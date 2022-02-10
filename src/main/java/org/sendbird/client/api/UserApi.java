@@ -28,34 +28,43 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.AddRegistrationOrDeviceTokenData;
+import org.openapitools.client.model.AddRegistrationOrDeviceTokenResponse;
 import org.openapitools.client.model.BanFromChannelsWithCustomChannelTypesData;
 import org.openapitools.client.model.BlockUserData;
+import org.openapitools.client.model.ChoosePushNotificationContentTemplateResponse;
 import org.openapitools.client.model.CreateUserData;
-import org.openapitools.client.model.InlineResponse20016;
-import org.openapitools.client.model.InlineResponse20017;
-import org.openapitools.client.model.InlineResponse20018;
-import org.openapitools.client.model.InlineResponse20019;
-import org.openapitools.client.model.InlineResponse20020;
-import org.openapitools.client.model.InlineResponse20021;
-import org.openapitools.client.model.InlineResponse20022;
-import org.openapitools.client.model.InlineResponse20023;
-import org.openapitools.client.model.InlineResponse20024;
-import org.openapitools.client.model.InlineResponse20025;
-import org.openapitools.client.model.InlineResponse20026;
-import org.openapitools.client.model.InlineResponse20027;
-import org.openapitools.client.model.InlineResponse20028;
-import org.openapitools.client.model.InlineResponse20029;
-import org.openapitools.client.model.InlineResponse2005;
 import org.openapitools.client.model.LeaveMyGroupChannelsData;
+import org.openapitools.client.model.ListBannedChannelsResponse;
+import org.openapitools.client.model.ListBlockedUsersResponse;
+import org.openapitools.client.model.ListMutedChannelsResponse;
+import org.openapitools.client.model.ListMyGroupChannelsResponse;
+import org.openapitools.client.model.ListRegistrationOrDeviceTokensResponse;
+import org.openapitools.client.model.ListUsersResponse;
 import org.openapitools.client.model.MarkAllMessagesAsReadData;
 import org.openapitools.client.model.MuteInChannelsWithCustomChannelTypesData;
 import org.openapitools.client.model.RegisterAsOperatorToChannelsWithCustomChannelTypesData;
+import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenByTokenResponse;
+import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse;
+import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenResponse;
 import org.openapitools.client.model.SendBirdUser;
 import org.openapitools.client.model.UpdateChannelInvitationPreferenceData;
+import org.openapitools.client.model.UpdateChannelInvitationPreferenceResponse;
 import org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlData;
+import org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlResponse;
 import org.openapitools.client.model.UpdatePushPreferencesData;
 import org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlData;
+import org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlResponse;
+import org.openapitools.client.model.UpdatePushPreferencesResponse;
 import org.openapitools.client.model.UpdateUserByIdData;
+import org.openapitools.client.model.ViewChannelInvitationPreferenceResponse;
+import org.openapitools.client.model.ViewCountPreferenceOfChannelByUrlResponse;
+import org.openapitools.client.model.ViewNumberOfChannelsByJoinStatusResponse;
+import org.openapitools.client.model.ViewNumberOfChannelsWithUnreadMessagesResponse;
+import org.openapitools.client.model.ViewNumberOfUnreadItemsResponse;
+import org.openapitools.client.model.ViewNumberOfUnreadMessagesResponse;
+import org.openapitools.client.model.ViewPushPreferencesForChannelByUrlResponse;
+import org.openapitools.client.model.ViewPushPreferencesResponse;
+import org.openapitools.client.model.ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -193,7 +202,7 @@ public class UserApi {
      * @param tokenType  (required)
      * @param apiToken  (optional)
      * @param addRegistrationOrDeviceTokenData  (optional)
-     * @return InlineResponse20025
+     * @return AddRegistrationOrDeviceTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -201,8 +210,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20025 addRegistrationOrDeviceToken(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
-        ApiResponse<InlineResponse20025> localVarResp = addRegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
+    public AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceToken(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
+        ApiResponse<AddRegistrationOrDeviceTokenResponse> localVarResp = addRegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
         return localVarResp.getData();
     }
 
@@ -213,7 +222,7 @@ public class UserApi {
      * @param tokenType  (required)
      * @param apiToken  (optional)
      * @param addRegistrationOrDeviceTokenData  (optional)
-     * @return ApiResponse&lt;InlineResponse20025&gt;
+     * @return ApiResponse&lt;AddRegistrationOrDeviceTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -221,9 +230,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20025> addRegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
+    public ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
         okhttp3.Call localVarCall = addRegistrationOrDeviceTokenValidateBeforeCall(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20025>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddRegistrationOrDeviceTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -243,10 +252,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addRegistrationOrDeviceTokenAsync(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData, final ApiCallback<InlineResponse20025> _callback) throws ApiException {
+    public okhttp3.Call addRegistrationOrDeviceTokenAsync(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData, final ApiCallback<AddRegistrationOrDeviceTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addRegistrationOrDeviceTokenValidateBeforeCall(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20025>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddRegistrationOrDeviceTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -611,7 +620,7 @@ public class UserApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param body  (optional)
-     * @return InlineResponse20029
+     * @return ChoosePushNotificationContentTemplateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -619,8 +628,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20029 choosePushNotificationContentTemplate(String userId, String apiToken, Object body) throws ApiException {
-        ApiResponse<InlineResponse20029> localVarResp = choosePushNotificationContentTemplateWithHttpInfo(userId, apiToken, body);
+    public ChoosePushNotificationContentTemplateResponse choosePushNotificationContentTemplate(String userId, String apiToken, Object body) throws ApiException {
+        ApiResponse<ChoosePushNotificationContentTemplateResponse> localVarResp = choosePushNotificationContentTemplateWithHttpInfo(userId, apiToken, body);
         return localVarResp.getData();
     }
 
@@ -630,7 +639,7 @@ public class UserApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param body  (optional)
-     * @return ApiResponse&lt;InlineResponse20029&gt;
+     * @return ApiResponse&lt;ChoosePushNotificationContentTemplateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -638,9 +647,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20029> choosePushNotificationContentTemplateWithHttpInfo(String userId, String apiToken, Object body) throws ApiException {
+    public ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNotificationContentTemplateWithHttpInfo(String userId, String apiToken, Object body) throws ApiException {
         okhttp3.Call localVarCall = choosePushNotificationContentTemplateValidateBeforeCall(userId, apiToken, body, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20029>(){}.getType();
+        Type localVarReturnType = new TypeToken<ChoosePushNotificationContentTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -659,10 +668,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call choosePushNotificationContentTemplateAsync(String userId, String apiToken, Object body, final ApiCallback<InlineResponse20029> _callback) throws ApiException {
+    public okhttp3.Call choosePushNotificationContentTemplateAsync(String userId, String apiToken, Object body, final ApiCallback<ChoosePushNotificationContentTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = choosePushNotificationContentTemplateValidateBeforeCall(userId, apiToken, body, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20029>(){}.getType();
+        Type localVarReturnType = new TypeToken<ChoosePushNotificationContentTemplateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1159,7 +1168,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20022
+     * @return ListBannedChannelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1167,8 +1176,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20022 listBannedChannels(String userId, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20022> localVarResp = listBannedChannelsWithHttpInfo(userId, apiToken, token, limit);
+    public ListBannedChannelsResponse listBannedChannels(String userId, String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<ListBannedChannelsResponse> localVarResp = listBannedChannelsWithHttpInfo(userId, apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -1179,7 +1188,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20022&gt;
+     * @return ApiResponse&lt;ListBannedChannelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1187,9 +1196,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20022> listBannedChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listBannedChannelsValidateBeforeCall(userId, apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20022>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListBannedChannelsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1209,10 +1218,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBannedChannelsAsync(String userId, String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20022> _callback) throws ApiException {
+    public okhttp3.Call listBannedChannelsAsync(String userId, String apiToken, String token, Integer limit, final ApiCallback<ListBannedChannelsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listBannedChannelsValidateBeforeCall(userId, apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20022>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListBannedChannelsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1329,7 +1338,7 @@ public class UserApi {
      * @param userIds  (optional)
      * @param metadatakey  (optional)
      * @param metadatavaluesIn  (optional)
-     * @return InlineResponse20016
+     * @return ListBlockedUsersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1337,8 +1346,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20016 listBlockedUsers(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
-        ApiResponse<InlineResponse20016> localVarResp = listBlockedUsersWithHttpInfo(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn);
+    public ListBlockedUsersResponse listBlockedUsers(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
+        ApiResponse<ListBlockedUsersResponse> localVarResp = listBlockedUsersWithHttpInfo(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn);
         return localVarResp.getData();
     }
 
@@ -1352,7 +1361,7 @@ public class UserApi {
      * @param userIds  (optional)
      * @param metadatakey  (optional)
      * @param metadatavaluesIn  (optional)
-     * @return ApiResponse&lt;InlineResponse20016&gt;
+     * @return ApiResponse&lt;ListBlockedUsersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1360,9 +1369,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20016> listBlockedUsersWithHttpInfo(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
+    public ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
         okhttp3.Call localVarCall = listBlockedUsersValidateBeforeCall(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20016>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListBlockedUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1385,10 +1394,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBlockedUsersAsync(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, final ApiCallback<InlineResponse20016> _callback) throws ApiException {
+    public okhttp3.Call listBlockedUsersAsync(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, final ApiCallback<ListBlockedUsersResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listBlockedUsersValidateBeforeCall(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20016>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListBlockedUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1487,7 +1496,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20023
+     * @return ListMutedChannelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1495,8 +1504,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20023 listMutedChannels(String userId, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20023> localVarResp = listMutedChannelsWithHttpInfo(userId, apiToken, token, limit);
+    public ListMutedChannelsResponse listMutedChannels(String userId, String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<ListMutedChannelsResponse> localVarResp = listMutedChannelsWithHttpInfo(userId, apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -1507,7 +1516,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20023&gt;
+     * @return ApiResponse&lt;ListMutedChannelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1515,9 +1524,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20023> listMutedChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listMutedChannelsValidateBeforeCall(userId, apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20023>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListMutedChannelsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1537,10 +1546,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMutedChannelsAsync(String userId, String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20023> _callback) throws ApiException {
+    public okhttp3.Call listMutedChannelsAsync(String userId, String apiToken, String token, Integer limit, final ApiCallback<ListMutedChannelsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listMutedChannelsValidateBeforeCall(userId, apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20023>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListMutedChannelsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1867,7 +1876,7 @@ public class UserApi {
      * @param metacounterValueLt  (optional)
      * @param metacounterValueLte  (optional)
      * @param customType  (optional)
-     * @return InlineResponse20017
+     * @return ListMyGroupChannelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1875,8 +1884,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20017 listMyGroupChannels(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
-        ApiResponse<InlineResponse20017> localVarResp = listMyGroupChannelsWithHttpInfo(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+    public ListMyGroupChannelsResponse listMyGroupChannels(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
+        ApiResponse<ListMyGroupChannelsResponse> localVarResp = listMyGroupChannelsWithHttpInfo(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
         return localVarResp.getData();
     }
 
@@ -1925,7 +1934,7 @@ public class UserApi {
      * @param metacounterValueLt  (optional)
      * @param metacounterValueLte  (optional)
      * @param customType  (optional)
-     * @return ApiResponse&lt;InlineResponse20017&gt;
+     * @return ApiResponse&lt;ListMyGroupChannelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1933,9 +1942,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20017> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
+    public ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
         okhttp3.Call localVarCall = listMyGroupChannelsValidateBeforeCall(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20017>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListMyGroupChannelsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1993,10 +2002,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMyGroupChannelsAsync(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType, final ApiCallback<InlineResponse20017> _callback) throws ApiException {
+    public okhttp3.Call listMyGroupChannelsAsync(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType, final ApiCallback<ListMyGroupChannelsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listMyGroupChannelsValidateBeforeCall(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20017>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListMyGroupChannelsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2091,7 +2100,7 @@ public class UserApi {
      * @param userId  (required)
      * @param tokenType  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20024
+     * @return ListRegistrationOrDeviceTokensResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2099,8 +2108,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20024 listRegistrationOrDeviceTokens(String userId, String tokenType, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20024> localVarResp = listRegistrationOrDeviceTokensWithHttpInfo(userId, tokenType, apiToken);
+    public ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(String userId, String tokenType, String apiToken) throws ApiException {
+        ApiResponse<ListRegistrationOrDeviceTokensResponse> localVarResp = listRegistrationOrDeviceTokensWithHttpInfo(userId, tokenType, apiToken);
         return localVarResp.getData();
     }
 
@@ -2110,7 +2119,7 @@ public class UserApi {
      * @param userId  (required)
      * @param tokenType  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20024&gt;
+     * @return ApiResponse&lt;ListRegistrationOrDeviceTokensResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2118,9 +2127,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20024> listRegistrationOrDeviceTokensWithHttpInfo(String userId, String tokenType, String apiToken) throws ApiException {
+    public ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDeviceTokensWithHttpInfo(String userId, String tokenType, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = listRegistrationOrDeviceTokensValidateBeforeCall(userId, tokenType, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20024>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListRegistrationOrDeviceTokensResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2139,10 +2148,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRegistrationOrDeviceTokensAsync(String userId, String tokenType, String apiToken, final ApiCallback<InlineResponse20024> _callback) throws ApiException {
+    public okhttp3.Call listRegistrationOrDeviceTokensAsync(String userId, String tokenType, String apiToken, final ApiCallback<ListRegistrationOrDeviceTokensResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listRegistrationOrDeviceTokensValidateBeforeCall(userId, tokenType, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20024>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListRegistrationOrDeviceTokensResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2275,7 +2284,7 @@ public class UserApi {
      * @param nicknameStartswith  (optional)
      * @param metadatakey  (optional)
      * @param metadatavaluesIn  (optional)
-     * @return InlineResponse20016
+     * @return ListUsersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2283,8 +2292,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20016 listUsers(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn) throws ApiException {
-        ApiResponse<InlineResponse20016> localVarResp = listUsersWithHttpInfo(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
+    public ListUsersResponse listUsers(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn) throws ApiException {
+        ApiResponse<ListUsersResponse> localVarResp = listUsersWithHttpInfo(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
         return localVarResp.getData();
     }
 
@@ -2301,7 +2310,7 @@ public class UserApi {
      * @param nicknameStartswith  (optional)
      * @param metadatakey  (optional)
      * @param metadatavaluesIn  (optional)
-     * @return ApiResponse&lt;InlineResponse20016&gt;
+     * @return ApiResponse&lt;ListUsersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2309,9 +2318,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20016> listUsersWithHttpInfo(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn) throws ApiException {
+    public ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn) throws ApiException {
         okhttp3.Call localVarCall = listUsersValidateBeforeCall(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20016>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2337,10 +2346,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUsersAsync(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn, final ApiCallback<InlineResponse20016> _callback) throws ApiException {
+    public okhttp3.Call listUsersAsync(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn, final ApiCallback<ListUsersResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listUsersValidateBeforeCall(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20016>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2835,7 +2844,7 @@ public class UserApi {
      * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
      * @param userId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20026
+     * @return RemoveRegistrationOrDeviceTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2843,8 +2852,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20026 removeRegistrationOrDeviceToken(String userId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20026> localVarResp = removeRegistrationOrDeviceTokenWithHttpInfo(userId, apiToken);
+    public RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceToken(String userId, String apiToken) throws ApiException {
+        ApiResponse<RemoveRegistrationOrDeviceTokenResponse> localVarResp = removeRegistrationOrDeviceTokenWithHttpInfo(userId, apiToken);
         return localVarResp.getData();
     }
 
@@ -2853,7 +2862,7 @@ public class UserApi {
      * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
      * @param userId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20026&gt;
+     * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2861,9 +2870,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20026> removeRegistrationOrDeviceTokenWithHttpInfo(String userId, String apiToken) throws ApiException {
+    public ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationOrDeviceTokenWithHttpInfo(String userId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenValidateBeforeCall(userId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20026>(){}.getType();
+        Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2881,10 +2890,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeRegistrationOrDeviceTokenAsync(String userId, String apiToken, final ApiCallback<InlineResponse20026> _callback) throws ApiException {
+    public okhttp3.Call removeRegistrationOrDeviceTokenAsync(String userId, String apiToken, final ApiCallback<RemoveRegistrationOrDeviceTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenValidateBeforeCall(userId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20026>(){}.getType();
+        Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2987,7 +2996,7 @@ public class UserApi {
      * @param tokenType  (required)
      * @param token  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20026
+     * @return RemoveRegistrationOrDeviceTokenByTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2995,8 +3004,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20026 removeRegistrationOrDeviceTokenByToken(String userId, String tokenType, String token, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20026> localVarResp = removeRegistrationOrDeviceTokenByTokenWithHttpInfo(userId, tokenType, token, apiToken);
+    public RemoveRegistrationOrDeviceTokenByTokenResponse removeRegistrationOrDeviceTokenByToken(String userId, String tokenType, String token, String apiToken) throws ApiException {
+        ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> localVarResp = removeRegistrationOrDeviceTokenByTokenWithHttpInfo(userId, tokenType, token, apiToken);
         return localVarResp.getData();
     }
 
@@ -3007,7 +3016,7 @@ public class UserApi {
      * @param tokenType  (required)
      * @param token  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20026&gt;
+     * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenByTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3015,9 +3024,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20026> removeRegistrationOrDeviceTokenByTokenWithHttpInfo(String userId, String tokenType, String token, String apiToken) throws ApiException {
+    public ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegistrationOrDeviceTokenByTokenWithHttpInfo(String userId, String tokenType, String token, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenByTokenValidateBeforeCall(userId, tokenType, token, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20026>(){}.getType();
+        Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenByTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3037,10 +3046,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeRegistrationOrDeviceTokenByTokenAsync(String userId, String tokenType, String token, String apiToken, final ApiCallback<InlineResponse20026> _callback) throws ApiException {
+    public okhttp3.Call removeRegistrationOrDeviceTokenByTokenAsync(String userId, String tokenType, String token, String apiToken, final ApiCallback<RemoveRegistrationOrDeviceTokenByTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenByTokenValidateBeforeCall(userId, tokenType, token, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20026>(){}.getType();
+        Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenByTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3135,7 +3144,7 @@ public class UserApi {
      * @param tokenType  (required)
      * @param token  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20027
+     * @return RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3143,8 +3152,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20027 removeRegistrationOrDeviceTokenFromOwnerByToken(String tokenType, String token, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20027> localVarResp = removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(tokenType, token, apiToken);
+    public RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse removeRegistrationOrDeviceTokenFromOwnerByToken(String tokenType, String token, String apiToken) throws ApiException {
+        ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> localVarResp = removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(tokenType, token, apiToken);
         return localVarResp.getData();
     }
 
@@ -3154,7 +3163,7 @@ public class UserApi {
      * @param tokenType  (required)
      * @param token  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20027&gt;
+     * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3162,9 +3171,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20027> removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
+    public ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenFromOwnerByTokenValidateBeforeCall(tokenType, token, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20027>(){}.getType();
+        Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3183,10 +3192,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeRegistrationOrDeviceTokenFromOwnerByTokenAsync(String tokenType, String token, String apiToken, final ApiCallback<InlineResponse20027> _callback) throws ApiException {
+    public okhttp3.Call removeRegistrationOrDeviceTokenFromOwnerByTokenAsync(String tokenType, String token, String apiToken, final ApiCallback<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenFromOwnerByTokenValidateBeforeCall(tokenType, token, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20027>(){}.getType();
+        Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3549,7 +3558,7 @@ public class UserApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param updateChannelInvitationPreferenceData  (optional)
-     * @return InlineResponse2005
+     * @return UpdateChannelInvitationPreferenceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3557,8 +3566,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2005 updateChannelInvitationPreference(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
-        ApiResponse<InlineResponse2005> localVarResp = updateChannelInvitationPreferenceWithHttpInfo(userId, apiToken, updateChannelInvitationPreferenceData);
+    public UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
+        ApiResponse<UpdateChannelInvitationPreferenceResponse> localVarResp = updateChannelInvitationPreferenceWithHttpInfo(userId, apiToken, updateChannelInvitationPreferenceData);
         return localVarResp.getData();
     }
 
@@ -3568,7 +3577,7 @@ public class UserApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param updateChannelInvitationPreferenceData  (optional)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;UpdateChannelInvitationPreferenceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3576,9 +3585,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2005> updateChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
+    public ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
         okhttp3.Call localVarCall = updateChannelInvitationPreferenceValidateBeforeCall(userId, apiToken, updateChannelInvitationPreferenceData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateChannelInvitationPreferenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3597,10 +3606,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelInvitationPreferenceAsync(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData, final ApiCallback<InlineResponse2005> _callback) throws ApiException {
+    public okhttp3.Call updateChannelInvitationPreferenceAsync(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData, final ApiCallback<UpdateChannelInvitationPreferenceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateChannelInvitationPreferenceValidateBeforeCall(userId, apiToken, updateChannelInvitationPreferenceData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateChannelInvitationPreferenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3697,7 +3706,7 @@ public class UserApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param updateCountPreferenceOfChannelByUrlData  (optional)
-     * @return InlineResponse20021
+     * @return UpdateCountPreferenceOfChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3705,8 +3714,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20021 updateCountPreferenceOfChannelByUrl(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
-        ApiResponse<InlineResponse20021> localVarResp = updateCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
+    public UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfChannelByUrl(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
+        ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> localVarResp = updateCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
         return localVarResp.getData();
     }
 
@@ -3717,7 +3726,7 @@ public class UserApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param updateCountPreferenceOfChannelByUrlData  (optional)
-     * @return ApiResponse&lt;InlineResponse20021&gt;
+     * @return ApiResponse&lt;UpdateCountPreferenceOfChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3725,9 +3734,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20021> updateCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
+    public ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
         okhttp3.Call localVarCall = updateCountPreferenceOfChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20021>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateCountPreferenceOfChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3747,10 +3756,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCountPreferenceOfChannelByUrlAsync(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData, final ApiCallback<InlineResponse20021> _callback) throws ApiException {
+    public okhttp3.Call updateCountPreferenceOfChannelByUrlAsync(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData, final ApiCallback<UpdateCountPreferenceOfChannelByUrlResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCountPreferenceOfChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20021>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateCountPreferenceOfChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3839,7 +3848,7 @@ public class UserApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param updatePushPreferencesData  (optional)
-     * @return InlineResponse20028
+     * @return UpdatePushPreferencesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3847,8 +3856,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20028 updatePushPreferences(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
-        ApiResponse<InlineResponse20028> localVarResp = updatePushPreferencesWithHttpInfo(userId, apiToken, updatePushPreferencesData);
+    public UpdatePushPreferencesResponse updatePushPreferences(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
+        ApiResponse<UpdatePushPreferencesResponse> localVarResp = updatePushPreferencesWithHttpInfo(userId, apiToken, updatePushPreferencesData);
         return localVarResp.getData();
     }
 
@@ -3858,7 +3867,7 @@ public class UserApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param updatePushPreferencesData  (optional)
-     * @return ApiResponse&lt;InlineResponse20028&gt;
+     * @return ApiResponse&lt;UpdatePushPreferencesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3866,9 +3875,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20028> updatePushPreferencesWithHttpInfo(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
+    public ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
         okhttp3.Call localVarCall = updatePushPreferencesValidateBeforeCall(userId, apiToken, updatePushPreferencesData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatePushPreferencesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3887,10 +3896,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePushPreferencesAsync(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData, final ApiCallback<InlineResponse20028> _callback) throws ApiException {
+    public okhttp3.Call updatePushPreferencesAsync(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData, final ApiCallback<UpdatePushPreferencesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePushPreferencesValidateBeforeCall(userId, apiToken, updatePushPreferencesData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatePushPreferencesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3987,7 +3996,7 @@ public class UserApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param updatePushPreferencesForChannelByUrlData  (optional)
-     * @return InlineResponse20028
+     * @return UpdatePushPreferencesForChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3995,8 +4004,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20028 updatePushPreferencesForChannelByUrl(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
-        ApiResponse<InlineResponse20028> localVarResp = updatePushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
+    public UpdatePushPreferencesForChannelByUrlResponse updatePushPreferencesForChannelByUrl(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
+        ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> localVarResp = updatePushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
         return localVarResp.getData();
     }
 
@@ -4007,7 +4016,7 @@ public class UserApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param updatePushPreferencesForChannelByUrlData  (optional)
-     * @return ApiResponse&lt;InlineResponse20028&gt;
+     * @return ApiResponse&lt;UpdatePushPreferencesForChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4015,9 +4024,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20028> updatePushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
+    public ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
         okhttp3.Call localVarCall = updatePushPreferencesForChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatePushPreferencesForChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4037,10 +4046,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePushPreferencesForChannelByUrlAsync(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData, final ApiCallback<InlineResponse20028> _callback) throws ApiException {
+    public okhttp3.Call updatePushPreferencesForChannelByUrlAsync(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData, final ApiCallback<UpdatePushPreferencesForChannelByUrlResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePushPreferencesForChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatePushPreferencesForChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4267,7 +4276,7 @@ public class UserApi {
      * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
      * @param userId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse2005
+     * @return ViewChannelInvitationPreferenceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4275,8 +4284,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2005 viewChannelInvitationPreference(String userId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse2005> localVarResp = viewChannelInvitationPreferenceWithHttpInfo(userId, apiToken);
+    public ViewChannelInvitationPreferenceResponse viewChannelInvitationPreference(String userId, String apiToken) throws ApiException {
+        ApiResponse<ViewChannelInvitationPreferenceResponse> localVarResp = viewChannelInvitationPreferenceWithHttpInfo(userId, apiToken);
         return localVarResp.getData();
     }
 
@@ -4285,7 +4294,7 @@ public class UserApi {
      * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
      * @param userId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;ViewChannelInvitationPreferenceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4293,9 +4302,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2005> viewChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken) throws ApiException {
+    public ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewChannelInvitationPreferenceValidateBeforeCall(userId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewChannelInvitationPreferenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4313,10 +4322,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelInvitationPreferenceAsync(String userId, String apiToken, final ApiCallback<InlineResponse2005> _callback) throws ApiException {
+    public okhttp3.Call viewChannelInvitationPreferenceAsync(String userId, String apiToken, final ApiCallback<ViewChannelInvitationPreferenceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewChannelInvitationPreferenceValidateBeforeCall(userId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewChannelInvitationPreferenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4411,7 +4420,7 @@ public class UserApi {
      * @param userId  (required)
      * @param channelUrl  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20021
+     * @return ViewCountPreferenceOfChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4419,8 +4428,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20021 viewCountPreferenceOfChannelByUrl(String userId, String channelUrl, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20021> localVarResp = viewCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
+    public ViewCountPreferenceOfChannelByUrlResponse viewCountPreferenceOfChannelByUrl(String userId, String channelUrl, String apiToken) throws ApiException {
+        ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> localVarResp = viewCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
         return localVarResp.getData();
     }
 
@@ -4430,7 +4439,7 @@ public class UserApi {
      * @param userId  (required)
      * @param channelUrl  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20021&gt;
+     * @return ApiResponse&lt;ViewCountPreferenceOfChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4438,9 +4447,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20021> viewCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
+    public ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewCountPreferenceOfChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20021>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewCountPreferenceOfChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4459,10 +4468,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewCountPreferenceOfChannelByUrlAsync(String userId, String channelUrl, String apiToken, final ApiCallback<InlineResponse20021> _callback) throws ApiException {
+    public okhttp3.Call viewCountPreferenceOfChannelByUrlAsync(String userId, String channelUrl, String apiToken, final ApiCallback<ViewCountPreferenceOfChannelByUrlResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewCountPreferenceOfChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20021>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewCountPreferenceOfChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4555,7 +4564,7 @@ public class UserApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param state  (optional)
-     * @return InlineResponse20020
+     * @return ViewNumberOfChannelsByJoinStatusResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4563,8 +4572,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20020 viewNumberOfChannelsByJoinStatus(String userId, String apiToken, String state) throws ApiException {
-        ApiResponse<InlineResponse20020> localVarResp = viewNumberOfChannelsByJoinStatusWithHttpInfo(userId, apiToken, state);
+    public ViewNumberOfChannelsByJoinStatusResponse viewNumberOfChannelsByJoinStatus(String userId, String apiToken, String state) throws ApiException {
+        ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> localVarResp = viewNumberOfChannelsByJoinStatusWithHttpInfo(userId, apiToken, state);
         return localVarResp.getData();
     }
 
@@ -4574,7 +4583,7 @@ public class UserApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param state  (optional)
-     * @return ApiResponse&lt;InlineResponse20020&gt;
+     * @return ApiResponse&lt;ViewNumberOfChannelsByJoinStatusResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4582,9 +4591,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20020> viewNumberOfChannelsByJoinStatusWithHttpInfo(String userId, String apiToken, String state) throws ApiException {
+    public ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChannelsByJoinStatusWithHttpInfo(String userId, String apiToken, String state) throws ApiException {
         okhttp3.Call localVarCall = viewNumberOfChannelsByJoinStatusValidateBeforeCall(userId, apiToken, state, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20020>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfChannelsByJoinStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4603,10 +4612,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfChannelsByJoinStatusAsync(String userId, String apiToken, String state, final ApiCallback<InlineResponse20020> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfChannelsByJoinStatusAsync(String userId, String apiToken, String state, final ApiCallback<ViewNumberOfChannelsByJoinStatusResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewNumberOfChannelsByJoinStatusValidateBeforeCall(userId, apiToken, state, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20020>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfChannelsByJoinStatusResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4705,7 +4714,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
-     * @return InlineResponse20018
+     * @return ViewNumberOfChannelsWithUnreadMessagesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4713,8 +4722,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20018 viewNumberOfChannelsWithUnreadMessages(String userId, String apiToken, List<String> customTypes, String superMode) throws ApiException {
-        ApiResponse<InlineResponse20018> localVarResp = viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
+    public ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(String userId, String apiToken, List<String> customTypes, String superMode) throws ApiException {
+        ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> localVarResp = viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
         return localVarResp.getData();
     }
 
@@ -4725,7 +4734,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
-     * @return ApiResponse&lt;InlineResponse20018&gt;
+     * @return ApiResponse&lt;ViewNumberOfChannelsWithUnreadMessagesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4733,9 +4742,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20018> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String userId, String apiToken, List<String> customTypes, String superMode) throws ApiException {
+    public ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String userId, String apiToken, List<String> customTypes, String superMode) throws ApiException {
         okhttp3.Call localVarCall = viewNumberOfChannelsWithUnreadMessagesValidateBeforeCall(userId, apiToken, customTypes, superMode, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfChannelsWithUnreadMessagesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4755,10 +4764,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfChannelsWithUnreadMessagesAsync(String userId, String apiToken, List<String> customTypes, String superMode, final ApiCallback<InlineResponse20018> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfChannelsWithUnreadMessagesAsync(String userId, String apiToken, List<String> customTypes, String superMode, final ApiCallback<ViewNumberOfChannelsWithUnreadMessagesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewNumberOfChannelsWithUnreadMessagesValidateBeforeCall(userId, apiToken, customTypes, superMode, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfChannelsWithUnreadMessagesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4857,7 +4866,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param customType  (optional)
      * @param itemKeys  (optional)
-     * @return InlineResponse20019
+     * @return ViewNumberOfUnreadItemsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4865,8 +4874,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20019 viewNumberOfUnreadItems(String userId, String apiToken, String customType, String itemKeys) throws ApiException {
-        ApiResponse<InlineResponse20019> localVarResp = viewNumberOfUnreadItemsWithHttpInfo(userId, apiToken, customType, itemKeys);
+    public ViewNumberOfUnreadItemsResponse viewNumberOfUnreadItems(String userId, String apiToken, String customType, String itemKeys) throws ApiException {
+        ApiResponse<ViewNumberOfUnreadItemsResponse> localVarResp = viewNumberOfUnreadItemsWithHttpInfo(userId, apiToken, customType, itemKeys);
         return localVarResp.getData();
     }
 
@@ -4877,7 +4886,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param customType  (optional)
      * @param itemKeys  (optional)
-     * @return ApiResponse&lt;InlineResponse20019&gt;
+     * @return ApiResponse&lt;ViewNumberOfUnreadItemsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4885,9 +4894,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20019> viewNumberOfUnreadItemsWithHttpInfo(String userId, String apiToken, String customType, String itemKeys) throws ApiException {
+    public ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWithHttpInfo(String userId, String apiToken, String customType, String itemKeys) throws ApiException {
         okhttp3.Call localVarCall = viewNumberOfUnreadItemsValidateBeforeCall(userId, apiToken, customType, itemKeys, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20019>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfUnreadItemsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4907,10 +4916,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfUnreadItemsAsync(String userId, String apiToken, String customType, String itemKeys, final ApiCallback<InlineResponse20019> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfUnreadItemsAsync(String userId, String apiToken, String customType, String itemKeys, final ApiCallback<ViewNumberOfUnreadItemsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewNumberOfUnreadItemsValidateBeforeCall(userId, apiToken, customType, itemKeys, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20019>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfUnreadItemsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -5009,7 +5018,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
-     * @return InlineResponse20018
+     * @return ViewNumberOfUnreadMessagesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5017,8 +5026,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20018 viewNumberOfUnreadMessages(String userId, String apiToken, String customTypes, String superMode) throws ApiException {
-        ApiResponse<InlineResponse20018> localVarResp = viewNumberOfUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
+    public ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(String userId, String apiToken, String customTypes, String superMode) throws ApiException {
+        ApiResponse<ViewNumberOfUnreadMessagesResponse> localVarResp = viewNumberOfUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
         return localVarResp.getData();
     }
 
@@ -5029,7 +5038,7 @@ public class UserApi {
      * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
-     * @return ApiResponse&lt;InlineResponse20018&gt;
+     * @return ApiResponse&lt;ViewNumberOfUnreadMessagesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5037,9 +5046,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20018> viewNumberOfUnreadMessagesWithHttpInfo(String userId, String apiToken, String customTypes, String superMode) throws ApiException {
+    public ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String userId, String apiToken, String customTypes, String superMode) throws ApiException {
         okhttp3.Call localVarCall = viewNumberOfUnreadMessagesValidateBeforeCall(userId, apiToken, customTypes, superMode, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfUnreadMessagesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -5059,10 +5068,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfUnreadMessagesAsync(String userId, String apiToken, String customTypes, String superMode, final ApiCallback<InlineResponse20018> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfUnreadMessagesAsync(String userId, String apiToken, String customTypes, String superMode, final ApiCallback<ViewNumberOfUnreadMessagesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewNumberOfUnreadMessagesValidateBeforeCall(userId, apiToken, customTypes, superMode, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfUnreadMessagesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -5149,7 +5158,7 @@ public class UserApi {
      * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
      * @param userId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20028
+     * @return ViewPushPreferencesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5157,8 +5166,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20028 viewPushPreferences(String userId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20028> localVarResp = viewPushPreferencesWithHttpInfo(userId, apiToken);
+    public ViewPushPreferencesResponse viewPushPreferences(String userId, String apiToken) throws ApiException {
+        ApiResponse<ViewPushPreferencesResponse> localVarResp = viewPushPreferencesWithHttpInfo(userId, apiToken);
         return localVarResp.getData();
     }
 
@@ -5167,7 +5176,7 @@ public class UserApi {
      * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
      * @param userId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20028&gt;
+     * @return ApiResponse&lt;ViewPushPreferencesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5175,9 +5184,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20028> viewPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
+    public ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewPushPreferencesValidateBeforeCall(userId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewPushPreferencesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -5195,10 +5204,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewPushPreferencesAsync(String userId, String apiToken, final ApiCallback<InlineResponse20028> _callback) throws ApiException {
+    public okhttp3.Call viewPushPreferencesAsync(String userId, String apiToken, final ApiCallback<ViewPushPreferencesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewPushPreferencesValidateBeforeCall(userId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewPushPreferencesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -5293,7 +5302,7 @@ public class UserApi {
      * @param userId  (required)
      * @param channelUrl  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20028
+     * @return ViewPushPreferencesForChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5301,8 +5310,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20028 viewPushPreferencesForChannelByUrl(String userId, String channelUrl, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20028> localVarResp = viewPushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
+    public ViewPushPreferencesForChannelByUrlResponse viewPushPreferencesForChannelByUrl(String userId, String channelUrl, String apiToken) throws ApiException {
+        ApiResponse<ViewPushPreferencesForChannelByUrlResponse> localVarResp = viewPushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
         return localVarResp.getData();
     }
 
@@ -5312,7 +5321,7 @@ public class UserApi {
      * @param userId  (required)
      * @param channelUrl  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20028&gt;
+     * @return ApiResponse&lt;ViewPushPreferencesForChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5320,9 +5329,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20028> viewPushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
+    public ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewPushPreferencesForChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewPushPreferencesForChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -5341,10 +5350,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewPushPreferencesForChannelByUrlAsync(String userId, String channelUrl, String apiToken, final ApiCallback<InlineResponse20028> _callback) throws ApiException {
+    public okhttp3.Call viewPushPreferencesForChannelByUrlAsync(String userId, String channelUrl, String apiToken, final ApiCallback<ViewPushPreferencesForChannelByUrlResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewPushPreferencesForChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewPushPreferencesForChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -5599,7 +5608,7 @@ public class UserApi {
      * @param tokenType  (required)
      * @param token  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20027
+     * @return ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5607,8 +5616,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20027 viewWhoOwnsRegistrationOrDeviceTokenByToken(String tokenType, String token, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20027> localVarResp = viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(tokenType, token, apiToken);
+    public ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse viewWhoOwnsRegistrationOrDeviceTokenByToken(String tokenType, String token, String apiToken) throws ApiException {
+        ApiResponse<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse> localVarResp = viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(tokenType, token, apiToken);
         return localVarResp.getData();
     }
 
@@ -5618,7 +5627,7 @@ public class UserApi {
      * @param tokenType  (required)
      * @param token  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20027&gt;
+     * @return ApiResponse&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -5626,9 +5635,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20027> viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
+    public ApiResponse<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse> viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewWhoOwnsRegistrationOrDeviceTokenByTokenValidateBeforeCall(tokenType, token, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20027>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -5647,10 +5656,10 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewWhoOwnsRegistrationOrDeviceTokenByTokenAsync(String tokenType, String token, String apiToken, final ApiCallback<InlineResponse20027> _callback) throws ApiException {
+    public okhttp3.Call viewWhoOwnsRegistrationOrDeviceTokenByTokenAsync(String tokenType, String token, String apiToken, final ApiCallback<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewWhoOwnsRegistrationOrDeviceTokenByTokenValidateBeforeCall(tokenType, token, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20027>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

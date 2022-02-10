@@ -27,17 +27,19 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse20039;
-import org.openapitools.client.model.InlineResponse20039Announcements;
-import org.openapitools.client.model.InlineResponse20040;
-import org.openapitools.client.model.InlineResponse20041;
-import org.openapitools.client.model.InlineResponse20042;
-import org.openapitools.client.model.InlineResponse20043;
-import org.openapitools.client.model.InlineResponse20044;
-import org.openapitools.client.model.InlineResponse20045;
-import org.openapitools.client.model.InlineResponse20046;
+import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementByIdResponse;
+import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementGroupResponse;
+import org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResponse;
+import org.openapitools.client.model.GetStatisticsDailyResponse;
+import org.openapitools.client.model.GetStatisticsMonthlyResponse;
+import org.openapitools.client.model.GetStatisticsResponse;
+import org.openapitools.client.model.ListAnnouncementGroupsResponse;
+import org.openapitools.client.model.ListAnnouncementsResponse;
 import org.openapitools.client.model.ScheduleAnnouncementData;
+import org.openapitools.client.model.ScheduleAnnouncementResponse;
 import org.openapitools.client.model.UpdateAnnouncementByIdData;
+import org.openapitools.client.model.UpdateAnnouncementByIdResponse;
+import org.openapitools.client.model.ViewAnnouncementByIdResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -165,7 +167,7 @@ public class AnnouncementsApi {
      * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
      * @param uniqueId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20042
+     * @return GetDetailedOpenRateOfAnnouncementByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -173,8 +175,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20042 getDetailedOpenRateOfAnnouncementById(String uniqueId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20042> localVarResp = getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(uniqueId, apiToken);
+    public GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(String uniqueId, String apiToken) throws ApiException {
+        ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> localVarResp = getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(uniqueId, apiToken);
         return localVarResp.getData();
     }
 
@@ -183,7 +185,7 @@ public class AnnouncementsApi {
      * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
      * @param uniqueId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20042&gt;
+     * @return ApiResponse&lt;GetDetailedOpenRateOfAnnouncementByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -191,9 +193,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20042> getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken) throws ApiException {
+    public ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20042>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDetailedOpenRateOfAnnouncementByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -211,10 +213,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDetailedOpenRateOfAnnouncementByIdAsync(String uniqueId, String apiToken, final ApiCallback<InlineResponse20042> _callback) throws ApiException {
+    public okhttp3.Call getDetailedOpenRateOfAnnouncementByIdAsync(String uniqueId, String apiToken, final ApiCallback<GetDetailedOpenRateOfAnnouncementByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20042>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDetailedOpenRateOfAnnouncementByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -301,7 +303,7 @@ public class AnnouncementsApi {
      * ## Get detailed open rate of an announcement group  Retrieves the detailed open rate information of an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement-group ----------------------------
      * @param announcementGroup  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20046
+     * @return GetDetailedOpenRateOfAnnouncementGroupResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -309,8 +311,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20046 getDetailedOpenRateOfAnnouncementGroup(String announcementGroup, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20046> localVarResp = getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(announcementGroup, apiToken);
+    public GetDetailedOpenRateOfAnnouncementGroupResponse getDetailedOpenRateOfAnnouncementGroup(String announcementGroup, String apiToken) throws ApiException {
+        ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> localVarResp = getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(announcementGroup, apiToken);
         return localVarResp.getData();
     }
 
@@ -319,7 +321,7 @@ public class AnnouncementsApi {
      * ## Get detailed open rate of an announcement group  Retrieves the detailed open rate information of an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement-group ----------------------------
      * @param announcementGroup  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20046&gt;
+     * @return ApiResponse&lt;GetDetailedOpenRateOfAnnouncementGroupResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -327,9 +329,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20046> getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(String announcementGroup, String apiToken) throws ApiException {
+    public ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(String announcementGroup, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementGroupValidateBeforeCall(announcementGroup, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20046>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDetailedOpenRateOfAnnouncementGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -347,10 +349,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDetailedOpenRateOfAnnouncementGroupAsync(String announcementGroup, String apiToken, final ApiCallback<InlineResponse20046> _callback) throws ApiException {
+    public okhttp3.Call getDetailedOpenRateOfAnnouncementGroupAsync(String announcementGroup, String apiToken, final ApiCallback<GetDetailedOpenRateOfAnnouncementGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementGroupValidateBeforeCall(announcementGroup, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20046>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDetailedOpenRateOfAnnouncementGroupResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -467,7 +469,7 @@ public class AnnouncementsApi {
      * @param uniqueIds  (optional)
      * @param channelUrls  (optional)
      * @param hasOpened  (optional)
-     * @return InlineResponse20043
+     * @return GetDetailedOpenStatusOfAnnouncementByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -475,8 +477,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20043 getDetailedOpenStatusOfAnnouncementById(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
-        ApiResponse<InlineResponse20043> localVarResp = getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened);
+    public GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
+        ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> localVarResp = getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened);
         return localVarResp.getData();
     }
 
@@ -490,7 +492,7 @@ public class AnnouncementsApi {
      * @param uniqueIds  (optional)
      * @param channelUrls  (optional)
      * @param hasOpened  (optional)
-     * @return ApiResponse&lt;InlineResponse20043&gt;
+     * @return ApiResponse&lt;GetDetailedOpenStatusOfAnnouncementByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -498,9 +500,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20043> getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
+    public ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
         okhttp3.Call localVarCall = getDetailedOpenStatusOfAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20043>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDetailedOpenStatusOfAnnouncementByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -523,10 +525,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDetailedOpenStatusOfAnnouncementByIdAsync(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened, final ApiCallback<InlineResponse20043> _callback) throws ApiException {
+    public okhttp3.Call getDetailedOpenStatusOfAnnouncementByIdAsync(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened, final ApiCallback<GetDetailedOpenStatusOfAnnouncementByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDetailedOpenStatusOfAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20043>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDetailedOpenStatusOfAnnouncementByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -605,7 +607,7 @@ public class AnnouncementsApi {
      * Get statistics - weekly
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
      * @param apiToken  (optional)
-     * @return InlineResponse20044
+     * @return GetStatisticsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -613,8 +615,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20044 getStatistics(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20044> localVarResp = getStatisticsWithHttpInfo(apiToken);
+    public GetStatisticsResponse getStatistics(String apiToken) throws ApiException {
+        ApiResponse<GetStatisticsResponse> localVarResp = getStatisticsWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -622,7 +624,7 @@ public class AnnouncementsApi {
      * Get statistics - weekly
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20044&gt;
+     * @return ApiResponse&lt;GetStatisticsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -630,9 +632,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20044> getStatisticsWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<GetStatisticsResponse> getStatisticsWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = getStatisticsValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20044>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetStatisticsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -649,10 +651,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatisticsAsync(String apiToken, final ApiCallback<InlineResponse20044> _callback) throws ApiException {
+    public okhttp3.Call getStatisticsAsync(String apiToken, final ApiCallback<GetStatisticsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStatisticsValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20044>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetStatisticsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -803,7 +805,7 @@ public class AnnouncementsApi {
      * @param endMonth  (required)
      * @param apiToken  (optional)
      * @param announcementGroup  (optional)
-     * @return InlineResponse20044
+     * @return GetStatisticsDailyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -811,8 +813,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20044 getStatisticsDaily(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup) throws ApiException {
-        ApiResponse<InlineResponse20044> localVarResp = getStatisticsDailyWithHttpInfo(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup);
+    public GetStatisticsDailyResponse getStatisticsDaily(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup) throws ApiException {
+        ApiResponse<GetStatisticsDailyResponse> localVarResp = getStatisticsDailyWithHttpInfo(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup);
         return localVarResp.getData();
     }
 
@@ -827,7 +829,7 @@ public class AnnouncementsApi {
      * @param endMonth  (required)
      * @param apiToken  (optional)
      * @param announcementGroup  (optional)
-     * @return ApiResponse&lt;InlineResponse20044&gt;
+     * @return ApiResponse&lt;GetStatisticsDailyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -835,9 +837,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20044> getStatisticsDailyWithHttpInfo(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup) throws ApiException {
+    public ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup) throws ApiException {
         okhttp3.Call localVarCall = getStatisticsDailyValidateBeforeCall(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20044>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetStatisticsDailyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -861,10 +863,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatisticsDailyAsync(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup, final ApiCallback<InlineResponse20044> _callback) throws ApiException {
+    public okhttp3.Call getStatisticsDailyAsync(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup, final ApiCallback<GetStatisticsDailyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStatisticsDailyValidateBeforeCall(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20044>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetStatisticsDailyResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -943,7 +945,7 @@ public class AnnouncementsApi {
      * Get statistics - monthly
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
      * @param apiToken  (optional)
-     * @return InlineResponse20044
+     * @return GetStatisticsMonthlyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -951,8 +953,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20044 getStatisticsMonthly(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20044> localVarResp = getStatisticsMonthlyWithHttpInfo(apiToken);
+    public GetStatisticsMonthlyResponse getStatisticsMonthly(String apiToken) throws ApiException {
+        ApiResponse<GetStatisticsMonthlyResponse> localVarResp = getStatisticsMonthlyWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -960,7 +962,7 @@ public class AnnouncementsApi {
      * Get statistics - monthly
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20044&gt;
+     * @return ApiResponse&lt;GetStatisticsMonthlyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -968,9 +970,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20044> getStatisticsMonthlyWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<GetStatisticsMonthlyResponse> getStatisticsMonthlyWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = getStatisticsMonthlyValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20044>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetStatisticsMonthlyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -987,10 +989,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatisticsMonthlyAsync(String apiToken, final ApiCallback<InlineResponse20044> _callback) throws ApiException {
+    public okhttp3.Call getStatisticsMonthlyAsync(String apiToken, final ApiCallback<GetStatisticsMonthlyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStatisticsMonthlyValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20044>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetStatisticsMonthlyResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1081,7 +1083,7 @@ public class AnnouncementsApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20045
+     * @return ListAnnouncementGroupsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1089,8 +1091,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20045 listAnnouncementGroups(String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20045> localVarResp = listAnnouncementGroupsWithHttpInfo(apiToken, token, limit);
+    public ListAnnouncementGroupsResponse listAnnouncementGroups(String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<ListAnnouncementGroupsResponse> localVarResp = listAnnouncementGroupsWithHttpInfo(apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -1100,7 +1102,7 @@ public class AnnouncementsApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20045&gt;
+     * @return ApiResponse&lt;ListAnnouncementGroupsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1108,9 +1110,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20045> listAnnouncementGroupsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListAnnouncementGroupsResponse> listAnnouncementGroupsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listAnnouncementGroupsValidateBeforeCall(apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20045>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListAnnouncementGroupsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1129,10 +1131,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAnnouncementGroupsAsync(String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20045> _callback) throws ApiException {
+    public okhttp3.Call listAnnouncementGroupsAsync(String apiToken, String token, Integer limit, final ApiCallback<ListAnnouncementGroupsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAnnouncementGroupsValidateBeforeCall(apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20045>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListAnnouncementGroupsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1241,7 +1243,7 @@ public class AnnouncementsApi {
      * @param order  (optional)
      * @param status  (optional)
      * @param announcementGroup  (optional)
-     * @return InlineResponse20039
+     * @return ListAnnouncementsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1249,8 +1251,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20039 listAnnouncements(String apiToken, String token, Integer limit, String order, String status, String announcementGroup) throws ApiException {
-        ApiResponse<InlineResponse20039> localVarResp = listAnnouncementsWithHttpInfo(apiToken, token, limit, order, status, announcementGroup);
+    public ListAnnouncementsResponse listAnnouncements(String apiToken, String token, Integer limit, String order, String status, String announcementGroup) throws ApiException {
+        ApiResponse<ListAnnouncementsResponse> localVarResp = listAnnouncementsWithHttpInfo(apiToken, token, limit, order, status, announcementGroup);
         return localVarResp.getData();
     }
 
@@ -1263,7 +1265,7 @@ public class AnnouncementsApi {
      * @param order  (optional)
      * @param status  (optional)
      * @param announcementGroup  (optional)
-     * @return ApiResponse&lt;InlineResponse20039&gt;
+     * @return ApiResponse&lt;ListAnnouncementsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1271,9 +1273,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20039> listAnnouncementsWithHttpInfo(String apiToken, String token, Integer limit, String order, String status, String announcementGroup) throws ApiException {
+    public ApiResponse<ListAnnouncementsResponse> listAnnouncementsWithHttpInfo(String apiToken, String token, Integer limit, String order, String status, String announcementGroup) throws ApiException {
         okhttp3.Call localVarCall = listAnnouncementsValidateBeforeCall(apiToken, token, limit, order, status, announcementGroup, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20039>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListAnnouncementsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1295,10 +1297,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAnnouncementsAsync(String apiToken, String token, Integer limit, String order, String status, String announcementGroup, final ApiCallback<InlineResponse20039> _callback) throws ApiException {
+    public okhttp3.Call listAnnouncementsAsync(String apiToken, String token, Integer limit, String order, String status, String announcementGroup, final ApiCallback<ListAnnouncementsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAnnouncementsValidateBeforeCall(apiToken, token, limit, order, status, announcementGroup, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20039>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListAnnouncementsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1379,7 +1381,7 @@ public class AnnouncementsApi {
      * ## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
      * @param apiToken  (optional)
      * @param scheduleAnnouncementData  (optional)
-     * @return InlineResponse20040
+     * @return ScheduleAnnouncementResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1387,8 +1389,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20040 scheduleAnnouncement(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData) throws ApiException {
-        ApiResponse<InlineResponse20040> localVarResp = scheduleAnnouncementWithHttpInfo(apiToken, scheduleAnnouncementData);
+    public ScheduleAnnouncementResponse scheduleAnnouncement(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData) throws ApiException {
+        ApiResponse<ScheduleAnnouncementResponse> localVarResp = scheduleAnnouncementWithHttpInfo(apiToken, scheduleAnnouncementData);
         return localVarResp.getData();
     }
 
@@ -1397,7 +1399,7 @@ public class AnnouncementsApi {
      * ## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
      * @param apiToken  (optional)
      * @param scheduleAnnouncementData  (optional)
-     * @return ApiResponse&lt;InlineResponse20040&gt;
+     * @return ApiResponse&lt;ScheduleAnnouncementResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1405,9 +1407,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20040> scheduleAnnouncementWithHttpInfo(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData) throws ApiException {
+    public ApiResponse<ScheduleAnnouncementResponse> scheduleAnnouncementWithHttpInfo(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData) throws ApiException {
         okhttp3.Call localVarCall = scheduleAnnouncementValidateBeforeCall(apiToken, scheduleAnnouncementData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20040>(){}.getType();
+        Type localVarReturnType = new TypeToken<ScheduleAnnouncementResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1425,10 +1427,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call scheduleAnnouncementAsync(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData, final ApiCallback<InlineResponse20040> _callback) throws ApiException {
+    public okhttp3.Call scheduleAnnouncementAsync(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData, final ApiCallback<ScheduleAnnouncementResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = scheduleAnnouncementValidateBeforeCall(apiToken, scheduleAnnouncementData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20040>(){}.getType();
+        Type localVarReturnType = new TypeToken<ScheduleAnnouncementResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1517,7 +1519,7 @@ public class AnnouncementsApi {
      * @param uniqueId  (required)
      * @param apiToken  (optional)
      * @param updateAnnouncementByIdData  (optional)
-     * @return InlineResponse20041
+     * @return UpdateAnnouncementByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1525,8 +1527,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20041 updateAnnouncementById(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
-        ApiResponse<InlineResponse20041> localVarResp = updateAnnouncementByIdWithHttpInfo(uniqueId, apiToken, updateAnnouncementByIdData);
+    public UpdateAnnouncementByIdResponse updateAnnouncementById(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
+        ApiResponse<UpdateAnnouncementByIdResponse> localVarResp = updateAnnouncementByIdWithHttpInfo(uniqueId, apiToken, updateAnnouncementByIdData);
         return localVarResp.getData();
     }
 
@@ -1536,7 +1538,7 @@ public class AnnouncementsApi {
      * @param uniqueId  (required)
      * @param apiToken  (optional)
      * @param updateAnnouncementByIdData  (optional)
-     * @return ApiResponse&lt;InlineResponse20041&gt;
+     * @return ApiResponse&lt;UpdateAnnouncementByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1544,9 +1546,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20041> updateAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
+    public ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
         okhttp3.Call localVarCall = updateAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, updateAnnouncementByIdData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20041>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateAnnouncementByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1565,10 +1567,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAnnouncementByIdAsync(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData, final ApiCallback<InlineResponse20041> _callback) throws ApiException {
+    public okhttp3.Call updateAnnouncementByIdAsync(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData, final ApiCallback<UpdateAnnouncementByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, updateAnnouncementByIdData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20041>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateAnnouncementByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1655,7 +1657,7 @@ public class AnnouncementsApi {
      * ## View an announcement  Retrieves information on a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-view-an-announcement ----------------------------
      * @param uniqueId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20039Announcements
+     * @return ViewAnnouncementByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1663,8 +1665,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20039Announcements viewAnnouncementById(String uniqueId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20039Announcements> localVarResp = viewAnnouncementByIdWithHttpInfo(uniqueId, apiToken);
+    public ViewAnnouncementByIdResponse viewAnnouncementById(String uniqueId, String apiToken) throws ApiException {
+        ApiResponse<ViewAnnouncementByIdResponse> localVarResp = viewAnnouncementByIdWithHttpInfo(uniqueId, apiToken);
         return localVarResp.getData();
     }
 
@@ -1673,7 +1675,7 @@ public class AnnouncementsApi {
      * ## View an announcement  Retrieves information on a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-view-an-announcement ----------------------------
      * @param uniqueId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20039Announcements&gt;
+     * @return ApiResponse&lt;ViewAnnouncementByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1681,9 +1683,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20039Announcements> viewAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken) throws ApiException {
+    public ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20039Announcements>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewAnnouncementByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1701,10 +1703,10 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewAnnouncementByIdAsync(String uniqueId, String apiToken, final ApiCallback<InlineResponse20039Announcements> _callback) throws ApiException {
+    public okhttp3.Call viewAnnouncementByIdAsync(String uniqueId, String apiToken, final ApiCallback<ViewAnnouncementByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20039Announcements>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewAnnouncementByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

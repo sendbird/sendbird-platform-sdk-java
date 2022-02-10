@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ModelObject;
+import org.openapitools.client.model.SBObject;
 import org.openapitools.client.model.SendBirdAppleCriticalAlertOptions;
 import org.openapitools.client.model.SendBirdMessageMetaArray;
 import org.openapitools.client.model.SendBirdMessageResponse;
@@ -38,7 +38,7 @@ import org.openapitools.client.model.SendBirdUser;
 /**
  * SendBirdAdminMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-07T15:20:09.800379Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T12:13:33.713738Z[Europe/London]")
 public class SendBirdAdminMessage {
   public static final String SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   @SerializedName(SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS)
@@ -139,7 +139,7 @@ public class SendBirdAdminMessage {
 
   public static final String SERIALIZED_NAME_META_ARRAY = "meta_array";
   @SerializedName(SERIALIZED_NAME_META_ARRAY)
-  private ModelObject metaArray;
+  private SBObject metaArray;
 
   public static final String SERIALIZED_NAME_META_ARRAYS = "meta_arrays";
   @SerializedName(SERIALIZED_NAME_META_ARRAYS)
@@ -232,7 +232,7 @@ public class SendBirdAdminMessage {
 
   public static final String SERIALIZED_NAME_TRANSLATIONS = "translations";
   @SerializedName(SERIALIZED_NAME_TRANSLATIONS)
-  private ModelObject translations;
+  private SBObject translations;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -525,7 +525,7 @@ public class SendBirdAdminMessage {
   }
 
 
-  public SendBirdAdminMessage metaArray(ModelObject metaArray) {
+  public SendBirdAdminMessage metaArray(SBObject metaArray) {
     
     this.metaArray = metaArray;
     return this;
@@ -538,12 +538,12 @@ public class SendBirdAdminMessage {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ModelObject getMetaArray() {
+  public SBObject getMetaArray() {
     return metaArray;
   }
 
 
-  public void setMetaArray(ModelObject metaArray) {
+  public void setMetaArray(SBObject metaArray) {
     this.metaArray = metaArray;
   }
 
@@ -771,7 +771,7 @@ public class SendBirdAdminMessage {
   }
 
 
-  public SendBirdAdminMessage translations(ModelObject translations) {
+  public SendBirdAdminMessage translations(SBObject translations) {
     
     this.translations = translations;
     return this;
@@ -784,12 +784,12 @@ public class SendBirdAdminMessage {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ModelObject getTranslations() {
+  public SBObject getTranslations() {
     return translations;
   }
 
 
-  public void setTranslations(ModelObject translations) {
+  public void setTranslations(SBObject translations) {
     this.translations = translations;
   }
 

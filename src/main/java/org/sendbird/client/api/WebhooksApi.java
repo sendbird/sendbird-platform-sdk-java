@@ -28,8 +28,8 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ChooseWhichEventsToSubscribeToData;
-import org.openapitools.client.model.InlineResponse20066;
-import org.openapitools.client.model.InlineResponse20067;
+import org.openapitools.client.model.ChooseWhichEventsToSubscribeToResponse;
+import org.openapitools.client.model.RetrieveListOfSubscribedEventsResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -151,7 +151,7 @@ public class WebhooksApi {
      * ## Choose which events to subscribe to  Chooses which events for your webhook server to receive payloads for. By subscribing to specific events based on your own needs, you can control the number of HTTP requests to your webhook server.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-choose-which-events-to-subscribe-to
      * @param apiToken  (optional)
      * @param chooseWhichEventsToSubscribeToData  (optional)
-     * @return InlineResponse20067
+     * @return ChooseWhichEventsToSubscribeToResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -159,8 +159,8 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20067 chooseWhichEventsToSubscribeTo(String apiToken, ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData) throws ApiException {
-        ApiResponse<InlineResponse20067> localVarResp = chooseWhichEventsToSubscribeToWithHttpInfo(apiToken, chooseWhichEventsToSubscribeToData);
+    public ChooseWhichEventsToSubscribeToResponse chooseWhichEventsToSubscribeTo(String apiToken, ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData) throws ApiException {
+        ApiResponse<ChooseWhichEventsToSubscribeToResponse> localVarResp = chooseWhichEventsToSubscribeToWithHttpInfo(apiToken, chooseWhichEventsToSubscribeToData);
         return localVarResp.getData();
     }
 
@@ -169,7 +169,7 @@ public class WebhooksApi {
      * ## Choose which events to subscribe to  Chooses which events for your webhook server to receive payloads for. By subscribing to specific events based on your own needs, you can control the number of HTTP requests to your webhook server.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-choose-which-events-to-subscribe-to
      * @param apiToken  (optional)
      * @param chooseWhichEventsToSubscribeToData  (optional)
-     * @return ApiResponse&lt;InlineResponse20067&gt;
+     * @return ApiResponse&lt;ChooseWhichEventsToSubscribeToResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -177,9 +177,9 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20067> chooseWhichEventsToSubscribeToWithHttpInfo(String apiToken, ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData) throws ApiException {
+    public ApiResponse<ChooseWhichEventsToSubscribeToResponse> chooseWhichEventsToSubscribeToWithHttpInfo(String apiToken, ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData) throws ApiException {
         okhttp3.Call localVarCall = chooseWhichEventsToSubscribeToValidateBeforeCall(apiToken, chooseWhichEventsToSubscribeToData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20067>(){}.getType();
+        Type localVarReturnType = new TypeToken<ChooseWhichEventsToSubscribeToResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -197,10 +197,10 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call chooseWhichEventsToSubscribeToAsync(String apiToken, ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData, final ApiCallback<InlineResponse20067> _callback) throws ApiException {
+    public okhttp3.Call chooseWhichEventsToSubscribeToAsync(String apiToken, ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData, final ApiCallback<ChooseWhichEventsToSubscribeToResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = chooseWhichEventsToSubscribeToValidateBeforeCall(apiToken, chooseWhichEventsToSubscribeToData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20067>(){}.getType();
+        Type localVarReturnType = new TypeToken<ChooseWhichEventsToSubscribeToResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -285,7 +285,7 @@ public class WebhooksApi {
      * ## Retrieve a list of subscribed events  Retrieves a list of events for your webhook server to receive payloads for.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-retrieve-a-list-of-subscribed-events ----------------------------
      * @param apiToken  (optional)
      * @param displayAllWebhookCategories  (optional)
-     * @return InlineResponse20066
+     * @return RetrieveListOfSubscribedEventsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -293,8 +293,8 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20066 retrieveListOfSubscribedEvents(String apiToken, Boolean displayAllWebhookCategories) throws ApiException {
-        ApiResponse<InlineResponse20066> localVarResp = retrieveListOfSubscribedEventsWithHttpInfo(apiToken, displayAllWebhookCategories);
+    public RetrieveListOfSubscribedEventsResponse retrieveListOfSubscribedEvents(String apiToken, Boolean displayAllWebhookCategories) throws ApiException {
+        ApiResponse<RetrieveListOfSubscribedEventsResponse> localVarResp = retrieveListOfSubscribedEventsWithHttpInfo(apiToken, displayAllWebhookCategories);
         return localVarResp.getData();
     }
 
@@ -303,7 +303,7 @@ public class WebhooksApi {
      * ## Retrieve a list of subscribed events  Retrieves a list of events for your webhook server to receive payloads for.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-retrieve-a-list-of-subscribed-events ----------------------------
      * @param apiToken  (optional)
      * @param displayAllWebhookCategories  (optional)
-     * @return ApiResponse&lt;InlineResponse20066&gt;
+     * @return ApiResponse&lt;RetrieveListOfSubscribedEventsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -311,9 +311,9 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20066> retrieveListOfSubscribedEventsWithHttpInfo(String apiToken, Boolean displayAllWebhookCategories) throws ApiException {
+    public ApiResponse<RetrieveListOfSubscribedEventsResponse> retrieveListOfSubscribedEventsWithHttpInfo(String apiToken, Boolean displayAllWebhookCategories) throws ApiException {
         okhttp3.Call localVarCall = retrieveListOfSubscribedEventsValidateBeforeCall(apiToken, displayAllWebhookCategories, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20066>(){}.getType();
+        Type localVarReturnType = new TypeToken<RetrieveListOfSubscribedEventsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -331,10 +331,10 @@ public class WebhooksApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call retrieveListOfSubscribedEventsAsync(String apiToken, Boolean displayAllWebhookCategories, final ApiCallback<InlineResponse20066> _callback) throws ApiException {
+    public okhttp3.Call retrieveListOfSubscribedEventsAsync(String apiToken, Boolean displayAllWebhookCategories, final ApiCallback<RetrieveListOfSubscribedEventsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = retrieveListOfSubscribedEventsValidateBeforeCall(apiToken, displayAllWebhookCategories, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20066>(){}.getType();
+        Type localVarReturnType = new TypeToken<RetrieveListOfSubscribedEventsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

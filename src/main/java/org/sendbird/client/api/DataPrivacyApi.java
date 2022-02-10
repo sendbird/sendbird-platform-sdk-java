@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse20068;
-import org.openapitools.client.model.InlineResponse20068Requests;
-import org.openapitools.client.model.InlineResponse20069;
+import org.openapitools.client.model.ListGdprRequestsResponse;
 import org.openapitools.client.model.RegisterGdprRequestData;
+import org.openapitools.client.model.RegisterGdprRequestResponse;
+import org.openapitools.client.model.ViewGdprRequestByIdResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -294,7 +294,7 @@ public class DataPrivacyApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20068
+     * @return ListGdprRequestsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -302,8 +302,8 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20068 listGdprRequests(String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20068> localVarResp = listGdprRequestsWithHttpInfo(apiToken, token, limit);
+    public ListGdprRequestsResponse listGdprRequests(String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<ListGdprRequestsResponse> localVarResp = listGdprRequestsWithHttpInfo(apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -313,7 +313,7 @@ public class DataPrivacyApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20068&gt;
+     * @return ApiResponse&lt;ListGdprRequestsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -321,9 +321,9 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20068> listGdprRequestsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListGdprRequestsResponse> listGdprRequestsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listGdprRequestsValidateBeforeCall(apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20068>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListGdprRequestsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -342,10 +342,10 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listGdprRequestsAsync(String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20068> _callback) throws ApiException {
+    public okhttp3.Call listGdprRequestsAsync(String apiToken, String token, Integer limit, final ApiCallback<ListGdprRequestsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listGdprRequestsValidateBeforeCall(apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20068>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListGdprRequestsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -426,7 +426,7 @@ public class DataPrivacyApi {
      * ## Register a GDPR request  Registers a specific type of GDPR request to meet the GDPR&#39;s requirements.  &gt; __Note__: Currently, only delete and access of the user data are supported. The features for the [right to restriction of processing](https://gdpr-info.eu/art-18-gdpr/) and [right to object](https://gdpr-info.eu/art-21-gdpr/) will be available soon.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-register-a-gdpr-request
      * @param apiToken  (optional)
      * @param registerGdprRequestData  (optional)
-     * @return InlineResponse20069
+     * @return RegisterGdprRequestResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -434,8 +434,8 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20069 registerGdprRequest(String apiToken, RegisterGdprRequestData registerGdprRequestData) throws ApiException {
-        ApiResponse<InlineResponse20069> localVarResp = registerGdprRequestWithHttpInfo(apiToken, registerGdprRequestData);
+    public RegisterGdprRequestResponse registerGdprRequest(String apiToken, RegisterGdprRequestData registerGdprRequestData) throws ApiException {
+        ApiResponse<RegisterGdprRequestResponse> localVarResp = registerGdprRequestWithHttpInfo(apiToken, registerGdprRequestData);
         return localVarResp.getData();
     }
 
@@ -444,7 +444,7 @@ public class DataPrivacyApi {
      * ## Register a GDPR request  Registers a specific type of GDPR request to meet the GDPR&#39;s requirements.  &gt; __Note__: Currently, only delete and access of the user data are supported. The features for the [right to restriction of processing](https://gdpr-info.eu/art-18-gdpr/) and [right to object](https://gdpr-info.eu/art-21-gdpr/) will be available soon.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-register-a-gdpr-request
      * @param apiToken  (optional)
      * @param registerGdprRequestData  (optional)
-     * @return ApiResponse&lt;InlineResponse20069&gt;
+     * @return ApiResponse&lt;RegisterGdprRequestResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -452,9 +452,9 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20069> registerGdprRequestWithHttpInfo(String apiToken, RegisterGdprRequestData registerGdprRequestData) throws ApiException {
+    public ApiResponse<RegisterGdprRequestResponse> registerGdprRequestWithHttpInfo(String apiToken, RegisterGdprRequestData registerGdprRequestData) throws ApiException {
         okhttp3.Call localVarCall = registerGdprRequestValidateBeforeCall(apiToken, registerGdprRequestData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20069>(){}.getType();
+        Type localVarReturnType = new TypeToken<RegisterGdprRequestResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -472,10 +472,10 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerGdprRequestAsync(String apiToken, RegisterGdprRequestData registerGdprRequestData, final ApiCallback<InlineResponse20069> _callback) throws ApiException {
+    public okhttp3.Call registerGdprRequestAsync(String apiToken, RegisterGdprRequestData registerGdprRequestData, final ApiCallback<RegisterGdprRequestResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = registerGdprRequestValidateBeforeCall(apiToken, registerGdprRequestData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20069>(){}.getType();
+        Type localVarReturnType = new TypeToken<RegisterGdprRequestResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -562,7 +562,7 @@ public class DataPrivacyApi {
      * ## View a GDPR request  Retrieves a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-view-a-gdpr-request ----------------------------
      * @param requestId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20068Requests
+     * @return ViewGdprRequestByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -570,8 +570,8 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20068Requests viewGdprRequestById(String requestId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20068Requests> localVarResp = viewGdprRequestByIdWithHttpInfo(requestId, apiToken);
+    public ViewGdprRequestByIdResponse viewGdprRequestById(String requestId, String apiToken) throws ApiException {
+        ApiResponse<ViewGdprRequestByIdResponse> localVarResp = viewGdprRequestByIdWithHttpInfo(requestId, apiToken);
         return localVarResp.getData();
     }
 
@@ -580,7 +580,7 @@ public class DataPrivacyApi {
      * ## View a GDPR request  Retrieves a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-view-a-gdpr-request ----------------------------
      * @param requestId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20068Requests&gt;
+     * @return ApiResponse&lt;ViewGdprRequestByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -588,9 +588,9 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20068Requests> viewGdprRequestByIdWithHttpInfo(String requestId, String apiToken) throws ApiException {
+    public ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo(String requestId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewGdprRequestByIdValidateBeforeCall(requestId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20068Requests>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewGdprRequestByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -608,10 +608,10 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewGdprRequestByIdAsync(String requestId, String apiToken, final ApiCallback<InlineResponse20068Requests> _callback) throws ApiException {
+    public okhttp3.Call viewGdprRequestByIdAsync(String requestId, String apiToken, final ApiCallback<ViewGdprRequestByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewGdprRequestByIdValidateBeforeCall(requestId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20068Requests>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewGdprRequestByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

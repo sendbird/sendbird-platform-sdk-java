@@ -15,20 +15,22 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
 import org.openapitools.client.model.AddExtraDataToMessageData;
+import org.openapitools.client.model.AddExtraDataToMessageResponse;
 import org.openapitools.client.model.AddReactionToAMessageData;
+import org.openapitools.client.model.AddReactionToAMessageResponse;
 import org.openapitools.client.model.GcMarkAllMessagesAsDeliveredData;
+import org.openapitools.client.model.GcMarkAllMessagesAsDeliveredResponse;
 import org.openapitools.client.model.GcMarkAllMessagesAsReadData;
-import org.openapitools.client.model.InlineResponse20047;
-import org.openapitools.client.model.InlineResponse20048;
-import org.openapitools.client.model.InlineResponse20049;
-import org.openapitools.client.model.InlineResponse20050;
-import org.openapitools.client.model.InlineResponse20052;
-import org.openapitools.client.model.InlineResponse20053;
-import org.openapitools.client.model.InlineResponse20054;
+import org.openapitools.client.model.GcViewNumberOfEachMembersUnreadMessagesResponse;
+import org.openapitools.client.model.ListMessagesResponse;
+import org.openapitools.client.model.ListReactionsOfMessageResponse;
+import org.openapitools.client.model.RemoveReactionFromAMessageResponse;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendMessageData;
 import org.openapitools.client.model.UpdateExtraDataInMessageData;
+import org.openapitools.client.model.UpdateExtraDataInMessageResponse;
 import org.openapitools.client.model.UpdateMessageByIdData;
+import org.openapitools.client.model.ViewTotalNumberOfMessagesInChannelResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -61,7 +63,7 @@ public class MessagesApiTest {
         String messageId = null;
         String apiToken = null;
         AddExtraDataToMessageData addExtraDataToMessageData = null;
-                InlineResponse20054 response = api.addExtraDataToMessage(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData);
+                AddExtraDataToMessageResponse response = api.addExtraDataToMessage(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData);
         // TODO: test validations
     }
     
@@ -80,7 +82,7 @@ public class MessagesApiTest {
         String messageId = null;
         String apiToken = null;
         AddReactionToAMessageData addReactionToAMessageData = null;
-                InlineResponse20053 response = api.addReactionToAMessage(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData);
+                AddReactionToAMessageResponse response = api.addReactionToAMessage(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData);
         // TODO: test validations
     }
     
@@ -115,7 +117,7 @@ public class MessagesApiTest {
         String channelUrl = null;
         String apiToken = null;
         GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData = null;
-                InlineResponse20050 response = api.gcMarkAllMessagesAsDelivered(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData);
+                GcMarkAllMessagesAsDeliveredResponse response = api.gcMarkAllMessagesAsDelivered(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData);
         // TODO: test validations
     }
     
@@ -149,7 +151,7 @@ public class MessagesApiTest {
         String channelUrl = null;
         String apiToken = null;
         String userIds = null;
-                InlineResponse20049 response = api.gcViewNumberOfEachMembersUnreadMessages(channelUrl, apiToken, userIds);
+                GcViewNumberOfEachMembersUnreadMessagesResponse response = api.gcViewNumberOfEachMembersUnreadMessages(channelUrl, apiToken, userIds);
         // TODO: test validations
     }
     
@@ -184,7 +186,7 @@ public class MessagesApiTest {
         String userId = null;
         String customType = null;
         Boolean withMetaArray = null;
-                InlineResponse20047 response = api.listMessages(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+                ListMessagesResponse response = api.listMessages(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
         // TODO: test validations
     }
     
@@ -203,7 +205,7 @@ public class MessagesApiTest {
         String messageId = null;
         String apiToken = null;
         Boolean listUsers = null;
-                InlineResponse20052 response = api.listReactionsOfMessage(channelType, channelUrl, messageId, apiToken, listUsers);
+                ListReactionsOfMessageResponse response = api.listReactionsOfMessage(channelType, channelUrl, messageId, apiToken, listUsers);
         // TODO: test validations
     }
     
@@ -242,7 +244,7 @@ public class MessagesApiTest {
         String apiToken = null;
         String userId = null;
         String reaction = null;
-                InlineResponse20053 response = api.removeReactionFromAMessage(channelType, channelUrl, messageId, apiToken, userId, reaction);
+                RemoveReactionFromAMessageResponse response = api.removeReactionFromAMessage(channelType, channelUrl, messageId, apiToken, userId, reaction);
         // TODO: test validations
     }
     
@@ -298,7 +300,7 @@ public class MessagesApiTest {
         String messageId = null;
         String apiToken = null;
         UpdateExtraDataInMessageData updateExtraDataInMessageData = null;
-                InlineResponse20054 response = api.updateExtraDataInMessage(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData);
+                UpdateExtraDataInMessageResponse response = api.updateExtraDataInMessage(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData);
         // TODO: test validations
     }
     
@@ -354,7 +356,7 @@ public class MessagesApiTest {
         String channelType = null;
         String channelUrl = null;
         String apiToken = null;
-                InlineResponse20048 response = api.viewTotalNumberOfMessagesInChannel(channelType, channelUrl, apiToken);
+                ViewTotalNumberOfMessagesInChannelResponse response = api.viewTotalNumberOfMessagesInChannel(channelType, channelUrl, apiToken);
         // TODO: test validations
     }
     

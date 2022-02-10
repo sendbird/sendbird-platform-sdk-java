@@ -44,7 +44,7 @@ Method | HTTP request | Description
 
 <a name="addRegistrationOrDeviceToken"></a>
 # **addRegistrationOrDeviceToken**
-> InlineResponse20025 addRegistrationOrDeviceToken(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData)
+> AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceToken(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData)
 
 Add a registration or device token
 
@@ -70,7 +70,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData = new AddRegistrationOrDeviceTokenData(); // AddRegistrationOrDeviceTokenData | 
     try {
-      InlineResponse20025 result = apiInstance.addRegistrationOrDeviceToken(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
+      AddRegistrationOrDeviceTokenResponse result = apiInstance.addRegistrationOrDeviceToken(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#addRegistrationOrDeviceToken");
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**AddRegistrationOrDeviceTokenResponse**](AddRegistrationOrDeviceTokenResponse.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ No authorization required
 
 <a name="choosePushNotificationContentTemplate"></a>
 # **choosePushNotificationContentTemplate**
-> InlineResponse20029 choosePushNotificationContentTemplate(userId, apiToken, body)
+> ChoosePushNotificationContentTemplateResponse choosePushNotificationContentTemplate(userId, apiToken, body)
 
 Choose a push notification content template
 
@@ -268,7 +268,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     Object body = null; // Object | 
     try {
-      InlineResponse20029 result = apiInstance.choosePushNotificationContentTemplate(userId, apiToken, body);
+      ChoosePushNotificationContentTemplateResponse result = apiInstance.choosePushNotificationContentTemplate(userId, apiToken, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#choosePushNotificationContentTemplate");
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20029**](InlineResponse20029.md)
+[**ChoosePushNotificationContentTemplateResponse**](ChoosePushNotificationContentTemplateResponse.md)
 
 ### Authorization
 
@@ -501,7 +501,7 @@ No authorization required
 
 <a name="listBannedChannels"></a>
 # **listBannedChannels**
-> InlineResponse20022 listBannedChannels(userId, apiToken, token, limit)
+> ListBannedChannelsResponse listBannedChannels(userId, apiToken, token, limit)
 
 List banned channels
 
@@ -527,7 +527,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20022 result = apiInstance.listBannedChannels(userId, apiToken, token, limit);
+      ListBannedChannelsResponse result = apiInstance.listBannedChannels(userId, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listBannedChannels");
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**ListBannedChannelsResponse**](ListBannedChannelsResponse.md)
 
 ### Authorization
 
@@ -569,7 +569,7 @@ No authorization required
 
 <a name="listBlockedUsers"></a>
 # **listBlockedUsers**
-> InlineResponse20016 listBlockedUsers(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn)
+> ListBlockedUsersResponse listBlockedUsers(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn)
 
 List blocked users
 
@@ -598,7 +598,7 @@ public class Example {
     String metadatakey = "metadatakey_example"; // String | 
     String metadatavaluesIn = "metadatavaluesIn_example"; // String | 
     try {
-      InlineResponse20016 result = apiInstance.listBlockedUsers(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn);
+      ListBlockedUsersResponse result = apiInstance.listBlockedUsers(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listBlockedUsers");
@@ -625,7 +625,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**ListBlockedUsersResponse**](ListBlockedUsersResponse.md)
 
 ### Authorization
 
@@ -643,7 +643,7 @@ No authorization required
 
 <a name="listMutedChannels"></a>
 # **listMutedChannels**
-> InlineResponse20023 listMutedChannels(userId, apiToken, token, limit)
+> ListMutedChannelsResponse listMutedChannels(userId, apiToken, token, limit)
 
 List muted channels
 
@@ -669,7 +669,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20023 result = apiInstance.listMutedChannels(userId, apiToken, token, limit);
+      ListMutedChannelsResponse result = apiInstance.listMutedChannels(userId, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listMutedChannels");
@@ -693,7 +693,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**ListMutedChannelsResponse**](ListMutedChannelsResponse.md)
 
 ### Authorization
 
@@ -711,7 +711,7 @@ No authorization required
 
 <a name="listMyGroupChannels"></a>
 # **listMyGroupChannels**
-> InlineResponse20017 listMyGroupChannels(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType)
+> ListMyGroupChannelsResponse listMyGroupChannels(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType)
 
 List my group channels
 
@@ -775,7 +775,7 @@ public class Example {
     String metacounterValueLte = "metacounterValueLte_example"; // String | 
     String customType = "customType_example"; // String | 
     try {
-      InlineResponse20017 result = apiInstance.listMyGroupChannels(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+      ListMyGroupChannelsResponse result = apiInstance.listMyGroupChannels(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listMyGroupChannels");
@@ -837,7 +837,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**ListMyGroupChannelsResponse**](ListMyGroupChannelsResponse.md)
 
 ### Authorization
 
@@ -855,7 +855,7 @@ No authorization required
 
 <a name="listRegistrationOrDeviceTokens"></a>
 # **listRegistrationOrDeviceTokens**
-> InlineResponse20024 listRegistrationOrDeviceTokens(userId, tokenType, apiToken)
+> ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(userId, tokenType, apiToken)
 
 List registration or device tokens
 
@@ -880,7 +880,7 @@ public class Example {
     String tokenType = "tokenType_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20024 result = apiInstance.listRegistrationOrDeviceTokens(userId, tokenType, apiToken);
+      ListRegistrationOrDeviceTokensResponse result = apiInstance.listRegistrationOrDeviceTokens(userId, tokenType, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listRegistrationOrDeviceTokens");
@@ -903,7 +903,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**ListRegistrationOrDeviceTokensResponse**](ListRegistrationOrDeviceTokensResponse.md)
 
 ### Authorization
 
@@ -921,7 +921,7 @@ No authorization required
 
 <a name="listUsers"></a>
 # **listUsers**
-> InlineResponse20016 listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn)
+> ListUsersResponse listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn)
 
 List users
 
@@ -953,7 +953,7 @@ public class Example {
     String metadatakey = "metadatakey_example"; // String | 
     String metadatavaluesIn = "metadatavaluesIn_example"; // String | 
     try {
-      InlineResponse20016 result = apiInstance.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
+      ListUsersResponse result = apiInstance.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listUsers");
@@ -983,7 +983,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**ListUsersResponse**](ListUsersResponse.md)
 
 ### Authorization
 
@@ -1196,7 +1196,7 @@ No authorization required
 
 <a name="removeRegistrationOrDeviceToken"></a>
 # **removeRegistrationOrDeviceToken**
-> InlineResponse20026 removeRegistrationOrDeviceToken(userId, apiToken)
+> RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceToken(userId, apiToken)
 
 Remove a registration or device token - When unregistering all device tokens
 
@@ -1220,7 +1220,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20026 result = apiInstance.removeRegistrationOrDeviceToken(userId, apiToken);
+      RemoveRegistrationOrDeviceTokenResponse result = apiInstance.removeRegistrationOrDeviceToken(userId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#removeRegistrationOrDeviceToken");
@@ -1242,7 +1242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**RemoveRegistrationOrDeviceTokenResponse**](RemoveRegistrationOrDeviceTokenResponse.md)
 
 ### Authorization
 
@@ -1260,7 +1260,7 @@ No authorization required
 
 <a name="removeRegistrationOrDeviceTokenByToken"></a>
 # **removeRegistrationOrDeviceTokenByToken**
-> InlineResponse20026 removeRegistrationOrDeviceTokenByToken(userId, tokenType, token, apiToken)
+> RemoveRegistrationOrDeviceTokenByTokenResponse removeRegistrationOrDeviceTokenByToken(userId, tokenType, token, apiToken)
 
 Remove a registration or device token - When unregistering a specific token
 
@@ -1286,7 +1286,7 @@ public class Example {
     String token = "token_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20026 result = apiInstance.removeRegistrationOrDeviceTokenByToken(userId, tokenType, token, apiToken);
+      RemoveRegistrationOrDeviceTokenByTokenResponse result = apiInstance.removeRegistrationOrDeviceTokenByToken(userId, tokenType, token, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#removeRegistrationOrDeviceTokenByToken");
@@ -1310,7 +1310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**RemoveRegistrationOrDeviceTokenByTokenResponse**](RemoveRegistrationOrDeviceTokenByTokenResponse.md)
 
 ### Authorization
 
@@ -1328,7 +1328,7 @@ No authorization required
 
 <a name="removeRegistrationOrDeviceTokenFromOwnerByToken"></a>
 # **removeRegistrationOrDeviceTokenFromOwnerByToken**
-> InlineResponse20027 removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token, apiToken)
+> RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token, apiToken)
 
 Remove a registration or device token from an owner
 
@@ -1353,7 +1353,7 @@ public class Example {
     String token = "token_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20027 result = apiInstance.removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token, apiToken);
+      RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse result = apiInstance.removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#removeRegistrationOrDeviceTokenFromOwnerByToken");
@@ -1376,7 +1376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse**](RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse.md)
 
 ### Authorization
 
@@ -1522,7 +1522,7 @@ No authorization required
 
 <a name="updateChannelInvitationPreference"></a>
 # **updateChannelInvitationPreference**
-> InlineResponse2005 updateChannelInvitationPreference(userId, apiToken, updateChannelInvitationPreferenceData)
+> UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(userId, apiToken, updateChannelInvitationPreferenceData)
 
 Update channel invitation preference
 
@@ -1547,7 +1547,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData = new UpdateChannelInvitationPreferenceData(); // UpdateChannelInvitationPreferenceData | 
     try {
-      InlineResponse2005 result = apiInstance.updateChannelInvitationPreference(userId, apiToken, updateChannelInvitationPreferenceData);
+      UpdateChannelInvitationPreferenceResponse result = apiInstance.updateChannelInvitationPreference(userId, apiToken, updateChannelInvitationPreferenceData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updateChannelInvitationPreference");
@@ -1570,7 +1570,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**UpdateChannelInvitationPreferenceResponse**](UpdateChannelInvitationPreferenceResponse.md)
 
 ### Authorization
 
@@ -1588,7 +1588,7 @@ No authorization required
 
 <a name="updateCountPreferenceOfChannelByUrl"></a>
 # **updateCountPreferenceOfChannelByUrl**
-> InlineResponse20021 updateCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData)
+> UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData)
 
 Update count preference of a channel
 
@@ -1614,7 +1614,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData = new UpdateCountPreferenceOfChannelByUrlData(); // UpdateCountPreferenceOfChannelByUrlData | 
     try {
-      InlineResponse20021 result = apiInstance.updateCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
+      UpdateCountPreferenceOfChannelByUrlResponse result = apiInstance.updateCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updateCountPreferenceOfChannelByUrl");
@@ -1638,7 +1638,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**UpdateCountPreferenceOfChannelByUrlResponse**](UpdateCountPreferenceOfChannelByUrlResponse.md)
 
 ### Authorization
 
@@ -1656,7 +1656,7 @@ No authorization required
 
 <a name="updatePushPreferences"></a>
 # **updatePushPreferences**
-> InlineResponse20028 updatePushPreferences(userId, apiToken, updatePushPreferencesData)
+> UpdatePushPreferencesResponse updatePushPreferences(userId, apiToken, updatePushPreferencesData)
 
 Update push preferences
 
@@ -1681,7 +1681,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdatePushPreferencesData updatePushPreferencesData = new UpdatePushPreferencesData(); // UpdatePushPreferencesData | 
     try {
-      InlineResponse20028 result = apiInstance.updatePushPreferences(userId, apiToken, updatePushPreferencesData);
+      UpdatePushPreferencesResponse result = apiInstance.updatePushPreferences(userId, apiToken, updatePushPreferencesData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updatePushPreferences");
@@ -1704,7 +1704,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**UpdatePushPreferencesResponse**](UpdatePushPreferencesResponse.md)
 
 ### Authorization
 
@@ -1722,7 +1722,7 @@ No authorization required
 
 <a name="updatePushPreferencesForChannelByUrl"></a>
 # **updatePushPreferencesForChannelByUrl**
-> InlineResponse20028 updatePushPreferencesForChannelByUrl(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData)
+> UpdatePushPreferencesForChannelByUrlResponse updatePushPreferencesForChannelByUrl(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData)
 
 Update push preferences for a channel
 
@@ -1748,7 +1748,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData = new UpdatePushPreferencesForChannelByUrlData(); // UpdatePushPreferencesForChannelByUrlData | 
     try {
-      InlineResponse20028 result = apiInstance.updatePushPreferencesForChannelByUrl(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
+      UpdatePushPreferencesForChannelByUrlResponse result = apiInstance.updatePushPreferencesForChannelByUrl(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updatePushPreferencesForChannelByUrl");
@@ -1772,7 +1772,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**UpdatePushPreferencesForChannelByUrlResponse**](UpdatePushPreferencesForChannelByUrlResponse.md)
 
 ### Authorization
 
@@ -1856,7 +1856,7 @@ No authorization required
 
 <a name="viewChannelInvitationPreference"></a>
 # **viewChannelInvitationPreference**
-> InlineResponse2005 viewChannelInvitationPreference(userId, apiToken)
+> ViewChannelInvitationPreferenceResponse viewChannelInvitationPreference(userId, apiToken)
 
 View channel invitation preference
 
@@ -1880,7 +1880,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse2005 result = apiInstance.viewChannelInvitationPreference(userId, apiToken);
+      ViewChannelInvitationPreferenceResponse result = apiInstance.viewChannelInvitationPreference(userId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewChannelInvitationPreference");
@@ -1902,7 +1902,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**ViewChannelInvitationPreferenceResponse**](ViewChannelInvitationPreferenceResponse.md)
 
 ### Authorization
 
@@ -1920,7 +1920,7 @@ No authorization required
 
 <a name="viewCountPreferenceOfChannelByUrl"></a>
 # **viewCountPreferenceOfChannelByUrl**
-> InlineResponse20021 viewCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken)
+> ViewCountPreferenceOfChannelByUrlResponse viewCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken)
 
 View count preference of a channel
 
@@ -1945,7 +1945,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20021 result = apiInstance.viewCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken);
+      ViewCountPreferenceOfChannelByUrlResponse result = apiInstance.viewCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewCountPreferenceOfChannelByUrl");
@@ -1968,7 +1968,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ViewCountPreferenceOfChannelByUrlResponse**](ViewCountPreferenceOfChannelByUrlResponse.md)
 
 ### Authorization
 
@@ -1986,7 +1986,7 @@ No authorization required
 
 <a name="viewNumberOfChannelsByJoinStatus"></a>
 # **viewNumberOfChannelsByJoinStatus**
-> InlineResponse20020 viewNumberOfChannelsByJoinStatus(userId, apiToken, state)
+> ViewNumberOfChannelsByJoinStatusResponse viewNumberOfChannelsByJoinStatus(userId, apiToken, state)
 
 View number of channels by join status
 
@@ -2011,7 +2011,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String state = "state_example"; // String | 
     try {
-      InlineResponse20020 result = apiInstance.viewNumberOfChannelsByJoinStatus(userId, apiToken, state);
+      ViewNumberOfChannelsByJoinStatusResponse result = apiInstance.viewNumberOfChannelsByJoinStatus(userId, apiToken, state);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewNumberOfChannelsByJoinStatus");
@@ -2034,7 +2034,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ViewNumberOfChannelsByJoinStatusResponse**](ViewNumberOfChannelsByJoinStatusResponse.md)
 
 ### Authorization
 
@@ -2052,7 +2052,7 @@ No authorization required
 
 <a name="viewNumberOfChannelsWithUnreadMessages"></a>
 # **viewNumberOfChannelsWithUnreadMessages**
-> InlineResponse20018 viewNumberOfChannelsWithUnreadMessages(userId, apiToken, customTypes, superMode)
+> ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(userId, apiToken, customTypes, superMode)
 
 View number of channels with unread messages
 
@@ -2078,7 +2078,7 @@ public class Example {
     List<String> customTypes = Arrays.asList(); // List<String> | 
     String superMode = "superMode_example"; // String | 
     try {
-      InlineResponse20018 result = apiInstance.viewNumberOfChannelsWithUnreadMessages(userId, apiToken, customTypes, superMode);
+      ViewNumberOfChannelsWithUnreadMessagesResponse result = apiInstance.viewNumberOfChannelsWithUnreadMessages(userId, apiToken, customTypes, superMode);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewNumberOfChannelsWithUnreadMessages");
@@ -2102,7 +2102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**ViewNumberOfChannelsWithUnreadMessagesResponse**](ViewNumberOfChannelsWithUnreadMessagesResponse.md)
 
 ### Authorization
 
@@ -2120,7 +2120,7 @@ No authorization required
 
 <a name="viewNumberOfUnreadItems"></a>
 # **viewNumberOfUnreadItems**
-> InlineResponse20019 viewNumberOfUnreadItems(userId, apiToken, customType, itemKeys)
+> ViewNumberOfUnreadItemsResponse viewNumberOfUnreadItems(userId, apiToken, customType, itemKeys)
 
 View number of unread items
 
@@ -2146,7 +2146,7 @@ public class Example {
     String customType = "customType_example"; // String | 
     String itemKeys = "itemKeys_example"; // String | 
     try {
-      InlineResponse20019 result = apiInstance.viewNumberOfUnreadItems(userId, apiToken, customType, itemKeys);
+      ViewNumberOfUnreadItemsResponse result = apiInstance.viewNumberOfUnreadItems(userId, apiToken, customType, itemKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewNumberOfUnreadItems");
@@ -2170,7 +2170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**ViewNumberOfUnreadItemsResponse**](ViewNumberOfUnreadItemsResponse.md)
 
 ### Authorization
 
@@ -2188,7 +2188,7 @@ No authorization required
 
 <a name="viewNumberOfUnreadMessages"></a>
 # **viewNumberOfUnreadMessages**
-> InlineResponse20018 viewNumberOfUnreadMessages(userId, apiToken, customTypes, superMode)
+> ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(userId, apiToken, customTypes, superMode)
 
 View number of unread messages
 
@@ -2214,7 +2214,7 @@ public class Example {
     String customTypes = "customTypes_example"; // String | 
     String superMode = "superMode_example"; // String | 
     try {
-      InlineResponse20018 result = apiInstance.viewNumberOfUnreadMessages(userId, apiToken, customTypes, superMode);
+      ViewNumberOfUnreadMessagesResponse result = apiInstance.viewNumberOfUnreadMessages(userId, apiToken, customTypes, superMode);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewNumberOfUnreadMessages");
@@ -2238,7 +2238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**ViewNumberOfUnreadMessagesResponse**](ViewNumberOfUnreadMessagesResponse.md)
 
 ### Authorization
 
@@ -2256,7 +2256,7 @@ No authorization required
 
 <a name="viewPushPreferences"></a>
 # **viewPushPreferences**
-> InlineResponse20028 viewPushPreferences(userId, apiToken)
+> ViewPushPreferencesResponse viewPushPreferences(userId, apiToken)
 
 View push preferences
 
@@ -2280,7 +2280,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20028 result = apiInstance.viewPushPreferences(userId, apiToken);
+      ViewPushPreferencesResponse result = apiInstance.viewPushPreferences(userId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewPushPreferences");
@@ -2302,7 +2302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**ViewPushPreferencesResponse**](ViewPushPreferencesResponse.md)
 
 ### Authorization
 
@@ -2320,7 +2320,7 @@ No authorization required
 
 <a name="viewPushPreferencesForChannelByUrl"></a>
 # **viewPushPreferencesForChannelByUrl**
-> InlineResponse20028 viewPushPreferencesForChannelByUrl(userId, channelUrl, apiToken)
+> ViewPushPreferencesForChannelByUrlResponse viewPushPreferencesForChannelByUrl(userId, channelUrl, apiToken)
 
 View push preferences for a channel
 
@@ -2345,7 +2345,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20028 result = apiInstance.viewPushPreferencesForChannelByUrl(userId, channelUrl, apiToken);
+      ViewPushPreferencesForChannelByUrlResponse result = apiInstance.viewPushPreferencesForChannelByUrl(userId, channelUrl, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewPushPreferencesForChannelByUrl");
@@ -2368,7 +2368,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**ViewPushPreferencesForChannelByUrlResponse**](ViewPushPreferencesForChannelByUrlResponse.md)
 
 ### Authorization
 
@@ -2456,7 +2456,7 @@ No authorization required
 
 <a name="viewWhoOwnsRegistrationOrDeviceTokenByToken"></a>
 # **viewWhoOwnsRegistrationOrDeviceTokenByToken**
-> InlineResponse20027 viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token, apiToken)
+> ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token, apiToken)
 
 View who owns a registration or device token
 
@@ -2481,7 +2481,7 @@ public class Example {
     String token = "token_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20027 result = apiInstance.viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token, apiToken);
+      ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse result = apiInstance.viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewWhoOwnsRegistrationOrDeviceTokenByToken");
@@ -2504,7 +2504,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse**](ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse.md)
 
 ### Authorization
 

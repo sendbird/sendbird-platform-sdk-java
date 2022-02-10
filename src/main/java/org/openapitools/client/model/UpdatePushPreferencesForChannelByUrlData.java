@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * UpdatePushPreferencesForChannelByUrlData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-07T15:20:09.800379Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T12:13:33.713738Z[Europe/London]")
 public class UpdatePushPreferencesForChannelByUrlData {
   public static final String SERIALIZED_NAME_PUSH_TRIGGER_OPTION = "push_trigger_option";
   @SerializedName(SERIALIZED_NAME_PUSH_TRIGGER_OPTION)

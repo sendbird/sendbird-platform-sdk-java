@@ -29,6 +29,8 @@ import java.io.IOException;
 
 import org.openapitools.client.model.GcAcceptInvitationData;
 import org.openapitools.client.model.GcBanUserData;
+import org.openapitools.client.model.GcBanUserResponse;
+import org.openapitools.client.model.GcCheckIfMemberByIdResponse;
 import org.openapitools.client.model.GcCreateChannelData;
 import org.openapitools.client.model.GcDeclineInvitationData;
 import org.openapitools.client.model.GcFreezeChannelData;
@@ -36,20 +38,18 @@ import org.openapitools.client.model.GcHideOrArchiveChannelData;
 import org.openapitools.client.model.GcInviteAsMembersData;
 import org.openapitools.client.model.GcJoinChannelData;
 import org.openapitools.client.model.GcLeaveChannelData;
+import org.openapitools.client.model.GcListBannedUsersResponse;
+import org.openapitools.client.model.GcListChannelsResponse;
+import org.openapitools.client.model.GcListMembersResponse;
+import org.openapitools.client.model.GcListMutedUsersResponse;
+import org.openapitools.client.model.GcListOperatorsResponse;
 import org.openapitools.client.model.GcMuteUserData;
 import org.openapitools.client.model.GcRegisterOperatorsData;
+import org.openapitools.client.model.GcRegisterOperatorsResponse;
 import org.openapitools.client.model.GcResetChatHistoryData;
 import org.openapitools.client.model.GcUpdateBanByIdData;
 import org.openapitools.client.model.GcUpdateChannelByUrlData;
-import org.openapitools.client.model.InlineResponse20017;
-import org.openapitools.client.model.InlineResponse20031;
-import org.openapitools.client.model.InlineResponse20033;
-import org.openapitools.client.model.InlineResponse20033BannedList;
-import org.openapitools.client.model.InlineResponse20034;
-import org.openapitools.client.model.InlineResponse20035;
-import org.openapitools.client.model.InlineResponse20036;
-import org.openapitools.client.model.InlineResponse20037;
-import org.openapitools.client.model.InlineResponse20038;
+import org.openapitools.client.model.GcViewMuteByIdResponse;
 import org.openapitools.client.model.SendBirdGroupChannel;
 import org.openapitools.client.model.SendBirdUser;
 
@@ -321,7 +321,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param gcBanUserData  (optional)
-     * @return InlineResponse20033BannedList
+     * @return GcBanUserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -329,8 +329,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20033BannedList gcBanUser(String channelUrl, String apiToken, GcBanUserData gcBanUserData) throws ApiException {
-        ApiResponse<InlineResponse20033BannedList> localVarResp = gcBanUserWithHttpInfo(channelUrl, apiToken, gcBanUserData);
+    public GcBanUserResponse gcBanUser(String channelUrl, String apiToken, GcBanUserData gcBanUserData) throws ApiException {
+        ApiResponse<GcBanUserResponse> localVarResp = gcBanUserWithHttpInfo(channelUrl, apiToken, gcBanUserData);
         return localVarResp.getData();
     }
 
@@ -340,7 +340,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param gcBanUserData  (optional)
-     * @return ApiResponse&lt;InlineResponse20033BannedList&gt;
+     * @return ApiResponse&lt;GcBanUserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -348,9 +348,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20033BannedList> gcBanUserWithHttpInfo(String channelUrl, String apiToken, GcBanUserData gcBanUserData) throws ApiException {
+    public ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String channelUrl, String apiToken, GcBanUserData gcBanUserData) throws ApiException {
         okhttp3.Call localVarCall = gcBanUserValidateBeforeCall(channelUrl, apiToken, gcBanUserData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20033BannedList>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcBanUserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -369,10 +369,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcBanUserAsync(String channelUrl, String apiToken, GcBanUserData gcBanUserData, final ApiCallback<InlineResponse20033BannedList> _callback) throws ApiException {
+    public okhttp3.Call gcBanUserAsync(String channelUrl, String apiToken, GcBanUserData gcBanUserData, final ApiCallback<GcBanUserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcBanUserValidateBeforeCall(channelUrl, apiToken, gcBanUserData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20033BannedList>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcBanUserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -620,7 +620,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param userId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20037
+     * @return GcCheckIfMemberByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -628,8 +628,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20037 gcCheckIfMemberById(String channelUrl, String userId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20037> localVarResp = gcCheckIfMemberByIdWithHttpInfo(channelUrl, userId, apiToken);
+    public GcCheckIfMemberByIdResponse gcCheckIfMemberById(String channelUrl, String userId, String apiToken) throws ApiException {
+        ApiResponse<GcCheckIfMemberByIdResponse> localVarResp = gcCheckIfMemberByIdWithHttpInfo(channelUrl, userId, apiToken);
         return localVarResp.getData();
     }
 
@@ -639,7 +639,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param userId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20037&gt;
+     * @return ApiResponse&lt;GcCheckIfMemberByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -647,9 +647,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20037> gcCheckIfMemberByIdWithHttpInfo(String channelUrl, String userId, String apiToken) throws ApiException {
+    public ApiResponse<GcCheckIfMemberByIdResponse> gcCheckIfMemberByIdWithHttpInfo(String channelUrl, String userId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = gcCheckIfMemberByIdValidateBeforeCall(channelUrl, userId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20037>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcCheckIfMemberByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -668,10 +668,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcCheckIfMemberByIdAsync(String channelUrl, String userId, String apiToken, final ApiCallback<InlineResponse20037> _callback) throws ApiException {
+    public okhttp3.Call gcCheckIfMemberByIdAsync(String channelUrl, String userId, String apiToken, final ApiCallback<GcCheckIfMemberByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcCheckIfMemberByIdValidateBeforeCall(channelUrl, userId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20037>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcCheckIfMemberByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1856,7 +1856,7 @@ public class GroupChannelApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20033
+     * @return GcListBannedUsersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1864,8 +1864,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20033 gcListBannedUsers(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20033> localVarResp = gcListBannedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
+    public GcListBannedUsersResponse gcListBannedUsers(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<GcListBannedUsersResponse> localVarResp = gcListBannedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -1876,7 +1876,7 @@ public class GroupChannelApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20033&gt;
+     * @return ApiResponse&lt;GcListBannedUsersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1884,9 +1884,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20033> gcListBannedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = gcListBannedUsersValidateBeforeCall(channelUrl, apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20033>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListBannedUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1906,10 +1906,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcListBannedUsersAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20033> _callback) throws ApiException {
+    public okhttp3.Call gcListBannedUsersAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<GcListBannedUsersResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcListBannedUsersValidateBeforeCall(channelUrl, apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20033>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListBannedUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2240,7 +2240,7 @@ public class GroupChannelApi {
      * @param isDistinct  (optional)
      * @param membersIn  (optional)
      * @param userId  (optional)
-     * @return InlineResponse20017
+     * @return GcListChannelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2248,8 +2248,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20017 gcListChannels(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId) throws ApiException {
-        ApiResponse<InlineResponse20017> localVarResp = gcListChannelsWithHttpInfo(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
+    public GcListChannelsResponse gcListChannels(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId) throws ApiException {
+        ApiResponse<GcListChannelsResponse> localVarResp = gcListChannelsWithHttpInfo(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
         return localVarResp.getData();
     }
 
@@ -2299,7 +2299,7 @@ public class GroupChannelApi {
      * @param isDistinct  (optional)
      * @param membersIn  (optional)
      * @param userId  (optional)
-     * @return ApiResponse&lt;InlineResponse20017&gt;
+     * @return ApiResponse&lt;GcListChannelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2307,9 +2307,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20017> gcListChannelsWithHttpInfo(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId) throws ApiException {
+    public ApiResponse<GcListChannelsResponse> gcListChannelsWithHttpInfo(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId) throws ApiException {
         okhttp3.Call localVarCall = gcListChannelsValidateBeforeCall(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20017>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListChannelsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2368,10 +2368,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcListChannelsAsync(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId, final ApiCallback<InlineResponse20017> _callback) throws ApiException {
+    public okhttp3.Call gcListChannelsAsync(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId, final ApiCallback<GcListChannelsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcListChannelsValidateBeforeCall(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20017>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListChannelsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2512,7 +2512,7 @@ public class GroupChannelApi {
      * @param memberStateFilter  (optional)
      * @param mutedMemberFilter  (optional)
      * @param nicknameStartswith  (optional)
-     * @return InlineResponse20036
+     * @return GcListMembersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2520,8 +2520,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20036 gcListMembers(String channelUrl, String apiToken, String token, Integer limit, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String operatorFilter, String memberStateFilter, String mutedMemberFilter, String nicknameStartswith) throws ApiException {
-        ApiResponse<InlineResponse20036> localVarResp = gcListMembersWithHttpInfo(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
+    public GcListMembersResponse gcListMembers(String channelUrl, String apiToken, String token, Integer limit, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String operatorFilter, String memberStateFilter, String mutedMemberFilter, String nicknameStartswith) throws ApiException {
+        ApiResponse<GcListMembersResponse> localVarResp = gcListMembersWithHttpInfo(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
         return localVarResp.getData();
     }
 
@@ -2539,7 +2539,7 @@ public class GroupChannelApi {
      * @param memberStateFilter  (optional)
      * @param mutedMemberFilter  (optional)
      * @param nicknameStartswith  (optional)
-     * @return ApiResponse&lt;InlineResponse20036&gt;
+     * @return ApiResponse&lt;GcListMembersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2547,9 +2547,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20036> gcListMembersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String operatorFilter, String memberStateFilter, String mutedMemberFilter, String nicknameStartswith) throws ApiException {
+    public ApiResponse<GcListMembersResponse> gcListMembersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String operatorFilter, String memberStateFilter, String mutedMemberFilter, String nicknameStartswith) throws ApiException {
         okhttp3.Call localVarCall = gcListMembersValidateBeforeCall(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20036>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListMembersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2576,10 +2576,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcListMembersAsync(String channelUrl, String apiToken, String token, Integer limit, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String operatorFilter, String memberStateFilter, String mutedMemberFilter, String nicknameStartswith, final ApiCallback<InlineResponse20036> _callback) throws ApiException {
+    public okhttp3.Call gcListMembersAsync(String channelUrl, String apiToken, String token, Integer limit, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String operatorFilter, String memberStateFilter, String mutedMemberFilter, String nicknameStartswith, final ApiCallback<GcListMembersResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcListMembersValidateBeforeCall(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20036>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListMembersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2678,7 +2678,7 @@ public class GroupChannelApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20031
+     * @return GcListMutedUsersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2686,8 +2686,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20031 gcListMutedUsers(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20031> localVarResp = gcListMutedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
+    public GcListMutedUsersResponse gcListMutedUsers(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<GcListMutedUsersResponse> localVarResp = gcListMutedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -2698,7 +2698,7 @@ public class GroupChannelApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20031&gt;
+     * @return ApiResponse&lt;GcListMutedUsersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2706,9 +2706,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20031> gcListMutedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = gcListMutedUsersValidateBeforeCall(channelUrl, apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20031>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListMutedUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2728,10 +2728,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcListMutedUsersAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20031> _callback) throws ApiException {
+    public okhttp3.Call gcListMutedUsersAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<GcListMutedUsersResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcListMutedUsersValidateBeforeCall(channelUrl, apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20031>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListMutedUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2830,7 +2830,7 @@ public class GroupChannelApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20034
+     * @return GcListOperatorsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2838,8 +2838,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20034 gcListOperators(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20034> localVarResp = gcListOperatorsWithHttpInfo(channelUrl, apiToken, token, limit);
+    public GcListOperatorsResponse gcListOperators(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<GcListOperatorsResponse> localVarResp = gcListOperatorsWithHttpInfo(channelUrl, apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -2850,7 +2850,7 @@ public class GroupChannelApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20034&gt;
+     * @return ApiResponse&lt;GcListOperatorsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2858,9 +2858,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20034> gcListOperatorsWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<GcListOperatorsResponse> gcListOperatorsWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = gcListOperatorsValidateBeforeCall(channelUrl, apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20034>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListOperatorsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2880,10 +2880,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcListOperatorsAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20034> _callback) throws ApiException {
+    public okhttp3.Call gcListOperatorsAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<GcListOperatorsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcListOperatorsValidateBeforeCall(channelUrl, apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20034>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcListOperatorsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3112,7 +3112,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param gcRegisterOperatorsData  (optional)
-     * @return InlineResponse20038
+     * @return GcRegisterOperatorsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3120,8 +3120,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20038 gcRegisterOperators(String channelUrl, String apiToken, GcRegisterOperatorsData gcRegisterOperatorsData) throws ApiException {
-        ApiResponse<InlineResponse20038> localVarResp = gcRegisterOperatorsWithHttpInfo(channelUrl, apiToken, gcRegisterOperatorsData);
+    public GcRegisterOperatorsResponse gcRegisterOperators(String channelUrl, String apiToken, GcRegisterOperatorsData gcRegisterOperatorsData) throws ApiException {
+        ApiResponse<GcRegisterOperatorsResponse> localVarResp = gcRegisterOperatorsWithHttpInfo(channelUrl, apiToken, gcRegisterOperatorsData);
         return localVarResp.getData();
     }
 
@@ -3131,7 +3131,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param gcRegisterOperatorsData  (optional)
-     * @return ApiResponse&lt;InlineResponse20038&gt;
+     * @return ApiResponse&lt;GcRegisterOperatorsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3139,9 +3139,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20038> gcRegisterOperatorsWithHttpInfo(String channelUrl, String apiToken, GcRegisterOperatorsData gcRegisterOperatorsData) throws ApiException {
+    public ApiResponse<GcRegisterOperatorsResponse> gcRegisterOperatorsWithHttpInfo(String channelUrl, String apiToken, GcRegisterOperatorsData gcRegisterOperatorsData) throws ApiException {
         okhttp3.Call localVarCall = gcRegisterOperatorsValidateBeforeCall(channelUrl, apiToken, gcRegisterOperatorsData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20038>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcRegisterOperatorsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3160,10 +3160,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcRegisterOperatorsAsync(String channelUrl, String apiToken, GcRegisterOperatorsData gcRegisterOperatorsData, final ApiCallback<InlineResponse20038> _callback) throws ApiException {
+    public okhttp3.Call gcRegisterOperatorsAsync(String channelUrl, String apiToken, GcRegisterOperatorsData gcRegisterOperatorsData, final ApiCallback<GcRegisterOperatorsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcRegisterOperatorsValidateBeforeCall(channelUrl, apiToken, gcRegisterOperatorsData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20038>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcRegisterOperatorsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4443,7 +4443,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20035
+     * @return GcViewMuteByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4451,8 +4451,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20035 gcViewMuteById(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20035> localVarResp = gcViewMuteByIdWithHttpInfo(channelUrl, mutedUserId, apiToken);
+    public GcViewMuteByIdResponse gcViewMuteById(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
+        ApiResponse<GcViewMuteByIdResponse> localVarResp = gcViewMuteByIdWithHttpInfo(channelUrl, mutedUserId, apiToken);
         return localVarResp.getData();
     }
 
@@ -4462,7 +4462,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20035&gt;
+     * @return ApiResponse&lt;GcViewMuteByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4470,9 +4470,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20035> gcViewMuteByIdWithHttpInfo(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
+    public ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = gcViewMuteByIdValidateBeforeCall(channelUrl, mutedUserId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20035>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcViewMuteByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4491,10 +4491,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcViewMuteByIdAsync(String channelUrl, String mutedUserId, String apiToken, final ApiCallback<InlineResponse20035> _callback) throws ApiException {
+    public okhttp3.Call gcViewMuteByIdAsync(String channelUrl, String mutedUserId, String apiToken, final ApiCallback<GcViewMuteByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcViewMuteByIdValidateBeforeCall(channelUrl, mutedUserId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20035>(){}.getType();
+        Type localVarReturnType = new TypeToken<GcViewMuteByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

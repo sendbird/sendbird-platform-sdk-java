@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * GcUpdateChannelByUrlData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-07T15:20:09.800379Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T12:13:33.713738Z[Europe/London]")
 public class GcUpdateChannelByUrlData {
   public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
   @SerializedName(SERIALIZED_NAME_CHANNEL_URL)

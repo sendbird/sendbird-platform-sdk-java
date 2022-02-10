@@ -28,13 +28,15 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.CreateBotData;
-import org.openapitools.client.model.InlineResponse20065;
-import org.openapitools.client.model.InlineResponse20065Bots;
+import org.openapitools.client.model.CreateBotResponse;
 import org.openapitools.client.model.JoinChannelsData;
+import org.openapitools.client.model.ListBotsResponse;
 import org.openapitools.client.model.SendBirdGroupChannelCollection;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBotSMessageData;
 import org.openapitools.client.model.UpdateBotByIdData;
+import org.openapitools.client.model.UpdateBotByIdResponse;
+import org.openapitools.client.model.ViewBotByIdResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -156,7 +158,7 @@ public class BotInterfaceApi {
      * ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  &gt; __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
      * @param apiToken  (optional)
      * @param createBotData  (optional)
-     * @return InlineResponse20065Bots
+     * @return CreateBotResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -164,8 +166,8 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20065Bots createBot(String apiToken, CreateBotData createBotData) throws ApiException {
-        ApiResponse<InlineResponse20065Bots> localVarResp = createBotWithHttpInfo(apiToken, createBotData);
+    public CreateBotResponse createBot(String apiToken, CreateBotData createBotData) throws ApiException {
+        ApiResponse<CreateBotResponse> localVarResp = createBotWithHttpInfo(apiToken, createBotData);
         return localVarResp.getData();
     }
 
@@ -174,7 +176,7 @@ public class BotInterfaceApi {
      * ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  &gt; __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
      * @param apiToken  (optional)
      * @param createBotData  (optional)
-     * @return ApiResponse&lt;InlineResponse20065Bots&gt;
+     * @return ApiResponse&lt;CreateBotResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -182,9 +184,9 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20065Bots> createBotWithHttpInfo(String apiToken, CreateBotData createBotData) throws ApiException {
+    public ApiResponse<CreateBotResponse> createBotWithHttpInfo(String apiToken, CreateBotData createBotData) throws ApiException {
         okhttp3.Call localVarCall = createBotValidateBeforeCall(apiToken, createBotData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20065Bots>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateBotResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -202,10 +204,10 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBotAsync(String apiToken, CreateBotData createBotData, final ApiCallback<InlineResponse20065Bots> _callback) throws ApiException {
+    public okhttp3.Call createBotAsync(String apiToken, CreateBotData createBotData, final ApiCallback<CreateBotResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createBotValidateBeforeCall(apiToken, createBotData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20065Bots>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateBotResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -850,7 +852,7 @@ public class BotInterfaceApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20065
+     * @return ListBotsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -858,8 +860,8 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20065 listBots(String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20065> localVarResp = listBotsWithHttpInfo(apiToken, token, limit);
+    public ListBotsResponse listBots(String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<ListBotsResponse> localVarResp = listBotsWithHttpInfo(apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -869,7 +871,7 @@ public class BotInterfaceApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20065&gt;
+     * @return ApiResponse&lt;ListBotsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -877,9 +879,9 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20065> listBotsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListBotsResponse> listBotsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listBotsValidateBeforeCall(apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20065>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListBotsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -898,10 +900,10 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBotsAsync(String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20065> _callback) throws ApiException {
+    public okhttp3.Call listBotsAsync(String apiToken, String token, Integer limit, final ApiCallback<ListBotsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listBotsValidateBeforeCall(apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20065>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListBotsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1130,7 +1132,7 @@ public class BotInterfaceApi {
      * @param botUserid  (required)
      * @param apiToken  (optional)
      * @param updateBotByIdData  (optional)
-     * @return InlineResponse20065Bots
+     * @return UpdateBotByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1138,8 +1140,8 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20065Bots updateBotById(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData) throws ApiException {
-        ApiResponse<InlineResponse20065Bots> localVarResp = updateBotByIdWithHttpInfo(botUserid, apiToken, updateBotByIdData);
+    public UpdateBotByIdResponse updateBotById(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData) throws ApiException {
+        ApiResponse<UpdateBotByIdResponse> localVarResp = updateBotByIdWithHttpInfo(botUserid, apiToken, updateBotByIdData);
         return localVarResp.getData();
     }
 
@@ -1149,7 +1151,7 @@ public class BotInterfaceApi {
      * @param botUserid  (required)
      * @param apiToken  (optional)
      * @param updateBotByIdData  (optional)
-     * @return ApiResponse&lt;InlineResponse20065Bots&gt;
+     * @return ApiResponse&lt;UpdateBotByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1157,9 +1159,9 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20065Bots> updateBotByIdWithHttpInfo(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData) throws ApiException {
+    public ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData) throws ApiException {
         okhttp3.Call localVarCall = updateBotByIdValidateBeforeCall(botUserid, apiToken, updateBotByIdData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20065Bots>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateBotByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1178,10 +1180,10 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateBotByIdAsync(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData, final ApiCallback<InlineResponse20065Bots> _callback) throws ApiException {
+    public okhttp3.Call updateBotByIdAsync(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData, final ApiCallback<UpdateBotByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateBotByIdValidateBeforeCall(botUserid, apiToken, updateBotByIdData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20065Bots>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateBotByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1268,7 +1270,7 @@ public class BotInterfaceApi {
      * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
      * @param botUserid  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20065Bots
+     * @return ViewBotByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1276,8 +1278,8 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20065Bots viewBotById(String botUserid, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20065Bots> localVarResp = viewBotByIdWithHttpInfo(botUserid, apiToken);
+    public ViewBotByIdResponse viewBotById(String botUserid, String apiToken) throws ApiException {
+        ApiResponse<ViewBotByIdResponse> localVarResp = viewBotByIdWithHttpInfo(botUserid, apiToken);
         return localVarResp.getData();
     }
 
@@ -1286,7 +1288,7 @@ public class BotInterfaceApi {
      * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
      * @param botUserid  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20065Bots&gt;
+     * @return ApiResponse&lt;ViewBotByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1294,9 +1296,9 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20065Bots> viewBotByIdWithHttpInfo(String botUserid, String apiToken) throws ApiException {
+    public ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String botUserid, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewBotByIdValidateBeforeCall(botUserid, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20065Bots>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewBotByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1314,10 +1316,10 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewBotByIdAsync(String botUserid, String apiToken, final ApiCallback<InlineResponse20065Bots> _callback) throws ApiException {
+    public okhttp3.Call viewBotByIdAsync(String botUserid, String apiToken, final ApiCallback<ViewBotByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewBotByIdValidateBeforeCall(botUserid, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20065Bots>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewBotByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -27,19 +27,19 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.AddEmojiCategoriesResponse;
 import org.openapitools.client.model.AddEmojisData;
+import org.openapitools.client.model.AddEmojisResponse;
 import org.openapitools.client.model.EnableReactionsData;
-import org.openapitools.client.model.InlineResponse20051;
-import org.openapitools.client.model.InlineResponse20055;
-import org.openapitools.client.model.InlineResponse20056;
-import org.openapitools.client.model.InlineResponse20057;
-import org.openapitools.client.model.InlineResponse20058;
-import org.openapitools.client.model.InlineResponse20059;
+import org.openapitools.client.model.EnableReactionsResponse;
+import org.openapitools.client.model.ListAllEmojisAndEmojiCategoriesResponse;
+import org.openapitools.client.model.ListEmojisResponse;
 import org.openapitools.client.model.SendBirdEmoji;
 import org.openapitools.client.model.SendBirdEmojiCategory;
 import org.openapitools.client.model.UpdateEmojiCategoryUrlByIdData;
 import org.openapitools.client.model.UpdateEmojiUrlByKeyData;
 import org.openapitools.client.model.UseDefaultEmojisData;
+import org.openapitools.client.model.UseDefaultEmojisResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -161,7 +161,7 @@ public class EmojisApi {
      * ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories
      * @param apiToken  (optional)
      * @param body  (optional)
-     * @return InlineResponse20057
+     * @return AddEmojiCategoriesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -169,8 +169,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20057 addEmojiCategories(String apiToken, Object body) throws ApiException {
-        ApiResponse<InlineResponse20057> localVarResp = addEmojiCategoriesWithHttpInfo(apiToken, body);
+    public AddEmojiCategoriesResponse addEmojiCategories(String apiToken, Object body) throws ApiException {
+        ApiResponse<AddEmojiCategoriesResponse> localVarResp = addEmojiCategoriesWithHttpInfo(apiToken, body);
         return localVarResp.getData();
     }
 
@@ -179,7 +179,7 @@ public class EmojisApi {
      * ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories
      * @param apiToken  (optional)
      * @param body  (optional)
-     * @return ApiResponse&lt;InlineResponse20057&gt;
+     * @return ApiResponse&lt;AddEmojiCategoriesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -187,9 +187,9 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20057> addEmojiCategoriesWithHttpInfo(String apiToken, Object body) throws ApiException {
+    public ApiResponse<AddEmojiCategoriesResponse> addEmojiCategoriesWithHttpInfo(String apiToken, Object body) throws ApiException {
         okhttp3.Call localVarCall = addEmojiCategoriesValidateBeforeCall(apiToken, body, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20057>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddEmojiCategoriesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -207,10 +207,10 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addEmojiCategoriesAsync(String apiToken, Object body, final ApiCallback<InlineResponse20057> _callback) throws ApiException {
+    public okhttp3.Call addEmojiCategoriesAsync(String apiToken, Object body, final ApiCallback<AddEmojiCategoriesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addEmojiCategoriesValidateBeforeCall(apiToken, body, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20057>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddEmojiCategoriesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -291,7 +291,7 @@ public class EmojisApi {
      * ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis
      * @param apiToken  (optional)
      * @param addEmojisData  (optional)
-     * @return InlineResponse20059
+     * @return AddEmojisResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -299,8 +299,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20059 addEmojis(String apiToken, AddEmojisData addEmojisData) throws ApiException {
-        ApiResponse<InlineResponse20059> localVarResp = addEmojisWithHttpInfo(apiToken, addEmojisData);
+    public AddEmojisResponse addEmojis(String apiToken, AddEmojisData addEmojisData) throws ApiException {
+        ApiResponse<AddEmojisResponse> localVarResp = addEmojisWithHttpInfo(apiToken, addEmojisData);
         return localVarResp.getData();
     }
 
@@ -309,7 +309,7 @@ public class EmojisApi {
      * ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis
      * @param apiToken  (optional)
      * @param addEmojisData  (optional)
-     * @return ApiResponse&lt;InlineResponse20059&gt;
+     * @return ApiResponse&lt;AddEmojisResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -317,9 +317,9 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20059> addEmojisWithHttpInfo(String apiToken, AddEmojisData addEmojisData) throws ApiException {
+    public ApiResponse<AddEmojisResponse> addEmojisWithHttpInfo(String apiToken, AddEmojisData addEmojisData) throws ApiException {
         okhttp3.Call localVarCall = addEmojisValidateBeforeCall(apiToken, addEmojisData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20059>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddEmojisResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -337,10 +337,10 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addEmojisAsync(String apiToken, AddEmojisData addEmojisData, final ApiCallback<InlineResponse20059> _callback) throws ApiException {
+    public okhttp3.Call addEmojisAsync(String apiToken, AddEmojisData addEmojisData, final ApiCallback<AddEmojisResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addEmojisValidateBeforeCall(apiToken, addEmojisData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20059>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddEmojisResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -685,7 +685,7 @@ public class EmojisApi {
      * ## Enable reactions  Turn on or off reactions in a Sendbird application.  &gt; __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions
      * @param apiToken  (optional)
      * @param enableReactionsData  (optional)
-     * @return InlineResponse20051
+     * @return EnableReactionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -693,8 +693,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20051 enableReactions(String apiToken, EnableReactionsData enableReactionsData) throws ApiException {
-        ApiResponse<InlineResponse20051> localVarResp = enableReactionsWithHttpInfo(apiToken, enableReactionsData);
+    public EnableReactionsResponse enableReactions(String apiToken, EnableReactionsData enableReactionsData) throws ApiException {
+        ApiResponse<EnableReactionsResponse> localVarResp = enableReactionsWithHttpInfo(apiToken, enableReactionsData);
         return localVarResp.getData();
     }
 
@@ -703,7 +703,7 @@ public class EmojisApi {
      * ## Enable reactions  Turn on or off reactions in a Sendbird application.  &gt; __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions
      * @param apiToken  (optional)
      * @param enableReactionsData  (optional)
-     * @return ApiResponse&lt;InlineResponse20051&gt;
+     * @return ApiResponse&lt;EnableReactionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -711,9 +711,9 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20051> enableReactionsWithHttpInfo(String apiToken, EnableReactionsData enableReactionsData) throws ApiException {
+    public ApiResponse<EnableReactionsResponse> enableReactionsWithHttpInfo(String apiToken, EnableReactionsData enableReactionsData) throws ApiException {
         okhttp3.Call localVarCall = enableReactionsValidateBeforeCall(apiToken, enableReactionsData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20051>(){}.getType();
+        Type localVarReturnType = new TypeToken<EnableReactionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -731,10 +731,10 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call enableReactionsAsync(String apiToken, EnableReactionsData enableReactionsData, final ApiCallback<InlineResponse20051> _callback) throws ApiException {
+    public okhttp3.Call enableReactionsAsync(String apiToken, EnableReactionsData enableReactionsData, final ApiCallback<EnableReactionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = enableReactionsValidateBeforeCall(apiToken, enableReactionsData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20051>(){}.getType();
+        Type localVarReturnType = new TypeToken<EnableReactionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1085,7 +1085,7 @@ public class EmojisApi {
      * List all emojis and emoji categories
      * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
      * @param apiToken  (optional)
-     * @return InlineResponse20056
+     * @return ListAllEmojisAndEmojiCategoriesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1093,8 +1093,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20056 listAllEmojisAndEmojiCategories(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20056> localVarResp = listAllEmojisAndEmojiCategoriesWithHttpInfo(apiToken);
+    public ListAllEmojisAndEmojiCategoriesResponse listAllEmojisAndEmojiCategories(String apiToken) throws ApiException {
+        ApiResponse<ListAllEmojisAndEmojiCategoriesResponse> localVarResp = listAllEmojisAndEmojiCategoriesWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -1102,7 +1102,7 @@ public class EmojisApi {
      * List all emojis and emoji categories
      * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20056&gt;
+     * @return ApiResponse&lt;ListAllEmojisAndEmojiCategoriesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1110,9 +1110,9 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20056> listAllEmojisAndEmojiCategoriesWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<ListAllEmojisAndEmojiCategoriesResponse> listAllEmojisAndEmojiCategoriesWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = listAllEmojisAndEmojiCategoriesValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20056>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListAllEmojisAndEmojiCategoriesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1129,10 +1129,10 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAllEmojisAndEmojiCategoriesAsync(String apiToken, final ApiCallback<InlineResponse20056> _callback) throws ApiException {
+    public okhttp3.Call listAllEmojisAndEmojiCategoriesAsync(String apiToken, final ApiCallback<ListAllEmojisAndEmojiCategoriesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAllEmojisAndEmojiCategoriesValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20056>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListAllEmojisAndEmojiCategoriesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1211,7 +1211,7 @@ public class EmojisApi {
      * List emojis
      * ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis
      * @param apiToken  (optional)
-     * @return InlineResponse20058
+     * @return ListEmojisResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1219,8 +1219,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20058 listEmojis(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20058> localVarResp = listEmojisWithHttpInfo(apiToken);
+    public ListEmojisResponse listEmojis(String apiToken) throws ApiException {
+        ApiResponse<ListEmojisResponse> localVarResp = listEmojisWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -1228,7 +1228,7 @@ public class EmojisApi {
      * List emojis
      * ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20058&gt;
+     * @return ApiResponse&lt;ListEmojisResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1236,9 +1236,9 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20058> listEmojisWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<ListEmojisResponse> listEmojisWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = listEmojisValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20058>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListEmojisResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1255,10 +1255,10 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listEmojisAsync(String apiToken, final ApiCallback<InlineResponse20058> _callback) throws ApiException {
+    public okhttp3.Call listEmojisAsync(String apiToken, final ApiCallback<ListEmojisResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listEmojisValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20058>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListEmojisResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1619,7 +1619,7 @@ public class EmojisApi {
      * ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis
      * @param apiToken  (optional)
      * @param useDefaultEmojisData  (optional)
-     * @return InlineResponse20055
+     * @return UseDefaultEmojisResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1627,8 +1627,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20055 useDefaultEmojis(String apiToken, UseDefaultEmojisData useDefaultEmojisData) throws ApiException {
-        ApiResponse<InlineResponse20055> localVarResp = useDefaultEmojisWithHttpInfo(apiToken, useDefaultEmojisData);
+    public UseDefaultEmojisResponse useDefaultEmojis(String apiToken, UseDefaultEmojisData useDefaultEmojisData) throws ApiException {
+        ApiResponse<UseDefaultEmojisResponse> localVarResp = useDefaultEmojisWithHttpInfo(apiToken, useDefaultEmojisData);
         return localVarResp.getData();
     }
 
@@ -1637,7 +1637,7 @@ public class EmojisApi {
      * ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis
      * @param apiToken  (optional)
      * @param useDefaultEmojisData  (optional)
-     * @return ApiResponse&lt;InlineResponse20055&gt;
+     * @return ApiResponse&lt;UseDefaultEmojisResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1645,9 +1645,9 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20055> useDefaultEmojisWithHttpInfo(String apiToken, UseDefaultEmojisData useDefaultEmojisData) throws ApiException {
+    public ApiResponse<UseDefaultEmojisResponse> useDefaultEmojisWithHttpInfo(String apiToken, UseDefaultEmojisData useDefaultEmojisData) throws ApiException {
         okhttp3.Call localVarCall = useDefaultEmojisValidateBeforeCall(apiToken, useDefaultEmojisData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20055>(){}.getType();
+        Type localVarReturnType = new TypeToken<UseDefaultEmojisResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1665,10 +1665,10 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call useDefaultEmojisAsync(String apiToken, UseDefaultEmojisData useDefaultEmojisData, final ApiCallback<InlineResponse20055> _callback) throws ApiException {
+    public okhttp3.Call useDefaultEmojisAsync(String apiToken, UseDefaultEmojisData useDefaultEmojisData, final ApiCallback<UseDefaultEmojisResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = useDefaultEmojisValidateBeforeCall(apiToken, useDefaultEmojisData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20055>(){}.getType();
+        Type localVarReturnType = new TypeToken<UseDefaultEmojisResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

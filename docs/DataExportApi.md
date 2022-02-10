@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="listDataExportsByMessageChannelOrUser"></a>
 # **listDataExportsByMessageChannelOrUser**
-> InlineResponse20063 listDataExportsByMessageChannelOrUser(dataType, apiToken, token, limit)
+> ListDataExportsByMessageChannelOrUserResponse listDataExportsByMessageChannelOrUser(dataType, apiToken, token, limit)
 
 List data exports by message, channel, or user
 
@@ -37,7 +37,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20063 result = apiInstance.listDataExportsByMessageChannelOrUser(dataType, apiToken, token, limit);
+      ListDataExportsByMessageChannelOrUserResponse result = apiInstance.listDataExportsByMessageChannelOrUser(dataType, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportApi#listDataExportsByMessageChannelOrUser");
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20063**](InlineResponse20063.md)
+[**ListDataExportsByMessageChannelOrUserResponse**](ListDataExportsByMessageChannelOrUserResponse.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ No authorization required
 
 <a name="registerAndScheduleDataExport"></a>
 # **registerAndScheduleDataExport**
-> InlineResponse20063ExportedData registerAndScheduleDataExport(dataType, apiToken, registerAndScheduleDataExportData)
+> RegisterAndScheduleDataExportResponse registerAndScheduleDataExport(dataType, apiToken, registerAndScheduleDataExportData)
 
 Register and schedule a data export
 
@@ -104,7 +104,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     RegisterAndScheduleDataExportData registerAndScheduleDataExportData = new RegisterAndScheduleDataExportData(); // RegisterAndScheduleDataExportData | 
     try {
-      InlineResponse20063ExportedData result = apiInstance.registerAndScheduleDataExport(dataType, apiToken, registerAndScheduleDataExportData);
+      RegisterAndScheduleDataExportResponse result = apiInstance.registerAndScheduleDataExport(dataType, apiToken, registerAndScheduleDataExportData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportApi#registerAndScheduleDataExport");
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20063ExportedData**](InlineResponse20063ExportedData.md)
+[**RegisterAndScheduleDataExportResponse**](RegisterAndScheduleDataExportResponse.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ No authorization required
 
 <a name="viewDataExportById"></a>
 # **viewDataExportById**
-> InlineResponse20064 viewDataExportById(dataType, requestId, apiToken)
+> ViewDataExportByIdResponse viewDataExportById(dataType, requestId, apiToken)
 
 View a data export
 
@@ -170,7 +170,7 @@ public class Example {
     String requestId = "requestId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20064 result = apiInstance.viewDataExportById(dataType, requestId, apiToken);
+      ViewDataExportByIdResponse result = apiInstance.viewDataExportById(dataType, requestId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportApi#viewDataExportById");
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20064**](InlineResponse20064.md)
+[**ViewDataExportByIdResponse**](ViewDataExportByIdResponse.md)
 
 ### Authorization
 

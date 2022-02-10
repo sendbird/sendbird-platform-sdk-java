@@ -102,7 +102,7 @@ No authorization required
 
 <a name="gcBanUser"></a>
 # **gcBanUser**
-> InlineResponse20033BannedList gcBanUser(channelUrl, apiToken, gcBanUserData)
+> GcBanUserResponse gcBanUser(channelUrl, apiToken, gcBanUserData)
 
 Ban a user
 
@@ -127,7 +127,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     GcBanUserData gcBanUserData = new GcBanUserData(); // GcBanUserData | 
     try {
-      InlineResponse20033BannedList result = apiInstance.gcBanUser(channelUrl, apiToken, gcBanUserData);
+      GcBanUserResponse result = apiInstance.gcBanUser(channelUrl, apiToken, gcBanUserData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcBanUser");
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033BannedList**](InlineResponse20033BannedList.md)
+[**GcBanUserResponse**](GcBanUserResponse.md)
 
 ### Authorization
 
@@ -235,7 +235,7 @@ No authorization required
 
 <a name="gcCheckIfMemberById"></a>
 # **gcCheckIfMemberById**
-> InlineResponse20037 gcCheckIfMemberById(channelUrl, userId, apiToken)
+> GcCheckIfMemberByIdResponse gcCheckIfMemberById(channelUrl, userId, apiToken)
 
 Check if member
 
@@ -260,7 +260,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20037 result = apiInstance.gcCheckIfMemberById(channelUrl, userId, apiToken);
+      GcCheckIfMemberByIdResponse result = apiInstance.gcCheckIfMemberById(channelUrl, userId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcCheckIfMemberById");
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20037**](InlineResponse20037.md)
+[**GcCheckIfMemberByIdResponse**](GcCheckIfMemberByIdResponse.md)
 
 ### Authorization
 
@@ -820,7 +820,7 @@ No authorization required
 
 <a name="gcListBannedUsers"></a>
 # **gcListBannedUsers**
-> InlineResponse20033 gcListBannedUsers(channelUrl, apiToken, token, limit)
+> GcListBannedUsersResponse gcListBannedUsers(channelUrl, apiToken, token, limit)
 
 List banned users
 
@@ -846,7 +846,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20033 result = apiInstance.gcListBannedUsers(channelUrl, apiToken, token, limit);
+      GcListBannedUsersResponse result = apiInstance.gcListBannedUsers(channelUrl, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcListBannedUsers");
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**GcListBannedUsersResponse**](GcListBannedUsersResponse.md)
 
 ### Authorization
 
@@ -888,7 +888,7 @@ No authorization required
 
 <a name="gcListChannels"></a>
 # **gcListChannels**
-> InlineResponse20017 gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId)
+> GcListChannelsResponse gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId)
 
 List channels
 
@@ -953,7 +953,7 @@ public class Example {
     String membersIn = "membersIn_example"; // String | 
     String userId = "userId_example"; // String | 
     try {
-      InlineResponse20017 result = apiInstance.gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
+      GcListChannelsResponse result = apiInstance.gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcListChannels");
@@ -1016,7 +1016,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**GcListChannelsResponse**](GcListChannelsResponse.md)
 
 ### Authorization
 
@@ -1034,7 +1034,7 @@ No authorization required
 
 <a name="gcListMembers"></a>
 # **gcListMembers**
-> InlineResponse20036 gcListMembers(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith)
+> GcListMembersResponse gcListMembers(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith)
 
 List members
 
@@ -1067,7 +1067,7 @@ public class Example {
     String mutedMemberFilter = "mutedMemberFilter_example"; // String | 
     String nicknameStartswith = "nicknameStartswith_example"; // String | 
     try {
-      InlineResponse20036 result = apiInstance.gcListMembers(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
+      GcListMembersResponse result = apiInstance.gcListMembers(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcListMembers");
@@ -1098,7 +1098,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20036**](InlineResponse20036.md)
+[**GcListMembersResponse**](GcListMembersResponse.md)
 
 ### Authorization
 
@@ -1116,7 +1116,7 @@ No authorization required
 
 <a name="gcListMutedUsers"></a>
 # **gcListMutedUsers**
-> InlineResponse20031 gcListMutedUsers(channelUrl, apiToken, token, limit)
+> GcListMutedUsersResponse gcListMutedUsers(channelUrl, apiToken, token, limit)
 
 List muted users
 
@@ -1142,7 +1142,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20031 result = apiInstance.gcListMutedUsers(channelUrl, apiToken, token, limit);
+      GcListMutedUsersResponse result = apiInstance.gcListMutedUsers(channelUrl, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcListMutedUsers");
@@ -1166,7 +1166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**GcListMutedUsersResponse**](GcListMutedUsersResponse.md)
 
 ### Authorization
 
@@ -1184,7 +1184,7 @@ No authorization required
 
 <a name="gcListOperators"></a>
 # **gcListOperators**
-> InlineResponse20034 gcListOperators(channelUrl, apiToken, token, limit)
+> GcListOperatorsResponse gcListOperators(channelUrl, apiToken, token, limit)
 
 List operators
 
@@ -1210,7 +1210,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20034 result = apiInstance.gcListOperators(channelUrl, apiToken, token, limit);
+      GcListOperatorsResponse result = apiInstance.gcListOperators(channelUrl, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcListOperators");
@@ -1234,7 +1234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**GcListOperatorsResponse**](GcListOperatorsResponse.md)
 
 ### Authorization
 
@@ -1318,7 +1318,7 @@ No authorization required
 
 <a name="gcRegisterOperators"></a>
 # **gcRegisterOperators**
-> InlineResponse20038 gcRegisterOperators(channelUrl, apiToken, gcRegisterOperatorsData)
+> GcRegisterOperatorsResponse gcRegisterOperators(channelUrl, apiToken, gcRegisterOperatorsData)
 
 Register operators
 
@@ -1343,7 +1343,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     GcRegisterOperatorsData gcRegisterOperatorsData = new GcRegisterOperatorsData(); // GcRegisterOperatorsData | 
     try {
-      InlineResponse20038 result = apiInstance.gcRegisterOperators(channelUrl, apiToken, gcRegisterOperatorsData);
+      GcRegisterOperatorsResponse result = apiInstance.gcRegisterOperators(channelUrl, apiToken, gcRegisterOperatorsData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcRegisterOperators");
@@ -1366,7 +1366,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20038**](InlineResponse20038.md)
+[**GcRegisterOperatorsResponse**](GcRegisterOperatorsResponse.md)
 
 ### Authorization
 
@@ -1920,7 +1920,7 @@ No authorization required
 
 <a name="gcViewMuteById"></a>
 # **gcViewMuteById**
-> InlineResponse20035 gcViewMuteById(channelUrl, mutedUserId, apiToken)
+> GcViewMuteByIdResponse gcViewMuteById(channelUrl, mutedUserId, apiToken)
 
 View a mute
 
@@ -1945,7 +1945,7 @@ public class Example {
     String mutedUserId = "mutedUserId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20035 result = apiInstance.gcViewMuteById(channelUrl, mutedUserId, apiToken);
+      GcViewMuteByIdResponse result = apiInstance.gcViewMuteById(channelUrl, mutedUserId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcViewMuteById");
@@ -1968,7 +1968,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](InlineResponse20035.md)
+[**GcViewMuteByIdResponse**](GcViewMuteByIdResponse.md)
 
 ### Authorization
 

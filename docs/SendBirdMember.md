@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **isBlockingMe** | **Boolean** |  |  [optional]
 **isMuted** | **Boolean** |  |  [optional]
 **lastSeenAt** | **Integer** |  |  [optional]
-**metaData** | [**ModelObject**](ModelObject.md) |  |  [optional]
+**metaData** | [**SBObject**](SBObject.md) |  |  [optional]
 **nickname** | **String** |  |  [optional]
 **plainProfileUrl** | **String** |  |  [optional]
 **preferredLanguages** | **List&lt;String&gt;** |  |  [optional]

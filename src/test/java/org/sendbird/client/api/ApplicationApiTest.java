@@ -15,31 +15,41 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
 import org.openapitools.client.model.AddApnsPushConfigurationData;
+import org.openapitools.client.model.AddApnsPushConfigurationResponse;
 import org.openapitools.client.model.AddFcmPushConfigurationData;
+import org.openapitools.client.model.AddFcmPushConfigurationResponse;
 import org.openapitools.client.model.AddHmsPushConfigurationData;
+import org.openapitools.client.model.AddHmsPushConfigurationResponse;
 import org.openapitools.client.model.AddIpToWhitelistData;
+import org.openapitools.client.model.AddIpToWhitelistResponse;
+import org.openapitools.client.model.DeleteAllowedIpsFromWhitelistResponse;
+import org.openapitools.client.model.DeleteApnsCertificateByIdResponse;
 import org.openapitools.client.model.GenerateSecondaryApiTokenData;
-import org.openapitools.client.model.InlineResponse200;
-import org.openapitools.client.model.InlineResponse2001;
-import org.openapitools.client.model.InlineResponse20010;
-import org.openapitools.client.model.InlineResponse20011;
-import org.openapitools.client.model.InlineResponse20012;
-import org.openapitools.client.model.InlineResponse20013;
-import org.openapitools.client.model.InlineResponse20014;
-import org.openapitools.client.model.InlineResponse20015;
-import org.openapitools.client.model.InlineResponse2002;
-import org.openapitools.client.model.InlineResponse2003;
-import org.openapitools.client.model.InlineResponse2004;
-import org.openapitools.client.model.InlineResponse2005;
-import org.openapitools.client.model.InlineResponse2006;
-import org.openapitools.client.model.InlineResponse2007;
-import org.openapitools.client.model.InlineResponse2008;
-import org.openapitools.client.model.InlineResponse2009;
+import org.openapitools.client.model.GenerateSecondaryApiTokenResponse;
+import org.openapitools.client.model.ListPushConfigurationsResponse;
+import org.openapitools.client.model.ListPushNotificationContentTemplatesResponse;
+import org.openapitools.client.model.ListSecondaryApiTokensResponse;
+import org.openapitools.client.model.RemovePushConfigurationByIdResponse;
+import org.openapitools.client.model.RetrieveIpWhitelistResponse;
+import org.openapitools.client.model.RevokeSecondaryApiTokenByTokenResponse;
 import org.openapitools.client.model.UpdateApnsPushConfigurationByIdData;
+import org.openapitools.client.model.UpdateApnsPushConfigurationByIdResponse;
 import org.openapitools.client.model.UpdateDefaultChannelInvitationPreferenceData;
+import org.openapitools.client.model.UpdateDefaultChannelInvitationPreferenceResponse;
 import org.openapitools.client.model.UpdateFcmPushConfigurationByIdData;
+import org.openapitools.client.model.UpdateFcmPushConfigurationByIdResponse;
 import org.openapitools.client.model.UpdateHmsPushConfigurationByIdData;
+import org.openapitools.client.model.UpdateHmsPushConfigurationByIdResponse;
 import org.openapitools.client.model.UpdatePushNotificationContentTemplateData;
+import org.openapitools.client.model.UpdatePushNotificationContentTemplateResponse;
+import org.openapitools.client.model.ViewDefaultChannelInvitationPreferenceResponse;
+import org.openapitools.client.model.ViewNumberOfConcurrentConnectionsResponse;
+import org.openapitools.client.model.ViewNumberOfDailyActiveUsersResponse;
+import org.openapitools.client.model.ViewNumberOfMonthlyActiveUsersResponse;
+import org.openapitools.client.model.ViewNumberOfPeakConnectionsResponse;
+import org.openapitools.client.model.ViewPushConfigurationByIdResponse;
+import org.openapitools.client.model.ViewPushNotificationContentTemplateResponse;
+import org.openapitools.client.model.ViewSecondaryApiTokenByTokenResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -69,7 +79,7 @@ public class ApplicationApiTest {
     public void addApnsPushConfigurationTest() throws ApiException {
         String apiToken = null;
         AddApnsPushConfigurationData addApnsPushConfigurationData = null;
-                InlineResponse2003 response = api.addApnsPushConfiguration(apiToken, addApnsPushConfigurationData);
+                AddApnsPushConfigurationResponse response = api.addApnsPushConfiguration(apiToken, addApnsPushConfigurationData);
         // TODO: test validations
     }
     
@@ -85,7 +95,7 @@ public class ApplicationApiTest {
     public void addFcmPushConfigurationTest() throws ApiException {
         String apiToken = null;
         AddFcmPushConfigurationData addFcmPushConfigurationData = null;
-                InlineResponse2001 response = api.addFcmPushConfiguration(apiToken, addFcmPushConfigurationData);
+                AddFcmPushConfigurationResponse response = api.addFcmPushConfiguration(apiToken, addFcmPushConfigurationData);
         // TODO: test validations
     }
     
@@ -101,7 +111,7 @@ public class ApplicationApiTest {
     public void addHmsPushConfigurationTest() throws ApiException {
         String apiToken = null;
         AddHmsPushConfigurationData addHmsPushConfigurationData = null;
-                InlineResponse2002 response = api.addHmsPushConfiguration(apiToken, addHmsPushConfigurationData);
+                AddHmsPushConfigurationResponse response = api.addHmsPushConfiguration(apiToken, addHmsPushConfigurationData);
         // TODO: test validations
     }
     
@@ -117,7 +127,7 @@ public class ApplicationApiTest {
     public void addIpToWhitelistTest() throws ApiException {
         String apiToken = null;
         AddIpToWhitelistData addIpToWhitelistData = null;
-                InlineResponse2006 response = api.addIpToWhitelist(apiToken, addIpToWhitelistData);
+                AddIpToWhitelistResponse response = api.addIpToWhitelist(apiToken, addIpToWhitelistData);
         // TODO: test validations
     }
     
@@ -133,7 +143,7 @@ public class ApplicationApiTest {
     public void deleteAllowedIpsFromWhitelistTest() throws ApiException {
         List<String> ipWhitelistAddresses = null;
         String apiToken = null;
-                InlineResponse2006 response = api.deleteAllowedIpsFromWhitelist(ipWhitelistAddresses, apiToken);
+                DeleteAllowedIpsFromWhitelistResponse response = api.deleteAllowedIpsFromWhitelist(ipWhitelistAddresses, apiToken);
         // TODO: test validations
     }
     
@@ -149,7 +159,7 @@ public class ApplicationApiTest {
     public void deleteApnsCertificateByIdTest() throws ApiException {
         String providerId = null;
         String apiToken = null;
-                InlineResponse20013 response = api.deleteApnsCertificateById(providerId, apiToken);
+                DeleteApnsCertificateByIdResponse response = api.deleteApnsCertificateById(providerId, apiToken);
         // TODO: test validations
     }
     
@@ -165,7 +175,7 @@ public class ApplicationApiTest {
     public void generateSecondaryApiTokenTest() throws ApiException {
         String apiToken = null;
         GenerateSecondaryApiTokenData generateSecondaryApiTokenData = null;
-                InlineResponse2007 response = api.generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData);
+                GenerateSecondaryApiTokenResponse response = api.generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData);
         // TODO: test validations
     }
     
@@ -181,7 +191,7 @@ public class ApplicationApiTest {
     public void listPushConfigurationsTest() throws ApiException {
         String pushType = null;
         String apiToken = null;
-                InlineResponse20012 response = api.listPushConfigurations(pushType, apiToken);
+                ListPushConfigurationsResponse response = api.listPushConfigurations(pushType, apiToken);
         // TODO: test validations
     }
     
@@ -196,7 +206,7 @@ public class ApplicationApiTest {
     @Test
     public void listPushNotificationContentTemplatesTest() throws ApiException {
         String apiToken = null;
-                InlineResponse2004 response = api.listPushNotificationContentTemplates(apiToken);
+                ListPushNotificationContentTemplatesResponse response = api.listPushNotificationContentTemplates(apiToken);
         // TODO: test validations
     }
     
@@ -211,7 +221,7 @@ public class ApplicationApiTest {
     @Test
     public void listSecondaryApiTokensTest() throws ApiException {
         String apiToken = null;
-                InlineResponse2008 response = api.listSecondaryApiTokens(apiToken);
+                ListSecondaryApiTokensResponse response = api.listSecondaryApiTokens(apiToken);
         // TODO: test validations
     }
     
@@ -228,7 +238,7 @@ public class ApplicationApiTest {
         String pushType = null;
         String providerId = null;
         String apiToken = null;
-                InlineResponse20013 response = api.removePushConfigurationById(pushType, providerId, apiToken);
+                RemovePushConfigurationByIdResponse response = api.removePushConfigurationById(pushType, providerId, apiToken);
         // TODO: test validations
     }
     
@@ -243,7 +253,7 @@ public class ApplicationApiTest {
     @Test
     public void retrieveIpWhitelistTest() throws ApiException {
         String apiToken = null;
-                InlineResponse2006 response = api.retrieveIpWhitelist(apiToken);
+                RetrieveIpWhitelistResponse response = api.retrieveIpWhitelist(apiToken);
         // TODO: test validations
     }
     
@@ -259,7 +269,7 @@ public class ApplicationApiTest {
     public void revokeSecondaryApiTokenByTokenTest() throws ApiException {
         String apiToken2 = null;
         String apiToken = null;
-                InlineResponse2007 response = api.revokeSecondaryApiTokenByToken(apiToken2, apiToken);
+                RevokeSecondaryApiTokenByTokenResponse response = api.revokeSecondaryApiTokenByToken(apiToken2, apiToken);
         // TODO: test validations
     }
     
@@ -276,7 +286,7 @@ public class ApplicationApiTest {
         String providerId = null;
         String apiToken = null;
         UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData = null;
-                InlineResponse20014 response = api.updateApnsPushConfigurationById(providerId, apiToken, updateApnsPushConfigurationByIdData);
+                UpdateApnsPushConfigurationByIdResponse response = api.updateApnsPushConfigurationById(providerId, apiToken, updateApnsPushConfigurationByIdData);
         // TODO: test validations
     }
     
@@ -292,7 +302,7 @@ public class ApplicationApiTest {
     public void updateDefaultChannelInvitationPreferenceTest() throws ApiException {
         String apiToken = null;
         UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData = null;
-                InlineResponse2005 response = api.updateDefaultChannelInvitationPreference(apiToken, updateDefaultChannelInvitationPreferenceData);
+                UpdateDefaultChannelInvitationPreferenceResponse response = api.updateDefaultChannelInvitationPreference(apiToken, updateDefaultChannelInvitationPreferenceData);
         // TODO: test validations
     }
     
@@ -309,7 +319,7 @@ public class ApplicationApiTest {
         String providerId = null;
         String apiToken = null;
         UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData = null;
-                InlineResponse20014 response = api.updateFcmPushConfigurationById(providerId, apiToken, updateFcmPushConfigurationByIdData);
+                UpdateFcmPushConfigurationByIdResponse response = api.updateFcmPushConfigurationById(providerId, apiToken, updateFcmPushConfigurationByIdData);
         // TODO: test validations
     }
     
@@ -326,7 +336,7 @@ public class ApplicationApiTest {
         String providerId = null;
         String apiToken = null;
         UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData = null;
-                InlineResponse20014 response = api.updateHmsPushConfigurationById(providerId, apiToken, updateHmsPushConfigurationByIdData);
+                UpdateHmsPushConfigurationByIdResponse response = api.updateHmsPushConfigurationById(providerId, apiToken, updateHmsPushConfigurationByIdData);
         // TODO: test validations
     }
     
@@ -343,7 +353,7 @@ public class ApplicationApiTest {
         String templateName = null;
         String apiToken = null;
         UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData = null;
-                InlineResponse20015 response = api.updatePushNotificationContentTemplate(templateName, apiToken, updatePushNotificationContentTemplateData);
+                UpdatePushNotificationContentTemplateResponse response = api.updatePushNotificationContentTemplate(templateName, apiToken, updatePushNotificationContentTemplateData);
         // TODO: test validations
     }
     
@@ -358,7 +368,7 @@ public class ApplicationApiTest {
     @Test
     public void viewDefaultChannelInvitationPreferenceTest() throws ApiException {
         String apiToken = null;
-                InlineResponse2005 response = api.viewDefaultChannelInvitationPreference(apiToken);
+                ViewDefaultChannelInvitationPreferenceResponse response = api.viewDefaultChannelInvitationPreference(apiToken);
         // TODO: test validations
     }
     
@@ -373,7 +383,7 @@ public class ApplicationApiTest {
     @Test
     public void viewNumberOfConcurrentConnectionsTest() throws ApiException {
         String apiToken = null;
-                InlineResponse200 response = api.viewNumberOfConcurrentConnections(apiToken);
+                ViewNumberOfConcurrentConnectionsResponse response = api.viewNumberOfConcurrentConnections(apiToken);
         // TODO: test validations
     }
     
@@ -389,7 +399,7 @@ public class ApplicationApiTest {
     public void viewNumberOfDailyActiveUsersTest() throws ApiException {
         String apiToken = null;
         String date = null;
-                InlineResponse20011 response = api.viewNumberOfDailyActiveUsers(apiToken, date);
+                ViewNumberOfDailyActiveUsersResponse response = api.viewNumberOfDailyActiveUsers(apiToken, date);
         // TODO: test validations
     }
     
@@ -405,7 +415,7 @@ public class ApplicationApiTest {
     public void viewNumberOfMonthlyActiveUsersTest() throws ApiException {
         String apiToken = null;
         String date = null;
-                InlineResponse20010 response = api.viewNumberOfMonthlyActiveUsers(apiToken, date);
+                ViewNumberOfMonthlyActiveUsersResponse response = api.viewNumberOfMonthlyActiveUsers(apiToken, date);
         // TODO: test validations
     }
     
@@ -427,7 +437,7 @@ public class ApplicationApiTest {
         String apiToken = null;
         Integer startDay = null;
         Integer endDay = null;
-                InlineResponse2009 response = api.viewNumberOfPeakConnections(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay);
+                ViewNumberOfPeakConnectionsResponse response = api.viewNumberOfPeakConnections(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay);
         // TODO: test validations
     }
     
@@ -444,7 +454,7 @@ public class ApplicationApiTest {
         String pushType = null;
         String providerId = null;
         String apiToken = null;
-                InlineResponse20012 response = api.viewPushConfigurationById(pushType, providerId, apiToken);
+                ViewPushConfigurationByIdResponse response = api.viewPushConfigurationById(pushType, providerId, apiToken);
         // TODO: test validations
     }
     
@@ -460,7 +470,7 @@ public class ApplicationApiTest {
     public void viewPushNotificationContentTemplateTest() throws ApiException {
         String templateName = null;
         String apiToken = null;
-                InlineResponse20015 response = api.viewPushNotificationContentTemplate(templateName, apiToken);
+                ViewPushNotificationContentTemplateResponse response = api.viewPushNotificationContentTemplate(templateName, apiToken);
         // TODO: test validations
     }
     
@@ -476,7 +486,7 @@ public class ApplicationApiTest {
     public void viewSecondaryApiTokenByTokenTest() throws ApiException {
         String apiToken2 = null;
         String apiToken = null;
-                InlineResponse2007 response = api.viewSecondaryApiTokenByToken(apiToken2, apiToken);
+                ViewSecondaryApiTokenByTokenResponse response = api.viewSecondaryApiTokenByToken(apiToken2, apiToken);
         // TODO: test validations
     }
     

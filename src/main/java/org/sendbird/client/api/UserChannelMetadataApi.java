@@ -29,14 +29,15 @@ import java.io.IOException;
 
 import org.openapitools.client.model.CreateChannelMetacounterData;
 import org.openapitools.client.model.CreateChannelMetadataData;
+import org.openapitools.client.model.CreateChannelMetadataResponse;
 import org.openapitools.client.model.CreateUserMetadataData;
-import org.openapitools.client.model.InlineResponse20047UserMetadata;
-import org.openapitools.client.model.InlineResponse20060;
-import org.openapitools.client.model.InlineResponse20061;
+import org.openapitools.client.model.CreateUserMetadataResponse;
 import org.openapitools.client.model.SendBirdAdditionalProperties;
 import org.openapitools.client.model.UpdateChannelMetacounterData;
 import org.openapitools.client.model.UpdateChannelMetadataData;
 import org.openapitools.client.model.UpdateUserMetadataData;
+import org.openapitools.client.model.UpdateUserMetadataResponse;
+import org.openapitools.client.model.ViewUserMetadataResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -324,7 +325,7 @@ public class UserChannelMetadataApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param createChannelMetadataData  (optional)
-     * @return InlineResponse20061
+     * @return CreateChannelMetadataResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -332,8 +333,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20061 createChannelMetadata(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
-        ApiResponse<InlineResponse20061> localVarResp = createChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, createChannelMetadataData);
+    public CreateChannelMetadataResponse createChannelMetadata(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
+        ApiResponse<CreateChannelMetadataResponse> localVarResp = createChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, createChannelMetadataData);
         return localVarResp.getData();
     }
 
@@ -344,7 +345,7 @@ public class UserChannelMetadataApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param createChannelMetadataData  (optional)
-     * @return ApiResponse&lt;InlineResponse20061&gt;
+     * @return ApiResponse&lt;CreateChannelMetadataResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -352,9 +353,9 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20061> createChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
+    public ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
         okhttp3.Call localVarCall = createChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, createChannelMetadataData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20061>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateChannelMetadataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -374,10 +375,10 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createChannelMetadataAsync(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData, final ApiCallback<InlineResponse20061> _callback) throws ApiException {
+    public okhttp3.Call createChannelMetadataAsync(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData, final ApiCallback<CreateChannelMetadataResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, createChannelMetadataData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20061>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateChannelMetadataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -466,7 +467,7 @@ public class UserChannelMetadataApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param createUserMetadataData  (optional)
-     * @return InlineResponse20047UserMetadata
+     * @return CreateUserMetadataResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -474,8 +475,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20047UserMetadata createUserMetadata(String userId, String apiToken, CreateUserMetadataData createUserMetadataData) throws ApiException {
-        ApiResponse<InlineResponse20047UserMetadata> localVarResp = createUserMetadataWithHttpInfo(userId, apiToken, createUserMetadataData);
+    public CreateUserMetadataResponse createUserMetadata(String userId, String apiToken, CreateUserMetadataData createUserMetadataData) throws ApiException {
+        ApiResponse<CreateUserMetadataResponse> localVarResp = createUserMetadataWithHttpInfo(userId, apiToken, createUserMetadataData);
         return localVarResp.getData();
     }
 
@@ -485,7 +486,7 @@ public class UserChannelMetadataApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param createUserMetadataData  (optional)
-     * @return ApiResponse&lt;InlineResponse20047UserMetadata&gt;
+     * @return ApiResponse&lt;CreateUserMetadataResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -493,9 +494,9 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20047UserMetadata> createUserMetadataWithHttpInfo(String userId, String apiToken, CreateUserMetadataData createUserMetadataData) throws ApiException {
+    public ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(String userId, String apiToken, CreateUserMetadataData createUserMetadataData) throws ApiException {
         okhttp3.Call localVarCall = createUserMetadataValidateBeforeCall(userId, apiToken, createUserMetadataData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20047UserMetadata>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateUserMetadataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -514,10 +515,10 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createUserMetadataAsync(String userId, String apiToken, CreateUserMetadataData createUserMetadataData, final ApiCallback<InlineResponse20047UserMetadata> _callback) throws ApiException {
+    public okhttp3.Call createUserMetadataAsync(String userId, String apiToken, CreateUserMetadataData createUserMetadataData, final ApiCallback<CreateUserMetadataResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createUserMetadataValidateBeforeCall(userId, apiToken, createUserMetadataData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20047UserMetadata>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateUserMetadataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2104,7 +2105,7 @@ public class UserChannelMetadataApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param updateUserMetadataData  (optional)
-     * @return InlineResponse20060
+     * @return UpdateUserMetadataResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2112,8 +2113,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20060 updateUserMetadata(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
-        ApiResponse<InlineResponse20060> localVarResp = updateUserMetadataWithHttpInfo(userId, apiToken, updateUserMetadataData);
+    public UpdateUserMetadataResponse updateUserMetadata(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
+        ApiResponse<UpdateUserMetadataResponse> localVarResp = updateUserMetadataWithHttpInfo(userId, apiToken, updateUserMetadataData);
         return localVarResp.getData();
     }
 
@@ -2123,7 +2124,7 @@ public class UserChannelMetadataApi {
      * @param userId  (required)
      * @param apiToken  (optional)
      * @param updateUserMetadataData  (optional)
-     * @return ApiResponse&lt;InlineResponse20060&gt;
+     * @return ApiResponse&lt;UpdateUserMetadataResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2131,9 +2132,9 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20060> updateUserMetadataWithHttpInfo(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
+    public ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
         okhttp3.Call localVarCall = updateUserMetadataValidateBeforeCall(userId, apiToken, updateUserMetadataData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20060>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateUserMetadataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2152,10 +2153,10 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserMetadataAsync(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData, final ApiCallback<InlineResponse20060> _callback) throws ApiException {
+    public okhttp3.Call updateUserMetadataAsync(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData, final ApiCallback<UpdateUserMetadataResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateUserMetadataValidateBeforeCall(userId, apiToken, updateUserMetadataData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20060>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateUserMetadataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3040,7 +3041,7 @@ public class UserChannelMetadataApi {
      * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
-     * @return InlineResponse20047UserMetadata
+     * @return ViewUserMetadataResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3048,8 +3049,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20047UserMetadata viewUserMetadata(String userId, String apiToken, String key, List<String> keys) throws ApiException {
-        ApiResponse<InlineResponse20047UserMetadata> localVarResp = viewUserMetadataWithHttpInfo(userId, apiToken, key, keys);
+    public ViewUserMetadataResponse viewUserMetadata(String userId, String apiToken, String key, List<String> keys) throws ApiException {
+        ApiResponse<ViewUserMetadataResponse> localVarResp = viewUserMetadataWithHttpInfo(userId, apiToken, key, keys);
         return localVarResp.getData();
     }
 
@@ -3060,7 +3061,7 @@ public class UserChannelMetadataApi {
      * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
-     * @return ApiResponse&lt;InlineResponse20047UserMetadata&gt;
+     * @return ApiResponse&lt;ViewUserMetadataResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3068,9 +3069,9 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20047UserMetadata> viewUserMetadataWithHttpInfo(String userId, String apiToken, String key, List<String> keys) throws ApiException {
+    public ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(String userId, String apiToken, String key, List<String> keys) throws ApiException {
         okhttp3.Call localVarCall = viewUserMetadataValidateBeforeCall(userId, apiToken, key, keys, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20047UserMetadata>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewUserMetadataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3090,10 +3091,10 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewUserMetadataAsync(String userId, String apiToken, String key, List<String> keys, final ApiCallback<InlineResponse20047UserMetadata> _callback) throws ApiException {
+    public okhttp3.Call viewUserMetadataAsync(String userId, String apiToken, String key, List<String> keys, final ApiCallback<ViewUserMetadataResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewUserMetadataValidateBeforeCall(userId, apiToken, key, keys, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20047UserMetadata>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewUserMetadataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

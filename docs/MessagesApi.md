@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 <a name="addExtraDataToMessage"></a>
 # **addExtraDataToMessage**
-> InlineResponse20054 addExtraDataToMessage(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData)
+> AddExtraDataToMessageResponse addExtraDataToMessage(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData)
 
 Add extra data to a message
 
@@ -51,7 +51,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     AddExtraDataToMessageData addExtraDataToMessageData = new AddExtraDataToMessageData(); // AddExtraDataToMessageData | 
     try {
-      InlineResponse20054 result = apiInstance.addExtraDataToMessage(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData);
+      AddExtraDataToMessageResponse result = apiInstance.addExtraDataToMessage(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#addExtraDataToMessage");
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20054**](InlineResponse20054.md)
+[**AddExtraDataToMessageResponse**](AddExtraDataToMessageResponse.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ No authorization required
 
 <a name="addReactionToAMessage"></a>
 # **addReactionToAMessage**
-> InlineResponse20053 addReactionToAMessage(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData)
+> AddReactionToAMessageResponse addReactionToAMessage(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData)
 
 Add a reaction to a message
 
@@ -121,7 +121,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     AddReactionToAMessageData addReactionToAMessageData = new AddReactionToAMessageData(); // AddReactionToAMessageData | 
     try {
-      InlineResponse20053 result = apiInstance.addReactionToAMessage(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData);
+      AddReactionToAMessageResponse result = apiInstance.addReactionToAMessage(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#addReactionToAMessage");
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20053**](InlineResponse20053.md)
+[**AddReactionToAMessageResponse**](AddReactionToAMessageResponse.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ No authorization required
 
 <a name="gcMarkAllMessagesAsDelivered"></a>
 # **gcMarkAllMessagesAsDelivered**
-> InlineResponse20050 gcMarkAllMessagesAsDelivered(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData)
+> GcMarkAllMessagesAsDeliveredResponse gcMarkAllMessagesAsDelivered(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData)
 
 Mark all messages as delivered
 
@@ -256,7 +256,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData = new GcMarkAllMessagesAsDeliveredData(); // GcMarkAllMessagesAsDeliveredData | 
     try {
-      InlineResponse20050 result = apiInstance.gcMarkAllMessagesAsDelivered(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData);
+      GcMarkAllMessagesAsDeliveredResponse result = apiInstance.gcMarkAllMessagesAsDelivered(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#gcMarkAllMessagesAsDelivered");
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20050**](InlineResponse20050.md)
+[**GcMarkAllMessagesAsDeliveredResponse**](GcMarkAllMessagesAsDeliveredResponse.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ No authorization required
 
 <a name="gcViewNumberOfEachMembersUnreadMessages"></a>
 # **gcViewNumberOfEachMembersUnreadMessages**
-> InlineResponse20049 gcViewNumberOfEachMembersUnreadMessages(channelUrl, apiToken, userIds)
+> GcViewNumberOfEachMembersUnreadMessagesResponse gcViewNumberOfEachMembersUnreadMessages(channelUrl, apiToken, userIds)
 
 View number of each member&#39;s unread messages
 
@@ -387,7 +387,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String userIds = "userIds_example"; // String | 
     try {
-      InlineResponse20049 result = apiInstance.gcViewNumberOfEachMembersUnreadMessages(channelUrl, apiToken, userIds);
+      GcViewNumberOfEachMembersUnreadMessagesResponse result = apiInstance.gcViewNumberOfEachMembersUnreadMessages(channelUrl, apiToken, userIds);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#gcViewNumberOfEachMembersUnreadMessages");
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20049**](InlineResponse20049.md)
+[**GcViewNumberOfEachMembersUnreadMessagesResponse**](GcViewNumberOfEachMembersUnreadMessagesResponse.md)
 
 ### Authorization
 
@@ -428,7 +428,7 @@ No authorization required
 
 <a name="listMessages"></a>
 # **listMessages**
-> InlineResponse20047 listMessages(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray)
+> ListMessagesResponse listMessages(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray)
 
 List messages
 
@@ -471,7 +471,7 @@ public class Example {
     String customType = "customType_example"; // String | 
     Boolean withMetaArray = true; // Boolean | 
     try {
-      InlineResponse20047 result = apiInstance.listMessages(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+      ListMessagesResponse result = apiInstance.listMessages(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#listMessages");
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20047**](InlineResponse20047.md)
+[**ListMessagesResponse**](ListMessagesResponse.md)
 
 ### Authorization
 
@@ -530,7 +530,7 @@ No authorization required
 
 <a name="listReactionsOfMessage"></a>
 # **listReactionsOfMessage**
-> InlineResponse20052 listReactionsOfMessage(channelType, channelUrl, messageId, apiToken, listUsers)
+> ListReactionsOfMessageResponse listReactionsOfMessage(channelType, channelUrl, messageId, apiToken, listUsers)
 
 List reactions of a message
 
@@ -557,7 +557,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     Boolean listUsers = true; // Boolean | 
     try {
-      InlineResponse20052 result = apiInstance.listReactionsOfMessage(channelType, channelUrl, messageId, apiToken, listUsers);
+      ListReactionsOfMessageResponse result = apiInstance.listReactionsOfMessage(channelType, channelUrl, messageId, apiToken, listUsers);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#listReactionsOfMessage");
@@ -582,7 +582,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20052**](InlineResponse20052.md)
+[**ListReactionsOfMessageResponse**](ListReactionsOfMessageResponse.md)
 
 ### Authorization
 
@@ -669,7 +669,7 @@ No authorization required
 
 <a name="removeReactionFromAMessage"></a>
 # **removeReactionFromAMessage**
-> InlineResponse20053 removeReactionFromAMessage(channelType, channelUrl, messageId, apiToken, userId, reaction)
+> RemoveReactionFromAMessageResponse removeReactionFromAMessage(channelType, channelUrl, messageId, apiToken, userId, reaction)
 
 Remove a reaction from a message
 
@@ -697,7 +697,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     String reaction = "reaction_example"; // String | 
     try {
-      InlineResponse20053 result = apiInstance.removeReactionFromAMessage(channelType, channelUrl, messageId, apiToken, userId, reaction);
+      RemoveReactionFromAMessageResponse result = apiInstance.removeReactionFromAMessage(channelType, channelUrl, messageId, apiToken, userId, reaction);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#removeReactionFromAMessage");
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20053**](InlineResponse20053.md)
+[**RemoveReactionFromAMessageResponse**](RemoveReactionFromAMessageResponse.md)
 
 ### Authorization
 
@@ -879,7 +879,7 @@ No authorization required
 
 <a name="updateExtraDataInMessage"></a>
 # **updateExtraDataInMessage**
-> InlineResponse20054 updateExtraDataInMessage(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData)
+> UpdateExtraDataInMessageResponse updateExtraDataInMessage(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData)
 
 Update extra data in a message
 
@@ -906,7 +906,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateExtraDataInMessageData updateExtraDataInMessageData = new UpdateExtraDataInMessageData(); // UpdateExtraDataInMessageData | 
     try {
-      InlineResponse20054 result = apiInstance.updateExtraDataInMessage(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData);
+      UpdateExtraDataInMessageResponse result = apiInstance.updateExtraDataInMessage(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#updateExtraDataInMessage");
@@ -931,7 +931,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20054**](InlineResponse20054.md)
+[**UpdateExtraDataInMessageResponse**](UpdateExtraDataInMessageResponse.md)
 
 ### Authorization
 
@@ -1091,7 +1091,7 @@ No authorization required
 
 <a name="viewTotalNumberOfMessagesInChannel"></a>
 # **viewTotalNumberOfMessagesInChannel**
-> InlineResponse20048 viewTotalNumberOfMessagesInChannel(channelType, channelUrl, apiToken)
+> ViewTotalNumberOfMessagesInChannelResponse viewTotalNumberOfMessagesInChannel(channelType, channelUrl, apiToken)
 
 View total number of messages in a channel
 
@@ -1116,7 +1116,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20048 result = apiInstance.viewTotalNumberOfMessagesInChannel(channelType, channelUrl, apiToken);
+      ViewTotalNumberOfMessagesInChannelResponse result = apiInstance.viewTotalNumberOfMessagesInChannel(channelType, channelUrl, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#viewTotalNumberOfMessagesInChannel");
@@ -1139,7 +1139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20048**](InlineResponse20048.md)
+[**ViewTotalNumberOfMessagesInChannelResponse**](ViewTotalNumberOfMessagesInChannelResponse.md)
 
 ### Authorization
 

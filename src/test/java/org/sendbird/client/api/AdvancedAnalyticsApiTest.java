@@ -14,7 +14,7 @@
 package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
-import org.openapitools.client.model.InlineResponse20062;
+import org.openapitools.client.model.RetrieveAdvancedAnalyticsMetricsResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -43,7 +43,7 @@ public class AdvancedAnalyticsApiTest {
     @Test
     public void retrieveAdvancedAnalyticsMetricsTest() throws ApiException {
         String apiToken = null;
-                InlineResponse20062 response = api.retrieveAdvancedAnalyticsMetrics(apiToken);
+                RetrieveAdvancedAnalyticsMetricsResponse response = api.retrieveAdvancedAnalyticsMetrics(apiToken);
         // TODO: test validations
     }
     

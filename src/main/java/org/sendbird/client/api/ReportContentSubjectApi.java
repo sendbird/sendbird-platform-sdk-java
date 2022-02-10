@@ -27,12 +27,16 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse20070;
-import org.openapitools.client.model.InlineResponse20071;
-import org.openapitools.client.model.InlineResponse20071ReportLogs;
+import org.openapitools.client.model.ListReportsOnChannelByUrlResponse;
+import org.openapitools.client.model.ListReportsOnMessageByIdResponse;
+import org.openapitools.client.model.ListReportsOnUserByIdResponse;
+import org.openapitools.client.model.ListReportsResponse;
 import org.openapitools.client.model.ReportChannelByUrlData;
+import org.openapitools.client.model.ReportChannelByUrlResponse;
 import org.openapitools.client.model.ReportMessageByIdData;
+import org.openapitools.client.model.ReportMessageByIdResponse;
 import org.openapitools.client.model.ReportUserByIdData;
+import org.openapitools.client.model.ReportUserByIdResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -176,7 +180,7 @@ public class ReportContentSubjectApi {
      * @param limit  (optional)
      * @param startTs  (optional)
      * @param endTs  (optional)
-     * @return InlineResponse20070
+     * @return ListReportsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -184,8 +188,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20070 listReports(String apiToken, String token, Integer limit, Integer startTs, Integer endTs) throws ApiException {
-        ApiResponse<InlineResponse20070> localVarResp = listReportsWithHttpInfo(apiToken, token, limit, startTs, endTs);
+    public ListReportsResponse listReports(String apiToken, String token, Integer limit, Integer startTs, Integer endTs) throws ApiException {
+        ApiResponse<ListReportsResponse> localVarResp = listReportsWithHttpInfo(apiToken, token, limit, startTs, endTs);
         return localVarResp.getData();
     }
 
@@ -197,7 +201,7 @@ public class ReportContentSubjectApi {
      * @param limit  (optional)
      * @param startTs  (optional)
      * @param endTs  (optional)
-     * @return ApiResponse&lt;InlineResponse20070&gt;
+     * @return ApiResponse&lt;ListReportsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -205,9 +209,9 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20070> listReportsWithHttpInfo(String apiToken, String token, Integer limit, Integer startTs, Integer endTs) throws ApiException {
+    public ApiResponse<ListReportsResponse> listReportsWithHttpInfo(String apiToken, String token, Integer limit, Integer startTs, Integer endTs) throws ApiException {
         okhttp3.Call localVarCall = listReportsValidateBeforeCall(apiToken, token, limit, startTs, endTs, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20070>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListReportsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -228,10 +232,10 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsAsync(String apiToken, String token, Integer limit, Integer startTs, Integer endTs, final ApiCallback<InlineResponse20070> _callback) throws ApiException {
+    public okhttp3.Call listReportsAsync(String apiToken, String token, Integer limit, Integer startTs, Integer endTs, final ApiCallback<ListReportsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listReportsValidateBeforeCall(apiToken, token, limit, startTs, endTs, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20070>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListReportsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -338,7 +342,7 @@ public class ReportContentSubjectApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20071
+     * @return ListReportsOnChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -346,8 +350,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20071 listReportsOnChannelByUrl(String channelType, String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20071> localVarResp = listReportsOnChannelByUrlWithHttpInfo(channelType, channelUrl, apiToken, token, limit);
+    public ListReportsOnChannelByUrlResponse listReportsOnChannelByUrl(String channelType, String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<ListReportsOnChannelByUrlResponse> localVarResp = listReportsOnChannelByUrlWithHttpInfo(channelType, channelUrl, apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -359,7 +363,7 @@ public class ReportContentSubjectApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20071&gt;
+     * @return ApiResponse&lt;ListReportsOnChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -367,9 +371,9 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20071> listReportsOnChannelByUrlWithHttpInfo(String channelType, String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrlWithHttpInfo(String channelType, String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listReportsOnChannelByUrlValidateBeforeCall(channelType, channelUrl, apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20071>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListReportsOnChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -390,10 +394,10 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsOnChannelByUrlAsync(String channelType, String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20071> _callback) throws ApiException {
+    public okhttp3.Call listReportsOnChannelByUrlAsync(String channelType, String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<ListReportsOnChannelByUrlResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listReportsOnChannelByUrlValidateBeforeCall(channelType, channelUrl, apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20071>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListReportsOnChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -508,7 +512,7 @@ public class ReportContentSubjectApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20071
+     * @return ListReportsOnMessageByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -516,8 +520,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20071 listReportsOnMessageById(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20071> localVarResp = listReportsOnMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, token, limit);
+    public ListReportsOnMessageByIdResponse listReportsOnMessageById(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<ListReportsOnMessageByIdResponse> localVarResp = listReportsOnMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -530,7 +534,7 @@ public class ReportContentSubjectApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20071&gt;
+     * @return ApiResponse&lt;ListReportsOnMessageByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -538,9 +542,9 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20071> listReportsOnMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listReportsOnMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20071>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListReportsOnMessageByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -562,10 +566,10 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsOnMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20071> _callback) throws ApiException {
+    public okhttp3.Call listReportsOnMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit, final ApiCallback<ListReportsOnMessageByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listReportsOnMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20071>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListReportsOnMessageByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -664,7 +668,7 @@ public class ReportContentSubjectApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20071
+     * @return ListReportsOnUserByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -672,8 +676,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20071 listReportsOnUserById(String offendingUserId, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20071> localVarResp = listReportsOnUserByIdWithHttpInfo(offendingUserId, apiToken, token, limit);
+    public ListReportsOnUserByIdResponse listReportsOnUserById(String offendingUserId, String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<ListReportsOnUserByIdResponse> localVarResp = listReportsOnUserByIdWithHttpInfo(offendingUserId, apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -684,7 +688,7 @@ public class ReportContentSubjectApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20071&gt;
+     * @return ApiResponse&lt;ListReportsOnUserByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -692,9 +696,9 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20071> listReportsOnUserByIdWithHttpInfo(String offendingUserId, String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttpInfo(String offendingUserId, String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listReportsOnUserByIdValidateBeforeCall(offendingUserId, apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20071>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListReportsOnUserByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -714,10 +718,10 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsOnUserByIdAsync(String offendingUserId, String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20071> _callback) throws ApiException {
+    public okhttp3.Call listReportsOnUserByIdAsync(String offendingUserId, String apiToken, String token, Integer limit, final ApiCallback<ListReportsOnUserByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listReportsOnUserByIdValidateBeforeCall(offendingUserId, apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20071>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListReportsOnUserByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -814,7 +818,7 @@ public class ReportContentSubjectApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param reportChannelByUrlData  (optional)
-     * @return InlineResponse20071ReportLogs
+     * @return ReportChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -822,8 +826,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20071ReportLogs reportChannelByUrl(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
-        ApiResponse<InlineResponse20071ReportLogs> localVarResp = reportChannelByUrlWithHttpInfo(channelType, channelUrl, apiToken, reportChannelByUrlData);
+    public ReportChannelByUrlResponse reportChannelByUrl(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
+        ApiResponse<ReportChannelByUrlResponse> localVarResp = reportChannelByUrlWithHttpInfo(channelType, channelUrl, apiToken, reportChannelByUrlData);
         return localVarResp.getData();
     }
 
@@ -834,7 +838,7 @@ public class ReportContentSubjectApi {
      * @param channelUrl  (required)
      * @param apiToken  (optional)
      * @param reportChannelByUrlData  (optional)
-     * @return ApiResponse&lt;InlineResponse20071ReportLogs&gt;
+     * @return ApiResponse&lt;ReportChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -842,9 +846,9 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20071ReportLogs> reportChannelByUrlWithHttpInfo(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
+    public ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
         okhttp3.Call localVarCall = reportChannelByUrlValidateBeforeCall(channelType, channelUrl, apiToken, reportChannelByUrlData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20071ReportLogs>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReportChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -864,10 +868,10 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call reportChannelByUrlAsync(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData, final ApiCallback<InlineResponse20071ReportLogs> _callback) throws ApiException {
+    public okhttp3.Call reportChannelByUrlAsync(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData, final ApiCallback<ReportChannelByUrlResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = reportChannelByUrlValidateBeforeCall(channelType, channelUrl, apiToken, reportChannelByUrlData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20071ReportLogs>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReportChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -972,7 +976,7 @@ public class ReportContentSubjectApi {
      * @param messageId  (required)
      * @param apiToken  (optional)
      * @param reportMessageByIdData  (optional)
-     * @return InlineResponse20071ReportLogs
+     * @return ReportMessageByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -980,8 +984,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20071ReportLogs reportMessageById(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData) throws ApiException {
-        ApiResponse<InlineResponse20071ReportLogs> localVarResp = reportMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, reportMessageByIdData);
+    public ReportMessageByIdResponse reportMessageById(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData) throws ApiException {
+        ApiResponse<ReportMessageByIdResponse> localVarResp = reportMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, reportMessageByIdData);
         return localVarResp.getData();
     }
 
@@ -993,7 +997,7 @@ public class ReportContentSubjectApi {
      * @param messageId  (required)
      * @param apiToken  (optional)
      * @param reportMessageByIdData  (optional)
-     * @return ApiResponse&lt;InlineResponse20071ReportLogs&gt;
+     * @return ApiResponse&lt;ReportMessageByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1001,9 +1005,9 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20071ReportLogs> reportMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData) throws ApiException {
+    public ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData) throws ApiException {
         okhttp3.Call localVarCall = reportMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, reportMessageByIdData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20071ReportLogs>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReportMessageByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1024,10 +1028,10 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call reportMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData, final ApiCallback<InlineResponse20071ReportLogs> _callback) throws ApiException {
+    public okhttp3.Call reportMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData, final ApiCallback<ReportMessageByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = reportMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, reportMessageByIdData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20071ReportLogs>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReportMessageByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1116,7 +1120,7 @@ public class ReportContentSubjectApi {
      * @param offendingUserId  (required)
      * @param apiToken  (optional)
      * @param reportUserByIdData  (optional)
-     * @return InlineResponse20071ReportLogs
+     * @return ReportUserByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1124,8 +1128,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20071ReportLogs reportUserById(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData) throws ApiException {
-        ApiResponse<InlineResponse20071ReportLogs> localVarResp = reportUserByIdWithHttpInfo(offendingUserId, apiToken, reportUserByIdData);
+    public ReportUserByIdResponse reportUserById(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData) throws ApiException {
+        ApiResponse<ReportUserByIdResponse> localVarResp = reportUserByIdWithHttpInfo(offendingUserId, apiToken, reportUserByIdData);
         return localVarResp.getData();
     }
 
@@ -1135,7 +1139,7 @@ public class ReportContentSubjectApi {
      * @param offendingUserId  (required)
      * @param apiToken  (optional)
      * @param reportUserByIdData  (optional)
-     * @return ApiResponse&lt;InlineResponse20071ReportLogs&gt;
+     * @return ApiResponse&lt;ReportUserByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1143,9 +1147,9 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20071ReportLogs> reportUserByIdWithHttpInfo(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData) throws ApiException {
+    public ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData) throws ApiException {
         okhttp3.Call localVarCall = reportUserByIdValidateBeforeCall(offendingUserId, apiToken, reportUserByIdData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20071ReportLogs>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReportUserByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1164,10 +1168,10 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call reportUserByIdAsync(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData, final ApiCallback<InlineResponse20071ReportLogs> _callback) throws ApiException {
+    public okhttp3.Call reportUserByIdAsync(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData, final ApiCallback<ReportUserByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = reportUserByIdValidateBeforeCall(offendingUserId, apiToken, reportUserByIdData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20071ReportLogs>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReportUserByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

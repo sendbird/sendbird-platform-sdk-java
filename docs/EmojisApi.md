@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addEmojiCategories"></a>
 # **addEmojiCategories**
-> InlineResponse20057 addEmojiCategories(apiToken, body)
+> AddEmojiCategoriesResponse addEmojiCategories(apiToken, body)
 
 Add emoji categories
 
@@ -44,7 +44,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     Object body = null; // Object | 
     try {
-      InlineResponse20057 result = apiInstance.addEmojiCategories(apiToken, body);
+      AddEmojiCategoriesResponse result = apiInstance.addEmojiCategories(apiToken, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#addEmojiCategories");
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20057**](InlineResponse20057.md)
+[**AddEmojiCategoriesResponse**](AddEmojiCategoriesResponse.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ No authorization required
 
 <a name="addEmojis"></a>
 # **addEmojis**
-> InlineResponse20059 addEmojis(apiToken, addEmojisData)
+> AddEmojisResponse addEmojis(apiToken, addEmojisData)
 
 Add emojis
 
@@ -108,7 +108,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     AddEmojisData addEmojisData = new AddEmojisData(); // AddEmojisData | 
     try {
-      InlineResponse20059 result = apiInstance.addEmojis(apiToken, addEmojisData);
+      AddEmojisResponse result = apiInstance.addEmojis(apiToken, addEmojisData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#addEmojis");
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20059**](InlineResponse20059.md)
+[**AddEmojisResponse**](AddEmojisResponse.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ No authorization required
 
 <a name="enableReactions"></a>
 # **enableReactions**
-> InlineResponse20051 enableReactions(apiToken, enableReactionsData)
+> EnableReactionsResponse enableReactions(apiToken, enableReactionsData)
 
 Enable reactions
 
@@ -298,7 +298,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     EnableReactionsData enableReactionsData = new EnableReactionsData(); // EnableReactionsData | 
     try {
-      InlineResponse20051 result = apiInstance.enableReactions(apiToken, enableReactionsData);
+      EnableReactionsResponse result = apiInstance.enableReactions(apiToken, enableReactionsData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#enableReactions");
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20051**](InlineResponse20051.md)
+[**EnableReactionsResponse**](EnableReactionsResponse.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ No authorization required
 
 <a name="listAllEmojisAndEmojiCategories"></a>
 # **listAllEmojisAndEmojiCategories**
-> InlineResponse20056 listAllEmojisAndEmojiCategories(apiToken)
+> ListAllEmojisAndEmojiCategoriesResponse listAllEmojisAndEmojiCategories(apiToken)
 
 List all emojis and emoji categories
 
@@ -489,7 +489,7 @@ public class Example {
     EmojisApi apiInstance = new EmojisApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20056 result = apiInstance.listAllEmojisAndEmojiCategories(apiToken);
+      ListAllEmojisAndEmojiCategoriesResponse result = apiInstance.listAllEmojisAndEmojiCategories(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#listAllEmojisAndEmojiCategories");
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20056**](InlineResponse20056.md)
+[**ListAllEmojisAndEmojiCategoriesResponse**](ListAllEmojisAndEmojiCategoriesResponse.md)
 
 ### Authorization
 
@@ -528,7 +528,7 @@ No authorization required
 
 <a name="listEmojis"></a>
 # **listEmojis**
-> InlineResponse20058 listEmojis(apiToken)
+> ListEmojisResponse listEmojis(apiToken)
 
 List emojis
 
@@ -551,7 +551,7 @@ public class Example {
     EmojisApi apiInstance = new EmojisApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20058 result = apiInstance.listEmojis(apiToken);
+      ListEmojisResponse result = apiInstance.listEmojis(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#listEmojis");
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20058**](InlineResponse20058.md)
+[**ListEmojisResponse**](ListEmojisResponse.md)
 
 ### Authorization
 
@@ -722,7 +722,7 @@ No authorization required
 
 <a name="useDefaultEmojis"></a>
 # **useDefaultEmojis**
-> InlineResponse20055 useDefaultEmojis(apiToken, useDefaultEmojisData)
+> UseDefaultEmojisResponse useDefaultEmojis(apiToken, useDefaultEmojisData)
 
 Use default emojis
 
@@ -746,7 +746,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UseDefaultEmojisData useDefaultEmojisData = new UseDefaultEmojisData(); // UseDefaultEmojisData | 
     try {
-      InlineResponse20055 result = apiInstance.useDefaultEmojis(apiToken, useDefaultEmojisData);
+      UseDefaultEmojisResponse result = apiInstance.useDefaultEmojis(apiToken, useDefaultEmojisData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#useDefaultEmojis");
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20055**](InlineResponse20055.md)
+[**UseDefaultEmojisResponse**](UseDefaultEmojisResponse.md)
 
 ### Authorization
 

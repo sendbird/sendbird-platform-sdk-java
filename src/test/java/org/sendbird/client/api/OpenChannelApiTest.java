@@ -14,20 +14,20 @@
 package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
-import org.openapitools.client.model.InlineResponse20030;
-import org.openapitools.client.model.InlineResponse20031;
-import org.openapitools.client.model.InlineResponse20032;
-import org.openapitools.client.model.InlineResponse20033;
-import org.openapitools.client.model.InlineResponse20033BannedList;
-import org.openapitools.client.model.InlineResponse20034;
-import org.openapitools.client.model.InlineResponse20035;
 import org.openapitools.client.model.OcBanUserData;
+import org.openapitools.client.model.OcBanUserResponse;
 import org.openapitools.client.model.OcCreateChannelData;
 import org.openapitools.client.model.OcFreezeChannelData;
+import org.openapitools.client.model.OcListBannedUsersResponse;
+import org.openapitools.client.model.OcListChannelsResponse;
+import org.openapitools.client.model.OcListMutedUsersResponse;
+import org.openapitools.client.model.OcListOperatorsResponse;
+import org.openapitools.client.model.OcListParticipantsResponse;
 import org.openapitools.client.model.OcMuteUserData;
 import org.openapitools.client.model.OcRegisterOperatorsData;
 import org.openapitools.client.model.OcUpdateBanByIdData;
 import org.openapitools.client.model.OcUpdateChannelByUrlData;
+import org.openapitools.client.model.OcViewMuteByIdResponse;
 import org.openapitools.client.model.SendBirdOpenChannel;
 import org.openapitools.client.model.SendBirdUser;
 import org.junit.Test;
@@ -60,7 +60,7 @@ public class OpenChannelApiTest {
         String channelUrl = null;
         String apiToken = null;
         OcBanUserData ocBanUserData = null;
-                InlineResponse20033BannedList response = api.ocBanUser(channelUrl, apiToken, ocBanUserData);
+                OcBanUserResponse response = api.ocBanUser(channelUrl, apiToken, ocBanUserData);
         // TODO: test validations
     }
     
@@ -145,7 +145,7 @@ public class OpenChannelApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20033 response = api.ocListBannedUsers(channelUrl, apiToken, token, limit);
+                OcListBannedUsersResponse response = api.ocListBannedUsers(channelUrl, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -168,7 +168,7 @@ public class OpenChannelApiTest {
         Boolean showFrozen = null;
         Boolean showMetadata = null;
         String customType = null;
-                InlineResponse20030 response = api.ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType);
+                OcListChannelsResponse response = api.ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType);
         // TODO: test validations
     }
     
@@ -186,7 +186,7 @@ public class OpenChannelApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20031 response = api.ocListMutedUsers(channelUrl, apiToken, token, limit);
+                OcListMutedUsersResponse response = api.ocListMutedUsers(channelUrl, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -204,7 +204,7 @@ public class OpenChannelApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20034 response = api.ocListOperators(channelUrl, apiToken, token, limit);
+                OcListOperatorsResponse response = api.ocListOperators(channelUrl, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -222,7 +222,7 @@ public class OpenChannelApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20032 response = api.ocListParticipants(channelUrl, apiToken, token, limit);
+                OcListParticipantsResponse response = api.ocListParticipants(channelUrl, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -375,7 +375,7 @@ public class OpenChannelApiTest {
         String channelUrl = null;
         String mutedUserId = null;
         String apiToken = null;
-                InlineResponse20035 response = api.ocViewMuteById(channelUrl, mutedUserId, apiToken);
+                OcViewMuteByIdResponse response = api.ocViewMuteById(channelUrl, mutedUserId, apiToken);
         // TODO: test validations
     }
     

@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 <a name="ocBanUser"></a>
 # **ocBanUser**
-> InlineResponse20033BannedList ocBanUser(channelUrl, apiToken, ocBanUserData)
+> OcBanUserResponse ocBanUser(channelUrl, apiToken, ocBanUserData)
 
 Ban a user
 
@@ -52,7 +52,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     OcBanUserData ocBanUserData = new OcBanUserData(); // OcBanUserData | 
     try {
-      InlineResponse20033BannedList result = apiInstance.ocBanUser(channelUrl, apiToken, ocBanUserData);
+      OcBanUserResponse result = apiInstance.ocBanUser(channelUrl, apiToken, ocBanUserData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocBanUser");
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033BannedList**](InlineResponse20033BannedList.md)
+[**OcBanUserResponse**](OcBanUserResponse.md)
 
 ### Authorization
 
@@ -353,7 +353,7 @@ No authorization required
 
 <a name="ocListBannedUsers"></a>
 # **ocListBannedUsers**
-> InlineResponse20033 ocListBannedUsers(channelUrl, apiToken, token, limit)
+> OcListBannedUsersResponse ocListBannedUsers(channelUrl, apiToken, token, limit)
 
 List banned users
 
@@ -379,7 +379,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20033 result = apiInstance.ocListBannedUsers(channelUrl, apiToken, token, limit);
+      OcListBannedUsersResponse result = apiInstance.ocListBannedUsers(channelUrl, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocListBannedUsers");
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](InlineResponse20033.md)
+[**OcListBannedUsersResponse**](OcListBannedUsersResponse.md)
 
 ### Authorization
 
@@ -421,7 +421,7 @@ No authorization required
 
 <a name="ocListChannels"></a>
 # **ocListChannels**
-> InlineResponse20030 ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType)
+> OcListChannelsResponse ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType)
 
 List channels
 
@@ -452,7 +452,7 @@ public class Example {
     Boolean showMetadata = true; // Boolean | 
     String customType = "customType_example"; // String | 
     try {
-      InlineResponse20030 result = apiInstance.ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType);
+      OcListChannelsResponse result = apiInstance.ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocListChannels");
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**OcListChannelsResponse**](OcListChannelsResponse.md)
 
 ### Authorization
 
@@ -499,7 +499,7 @@ No authorization required
 
 <a name="ocListMutedUsers"></a>
 # **ocListMutedUsers**
-> InlineResponse20031 ocListMutedUsers(channelUrl, apiToken, token, limit)
+> OcListMutedUsersResponse ocListMutedUsers(channelUrl, apiToken, token, limit)
 
 List muted users
 
@@ -525,7 +525,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20031 result = apiInstance.ocListMutedUsers(channelUrl, apiToken, token, limit);
+      OcListMutedUsersResponse result = apiInstance.ocListMutedUsers(channelUrl, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocListMutedUsers");
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**OcListMutedUsersResponse**](OcListMutedUsersResponse.md)
 
 ### Authorization
 
@@ -567,7 +567,7 @@ No authorization required
 
 <a name="ocListOperators"></a>
 # **ocListOperators**
-> InlineResponse20034 ocListOperators(channelUrl, apiToken, token, limit)
+> OcListOperatorsResponse ocListOperators(channelUrl, apiToken, token, limit)
 
 List operators
 
@@ -593,7 +593,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20034 result = apiInstance.ocListOperators(channelUrl, apiToken, token, limit);
+      OcListOperatorsResponse result = apiInstance.ocListOperators(channelUrl, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocListOperators");
@@ -617,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](InlineResponse20034.md)
+[**OcListOperatorsResponse**](OcListOperatorsResponse.md)
 
 ### Authorization
 
@@ -635,7 +635,7 @@ No authorization required
 
 <a name="ocListParticipants"></a>
 # **ocListParticipants**
-> InlineResponse20032 ocListParticipants(channelUrl, apiToken, token, limit)
+> OcListParticipantsResponse ocListParticipants(channelUrl, apiToken, token, limit)
 
 List participants
 
@@ -661,7 +661,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20032 result = apiInstance.ocListParticipants(channelUrl, apiToken, token, limit);
+      OcListParticipantsResponse result = apiInstance.ocListParticipants(channelUrl, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocListParticipants");
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**OcListParticipantsResponse**](OcListParticipantsResponse.md)
 
 ### Authorization
 
@@ -1228,7 +1228,7 @@ No authorization required
 
 <a name="ocViewMuteById"></a>
 # **ocViewMuteById**
-> InlineResponse20035 ocViewMuteById(channelUrl, mutedUserId, apiToken)
+> OcViewMuteByIdResponse ocViewMuteById(channelUrl, mutedUserId, apiToken)
 
 View a mute
 
@@ -1253,7 +1253,7 @@ public class Example {
     String mutedUserId = "mutedUserId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20035 result = apiInstance.ocViewMuteById(channelUrl, mutedUserId, apiToken);
+      OcViewMuteByIdResponse result = apiInstance.ocViewMuteById(channelUrl, mutedUserId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocViewMuteById");
@@ -1276,7 +1276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](InlineResponse20035.md)
+[**OcViewMuteByIdResponse**](OcViewMuteByIdResponse.md)
 
 ### Authorization
 

@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ModelObject;
+import org.openapitools.client.model.SBObject;
 import org.openapitools.client.model.SendBirdAppleCriticalAlertOptions;
 import org.openapitools.client.model.SendBirdMessageMetaArray;
 import org.openapitools.client.model.SendBirdMessageResponse;

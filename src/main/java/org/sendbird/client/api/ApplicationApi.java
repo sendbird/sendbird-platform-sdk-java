@@ -28,31 +28,41 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.AddApnsPushConfigurationData;
+import org.openapitools.client.model.AddApnsPushConfigurationResponse;
 import org.openapitools.client.model.AddFcmPushConfigurationData;
+import org.openapitools.client.model.AddFcmPushConfigurationResponse;
 import org.openapitools.client.model.AddHmsPushConfigurationData;
+import org.openapitools.client.model.AddHmsPushConfigurationResponse;
 import org.openapitools.client.model.AddIpToWhitelistData;
+import org.openapitools.client.model.AddIpToWhitelistResponse;
+import org.openapitools.client.model.DeleteAllowedIpsFromWhitelistResponse;
+import org.openapitools.client.model.DeleteApnsCertificateByIdResponse;
 import org.openapitools.client.model.GenerateSecondaryApiTokenData;
-import org.openapitools.client.model.InlineResponse200;
-import org.openapitools.client.model.InlineResponse2001;
-import org.openapitools.client.model.InlineResponse20010;
-import org.openapitools.client.model.InlineResponse20011;
-import org.openapitools.client.model.InlineResponse20012;
-import org.openapitools.client.model.InlineResponse20013;
-import org.openapitools.client.model.InlineResponse20014;
-import org.openapitools.client.model.InlineResponse20015;
-import org.openapitools.client.model.InlineResponse2002;
-import org.openapitools.client.model.InlineResponse2003;
-import org.openapitools.client.model.InlineResponse2004;
-import org.openapitools.client.model.InlineResponse2005;
-import org.openapitools.client.model.InlineResponse2006;
-import org.openapitools.client.model.InlineResponse2007;
-import org.openapitools.client.model.InlineResponse2008;
-import org.openapitools.client.model.InlineResponse2009;
+import org.openapitools.client.model.GenerateSecondaryApiTokenResponse;
+import org.openapitools.client.model.ListPushConfigurationsResponse;
+import org.openapitools.client.model.ListPushNotificationContentTemplatesResponse;
+import org.openapitools.client.model.ListSecondaryApiTokensResponse;
+import org.openapitools.client.model.RemovePushConfigurationByIdResponse;
+import org.openapitools.client.model.RetrieveIpWhitelistResponse;
+import org.openapitools.client.model.RevokeSecondaryApiTokenByTokenResponse;
 import org.openapitools.client.model.UpdateApnsPushConfigurationByIdData;
+import org.openapitools.client.model.UpdateApnsPushConfigurationByIdResponse;
 import org.openapitools.client.model.UpdateDefaultChannelInvitationPreferenceData;
+import org.openapitools.client.model.UpdateDefaultChannelInvitationPreferenceResponse;
 import org.openapitools.client.model.UpdateFcmPushConfigurationByIdData;
+import org.openapitools.client.model.UpdateFcmPushConfigurationByIdResponse;
 import org.openapitools.client.model.UpdateHmsPushConfigurationByIdData;
+import org.openapitools.client.model.UpdateHmsPushConfigurationByIdResponse;
 import org.openapitools.client.model.UpdatePushNotificationContentTemplateData;
+import org.openapitools.client.model.UpdatePushNotificationContentTemplateResponse;
+import org.openapitools.client.model.ViewDefaultChannelInvitationPreferenceResponse;
+import org.openapitools.client.model.ViewNumberOfConcurrentConnectionsResponse;
+import org.openapitools.client.model.ViewNumberOfDailyActiveUsersResponse;
+import org.openapitools.client.model.ViewNumberOfMonthlyActiveUsersResponse;
+import org.openapitools.client.model.ViewNumberOfPeakConnectionsResponse;
+import org.openapitools.client.model.ViewPushConfigurationByIdResponse;
+import org.openapitools.client.model.ViewPushNotificationContentTemplateResponse;
+import org.openapitools.client.model.ViewSecondaryApiTokenByTokenResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -174,7 +184,7 @@ public class ApplicationApi {
      * ## Add an APNs push configuration  Registers an APNs (Apple Push Notification service) push configuration for your client app. To send push notifications to iOS devices, your should first register the APNs push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  &gt; __Note__: To upload a [.p12](https://sendbird.com/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) certificate file to Sendbird server, you should send a [Multipart request](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api#2-headers-3-multipart-requests).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-apns-push-configuration
      * @param apiToken  (optional)
      * @param addApnsPushConfigurationData  (optional)
-     * @return InlineResponse2003
+     * @return AddApnsPushConfigurationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -182,8 +192,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2003 addApnsPushConfiguration(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData) throws ApiException {
-        ApiResponse<InlineResponse2003> localVarResp = addApnsPushConfigurationWithHttpInfo(apiToken, addApnsPushConfigurationData);
+    public AddApnsPushConfigurationResponse addApnsPushConfiguration(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData) throws ApiException {
+        ApiResponse<AddApnsPushConfigurationResponse> localVarResp = addApnsPushConfigurationWithHttpInfo(apiToken, addApnsPushConfigurationData);
         return localVarResp.getData();
     }
 
@@ -192,7 +202,7 @@ public class ApplicationApi {
      * ## Add an APNs push configuration  Registers an APNs (Apple Push Notification service) push configuration for your client app. To send push notifications to iOS devices, your should first register the APNs push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  &gt; __Note__: To upload a [.p12](https://sendbird.com/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) certificate file to Sendbird server, you should send a [Multipart request](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api#2-headers-3-multipart-requests).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-apns-push-configuration
      * @param apiToken  (optional)
      * @param addApnsPushConfigurationData  (optional)
-     * @return ApiResponse&lt;InlineResponse2003&gt;
+     * @return ApiResponse&lt;AddApnsPushConfigurationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -200,9 +210,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2003> addApnsPushConfigurationWithHttpInfo(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData) throws ApiException {
+    public ApiResponse<AddApnsPushConfigurationResponse> addApnsPushConfigurationWithHttpInfo(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData) throws ApiException {
         okhttp3.Call localVarCall = addApnsPushConfigurationValidateBeforeCall(apiToken, addApnsPushConfigurationData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddApnsPushConfigurationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -220,10 +230,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addApnsPushConfigurationAsync(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData, final ApiCallback<InlineResponse2003> _callback) throws ApiException {
+    public okhttp3.Call addApnsPushConfigurationAsync(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData, final ApiCallback<AddApnsPushConfigurationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addApnsPushConfigurationValidateBeforeCall(apiToken, addApnsPushConfigurationData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddApnsPushConfigurationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -304,7 +314,7 @@ public class ApplicationApi {
      * ## Add a FCM push configuration  Registers a FCM (Firebase Cloud Messaging) push configuration for your client app. To send push notifications to Android devices, you should first register the FCM push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-a-fcm-push-configuration
      * @param apiToken  (optional)
      * @param addFcmPushConfigurationData  (optional)
-     * @return InlineResponse2001
+     * @return AddFcmPushConfigurationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -312,8 +322,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 addFcmPushConfiguration(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = addFcmPushConfigurationWithHttpInfo(apiToken, addFcmPushConfigurationData);
+    public AddFcmPushConfigurationResponse addFcmPushConfiguration(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData) throws ApiException {
+        ApiResponse<AddFcmPushConfigurationResponse> localVarResp = addFcmPushConfigurationWithHttpInfo(apiToken, addFcmPushConfigurationData);
         return localVarResp.getData();
     }
 
@@ -322,7 +332,7 @@ public class ApplicationApi {
      * ## Add a FCM push configuration  Registers a FCM (Firebase Cloud Messaging) push configuration for your client app. To send push notifications to Android devices, you should first register the FCM push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-a-fcm-push-configuration
      * @param apiToken  (optional)
      * @param addFcmPushConfigurationData  (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;AddFcmPushConfigurationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -330,9 +340,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> addFcmPushConfigurationWithHttpInfo(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData) throws ApiException {
+    public ApiResponse<AddFcmPushConfigurationResponse> addFcmPushConfigurationWithHttpInfo(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData) throws ApiException {
         okhttp3.Call localVarCall = addFcmPushConfigurationValidateBeforeCall(apiToken, addFcmPushConfigurationData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddFcmPushConfigurationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -350,10 +360,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addFcmPushConfigurationAsync(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call addFcmPushConfigurationAsync(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData, final ApiCallback<AddFcmPushConfigurationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addFcmPushConfigurationValidateBeforeCall(apiToken, addFcmPushConfigurationData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddFcmPushConfigurationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -434,7 +444,7 @@ public class ApplicationApi {
      * ## Add an HMS push configuration  Registers an HMS (Huawei Mobile Services) push configuration for your client app. To send push notifications to Android devices for HMS, you should first register the HMS push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-hms-push-configuration
      * @param apiToken  (optional)
      * @param addHmsPushConfigurationData  (optional)
-     * @return InlineResponse2002
+     * @return AddHmsPushConfigurationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -442,8 +452,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2002 addHmsPushConfiguration(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData) throws ApiException {
-        ApiResponse<InlineResponse2002> localVarResp = addHmsPushConfigurationWithHttpInfo(apiToken, addHmsPushConfigurationData);
+    public AddHmsPushConfigurationResponse addHmsPushConfiguration(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData) throws ApiException {
+        ApiResponse<AddHmsPushConfigurationResponse> localVarResp = addHmsPushConfigurationWithHttpInfo(apiToken, addHmsPushConfigurationData);
         return localVarResp.getData();
     }
 
@@ -452,7 +462,7 @@ public class ApplicationApi {
      * ## Add an HMS push configuration  Registers an HMS (Huawei Mobile Services) push configuration for your client app. To send push notifications to Android devices for HMS, you should first register the HMS push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-hms-push-configuration
      * @param apiToken  (optional)
      * @param addHmsPushConfigurationData  (optional)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse&lt;AddHmsPushConfigurationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -460,9 +470,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2002> addHmsPushConfigurationWithHttpInfo(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData) throws ApiException {
+    public ApiResponse<AddHmsPushConfigurationResponse> addHmsPushConfigurationWithHttpInfo(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData) throws ApiException {
         okhttp3.Call localVarCall = addHmsPushConfigurationValidateBeforeCall(apiToken, addHmsPushConfigurationData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddHmsPushConfigurationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -480,10 +490,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addHmsPushConfigurationAsync(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData, final ApiCallback<InlineResponse2002> _callback) throws ApiException {
+    public okhttp3.Call addHmsPushConfigurationAsync(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData, final ApiCallback<AddHmsPushConfigurationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addHmsPushConfigurationValidateBeforeCall(apiToken, addHmsPushConfigurationData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddHmsPushConfigurationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -564,7 +574,7 @@ public class ApplicationApi {
      * ## Add an IP to a whitelist  Adds IP addresses and ranges to your Sendbird application settings. Both currently added and any previously added IPs are granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-ip-to-a-whitelist
      * @param apiToken  (optional)
      * @param addIpToWhitelistData  (optional)
-     * @return InlineResponse2006
+     * @return AddIpToWhitelistResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -572,8 +582,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2006 addIpToWhitelist(String apiToken, AddIpToWhitelistData addIpToWhitelistData) throws ApiException {
-        ApiResponse<InlineResponse2006> localVarResp = addIpToWhitelistWithHttpInfo(apiToken, addIpToWhitelistData);
+    public AddIpToWhitelistResponse addIpToWhitelist(String apiToken, AddIpToWhitelistData addIpToWhitelistData) throws ApiException {
+        ApiResponse<AddIpToWhitelistResponse> localVarResp = addIpToWhitelistWithHttpInfo(apiToken, addIpToWhitelistData);
         return localVarResp.getData();
     }
 
@@ -582,7 +592,7 @@ public class ApplicationApi {
      * ## Add an IP to a whitelist  Adds IP addresses and ranges to your Sendbird application settings. Both currently added and any previously added IPs are granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-ip-to-a-whitelist
      * @param apiToken  (optional)
      * @param addIpToWhitelistData  (optional)
-     * @return ApiResponse&lt;InlineResponse2006&gt;
+     * @return ApiResponse&lt;AddIpToWhitelistResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -590,9 +600,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2006> addIpToWhitelistWithHttpInfo(String apiToken, AddIpToWhitelistData addIpToWhitelistData) throws ApiException {
+    public ApiResponse<AddIpToWhitelistResponse> addIpToWhitelistWithHttpInfo(String apiToken, AddIpToWhitelistData addIpToWhitelistData) throws ApiException {
         okhttp3.Call localVarCall = addIpToWhitelistValidateBeforeCall(apiToken, addIpToWhitelistData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddIpToWhitelistResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -610,10 +620,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addIpToWhitelistAsync(String apiToken, AddIpToWhitelistData addIpToWhitelistData, final ApiCallback<InlineResponse2006> _callback) throws ApiException {
+    public okhttp3.Call addIpToWhitelistAsync(String apiToken, AddIpToWhitelistData addIpToWhitelistData, final ApiCallback<AddIpToWhitelistResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addIpToWhitelistValidateBeforeCall(apiToken, addIpToWhitelistData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<AddIpToWhitelistResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -703,7 +713,7 @@ public class ApplicationApi {
      * ## Delete allowed IPs from a whitelist  Deletes allowed IPs from the whitelist by specifying their IP addresses or ranges. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-allowed-ips-from-a-whitelist
      * @param ipWhitelistAddresses  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse2006
+     * @return DeleteAllowedIpsFromWhitelistResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -711,8 +721,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2006 deleteAllowedIpsFromWhitelist(List<String> ipWhitelistAddresses, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse2006> localVarResp = deleteAllowedIpsFromWhitelistWithHttpInfo(ipWhitelistAddresses, apiToken);
+    public DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist(List<String> ipWhitelistAddresses, String apiToken) throws ApiException {
+        ApiResponse<DeleteAllowedIpsFromWhitelistResponse> localVarResp = deleteAllowedIpsFromWhitelistWithHttpInfo(ipWhitelistAddresses, apiToken);
         return localVarResp.getData();
     }
 
@@ -721,7 +731,7 @@ public class ApplicationApi {
      * ## Delete allowed IPs from a whitelist  Deletes allowed IPs from the whitelist by specifying their IP addresses or ranges. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-allowed-ips-from-a-whitelist
      * @param ipWhitelistAddresses  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse2006&gt;
+     * @return ApiResponse&lt;DeleteAllowedIpsFromWhitelistResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -729,9 +739,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2006> deleteAllowedIpsFromWhitelistWithHttpInfo(List<String> ipWhitelistAddresses, String apiToken) throws ApiException {
+    public ApiResponse<DeleteAllowedIpsFromWhitelistResponse> deleteAllowedIpsFromWhitelistWithHttpInfo(List<String> ipWhitelistAddresses, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = deleteAllowedIpsFromWhitelistValidateBeforeCall(ipWhitelistAddresses, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeleteAllowedIpsFromWhitelistResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -749,10 +759,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAllowedIpsFromWhitelistAsync(List<String> ipWhitelistAddresses, String apiToken, final ApiCallback<InlineResponse2006> _callback) throws ApiException {
+    public okhttp3.Call deleteAllowedIpsFromWhitelistAsync(List<String> ipWhitelistAddresses, String apiToken, final ApiCallback<DeleteAllowedIpsFromWhitelistResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAllowedIpsFromWhitelistValidateBeforeCall(ipWhitelistAddresses, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeleteAllowedIpsFromWhitelistResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -839,7 +849,7 @@ public class ApplicationApi {
      * ## Delete an APNs certificate  Deletes a specific APNs certificate.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-an-apns-certificate ----------------------------
      * @param providerId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20013
+     * @return DeleteApnsCertificateByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -847,8 +857,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20013 deleteApnsCertificateById(String providerId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20013> localVarResp = deleteApnsCertificateByIdWithHttpInfo(providerId, apiToken);
+    public DeleteApnsCertificateByIdResponse deleteApnsCertificateById(String providerId, String apiToken) throws ApiException {
+        ApiResponse<DeleteApnsCertificateByIdResponse> localVarResp = deleteApnsCertificateByIdWithHttpInfo(providerId, apiToken);
         return localVarResp.getData();
     }
 
@@ -857,7 +867,7 @@ public class ApplicationApi {
      * ## Delete an APNs certificate  Deletes a specific APNs certificate.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-an-apns-certificate ----------------------------
      * @param providerId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20013&gt;
+     * @return ApiResponse&lt;DeleteApnsCertificateByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -865,9 +875,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20013> deleteApnsCertificateByIdWithHttpInfo(String providerId, String apiToken) throws ApiException {
+    public ApiResponse<DeleteApnsCertificateByIdResponse> deleteApnsCertificateByIdWithHttpInfo(String providerId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = deleteApnsCertificateByIdValidateBeforeCall(providerId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeleteApnsCertificateByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -885,10 +895,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteApnsCertificateByIdAsync(String providerId, String apiToken, final ApiCallback<InlineResponse20013> _callback) throws ApiException {
+    public okhttp3.Call deleteApnsCertificateByIdAsync(String providerId, String apiToken, final ApiCallback<DeleteApnsCertificateByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteApnsCertificateByIdValidateBeforeCall(providerId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeleteApnsCertificateByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -969,7 +979,7 @@ public class ApplicationApi {
      * ## Generate a secondary API token  Generates a new secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-generate-a-secondary-api-token
      * @param apiToken  (optional)
      * @param generateSecondaryApiTokenData  (optional)
-     * @return InlineResponse2007
+     * @return GenerateSecondaryApiTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -977,8 +987,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2007 generateSecondaryApiToken(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData) throws ApiException {
-        ApiResponse<InlineResponse2007> localVarResp = generateSecondaryApiTokenWithHttpInfo(apiToken, generateSecondaryApiTokenData);
+    public GenerateSecondaryApiTokenResponse generateSecondaryApiToken(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData) throws ApiException {
+        ApiResponse<GenerateSecondaryApiTokenResponse> localVarResp = generateSecondaryApiTokenWithHttpInfo(apiToken, generateSecondaryApiTokenData);
         return localVarResp.getData();
     }
 
@@ -987,7 +997,7 @@ public class ApplicationApi {
      * ## Generate a secondary API token  Generates a new secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-generate-a-secondary-api-token
      * @param apiToken  (optional)
      * @param generateSecondaryApiTokenData  (optional)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse&lt;GenerateSecondaryApiTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -995,9 +1005,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2007> generateSecondaryApiTokenWithHttpInfo(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData) throws ApiException {
+    public ApiResponse<GenerateSecondaryApiTokenResponse> generateSecondaryApiTokenWithHttpInfo(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData) throws ApiException {
         okhttp3.Call localVarCall = generateSecondaryApiTokenValidateBeforeCall(apiToken, generateSecondaryApiTokenData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<GenerateSecondaryApiTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1015,10 +1025,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generateSecondaryApiTokenAsync(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData, final ApiCallback<InlineResponse2007> _callback) throws ApiException {
+    public okhttp3.Call generateSecondaryApiTokenAsync(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData, final ApiCallback<GenerateSecondaryApiTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = generateSecondaryApiTokenValidateBeforeCall(apiToken, generateSecondaryApiTokenData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<GenerateSecondaryApiTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1105,7 +1115,7 @@ public class ApplicationApi {
      * ## List push configurations  Retrieves a list of an application&#39;s registered push configurations.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-configurations ----------------------------
      * @param pushType  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20012
+     * @return ListPushConfigurationsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1113,8 +1123,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20012 listPushConfigurations(String pushType, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20012> localVarResp = listPushConfigurationsWithHttpInfo(pushType, apiToken);
+    public ListPushConfigurationsResponse listPushConfigurations(String pushType, String apiToken) throws ApiException {
+        ApiResponse<ListPushConfigurationsResponse> localVarResp = listPushConfigurationsWithHttpInfo(pushType, apiToken);
         return localVarResp.getData();
     }
 
@@ -1123,7 +1133,7 @@ public class ApplicationApi {
      * ## List push configurations  Retrieves a list of an application&#39;s registered push configurations.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-configurations ----------------------------
      * @param pushType  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20012&gt;
+     * @return ApiResponse&lt;ListPushConfigurationsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1131,9 +1141,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20012> listPushConfigurationsWithHttpInfo(String pushType, String apiToken) throws ApiException {
+    public ApiResponse<ListPushConfigurationsResponse> listPushConfigurationsWithHttpInfo(String pushType, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = listPushConfigurationsValidateBeforeCall(pushType, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListPushConfigurationsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1151,10 +1161,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPushConfigurationsAsync(String pushType, String apiToken, final ApiCallback<InlineResponse20012> _callback) throws ApiException {
+    public okhttp3.Call listPushConfigurationsAsync(String pushType, String apiToken, final ApiCallback<ListPushConfigurationsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listPushConfigurationsValidateBeforeCall(pushType, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListPushConfigurationsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1233,7 +1243,7 @@ public class ApplicationApi {
      * List push notification content templates
      * ## List push notification content templates  Retrieves a list of push notification content templates of an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-notification-content-templates
      * @param apiToken  (optional)
-     * @return InlineResponse2004
+     * @return ListPushNotificationContentTemplatesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1241,8 +1251,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2004 listPushNotificationContentTemplates(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse2004> localVarResp = listPushNotificationContentTemplatesWithHttpInfo(apiToken);
+    public ListPushNotificationContentTemplatesResponse listPushNotificationContentTemplates(String apiToken) throws ApiException {
+        ApiResponse<ListPushNotificationContentTemplatesResponse> localVarResp = listPushNotificationContentTemplatesWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -1250,7 +1260,7 @@ public class ApplicationApi {
      * List push notification content templates
      * ## List push notification content templates  Retrieves a list of push notification content templates of an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-notification-content-templates
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse2004&gt;
+     * @return ApiResponse&lt;ListPushNotificationContentTemplatesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1258,9 +1268,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2004> listPushNotificationContentTemplatesWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<ListPushNotificationContentTemplatesResponse> listPushNotificationContentTemplatesWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = listPushNotificationContentTemplatesValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListPushNotificationContentTemplatesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1277,10 +1287,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPushNotificationContentTemplatesAsync(String apiToken, final ApiCallback<InlineResponse2004> _callback) throws ApiException {
+    public okhttp3.Call listPushNotificationContentTemplatesAsync(String apiToken, final ApiCallback<ListPushNotificationContentTemplatesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listPushNotificationContentTemplatesValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListPushNotificationContentTemplatesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1359,7 +1369,7 @@ public class ApplicationApi {
      * List secondary API tokens
      * ## List secondary API tokens  Retrieves a list of secondary API tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-secondary-api-tokens
      * @param apiToken  (optional)
-     * @return InlineResponse2008
+     * @return ListSecondaryApiTokensResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1367,8 +1377,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2008 listSecondaryApiTokens(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse2008> localVarResp = listSecondaryApiTokensWithHttpInfo(apiToken);
+    public ListSecondaryApiTokensResponse listSecondaryApiTokens(String apiToken) throws ApiException {
+        ApiResponse<ListSecondaryApiTokensResponse> localVarResp = listSecondaryApiTokensWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -1376,7 +1386,7 @@ public class ApplicationApi {
      * List secondary API tokens
      * ## List secondary API tokens  Retrieves a list of secondary API tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-secondary-api-tokens
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse2008&gt;
+     * @return ApiResponse&lt;ListSecondaryApiTokensResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1384,9 +1394,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2008> listSecondaryApiTokensWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<ListSecondaryApiTokensResponse> listSecondaryApiTokensWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = listSecondaryApiTokensValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListSecondaryApiTokensResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1403,10 +1413,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSecondaryApiTokensAsync(String apiToken, final ApiCallback<InlineResponse2008> _callback) throws ApiException {
+    public okhttp3.Call listSecondaryApiTokensAsync(String apiToken, final ApiCallback<ListSecondaryApiTokensResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSecondaryApiTokensValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListSecondaryApiTokensResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1501,7 +1511,7 @@ public class ApplicationApi {
      * @param pushType  (required)
      * @param providerId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20013
+     * @return RemovePushConfigurationByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1509,8 +1519,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20013 removePushConfigurationById(String pushType, String providerId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20013> localVarResp = removePushConfigurationByIdWithHttpInfo(pushType, providerId, apiToken);
+    public RemovePushConfigurationByIdResponse removePushConfigurationById(String pushType, String providerId, String apiToken) throws ApiException {
+        ApiResponse<RemovePushConfigurationByIdResponse> localVarResp = removePushConfigurationByIdWithHttpInfo(pushType, providerId, apiToken);
         return localVarResp.getData();
     }
 
@@ -1520,7 +1530,7 @@ public class ApplicationApi {
      * @param pushType  (required)
      * @param providerId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20013&gt;
+     * @return ApiResponse&lt;RemovePushConfigurationByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1528,9 +1538,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20013> removePushConfigurationByIdWithHttpInfo(String pushType, String providerId, String apiToken) throws ApiException {
+    public ApiResponse<RemovePushConfigurationByIdResponse> removePushConfigurationByIdWithHttpInfo(String pushType, String providerId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = removePushConfigurationByIdValidateBeforeCall(pushType, providerId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<RemovePushConfigurationByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1549,10 +1559,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removePushConfigurationByIdAsync(String pushType, String providerId, String apiToken, final ApiCallback<InlineResponse20013> _callback) throws ApiException {
+    public okhttp3.Call removePushConfigurationByIdAsync(String pushType, String providerId, String apiToken, final ApiCallback<RemovePushConfigurationByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removePushConfigurationByIdValidateBeforeCall(pushType, providerId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<RemovePushConfigurationByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1631,7 +1641,7 @@ public class ApplicationApi {
      * Retrieve an IP whitelist
      * ## Retrieve an IP whitelist  Retrieves a list of all the IP ranges and addresses that have access to your Sendbird application. This list is called an IP whitelist and its addresses are granted API access when the IP whitelist API enables [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notations.  If you specify which IP addresses or ranges to include in the whitelist, any unlisted foreign IP addresses will be denied access. If you don&#39;t specify any IP address or range to include in the whitelist, all IP addresses will be granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-retrieve-an-ip-whitelist
      * @param apiToken  (optional)
-     * @return InlineResponse2006
+     * @return RetrieveIpWhitelistResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1639,8 +1649,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2006 retrieveIpWhitelist(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse2006> localVarResp = retrieveIpWhitelistWithHttpInfo(apiToken);
+    public RetrieveIpWhitelistResponse retrieveIpWhitelist(String apiToken) throws ApiException {
+        ApiResponse<RetrieveIpWhitelistResponse> localVarResp = retrieveIpWhitelistWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -1648,7 +1658,7 @@ public class ApplicationApi {
      * Retrieve an IP whitelist
      * ## Retrieve an IP whitelist  Retrieves a list of all the IP ranges and addresses that have access to your Sendbird application. This list is called an IP whitelist and its addresses are granted API access when the IP whitelist API enables [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notations.  If you specify which IP addresses or ranges to include in the whitelist, any unlisted foreign IP addresses will be denied access. If you don&#39;t specify any IP address or range to include in the whitelist, all IP addresses will be granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-retrieve-an-ip-whitelist
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse2006&gt;
+     * @return ApiResponse&lt;RetrieveIpWhitelistResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1656,9 +1666,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2006> retrieveIpWhitelistWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<RetrieveIpWhitelistResponse> retrieveIpWhitelistWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = retrieveIpWhitelistValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<RetrieveIpWhitelistResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1675,10 +1685,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call retrieveIpWhitelistAsync(String apiToken, final ApiCallback<InlineResponse2006> _callback) throws ApiException {
+    public okhttp3.Call retrieveIpWhitelistAsync(String apiToken, final ApiCallback<RetrieveIpWhitelistResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = retrieveIpWhitelistValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<RetrieveIpWhitelistResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1765,7 +1775,7 @@ public class ApplicationApi {
      * ## Revoke a secondary API token  Revokes a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-revoke-a-secondary-api-token
      * @param apiToken2  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse2007
+     * @return RevokeSecondaryApiTokenByTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1773,8 +1783,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2007 revokeSecondaryApiTokenByToken(String apiToken2, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse2007> localVarResp = revokeSecondaryApiTokenByTokenWithHttpInfo(apiToken2, apiToken);
+    public RevokeSecondaryApiTokenByTokenResponse revokeSecondaryApiTokenByToken(String apiToken2, String apiToken) throws ApiException {
+        ApiResponse<RevokeSecondaryApiTokenByTokenResponse> localVarResp = revokeSecondaryApiTokenByTokenWithHttpInfo(apiToken2, apiToken);
         return localVarResp.getData();
     }
 
@@ -1783,7 +1793,7 @@ public class ApplicationApi {
      * ## Revoke a secondary API token  Revokes a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-revoke-a-secondary-api-token
      * @param apiToken2  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse&lt;RevokeSecondaryApiTokenByTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1791,9 +1801,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2007> revokeSecondaryApiTokenByTokenWithHttpInfo(String apiToken2, String apiToken) throws ApiException {
+    public ApiResponse<RevokeSecondaryApiTokenByTokenResponse> revokeSecondaryApiTokenByTokenWithHttpInfo(String apiToken2, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = revokeSecondaryApiTokenByTokenValidateBeforeCall(apiToken2, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<RevokeSecondaryApiTokenByTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1811,10 +1821,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call revokeSecondaryApiTokenByTokenAsync(String apiToken2, String apiToken, final ApiCallback<InlineResponse2007> _callback) throws ApiException {
+    public okhttp3.Call revokeSecondaryApiTokenByTokenAsync(String apiToken2, String apiToken, final ApiCallback<RevokeSecondaryApiTokenByTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = revokeSecondaryApiTokenByTokenValidateBeforeCall(apiToken2, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<RevokeSecondaryApiTokenByTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1903,7 +1913,7 @@ public class ApplicationApi {
      * @param providerId  (required)
      * @param apiToken  (optional)
      * @param updateApnsPushConfigurationByIdData  (optional)
-     * @return InlineResponse20014
+     * @return UpdateApnsPushConfigurationByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1911,8 +1921,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20014 updateApnsPushConfigurationById(String providerId, String apiToken, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData) throws ApiException {
-        ApiResponse<InlineResponse20014> localVarResp = updateApnsPushConfigurationByIdWithHttpInfo(providerId, apiToken, updateApnsPushConfigurationByIdData);
+    public UpdateApnsPushConfigurationByIdResponse updateApnsPushConfigurationById(String providerId, String apiToken, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData) throws ApiException {
+        ApiResponse<UpdateApnsPushConfigurationByIdResponse> localVarResp = updateApnsPushConfigurationByIdWithHttpInfo(providerId, apiToken, updateApnsPushConfigurationByIdData);
         return localVarResp.getData();
     }
 
@@ -1922,7 +1932,7 @@ public class ApplicationApi {
      * @param providerId  (required)
      * @param apiToken  (optional)
      * @param updateApnsPushConfigurationByIdData  (optional)
-     * @return ApiResponse&lt;InlineResponse20014&gt;
+     * @return ApiResponse&lt;UpdateApnsPushConfigurationByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1930,9 +1940,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20014> updateApnsPushConfigurationByIdWithHttpInfo(String providerId, String apiToken, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData) throws ApiException {
+    public ApiResponse<UpdateApnsPushConfigurationByIdResponse> updateApnsPushConfigurationByIdWithHttpInfo(String providerId, String apiToken, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData) throws ApiException {
         okhttp3.Call localVarCall = updateApnsPushConfigurationByIdValidateBeforeCall(providerId, apiToken, updateApnsPushConfigurationByIdData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateApnsPushConfigurationByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1951,10 +1961,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateApnsPushConfigurationByIdAsync(String providerId, String apiToken, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData, final ApiCallback<InlineResponse20014> _callback) throws ApiException {
+    public okhttp3.Call updateApnsPushConfigurationByIdAsync(String providerId, String apiToken, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData, final ApiCallback<UpdateApnsPushConfigurationByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateApnsPushConfigurationByIdValidateBeforeCall(providerId, apiToken, updateApnsPushConfigurationByIdData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateApnsPushConfigurationByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2035,7 +2045,7 @@ public class ApplicationApi {
      * ## Update default channel invitation preference  Updates the default channel invitation preference of an application.  &gt; __Note__: Using the [update channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action, you can update the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference
      * @param apiToken  (optional)
      * @param updateDefaultChannelInvitationPreferenceData  (optional)
-     * @return InlineResponse2005
+     * @return UpdateDefaultChannelInvitationPreferenceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2043,8 +2053,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2005 updateDefaultChannelInvitationPreference(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData) throws ApiException {
-        ApiResponse<InlineResponse2005> localVarResp = updateDefaultChannelInvitationPreferenceWithHttpInfo(apiToken, updateDefaultChannelInvitationPreferenceData);
+    public UpdateDefaultChannelInvitationPreferenceResponse updateDefaultChannelInvitationPreference(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData) throws ApiException {
+        ApiResponse<UpdateDefaultChannelInvitationPreferenceResponse> localVarResp = updateDefaultChannelInvitationPreferenceWithHttpInfo(apiToken, updateDefaultChannelInvitationPreferenceData);
         return localVarResp.getData();
     }
 
@@ -2053,7 +2063,7 @@ public class ApplicationApi {
      * ## Update default channel invitation preference  Updates the default channel invitation preference of an application.  &gt; __Note__: Using the [update channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action, you can update the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference
      * @param apiToken  (optional)
      * @param updateDefaultChannelInvitationPreferenceData  (optional)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;UpdateDefaultChannelInvitationPreferenceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2061,9 +2071,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2005> updateDefaultChannelInvitationPreferenceWithHttpInfo(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData) throws ApiException {
+    public ApiResponse<UpdateDefaultChannelInvitationPreferenceResponse> updateDefaultChannelInvitationPreferenceWithHttpInfo(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData) throws ApiException {
         okhttp3.Call localVarCall = updateDefaultChannelInvitationPreferenceValidateBeforeCall(apiToken, updateDefaultChannelInvitationPreferenceData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateDefaultChannelInvitationPreferenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2081,10 +2091,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateDefaultChannelInvitationPreferenceAsync(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData, final ApiCallback<InlineResponse2005> _callback) throws ApiException {
+    public okhttp3.Call updateDefaultChannelInvitationPreferenceAsync(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData, final ApiCallback<UpdateDefaultChannelInvitationPreferenceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateDefaultChannelInvitationPreferenceValidateBeforeCall(apiToken, updateDefaultChannelInvitationPreferenceData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateDefaultChannelInvitationPreferenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2173,7 +2183,7 @@ public class ApplicationApi {
      * @param providerId  (required)
      * @param apiToken  (optional)
      * @param updateFcmPushConfigurationByIdData  (optional)
-     * @return InlineResponse20014
+     * @return UpdateFcmPushConfigurationByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2181,8 +2191,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20014 updateFcmPushConfigurationById(String providerId, String apiToken, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData) throws ApiException {
-        ApiResponse<InlineResponse20014> localVarResp = updateFcmPushConfigurationByIdWithHttpInfo(providerId, apiToken, updateFcmPushConfigurationByIdData);
+    public UpdateFcmPushConfigurationByIdResponse updateFcmPushConfigurationById(String providerId, String apiToken, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData) throws ApiException {
+        ApiResponse<UpdateFcmPushConfigurationByIdResponse> localVarResp = updateFcmPushConfigurationByIdWithHttpInfo(providerId, apiToken, updateFcmPushConfigurationByIdData);
         return localVarResp.getData();
     }
 
@@ -2192,7 +2202,7 @@ public class ApplicationApi {
      * @param providerId  (required)
      * @param apiToken  (optional)
      * @param updateFcmPushConfigurationByIdData  (optional)
-     * @return ApiResponse&lt;InlineResponse20014&gt;
+     * @return ApiResponse&lt;UpdateFcmPushConfigurationByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2200,9 +2210,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20014> updateFcmPushConfigurationByIdWithHttpInfo(String providerId, String apiToken, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData) throws ApiException {
+    public ApiResponse<UpdateFcmPushConfigurationByIdResponse> updateFcmPushConfigurationByIdWithHttpInfo(String providerId, String apiToken, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData) throws ApiException {
         okhttp3.Call localVarCall = updateFcmPushConfigurationByIdValidateBeforeCall(providerId, apiToken, updateFcmPushConfigurationByIdData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateFcmPushConfigurationByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2221,10 +2231,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateFcmPushConfigurationByIdAsync(String providerId, String apiToken, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData, final ApiCallback<InlineResponse20014> _callback) throws ApiException {
+    public okhttp3.Call updateFcmPushConfigurationByIdAsync(String providerId, String apiToken, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData, final ApiCallback<UpdateFcmPushConfigurationByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateFcmPushConfigurationByIdValidateBeforeCall(providerId, apiToken, updateFcmPushConfigurationByIdData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateFcmPushConfigurationByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2313,7 +2323,7 @@ public class ApplicationApi {
      * @param providerId  (required)
      * @param apiToken  (optional)
      * @param updateHmsPushConfigurationByIdData  (optional)
-     * @return InlineResponse20014
+     * @return UpdateHmsPushConfigurationByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2321,8 +2331,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20014 updateHmsPushConfigurationById(String providerId, String apiToken, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData) throws ApiException {
-        ApiResponse<InlineResponse20014> localVarResp = updateHmsPushConfigurationByIdWithHttpInfo(providerId, apiToken, updateHmsPushConfigurationByIdData);
+    public UpdateHmsPushConfigurationByIdResponse updateHmsPushConfigurationById(String providerId, String apiToken, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData) throws ApiException {
+        ApiResponse<UpdateHmsPushConfigurationByIdResponse> localVarResp = updateHmsPushConfigurationByIdWithHttpInfo(providerId, apiToken, updateHmsPushConfigurationByIdData);
         return localVarResp.getData();
     }
 
@@ -2332,7 +2342,7 @@ public class ApplicationApi {
      * @param providerId  (required)
      * @param apiToken  (optional)
      * @param updateHmsPushConfigurationByIdData  (optional)
-     * @return ApiResponse&lt;InlineResponse20014&gt;
+     * @return ApiResponse&lt;UpdateHmsPushConfigurationByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2340,9 +2350,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20014> updateHmsPushConfigurationByIdWithHttpInfo(String providerId, String apiToken, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData) throws ApiException {
+    public ApiResponse<UpdateHmsPushConfigurationByIdResponse> updateHmsPushConfigurationByIdWithHttpInfo(String providerId, String apiToken, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData) throws ApiException {
         okhttp3.Call localVarCall = updateHmsPushConfigurationByIdValidateBeforeCall(providerId, apiToken, updateHmsPushConfigurationByIdData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateHmsPushConfigurationByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2361,10 +2371,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateHmsPushConfigurationByIdAsync(String providerId, String apiToken, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData, final ApiCallback<InlineResponse20014> _callback) throws ApiException {
+    public okhttp3.Call updateHmsPushConfigurationByIdAsync(String providerId, String apiToken, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData, final ApiCallback<UpdateHmsPushConfigurationByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateHmsPushConfigurationByIdValidateBeforeCall(providerId, apiToken, updateHmsPushConfigurationByIdData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateHmsPushConfigurationByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2453,7 +2463,7 @@ public class ApplicationApi {
      * @param templateName  (required)
      * @param apiToken  (optional)
      * @param updatePushNotificationContentTemplateData  (optional)
-     * @return InlineResponse20015
+     * @return UpdatePushNotificationContentTemplateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2461,8 +2471,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20015 updatePushNotificationContentTemplate(String templateName, String apiToken, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData) throws ApiException {
-        ApiResponse<InlineResponse20015> localVarResp = updatePushNotificationContentTemplateWithHttpInfo(templateName, apiToken, updatePushNotificationContentTemplateData);
+    public UpdatePushNotificationContentTemplateResponse updatePushNotificationContentTemplate(String templateName, String apiToken, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData) throws ApiException {
+        ApiResponse<UpdatePushNotificationContentTemplateResponse> localVarResp = updatePushNotificationContentTemplateWithHttpInfo(templateName, apiToken, updatePushNotificationContentTemplateData);
         return localVarResp.getData();
     }
 
@@ -2472,7 +2482,7 @@ public class ApplicationApi {
      * @param templateName  (required)
      * @param apiToken  (optional)
      * @param updatePushNotificationContentTemplateData  (optional)
-     * @return ApiResponse&lt;InlineResponse20015&gt;
+     * @return ApiResponse&lt;UpdatePushNotificationContentTemplateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2480,9 +2490,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20015> updatePushNotificationContentTemplateWithHttpInfo(String templateName, String apiToken, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData) throws ApiException {
+    public ApiResponse<UpdatePushNotificationContentTemplateResponse> updatePushNotificationContentTemplateWithHttpInfo(String templateName, String apiToken, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData) throws ApiException {
         okhttp3.Call localVarCall = updatePushNotificationContentTemplateValidateBeforeCall(templateName, apiToken, updatePushNotificationContentTemplateData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20015>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatePushNotificationContentTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2501,10 +2511,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePushNotificationContentTemplateAsync(String templateName, String apiToken, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData, final ApiCallback<InlineResponse20015> _callback) throws ApiException {
+    public okhttp3.Call updatePushNotificationContentTemplateAsync(String templateName, String apiToken, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData, final ApiCallback<UpdatePushNotificationContentTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePushNotificationContentTemplateValidateBeforeCall(templateName, apiToken, updatePushNotificationContentTemplateData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20015>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatePushNotificationContentTemplateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2583,7 +2593,7 @@ public class ApplicationApi {
      * View default channel invitation preference
      * ## View default channel invitation preference  Retrieves the default channel invitation preference of an application.  &gt; __Note__: Using the [view channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference) action, you can retrieve the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference
      * @param apiToken  (optional)
-     * @return InlineResponse2005
+     * @return ViewDefaultChannelInvitationPreferenceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2591,8 +2601,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2005 viewDefaultChannelInvitationPreference(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse2005> localVarResp = viewDefaultChannelInvitationPreferenceWithHttpInfo(apiToken);
+    public ViewDefaultChannelInvitationPreferenceResponse viewDefaultChannelInvitationPreference(String apiToken) throws ApiException {
+        ApiResponse<ViewDefaultChannelInvitationPreferenceResponse> localVarResp = viewDefaultChannelInvitationPreferenceWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -2600,7 +2610,7 @@ public class ApplicationApi {
      * View default channel invitation preference
      * ## View default channel invitation preference  Retrieves the default channel invitation preference of an application.  &gt; __Note__: Using the [view channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference) action, you can retrieve the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;ViewDefaultChannelInvitationPreferenceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2608,9 +2618,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2005> viewDefaultChannelInvitationPreferenceWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<ViewDefaultChannelInvitationPreferenceResponse> viewDefaultChannelInvitationPreferenceWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewDefaultChannelInvitationPreferenceValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewDefaultChannelInvitationPreferenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2627,10 +2637,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewDefaultChannelInvitationPreferenceAsync(String apiToken, final ApiCallback<InlineResponse2005> _callback) throws ApiException {
+    public okhttp3.Call viewDefaultChannelInvitationPreferenceAsync(String apiToken, final ApiCallback<ViewDefaultChannelInvitationPreferenceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewDefaultChannelInvitationPreferenceValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewDefaultChannelInvitationPreferenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2709,7 +2719,7 @@ public class ApplicationApi {
      * View number of concurrent connections
      * ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
      * @param apiToken  (optional)
-     * @return InlineResponse200
+     * @return ViewNumberOfConcurrentConnectionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2717,8 +2727,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse200 viewNumberOfConcurrentConnections(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = viewNumberOfConcurrentConnectionsWithHttpInfo(apiToken);
+    public ViewNumberOfConcurrentConnectionsResponse viewNumberOfConcurrentConnections(String apiToken) throws ApiException {
+        ApiResponse<ViewNumberOfConcurrentConnectionsResponse> localVarResp = viewNumberOfConcurrentConnectionsWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -2726,7 +2736,7 @@ public class ApplicationApi {
      * View number of concurrent connections
      * ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;ViewNumberOfConcurrentConnectionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2734,9 +2744,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse200> viewNumberOfConcurrentConnectionsWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<ViewNumberOfConcurrentConnectionsResponse> viewNumberOfConcurrentConnectionsWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewNumberOfConcurrentConnectionsValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfConcurrentConnectionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2753,10 +2763,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfConcurrentConnectionsAsync(String apiToken, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfConcurrentConnectionsAsync(String apiToken, final ApiCallback<ViewNumberOfConcurrentConnectionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewNumberOfConcurrentConnectionsValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfConcurrentConnectionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2841,7 +2851,7 @@ public class ApplicationApi {
      * ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
      * @param apiToken  (optional)
      * @param date  (optional)
-     * @return InlineResponse20011
+     * @return ViewNumberOfDailyActiveUsersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2849,8 +2859,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20011 viewNumberOfDailyActiveUsers(String apiToken, String date) throws ApiException {
-        ApiResponse<InlineResponse20011> localVarResp = viewNumberOfDailyActiveUsersWithHttpInfo(apiToken, date);
+    public ViewNumberOfDailyActiveUsersResponse viewNumberOfDailyActiveUsers(String apiToken, String date) throws ApiException {
+        ApiResponse<ViewNumberOfDailyActiveUsersResponse> localVarResp = viewNumberOfDailyActiveUsersWithHttpInfo(apiToken, date);
         return localVarResp.getData();
     }
 
@@ -2859,7 +2869,7 @@ public class ApplicationApi {
      * ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
      * @param apiToken  (optional)
      * @param date  (optional)
-     * @return ApiResponse&lt;InlineResponse20011&gt;
+     * @return ApiResponse&lt;ViewNumberOfDailyActiveUsersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2867,9 +2877,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20011> viewNumberOfDailyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
+    public ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
         okhttp3.Call localVarCall = viewNumberOfDailyActiveUsersValidateBeforeCall(apiToken, date, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfDailyActiveUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2887,10 +2897,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfDailyActiveUsersAsync(String apiToken, String date, final ApiCallback<InlineResponse20011> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfDailyActiveUsersAsync(String apiToken, String date, final ApiCallback<ViewNumberOfDailyActiveUsersResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewNumberOfDailyActiveUsersValidateBeforeCall(apiToken, date, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfDailyActiveUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2975,7 +2985,7 @@ public class ApplicationApi {
      * ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
      * @param apiToken  (optional)
      * @param date  (optional)
-     * @return InlineResponse20010
+     * @return ViewNumberOfMonthlyActiveUsersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2983,8 +2993,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20010 viewNumberOfMonthlyActiveUsers(String apiToken, String date) throws ApiException {
-        ApiResponse<InlineResponse20010> localVarResp = viewNumberOfMonthlyActiveUsersWithHttpInfo(apiToken, date);
+    public ViewNumberOfMonthlyActiveUsersResponse viewNumberOfMonthlyActiveUsers(String apiToken, String date) throws ApiException {
+        ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> localVarResp = viewNumberOfMonthlyActiveUsersWithHttpInfo(apiToken, date);
         return localVarResp.getData();
     }
 
@@ -2993,7 +3003,7 @@ public class ApplicationApi {
      * ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
      * @param apiToken  (optional)
      * @param date  (optional)
-     * @return ApiResponse&lt;InlineResponse20010&gt;
+     * @return ApiResponse&lt;ViewNumberOfMonthlyActiveUsersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3001,9 +3011,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20010> viewNumberOfMonthlyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
+    public ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
         okhttp3.Call localVarCall = viewNumberOfMonthlyActiveUsersValidateBeforeCall(apiToken, date, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfMonthlyActiveUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3021,10 +3031,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfMonthlyActiveUsersAsync(String apiToken, String date, final ApiCallback<InlineResponse20010> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfMonthlyActiveUsersAsync(String apiToken, String date, final ApiCallback<ViewNumberOfMonthlyActiveUsersResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewNumberOfMonthlyActiveUsersValidateBeforeCall(apiToken, date, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfMonthlyActiveUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3170,7 +3180,7 @@ public class ApplicationApi {
      * @param apiToken  (optional)
      * @param startDay  (optional)
      * @param endDay  (optional)
-     * @return InlineResponse2009
+     * @return ViewNumberOfPeakConnectionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3178,8 +3188,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2009 viewNumberOfPeakConnections(String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, String apiToken, Integer startDay, Integer endDay) throws ApiException {
-        ApiResponse<InlineResponse2009> localVarResp = viewNumberOfPeakConnectionsWithHttpInfo(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay);
+    public ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections(String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, String apiToken, Integer startDay, Integer endDay) throws ApiException {
+        ApiResponse<ViewNumberOfPeakConnectionsResponse> localVarResp = viewNumberOfPeakConnectionsWithHttpInfo(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay);
         return localVarResp.getData();
     }
 
@@ -3194,7 +3204,7 @@ public class ApplicationApi {
      * @param apiToken  (optional)
      * @param startDay  (optional)
      * @param endDay  (optional)
-     * @return ApiResponse&lt;InlineResponse2009&gt;
+     * @return ApiResponse&lt;ViewNumberOfPeakConnectionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3202,9 +3212,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2009> viewNumberOfPeakConnectionsWithHttpInfo(String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, String apiToken, Integer startDay, Integer endDay) throws ApiException {
+    public ApiResponse<ViewNumberOfPeakConnectionsResponse> viewNumberOfPeakConnectionsWithHttpInfo(String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, String apiToken, Integer startDay, Integer endDay) throws ApiException {
         okhttp3.Call localVarCall = viewNumberOfPeakConnectionsValidateBeforeCall(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfPeakConnectionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3228,10 +3238,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfPeakConnectionsAsync(String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, String apiToken, Integer startDay, Integer endDay, final ApiCallback<InlineResponse2009> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfPeakConnectionsAsync(String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, String apiToken, Integer startDay, Integer endDay, final ApiCallback<ViewNumberOfPeakConnectionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewNumberOfPeakConnectionsValidateBeforeCall(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewNumberOfPeakConnectionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3326,7 +3336,7 @@ public class ApplicationApi {
      * @param pushType  (required)
      * @param providerId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20012
+     * @return ViewPushConfigurationByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3334,8 +3344,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20012 viewPushConfigurationById(String pushType, String providerId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20012> localVarResp = viewPushConfigurationByIdWithHttpInfo(pushType, providerId, apiToken);
+    public ViewPushConfigurationByIdResponse viewPushConfigurationById(String pushType, String providerId, String apiToken) throws ApiException {
+        ApiResponse<ViewPushConfigurationByIdResponse> localVarResp = viewPushConfigurationByIdWithHttpInfo(pushType, providerId, apiToken);
         return localVarResp.getData();
     }
 
@@ -3345,7 +3355,7 @@ public class ApplicationApi {
      * @param pushType  (required)
      * @param providerId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20012&gt;
+     * @return ApiResponse&lt;ViewPushConfigurationByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3353,9 +3363,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20012> viewPushConfigurationByIdWithHttpInfo(String pushType, String providerId, String apiToken) throws ApiException {
+    public ApiResponse<ViewPushConfigurationByIdResponse> viewPushConfigurationByIdWithHttpInfo(String pushType, String providerId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewPushConfigurationByIdValidateBeforeCall(pushType, providerId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewPushConfigurationByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3374,10 +3384,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewPushConfigurationByIdAsync(String pushType, String providerId, String apiToken, final ApiCallback<InlineResponse20012> _callback) throws ApiException {
+    public okhttp3.Call viewPushConfigurationByIdAsync(String pushType, String providerId, String apiToken, final ApiCallback<ViewPushConfigurationByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewPushConfigurationByIdValidateBeforeCall(pushType, providerId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewPushConfigurationByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3464,7 +3474,7 @@ public class ApplicationApi {
      * ## View a push notification content template  Retrieves information on a specific push notification content templates of an application. The name of a content template is either &#x60;default&#x60; or &#x60;alternative&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-notification-content-template ----------------------------
      * @param templateName  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20015
+     * @return ViewPushNotificationContentTemplateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3472,8 +3482,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20015 viewPushNotificationContentTemplate(String templateName, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20015> localVarResp = viewPushNotificationContentTemplateWithHttpInfo(templateName, apiToken);
+    public ViewPushNotificationContentTemplateResponse viewPushNotificationContentTemplate(String templateName, String apiToken) throws ApiException {
+        ApiResponse<ViewPushNotificationContentTemplateResponse> localVarResp = viewPushNotificationContentTemplateWithHttpInfo(templateName, apiToken);
         return localVarResp.getData();
     }
 
@@ -3482,7 +3492,7 @@ public class ApplicationApi {
      * ## View a push notification content template  Retrieves information on a specific push notification content templates of an application. The name of a content template is either &#x60;default&#x60; or &#x60;alternative&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-notification-content-template ----------------------------
      * @param templateName  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20015&gt;
+     * @return ApiResponse&lt;ViewPushNotificationContentTemplateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3490,9 +3500,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20015> viewPushNotificationContentTemplateWithHttpInfo(String templateName, String apiToken) throws ApiException {
+    public ApiResponse<ViewPushNotificationContentTemplateResponse> viewPushNotificationContentTemplateWithHttpInfo(String templateName, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewPushNotificationContentTemplateValidateBeforeCall(templateName, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20015>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewPushNotificationContentTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3510,10 +3520,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewPushNotificationContentTemplateAsync(String templateName, String apiToken, final ApiCallback<InlineResponse20015> _callback) throws ApiException {
+    public okhttp3.Call viewPushNotificationContentTemplateAsync(String templateName, String apiToken, final ApiCallback<ViewPushNotificationContentTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewPushNotificationContentTemplateValidateBeforeCall(templateName, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20015>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewPushNotificationContentTemplateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3600,7 +3610,7 @@ public class ApplicationApi {
      * ## View a secondary API token  Retrieves the information on a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-secondary-api-token
      * @param apiToken2  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse2007
+     * @return ViewSecondaryApiTokenByTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3608,8 +3618,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2007 viewSecondaryApiTokenByToken(String apiToken2, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse2007> localVarResp = viewSecondaryApiTokenByTokenWithHttpInfo(apiToken2, apiToken);
+    public ViewSecondaryApiTokenByTokenResponse viewSecondaryApiTokenByToken(String apiToken2, String apiToken) throws ApiException {
+        ApiResponse<ViewSecondaryApiTokenByTokenResponse> localVarResp = viewSecondaryApiTokenByTokenWithHttpInfo(apiToken2, apiToken);
         return localVarResp.getData();
     }
 
@@ -3618,7 +3628,7 @@ public class ApplicationApi {
      * ## View a secondary API token  Retrieves the information on a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-secondary-api-token
      * @param apiToken2  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse&lt;ViewSecondaryApiTokenByTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3626,9 +3636,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2007> viewSecondaryApiTokenByTokenWithHttpInfo(String apiToken2, String apiToken) throws ApiException {
+    public ApiResponse<ViewSecondaryApiTokenByTokenResponse> viewSecondaryApiTokenByTokenWithHttpInfo(String apiToken2, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewSecondaryApiTokenByTokenValidateBeforeCall(apiToken2, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewSecondaryApiTokenByTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3646,10 +3656,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewSecondaryApiTokenByTokenAsync(String apiToken2, String apiToken, final ApiCallback<InlineResponse2007> _callback) throws ApiException {
+    public okhttp3.Call viewSecondaryApiTokenByTokenAsync(String apiToken2, String apiToken, final ApiCallback<ViewSecondaryApiTokenByTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewSecondaryApiTokenByTokenValidateBeforeCall(apiToken2, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewSecondaryApiTokenByTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

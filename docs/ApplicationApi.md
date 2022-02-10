@@ -34,7 +34,7 @@ Method | HTTP request | Description
 
 <a name="addApnsPushConfiguration"></a>
 # **addApnsPushConfiguration**
-> InlineResponse2003 addApnsPushConfiguration(apiToken, addApnsPushConfigurationData)
+> AddApnsPushConfigurationResponse addApnsPushConfiguration(apiToken, addApnsPushConfigurationData)
 
 Add an APNs push configuration
 
@@ -58,7 +58,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     AddApnsPushConfigurationData addApnsPushConfigurationData = new AddApnsPushConfigurationData(); // AddApnsPushConfigurationData | 
     try {
-      InlineResponse2003 result = apiInstance.addApnsPushConfiguration(apiToken, addApnsPushConfigurationData);
+      AddApnsPushConfigurationResponse result = apiInstance.addApnsPushConfiguration(apiToken, addApnsPushConfigurationData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#addApnsPushConfiguration");
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**AddApnsPushConfigurationResponse**](AddApnsPushConfigurationResponse.md)
 
 ### Authorization
 
@@ -98,7 +98,7 @@ No authorization required
 
 <a name="addFcmPushConfiguration"></a>
 # **addFcmPushConfiguration**
-> InlineResponse2001 addFcmPushConfiguration(apiToken, addFcmPushConfigurationData)
+> AddFcmPushConfigurationResponse addFcmPushConfiguration(apiToken, addFcmPushConfigurationData)
 
 Add a FCM push configuration
 
@@ -122,7 +122,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     AddFcmPushConfigurationData addFcmPushConfigurationData = new AddFcmPushConfigurationData(); // AddFcmPushConfigurationData | 
     try {
-      InlineResponse2001 result = apiInstance.addFcmPushConfiguration(apiToken, addFcmPushConfigurationData);
+      AddFcmPushConfigurationResponse result = apiInstance.addFcmPushConfiguration(apiToken, addFcmPushConfigurationData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#addFcmPushConfiguration");
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**AddFcmPushConfigurationResponse**](AddFcmPushConfigurationResponse.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ No authorization required
 
 <a name="addHmsPushConfiguration"></a>
 # **addHmsPushConfiguration**
-> InlineResponse2002 addHmsPushConfiguration(apiToken, addHmsPushConfigurationData)
+> AddHmsPushConfigurationResponse addHmsPushConfiguration(apiToken, addHmsPushConfigurationData)
 
 Add an HMS push configuration
 
@@ -186,7 +186,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     AddHmsPushConfigurationData addHmsPushConfigurationData = new AddHmsPushConfigurationData(); // AddHmsPushConfigurationData | 
     try {
-      InlineResponse2002 result = apiInstance.addHmsPushConfiguration(apiToken, addHmsPushConfigurationData);
+      AddHmsPushConfigurationResponse result = apiInstance.addHmsPushConfiguration(apiToken, addHmsPushConfigurationData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#addHmsPushConfiguration");
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**AddHmsPushConfigurationResponse**](AddHmsPushConfigurationResponse.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ No authorization required
 
 <a name="addIpToWhitelist"></a>
 # **addIpToWhitelist**
-> InlineResponse2006 addIpToWhitelist(apiToken, addIpToWhitelistData)
+> AddIpToWhitelistResponse addIpToWhitelist(apiToken, addIpToWhitelistData)
 
 Add an IP to a whitelist
 
@@ -250,7 +250,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     AddIpToWhitelistData addIpToWhitelistData = new AddIpToWhitelistData(); // AddIpToWhitelistData | 
     try {
-      InlineResponse2006 result = apiInstance.addIpToWhitelist(apiToken, addIpToWhitelistData);
+      AddIpToWhitelistResponse result = apiInstance.addIpToWhitelist(apiToken, addIpToWhitelistData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#addIpToWhitelist");
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**AddIpToWhitelistResponse**](AddIpToWhitelistResponse.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ No authorization required
 
 <a name="deleteAllowedIpsFromWhitelist"></a>
 # **deleteAllowedIpsFromWhitelist**
-> InlineResponse2006 deleteAllowedIpsFromWhitelist(ipWhitelistAddresses, apiToken)
+> DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist(ipWhitelistAddresses, apiToken)
 
 Delete allowed IPs from a whitelist
 
@@ -314,7 +314,7 @@ public class Example {
     List<String> ipWhitelistAddresses = Arrays.asList(); // List<String> | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse2006 result = apiInstance.deleteAllowedIpsFromWhitelist(ipWhitelistAddresses, apiToken);
+      DeleteAllowedIpsFromWhitelistResponse result = apiInstance.deleteAllowedIpsFromWhitelist(ipWhitelistAddresses, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#deleteAllowedIpsFromWhitelist");
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**DeleteAllowedIpsFromWhitelistResponse**](DeleteAllowedIpsFromWhitelistResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ No authorization required
 
 <a name="deleteApnsCertificateById"></a>
 # **deleteApnsCertificateById**
-> InlineResponse20013 deleteApnsCertificateById(providerId, apiToken)
+> DeleteApnsCertificateByIdResponse deleteApnsCertificateById(providerId, apiToken)
 
 Delete an APNs certificate
 
@@ -378,7 +378,7 @@ public class Example {
     String providerId = "providerId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20013 result = apiInstance.deleteApnsCertificateById(providerId, apiToken);
+      DeleteApnsCertificateByIdResponse result = apiInstance.deleteApnsCertificateById(providerId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#deleteApnsCertificateById");
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**DeleteApnsCertificateByIdResponse**](DeleteApnsCertificateByIdResponse.md)
 
 ### Authorization
 
@@ -418,7 +418,7 @@ No authorization required
 
 <a name="generateSecondaryApiToken"></a>
 # **generateSecondaryApiToken**
-> InlineResponse2007 generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData)
+> GenerateSecondaryApiTokenResponse generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData)
 
 Generate a secondary API token
 
@@ -442,7 +442,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     GenerateSecondaryApiTokenData generateSecondaryApiTokenData = new GenerateSecondaryApiTokenData(); // GenerateSecondaryApiTokenData | 
     try {
-      InlineResponse2007 result = apiInstance.generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData);
+      GenerateSecondaryApiTokenResponse result = apiInstance.generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#generateSecondaryApiToken");
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**GenerateSecondaryApiTokenResponse**](GenerateSecondaryApiTokenResponse.md)
 
 ### Authorization
 
@@ -482,7 +482,7 @@ No authorization required
 
 <a name="listPushConfigurations"></a>
 # **listPushConfigurations**
-> InlineResponse20012 listPushConfigurations(pushType, apiToken)
+> ListPushConfigurationsResponse listPushConfigurations(pushType, apiToken)
 
 List push configurations
 
@@ -506,7 +506,7 @@ public class Example {
     String pushType = "pushType_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20012 result = apiInstance.listPushConfigurations(pushType, apiToken);
+      ListPushConfigurationsResponse result = apiInstance.listPushConfigurations(pushType, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#listPushConfigurations");
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ListPushConfigurationsResponse**](ListPushConfigurationsResponse.md)
 
 ### Authorization
 
@@ -546,7 +546,7 @@ No authorization required
 
 <a name="listPushNotificationContentTemplates"></a>
 # **listPushNotificationContentTemplates**
-> InlineResponse2004 listPushNotificationContentTemplates(apiToken)
+> ListPushNotificationContentTemplatesResponse listPushNotificationContentTemplates(apiToken)
 
 List push notification content templates
 
@@ -569,7 +569,7 @@ public class Example {
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse2004 result = apiInstance.listPushNotificationContentTemplates(apiToken);
+      ListPushNotificationContentTemplatesResponse result = apiInstance.listPushNotificationContentTemplates(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#listPushNotificationContentTemplates");
@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**ListPushNotificationContentTemplatesResponse**](ListPushNotificationContentTemplatesResponse.md)
 
 ### Authorization
 
@@ -608,7 +608,7 @@ No authorization required
 
 <a name="listSecondaryApiTokens"></a>
 # **listSecondaryApiTokens**
-> InlineResponse2008 listSecondaryApiTokens(apiToken)
+> ListSecondaryApiTokensResponse listSecondaryApiTokens(apiToken)
 
 List secondary API tokens
 
@@ -631,7 +631,7 @@ public class Example {
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse2008 result = apiInstance.listSecondaryApiTokens(apiToken);
+      ListSecondaryApiTokensResponse result = apiInstance.listSecondaryApiTokens(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#listSecondaryApiTokens");
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**ListSecondaryApiTokensResponse**](ListSecondaryApiTokensResponse.md)
 
 ### Authorization
 
@@ -670,7 +670,7 @@ No authorization required
 
 <a name="removePushConfigurationById"></a>
 # **removePushConfigurationById**
-> InlineResponse20013 removePushConfigurationById(pushType, providerId, apiToken)
+> RemovePushConfigurationByIdResponse removePushConfigurationById(pushType, providerId, apiToken)
 
 Remove a push configuration
 
@@ -695,7 +695,7 @@ public class Example {
     String providerId = "providerId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20013 result = apiInstance.removePushConfigurationById(pushType, providerId, apiToken);
+      RemovePushConfigurationByIdResponse result = apiInstance.removePushConfigurationById(pushType, providerId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#removePushConfigurationById");
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**RemovePushConfigurationByIdResponse**](RemovePushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -736,7 +736,7 @@ No authorization required
 
 <a name="retrieveIpWhitelist"></a>
 # **retrieveIpWhitelist**
-> InlineResponse2006 retrieveIpWhitelist(apiToken)
+> RetrieveIpWhitelistResponse retrieveIpWhitelist(apiToken)
 
 Retrieve an IP whitelist
 
@@ -759,7 +759,7 @@ public class Example {
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse2006 result = apiInstance.retrieveIpWhitelist(apiToken);
+      RetrieveIpWhitelistResponse result = apiInstance.retrieveIpWhitelist(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#retrieveIpWhitelist");
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RetrieveIpWhitelistResponse**](RetrieveIpWhitelistResponse.md)
 
 ### Authorization
 
@@ -798,7 +798,7 @@ No authorization required
 
 <a name="revokeSecondaryApiTokenByToken"></a>
 # **revokeSecondaryApiTokenByToken**
-> InlineResponse2007 revokeSecondaryApiTokenByToken(apiToken2, apiToken)
+> RevokeSecondaryApiTokenByTokenResponse revokeSecondaryApiTokenByToken(apiToken2, apiToken)
 
 Revoke a secondary API token
 
@@ -822,7 +822,7 @@ public class Example {
     String apiToken2 = "apiToken_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse2007 result = apiInstance.revokeSecondaryApiTokenByToken(apiToken2, apiToken);
+      RevokeSecondaryApiTokenByTokenResponse result = apiInstance.revokeSecondaryApiTokenByToken(apiToken2, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#revokeSecondaryApiTokenByToken");
@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**RevokeSecondaryApiTokenByTokenResponse**](RevokeSecondaryApiTokenByTokenResponse.md)
 
 ### Authorization
 
@@ -862,7 +862,7 @@ No authorization required
 
 <a name="updateApnsPushConfigurationById"></a>
 # **updateApnsPushConfigurationById**
-> InlineResponse20014 updateApnsPushConfigurationById(providerId, apiToken, updateApnsPushConfigurationByIdData)
+> UpdateApnsPushConfigurationByIdResponse updateApnsPushConfigurationById(providerId, apiToken, updateApnsPushConfigurationByIdData)
 
 Update an APNs push configuration
 
@@ -887,7 +887,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData = new UpdateApnsPushConfigurationByIdData(); // UpdateApnsPushConfigurationByIdData | 
     try {
-      InlineResponse20014 result = apiInstance.updateApnsPushConfigurationById(providerId, apiToken, updateApnsPushConfigurationByIdData);
+      UpdateApnsPushConfigurationByIdResponse result = apiInstance.updateApnsPushConfigurationById(providerId, apiToken, updateApnsPushConfigurationByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#updateApnsPushConfigurationById");
@@ -910,7 +910,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**UpdateApnsPushConfigurationByIdResponse**](UpdateApnsPushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -928,7 +928,7 @@ No authorization required
 
 <a name="updateDefaultChannelInvitationPreference"></a>
 # **updateDefaultChannelInvitationPreference**
-> InlineResponse2005 updateDefaultChannelInvitationPreference(apiToken, updateDefaultChannelInvitationPreferenceData)
+> UpdateDefaultChannelInvitationPreferenceResponse updateDefaultChannelInvitationPreference(apiToken, updateDefaultChannelInvitationPreferenceData)
 
 Update default channel invitation preference
 
@@ -952,7 +952,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData = new UpdateDefaultChannelInvitationPreferenceData(); // UpdateDefaultChannelInvitationPreferenceData | 
     try {
-      InlineResponse2005 result = apiInstance.updateDefaultChannelInvitationPreference(apiToken, updateDefaultChannelInvitationPreferenceData);
+      UpdateDefaultChannelInvitationPreferenceResponse result = apiInstance.updateDefaultChannelInvitationPreference(apiToken, updateDefaultChannelInvitationPreferenceData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#updateDefaultChannelInvitationPreference");
@@ -974,7 +974,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**UpdateDefaultChannelInvitationPreferenceResponse**](UpdateDefaultChannelInvitationPreferenceResponse.md)
 
 ### Authorization
 
@@ -992,7 +992,7 @@ No authorization required
 
 <a name="updateFcmPushConfigurationById"></a>
 # **updateFcmPushConfigurationById**
-> InlineResponse20014 updateFcmPushConfigurationById(providerId, apiToken, updateFcmPushConfigurationByIdData)
+> UpdateFcmPushConfigurationByIdResponse updateFcmPushConfigurationById(providerId, apiToken, updateFcmPushConfigurationByIdData)
 
 Update a FCM push configuration
 
@@ -1017,7 +1017,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData = new UpdateFcmPushConfigurationByIdData(); // UpdateFcmPushConfigurationByIdData | 
     try {
-      InlineResponse20014 result = apiInstance.updateFcmPushConfigurationById(providerId, apiToken, updateFcmPushConfigurationByIdData);
+      UpdateFcmPushConfigurationByIdResponse result = apiInstance.updateFcmPushConfigurationById(providerId, apiToken, updateFcmPushConfigurationByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#updateFcmPushConfigurationById");
@@ -1040,7 +1040,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**UpdateFcmPushConfigurationByIdResponse**](UpdateFcmPushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -1058,7 +1058,7 @@ No authorization required
 
 <a name="updateHmsPushConfigurationById"></a>
 # **updateHmsPushConfigurationById**
-> InlineResponse20014 updateHmsPushConfigurationById(providerId, apiToken, updateHmsPushConfigurationByIdData)
+> UpdateHmsPushConfigurationByIdResponse updateHmsPushConfigurationById(providerId, apiToken, updateHmsPushConfigurationByIdData)
 
 Update an HMS push configuration
 
@@ -1083,7 +1083,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData = new UpdateHmsPushConfigurationByIdData(); // UpdateHmsPushConfigurationByIdData | 
     try {
-      InlineResponse20014 result = apiInstance.updateHmsPushConfigurationById(providerId, apiToken, updateHmsPushConfigurationByIdData);
+      UpdateHmsPushConfigurationByIdResponse result = apiInstance.updateHmsPushConfigurationById(providerId, apiToken, updateHmsPushConfigurationByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#updateHmsPushConfigurationById");
@@ -1106,7 +1106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**UpdateHmsPushConfigurationByIdResponse**](UpdateHmsPushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -1124,7 +1124,7 @@ No authorization required
 
 <a name="updatePushNotificationContentTemplate"></a>
 # **updatePushNotificationContentTemplate**
-> InlineResponse20015 updatePushNotificationContentTemplate(templateName, apiToken, updatePushNotificationContentTemplateData)
+> UpdatePushNotificationContentTemplateResponse updatePushNotificationContentTemplate(templateName, apiToken, updatePushNotificationContentTemplateData)
 
 Update a push notification content template
 
@@ -1149,7 +1149,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData = new UpdatePushNotificationContentTemplateData(); // UpdatePushNotificationContentTemplateData | 
     try {
-      InlineResponse20015 result = apiInstance.updatePushNotificationContentTemplate(templateName, apiToken, updatePushNotificationContentTemplateData);
+      UpdatePushNotificationContentTemplateResponse result = apiInstance.updatePushNotificationContentTemplate(templateName, apiToken, updatePushNotificationContentTemplateData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#updatePushNotificationContentTemplate");
@@ -1172,7 +1172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**UpdatePushNotificationContentTemplateResponse**](UpdatePushNotificationContentTemplateResponse.md)
 
 ### Authorization
 
@@ -1190,7 +1190,7 @@ No authorization required
 
 <a name="viewDefaultChannelInvitationPreference"></a>
 # **viewDefaultChannelInvitationPreference**
-> InlineResponse2005 viewDefaultChannelInvitationPreference(apiToken)
+> ViewDefaultChannelInvitationPreferenceResponse viewDefaultChannelInvitationPreference(apiToken)
 
 View default channel invitation preference
 
@@ -1213,7 +1213,7 @@ public class Example {
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse2005 result = apiInstance.viewDefaultChannelInvitationPreference(apiToken);
+      ViewDefaultChannelInvitationPreferenceResponse result = apiInstance.viewDefaultChannelInvitationPreference(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewDefaultChannelInvitationPreference");
@@ -1234,7 +1234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**ViewDefaultChannelInvitationPreferenceResponse**](ViewDefaultChannelInvitationPreferenceResponse.md)
 
 ### Authorization
 
@@ -1252,7 +1252,7 @@ No authorization required
 
 <a name="viewNumberOfConcurrentConnections"></a>
 # **viewNumberOfConcurrentConnections**
-> InlineResponse200 viewNumberOfConcurrentConnections(apiToken)
+> ViewNumberOfConcurrentConnectionsResponse viewNumberOfConcurrentConnections(apiToken)
 
 View number of concurrent connections
 
@@ -1275,7 +1275,7 @@ public class Example {
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse200 result = apiInstance.viewNumberOfConcurrentConnections(apiToken);
+      ViewNumberOfConcurrentConnectionsResponse result = apiInstance.viewNumberOfConcurrentConnections(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewNumberOfConcurrentConnections");
@@ -1296,7 +1296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**ViewNumberOfConcurrentConnectionsResponse**](ViewNumberOfConcurrentConnectionsResponse.md)
 
 ### Authorization
 
@@ -1314,7 +1314,7 @@ No authorization required
 
 <a name="viewNumberOfDailyActiveUsers"></a>
 # **viewNumberOfDailyActiveUsers**
-> InlineResponse20011 viewNumberOfDailyActiveUsers(apiToken, date)
+> ViewNumberOfDailyActiveUsersResponse viewNumberOfDailyActiveUsers(apiToken, date)
 
 View number of daily active users
 
@@ -1338,7 +1338,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String date = "date_example"; // String | 
     try {
-      InlineResponse20011 result = apiInstance.viewNumberOfDailyActiveUsers(apiToken, date);
+      ViewNumberOfDailyActiveUsersResponse result = apiInstance.viewNumberOfDailyActiveUsers(apiToken, date);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewNumberOfDailyActiveUsers");
@@ -1360,7 +1360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**ViewNumberOfDailyActiveUsersResponse**](ViewNumberOfDailyActiveUsersResponse.md)
 
 ### Authorization
 
@@ -1378,7 +1378,7 @@ No authorization required
 
 <a name="viewNumberOfMonthlyActiveUsers"></a>
 # **viewNumberOfMonthlyActiveUsers**
-> InlineResponse20010 viewNumberOfMonthlyActiveUsers(apiToken, date)
+> ViewNumberOfMonthlyActiveUsersResponse viewNumberOfMonthlyActiveUsers(apiToken, date)
 
 View number of monthly active users
 
@@ -1402,7 +1402,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String date = "date_example"; // String | 
     try {
-      InlineResponse20010 result = apiInstance.viewNumberOfMonthlyActiveUsers(apiToken, date);
+      ViewNumberOfMonthlyActiveUsersResponse result = apiInstance.viewNumberOfMonthlyActiveUsers(apiToken, date);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewNumberOfMonthlyActiveUsers");
@@ -1424,7 +1424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**ViewNumberOfMonthlyActiveUsersResponse**](ViewNumberOfMonthlyActiveUsersResponse.md)
 
 ### Authorization
 
@@ -1442,7 +1442,7 @@ No authorization required
 
 <a name="viewNumberOfPeakConnections"></a>
 # **viewNumberOfPeakConnections**
-> InlineResponse2009 viewNumberOfPeakConnections(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay)
+> ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay)
 
 View number of peak connections
 
@@ -1472,7 +1472,7 @@ public class Example {
     Integer startDay = 56; // Integer | 
     Integer endDay = 56; // Integer | 
     try {
-      InlineResponse2009 result = apiInstance.viewNumberOfPeakConnections(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay);
+      ViewNumberOfPeakConnectionsResponse result = apiInstance.viewNumberOfPeakConnections(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewNumberOfPeakConnections");
@@ -1500,7 +1500,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**ViewNumberOfPeakConnectionsResponse**](ViewNumberOfPeakConnectionsResponse.md)
 
 ### Authorization
 
@@ -1518,7 +1518,7 @@ No authorization required
 
 <a name="viewPushConfigurationById"></a>
 # **viewPushConfigurationById**
-> InlineResponse20012 viewPushConfigurationById(pushType, providerId, apiToken)
+> ViewPushConfigurationByIdResponse viewPushConfigurationById(pushType, providerId, apiToken)
 
 View a push configuration
 
@@ -1543,7 +1543,7 @@ public class Example {
     String providerId = "providerId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20012 result = apiInstance.viewPushConfigurationById(pushType, providerId, apiToken);
+      ViewPushConfigurationByIdResponse result = apiInstance.viewPushConfigurationById(pushType, providerId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewPushConfigurationById");
@@ -1566,7 +1566,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ViewPushConfigurationByIdResponse**](ViewPushConfigurationByIdResponse.md)
 
 ### Authorization
 
@@ -1584,7 +1584,7 @@ No authorization required
 
 <a name="viewPushNotificationContentTemplate"></a>
 # **viewPushNotificationContentTemplate**
-> InlineResponse20015 viewPushNotificationContentTemplate(templateName, apiToken)
+> ViewPushNotificationContentTemplateResponse viewPushNotificationContentTemplate(templateName, apiToken)
 
 View a push notification content template
 
@@ -1608,7 +1608,7 @@ public class Example {
     String templateName = "templateName_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20015 result = apiInstance.viewPushNotificationContentTemplate(templateName, apiToken);
+      ViewPushNotificationContentTemplateResponse result = apiInstance.viewPushNotificationContentTemplate(templateName, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewPushNotificationContentTemplate");
@@ -1630,7 +1630,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**ViewPushNotificationContentTemplateResponse**](ViewPushNotificationContentTemplateResponse.md)
 
 ### Authorization
 
@@ -1648,7 +1648,7 @@ No authorization required
 
 <a name="viewSecondaryApiTokenByToken"></a>
 # **viewSecondaryApiTokenByToken**
-> InlineResponse2007 viewSecondaryApiTokenByToken(apiToken2, apiToken)
+> ViewSecondaryApiTokenByTokenResponse viewSecondaryApiTokenByToken(apiToken2, apiToken)
 
 View a secondary API token
 
@@ -1672,7 +1672,7 @@ public class Example {
     String apiToken2 = "apiToken_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse2007 result = apiInstance.viewSecondaryApiTokenByToken(apiToken2, apiToken);
+      ViewSecondaryApiTokenByTokenResponse result = apiInstance.viewSecondaryApiTokenByToken(apiToken2, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewSecondaryApiTokenByToken");
@@ -1694,7 +1694,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**ViewSecondaryApiTokenByTokenResponse**](ViewSecondaryApiTokenByTokenResponse.md)
 
 ### Authorization
 

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse20062;
+import org.openapitools.client.model.RetrieveAdvancedAnalyticsMetricsResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -147,7 +147,7 @@ public class AdvancedAnalyticsApi {
      * Retrieve Advanced analytics metrics
      * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------
      * @param apiToken  (optional)
-     * @return InlineResponse20062
+     * @return RetrieveAdvancedAnalyticsMetricsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -155,8 +155,8 @@ public class AdvancedAnalyticsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20062 retrieveAdvancedAnalyticsMetrics(String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20062> localVarResp = retrieveAdvancedAnalyticsMetricsWithHttpInfo(apiToken);
+    public RetrieveAdvancedAnalyticsMetricsResponse retrieveAdvancedAnalyticsMetrics(String apiToken) throws ApiException {
+        ApiResponse<RetrieveAdvancedAnalyticsMetricsResponse> localVarResp = retrieveAdvancedAnalyticsMetricsWithHttpInfo(apiToken);
         return localVarResp.getData();
     }
 
@@ -164,7 +164,7 @@ public class AdvancedAnalyticsApi {
      * Retrieve Advanced analytics metrics
      * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20062&gt;
+     * @return ApiResponse&lt;RetrieveAdvancedAnalyticsMetricsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -172,9 +172,9 @@ public class AdvancedAnalyticsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20062> retrieveAdvancedAnalyticsMetricsWithHttpInfo(String apiToken) throws ApiException {
+    public ApiResponse<RetrieveAdvancedAnalyticsMetricsResponse> retrieveAdvancedAnalyticsMetricsWithHttpInfo(String apiToken) throws ApiException {
         okhttp3.Call localVarCall = retrieveAdvancedAnalyticsMetricsValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20062>(){}.getType();
+        Type localVarReturnType = new TypeToken<RetrieveAdvancedAnalyticsMetricsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -191,10 +191,10 @@ public class AdvancedAnalyticsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call retrieveAdvancedAnalyticsMetricsAsync(String apiToken, final ApiCallback<InlineResponse20062> _callback) throws ApiException {
+    public okhttp3.Call retrieveAdvancedAnalyticsMetricsAsync(String apiToken, final ApiCallback<RetrieveAdvancedAnalyticsMetricsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = retrieveAdvancedAnalyticsMetricsValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20062>(){}.getType();
+        Type localVarReturnType = new TypeToken<RetrieveAdvancedAnalyticsMetricsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

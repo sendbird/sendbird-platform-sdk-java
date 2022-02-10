@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a name="getDetailedOpenRateOfAnnouncementById"></a>
 # **getDetailedOpenRateOfAnnouncementById**
-> InlineResponse20042 getDetailedOpenRateOfAnnouncementById(uniqueId, apiToken)
+> GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(uniqueId, apiToken)
 
 Get detailed open rate of an announcement
 
@@ -43,7 +43,7 @@ public class Example {
     String uniqueId = "uniqueId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20042 result = apiInstance.getDetailedOpenRateOfAnnouncementById(uniqueId, apiToken);
+      GetDetailedOpenRateOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenRateOfAnnouncementById(uniqueId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getDetailedOpenRateOfAnnouncementById");
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20042**](InlineResponse20042.md)
+[**GetDetailedOpenRateOfAnnouncementByIdResponse**](GetDetailedOpenRateOfAnnouncementByIdResponse.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ No authorization required
 
 <a name="getDetailedOpenRateOfAnnouncementGroup"></a>
 # **getDetailedOpenRateOfAnnouncementGroup**
-> InlineResponse20046 getDetailedOpenRateOfAnnouncementGroup(announcementGroup, apiToken)
+> GetDetailedOpenRateOfAnnouncementGroupResponse getDetailedOpenRateOfAnnouncementGroup(announcementGroup, apiToken)
 
 Get detailed open rate of an announcement group
 
@@ -107,7 +107,7 @@ public class Example {
     String announcementGroup = "announcementGroup_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20046 result = apiInstance.getDetailedOpenRateOfAnnouncementGroup(announcementGroup, apiToken);
+      GetDetailedOpenRateOfAnnouncementGroupResponse result = apiInstance.getDetailedOpenRateOfAnnouncementGroup(announcementGroup, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getDetailedOpenRateOfAnnouncementGroup");
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20046**](InlineResponse20046.md)
+[**GetDetailedOpenRateOfAnnouncementGroupResponse**](GetDetailedOpenRateOfAnnouncementGroupResponse.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ No authorization required
 
 <a name="getDetailedOpenStatusOfAnnouncementById"></a>
 # **getDetailedOpenStatusOfAnnouncementById**
-> InlineResponse20043 getDetailedOpenStatusOfAnnouncementById(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened)
+> GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened)
 
 Get detailed open status of an announcement
 
@@ -176,7 +176,7 @@ public class Example {
     List<String> channelUrls = Arrays.asList(); // List<String> | 
     Boolean hasOpened = true; // Boolean | 
     try {
-      InlineResponse20043 result = apiInstance.getDetailedOpenStatusOfAnnouncementById(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened);
+      GetDetailedOpenStatusOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenStatusOfAnnouncementById(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getDetailedOpenStatusOfAnnouncementById");
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20043**](InlineResponse20043.md)
+[**GetDetailedOpenStatusOfAnnouncementByIdResponse**](GetDetailedOpenStatusOfAnnouncementByIdResponse.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ No authorization required
 
 <a name="getStatistics"></a>
 # **getStatistics**
-> InlineResponse20044 getStatistics(apiToken)
+> GetStatisticsResponse getStatistics(apiToken)
 
 Get statistics - weekly
 
@@ -244,7 +244,7 @@ public class Example {
     AnnouncementsApi apiInstance = new AnnouncementsApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20044 result = apiInstance.getStatistics(apiToken);
+      GetStatisticsResponse result = apiInstance.getStatistics(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getStatistics");
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20044**](InlineResponse20044.md)
+[**GetStatisticsResponse**](GetStatisticsResponse.md)
 
 ### Authorization
 
@@ -283,7 +283,7 @@ No authorization required
 
 <a name="getStatisticsDaily"></a>
 # **getStatisticsDaily**
-> InlineResponse20044 getStatisticsDaily(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup)
+> GetStatisticsDailyResponse getStatisticsDaily(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup)
 
 Get statistics - daily
 
@@ -313,7 +313,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String announcementGroup = "announcementGroup_example"; // String | 
     try {
-      InlineResponse20044 result = apiInstance.getStatisticsDaily(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup);
+      GetStatisticsDailyResponse result = apiInstance.getStatisticsDaily(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getStatisticsDaily");
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20044**](InlineResponse20044.md)
+[**GetStatisticsDailyResponse**](GetStatisticsDailyResponse.md)
 
 ### Authorization
 
@@ -359,7 +359,7 @@ No authorization required
 
 <a name="getStatisticsMonthly"></a>
 # **getStatisticsMonthly**
-> InlineResponse20044 getStatisticsMonthly(apiToken)
+> GetStatisticsMonthlyResponse getStatisticsMonthly(apiToken)
 
 Get statistics - monthly
 
@@ -382,7 +382,7 @@ public class Example {
     AnnouncementsApi apiInstance = new AnnouncementsApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20044 result = apiInstance.getStatisticsMonthly(apiToken);
+      GetStatisticsMonthlyResponse result = apiInstance.getStatisticsMonthly(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getStatisticsMonthly");
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20044**](InlineResponse20044.md)
+[**GetStatisticsMonthlyResponse**](GetStatisticsMonthlyResponse.md)
 
 ### Authorization
 
@@ -421,7 +421,7 @@ No authorization required
 
 <a name="listAnnouncementGroups"></a>
 # **listAnnouncementGroups**
-> InlineResponse20045 listAnnouncementGroups(apiToken, token, limit)
+> ListAnnouncementGroupsResponse listAnnouncementGroups(apiToken, token, limit)
 
 List announcement groups
 
@@ -446,7 +446,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20045 result = apiInstance.listAnnouncementGroups(apiToken, token, limit);
+      ListAnnouncementGroupsResponse result = apiInstance.listAnnouncementGroups(apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#listAnnouncementGroups");
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20045**](InlineResponse20045.md)
+[**ListAnnouncementGroupsResponse**](ListAnnouncementGroupsResponse.md)
 
 ### Authorization
 
@@ -487,7 +487,7 @@ No authorization required
 
 <a name="listAnnouncements"></a>
 # **listAnnouncements**
-> InlineResponse20039 listAnnouncements(apiToken, token, limit, order, status, announcementGroup)
+> ListAnnouncementsResponse listAnnouncements(apiToken, token, limit, order, status, announcementGroup)
 
 List announcements
 
@@ -515,7 +515,7 @@ public class Example {
     String status = "status_example"; // String | 
     String announcementGroup = "announcementGroup_example"; // String | 
     try {
-      InlineResponse20039 result = apiInstance.listAnnouncements(apiToken, token, limit, order, status, announcementGroup);
+      ListAnnouncementsResponse result = apiInstance.listAnnouncements(apiToken, token, limit, order, status, announcementGroup);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#listAnnouncements");
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20039**](InlineResponse20039.md)
+[**ListAnnouncementsResponse**](ListAnnouncementsResponse.md)
 
 ### Authorization
 
@@ -559,7 +559,7 @@ No authorization required
 
 <a name="scheduleAnnouncement"></a>
 # **scheduleAnnouncement**
-> InlineResponse20040 scheduleAnnouncement(apiToken, scheduleAnnouncementData)
+> ScheduleAnnouncementResponse scheduleAnnouncement(apiToken, scheduleAnnouncementData)
 
 Schedule an announcement
 
@@ -583,7 +583,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     ScheduleAnnouncementData scheduleAnnouncementData = new ScheduleAnnouncementData(); // ScheduleAnnouncementData | 
     try {
-      InlineResponse20040 result = apiInstance.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
+      ScheduleAnnouncementResponse result = apiInstance.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#scheduleAnnouncement");
@@ -605,7 +605,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20040**](InlineResponse20040.md)
+[**ScheduleAnnouncementResponse**](ScheduleAnnouncementResponse.md)
 
 ### Authorization
 
@@ -623,7 +623,7 @@ No authorization required
 
 <a name="updateAnnouncementById"></a>
 # **updateAnnouncementById**
-> InlineResponse20041 updateAnnouncementById(uniqueId, apiToken, updateAnnouncementByIdData)
+> UpdateAnnouncementByIdResponse updateAnnouncementById(uniqueId, apiToken, updateAnnouncementByIdData)
 
 Update an announcement
 
@@ -648,7 +648,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateAnnouncementByIdData updateAnnouncementByIdData = new UpdateAnnouncementByIdData(); // UpdateAnnouncementByIdData | 
     try {
-      InlineResponse20041 result = apiInstance.updateAnnouncementById(uniqueId, apiToken, updateAnnouncementByIdData);
+      UpdateAnnouncementByIdResponse result = apiInstance.updateAnnouncementById(uniqueId, apiToken, updateAnnouncementByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#updateAnnouncementById");
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20041**](InlineResponse20041.md)
+[**UpdateAnnouncementByIdResponse**](UpdateAnnouncementByIdResponse.md)
 
 ### Authorization
 
@@ -689,7 +689,7 @@ No authorization required
 
 <a name="viewAnnouncementById"></a>
 # **viewAnnouncementById**
-> InlineResponse20039Announcements viewAnnouncementById(uniqueId, apiToken)
+> ViewAnnouncementByIdResponse viewAnnouncementById(uniqueId, apiToken)
 
 View an announcement
 
@@ -713,7 +713,7 @@ public class Example {
     String uniqueId = "uniqueId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20039Announcements result = apiInstance.viewAnnouncementById(uniqueId, apiToken);
+      ViewAnnouncementByIdResponse result = apiInstance.viewAnnouncementById(uniqueId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#viewAnnouncementById");
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20039Announcements**](InlineResponse20039Announcements.md)
+[**ViewAnnouncementByIdResponse**](ViewAnnouncementByIdResponse.md)
 
 ### Authorization
 

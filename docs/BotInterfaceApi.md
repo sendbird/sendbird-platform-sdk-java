@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="createBot"></a>
 # **createBot**
-> InlineResponse20065Bots createBot(apiToken, createBotData)
+> CreateBotResponse createBot(apiToken, createBotData)
 
 Create a bot
 
@@ -41,7 +41,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     CreateBotData createBotData = new CreateBotData(); // CreateBotData | 
     try {
-      InlineResponse20065Bots result = apiInstance.createBot(apiToken, createBotData);
+      CreateBotResponse result = apiInstance.createBot(apiToken, createBotData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#createBot");
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20065Bots**](InlineResponse20065Bots.md)
+[**CreateBotResponse**](CreateBotResponse.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ No authorization required
 
 <a name="listBots"></a>
 # **listBots**
-> InlineResponse20065 listBots(apiToken, token, limit)
+> ListBotsResponse listBots(apiToken, token, limit)
 
 List bots
 
@@ -365,7 +365,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20065 result = apiInstance.listBots(apiToken, token, limit);
+      ListBotsResponse result = apiInstance.listBots(apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#listBots");
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20065**](InlineResponse20065.md)
+[**ListBotsResponse**](ListBotsResponse.md)
 
 ### Authorization
 
@@ -472,7 +472,7 @@ No authorization required
 
 <a name="updateBotById"></a>
 # **updateBotById**
-> InlineResponse20065Bots updateBotById(botUserid, apiToken, updateBotByIdData)
+> UpdateBotByIdResponse updateBotById(botUserid, apiToken, updateBotByIdData)
 
 Update a bot
 
@@ -497,7 +497,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateBotByIdData updateBotByIdData = new UpdateBotByIdData(); // UpdateBotByIdData | 
     try {
-      InlineResponse20065Bots result = apiInstance.updateBotById(botUserid, apiToken, updateBotByIdData);
+      UpdateBotByIdResponse result = apiInstance.updateBotById(botUserid, apiToken, updateBotByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#updateBotById");
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20065Bots**](InlineResponse20065Bots.md)
+[**UpdateBotByIdResponse**](UpdateBotByIdResponse.md)
 
 ### Authorization
 
@@ -538,7 +538,7 @@ No authorization required
 
 <a name="viewBotById"></a>
 # **viewBotById**
-> InlineResponse20065Bots viewBotById(botUserid, apiToken)
+> ViewBotByIdResponse viewBotById(botUserid, apiToken)
 
 View a bot
 
@@ -562,7 +562,7 @@ public class Example {
     String botUserid = "botUserid_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20065Bots result = apiInstance.viewBotById(botUserid, apiToken);
+      ViewBotByIdResponse result = apiInstance.viewBotById(botUserid, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#viewBotById");
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20065Bots**](InlineResponse20065Bots.md)
+[**ViewBotByIdResponse**](ViewBotByIdResponse.md)
 
 ### Authorization
 

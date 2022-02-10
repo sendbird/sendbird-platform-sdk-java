@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **mentionedUsers** | [**List&lt;SendBirdUser&gt;**](SendBirdUser.md) |  |  [optional]
 **messageId** | **BigDecimal** |  |  [optional]
 **messageType** | [**MessageTypeEnum**](#MessageTypeEnum) |  |  [optional]
-**metaArray** | [**ModelObject**](ModelObject.md) |  |  [optional]
+**metaArray** | [**SBObject**](SBObject.md) |  |  [optional]
 **metaArrays** | [**List&lt;SendBirdMessageMetaArray&gt;**](SendBirdMessageMetaArray.md) |  |  [optional]
 **ogMetaData** | [**SendBirdOGMetaData**](SendBirdOGMetaData.md) |  |  [optional]
 **parentMessage** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  |  [optional]

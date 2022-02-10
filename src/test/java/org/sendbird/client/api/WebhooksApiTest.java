@@ -15,8 +15,8 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
 import org.openapitools.client.model.ChooseWhichEventsToSubscribeToData;
-import org.openapitools.client.model.InlineResponse20066;
-import org.openapitools.client.model.InlineResponse20067;
+import org.openapitools.client.model.ChooseWhichEventsToSubscribeToResponse;
+import org.openapitools.client.model.RetrieveListOfSubscribedEventsResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -46,7 +46,7 @@ public class WebhooksApiTest {
     public void chooseWhichEventsToSubscribeToTest() throws ApiException {
         String apiToken = null;
         ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData = null;
-                InlineResponse20067 response = api.chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData);
+                ChooseWhichEventsToSubscribeToResponse response = api.chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData);
         // TODO: test validations
     }
     
@@ -62,7 +62,7 @@ public class WebhooksApiTest {
     public void retrieveListOfSubscribedEventsTest() throws ApiException {
         String apiToken = null;
         Boolean displayAllWebhookCategories = null;
-                InlineResponse20066 response = api.retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories);
+                RetrieveListOfSubscribedEventsResponse response = api.retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories);
         // TODO: test validations
     }
     

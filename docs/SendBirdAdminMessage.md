@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **message** | **String** |  |  [optional]
 **messageId** | **BigDecimal** |  |  [optional]
 **messageType** | [**MessageTypeEnum**](#MessageTypeEnum) |  |  [optional]
-**metaArray** | [**ModelObject**](ModelObject.md) |  |  [optional]
+**metaArray** | [**SBObject**](SBObject.md) |  |  [optional]
 **metaArrays** | [**List&lt;SendBirdMessageMetaArray&gt;**](SendBirdMessageMetaArray.md) |  |  [optional]
 **ogMetaData** | [**SendBirdOGMetaData**](SendBirdOGMetaData.md) |  |  [optional]
 **parentMessage** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  |  [optional]
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **sendingStatus** | [**SendingStatusEnum**](#SendingStatusEnum) |  |  [optional]
 **silent** | **Boolean** |  |  [optional]
 **threadInfo** | [**SendBirdThreadInfo**](SendBirdThreadInfo.md) |  |  [optional]
-**translations** | [**ModelObject**](ModelObject.md) |  |  [optional]
+**translations** | [**SBObject**](SBObject.md) |  |  [optional]
 **updatedAt** | **BigDecimal** |  |  [optional]
 
 

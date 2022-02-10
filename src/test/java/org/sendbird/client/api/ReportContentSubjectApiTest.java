@@ -14,12 +14,16 @@
 package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
-import org.openapitools.client.model.InlineResponse20070;
-import org.openapitools.client.model.InlineResponse20071;
-import org.openapitools.client.model.InlineResponse20071ReportLogs;
+import org.openapitools.client.model.ListReportsOnChannelByUrlResponse;
+import org.openapitools.client.model.ListReportsOnMessageByIdResponse;
+import org.openapitools.client.model.ListReportsOnUserByIdResponse;
+import org.openapitools.client.model.ListReportsResponse;
 import org.openapitools.client.model.ReportChannelByUrlData;
+import org.openapitools.client.model.ReportChannelByUrlResponse;
 import org.openapitools.client.model.ReportMessageByIdData;
+import org.openapitools.client.model.ReportMessageByIdResponse;
 import org.openapitools.client.model.ReportUserByIdData;
+import org.openapitools.client.model.ReportUserByIdResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -52,7 +56,7 @@ public class ReportContentSubjectApiTest {
         Integer limit = null;
         Integer startTs = null;
         Integer endTs = null;
-                InlineResponse20070 response = api.listReports(apiToken, token, limit, startTs, endTs);
+                ListReportsResponse response = api.listReports(apiToken, token, limit, startTs, endTs);
         // TODO: test validations
     }
     
@@ -71,7 +75,7 @@ public class ReportContentSubjectApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20071 response = api.listReportsOnChannelByUrl(channelType, channelUrl, apiToken, token, limit);
+                ListReportsOnChannelByUrlResponse response = api.listReportsOnChannelByUrl(channelType, channelUrl, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -91,7 +95,7 @@ public class ReportContentSubjectApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20071 response = api.listReportsOnMessageById(channelType, channelUrl, messageId, apiToken, token, limit);
+                ListReportsOnMessageByIdResponse response = api.listReportsOnMessageById(channelType, channelUrl, messageId, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -109,7 +113,7 @@ public class ReportContentSubjectApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20071 response = api.listReportsOnUserById(offendingUserId, apiToken, token, limit);
+                ListReportsOnUserByIdResponse response = api.listReportsOnUserById(offendingUserId, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -127,7 +131,7 @@ public class ReportContentSubjectApiTest {
         String channelUrl = null;
         String apiToken = null;
         ReportChannelByUrlData reportChannelByUrlData = null;
-                InlineResponse20071ReportLogs response = api.reportChannelByUrl(channelType, channelUrl, apiToken, reportChannelByUrlData);
+                ReportChannelByUrlResponse response = api.reportChannelByUrl(channelType, channelUrl, apiToken, reportChannelByUrlData);
         // TODO: test validations
     }
     
@@ -146,7 +150,7 @@ public class ReportContentSubjectApiTest {
         String messageId = null;
         String apiToken = null;
         ReportMessageByIdData reportMessageByIdData = null;
-                InlineResponse20071ReportLogs response = api.reportMessageById(channelType, channelUrl, messageId, apiToken, reportMessageByIdData);
+                ReportMessageByIdResponse response = api.reportMessageById(channelType, channelUrl, messageId, apiToken, reportMessageByIdData);
         // TODO: test validations
     }
     
@@ -163,7 +167,7 @@ public class ReportContentSubjectApiTest {
         String offendingUserId = null;
         String apiToken = null;
         ReportUserByIdData reportUserByIdData = null;
-                InlineResponse20071ReportLogs response = api.reportUserById(offendingUserId, apiToken, reportUserByIdData);
+                ReportUserByIdResponse response = api.reportUserById(offendingUserId, apiToken, reportUserByIdData);
         // TODO: test validations
     }
     

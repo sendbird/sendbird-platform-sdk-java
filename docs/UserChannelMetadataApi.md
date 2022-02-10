@@ -97,7 +97,7 @@ No authorization required
 
 <a name="createChannelMetadata"></a>
 # **createChannelMetadata**
-> InlineResponse20061 createChannelMetadata(channelType, channelUrl, apiToken, createChannelMetadataData)
+> CreateChannelMetadataResponse createChannelMetadata(channelType, channelUrl, apiToken, createChannelMetadataData)
 
 Create a channel metadata
 
@@ -123,7 +123,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     CreateChannelMetadataData createChannelMetadataData = new CreateChannelMetadataData(); // CreateChannelMetadataData | 
     try {
-      InlineResponse20061 result = apiInstance.createChannelMetadata(channelType, channelUrl, apiToken, createChannelMetadataData);
+      CreateChannelMetadataResponse result = apiInstance.createChannelMetadata(channelType, channelUrl, apiToken, createChannelMetadataData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#createChannelMetadata");
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20061**](InlineResponse20061.md)
+[**CreateChannelMetadataResponse**](CreateChannelMetadataResponse.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ No authorization required
 
 <a name="createUserMetadata"></a>
 # **createUserMetadata**
-> InlineResponse20047UserMetadata createUserMetadata(userId, apiToken, createUserMetadataData)
+> CreateUserMetadataResponse createUserMetadata(userId, apiToken, createUserMetadataData)
 
 Create a user metadata
 
@@ -190,7 +190,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     CreateUserMetadataData createUserMetadataData = new CreateUserMetadataData(); // CreateUserMetadataData | 
     try {
-      InlineResponse20047UserMetadata result = apiInstance.createUserMetadata(userId, apiToken, createUserMetadataData);
+      CreateUserMetadataResponse result = apiInstance.createUserMetadata(userId, apiToken, createUserMetadataData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#createUserMetadata");
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20047UserMetadata**](InlineResponse20047UserMetadata.md)
+[**CreateUserMetadataResponse**](CreateUserMetadataResponse.md)
 
 ### Authorization
 
@@ -903,7 +903,7 @@ No authorization required
 
 <a name="updateUserMetadata"></a>
 # **updateUserMetadata**
-> InlineResponse20060 updateUserMetadata(userId, apiToken, updateUserMetadataData)
+> UpdateUserMetadataResponse updateUserMetadata(userId, apiToken, updateUserMetadataData)
 
 Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
 
@@ -928,7 +928,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateUserMetadataData updateUserMetadataData = new UpdateUserMetadataData(); // UpdateUserMetadataData | 
     try {
-      InlineResponse20060 result = apiInstance.updateUserMetadata(userId, apiToken, updateUserMetadataData);
+      UpdateUserMetadataResponse result = apiInstance.updateUserMetadata(userId, apiToken, updateUserMetadataData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#updateUserMetadata");
@@ -951,7 +951,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20060**](InlineResponse20060.md)
+[**UpdateUserMetadataResponse**](UpdateUserMetadataResponse.md)
 
 ### Authorization
 
@@ -1313,7 +1313,7 @@ No authorization required
 
 <a name="viewUserMetadata"></a>
 # **viewUserMetadata**
-> InlineResponse20047UserMetadata viewUserMetadata(userId, apiToken, key, keys)
+> ViewUserMetadataResponse viewUserMetadata(userId, apiToken, key, keys)
 
 View a user metadata - When retrieving all items of a user metadata
 
@@ -1339,7 +1339,7 @@ public class Example {
     String key = "key_example"; // String | 
     List<String> keys = Arrays.asList(); // List<String> | 
     try {
-      InlineResponse20047UserMetadata result = apiInstance.viewUserMetadata(userId, apiToken, key, keys);
+      ViewUserMetadataResponse result = apiInstance.viewUserMetadata(userId, apiToken, key, keys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#viewUserMetadata");
@@ -1363,7 +1363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20047UserMetadata**](InlineResponse20047UserMetadata.md)
+[**ViewUserMetadataResponse**](ViewUserMetadataResponse.md)
 
 ### Authorization
 

@@ -14,19 +14,19 @@
 package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
+import org.openapitools.client.model.AddEmojiCategoriesResponse;
 import org.openapitools.client.model.AddEmojisData;
+import org.openapitools.client.model.AddEmojisResponse;
 import org.openapitools.client.model.EnableReactionsData;
-import org.openapitools.client.model.InlineResponse20051;
-import org.openapitools.client.model.InlineResponse20055;
-import org.openapitools.client.model.InlineResponse20056;
-import org.openapitools.client.model.InlineResponse20057;
-import org.openapitools.client.model.InlineResponse20058;
-import org.openapitools.client.model.InlineResponse20059;
+import org.openapitools.client.model.EnableReactionsResponse;
+import org.openapitools.client.model.ListAllEmojisAndEmojiCategoriesResponse;
+import org.openapitools.client.model.ListEmojisResponse;
 import org.openapitools.client.model.SendBirdEmoji;
 import org.openapitools.client.model.SendBirdEmojiCategory;
 import org.openapitools.client.model.UpdateEmojiCategoryUrlByIdData;
 import org.openapitools.client.model.UpdateEmojiUrlByKeyData;
 import org.openapitools.client.model.UseDefaultEmojisData;
+import org.openapitools.client.model.UseDefaultEmojisResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -56,7 +56,7 @@ public class EmojisApiTest {
     public void addEmojiCategoriesTest() throws ApiException {
         String apiToken = null;
         Object body = null;
-                InlineResponse20057 response = api.addEmojiCategories(apiToken, body);
+                AddEmojiCategoriesResponse response = api.addEmojiCategories(apiToken, body);
         // TODO: test validations
     }
     
@@ -72,7 +72,7 @@ public class EmojisApiTest {
     public void addEmojisTest() throws ApiException {
         String apiToken = null;
         AddEmojisData addEmojisData = null;
-                InlineResponse20059 response = api.addEmojis(apiToken, addEmojisData);
+                AddEmojisResponse response = api.addEmojis(apiToken, addEmojisData);
         // TODO: test validations
     }
     
@@ -120,7 +120,7 @@ public class EmojisApiTest {
     public void enableReactionsTest() throws ApiException {
         String apiToken = null;
         EnableReactionsData enableReactionsData = null;
-                InlineResponse20051 response = api.enableReactions(apiToken, enableReactionsData);
+                EnableReactionsResponse response = api.enableReactions(apiToken, enableReactionsData);
         // TODO: test validations
     }
     
@@ -167,7 +167,7 @@ public class EmojisApiTest {
     @Test
     public void listAllEmojisAndEmojiCategoriesTest() throws ApiException {
         String apiToken = null;
-                InlineResponse20056 response = api.listAllEmojisAndEmojiCategories(apiToken);
+                ListAllEmojisAndEmojiCategoriesResponse response = api.listAllEmojisAndEmojiCategories(apiToken);
         // TODO: test validations
     }
     
@@ -182,7 +182,7 @@ public class EmojisApiTest {
     @Test
     public void listEmojisTest() throws ApiException {
         String apiToken = null;
-                InlineResponse20058 response = api.listEmojis(apiToken);
+                ListEmojisResponse response = api.listEmojis(apiToken);
         // TODO: test validations
     }
     
@@ -232,7 +232,7 @@ public class EmojisApiTest {
     public void useDefaultEmojisTest() throws ApiException {
         String apiToken = null;
         UseDefaultEmojisData useDefaultEmojisData = null;
-                InlineResponse20055 response = api.useDefaultEmojis(apiToken, useDefaultEmojisData);
+                UseDefaultEmojisResponse response = api.useDefaultEmojis(apiToken, useDefaultEmojisData);
         // TODO: test validations
     }
     

@@ -15,34 +15,43 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
 import org.openapitools.client.model.AddRegistrationOrDeviceTokenData;
+import org.openapitools.client.model.AddRegistrationOrDeviceTokenResponse;
 import org.openapitools.client.model.BanFromChannelsWithCustomChannelTypesData;
 import org.openapitools.client.model.BlockUserData;
+import org.openapitools.client.model.ChoosePushNotificationContentTemplateResponse;
 import org.openapitools.client.model.CreateUserData;
-import org.openapitools.client.model.InlineResponse20016;
-import org.openapitools.client.model.InlineResponse20017;
-import org.openapitools.client.model.InlineResponse20018;
-import org.openapitools.client.model.InlineResponse20019;
-import org.openapitools.client.model.InlineResponse20020;
-import org.openapitools.client.model.InlineResponse20021;
-import org.openapitools.client.model.InlineResponse20022;
-import org.openapitools.client.model.InlineResponse20023;
-import org.openapitools.client.model.InlineResponse20024;
-import org.openapitools.client.model.InlineResponse20025;
-import org.openapitools.client.model.InlineResponse20026;
-import org.openapitools.client.model.InlineResponse20027;
-import org.openapitools.client.model.InlineResponse20028;
-import org.openapitools.client.model.InlineResponse20029;
-import org.openapitools.client.model.InlineResponse2005;
 import org.openapitools.client.model.LeaveMyGroupChannelsData;
+import org.openapitools.client.model.ListBannedChannelsResponse;
+import org.openapitools.client.model.ListBlockedUsersResponse;
+import org.openapitools.client.model.ListMutedChannelsResponse;
+import org.openapitools.client.model.ListMyGroupChannelsResponse;
+import org.openapitools.client.model.ListRegistrationOrDeviceTokensResponse;
+import org.openapitools.client.model.ListUsersResponse;
 import org.openapitools.client.model.MarkAllMessagesAsReadData;
 import org.openapitools.client.model.MuteInChannelsWithCustomChannelTypesData;
 import org.openapitools.client.model.RegisterAsOperatorToChannelsWithCustomChannelTypesData;
+import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenByTokenResponse;
+import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse;
+import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenResponse;
 import org.openapitools.client.model.SendBirdUser;
 import org.openapitools.client.model.UpdateChannelInvitationPreferenceData;
+import org.openapitools.client.model.UpdateChannelInvitationPreferenceResponse;
 import org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlData;
+import org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlResponse;
 import org.openapitools.client.model.UpdatePushPreferencesData;
 import org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlData;
+import org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlResponse;
+import org.openapitools.client.model.UpdatePushPreferencesResponse;
 import org.openapitools.client.model.UpdateUserByIdData;
+import org.openapitools.client.model.ViewChannelInvitationPreferenceResponse;
+import org.openapitools.client.model.ViewCountPreferenceOfChannelByUrlResponse;
+import org.openapitools.client.model.ViewNumberOfChannelsByJoinStatusResponse;
+import org.openapitools.client.model.ViewNumberOfChannelsWithUnreadMessagesResponse;
+import org.openapitools.client.model.ViewNumberOfUnreadItemsResponse;
+import org.openapitools.client.model.ViewNumberOfUnreadMessagesResponse;
+import org.openapitools.client.model.ViewPushPreferencesForChannelByUrlResponse;
+import org.openapitools.client.model.ViewPushPreferencesResponse;
+import org.openapitools.client.model.ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -74,7 +83,7 @@ public class UserApiTest {
         String tokenType = null;
         String apiToken = null;
         AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData = null;
-                InlineResponse20025 response = api.addRegistrationOrDeviceToken(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
+                AddRegistrationOrDeviceTokenResponse response = api.addRegistrationOrDeviceToken(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
         // TODO: test validations
     }
     
@@ -125,7 +134,7 @@ public class UserApiTest {
         String userId = null;
         String apiToken = null;
         Object body = null;
-                InlineResponse20029 response = api.choosePushNotificationContentTemplate(userId, apiToken, body);
+                ChoosePushNotificationContentTemplateResponse response = api.choosePushNotificationContentTemplate(userId, apiToken, body);
         // TODO: test validations
     }
     
@@ -192,7 +201,7 @@ public class UserApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20022 response = api.listBannedChannels(userId, apiToken, token, limit);
+                ListBannedChannelsResponse response = api.listBannedChannels(userId, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -213,7 +222,7 @@ public class UserApiTest {
         String userIds = null;
         String metadatakey = null;
         String metadatavaluesIn = null;
-                InlineResponse20016 response = api.listBlockedUsers(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn);
+                ListBlockedUsersResponse response = api.listBlockedUsers(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn);
         // TODO: test validations
     }
     
@@ -231,7 +240,7 @@ public class UserApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20023 response = api.listMutedChannels(userId, apiToken, token, limit);
+                ListMutedChannelsResponse response = api.listMutedChannels(userId, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -287,7 +296,7 @@ public class UserApiTest {
         String metacounterValueLt = null;
         String metacounterValueLte = null;
         String customType = null;
-                InlineResponse20017 response = api.listMyGroupChannels(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+                ListMyGroupChannelsResponse response = api.listMyGroupChannels(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
         // TODO: test validations
     }
     
@@ -304,7 +313,7 @@ public class UserApiTest {
         String userId = null;
         String tokenType = null;
         String apiToken = null;
-                InlineResponse20024 response = api.listRegistrationOrDeviceTokens(userId, tokenType, apiToken);
+                ListRegistrationOrDeviceTokensResponse response = api.listRegistrationOrDeviceTokens(userId, tokenType, apiToken);
         // TODO: test validations
     }
     
@@ -328,7 +337,7 @@ public class UserApiTest {
         String nicknameStartswith = null;
         String metadatakey = null;
         String metadatavaluesIn = null;
-                InlineResponse20016 response = api.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
+                ListUsersResponse response = api.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
         // TODO: test validations
     }
     
@@ -395,7 +404,7 @@ public class UserApiTest {
     public void removeRegistrationOrDeviceTokenTest() throws ApiException {
         String userId = null;
         String apiToken = null;
-                InlineResponse20026 response = api.removeRegistrationOrDeviceToken(userId, apiToken);
+                RemoveRegistrationOrDeviceTokenResponse response = api.removeRegistrationOrDeviceToken(userId, apiToken);
         // TODO: test validations
     }
     
@@ -413,7 +422,7 @@ public class UserApiTest {
         String tokenType = null;
         String token = null;
         String apiToken = null;
-                InlineResponse20026 response = api.removeRegistrationOrDeviceTokenByToken(userId, tokenType, token, apiToken);
+                RemoveRegistrationOrDeviceTokenByTokenResponse response = api.removeRegistrationOrDeviceTokenByToken(userId, tokenType, token, apiToken);
         // TODO: test validations
     }
     
@@ -430,7 +439,7 @@ public class UserApiTest {
         String tokenType = null;
         String token = null;
         String apiToken = null;
-                InlineResponse20027 response = api.removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token, apiToken);
+                RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse response = api.removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token, apiToken);
         // TODO: test validations
     }
     
@@ -480,7 +489,7 @@ public class UserApiTest {
         String userId = null;
         String apiToken = null;
         UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData = null;
-                InlineResponse2005 response = api.updateChannelInvitationPreference(userId, apiToken, updateChannelInvitationPreferenceData);
+                UpdateChannelInvitationPreferenceResponse response = api.updateChannelInvitationPreference(userId, apiToken, updateChannelInvitationPreferenceData);
         // TODO: test validations
     }
     
@@ -498,7 +507,7 @@ public class UserApiTest {
         String channelUrl = null;
         String apiToken = null;
         UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData = null;
-                InlineResponse20021 response = api.updateCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
+                UpdateCountPreferenceOfChannelByUrlResponse response = api.updateCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
         // TODO: test validations
     }
     
@@ -515,7 +524,7 @@ public class UserApiTest {
         String userId = null;
         String apiToken = null;
         UpdatePushPreferencesData updatePushPreferencesData = null;
-                InlineResponse20028 response = api.updatePushPreferences(userId, apiToken, updatePushPreferencesData);
+                UpdatePushPreferencesResponse response = api.updatePushPreferences(userId, apiToken, updatePushPreferencesData);
         // TODO: test validations
     }
     
@@ -533,7 +542,7 @@ public class UserApiTest {
         String channelUrl = null;
         String apiToken = null;
         UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData = null;
-                InlineResponse20028 response = api.updatePushPreferencesForChannelByUrl(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
+                UpdatePushPreferencesForChannelByUrlResponse response = api.updatePushPreferencesForChannelByUrl(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
         // TODO: test validations
     }
     
@@ -566,7 +575,7 @@ public class UserApiTest {
     public void viewChannelInvitationPreferenceTest() throws ApiException {
         String userId = null;
         String apiToken = null;
-                InlineResponse2005 response = api.viewChannelInvitationPreference(userId, apiToken);
+                ViewChannelInvitationPreferenceResponse response = api.viewChannelInvitationPreference(userId, apiToken);
         // TODO: test validations
     }
     
@@ -583,7 +592,7 @@ public class UserApiTest {
         String userId = null;
         String channelUrl = null;
         String apiToken = null;
-                InlineResponse20021 response = api.viewCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken);
+                ViewCountPreferenceOfChannelByUrlResponse response = api.viewCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken);
         // TODO: test validations
     }
     
@@ -600,7 +609,7 @@ public class UserApiTest {
         String userId = null;
         String apiToken = null;
         String state = null;
-                InlineResponse20020 response = api.viewNumberOfChannelsByJoinStatus(userId, apiToken, state);
+                ViewNumberOfChannelsByJoinStatusResponse response = api.viewNumberOfChannelsByJoinStatus(userId, apiToken, state);
         // TODO: test validations
     }
     
@@ -618,7 +627,7 @@ public class UserApiTest {
         String apiToken = null;
         List<String> customTypes = null;
         String superMode = null;
-                InlineResponse20018 response = api.viewNumberOfChannelsWithUnreadMessages(userId, apiToken, customTypes, superMode);
+                ViewNumberOfChannelsWithUnreadMessagesResponse response = api.viewNumberOfChannelsWithUnreadMessages(userId, apiToken, customTypes, superMode);
         // TODO: test validations
     }
     
@@ -636,7 +645,7 @@ public class UserApiTest {
         String apiToken = null;
         String customType = null;
         String itemKeys = null;
-                InlineResponse20019 response = api.viewNumberOfUnreadItems(userId, apiToken, customType, itemKeys);
+                ViewNumberOfUnreadItemsResponse response = api.viewNumberOfUnreadItems(userId, apiToken, customType, itemKeys);
         // TODO: test validations
     }
     
@@ -654,7 +663,7 @@ public class UserApiTest {
         String apiToken = null;
         String customTypes = null;
         String superMode = null;
-                InlineResponse20018 response = api.viewNumberOfUnreadMessages(userId, apiToken, customTypes, superMode);
+                ViewNumberOfUnreadMessagesResponse response = api.viewNumberOfUnreadMessages(userId, apiToken, customTypes, superMode);
         // TODO: test validations
     }
     
@@ -670,7 +679,7 @@ public class UserApiTest {
     public void viewPushPreferencesTest() throws ApiException {
         String userId = null;
         String apiToken = null;
-                InlineResponse20028 response = api.viewPushPreferences(userId, apiToken);
+                ViewPushPreferencesResponse response = api.viewPushPreferences(userId, apiToken);
         // TODO: test validations
     }
     
@@ -687,7 +696,7 @@ public class UserApiTest {
         String userId = null;
         String channelUrl = null;
         String apiToken = null;
-                InlineResponse20028 response = api.viewPushPreferencesForChannelByUrl(userId, channelUrl, apiToken);
+                ViewPushPreferencesForChannelByUrlResponse response = api.viewPushPreferencesForChannelByUrl(userId, channelUrl, apiToken);
         // TODO: test validations
     }
     
@@ -723,7 +732,7 @@ public class UserApiTest {
         String tokenType = null;
         String token = null;
         String apiToken = null;
-                InlineResponse20027 response = api.viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token, apiToken);
+                ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse response = api.viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token, apiToken);
         // TODO: test validations
     }
     

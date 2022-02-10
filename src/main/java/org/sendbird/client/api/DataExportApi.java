@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse20063;
-import org.openapitools.client.model.InlineResponse20063ExportedData;
-import org.openapitools.client.model.InlineResponse20064;
+import org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponse;
 import org.openapitools.client.model.RegisterAndScheduleDataExportData;
+import org.openapitools.client.model.RegisterAndScheduleDataExportResponse;
+import org.openapitools.client.model.ViewDataExportByIdResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -170,7 +170,7 @@ public class DataExportApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse20063
+     * @return ListDataExportsByMessageChannelOrUserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -178,8 +178,8 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20063 listDataExportsByMessageChannelOrUser(String dataType, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse20063> localVarResp = listDataExportsByMessageChannelOrUserWithHttpInfo(dataType, apiToken, token, limit);
+    public ListDataExportsByMessageChannelOrUserResponse listDataExportsByMessageChannelOrUser(String dataType, String apiToken, String token, Integer limit) throws ApiException {
+        ApiResponse<ListDataExportsByMessageChannelOrUserResponse> localVarResp = listDataExportsByMessageChannelOrUserWithHttpInfo(dataType, apiToken, token, limit);
         return localVarResp.getData();
     }
 
@@ -190,7 +190,7 @@ public class DataExportApi {
      * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse20063&gt;
+     * @return ApiResponse&lt;ListDataExportsByMessageChannelOrUserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -198,9 +198,9 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20063> listDataExportsByMessageChannelOrUserWithHttpInfo(String dataType, String apiToken, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExportsByMessageChannelOrUserWithHttpInfo(String dataType, String apiToken, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listDataExportsByMessageChannelOrUserValidateBeforeCall(dataType, apiToken, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20063>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListDataExportsByMessageChannelOrUserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -220,10 +220,10 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDataExportsByMessageChannelOrUserAsync(String dataType, String apiToken, String token, Integer limit, final ApiCallback<InlineResponse20063> _callback) throws ApiException {
+    public okhttp3.Call listDataExportsByMessageChannelOrUserAsync(String dataType, String apiToken, String token, Integer limit, final ApiCallback<ListDataExportsByMessageChannelOrUserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listDataExportsByMessageChannelOrUserValidateBeforeCall(dataType, apiToken, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20063>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListDataExportsByMessageChannelOrUserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -312,7 +312,7 @@ public class DataExportApi {
      * @param dataType  (required)
      * @param apiToken  (optional)
      * @param registerAndScheduleDataExportData  (optional)
-     * @return InlineResponse20063ExportedData
+     * @return RegisterAndScheduleDataExportResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -320,8 +320,8 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20063ExportedData registerAndScheduleDataExport(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
-        ApiResponse<InlineResponse20063ExportedData> localVarResp = registerAndScheduleDataExportWithHttpInfo(dataType, apiToken, registerAndScheduleDataExportData);
+    public RegisterAndScheduleDataExportResponse registerAndScheduleDataExport(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
+        ApiResponse<RegisterAndScheduleDataExportResponse> localVarResp = registerAndScheduleDataExportWithHttpInfo(dataType, apiToken, registerAndScheduleDataExportData);
         return localVarResp.getData();
     }
 
@@ -331,7 +331,7 @@ public class DataExportApi {
      * @param dataType  (required)
      * @param apiToken  (optional)
      * @param registerAndScheduleDataExportData  (optional)
-     * @return ApiResponse&lt;InlineResponse20063ExportedData&gt;
+     * @return ApiResponse&lt;RegisterAndScheduleDataExportResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -339,9 +339,9 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20063ExportedData> registerAndScheduleDataExportWithHttpInfo(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
+    public ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDataExportWithHttpInfo(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
         okhttp3.Call localVarCall = registerAndScheduleDataExportValidateBeforeCall(dataType, apiToken, registerAndScheduleDataExportData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20063ExportedData>(){}.getType();
+        Type localVarReturnType = new TypeToken<RegisterAndScheduleDataExportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -360,10 +360,10 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerAndScheduleDataExportAsync(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData, final ApiCallback<InlineResponse20063ExportedData> _callback) throws ApiException {
+    public okhttp3.Call registerAndScheduleDataExportAsync(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData, final ApiCallback<RegisterAndScheduleDataExportResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = registerAndScheduleDataExportValidateBeforeCall(dataType, apiToken, registerAndScheduleDataExportData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20063ExportedData>(){}.getType();
+        Type localVarReturnType = new TypeToken<RegisterAndScheduleDataExportResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -458,7 +458,7 @@ public class DataExportApi {
      * @param dataType  (required)
      * @param requestId  (required)
      * @param apiToken  (optional)
-     * @return InlineResponse20064
+     * @return ViewDataExportByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -466,8 +466,8 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse20064 viewDataExportById(String dataType, String requestId, String apiToken) throws ApiException {
-        ApiResponse<InlineResponse20064> localVarResp = viewDataExportByIdWithHttpInfo(dataType, requestId, apiToken);
+    public ViewDataExportByIdResponse viewDataExportById(String dataType, String requestId, String apiToken) throws ApiException {
+        ApiResponse<ViewDataExportByIdResponse> localVarResp = viewDataExportByIdWithHttpInfo(dataType, requestId, apiToken);
         return localVarResp.getData();
     }
 
@@ -477,7 +477,7 @@ public class DataExportApi {
      * @param dataType  (required)
      * @param requestId  (required)
      * @param apiToken  (optional)
-     * @return ApiResponse&lt;InlineResponse20064&gt;
+     * @return ApiResponse&lt;ViewDataExportByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -485,9 +485,9 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse20064> viewDataExportByIdWithHttpInfo(String dataType, String requestId, String apiToken) throws ApiException {
+    public ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(String dataType, String requestId, String apiToken) throws ApiException {
         okhttp3.Call localVarCall = viewDataExportByIdValidateBeforeCall(dataType, requestId, apiToken, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20064>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewDataExportByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -506,10 +506,10 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewDataExportByIdAsync(String dataType, String requestId, String apiToken, final ApiCallback<InlineResponse20064> _callback) throws ApiException {
+    public okhttp3.Call viewDataExportByIdAsync(String dataType, String requestId, String apiToken, final ApiCallback<ViewDataExportByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewDataExportByIdValidateBeforeCall(dataType, requestId, apiToken, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20064>(){}.getType();
+        Type localVarReturnType = new TypeToken<ViewDataExportByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

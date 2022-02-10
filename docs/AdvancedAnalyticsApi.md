@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="retrieveAdvancedAnalyticsMetrics"></a>
 # **retrieveAdvancedAnalyticsMetrics**
-> InlineResponse20062 retrieveAdvancedAnalyticsMetrics(apiToken)
+> RetrieveAdvancedAnalyticsMetricsResponse retrieveAdvancedAnalyticsMetrics(apiToken)
 
 Retrieve Advanced analytics metrics
 
@@ -32,7 +32,7 @@ public class Example {
     AdvancedAnalyticsApi apiInstance = new AdvancedAnalyticsApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20062 result = apiInstance.retrieveAdvancedAnalyticsMetrics(apiToken);
+      RetrieveAdvancedAnalyticsMetricsResponse result = apiInstance.retrieveAdvancedAnalyticsMetrics(apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AdvancedAnalyticsApi#retrieveAdvancedAnalyticsMetrics");
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20062**](InlineResponse20062.md)
+[**RetrieveAdvancedAnalyticsMetricsResponse**](RetrieveAdvancedAnalyticsMetricsResponse.md)
 
 ### Authorization
 

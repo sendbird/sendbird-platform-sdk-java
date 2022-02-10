@@ -14,10 +14,10 @@
 package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
-import org.openapitools.client.model.InlineResponse20063;
-import org.openapitools.client.model.InlineResponse20063ExportedData;
-import org.openapitools.client.model.InlineResponse20064;
+import org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponse;
 import org.openapitools.client.model.RegisterAndScheduleDataExportData;
+import org.openapitools.client.model.RegisterAndScheduleDataExportResponse;
+import org.openapitools.client.model.ViewDataExportByIdResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -49,7 +49,7 @@ public class DataExportApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20063 response = api.listDataExportsByMessageChannelOrUser(dataType, apiToken, token, limit);
+                ListDataExportsByMessageChannelOrUserResponse response = api.listDataExportsByMessageChannelOrUser(dataType, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -66,7 +66,7 @@ public class DataExportApiTest {
         String dataType = null;
         String apiToken = null;
         RegisterAndScheduleDataExportData registerAndScheduleDataExportData = null;
-                InlineResponse20063ExportedData response = api.registerAndScheduleDataExport(dataType, apiToken, registerAndScheduleDataExportData);
+                RegisterAndScheduleDataExportResponse response = api.registerAndScheduleDataExport(dataType, apiToken, registerAndScheduleDataExportData);
         // TODO: test validations
     }
     
@@ -83,7 +83,7 @@ public class DataExportApiTest {
         String dataType = null;
         String requestId = null;
         String apiToken = null;
-                InlineResponse20064 response = api.viewDataExportById(dataType, requestId, apiToken);
+                ViewDataExportByIdResponse response = api.viewDataExportById(dataType, requestId, apiToken);
         // TODO: test validations
     }
     

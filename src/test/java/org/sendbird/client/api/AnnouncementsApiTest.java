@@ -14,17 +14,19 @@
 package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
-import org.openapitools.client.model.InlineResponse20039;
-import org.openapitools.client.model.InlineResponse20039Announcements;
-import org.openapitools.client.model.InlineResponse20040;
-import org.openapitools.client.model.InlineResponse20041;
-import org.openapitools.client.model.InlineResponse20042;
-import org.openapitools.client.model.InlineResponse20043;
-import org.openapitools.client.model.InlineResponse20044;
-import org.openapitools.client.model.InlineResponse20045;
-import org.openapitools.client.model.InlineResponse20046;
+import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementByIdResponse;
+import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementGroupResponse;
+import org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResponse;
+import org.openapitools.client.model.GetStatisticsDailyResponse;
+import org.openapitools.client.model.GetStatisticsMonthlyResponse;
+import org.openapitools.client.model.GetStatisticsResponse;
+import org.openapitools.client.model.ListAnnouncementGroupsResponse;
+import org.openapitools.client.model.ListAnnouncementsResponse;
 import org.openapitools.client.model.ScheduleAnnouncementData;
+import org.openapitools.client.model.ScheduleAnnouncementResponse;
 import org.openapitools.client.model.UpdateAnnouncementByIdData;
+import org.openapitools.client.model.UpdateAnnouncementByIdResponse;
+import org.openapitools.client.model.ViewAnnouncementByIdResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -54,7 +56,7 @@ public class AnnouncementsApiTest {
     public void getDetailedOpenRateOfAnnouncementByIdTest() throws ApiException {
         String uniqueId = null;
         String apiToken = null;
-                InlineResponse20042 response = api.getDetailedOpenRateOfAnnouncementById(uniqueId, apiToken);
+                GetDetailedOpenRateOfAnnouncementByIdResponse response = api.getDetailedOpenRateOfAnnouncementById(uniqueId, apiToken);
         // TODO: test validations
     }
     
@@ -70,7 +72,7 @@ public class AnnouncementsApiTest {
     public void getDetailedOpenRateOfAnnouncementGroupTest() throws ApiException {
         String announcementGroup = null;
         String apiToken = null;
-                InlineResponse20046 response = api.getDetailedOpenRateOfAnnouncementGroup(announcementGroup, apiToken);
+                GetDetailedOpenRateOfAnnouncementGroupResponse response = api.getDetailedOpenRateOfAnnouncementGroup(announcementGroup, apiToken);
         // TODO: test validations
     }
     
@@ -91,7 +93,7 @@ public class AnnouncementsApiTest {
         List<String> uniqueIds = null;
         List<String> channelUrls = null;
         Boolean hasOpened = null;
-                InlineResponse20043 response = api.getDetailedOpenStatusOfAnnouncementById(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened);
+                GetDetailedOpenStatusOfAnnouncementByIdResponse response = api.getDetailedOpenStatusOfAnnouncementById(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened);
         // TODO: test validations
     }
     
@@ -106,7 +108,7 @@ public class AnnouncementsApiTest {
     @Test
     public void getStatisticsTest() throws ApiException {
         String apiToken = null;
-                InlineResponse20044 response = api.getStatistics(apiToken);
+                GetStatisticsResponse response = api.getStatistics(apiToken);
         // TODO: test validations
     }
     
@@ -128,7 +130,7 @@ public class AnnouncementsApiTest {
         String endMonth = null;
         String apiToken = null;
         String announcementGroup = null;
-                InlineResponse20044 response = api.getStatisticsDaily(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup);
+                GetStatisticsDailyResponse response = api.getStatisticsDaily(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup);
         // TODO: test validations
     }
     
@@ -143,7 +145,7 @@ public class AnnouncementsApiTest {
     @Test
     public void getStatisticsMonthlyTest() throws ApiException {
         String apiToken = null;
-                InlineResponse20044 response = api.getStatisticsMonthly(apiToken);
+                GetStatisticsMonthlyResponse response = api.getStatisticsMonthly(apiToken);
         // TODO: test validations
     }
     
@@ -160,7 +162,7 @@ public class AnnouncementsApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20045 response = api.listAnnouncementGroups(apiToken, token, limit);
+                ListAnnouncementGroupsResponse response = api.listAnnouncementGroups(apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -180,7 +182,7 @@ public class AnnouncementsApiTest {
         String order = null;
         String status = null;
         String announcementGroup = null;
-                InlineResponse20039 response = api.listAnnouncements(apiToken, token, limit, order, status, announcementGroup);
+                ListAnnouncementsResponse response = api.listAnnouncements(apiToken, token, limit, order, status, announcementGroup);
         // TODO: test validations
     }
     
@@ -196,7 +198,7 @@ public class AnnouncementsApiTest {
     public void scheduleAnnouncementTest() throws ApiException {
         String apiToken = null;
         ScheduleAnnouncementData scheduleAnnouncementData = null;
-                InlineResponse20040 response = api.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
+                ScheduleAnnouncementResponse response = api.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
         // TODO: test validations
     }
     
@@ -213,7 +215,7 @@ public class AnnouncementsApiTest {
         String uniqueId = null;
         String apiToken = null;
         UpdateAnnouncementByIdData updateAnnouncementByIdData = null;
-                InlineResponse20041 response = api.updateAnnouncementById(uniqueId, apiToken, updateAnnouncementByIdData);
+                UpdateAnnouncementByIdResponse response = api.updateAnnouncementById(uniqueId, apiToken, updateAnnouncementByIdData);
         // TODO: test validations
     }
     
@@ -229,7 +231,7 @@ public class AnnouncementsApiTest {
     public void viewAnnouncementByIdTest() throws ApiException {
         String uniqueId = null;
         String apiToken = null;
-                InlineResponse20039Announcements response = api.viewAnnouncementById(uniqueId, apiToken);
+                ViewAnnouncementByIdResponse response = api.viewAnnouncementById(uniqueId, apiToken);
         // TODO: test validations
     }
     

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="listReports"></a>
 # **listReports**
-> InlineResponse20070 listReports(apiToken, token, limit, startTs, endTs)
+> ListReportsResponse listReports(apiToken, token, limit, startTs, endTs)
 
 List reports
 
@@ -43,7 +43,7 @@ public class Example {
     Integer startTs = 56; // Integer | 
     Integer endTs = 56; // Integer | 
     try {
-      InlineResponse20070 result = apiInstance.listReports(apiToken, token, limit, startTs, endTs);
+      ListReportsResponse result = apiInstance.listReports(apiToken, token, limit, startTs, endTs);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#listReports");
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20070**](InlineResponse20070.md)
+[**ListReportsResponse**](ListReportsResponse.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ No authorization required
 
 <a name="listReportsOnChannelByUrl"></a>
 # **listReportsOnChannelByUrl**
-> InlineResponse20071 listReportsOnChannelByUrl(channelType, channelUrl, apiToken, token, limit)
+> ListReportsOnChannelByUrlResponse listReportsOnChannelByUrl(channelType, channelUrl, apiToken, token, limit)
 
 List reports on a channel
 
@@ -113,7 +113,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20071 result = apiInstance.listReportsOnChannelByUrl(channelType, channelUrl, apiToken, token, limit);
+      ListReportsOnChannelByUrlResponse result = apiInstance.listReportsOnChannelByUrl(channelType, channelUrl, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#listReportsOnChannelByUrl");
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071**](InlineResponse20071.md)
+[**ListReportsOnChannelByUrlResponse**](ListReportsOnChannelByUrlResponse.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ No authorization required
 
 <a name="listReportsOnMessageById"></a>
 # **listReportsOnMessageById**
-> InlineResponse20071 listReportsOnMessageById(channelType, channelUrl, messageId, apiToken, token, limit)
+> ListReportsOnMessageByIdResponse listReportsOnMessageById(channelType, channelUrl, messageId, apiToken, token, limit)
 
 List reports on a message
 
@@ -184,7 +184,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20071 result = apiInstance.listReportsOnMessageById(channelType, channelUrl, messageId, apiToken, token, limit);
+      ListReportsOnMessageByIdResponse result = apiInstance.listReportsOnMessageById(channelType, channelUrl, messageId, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#listReportsOnMessageById");
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071**](InlineResponse20071.md)
+[**ListReportsOnMessageByIdResponse**](ListReportsOnMessageByIdResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ No authorization required
 
 <a name="listReportsOnUserById"></a>
 # **listReportsOnUserById**
-> InlineResponse20071 listReportsOnUserById(offendingUserId, apiToken, token, limit)
+> ListReportsOnUserByIdResponse listReportsOnUserById(offendingUserId, apiToken, token, limit)
 
 List reports on a user
 
@@ -254,7 +254,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20071 result = apiInstance.listReportsOnUserById(offendingUserId, apiToken, token, limit);
+      ListReportsOnUserByIdResponse result = apiInstance.listReportsOnUserById(offendingUserId, apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#listReportsOnUserById");
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071**](InlineResponse20071.md)
+[**ListReportsOnUserByIdResponse**](ListReportsOnUserByIdResponse.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ No authorization required
 
 <a name="reportChannelByUrl"></a>
 # **reportChannelByUrl**
-> InlineResponse20071ReportLogs reportChannelByUrl(channelType, channelUrl, apiToken, reportChannelByUrlData)
+> ReportChannelByUrlResponse reportChannelByUrl(channelType, channelUrl, apiToken, reportChannelByUrlData)
 
 Report a channel
 
@@ -322,7 +322,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     ReportChannelByUrlData reportChannelByUrlData = new ReportChannelByUrlData(); // ReportChannelByUrlData | 
     try {
-      InlineResponse20071ReportLogs result = apiInstance.reportChannelByUrl(channelType, channelUrl, apiToken, reportChannelByUrlData);
+      ReportChannelByUrlResponse result = apiInstance.reportChannelByUrl(channelType, channelUrl, apiToken, reportChannelByUrlData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#reportChannelByUrl");
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071ReportLogs**](InlineResponse20071ReportLogs.md)
+[**ReportChannelByUrlResponse**](ReportChannelByUrlResponse.md)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ No authorization required
 
 <a name="reportMessageById"></a>
 # **reportMessageById**
-> InlineResponse20071ReportLogs reportMessageById(channelType, channelUrl, messageId, apiToken, reportMessageByIdData)
+> ReportMessageByIdResponse reportMessageById(channelType, channelUrl, messageId, apiToken, reportMessageByIdData)
 
 Report a message
 
@@ -391,7 +391,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     ReportMessageByIdData reportMessageByIdData = new ReportMessageByIdData(); // ReportMessageByIdData | 
     try {
-      InlineResponse20071ReportLogs result = apiInstance.reportMessageById(channelType, channelUrl, messageId, apiToken, reportMessageByIdData);
+      ReportMessageByIdResponse result = apiInstance.reportMessageById(channelType, channelUrl, messageId, apiToken, reportMessageByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#reportMessageById");
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071ReportLogs**](InlineResponse20071ReportLogs.md)
+[**ReportMessageByIdResponse**](ReportMessageByIdResponse.md)
 
 ### Authorization
 
@@ -434,7 +434,7 @@ No authorization required
 
 <a name="reportUserById"></a>
 # **reportUserById**
-> InlineResponse20071ReportLogs reportUserById(offendingUserId, apiToken, reportUserByIdData)
+> ReportUserByIdResponse reportUserById(offendingUserId, apiToken, reportUserByIdData)
 
 Report a user
 
@@ -459,7 +459,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     ReportUserByIdData reportUserByIdData = new ReportUserByIdData(); // ReportUserByIdData | 
     try {
-      InlineResponse20071ReportLogs result = apiInstance.reportUserById(offendingUserId, apiToken, reportUserByIdData);
+      ReportUserByIdResponse result = apiInstance.reportUserById(offendingUserId, apiToken, reportUserByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#reportUserById");
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20071ReportLogs**](InlineResponse20071ReportLogs.md)
+[**ReportUserByIdResponse**](ReportUserByIdResponse.md)
 
 ### Authorization
 

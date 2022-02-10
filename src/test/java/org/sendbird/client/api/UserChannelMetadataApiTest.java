@@ -16,14 +16,15 @@ package org.sendbird.client.api;
 import org.sendbird.client.ApiException;
 import org.openapitools.client.model.CreateChannelMetacounterData;
 import org.openapitools.client.model.CreateChannelMetadataData;
+import org.openapitools.client.model.CreateChannelMetadataResponse;
 import org.openapitools.client.model.CreateUserMetadataData;
-import org.openapitools.client.model.InlineResponse20047UserMetadata;
-import org.openapitools.client.model.InlineResponse20060;
-import org.openapitools.client.model.InlineResponse20061;
+import org.openapitools.client.model.CreateUserMetadataResponse;
 import org.openapitools.client.model.SendBirdAdditionalProperties;
 import org.openapitools.client.model.UpdateChannelMetacounterData;
 import org.openapitools.client.model.UpdateChannelMetadataData;
 import org.openapitools.client.model.UpdateUserMetadataData;
+import org.openapitools.client.model.UpdateUserMetadataResponse;
+import org.openapitools.client.model.ViewUserMetadataResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -73,7 +74,7 @@ public class UserChannelMetadataApiTest {
         String channelUrl = null;
         String apiToken = null;
         CreateChannelMetadataData createChannelMetadataData = null;
-                InlineResponse20061 response = api.createChannelMetadata(channelType, channelUrl, apiToken, createChannelMetadataData);
+                CreateChannelMetadataResponse response = api.createChannelMetadata(channelType, channelUrl, apiToken, createChannelMetadataData);
         // TODO: test validations
     }
     
@@ -90,7 +91,7 @@ public class UserChannelMetadataApiTest {
         String userId = null;
         String apiToken = null;
         CreateUserMetadataData createUserMetadataData = null;
-                InlineResponse20047UserMetadata response = api.createUserMetadata(userId, apiToken, createUserMetadataData);
+                CreateUserMetadataResponse response = api.createUserMetadata(userId, apiToken, createUserMetadataData);
         // TODO: test validations
     }
     
@@ -286,7 +287,7 @@ public class UserChannelMetadataApiTest {
         String userId = null;
         String apiToken = null;
         UpdateUserMetadataData updateUserMetadataData = null;
-                InlineResponse20060 response = api.updateUserMetadata(userId, apiToken, updateUserMetadataData);
+                UpdateUserMetadataResponse response = api.updateUserMetadata(userId, apiToken, updateUserMetadataData);
         // TODO: test validations
     }
     
@@ -396,7 +397,7 @@ public class UserChannelMetadataApiTest {
         String apiToken = null;
         String key = null;
         List<String> keys = null;
-                InlineResponse20047UserMetadata response = api.viewUserMetadata(userId, apiToken, key, keys);
+                ViewUserMetadataResponse response = api.viewUserMetadata(userId, apiToken, key, keys);
         // TODO: test validations
     }
     

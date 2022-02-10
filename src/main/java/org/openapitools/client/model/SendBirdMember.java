@@ -25,13 +25,13 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ModelObject;
+import org.openapitools.client.model.SBObject;
 import org.openapitools.client.model.SendBirdRestrictionInfo;
 
 /**
  * SendBirdMember
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-07T15:20:09.800379Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T12:13:33.713738Z[Europe/London]")
 public class SendBirdMember {
   public static final String SERIALIZED_NAME_CONNECTION_STATUS = "connection_status";
   @SerializedName(SERIALIZED_NAME_CONNECTION_STATUS)
@@ -67,7 +67,7 @@ public class SendBirdMember {
 
   public static final String SERIALIZED_NAME_META_DATA = "meta_data";
   @SerializedName(SERIALIZED_NAME_META_DATA)
-  private ModelObject metaData;
+  private SBObject metaData;
 
   public static final String SERIALIZED_NAME_NICKNAME = "nickname";
   @SerializedName(SERIALIZED_NAME_NICKNAME)
@@ -386,7 +386,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember metaData(ModelObject metaData) {
+  public SendBirdMember metaData(SBObject metaData) {
     
     this.metaData = metaData;
     return this;
@@ -399,12 +399,12 @@ public class SendBirdMember {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ModelObject getMetaData() {
+  public SBObject getMetaData() {
     return metaData;
   }
 
 
-  public void setMetaData(ModelObject metaData) {
+  public void setMetaData(SBObject metaData) {
     this.metaData = metaData;
   }
 

@@ -75,7 +75,7 @@ No authorization required
 
 <a name="listGdprRequests"></a>
 # **listGdprRequests**
-> InlineResponse20068 listGdprRequests(apiToken, token, limit)
+> ListGdprRequestsResponse listGdprRequests(apiToken, token, limit)
 
 List GDPR requests
 
@@ -100,7 +100,7 @@ public class Example {
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      InlineResponse20068 result = apiInstance.listGdprRequests(apiToken, token, limit);
+      ListGdprRequestsResponse result = apiInstance.listGdprRequests(apiToken, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataPrivacyApi#listGdprRequests");
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20068**](InlineResponse20068.md)
+[**ListGdprRequestsResponse**](ListGdprRequestsResponse.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ No authorization required
 
 <a name="registerGdprRequest"></a>
 # **registerGdprRequest**
-> InlineResponse20069 registerGdprRequest(apiToken, registerGdprRequestData)
+> RegisterGdprRequestResponse registerGdprRequest(apiToken, registerGdprRequestData)
 
 Register a GDPR request
 
@@ -165,7 +165,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     RegisterGdprRequestData registerGdprRequestData = new RegisterGdprRequestData(); // RegisterGdprRequestData | 
     try {
-      InlineResponse20069 result = apiInstance.registerGdprRequest(apiToken, registerGdprRequestData);
+      RegisterGdprRequestResponse result = apiInstance.registerGdprRequest(apiToken, registerGdprRequestData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataPrivacyApi#registerGdprRequest");
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20069**](InlineResponse20069.md)
+[**RegisterGdprRequestResponse**](RegisterGdprRequestResponse.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ No authorization required
 
 <a name="viewGdprRequestById"></a>
 # **viewGdprRequestById**
-> InlineResponse20068Requests viewGdprRequestById(requestId, apiToken)
+> ViewGdprRequestByIdResponse viewGdprRequestById(requestId, apiToken)
 
 View a GDPR request
 
@@ -229,7 +229,7 @@ public class Example {
     String requestId = "requestId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      InlineResponse20068Requests result = apiInstance.viewGdprRequestById(requestId, apiToken);
+      ViewGdprRequestByIdResponse result = apiInstance.viewGdprRequestById(requestId, apiToken);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataPrivacyApi#viewGdprRequestById");
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20068Requests**](InlineResponse20068Requests.md)
+[**ViewGdprRequestByIdResponse**](ViewGdprRequestByIdResponse.md)
 
 ### Authorization
 

@@ -15,13 +15,15 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
 import org.openapitools.client.model.CreateBotData;
-import org.openapitools.client.model.InlineResponse20065;
-import org.openapitools.client.model.InlineResponse20065Bots;
+import org.openapitools.client.model.CreateBotResponse;
 import org.openapitools.client.model.JoinChannelsData;
+import org.openapitools.client.model.ListBotsResponse;
 import org.openapitools.client.model.SendBirdGroupChannelCollection;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBotSMessageData;
 import org.openapitools.client.model.UpdateBotByIdData;
+import org.openapitools.client.model.UpdateBotByIdResponse;
+import org.openapitools.client.model.ViewBotByIdResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -51,7 +53,7 @@ public class BotInterfaceApiTest {
     public void createBotTest() throws ApiException {
         String apiToken = null;
         CreateBotData createBotData = null;
-                InlineResponse20065Bots response = api.createBot(apiToken, createBotData);
+                CreateBotResponse response = api.createBot(apiToken, createBotData);
         // TODO: test validations
     }
     
@@ -135,7 +137,7 @@ public class BotInterfaceApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20065 response = api.listBots(apiToken, token, limit);
+                ListBotsResponse response = api.listBots(apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -169,7 +171,7 @@ public class BotInterfaceApiTest {
         String botUserid = null;
         String apiToken = null;
         UpdateBotByIdData updateBotByIdData = null;
-                InlineResponse20065Bots response = api.updateBotById(botUserid, apiToken, updateBotByIdData);
+                UpdateBotByIdResponse response = api.updateBotById(botUserid, apiToken, updateBotByIdData);
         // TODO: test validations
     }
     
@@ -185,7 +187,7 @@ public class BotInterfaceApiTest {
     public void viewBotByIdTest() throws ApiException {
         String botUserid = null;
         String apiToken = null;
-                InlineResponse20065Bots response = api.viewBotById(botUserid, apiToken);
+                ViewBotByIdResponse response = api.viewBotById(botUserid, apiToken);
         // TODO: test validations
     }
     

@@ -14,10 +14,10 @@
 package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
-import org.openapitools.client.model.InlineResponse20068;
-import org.openapitools.client.model.InlineResponse20068Requests;
-import org.openapitools.client.model.InlineResponse20069;
+import org.openapitools.client.model.ListGdprRequestsResponse;
 import org.openapitools.client.model.RegisterGdprRequestData;
+import org.openapitools.client.model.RegisterGdprRequestResponse;
+import org.openapitools.client.model.ViewGdprRequestByIdResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -64,7 +64,7 @@ public class DataPrivacyApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20068 response = api.listGdprRequests(apiToken, token, limit);
+                ListGdprRequestsResponse response = api.listGdprRequests(apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -80,7 +80,7 @@ public class DataPrivacyApiTest {
     public void registerGdprRequestTest() throws ApiException {
         String apiToken = null;
         RegisterGdprRequestData registerGdprRequestData = null;
-                InlineResponse20069 response = api.registerGdprRequest(apiToken, registerGdprRequestData);
+                RegisterGdprRequestResponse response = api.registerGdprRequest(apiToken, registerGdprRequestData);
         // TODO: test validations
     }
     
@@ -96,7 +96,7 @@ public class DataPrivacyApiTest {
     public void viewGdprRequestByIdTest() throws ApiException {
         String requestId = null;
         String apiToken = null;
-                InlineResponse20068Requests response = api.viewGdprRequestById(requestId, apiToken);
+                ViewGdprRequestByIdResponse response = api.viewGdprRequestById(requestId, apiToken);
         // TODO: test validations
     }
     

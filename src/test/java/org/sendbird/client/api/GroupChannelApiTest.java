@@ -16,6 +16,8 @@ package org.sendbird.client.api;
 import org.sendbird.client.ApiException;
 import org.openapitools.client.model.GcAcceptInvitationData;
 import org.openapitools.client.model.GcBanUserData;
+import org.openapitools.client.model.GcBanUserResponse;
+import org.openapitools.client.model.GcCheckIfMemberByIdResponse;
 import org.openapitools.client.model.GcCreateChannelData;
 import org.openapitools.client.model.GcDeclineInvitationData;
 import org.openapitools.client.model.GcFreezeChannelData;
@@ -23,20 +25,18 @@ import org.openapitools.client.model.GcHideOrArchiveChannelData;
 import org.openapitools.client.model.GcInviteAsMembersData;
 import org.openapitools.client.model.GcJoinChannelData;
 import org.openapitools.client.model.GcLeaveChannelData;
+import org.openapitools.client.model.GcListBannedUsersResponse;
+import org.openapitools.client.model.GcListChannelsResponse;
+import org.openapitools.client.model.GcListMembersResponse;
+import org.openapitools.client.model.GcListMutedUsersResponse;
+import org.openapitools.client.model.GcListOperatorsResponse;
 import org.openapitools.client.model.GcMuteUserData;
 import org.openapitools.client.model.GcRegisterOperatorsData;
+import org.openapitools.client.model.GcRegisterOperatorsResponse;
 import org.openapitools.client.model.GcResetChatHistoryData;
 import org.openapitools.client.model.GcUpdateBanByIdData;
 import org.openapitools.client.model.GcUpdateChannelByUrlData;
-import org.openapitools.client.model.InlineResponse20017;
-import org.openapitools.client.model.InlineResponse20031;
-import org.openapitools.client.model.InlineResponse20033;
-import org.openapitools.client.model.InlineResponse20033BannedList;
-import org.openapitools.client.model.InlineResponse20034;
-import org.openapitools.client.model.InlineResponse20035;
-import org.openapitools.client.model.InlineResponse20036;
-import org.openapitools.client.model.InlineResponse20037;
-import org.openapitools.client.model.InlineResponse20038;
+import org.openapitools.client.model.GcViewMuteByIdResponse;
 import org.openapitools.client.model.SendBirdGroupChannel;
 import org.openapitools.client.model.SendBirdUser;
 import org.junit.Test;
@@ -86,7 +86,7 @@ public class GroupChannelApiTest {
         String channelUrl = null;
         String apiToken = null;
         GcBanUserData gcBanUserData = null;
-                InlineResponse20033BannedList response = api.gcBanUser(channelUrl, apiToken, gcBanUserData);
+                GcBanUserResponse response = api.gcBanUser(channelUrl, apiToken, gcBanUserData);
         // TODO: test validations
     }
     
@@ -121,7 +121,7 @@ public class GroupChannelApiTest {
         String channelUrl = null;
         String userId = null;
         String apiToken = null;
-                InlineResponse20037 response = api.gcCheckIfMemberById(channelUrl, userId, apiToken);
+                GcCheckIfMemberByIdResponse response = api.gcCheckIfMemberById(channelUrl, userId, apiToken);
         // TODO: test validations
     }
     
@@ -273,7 +273,7 @@ public class GroupChannelApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20033 response = api.gcListBannedUsers(channelUrl, apiToken, token, limit);
+                GcListBannedUsersResponse response = api.gcListBannedUsers(channelUrl, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -330,7 +330,7 @@ public class GroupChannelApiTest {
         Boolean isDistinct = null;
         String membersIn = null;
         String userId = null;
-                InlineResponse20017 response = api.gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
+                GcListChannelsResponse response = api.gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
         // TODO: test validations
     }
     
@@ -355,7 +355,7 @@ public class GroupChannelApiTest {
         String memberStateFilter = null;
         String mutedMemberFilter = null;
         String nicknameStartswith = null;
-                InlineResponse20036 response = api.gcListMembers(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
+                GcListMembersResponse response = api.gcListMembers(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
         // TODO: test validations
     }
     
@@ -373,7 +373,7 @@ public class GroupChannelApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20031 response = api.gcListMutedUsers(channelUrl, apiToken, token, limit);
+                GcListMutedUsersResponse response = api.gcListMutedUsers(channelUrl, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -391,7 +391,7 @@ public class GroupChannelApiTest {
         String apiToken = null;
         String token = null;
         Integer limit = null;
-                InlineResponse20034 response = api.gcListOperators(channelUrl, apiToken, token, limit);
+                GcListOperatorsResponse response = api.gcListOperators(channelUrl, apiToken, token, limit);
         // TODO: test validations
     }
     
@@ -425,7 +425,7 @@ public class GroupChannelApiTest {
         String channelUrl = null;
         String apiToken = null;
         GcRegisterOperatorsData gcRegisterOperatorsData = null;
-                InlineResponse20038 response = api.gcRegisterOperators(channelUrl, apiToken, gcRegisterOperatorsData);
+                GcRegisterOperatorsResponse response = api.gcRegisterOperators(channelUrl, apiToken, gcRegisterOperatorsData);
         // TODO: test validations
     }
     
@@ -584,7 +584,7 @@ public class GroupChannelApiTest {
         String channelUrl = null;
         String mutedUserId = null;
         String apiToken = null;
-                InlineResponse20035 response = api.gcViewMuteById(channelUrl, mutedUserId, apiToken);
+                GcViewMuteByIdResponse response = api.gcViewMuteById(channelUrl, mutedUserId, apiToken);
         // TODO: test validations
     }
     
