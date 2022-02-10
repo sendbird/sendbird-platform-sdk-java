@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * GcCreateChannelData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T12:13:33.713738Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T13:13:38.822057Z[Europe/London]")
 public class GcCreateChannelData {
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)

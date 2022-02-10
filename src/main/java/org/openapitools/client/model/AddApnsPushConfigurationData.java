@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * AddApnsPushConfigurationData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T12:13:33.713738Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T13:13:38.822057Z[Europe/London]")
 public class AddApnsPushConfigurationData {
   public static final String SERIALIZED_NAME_APNS_CERT = "apns_cert";
   @SerializedName(SERIALIZED_NAME_APNS_CERT)

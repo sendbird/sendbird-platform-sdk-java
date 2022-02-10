@@ -13,7 +13,7 @@
 
 package org.sendbird.client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T12:13:33.713738Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T13:13:38.822057Z[Europe/London]")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

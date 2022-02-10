@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResp
 /**
  * GetDetailedOpenStatusOfAnnouncementByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T12:13:33.713738Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T13:13:38.822057Z[Europe/London]")
 public class GetDetailedOpenStatusOfAnnouncementByIdResponse {
   public static final String SERIALIZED_NAME_OPEN_STATUS = "open_status";
   @SerializedName(SERIALIZED_NAME_OPEN_STATUS)

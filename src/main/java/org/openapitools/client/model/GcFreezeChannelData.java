@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GcFreezeChannelData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T12:13:33.713738Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T13:13:38.822057Z[Europe/London]")
 public class GcFreezeChannelData {
   public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
   @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
