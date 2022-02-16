@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * DeleteApnsCertificateByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T13:13:38.822057Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
 public class DeleteApnsCertificateByIdResponse {
   public static final String SERIALIZED_NAME_PUSH_CONFIGURATIONS = "push_configurations";
   @SerializedName(SERIALIZED_NAME_PUSH_CONFIGURATIONS)

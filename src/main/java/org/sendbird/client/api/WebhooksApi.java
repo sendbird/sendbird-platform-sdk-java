@@ -76,7 +76,7 @@ public class WebhooksApi {
 
     /**
      * Build call for chooseWhichEventsToSubscribeTo
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param chooseWhichEventsToSubscribeToData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -140,6 +140,11 @@ public class WebhooksApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call chooseWhichEventsToSubscribeToValidateBeforeCall(String apiToken, ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling chooseWhichEventsToSubscribeTo(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = chooseWhichEventsToSubscribeToCall(apiToken, chooseWhichEventsToSubscribeToData, _callback);
         return localVarCall;
@@ -149,7 +154,7 @@ public class WebhooksApi {
     /**
      * Choose which events to subscribe to
      * ## Choose which events to subscribe to  Chooses which events for your webhook server to receive payloads for. By subscribing to specific events based on your own needs, you can control the number of HTTP requests to your webhook server.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-choose-which-events-to-subscribe-to
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param chooseWhichEventsToSubscribeToData  (optional)
      * @return ChooseWhichEventsToSubscribeToResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -167,7 +172,7 @@ public class WebhooksApi {
     /**
      * Choose which events to subscribe to
      * ## Choose which events to subscribe to  Chooses which events for your webhook server to receive payloads for. By subscribing to specific events based on your own needs, you can control the number of HTTP requests to your webhook server.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-choose-which-events-to-subscribe-to
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param chooseWhichEventsToSubscribeToData  (optional)
      * @return ApiResponse&lt;ChooseWhichEventsToSubscribeToResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -186,7 +191,7 @@ public class WebhooksApi {
     /**
      * Choose which events to subscribe to (asynchronously)
      * ## Choose which events to subscribe to  Chooses which events for your webhook server to receive payloads for. By subscribing to specific events based on your own needs, you can control the number of HTTP requests to your webhook server.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-choose-which-events-to-subscribe-to
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param chooseWhichEventsToSubscribeToData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -206,7 +211,7 @@ public class WebhooksApi {
     }
     /**
      * Build call for retrieveListOfSubscribedEvents
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param displayAllWebhookCategories  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -274,6 +279,11 @@ public class WebhooksApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call retrieveListOfSubscribedEventsValidateBeforeCall(String apiToken, Boolean displayAllWebhookCategories, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling retrieveListOfSubscribedEvents(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = retrieveListOfSubscribedEventsCall(apiToken, displayAllWebhookCategories, _callback);
         return localVarCall;
@@ -283,7 +293,7 @@ public class WebhooksApi {
     /**
      * Retrieve a list of subscribed events
      * ## Retrieve a list of subscribed events  Retrieves a list of events for your webhook server to receive payloads for.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-retrieve-a-list-of-subscribed-events ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param displayAllWebhookCategories  (optional)
      * @return RetrieveListOfSubscribedEventsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -301,7 +311,7 @@ public class WebhooksApi {
     /**
      * Retrieve a list of subscribed events
      * ## Retrieve a list of subscribed events  Retrieves a list of events for your webhook server to receive payloads for.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-retrieve-a-list-of-subscribed-events ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param displayAllWebhookCategories  (optional)
      * @return ApiResponse&lt;RetrieveListOfSubscribedEventsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -320,7 +330,7 @@ public class WebhooksApi {
     /**
      * Retrieve a list of subscribed events (asynchronously)
      * ## Retrieve a list of subscribed events  Retrieves a list of events for your webhook server to receive payloads for.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-retrieve-a-list-of-subscribed-events ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param displayAllWebhookCategories  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

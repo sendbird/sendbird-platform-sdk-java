@@ -44,7 +44,7 @@ Method | HTTP request | Description
 
 <a name="addRegistrationOrDeviceToken"></a>
 # **addRegistrationOrDeviceToken**
-> AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceToken(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData)
+> AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceToken(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData)
 
 Add a registration or device token
 
@@ -65,12 +65,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String tokenType = "tokenType_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData = new AddRegistrationOrDeviceTokenData(); // AddRegistrationOrDeviceTokenData | 
     try {
-      AddRegistrationOrDeviceTokenResponse result = apiInstance.addRegistrationOrDeviceToken(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
+      AddRegistrationOrDeviceTokenResponse result = apiInstance.addRegistrationOrDeviceToken(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#addRegistrationOrDeviceToken");
@@ -87,9 +87,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **tokenType** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **addRegistrationOrDeviceTokenData** | [**AddRegistrationOrDeviceTokenData**](AddRegistrationOrDeviceTokenData.md)|  | [optional]
 
 ### Return type
@@ -112,7 +112,7 @@ No authorization required
 
 <a name="banFromChannelsWithCustomChannelTypes"></a>
 # **banFromChannelsWithCustomChannelTypes**
-> banFromChannelsWithCustomChannelTypes(userId, apiToken, banFromChannelsWithCustomChannelTypesData)
+> banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData)
 
 Ban from channels with custom channel types
 
@@ -133,11 +133,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData = new BanFromChannelsWithCustomChannelTypesData(); // BanFromChannelsWithCustomChannelTypesData | 
     try {
-      apiInstance.banFromChannelsWithCustomChannelTypes(userId, apiToken, banFromChannelsWithCustomChannelTypesData);
+      apiInstance.banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#banFromChannelsWithCustomChannelTypes");
       System.err.println("Status code: " + e.getCode());
@@ -153,8 +153,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **banFromChannelsWithCustomChannelTypesData** | [**BanFromChannelsWithCustomChannelTypesData**](BanFromChannelsWithCustomChannelTypesData.md)|  | [optional]
 
 ### Return type
@@ -177,7 +177,7 @@ No authorization required
 
 <a name="blockUser"></a>
 # **blockUser**
-> SendBirdUser blockUser(userId, apiToken, blockUserData)
+> SendBirdUser blockUser(apiToken, userId, blockUserData)
 
 Block a user
 
@@ -198,11 +198,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     BlockUserData blockUserData = new BlockUserData(); // BlockUserData | 
     try {
-      SendBirdUser result = apiInstance.blockUser(userId, apiToken, blockUserData);
+      SendBirdUser result = apiInstance.blockUser(apiToken, userId, blockUserData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#blockUser");
@@ -219,8 +219,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **blockUserData** | [**BlockUserData**](BlockUserData.md)|  | [optional]
 
 ### Return type
@@ -243,7 +243,7 @@ No authorization required
 
 <a name="choosePushNotificationContentTemplate"></a>
 # **choosePushNotificationContentTemplate**
-> ChoosePushNotificationContentTemplateResponse choosePushNotificationContentTemplate(userId, apiToken, body)
+> ChoosePushNotificationContentTemplateResponse choosePushNotificationContentTemplate(apiToken, userId, body)
 
 Choose a push notification content template
 
@@ -264,11 +264,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     Object body = null; // Object | 
     try {
-      ChoosePushNotificationContentTemplateResponse result = apiInstance.choosePushNotificationContentTemplate(userId, apiToken, body);
+      ChoosePushNotificationContentTemplateResponse result = apiInstance.choosePushNotificationContentTemplate(apiToken, userId, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#choosePushNotificationContentTemplate");
@@ -285,8 +285,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **body** | **Object**|  | [optional]
 
 ### Return type
@@ -350,7 +350,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **createUserData** | [**CreateUserData**](CreateUserData.md)|  | [optional]
 
 ### Return type
@@ -373,7 +373,7 @@ No authorization required
 
 <a name="deleteUserById"></a>
 # **deleteUserById**
-> deleteUserById(userId, apiToken)
+> deleteUserById(apiToken, userId)
 
 Delete a user
 
@@ -394,10 +394,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     try {
-      apiInstance.deleteUserById(userId, apiToken);
+      apiInstance.deleteUserById(apiToken, userId);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#deleteUserById");
       System.err.println("Status code: " + e.getCode());
@@ -413,8 +413,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -436,7 +436,7 @@ No authorization required
 
 <a name="leaveMyGroupChannels"></a>
 # **leaveMyGroupChannels**
-> leaveMyGroupChannels(userId, apiToken, leaveMyGroupChannelsData)
+> leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData)
 
 Leave my group channels
 
@@ -457,11 +457,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     LeaveMyGroupChannelsData leaveMyGroupChannelsData = new LeaveMyGroupChannelsData(); // LeaveMyGroupChannelsData | 
     try {
-      apiInstance.leaveMyGroupChannels(userId, apiToken, leaveMyGroupChannelsData);
+      apiInstance.leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#leaveMyGroupChannels");
       System.err.println("Status code: " + e.getCode());
@@ -477,8 +477,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **leaveMyGroupChannelsData** | [**LeaveMyGroupChannelsData**](LeaveMyGroupChannelsData.md)|  | [optional]
 
 ### Return type
@@ -501,7 +501,7 @@ No authorization required
 
 <a name="listBannedChannels"></a>
 # **listBannedChannels**
-> ListBannedChannelsResponse listBannedChannels(userId, apiToken, token, limit)
+> ListBannedChannelsResponse listBannedChannels(apiToken, userId, token, limit)
 
 List banned channels
 
@@ -522,12 +522,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      ListBannedChannelsResponse result = apiInstance.listBannedChannels(userId, apiToken, token, limit);
+      ListBannedChannelsResponse result = apiInstance.listBannedChannels(apiToken, userId, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listBannedChannels");
@@ -544,8 +544,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -569,7 +569,7 @@ No authorization required
 
 <a name="listBlockedUsers"></a>
 # **listBlockedUsers**
-> ListBlockedUsersResponse listBlockedUsers(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn)
+> ListBlockedUsersResponse listBlockedUsers(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn)
 
 List blocked users
 
@@ -590,15 +590,15 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     String userIds = "userIds_example"; // String | 
     String metadatakey = "metadatakey_example"; // String | 
     String metadatavaluesIn = "metadatavaluesIn_example"; // String | 
     try {
-      ListBlockedUsersResponse result = apiInstance.listBlockedUsers(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn);
+      ListBlockedUsersResponse result = apiInstance.listBlockedUsers(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listBlockedUsers");
@@ -615,8 +615,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **userIds** | **String**|  | [optional]
@@ -643,7 +643,7 @@ No authorization required
 
 <a name="listMutedChannels"></a>
 # **listMutedChannels**
-> ListMutedChannelsResponse listMutedChannels(userId, apiToken, token, limit)
+> ListMutedChannelsResponse listMutedChannels(apiToken, userId, token, limit)
 
 List muted channels
 
@@ -664,12 +664,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      ListMutedChannelsResponse result = apiInstance.listMutedChannels(userId, apiToken, token, limit);
+      ListMutedChannelsResponse result = apiInstance.listMutedChannels(apiToken, userId, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listMutedChannels");
@@ -686,8 +686,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -711,7 +711,7 @@ No authorization required
 
 <a name="listMyGroupChannels"></a>
 # **listMyGroupChannels**
-> ListMyGroupChannelsResponse listMyGroupChannels(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType)
+> ListMyGroupChannelsResponse listMyGroupChannels(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType)
 
 List my group channels
 
@@ -732,8 +732,8 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     String distinctMode = "distinctMode_example"; // String | 
@@ -775,7 +775,7 @@ public class Example {
     String metacounterValueLte = "metacounterValueLte_example"; // String | 
     String customType = "customType_example"; // String | 
     try {
-      ListMyGroupChannelsResponse result = apiInstance.listMyGroupChannels(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+      ListMyGroupChannelsResponse result = apiInstance.listMyGroupChannels(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listMyGroupChannels");
@@ -792,8 +792,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **distinctMode** | **String**|  | [optional]
@@ -855,7 +855,7 @@ No authorization required
 
 <a name="listRegistrationOrDeviceTokens"></a>
 # **listRegistrationOrDeviceTokens**
-> ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(userId, tokenType, apiToken)
+> ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(apiToken, userId, tokenType)
 
 List registration or device tokens
 
@@ -876,11 +876,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String tokenType = "tokenType_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      ListRegistrationOrDeviceTokensResponse result = apiInstance.listRegistrationOrDeviceTokens(userId, tokenType, apiToken);
+      ListRegistrationOrDeviceTokensResponse result = apiInstance.listRegistrationOrDeviceTokens(apiToken, userId, tokenType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#listRegistrationOrDeviceTokens");
@@ -897,9 +897,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **tokenType** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -970,7 +970,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **activeMode** | **String**|  | [optional]
@@ -1001,7 +1001,7 @@ No authorization required
 
 <a name="markAllMessagesAsRead"></a>
 # **markAllMessagesAsRead**
-> markAllMessagesAsRead(userId, apiToken, markAllMessagesAsReadData)
+> markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData)
 
 Mark all messages as read
 
@@ -1022,11 +1022,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     MarkAllMessagesAsReadData markAllMessagesAsReadData = new MarkAllMessagesAsReadData(); // MarkAllMessagesAsReadData | 
     try {
-      apiInstance.markAllMessagesAsRead(userId, apiToken, markAllMessagesAsReadData);
+      apiInstance.markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#markAllMessagesAsRead");
       System.err.println("Status code: " + e.getCode());
@@ -1042,8 +1042,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **markAllMessagesAsReadData** | [**MarkAllMessagesAsReadData**](MarkAllMessagesAsReadData.md)|  | [optional]
 
 ### Return type
@@ -1066,7 +1066,7 @@ No authorization required
 
 <a name="muteInChannelsWithCustomChannelTypes"></a>
 # **muteInChannelsWithCustomChannelTypes**
-> muteInChannelsWithCustomChannelTypes(userId, apiToken, muteInChannelsWithCustomChannelTypesData)
+> muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData)
 
 Mute in channels with custom channel types
 
@@ -1087,11 +1087,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData = new MuteInChannelsWithCustomChannelTypesData(); // MuteInChannelsWithCustomChannelTypesData | 
     try {
-      apiInstance.muteInChannelsWithCustomChannelTypes(userId, apiToken, muteInChannelsWithCustomChannelTypesData);
+      apiInstance.muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#muteInChannelsWithCustomChannelTypes");
       System.err.println("Status code: " + e.getCode());
@@ -1107,8 +1107,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **muteInChannelsWithCustomChannelTypesData** | [**MuteInChannelsWithCustomChannelTypesData**](MuteInChannelsWithCustomChannelTypesData.md)|  | [optional]
 
 ### Return type
@@ -1131,7 +1131,7 @@ No authorization required
 
 <a name="registerAsOperatorToChannelsWithCustomChannelTypes"></a>
 # **registerAsOperatorToChannelsWithCustomChannelTypes**
-> registerAsOperatorToChannelsWithCustomChannelTypes(userId, apiToken, registerAsOperatorToChannelsWithCustomChannelTypesData)
+> registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData)
 
 Register as an operator to channels with custom channel types
 
@@ -1152,11 +1152,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData = new RegisterAsOperatorToChannelsWithCustomChannelTypesData(); // RegisterAsOperatorToChannelsWithCustomChannelTypesData | 
     try {
-      apiInstance.registerAsOperatorToChannelsWithCustomChannelTypes(userId, apiToken, registerAsOperatorToChannelsWithCustomChannelTypesData);
+      apiInstance.registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#registerAsOperatorToChannelsWithCustomChannelTypes");
       System.err.println("Status code: " + e.getCode());
@@ -1172,8 +1172,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **registerAsOperatorToChannelsWithCustomChannelTypesData** | [**RegisterAsOperatorToChannelsWithCustomChannelTypesData**](RegisterAsOperatorToChannelsWithCustomChannelTypesData.md)|  | [optional]
 
 ### Return type
@@ -1196,7 +1196,7 @@ No authorization required
 
 <a name="removeRegistrationOrDeviceToken"></a>
 # **removeRegistrationOrDeviceToken**
-> RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceToken(userId, apiToken)
+> RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceToken(apiToken, userId)
 
 Remove a registration or device token - When unregistering all device tokens
 
@@ -1217,10 +1217,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     try {
-      RemoveRegistrationOrDeviceTokenResponse result = apiInstance.removeRegistrationOrDeviceToken(userId, apiToken);
+      RemoveRegistrationOrDeviceTokenResponse result = apiInstance.removeRegistrationOrDeviceToken(apiToken, userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#removeRegistrationOrDeviceToken");
@@ -1237,8 +1237,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1260,7 +1260,7 @@ No authorization required
 
 <a name="removeRegistrationOrDeviceTokenByToken"></a>
 # **removeRegistrationOrDeviceTokenByToken**
-> RemoveRegistrationOrDeviceTokenByTokenResponse removeRegistrationOrDeviceTokenByToken(userId, tokenType, token, apiToken)
+> RemoveRegistrationOrDeviceTokenByTokenResponse removeRegistrationOrDeviceTokenByToken(apiToken, userId, tokenType, token)
 
 Remove a registration or device token - When unregistering a specific token
 
@@ -1281,12 +1281,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String tokenType = "tokenType_example"; // String | 
     String token = "token_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      RemoveRegistrationOrDeviceTokenByTokenResponse result = apiInstance.removeRegistrationOrDeviceTokenByToken(userId, tokenType, token, apiToken);
+      RemoveRegistrationOrDeviceTokenByTokenResponse result = apiInstance.removeRegistrationOrDeviceTokenByToken(apiToken, userId, tokenType, token);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#removeRegistrationOrDeviceTokenByToken");
@@ -1303,10 +1303,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **tokenType** | **String**|  |
  **token** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1328,7 +1328,7 @@ No authorization required
 
 <a name="removeRegistrationOrDeviceTokenFromOwnerByToken"></a>
 # **removeRegistrationOrDeviceTokenFromOwnerByToken**
-> RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token, apiToken)
+> RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse removeRegistrationOrDeviceTokenFromOwnerByToken(apiToken, tokenType, token)
 
 Remove a registration or device token from an owner
 
@@ -1349,11 +1349,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String tokenType = "tokenType_example"; // String | 
     String token = "token_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse result = apiInstance.removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token, apiToken);
+      RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse result = apiInstance.removeRegistrationOrDeviceTokenFromOwnerByToken(apiToken, tokenType, token);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#removeRegistrationOrDeviceTokenFromOwnerByToken");
@@ -1370,9 +1370,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **tokenType** | **String**|  |
  **token** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1394,7 +1394,7 @@ No authorization required
 
 <a name="resetPushPreferences"></a>
 # **resetPushPreferences**
-> resetPushPreferences(userId, apiToken)
+> resetPushPreferences(apiToken, userId)
 
 Reset push preferences
 
@@ -1415,10 +1415,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     try {
-      apiInstance.resetPushPreferences(userId, apiToken);
+      apiInstance.resetPushPreferences(apiToken, userId);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#resetPushPreferences");
       System.err.println("Status code: " + e.getCode());
@@ -1434,8 +1434,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1457,7 +1457,7 @@ No authorization required
 
 <a name="unblockUserById"></a>
 # **unblockUserById**
-> unblockUserById(userId, targetId, apiToken)
+> unblockUserById(apiToken, userId, targetId)
 
 Unblock a user
 
@@ -1478,11 +1478,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String targetId = "targetId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      apiInstance.unblockUserById(userId, targetId, apiToken);
+      apiInstance.unblockUserById(apiToken, userId, targetId);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#unblockUserById");
       System.err.println("Status code: " + e.getCode());
@@ -1498,9 +1498,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **targetId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1522,7 +1522,7 @@ No authorization required
 
 <a name="updateChannelInvitationPreference"></a>
 # **updateChannelInvitationPreference**
-> UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(userId, apiToken, updateChannelInvitationPreferenceData)
+> UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(apiToken, userId, updateChannelInvitationPreferenceData)
 
 Update channel invitation preference
 
@@ -1543,11 +1543,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData = new UpdateChannelInvitationPreferenceData(); // UpdateChannelInvitationPreferenceData | 
     try {
-      UpdateChannelInvitationPreferenceResponse result = apiInstance.updateChannelInvitationPreference(userId, apiToken, updateChannelInvitationPreferenceData);
+      UpdateChannelInvitationPreferenceResponse result = apiInstance.updateChannelInvitationPreference(apiToken, userId, updateChannelInvitationPreferenceData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updateChannelInvitationPreference");
@@ -1564,8 +1564,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateChannelInvitationPreferenceData** | [**UpdateChannelInvitationPreferenceData**](UpdateChannelInvitationPreferenceData.md)|  | [optional]
 
 ### Return type
@@ -1588,7 +1588,7 @@ No authorization required
 
 <a name="updateCountPreferenceOfChannelByUrl"></a>
 # **updateCountPreferenceOfChannelByUrl**
-> UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData)
+> UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData)
 
 Update count preference of a channel
 
@@ -1609,12 +1609,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData = new UpdateCountPreferenceOfChannelByUrlData(); // UpdateCountPreferenceOfChannelByUrlData | 
     try {
-      UpdateCountPreferenceOfChannelByUrlResponse result = apiInstance.updateCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
+      UpdateCountPreferenceOfChannelByUrlResponse result = apiInstance.updateCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updateCountPreferenceOfChannelByUrl");
@@ -1631,9 +1631,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateCountPreferenceOfChannelByUrlData** | [**UpdateCountPreferenceOfChannelByUrlData**](UpdateCountPreferenceOfChannelByUrlData.md)|  | [optional]
 
 ### Return type
@@ -1656,7 +1656,7 @@ No authorization required
 
 <a name="updatePushPreferences"></a>
 # **updatePushPreferences**
-> UpdatePushPreferencesResponse updatePushPreferences(userId, apiToken, updatePushPreferencesData)
+> UpdatePushPreferencesResponse updatePushPreferences(apiToken, userId, updatePushPreferencesData)
 
 Update push preferences
 
@@ -1677,11 +1677,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     UpdatePushPreferencesData updatePushPreferencesData = new UpdatePushPreferencesData(); // UpdatePushPreferencesData | 
     try {
-      UpdatePushPreferencesResponse result = apiInstance.updatePushPreferences(userId, apiToken, updatePushPreferencesData);
+      UpdatePushPreferencesResponse result = apiInstance.updatePushPreferences(apiToken, userId, updatePushPreferencesData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updatePushPreferences");
@@ -1698,8 +1698,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updatePushPreferencesData** | [**UpdatePushPreferencesData**](UpdatePushPreferencesData.md)|  | [optional]
 
 ### Return type
@@ -1722,7 +1722,7 @@ No authorization required
 
 <a name="updatePushPreferencesForChannelByUrl"></a>
 # **updatePushPreferencesForChannelByUrl**
-> UpdatePushPreferencesForChannelByUrlResponse updatePushPreferencesForChannelByUrl(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData)
+> UpdatePushPreferencesForChannelByUrlResponse updatePushPreferencesForChannelByUrl(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData)
 
 Update push preferences for a channel
 
@@ -1743,12 +1743,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData = new UpdatePushPreferencesForChannelByUrlData(); // UpdatePushPreferencesForChannelByUrlData | 
     try {
-      UpdatePushPreferencesForChannelByUrlResponse result = apiInstance.updatePushPreferencesForChannelByUrl(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
+      UpdatePushPreferencesForChannelByUrlResponse result = apiInstance.updatePushPreferencesForChannelByUrl(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updatePushPreferencesForChannelByUrl");
@@ -1765,9 +1765,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updatePushPreferencesForChannelByUrlData** | [**UpdatePushPreferencesForChannelByUrlData**](UpdatePushPreferencesForChannelByUrlData.md)|  | [optional]
 
 ### Return type
@@ -1790,7 +1790,7 @@ No authorization required
 
 <a name="updateUserById"></a>
 # **updateUserById**
-> SendBirdUser updateUserById(userId, apiToken, updateUserByIdData)
+> SendBirdUser updateUserById(apiToken, userId, updateUserByIdData)
 
 Update a user
 
@@ -1811,11 +1811,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     UpdateUserByIdData updateUserByIdData = new UpdateUserByIdData(); // UpdateUserByIdData | 
     try {
-      SendBirdUser result = apiInstance.updateUserById(userId, apiToken, updateUserByIdData);
+      SendBirdUser result = apiInstance.updateUserById(apiToken, userId, updateUserByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updateUserById");
@@ -1832,8 +1832,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateUserByIdData** | [**UpdateUserByIdData**](UpdateUserByIdData.md)|  | [optional]
 
 ### Return type
@@ -1856,7 +1856,7 @@ No authorization required
 
 <a name="viewChannelInvitationPreference"></a>
 # **viewChannelInvitationPreference**
-> ViewChannelInvitationPreferenceResponse viewChannelInvitationPreference(userId, apiToken)
+> ViewChannelInvitationPreferenceResponse viewChannelInvitationPreference(apiToken, userId)
 
 View channel invitation preference
 
@@ -1877,10 +1877,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     try {
-      ViewChannelInvitationPreferenceResponse result = apiInstance.viewChannelInvitationPreference(userId, apiToken);
+      ViewChannelInvitationPreferenceResponse result = apiInstance.viewChannelInvitationPreference(apiToken, userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewChannelInvitationPreference");
@@ -1897,8 +1897,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1920,7 +1920,7 @@ No authorization required
 
 <a name="viewCountPreferenceOfChannelByUrl"></a>
 # **viewCountPreferenceOfChannelByUrl**
-> ViewCountPreferenceOfChannelByUrlResponse viewCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken)
+> ViewCountPreferenceOfChannelByUrlResponse viewCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl)
 
 View count preference of a channel
 
@@ -1941,11 +1941,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      ViewCountPreferenceOfChannelByUrlResponse result = apiInstance.viewCountPreferenceOfChannelByUrl(userId, channelUrl, apiToken);
+      ViewCountPreferenceOfChannelByUrlResponse result = apiInstance.viewCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewCountPreferenceOfChannelByUrl");
@@ -1962,9 +1962,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1986,7 +1986,7 @@ No authorization required
 
 <a name="viewNumberOfChannelsByJoinStatus"></a>
 # **viewNumberOfChannelsByJoinStatus**
-> ViewNumberOfChannelsByJoinStatusResponse viewNumberOfChannelsByJoinStatus(userId, apiToken, state)
+> ViewNumberOfChannelsByJoinStatusResponse viewNumberOfChannelsByJoinStatus(apiToken, userId, state)
 
 View number of channels by join status
 
@@ -2007,11 +2007,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     String state = "state_example"; // String | 
     try {
-      ViewNumberOfChannelsByJoinStatusResponse result = apiInstance.viewNumberOfChannelsByJoinStatus(userId, apiToken, state);
+      ViewNumberOfChannelsByJoinStatusResponse result = apiInstance.viewNumberOfChannelsByJoinStatus(apiToken, userId, state);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewNumberOfChannelsByJoinStatus");
@@ -2028,8 +2028,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **state** | **String**|  | [optional]
 
 ### Return type
@@ -2052,7 +2052,7 @@ No authorization required
 
 <a name="viewNumberOfChannelsWithUnreadMessages"></a>
 # **viewNumberOfChannelsWithUnreadMessages**
-> ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(userId, apiToken, customTypes, superMode)
+> ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(apiToken, userId, customTypes, superMode)
 
 View number of channels with unread messages
 
@@ -2073,12 +2073,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     List<String> customTypes = Arrays.asList(); // List<String> | 
     String superMode = "superMode_example"; // String | 
     try {
-      ViewNumberOfChannelsWithUnreadMessagesResponse result = apiInstance.viewNumberOfChannelsWithUnreadMessages(userId, apiToken, customTypes, superMode);
+      ViewNumberOfChannelsWithUnreadMessagesResponse result = apiInstance.viewNumberOfChannelsWithUnreadMessages(apiToken, userId, customTypes, superMode);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewNumberOfChannelsWithUnreadMessages");
@@ -2095,8 +2095,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **customTypes** | [**List&lt;String&gt;**](String.md)|  | [optional]
  **superMode** | **String**|  | [optional]
 
@@ -2120,7 +2120,7 @@ No authorization required
 
 <a name="viewNumberOfUnreadItems"></a>
 # **viewNumberOfUnreadItems**
-> ViewNumberOfUnreadItemsResponse viewNumberOfUnreadItems(userId, apiToken, customType, itemKeys)
+> ViewNumberOfUnreadItemsResponse viewNumberOfUnreadItems(apiToken, userId, customType, itemKeys)
 
 View number of unread items
 
@@ -2141,12 +2141,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     String customType = "customType_example"; // String | 
     String itemKeys = "itemKeys_example"; // String | 
     try {
-      ViewNumberOfUnreadItemsResponse result = apiInstance.viewNumberOfUnreadItems(userId, apiToken, customType, itemKeys);
+      ViewNumberOfUnreadItemsResponse result = apiInstance.viewNumberOfUnreadItems(apiToken, userId, customType, itemKeys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewNumberOfUnreadItems");
@@ -2163,8 +2163,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **customType** | **String**|  | [optional]
  **itemKeys** | **String**|  | [optional]
 
@@ -2188,7 +2188,7 @@ No authorization required
 
 <a name="viewNumberOfUnreadMessages"></a>
 # **viewNumberOfUnreadMessages**
-> ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(userId, apiToken, customTypes, superMode)
+> ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(apiToken, userId, customTypes, superMode)
 
 View number of unread messages
 
@@ -2209,12 +2209,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     String customTypes = "customTypes_example"; // String | 
     String superMode = "superMode_example"; // String | 
     try {
-      ViewNumberOfUnreadMessagesResponse result = apiInstance.viewNumberOfUnreadMessages(userId, apiToken, customTypes, superMode);
+      ViewNumberOfUnreadMessagesResponse result = apiInstance.viewNumberOfUnreadMessages(apiToken, userId, customTypes, superMode);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewNumberOfUnreadMessages");
@@ -2231,8 +2231,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **customTypes** | **String**|  | [optional]
  **superMode** | **String**|  | [optional]
 
@@ -2256,7 +2256,7 @@ No authorization required
 
 <a name="viewPushPreferences"></a>
 # **viewPushPreferences**
-> ViewPushPreferencesResponse viewPushPreferences(userId, apiToken)
+> ViewPushPreferencesResponse viewPushPreferences(apiToken, userId)
 
 View push preferences
 
@@ -2277,10 +2277,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     try {
-      ViewPushPreferencesResponse result = apiInstance.viewPushPreferences(userId, apiToken);
+      ViewPushPreferencesResponse result = apiInstance.viewPushPreferences(apiToken, userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewPushPreferences");
@@ -2297,8 +2297,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -2320,7 +2320,7 @@ No authorization required
 
 <a name="viewPushPreferencesForChannelByUrl"></a>
 # **viewPushPreferencesForChannelByUrl**
-> ViewPushPreferencesForChannelByUrlResponse viewPushPreferencesForChannelByUrl(userId, channelUrl, apiToken)
+> ViewPushPreferencesForChannelByUrlResponse viewPushPreferencesForChannelByUrl(apiToken, userId, channelUrl)
 
 View push preferences for a channel
 
@@ -2341,11 +2341,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      ViewPushPreferencesForChannelByUrlResponse result = apiInstance.viewPushPreferencesForChannelByUrl(userId, channelUrl, apiToken);
+      ViewPushPreferencesForChannelByUrlResponse result = apiInstance.viewPushPreferencesForChannelByUrl(apiToken, userId, channelUrl);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewPushPreferencesForChannelByUrl");
@@ -2362,9 +2362,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -2386,7 +2386,7 @@ No authorization required
 
 <a name="viewUserById"></a>
 # **viewUserById**
-> SendBirdUser viewUserById(userId, apiToken, includeUnreadCount, customTypes, superMode)
+> SendBirdUser viewUserById(apiToken, userId, includeUnreadCount, customTypes, superMode)
 
 View a user
 
@@ -2407,13 +2407,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     Boolean includeUnreadCount = true; // Boolean | 
     String customTypes = "customTypes_example"; // String | 
     String superMode = "superMode_example"; // String | 
     try {
-      SendBirdUser result = apiInstance.viewUserById(userId, apiToken, includeUnreadCount, customTypes, superMode);
+      SendBirdUser result = apiInstance.viewUserById(apiToken, userId, includeUnreadCount, customTypes, superMode);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewUserById");
@@ -2430,8 +2430,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **includeUnreadCount** | **Boolean**|  | [optional]
  **customTypes** | **String**|  | [optional]
  **superMode** | **String**|  | [optional]
@@ -2456,7 +2456,7 @@ No authorization required
 
 <a name="viewWhoOwnsRegistrationOrDeviceTokenByToken"></a>
 # **viewWhoOwnsRegistrationOrDeviceTokenByToken**
-> ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token, apiToken)
+> ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token)
 
 View who owns a registration or device token
 
@@ -2477,11 +2477,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserApi apiInstance = new UserApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String tokenType = "tokenType_example"; // String | 
     String token = "token_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse result = apiInstance.viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token, apiToken);
+      ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse result = apiInstance.viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewWhoOwnsRegistrationOrDeviceTokenByToken");
@@ -2498,9 +2498,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **tokenType** | **String**|  |
  **token** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

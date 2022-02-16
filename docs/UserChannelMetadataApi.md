@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 <a name="createChannelMetacounter"></a>
 # **createChannelMetacounter**
-> Map&lt;String, SendBirdAdditionalProperties&gt; createChannelMetacounter(channelType, channelUrl, apiToken, createChannelMetacounterData)
+> Map&lt;String, SendBirdAdditionalProperties&gt; createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData)
 
 Create a channel metacounter
 
@@ -50,12 +50,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     CreateChannelMetacounterData createChannelMetacounterData = new CreateChannelMetacounterData(); // CreateChannelMetacounterData | 
     try {
-      Map<String, SendBirdAdditionalProperties> result = apiInstance.createChannelMetacounter(channelType, channelUrl, apiToken, createChannelMetacounterData);
+      Map<String, SendBirdAdditionalProperties> result = apiInstance.createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#createChannelMetacounter");
@@ -72,9 +72,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **createChannelMetacounterData** | [**CreateChannelMetacounterData**](CreateChannelMetacounterData.md)|  | [optional]
 
 ### Return type
@@ -97,7 +97,7 @@ No authorization required
 
 <a name="createChannelMetadata"></a>
 # **createChannelMetadata**
-> CreateChannelMetadataResponse createChannelMetadata(channelType, channelUrl, apiToken, createChannelMetadataData)
+> CreateChannelMetadataResponse createChannelMetadata(apiToken, channelType, channelUrl, createChannelMetadataData)
 
 Create a channel metadata
 
@@ -118,12 +118,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     CreateChannelMetadataData createChannelMetadataData = new CreateChannelMetadataData(); // CreateChannelMetadataData | 
     try {
-      CreateChannelMetadataResponse result = apiInstance.createChannelMetadata(channelType, channelUrl, apiToken, createChannelMetadataData);
+      CreateChannelMetadataResponse result = apiInstance.createChannelMetadata(apiToken, channelType, channelUrl, createChannelMetadataData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#createChannelMetadata");
@@ -140,9 +140,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **createChannelMetadataData** | [**CreateChannelMetadataData**](CreateChannelMetadataData.md)|  | [optional]
 
 ### Return type
@@ -165,7 +165,7 @@ No authorization required
 
 <a name="createUserMetadata"></a>
 # **createUserMetadata**
-> CreateUserMetadataResponse createUserMetadata(userId, apiToken, createUserMetadataData)
+> CreateUserMetadataResponse createUserMetadata(apiToken, userId, createUserMetadataData)
 
 Create a user metadata
 
@@ -186,11 +186,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     CreateUserMetadataData createUserMetadataData = new CreateUserMetadataData(); // CreateUserMetadataData | 
     try {
-      CreateUserMetadataResponse result = apiInstance.createUserMetadata(userId, apiToken, createUserMetadataData);
+      CreateUserMetadataResponse result = apiInstance.createUserMetadata(apiToken, userId, createUserMetadataData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#createUserMetadata");
@@ -207,8 +207,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **createUserMetadataData** | [**CreateUserMetadataData**](CreateUserMetadataData.md)|  | [optional]
 
 ### Return type
@@ -231,7 +231,7 @@ No authorization required
 
 <a name="deleteChannelMetacounter"></a>
 # **deleteChannelMetacounter**
-> deleteChannelMetacounter(channelType, channelUrl, apiToken)
+> deleteChannelMetacounter(apiToken, channelType, channelUrl)
 
 Delete a channel metacounter - When deleting all items of a channel metacounter
 
@@ -252,11 +252,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      apiInstance.deleteChannelMetacounter(channelType, channelUrl, apiToken);
+      apiInstance.deleteChannelMetacounter(apiToken, channelType, channelUrl);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#deleteChannelMetacounter");
       System.err.println("Status code: " + e.getCode());
@@ -272,9 +272,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -296,7 +296,7 @@ No authorization required
 
 <a name="deleteChannelMetacounterByKey"></a>
 # **deleteChannelMetacounterByKey**
-> deleteChannelMetacounterByKey(channelType, channelUrl, key, apiToken)
+> deleteChannelMetacounterByKey(apiToken, channelType, channelUrl, key)
 
 Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
 
@@ -317,12 +317,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String key = "key_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      apiInstance.deleteChannelMetacounterByKey(channelType, channelUrl, key, apiToken);
+      apiInstance.deleteChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#deleteChannelMetacounterByKey");
       System.err.println("Status code: " + e.getCode());
@@ -338,10 +338,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **key** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -363,7 +363,7 @@ No authorization required
 
 <a name="deleteChannelMetadata"></a>
 # **deleteChannelMetadata**
-> deleteChannelMetadata(channelType, channelUrl, apiToken, key)
+> deleteChannelMetadata(apiToken, channelType, channelUrl, key)
 
 Delete a channel metadata - When deleting all items of a channel metadata
 
@@ -384,12 +384,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     String key = "key_example"; // String | 
     try {
-      apiInstance.deleteChannelMetadata(channelType, channelUrl, apiToken, key);
+      apiInstance.deleteChannelMetadata(apiToken, channelType, channelUrl, key);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#deleteChannelMetadata");
       System.err.println("Status code: " + e.getCode());
@@ -405,9 +405,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **key** | **String**|  | [optional]
 
 ### Return type
@@ -430,7 +430,7 @@ No authorization required
 
 <a name="deleteChannelMetadataByKey"></a>
 # **deleteChannelMetadataByKey**
-> deleteChannelMetadataByKey(channelType, channelUrl, key, apiToken)
+> deleteChannelMetadataByKey(apiToken, channelType, channelUrl, key)
 
 Delete a channel metadata - When deleting a specific item of a channel metadata by its key
 
@@ -451,12 +451,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String key = "key_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      apiInstance.deleteChannelMetadataByKey(channelType, channelUrl, key, apiToken);
+      apiInstance.deleteChannelMetadataByKey(apiToken, channelType, channelUrl, key);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#deleteChannelMetadataByKey");
       System.err.println("Status code: " + e.getCode());
@@ -472,10 +472,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **key** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -497,7 +497,7 @@ No authorization required
 
 <a name="deleteUserMetadata"></a>
 # **deleteUserMetadata**
-> deleteUserMetadata(userId, apiToken, key)
+> deleteUserMetadata(apiToken, userId, key)
 
 Delete a user metadata - When deleting all items of a user metadata
 
@@ -518,11 +518,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     String key = "key_example"; // String | 
     try {
-      apiInstance.deleteUserMetadata(userId, apiToken, key);
+      apiInstance.deleteUserMetadata(apiToken, userId, key);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#deleteUserMetadata");
       System.err.println("Status code: " + e.getCode());
@@ -538,8 +538,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **key** | **String**|  | [optional]
 
 ### Return type
@@ -562,7 +562,7 @@ No authorization required
 
 <a name="deleteUserMetadataByKey"></a>
 # **deleteUserMetadataByKey**
-> deleteUserMetadataByKey(userId, key, apiToken)
+> deleteUserMetadataByKey(apiToken, userId, key)
 
 Delete a user metadata - When deleting a specific item of a user metadata by its key
 
@@ -583,11 +583,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String key = "key_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      apiInstance.deleteUserMetadataByKey(userId, key, apiToken);
+      apiInstance.deleteUserMetadataByKey(apiToken, userId, key);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#deleteUserMetadataByKey");
       System.err.println("Status code: " + e.getCode());
@@ -603,9 +603,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **key** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -627,7 +627,7 @@ No authorization required
 
 <a name="updateChannelMetacounter"></a>
 # **updateChannelMetacounter**
-> Map&lt;String, SendBirdAdditionalProperties&gt; updateChannelMetacounter(channelType, channelUrl, apiToken, updateChannelMetacounterData)
+> Map&lt;String, SendBirdAdditionalProperties&gt; updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData)
 
 Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
 
@@ -648,12 +648,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateChannelMetacounterData updateChannelMetacounterData = new UpdateChannelMetacounterData(); // UpdateChannelMetacounterData | 
     try {
-      Map<String, SendBirdAdditionalProperties> result = apiInstance.updateChannelMetacounter(channelType, channelUrl, apiToken, updateChannelMetacounterData);
+      Map<String, SendBirdAdditionalProperties> result = apiInstance.updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#updateChannelMetacounter");
@@ -670,9 +670,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateChannelMetacounterData** | [**UpdateChannelMetacounterData**](UpdateChannelMetacounterData.md)|  | [optional]
 
 ### Return type
@@ -695,7 +695,7 @@ No authorization required
 
 <a name="updateChannelMetacounterByKey"></a>
 # **updateChannelMetacounterByKey**
-> Map&lt;String, String&gt; updateChannelMetacounterByKey(channelType, channelUrl, key, apiToken, body)
+> Map&lt;String, String&gt; updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body)
 
 Update a channel metacounter - When updating a specific item of a channel metacounter by its key
 
@@ -716,13 +716,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String key = "key_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Object body = null; // Object | 
     try {
-      Map<String, String> result = apiInstance.updateChannelMetacounterByKey(channelType, channelUrl, key, apiToken, body);
+      Map<String, String> result = apiInstance.updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#updateChannelMetacounterByKey");
@@ -739,10 +739,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **key** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **body** | **Object**|  | [optional]
 
 ### Return type
@@ -765,7 +765,7 @@ No authorization required
 
 <a name="updateChannelMetadata"></a>
 # **updateChannelMetadata**
-> Map&lt;String, String&gt; updateChannelMetadata(channelType, channelUrl, apiToken, updateChannelMetadataData)
+> Map&lt;String, String&gt; updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData)
 
 Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
 
@@ -786,12 +786,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateChannelMetadataData updateChannelMetadataData = new UpdateChannelMetadataData(); // UpdateChannelMetadataData | 
     try {
-      Map<String, String> result = apiInstance.updateChannelMetadata(channelType, channelUrl, apiToken, updateChannelMetadataData);
+      Map<String, String> result = apiInstance.updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#updateChannelMetadata");
@@ -808,9 +808,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateChannelMetadataData** | [**UpdateChannelMetadataData**](UpdateChannelMetadataData.md)|  | [optional]
 
 ### Return type
@@ -833,7 +833,7 @@ No authorization required
 
 <a name="updateChannelMetadataByKey"></a>
 # **updateChannelMetadataByKey**
-> Map&lt;String, String&gt; updateChannelMetadataByKey(channelType, channelUrl, key, apiToken, body)
+> Map&lt;String, String&gt; updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body)
 
 Update a channel metadata - When updating a specific item of a channel metadata by its key
 
@@ -854,13 +854,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String key = "key_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Object body = null; // Object | 
     try {
-      Map<String, String> result = apiInstance.updateChannelMetadataByKey(channelType, channelUrl, key, apiToken, body);
+      Map<String, String> result = apiInstance.updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#updateChannelMetadataByKey");
@@ -877,10 +877,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **key** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **body** | **Object**|  | [optional]
 
 ### Return type
@@ -903,7 +903,7 @@ No authorization required
 
 <a name="updateUserMetadata"></a>
 # **updateUserMetadata**
-> UpdateUserMetadataResponse updateUserMetadata(userId, apiToken, updateUserMetadataData)
+> UpdateUserMetadataResponse updateUserMetadata(apiToken, userId, updateUserMetadataData)
 
 Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
 
@@ -924,11 +924,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     UpdateUserMetadataData updateUserMetadataData = new UpdateUserMetadataData(); // UpdateUserMetadataData | 
     try {
-      UpdateUserMetadataResponse result = apiInstance.updateUserMetadata(userId, apiToken, updateUserMetadataData);
+      UpdateUserMetadataResponse result = apiInstance.updateUserMetadata(apiToken, userId, updateUserMetadataData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#updateUserMetadata");
@@ -945,8 +945,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateUserMetadataData** | [**UpdateUserMetadataData**](UpdateUserMetadataData.md)|  | [optional]
 
 ### Return type
@@ -969,7 +969,7 @@ No authorization required
 
 <a name="updateUserMetadataByKey"></a>
 # **updateUserMetadataByKey**
-> Map&lt;String, String&gt; updateUserMetadataByKey(userId, key, apiToken, body)
+> Map&lt;String, String&gt; updateUserMetadataByKey(apiToken, userId, key, body)
 
 Update a user metadata - When updating a specific item of a user metadata by its key
 
@@ -990,12 +990,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String key = "key_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Object body = null; // Object | 
     try {
-      Map<String, String> result = apiInstance.updateUserMetadataByKey(userId, key, apiToken, body);
+      Map<String, String> result = apiInstance.updateUserMetadataByKey(apiToken, userId, key, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#updateUserMetadataByKey");
@@ -1012,9 +1012,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **key** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **body** | **Object**|  | [optional]
 
 ### Return type
@@ -1037,7 +1037,7 @@ No authorization required
 
 <a name="viewChannelMetacounter"></a>
 # **viewChannelMetacounter**
-> Map&lt;String, SendBirdAdditionalProperties&gt; viewChannelMetacounter(channelType, channelUrl, apiToken, key, keys)
+> Map&lt;String, SendBirdAdditionalProperties&gt; viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys)
 
 View a channel metacounter - When retrieving all items of a channel metacounter
 
@@ -1058,13 +1058,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     String key = "key_example"; // String | 
     List<String> keys = Arrays.asList(); // List<String> | 
     try {
-      Map<String, SendBirdAdditionalProperties> result = apiInstance.viewChannelMetacounter(channelType, channelUrl, apiToken, key, keys);
+      Map<String, SendBirdAdditionalProperties> result = apiInstance.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#viewChannelMetacounter");
@@ -1081,9 +1081,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **key** | **String**|  | [optional]
  **keys** | [**List&lt;String&gt;**](String.md)|  | [optional]
 
@@ -1107,7 +1107,7 @@ No authorization required
 
 <a name="viewChannelMetacounterByKey"></a>
 # **viewChannelMetacounterByKey**
-> Map&lt;String, SendBirdAdditionalProperties&gt; viewChannelMetacounterByKey(channelType, channelUrl, key, apiToken)
+> Map&lt;String, SendBirdAdditionalProperties&gt; viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key)
 
 View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
 
@@ -1128,12 +1128,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String key = "key_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      Map<String, SendBirdAdditionalProperties> result = apiInstance.viewChannelMetacounterByKey(channelType, channelUrl, key, apiToken);
+      Map<String, SendBirdAdditionalProperties> result = apiInstance.viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#viewChannelMetacounterByKey");
@@ -1150,10 +1150,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **key** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1175,7 +1175,7 @@ No authorization required
 
 <a name="viewChannelMetadata"></a>
 # **viewChannelMetadata**
-> Map&lt;String, String&gt; viewChannelMetadata(channelType, channelUrl, apiToken, key, keys)
+> Map&lt;String, String&gt; viewChannelMetadata(apiToken, channelType, channelUrl, key, keys)
 
 View a channel metadata - When retrieving all items of a channel metadata
 
@@ -1196,13 +1196,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     String key = "key_example"; // String | 
     List<String> keys = Arrays.asList(); // List<String> | 
     try {
-      Map<String, String> result = apiInstance.viewChannelMetadata(channelType, channelUrl, apiToken, key, keys);
+      Map<String, String> result = apiInstance.viewChannelMetadata(apiToken, channelType, channelUrl, key, keys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#viewChannelMetadata");
@@ -1219,9 +1219,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **key** | **String**|  | [optional]
  **keys** | [**List&lt;String&gt;**](String.md)|  | [optional]
 
@@ -1245,7 +1245,7 @@ No authorization required
 
 <a name="viewChannelMetadataByKey"></a>
 # **viewChannelMetadataByKey**
-> Map&lt;String, String&gt; viewChannelMetadataByKey(channelType, channelUrl, key, apiToken)
+> Map&lt;String, String&gt; viewChannelMetadataByKey(apiToken, channelType, channelUrl, key)
 
 View a channel metadata - When retrieving a specific item of a channel metadata by its key
 
@@ -1266,12 +1266,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String key = "key_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      Map<String, String> result = apiInstance.viewChannelMetadataByKey(channelType, channelUrl, key, apiToken);
+      Map<String, String> result = apiInstance.viewChannelMetadataByKey(apiToken, channelType, channelUrl, key);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#viewChannelMetadataByKey");
@@ -1288,10 +1288,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **key** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1313,7 +1313,7 @@ No authorization required
 
 <a name="viewUserMetadata"></a>
 # **viewUserMetadata**
-> ViewUserMetadataResponse viewUserMetadata(userId, apiToken, key, keys)
+> ViewUserMetadataResponse viewUserMetadata(apiToken, userId, key, keys)
 
 View a user metadata - When retrieving all items of a user metadata
 
@@ -1334,12 +1334,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
-    String userId = "userId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String userId = "userId_example"; // String | 
     String key = "key_example"; // String | 
     List<String> keys = Arrays.asList(); // List<String> | 
     try {
-      ViewUserMetadataResponse result = apiInstance.viewUserMetadata(userId, apiToken, key, keys);
+      ViewUserMetadataResponse result = apiInstance.viewUserMetadata(apiToken, userId, key, keys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#viewUserMetadata");
@@ -1356,8 +1356,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **key** | **String**|  | [optional]
  **keys** | [**List&lt;String&gt;**](String.md)|  | [optional]
 
@@ -1381,7 +1381,7 @@ No authorization required
 
 <a name="viewUserMetadataByKey"></a>
 # **viewUserMetadataByKey**
-> Map&lt;String, String&gt; viewUserMetadataByKey(userId, key, apiToken)
+> Map&lt;String, String&gt; viewUserMetadataByKey(apiToken, userId, key)
 
 View a user metadata - When retrieving a specific item of a user metadata by its key
 
@@ -1402,11 +1402,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     UserChannelMetadataApi apiInstance = new UserChannelMetadataApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String key = "key_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      Map<String, String> result = apiInstance.viewUserMetadataByKey(userId, key, apiToken);
+      Map<String, String> result = apiInstance.viewUserMetadataByKey(apiToken, userId, key);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserChannelMetadataApi#viewUserMetadataByKey");
@@ -1423,9 +1423,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **userId** | **String**|  |
  **key** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

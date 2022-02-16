@@ -86,7 +86,7 @@ public class EmojisApi {
 
     /**
      * Build call for addEmojiCategories
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -150,6 +150,11 @@ public class EmojisApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call addEmojiCategoriesValidateBeforeCall(String apiToken, Object body, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling addEmojiCategories(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = addEmojiCategoriesCall(apiToken, body, _callback);
         return localVarCall;
@@ -159,7 +164,7 @@ public class EmojisApi {
     /**
      * Add emoji categories
      * ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param body  (optional)
      * @return AddEmojiCategoriesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -177,7 +182,7 @@ public class EmojisApi {
     /**
      * Add emoji categories
      * ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param body  (optional)
      * @return ApiResponse&lt;AddEmojiCategoriesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -196,7 +201,7 @@ public class EmojisApi {
     /**
      * Add emoji categories (asynchronously)
      * ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -216,7 +221,7 @@ public class EmojisApi {
     }
     /**
      * Build call for addEmojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param addEmojisData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -280,6 +285,11 @@ public class EmojisApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call addEmojisValidateBeforeCall(String apiToken, AddEmojisData addEmojisData, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling addEmojis(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = addEmojisCall(apiToken, addEmojisData, _callback);
         return localVarCall;
@@ -289,7 +299,7 @@ public class EmojisApi {
     /**
      * Add emojis
      * ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param addEmojisData  (optional)
      * @return AddEmojisResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -307,7 +317,7 @@ public class EmojisApi {
     /**
      * Add emojis
      * ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param addEmojisData  (optional)
      * @return ApiResponse&lt;AddEmojisResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -326,7 +336,7 @@ public class EmojisApi {
     /**
      * Add emojis (asynchronously)
      * ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param addEmojisData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -346,8 +356,8 @@ public class EmojisApi {
     }
     /**
      * Build call for deleteEmojiByKey
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -357,7 +367,7 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEmojiByKeyCall(String emojiKey, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteEmojiByKeyCall(String apiToken, String emojiKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -409,7 +419,12 @@ public class EmojisApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteEmojiByKeyValidateBeforeCall(String emojiKey, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteEmojiByKeyValidateBeforeCall(String apiToken, String emojiKey, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteEmojiByKey(Async)");
+        }
         
         // verify the required parameter 'emojiKey' is set
         if (emojiKey == null) {
@@ -417,7 +432,7 @@ public class EmojisApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteEmojiByKeyCall(emojiKey, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteEmojiByKeyCall(apiToken, emojiKey, _callback);
         return localVarCall;
 
     }
@@ -425,8 +440,8 @@ public class EmojisApi {
     /**
      * Delete an emoji
      * ## Delete an emoji  Deletes an emoji from the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji ----------------------------
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -434,15 +449,15 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteEmojiByKey(String emojiKey, String apiToken) throws ApiException {
-        deleteEmojiByKeyWithHttpInfo(emojiKey, apiToken);
+    public void deleteEmojiByKey(String apiToken, String emojiKey) throws ApiException {
+        deleteEmojiByKeyWithHttpInfo(apiToken, emojiKey);
     }
 
     /**
      * Delete an emoji
      * ## Delete an emoji  Deletes an emoji from the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji ----------------------------
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -451,16 +466,16 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String emojiKey, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = deleteEmojiByKeyValidateBeforeCall(emojiKey, apiToken, null);
+    public ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String apiToken, String emojiKey) throws ApiException {
+        okhttp3.Call localVarCall = deleteEmojiByKeyValidateBeforeCall(apiToken, emojiKey, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete an emoji (asynchronously)
      * ## Delete an emoji  Deletes an emoji from the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji ----------------------------
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -470,16 +485,16 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEmojiByKeyAsync(String emojiKey, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteEmojiByKeyAsync(String apiToken, String emojiKey, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteEmojiByKeyValidateBeforeCall(emojiKey, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteEmojiByKeyValidateBeforeCall(apiToken, emojiKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteEmojiCategoryById
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -489,7 +504,7 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEmojiCategoryByIdCall(String emojiCategoryId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteEmojiCategoryByIdCall(String apiToken, String emojiCategoryId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -541,7 +556,12 @@ public class EmojisApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteEmojiCategoryByIdValidateBeforeCall(String emojiCategoryId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteEmojiCategoryByIdValidateBeforeCall(String apiToken, String emojiCategoryId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteEmojiCategoryById(Async)");
+        }
         
         // verify the required parameter 'emojiCategoryId' is set
         if (emojiCategoryId == null) {
@@ -549,7 +569,7 @@ public class EmojisApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteEmojiCategoryByIdCall(emojiCategoryId, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteEmojiCategoryByIdCall(apiToken, emojiCategoryId, _callback);
         return localVarCall;
 
     }
@@ -557,8 +577,8 @@ public class EmojisApi {
     /**
      * Delete an emoji category
      * ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -566,15 +586,15 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteEmojiCategoryById(String emojiCategoryId, String apiToken) throws ApiException {
-        deleteEmojiCategoryByIdWithHttpInfo(emojiCategoryId, apiToken);
+    public void deleteEmojiCategoryById(String apiToken, String emojiCategoryId) throws ApiException {
+        deleteEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId);
     }
 
     /**
      * Delete an emoji category
      * ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -583,16 +603,16 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteEmojiCategoryByIdWithHttpInfo(String emojiCategoryId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = deleteEmojiCategoryByIdValidateBeforeCall(emojiCategoryId, apiToken, null);
+    public ApiResponse<Void> deleteEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
+        okhttp3.Call localVarCall = deleteEmojiCategoryByIdValidateBeforeCall(apiToken, emojiCategoryId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete an emoji category (asynchronously)
      * ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -602,15 +622,15 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEmojiCategoryByIdAsync(String emojiCategoryId, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteEmojiCategoryByIdAsync(String apiToken, String emojiCategoryId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteEmojiCategoryByIdValidateBeforeCall(emojiCategoryId, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteEmojiCategoryByIdValidateBeforeCall(apiToken, emojiCategoryId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for enableReactions
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param enableReactionsData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -674,6 +694,11 @@ public class EmojisApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call enableReactionsValidateBeforeCall(String apiToken, EnableReactionsData enableReactionsData, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling enableReactions(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = enableReactionsCall(apiToken, enableReactionsData, _callback);
         return localVarCall;
@@ -683,7 +708,7 @@ public class EmojisApi {
     /**
      * Enable reactions
      * ## Enable reactions  Turn on or off reactions in a Sendbird application.  &gt; __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param enableReactionsData  (optional)
      * @return EnableReactionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -701,7 +726,7 @@ public class EmojisApi {
     /**
      * Enable reactions
      * ## Enable reactions  Turn on or off reactions in a Sendbird application.  &gt; __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param enableReactionsData  (optional)
      * @return ApiResponse&lt;EnableReactionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -720,7 +745,7 @@ public class EmojisApi {
     /**
      * Enable reactions (asynchronously)
      * ## Enable reactions  Turn on or off reactions in a Sendbird application.  &gt; __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param enableReactionsData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -740,8 +765,8 @@ public class EmojisApi {
     }
     /**
      * Build call for getEmojiByKey
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -751,7 +776,7 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEmojiByKeyCall(String emojiKey, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEmojiByKeyCall(String apiToken, String emojiKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -803,7 +828,12 @@ public class EmojisApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEmojiByKeyValidateBeforeCall(String emojiKey, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEmojiByKeyValidateBeforeCall(String apiToken, String emojiKey, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling getEmojiByKey(Async)");
+        }
         
         // verify the required parameter 'emojiKey' is set
         if (emojiKey == null) {
@@ -811,7 +841,7 @@ public class EmojisApi {
         }
         
 
-        okhttp3.Call localVarCall = getEmojiByKeyCall(emojiKey, apiToken, _callback);
+        okhttp3.Call localVarCall = getEmojiByKeyCall(apiToken, emojiKey, _callback);
         return localVarCall;
 
     }
@@ -819,8 +849,8 @@ public class EmojisApi {
     /**
      * Get an emoji
      * ## Get an emoji  Retrieves an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji ----------------------------
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @return SendBirdEmoji
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -829,16 +859,16 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdEmoji getEmojiByKey(String emojiKey, String apiToken) throws ApiException {
-        ApiResponse<SendBirdEmoji> localVarResp = getEmojiByKeyWithHttpInfo(emojiKey, apiToken);
+    public SendBirdEmoji getEmojiByKey(String apiToken, String emojiKey) throws ApiException {
+        ApiResponse<SendBirdEmoji> localVarResp = getEmojiByKeyWithHttpInfo(apiToken, emojiKey);
         return localVarResp.getData();
     }
 
     /**
      * Get an emoji
      * ## Get an emoji  Retrieves an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji ----------------------------
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;SendBirdEmoji&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -847,8 +877,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String emojiKey, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = getEmojiByKeyValidateBeforeCall(emojiKey, apiToken, null);
+    public ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String apiToken, String emojiKey) throws ApiException {
+        okhttp3.Call localVarCall = getEmojiByKeyValidateBeforeCall(apiToken, emojiKey, null);
         Type localVarReturnType = new TypeToken<SendBirdEmoji>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -856,8 +886,8 @@ public class EmojisApi {
     /**
      * Get an emoji (asynchronously)
      * ## Get an emoji  Retrieves an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji ----------------------------
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -867,17 +897,17 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEmojiByKeyAsync(String emojiKey, String apiToken, final ApiCallback<SendBirdEmoji> _callback) throws ApiException {
+    public okhttp3.Call getEmojiByKeyAsync(String apiToken, String emojiKey, final ApiCallback<SendBirdEmoji> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getEmojiByKeyValidateBeforeCall(emojiKey, apiToken, _callback);
+        okhttp3.Call localVarCall = getEmojiByKeyValidateBeforeCall(apiToken, emojiKey, _callback);
         Type localVarReturnType = new TypeToken<SendBirdEmoji>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getEmojiCategoryById
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -887,7 +917,7 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEmojiCategoryByIdCall(String emojiCategoryId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEmojiCategoryByIdCall(String apiToken, String emojiCategoryId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -939,7 +969,12 @@ public class EmojisApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEmojiCategoryByIdValidateBeforeCall(String emojiCategoryId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEmojiCategoryByIdValidateBeforeCall(String apiToken, String emojiCategoryId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling getEmojiCategoryById(Async)");
+        }
         
         // verify the required parameter 'emojiCategoryId' is set
         if (emojiCategoryId == null) {
@@ -947,7 +982,7 @@ public class EmojisApi {
         }
         
 
-        okhttp3.Call localVarCall = getEmojiCategoryByIdCall(emojiCategoryId, apiToken, _callback);
+        okhttp3.Call localVarCall = getEmojiCategoryByIdCall(apiToken, emojiCategoryId, _callback);
         return localVarCall;
 
     }
@@ -955,8 +990,8 @@ public class EmojisApi {
     /**
      * Get an emoji category
      * ## Get an emoji category  Retrieves an emoji category with the specified ID, including its emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji-category ----------------------------   &#x60;emoji_category_id&#x60;      Type: int      Description: Specifies the unique ID of the emoji category to retrieve.
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @return SendBirdEmojiCategory
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -965,16 +1000,16 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdEmojiCategory getEmojiCategoryById(String emojiCategoryId, String apiToken) throws ApiException {
-        ApiResponse<SendBirdEmojiCategory> localVarResp = getEmojiCategoryByIdWithHttpInfo(emojiCategoryId, apiToken);
+    public SendBirdEmojiCategory getEmojiCategoryById(String apiToken, String emojiCategoryId) throws ApiException {
+        ApiResponse<SendBirdEmojiCategory> localVarResp = getEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId);
         return localVarResp.getData();
     }
 
     /**
      * Get an emoji category
      * ## Get an emoji category  Retrieves an emoji category with the specified ID, including its emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji-category ----------------------------   &#x60;emoji_category_id&#x60;      Type: int      Description: Specifies the unique ID of the emoji category to retrieve.
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;SendBirdEmojiCategory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -983,8 +1018,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(String emojiCategoryId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = getEmojiCategoryByIdValidateBeforeCall(emojiCategoryId, apiToken, null);
+    public ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
+        okhttp3.Call localVarCall = getEmojiCategoryByIdValidateBeforeCall(apiToken, emojiCategoryId, null);
         Type localVarReturnType = new TypeToken<SendBirdEmojiCategory>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -992,8 +1027,8 @@ public class EmojisApi {
     /**
      * Get an emoji category (asynchronously)
      * ## Get an emoji category  Retrieves an emoji category with the specified ID, including its emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji-category ----------------------------   &#x60;emoji_category_id&#x60;      Type: int      Description: Specifies the unique ID of the emoji category to retrieve.
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1003,16 +1038,16 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEmojiCategoryByIdAsync(String emojiCategoryId, String apiToken, final ApiCallback<SendBirdEmojiCategory> _callback) throws ApiException {
+    public okhttp3.Call getEmojiCategoryByIdAsync(String apiToken, String emojiCategoryId, final ApiCallback<SendBirdEmojiCategory> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getEmojiCategoryByIdValidateBeforeCall(emojiCategoryId, apiToken, _callback);
+        okhttp3.Call localVarCall = getEmojiCategoryByIdValidateBeforeCall(apiToken, emojiCategoryId, _callback);
         Type localVarReturnType = new TypeToken<SendBirdEmojiCategory>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listAllEmojisAndEmojiCategories
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1075,6 +1110,11 @@ public class EmojisApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listAllEmojisAndEmojiCategoriesValidateBeforeCall(String apiToken, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listAllEmojisAndEmojiCategories(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = listAllEmojisAndEmojiCategoriesCall(apiToken, _callback);
         return localVarCall;
@@ -1084,7 +1124,7 @@ public class EmojisApi {
     /**
      * List all emojis and emoji categories
      * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return ListAllEmojisAndEmojiCategoriesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1101,7 +1141,7 @@ public class EmojisApi {
     /**
      * List all emojis and emoji categories
      * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return ApiResponse&lt;ListAllEmojisAndEmojiCategoriesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1119,7 +1159,7 @@ public class EmojisApi {
     /**
      * List all emojis and emoji categories (asynchronously)
      * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1138,7 +1178,7 @@ public class EmojisApi {
     }
     /**
      * Build call for listEmojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1201,6 +1241,11 @@ public class EmojisApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listEmojisValidateBeforeCall(String apiToken, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listEmojis(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = listEmojisCall(apiToken, _callback);
         return localVarCall;
@@ -1210,7 +1255,7 @@ public class EmojisApi {
     /**
      * List emojis
      * ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return ListEmojisResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1227,7 +1272,7 @@ public class EmojisApi {
     /**
      * List emojis
      * ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return ApiResponse&lt;ListEmojisResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1245,7 +1290,7 @@ public class EmojisApi {
     /**
      * List emojis (asynchronously)
      * ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1264,8 +1309,8 @@ public class EmojisApi {
     }
     /**
      * Build call for updateEmojiCategoryUrlById
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @param updateEmojiCategoryUrlByIdData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1276,7 +1321,7 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEmojiCategoryUrlByIdCall(String emojiCategoryId, String apiToken, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateEmojiCategoryUrlByIdCall(String apiToken, String emojiCategoryId, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1328,7 +1373,12 @@ public class EmojisApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateEmojiCategoryUrlByIdValidateBeforeCall(String emojiCategoryId, String apiToken, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateEmojiCategoryUrlByIdValidateBeforeCall(String apiToken, String emojiCategoryId, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateEmojiCategoryUrlById(Async)");
+        }
         
         // verify the required parameter 'emojiCategoryId' is set
         if (emojiCategoryId == null) {
@@ -1336,7 +1386,7 @@ public class EmojisApi {
         }
         
 
-        okhttp3.Call localVarCall = updateEmojiCategoryUrlByIdCall(emojiCategoryId, apiToken, updateEmojiCategoryUrlByIdData, _callback);
+        okhttp3.Call localVarCall = updateEmojiCategoryUrlByIdCall(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData, _callback);
         return localVarCall;
 
     }
@@ -1344,8 +1394,8 @@ public class EmojisApi {
     /**
      * Update an emoji category URL
      * ## Update an emoji category URL  Updates the URL of an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-category-url ----------------------------
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @param updateEmojiCategoryUrlByIdData  (optional)
      * @return SendBirdEmojiCategory
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1355,16 +1405,16 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdEmojiCategory updateEmojiCategoryUrlById(String emojiCategoryId, String apiToken, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) throws ApiException {
-        ApiResponse<SendBirdEmojiCategory> localVarResp = updateEmojiCategoryUrlByIdWithHttpInfo(emojiCategoryId, apiToken, updateEmojiCategoryUrlByIdData);
+    public SendBirdEmojiCategory updateEmojiCategoryUrlById(String apiToken, String emojiCategoryId, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) throws ApiException {
+        ApiResponse<SendBirdEmojiCategory> localVarResp = updateEmojiCategoryUrlByIdWithHttpInfo(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData);
         return localVarResp.getData();
     }
 
     /**
      * Update an emoji category URL
      * ## Update an emoji category URL  Updates the URL of an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-category-url ----------------------------
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @param updateEmojiCategoryUrlByIdData  (optional)
      * @return ApiResponse&lt;SendBirdEmojiCategory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1374,8 +1424,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInfo(String emojiCategoryId, String apiToken, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) throws ApiException {
-        okhttp3.Call localVarCall = updateEmojiCategoryUrlByIdValidateBeforeCall(emojiCategoryId, apiToken, updateEmojiCategoryUrlByIdData, null);
+    public ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInfo(String apiToken, String emojiCategoryId, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) throws ApiException {
+        okhttp3.Call localVarCall = updateEmojiCategoryUrlByIdValidateBeforeCall(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData, null);
         Type localVarReturnType = new TypeToken<SendBirdEmojiCategory>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1383,8 +1433,8 @@ public class EmojisApi {
     /**
      * Update an emoji category URL (asynchronously)
      * ## Update an emoji category URL  Updates the URL of an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-category-url ----------------------------
+     * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @param apiToken  (optional)
      * @param updateEmojiCategoryUrlByIdData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1395,17 +1445,17 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEmojiCategoryUrlByIdAsync(String emojiCategoryId, String apiToken, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData, final ApiCallback<SendBirdEmojiCategory> _callback) throws ApiException {
+    public okhttp3.Call updateEmojiCategoryUrlByIdAsync(String apiToken, String emojiCategoryId, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData, final ApiCallback<SendBirdEmojiCategory> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateEmojiCategoryUrlByIdValidateBeforeCall(emojiCategoryId, apiToken, updateEmojiCategoryUrlByIdData, _callback);
+        okhttp3.Call localVarCall = updateEmojiCategoryUrlByIdValidateBeforeCall(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdEmojiCategory>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateEmojiUrlByKey
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @param updateEmojiUrlByKeyData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1416,7 +1466,7 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEmojiUrlByKeyCall(String emojiKey, String apiToken, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateEmojiUrlByKeyCall(String apiToken, String emojiKey, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1468,7 +1518,12 @@ public class EmojisApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateEmojiUrlByKeyValidateBeforeCall(String emojiKey, String apiToken, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateEmojiUrlByKeyValidateBeforeCall(String apiToken, String emojiKey, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateEmojiUrlByKey(Async)");
+        }
         
         // verify the required parameter 'emojiKey' is set
         if (emojiKey == null) {
@@ -1476,7 +1531,7 @@ public class EmojisApi {
         }
         
 
-        okhttp3.Call localVarCall = updateEmojiUrlByKeyCall(emojiKey, apiToken, updateEmojiUrlByKeyData, _callback);
+        okhttp3.Call localVarCall = updateEmojiUrlByKeyCall(apiToken, emojiKey, updateEmojiUrlByKeyData, _callback);
         return localVarCall;
 
     }
@@ -1484,8 +1539,8 @@ public class EmojisApi {
     /**
      * Update an emoji URL
      * ## Update an emoji URL  Updates the image URL of an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-url ----------------------------
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @param updateEmojiUrlByKeyData  (optional)
      * @return SendBirdEmoji
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1495,16 +1550,16 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdEmoji updateEmojiUrlByKey(String emojiKey, String apiToken, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) throws ApiException {
-        ApiResponse<SendBirdEmoji> localVarResp = updateEmojiUrlByKeyWithHttpInfo(emojiKey, apiToken, updateEmojiUrlByKeyData);
+    public SendBirdEmoji updateEmojiUrlByKey(String apiToken, String emojiKey, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) throws ApiException {
+        ApiResponse<SendBirdEmoji> localVarResp = updateEmojiUrlByKeyWithHttpInfo(apiToken, emojiKey, updateEmojiUrlByKeyData);
         return localVarResp.getData();
     }
 
     /**
      * Update an emoji URL
      * ## Update an emoji URL  Updates the image URL of an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-url ----------------------------
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @param updateEmojiUrlByKeyData  (optional)
      * @return ApiResponse&lt;SendBirdEmoji&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1514,8 +1569,8 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String emojiKey, String apiToken, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) throws ApiException {
-        okhttp3.Call localVarCall = updateEmojiUrlByKeyValidateBeforeCall(emojiKey, apiToken, updateEmojiUrlByKeyData, null);
+    public ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String apiToken, String emojiKey, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) throws ApiException {
+        okhttp3.Call localVarCall = updateEmojiUrlByKeyValidateBeforeCall(apiToken, emojiKey, updateEmojiUrlByKeyData, null);
         Type localVarReturnType = new TypeToken<SendBirdEmoji>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1523,8 +1578,8 @@ public class EmojisApi {
     /**
      * Update an emoji URL (asynchronously)
      * ## Update an emoji URL  Updates the image URL of an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-url ----------------------------
+     * @param apiToken  (required)
      * @param emojiKey  (required)
-     * @param apiToken  (optional)
      * @param updateEmojiUrlByKeyData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1535,16 +1590,16 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEmojiUrlByKeyAsync(String emojiKey, String apiToken, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData, final ApiCallback<SendBirdEmoji> _callback) throws ApiException {
+    public okhttp3.Call updateEmojiUrlByKeyAsync(String apiToken, String emojiKey, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData, final ApiCallback<SendBirdEmoji> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateEmojiUrlByKeyValidateBeforeCall(emojiKey, apiToken, updateEmojiUrlByKeyData, _callback);
+        okhttp3.Call localVarCall = updateEmojiUrlByKeyValidateBeforeCall(apiToken, emojiKey, updateEmojiUrlByKeyData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdEmoji>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for useDefaultEmojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param useDefaultEmojisData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1608,6 +1663,11 @@ public class EmojisApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call useDefaultEmojisValidateBeforeCall(String apiToken, UseDefaultEmojisData useDefaultEmojisData, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling useDefaultEmojis(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = useDefaultEmojisCall(apiToken, useDefaultEmojisData, _callback);
         return localVarCall;
@@ -1617,7 +1677,7 @@ public class EmojisApi {
     /**
      * Use default emojis
      * ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param useDefaultEmojisData  (optional)
      * @return UseDefaultEmojisResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1635,7 +1695,7 @@ public class EmojisApi {
     /**
      * Use default emojis
      * ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param useDefaultEmojisData  (optional)
      * @return ApiResponse&lt;UseDefaultEmojisResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1654,7 +1714,7 @@ public class EmojisApi {
     /**
      * Use default emojis (asynchronously)
      * ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param useDefaultEmojisData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

@@ -77,8 +77,8 @@ public class DataPrivacyApi {
 
     /**
      * Build call for cancelTheRegistrationOfGdprRequestById
+     * @param apiToken  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -88,7 +88,7 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelTheRegistrationOfGdprRequestByIdCall(String requestId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelTheRegistrationOfGdprRequestByIdCall(String apiToken, String requestId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -140,7 +140,12 @@ public class DataPrivacyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelTheRegistrationOfGdprRequestByIdValidateBeforeCall(String requestId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelTheRegistrationOfGdprRequestByIdValidateBeforeCall(String apiToken, String requestId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling cancelTheRegistrationOfGdprRequestById(Async)");
+        }
         
         // verify the required parameter 'requestId' is set
         if (requestId == null) {
@@ -148,7 +153,7 @@ public class DataPrivacyApi {
         }
         
 
-        okhttp3.Call localVarCall = cancelTheRegistrationOfGdprRequestByIdCall(requestId, apiToken, _callback);
+        okhttp3.Call localVarCall = cancelTheRegistrationOfGdprRequestByIdCall(apiToken, requestId, _callback);
         return localVarCall;
 
     }
@@ -156,8 +161,8 @@ public class DataPrivacyApi {
     /**
      * Cancel the registration of a GDPR request
      * ## Cancel the registration of a GDPR request  Cancels the registration of a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-cancel-the-registration-of-a-gdpr-request ----------------------------
+     * @param apiToken  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -165,15 +170,15 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void cancelTheRegistrationOfGdprRequestById(String requestId, String apiToken) throws ApiException {
-        cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(requestId, apiToken);
+    public void cancelTheRegistrationOfGdprRequestById(String apiToken, String requestId) throws ApiException {
+        cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(apiToken, requestId);
     }
 
     /**
      * Cancel the registration of a GDPR request
      * ## Cancel the registration of a GDPR request  Cancels the registration of a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-cancel-the-registration-of-a-gdpr-request ----------------------------
+     * @param apiToken  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -182,16 +187,16 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(String requestId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = cancelTheRegistrationOfGdprRequestByIdValidateBeforeCall(requestId, apiToken, null);
+    public ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(String apiToken, String requestId) throws ApiException {
+        okhttp3.Call localVarCall = cancelTheRegistrationOfGdprRequestByIdValidateBeforeCall(apiToken, requestId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Cancel the registration of a GDPR request (asynchronously)
      * ## Cancel the registration of a GDPR request  Cancels the registration of a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-cancel-the-registration-of-a-gdpr-request ----------------------------
+     * @param apiToken  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -201,15 +206,15 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelTheRegistrationOfGdprRequestByIdAsync(String requestId, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call cancelTheRegistrationOfGdprRequestByIdAsync(String apiToken, String requestId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = cancelTheRegistrationOfGdprRequestByIdValidateBeforeCall(requestId, apiToken, _callback);
+        okhttp3.Call localVarCall = cancelTheRegistrationOfGdprRequestByIdValidateBeforeCall(apiToken, requestId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for listGdprRequests
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -282,6 +287,11 @@ public class DataPrivacyApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listGdprRequestsValidateBeforeCall(String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listGdprRequests(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = listGdprRequestsCall(apiToken, token, limit, _callback);
         return localVarCall;
@@ -291,7 +301,7 @@ public class DataPrivacyApi {
     /**
      * List GDPR requests
      * ## List GDPR requests  Retrieves a list of GDPR requests of all types.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-list-gdpr-requests ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ListGdprRequestsResponse
@@ -310,7 +320,7 @@ public class DataPrivacyApi {
     /**
      * List GDPR requests
      * ## List GDPR requests  Retrieves a list of GDPR requests of all types.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-list-gdpr-requests ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;ListGdprRequestsResponse&gt;
@@ -330,7 +340,7 @@ public class DataPrivacyApi {
     /**
      * List GDPR requests (asynchronously)
      * ## List GDPR requests  Retrieves a list of GDPR requests of all types.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-list-gdpr-requests ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -351,7 +361,7 @@ public class DataPrivacyApi {
     }
     /**
      * Build call for registerGdprRequest
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param registerGdprRequestData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -415,6 +425,11 @@ public class DataPrivacyApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call registerGdprRequestValidateBeforeCall(String apiToken, RegisterGdprRequestData registerGdprRequestData, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling registerGdprRequest(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = registerGdprRequestCall(apiToken, registerGdprRequestData, _callback);
         return localVarCall;
@@ -424,7 +439,7 @@ public class DataPrivacyApi {
     /**
      * Register a GDPR request
      * ## Register a GDPR request  Registers a specific type of GDPR request to meet the GDPR&#39;s requirements.  &gt; __Note__: Currently, only delete and access of the user data are supported. The features for the [right to restriction of processing](https://gdpr-info.eu/art-18-gdpr/) and [right to object](https://gdpr-info.eu/art-21-gdpr/) will be available soon.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-register-a-gdpr-request
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param registerGdprRequestData  (optional)
      * @return RegisterGdprRequestResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -442,7 +457,7 @@ public class DataPrivacyApi {
     /**
      * Register a GDPR request
      * ## Register a GDPR request  Registers a specific type of GDPR request to meet the GDPR&#39;s requirements.  &gt; __Note__: Currently, only delete and access of the user data are supported. The features for the [right to restriction of processing](https://gdpr-info.eu/art-18-gdpr/) and [right to object](https://gdpr-info.eu/art-21-gdpr/) will be available soon.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-register-a-gdpr-request
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param registerGdprRequestData  (optional)
      * @return ApiResponse&lt;RegisterGdprRequestResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -461,7 +476,7 @@ public class DataPrivacyApi {
     /**
      * Register a GDPR request (asynchronously)
      * ## Register a GDPR request  Registers a specific type of GDPR request to meet the GDPR&#39;s requirements.  &gt; __Note__: Currently, only delete and access of the user data are supported. The features for the [right to restriction of processing](https://gdpr-info.eu/art-18-gdpr/) and [right to object](https://gdpr-info.eu/art-21-gdpr/) will be available soon.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-register-a-gdpr-request
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param registerGdprRequestData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -481,8 +496,8 @@ public class DataPrivacyApi {
     }
     /**
      * Build call for viewGdprRequestById
+     * @param apiToken  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -492,7 +507,7 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewGdprRequestByIdCall(String requestId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewGdprRequestByIdCall(String apiToken, String requestId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -544,7 +559,12 @@ public class DataPrivacyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewGdprRequestByIdValidateBeforeCall(String requestId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewGdprRequestByIdValidateBeforeCall(String apiToken, String requestId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewGdprRequestById(Async)");
+        }
         
         // verify the required parameter 'requestId' is set
         if (requestId == null) {
@@ -552,7 +572,7 @@ public class DataPrivacyApi {
         }
         
 
-        okhttp3.Call localVarCall = viewGdprRequestByIdCall(requestId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewGdprRequestByIdCall(apiToken, requestId, _callback);
         return localVarCall;
 
     }
@@ -560,8 +580,8 @@ public class DataPrivacyApi {
     /**
      * View a GDPR request
      * ## View a GDPR request  Retrieves a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-view-a-gdpr-request ----------------------------
+     * @param apiToken  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @return ViewGdprRequestByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -570,16 +590,16 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewGdprRequestByIdResponse viewGdprRequestById(String requestId, String apiToken) throws ApiException {
-        ApiResponse<ViewGdprRequestByIdResponse> localVarResp = viewGdprRequestByIdWithHttpInfo(requestId, apiToken);
+    public ViewGdprRequestByIdResponse viewGdprRequestById(String apiToken, String requestId) throws ApiException {
+        ApiResponse<ViewGdprRequestByIdResponse> localVarResp = viewGdprRequestByIdWithHttpInfo(apiToken, requestId);
         return localVarResp.getData();
     }
 
     /**
      * View a GDPR request
      * ## View a GDPR request  Retrieves a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-view-a-gdpr-request ----------------------------
+     * @param apiToken  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewGdprRequestByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -588,8 +608,8 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo(String requestId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewGdprRequestByIdValidateBeforeCall(requestId, apiToken, null);
+    public ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo(String apiToken, String requestId) throws ApiException {
+        okhttp3.Call localVarCall = viewGdprRequestByIdValidateBeforeCall(apiToken, requestId, null);
         Type localVarReturnType = new TypeToken<ViewGdprRequestByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -597,8 +617,8 @@ public class DataPrivacyApi {
     /**
      * View a GDPR request (asynchronously)
      * ## View a GDPR request  Retrieves a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-view-a-gdpr-request ----------------------------
+     * @param apiToken  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -608,9 +628,9 @@ public class DataPrivacyApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewGdprRequestByIdAsync(String requestId, String apiToken, final ApiCallback<ViewGdprRequestByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call viewGdprRequestByIdAsync(String apiToken, String requestId, final ApiCallback<ViewGdprRequestByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewGdprRequestByIdValidateBeforeCall(requestId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewGdprRequestByIdValidateBeforeCall(apiToken, requestId, _callback);
         Type localVarReturnType = new TypeToken<ViewGdprRequestByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

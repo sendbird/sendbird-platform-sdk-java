@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 <a name="addExtraDataToMessage"></a>
 # **addExtraDataToMessage**
-> AddExtraDataToMessageResponse addExtraDataToMessage(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData)
+> AddExtraDataToMessageResponse addExtraDataToMessage(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData)
 
 Add extra data to a message
 
@@ -45,13 +45,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     AddExtraDataToMessageData addExtraDataToMessageData = new AddExtraDataToMessageData(); // AddExtraDataToMessageData | 
     try {
-      AddExtraDataToMessageResponse result = apiInstance.addExtraDataToMessage(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData);
+      AddExtraDataToMessageResponse result = apiInstance.addExtraDataToMessage(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#addExtraDataToMessage");
@@ -68,10 +68,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **addExtraDataToMessageData** | [**AddExtraDataToMessageData**](AddExtraDataToMessageData.md)|  | [optional]
 
 ### Return type
@@ -94,7 +94,7 @@ No authorization required
 
 <a name="addReactionToAMessage"></a>
 # **addReactionToAMessage**
-> AddReactionToAMessageResponse addReactionToAMessage(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData)
+> AddReactionToAMessageResponse addReactionToAMessage(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData)
 
 Add a reaction to a message
 
@@ -115,13 +115,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     AddReactionToAMessageData addReactionToAMessageData = new AddReactionToAMessageData(); // AddReactionToAMessageData | 
     try {
-      AddReactionToAMessageResponse result = apiInstance.addReactionToAMessage(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData);
+      AddReactionToAMessageResponse result = apiInstance.addReactionToAMessage(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#addReactionToAMessage");
@@ -138,10 +138,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **addReactionToAMessageData** | [**AddReactionToAMessageData**](AddReactionToAMessageData.md)|  | [optional]
 
 ### Return type
@@ -164,7 +164,7 @@ No authorization required
 
 <a name="deleteMessageById"></a>
 # **deleteMessageById**
-> deleteMessageById(channelType, channelUrl, messageId, apiToken)
+> deleteMessageById(apiToken, channelType, channelUrl, messageId)
 
 Delete a message
 
@@ -185,12 +185,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      apiInstance.deleteMessageById(channelType, channelUrl, messageId, apiToken);
+      apiInstance.deleteMessageById(apiToken, channelType, channelUrl, messageId);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#deleteMessageById");
       System.err.println("Status code: " + e.getCode());
@@ -206,10 +206,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -231,7 +231,7 @@ No authorization required
 
 <a name="gcMarkAllMessagesAsDelivered"></a>
 # **gcMarkAllMessagesAsDelivered**
-> GcMarkAllMessagesAsDeliveredResponse gcMarkAllMessagesAsDelivered(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData)
+> GcMarkAllMessagesAsDeliveredResponse gcMarkAllMessagesAsDelivered(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData)
 
 Mark all messages as delivered
 
@@ -252,11 +252,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData = new GcMarkAllMessagesAsDeliveredData(); // GcMarkAllMessagesAsDeliveredData | 
     try {
-      GcMarkAllMessagesAsDeliveredResponse result = apiInstance.gcMarkAllMessagesAsDelivered(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData);
+      GcMarkAllMessagesAsDeliveredResponse result = apiInstance.gcMarkAllMessagesAsDelivered(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#gcMarkAllMessagesAsDelivered");
@@ -273,8 +273,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcMarkAllMessagesAsDeliveredData** | [**GcMarkAllMessagesAsDeliveredData**](GcMarkAllMessagesAsDeliveredData.md)|  | [optional]
 
 ### Return type
@@ -297,7 +297,7 @@ No authorization required
 
 <a name="gcMarkAllMessagesAsRead"></a>
 # **gcMarkAllMessagesAsRead**
-> gcMarkAllMessagesAsRead(channelUrl, apiToken, gcMarkAllMessagesAsReadData)
+> gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData)
 
 Mark all messages as read
 
@@ -318,11 +318,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData = new GcMarkAllMessagesAsReadData(); // GcMarkAllMessagesAsReadData | 
     try {
-      apiInstance.gcMarkAllMessagesAsRead(channelUrl, apiToken, gcMarkAllMessagesAsReadData);
+      apiInstance.gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#gcMarkAllMessagesAsRead");
       System.err.println("Status code: " + e.getCode());
@@ -338,8 +338,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcMarkAllMessagesAsReadData** | [**GcMarkAllMessagesAsReadData**](GcMarkAllMessagesAsReadData.md)|  | [optional]
 
 ### Return type
@@ -362,7 +362,7 @@ No authorization required
 
 <a name="gcViewNumberOfEachMembersUnreadMessages"></a>
 # **gcViewNumberOfEachMembersUnreadMessages**
-> GcViewNumberOfEachMembersUnreadMessagesResponse gcViewNumberOfEachMembersUnreadMessages(channelUrl, apiToken, userIds)
+> GcViewNumberOfEachMembersUnreadMessagesResponse gcViewNumberOfEachMembersUnreadMessages(apiToken, channelUrl, userIds)
 
 View number of each member&#39;s unread messages
 
@@ -383,11 +383,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     String userIds = "userIds_example"; // String | 
     try {
-      GcViewNumberOfEachMembersUnreadMessagesResponse result = apiInstance.gcViewNumberOfEachMembersUnreadMessages(channelUrl, apiToken, userIds);
+      GcViewNumberOfEachMembersUnreadMessagesResponse result = apiInstance.gcViewNumberOfEachMembersUnreadMessages(apiToken, channelUrl, userIds);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#gcViewNumberOfEachMembersUnreadMessages");
@@ -404,8 +404,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **userIds** | **String**|  | [optional]
 
 ### Return type
@@ -428,7 +428,7 @@ No authorization required
 
 <a name="listMessages"></a>
 # **listMessages**
-> ListMessagesResponse listMessages(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray)
+> ListMessagesResponse listMessages(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray)
 
 List messages
 
@@ -449,11 +449,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     Integer messageTs = 56; // Integer | 
     Integer messageId = 56; // Integer | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Integer prevLimit = 56; // Integer | 
     Integer nextLimit = 56; // Integer | 
     Boolean include = true; // Boolean | 
@@ -471,7 +471,7 @@ public class Example {
     String customType = "customType_example"; // String | 
     Boolean withMetaArray = true; // Boolean | 
     try {
-      ListMessagesResponse result = apiInstance.listMessages(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+      ListMessagesResponse result = apiInstance.listMessages(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#listMessages");
@@ -488,11 +488,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **messageTs** | **Integer**|  |
- **messageId** | **Integer**|  |
- **apiToken** | **String**|  | [optional]
+ **messageTs** | **Integer**|  | [optional]
+ **messageId** | **Integer**|  | [optional]
  **prevLimit** | **Integer**|  | [optional]
  **nextLimit** | **Integer**|  | [optional]
  **include** | **Boolean**|  | [optional]
@@ -530,7 +530,7 @@ No authorization required
 
 <a name="listReactionsOfMessage"></a>
 # **listReactionsOfMessage**
-> ListReactionsOfMessageResponse listReactionsOfMessage(channelType, channelUrl, messageId, apiToken, listUsers)
+> ListReactionsOfMessageResponse listReactionsOfMessage(apiToken, channelType, channelUrl, messageId, listUsers)
 
 List reactions of a message
 
@@ -551,13 +551,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Boolean listUsers = true; // Boolean | 
     try {
-      ListReactionsOfMessageResponse result = apiInstance.listReactionsOfMessage(channelType, channelUrl, messageId, apiToken, listUsers);
+      ListReactionsOfMessageResponse result = apiInstance.listReactionsOfMessage(apiToken, channelType, channelUrl, messageId, listUsers);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#listReactionsOfMessage");
@@ -574,10 +574,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **listUsers** | **Boolean**|  | [optional]
 
 ### Return type
@@ -600,7 +600,7 @@ No authorization required
 
 <a name="removeExtraDataFromMessage"></a>
 # **removeExtraDataFromMessage**
-> removeExtraDataFromMessage(channelType, channelUrl, messageId, apiToken, keys)
+> removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys)
 
 Remove extra data from a message
 
@@ -621,13 +621,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     List<String> keys = Arrays.asList(); // List<String> | 
     try {
-      apiInstance.removeExtraDataFromMessage(channelType, channelUrl, messageId, apiToken, keys);
+      apiInstance.removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#removeExtraDataFromMessage");
       System.err.println("Status code: " + e.getCode());
@@ -643,10 +643,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **keys** | [**List&lt;String&gt;**](String.md)|  | [optional]
 
 ### Return type
@@ -669,7 +669,7 @@ No authorization required
 
 <a name="removeReactionFromAMessage"></a>
 # **removeReactionFromAMessage**
-> RemoveReactionFromAMessageResponse removeReactionFromAMessage(channelType, channelUrl, messageId, apiToken, userId, reaction)
+> RemoveReactionFromAMessageResponse removeReactionFromAMessage(apiToken, channelType, channelUrl, messageId, userId, reaction)
 
 Remove a reaction from a message
 
@@ -690,14 +690,14 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     String reaction = "reaction_example"; // String | 
     try {
-      RemoveReactionFromAMessageResponse result = apiInstance.removeReactionFromAMessage(channelType, channelUrl, messageId, apiToken, userId, reaction);
+      RemoveReactionFromAMessageResponse result = apiInstance.removeReactionFromAMessage(apiToken, channelType, channelUrl, messageId, userId, reaction);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#removeReactionFromAMessage");
@@ -714,10 +714,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **userId** | **String**|  | [optional]
  **reaction** | **String**|  | [optional]
 
@@ -741,7 +741,7 @@ No authorization required
 
 <a name="sendMessage"></a>
 # **sendMessage**
-> SendBirdMessageResponse sendMessage(channelType, channelUrl, apiToken, sendMessageData)
+> SendBirdMessageResponse sendMessage(apiToken, channelType, channelUrl, sendMessageData)
 
 Send a message
 
@@ -762,12 +762,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     SendMessageData sendMessageData = new SendMessageData(); // SendMessageData | 
     try {
-      SendBirdMessageResponse result = apiInstance.sendMessage(channelType, channelUrl, apiToken, sendMessageData);
+      SendBirdMessageResponse result = apiInstance.sendMessage(apiToken, channelType, channelUrl, sendMessageData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#sendMessage");
@@ -784,9 +784,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **sendMessageData** | [**SendMessageData**](SendMessageData.md)|  | [optional]
 
 ### Return type
@@ -809,7 +809,7 @@ No authorization required
 
 <a name="translateMessageIntoOtherLanguages"></a>
 # **translateMessageIntoOtherLanguages**
-> SendBirdMessageResponse translateMessageIntoOtherLanguages(channelType, channelUrl, messageId, apiToken, body)
+> SendBirdMessageResponse translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, body)
 
 Translate a message into other languages
 
@@ -830,13 +830,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Object body = null; // Object | 
     try {
-      SendBirdMessageResponse result = apiInstance.translateMessageIntoOtherLanguages(channelType, channelUrl, messageId, apiToken, body);
+      SendBirdMessageResponse result = apiInstance.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#translateMessageIntoOtherLanguages");
@@ -853,10 +853,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **body** | **Object**|  | [optional]
 
 ### Return type
@@ -879,7 +879,7 @@ No authorization required
 
 <a name="updateExtraDataInMessage"></a>
 # **updateExtraDataInMessage**
-> UpdateExtraDataInMessageResponse updateExtraDataInMessage(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData)
+> UpdateExtraDataInMessageResponse updateExtraDataInMessage(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData)
 
 Update extra data in a message
 
@@ -900,13 +900,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateExtraDataInMessageData updateExtraDataInMessageData = new UpdateExtraDataInMessageData(); // UpdateExtraDataInMessageData | 
     try {
-      UpdateExtraDataInMessageResponse result = apiInstance.updateExtraDataInMessage(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData);
+      UpdateExtraDataInMessageResponse result = apiInstance.updateExtraDataInMessage(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#updateExtraDataInMessage");
@@ -923,10 +923,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateExtraDataInMessageData** | [**UpdateExtraDataInMessageData**](UpdateExtraDataInMessageData.md)|  | [optional]
 
 ### Return type
@@ -949,7 +949,7 @@ No authorization required
 
 <a name="updateMessageById"></a>
 # **updateMessageById**
-> SendBirdMessageResponse updateMessageById(channelType, channelUrl, messageId, apiToken, updateMessageByIdData)
+> SendBirdMessageResponse updateMessageById(apiToken, channelType, channelUrl, messageId, updateMessageByIdData)
 
 Update a message
 
@@ -970,13 +970,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     UpdateMessageByIdData updateMessageByIdData = new UpdateMessageByIdData(); // UpdateMessageByIdData | 
     try {
-      SendBirdMessageResponse result = apiInstance.updateMessageById(channelType, channelUrl, messageId, apiToken, updateMessageByIdData);
+      SendBirdMessageResponse result = apiInstance.updateMessageById(apiToken, channelType, channelUrl, messageId, updateMessageByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#updateMessageById");
@@ -993,10 +993,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateMessageByIdData** | [**UpdateMessageByIdData**](UpdateMessageByIdData.md)|  | [optional]
 
 ### Return type
@@ -1019,7 +1019,7 @@ No authorization required
 
 <a name="viewMessageById"></a>
 # **viewMessageById**
-> SendBirdMessageResponse viewMessageById(channelType, channelUrl, messageId, apiToken, withSortedMetaArray, withMetaArray)
+> SendBirdMessageResponse viewMessageById(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray)
 
 View a message
 
@@ -1040,14 +1040,14 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Boolean withSortedMetaArray = true; // Boolean | 
     Boolean withMetaArray = true; // Boolean | 
     try {
-      SendBirdMessageResponse result = apiInstance.viewMessageById(channelType, channelUrl, messageId, apiToken, withSortedMetaArray, withMetaArray);
+      SendBirdMessageResponse result = apiInstance.viewMessageById(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#viewMessageById");
@@ -1064,10 +1064,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **withSortedMetaArray** | **Boolean**|  | [optional]
  **withMetaArray** | **Boolean**|  | [optional]
 
@@ -1091,7 +1091,7 @@ No authorization required
 
 <a name="viewTotalNumberOfMessagesInChannel"></a>
 # **viewTotalNumberOfMessagesInChannel**
-> ViewTotalNumberOfMessagesInChannelResponse viewTotalNumberOfMessagesInChannel(channelType, channelUrl, apiToken)
+> ViewTotalNumberOfMessagesInChannelResponse viewTotalNumberOfMessagesInChannel(apiToken, channelType, channelUrl)
 
 View total number of messages in a channel
 
@@ -1112,11 +1112,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MessagesApi apiInstance = new MessagesApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      ViewTotalNumberOfMessagesInChannelResponse result = apiInstance.viewTotalNumberOfMessagesInChannel(channelType, channelUrl, apiToken);
+      ViewTotalNumberOfMessagesInChannelResponse result = apiInstance.viewTotalNumberOfMessagesInChannel(apiToken, channelType, channelUrl);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#viewTotalNumberOfMessagesInChannel");
@@ -1133,9 +1133,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

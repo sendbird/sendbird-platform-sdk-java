@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="cancelTheRegistrationOfGdprRequestById"></a>
 # **cancelTheRegistrationOfGdprRequestById**
-> cancelTheRegistrationOfGdprRequestById(requestId, apiToken)
+> cancelTheRegistrationOfGdprRequestById(apiToken, requestId)
 
 Cancel the registration of a GDPR request
 
@@ -33,10 +33,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     DataPrivacyApi apiInstance = new DataPrivacyApi(defaultClient);
-    String requestId = "requestId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String requestId = "requestId_example"; // String | 
     try {
-      apiInstance.cancelTheRegistrationOfGdprRequestById(requestId, apiToken);
+      apiInstance.cancelTheRegistrationOfGdprRequestById(apiToken, requestId);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataPrivacyApi#cancelTheRegistrationOfGdprRequestById");
       System.err.println("Status code: " + e.getCode());
@@ -52,8 +52,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **requestId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -117,7 +117,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -182,7 +182,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **registerGdprRequestData** | [**RegisterGdprRequestData**](RegisterGdprRequestData.md)|  | [optional]
 
 ### Return type
@@ -205,7 +205,7 @@ No authorization required
 
 <a name="viewGdprRequestById"></a>
 # **viewGdprRequestById**
-> ViewGdprRequestByIdResponse viewGdprRequestById(requestId, apiToken)
+> ViewGdprRequestByIdResponse viewGdprRequestById(apiToken, requestId)
 
 View a GDPR request
 
@@ -226,10 +226,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     DataPrivacyApi apiInstance = new DataPrivacyApi(defaultClient);
-    String requestId = "requestId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String requestId = "requestId_example"; // String | 
     try {
-      ViewGdprRequestByIdResponse result = apiInstance.viewGdprRequestById(requestId, apiToken);
+      ViewGdprRequestByIdResponse result = apiInstance.viewGdprRequestById(apiToken, requestId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataPrivacyApi#viewGdprRequestById");
@@ -246,8 +246,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **requestId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

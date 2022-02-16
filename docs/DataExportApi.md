@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="listDataExportsByMessageChannelOrUser"></a>
 # **listDataExportsByMessageChannelOrUser**
-> ListDataExportsByMessageChannelOrUserResponse listDataExportsByMessageChannelOrUser(dataType, apiToken, token, limit)
+> ListDataExportsByMessageChannelOrUserResponse listDataExportsByMessageChannelOrUser(apiToken, dataType, token, limit)
 
 List data exports by message, channel, or user
 
@@ -32,12 +32,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     DataExportApi apiInstance = new DataExportApi(defaultClient);
-    String dataType = "dataType_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String dataType = "dataType_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      ListDataExportsByMessageChannelOrUserResponse result = apiInstance.listDataExportsByMessageChannelOrUser(dataType, apiToken, token, limit);
+      ListDataExportsByMessageChannelOrUserResponse result = apiInstance.listDataExportsByMessageChannelOrUser(apiToken, dataType, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportApi#listDataExportsByMessageChannelOrUser");
@@ -54,8 +54,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **dataType** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -79,7 +79,7 @@ No authorization required
 
 <a name="registerAndScheduleDataExport"></a>
 # **registerAndScheduleDataExport**
-> RegisterAndScheduleDataExportResponse registerAndScheduleDataExport(dataType, apiToken, registerAndScheduleDataExportData)
+> RegisterAndScheduleDataExportResponse registerAndScheduleDataExport(apiToken, dataType, registerAndScheduleDataExportData)
 
 Register and schedule a data export
 
@@ -100,11 +100,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     DataExportApi apiInstance = new DataExportApi(defaultClient);
-    String dataType = "dataType_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String dataType = "dataType_example"; // String | 
     RegisterAndScheduleDataExportData registerAndScheduleDataExportData = new RegisterAndScheduleDataExportData(); // RegisterAndScheduleDataExportData | 
     try {
-      RegisterAndScheduleDataExportResponse result = apiInstance.registerAndScheduleDataExport(dataType, apiToken, registerAndScheduleDataExportData);
+      RegisterAndScheduleDataExportResponse result = apiInstance.registerAndScheduleDataExport(apiToken, dataType, registerAndScheduleDataExportData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportApi#registerAndScheduleDataExport");
@@ -121,8 +121,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **dataType** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **registerAndScheduleDataExportData** | [**RegisterAndScheduleDataExportData**](RegisterAndScheduleDataExportData.md)|  | [optional]
 
 ### Return type
@@ -145,7 +145,7 @@ No authorization required
 
 <a name="viewDataExportById"></a>
 # **viewDataExportById**
-> ViewDataExportByIdResponse viewDataExportById(dataType, requestId, apiToken)
+> ViewDataExportByIdResponse viewDataExportById(apiToken, dataType, requestId)
 
 View a data export
 
@@ -166,11 +166,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     DataExportApi apiInstance = new DataExportApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String dataType = "dataType_example"; // String | 
     String requestId = "requestId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      ViewDataExportByIdResponse result = apiInstance.viewDataExportById(dataType, requestId, apiToken);
+      ViewDataExportByIdResponse result = apiInstance.viewDataExportById(apiToken, dataType, requestId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportApi#viewDataExportById");
@@ -187,9 +187,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **dataType** | **String**|  |
  **requestId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

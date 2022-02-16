@@ -74,7 +74,7 @@ public class AdvancedAnalyticsApi {
 
     /**
      * Build call for retrieveAdvancedAnalyticsMetrics
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -137,6 +137,11 @@ public class AdvancedAnalyticsApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call retrieveAdvancedAnalyticsMetricsValidateBeforeCall(String apiToken, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling retrieveAdvancedAnalyticsMetrics(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = retrieveAdvancedAnalyticsMetricsCall(apiToken, _callback);
         return localVarCall;
@@ -146,7 +151,7 @@ public class AdvancedAnalyticsApi {
     /**
      * Retrieve Advanced analytics metrics
      * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return RetrieveAdvancedAnalyticsMetricsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -163,7 +168,7 @@ public class AdvancedAnalyticsApi {
     /**
      * Retrieve Advanced analytics metrics
      * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return ApiResponse&lt;RetrieveAdvancedAnalyticsMetricsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -181,7 +186,7 @@ public class AdvancedAnalyticsApi {
     /**
      * Retrieve Advanced analytics metrics (asynchronously)
      * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

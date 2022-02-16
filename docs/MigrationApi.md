@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="migrateMessagesByUrl"></a>
 # **migrateMessagesByUrl**
-> migrateMessagesByUrl(targetChannelUrl, apiToken, body)
+> migrateMessagesByUrl(apiToken, targetChannelUrl, body)
 
 Migrate messages
 
@@ -30,11 +30,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     MigrationApi apiInstance = new MigrationApi(defaultClient);
-    String targetChannelUrl = "targetChannelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String targetChannelUrl = "targetChannelUrl_example"; // String | 
     Object body = null; // Object | 
     try {
-      apiInstance.migrateMessagesByUrl(targetChannelUrl, apiToken, body);
+      apiInstance.migrateMessagesByUrl(apiToken, targetChannelUrl, body);
     } catch (ApiException e) {
       System.err.println("Exception when calling MigrationApi#migrateMessagesByUrl");
       System.err.println("Status code: " + e.getCode());
@@ -50,8 +50,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **targetChannelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **body** | **Object**|  | [optional]
 
 ### Return type

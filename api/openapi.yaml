@@ -44,7 +44,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -73,7 +73,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -122,7 +122,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -178,7 +178,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -276,7 +276,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -307,7 +307,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -337,7 +337,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -383,7 +383,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -422,7 +422,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -450,7 +450,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -496,7 +496,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -531,7 +531,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -567,7 +567,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -595,7 +595,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -639,7 +639,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -718,7 +718,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -755,7 +755,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -792,7 +792,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -829,7 +829,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -872,7 +872,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -916,7 +916,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -978,7 +978,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1046,7 +1046,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1159,7 +1159,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1196,7 +1196,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1232,7 +1232,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1312,7 +1312,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1403,7 +1403,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1494,7 +1494,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1531,7 +1531,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1585,7 +1585,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1621,7 +1621,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1680,7 +1680,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -1812,7 +1812,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2133,7 +2133,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2190,7 +2190,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2241,7 +2241,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2292,7 +2292,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2349,7 +2349,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2393,7 +2393,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2436,7 +2436,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2503,7 +2503,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2559,7 +2559,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2614,7 +2614,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2665,7 +2665,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2720,7 +2720,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2771,7 +2771,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2826,7 +2826,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2897,7 +2897,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -2967,7 +2967,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3007,7 +3007,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3056,7 +3056,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3124,7 +3124,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3176,7 +3176,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3214,7 +3214,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3257,7 +3257,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3306,7 +3306,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3338,7 +3338,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3374,7 +3374,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3502,7 +3502,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3545,7 +3545,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3623,7 +3623,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3668,7 +3668,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3754,7 +3754,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3871,7 +3871,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3920,7 +3920,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -3981,7 +3981,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4013,7 +4013,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4049,7 +4049,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4154,7 +4154,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4207,7 +4207,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4267,7 +4267,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4317,7 +4317,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4393,7 +4393,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4445,7 +4445,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4495,7 +4495,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4551,7 +4551,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4590,7 +4590,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4633,7 +4633,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4705,7 +4705,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4744,7 +4744,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -4790,7 +4790,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5114,7 +5114,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5311,7 +5311,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5347,7 +5347,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5420,7 +5420,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5543,7 +5543,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5643,7 +5643,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5689,7 +5689,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5789,7 +5789,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5855,7 +5855,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5909,7 +5909,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -5968,7 +5968,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6031,7 +6031,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6079,7 +6079,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6168,7 +6168,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6230,7 +6230,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6290,7 +6290,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6342,7 +6342,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6392,7 +6392,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6460,7 +6460,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6510,7 +6510,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6581,7 +6581,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6620,7 +6620,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6663,7 +6663,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6739,7 +6739,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6789,7 +6789,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6854,7 +6854,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6893,7 +6893,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -6937,7 +6937,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7000,7 +7000,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7187,7 +7187,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7225,7 +7225,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7352,7 +7352,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7389,7 +7389,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7465,7 +7465,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7544,7 +7544,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7574,7 +7574,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7604,7 +7604,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7648,7 +7648,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7694,7 +7694,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -7715,14 +7715,14 @@ paths:
       - explode: true
         in: query
         name: message_ts
-        required: true
+        required: false
         schema:
           type: integer
         style: form
       - explode: true
         in: query
         name: message_id
-        required: true
+        required: false
         schema:
           type: integer
         style: form
@@ -7865,7 +7865,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8016,7 +8016,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8072,7 +8072,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8136,7 +8136,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8239,7 +8239,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8283,7 +8283,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8327,7 +8327,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8387,7 +8387,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8446,7 +8446,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8493,7 +8493,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8569,7 +8569,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8628,7 +8628,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8712,7 +8712,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8767,7 +8767,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8848,7 +8848,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -8951,7 +8951,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9009,7 +9009,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9053,7 +9053,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9081,7 +9081,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9118,7 +9118,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9146,7 +9146,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9197,7 +9197,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9233,7 +9233,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9269,7 +9269,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9324,7 +9324,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9356,7 +9356,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9392,7 +9392,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9451,7 +9451,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9494,7 +9494,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9546,7 +9546,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9608,7 +9608,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9670,7 +9670,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9714,7 +9714,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9762,7 +9762,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9822,7 +9822,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9875,7 +9875,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -9934,7 +9934,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10015,7 +10015,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10087,7 +10087,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10141,7 +10141,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10199,7 +10199,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10266,7 +10266,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10313,7 +10313,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10373,7 +10373,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10450,7 +10450,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10528,7 +10528,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10582,7 +10582,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10640,7 +10640,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10708,7 +10708,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10751,7 +10751,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10785,7 +10785,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10835,7 +10835,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -10982,7 +10982,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11026,7 +11026,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11070,7 +11070,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11156,7 +11156,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11188,7 +11188,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11224,7 +11224,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11318,7 +11318,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11357,7 +11357,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11419,7 +11419,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11507,7 +11507,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11547,7 +11547,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11582,7 +11582,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11645,7 +11645,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11689,7 +11689,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11766,7 +11766,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11798,7 +11798,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11835,7 +11835,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11903,7 +11903,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -11967,7 +11967,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -12062,7 +12062,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -12112,7 +12112,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -12194,7 +12194,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -12251,7 +12251,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple
@@ -12327,7 +12327,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: false
+        required: true
         schema:
           type: string
         style: simple

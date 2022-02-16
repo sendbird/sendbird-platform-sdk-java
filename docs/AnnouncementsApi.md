@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a name="getDetailedOpenRateOfAnnouncementById"></a>
 # **getDetailedOpenRateOfAnnouncementById**
-> GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(uniqueId, apiToken)
+> GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId)
 
 Get detailed open rate of an announcement
 
@@ -40,10 +40,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     AnnouncementsApi apiInstance = new AnnouncementsApi(defaultClient);
-    String uniqueId = "uniqueId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String uniqueId = "uniqueId_example"; // String | 
     try {
-      GetDetailedOpenRateOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenRateOfAnnouncementById(uniqueId, apiToken);
+      GetDetailedOpenRateOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getDetailedOpenRateOfAnnouncementById");
@@ -60,8 +60,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **uniqueId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -83,7 +83,7 @@ No authorization required
 
 <a name="getDetailedOpenRateOfAnnouncementGroup"></a>
 # **getDetailedOpenRateOfAnnouncementGroup**
-> GetDetailedOpenRateOfAnnouncementGroupResponse getDetailedOpenRateOfAnnouncementGroup(announcementGroup, apiToken)
+> GetDetailedOpenRateOfAnnouncementGroupResponse getDetailedOpenRateOfAnnouncementGroup(apiToken, announcementGroup)
 
 Get detailed open rate of an announcement group
 
@@ -104,10 +104,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     AnnouncementsApi apiInstance = new AnnouncementsApi(defaultClient);
-    String announcementGroup = "announcementGroup_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String announcementGroup = "announcementGroup_example"; // String | 
     try {
-      GetDetailedOpenRateOfAnnouncementGroupResponse result = apiInstance.getDetailedOpenRateOfAnnouncementGroup(announcementGroup, apiToken);
+      GetDetailedOpenRateOfAnnouncementGroupResponse result = apiInstance.getDetailedOpenRateOfAnnouncementGroup(apiToken, announcementGroup);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getDetailedOpenRateOfAnnouncementGroup");
@@ -124,8 +124,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **announcementGroup** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -147,7 +147,7 @@ No authorization required
 
 <a name="getDetailedOpenStatusOfAnnouncementById"></a>
 # **getDetailedOpenStatusOfAnnouncementById**
-> GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened)
+> GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened)
 
 Get detailed open status of an announcement
 
@@ -168,15 +168,15 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     AnnouncementsApi apiInstance = new AnnouncementsApi(defaultClient);
-    String uniqueId = "uniqueId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String uniqueId = "uniqueId_example"; // String | 
     Integer limit = 56; // Integer | 
     String next = "next_example"; // String | 
     List<String> uniqueIds = Arrays.asList(); // List<String> | 
     List<String> channelUrls = Arrays.asList(); // List<String> | 
     Boolean hasOpened = true; // Boolean | 
     try {
-      GetDetailedOpenStatusOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenStatusOfAnnouncementById(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened);
+      GetDetailedOpenStatusOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getDetailedOpenStatusOfAnnouncementById");
@@ -193,8 +193,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **uniqueId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **next** | **String**|  | [optional]
  **uniqueIds** | [**List&lt;String&gt;**](String.md)|  | [optional]
@@ -261,7 +261,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
 
 ### Return type
 
@@ -283,7 +283,7 @@ No authorization required
 
 <a name="getStatisticsDaily"></a>
 # **getStatisticsDaily**
-> GetStatisticsDailyResponse getStatisticsDaily(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup)
+> GetStatisticsDailyResponse getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup)
 
 Get statistics - daily
 
@@ -304,16 +304,16 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     AnnouncementsApi apiInstance = new AnnouncementsApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String startDate = "startDate_example"; // String | 
     String endDate = "endDate_example"; // String | 
     String startWeek = "startWeek_example"; // String | 
     String endWeek = "endWeek_example"; // String | 
     String startMonth = "startMonth_example"; // String | 
     String endMonth = "endMonth_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     String announcementGroup = "announcementGroup_example"; // String | 
     try {
-      GetStatisticsDailyResponse result = apiInstance.getStatisticsDaily(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup);
+      GetStatisticsDailyResponse result = apiInstance.getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#getStatisticsDaily");
@@ -330,13 +330,13 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **startDate** | **String**|  |
  **endDate** | **String**|  |
  **startWeek** | **String**|  |
  **endWeek** | **String**|  |
  **startMonth** | **String**|  |
  **endMonth** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **announcementGroup** | **String**|  | [optional]
 
 ### Return type
@@ -399,7 +399,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
 
 ### Return type
 
@@ -463,7 +463,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -532,7 +532,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **order** | **String**|  | [optional]
@@ -600,7 +600,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **scheduleAnnouncementData** | [**ScheduleAnnouncementData**](ScheduleAnnouncementData.md)|  | [optional]
 
 ### Return type
@@ -623,7 +623,7 @@ No authorization required
 
 <a name="updateAnnouncementById"></a>
 # **updateAnnouncementById**
-> UpdateAnnouncementByIdResponse updateAnnouncementById(uniqueId, apiToken, updateAnnouncementByIdData)
+> UpdateAnnouncementByIdResponse updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData)
 
 Update an announcement
 
@@ -644,11 +644,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     AnnouncementsApi apiInstance = new AnnouncementsApi(defaultClient);
-    String uniqueId = "uniqueId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String uniqueId = "uniqueId_example"; // String | 
     UpdateAnnouncementByIdData updateAnnouncementByIdData = new UpdateAnnouncementByIdData(); // UpdateAnnouncementByIdData | 
     try {
-      UpdateAnnouncementByIdResponse result = apiInstance.updateAnnouncementById(uniqueId, apiToken, updateAnnouncementByIdData);
+      UpdateAnnouncementByIdResponse result = apiInstance.updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#updateAnnouncementById");
@@ -665,8 +665,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **uniqueId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateAnnouncementByIdData** | [**UpdateAnnouncementByIdData**](UpdateAnnouncementByIdData.md)|  | [optional]
 
 ### Return type
@@ -689,7 +689,7 @@ No authorization required
 
 <a name="viewAnnouncementById"></a>
 # **viewAnnouncementById**
-> ViewAnnouncementByIdResponse viewAnnouncementById(uniqueId, apiToken)
+> ViewAnnouncementByIdResponse viewAnnouncementById(apiToken, uniqueId)
 
 View an announcement
 
@@ -710,10 +710,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     AnnouncementsApi apiInstance = new AnnouncementsApi(defaultClient);
-    String uniqueId = "uniqueId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String uniqueId = "uniqueId_example"; // String | 
     try {
-      ViewAnnouncementByIdResponse result = apiInstance.viewAnnouncementById(uniqueId, apiToken);
+      ViewAnnouncementByIdResponse result = apiInstance.viewAnnouncementById(apiToken, uniqueId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AnnouncementsApi#viewAnnouncementById");
@@ -730,8 +730,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **uniqueId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

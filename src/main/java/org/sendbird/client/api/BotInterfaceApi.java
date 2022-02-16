@@ -83,7 +83,7 @@ public class BotInterfaceApi {
 
     /**
      * Build call for createBot
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param createBotData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -147,6 +147,11 @@ public class BotInterfaceApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createBotValidateBeforeCall(String apiToken, CreateBotData createBotData, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling createBot(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = createBotCall(apiToken, createBotData, _callback);
         return localVarCall;
@@ -156,7 +161,7 @@ public class BotInterfaceApi {
     /**
      * Create a bot
      * ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  &gt; __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param createBotData  (optional)
      * @return CreateBotResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -174,7 +179,7 @@ public class BotInterfaceApi {
     /**
      * Create a bot
      * ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  &gt; __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param createBotData  (optional)
      * @return ApiResponse&lt;CreateBotResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -193,7 +198,7 @@ public class BotInterfaceApi {
     /**
      * Create a bot (asynchronously)
      * ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  &gt; __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param createBotData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -213,8 +218,8 @@ public class BotInterfaceApi {
     }
     /**
      * Build call for deleteBotById
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -224,7 +229,7 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteBotByIdCall(String botUserid, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteBotByIdCall(String apiToken, String botUserid, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -276,7 +281,12 @@ public class BotInterfaceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteBotByIdValidateBeforeCall(String botUserid, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteBotByIdValidateBeforeCall(String apiToken, String botUserid, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteBotById(Async)");
+        }
         
         // verify the required parameter 'botUserid' is set
         if (botUserid == null) {
@@ -284,7 +294,7 @@ public class BotInterfaceApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteBotByIdCall(botUserid, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteBotByIdCall(apiToken, botUserid, _callback);
         return localVarCall;
 
     }
@@ -292,8 +302,8 @@ public class BotInterfaceApi {
     /**
      * Delete a bot
      * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -301,15 +311,15 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteBotById(String botUserid, String apiToken) throws ApiException {
-        deleteBotByIdWithHttpInfo(botUserid, apiToken);
+    public void deleteBotById(String apiToken, String botUserid) throws ApiException {
+        deleteBotByIdWithHttpInfo(apiToken, botUserid);
     }
 
     /**
      * Delete a bot
      * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -318,16 +328,16 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteBotByIdWithHttpInfo(String botUserid, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = deleteBotByIdValidateBeforeCall(botUserid, apiToken, null);
+    public ApiResponse<Void> deleteBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
+        okhttp3.Call localVarCall = deleteBotByIdValidateBeforeCall(apiToken, botUserid, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a bot (asynchronously)
      * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -337,16 +347,16 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteBotByIdAsync(String botUserid, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteBotByIdAsync(String apiToken, String botUserid, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteBotByIdValidateBeforeCall(botUserid, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteBotByIdValidateBeforeCall(apiToken, botUserid, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for joinChannels
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param joinChannelsData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -357,7 +367,7 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call joinChannelsCall(String botUserid, String apiToken, JoinChannelsData joinChannelsData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call joinChannelsCall(String apiToken, String botUserid, JoinChannelsData joinChannelsData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -409,7 +419,12 @@ public class BotInterfaceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call joinChannelsValidateBeforeCall(String botUserid, String apiToken, JoinChannelsData joinChannelsData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call joinChannelsValidateBeforeCall(String apiToken, String botUserid, JoinChannelsData joinChannelsData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling joinChannels(Async)");
+        }
         
         // verify the required parameter 'botUserid' is set
         if (botUserid == null) {
@@ -417,7 +432,7 @@ public class BotInterfaceApi {
         }
         
 
-        okhttp3.Call localVarCall = joinChannelsCall(botUserid, apiToken, joinChannelsData, _callback);
+        okhttp3.Call localVarCall = joinChannelsCall(apiToken, botUserid, joinChannelsData, _callback);
         return localVarCall;
 
     }
@@ -425,8 +440,8 @@ public class BotInterfaceApi {
     /**
      * Join channels
      * ## Join channels  Makes a bot join one or more channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param joinChannelsData  (optional)
      * @return SendBirdGroupChannelCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -436,16 +451,16 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdGroupChannelCollection joinChannels(String botUserid, String apiToken, JoinChannelsData joinChannelsData) throws ApiException {
-        ApiResponse<SendBirdGroupChannelCollection> localVarResp = joinChannelsWithHttpInfo(botUserid, apiToken, joinChannelsData);
+    public SendBirdGroupChannelCollection joinChannels(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
+        ApiResponse<SendBirdGroupChannelCollection> localVarResp = joinChannelsWithHttpInfo(apiToken, botUserid, joinChannelsData);
         return localVarResp.getData();
     }
 
     /**
      * Join channels
      * ## Join channels  Makes a bot join one or more channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param joinChannelsData  (optional)
      * @return ApiResponse&lt;SendBirdGroupChannelCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -455,8 +470,8 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdGroupChannelCollection> joinChannelsWithHttpInfo(String botUserid, String apiToken, JoinChannelsData joinChannelsData) throws ApiException {
-        okhttp3.Call localVarCall = joinChannelsValidateBeforeCall(botUserid, apiToken, joinChannelsData, null);
+    public ApiResponse<SendBirdGroupChannelCollection> joinChannelsWithHttpInfo(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
+        okhttp3.Call localVarCall = joinChannelsValidateBeforeCall(apiToken, botUserid, joinChannelsData, null);
         Type localVarReturnType = new TypeToken<SendBirdGroupChannelCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -464,8 +479,8 @@ public class BotInterfaceApi {
     /**
      * Join channels (asynchronously)
      * ## Join channels  Makes a bot join one or more channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param joinChannelsData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -476,17 +491,17 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call joinChannelsAsync(String botUserid, String apiToken, JoinChannelsData joinChannelsData, final ApiCallback<SendBirdGroupChannelCollection> _callback) throws ApiException {
+    public okhttp3.Call joinChannelsAsync(String apiToken, String botUserid, JoinChannelsData joinChannelsData, final ApiCallback<SendBirdGroupChannelCollection> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = joinChannelsValidateBeforeCall(botUserid, apiToken, joinChannelsData, _callback);
+        okhttp3.Call localVarCall = joinChannelsValidateBeforeCall(apiToken, botUserid, joinChannelsData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdGroupChannelCollection>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for leaveChannels
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param channelUrl  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -497,7 +512,7 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call leaveChannelsCall(String botUserid, String apiToken, String channelUrl, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call leaveChannelsCall(String apiToken, String botUserid, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -553,7 +568,12 @@ public class BotInterfaceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call leaveChannelsValidateBeforeCall(String botUserid, String apiToken, String channelUrl, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call leaveChannelsValidateBeforeCall(String apiToken, String botUserid, String channelUrl, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling leaveChannels(Async)");
+        }
         
         // verify the required parameter 'botUserid' is set
         if (botUserid == null) {
@@ -561,7 +581,7 @@ public class BotInterfaceApi {
         }
         
 
-        okhttp3.Call localVarCall = leaveChannelsCall(botUserid, apiToken, channelUrl, _callback);
+        okhttp3.Call localVarCall = leaveChannelsCall(apiToken, botUserid, channelUrl, _callback);
         return localVarCall;
 
     }
@@ -569,8 +589,8 @@ public class BotInterfaceApi {
     /**
      * Leave channels - When leaving all channels
      * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param channelUrl  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -579,15 +599,15 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void leaveChannels(String botUserid, String apiToken, String channelUrl) throws ApiException {
-        leaveChannelsWithHttpInfo(botUserid, apiToken, channelUrl);
+    public void leaveChannels(String apiToken, String botUserid, String channelUrl) throws ApiException {
+        leaveChannelsWithHttpInfo(apiToken, botUserid, channelUrl);
     }
 
     /**
      * Leave channels - When leaving all channels
      * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param channelUrl  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -597,16 +617,16 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> leaveChannelsWithHttpInfo(String botUserid, String apiToken, String channelUrl) throws ApiException {
-        okhttp3.Call localVarCall = leaveChannelsValidateBeforeCall(botUserid, apiToken, channelUrl, null);
+    public ApiResponse<Void> leaveChannelsWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
+        okhttp3.Call localVarCall = leaveChannelsValidateBeforeCall(apiToken, botUserid, channelUrl, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Leave channels - When leaving all channels (asynchronously)
      * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param channelUrl  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -617,17 +637,17 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call leaveChannelsAsync(String botUserid, String apiToken, String channelUrl, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call leaveChannelsAsync(String apiToken, String botUserid, String channelUrl, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = leaveChannelsValidateBeforeCall(botUserid, apiToken, channelUrl, _callback);
+        okhttp3.Call localVarCall = leaveChannelsValidateBeforeCall(apiToken, botUserid, channelUrl, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for leaveChannelsByUrl
+     * @param apiToken  (required)
      * @param botUserid  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -637,7 +657,7 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call leaveChannelsByUrlCall(String botUserid, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call leaveChannelsByUrlCall(String apiToken, String botUserid, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -690,7 +710,12 @@ public class BotInterfaceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call leaveChannelsByUrlValidateBeforeCall(String botUserid, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call leaveChannelsByUrlValidateBeforeCall(String apiToken, String botUserid, String channelUrl, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling leaveChannelsByUrl(Async)");
+        }
         
         // verify the required parameter 'botUserid' is set
         if (botUserid == null) {
@@ -703,7 +728,7 @@ public class BotInterfaceApi {
         }
         
 
-        okhttp3.Call localVarCall = leaveChannelsByUrlCall(botUserid, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = leaveChannelsByUrlCall(apiToken, botUserid, channelUrl, _callback);
         return localVarCall;
 
     }
@@ -711,9 +736,9 @@ public class BotInterfaceApi {
     /**
      * Leave channels - When leaving a channel by its channel URL
      * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -721,16 +746,16 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void leaveChannelsByUrl(String botUserid, String channelUrl, String apiToken) throws ApiException {
-        leaveChannelsByUrlWithHttpInfo(botUserid, channelUrl, apiToken);
+    public void leaveChannelsByUrl(String apiToken, String botUserid, String channelUrl) throws ApiException {
+        leaveChannelsByUrlWithHttpInfo(apiToken, botUserid, channelUrl);
     }
 
     /**
      * Leave channels - When leaving a channel by its channel URL
      * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -739,17 +764,17 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> leaveChannelsByUrlWithHttpInfo(String botUserid, String channelUrl, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = leaveChannelsByUrlValidateBeforeCall(botUserid, channelUrl, apiToken, null);
+    public ApiResponse<Void> leaveChannelsByUrlWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
+        okhttp3.Call localVarCall = leaveChannelsByUrlValidateBeforeCall(apiToken, botUserid, channelUrl, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Leave channels - When leaving a channel by its channel URL (asynchronously)
      * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -759,15 +784,15 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call leaveChannelsByUrlAsync(String botUserid, String channelUrl, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call leaveChannelsByUrlAsync(String apiToken, String botUserid, String channelUrl, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = leaveChannelsByUrlValidateBeforeCall(botUserid, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = leaveChannelsByUrlValidateBeforeCall(apiToken, botUserid, channelUrl, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for listBots
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -840,6 +865,11 @@ public class BotInterfaceApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listBotsValidateBeforeCall(String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listBots(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = listBotsCall(apiToken, token, limit, _callback);
         return localVarCall;
@@ -849,7 +879,7 @@ public class BotInterfaceApi {
     /**
      * List bots
      * ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ListBotsResponse
@@ -868,7 +898,7 @@ public class BotInterfaceApi {
     /**
      * List bots
      * ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;ListBotsResponse&gt;
@@ -888,7 +918,7 @@ public class BotInterfaceApi {
     /**
      * List bots (asynchronously)
      * ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -909,8 +939,8 @@ public class BotInterfaceApi {
     }
     /**
      * Build call for sendBotsMessage
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param sendBotSMessageData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -921,7 +951,7 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendBotsMessageCall(String botUserid, String apiToken, SendBotSMessageData sendBotSMessageData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendBotsMessageCall(String apiToken, String botUserid, SendBotSMessageData sendBotSMessageData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -973,7 +1003,12 @@ public class BotInterfaceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendBotsMessageValidateBeforeCall(String botUserid, String apiToken, SendBotSMessageData sendBotSMessageData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendBotsMessageValidateBeforeCall(String apiToken, String botUserid, SendBotSMessageData sendBotSMessageData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling sendBotsMessage(Async)");
+        }
         
         // verify the required parameter 'botUserid' is set
         if (botUserid == null) {
@@ -981,7 +1016,7 @@ public class BotInterfaceApi {
         }
         
 
-        okhttp3.Call localVarCall = sendBotsMessageCall(botUserid, apiToken, sendBotSMessageData, _callback);
+        okhttp3.Call localVarCall = sendBotsMessageCall(apiToken, botUserid, sendBotSMessageData, _callback);
         return localVarCall;
 
     }
@@ -989,8 +1024,8 @@ public class BotInterfaceApi {
     /**
      * Send a bot&#39;s message
      * ## Send a bot&#39;s message  Sends a bot&#39;s message to a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message ----------------------------   &#x60;bot_userid&#x60;      Type: string      Description: Specifies the ID of the bot to send a message.
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param sendBotSMessageData  (optional)
      * @return SendBirdMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1000,16 +1035,16 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdMessageResponse sendBotsMessage(String botUserid, String apiToken, SendBotSMessageData sendBotSMessageData) throws ApiException {
-        ApiResponse<SendBirdMessageResponse> localVarResp = sendBotsMessageWithHttpInfo(botUserid, apiToken, sendBotSMessageData);
+    public SendBirdMessageResponse sendBotsMessage(String apiToken, String botUserid, SendBotSMessageData sendBotSMessageData) throws ApiException {
+        ApiResponse<SendBirdMessageResponse> localVarResp = sendBotsMessageWithHttpInfo(apiToken, botUserid, sendBotSMessageData);
         return localVarResp.getData();
     }
 
     /**
      * Send a bot&#39;s message
      * ## Send a bot&#39;s message  Sends a bot&#39;s message to a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message ----------------------------   &#x60;bot_userid&#x60;      Type: string      Description: Specifies the ID of the bot to send a message.
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param sendBotSMessageData  (optional)
      * @return ApiResponse&lt;SendBirdMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1019,8 +1054,8 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String botUserid, String apiToken, SendBotSMessageData sendBotSMessageData) throws ApiException {
-        okhttp3.Call localVarCall = sendBotsMessageValidateBeforeCall(botUserid, apiToken, sendBotSMessageData, null);
+    public ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String apiToken, String botUserid, SendBotSMessageData sendBotSMessageData) throws ApiException {
+        okhttp3.Call localVarCall = sendBotsMessageValidateBeforeCall(apiToken, botUserid, sendBotSMessageData, null);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1028,8 +1063,8 @@ public class BotInterfaceApi {
     /**
      * Send a bot&#39;s message (asynchronously)
      * ## Send a bot&#39;s message  Sends a bot&#39;s message to a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message ----------------------------   &#x60;bot_userid&#x60;      Type: string      Description: Specifies the ID of the bot to send a message.
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param sendBotSMessageData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1040,17 +1075,17 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendBotsMessageAsync(String botUserid, String apiToken, SendBotSMessageData sendBotSMessageData, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call sendBotsMessageAsync(String apiToken, String botUserid, SendBotSMessageData sendBotSMessageData, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendBotsMessageValidateBeforeCall(botUserid, apiToken, sendBotSMessageData, _callback);
+        okhttp3.Call localVarCall = sendBotsMessageValidateBeforeCall(apiToken, botUserid, sendBotSMessageData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateBotById
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param updateBotByIdData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1061,7 +1096,7 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateBotByIdCall(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateBotByIdCall(String apiToken, String botUserid, UpdateBotByIdData updateBotByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1113,7 +1148,12 @@ public class BotInterfaceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateBotByIdValidateBeforeCall(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateBotByIdValidateBeforeCall(String apiToken, String botUserid, UpdateBotByIdData updateBotByIdData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateBotById(Async)");
+        }
         
         // verify the required parameter 'botUserid' is set
         if (botUserid == null) {
@@ -1121,7 +1161,7 @@ public class BotInterfaceApi {
         }
         
 
-        okhttp3.Call localVarCall = updateBotByIdCall(botUserid, apiToken, updateBotByIdData, _callback);
+        okhttp3.Call localVarCall = updateBotByIdCall(apiToken, botUserid, updateBotByIdData, _callback);
         return localVarCall;
 
     }
@@ -1129,8 +1169,8 @@ public class BotInterfaceApi {
     /**
      * Update a bot
      * ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param updateBotByIdData  (optional)
      * @return UpdateBotByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1140,16 +1180,16 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public UpdateBotByIdResponse updateBotById(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData) throws ApiException {
-        ApiResponse<UpdateBotByIdResponse> localVarResp = updateBotByIdWithHttpInfo(botUserid, apiToken, updateBotByIdData);
+    public UpdateBotByIdResponse updateBotById(String apiToken, String botUserid, UpdateBotByIdData updateBotByIdData) throws ApiException {
+        ApiResponse<UpdateBotByIdResponse> localVarResp = updateBotByIdWithHttpInfo(apiToken, botUserid, updateBotByIdData);
         return localVarResp.getData();
     }
 
     /**
      * Update a bot
      * ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param updateBotByIdData  (optional)
      * @return ApiResponse&lt;UpdateBotByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1159,8 +1199,8 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData) throws ApiException {
-        okhttp3.Call localVarCall = updateBotByIdValidateBeforeCall(botUserid, apiToken, updateBotByIdData, null);
+    public ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String apiToken, String botUserid, UpdateBotByIdData updateBotByIdData) throws ApiException {
+        okhttp3.Call localVarCall = updateBotByIdValidateBeforeCall(apiToken, botUserid, updateBotByIdData, null);
         Type localVarReturnType = new TypeToken<UpdateBotByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1168,8 +1208,8 @@ public class BotInterfaceApi {
     /**
      * Update a bot (asynchronously)
      * ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param updateBotByIdData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1180,17 +1220,17 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateBotByIdAsync(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData, final ApiCallback<UpdateBotByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call updateBotByIdAsync(String apiToken, String botUserid, UpdateBotByIdData updateBotByIdData, final ApiCallback<UpdateBotByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateBotByIdValidateBeforeCall(botUserid, apiToken, updateBotByIdData, _callback);
+        okhttp3.Call localVarCall = updateBotByIdValidateBeforeCall(apiToken, botUserid, updateBotByIdData, _callback);
         Type localVarReturnType = new TypeToken<UpdateBotByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewBotById
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1200,7 +1240,7 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewBotByIdCall(String botUserid, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewBotByIdCall(String apiToken, String botUserid, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1252,7 +1292,12 @@ public class BotInterfaceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewBotByIdValidateBeforeCall(String botUserid, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewBotByIdValidateBeforeCall(String apiToken, String botUserid, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewBotById(Async)");
+        }
         
         // verify the required parameter 'botUserid' is set
         if (botUserid == null) {
@@ -1260,7 +1305,7 @@ public class BotInterfaceApi {
         }
         
 
-        okhttp3.Call localVarCall = viewBotByIdCall(botUserid, apiToken, _callback);
+        okhttp3.Call localVarCall = viewBotByIdCall(apiToken, botUserid, _callback);
         return localVarCall;
 
     }
@@ -1268,8 +1313,8 @@ public class BotInterfaceApi {
     /**
      * View a bot
      * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @return ViewBotByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1278,16 +1323,16 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewBotByIdResponse viewBotById(String botUserid, String apiToken) throws ApiException {
-        ApiResponse<ViewBotByIdResponse> localVarResp = viewBotByIdWithHttpInfo(botUserid, apiToken);
+    public ViewBotByIdResponse viewBotById(String apiToken, String botUserid) throws ApiException {
+        ApiResponse<ViewBotByIdResponse> localVarResp = viewBotByIdWithHttpInfo(apiToken, botUserid);
         return localVarResp.getData();
     }
 
     /**
      * View a bot
      * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewBotByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1296,8 +1341,8 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String botUserid, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewBotByIdValidateBeforeCall(botUserid, apiToken, null);
+    public ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
+        okhttp3.Call localVarCall = viewBotByIdValidateBeforeCall(apiToken, botUserid, null);
         Type localVarReturnType = new TypeToken<ViewBotByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1305,8 +1350,8 @@ public class BotInterfaceApi {
     /**
      * View a bot (asynchronously)
      * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
+     * @param apiToken  (required)
      * @param botUserid  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1316,9 +1361,9 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewBotByIdAsync(String botUserid, String apiToken, final ApiCallback<ViewBotByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call viewBotByIdAsync(String apiToken, String botUserid, final ApiCallback<ViewBotByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewBotByIdValidateBeforeCall(botUserid, apiToken, _callback);
+        okhttp3.Call localVarCall = viewBotByIdValidateBeforeCall(apiToken, botUserid, _callback);
         Type localVarReturnType = new TypeToken<ViewBotByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

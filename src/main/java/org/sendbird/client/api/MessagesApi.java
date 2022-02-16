@@ -90,10 +90,10 @@ public class MessagesApi {
 
     /**
      * Build call for addExtraDataToMessage
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param addExtraDataToMessageData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -104,7 +104,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addExtraDataToMessageCall(String channelType, String channelUrl, String messageId, String apiToken, AddExtraDataToMessageData addExtraDataToMessageData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addExtraDataToMessageCall(String apiToken, String channelType, String channelUrl, String messageId, AddExtraDataToMessageData addExtraDataToMessageData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -158,7 +158,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addExtraDataToMessageValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, AddExtraDataToMessageData addExtraDataToMessageData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addExtraDataToMessageValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, AddExtraDataToMessageData addExtraDataToMessageData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling addExtraDataToMessage(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -176,7 +181,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = addExtraDataToMessageCall(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData, _callback);
+        okhttp3.Call localVarCall = addExtraDataToMessageCall(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData, _callback);
         return localVarCall;
 
     }
@@ -184,10 +189,10 @@ public class MessagesApi {
     /**
      * Add extra data to a message
      * ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-extra-data-to-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param addExtraDataToMessageData  (optional)
      * @return AddExtraDataToMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -197,18 +202,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public AddExtraDataToMessageResponse addExtraDataToMessage(String channelType, String channelUrl, String messageId, String apiToken, AddExtraDataToMessageData addExtraDataToMessageData) throws ApiException {
-        ApiResponse<AddExtraDataToMessageResponse> localVarResp = addExtraDataToMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData);
+    public AddExtraDataToMessageResponse addExtraDataToMessage(String apiToken, String channelType, String channelUrl, String messageId, AddExtraDataToMessageData addExtraDataToMessageData) throws ApiException {
+        ApiResponse<AddExtraDataToMessageResponse> localVarResp = addExtraDataToMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData);
         return localVarResp.getData();
     }
 
     /**
      * Add extra data to a message
      * ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-extra-data-to-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param addExtraDataToMessageData  (optional)
      * @return ApiResponse&lt;AddExtraDataToMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -218,8 +223,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, AddExtraDataToMessageData addExtraDataToMessageData) throws ApiException {
-        okhttp3.Call localVarCall = addExtraDataToMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData, null);
+    public ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, AddExtraDataToMessageData addExtraDataToMessageData) throws ApiException {
+        okhttp3.Call localVarCall = addExtraDataToMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData, null);
         Type localVarReturnType = new TypeToken<AddExtraDataToMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -227,10 +232,10 @@ public class MessagesApi {
     /**
      * Add extra data to a message (asynchronously)
      * ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-extra-data-to-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param addExtraDataToMessageData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -241,19 +246,19 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addExtraDataToMessageAsync(String channelType, String channelUrl, String messageId, String apiToken, AddExtraDataToMessageData addExtraDataToMessageData, final ApiCallback<AddExtraDataToMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call addExtraDataToMessageAsync(String apiToken, String channelType, String channelUrl, String messageId, AddExtraDataToMessageData addExtraDataToMessageData, final ApiCallback<AddExtraDataToMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = addExtraDataToMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData, _callback);
+        okhttp3.Call localVarCall = addExtraDataToMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData, _callback);
         Type localVarReturnType = new TypeToken<AddExtraDataToMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for addReactionToAMessage
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param addReactionToAMessageData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -264,7 +269,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addReactionToAMessageCall(String channelType, String channelUrl, String messageId, String apiToken, AddReactionToAMessageData addReactionToAMessageData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addReactionToAMessageCall(String apiToken, String channelType, String channelUrl, String messageId, AddReactionToAMessageData addReactionToAMessageData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -318,7 +323,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addReactionToAMessageValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, AddReactionToAMessageData addReactionToAMessageData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addReactionToAMessageValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, AddReactionToAMessageData addReactionToAMessageData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling addReactionToAMessage(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -336,7 +346,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = addReactionToAMessageCall(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData, _callback);
+        okhttp3.Call localVarCall = addReactionToAMessageCall(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData, _callback);
         return localVarCall;
 
     }
@@ -344,10 +354,10 @@ public class MessagesApi {
     /**
      * Add a reaction to a message
      * ## Add a reaction to a message  Adds a specific reaction to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-a-reaction-to-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param addReactionToAMessageData  (optional)
      * @return AddReactionToAMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -357,18 +367,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public AddReactionToAMessageResponse addReactionToAMessage(String channelType, String channelUrl, String messageId, String apiToken, AddReactionToAMessageData addReactionToAMessageData) throws ApiException {
-        ApiResponse<AddReactionToAMessageResponse> localVarResp = addReactionToAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData);
+    public AddReactionToAMessageResponse addReactionToAMessage(String apiToken, String channelType, String channelUrl, String messageId, AddReactionToAMessageData addReactionToAMessageData) throws ApiException {
+        ApiResponse<AddReactionToAMessageResponse> localVarResp = addReactionToAMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData);
         return localVarResp.getData();
     }
 
     /**
      * Add a reaction to a message
      * ## Add a reaction to a message  Adds a specific reaction to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-a-reaction-to-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param addReactionToAMessageData  (optional)
      * @return ApiResponse&lt;AddReactionToAMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -378,8 +388,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, AddReactionToAMessageData addReactionToAMessageData) throws ApiException {
-        okhttp3.Call localVarCall = addReactionToAMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData, null);
+    public ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, AddReactionToAMessageData addReactionToAMessageData) throws ApiException {
+        okhttp3.Call localVarCall = addReactionToAMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData, null);
         Type localVarReturnType = new TypeToken<AddReactionToAMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -387,10 +397,10 @@ public class MessagesApi {
     /**
      * Add a reaction to a message (asynchronously)
      * ## Add a reaction to a message  Adds a specific reaction to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-a-reaction-to-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param addReactionToAMessageData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -401,19 +411,19 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addReactionToAMessageAsync(String channelType, String channelUrl, String messageId, String apiToken, AddReactionToAMessageData addReactionToAMessageData, final ApiCallback<AddReactionToAMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call addReactionToAMessageAsync(String apiToken, String channelType, String channelUrl, String messageId, AddReactionToAMessageData addReactionToAMessageData, final ApiCallback<AddReactionToAMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = addReactionToAMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData, _callback);
+        okhttp3.Call localVarCall = addReactionToAMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData, _callback);
         Type localVarReturnType = new TypeToken<AddReactionToAMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteMessageById
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -423,7 +433,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMessageByIdCall(String channelType, String channelUrl, String messageId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteMessageByIdCall(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -477,7 +487,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteMessageByIdValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteMessageByIdValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteMessageById(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -495,7 +510,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteMessageByIdCall(channelType, channelUrl, messageId, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteMessageByIdCall(apiToken, channelType, channelUrl, messageId, _callback);
         return localVarCall;
 
     }
@@ -503,10 +518,10 @@ public class MessagesApi {
     /**
      * Delete a message
      * ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-delete-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -514,17 +529,17 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteMessageById(String channelType, String channelUrl, String messageId, String apiToken) throws ApiException {
-        deleteMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken);
+    public void deleteMessageById(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+        deleteMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
     }
 
     /**
      * Delete a message
      * ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-delete-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -533,18 +548,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = deleteMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, null);
+    public ApiResponse<Void> deleteMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+        okhttp3.Call localVarCall = deleteMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a message (asynchronously)
      * ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-delete-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -554,16 +569,16 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for gcMarkAllMessagesAsDelivered
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param gcMarkAllMessagesAsDeliveredData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -574,7 +589,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcMarkAllMessagesAsDeliveredCall(String channelUrl, String apiToken, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call gcMarkAllMessagesAsDeliveredCall(String apiToken, String channelUrl, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -626,7 +641,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcMarkAllMessagesAsDeliveredValidateBeforeCall(String channelUrl, String apiToken, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call gcMarkAllMessagesAsDeliveredValidateBeforeCall(String apiToken, String channelUrl, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling gcMarkAllMessagesAsDelivered(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -634,7 +654,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = gcMarkAllMessagesAsDeliveredCall(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData, _callback);
+        okhttp3.Call localVarCall = gcMarkAllMessagesAsDeliveredCall(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData, _callback);
         return localVarCall;
 
     }
@@ -642,8 +662,8 @@ public class MessagesApi {
     /**
      * Mark all messages as delivered
      * ## Mark all messages as delivered  Marks all messages in a group channel as delivered for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-delivered ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param gcMarkAllMessagesAsDeliveredData  (optional)
      * @return GcMarkAllMessagesAsDeliveredResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -653,16 +673,16 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GcMarkAllMessagesAsDeliveredResponse gcMarkAllMessagesAsDelivered(String channelUrl, String apiToken, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) throws ApiException {
-        ApiResponse<GcMarkAllMessagesAsDeliveredResponse> localVarResp = gcMarkAllMessagesAsDeliveredWithHttpInfo(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData);
+    public GcMarkAllMessagesAsDeliveredResponse gcMarkAllMessagesAsDelivered(String apiToken, String channelUrl, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) throws ApiException {
+        ApiResponse<GcMarkAllMessagesAsDeliveredResponse> localVarResp = gcMarkAllMessagesAsDeliveredWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData);
         return localVarResp.getData();
     }
 
     /**
      * Mark all messages as delivered
      * ## Mark all messages as delivered  Marks all messages in a group channel as delivered for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-delivered ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param gcMarkAllMessagesAsDeliveredData  (optional)
      * @return ApiResponse&lt;GcMarkAllMessagesAsDeliveredResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -672,8 +692,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDeliveredWithHttpInfo(String channelUrl, String apiToken, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) throws ApiException {
-        okhttp3.Call localVarCall = gcMarkAllMessagesAsDeliveredValidateBeforeCall(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData, null);
+    public ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDeliveredWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) throws ApiException {
+        okhttp3.Call localVarCall = gcMarkAllMessagesAsDeliveredValidateBeforeCall(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData, null);
         Type localVarReturnType = new TypeToken<GcMarkAllMessagesAsDeliveredResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -681,8 +701,8 @@ public class MessagesApi {
     /**
      * Mark all messages as delivered (asynchronously)
      * ## Mark all messages as delivered  Marks all messages in a group channel as delivered for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-delivered ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param gcMarkAllMessagesAsDeliveredData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -693,17 +713,17 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcMarkAllMessagesAsDeliveredAsync(String channelUrl, String apiToken, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData, final ApiCallback<GcMarkAllMessagesAsDeliveredResponse> _callback) throws ApiException {
+    public okhttp3.Call gcMarkAllMessagesAsDeliveredAsync(String apiToken, String channelUrl, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData, final ApiCallback<GcMarkAllMessagesAsDeliveredResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = gcMarkAllMessagesAsDeliveredValidateBeforeCall(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData, _callback);
+        okhttp3.Call localVarCall = gcMarkAllMessagesAsDeliveredValidateBeforeCall(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData, _callback);
         Type localVarReturnType = new TypeToken<GcMarkAllMessagesAsDeliveredResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for gcMarkAllMessagesAsRead
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param gcMarkAllMessagesAsReadData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -714,7 +734,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcMarkAllMessagesAsReadCall(String channelUrl, String apiToken, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call gcMarkAllMessagesAsReadCall(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -766,7 +786,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcMarkAllMessagesAsReadValidateBeforeCall(String channelUrl, String apiToken, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call gcMarkAllMessagesAsReadValidateBeforeCall(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling gcMarkAllMessagesAsRead(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -774,7 +799,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = gcMarkAllMessagesAsReadCall(channelUrl, apiToken, gcMarkAllMessagesAsReadData, _callback);
+        okhttp3.Call localVarCall = gcMarkAllMessagesAsReadCall(apiToken, channelUrl, gcMarkAllMessagesAsReadData, _callback);
         return localVarCall;
 
     }
@@ -782,8 +807,8 @@ public class MessagesApi {
     /**
      * Mark all messages as read
      * ## Mark all messages as read  Marks all messages in a group channel as read for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-read ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param gcMarkAllMessagesAsReadData  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -792,15 +817,15 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void gcMarkAllMessagesAsRead(String channelUrl, String apiToken, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
-        gcMarkAllMessagesAsReadWithHttpInfo(channelUrl, apiToken, gcMarkAllMessagesAsReadData);
+    public void gcMarkAllMessagesAsRead(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
+        gcMarkAllMessagesAsReadWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
     }
 
     /**
      * Mark all messages as read
      * ## Mark all messages as read  Marks all messages in a group channel as read for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-read ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param gcMarkAllMessagesAsReadData  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -810,16 +835,16 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> gcMarkAllMessagesAsReadWithHttpInfo(String channelUrl, String apiToken, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
-        okhttp3.Call localVarCall = gcMarkAllMessagesAsReadValidateBeforeCall(channelUrl, apiToken, gcMarkAllMessagesAsReadData, null);
+    public ApiResponse<Void> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
+        okhttp3.Call localVarCall = gcMarkAllMessagesAsReadValidateBeforeCall(apiToken, channelUrl, gcMarkAllMessagesAsReadData, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Mark all messages as read (asynchronously)
      * ## Mark all messages as read  Marks all messages in a group channel as read for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-read ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param gcMarkAllMessagesAsReadData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -830,16 +855,16 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcMarkAllMessagesAsReadAsync(String channelUrl, String apiToken, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call gcMarkAllMessagesAsReadAsync(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = gcMarkAllMessagesAsReadValidateBeforeCall(channelUrl, apiToken, gcMarkAllMessagesAsReadData, _callback);
+        okhttp3.Call localVarCall = gcMarkAllMessagesAsReadValidateBeforeCall(apiToken, channelUrl, gcMarkAllMessagesAsReadData, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for gcViewNumberOfEachMembersUnreadMessages
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param userIds  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -850,7 +875,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcViewNumberOfEachMembersUnreadMessagesCall(String channelUrl, String apiToken, String userIds, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call gcViewNumberOfEachMembersUnreadMessagesCall(String apiToken, String channelUrl, String userIds, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -906,7 +931,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcViewNumberOfEachMembersUnreadMessagesValidateBeforeCall(String channelUrl, String apiToken, String userIds, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call gcViewNumberOfEachMembersUnreadMessagesValidateBeforeCall(String apiToken, String channelUrl, String userIds, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling gcViewNumberOfEachMembersUnreadMessages(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -914,7 +944,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = gcViewNumberOfEachMembersUnreadMessagesCall(channelUrl, apiToken, userIds, _callback);
+        okhttp3.Call localVarCall = gcViewNumberOfEachMembersUnreadMessagesCall(apiToken, channelUrl, userIds, _callback);
         return localVarCall;
 
     }
@@ -922,8 +952,8 @@ public class MessagesApi {
     /**
      * View number of each member&#39;s unread messages
      * ## View number of each member&#39;s unread messages  Retrieves the total number of each member&#39;s unread messages in a group channel. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-number-of-each-member-s-unread-messages ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param userIds  (optional)
      * @return GcViewNumberOfEachMembersUnreadMessagesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -933,16 +963,16 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GcViewNumberOfEachMembersUnreadMessagesResponse gcViewNumberOfEachMembersUnreadMessages(String channelUrl, String apiToken, String userIds) throws ApiException {
-        ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> localVarResp = gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(channelUrl, apiToken, userIds);
+    public GcViewNumberOfEachMembersUnreadMessagesResponse gcViewNumberOfEachMembersUnreadMessages(String apiToken, String channelUrl, String userIds) throws ApiException {
+        ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> localVarResp = gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(apiToken, channelUrl, userIds);
         return localVarResp.getData();
     }
 
     /**
      * View number of each member&#39;s unread messages
      * ## View number of each member&#39;s unread messages  Retrieves the total number of each member&#39;s unread messages in a group channel. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-number-of-each-member-s-unread-messages ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param userIds  (optional)
      * @return ApiResponse&lt;GcViewNumberOfEachMembersUnreadMessagesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -952,8 +982,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(String channelUrl, String apiToken, String userIds) throws ApiException {
-        okhttp3.Call localVarCall = gcViewNumberOfEachMembersUnreadMessagesValidateBeforeCall(channelUrl, apiToken, userIds, null);
+    public ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(String apiToken, String channelUrl, String userIds) throws ApiException {
+        okhttp3.Call localVarCall = gcViewNumberOfEachMembersUnreadMessagesValidateBeforeCall(apiToken, channelUrl, userIds, null);
         Type localVarReturnType = new TypeToken<GcViewNumberOfEachMembersUnreadMessagesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -961,8 +991,8 @@ public class MessagesApi {
     /**
      * View number of each member&#39;s unread messages (asynchronously)
      * ## View number of each member&#39;s unread messages  Retrieves the total number of each member&#39;s unread messages in a group channel. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-number-of-each-member-s-unread-messages ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param userIds  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -973,20 +1003,20 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcViewNumberOfEachMembersUnreadMessagesAsync(String channelUrl, String apiToken, String userIds, final ApiCallback<GcViewNumberOfEachMembersUnreadMessagesResponse> _callback) throws ApiException {
+    public okhttp3.Call gcViewNumberOfEachMembersUnreadMessagesAsync(String apiToken, String channelUrl, String userIds, final ApiCallback<GcViewNumberOfEachMembersUnreadMessagesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = gcViewNumberOfEachMembersUnreadMessagesValidateBeforeCall(channelUrl, apiToken, userIds, _callback);
+        okhttp3.Call localVarCall = gcViewNumberOfEachMembersUnreadMessagesValidateBeforeCall(apiToken, channelUrl, userIds, _callback);
         Type localVarReturnType = new TypeToken<GcViewNumberOfEachMembersUnreadMessagesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listMessages
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param messageTs  (required)
-     * @param messageId  (required)
-     * @param apiToken  (optional)
+     * @param messageTs  (optional)
+     * @param messageId  (optional)
      * @param prevLimit  (optional)
      * @param nextLimit  (optional)
      * @param include  (optional)
@@ -1012,7 +1042,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMessagesCall(String channelType, String channelUrl, Integer messageTs, Integer messageId, String apiToken, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listMessagesCall(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1137,7 +1167,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listMessagesValidateBeforeCall(String channelType, String channelUrl, Integer messageTs, Integer messageId, String apiToken, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listMessagesValidateBeforeCall(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listMessages(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1149,18 +1184,8 @@ public class MessagesApi {
             throw new ApiException("Missing the required parameter 'channelUrl' when calling listMessages(Async)");
         }
         
-        // verify the required parameter 'messageTs' is set
-        if (messageTs == null) {
-            throw new ApiException("Missing the required parameter 'messageTs' when calling listMessages(Async)");
-        }
-        
-        // verify the required parameter 'messageId' is set
-        if (messageId == null) {
-            throw new ApiException("Missing the required parameter 'messageId' when calling listMessages(Async)");
-        }
-        
 
-        okhttp3.Call localVarCall = listMessagesCall(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray, _callback);
+        okhttp3.Call localVarCall = listMessagesCall(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray, _callback);
         return localVarCall;
 
     }
@@ -1168,11 +1193,11 @@ public class MessagesApi {
     /**
      * List messages
      * ## List messages  Retrieves a list of past messages of a channel.  &gt; This message retrieval is one of Sendbird&#39;s [premium features](https://sendbird.com/docs/chat/v3/platform-api/guides/application#-3-sendbird-s-premium-features). Contact our [sales team](https://get.sendbird.com/talk-to-sales.html) for further assistance.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-messages ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of past messages.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param messageTs  (required)
-     * @param messageId  (required)
-     * @param apiToken  (optional)
+     * @param messageTs  (optional)
+     * @param messageId  (optional)
      * @param prevLimit  (optional)
      * @param nextLimit  (optional)
      * @param include  (optional)
@@ -1197,19 +1222,19 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListMessagesResponse listMessages(String channelType, String channelUrl, Integer messageTs, Integer messageId, String apiToken, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
-        ApiResponse<ListMessagesResponse> localVarResp = listMessagesWithHttpInfo(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+    public ListMessagesResponse listMessages(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
+        ApiResponse<ListMessagesResponse> localVarResp = listMessagesWithHttpInfo(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
         return localVarResp.getData();
     }
 
     /**
      * List messages
      * ## List messages  Retrieves a list of past messages of a channel.  &gt; This message retrieval is one of Sendbird&#39;s [premium features](https://sendbird.com/docs/chat/v3/platform-api/guides/application#-3-sendbird-s-premium-features). Contact our [sales team](https://get.sendbird.com/talk-to-sales.html) for further assistance.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-messages ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of past messages.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param messageTs  (required)
-     * @param messageId  (required)
-     * @param apiToken  (optional)
+     * @param messageTs  (optional)
+     * @param messageId  (optional)
      * @param prevLimit  (optional)
      * @param nextLimit  (optional)
      * @param include  (optional)
@@ -1234,8 +1259,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String channelType, String channelUrl, Integer messageTs, Integer messageId, String apiToken, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
-        okhttp3.Call localVarCall = listMessagesValidateBeforeCall(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray, null);
+    public ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
+        okhttp3.Call localVarCall = listMessagesValidateBeforeCall(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray, null);
         Type localVarReturnType = new TypeToken<ListMessagesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1243,11 +1268,11 @@ public class MessagesApi {
     /**
      * List messages (asynchronously)
      * ## List messages  Retrieves a list of past messages of a channel.  &gt; This message retrieval is one of Sendbird&#39;s [premium features](https://sendbird.com/docs/chat/v3/platform-api/guides/application#-3-sendbird-s-premium-features). Contact our [sales team](https://get.sendbird.com/talk-to-sales.html) for further assistance.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-messages ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of past messages.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param messageTs  (required)
-     * @param messageId  (required)
-     * @param apiToken  (optional)
+     * @param messageTs  (optional)
+     * @param messageId  (optional)
      * @param prevLimit  (optional)
      * @param nextLimit  (optional)
      * @param include  (optional)
@@ -1273,19 +1298,19 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMessagesAsync(String channelType, String channelUrl, Integer messageTs, Integer messageId, String apiToken, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback<ListMessagesResponse> _callback) throws ApiException {
+    public okhttp3.Call listMessagesAsync(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback<ListMessagesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listMessagesValidateBeforeCall(channelType, channelUrl, messageTs, messageId, apiToken, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray, _callback);
+        okhttp3.Call localVarCall = listMessagesValidateBeforeCall(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray, _callback);
         Type localVarReturnType = new TypeToken<ListMessagesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listReactionsOfMessage
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param listUsers  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1296,7 +1321,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReactionsOfMessageCall(String channelType, String channelUrl, String messageId, String apiToken, Boolean listUsers, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listReactionsOfMessageCall(String apiToken, String channelType, String channelUrl, String messageId, Boolean listUsers, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1354,7 +1379,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listReactionsOfMessageValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, Boolean listUsers, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listReactionsOfMessageValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, Boolean listUsers, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listReactionsOfMessage(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1372,7 +1402,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = listReactionsOfMessageCall(channelType, channelUrl, messageId, apiToken, listUsers, _callback);
+        okhttp3.Call localVarCall = listReactionsOfMessageCall(apiToken, channelType, channelUrl, messageId, listUsers, _callback);
         return localVarCall;
 
     }
@@ -1380,10 +1410,10 @@ public class MessagesApi {
     /**
      * List reactions of a message
      * ## List reactions of a message  Retrieves a list of reactions made to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-reactions-of-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to add a reaction to.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param listUsers  (optional)
      * @return ListReactionsOfMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1393,18 +1423,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListReactionsOfMessageResponse listReactionsOfMessage(String channelType, String channelUrl, String messageId, String apiToken, Boolean listUsers) throws ApiException {
-        ApiResponse<ListReactionsOfMessageResponse> localVarResp = listReactionsOfMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, listUsers);
+    public ListReactionsOfMessageResponse listReactionsOfMessage(String apiToken, String channelType, String channelUrl, String messageId, Boolean listUsers) throws ApiException {
+        ApiResponse<ListReactionsOfMessageResponse> localVarResp = listReactionsOfMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, listUsers);
         return localVarResp.getData();
     }
 
     /**
      * List reactions of a message
      * ## List reactions of a message  Retrieves a list of reactions made to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-reactions-of-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to add a reaction to.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param listUsers  (optional)
      * @return ApiResponse&lt;ListReactionsOfMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1414,8 +1444,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, Boolean listUsers) throws ApiException {
-        okhttp3.Call localVarCall = listReactionsOfMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, listUsers, null);
+    public ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Boolean listUsers) throws ApiException {
+        okhttp3.Call localVarCall = listReactionsOfMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, listUsers, null);
         Type localVarReturnType = new TypeToken<ListReactionsOfMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1423,10 +1453,10 @@ public class MessagesApi {
     /**
      * List reactions of a message (asynchronously)
      * ## List reactions of a message  Retrieves a list of reactions made to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-reactions-of-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to add a reaction to.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param listUsers  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1437,19 +1467,19 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReactionsOfMessageAsync(String channelType, String channelUrl, String messageId, String apiToken, Boolean listUsers, final ApiCallback<ListReactionsOfMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call listReactionsOfMessageAsync(String apiToken, String channelType, String channelUrl, String messageId, Boolean listUsers, final ApiCallback<ListReactionsOfMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listReactionsOfMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, listUsers, _callback);
+        okhttp3.Call localVarCall = listReactionsOfMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, listUsers, _callback);
         Type localVarReturnType = new TypeToken<ListReactionsOfMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for removeExtraDataFromMessage
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param keys  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1460,7 +1490,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeExtraDataFromMessageCall(String channelType, String channelUrl, String messageId, String apiToken, List<String> keys, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeExtraDataFromMessageCall(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1518,7 +1548,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeExtraDataFromMessageValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, List<String> keys, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeExtraDataFromMessageValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling removeExtraDataFromMessage(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1536,7 +1571,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = removeExtraDataFromMessageCall(channelType, channelUrl, messageId, apiToken, keys, _callback);
+        okhttp3.Call localVarCall = removeExtraDataFromMessageCall(apiToken, channelType, channelUrl, messageId, keys, _callback);
         return localVarCall;
 
     }
@@ -1544,10 +1579,10 @@ public class MessagesApi {
     /**
      * Remove extra data from a message
      * ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-extra-data-from-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param keys  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1556,17 +1591,17 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void removeExtraDataFromMessage(String channelType, String channelUrl, String messageId, String apiToken, List<String> keys) throws ApiException {
-        removeExtraDataFromMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, keys);
+    public void removeExtraDataFromMessage(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
+        removeExtraDataFromMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, keys);
     }
 
     /**
      * Remove extra data from a message
      * ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-extra-data-from-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param keys  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1576,18 +1611,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> removeExtraDataFromMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, List<String> keys) throws ApiException {
-        okhttp3.Call localVarCall = removeExtraDataFromMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, keys, null);
+    public ApiResponse<Void> removeExtraDataFromMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
+        okhttp3.Call localVarCall = removeExtraDataFromMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, keys, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Remove extra data from a message (asynchronously)
      * ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-extra-data-from-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param keys  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1598,18 +1633,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeExtraDataFromMessageAsync(String channelType, String channelUrl, String messageId, String apiToken, List<String> keys, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call removeExtraDataFromMessageAsync(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeExtraDataFromMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, keys, _callback);
+        okhttp3.Call localVarCall = removeExtraDataFromMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, keys, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for removeReactionFromAMessage
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param userId  (optional)
      * @param reaction  (optional)
      * @param _callback Callback for upload/download progress
@@ -1621,7 +1656,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeReactionFromAMessageCall(String channelType, String channelUrl, String messageId, String apiToken, String userId, String reaction, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeReactionFromAMessageCall(String apiToken, String channelType, String channelUrl, String messageId, String userId, String reaction, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1683,7 +1718,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeReactionFromAMessageValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, String userId, String reaction, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeReactionFromAMessageValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, String userId, String reaction, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling removeReactionFromAMessage(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1701,7 +1741,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = removeReactionFromAMessageCall(channelType, channelUrl, messageId, apiToken, userId, reaction, _callback);
+        okhttp3.Call localVarCall = removeReactionFromAMessageCall(apiToken, channelType, channelUrl, messageId, userId, reaction, _callback);
         return localVarCall;
 
     }
@@ -1709,10 +1749,10 @@ public class MessagesApi {
     /**
      * Remove a reaction from a message
      * ## Remove a reaction from a message  Removes a specific reaction from a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-a-reaction-from-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param userId  (optional)
      * @param reaction  (optional)
      * @return RemoveReactionFromAMessageResponse
@@ -1723,18 +1763,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public RemoveReactionFromAMessageResponse removeReactionFromAMessage(String channelType, String channelUrl, String messageId, String apiToken, String userId, String reaction) throws ApiException {
-        ApiResponse<RemoveReactionFromAMessageResponse> localVarResp = removeReactionFromAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, userId, reaction);
+    public RemoveReactionFromAMessageResponse removeReactionFromAMessage(String apiToken, String channelType, String channelUrl, String messageId, String userId, String reaction) throws ApiException {
+        ApiResponse<RemoveReactionFromAMessageResponse> localVarResp = removeReactionFromAMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, userId, reaction);
         return localVarResp.getData();
     }
 
     /**
      * Remove a reaction from a message
      * ## Remove a reaction from a message  Removes a specific reaction from a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-a-reaction-from-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param userId  (optional)
      * @param reaction  (optional)
      * @return ApiResponse&lt;RemoveReactionFromAMessageResponse&gt;
@@ -1745,8 +1785,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, String userId, String reaction) throws ApiException {
-        okhttp3.Call localVarCall = removeReactionFromAMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, userId, reaction, null);
+    public ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, String userId, String reaction) throws ApiException {
+        okhttp3.Call localVarCall = removeReactionFromAMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, userId, reaction, null);
         Type localVarReturnType = new TypeToken<RemoveReactionFromAMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1754,10 +1794,10 @@ public class MessagesApi {
     /**
      * Remove a reaction from a message (asynchronously)
      * ## Remove a reaction from a message  Removes a specific reaction from a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-a-reaction-from-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param userId  (optional)
      * @param reaction  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1769,18 +1809,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeReactionFromAMessageAsync(String channelType, String channelUrl, String messageId, String apiToken, String userId, String reaction, final ApiCallback<RemoveReactionFromAMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call removeReactionFromAMessageAsync(String apiToken, String channelType, String channelUrl, String messageId, String userId, String reaction, final ApiCallback<RemoveReactionFromAMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeReactionFromAMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, userId, reaction, _callback);
+        okhttp3.Call localVarCall = removeReactionFromAMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, userId, reaction, _callback);
         Type localVarReturnType = new TypeToken<RemoveReactionFromAMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for sendMessage
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param sendMessageData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1791,7 +1831,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendMessageCall(String channelType, String channelUrl, String apiToken, SendMessageData sendMessageData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call sendMessageCall(String apiToken, String channelType, String channelUrl, SendMessageData sendMessageData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1844,7 +1884,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendMessageValidateBeforeCall(String channelType, String channelUrl, String apiToken, SendMessageData sendMessageData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call sendMessageValidateBeforeCall(String apiToken, String channelType, String channelUrl, SendMessageData sendMessageData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling sendMessage(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1857,7 +1902,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = sendMessageCall(channelType, channelUrl, apiToken, sendMessageData, _callback);
+        okhttp3.Call localVarCall = sendMessageCall(apiToken, channelType, channelUrl, sendMessageData, _callback);
         return localVarCall;
 
     }
@@ -1865,9 +1910,9 @@ public class MessagesApi {
     /**
      * Send a message
      * ## Send a message  Sends a message to a channel. You can send a text message, a file message, and an admin message.  &gt;__Note__: With Sendbird Chat SDKs and the platform API, any type of files in messages can be uploaded to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-send-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param sendMessageData  (optional)
      * @return SendBirdMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1877,17 +1922,17 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdMessageResponse sendMessage(String channelType, String channelUrl, String apiToken, SendMessageData sendMessageData) throws ApiException {
-        ApiResponse<SendBirdMessageResponse> localVarResp = sendMessageWithHttpInfo(channelType, channelUrl, apiToken, sendMessageData);
+    public SendBirdMessageResponse sendMessage(String apiToken, String channelType, String channelUrl, SendMessageData sendMessageData) throws ApiException {
+        ApiResponse<SendBirdMessageResponse> localVarResp = sendMessageWithHttpInfo(apiToken, channelType, channelUrl, sendMessageData);
         return localVarResp.getData();
     }
 
     /**
      * Send a message
      * ## Send a message  Sends a message to a channel. You can send a text message, a file message, and an admin message.  &gt;__Note__: With Sendbird Chat SDKs and the platform API, any type of files in messages can be uploaded to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-send-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param sendMessageData  (optional)
      * @return ApiResponse&lt;SendBirdMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1897,8 +1942,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String channelType, String channelUrl, String apiToken, SendMessageData sendMessageData) throws ApiException {
-        okhttp3.Call localVarCall = sendMessageValidateBeforeCall(channelType, channelUrl, apiToken, sendMessageData, null);
+    public ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, SendMessageData sendMessageData) throws ApiException {
+        okhttp3.Call localVarCall = sendMessageValidateBeforeCall(apiToken, channelType, channelUrl, sendMessageData, null);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1906,9 +1951,9 @@ public class MessagesApi {
     /**
      * Send a message (asynchronously)
      * ## Send a message  Sends a message to a channel. You can send a text message, a file message, and an admin message.  &gt;__Note__: With Sendbird Chat SDKs and the platform API, any type of files in messages can be uploaded to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-send-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param sendMessageData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1919,19 +1964,19 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call sendMessageAsync(String channelType, String channelUrl, String apiToken, SendMessageData sendMessageData, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call sendMessageAsync(String apiToken, String channelType, String channelUrl, SendMessageData sendMessageData, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = sendMessageValidateBeforeCall(channelType, channelUrl, apiToken, sendMessageData, _callback);
+        okhttp3.Call localVarCall = sendMessageValidateBeforeCall(apiToken, channelType, channelUrl, sendMessageData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for translateMessageIntoOtherLanguages
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1942,7 +1987,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call translateMessageIntoOtherLanguagesCall(String channelType, String channelUrl, String messageId, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call translateMessageIntoOtherLanguagesCall(String apiToken, String channelType, String channelUrl, String messageId, Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1996,7 +2041,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call translateMessageIntoOtherLanguagesValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call translateMessageIntoOtherLanguagesValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, Object body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling translateMessageIntoOtherLanguages(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -2014,7 +2064,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesCall(channelType, channelUrl, messageId, apiToken, body, _callback);
+        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesCall(apiToken, channelType, channelUrl, messageId, body, _callback);
         return localVarCall;
 
     }
@@ -2022,10 +2072,10 @@ public class MessagesApi {
     /**
      * Translate a message into other languages
      * ## Translate a message into other languages  Translates a message into specific languages. Only text messages of which type is MESG can be translated into other languages.  &gt; __Note__: Message translation is powered by [Google Cloud Translation API recognition engine](https://cloud.google.com/translate/). Find language codes supported by the engine in the [Miscellaneous](https://sendbird.com/docs/chat/v3/platform-api/guides/Miscellaneous) page or visit the [Language Support](https://cloud.google.com/translate/docs/languages) for Google Cloud Translation.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-translate-a-message-into-other-languages ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return SendBirdMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2035,18 +2085,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdMessageResponse translateMessageIntoOtherLanguages(String channelType, String channelUrl, String messageId, String apiToken, Object body) throws ApiException {
-        ApiResponse<SendBirdMessageResponse> localVarResp = translateMessageIntoOtherLanguagesWithHttpInfo(channelType, channelUrl, messageId, apiToken, body);
+    public SendBirdMessageResponse translateMessageIntoOtherLanguages(String apiToken, String channelType, String channelUrl, String messageId, Object body) throws ApiException {
+        ApiResponse<SendBirdMessageResponse> localVarResp = translateMessageIntoOtherLanguagesWithHttpInfo(apiToken, channelType, channelUrl, messageId, body);
         return localVarResp.getData();
     }
 
     /**
      * Translate a message into other languages
      * ## Translate a message into other languages  Translates a message into specific languages. Only text messages of which type is MESG can be translated into other languages.  &gt; __Note__: Message translation is powered by [Google Cloud Translation API recognition engine](https://cloud.google.com/translate/). Find language codes supported by the engine in the [Miscellaneous](https://sendbird.com/docs/chat/v3/platform-api/guides/Miscellaneous) page or visit the [Language Support](https://cloud.google.com/translate/docs/languages) for Google Cloud Translation.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-translate-a-message-into-other-languages ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return ApiResponse&lt;SendBirdMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2056,8 +2106,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, Object body) throws ApiException {
-        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesValidateBeforeCall(channelType, channelUrl, messageId, apiToken, body, null);
+    public ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Object body) throws ApiException {
+        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesValidateBeforeCall(apiToken, channelType, channelUrl, messageId, body, null);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2065,10 +2115,10 @@ public class MessagesApi {
     /**
      * Translate a message into other languages (asynchronously)
      * ## Translate a message into other languages  Translates a message into specific languages. Only text messages of which type is MESG can be translated into other languages.  &gt; __Note__: Message translation is powered by [Google Cloud Translation API recognition engine](https://cloud.google.com/translate/). Find language codes supported by the engine in the [Miscellaneous](https://sendbird.com/docs/chat/v3/platform-api/guides/Miscellaneous) page or visit the [Language Support](https://cloud.google.com/translate/docs/languages) for Google Cloud Translation.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-translate-a-message-into-other-languages ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2079,19 +2129,19 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call translateMessageIntoOtherLanguagesAsync(String channelType, String channelUrl, String messageId, String apiToken, Object body, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call translateMessageIntoOtherLanguagesAsync(String apiToken, String channelType, String channelUrl, String messageId, Object body, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesValidateBeforeCall(channelType, channelUrl, messageId, apiToken, body, _callback);
+        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesValidateBeforeCall(apiToken, channelType, channelUrl, messageId, body, _callback);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateExtraDataInMessage
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param updateExtraDataInMessageData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2102,7 +2152,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateExtraDataInMessageCall(String channelType, String channelUrl, String messageId, String apiToken, UpdateExtraDataInMessageData updateExtraDataInMessageData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateExtraDataInMessageCall(String apiToken, String channelType, String channelUrl, String messageId, UpdateExtraDataInMessageData updateExtraDataInMessageData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2156,7 +2206,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateExtraDataInMessageValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, UpdateExtraDataInMessageData updateExtraDataInMessageData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateExtraDataInMessageValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, UpdateExtraDataInMessageData updateExtraDataInMessageData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateExtraDataInMessage(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -2174,7 +2229,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = updateExtraDataInMessageCall(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData, _callback);
+        okhttp3.Call localVarCall = updateExtraDataInMessageCall(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData, _callback);
         return localVarCall;
 
     }
@@ -2182,10 +2237,10 @@ public class MessagesApi {
     /**
      * Update extra data in a message
      * ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-extra-data-in-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param updateExtraDataInMessageData  (optional)
      * @return UpdateExtraDataInMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2195,18 +2250,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public UpdateExtraDataInMessageResponse updateExtraDataInMessage(String channelType, String channelUrl, String messageId, String apiToken, UpdateExtraDataInMessageData updateExtraDataInMessageData) throws ApiException {
-        ApiResponse<UpdateExtraDataInMessageResponse> localVarResp = updateExtraDataInMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData);
+    public UpdateExtraDataInMessageResponse updateExtraDataInMessage(String apiToken, String channelType, String channelUrl, String messageId, UpdateExtraDataInMessageData updateExtraDataInMessageData) throws ApiException {
+        ApiResponse<UpdateExtraDataInMessageResponse> localVarResp = updateExtraDataInMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData);
         return localVarResp.getData();
     }
 
     /**
      * Update extra data in a message
      * ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-extra-data-in-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param updateExtraDataInMessageData  (optional)
      * @return ApiResponse&lt;UpdateExtraDataInMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2216,8 +2271,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, UpdateExtraDataInMessageData updateExtraDataInMessageData) throws ApiException {
-        okhttp3.Call localVarCall = updateExtraDataInMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData, null);
+    public ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, UpdateExtraDataInMessageData updateExtraDataInMessageData) throws ApiException {
+        okhttp3.Call localVarCall = updateExtraDataInMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData, null);
         Type localVarReturnType = new TypeToken<UpdateExtraDataInMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2225,10 +2280,10 @@ public class MessagesApi {
     /**
      * Update extra data in a message (asynchronously)
      * ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-extra-data-in-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param updateExtraDataInMessageData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2239,19 +2294,19 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateExtraDataInMessageAsync(String channelType, String channelUrl, String messageId, String apiToken, UpdateExtraDataInMessageData updateExtraDataInMessageData, final ApiCallback<UpdateExtraDataInMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call updateExtraDataInMessageAsync(String apiToken, String channelType, String channelUrl, String messageId, UpdateExtraDataInMessageData updateExtraDataInMessageData, final ApiCallback<UpdateExtraDataInMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateExtraDataInMessageValidateBeforeCall(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData, _callback);
+        okhttp3.Call localVarCall = updateExtraDataInMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData, _callback);
         Type localVarReturnType = new TypeToken<UpdateExtraDataInMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateMessageById
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param updateMessageByIdData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2262,7 +2317,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateMessageByIdCall(String channelType, String channelUrl, String messageId, String apiToken, UpdateMessageByIdData updateMessageByIdData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateMessageByIdCall(String apiToken, String channelType, String channelUrl, String messageId, UpdateMessageByIdData updateMessageByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2316,7 +2371,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateMessageByIdValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, UpdateMessageByIdData updateMessageByIdData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateMessageByIdValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, UpdateMessageByIdData updateMessageByIdData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateMessageById(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -2334,7 +2394,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = updateMessageByIdCall(channelType, channelUrl, messageId, apiToken, updateMessageByIdData, _callback);
+        okhttp3.Call localVarCall = updateMessageByIdCall(apiToken, channelType, channelUrl, messageId, updateMessageByIdData, _callback);
         return localVarCall;
 
     }
@@ -2342,10 +2402,10 @@ public class MessagesApi {
     /**
      * Update a message
      * ## Update a message  Updates information on a message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param updateMessageByIdData  (optional)
      * @return SendBirdMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2355,18 +2415,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdMessageResponse updateMessageById(String channelType, String channelUrl, String messageId, String apiToken, UpdateMessageByIdData updateMessageByIdData) throws ApiException {
-        ApiResponse<SendBirdMessageResponse> localVarResp = updateMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, updateMessageByIdData);
+    public SendBirdMessageResponse updateMessageById(String apiToken, String channelType, String channelUrl, String messageId, UpdateMessageByIdData updateMessageByIdData) throws ApiException {
+        ApiResponse<SendBirdMessageResponse> localVarResp = updateMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, updateMessageByIdData);
         return localVarResp.getData();
     }
 
     /**
      * Update a message
      * ## Update a message  Updates information on a message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param updateMessageByIdData  (optional)
      * @return ApiResponse&lt;SendBirdMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2376,8 +2436,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, UpdateMessageByIdData updateMessageByIdData) throws ApiException {
-        okhttp3.Call localVarCall = updateMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, updateMessageByIdData, null);
+    public ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, UpdateMessageByIdData updateMessageByIdData) throws ApiException {
+        okhttp3.Call localVarCall = updateMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, updateMessageByIdData, null);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2385,10 +2445,10 @@ public class MessagesApi {
     /**
      * Update a message (asynchronously)
      * ## Update a message  Updates information on a message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param updateMessageByIdData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2399,19 +2459,19 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, UpdateMessageByIdData updateMessageByIdData, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call updateMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, UpdateMessageByIdData updateMessageByIdData, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, updateMessageByIdData, _callback);
+        okhttp3.Call localVarCall = updateMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, updateMessageByIdData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewMessageById
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param withSortedMetaArray  (optional)
      * @param withMetaArray  (optional)
      * @param _callback Callback for upload/download progress
@@ -2423,7 +2483,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewMessageByIdCall(String channelType, String channelUrl, String messageId, String apiToken, Boolean withSortedMetaArray, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewMessageByIdCall(String apiToken, String channelType, String channelUrl, String messageId, Boolean withSortedMetaArray, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2485,7 +2545,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewMessageByIdValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, Boolean withSortedMetaArray, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewMessageByIdValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, Boolean withSortedMetaArray, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewMessageById(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -2503,7 +2568,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = viewMessageByIdCall(channelType, channelUrl, messageId, apiToken, withSortedMetaArray, withMetaArray, _callback);
+        okhttp3.Call localVarCall = viewMessageByIdCall(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray, _callback);
         return localVarCall;
 
     }
@@ -2511,10 +2576,10 @@ public class MessagesApi {
     /**
      * View a message
      * ## View a message  Retrieves information on a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to retrieve.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param withSortedMetaArray  (optional)
      * @param withMetaArray  (optional)
      * @return SendBirdMessageResponse
@@ -2525,18 +2590,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdMessageResponse viewMessageById(String channelType, String channelUrl, String messageId, String apiToken, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
-        ApiResponse<SendBirdMessageResponse> localVarResp = viewMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, withSortedMetaArray, withMetaArray);
+    public SendBirdMessageResponse viewMessageById(String apiToken, String channelType, String channelUrl, String messageId, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
+        ApiResponse<SendBirdMessageResponse> localVarResp = viewMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray);
         return localVarResp.getData();
     }
 
     /**
      * View a message
      * ## View a message  Retrieves information on a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to retrieve.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param withSortedMetaArray  (optional)
      * @param withMetaArray  (optional)
      * @return ApiResponse&lt;SendBirdMessageResponse&gt;
@@ -2547,8 +2612,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
-        okhttp3.Call localVarCall = viewMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, withSortedMetaArray, withMetaArray, null);
+    public ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
+        okhttp3.Call localVarCall = viewMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray, null);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2556,10 +2621,10 @@ public class MessagesApi {
     /**
      * View a message (asynchronously)
      * ## View a message  Retrieves information on a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to retrieve.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param withSortedMetaArray  (optional)
      * @param withMetaArray  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -2571,18 +2636,18 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, Boolean withSortedMetaArray, Boolean withMetaArray, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call viewMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, Boolean withSortedMetaArray, Boolean withMetaArray, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, withSortedMetaArray, withMetaArray, _callback);
+        okhttp3.Call localVarCall = viewMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray, _callback);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewTotalNumberOfMessagesInChannel
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2592,7 +2657,7 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewTotalNumberOfMessagesInChannelCall(String channelType, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewTotalNumberOfMessagesInChannelCall(String apiToken, String channelType, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2645,7 +2710,12 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewTotalNumberOfMessagesInChannelValidateBeforeCall(String channelType, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewTotalNumberOfMessagesInChannelValidateBeforeCall(String apiToken, String channelType, String channelUrl, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewTotalNumberOfMessagesInChannel(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -2658,7 +2728,7 @@ public class MessagesApi {
         }
         
 
-        okhttp3.Call localVarCall = viewTotalNumberOfMessagesInChannelCall(channelType, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = viewTotalNumberOfMessagesInChannelCall(apiToken, channelType, channelUrl, _callback);
         return localVarCall;
 
     }
@@ -2666,9 +2736,9 @@ public class MessagesApi {
     /**
      * View total number of messages in a channel
      * ## View total number of messages in a channel  Retrieves the total number of messages in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-total-number-of-messages-in-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ViewTotalNumberOfMessagesInChannelResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2677,17 +2747,17 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewTotalNumberOfMessagesInChannelResponse viewTotalNumberOfMessagesInChannel(String channelType, String channelUrl, String apiToken) throws ApiException {
-        ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> localVarResp = viewTotalNumberOfMessagesInChannelWithHttpInfo(channelType, channelUrl, apiToken);
+    public ViewTotalNumberOfMessagesInChannelResponse viewTotalNumberOfMessagesInChannel(String apiToken, String channelType, String channelUrl) throws ApiException {
+        ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> localVarResp = viewTotalNumberOfMessagesInChannelWithHttpInfo(apiToken, channelType, channelUrl);
         return localVarResp.getData();
     }
 
     /**
      * View total number of messages in a channel
      * ## View total number of messages in a channel  Retrieves the total number of messages in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-total-number-of-messages-in-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewTotalNumberOfMessagesInChannelResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2696,8 +2766,8 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> viewTotalNumberOfMessagesInChannelWithHttpInfo(String channelType, String channelUrl, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewTotalNumberOfMessagesInChannelValidateBeforeCall(channelType, channelUrl, apiToken, null);
+    public ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> viewTotalNumberOfMessagesInChannelWithHttpInfo(String apiToken, String channelType, String channelUrl) throws ApiException {
+        okhttp3.Call localVarCall = viewTotalNumberOfMessagesInChannelValidateBeforeCall(apiToken, channelType, channelUrl, null);
         Type localVarReturnType = new TypeToken<ViewTotalNumberOfMessagesInChannelResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2705,9 +2775,9 @@ public class MessagesApi {
     /**
      * View total number of messages in a channel (asynchronously)
      * ## View total number of messages in a channel  Retrieves the total number of messages in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-total-number-of-messages-in-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2717,9 +2787,9 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewTotalNumberOfMessagesInChannelAsync(String channelType, String channelUrl, String apiToken, final ApiCallback<ViewTotalNumberOfMessagesInChannelResponse> _callback) throws ApiException {
+    public okhttp3.Call viewTotalNumberOfMessagesInChannelAsync(String apiToken, String channelType, String channelUrl, final ApiCallback<ViewTotalNumberOfMessagesInChannelResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewTotalNumberOfMessagesInChannelValidateBeforeCall(channelType, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = viewTotalNumberOfMessagesInChannelValidateBeforeCall(apiToken, channelType, channelUrl, _callback);
         Type localVarReturnType = new TypeToken<ViewTotalNumberOfMessagesInChannelResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

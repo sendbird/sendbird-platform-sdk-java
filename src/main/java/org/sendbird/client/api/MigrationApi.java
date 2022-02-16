@@ -73,8 +73,8 @@ public class MigrationApi {
 
     /**
      * Build call for migrateMessagesByUrl
+     * @param apiToken  (required)
      * @param targetChannelUrl  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -85,7 +85,7 @@ public class MigrationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call migrateMessagesByUrlCall(String targetChannelUrl, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call migrateMessagesByUrlCall(String apiToken, String targetChannelUrl, Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -137,7 +137,12 @@ public class MigrationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call migrateMessagesByUrlValidateBeforeCall(String targetChannelUrl, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call migrateMessagesByUrlValidateBeforeCall(String apiToken, String targetChannelUrl, Object body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling migrateMessagesByUrl(Async)");
+        }
         
         // verify the required parameter 'targetChannelUrl' is set
         if (targetChannelUrl == null) {
@@ -145,7 +150,7 @@ public class MigrationApi {
         }
         
 
-        okhttp3.Call localVarCall = migrateMessagesByUrlCall(targetChannelUrl, apiToken, body, _callback);
+        okhttp3.Call localVarCall = migrateMessagesByUrlCall(apiToken, targetChannelUrl, body, _callback);
         return localVarCall;
 
     }
@@ -153,8 +158,8 @@ public class MigrationApi {
     /**
      * Migrate messages
      * ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system&#39;s [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  &gt; To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).  There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user). 2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn&#39;t create a channel for your migration automatically. 3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.  https://sendbird.com/docs/chat/v3/platform-api/guides/migration#2-migrate-messages ----------------------------
+     * @param apiToken  (required)
      * @param targetChannelUrl  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -163,15 +168,15 @@ public class MigrationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void migrateMessagesByUrl(String targetChannelUrl, String apiToken, Object body) throws ApiException {
-        migrateMessagesByUrlWithHttpInfo(targetChannelUrl, apiToken, body);
+    public void migrateMessagesByUrl(String apiToken, String targetChannelUrl, Object body) throws ApiException {
+        migrateMessagesByUrlWithHttpInfo(apiToken, targetChannelUrl, body);
     }
 
     /**
      * Migrate messages
      * ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system&#39;s [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  &gt; To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).  There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user). 2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn&#39;t create a channel for your migration automatically. 3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.  https://sendbird.com/docs/chat/v3/platform-api/guides/migration#2-migrate-messages ----------------------------
+     * @param apiToken  (required)
      * @param targetChannelUrl  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -181,16 +186,16 @@ public class MigrationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String targetChannelUrl, String apiToken, Object body) throws ApiException {
-        okhttp3.Call localVarCall = migrateMessagesByUrlValidateBeforeCall(targetChannelUrl, apiToken, body, null);
+    public ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String apiToken, String targetChannelUrl, Object body) throws ApiException {
+        okhttp3.Call localVarCall = migrateMessagesByUrlValidateBeforeCall(apiToken, targetChannelUrl, body, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Migrate messages (asynchronously)
      * ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system&#39;s [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  &gt; To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).  There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user). 2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn&#39;t create a channel for your migration automatically. 3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.  https://sendbird.com/docs/chat/v3/platform-api/guides/migration#2-migrate-messages ----------------------------
+     * @param apiToken  (required)
      * @param targetChannelUrl  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -201,9 +206,9 @@ public class MigrationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call migrateMessagesByUrlAsync(String targetChannelUrl, String apiToken, Object body, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call migrateMessagesByUrlAsync(String apiToken, String targetChannelUrl, Object body, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = migrateMessagesByUrlValidateBeforeCall(targetChannelUrl, apiToken, body, _callback);
+        okhttp3.Call localVarCall = migrateMessagesByUrlValidateBeforeCall(apiToken, targetChannelUrl, body, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

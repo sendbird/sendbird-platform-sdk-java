@@ -86,8 +86,8 @@ public class AnnouncementsApi {
 
     /**
      * Build call for getDetailedOpenRateOfAnnouncementById
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -97,7 +97,7 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDetailedOpenRateOfAnnouncementByIdCall(String uniqueId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDetailedOpenRateOfAnnouncementByIdCall(String apiToken, String uniqueId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -149,7 +149,12 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDetailedOpenRateOfAnnouncementByIdValidateBeforeCall(String uniqueId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDetailedOpenRateOfAnnouncementByIdValidateBeforeCall(String apiToken, String uniqueId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling getDetailedOpenRateOfAnnouncementById(Async)");
+        }
         
         // verify the required parameter 'uniqueId' is set
         if (uniqueId == null) {
@@ -157,7 +162,7 @@ public class AnnouncementsApi {
         }
         
 
-        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementByIdCall(uniqueId, apiToken, _callback);
+        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementByIdCall(apiToken, uniqueId, _callback);
         return localVarCall;
 
     }
@@ -165,8 +170,8 @@ public class AnnouncementsApi {
     /**
      * Get detailed open rate of an announcement
      * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @return GetDetailedOpenRateOfAnnouncementByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -175,16 +180,16 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(String uniqueId, String apiToken) throws ApiException {
-        ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> localVarResp = getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(uniqueId, apiToken);
+    public GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(String apiToken, String uniqueId) throws ApiException {
+        ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> localVarResp = getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId);
         return localVarResp.getData();
     }
 
     /**
      * Get detailed open rate of an announcement
      * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;GetDetailedOpenRateOfAnnouncementByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -193,8 +198,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, null);
+    public ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId) throws ApiException {
+        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementByIdValidateBeforeCall(apiToken, uniqueId, null);
         Type localVarReturnType = new TypeToken<GetDetailedOpenRateOfAnnouncementByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -202,8 +207,8 @@ public class AnnouncementsApi {
     /**
      * Get detailed open rate of an announcement (asynchronously)
      * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -213,17 +218,17 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDetailedOpenRateOfAnnouncementByIdAsync(String uniqueId, String apiToken, final ApiCallback<GetDetailedOpenRateOfAnnouncementByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call getDetailedOpenRateOfAnnouncementByIdAsync(String apiToken, String uniqueId, final ApiCallback<GetDetailedOpenRateOfAnnouncementByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, _callback);
+        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementByIdValidateBeforeCall(apiToken, uniqueId, _callback);
         Type localVarReturnType = new TypeToken<GetDetailedOpenRateOfAnnouncementByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getDetailedOpenRateOfAnnouncementGroup
+     * @param apiToken  (required)
      * @param announcementGroup  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -233,7 +238,7 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDetailedOpenRateOfAnnouncementGroupCall(String announcementGroup, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDetailedOpenRateOfAnnouncementGroupCall(String apiToken, String announcementGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -285,7 +290,12 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDetailedOpenRateOfAnnouncementGroupValidateBeforeCall(String announcementGroup, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDetailedOpenRateOfAnnouncementGroupValidateBeforeCall(String apiToken, String announcementGroup, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling getDetailedOpenRateOfAnnouncementGroup(Async)");
+        }
         
         // verify the required parameter 'announcementGroup' is set
         if (announcementGroup == null) {
@@ -293,7 +303,7 @@ public class AnnouncementsApi {
         }
         
 
-        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementGroupCall(announcementGroup, apiToken, _callback);
+        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementGroupCall(apiToken, announcementGroup, _callback);
         return localVarCall;
 
     }
@@ -301,8 +311,8 @@ public class AnnouncementsApi {
     /**
      * Get detailed open rate of an announcement group
      * ## Get detailed open rate of an announcement group  Retrieves the detailed open rate information of an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement-group ----------------------------
+     * @param apiToken  (required)
      * @param announcementGroup  (required)
-     * @param apiToken  (optional)
      * @return GetDetailedOpenRateOfAnnouncementGroupResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -311,16 +321,16 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetDetailedOpenRateOfAnnouncementGroupResponse getDetailedOpenRateOfAnnouncementGroup(String announcementGroup, String apiToken) throws ApiException {
-        ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> localVarResp = getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(announcementGroup, apiToken);
+    public GetDetailedOpenRateOfAnnouncementGroupResponse getDetailedOpenRateOfAnnouncementGroup(String apiToken, String announcementGroup) throws ApiException {
+        ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> localVarResp = getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(apiToken, announcementGroup);
         return localVarResp.getData();
     }
 
     /**
      * Get detailed open rate of an announcement group
      * ## Get detailed open rate of an announcement group  Retrieves the detailed open rate information of an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement-group ----------------------------
+     * @param apiToken  (required)
      * @param announcementGroup  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;GetDetailedOpenRateOfAnnouncementGroupResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -329,8 +339,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(String announcementGroup, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementGroupValidateBeforeCall(announcementGroup, apiToken, null);
+    public ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(String apiToken, String announcementGroup) throws ApiException {
+        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementGroupValidateBeforeCall(apiToken, announcementGroup, null);
         Type localVarReturnType = new TypeToken<GetDetailedOpenRateOfAnnouncementGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -338,8 +348,8 @@ public class AnnouncementsApi {
     /**
      * Get detailed open rate of an announcement group (asynchronously)
      * ## Get detailed open rate of an announcement group  Retrieves the detailed open rate information of an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement-group ----------------------------
+     * @param apiToken  (required)
      * @param announcementGroup  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -349,17 +359,17 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDetailedOpenRateOfAnnouncementGroupAsync(String announcementGroup, String apiToken, final ApiCallback<GetDetailedOpenRateOfAnnouncementGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call getDetailedOpenRateOfAnnouncementGroupAsync(String apiToken, String announcementGroup, final ApiCallback<GetDetailedOpenRateOfAnnouncementGroupResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementGroupValidateBeforeCall(announcementGroup, apiToken, _callback);
+        okhttp3.Call localVarCall = getDetailedOpenRateOfAnnouncementGroupValidateBeforeCall(apiToken, announcementGroup, _callback);
         Type localVarReturnType = new TypeToken<GetDetailedOpenRateOfAnnouncementGroupResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getDetailedOpenStatusOfAnnouncementById
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param limit  (optional)
      * @param next  (optional)
      * @param uniqueIds  (optional)
@@ -374,7 +384,7 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDetailedOpenStatusOfAnnouncementByIdCall(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDetailedOpenStatusOfAnnouncementByIdCall(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -446,7 +456,12 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDetailedOpenStatusOfAnnouncementByIdValidateBeforeCall(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDetailedOpenStatusOfAnnouncementByIdValidateBeforeCall(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling getDetailedOpenStatusOfAnnouncementById(Async)");
+        }
         
         // verify the required parameter 'uniqueId' is set
         if (uniqueId == null) {
@@ -454,7 +469,7 @@ public class AnnouncementsApi {
         }
         
 
-        okhttp3.Call localVarCall = getDetailedOpenStatusOfAnnouncementByIdCall(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened, _callback);
+        okhttp3.Call localVarCall = getDetailedOpenStatusOfAnnouncementByIdCall(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened, _callback);
         return localVarCall;
 
     }
@@ -462,8 +477,8 @@ public class AnnouncementsApi {
     /**
      * Get detailed open status of an announcement
      * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param limit  (optional)
      * @param next  (optional)
      * @param uniqueIds  (optional)
@@ -477,16 +492,16 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
-        ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> localVarResp = getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened);
+    public GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
+        ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> localVarResp = getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
         return localVarResp.getData();
     }
 
     /**
      * Get detailed open status of an announcement
      * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param limit  (optional)
      * @param next  (optional)
      * @param uniqueIds  (optional)
@@ -500,8 +515,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
-        okhttp3.Call localVarCall = getDetailedOpenStatusOfAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened, null);
+    public ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
+        okhttp3.Call localVarCall = getDetailedOpenStatusOfAnnouncementByIdValidateBeforeCall(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened, null);
         Type localVarReturnType = new TypeToken<GetDetailedOpenStatusOfAnnouncementByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -509,8 +524,8 @@ public class AnnouncementsApi {
     /**
      * Get detailed open status of an announcement (asynchronously)
      * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param limit  (optional)
      * @param next  (optional)
      * @param uniqueIds  (optional)
@@ -525,16 +540,16 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDetailedOpenStatusOfAnnouncementByIdAsync(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened, final ApiCallback<GetDetailedOpenStatusOfAnnouncementByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call getDetailedOpenStatusOfAnnouncementByIdAsync(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened, final ApiCallback<GetDetailedOpenStatusOfAnnouncementByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getDetailedOpenStatusOfAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened, _callback);
+        okhttp3.Call localVarCall = getDetailedOpenStatusOfAnnouncementByIdValidateBeforeCall(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened, _callback);
         Type localVarReturnType = new TypeToken<GetDetailedOpenStatusOfAnnouncementByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getStatistics
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -597,6 +612,11 @@ public class AnnouncementsApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getStatisticsValidateBeforeCall(String apiToken, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling getStatistics(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = getStatisticsCall(apiToken, _callback);
         return localVarCall;
@@ -606,7 +626,7 @@ public class AnnouncementsApi {
     /**
      * Get statistics - weekly
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return GetStatisticsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -623,7 +643,7 @@ public class AnnouncementsApi {
     /**
      * Get statistics - weekly
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return ApiResponse&lt;GetStatisticsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -641,7 +661,7 @@ public class AnnouncementsApi {
     /**
      * Get statistics - weekly (asynchronously)
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -660,13 +680,13 @@ public class AnnouncementsApi {
     }
     /**
      * Build call for getStatisticsDaily
+     * @param apiToken  (required)
      * @param startDate  (required)
      * @param endDate  (required)
      * @param startWeek  (required)
      * @param endWeek  (required)
      * @param startMonth  (required)
      * @param endMonth  (required)
-     * @param apiToken  (optional)
      * @param announcementGroup  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -677,7 +697,7 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatisticsDailyCall(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStatisticsDailyCall(String apiToken, String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String announcementGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -756,7 +776,12 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStatisticsDailyValidateBeforeCall(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStatisticsDailyValidateBeforeCall(String apiToken, String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String announcementGroup, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling getStatisticsDaily(Async)");
+        }
         
         // verify the required parameter 'startDate' is set
         if (startDate == null) {
@@ -789,7 +814,7 @@ public class AnnouncementsApi {
         }
         
 
-        okhttp3.Call localVarCall = getStatisticsDailyCall(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup, _callback);
+        okhttp3.Call localVarCall = getStatisticsDailyCall(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup, _callback);
         return localVarCall;
 
     }
@@ -797,13 +822,13 @@ public class AnnouncementsApi {
     /**
      * Get statistics - daily
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
+     * @param apiToken  (required)
      * @param startDate  (required)
      * @param endDate  (required)
      * @param startWeek  (required)
      * @param endWeek  (required)
      * @param startMonth  (required)
      * @param endMonth  (required)
-     * @param apiToken  (optional)
      * @param announcementGroup  (optional)
      * @return GetStatisticsDailyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -813,21 +838,21 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public GetStatisticsDailyResponse getStatisticsDaily(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup) throws ApiException {
-        ApiResponse<GetStatisticsDailyResponse> localVarResp = getStatisticsDailyWithHttpInfo(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup);
+    public GetStatisticsDailyResponse getStatisticsDaily(String apiToken, String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String announcementGroup) throws ApiException {
+        ApiResponse<GetStatisticsDailyResponse> localVarResp = getStatisticsDailyWithHttpInfo(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
         return localVarResp.getData();
     }
 
     /**
      * Get statistics - daily
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
+     * @param apiToken  (required)
      * @param startDate  (required)
      * @param endDate  (required)
      * @param startWeek  (required)
      * @param endWeek  (required)
      * @param startMonth  (required)
      * @param endMonth  (required)
-     * @param apiToken  (optional)
      * @param announcementGroup  (optional)
      * @return ApiResponse&lt;GetStatisticsDailyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -837,8 +862,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup) throws ApiException {
-        okhttp3.Call localVarCall = getStatisticsDailyValidateBeforeCall(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup, null);
+    public ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(String apiToken, String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String announcementGroup) throws ApiException {
+        okhttp3.Call localVarCall = getStatisticsDailyValidateBeforeCall(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup, null);
         Type localVarReturnType = new TypeToken<GetStatisticsDailyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -846,13 +871,13 @@ public class AnnouncementsApi {
     /**
      * Get statistics - daily (asynchronously)
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
+     * @param apiToken  (required)
      * @param startDate  (required)
      * @param endDate  (required)
      * @param startWeek  (required)
      * @param endWeek  (required)
      * @param startMonth  (required)
      * @param endMonth  (required)
-     * @param apiToken  (optional)
      * @param announcementGroup  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -863,16 +888,16 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatisticsDailyAsync(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup, final ApiCallback<GetStatisticsDailyResponse> _callback) throws ApiException {
+    public okhttp3.Call getStatisticsDailyAsync(String apiToken, String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String announcementGroup, final ApiCallback<GetStatisticsDailyResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getStatisticsDailyValidateBeforeCall(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup, _callback);
+        okhttp3.Call localVarCall = getStatisticsDailyValidateBeforeCall(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup, _callback);
         Type localVarReturnType = new TypeToken<GetStatisticsDailyResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getStatisticsMonthly
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -935,6 +960,11 @@ public class AnnouncementsApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getStatisticsMonthlyValidateBeforeCall(String apiToken, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling getStatisticsMonthly(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = getStatisticsMonthlyCall(apiToken, _callback);
         return localVarCall;
@@ -944,7 +974,7 @@ public class AnnouncementsApi {
     /**
      * Get statistics - monthly
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return GetStatisticsMonthlyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -961,7 +991,7 @@ public class AnnouncementsApi {
     /**
      * Get statistics - monthly
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return ApiResponse&lt;GetStatisticsMonthlyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -979,7 +1009,7 @@ public class AnnouncementsApi {
     /**
      * Get statistics - monthly (asynchronously)
      * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -998,7 +1028,7 @@ public class AnnouncementsApi {
     }
     /**
      * Build call for listAnnouncementGroups
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -1071,6 +1101,11 @@ public class AnnouncementsApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listAnnouncementGroupsValidateBeforeCall(String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listAnnouncementGroups(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = listAnnouncementGroupsCall(apiToken, token, limit, _callback);
         return localVarCall;
@@ -1080,7 +1115,7 @@ public class AnnouncementsApi {
     /**
      * List announcement groups
      * ## List announcement groups  Retrieves a list of announcement groups.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcement-groups ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ListAnnouncementGroupsResponse
@@ -1099,7 +1134,7 @@ public class AnnouncementsApi {
     /**
      * List announcement groups
      * ## List announcement groups  Retrieves a list of announcement groups.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcement-groups ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;ListAnnouncementGroupsResponse&gt;
@@ -1119,7 +1154,7 @@ public class AnnouncementsApi {
     /**
      * List announcement groups (asynchronously)
      * ## List announcement groups  Retrieves a list of announcement groups.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcement-groups ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1140,7 +1175,7 @@ public class AnnouncementsApi {
     }
     /**
      * Build call for listAnnouncements
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param order  (optional)
@@ -1228,6 +1263,11 @@ public class AnnouncementsApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listAnnouncementsValidateBeforeCall(String apiToken, String token, Integer limit, String order, String status, String announcementGroup, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listAnnouncements(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = listAnnouncementsCall(apiToken, token, limit, order, status, announcementGroup, _callback);
         return localVarCall;
@@ -1237,7 +1277,7 @@ public class AnnouncementsApi {
     /**
      * List announcements
      * ## List announcements  Retrieves a list of announcements.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcements ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param order  (optional)
@@ -1259,7 +1299,7 @@ public class AnnouncementsApi {
     /**
      * List announcements
      * ## List announcements  Retrieves a list of announcements.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcements ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param order  (optional)
@@ -1282,7 +1322,7 @@ public class AnnouncementsApi {
     /**
      * List announcements (asynchronously)
      * ## List announcements  Retrieves a list of announcements.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcements ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param order  (optional)
@@ -1306,7 +1346,7 @@ public class AnnouncementsApi {
     }
     /**
      * Build call for scheduleAnnouncement
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param scheduleAnnouncementData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1370,6 +1410,11 @@ public class AnnouncementsApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call scheduleAnnouncementValidateBeforeCall(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling scheduleAnnouncement(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = scheduleAnnouncementCall(apiToken, scheduleAnnouncementData, _callback);
         return localVarCall;
@@ -1379,7 +1424,7 @@ public class AnnouncementsApi {
     /**
      * Schedule an announcement
      * ## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param scheduleAnnouncementData  (optional)
      * @return ScheduleAnnouncementResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1397,7 +1442,7 @@ public class AnnouncementsApi {
     /**
      * Schedule an announcement
      * ## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param scheduleAnnouncementData  (optional)
      * @return ApiResponse&lt;ScheduleAnnouncementResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1416,7 +1461,7 @@ public class AnnouncementsApi {
     /**
      * Schedule an announcement (asynchronously)
      * ## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param scheduleAnnouncementData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1436,8 +1481,8 @@ public class AnnouncementsApi {
     }
     /**
      * Build call for updateAnnouncementById
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param updateAnnouncementByIdData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1448,7 +1493,7 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAnnouncementByIdCall(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAnnouncementByIdCall(String apiToken, String uniqueId, UpdateAnnouncementByIdData updateAnnouncementByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1500,7 +1545,12 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAnnouncementByIdValidateBeforeCall(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAnnouncementByIdValidateBeforeCall(String apiToken, String uniqueId, UpdateAnnouncementByIdData updateAnnouncementByIdData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateAnnouncementById(Async)");
+        }
         
         // verify the required parameter 'uniqueId' is set
         if (uniqueId == null) {
@@ -1508,7 +1558,7 @@ public class AnnouncementsApi {
         }
         
 
-        okhttp3.Call localVarCall = updateAnnouncementByIdCall(uniqueId, apiToken, updateAnnouncementByIdData, _callback);
+        okhttp3.Call localVarCall = updateAnnouncementByIdCall(apiToken, uniqueId, updateAnnouncementByIdData, _callback);
         return localVarCall;
 
     }
@@ -1516,8 +1566,8 @@ public class AnnouncementsApi {
     /**
      * Update an announcement
      * ## Update an announcement  Updates information of a specific announcement before it starts or changes the status of a specific announcement after it starts. For the 2 different applications, refer to the request body below.  &gt;__Note__: Updating information of an announcement is possible only when the announcement status is scheduled, indicating it hasn&#39;t started yet.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-update-an-announcement ----------------------------
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param updateAnnouncementByIdData  (optional)
      * @return UpdateAnnouncementByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1527,16 +1577,16 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public UpdateAnnouncementByIdResponse updateAnnouncementById(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
-        ApiResponse<UpdateAnnouncementByIdResponse> localVarResp = updateAnnouncementByIdWithHttpInfo(uniqueId, apiToken, updateAnnouncementByIdData);
+    public UpdateAnnouncementByIdResponse updateAnnouncementById(String apiToken, String uniqueId, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
+        ApiResponse<UpdateAnnouncementByIdResponse> localVarResp = updateAnnouncementByIdWithHttpInfo(apiToken, uniqueId, updateAnnouncementByIdData);
         return localVarResp.getData();
     }
 
     /**
      * Update an announcement
      * ## Update an announcement  Updates information of a specific announcement before it starts or changes the status of a specific announcement after it starts. For the 2 different applications, refer to the request body below.  &gt;__Note__: Updating information of an announcement is possible only when the announcement status is scheduled, indicating it hasn&#39;t started yet.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-update-an-announcement ----------------------------
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param updateAnnouncementByIdData  (optional)
      * @return ApiResponse&lt;UpdateAnnouncementByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1546,8 +1596,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
-        okhttp3.Call localVarCall = updateAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, updateAnnouncementByIdData, null);
+    public ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
+        okhttp3.Call localVarCall = updateAnnouncementByIdValidateBeforeCall(apiToken, uniqueId, updateAnnouncementByIdData, null);
         Type localVarReturnType = new TypeToken<UpdateAnnouncementByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1555,8 +1605,8 @@ public class AnnouncementsApi {
     /**
      * Update an announcement (asynchronously)
      * ## Update an announcement  Updates information of a specific announcement before it starts or changes the status of a specific announcement after it starts. For the 2 different applications, refer to the request body below.  &gt;__Note__: Updating information of an announcement is possible only when the announcement status is scheduled, indicating it hasn&#39;t started yet.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-update-an-announcement ----------------------------
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param updateAnnouncementByIdData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1567,17 +1617,17 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAnnouncementByIdAsync(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData, final ApiCallback<UpdateAnnouncementByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call updateAnnouncementByIdAsync(String apiToken, String uniqueId, UpdateAnnouncementByIdData updateAnnouncementByIdData, final ApiCallback<UpdateAnnouncementByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, updateAnnouncementByIdData, _callback);
+        okhttp3.Call localVarCall = updateAnnouncementByIdValidateBeforeCall(apiToken, uniqueId, updateAnnouncementByIdData, _callback);
         Type localVarReturnType = new TypeToken<UpdateAnnouncementByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewAnnouncementById
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1587,7 +1637,7 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewAnnouncementByIdCall(String uniqueId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewAnnouncementByIdCall(String apiToken, String uniqueId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1639,7 +1689,12 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewAnnouncementByIdValidateBeforeCall(String uniqueId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewAnnouncementByIdValidateBeforeCall(String apiToken, String uniqueId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewAnnouncementById(Async)");
+        }
         
         // verify the required parameter 'uniqueId' is set
         if (uniqueId == null) {
@@ -1647,7 +1702,7 @@ public class AnnouncementsApi {
         }
         
 
-        okhttp3.Call localVarCall = viewAnnouncementByIdCall(uniqueId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewAnnouncementByIdCall(apiToken, uniqueId, _callback);
         return localVarCall;
 
     }
@@ -1655,8 +1710,8 @@ public class AnnouncementsApi {
     /**
      * View an announcement
      * ## View an announcement  Retrieves information on a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-view-an-announcement ----------------------------
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @return ViewAnnouncementByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1665,16 +1720,16 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewAnnouncementByIdResponse viewAnnouncementById(String uniqueId, String apiToken) throws ApiException {
-        ApiResponse<ViewAnnouncementByIdResponse> localVarResp = viewAnnouncementByIdWithHttpInfo(uniqueId, apiToken);
+    public ViewAnnouncementByIdResponse viewAnnouncementById(String apiToken, String uniqueId) throws ApiException {
+        ApiResponse<ViewAnnouncementByIdResponse> localVarResp = viewAnnouncementByIdWithHttpInfo(apiToken, uniqueId);
         return localVarResp.getData();
     }
 
     /**
      * View an announcement
      * ## View an announcement  Retrieves information on a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-view-an-announcement ----------------------------
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewAnnouncementByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1683,8 +1738,8 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, null);
+    public ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId) throws ApiException {
+        okhttp3.Call localVarCall = viewAnnouncementByIdValidateBeforeCall(apiToken, uniqueId, null);
         Type localVarReturnType = new TypeToken<ViewAnnouncementByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1692,8 +1747,8 @@ public class AnnouncementsApi {
     /**
      * View an announcement (asynchronously)
      * ## View an announcement  Retrieves information on a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-view-an-announcement ----------------------------
+     * @param apiToken  (required)
      * @param uniqueId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1703,9 +1758,9 @@ public class AnnouncementsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewAnnouncementByIdAsync(String uniqueId, String apiToken, final ApiCallback<ViewAnnouncementByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call viewAnnouncementByIdAsync(String apiToken, String uniqueId, final ApiCallback<ViewAnnouncementByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewAnnouncementByIdValidateBeforeCall(uniqueId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewAnnouncementByIdValidateBeforeCall(apiToken, uniqueId, _callback);
         Type localVarReturnType = new TypeToken<ViewAnnouncementByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

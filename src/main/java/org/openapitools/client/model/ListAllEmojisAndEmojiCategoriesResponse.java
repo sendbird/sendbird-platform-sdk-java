@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListAllEmojisAndEmojiCategoriesResponseEmoj
 /**
  * ListAllEmojisAndEmojiCategoriesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-10T13:13:38.822057Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
 public class ListAllEmojisAndEmojiCategoriesResponse {
   public static final String SERIALIZED_NAME_EMOJI_HASH = "emoji_hash";
   @SerializedName(SERIALIZED_NAME_EMOJI_HASH)

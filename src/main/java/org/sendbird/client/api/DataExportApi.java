@@ -77,8 +77,8 @@ public class DataExportApi {
 
     /**
      * Build call for listDataExportsByMessageChannelOrUser
+     * @param apiToken  (required)
      * @param dataType  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -90,7 +90,7 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDataExportsByMessageChannelOrUserCall(String dataType, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDataExportsByMessageChannelOrUserCall(String apiToken, String dataType, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -150,7 +150,12 @@ public class DataExportApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDataExportsByMessageChannelOrUserValidateBeforeCall(String dataType, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDataExportsByMessageChannelOrUserValidateBeforeCall(String apiToken, String dataType, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listDataExportsByMessageChannelOrUser(Async)");
+        }
         
         // verify the required parameter 'dataType' is set
         if (dataType == null) {
@@ -158,7 +163,7 @@ public class DataExportApi {
         }
         
 
-        okhttp3.Call localVarCall = listDataExportsByMessageChannelOrUserCall(dataType, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listDataExportsByMessageChannelOrUserCall(apiToken, dataType, token, limit, _callback);
         return localVarCall;
 
     }
@@ -166,8 +171,8 @@ public class DataExportApi {
     /**
      * List data exports by message, channel, or user
      * ## List data exports by message, channel, or user  Retrieves a list of message, channel or user data exports  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-list-data-exports-by-message,-channel,-or-user ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a data export to retrieve. Acceptable values are messages, channels, users, and failed_webhooks.
+     * @param apiToken  (required)
      * @param dataType  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ListDataExportsByMessageChannelOrUserResponse
@@ -178,16 +183,16 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListDataExportsByMessageChannelOrUserResponse listDataExportsByMessageChannelOrUser(String dataType, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<ListDataExportsByMessageChannelOrUserResponse> localVarResp = listDataExportsByMessageChannelOrUserWithHttpInfo(dataType, apiToken, token, limit);
+    public ListDataExportsByMessageChannelOrUserResponse listDataExportsByMessageChannelOrUser(String apiToken, String dataType, String token, Integer limit) throws ApiException {
+        ApiResponse<ListDataExportsByMessageChannelOrUserResponse> localVarResp = listDataExportsByMessageChannelOrUserWithHttpInfo(apiToken, dataType, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List data exports by message, channel, or user
      * ## List data exports by message, channel, or user  Retrieves a list of message, channel or user data exports  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-list-data-exports-by-message,-channel,-or-user ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a data export to retrieve. Acceptable values are messages, channels, users, and failed_webhooks.
+     * @param apiToken  (required)
      * @param dataType  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;ListDataExportsByMessageChannelOrUserResponse&gt;
@@ -198,8 +203,8 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExportsByMessageChannelOrUserWithHttpInfo(String dataType, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = listDataExportsByMessageChannelOrUserValidateBeforeCall(dataType, apiToken, token, limit, null);
+    public ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExportsByMessageChannelOrUserWithHttpInfo(String apiToken, String dataType, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listDataExportsByMessageChannelOrUserValidateBeforeCall(apiToken, dataType, token, limit, null);
         Type localVarReturnType = new TypeToken<ListDataExportsByMessageChannelOrUserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -207,8 +212,8 @@ public class DataExportApi {
     /**
      * List data exports by message, channel, or user (asynchronously)
      * ## List data exports by message, channel, or user  Retrieves a list of message, channel or user data exports  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-list-data-exports-by-message,-channel,-or-user ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a data export to retrieve. Acceptable values are messages, channels, users, and failed_webhooks.
+     * @param apiToken  (required)
      * @param dataType  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -220,17 +225,17 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDataExportsByMessageChannelOrUserAsync(String dataType, String apiToken, String token, Integer limit, final ApiCallback<ListDataExportsByMessageChannelOrUserResponse> _callback) throws ApiException {
+    public okhttp3.Call listDataExportsByMessageChannelOrUserAsync(String apiToken, String dataType, String token, Integer limit, final ApiCallback<ListDataExportsByMessageChannelOrUserResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listDataExportsByMessageChannelOrUserValidateBeforeCall(dataType, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listDataExportsByMessageChannelOrUserValidateBeforeCall(apiToken, dataType, token, limit, _callback);
         Type localVarReturnType = new TypeToken<ListDataExportsByMessageChannelOrUserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for registerAndScheduleDataExport
+     * @param apiToken  (required)
      * @param dataType  (required)
-     * @param apiToken  (optional)
      * @param registerAndScheduleDataExportData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -241,7 +246,7 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerAndScheduleDataExportCall(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call registerAndScheduleDataExportCall(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -293,7 +298,12 @@ public class DataExportApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call registerAndScheduleDataExportValidateBeforeCall(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call registerAndScheduleDataExportValidateBeforeCall(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling registerAndScheduleDataExport(Async)");
+        }
         
         // verify the required parameter 'dataType' is set
         if (dataType == null) {
@@ -301,7 +311,7 @@ public class DataExportApi {
         }
         
 
-        okhttp3.Call localVarCall = registerAndScheduleDataExportCall(dataType, apiToken, registerAndScheduleDataExportData, _callback);
+        okhttp3.Call localVarCall = registerAndScheduleDataExportCall(apiToken, dataType, registerAndScheduleDataExportData, _callback);
         return localVarCall;
 
     }
@@ -309,8 +319,8 @@ public class DataExportApi {
     /**
      * Register and schedule a data export
      * ## Register and schedule a data export  Registers and schedules a message, channel, or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-register-and-schedule-a-data-export ----------------------------
+     * @param apiToken  (required)
      * @param dataType  (required)
-     * @param apiToken  (optional)
      * @param registerAndScheduleDataExportData  (optional)
      * @return RegisterAndScheduleDataExportResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -320,16 +330,16 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public RegisterAndScheduleDataExportResponse registerAndScheduleDataExport(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
-        ApiResponse<RegisterAndScheduleDataExportResponse> localVarResp = registerAndScheduleDataExportWithHttpInfo(dataType, apiToken, registerAndScheduleDataExportData);
+    public RegisterAndScheduleDataExportResponse registerAndScheduleDataExport(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
+        ApiResponse<RegisterAndScheduleDataExportResponse> localVarResp = registerAndScheduleDataExportWithHttpInfo(apiToken, dataType, registerAndScheduleDataExportData);
         return localVarResp.getData();
     }
 
     /**
      * Register and schedule a data export
      * ## Register and schedule a data export  Registers and schedules a message, channel, or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-register-and-schedule-a-data-export ----------------------------
+     * @param apiToken  (required)
      * @param dataType  (required)
-     * @param apiToken  (optional)
      * @param registerAndScheduleDataExportData  (optional)
      * @return ApiResponse&lt;RegisterAndScheduleDataExportResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -339,8 +349,8 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDataExportWithHttpInfo(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
-        okhttp3.Call localVarCall = registerAndScheduleDataExportValidateBeforeCall(dataType, apiToken, registerAndScheduleDataExportData, null);
+    public ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDataExportWithHttpInfo(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
+        okhttp3.Call localVarCall = registerAndScheduleDataExportValidateBeforeCall(apiToken, dataType, registerAndScheduleDataExportData, null);
         Type localVarReturnType = new TypeToken<RegisterAndScheduleDataExportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -348,8 +358,8 @@ public class DataExportApi {
     /**
      * Register and schedule a data export (asynchronously)
      * ## Register and schedule a data export  Registers and schedules a message, channel, or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-register-and-schedule-a-data-export ----------------------------
+     * @param apiToken  (required)
      * @param dataType  (required)
-     * @param apiToken  (optional)
      * @param registerAndScheduleDataExportData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -360,18 +370,18 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerAndScheduleDataExportAsync(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData, final ApiCallback<RegisterAndScheduleDataExportResponse> _callback) throws ApiException {
+    public okhttp3.Call registerAndScheduleDataExportAsync(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData, final ApiCallback<RegisterAndScheduleDataExportResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = registerAndScheduleDataExportValidateBeforeCall(dataType, apiToken, registerAndScheduleDataExportData, _callback);
+        okhttp3.Call localVarCall = registerAndScheduleDataExportValidateBeforeCall(apiToken, dataType, registerAndScheduleDataExportData, _callback);
         Type localVarReturnType = new TypeToken<RegisterAndScheduleDataExportResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewDataExportById
+     * @param apiToken  (required)
      * @param dataType  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -381,7 +391,7 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewDataExportByIdCall(String dataType, String requestId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewDataExportByIdCall(String apiToken, String dataType, String requestId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -434,7 +444,12 @@ public class DataExportApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewDataExportByIdValidateBeforeCall(String dataType, String requestId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewDataExportByIdValidateBeforeCall(String apiToken, String dataType, String requestId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewDataExportById(Async)");
+        }
         
         // verify the required parameter 'dataType' is set
         if (dataType == null) {
@@ -447,7 +462,7 @@ public class DataExportApi {
         }
         
 
-        okhttp3.Call localVarCall = viewDataExportByIdCall(dataType, requestId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewDataExportByIdCall(apiToken, dataType, requestId, _callback);
         return localVarCall;
 
     }
@@ -455,9 +470,9 @@ public class DataExportApi {
     /**
      * View a data export
      * ## View a data export  Retrieves information on a message, channel or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-view-a-data-export ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a targeted data export. Acceptable values are messages, channels,  users, and failed_webhooks.  &#x60;request_id&#x60;      Type: string      Description: Specifies the unique ID of a data export to retrieve.
+     * @param apiToken  (required)
      * @param dataType  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @return ViewDataExportByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -466,17 +481,17 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewDataExportByIdResponse viewDataExportById(String dataType, String requestId, String apiToken) throws ApiException {
-        ApiResponse<ViewDataExportByIdResponse> localVarResp = viewDataExportByIdWithHttpInfo(dataType, requestId, apiToken);
+    public ViewDataExportByIdResponse viewDataExportById(String apiToken, String dataType, String requestId) throws ApiException {
+        ApiResponse<ViewDataExportByIdResponse> localVarResp = viewDataExportByIdWithHttpInfo(apiToken, dataType, requestId);
         return localVarResp.getData();
     }
 
     /**
      * View a data export
      * ## View a data export  Retrieves information on a message, channel or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-view-a-data-export ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a targeted data export. Acceptable values are messages, channels,  users, and failed_webhooks.  &#x60;request_id&#x60;      Type: string      Description: Specifies the unique ID of a data export to retrieve.
+     * @param apiToken  (required)
      * @param dataType  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewDataExportByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -485,8 +500,8 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(String dataType, String requestId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewDataExportByIdValidateBeforeCall(dataType, requestId, apiToken, null);
+    public ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(String apiToken, String dataType, String requestId) throws ApiException {
+        okhttp3.Call localVarCall = viewDataExportByIdValidateBeforeCall(apiToken, dataType, requestId, null);
         Type localVarReturnType = new TypeToken<ViewDataExportByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -494,9 +509,9 @@ public class DataExportApi {
     /**
      * View a data export (asynchronously)
      * ## View a data export  Retrieves information on a message, channel or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-view-a-data-export ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a targeted data export. Acceptable values are messages, channels,  users, and failed_webhooks.  &#x60;request_id&#x60;      Type: string      Description: Specifies the unique ID of a data export to retrieve.
+     * @param apiToken  (required)
      * @param dataType  (required)
      * @param requestId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -506,9 +521,9 @@ public class DataExportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewDataExportByIdAsync(String dataType, String requestId, String apiToken, final ApiCallback<ViewDataExportByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call viewDataExportByIdAsync(String apiToken, String dataType, String requestId, final ApiCallback<ViewDataExportByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewDataExportByIdValidateBeforeCall(dataType, requestId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewDataExportByIdValidateBeforeCall(apiToken, dataType, requestId, _callback);
         Type localVarReturnType = new TypeToken<ViewDataExportByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

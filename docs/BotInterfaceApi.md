@@ -58,7 +58,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **createBotData** | [**CreateBotData**](CreateBotData.md)|  | [optional]
 
 ### Return type
@@ -81,7 +81,7 @@ No authorization required
 
 <a name="deleteBotById"></a>
 # **deleteBotById**
-> deleteBotById(botUserid, apiToken)
+> deleteBotById(apiToken, botUserid)
 
 Delete a bot
 
@@ -102,10 +102,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     BotInterfaceApi apiInstance = new BotInterfaceApi(defaultClient);
-    String botUserid = "botUserid_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String botUserid = "botUserid_example"; // String | 
     try {
-      apiInstance.deleteBotById(botUserid, apiToken);
+      apiInstance.deleteBotById(apiToken, botUserid);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#deleteBotById");
       System.err.println("Status code: " + e.getCode());
@@ -121,8 +121,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **botUserid** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -144,7 +144,7 @@ No authorization required
 
 <a name="joinChannels"></a>
 # **joinChannels**
-> SendBirdGroupChannelCollection joinChannels(botUserid, apiToken, joinChannelsData)
+> SendBirdGroupChannelCollection joinChannels(apiToken, botUserid, joinChannelsData)
 
 Join channels
 
@@ -165,11 +165,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     BotInterfaceApi apiInstance = new BotInterfaceApi(defaultClient);
-    String botUserid = "botUserid_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String botUserid = "botUserid_example"; // String | 
     JoinChannelsData joinChannelsData = new JoinChannelsData(); // JoinChannelsData | 
     try {
-      SendBirdGroupChannelCollection result = apiInstance.joinChannels(botUserid, apiToken, joinChannelsData);
+      SendBirdGroupChannelCollection result = apiInstance.joinChannels(apiToken, botUserid, joinChannelsData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#joinChannels");
@@ -186,8 +186,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **botUserid** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **joinChannelsData** | [**JoinChannelsData**](JoinChannelsData.md)|  | [optional]
 
 ### Return type
@@ -210,7 +210,7 @@ No authorization required
 
 <a name="leaveChannels"></a>
 # **leaveChannels**
-> leaveChannels(botUserid, apiToken, channelUrl)
+> leaveChannels(apiToken, botUserid, channelUrl)
 
 Leave channels - When leaving all channels
 
@@ -231,11 +231,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     BotInterfaceApi apiInstance = new BotInterfaceApi(defaultClient);
-    String botUserid = "botUserid_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String botUserid = "botUserid_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     try {
-      apiInstance.leaveChannels(botUserid, apiToken, channelUrl);
+      apiInstance.leaveChannels(apiToken, botUserid, channelUrl);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#leaveChannels");
       System.err.println("Status code: " + e.getCode());
@@ -251,8 +251,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **botUserid** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **channelUrl** | **String**|  | [optional]
 
 ### Return type
@@ -275,7 +275,7 @@ No authorization required
 
 <a name="leaveChannelsByUrl"></a>
 # **leaveChannelsByUrl**
-> leaveChannelsByUrl(botUserid, channelUrl, apiToken)
+> leaveChannelsByUrl(apiToken, botUserid, channelUrl)
 
 Leave channels - When leaving a channel by its channel URL
 
@@ -296,11 +296,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     BotInterfaceApi apiInstance = new BotInterfaceApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String botUserid = "botUserid_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      apiInstance.leaveChannelsByUrl(botUserid, channelUrl, apiToken);
+      apiInstance.leaveChannelsByUrl(apiToken, botUserid, channelUrl);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#leaveChannelsByUrl");
       System.err.println("Status code: " + e.getCode());
@@ -316,9 +316,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **botUserid** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -382,7 +382,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -406,7 +406,7 @@ No authorization required
 
 <a name="sendBotsMessage"></a>
 # **sendBotsMessage**
-> SendBirdMessageResponse sendBotsMessage(botUserid, apiToken, sendBotSMessageData)
+> SendBirdMessageResponse sendBotsMessage(apiToken, botUserid, sendBotSMessageData)
 
 Send a bot&#39;s message
 
@@ -427,11 +427,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     BotInterfaceApi apiInstance = new BotInterfaceApi(defaultClient);
-    String botUserid = "botUserid_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String botUserid = "botUserid_example"; // String | 
     SendBotSMessageData sendBotSMessageData = new SendBotSMessageData(); // SendBotSMessageData | 
     try {
-      SendBirdMessageResponse result = apiInstance.sendBotsMessage(botUserid, apiToken, sendBotSMessageData);
+      SendBirdMessageResponse result = apiInstance.sendBotsMessage(apiToken, botUserid, sendBotSMessageData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#sendBotsMessage");
@@ -448,8 +448,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **botUserid** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **sendBotSMessageData** | [**SendBotSMessageData**](SendBotSMessageData.md)|  | [optional]
 
 ### Return type
@@ -472,7 +472,7 @@ No authorization required
 
 <a name="updateBotById"></a>
 # **updateBotById**
-> UpdateBotByIdResponse updateBotById(botUserid, apiToken, updateBotByIdData)
+> UpdateBotByIdResponse updateBotById(apiToken, botUserid, updateBotByIdData)
 
 Update a bot
 
@@ -493,11 +493,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     BotInterfaceApi apiInstance = new BotInterfaceApi(defaultClient);
-    String botUserid = "botUserid_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String botUserid = "botUserid_example"; // String | 
     UpdateBotByIdData updateBotByIdData = new UpdateBotByIdData(); // UpdateBotByIdData | 
     try {
-      UpdateBotByIdResponse result = apiInstance.updateBotById(botUserid, apiToken, updateBotByIdData);
+      UpdateBotByIdResponse result = apiInstance.updateBotById(apiToken, botUserid, updateBotByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#updateBotById");
@@ -514,8 +514,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **botUserid** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateBotByIdData** | [**UpdateBotByIdData**](UpdateBotByIdData.md)|  | [optional]
 
 ### Return type
@@ -538,7 +538,7 @@ No authorization required
 
 <a name="viewBotById"></a>
 # **viewBotById**
-> ViewBotByIdResponse viewBotById(botUserid, apiToken)
+> ViewBotByIdResponse viewBotById(apiToken, botUserid)
 
 View a bot
 
@@ -559,10 +559,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     BotInterfaceApi apiInstance = new BotInterfaceApi(defaultClient);
-    String botUserid = "botUserid_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String botUserid = "botUserid_example"; // String | 
     try {
-      ViewBotByIdResponse result = apiInstance.viewBotById(botUserid, apiToken);
+      ViewBotByIdResponse result = apiInstance.viewBotById(apiToken, botUserid);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#viewBotById");
@@ -579,8 +579,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **botUserid** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

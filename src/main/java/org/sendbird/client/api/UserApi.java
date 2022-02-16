@@ -111,9 +111,9 @@ public class UserApi {
 
     /**
      * Build call for addRegistrationOrDeviceToken
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
-     * @param apiToken  (optional)
      * @param addRegistrationOrDeviceTokenData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -124,7 +124,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addRegistrationOrDeviceTokenCall(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addRegistrationOrDeviceTokenCall(String apiToken, String userId, String tokenType, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -177,7 +177,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addRegistrationOrDeviceTokenValidateBeforeCall(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addRegistrationOrDeviceTokenValidateBeforeCall(String apiToken, String userId, String tokenType, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling addRegistrationOrDeviceToken(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -190,7 +195,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = addRegistrationOrDeviceTokenCall(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData, _callback);
+        okhttp3.Call localVarCall = addRegistrationOrDeviceTokenCall(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData, _callback);
         return localVarCall;
 
     }
@@ -198,9 +203,9 @@ public class UserApi {
     /**
      * Add a registration or device token
      * ## Add a registration or device token  &gt; __Note__: A user can have up to 20 FCM registration tokens, 20 HMS device tokens, and 20 APNs device tokens each. The oldest token will be deleted before a new token is added for a user who already has 20 registration or device tokens. Only the 20 newest tokens will be maintained for users who already have more than 20 of each token type.  To send notification requests to push notification services on behalf of your server, adds a specific user&#39;s FCM registration token, HMS device token, or APNs device token to Sendbird server. Depending on which push service you are using, you can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  A FCM registration token and an APNs device token allow identification of each client app instance on each device, and are generated and registered by Android and iOS apps through the corresponding SDKs. Use this method if you need to register a token via your own server.  &gt; __Note__: For more information on the registration token and device token, visit the Google&#39;s [FCM](https://firebase.google.com/docs/auth/admin/verify-id-tokens) page, Huawei&#39;s [Push kit](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050040060) and Apple&#39;s [APNs](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) page.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-add-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
-     * @param apiToken  (optional)
      * @param addRegistrationOrDeviceTokenData  (optional)
      * @return AddRegistrationOrDeviceTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -210,17 +215,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceToken(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
-        ApiResponse<AddRegistrationOrDeviceTokenResponse> localVarResp = addRegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
+    public AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceToken(String apiToken, String userId, String tokenType, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
+        ApiResponse<AddRegistrationOrDeviceTokenResponse> localVarResp = addRegistrationOrDeviceTokenWithHttpInfo(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData);
         return localVarResp.getData();
     }
 
     /**
      * Add a registration or device token
      * ## Add a registration or device token  &gt; __Note__: A user can have up to 20 FCM registration tokens, 20 HMS device tokens, and 20 APNs device tokens each. The oldest token will be deleted before a new token is added for a user who already has 20 registration or device tokens. Only the 20 newest tokens will be maintained for users who already have more than 20 of each token type.  To send notification requests to push notification services on behalf of your server, adds a specific user&#39;s FCM registration token, HMS device token, or APNs device token to Sendbird server. Depending on which push service you are using, you can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  A FCM registration token and an APNs device token allow identification of each client app instance on each device, and are generated and registered by Android and iOS apps through the corresponding SDKs. Use this method if you need to register a token via your own server.  &gt; __Note__: For more information on the registration token and device token, visit the Google&#39;s [FCM](https://firebase.google.com/docs/auth/admin/verify-id-tokens) page, Huawei&#39;s [Push kit](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050040060) and Apple&#39;s [APNs](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) page.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-add-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
-     * @param apiToken  (optional)
      * @param addRegistrationOrDeviceTokenData  (optional)
      * @return ApiResponse&lt;AddRegistrationOrDeviceTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -230,8 +235,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
-        okhttp3.Call localVarCall = addRegistrationOrDeviceTokenValidateBeforeCall(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData, null);
+    public ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDeviceTokenWithHttpInfo(String apiToken, String userId, String tokenType, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
+        okhttp3.Call localVarCall = addRegistrationOrDeviceTokenValidateBeforeCall(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData, null);
         Type localVarReturnType = new TypeToken<AddRegistrationOrDeviceTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -239,9 +244,9 @@ public class UserApi {
     /**
      * Add a registration or device token (asynchronously)
      * ## Add a registration or device token  &gt; __Note__: A user can have up to 20 FCM registration tokens, 20 HMS device tokens, and 20 APNs device tokens each. The oldest token will be deleted before a new token is added for a user who already has 20 registration or device tokens. Only the 20 newest tokens will be maintained for users who already have more than 20 of each token type.  To send notification requests to push notification services on behalf of your server, adds a specific user&#39;s FCM registration token, HMS device token, or APNs device token to Sendbird server. Depending on which push service you are using, you can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  A FCM registration token and an APNs device token allow identification of each client app instance on each device, and are generated and registered by Android and iOS apps through the corresponding SDKs. Use this method if you need to register a token via your own server.  &gt; __Note__: For more information on the registration token and device token, visit the Google&#39;s [FCM](https://firebase.google.com/docs/auth/admin/verify-id-tokens) page, Huawei&#39;s [Push kit](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050040060) and Apple&#39;s [APNs](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) page.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-add-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
-     * @param apiToken  (optional)
      * @param addRegistrationOrDeviceTokenData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -252,17 +257,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addRegistrationOrDeviceTokenAsync(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData, final ApiCallback<AddRegistrationOrDeviceTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call addRegistrationOrDeviceTokenAsync(String apiToken, String userId, String tokenType, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData, final ApiCallback<AddRegistrationOrDeviceTokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = addRegistrationOrDeviceTokenValidateBeforeCall(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData, _callback);
+        okhttp3.Call localVarCall = addRegistrationOrDeviceTokenValidateBeforeCall(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData, _callback);
         Type localVarReturnType = new TypeToken<AddRegistrationOrDeviceTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for banFromChannelsWithCustomChannelTypes
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param banFromChannelsWithCustomChannelTypesData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -273,7 +278,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call banFromChannelsWithCustomChannelTypesCall(String userId, String apiToken, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call banFromChannelsWithCustomChannelTypesCall(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -325,7 +330,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call banFromChannelsWithCustomChannelTypesValidateBeforeCall(String userId, String apiToken, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call banFromChannelsWithCustomChannelTypesValidateBeforeCall(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling banFromChannelsWithCustomChannelTypes(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -333,7 +343,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = banFromChannelsWithCustomChannelTypesCall(userId, apiToken, banFromChannelsWithCustomChannelTypesData, _callback);
+        okhttp3.Call localVarCall = banFromChannelsWithCustomChannelTypesCall(apiToken, userId, banFromChannelsWithCustomChannelTypesData, _callback);
         return localVarCall;
 
     }
@@ -341,8 +351,8 @@ public class UserApi {
     /**
      * Ban from channels with custom channel types
      * ## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param banFromChannelsWithCustomChannelTypesData  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -351,15 +361,15 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void banFromChannelsWithCustomChannelTypes(String userId, String apiToken, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) throws ApiException {
-        banFromChannelsWithCustomChannelTypesWithHttpInfo(userId, apiToken, banFromChannelsWithCustomChannelTypesData);
+    public void banFromChannelsWithCustomChannelTypes(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) throws ApiException {
+        banFromChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, banFromChannelsWithCustomChannelTypesData);
     }
 
     /**
      * Ban from channels with custom channel types
      * ## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param banFromChannelsWithCustomChannelTypesData  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -369,16 +379,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> banFromChannelsWithCustomChannelTypesWithHttpInfo(String userId, String apiToken, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) throws ApiException {
-        okhttp3.Call localVarCall = banFromChannelsWithCustomChannelTypesValidateBeforeCall(userId, apiToken, banFromChannelsWithCustomChannelTypesData, null);
+    public ApiResponse<Void> banFromChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) throws ApiException {
+        okhttp3.Call localVarCall = banFromChannelsWithCustomChannelTypesValidateBeforeCall(apiToken, userId, banFromChannelsWithCustomChannelTypesData, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Ban from channels with custom channel types (asynchronously)
      * ## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param banFromChannelsWithCustomChannelTypesData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -389,16 +399,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call banFromChannelsWithCustomChannelTypesAsync(String userId, String apiToken, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call banFromChannelsWithCustomChannelTypesAsync(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = banFromChannelsWithCustomChannelTypesValidateBeforeCall(userId, apiToken, banFromChannelsWithCustomChannelTypesData, _callback);
+        okhttp3.Call localVarCall = banFromChannelsWithCustomChannelTypesValidateBeforeCall(apiToken, userId, banFromChannelsWithCustomChannelTypesData, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for blockUser
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param blockUserData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -409,7 +419,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call blockUserCall(String userId, String apiToken, BlockUserData blockUserData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call blockUserCall(String apiToken, String userId, BlockUserData blockUserData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -461,7 +471,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call blockUserValidateBeforeCall(String userId, String apiToken, BlockUserData blockUserData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call blockUserValidateBeforeCall(String apiToken, String userId, BlockUserData blockUserData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling blockUser(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -469,7 +484,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = blockUserCall(userId, apiToken, blockUserData, _callback);
+        okhttp3.Call localVarCall = blockUserCall(apiToken, userId, blockUserData, _callback);
         return localVarCall;
 
     }
@@ -477,8 +492,8 @@ public class UserApi {
     /**
      * Block a user
      * ## Block a user  Allows a user to block another user. A user doesn&#39;t receive messages from someone they have blocked anymore. Also, blocking someone doesn&#39;t alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can&#39;t receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param blockUserData  (optional)
      * @return SendBirdUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -488,16 +503,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdUser blockUser(String userId, String apiToken, BlockUserData blockUserData) throws ApiException {
-        ApiResponse<SendBirdUser> localVarResp = blockUserWithHttpInfo(userId, apiToken, blockUserData);
+    public SendBirdUser blockUser(String apiToken, String userId, BlockUserData blockUserData) throws ApiException {
+        ApiResponse<SendBirdUser> localVarResp = blockUserWithHttpInfo(apiToken, userId, blockUserData);
         return localVarResp.getData();
     }
 
     /**
      * Block a user
      * ## Block a user  Allows a user to block another user. A user doesn&#39;t receive messages from someone they have blocked anymore. Also, blocking someone doesn&#39;t alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can&#39;t receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param blockUserData  (optional)
      * @return ApiResponse&lt;SendBirdUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -507,8 +522,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdUser> blockUserWithHttpInfo(String userId, String apiToken, BlockUserData blockUserData) throws ApiException {
-        okhttp3.Call localVarCall = blockUserValidateBeforeCall(userId, apiToken, blockUserData, null);
+    public ApiResponse<SendBirdUser> blockUserWithHttpInfo(String apiToken, String userId, BlockUserData blockUserData) throws ApiException {
+        okhttp3.Call localVarCall = blockUserValidateBeforeCall(apiToken, userId, blockUserData, null);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -516,8 +531,8 @@ public class UserApi {
     /**
      * Block a user (asynchronously)
      * ## Block a user  Allows a user to block another user. A user doesn&#39;t receive messages from someone they have blocked anymore. Also, blocking someone doesn&#39;t alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can&#39;t receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param blockUserData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -528,17 +543,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call blockUserAsync(String userId, String apiToken, BlockUserData blockUserData, final ApiCallback<SendBirdUser> _callback) throws ApiException {
+    public okhttp3.Call blockUserAsync(String apiToken, String userId, BlockUserData blockUserData, final ApiCallback<SendBirdUser> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = blockUserValidateBeforeCall(userId, apiToken, blockUserData, _callback);
+        okhttp3.Call localVarCall = blockUserValidateBeforeCall(apiToken, userId, blockUserData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for choosePushNotificationContentTemplate
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -549,7 +564,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call choosePushNotificationContentTemplateCall(String userId, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call choosePushNotificationContentTemplateCall(String apiToken, String userId, Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -601,7 +616,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call choosePushNotificationContentTemplateValidateBeforeCall(String userId, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call choosePushNotificationContentTemplateValidateBeforeCall(String apiToken, String userId, Object body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling choosePushNotificationContentTemplate(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -609,7 +629,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = choosePushNotificationContentTemplateCall(userId, apiToken, body, _callback);
+        okhttp3.Call localVarCall = choosePushNotificationContentTemplateCall(apiToken, userId, body, _callback);
         return localVarCall;
 
     }
@@ -617,8 +637,8 @@ public class UserApi {
     /**
      * Choose a push notification content template
      * ## Choose a push notification content template  Chooses a push notification content template of a user&#39;s own. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-choose-a-push-notification-content-template ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return ChoosePushNotificationContentTemplateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -628,16 +648,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ChoosePushNotificationContentTemplateResponse choosePushNotificationContentTemplate(String userId, String apiToken, Object body) throws ApiException {
-        ApiResponse<ChoosePushNotificationContentTemplateResponse> localVarResp = choosePushNotificationContentTemplateWithHttpInfo(userId, apiToken, body);
+    public ChoosePushNotificationContentTemplateResponse choosePushNotificationContentTemplate(String apiToken, String userId, Object body) throws ApiException {
+        ApiResponse<ChoosePushNotificationContentTemplateResponse> localVarResp = choosePushNotificationContentTemplateWithHttpInfo(apiToken, userId, body);
         return localVarResp.getData();
     }
 
     /**
      * Choose a push notification content template
      * ## Choose a push notification content template  Chooses a push notification content template of a user&#39;s own. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-choose-a-push-notification-content-template ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return ApiResponse&lt;ChoosePushNotificationContentTemplateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -647,8 +667,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNotificationContentTemplateWithHttpInfo(String userId, String apiToken, Object body) throws ApiException {
-        okhttp3.Call localVarCall = choosePushNotificationContentTemplateValidateBeforeCall(userId, apiToken, body, null);
+    public ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNotificationContentTemplateWithHttpInfo(String apiToken, String userId, Object body) throws ApiException {
+        okhttp3.Call localVarCall = choosePushNotificationContentTemplateValidateBeforeCall(apiToken, userId, body, null);
         Type localVarReturnType = new TypeToken<ChoosePushNotificationContentTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -656,8 +676,8 @@ public class UserApi {
     /**
      * Choose a push notification content template (asynchronously)
      * ## Choose a push notification content template  Chooses a push notification content template of a user&#39;s own. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-choose-a-push-notification-content-template ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -668,16 +688,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call choosePushNotificationContentTemplateAsync(String userId, String apiToken, Object body, final ApiCallback<ChoosePushNotificationContentTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call choosePushNotificationContentTemplateAsync(String apiToken, String userId, Object body, final ApiCallback<ChoosePushNotificationContentTemplateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = choosePushNotificationContentTemplateValidateBeforeCall(userId, apiToken, body, _callback);
+        okhttp3.Call localVarCall = choosePushNotificationContentTemplateValidateBeforeCall(apiToken, userId, body, _callback);
         Type localVarReturnType = new TypeToken<ChoosePushNotificationContentTemplateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for createUser
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param createUserData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -741,6 +761,11 @@ public class UserApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createUserValidateBeforeCall(String apiToken, CreateUserData createUserData, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling createUser(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = createUserCall(apiToken, createUserData, _callback);
         return localVarCall;
@@ -750,7 +775,7 @@ public class UserApi {
     /**
      * Create a user
      * ## Create a user  Creates a new user in the application. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param createUserData  (optional)
      * @return SendBirdUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -768,7 +793,7 @@ public class UserApi {
     /**
      * Create a user
      * ## Create a user  Creates a new user in the application. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param createUserData  (optional)
      * @return ApiResponse&lt;SendBirdUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -787,7 +812,7 @@ public class UserApi {
     /**
      * Create a user (asynchronously)
      * ## Create a user  Creates a new user in the application. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param createUserData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -807,8 +832,8 @@ public class UserApi {
     }
     /**
      * Build call for deleteUserById
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -818,7 +843,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserByIdCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteUserByIdCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -870,7 +895,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteUserByIdValidateBeforeCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteUserByIdValidateBeforeCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteUserById(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -878,7 +908,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteUserByIdCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteUserByIdCall(apiToken, userId, _callback);
         return localVarCall;
 
     }
@@ -886,8 +916,8 @@ public class UserApi {
     /**
      * Delete a user
      * ## Delete a user  Deletes a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-delete-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -895,15 +925,15 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteUserById(String userId, String apiToken) throws ApiException {
-        deleteUserByIdWithHttpInfo(userId, apiToken);
+    public void deleteUserById(String apiToken, String userId) throws ApiException {
+        deleteUserByIdWithHttpInfo(apiToken, userId);
     }
 
     /**
      * Delete a user
      * ## Delete a user  Deletes a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-delete-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -912,16 +942,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteUserByIdWithHttpInfo(String userId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = deleteUserByIdValidateBeforeCall(userId, apiToken, null);
+    public ApiResponse<Void> deleteUserByIdWithHttpInfo(String apiToken, String userId) throws ApiException {
+        okhttp3.Call localVarCall = deleteUserByIdValidateBeforeCall(apiToken, userId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a user (asynchronously)
      * ## Delete a user  Deletes a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-delete-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -931,16 +961,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserByIdAsync(String userId, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteUserByIdAsync(String apiToken, String userId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteUserByIdValidateBeforeCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteUserByIdValidateBeforeCall(apiToken, userId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for leaveMyGroupChannels
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param leaveMyGroupChannelsData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -951,7 +981,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call leaveMyGroupChannelsCall(String userId, String apiToken, LeaveMyGroupChannelsData leaveMyGroupChannelsData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call leaveMyGroupChannelsCall(String apiToken, String userId, LeaveMyGroupChannelsData leaveMyGroupChannelsData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1003,7 +1033,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call leaveMyGroupChannelsValidateBeforeCall(String userId, String apiToken, LeaveMyGroupChannelsData leaveMyGroupChannelsData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call leaveMyGroupChannelsValidateBeforeCall(String apiToken, String userId, LeaveMyGroupChannelsData leaveMyGroupChannelsData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling leaveMyGroupChannels(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -1011,7 +1046,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = leaveMyGroupChannelsCall(userId, apiToken, leaveMyGroupChannelsData, _callback);
+        okhttp3.Call localVarCall = leaveMyGroupChannelsCall(apiToken, userId, leaveMyGroupChannelsData, _callback);
         return localVarCall;
 
     }
@@ -1019,8 +1054,8 @@ public class UserApi {
     /**
      * Leave my group channels
      * ## Leave my group channels  Makes a user leave all joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-leave-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to leave all joined group channels.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param leaveMyGroupChannelsData  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1029,15 +1064,15 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void leaveMyGroupChannels(String userId, String apiToken, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
-        leaveMyGroupChannelsWithHttpInfo(userId, apiToken, leaveMyGroupChannelsData);
+    public void leaveMyGroupChannels(String apiToken, String userId, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
+        leaveMyGroupChannelsWithHttpInfo(apiToken, userId, leaveMyGroupChannelsData);
     }
 
     /**
      * Leave my group channels
      * ## Leave my group channels  Makes a user leave all joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-leave-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to leave all joined group channels.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param leaveMyGroupChannelsData  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1047,16 +1082,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> leaveMyGroupChannelsWithHttpInfo(String userId, String apiToken, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
-        okhttp3.Call localVarCall = leaveMyGroupChannelsValidateBeforeCall(userId, apiToken, leaveMyGroupChannelsData, null);
+    public ApiResponse<Void> leaveMyGroupChannelsWithHttpInfo(String apiToken, String userId, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
+        okhttp3.Call localVarCall = leaveMyGroupChannelsValidateBeforeCall(apiToken, userId, leaveMyGroupChannelsData, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Leave my group channels (asynchronously)
      * ## Leave my group channels  Makes a user leave all joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-leave-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to leave all joined group channels.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param leaveMyGroupChannelsData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1067,16 +1102,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call leaveMyGroupChannelsAsync(String userId, String apiToken, LeaveMyGroupChannelsData leaveMyGroupChannelsData, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call leaveMyGroupChannelsAsync(String apiToken, String userId, LeaveMyGroupChannelsData leaveMyGroupChannelsData, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = leaveMyGroupChannelsValidateBeforeCall(userId, apiToken, leaveMyGroupChannelsData, _callback);
+        okhttp3.Call localVarCall = leaveMyGroupChannelsValidateBeforeCall(apiToken, userId, leaveMyGroupChannelsData, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for listBannedChannels
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -1088,7 +1123,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBannedChannelsCall(String userId, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listBannedChannelsCall(String apiToken, String userId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1148,7 +1183,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listBannedChannelsValidateBeforeCall(String userId, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listBannedChannelsValidateBeforeCall(String apiToken, String userId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listBannedChannels(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -1156,7 +1196,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = listBannedChannelsCall(userId, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listBannedChannelsCall(apiToken, userId, token, limit, _callback);
         return localVarCall;
 
     }
@@ -1164,8 +1204,8 @@ public class UserApi {
     /**
      * List banned channels
      * ## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ListBannedChannelsResponse
@@ -1176,16 +1216,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListBannedChannelsResponse listBannedChannels(String userId, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<ListBannedChannelsResponse> localVarResp = listBannedChannelsWithHttpInfo(userId, apiToken, token, limit);
+    public ListBannedChannelsResponse listBannedChannels(String apiToken, String userId, String token, Integer limit) throws ApiException {
+        ApiResponse<ListBannedChannelsResponse> localVarResp = listBannedChannelsWithHttpInfo(apiToken, userId, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List banned channels
      * ## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;ListBannedChannelsResponse&gt;
@@ -1196,8 +1236,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = listBannedChannelsValidateBeforeCall(userId, apiToken, token, limit, null);
+    public ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listBannedChannelsValidateBeforeCall(apiToken, userId, token, limit, null);
         Type localVarReturnType = new TypeToken<ListBannedChannelsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1205,8 +1245,8 @@ public class UserApi {
     /**
      * List banned channels (asynchronously)
      * ## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1218,17 +1258,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBannedChannelsAsync(String userId, String apiToken, String token, Integer limit, final ApiCallback<ListBannedChannelsResponse> _callback) throws ApiException {
+    public okhttp3.Call listBannedChannelsAsync(String apiToken, String userId, String token, Integer limit, final ApiCallback<ListBannedChannelsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listBannedChannelsValidateBeforeCall(userId, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listBannedChannelsValidateBeforeCall(apiToken, userId, token, limit, _callback);
         Type localVarReturnType = new TypeToken<ListBannedChannelsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listBlockedUsers
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param userIds  (optional)
@@ -1243,7 +1283,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBlockedUsersCall(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listBlockedUsersCall(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1315,7 +1355,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listBlockedUsersValidateBeforeCall(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listBlockedUsersValidateBeforeCall(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listBlockedUsers(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -1323,7 +1368,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = listBlockedUsersCall(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn, _callback);
+        okhttp3.Call localVarCall = listBlockedUsersCall(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn, _callback);
         return localVarCall;
 
     }
@@ -1331,8 +1376,8 @@ public class UserApi {
     /**
      * List blocked users
      * ## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param userIds  (optional)
@@ -1346,16 +1391,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListBlockedUsersResponse listBlockedUsers(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
-        ApiResponse<ListBlockedUsersResponse> localVarResp = listBlockedUsersWithHttpInfo(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn);
+    public ListBlockedUsersResponse listBlockedUsers(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
+        ApiResponse<ListBlockedUsersResponse> localVarResp = listBlockedUsersWithHttpInfo(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn);
         return localVarResp.getData();
     }
 
     /**
      * List blocked users
      * ## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param userIds  (optional)
@@ -1369,8 +1414,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
-        okhttp3.Call localVarCall = listBlockedUsersValidateBeforeCall(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn, null);
+    public ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
+        okhttp3.Call localVarCall = listBlockedUsersValidateBeforeCall(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn, null);
         Type localVarReturnType = new TypeToken<ListBlockedUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1378,8 +1423,8 @@ public class UserApi {
     /**
      * List blocked users (asynchronously)
      * ## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param userIds  (optional)
@@ -1394,17 +1439,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listBlockedUsersAsync(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, final ApiCallback<ListBlockedUsersResponse> _callback) throws ApiException {
+    public okhttp3.Call listBlockedUsersAsync(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, final ApiCallback<ListBlockedUsersResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listBlockedUsersValidateBeforeCall(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn, _callback);
+        okhttp3.Call localVarCall = listBlockedUsersValidateBeforeCall(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn, _callback);
         Type localVarReturnType = new TypeToken<ListBlockedUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listMutedChannels
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -1416,7 +1461,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMutedChannelsCall(String userId, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listMutedChannelsCall(String apiToken, String userId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1476,7 +1521,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listMutedChannelsValidateBeforeCall(String userId, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listMutedChannelsValidateBeforeCall(String apiToken, String userId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listMutedChannels(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -1484,7 +1534,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = listMutedChannelsCall(userId, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listMutedChannelsCall(apiToken, userId, token, limit, _callback);
         return localVarCall;
 
     }
@@ -1492,8 +1542,8 @@ public class UserApi {
     /**
      * List muted channels
      * ## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ListMutedChannelsResponse
@@ -1504,16 +1554,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListMutedChannelsResponse listMutedChannels(String userId, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<ListMutedChannelsResponse> localVarResp = listMutedChannelsWithHttpInfo(userId, apiToken, token, limit);
+    public ListMutedChannelsResponse listMutedChannels(String apiToken, String userId, String token, Integer limit) throws ApiException {
+        ApiResponse<ListMutedChannelsResponse> localVarResp = listMutedChannelsWithHttpInfo(apiToken, userId, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List muted channels
      * ## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;ListMutedChannelsResponse&gt;
@@ -1524,8 +1574,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = listMutedChannelsValidateBeforeCall(userId, apiToken, token, limit, null);
+    public ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listMutedChannelsValidateBeforeCall(apiToken, userId, token, limit, null);
         Type localVarReturnType = new TypeToken<ListMutedChannelsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1533,8 +1583,8 @@ public class UserApi {
     /**
      * List muted channels (asynchronously)
      * ## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1546,17 +1596,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMutedChannelsAsync(String userId, String apiToken, String token, Integer limit, final ApiCallback<ListMutedChannelsResponse> _callback) throws ApiException {
+    public okhttp3.Call listMutedChannelsAsync(String apiToken, String userId, String token, Integer limit, final ApiCallback<ListMutedChannelsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listMutedChannelsValidateBeforeCall(userId, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listMutedChannelsValidateBeforeCall(apiToken, userId, token, limit, _callback);
         Type localVarReturnType = new TypeToken<ListMutedChannelsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listMyGroupChannels
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param distinctMode  (optional)
@@ -1606,7 +1656,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMyGroupChannelsCall(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listMyGroupChannelsCall(String apiToken, String userId, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1818,7 +1868,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listMyGroupChannelsValidateBeforeCall(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listMyGroupChannelsValidateBeforeCall(String apiToken, String userId, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listMyGroupChannels(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -1826,7 +1881,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = listMyGroupChannelsCall(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType, _callback);
+        okhttp3.Call localVarCall = listMyGroupChannelsCall(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType, _callback);
         return localVarCall;
 
     }
@@ -1834,8 +1889,8 @@ public class UserApi {
     /**
      * List my group channels
      * ## List my group channels  Retrieves all group channels that the user has joined. You can create a request based on various query parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param distinctMode  (optional)
@@ -1884,16 +1939,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListMyGroupChannelsResponse listMyGroupChannels(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
-        ApiResponse<ListMyGroupChannelsResponse> localVarResp = listMyGroupChannelsWithHttpInfo(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+    public ListMyGroupChannelsResponse listMyGroupChannels(String apiToken, String userId, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
+        ApiResponse<ListMyGroupChannelsResponse> localVarResp = listMyGroupChannelsWithHttpInfo(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
         return localVarResp.getData();
     }
 
     /**
      * List my group channels
      * ## List my group channels  Retrieves all group channels that the user has joined. You can create a request based on various query parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param distinctMode  (optional)
@@ -1942,8 +1997,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
-        okhttp3.Call localVarCall = listMyGroupChannelsValidateBeforeCall(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType, null);
+    public ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
+        okhttp3.Call localVarCall = listMyGroupChannelsValidateBeforeCall(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType, null);
         Type localVarReturnType = new TypeToken<ListMyGroupChannelsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1951,8 +2006,8 @@ public class UserApi {
     /**
      * List my group channels (asynchronously)
      * ## List my group channels  Retrieves all group channels that the user has joined. You can create a request based on various query parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param distinctMode  (optional)
@@ -2002,18 +2057,18 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMyGroupChannelsAsync(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType, final ApiCallback<ListMyGroupChannelsResponse> _callback) throws ApiException {
+    public okhttp3.Call listMyGroupChannelsAsync(String apiToken, String userId, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType, final ApiCallback<ListMyGroupChannelsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listMyGroupChannelsValidateBeforeCall(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType, _callback);
+        okhttp3.Call localVarCall = listMyGroupChannelsValidateBeforeCall(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType, _callback);
         Type localVarReturnType = new TypeToken<ListMyGroupChannelsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listRegistrationOrDeviceTokens
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2023,7 +2078,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRegistrationOrDeviceTokensCall(String userId, String tokenType, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listRegistrationOrDeviceTokensCall(String apiToken, String userId, String tokenType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2076,7 +2131,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listRegistrationOrDeviceTokensValidateBeforeCall(String userId, String tokenType, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listRegistrationOrDeviceTokensValidateBeforeCall(String apiToken, String userId, String tokenType, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listRegistrationOrDeviceTokens(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -2089,7 +2149,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = listRegistrationOrDeviceTokensCall(userId, tokenType, apiToken, _callback);
+        okhttp3.Call localVarCall = listRegistrationOrDeviceTokensCall(apiToken, userId, tokenType, _callback);
         return localVarCall;
 
     }
@@ -2097,9 +2157,9 @@ public class UserApi {
     /**
      * List registration or device tokens
      * ## List registration or device tokens  Retrieves a list of a specific user&#39;s FCM registration tokens, HMS device tokens, or APNs device tokens. You can specify either &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; in the &#x60;token_type&#x60; parameter, depending on which push notification service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-registration-or-device-tokens ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
-     * @param apiToken  (optional)
      * @return ListRegistrationOrDeviceTokensResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2108,17 +2168,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(String userId, String tokenType, String apiToken) throws ApiException {
-        ApiResponse<ListRegistrationOrDeviceTokensResponse> localVarResp = listRegistrationOrDeviceTokensWithHttpInfo(userId, tokenType, apiToken);
+    public ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(String apiToken, String userId, String tokenType) throws ApiException {
+        ApiResponse<ListRegistrationOrDeviceTokensResponse> localVarResp = listRegistrationOrDeviceTokensWithHttpInfo(apiToken, userId, tokenType);
         return localVarResp.getData();
     }
 
     /**
      * List registration or device tokens
      * ## List registration or device tokens  Retrieves a list of a specific user&#39;s FCM registration tokens, HMS device tokens, or APNs device tokens. You can specify either &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; in the &#x60;token_type&#x60; parameter, depending on which push notification service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-registration-or-device-tokens ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ListRegistrationOrDeviceTokensResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2127,8 +2187,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDeviceTokensWithHttpInfo(String userId, String tokenType, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = listRegistrationOrDeviceTokensValidateBeforeCall(userId, tokenType, apiToken, null);
+    public ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDeviceTokensWithHttpInfo(String apiToken, String userId, String tokenType) throws ApiException {
+        okhttp3.Call localVarCall = listRegistrationOrDeviceTokensValidateBeforeCall(apiToken, userId, tokenType, null);
         Type localVarReturnType = new TypeToken<ListRegistrationOrDeviceTokensResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2136,9 +2196,9 @@ public class UserApi {
     /**
      * List registration or device tokens (asynchronously)
      * ## List registration or device tokens  Retrieves a list of a specific user&#39;s FCM registration tokens, HMS device tokens, or APNs device tokens. You can specify either &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; in the &#x60;token_type&#x60; parameter, depending on which push notification service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-registration-or-device-tokens ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2148,16 +2208,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRegistrationOrDeviceTokensAsync(String userId, String tokenType, String apiToken, final ApiCallback<ListRegistrationOrDeviceTokensResponse> _callback) throws ApiException {
+    public okhttp3.Call listRegistrationOrDeviceTokensAsync(String apiToken, String userId, String tokenType, final ApiCallback<ListRegistrationOrDeviceTokensResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listRegistrationOrDeviceTokensValidateBeforeCall(userId, tokenType, apiToken, _callback);
+        okhttp3.Call localVarCall = listRegistrationOrDeviceTokensValidateBeforeCall(apiToken, userId, tokenType, _callback);
         Type localVarReturnType = new TypeToken<ListRegistrationOrDeviceTokensResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listUsers
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param activeMode  (optional)
@@ -2265,6 +2325,11 @@ public class UserApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listUsersValidateBeforeCall(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listUsers(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = listUsersCall(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn, _callback);
         return localVarCall;
@@ -2274,7 +2339,7 @@ public class UserApi {
     /**
      * List users
      * ## List users  Retrieves a list of users in your application. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-users ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param activeMode  (optional)
@@ -2300,7 +2365,7 @@ public class UserApi {
     /**
      * List users
      * ## List users  Retrieves a list of users in your application. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-users ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param activeMode  (optional)
@@ -2327,7 +2392,7 @@ public class UserApi {
     /**
      * List users (asynchronously)
      * ## List users  Retrieves a list of users in your application. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-users ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param activeMode  (optional)
@@ -2355,8 +2420,8 @@ public class UserApi {
     }
     /**
      * Build call for markAllMessagesAsRead
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param markAllMessagesAsReadData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2367,7 +2432,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markAllMessagesAsReadCall(String userId, String apiToken, MarkAllMessagesAsReadData markAllMessagesAsReadData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call markAllMessagesAsReadCall(String apiToken, String userId, MarkAllMessagesAsReadData markAllMessagesAsReadData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2419,7 +2484,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call markAllMessagesAsReadValidateBeforeCall(String userId, String apiToken, MarkAllMessagesAsReadData markAllMessagesAsReadData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call markAllMessagesAsReadValidateBeforeCall(String apiToken, String userId, MarkAllMessagesAsReadData markAllMessagesAsReadData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling markAllMessagesAsRead(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -2427,7 +2497,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = markAllMessagesAsReadCall(userId, apiToken, markAllMessagesAsReadData, _callback);
+        okhttp3.Call localVarCall = markAllMessagesAsReadCall(apiToken, userId, markAllMessagesAsReadData, _callback);
         return localVarCall;
 
     }
@@ -2435,8 +2505,8 @@ public class UserApi {
     /**
      * Mark all messages as read
      * ## Mark all messages as read  Marks all of a user&#39;s unread messages as read in the joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mark-all-messages-as-read ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param markAllMessagesAsReadData  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2445,15 +2515,15 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void markAllMessagesAsRead(String userId, String apiToken, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
-        markAllMessagesAsReadWithHttpInfo(userId, apiToken, markAllMessagesAsReadData);
+    public void markAllMessagesAsRead(String apiToken, String userId, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
+        markAllMessagesAsReadWithHttpInfo(apiToken, userId, markAllMessagesAsReadData);
     }
 
     /**
      * Mark all messages as read
      * ## Mark all messages as read  Marks all of a user&#39;s unread messages as read in the joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mark-all-messages-as-read ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param markAllMessagesAsReadData  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2463,16 +2533,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> markAllMessagesAsReadWithHttpInfo(String userId, String apiToken, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
-        okhttp3.Call localVarCall = markAllMessagesAsReadValidateBeforeCall(userId, apiToken, markAllMessagesAsReadData, null);
+    public ApiResponse<Void> markAllMessagesAsReadWithHttpInfo(String apiToken, String userId, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
+        okhttp3.Call localVarCall = markAllMessagesAsReadValidateBeforeCall(apiToken, userId, markAllMessagesAsReadData, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Mark all messages as read (asynchronously)
      * ## Mark all messages as read  Marks all of a user&#39;s unread messages as read in the joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mark-all-messages-as-read ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param markAllMessagesAsReadData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2483,16 +2553,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markAllMessagesAsReadAsync(String userId, String apiToken, MarkAllMessagesAsReadData markAllMessagesAsReadData, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call markAllMessagesAsReadAsync(String apiToken, String userId, MarkAllMessagesAsReadData markAllMessagesAsReadData, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = markAllMessagesAsReadValidateBeforeCall(userId, apiToken, markAllMessagesAsReadData, _callback);
+        okhttp3.Call localVarCall = markAllMessagesAsReadValidateBeforeCall(apiToken, userId, markAllMessagesAsReadData, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for muteInChannelsWithCustomChannelTypes
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param muteInChannelsWithCustomChannelTypesData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2503,7 +2573,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call muteInChannelsWithCustomChannelTypesCall(String userId, String apiToken, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call muteInChannelsWithCustomChannelTypesCall(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2555,7 +2625,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call muteInChannelsWithCustomChannelTypesValidateBeforeCall(String userId, String apiToken, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call muteInChannelsWithCustomChannelTypesValidateBeforeCall(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling muteInChannelsWithCustomChannelTypes(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -2563,7 +2638,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = muteInChannelsWithCustomChannelTypesCall(userId, apiToken, muteInChannelsWithCustomChannelTypesData, _callback);
+        okhttp3.Call localVarCall = muteInChannelsWithCustomChannelTypesCall(apiToken, userId, muteInChannelsWithCustomChannelTypesData, _callback);
         return localVarCall;
 
     }
@@ -2571,8 +2646,8 @@ public class UserApi {
     /**
      * Mute in channels with custom channel types
      * ## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param muteInChannelsWithCustomChannelTypesData  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2581,15 +2656,15 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void muteInChannelsWithCustomChannelTypes(String userId, String apiToken, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) throws ApiException {
-        muteInChannelsWithCustomChannelTypesWithHttpInfo(userId, apiToken, muteInChannelsWithCustomChannelTypesData);
+    public void muteInChannelsWithCustomChannelTypes(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) throws ApiException {
+        muteInChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, muteInChannelsWithCustomChannelTypesData);
     }
 
     /**
      * Mute in channels with custom channel types
      * ## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param muteInChannelsWithCustomChannelTypesData  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2599,16 +2674,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> muteInChannelsWithCustomChannelTypesWithHttpInfo(String userId, String apiToken, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) throws ApiException {
-        okhttp3.Call localVarCall = muteInChannelsWithCustomChannelTypesValidateBeforeCall(userId, apiToken, muteInChannelsWithCustomChannelTypesData, null);
+    public ApiResponse<Void> muteInChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) throws ApiException {
+        okhttp3.Call localVarCall = muteInChannelsWithCustomChannelTypesValidateBeforeCall(apiToken, userId, muteInChannelsWithCustomChannelTypesData, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Mute in channels with custom channel types (asynchronously)
      * ## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param muteInChannelsWithCustomChannelTypesData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2619,16 +2694,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call muteInChannelsWithCustomChannelTypesAsync(String userId, String apiToken, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call muteInChannelsWithCustomChannelTypesAsync(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = muteInChannelsWithCustomChannelTypesValidateBeforeCall(userId, apiToken, muteInChannelsWithCustomChannelTypesData, _callback);
+        okhttp3.Call localVarCall = muteInChannelsWithCustomChannelTypesValidateBeforeCall(apiToken, userId, muteInChannelsWithCustomChannelTypesData, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for registerAsOperatorToChannelsWithCustomChannelTypes
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param registerAsOperatorToChannelsWithCustomChannelTypesData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2639,7 +2714,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerAsOperatorToChannelsWithCustomChannelTypesCall(String userId, String apiToken, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call registerAsOperatorToChannelsWithCustomChannelTypesCall(String apiToken, String userId, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2691,7 +2766,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call registerAsOperatorToChannelsWithCustomChannelTypesValidateBeforeCall(String userId, String apiToken, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call registerAsOperatorToChannelsWithCustomChannelTypesValidateBeforeCall(String apiToken, String userId, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling registerAsOperatorToChannelsWithCustomChannelTypes(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -2699,7 +2779,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = registerAsOperatorToChannelsWithCustomChannelTypesCall(userId, apiToken, registerAsOperatorToChannelsWithCustomChannelTypesData, _callback);
+        okhttp3.Call localVarCall = registerAsOperatorToChannelsWithCustomChannelTypesCall(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData, _callback);
         return localVarCall;
 
     }
@@ -2707,8 +2787,8 @@ public class UserApi {
     /**
      * Register as an operator to channels with custom channel types
      * ## Register as an operator to channels with custom channel types  Registers a user as an operator to channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-register-as-an-operator-to-channels-with-custom-channel-types ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param registerAsOperatorToChannelsWithCustomChannelTypesData  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2717,15 +2797,15 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void registerAsOperatorToChannelsWithCustomChannelTypes(String userId, String apiToken, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
-        registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(userId, apiToken, registerAsOperatorToChannelsWithCustomChannelTypesData);
+    public void registerAsOperatorToChannelsWithCustomChannelTypes(String apiToken, String userId, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
+        registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData);
     }
 
     /**
      * Register as an operator to channels with custom channel types
      * ## Register as an operator to channels with custom channel types  Registers a user as an operator to channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-register-as-an-operator-to-channels-with-custom-channel-types ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param registerAsOperatorToChannelsWithCustomChannelTypesData  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2735,16 +2815,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(String userId, String apiToken, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
-        okhttp3.Call localVarCall = registerAsOperatorToChannelsWithCustomChannelTypesValidateBeforeCall(userId, apiToken, registerAsOperatorToChannelsWithCustomChannelTypesData, null);
+    public ApiResponse<Void> registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
+        okhttp3.Call localVarCall = registerAsOperatorToChannelsWithCustomChannelTypesValidateBeforeCall(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Register as an operator to channels with custom channel types (asynchronously)
      * ## Register as an operator to channels with custom channel types  Registers a user as an operator to channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-register-as-an-operator-to-channels-with-custom-channel-types ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param registerAsOperatorToChannelsWithCustomChannelTypesData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2755,16 +2835,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerAsOperatorToChannelsWithCustomChannelTypesAsync(String userId, String apiToken, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call registerAsOperatorToChannelsWithCustomChannelTypesAsync(String apiToken, String userId, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = registerAsOperatorToChannelsWithCustomChannelTypesValidateBeforeCall(userId, apiToken, registerAsOperatorToChannelsWithCustomChannelTypesData, _callback);
+        okhttp3.Call localVarCall = registerAsOperatorToChannelsWithCustomChannelTypesValidateBeforeCall(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for removeRegistrationOrDeviceToken
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2774,7 +2854,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeRegistrationOrDeviceTokenCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeRegistrationOrDeviceTokenCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2826,7 +2906,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeRegistrationOrDeviceTokenValidateBeforeCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeRegistrationOrDeviceTokenValidateBeforeCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling removeRegistrationOrDeviceToken(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -2834,7 +2919,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenCall(apiToken, userId, _callback);
         return localVarCall;
 
     }
@@ -2842,8 +2927,8 @@ public class UserApi {
     /**
      * Remove a registration or device token - When unregistering all device tokens
      * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @return RemoveRegistrationOrDeviceTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2852,16 +2937,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceToken(String userId, String apiToken) throws ApiException {
-        ApiResponse<RemoveRegistrationOrDeviceTokenResponse> localVarResp = removeRegistrationOrDeviceTokenWithHttpInfo(userId, apiToken);
+    public RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceToken(String apiToken, String userId) throws ApiException {
+        ApiResponse<RemoveRegistrationOrDeviceTokenResponse> localVarResp = removeRegistrationOrDeviceTokenWithHttpInfo(apiToken, userId);
         return localVarResp.getData();
     }
 
     /**
      * Remove a registration or device token - When unregistering all device tokens
      * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2870,8 +2955,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationOrDeviceTokenWithHttpInfo(String userId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenValidateBeforeCall(userId, apiToken, null);
+    public ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationOrDeviceTokenWithHttpInfo(String apiToken, String userId) throws ApiException {
+        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenValidateBeforeCall(apiToken, userId, null);
         Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2879,8 +2964,8 @@ public class UserApi {
     /**
      * Remove a registration or device token - When unregistering all device tokens (asynchronously)
      * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2890,19 +2975,19 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeRegistrationOrDeviceTokenAsync(String userId, String apiToken, final ApiCallback<RemoveRegistrationOrDeviceTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call removeRegistrationOrDeviceTokenAsync(String apiToken, String userId, final ApiCallback<RemoveRegistrationOrDeviceTokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenValidateBeforeCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenValidateBeforeCall(apiToken, userId, _callback);
         Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for removeRegistrationOrDeviceTokenByToken
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2912,7 +2997,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeRegistrationOrDeviceTokenByTokenCall(String userId, String tokenType, String token, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeRegistrationOrDeviceTokenByTokenCall(String apiToken, String userId, String tokenType, String token, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2966,7 +3051,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeRegistrationOrDeviceTokenByTokenValidateBeforeCall(String userId, String tokenType, String token, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeRegistrationOrDeviceTokenByTokenValidateBeforeCall(String apiToken, String userId, String tokenType, String token, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling removeRegistrationOrDeviceTokenByToken(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -2984,7 +3074,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenByTokenCall(userId, tokenType, token, apiToken, _callback);
+        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenByTokenCall(apiToken, userId, tokenType, token, _callback);
         return localVarCall;
 
     }
@@ -2992,10 +3082,10 @@ public class UserApi {
     /**
      * Remove a registration or device token - When unregistering a specific token
      * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @return RemoveRegistrationOrDeviceTokenByTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3004,18 +3094,18 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public RemoveRegistrationOrDeviceTokenByTokenResponse removeRegistrationOrDeviceTokenByToken(String userId, String tokenType, String token, String apiToken) throws ApiException {
-        ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> localVarResp = removeRegistrationOrDeviceTokenByTokenWithHttpInfo(userId, tokenType, token, apiToken);
+    public RemoveRegistrationOrDeviceTokenByTokenResponse removeRegistrationOrDeviceTokenByToken(String apiToken, String userId, String tokenType, String token) throws ApiException {
+        ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> localVarResp = removeRegistrationOrDeviceTokenByTokenWithHttpInfo(apiToken, userId, tokenType, token);
         return localVarResp.getData();
     }
 
     /**
      * Remove a registration or device token - When unregistering a specific token
      * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenByTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3024,8 +3114,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegistrationOrDeviceTokenByTokenWithHttpInfo(String userId, String tokenType, String token, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenByTokenValidateBeforeCall(userId, tokenType, token, apiToken, null);
+    public ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegistrationOrDeviceTokenByTokenWithHttpInfo(String apiToken, String userId, String tokenType, String token) throws ApiException {
+        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenByTokenValidateBeforeCall(apiToken, userId, tokenType, token, null);
         Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenByTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3033,10 +3123,10 @@ public class UserApi {
     /**
      * Remove a registration or device token - When unregistering a specific token (asynchronously)
      * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3046,18 +3136,18 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeRegistrationOrDeviceTokenByTokenAsync(String userId, String tokenType, String token, String apiToken, final ApiCallback<RemoveRegistrationOrDeviceTokenByTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call removeRegistrationOrDeviceTokenByTokenAsync(String apiToken, String userId, String tokenType, String token, final ApiCallback<RemoveRegistrationOrDeviceTokenByTokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenByTokenValidateBeforeCall(userId, tokenType, token, apiToken, _callback);
+        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenByTokenValidateBeforeCall(apiToken, userId, tokenType, token, _callback);
         Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenByTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for removeRegistrationOrDeviceTokenFromOwnerByToken
+     * @param apiToken  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -3067,7 +3157,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeRegistrationOrDeviceTokenFromOwnerByTokenCall(String tokenType, String token, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeRegistrationOrDeviceTokenFromOwnerByTokenCall(String apiToken, String tokenType, String token, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -3120,7 +3210,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeRegistrationOrDeviceTokenFromOwnerByTokenValidateBeforeCall(String tokenType, String token, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeRegistrationOrDeviceTokenFromOwnerByTokenValidateBeforeCall(String apiToken, String tokenType, String token, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling removeRegistrationOrDeviceTokenFromOwnerByToken(Async)");
+        }
         
         // verify the required parameter 'tokenType' is set
         if (tokenType == null) {
@@ -3133,7 +3228,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenFromOwnerByTokenCall(tokenType, token, apiToken, _callback);
+        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenFromOwnerByTokenCall(apiToken, tokenType, token, _callback);
         return localVarCall;
 
     }
@@ -3141,9 +3236,9 @@ public class UserApi {
     /**
      * Remove a registration or device token from an owner
      * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who owns it. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token-from-an-owner ----------------------------
+     * @param apiToken  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @return RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3152,17 +3247,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse removeRegistrationOrDeviceTokenFromOwnerByToken(String tokenType, String token, String apiToken) throws ApiException {
-        ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> localVarResp = removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(tokenType, token, apiToken);
+    public RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse removeRegistrationOrDeviceTokenFromOwnerByToken(String apiToken, String tokenType, String token) throws ApiException {
+        ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> localVarResp = removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(apiToken, tokenType, token);
         return localVarResp.getData();
     }
 
     /**
      * Remove a registration or device token from an owner
      * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who owns it. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token-from-an-owner ----------------------------
+     * @param apiToken  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3171,8 +3266,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenFromOwnerByTokenValidateBeforeCall(tokenType, token, apiToken, null);
+    public ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(String apiToken, String tokenType, String token) throws ApiException {
+        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenFromOwnerByTokenValidateBeforeCall(apiToken, tokenType, token, null);
         Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3180,9 +3275,9 @@ public class UserApi {
     /**
      * Remove a registration or device token from an owner (asynchronously)
      * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who owns it. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token-from-an-owner ----------------------------
+     * @param apiToken  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3192,17 +3287,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeRegistrationOrDeviceTokenFromOwnerByTokenAsync(String tokenType, String token, String apiToken, final ApiCallback<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call removeRegistrationOrDeviceTokenFromOwnerByTokenAsync(String apiToken, String tokenType, String token, final ApiCallback<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenFromOwnerByTokenValidateBeforeCall(tokenType, token, apiToken, _callback);
+        okhttp3.Call localVarCall = removeRegistrationOrDeviceTokenFromOwnerByTokenValidateBeforeCall(apiToken, tokenType, token, _callback);
         Type localVarReturnType = new TypeToken<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for resetPushPreferences
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -3212,7 +3307,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetPushPreferencesCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call resetPushPreferencesCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -3264,7 +3359,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resetPushPreferencesValidateBeforeCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resetPushPreferencesValidateBeforeCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling resetPushPreferences(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -3272,7 +3372,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = resetPushPreferencesCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = resetPushPreferencesCall(apiToken, userId, _callback);
         return localVarCall;
 
     }
@@ -3280,8 +3380,8 @@ public class UserApi {
     /**
      * Reset push preferences
      * ## Reset push preferences  Resets a user&#39;s push preferences. After performing this action,   &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; are set to false.  The values of the parameters associated with the time frame are all set to 0.  &#x60;timezone&#x60; is reset to &#x60;UTC&#x60;.  &#x60;push_sound&#x60; is reset to &#x60;default&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-reset-push-preferences ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3289,15 +3389,15 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void resetPushPreferences(String userId, String apiToken) throws ApiException {
-        resetPushPreferencesWithHttpInfo(userId, apiToken);
+    public void resetPushPreferences(String apiToken, String userId) throws ApiException {
+        resetPushPreferencesWithHttpInfo(apiToken, userId);
     }
 
     /**
      * Reset push preferences
      * ## Reset push preferences  Resets a user&#39;s push preferences. After performing this action,   &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; are set to false.  The values of the parameters associated with the time frame are all set to 0.  &#x60;timezone&#x60; is reset to &#x60;UTC&#x60;.  &#x60;push_sound&#x60; is reset to &#x60;default&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-reset-push-preferences ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3306,16 +3406,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> resetPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = resetPushPreferencesValidateBeforeCall(userId, apiToken, null);
+    public ApiResponse<Void> resetPushPreferencesWithHttpInfo(String apiToken, String userId) throws ApiException {
+        okhttp3.Call localVarCall = resetPushPreferencesValidateBeforeCall(apiToken, userId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Reset push preferences (asynchronously)
      * ## Reset push preferences  Resets a user&#39;s push preferences. After performing this action,   &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; are set to false.  The values of the parameters associated with the time frame are all set to 0.  &#x60;timezone&#x60; is reset to &#x60;UTC&#x60;.  &#x60;push_sound&#x60; is reset to &#x60;default&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-reset-push-preferences ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3325,17 +3425,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetPushPreferencesAsync(String userId, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call resetPushPreferencesAsync(String apiToken, String userId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = resetPushPreferencesValidateBeforeCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = resetPushPreferencesValidateBeforeCall(apiToken, userId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for unblockUserById
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param targetId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -3345,7 +3445,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call unblockUserByIdCall(String userId, String targetId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call unblockUserByIdCall(String apiToken, String userId, String targetId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -3398,7 +3498,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call unblockUserByIdValidateBeforeCall(String userId, String targetId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call unblockUserByIdValidateBeforeCall(String apiToken, String userId, String targetId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling unblockUserById(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -3411,7 +3516,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = unblockUserByIdCall(userId, targetId, apiToken, _callback);
+        okhttp3.Call localVarCall = unblockUserByIdCall(apiToken, userId, targetId, _callback);
         return localVarCall;
 
     }
@@ -3419,9 +3524,9 @@ public class UserApi {
     /**
      * Unblock a user
      * ## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param targetId  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3429,16 +3534,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void unblockUserById(String userId, String targetId, String apiToken) throws ApiException {
-        unblockUserByIdWithHttpInfo(userId, targetId, apiToken);
+    public void unblockUserById(String apiToken, String userId, String targetId) throws ApiException {
+        unblockUserByIdWithHttpInfo(apiToken, userId, targetId);
     }
 
     /**
      * Unblock a user
      * ## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param targetId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3447,17 +3552,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> unblockUserByIdWithHttpInfo(String userId, String targetId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = unblockUserByIdValidateBeforeCall(userId, targetId, apiToken, null);
+    public ApiResponse<Void> unblockUserByIdWithHttpInfo(String apiToken, String userId, String targetId) throws ApiException {
+        okhttp3.Call localVarCall = unblockUserByIdValidateBeforeCall(apiToken, userId, targetId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Unblock a user (asynchronously)
      * ## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param targetId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3467,16 +3572,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call unblockUserByIdAsync(String userId, String targetId, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call unblockUserByIdAsync(String apiToken, String userId, String targetId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = unblockUserByIdValidateBeforeCall(userId, targetId, apiToken, _callback);
+        okhttp3.Call localVarCall = unblockUserByIdValidateBeforeCall(apiToken, userId, targetId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateChannelInvitationPreference
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateChannelInvitationPreferenceData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -3487,7 +3592,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelInvitationPreferenceCall(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateChannelInvitationPreferenceCall(String apiToken, String userId, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -3539,7 +3644,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateChannelInvitationPreferenceValidateBeforeCall(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateChannelInvitationPreferenceValidateBeforeCall(String apiToken, String userId, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateChannelInvitationPreference(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -3547,7 +3657,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = updateChannelInvitationPreferenceCall(userId, apiToken, updateChannelInvitationPreferenceData, _callback);
+        okhttp3.Call localVarCall = updateChannelInvitationPreferenceCall(apiToken, userId, updateChannelInvitationPreferenceData, _callback);
         return localVarCall;
 
     }
@@ -3555,8 +3665,8 @@ public class UserApi {
     /**
      * Update channel invitation preference
      * ## Update channel invitation preference  Updates the channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, you can update the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateChannelInvitationPreferenceData  (optional)
      * @return UpdateChannelInvitationPreferenceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3566,16 +3676,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
-        ApiResponse<UpdateChannelInvitationPreferenceResponse> localVarResp = updateChannelInvitationPreferenceWithHttpInfo(userId, apiToken, updateChannelInvitationPreferenceData);
+    public UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(String apiToken, String userId, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
+        ApiResponse<UpdateChannelInvitationPreferenceResponse> localVarResp = updateChannelInvitationPreferenceWithHttpInfo(apiToken, userId, updateChannelInvitationPreferenceData);
         return localVarResp.getData();
     }
 
     /**
      * Update channel invitation preference
      * ## Update channel invitation preference  Updates the channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, you can update the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateChannelInvitationPreferenceData  (optional)
      * @return ApiResponse&lt;UpdateChannelInvitationPreferenceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3585,8 +3695,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
-        okhttp3.Call localVarCall = updateChannelInvitationPreferenceValidateBeforeCall(userId, apiToken, updateChannelInvitationPreferenceData, null);
+    public ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String apiToken, String userId, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
+        okhttp3.Call localVarCall = updateChannelInvitationPreferenceValidateBeforeCall(apiToken, userId, updateChannelInvitationPreferenceData, null);
         Type localVarReturnType = new TypeToken<UpdateChannelInvitationPreferenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3594,8 +3704,8 @@ public class UserApi {
     /**
      * Update channel invitation preference (asynchronously)
      * ## Update channel invitation preference  Updates the channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, you can update the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateChannelInvitationPreferenceData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -3606,18 +3716,18 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelInvitationPreferenceAsync(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData, final ApiCallback<UpdateChannelInvitationPreferenceResponse> _callback) throws ApiException {
+    public okhttp3.Call updateChannelInvitationPreferenceAsync(String apiToken, String userId, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData, final ApiCallback<UpdateChannelInvitationPreferenceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateChannelInvitationPreferenceValidateBeforeCall(userId, apiToken, updateChannelInvitationPreferenceData, _callback);
+        okhttp3.Call localVarCall = updateChannelInvitationPreferenceValidateBeforeCall(apiToken, userId, updateChannelInvitationPreferenceData, _callback);
         Type localVarReturnType = new TypeToken<UpdateChannelInvitationPreferenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateCountPreferenceOfChannelByUrl
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateCountPreferenceOfChannelByUrlData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -3628,7 +3738,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCountPreferenceOfChannelByUrlCall(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCountPreferenceOfChannelByUrlCall(String apiToken, String userId, String channelUrl, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -3681,7 +3791,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCountPreferenceOfChannelByUrlValidateBeforeCall(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCountPreferenceOfChannelByUrlValidateBeforeCall(String apiToken, String userId, String channelUrl, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateCountPreferenceOfChannelByUrl(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -3694,7 +3809,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = updateCountPreferenceOfChannelByUrlCall(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData, _callback);
+        okhttp3.Call localVarCall = updateCountPreferenceOfChannelByUrlCall(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData, _callback);
         return localVarCall;
 
     }
@@ -3702,9 +3817,9 @@ public class UserApi {
     /**
      * Update count preference of a channel
      * ## Update count preference of a channel  Updates count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-count-preference-of-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateCountPreferenceOfChannelByUrlData  (optional)
      * @return UpdateCountPreferenceOfChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3714,17 +3829,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfChannelByUrl(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
-        ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> localVarResp = updateCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
+    public UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfChannelByUrl(String apiToken, String userId, String channelUrl, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
+        ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> localVarResp = updateCountPreferenceOfChannelByUrlWithHttpInfo(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData);
         return localVarResp.getData();
     }
 
     /**
      * Update count preference of a channel
      * ## Update count preference of a channel  Updates count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-count-preference-of-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateCountPreferenceOfChannelByUrlData  (optional)
      * @return ApiResponse&lt;UpdateCountPreferenceOfChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3734,8 +3849,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
-        okhttp3.Call localVarCall = updateCountPreferenceOfChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData, null);
+    public ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
+        okhttp3.Call localVarCall = updateCountPreferenceOfChannelByUrlValidateBeforeCall(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData, null);
         Type localVarReturnType = new TypeToken<UpdateCountPreferenceOfChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3743,9 +3858,9 @@ public class UserApi {
     /**
      * Update count preference of a channel (asynchronously)
      * ## Update count preference of a channel  Updates count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-count-preference-of-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateCountPreferenceOfChannelByUrlData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -3756,17 +3871,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCountPreferenceOfChannelByUrlAsync(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData, final ApiCallback<UpdateCountPreferenceOfChannelByUrlResponse> _callback) throws ApiException {
+    public okhttp3.Call updateCountPreferenceOfChannelByUrlAsync(String apiToken, String userId, String channelUrl, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData, final ApiCallback<UpdateCountPreferenceOfChannelByUrlResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateCountPreferenceOfChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData, _callback);
+        okhttp3.Call localVarCall = updateCountPreferenceOfChannelByUrlValidateBeforeCall(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData, _callback);
         Type localVarReturnType = new TypeToken<UpdateCountPreferenceOfChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updatePushPreferences
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updatePushPreferencesData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -3777,7 +3892,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePushPreferencesCall(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePushPreferencesCall(String apiToken, String userId, UpdatePushPreferencesData updatePushPreferencesData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -3829,7 +3944,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePushPreferencesValidateBeforeCall(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePushPreferencesValidateBeforeCall(String apiToken, String userId, UpdatePushPreferencesData updatePushPreferencesData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updatePushPreferences(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -3837,7 +3957,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = updatePushPreferencesCall(userId, apiToken, updatePushPreferencesData, _callback);
+        okhttp3.Call localVarCall = updatePushPreferencesCall(apiToken, userId, updatePushPreferencesData, _callback);
         return localVarCall;
 
     }
@@ -3845,8 +3965,8 @@ public class UserApi {
     /**
      * Update push preferences
      * ## Update push preferences  Updates a user&#39;s push preferences. Through this action, you can set &#x60;do_not_disturb&#x60; for a user, and update the time frame in which the setting applies.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updatePushPreferencesData  (optional)
      * @return UpdatePushPreferencesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3856,16 +3976,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public UpdatePushPreferencesResponse updatePushPreferences(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
-        ApiResponse<UpdatePushPreferencesResponse> localVarResp = updatePushPreferencesWithHttpInfo(userId, apiToken, updatePushPreferencesData);
+    public UpdatePushPreferencesResponse updatePushPreferences(String apiToken, String userId, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
+        ApiResponse<UpdatePushPreferencesResponse> localVarResp = updatePushPreferencesWithHttpInfo(apiToken, userId, updatePushPreferencesData);
         return localVarResp.getData();
     }
 
     /**
      * Update push preferences
      * ## Update push preferences  Updates a user&#39;s push preferences. Through this action, you can set &#x60;do_not_disturb&#x60; for a user, and update the time frame in which the setting applies.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updatePushPreferencesData  (optional)
      * @return ApiResponse&lt;UpdatePushPreferencesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3875,8 +3995,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
-        okhttp3.Call localVarCall = updatePushPreferencesValidateBeforeCall(userId, apiToken, updatePushPreferencesData, null);
+    public ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String apiToken, String userId, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
+        okhttp3.Call localVarCall = updatePushPreferencesValidateBeforeCall(apiToken, userId, updatePushPreferencesData, null);
         Type localVarReturnType = new TypeToken<UpdatePushPreferencesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3884,8 +4004,8 @@ public class UserApi {
     /**
      * Update push preferences (asynchronously)
      * ## Update push preferences  Updates a user&#39;s push preferences. Through this action, you can set &#x60;do_not_disturb&#x60; for a user, and update the time frame in which the setting applies.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updatePushPreferencesData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -3896,18 +4016,18 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePushPreferencesAsync(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData, final ApiCallback<UpdatePushPreferencesResponse> _callback) throws ApiException {
+    public okhttp3.Call updatePushPreferencesAsync(String apiToken, String userId, UpdatePushPreferencesData updatePushPreferencesData, final ApiCallback<UpdatePushPreferencesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updatePushPreferencesValidateBeforeCall(userId, apiToken, updatePushPreferencesData, _callback);
+        okhttp3.Call localVarCall = updatePushPreferencesValidateBeforeCall(apiToken, userId, updatePushPreferencesData, _callback);
         Type localVarReturnType = new TypeToken<UpdatePushPreferencesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updatePushPreferencesForChannelByUrl
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updatePushPreferencesForChannelByUrlData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -3918,7 +4038,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePushPreferencesForChannelByUrlCall(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePushPreferencesForChannelByUrlCall(String apiToken, String userId, String channelUrl, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -3971,7 +4091,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePushPreferencesForChannelByUrlValidateBeforeCall(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePushPreferencesForChannelByUrlValidateBeforeCall(String apiToken, String userId, String channelUrl, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updatePushPreferencesForChannelByUrl(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -3984,7 +4109,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = updatePushPreferencesForChannelByUrlCall(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData, _callback);
+        okhttp3.Call localVarCall = updatePushPreferencesForChannelByUrlCall(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData, _callback);
         return localVarCall;
 
     }
@@ -3992,9 +4117,9 @@ public class UserApi {
     /**
      * Update push preferences for a channel
      * ## Update push preferences for a channel  Updates push preferences for a user&#39;s specific group channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences-for-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updatePushPreferencesForChannelByUrlData  (optional)
      * @return UpdatePushPreferencesForChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4004,17 +4129,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public UpdatePushPreferencesForChannelByUrlResponse updatePushPreferencesForChannelByUrl(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
-        ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> localVarResp = updatePushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
+    public UpdatePushPreferencesForChannelByUrlResponse updatePushPreferencesForChannelByUrl(String apiToken, String userId, String channelUrl, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
+        ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> localVarResp = updatePushPreferencesForChannelByUrlWithHttpInfo(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData);
         return localVarResp.getData();
     }
 
     /**
      * Update push preferences for a channel
      * ## Update push preferences for a channel  Updates push preferences for a user&#39;s specific group channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences-for-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updatePushPreferencesForChannelByUrlData  (optional)
      * @return ApiResponse&lt;UpdatePushPreferencesForChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4024,8 +4149,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
-        okhttp3.Call localVarCall = updatePushPreferencesForChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData, null);
+    public ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPreferencesForChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
+        okhttp3.Call localVarCall = updatePushPreferencesForChannelByUrlValidateBeforeCall(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData, null);
         Type localVarReturnType = new TypeToken<UpdatePushPreferencesForChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -4033,9 +4158,9 @@ public class UserApi {
     /**
      * Update push preferences for a channel (asynchronously)
      * ## Update push preferences for a channel  Updates push preferences for a user&#39;s specific group channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences-for-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updatePushPreferencesForChannelByUrlData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4046,17 +4171,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePushPreferencesForChannelByUrlAsync(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData, final ApiCallback<UpdatePushPreferencesForChannelByUrlResponse> _callback) throws ApiException {
+    public okhttp3.Call updatePushPreferencesForChannelByUrlAsync(String apiToken, String userId, String channelUrl, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData, final ApiCallback<UpdatePushPreferencesForChannelByUrlResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updatePushPreferencesForChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData, _callback);
+        okhttp3.Call localVarCall = updatePushPreferencesForChannelByUrlValidateBeforeCall(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData, _callback);
         Type localVarReturnType = new TypeToken<UpdatePushPreferencesForChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateUserById
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateUserByIdData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -4067,7 +4192,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserByIdCall(String userId, String apiToken, UpdateUserByIdData updateUserByIdData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateUserByIdCall(String apiToken, String userId, UpdateUserByIdData updateUserByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -4119,7 +4244,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateUserByIdValidateBeforeCall(String userId, String apiToken, UpdateUserByIdData updateUserByIdData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateUserByIdValidateBeforeCall(String apiToken, String userId, UpdateUserByIdData updateUserByIdData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateUserById(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -4127,7 +4257,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = updateUserByIdCall(userId, apiToken, updateUserByIdData, _callback);
+        okhttp3.Call localVarCall = updateUserByIdCall(apiToken, userId, updateUserByIdData, _callback);
         return localVarCall;
 
     }
@@ -4135,8 +4265,8 @@ public class UserApi {
     /**
      * Update a user
      * ## Update a user  Updates information on a user. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user. If the &#x60;leave_all_when_deactivated&#x60; is true (which it is by default), a user leaves all joined group channels when deactivated.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateUserByIdData  (optional)
      * @return SendBirdUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4146,16 +4276,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdUser updateUserById(String userId, String apiToken, UpdateUserByIdData updateUserByIdData) throws ApiException {
-        ApiResponse<SendBirdUser> localVarResp = updateUserByIdWithHttpInfo(userId, apiToken, updateUserByIdData);
+    public SendBirdUser updateUserById(String apiToken, String userId, UpdateUserByIdData updateUserByIdData) throws ApiException {
+        ApiResponse<SendBirdUser> localVarResp = updateUserByIdWithHttpInfo(apiToken, userId, updateUserByIdData);
         return localVarResp.getData();
     }
 
     /**
      * Update a user
      * ## Update a user  Updates information on a user. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user. If the &#x60;leave_all_when_deactivated&#x60; is true (which it is by default), a user leaves all joined group channels when deactivated.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateUserByIdData  (optional)
      * @return ApiResponse&lt;SendBirdUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4165,8 +4295,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String userId, String apiToken, UpdateUserByIdData updateUserByIdData) throws ApiException {
-        okhttp3.Call localVarCall = updateUserByIdValidateBeforeCall(userId, apiToken, updateUserByIdData, null);
+    public ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String apiToken, String userId, UpdateUserByIdData updateUserByIdData) throws ApiException {
+        okhttp3.Call localVarCall = updateUserByIdValidateBeforeCall(apiToken, userId, updateUserByIdData, null);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -4174,8 +4304,8 @@ public class UserApi {
     /**
      * Update a user (asynchronously)
      * ## Update a user  Updates information on a user. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user. If the &#x60;leave_all_when_deactivated&#x60; is true (which it is by default), a user leaves all joined group channels when deactivated.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-a-user ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateUserByIdData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4186,17 +4316,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserByIdAsync(String userId, String apiToken, UpdateUserByIdData updateUserByIdData, final ApiCallback<SendBirdUser> _callback) throws ApiException {
+    public okhttp3.Call updateUserByIdAsync(String apiToken, String userId, UpdateUserByIdData updateUserByIdData, final ApiCallback<SendBirdUser> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateUserByIdValidateBeforeCall(userId, apiToken, updateUserByIdData, _callback);
+        okhttp3.Call localVarCall = updateUserByIdValidateBeforeCall(apiToken, userId, updateUserByIdData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewChannelInvitationPreference
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -4206,7 +4336,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelInvitationPreferenceCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewChannelInvitationPreferenceCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -4258,7 +4388,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewChannelInvitationPreferenceValidateBeforeCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewChannelInvitationPreferenceValidateBeforeCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewChannelInvitationPreference(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -4266,7 +4401,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewChannelInvitationPreferenceCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewChannelInvitationPreferenceCall(apiToken, userId, _callback);
         return localVarCall;
 
     }
@@ -4274,8 +4409,8 @@ public class UserApi {
     /**
      * View channel invitation preference
      * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @return ViewChannelInvitationPreferenceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4284,16 +4419,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewChannelInvitationPreferenceResponse viewChannelInvitationPreference(String userId, String apiToken) throws ApiException {
-        ApiResponse<ViewChannelInvitationPreferenceResponse> localVarResp = viewChannelInvitationPreferenceWithHttpInfo(userId, apiToken);
+    public ViewChannelInvitationPreferenceResponse viewChannelInvitationPreference(String apiToken, String userId) throws ApiException {
+        ApiResponse<ViewChannelInvitationPreferenceResponse> localVarResp = viewChannelInvitationPreferenceWithHttpInfo(apiToken, userId);
         return localVarResp.getData();
     }
 
     /**
      * View channel invitation preference
      * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewChannelInvitationPreferenceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4302,8 +4437,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewChannelInvitationPreferenceValidateBeforeCall(userId, apiToken, null);
+    public ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitationPreferenceWithHttpInfo(String apiToken, String userId) throws ApiException {
+        okhttp3.Call localVarCall = viewChannelInvitationPreferenceValidateBeforeCall(apiToken, userId, null);
         Type localVarReturnType = new TypeToken<ViewChannelInvitationPreferenceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -4311,8 +4446,8 @@ public class UserApi {
     /**
      * View channel invitation preference (asynchronously)
      * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -4322,18 +4457,18 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelInvitationPreferenceAsync(String userId, String apiToken, final ApiCallback<ViewChannelInvitationPreferenceResponse> _callback) throws ApiException {
+    public okhttp3.Call viewChannelInvitationPreferenceAsync(String apiToken, String userId, final ApiCallback<ViewChannelInvitationPreferenceResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewChannelInvitationPreferenceValidateBeforeCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewChannelInvitationPreferenceValidateBeforeCall(apiToken, userId, _callback);
         Type localVarReturnType = new TypeToken<ViewChannelInvitationPreferenceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewCountPreferenceOfChannelByUrl
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -4343,7 +4478,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewCountPreferenceOfChannelByUrlCall(String userId, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewCountPreferenceOfChannelByUrlCall(String apiToken, String userId, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -4396,7 +4531,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewCountPreferenceOfChannelByUrlValidateBeforeCall(String userId, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewCountPreferenceOfChannelByUrlValidateBeforeCall(String apiToken, String userId, String channelUrl, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewCountPreferenceOfChannelByUrl(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -4409,7 +4549,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewCountPreferenceOfChannelByUrlCall(userId, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = viewCountPreferenceOfChannelByUrlCall(apiToken, userId, channelUrl, _callback);
         return localVarCall;
 
     }
@@ -4417,9 +4557,9 @@ public class UserApi {
     /**
      * View count preference of a channel
      * ## View count preference of a channel  Retrieves count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-count-preference-of-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ViewCountPreferenceOfChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4428,17 +4568,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewCountPreferenceOfChannelByUrlResponse viewCountPreferenceOfChannelByUrl(String userId, String channelUrl, String apiToken) throws ApiException {
-        ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> localVarResp = viewCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
+    public ViewCountPreferenceOfChannelByUrlResponse viewCountPreferenceOfChannelByUrl(String apiToken, String userId, String channelUrl) throws ApiException {
+        ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> localVarResp = viewCountPreferenceOfChannelByUrlWithHttpInfo(apiToken, userId, channelUrl);
         return localVarResp.getData();
     }
 
     /**
      * View count preference of a channel
      * ## View count preference of a channel  Retrieves count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-count-preference-of-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewCountPreferenceOfChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4447,8 +4587,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewCountPreferenceOfChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, null);
+    public ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferenceOfChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl) throws ApiException {
+        okhttp3.Call localVarCall = viewCountPreferenceOfChannelByUrlValidateBeforeCall(apiToken, userId, channelUrl, null);
         Type localVarReturnType = new TypeToken<ViewCountPreferenceOfChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -4456,9 +4596,9 @@ public class UserApi {
     /**
      * View count preference of a channel (asynchronously)
      * ## View count preference of a channel  Retrieves count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-count-preference-of-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -4468,17 +4608,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewCountPreferenceOfChannelByUrlAsync(String userId, String channelUrl, String apiToken, final ApiCallback<ViewCountPreferenceOfChannelByUrlResponse> _callback) throws ApiException {
+    public okhttp3.Call viewCountPreferenceOfChannelByUrlAsync(String apiToken, String userId, String channelUrl, final ApiCallback<ViewCountPreferenceOfChannelByUrlResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewCountPreferenceOfChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = viewCountPreferenceOfChannelByUrlValidateBeforeCall(apiToken, userId, channelUrl, _callback);
         Type localVarReturnType = new TypeToken<ViewCountPreferenceOfChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewNumberOfChannelsByJoinStatus
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param state  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -4489,7 +4629,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfChannelsByJoinStatusCall(String userId, String apiToken, String state, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfChannelsByJoinStatusCall(String apiToken, String userId, String state, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -4545,7 +4685,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewNumberOfChannelsByJoinStatusValidateBeforeCall(String userId, String apiToken, String state, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewNumberOfChannelsByJoinStatusValidateBeforeCall(String apiToken, String userId, String state, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewNumberOfChannelsByJoinStatus(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -4553,7 +4698,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewNumberOfChannelsByJoinStatusCall(userId, apiToken, state, _callback);
+        okhttp3.Call localVarCall = viewNumberOfChannelsByJoinStatusCall(apiToken, userId, state, _callback);
         return localVarCall;
 
     }
@@ -4561,8 +4706,8 @@ public class UserApi {
     /**
      * View number of channels by join status
      * ## View number of channels by join status  Retrieves the number of a user&#39;s group channels by their join status.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-by-join-status ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param state  (optional)
      * @return ViewNumberOfChannelsByJoinStatusResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4572,16 +4717,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewNumberOfChannelsByJoinStatusResponse viewNumberOfChannelsByJoinStatus(String userId, String apiToken, String state) throws ApiException {
-        ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> localVarResp = viewNumberOfChannelsByJoinStatusWithHttpInfo(userId, apiToken, state);
+    public ViewNumberOfChannelsByJoinStatusResponse viewNumberOfChannelsByJoinStatus(String apiToken, String userId, String state) throws ApiException {
+        ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> localVarResp = viewNumberOfChannelsByJoinStatusWithHttpInfo(apiToken, userId, state);
         return localVarResp.getData();
     }
 
     /**
      * View number of channels by join status
      * ## View number of channels by join status  Retrieves the number of a user&#39;s group channels by their join status.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-by-join-status ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param state  (optional)
      * @return ApiResponse&lt;ViewNumberOfChannelsByJoinStatusResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4591,8 +4736,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChannelsByJoinStatusWithHttpInfo(String userId, String apiToken, String state) throws ApiException {
-        okhttp3.Call localVarCall = viewNumberOfChannelsByJoinStatusValidateBeforeCall(userId, apiToken, state, null);
+    public ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChannelsByJoinStatusWithHttpInfo(String apiToken, String userId, String state) throws ApiException {
+        okhttp3.Call localVarCall = viewNumberOfChannelsByJoinStatusValidateBeforeCall(apiToken, userId, state, null);
         Type localVarReturnType = new TypeToken<ViewNumberOfChannelsByJoinStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -4600,8 +4745,8 @@ public class UserApi {
     /**
      * View number of channels by join status (asynchronously)
      * ## View number of channels by join status  Retrieves the number of a user&#39;s group channels by their join status.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-by-join-status ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param state  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4612,17 +4757,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfChannelsByJoinStatusAsync(String userId, String apiToken, String state, final ApiCallback<ViewNumberOfChannelsByJoinStatusResponse> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfChannelsByJoinStatusAsync(String apiToken, String userId, String state, final ApiCallback<ViewNumberOfChannelsByJoinStatusResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewNumberOfChannelsByJoinStatusValidateBeforeCall(userId, apiToken, state, _callback);
+        okhttp3.Call localVarCall = viewNumberOfChannelsByJoinStatusValidateBeforeCall(apiToken, userId, state, _callback);
         Type localVarReturnType = new TypeToken<ViewNumberOfChannelsByJoinStatusResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewNumberOfChannelsWithUnreadMessages
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
      * @param _callback Callback for upload/download progress
@@ -4634,7 +4779,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfChannelsWithUnreadMessagesCall(String userId, String apiToken, List<String> customTypes, String superMode, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfChannelsWithUnreadMessagesCall(String apiToken, String userId, List<String> customTypes, String superMode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -4694,7 +4839,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewNumberOfChannelsWithUnreadMessagesValidateBeforeCall(String userId, String apiToken, List<String> customTypes, String superMode, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewNumberOfChannelsWithUnreadMessagesValidateBeforeCall(String apiToken, String userId, List<String> customTypes, String superMode, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewNumberOfChannelsWithUnreadMessages(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -4702,7 +4852,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewNumberOfChannelsWithUnreadMessagesCall(userId, apiToken, customTypes, superMode, _callback);
+        okhttp3.Call localVarCall = viewNumberOfChannelsWithUnreadMessagesCall(apiToken, userId, customTypes, superMode, _callback);
         return localVarCall;
 
     }
@@ -4710,8 +4860,8 @@ public class UserApi {
     /**
      * View number of channels with unread messages
      * ## View number of channels with unread messages  Retrieves the total number of a user&#39;s group channels with unread messages.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-with-unread-messages ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
      * @return ViewNumberOfChannelsWithUnreadMessagesResponse
@@ -4722,16 +4872,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(String userId, String apiToken, List<String> customTypes, String superMode) throws ApiException {
-        ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> localVarResp = viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
+    public ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(String apiToken, String userId, List<String> customTypes, String superMode) throws ApiException {
+        ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> localVarResp = viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(apiToken, userId, customTypes, superMode);
         return localVarResp.getData();
     }
 
     /**
      * View number of channels with unread messages
      * ## View number of channels with unread messages  Retrieves the total number of a user&#39;s group channels with unread messages.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-with-unread-messages ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
      * @return ApiResponse&lt;ViewNumberOfChannelsWithUnreadMessagesResponse&gt;
@@ -4742,8 +4892,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String userId, String apiToken, List<String> customTypes, String superMode) throws ApiException {
-        okhttp3.Call localVarCall = viewNumberOfChannelsWithUnreadMessagesValidateBeforeCall(userId, apiToken, customTypes, superMode, null);
+    public ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String apiToken, String userId, List<String> customTypes, String superMode) throws ApiException {
+        okhttp3.Call localVarCall = viewNumberOfChannelsWithUnreadMessagesValidateBeforeCall(apiToken, userId, customTypes, superMode, null);
         Type localVarReturnType = new TypeToken<ViewNumberOfChannelsWithUnreadMessagesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -4751,8 +4901,8 @@ public class UserApi {
     /**
      * View number of channels with unread messages (asynchronously)
      * ## View number of channels with unread messages  Retrieves the total number of a user&#39;s group channels with unread messages.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-with-unread-messages ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -4764,17 +4914,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfChannelsWithUnreadMessagesAsync(String userId, String apiToken, List<String> customTypes, String superMode, final ApiCallback<ViewNumberOfChannelsWithUnreadMessagesResponse> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfChannelsWithUnreadMessagesAsync(String apiToken, String userId, List<String> customTypes, String superMode, final ApiCallback<ViewNumberOfChannelsWithUnreadMessagesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewNumberOfChannelsWithUnreadMessagesValidateBeforeCall(userId, apiToken, customTypes, superMode, _callback);
+        okhttp3.Call localVarCall = viewNumberOfChannelsWithUnreadMessagesValidateBeforeCall(apiToken, userId, customTypes, superMode, _callback);
         Type localVarReturnType = new TypeToken<ViewNumberOfChannelsWithUnreadMessagesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewNumberOfUnreadItems
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customType  (optional)
      * @param itemKeys  (optional)
      * @param _callback Callback for upload/download progress
@@ -4786,7 +4936,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfUnreadItemsCall(String userId, String apiToken, String customType, String itemKeys, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfUnreadItemsCall(String apiToken, String userId, String customType, String itemKeys, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -4846,7 +4996,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewNumberOfUnreadItemsValidateBeforeCall(String userId, String apiToken, String customType, String itemKeys, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewNumberOfUnreadItemsValidateBeforeCall(String apiToken, String userId, String customType, String itemKeys, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewNumberOfUnreadItems(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -4854,7 +5009,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewNumberOfUnreadItemsCall(userId, apiToken, customType, itemKeys, _callback);
+        okhttp3.Call localVarCall = viewNumberOfUnreadItemsCall(apiToken, userId, customType, itemKeys, _callback);
         return localVarCall;
 
     }
@@ -4862,8 +5017,8 @@ public class UserApi {
     /**
      * View number of unread items
      * ## View number of unread items  Retrieves a set of total numbers of a user&#39;s unread messages, unread mentioned messages, or received invitations in either super or non-super group channels. This action is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-items ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customType  (optional)
      * @param itemKeys  (optional)
      * @return ViewNumberOfUnreadItemsResponse
@@ -4874,16 +5029,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewNumberOfUnreadItemsResponse viewNumberOfUnreadItems(String userId, String apiToken, String customType, String itemKeys) throws ApiException {
-        ApiResponse<ViewNumberOfUnreadItemsResponse> localVarResp = viewNumberOfUnreadItemsWithHttpInfo(userId, apiToken, customType, itemKeys);
+    public ViewNumberOfUnreadItemsResponse viewNumberOfUnreadItems(String apiToken, String userId, String customType, String itemKeys) throws ApiException {
+        ApiResponse<ViewNumberOfUnreadItemsResponse> localVarResp = viewNumberOfUnreadItemsWithHttpInfo(apiToken, userId, customType, itemKeys);
         return localVarResp.getData();
     }
 
     /**
      * View number of unread items
      * ## View number of unread items  Retrieves a set of total numbers of a user&#39;s unread messages, unread mentioned messages, or received invitations in either super or non-super group channels. This action is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-items ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customType  (optional)
      * @param itemKeys  (optional)
      * @return ApiResponse&lt;ViewNumberOfUnreadItemsResponse&gt;
@@ -4894,8 +5049,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWithHttpInfo(String userId, String apiToken, String customType, String itemKeys) throws ApiException {
-        okhttp3.Call localVarCall = viewNumberOfUnreadItemsValidateBeforeCall(userId, apiToken, customType, itemKeys, null);
+    public ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWithHttpInfo(String apiToken, String userId, String customType, String itemKeys) throws ApiException {
+        okhttp3.Call localVarCall = viewNumberOfUnreadItemsValidateBeforeCall(apiToken, userId, customType, itemKeys, null);
         Type localVarReturnType = new TypeToken<ViewNumberOfUnreadItemsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -4903,8 +5058,8 @@ public class UserApi {
     /**
      * View number of unread items (asynchronously)
      * ## View number of unread items  Retrieves a set of total numbers of a user&#39;s unread messages, unread mentioned messages, or received invitations in either super or non-super group channels. This action is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-items ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customType  (optional)
      * @param itemKeys  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -4916,17 +5071,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfUnreadItemsAsync(String userId, String apiToken, String customType, String itemKeys, final ApiCallback<ViewNumberOfUnreadItemsResponse> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfUnreadItemsAsync(String apiToken, String userId, String customType, String itemKeys, final ApiCallback<ViewNumberOfUnreadItemsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewNumberOfUnreadItemsValidateBeforeCall(userId, apiToken, customType, itemKeys, _callback);
+        okhttp3.Call localVarCall = viewNumberOfUnreadItemsValidateBeforeCall(apiToken, userId, customType, itemKeys, _callback);
         Type localVarReturnType = new TypeToken<ViewNumberOfUnreadItemsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewNumberOfUnreadMessages
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
      * @param _callback Callback for upload/download progress
@@ -4938,7 +5093,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfUnreadMessagesCall(String userId, String apiToken, String customTypes, String superMode, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfUnreadMessagesCall(String apiToken, String userId, String customTypes, String superMode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -4998,7 +5153,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewNumberOfUnreadMessagesValidateBeforeCall(String userId, String apiToken, String customTypes, String superMode, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewNumberOfUnreadMessagesValidateBeforeCall(String apiToken, String userId, String customTypes, String superMode, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewNumberOfUnreadMessages(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -5006,7 +5166,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewNumberOfUnreadMessagesCall(userId, apiToken, customTypes, superMode, _callback);
+        okhttp3.Call localVarCall = viewNumberOfUnreadMessagesCall(apiToken, userId, customTypes, superMode, _callback);
         return localVarCall;
 
     }
@@ -5014,8 +5174,8 @@ public class UserApi {
     /**
      * View number of unread messages
      * ## View number of unread messages  Retrieves the total number of a user&#39;s currently unread messages in the group channels. The unread counts feature is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-messages ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
      * @return ViewNumberOfUnreadMessagesResponse
@@ -5026,16 +5186,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(String userId, String apiToken, String customTypes, String superMode) throws ApiException {
-        ApiResponse<ViewNumberOfUnreadMessagesResponse> localVarResp = viewNumberOfUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
+    public ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(String apiToken, String userId, String customTypes, String superMode) throws ApiException {
+        ApiResponse<ViewNumberOfUnreadMessagesResponse> localVarResp = viewNumberOfUnreadMessagesWithHttpInfo(apiToken, userId, customTypes, superMode);
         return localVarResp.getData();
     }
 
     /**
      * View number of unread messages
      * ## View number of unread messages  Retrieves the total number of a user&#39;s currently unread messages in the group channels. The unread counts feature is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-messages ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
      * @return ApiResponse&lt;ViewNumberOfUnreadMessagesResponse&gt;
@@ -5046,8 +5206,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String userId, String apiToken, String customTypes, String superMode) throws ApiException {
-        okhttp3.Call localVarCall = viewNumberOfUnreadMessagesValidateBeforeCall(userId, apiToken, customTypes, superMode, null);
+    public ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String apiToken, String userId, String customTypes, String superMode) throws ApiException {
+        okhttp3.Call localVarCall = viewNumberOfUnreadMessagesValidateBeforeCall(apiToken, userId, customTypes, superMode, null);
         Type localVarReturnType = new TypeToken<ViewNumberOfUnreadMessagesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -5055,8 +5215,8 @@ public class UserApi {
     /**
      * View number of unread messages (asynchronously)
      * ## View number of unread messages  Retrieves the total number of a user&#39;s currently unread messages in the group channels. The unread counts feature is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-messages ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -5068,17 +5228,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewNumberOfUnreadMessagesAsync(String userId, String apiToken, String customTypes, String superMode, final ApiCallback<ViewNumberOfUnreadMessagesResponse> _callback) throws ApiException {
+    public okhttp3.Call viewNumberOfUnreadMessagesAsync(String apiToken, String userId, String customTypes, String superMode, final ApiCallback<ViewNumberOfUnreadMessagesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewNumberOfUnreadMessagesValidateBeforeCall(userId, apiToken, customTypes, superMode, _callback);
+        okhttp3.Call localVarCall = viewNumberOfUnreadMessagesValidateBeforeCall(apiToken, userId, customTypes, superMode, _callback);
         Type localVarReturnType = new TypeToken<ViewNumberOfUnreadMessagesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewPushPreferences
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -5088,7 +5248,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewPushPreferencesCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewPushPreferencesCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -5140,7 +5300,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewPushPreferencesValidateBeforeCall(String userId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewPushPreferencesValidateBeforeCall(String apiToken, String userId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewPushPreferences(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -5148,7 +5313,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewPushPreferencesCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewPushPreferencesCall(apiToken, userId, _callback);
         return localVarCall;
 
     }
@@ -5156,8 +5321,8 @@ public class UserApi {
     /**
      * View push preferences
      * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @return ViewPushPreferencesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -5166,16 +5331,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewPushPreferencesResponse viewPushPreferences(String userId, String apiToken) throws ApiException {
-        ApiResponse<ViewPushPreferencesResponse> localVarResp = viewPushPreferencesWithHttpInfo(userId, apiToken);
+    public ViewPushPreferencesResponse viewPushPreferences(String apiToken, String userId) throws ApiException {
+        ApiResponse<ViewPushPreferencesResponse> localVarResp = viewPushPreferencesWithHttpInfo(apiToken, userId);
         return localVarResp.getData();
     }
 
     /**
      * View push preferences
      * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewPushPreferencesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -5184,8 +5349,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewPushPreferencesValidateBeforeCall(userId, apiToken, null);
+    public ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo(String apiToken, String userId) throws ApiException {
+        okhttp3.Call localVarCall = viewPushPreferencesValidateBeforeCall(apiToken, userId, null);
         Type localVarReturnType = new TypeToken<ViewPushPreferencesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -5193,8 +5358,8 @@ public class UserApi {
     /**
      * View push preferences (asynchronously)
      * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -5204,18 +5369,18 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewPushPreferencesAsync(String userId, String apiToken, final ApiCallback<ViewPushPreferencesResponse> _callback) throws ApiException {
+    public okhttp3.Call viewPushPreferencesAsync(String apiToken, String userId, final ApiCallback<ViewPushPreferencesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewPushPreferencesValidateBeforeCall(userId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewPushPreferencesValidateBeforeCall(apiToken, userId, _callback);
         Type localVarReturnType = new TypeToken<ViewPushPreferencesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewPushPreferencesForChannelByUrl
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -5225,7 +5390,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewPushPreferencesForChannelByUrlCall(String userId, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewPushPreferencesForChannelByUrlCall(String apiToken, String userId, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -5278,7 +5443,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewPushPreferencesForChannelByUrlValidateBeforeCall(String userId, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewPushPreferencesForChannelByUrlValidateBeforeCall(String apiToken, String userId, String channelUrl, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewPushPreferencesForChannelByUrl(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -5291,7 +5461,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewPushPreferencesForChannelByUrlCall(userId, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = viewPushPreferencesForChannelByUrlCall(apiToken, userId, channelUrl, _callback);
         return localVarCall;
 
     }
@@ -5299,9 +5469,9 @@ public class UserApi {
     /**
      * View push preferences for a channel
      * ## View push preferences for a channel  Retrieves whether a user has turned on notification messages for a specific channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences-for-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ViewPushPreferencesForChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -5310,17 +5480,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewPushPreferencesForChannelByUrlResponse viewPushPreferencesForChannelByUrl(String userId, String channelUrl, String apiToken) throws ApiException {
-        ApiResponse<ViewPushPreferencesForChannelByUrlResponse> localVarResp = viewPushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
+    public ViewPushPreferencesForChannelByUrlResponse viewPushPreferencesForChannelByUrl(String apiToken, String userId, String channelUrl) throws ApiException {
+        ApiResponse<ViewPushPreferencesForChannelByUrlResponse> localVarResp = viewPushPreferencesForChannelByUrlWithHttpInfo(apiToken, userId, channelUrl);
         return localVarResp.getData();
     }
 
     /**
      * View push preferences for a channel
      * ## View push preferences for a channel  Retrieves whether a user has turned on notification messages for a specific channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences-for-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewPushPreferencesForChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -5329,8 +5499,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewPushPreferencesForChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, null);
+    public ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferencesForChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl) throws ApiException {
+        okhttp3.Call localVarCall = viewPushPreferencesForChannelByUrlValidateBeforeCall(apiToken, userId, channelUrl, null);
         Type localVarReturnType = new TypeToken<ViewPushPreferencesForChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -5338,9 +5508,9 @@ public class UserApi {
     /**
      * View push preferences for a channel (asynchronously)
      * ## View push preferences for a channel  Retrieves whether a user has turned on notification messages for a specific channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences-for-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -5350,17 +5520,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewPushPreferencesForChannelByUrlAsync(String userId, String channelUrl, String apiToken, final ApiCallback<ViewPushPreferencesForChannelByUrlResponse> _callback) throws ApiException {
+    public okhttp3.Call viewPushPreferencesForChannelByUrlAsync(String apiToken, String userId, String channelUrl, final ApiCallback<ViewPushPreferencesForChannelByUrlResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewPushPreferencesForChannelByUrlValidateBeforeCall(userId, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = viewPushPreferencesForChannelByUrlValidateBeforeCall(apiToken, userId, channelUrl, _callback);
         Type localVarReturnType = new TypeToken<ViewPushPreferencesForChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewUserById
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param includeUnreadCount  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
@@ -5373,7 +5543,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewUserByIdCall(String userId, String apiToken, Boolean includeUnreadCount, String customTypes, String superMode, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewUserByIdCall(String apiToken, String userId, Boolean includeUnreadCount, String customTypes, String superMode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -5437,7 +5607,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewUserByIdValidateBeforeCall(String userId, String apiToken, Boolean includeUnreadCount, String customTypes, String superMode, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewUserByIdValidateBeforeCall(String apiToken, String userId, Boolean includeUnreadCount, String customTypes, String superMode, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewUserById(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -5445,7 +5620,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewUserByIdCall(userId, apiToken, includeUnreadCount, customTypes, superMode, _callback);
+        okhttp3.Call localVarCall = viewUserByIdCall(apiToken, userId, includeUnreadCount, customTypes, superMode, _callback);
         return localVarCall;
 
     }
@@ -5453,8 +5628,8 @@ public class UserApi {
     /**
      * View a user
      * ## View a user  Retrieves information on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-a-user ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param includeUnreadCount  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
@@ -5466,16 +5641,16 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdUser viewUserById(String userId, String apiToken, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
-        ApiResponse<SendBirdUser> localVarResp = viewUserByIdWithHttpInfo(userId, apiToken, includeUnreadCount, customTypes, superMode);
+    public SendBirdUser viewUserById(String apiToken, String userId, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
+        ApiResponse<SendBirdUser> localVarResp = viewUserByIdWithHttpInfo(apiToken, userId, includeUnreadCount, customTypes, superMode);
         return localVarResp.getData();
     }
 
     /**
      * View a user
      * ## View a user  Retrieves information on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-a-user ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param includeUnreadCount  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
@@ -5487,8 +5662,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String userId, String apiToken, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
-        okhttp3.Call localVarCall = viewUserByIdValidateBeforeCall(userId, apiToken, includeUnreadCount, customTypes, superMode, null);
+    public ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String apiToken, String userId, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
+        okhttp3.Call localVarCall = viewUserByIdValidateBeforeCall(apiToken, userId, includeUnreadCount, customTypes, superMode, null);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -5496,8 +5671,8 @@ public class UserApi {
     /**
      * View a user (asynchronously)
      * ## View a user  Retrieves information on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-a-user ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param includeUnreadCount  (optional)
      * @param customTypes  (optional)
      * @param superMode  (optional)
@@ -5510,18 +5685,18 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewUserByIdAsync(String userId, String apiToken, Boolean includeUnreadCount, String customTypes, String superMode, final ApiCallback<SendBirdUser> _callback) throws ApiException {
+    public okhttp3.Call viewUserByIdAsync(String apiToken, String userId, Boolean includeUnreadCount, String customTypes, String superMode, final ApiCallback<SendBirdUser> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewUserByIdValidateBeforeCall(userId, apiToken, includeUnreadCount, customTypes, superMode, _callback);
+        okhttp3.Call localVarCall = viewUserByIdValidateBeforeCall(apiToken, userId, includeUnreadCount, customTypes, superMode, _callback);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewWhoOwnsRegistrationOrDeviceTokenByToken
+     * @param apiToken  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -5531,7 +5706,7 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewWhoOwnsRegistrationOrDeviceTokenByTokenCall(String tokenType, String token, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewWhoOwnsRegistrationOrDeviceTokenByTokenCall(String apiToken, String tokenType, String token, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -5584,7 +5759,12 @@ public class UserApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewWhoOwnsRegistrationOrDeviceTokenByTokenValidateBeforeCall(String tokenType, String token, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewWhoOwnsRegistrationOrDeviceTokenByTokenValidateBeforeCall(String apiToken, String tokenType, String token, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewWhoOwnsRegistrationOrDeviceTokenByToken(Async)");
+        }
         
         // verify the required parameter 'tokenType' is set
         if (tokenType == null) {
@@ -5597,7 +5777,7 @@ public class UserApi {
         }
         
 
-        okhttp3.Call localVarCall = viewWhoOwnsRegistrationOrDeviceTokenByTokenCall(tokenType, token, apiToken, _callback);
+        okhttp3.Call localVarCall = viewWhoOwnsRegistrationOrDeviceTokenByTokenCall(apiToken, tokenType, token, _callback);
         return localVarCall;
 
     }
@@ -5605,9 +5785,9 @@ public class UserApi {
     /**
      * View who owns a registration or device token
      * ## View who owns a registration or device token  Retrieves a user who owns a FCM registration token, HMS device token, or APNs device token. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-who-owns-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @return ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -5616,17 +5796,17 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse viewWhoOwnsRegistrationOrDeviceTokenByToken(String tokenType, String token, String apiToken) throws ApiException {
-        ApiResponse<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse> localVarResp = viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(tokenType, token, apiToken);
+    public ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse viewWhoOwnsRegistrationOrDeviceTokenByToken(String apiToken, String tokenType, String token) throws ApiException {
+        ApiResponse<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse> localVarResp = viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(apiToken, tokenType, token);
         return localVarResp.getData();
     }
 
     /**
      * View who owns a registration or device token
      * ## View who owns a registration or device token  Retrieves a user who owns a FCM registration token, HMS device token, or APNs device token. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-who-owns-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -5635,8 +5815,8 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse> viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewWhoOwnsRegistrationOrDeviceTokenByTokenValidateBeforeCall(tokenType, token, apiToken, null);
+    public ApiResponse<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse> viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(String apiToken, String tokenType, String token) throws ApiException {
+        okhttp3.Call localVarCall = viewWhoOwnsRegistrationOrDeviceTokenByTokenValidateBeforeCall(apiToken, tokenType, token, null);
         Type localVarReturnType = new TypeToken<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -5644,9 +5824,9 @@ public class UserApi {
     /**
      * View who owns a registration or device token (asynchronously)
      * ## View who owns a registration or device token  Retrieves a user who owns a FCM registration token, HMS device token, or APNs device token. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-who-owns-a-registration-or-device-token ----------------------------
+     * @param apiToken  (required)
      * @param tokenType  (required)
      * @param token  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -5656,9 +5836,9 @@ public class UserApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewWhoOwnsRegistrationOrDeviceTokenByTokenAsync(String tokenType, String token, String apiToken, final ApiCallback<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call viewWhoOwnsRegistrationOrDeviceTokenByTokenAsync(String apiToken, String tokenType, String token, final ApiCallback<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewWhoOwnsRegistrationOrDeviceTokenByTokenValidateBeforeCall(tokenType, token, apiToken, _callback);
+        okhttp3.Call localVarCall = viewWhoOwnsRegistrationOrDeviceTokenByTokenValidateBeforeCall(apiToken, tokenType, token, _callback);
         Type localVarReturnType = new TypeToken<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

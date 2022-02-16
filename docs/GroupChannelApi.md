@@ -36,7 +36,7 @@ Method | HTTP request | Description
 
 <a name="gcAcceptInvitation"></a>
 # **gcAcceptInvitation**
-> SendBirdGroupChannel gcAcceptInvitation(channelUrl, apiToken, gcAcceptInvitationData)
+> SendBirdGroupChannel gcAcceptInvitation(apiToken, channelUrl, gcAcceptInvitationData)
 
 Accept an invitation
 
@@ -57,11 +57,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcAcceptInvitationData gcAcceptInvitationData = new GcAcceptInvitationData(); // GcAcceptInvitationData | 
     try {
-      SendBirdGroupChannel result = apiInstance.gcAcceptInvitation(channelUrl, apiToken, gcAcceptInvitationData);
+      SendBirdGroupChannel result = apiInstance.gcAcceptInvitation(apiToken, channelUrl, gcAcceptInvitationData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcAcceptInvitation");
@@ -78,8 +78,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcAcceptInvitationData** | [**GcAcceptInvitationData**](GcAcceptInvitationData.md)|  | [optional]
 
 ### Return type
@@ -102,7 +102,7 @@ No authorization required
 
 <a name="gcBanUser"></a>
 # **gcBanUser**
-> GcBanUserResponse gcBanUser(channelUrl, apiToken, gcBanUserData)
+> GcBanUserResponse gcBanUser(apiToken, channelUrl, gcBanUserData)
 
 Ban a user
 
@@ -123,11 +123,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcBanUserData gcBanUserData = new GcBanUserData(); // GcBanUserData | 
     try {
-      GcBanUserResponse result = apiInstance.gcBanUser(channelUrl, apiToken, gcBanUserData);
+      GcBanUserResponse result = apiInstance.gcBanUser(apiToken, channelUrl, gcBanUserData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcBanUser");
@@ -144,8 +144,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcBanUserData** | [**GcBanUserData**](GcBanUserData.md)|  | [optional]
 
 ### Return type
@@ -168,7 +168,7 @@ No authorization required
 
 <a name="gcCancelTheRegistrationOfOperators"></a>
 # **gcCancelTheRegistrationOfOperators**
-> gcCancelTheRegistrationOfOperators(channelUrl, operatorIds, apiToken, deleteAll)
+> gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll)
 
 Cancel the registration of operators
 
@@ -189,12 +189,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     List<String> operatorIds = Arrays.asList(); // List<String> | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Boolean deleteAll = true; // Boolean | 
     try {
-      apiInstance.gcCancelTheRegistrationOfOperators(channelUrl, operatorIds, apiToken, deleteAll);
+      apiInstance.gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcCancelTheRegistrationOfOperators");
       System.err.println("Status code: " + e.getCode());
@@ -210,9 +210,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
  **operatorIds** | [**List&lt;String&gt;**](String.md)|  |
- **apiToken** | **String**|  | [optional]
  **deleteAll** | **Boolean**|  | [optional]
 
 ### Return type
@@ -235,7 +235,7 @@ No authorization required
 
 <a name="gcCheckIfMemberById"></a>
 # **gcCheckIfMemberById**
-> GcCheckIfMemberByIdResponse gcCheckIfMemberById(channelUrl, userId, apiToken)
+> GcCheckIfMemberByIdResponse gcCheckIfMemberById(apiToken, channelUrl, userId)
 
 Check if member
 
@@ -256,11 +256,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String userId = "userId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      GcCheckIfMemberByIdResponse result = apiInstance.gcCheckIfMemberById(channelUrl, userId, apiToken);
+      GcCheckIfMemberByIdResponse result = apiInstance.gcCheckIfMemberById(apiToken, channelUrl, userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcCheckIfMemberById");
@@ -277,9 +277,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -342,7 +342,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **gcCreateChannelData** | [**GcCreateChannelData**](GcCreateChannelData.md)|  | [optional]
 
 ### Return type
@@ -365,7 +365,7 @@ No authorization required
 
 <a name="gcDeclineInvitation"></a>
 # **gcDeclineInvitation**
-> gcDeclineInvitation(channelUrl, apiToken, gcDeclineInvitationData)
+> gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData)
 
 Decline an invitation
 
@@ -386,11 +386,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcDeclineInvitationData gcDeclineInvitationData = new GcDeclineInvitationData(); // GcDeclineInvitationData | 
     try {
-      apiInstance.gcDeclineInvitation(channelUrl, apiToken, gcDeclineInvitationData);
+      apiInstance.gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcDeclineInvitation");
       System.err.println("Status code: " + e.getCode());
@@ -406,8 +406,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcDeclineInvitationData** | [**GcDeclineInvitationData**](GcDeclineInvitationData.md)|  | [optional]
 
 ### Return type
@@ -430,7 +430,7 @@ No authorization required
 
 <a name="gcDeleteChannelByUrl"></a>
 # **gcDeleteChannelByUrl**
-> gcDeleteChannelByUrl(channelUrl, apiToken)
+> gcDeleteChannelByUrl(apiToken, channelUrl)
 
 Delete a channel
 
@@ -451,10 +451,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     try {
-      apiInstance.gcDeleteChannelByUrl(channelUrl, apiToken);
+      apiInstance.gcDeleteChannelByUrl(apiToken, channelUrl);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcDeleteChannelByUrl");
       System.err.println("Status code: " + e.getCode());
@@ -470,8 +470,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -493,7 +493,7 @@ No authorization required
 
 <a name="gcFreezeChannel"></a>
 # **gcFreezeChannel**
-> SendBirdGroupChannel gcFreezeChannel(channelUrl, apiToken, gcFreezeChannelData)
+> SendBirdGroupChannel gcFreezeChannel(apiToken, channelUrl, gcFreezeChannelData)
 
 Freeze a channel
 
@@ -514,11 +514,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcFreezeChannelData gcFreezeChannelData = new GcFreezeChannelData(); // GcFreezeChannelData | 
     try {
-      SendBirdGroupChannel result = apiInstance.gcFreezeChannel(channelUrl, apiToken, gcFreezeChannelData);
+      SendBirdGroupChannel result = apiInstance.gcFreezeChannel(apiToken, channelUrl, gcFreezeChannelData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcFreezeChannel");
@@ -535,8 +535,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcFreezeChannelData** | [**GcFreezeChannelData**](GcFreezeChannelData.md)|  | [optional]
 
 ### Return type
@@ -559,7 +559,7 @@ No authorization required
 
 <a name="gcHideOrArchiveChannel"></a>
 # **gcHideOrArchiveChannel**
-> gcHideOrArchiveChannel(channelUrl, apiToken, gcHideOrArchiveChannelData)
+> gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData)
 
 Hide or archive a channel
 
@@ -580,11 +580,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcHideOrArchiveChannelData gcHideOrArchiveChannelData = new GcHideOrArchiveChannelData(); // GcHideOrArchiveChannelData | 
     try {
-      apiInstance.gcHideOrArchiveChannel(channelUrl, apiToken, gcHideOrArchiveChannelData);
+      apiInstance.gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcHideOrArchiveChannel");
       System.err.println("Status code: " + e.getCode());
@@ -600,8 +600,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcHideOrArchiveChannelData** | [**GcHideOrArchiveChannelData**](GcHideOrArchiveChannelData.md)|  | [optional]
 
 ### Return type
@@ -624,7 +624,7 @@ No authorization required
 
 <a name="gcInviteAsMembers"></a>
 # **gcInviteAsMembers**
-> SendBirdGroupChannel gcInviteAsMembers(channelUrl, apiToken, gcInviteAsMembersData)
+> SendBirdGroupChannel gcInviteAsMembers(apiToken, channelUrl, gcInviteAsMembersData)
 
 Invite as members
 
@@ -645,11 +645,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcInviteAsMembersData gcInviteAsMembersData = new GcInviteAsMembersData(); // GcInviteAsMembersData | 
     try {
-      SendBirdGroupChannel result = apiInstance.gcInviteAsMembers(channelUrl, apiToken, gcInviteAsMembersData);
+      SendBirdGroupChannel result = apiInstance.gcInviteAsMembers(apiToken, channelUrl, gcInviteAsMembersData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcInviteAsMembers");
@@ -666,8 +666,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcInviteAsMembersData** | [**GcInviteAsMembersData**](GcInviteAsMembersData.md)|  | [optional]
 
 ### Return type
@@ -690,7 +690,7 @@ No authorization required
 
 <a name="gcJoinChannel"></a>
 # **gcJoinChannel**
-> gcJoinChannel(channelUrl, apiToken, gcJoinChannelData)
+> gcJoinChannel(apiToken, channelUrl, gcJoinChannelData)
 
 Join a channel
 
@@ -711,11 +711,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcJoinChannelData gcJoinChannelData = new GcJoinChannelData(); // GcJoinChannelData | 
     try {
-      apiInstance.gcJoinChannel(channelUrl, apiToken, gcJoinChannelData);
+      apiInstance.gcJoinChannel(apiToken, channelUrl, gcJoinChannelData);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcJoinChannel");
       System.err.println("Status code: " + e.getCode());
@@ -731,8 +731,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcJoinChannelData** | [**GcJoinChannelData**](GcJoinChannelData.md)|  | [optional]
 
 ### Return type
@@ -755,7 +755,7 @@ No authorization required
 
 <a name="gcLeaveChannel"></a>
 # **gcLeaveChannel**
-> gcLeaveChannel(channelUrl, apiToken, gcLeaveChannelData)
+> gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData)
 
 Leave a channel
 
@@ -776,11 +776,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcLeaveChannelData gcLeaveChannelData = new GcLeaveChannelData(); // GcLeaveChannelData | 
     try {
-      apiInstance.gcLeaveChannel(channelUrl, apiToken, gcLeaveChannelData);
+      apiInstance.gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcLeaveChannel");
       System.err.println("Status code: " + e.getCode());
@@ -796,8 +796,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcLeaveChannelData** | [**GcLeaveChannelData**](GcLeaveChannelData.md)|  | [optional]
 
 ### Return type
@@ -820,7 +820,7 @@ No authorization required
 
 <a name="gcListBannedUsers"></a>
 # **gcListBannedUsers**
-> GcListBannedUsersResponse gcListBannedUsers(channelUrl, apiToken, token, limit)
+> GcListBannedUsersResponse gcListBannedUsers(apiToken, channelUrl, token, limit)
 
 List banned users
 
@@ -841,12 +841,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      GcListBannedUsersResponse result = apiInstance.gcListBannedUsers(channelUrl, apiToken, token, limit);
+      GcListBannedUsersResponse result = apiInstance.gcListBannedUsers(apiToken, channelUrl, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcListBannedUsers");
@@ -863,8 +863,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -970,7 +970,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **distinctMode** | **String**|  | [optional]
@@ -1034,7 +1034,7 @@ No authorization required
 
 <a name="gcListMembers"></a>
 # **gcListMembers**
-> GcListMembersResponse gcListMembers(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith)
+> GcListMembersResponse gcListMembers(apiToken, channelUrl, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith)
 
 List members
 
@@ -1055,8 +1055,8 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     Boolean showDeliveryReceipt = true; // Boolean | 
@@ -1067,7 +1067,7 @@ public class Example {
     String mutedMemberFilter = "mutedMemberFilter_example"; // String | 
     String nicknameStartswith = "nicknameStartswith_example"; // String | 
     try {
-      GcListMembersResponse result = apiInstance.gcListMembers(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
+      GcListMembersResponse result = apiInstance.gcListMembers(apiToken, channelUrl, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcListMembers");
@@ -1084,8 +1084,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **showDeliveryReceipt** | **Boolean**|  | [optional]
@@ -1116,7 +1116,7 @@ No authorization required
 
 <a name="gcListMutedUsers"></a>
 # **gcListMutedUsers**
-> GcListMutedUsersResponse gcListMutedUsers(channelUrl, apiToken, token, limit)
+> GcListMutedUsersResponse gcListMutedUsers(apiToken, channelUrl, token, limit)
 
 List muted users
 
@@ -1137,12 +1137,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      GcListMutedUsersResponse result = apiInstance.gcListMutedUsers(channelUrl, apiToken, token, limit);
+      GcListMutedUsersResponse result = apiInstance.gcListMutedUsers(apiToken, channelUrl, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcListMutedUsers");
@@ -1159,8 +1159,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -1184,7 +1184,7 @@ No authorization required
 
 <a name="gcListOperators"></a>
 # **gcListOperators**
-> GcListOperatorsResponse gcListOperators(channelUrl, apiToken, token, limit)
+> GcListOperatorsResponse gcListOperators(apiToken, channelUrl, token, limit)
 
 List operators
 
@@ -1205,12 +1205,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      GcListOperatorsResponse result = apiInstance.gcListOperators(channelUrl, apiToken, token, limit);
+      GcListOperatorsResponse result = apiInstance.gcListOperators(apiToken, channelUrl, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcListOperators");
@@ -1227,8 +1227,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -1252,7 +1252,7 @@ No authorization required
 
 <a name="gcMuteUser"></a>
 # **gcMuteUser**
-> SendBirdGroupChannel gcMuteUser(channelUrl, apiToken, gcMuteUserData)
+> SendBirdGroupChannel gcMuteUser(apiToken, channelUrl, gcMuteUserData)
 
 Mute a user
 
@@ -1273,11 +1273,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcMuteUserData gcMuteUserData = new GcMuteUserData(); // GcMuteUserData | 
     try {
-      SendBirdGroupChannel result = apiInstance.gcMuteUser(channelUrl, apiToken, gcMuteUserData);
+      SendBirdGroupChannel result = apiInstance.gcMuteUser(apiToken, channelUrl, gcMuteUserData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcMuteUser");
@@ -1294,8 +1294,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcMuteUserData** | [**GcMuteUserData**](GcMuteUserData.md)|  | [optional]
 
 ### Return type
@@ -1318,7 +1318,7 @@ No authorization required
 
 <a name="gcRegisterOperators"></a>
 # **gcRegisterOperators**
-> GcRegisterOperatorsResponse gcRegisterOperators(channelUrl, apiToken, gcRegisterOperatorsData)
+> GcRegisterOperatorsResponse gcRegisterOperators(apiToken, channelUrl, gcRegisterOperatorsData)
 
 Register operators
 
@@ -1339,11 +1339,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcRegisterOperatorsData gcRegisterOperatorsData = new GcRegisterOperatorsData(); // GcRegisterOperatorsData | 
     try {
-      GcRegisterOperatorsResponse result = apiInstance.gcRegisterOperators(channelUrl, apiToken, gcRegisterOperatorsData);
+      GcRegisterOperatorsResponse result = apiInstance.gcRegisterOperators(apiToken, channelUrl, gcRegisterOperatorsData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcRegisterOperators");
@@ -1360,8 +1360,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcRegisterOperatorsData** | [**GcRegisterOperatorsData**](GcRegisterOperatorsData.md)|  | [optional]
 
 ### Return type
@@ -1384,7 +1384,7 @@ No authorization required
 
 <a name="gcResetChatHistory"></a>
 # **gcResetChatHistory**
-> gcResetChatHistory(channelUrl, apiToken, gcResetChatHistoryData)
+> gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData)
 
 Reset chat history
 
@@ -1405,11 +1405,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcResetChatHistoryData gcResetChatHistoryData = new GcResetChatHistoryData(); // GcResetChatHistoryData | 
     try {
-      apiInstance.gcResetChatHistory(channelUrl, apiToken, gcResetChatHistoryData);
+      apiInstance.gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcResetChatHistory");
       System.err.println("Status code: " + e.getCode());
@@ -1425,8 +1425,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcResetChatHistoryData** | [**GcResetChatHistoryData**](GcResetChatHistoryData.md)|  | [optional]
 
 ### Return type
@@ -1449,7 +1449,7 @@ No authorization required
 
 <a name="gcUnbanUserById"></a>
 # **gcUnbanUserById**
-> gcUnbanUserById(channelUrl, bannedUserId, apiToken)
+> gcUnbanUserById(apiToken, channelUrl, bannedUserId)
 
 Unban a user
 
@@ -1470,11 +1470,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String bannedUserId = "bannedUserId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      apiInstance.gcUnbanUserById(channelUrl, bannedUserId, apiToken);
+      apiInstance.gcUnbanUserById(apiToken, channelUrl, bannedUserId);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUnbanUserById");
       System.err.println("Status code: " + e.getCode());
@@ -1490,9 +1490,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
  **bannedUserId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1514,7 +1514,7 @@ No authorization required
 
 <a name="gcUnhideOrUnarchiveChannel"></a>
 # **gcUnhideOrUnarchiveChannel**
-> gcUnhideOrUnarchiveChannel(channelUrl, userId, apiToken, shouldUnhideAll)
+> gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll)
 
 Unhide or unarchive a channel
 
@@ -1535,12 +1535,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String userId = "userId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Boolean shouldUnhideAll = true; // Boolean | 
     try {
-      apiInstance.gcUnhideOrUnarchiveChannel(channelUrl, userId, apiToken, shouldUnhideAll);
+      apiInstance.gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUnhideOrUnarchiveChannel");
       System.err.println("Status code: " + e.getCode());
@@ -1556,9 +1556,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
  **userId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **shouldUnhideAll** | **Boolean**|  | [optional]
 
 ### Return type
@@ -1581,7 +1581,7 @@ No authorization required
 
 <a name="gcUnmuteUserById"></a>
 # **gcUnmuteUserById**
-> gcUnmuteUserById(channelUrl, mutedUserId, apiToken)
+> gcUnmuteUserById(apiToken, channelUrl, mutedUserId)
 
 Unmute a user
 
@@ -1602,11 +1602,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String mutedUserId = "mutedUserId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      apiInstance.gcUnmuteUserById(channelUrl, mutedUserId, apiToken);
+      apiInstance.gcUnmuteUserById(apiToken, channelUrl, mutedUserId);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUnmuteUserById");
       System.err.println("Status code: " + e.getCode());
@@ -1622,9 +1622,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
  **mutedUserId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1646,7 +1646,7 @@ No authorization required
 
 <a name="gcUpdateBanById"></a>
 # **gcUpdateBanById**
-> SendBirdUser gcUpdateBanById(channelUrl, bannedUserId, apiToken, gcUpdateBanByIdData)
+> SendBirdUser gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData)
 
 Update a ban
 
@@ -1667,12 +1667,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String bannedUserId = "bannedUserId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     GcUpdateBanByIdData gcUpdateBanByIdData = new GcUpdateBanByIdData(); // GcUpdateBanByIdData | 
     try {
-      SendBirdUser result = apiInstance.gcUpdateBanById(channelUrl, bannedUserId, apiToken, gcUpdateBanByIdData);
+      SendBirdUser result = apiInstance.gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUpdateBanById");
@@ -1689,9 +1689,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
  **bannedUserId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcUpdateBanByIdData** | [**GcUpdateBanByIdData**](GcUpdateBanByIdData.md)|  | [optional]
 
 ### Return type
@@ -1714,7 +1714,7 @@ No authorization required
 
 <a name="gcUpdateChannelByUrl"></a>
 # **gcUpdateChannelByUrl**
-> SendBirdGroupChannel gcUpdateChannelByUrl(channelUrl, apiToken, gcUpdateChannelByUrlData)
+> SendBirdGroupChannel gcUpdateChannelByUrl(apiToken, channelUrl, gcUpdateChannelByUrlData)
 
 Update a channel
 
@@ -1735,11 +1735,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     GcUpdateChannelByUrlData gcUpdateChannelByUrlData = new GcUpdateChannelByUrlData(); // GcUpdateChannelByUrlData | 
     try {
-      SendBirdGroupChannel result = apiInstance.gcUpdateChannelByUrl(channelUrl, apiToken, gcUpdateChannelByUrlData);
+      SendBirdGroupChannel result = apiInstance.gcUpdateChannelByUrl(apiToken, channelUrl, gcUpdateChannelByUrlData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUpdateChannelByUrl");
@@ -1756,8 +1756,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **gcUpdateChannelByUrlData** | [**GcUpdateChannelByUrlData**](GcUpdateChannelByUrlData.md)|  | [optional]
 
 ### Return type
@@ -1780,7 +1780,7 @@ No authorization required
 
 <a name="gcViewBanById"></a>
 # **gcViewBanById**
-> SendBirdUser gcViewBanById(channelUrl, bannedUserId, apiToken)
+> SendBirdUser gcViewBanById(apiToken, channelUrl, bannedUserId)
 
 View a ban
 
@@ -1801,11 +1801,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String bannedUserId = "bannedUserId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      SendBirdUser result = apiInstance.gcViewBanById(channelUrl, bannedUserId, apiToken);
+      SendBirdUser result = apiInstance.gcViewBanById(apiToken, channelUrl, bannedUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcViewBanById");
@@ -1822,9 +1822,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
  **bannedUserId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1846,7 +1846,7 @@ No authorization required
 
 <a name="gcViewChannelByUrl"></a>
 # **gcViewChannelByUrl**
-> SendBirdGroupChannel gcViewChannelByUrl(channelUrl, apiToken, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member)
+> SendBirdGroupChannel gcViewChannelByUrl(apiToken, channelUrl, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member)
 
 View a channel
 
@@ -1867,15 +1867,15 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-    String channelUrl = "channelUrl_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String channelUrl = "channelUrl_example"; // String | 
     Boolean showDeliveryReceipt = true; // Boolean | 
     Boolean showReadReceipt = true; // Boolean | 
     Boolean showMember = true; // Boolean | 
     Boolean readReceipt = true; // Boolean | 
     Boolean member = true; // Boolean | 
     try {
-      SendBirdGroupChannel result = apiInstance.gcViewChannelByUrl(channelUrl, apiToken, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member);
+      SendBirdGroupChannel result = apiInstance.gcViewChannelByUrl(apiToken, channelUrl, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcViewChannelByUrl");
@@ -1892,8 +1892,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **showDeliveryReceipt** | **Boolean**|  | [optional]
  **showReadReceipt** | **Boolean**|  | [optional]
  **showMember** | **Boolean**|  | [optional]
@@ -1920,7 +1920,7 @@ No authorization required
 
 <a name="gcViewMuteById"></a>
 # **gcViewMuteById**
-> GcViewMuteByIdResponse gcViewMuteById(channelUrl, mutedUserId, apiToken)
+> GcViewMuteByIdResponse gcViewMuteById(apiToken, channelUrl, mutedUserId)
 
 View a mute
 
@@ -1941,11 +1941,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String mutedUserId = "mutedUserId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      GcViewMuteByIdResponse result = apiInstance.gcViewMuteById(channelUrl, mutedUserId, apiToken);
+      GcViewMuteByIdResponse result = apiInstance.gcViewMuteById(apiToken, channelUrl, mutedUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcViewMuteById");
@@ -1962,9 +1962,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelUrl** | **String**|  |
  **mutedUserId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

@@ -89,8 +89,8 @@ public class OpenChannelApi {
 
     /**
      * Build call for ocBanUser
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocBanUserData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -101,7 +101,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocBanUserCall(String channelUrl, String apiToken, OcBanUserData ocBanUserData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocBanUserCall(String apiToken, String channelUrl, OcBanUserData ocBanUserData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -153,7 +153,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocBanUserValidateBeforeCall(String channelUrl, String apiToken, OcBanUserData ocBanUserData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocBanUserValidateBeforeCall(String apiToken, String channelUrl, OcBanUserData ocBanUserData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocBanUser(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -161,7 +166,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocBanUserCall(channelUrl, apiToken, ocBanUserData, _callback);
+        okhttp3.Call localVarCall = ocBanUserCall(apiToken, channelUrl, ocBanUserData, _callback);
         return localVarCall;
 
     }
@@ -169,8 +174,8 @@ public class OpenChannelApi {
     /**
      * Ban a user
      * ## Ban a user  Bans a user from an open channel. A banned user is immediately expelled from a channel and allowed to participate in the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-ban-a-user ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocBanUserData  (optional)
      * @return OcBanUserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -180,16 +185,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public OcBanUserResponse ocBanUser(String channelUrl, String apiToken, OcBanUserData ocBanUserData) throws ApiException {
-        ApiResponse<OcBanUserResponse> localVarResp = ocBanUserWithHttpInfo(channelUrl, apiToken, ocBanUserData);
+    public OcBanUserResponse ocBanUser(String apiToken, String channelUrl, OcBanUserData ocBanUserData) throws ApiException {
+        ApiResponse<OcBanUserResponse> localVarResp = ocBanUserWithHttpInfo(apiToken, channelUrl, ocBanUserData);
         return localVarResp.getData();
     }
 
     /**
      * Ban a user
      * ## Ban a user  Bans a user from an open channel. A banned user is immediately expelled from a channel and allowed to participate in the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-ban-a-user ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocBanUserData  (optional)
      * @return ApiResponse&lt;OcBanUserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -199,8 +204,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String channelUrl, String apiToken, OcBanUserData ocBanUserData) throws ApiException {
-        okhttp3.Call localVarCall = ocBanUserValidateBeforeCall(channelUrl, apiToken, ocBanUserData, null);
+    public ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String apiToken, String channelUrl, OcBanUserData ocBanUserData) throws ApiException {
+        okhttp3.Call localVarCall = ocBanUserValidateBeforeCall(apiToken, channelUrl, ocBanUserData, null);
         Type localVarReturnType = new TypeToken<OcBanUserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -208,8 +213,8 @@ public class OpenChannelApi {
     /**
      * Ban a user (asynchronously)
      * ## Ban a user  Bans a user from an open channel. A banned user is immediately expelled from a channel and allowed to participate in the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-ban-a-user ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocBanUserData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -220,18 +225,18 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocBanUserAsync(String channelUrl, String apiToken, OcBanUserData ocBanUserData, final ApiCallback<OcBanUserResponse> _callback) throws ApiException {
+    public okhttp3.Call ocBanUserAsync(String apiToken, String channelUrl, OcBanUserData ocBanUserData, final ApiCallback<OcBanUserResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocBanUserValidateBeforeCall(channelUrl, apiToken, ocBanUserData, _callback);
+        okhttp3.Call localVarCall = ocBanUserValidateBeforeCall(apiToken, channelUrl, ocBanUserData, _callback);
         Type localVarReturnType = new TypeToken<OcBanUserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocCancelTheRegistrationOfOperators
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param operatorIds  (required)
-     * @param apiToken  (optional)
      * @param deleteAll  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -242,7 +247,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocCancelTheRegistrationOfOperatorsCall(String channelUrl, List<String> operatorIds, String apiToken, Boolean deleteAll, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocCancelTheRegistrationOfOperatorsCall(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -302,7 +307,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocCancelTheRegistrationOfOperatorsValidateBeforeCall(String channelUrl, List<String> operatorIds, String apiToken, Boolean deleteAll, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocCancelTheRegistrationOfOperatorsValidateBeforeCall(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocCancelTheRegistrationOfOperators(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -315,7 +325,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocCancelTheRegistrationOfOperatorsCall(channelUrl, operatorIds, apiToken, deleteAll, _callback);
+        okhttp3.Call localVarCall = ocCancelTheRegistrationOfOperatorsCall(apiToken, channelUrl, operatorIds, deleteAll, _callback);
         return localVarCall;
 
     }
@@ -323,9 +333,9 @@ public class OpenChannelApi {
     /**
      * Cancel the registration of operators
      * ## Cancel the registration of operators  Cancels the registration of operators from an open channel but leave them as participants.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-cancel-the-registration-of-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to cancel the registration of operators.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param operatorIds  (required)
-     * @param apiToken  (optional)
      * @param deleteAll  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -334,16 +344,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void ocCancelTheRegistrationOfOperators(String channelUrl, List<String> operatorIds, String apiToken, Boolean deleteAll) throws ApiException {
-        ocCancelTheRegistrationOfOperatorsWithHttpInfo(channelUrl, operatorIds, apiToken, deleteAll);
+    public void ocCancelTheRegistrationOfOperators(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
+        ocCancelTheRegistrationOfOperatorsWithHttpInfo(apiToken, channelUrl, operatorIds, deleteAll);
     }
 
     /**
      * Cancel the registration of operators
      * ## Cancel the registration of operators  Cancels the registration of operators from an open channel but leave them as participants.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-cancel-the-registration-of-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to cancel the registration of operators.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param operatorIds  (required)
-     * @param apiToken  (optional)
      * @param deleteAll  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -353,17 +363,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> ocCancelTheRegistrationOfOperatorsWithHttpInfo(String channelUrl, List<String> operatorIds, String apiToken, Boolean deleteAll) throws ApiException {
-        okhttp3.Call localVarCall = ocCancelTheRegistrationOfOperatorsValidateBeforeCall(channelUrl, operatorIds, apiToken, deleteAll, null);
+    public ApiResponse<Void> ocCancelTheRegistrationOfOperatorsWithHttpInfo(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
+        okhttp3.Call localVarCall = ocCancelTheRegistrationOfOperatorsValidateBeforeCall(apiToken, channelUrl, operatorIds, deleteAll, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Cancel the registration of operators (asynchronously)
      * ## Cancel the registration of operators  Cancels the registration of operators from an open channel but leave them as participants.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-cancel-the-registration-of-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to cancel the registration of operators.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param operatorIds  (required)
-     * @param apiToken  (optional)
      * @param deleteAll  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -374,15 +384,15 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocCancelTheRegistrationOfOperatorsAsync(String channelUrl, List<String> operatorIds, String apiToken, Boolean deleteAll, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call ocCancelTheRegistrationOfOperatorsAsync(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocCancelTheRegistrationOfOperatorsValidateBeforeCall(channelUrl, operatorIds, apiToken, deleteAll, _callback);
+        okhttp3.Call localVarCall = ocCancelTheRegistrationOfOperatorsValidateBeforeCall(apiToken, channelUrl, operatorIds, deleteAll, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocCreateChannel
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param ocCreateChannelData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -446,6 +456,11 @@ public class OpenChannelApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call ocCreateChannelValidateBeforeCall(String apiToken, OcCreateChannelData ocCreateChannelData, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocCreateChannel(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = ocCreateChannelCall(apiToken, ocCreateChannelData, _callback);
         return localVarCall;
@@ -455,7 +470,7 @@ public class OpenChannelApi {
     /**
      * Create a channel
      * ## Create a channel  Creates an open channel.  &gt;__Note__: Classic open channels created before the deprecation date of March 2021 will maintain their original form and functions. However, new applications created after December 15, 2020, will be able to create dynamic partitioning open channels only.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param ocCreateChannelData  (optional)
      * @return SendBirdOpenChannel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -473,7 +488,7 @@ public class OpenChannelApi {
     /**
      * Create a channel
      * ## Create a channel  Creates an open channel.  &gt;__Note__: Classic open channels created before the deprecation date of March 2021 will maintain their original form and functions. However, new applications created after December 15, 2020, will be able to create dynamic partitioning open channels only.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param ocCreateChannelData  (optional)
      * @return ApiResponse&lt;SendBirdOpenChannel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -492,7 +507,7 @@ public class OpenChannelApi {
     /**
      * Create a channel (asynchronously)
      * ## Create a channel  Creates an open channel.  &gt;__Note__: Classic open channels created before the deprecation date of March 2021 will maintain their original form and functions. However, new applications created after December 15, 2020, will be able to create dynamic partitioning open channels only.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param ocCreateChannelData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -512,8 +527,8 @@ public class OpenChannelApi {
     }
     /**
      * Build call for ocDeleteChannelByUrl
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -523,7 +538,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocDeleteChannelByUrlCall(String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocDeleteChannelByUrlCall(String apiToken, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -575,7 +590,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocDeleteChannelByUrlValidateBeforeCall(String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocDeleteChannelByUrlValidateBeforeCall(String apiToken, String channelUrl, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocDeleteChannelByUrl(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -583,7 +603,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocDeleteChannelByUrlCall(channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = ocDeleteChannelByUrlCall(apiToken, channelUrl, _callback);
         return localVarCall;
 
     }
@@ -591,8 +611,8 @@ public class OpenChannelApi {
     /**
      * Delete a channel
      * ## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -600,15 +620,15 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void ocDeleteChannelByUrl(String channelUrl, String apiToken) throws ApiException {
-        ocDeleteChannelByUrlWithHttpInfo(channelUrl, apiToken);
+    public void ocDeleteChannelByUrl(String apiToken, String channelUrl) throws ApiException {
+        ocDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
     }
 
     /**
      * Delete a channel
      * ## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -617,16 +637,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> ocDeleteChannelByUrlWithHttpInfo(String channelUrl, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = ocDeleteChannelByUrlValidateBeforeCall(channelUrl, apiToken, null);
+    public ApiResponse<Void> ocDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
+        okhttp3.Call localVarCall = ocDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a channel (asynchronously)
      * ## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -636,16 +656,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocDeleteChannelByUrlAsync(String channelUrl, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call ocDeleteChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocDeleteChannelByUrlValidateBeforeCall(channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = ocDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocFreezeChannel
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocFreezeChannelData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -656,7 +676,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocFreezeChannelCall(String channelUrl, String apiToken, OcFreezeChannelData ocFreezeChannelData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocFreezeChannelCall(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -708,7 +728,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocFreezeChannelValidateBeforeCall(String channelUrl, String apiToken, OcFreezeChannelData ocFreezeChannelData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocFreezeChannelValidateBeforeCall(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocFreezeChannel(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -716,7 +741,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocFreezeChannelCall(channelUrl, apiToken, ocFreezeChannelData, _callback);
+        okhttp3.Call localVarCall = ocFreezeChannelCall(apiToken, channelUrl, ocFreezeChannelData, _callback);
         return localVarCall;
 
     }
@@ -724,8 +749,8 @@ public class OpenChannelApi {
     /**
      * Freeze a channel
      * ## Freeze a channel  Freezes or unfreezes an open channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-freeze-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocFreezeChannelData  (optional)
      * @return SendBirdOpenChannel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -735,16 +760,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdOpenChannel ocFreezeChannel(String channelUrl, String apiToken, OcFreezeChannelData ocFreezeChannelData) throws ApiException {
-        ApiResponse<SendBirdOpenChannel> localVarResp = ocFreezeChannelWithHttpInfo(channelUrl, apiToken, ocFreezeChannelData);
+    public SendBirdOpenChannel ocFreezeChannel(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData) throws ApiException {
+        ApiResponse<SendBirdOpenChannel> localVarResp = ocFreezeChannelWithHttpInfo(apiToken, channelUrl, ocFreezeChannelData);
         return localVarResp.getData();
     }
 
     /**
      * Freeze a channel
      * ## Freeze a channel  Freezes or unfreezes an open channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-freeze-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocFreezeChannelData  (optional)
      * @return ApiResponse&lt;SendBirdOpenChannel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -754,8 +779,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String channelUrl, String apiToken, OcFreezeChannelData ocFreezeChannelData) throws ApiException {
-        okhttp3.Call localVarCall = ocFreezeChannelValidateBeforeCall(channelUrl, apiToken, ocFreezeChannelData, null);
+    public ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData) throws ApiException {
+        okhttp3.Call localVarCall = ocFreezeChannelValidateBeforeCall(apiToken, channelUrl, ocFreezeChannelData, null);
         Type localVarReturnType = new TypeToken<SendBirdOpenChannel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -763,8 +788,8 @@ public class OpenChannelApi {
     /**
      * Freeze a channel (asynchronously)
      * ## Freeze a channel  Freezes or unfreezes an open channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-freeze-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocFreezeChannelData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -775,17 +800,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocFreezeChannelAsync(String channelUrl, String apiToken, OcFreezeChannelData ocFreezeChannelData, final ApiCallback<SendBirdOpenChannel> _callback) throws ApiException {
+    public okhttp3.Call ocFreezeChannelAsync(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData, final ApiCallback<SendBirdOpenChannel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocFreezeChannelValidateBeforeCall(channelUrl, apiToken, ocFreezeChannelData, _callback);
+        okhttp3.Call localVarCall = ocFreezeChannelValidateBeforeCall(apiToken, channelUrl, ocFreezeChannelData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdOpenChannel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocListBannedUsers
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -797,7 +822,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocListBannedUsersCall(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocListBannedUsersCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -857,7 +882,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocListBannedUsersValidateBeforeCall(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocListBannedUsersValidateBeforeCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocListBannedUsers(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -865,7 +895,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocListBannedUsersCall(channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = ocListBannedUsersCall(apiToken, channelUrl, token, limit, _callback);
         return localVarCall;
 
     }
@@ -873,8 +903,8 @@ public class OpenChannelApi {
     /**
      * List banned users
      * ## List banned users  Retrieves a list of banned users from a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return OcListBannedUsersResponse
@@ -885,16 +915,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public OcListBannedUsersResponse ocListBannedUsers(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<OcListBannedUsersResponse> localVarResp = ocListBannedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
+    public OcListBannedUsersResponse ocListBannedUsers(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+        ApiResponse<OcListBannedUsersResponse> localVarResp = ocListBannedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List banned users
      * ## List banned users  Retrieves a list of banned users from a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;OcListBannedUsersResponse&gt;
@@ -905,8 +935,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = ocListBannedUsersValidateBeforeCall(channelUrl, apiToken, token, limit, null);
+    public ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = ocListBannedUsersValidateBeforeCall(apiToken, channelUrl, token, limit, null);
         Type localVarReturnType = new TypeToken<OcListBannedUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -914,8 +944,8 @@ public class OpenChannelApi {
     /**
      * List banned users (asynchronously)
      * ## List banned users  Retrieves a list of banned users from a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -927,16 +957,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocListBannedUsersAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<OcListBannedUsersResponse> _callback) throws ApiException {
+    public okhttp3.Call ocListBannedUsersAsync(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback<OcListBannedUsersResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocListBannedUsersValidateBeforeCall(channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = ocListBannedUsersValidateBeforeCall(apiToken, channelUrl, token, limit, _callback);
         Type localVarReturnType = new TypeToken<OcListBannedUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocListChannels
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param customTypes  (optional)
@@ -1039,6 +1069,11 @@ public class OpenChannelApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call ocListChannelsValidateBeforeCall(String apiToken, String token, Integer limit, String customTypes, String nameContains, String urlContains, Boolean showFrozen, Boolean showMetadata, String customType, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocListChannels(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = ocListChannelsCall(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType, _callback);
         return localVarCall;
@@ -1048,7 +1083,7 @@ public class OpenChannelApi {
     /**
      * List channels
      * ## List channels  Retrieves a list of open channels. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-channels ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param customTypes  (optional)
@@ -1073,7 +1108,7 @@ public class OpenChannelApi {
     /**
      * List channels
      * ## List channels  Retrieves a list of open channels. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-channels ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param customTypes  (optional)
@@ -1099,7 +1134,7 @@ public class OpenChannelApi {
     /**
      * List channels (asynchronously)
      * ## List channels  Retrieves a list of open channels. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-channels ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param customTypes  (optional)
@@ -1126,8 +1161,8 @@ public class OpenChannelApi {
     }
     /**
      * Build call for ocListMutedUsers
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -1139,7 +1174,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocListMutedUsersCall(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocListMutedUsersCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1199,7 +1234,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocListMutedUsersValidateBeforeCall(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocListMutedUsersValidateBeforeCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocListMutedUsers(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -1207,7 +1247,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocListMutedUsersCall(channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = ocListMutedUsersCall(apiToken, channelUrl, token, limit, _callback);
         return localVarCall;
 
     }
@@ -1215,8 +1255,8 @@ public class OpenChannelApi {
     /**
      * List muted users
      * ## List muted users  Retrieves a list of muted users in the channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return OcListMutedUsersResponse
@@ -1227,16 +1267,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public OcListMutedUsersResponse ocListMutedUsers(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<OcListMutedUsersResponse> localVarResp = ocListMutedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
+    public OcListMutedUsersResponse ocListMutedUsers(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+        ApiResponse<OcListMutedUsersResponse> localVarResp = ocListMutedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List muted users
      * ## List muted users  Retrieves a list of muted users in the channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;OcListMutedUsersResponse&gt;
@@ -1247,8 +1287,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = ocListMutedUsersValidateBeforeCall(channelUrl, apiToken, token, limit, null);
+    public ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = ocListMutedUsersValidateBeforeCall(apiToken, channelUrl, token, limit, null);
         Type localVarReturnType = new TypeToken<OcListMutedUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1256,8 +1296,8 @@ public class OpenChannelApi {
     /**
      * List muted users (asynchronously)
      * ## List muted users  Retrieves a list of muted users in the channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1269,17 +1309,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocListMutedUsersAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<OcListMutedUsersResponse> _callback) throws ApiException {
+    public okhttp3.Call ocListMutedUsersAsync(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback<OcListMutedUsersResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocListMutedUsersValidateBeforeCall(channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = ocListMutedUsersValidateBeforeCall(apiToken, channelUrl, token, limit, _callback);
         Type localVarReturnType = new TypeToken<OcListMutedUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocListOperators
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -1291,7 +1331,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocListOperatorsCall(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocListOperatorsCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1351,7 +1391,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocListOperatorsValidateBeforeCall(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocListOperatorsValidateBeforeCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocListOperators(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -1359,7 +1404,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocListOperatorsCall(channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = ocListOperatorsCall(apiToken, channelUrl, token, limit, _callback);
         return localVarCall;
 
     }
@@ -1367,8 +1412,8 @@ public class OpenChannelApi {
     /**
      * List operators
      * ## List operators  Retrieves a list of operators of an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of operators.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return OcListOperatorsResponse
@@ -1379,16 +1424,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public OcListOperatorsResponse ocListOperators(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<OcListOperatorsResponse> localVarResp = ocListOperatorsWithHttpInfo(channelUrl, apiToken, token, limit);
+    public OcListOperatorsResponse ocListOperators(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+        ApiResponse<OcListOperatorsResponse> localVarResp = ocListOperatorsWithHttpInfo(apiToken, channelUrl, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List operators
      * ## List operators  Retrieves a list of operators of an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of operators.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;OcListOperatorsResponse&gt;
@@ -1399,8 +1444,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = ocListOperatorsValidateBeforeCall(channelUrl, apiToken, token, limit, null);
+    public ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = ocListOperatorsValidateBeforeCall(apiToken, channelUrl, token, limit, null);
         Type localVarReturnType = new TypeToken<OcListOperatorsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1408,8 +1453,8 @@ public class OpenChannelApi {
     /**
      * List operators (asynchronously)
      * ## List operators  Retrieves a list of operators of an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of operators.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1421,17 +1466,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocListOperatorsAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<OcListOperatorsResponse> _callback) throws ApiException {
+    public okhttp3.Call ocListOperatorsAsync(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback<OcListOperatorsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocListOperatorsValidateBeforeCall(channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = ocListOperatorsValidateBeforeCall(apiToken, channelUrl, token, limit, _callback);
         Type localVarReturnType = new TypeToken<OcListOperatorsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocListParticipants
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -1443,7 +1488,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocListParticipantsCall(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocListParticipantsCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1503,7 +1548,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocListParticipantsValidateBeforeCall(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocListParticipantsValidateBeforeCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocListParticipants(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -1511,7 +1561,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocListParticipantsCall(channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = ocListParticipantsCall(apiToken, channelUrl, token, limit, _callback);
         return localVarCall;
 
     }
@@ -1519,8 +1569,8 @@ public class OpenChannelApi {
     /**
      * List participants
      * ## List participants  Retrieves a list of the participants of an open channel. A participant refers to a user who has entered the open channel and is currently online.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-participants ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of participants in.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return OcListParticipantsResponse
@@ -1531,16 +1581,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public OcListParticipantsResponse ocListParticipants(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<OcListParticipantsResponse> localVarResp = ocListParticipantsWithHttpInfo(channelUrl, apiToken, token, limit);
+    public OcListParticipantsResponse ocListParticipants(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+        ApiResponse<OcListParticipantsResponse> localVarResp = ocListParticipantsWithHttpInfo(apiToken, channelUrl, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List participants
      * ## List participants  Retrieves a list of the participants of an open channel. A participant refers to a user who has entered the open channel and is currently online.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-participants ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of participants in.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;OcListParticipantsResponse&gt;
@@ -1551,8 +1601,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OcListParticipantsResponse> ocListParticipantsWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = ocListParticipantsValidateBeforeCall(channelUrl, apiToken, token, limit, null);
+    public ApiResponse<OcListParticipantsResponse> ocListParticipantsWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = ocListParticipantsValidateBeforeCall(apiToken, channelUrl, token, limit, null);
         Type localVarReturnType = new TypeToken<OcListParticipantsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1560,8 +1610,8 @@ public class OpenChannelApi {
     /**
      * List participants (asynchronously)
      * ## List participants  Retrieves a list of the participants of an open channel. A participant refers to a user who has entered the open channel and is currently online.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-participants ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of participants in.
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1573,17 +1623,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocListParticipantsAsync(String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<OcListParticipantsResponse> _callback) throws ApiException {
+    public okhttp3.Call ocListParticipantsAsync(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback<OcListParticipantsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocListParticipantsValidateBeforeCall(channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = ocListParticipantsValidateBeforeCall(apiToken, channelUrl, token, limit, _callback);
         Type localVarReturnType = new TypeToken<OcListParticipantsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocMuteUser
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocMuteUserData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1594,7 +1644,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocMuteUserCall(String channelUrl, String apiToken, OcMuteUserData ocMuteUserData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocMuteUserCall(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1646,7 +1696,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocMuteUserValidateBeforeCall(String channelUrl, String apiToken, OcMuteUserData ocMuteUserData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocMuteUserValidateBeforeCall(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocMuteUser(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -1654,7 +1709,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocMuteUserCall(channelUrl, apiToken, ocMuteUserData, _callback);
+        okhttp3.Call localVarCall = ocMuteUserCall(apiToken, channelUrl, ocMuteUserData, _callback);
         return localVarCall;
 
     }
@@ -1662,8 +1717,8 @@ public class OpenChannelApi {
     /**
      * Mute a user
      * ## Mute a user  Mutes a user in the channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-mute-a-user
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocMuteUserData  (optional)
      * @return SendBirdOpenChannel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1673,16 +1728,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdOpenChannel ocMuteUser(String channelUrl, String apiToken, OcMuteUserData ocMuteUserData) throws ApiException {
-        ApiResponse<SendBirdOpenChannel> localVarResp = ocMuteUserWithHttpInfo(channelUrl, apiToken, ocMuteUserData);
+    public SendBirdOpenChannel ocMuteUser(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData) throws ApiException {
+        ApiResponse<SendBirdOpenChannel> localVarResp = ocMuteUserWithHttpInfo(apiToken, channelUrl, ocMuteUserData);
         return localVarResp.getData();
     }
 
     /**
      * Mute a user
      * ## Mute a user  Mutes a user in the channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-mute-a-user
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocMuteUserData  (optional)
      * @return ApiResponse&lt;SendBirdOpenChannel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1692,8 +1747,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String channelUrl, String apiToken, OcMuteUserData ocMuteUserData) throws ApiException {
-        okhttp3.Call localVarCall = ocMuteUserValidateBeforeCall(channelUrl, apiToken, ocMuteUserData, null);
+    public ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData) throws ApiException {
+        okhttp3.Call localVarCall = ocMuteUserValidateBeforeCall(apiToken, channelUrl, ocMuteUserData, null);
         Type localVarReturnType = new TypeToken<SendBirdOpenChannel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1701,8 +1756,8 @@ public class OpenChannelApi {
     /**
      * Mute a user (asynchronously)
      * ## Mute a user  Mutes a user in the channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-mute-a-user
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocMuteUserData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1713,17 +1768,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocMuteUserAsync(String channelUrl, String apiToken, OcMuteUserData ocMuteUserData, final ApiCallback<SendBirdOpenChannel> _callback) throws ApiException {
+    public okhttp3.Call ocMuteUserAsync(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData, final ApiCallback<SendBirdOpenChannel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocMuteUserValidateBeforeCall(channelUrl, apiToken, ocMuteUserData, _callback);
+        okhttp3.Call localVarCall = ocMuteUserValidateBeforeCall(apiToken, channelUrl, ocMuteUserData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdOpenChannel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocRegisterOperators
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocRegisterOperatorsData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1734,7 +1789,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocRegisterOperatorsCall(String channelUrl, String apiToken, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocRegisterOperatorsCall(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1786,7 +1841,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocRegisterOperatorsValidateBeforeCall(String channelUrl, String apiToken, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocRegisterOperatorsValidateBeforeCall(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocRegisterOperators(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -1794,7 +1854,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocRegisterOperatorsCall(channelUrl, apiToken, ocRegisterOperatorsData, _callback);
+        okhttp3.Call localVarCall = ocRegisterOperatorsCall(apiToken, channelUrl, ocRegisterOperatorsData, _callback);
         return localVarCall;
 
     }
@@ -1802,8 +1862,8 @@ public class OpenChannelApi {
     /**
      * Register operators
      * ## Register operators  Registers one or more operators to an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-register-operators ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocRegisterOperatorsData  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1812,15 +1872,15 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void ocRegisterOperators(String channelUrl, String apiToken, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
-        ocRegisterOperatorsWithHttpInfo(channelUrl, apiToken, ocRegisterOperatorsData);
+    public void ocRegisterOperators(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
+        ocRegisterOperatorsWithHttpInfo(apiToken, channelUrl, ocRegisterOperatorsData);
     }
 
     /**
      * Register operators
      * ## Register operators  Registers one or more operators to an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-register-operators ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocRegisterOperatorsData  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1830,16 +1890,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> ocRegisterOperatorsWithHttpInfo(String channelUrl, String apiToken, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
-        okhttp3.Call localVarCall = ocRegisterOperatorsValidateBeforeCall(channelUrl, apiToken, ocRegisterOperatorsData, null);
+    public ApiResponse<Void> ocRegisterOperatorsWithHttpInfo(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
+        okhttp3.Call localVarCall = ocRegisterOperatorsValidateBeforeCall(apiToken, channelUrl, ocRegisterOperatorsData, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Register operators (asynchronously)
      * ## Register operators  Registers one or more operators to an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-register-operators ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocRegisterOperatorsData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1850,17 +1910,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocRegisterOperatorsAsync(String channelUrl, String apiToken, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call ocRegisterOperatorsAsync(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocRegisterOperatorsValidateBeforeCall(channelUrl, apiToken, ocRegisterOperatorsData, _callback);
+        okhttp3.Call localVarCall = ocRegisterOperatorsValidateBeforeCall(apiToken, channelUrl, ocRegisterOperatorsData, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocUnbanUserById
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1870,7 +1930,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUnbanUserByIdCall(String channelUrl, String bannedUserId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocUnbanUserByIdCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1923,7 +1983,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocUnbanUserByIdValidateBeforeCall(String channelUrl, String bannedUserId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocUnbanUserByIdValidateBeforeCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocUnbanUserById(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -1936,7 +2001,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocUnbanUserByIdCall(channelUrl, bannedUserId, apiToken, _callback);
+        okhttp3.Call localVarCall = ocUnbanUserByIdCall(apiToken, channelUrl, bannedUserId, _callback);
         return localVarCall;
 
     }
@@ -1944,9 +2009,9 @@ public class OpenChannelApi {
     /**
      * Unban a user
      * ## Unban a user  Unbans a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unban-a-user ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1954,16 +2019,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void ocUnbanUserById(String channelUrl, String bannedUserId, String apiToken) throws ApiException {
-        ocUnbanUserByIdWithHttpInfo(channelUrl, bannedUserId, apiToken);
+    public void ocUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+        ocUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
     }
 
     /**
      * Unban a user
      * ## Unban a user  Unbans a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unban-a-user ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1972,17 +2037,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> ocUnbanUserByIdWithHttpInfo(String channelUrl, String bannedUserId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = ocUnbanUserByIdValidateBeforeCall(channelUrl, bannedUserId, apiToken, null);
+    public ApiResponse<Void> ocUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+        okhttp3.Call localVarCall = ocUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Unban a user (asynchronously)
      * ## Unban a user  Unbans a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unban-a-user ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1992,17 +2057,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUnbanUserByIdAsync(String channelUrl, String bannedUserId, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call ocUnbanUserByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocUnbanUserByIdValidateBeforeCall(channelUrl, bannedUserId, apiToken, _callback);
+        okhttp3.Call localVarCall = ocUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocUnmuteUserById
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2012,7 +2077,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUnmuteUserByIdCall(String channelUrl, String mutedUserId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocUnmuteUserByIdCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2065,7 +2130,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocUnmuteUserByIdValidateBeforeCall(String channelUrl, String mutedUserId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocUnmuteUserByIdValidateBeforeCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocUnmuteUserById(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -2078,7 +2148,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocUnmuteUserByIdCall(channelUrl, mutedUserId, apiToken, _callback);
+        okhttp3.Call localVarCall = ocUnmuteUserByIdCall(apiToken, channelUrl, mutedUserId, _callback);
         return localVarCall;
 
     }
@@ -2086,9 +2156,9 @@ public class OpenChannelApi {
     /**
      * Unmute a user
      * ## Unmute a user  Unmutes a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unmute-a-user ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2096,16 +2166,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void ocUnmuteUserById(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
-        ocUnmuteUserByIdWithHttpInfo(channelUrl, mutedUserId, apiToken);
+    public void ocUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+        ocUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
     }
 
     /**
      * Unmute a user
      * ## Unmute a user  Unmutes a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unmute-a-user ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2114,17 +2184,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> ocUnmuteUserByIdWithHttpInfo(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = ocUnmuteUserByIdValidateBeforeCall(channelUrl, mutedUserId, apiToken, null);
+    public ApiResponse<Void> ocUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+        okhttp3.Call localVarCall = ocUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Unmute a user (asynchronously)
      * ## Unmute a user  Unmutes a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unmute-a-user ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2134,17 +2204,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUnmuteUserByIdAsync(String channelUrl, String mutedUserId, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call ocUnmuteUserByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocUnmuteUserByIdValidateBeforeCall(channelUrl, mutedUserId, apiToken, _callback);
+        okhttp3.Call localVarCall = ocUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocUpdateBanById
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @param ocUpdateBanByIdData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2155,7 +2225,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUpdateBanByIdCall(String channelUrl, String bannedUserId, String apiToken, OcUpdateBanByIdData ocUpdateBanByIdData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocUpdateBanByIdCall(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2208,7 +2278,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocUpdateBanByIdValidateBeforeCall(String channelUrl, String bannedUserId, String apiToken, OcUpdateBanByIdData ocUpdateBanByIdData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocUpdateBanByIdValidateBeforeCall(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocUpdateBanById(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -2221,7 +2296,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocUpdateBanByIdCall(channelUrl, bannedUserId, apiToken, ocUpdateBanByIdData, _callback);
+        okhttp3.Call localVarCall = ocUpdateBanByIdCall(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData, _callback);
         return localVarCall;
 
     }
@@ -2229,9 +2304,9 @@ public class OpenChannelApi {
     /**
      * Update a ban
      * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of a ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-ban ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @param ocUpdateBanByIdData  (optional)
      * @return SendBirdUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2241,17 +2316,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdUser ocUpdateBanById(String channelUrl, String bannedUserId, String apiToken, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
-        ApiResponse<SendBirdUser> localVarResp = ocUpdateBanByIdWithHttpInfo(channelUrl, bannedUserId, apiToken, ocUpdateBanByIdData);
+    public SendBirdUser ocUpdateBanById(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
+        ApiResponse<SendBirdUser> localVarResp = ocUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
         return localVarResp.getData();
     }
 
     /**
      * Update a ban
      * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of a ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-ban ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @param ocUpdateBanByIdData  (optional)
      * @return ApiResponse&lt;SendBirdUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2261,8 +2336,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdUser> ocUpdateBanByIdWithHttpInfo(String channelUrl, String bannedUserId, String apiToken, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
-        okhttp3.Call localVarCall = ocUpdateBanByIdValidateBeforeCall(channelUrl, bannedUserId, apiToken, ocUpdateBanByIdData, null);
+    public ApiResponse<SendBirdUser> ocUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
+        okhttp3.Call localVarCall = ocUpdateBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData, null);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2270,9 +2345,9 @@ public class OpenChannelApi {
     /**
      * Update a ban (asynchronously)
      * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of a ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-ban ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @param ocUpdateBanByIdData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2283,17 +2358,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUpdateBanByIdAsync(String channelUrl, String bannedUserId, String apiToken, OcUpdateBanByIdData ocUpdateBanByIdData, final ApiCallback<SendBirdUser> _callback) throws ApiException {
+    public okhttp3.Call ocUpdateBanByIdAsync(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData, final ApiCallback<SendBirdUser> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocUpdateBanByIdValidateBeforeCall(channelUrl, bannedUserId, apiToken, ocUpdateBanByIdData, _callback);
+        okhttp3.Call localVarCall = ocUpdateBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocUpdateChannelByUrl
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocUpdateChannelByUrlData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2304,7 +2379,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUpdateChannelByUrlCall(String channelUrl, String apiToken, OcUpdateChannelByUrlData ocUpdateChannelByUrlData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocUpdateChannelByUrlCall(String apiToken, String channelUrl, OcUpdateChannelByUrlData ocUpdateChannelByUrlData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2356,7 +2431,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocUpdateChannelByUrlValidateBeforeCall(String channelUrl, String apiToken, OcUpdateChannelByUrlData ocUpdateChannelByUrlData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocUpdateChannelByUrlValidateBeforeCall(String apiToken, String channelUrl, OcUpdateChannelByUrlData ocUpdateChannelByUrlData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocUpdateChannelByUrl(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -2364,7 +2444,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocUpdateChannelByUrlCall(channelUrl, apiToken, ocUpdateChannelByUrlData, _callback);
+        okhttp3.Call localVarCall = ocUpdateChannelByUrlCall(apiToken, channelUrl, ocUpdateChannelByUrlData, _callback);
         return localVarCall;
 
     }
@@ -2372,8 +2452,8 @@ public class OpenChannelApi {
     /**
      * Update a channel
      * ## Update a channel  Updates information on an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocUpdateChannelByUrlData  (optional)
      * @return SendBirdOpenChannel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2383,16 +2463,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdOpenChannel ocUpdateChannelByUrl(String channelUrl, String apiToken, OcUpdateChannelByUrlData ocUpdateChannelByUrlData) throws ApiException {
-        ApiResponse<SendBirdOpenChannel> localVarResp = ocUpdateChannelByUrlWithHttpInfo(channelUrl, apiToken, ocUpdateChannelByUrlData);
+    public SendBirdOpenChannel ocUpdateChannelByUrl(String apiToken, String channelUrl, OcUpdateChannelByUrlData ocUpdateChannelByUrlData) throws ApiException {
+        ApiResponse<SendBirdOpenChannel> localVarResp = ocUpdateChannelByUrlWithHttpInfo(apiToken, channelUrl, ocUpdateChannelByUrlData);
         return localVarResp.getData();
     }
 
     /**
      * Update a channel
      * ## Update a channel  Updates information on an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocUpdateChannelByUrlData  (optional)
      * @return ApiResponse&lt;SendBirdOpenChannel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2402,8 +2482,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdOpenChannel> ocUpdateChannelByUrlWithHttpInfo(String channelUrl, String apiToken, OcUpdateChannelByUrlData ocUpdateChannelByUrlData) throws ApiException {
-        okhttp3.Call localVarCall = ocUpdateChannelByUrlValidateBeforeCall(channelUrl, apiToken, ocUpdateChannelByUrlData, null);
+    public ApiResponse<SendBirdOpenChannel> ocUpdateChannelByUrlWithHttpInfo(String apiToken, String channelUrl, OcUpdateChannelByUrlData ocUpdateChannelByUrlData) throws ApiException {
+        okhttp3.Call localVarCall = ocUpdateChannelByUrlValidateBeforeCall(apiToken, channelUrl, ocUpdateChannelByUrlData, null);
         Type localVarReturnType = new TypeToken<SendBirdOpenChannel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2411,8 +2491,8 @@ public class OpenChannelApi {
     /**
      * Update a channel (asynchronously)
      * ## Update a channel  Updates information on an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param ocUpdateChannelByUrlData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2423,18 +2503,18 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUpdateChannelByUrlAsync(String channelUrl, String apiToken, OcUpdateChannelByUrlData ocUpdateChannelByUrlData, final ApiCallback<SendBirdOpenChannel> _callback) throws ApiException {
+    public okhttp3.Call ocUpdateChannelByUrlAsync(String apiToken, String channelUrl, OcUpdateChannelByUrlData ocUpdateChannelByUrlData, final ApiCallback<SendBirdOpenChannel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocUpdateChannelByUrlValidateBeforeCall(channelUrl, apiToken, ocUpdateChannelByUrlData, _callback);
+        okhttp3.Call localVarCall = ocUpdateChannelByUrlValidateBeforeCall(apiToken, channelUrl, ocUpdateChannelByUrlData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdOpenChannel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocViewBanById
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2444,7 +2524,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocViewBanByIdCall(String channelUrl, String bannedUserId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocViewBanByIdCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2497,7 +2577,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocViewBanByIdValidateBeforeCall(String channelUrl, String bannedUserId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocViewBanByIdValidateBeforeCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocViewBanById(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -2510,7 +2595,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocViewBanByIdCall(channelUrl, bannedUserId, apiToken, _callback);
+        okhttp3.Call localVarCall = ocViewBanByIdCall(apiToken, channelUrl, bannedUserId, _callback);
         return localVarCall;
 
     }
@@ -2518,9 +2603,9 @@ public class OpenChannelApi {
     /**
      * View a ban
      * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-ban ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @return SendBirdUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2529,17 +2614,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdUser ocViewBanById(String channelUrl, String bannedUserId, String apiToken) throws ApiException {
-        ApiResponse<SendBirdUser> localVarResp = ocViewBanByIdWithHttpInfo(channelUrl, bannedUserId, apiToken);
+    public SendBirdUser ocViewBanById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+        ApiResponse<SendBirdUser> localVarResp = ocViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
         return localVarResp.getData();
     }
 
     /**
      * View a ban
      * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-ban ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;SendBirdUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2548,8 +2633,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdUser> ocViewBanByIdWithHttpInfo(String channelUrl, String bannedUserId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = ocViewBanByIdValidateBeforeCall(channelUrl, bannedUserId, apiToken, null);
+    public ApiResponse<SendBirdUser> ocViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+        okhttp3.Call localVarCall = ocViewBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, null);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2557,9 +2642,9 @@ public class OpenChannelApi {
     /**
      * View a ban (asynchronously)
      * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-ban ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2569,17 +2654,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocViewBanByIdAsync(String channelUrl, String bannedUserId, String apiToken, final ApiCallback<SendBirdUser> _callback) throws ApiException {
+    public okhttp3.Call ocViewBanByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<SendBirdUser> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocViewBanByIdValidateBeforeCall(channelUrl, bannedUserId, apiToken, _callback);
+        okhttp3.Call localVarCall = ocViewBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, _callback);
         Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocViewChannelByUrl
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2589,7 +2674,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocViewChannelByUrlCall(String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocViewChannelByUrlCall(String apiToken, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2641,7 +2726,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocViewChannelByUrlValidateBeforeCall(String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocViewChannelByUrlValidateBeforeCall(String apiToken, String channelUrl, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocViewChannelByUrl(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -2649,7 +2739,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocViewChannelByUrlCall(channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = ocViewChannelByUrlCall(apiToken, channelUrl, _callback);
         return localVarCall;
 
     }
@@ -2657,8 +2747,8 @@ public class OpenChannelApi {
     /**
      * View a channel
      * ## View a channel  Retrieves information on a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return SendBirdOpenChannel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2667,16 +2757,16 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdOpenChannel ocViewChannelByUrl(String channelUrl, String apiToken) throws ApiException {
-        ApiResponse<SendBirdOpenChannel> localVarResp = ocViewChannelByUrlWithHttpInfo(channelUrl, apiToken);
+    public SendBirdOpenChannel ocViewChannelByUrl(String apiToken, String channelUrl) throws ApiException {
+        ApiResponse<SendBirdOpenChannel> localVarResp = ocViewChannelByUrlWithHttpInfo(apiToken, channelUrl);
         return localVarResp.getData();
     }
 
     /**
      * View a channel
      * ## View a channel  Retrieves information on a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;SendBirdOpenChannel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2685,8 +2775,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String channelUrl, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = ocViewChannelByUrlValidateBeforeCall(channelUrl, apiToken, null);
+    public ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
+        okhttp3.Call localVarCall = ocViewChannelByUrlValidateBeforeCall(apiToken, channelUrl, null);
         Type localVarReturnType = new TypeToken<SendBirdOpenChannel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2694,8 +2784,8 @@ public class OpenChannelApi {
     /**
      * View a channel (asynchronously)
      * ## View a channel  Retrieves information on a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2705,18 +2795,18 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocViewChannelByUrlAsync(String channelUrl, String apiToken, final ApiCallback<SendBirdOpenChannel> _callback) throws ApiException {
+    public okhttp3.Call ocViewChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<SendBirdOpenChannel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocViewChannelByUrlValidateBeforeCall(channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = ocViewChannelByUrlValidateBeforeCall(apiToken, channelUrl, _callback);
         Type localVarReturnType = new TypeToken<SendBirdOpenChannel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for ocViewMuteById
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2726,7 +2816,7 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocViewMuteByIdCall(String channelUrl, String mutedUserId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call ocViewMuteByIdCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2779,7 +2869,12 @@ public class OpenChannelApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call ocViewMuteByIdValidateBeforeCall(String channelUrl, String mutedUserId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call ocViewMuteByIdValidateBeforeCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling ocViewMuteById(Async)");
+        }
         
         // verify the required parameter 'channelUrl' is set
         if (channelUrl == null) {
@@ -2792,7 +2887,7 @@ public class OpenChannelApi {
         }
         
 
-        okhttp3.Call localVarCall = ocViewMuteByIdCall(channelUrl, mutedUserId, apiToken, _callback);
+        okhttp3.Call localVarCall = ocViewMuteByIdCall(apiToken, channelUrl, mutedUserId, _callback);
         return localVarCall;
 
     }
@@ -2800,9 +2895,9 @@ public class OpenChannelApi {
     /**
      * View a mute
      * ## View a mute  Checks if a user is muted in an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-mute ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @param apiToken  (optional)
      * @return OcViewMuteByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2811,17 +2906,17 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public OcViewMuteByIdResponse ocViewMuteById(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
-        ApiResponse<OcViewMuteByIdResponse> localVarResp = ocViewMuteByIdWithHttpInfo(channelUrl, mutedUserId, apiToken);
+    public OcViewMuteByIdResponse ocViewMuteById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+        ApiResponse<OcViewMuteByIdResponse> localVarResp = ocViewMuteByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
         return localVarResp.getData();
     }
 
     /**
      * View a mute
      * ## View a mute  Checks if a user is muted in an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-mute ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;OcViewMuteByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2830,8 +2925,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = ocViewMuteByIdValidateBeforeCall(channelUrl, mutedUserId, apiToken, null);
+    public ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+        okhttp3.Call localVarCall = ocViewMuteByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, null);
         Type localVarReturnType = new TypeToken<OcViewMuteByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2839,9 +2934,9 @@ public class OpenChannelApi {
     /**
      * View a mute (asynchronously)
      * ## View a mute  Checks if a user is muted in an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-mute ----------------------------
+     * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2851,9 +2946,9 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocViewMuteByIdAsync(String channelUrl, String mutedUserId, String apiToken, final ApiCallback<OcViewMuteByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call ocViewMuteByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<OcViewMuteByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = ocViewMuteByIdValidateBeforeCall(channelUrl, mutedUserId, apiToken, _callback);
+        okhttp3.Call localVarCall = ocViewMuteByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, _callback);
         Type localVarReturnType = new TypeToken<OcViewMuteByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

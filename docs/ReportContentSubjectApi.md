@@ -60,7 +60,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
  **startTs** | **Integer**|  | [optional]
@@ -86,7 +86,7 @@ No authorization required
 
 <a name="listReportsOnChannelByUrl"></a>
 # **listReportsOnChannelByUrl**
-> ListReportsOnChannelByUrlResponse listReportsOnChannelByUrl(channelType, channelUrl, apiToken, token, limit)
+> ListReportsOnChannelByUrlResponse listReportsOnChannelByUrl(apiToken, channelType, channelUrl, token, limit)
 
 List reports on a channel
 
@@ -107,13 +107,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ReportContentSubjectApi apiInstance = new ReportContentSubjectApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      ListReportsOnChannelByUrlResponse result = apiInstance.listReportsOnChannelByUrl(channelType, channelUrl, apiToken, token, limit);
+      ListReportsOnChannelByUrlResponse result = apiInstance.listReportsOnChannelByUrl(apiToken, channelType, channelUrl, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#listReportsOnChannelByUrl");
@@ -130,9 +130,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -156,7 +156,7 @@ No authorization required
 
 <a name="listReportsOnMessageById"></a>
 # **listReportsOnMessageById**
-> ListReportsOnMessageByIdResponse listReportsOnMessageById(channelType, channelUrl, messageId, apiToken, token, limit)
+> ListReportsOnMessageByIdResponse listReportsOnMessageById(apiToken, channelType, channelUrl, messageId, token, limit)
 
 List reports on a message
 
@@ -177,14 +177,14 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ReportContentSubjectApi apiInstance = new ReportContentSubjectApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      ListReportsOnMessageByIdResponse result = apiInstance.listReportsOnMessageById(channelType, channelUrl, messageId, apiToken, token, limit);
+      ListReportsOnMessageByIdResponse result = apiInstance.listReportsOnMessageById(apiToken, channelType, channelUrl, messageId, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#listReportsOnMessageById");
@@ -201,10 +201,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -228,7 +228,7 @@ No authorization required
 
 <a name="listReportsOnUserById"></a>
 # **listReportsOnUserById**
-> ListReportsOnUserByIdResponse listReportsOnUserById(offendingUserId, apiToken, token, limit)
+> ListReportsOnUserByIdResponse listReportsOnUserById(apiToken, offendingUserId, token, limit)
 
 List reports on a user
 
@@ -249,12 +249,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ReportContentSubjectApi apiInstance = new ReportContentSubjectApi(defaultClient);
-    String offendingUserId = "offendingUserId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String offendingUserId = "offendingUserId_example"; // String | 
     String token = "token_example"; // String | 
     Integer limit = 56; // Integer | 
     try {
-      ListReportsOnUserByIdResponse result = apiInstance.listReportsOnUserById(offendingUserId, apiToken, token, limit);
+      ListReportsOnUserByIdResponse result = apiInstance.listReportsOnUserById(apiToken, offendingUserId, token, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#listReportsOnUserById");
@@ -271,8 +271,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **offendingUserId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **token** | **String**|  | [optional]
  **limit** | **Integer**|  | [optional]
 
@@ -296,7 +296,7 @@ No authorization required
 
 <a name="reportChannelByUrl"></a>
 # **reportChannelByUrl**
-> ReportChannelByUrlResponse reportChannelByUrl(channelType, channelUrl, apiToken, reportChannelByUrlData)
+> ReportChannelByUrlResponse reportChannelByUrl(apiToken, channelType, channelUrl, reportChannelByUrlData)
 
 Report a channel
 
@@ -317,12 +317,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ReportContentSubjectApi apiInstance = new ReportContentSubjectApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     ReportChannelByUrlData reportChannelByUrlData = new ReportChannelByUrlData(); // ReportChannelByUrlData | 
     try {
-      ReportChannelByUrlResponse result = apiInstance.reportChannelByUrl(channelType, channelUrl, apiToken, reportChannelByUrlData);
+      ReportChannelByUrlResponse result = apiInstance.reportChannelByUrl(apiToken, channelType, channelUrl, reportChannelByUrlData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#reportChannelByUrl");
@@ -339,9 +339,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **reportChannelByUrlData** | [**ReportChannelByUrlData**](ReportChannelByUrlData.md)|  | [optional]
 
 ### Return type
@@ -364,7 +364,7 @@ No authorization required
 
 <a name="reportMessageById"></a>
 # **reportMessageById**
-> ReportMessageByIdResponse reportMessageById(channelType, channelUrl, messageId, apiToken, reportMessageByIdData)
+> ReportMessageByIdResponse reportMessageById(apiToken, channelType, channelUrl, messageId, reportMessageByIdData)
 
 Report a message
 
@@ -385,13 +385,13 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ReportContentSubjectApi apiInstance = new ReportContentSubjectApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     ReportMessageByIdData reportMessageByIdData = new ReportMessageByIdData(); // ReportMessageByIdData | 
     try {
-      ReportMessageByIdResponse result = apiInstance.reportMessageById(channelType, channelUrl, messageId, apiToken, reportMessageByIdData);
+      ReportMessageByIdResponse result = apiInstance.reportMessageById(apiToken, channelType, channelUrl, messageId, reportMessageByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#reportMessageById");
@@ -408,10 +408,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **reportMessageByIdData** | [**ReportMessageByIdData**](ReportMessageByIdData.md)|  | [optional]
 
 ### Return type
@@ -434,7 +434,7 @@ No authorization required
 
 <a name="reportUserById"></a>
 # **reportUserById**
-> ReportUserByIdResponse reportUserById(offendingUserId, apiToken, reportUserByIdData)
+> ReportUserByIdResponse reportUserById(apiToken, offendingUserId, reportUserByIdData)
 
 Report a user
 
@@ -455,11 +455,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ReportContentSubjectApi apiInstance = new ReportContentSubjectApi(defaultClient);
-    String offendingUserId = "offendingUserId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String offendingUserId = "offendingUserId_example"; // String | 
     ReportUserByIdData reportUserByIdData = new ReportUserByIdData(); // ReportUserByIdData | 
     try {
-      ReportUserByIdResponse result = apiInstance.reportUserById(offendingUserId, apiToken, reportUserByIdData);
+      ReportUserByIdResponse result = apiInstance.reportUserById(apiToken, offendingUserId, reportUserByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#reportUserById");
@@ -476,8 +476,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **offendingUserId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **reportUserByIdData** | [**ReportUserByIdData**](ReportUserByIdData.md)|  | [optional]
 
 ### Return type
@@ -500,7 +500,7 @@ No authorization required
 
 <a name="viewModeratedMessageById"></a>
 # **viewModeratedMessageById**
-> Map&lt;String, String&gt; viewModeratedMessageById(channelType, channelUrl, messageId, apiToken)
+> Map&lt;String, String&gt; viewModeratedMessageById(apiToken, channelType, channelUrl, messageId)
 
 View a moderated message
 
@@ -521,12 +521,12 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ReportContentSubjectApi apiInstance = new ReportContentSubjectApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      Map<String, String> result = apiInstance.viewModeratedMessageById(channelType, channelUrl, messageId, apiToken);
+      Map<String, String> result = apiInstance.viewModeratedMessageById(apiToken, channelType, channelUrl, messageId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportContentSubjectApi#viewModeratedMessageById");
@@ -543,10 +543,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **channelType** | **String**|  |
  **channelUrl** | **String**|  |
  **messageId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

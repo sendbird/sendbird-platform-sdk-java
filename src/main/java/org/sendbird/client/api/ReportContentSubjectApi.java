@@ -83,7 +83,7 @@ public class ReportContentSubjectApi {
 
     /**
      * Build call for listReports
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param startTs  (optional)
@@ -166,6 +166,11 @@ public class ReportContentSubjectApi {
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listReportsValidateBeforeCall(String apiToken, String token, Integer limit, Integer startTs, Integer endTs, final ApiCallback _callback) throws ApiException {
         
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listReports(Async)");
+        }
+        
 
         okhttp3.Call localVarCall = listReportsCall(apiToken, token, limit, startTs, endTs, _callback);
         return localVarCall;
@@ -175,7 +180,7 @@ public class ReportContentSubjectApi {
     /**
      * List reports
      * ## List reports  Retrieves a list of reports within an application regardless of object types.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param startTs  (optional)
@@ -196,7 +201,7 @@ public class ReportContentSubjectApi {
     /**
      * List reports
      * ## List reports  Retrieves a list of reports within an application regardless of object types.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param startTs  (optional)
@@ -218,7 +223,7 @@ public class ReportContentSubjectApi {
     /**
      * List reports (asynchronously)
      * ## List reports  Retrieves a list of reports within an application regardless of object types.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports ----------------------------
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @param token  (optional)
      * @param limit  (optional)
      * @param startTs  (optional)
@@ -241,9 +246,9 @@ public class ReportContentSubjectApi {
     }
     /**
      * Build call for listReportsOnChannelByUrl
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -255,7 +260,7 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsOnChannelByUrlCall(String channelType, String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listReportsOnChannelByUrlCall(String apiToken, String channelType, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -316,7 +321,12 @@ public class ReportContentSubjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listReportsOnChannelByUrlValidateBeforeCall(String channelType, String channelUrl, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listReportsOnChannelByUrlValidateBeforeCall(String apiToken, String channelType, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listReportsOnChannelByUrl(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -329,7 +339,7 @@ public class ReportContentSubjectApi {
         }
         
 
-        okhttp3.Call localVarCall = listReportsOnChannelByUrlCall(channelType, channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listReportsOnChannelByUrlCall(apiToken, channelType, channelUrl, token, limit, _callback);
         return localVarCall;
 
     }
@@ -337,9 +347,9 @@ public class ReportContentSubjectApi {
     /**
      * List reports on a channel
      * ## List reports on a channel  Retrieves a list of reports on a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-channel ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which is reported for offensive messages or inappropriate activities.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ListReportsOnChannelByUrlResponse
@@ -350,17 +360,17 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListReportsOnChannelByUrlResponse listReportsOnChannelByUrl(String channelType, String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<ListReportsOnChannelByUrlResponse> localVarResp = listReportsOnChannelByUrlWithHttpInfo(channelType, channelUrl, apiToken, token, limit);
+    public ListReportsOnChannelByUrlResponse listReportsOnChannelByUrl(String apiToken, String channelType, String channelUrl, String token, Integer limit) throws ApiException {
+        ApiResponse<ListReportsOnChannelByUrlResponse> localVarResp = listReportsOnChannelByUrlWithHttpInfo(apiToken, channelType, channelUrl, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List reports on a channel
      * ## List reports on a channel  Retrieves a list of reports on a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-channel ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which is reported for offensive messages or inappropriate activities.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;ListReportsOnChannelByUrlResponse&gt;
@@ -371,8 +381,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrlWithHttpInfo(String channelType, String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = listReportsOnChannelByUrlValidateBeforeCall(channelType, channelUrl, apiToken, token, limit, null);
+    public ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrlWithHttpInfo(String apiToken, String channelType, String channelUrl, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listReportsOnChannelByUrlValidateBeforeCall(apiToken, channelType, channelUrl, token, limit, null);
         Type localVarReturnType = new TypeToken<ListReportsOnChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -380,9 +390,9 @@ public class ReportContentSubjectApi {
     /**
      * List reports on a channel (asynchronously)
      * ## List reports on a channel  Retrieves a list of reports on a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-channel ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which is reported for offensive messages or inappropriate activities.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -394,19 +404,19 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsOnChannelByUrlAsync(String channelType, String channelUrl, String apiToken, String token, Integer limit, final ApiCallback<ListReportsOnChannelByUrlResponse> _callback) throws ApiException {
+    public okhttp3.Call listReportsOnChannelByUrlAsync(String apiToken, String channelType, String channelUrl, String token, Integer limit, final ApiCallback<ListReportsOnChannelByUrlResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listReportsOnChannelByUrlValidateBeforeCall(channelType, channelUrl, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listReportsOnChannelByUrlValidateBeforeCall(apiToken, channelType, channelUrl, token, limit, _callback);
         Type localVarReturnType = new TypeToken<ListReportsOnChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listReportsOnMessageById
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -418,7 +428,7 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsOnMessageByIdCall(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listReportsOnMessageByIdCall(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -480,7 +490,12 @@ public class ReportContentSubjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listReportsOnMessageByIdValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listReportsOnMessageByIdValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listReportsOnMessageById(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -498,7 +513,7 @@ public class ReportContentSubjectApi {
         }
         
 
-        okhttp3.Call localVarCall = listReportsOnMessageByIdCall(channelType, channelUrl, messageId, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listReportsOnMessageByIdCall(apiToken, channelType, channelUrl, messageId, token, limit, _callback);
         return localVarCall;
 
     }
@@ -506,10 +521,10 @@ public class ReportContentSubjectApi {
     /**
      * List reports on a message
      * ## List reports on a message  Retrieves a list of reports on a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where the reported message is in.  &#x60;message_id&#x60;      Type: string      Description: Specifies the unique ID of the reported message.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ListReportsOnMessageByIdResponse
@@ -520,18 +535,18 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListReportsOnMessageByIdResponse listReportsOnMessageById(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<ListReportsOnMessageByIdResponse> localVarResp = listReportsOnMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, token, limit);
+    public ListReportsOnMessageByIdResponse listReportsOnMessageById(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit) throws ApiException {
+        ApiResponse<ListReportsOnMessageByIdResponse> localVarResp = listReportsOnMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List reports on a message
      * ## List reports on a message  Retrieves a list of reports on a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where the reported message is in.  &#x60;message_id&#x60;      Type: string      Description: Specifies the unique ID of the reported message.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;ListReportsOnMessageByIdResponse&gt;
@@ -542,8 +557,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = listReportsOnMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, token, limit, null);
+    public ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listReportsOnMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, token, limit, null);
         Type localVarReturnType = new TypeToken<ListReportsOnMessageByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -551,10 +566,10 @@ public class ReportContentSubjectApi {
     /**
      * List reports on a message (asynchronously)
      * ## List reports on a message  Retrieves a list of reports on a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where the reported message is in.  &#x60;message_id&#x60;      Type: string      Description: Specifies the unique ID of the reported message.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -566,17 +581,17 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsOnMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit, final ApiCallback<ListReportsOnMessageByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call listReportsOnMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit, final ApiCallback<ListReportsOnMessageByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listReportsOnMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listReportsOnMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, token, limit, _callback);
         Type localVarReturnType = new TypeToken<ListReportsOnMessageByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listReportsOnUserById
+     * @param apiToken  (required)
      * @param offendingUserId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -588,7 +603,7 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsOnUserByIdCall(String offendingUserId, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listReportsOnUserByIdCall(String apiToken, String offendingUserId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -648,7 +663,12 @@ public class ReportContentSubjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listReportsOnUserByIdValidateBeforeCall(String offendingUserId, String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listReportsOnUserByIdValidateBeforeCall(String apiToken, String offendingUserId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listReportsOnUserById(Async)");
+        }
         
         // verify the required parameter 'offendingUserId' is set
         if (offendingUserId == null) {
@@ -656,7 +676,7 @@ public class ReportContentSubjectApi {
         }
         
 
-        okhttp3.Call localVarCall = listReportsOnUserByIdCall(offendingUserId, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listReportsOnUserByIdCall(apiToken, offendingUserId, token, limit, _callback);
         return localVarCall;
 
     }
@@ -664,8 +684,8 @@ public class ReportContentSubjectApi {
     /**
      * List reports on a user
      * ## List reports on a user  Retrieves a list of reports on a user who sends an offensive message.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-user ----------------------------   &#x60;offending_user_id&#x60;      Type: string      Description: Specifies the unique ID of the user who has sent the message to report.
+     * @param apiToken  (required)
      * @param offendingUserId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ListReportsOnUserByIdResponse
@@ -676,16 +696,16 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListReportsOnUserByIdResponse listReportsOnUserById(String offendingUserId, String apiToken, String token, Integer limit) throws ApiException {
-        ApiResponse<ListReportsOnUserByIdResponse> localVarResp = listReportsOnUserByIdWithHttpInfo(offendingUserId, apiToken, token, limit);
+    public ListReportsOnUserByIdResponse listReportsOnUserById(String apiToken, String offendingUserId, String token, Integer limit) throws ApiException {
+        ApiResponse<ListReportsOnUserByIdResponse> localVarResp = listReportsOnUserByIdWithHttpInfo(apiToken, offendingUserId, token, limit);
         return localVarResp.getData();
     }
 
     /**
      * List reports on a user
      * ## List reports on a user  Retrieves a list of reports on a user who sends an offensive message.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-user ----------------------------   &#x60;offending_user_id&#x60;      Type: string      Description: Specifies the unique ID of the user who has sent the message to report.
+     * @param apiToken  (required)
      * @param offendingUserId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @return ApiResponse&lt;ListReportsOnUserByIdResponse&gt;
@@ -696,8 +716,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttpInfo(String offendingUserId, String apiToken, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = listReportsOnUserByIdValidateBeforeCall(offendingUserId, apiToken, token, limit, null);
+    public ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttpInfo(String apiToken, String offendingUserId, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listReportsOnUserByIdValidateBeforeCall(apiToken, offendingUserId, token, limit, null);
         Type localVarReturnType = new TypeToken<ListReportsOnUserByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -705,8 +725,8 @@ public class ReportContentSubjectApi {
     /**
      * List reports on a user (asynchronously)
      * ## List reports on a user  Retrieves a list of reports on a user who sends an offensive message.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-user ----------------------------   &#x60;offending_user_id&#x60;      Type: string      Description: Specifies the unique ID of the user who has sent the message to report.
+     * @param apiToken  (required)
      * @param offendingUserId  (required)
-     * @param apiToken  (optional)
      * @param token  (optional)
      * @param limit  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -718,18 +738,18 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReportsOnUserByIdAsync(String offendingUserId, String apiToken, String token, Integer limit, final ApiCallback<ListReportsOnUserByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call listReportsOnUserByIdAsync(String apiToken, String offendingUserId, String token, Integer limit, final ApiCallback<ListReportsOnUserByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listReportsOnUserByIdValidateBeforeCall(offendingUserId, apiToken, token, limit, _callback);
+        okhttp3.Call localVarCall = listReportsOnUserByIdValidateBeforeCall(apiToken, offendingUserId, token, limit, _callback);
         Type localVarReturnType = new TypeToken<ListReportsOnUserByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for reportChannelByUrl
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param reportChannelByUrlData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -740,7 +760,7 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call reportChannelByUrlCall(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call reportChannelByUrlCall(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -793,7 +813,12 @@ public class ReportContentSubjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call reportChannelByUrlValidateBeforeCall(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call reportChannelByUrlValidateBeforeCall(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling reportChannelByUrl(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -806,7 +831,7 @@ public class ReportContentSubjectApi {
         }
         
 
-        okhttp3.Call localVarCall = reportChannelByUrlCall(channelType, channelUrl, apiToken, reportChannelByUrlData, _callback);
+        okhttp3.Call localVarCall = reportChannelByUrlCall(apiToken, channelType, channelUrl, reportChannelByUrlData, _callback);
         return localVarCall;
 
     }
@@ -814,9 +839,9 @@ public class ReportContentSubjectApi {
     /**
      * Report a channel
      * ## Report a channel  Reports a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param reportChannelByUrlData  (optional)
      * @return ReportChannelByUrlResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -826,17 +851,17 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ReportChannelByUrlResponse reportChannelByUrl(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
-        ApiResponse<ReportChannelByUrlResponse> localVarResp = reportChannelByUrlWithHttpInfo(channelType, channelUrl, apiToken, reportChannelByUrlData);
+    public ReportChannelByUrlResponse reportChannelByUrl(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
+        ApiResponse<ReportChannelByUrlResponse> localVarResp = reportChannelByUrlWithHttpInfo(apiToken, channelType, channelUrl, reportChannelByUrlData);
         return localVarResp.getData();
     }
 
     /**
      * Report a channel
      * ## Report a channel  Reports a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param reportChannelByUrlData  (optional)
      * @return ApiResponse&lt;ReportChannelByUrlResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -846,8 +871,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
-        okhttp3.Call localVarCall = reportChannelByUrlValidateBeforeCall(channelType, channelUrl, apiToken, reportChannelByUrlData, null);
+    public ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
+        okhttp3.Call localVarCall = reportChannelByUrlValidateBeforeCall(apiToken, channelType, channelUrl, reportChannelByUrlData, null);
         Type localVarReturnType = new TypeToken<ReportChannelByUrlResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -855,9 +880,9 @@ public class ReportContentSubjectApi {
     /**
      * Report a channel (asynchronously)
      * ## Report a channel  Reports a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-channel ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param reportChannelByUrlData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -868,19 +893,19 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call reportChannelByUrlAsync(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData, final ApiCallback<ReportChannelByUrlResponse> _callback) throws ApiException {
+    public okhttp3.Call reportChannelByUrlAsync(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData, final ApiCallback<ReportChannelByUrlResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = reportChannelByUrlValidateBeforeCall(channelType, channelUrl, apiToken, reportChannelByUrlData, _callback);
+        okhttp3.Call localVarCall = reportChannelByUrlValidateBeforeCall(apiToken, channelType, channelUrl, reportChannelByUrlData, _callback);
         Type localVarReturnType = new TypeToken<ReportChannelByUrlResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for reportMessageById
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param reportMessageByIdData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -891,7 +916,7 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call reportMessageByIdCall(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call reportMessageByIdCall(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -945,7 +970,12 @@ public class ReportContentSubjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call reportMessageByIdValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call reportMessageByIdValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling reportMessageById(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -963,7 +993,7 @@ public class ReportContentSubjectApi {
         }
         
 
-        okhttp3.Call localVarCall = reportMessageByIdCall(channelType, channelUrl, messageId, apiToken, reportMessageByIdData, _callback);
+        okhttp3.Call localVarCall = reportMessageByIdCall(apiToken, channelType, channelUrl, messageId, reportMessageByIdData, _callback);
         return localVarCall;
 
     }
@@ -971,10 +1001,10 @@ public class ReportContentSubjectApi {
     /**
      * Report a message
      * ## Report a message  Reports a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param reportMessageByIdData  (optional)
      * @return ReportMessageByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -984,18 +1014,18 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ReportMessageByIdResponse reportMessageById(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData) throws ApiException {
-        ApiResponse<ReportMessageByIdResponse> localVarResp = reportMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, reportMessageByIdData);
+    public ReportMessageByIdResponse reportMessageById(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData) throws ApiException {
+        ApiResponse<ReportMessageByIdResponse> localVarResp = reportMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, reportMessageByIdData);
         return localVarResp.getData();
     }
 
     /**
      * Report a message
      * ## Report a message  Reports a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param reportMessageByIdData  (optional)
      * @return ApiResponse&lt;ReportMessageByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1005,8 +1035,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData) throws ApiException {
-        okhttp3.Call localVarCall = reportMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, reportMessageByIdData, null);
+    public ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData) throws ApiException {
+        okhttp3.Call localVarCall = reportMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, reportMessageByIdData, null);
         Type localVarReturnType = new TypeToken<ReportMessageByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1014,10 +1044,10 @@ public class ReportContentSubjectApi {
     /**
      * Report a message (asynchronously)
      * ## Report a message  Reports a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param reportMessageByIdData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1028,17 +1058,17 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call reportMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData, final ApiCallback<ReportMessageByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call reportMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData, final ApiCallback<ReportMessageByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = reportMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, reportMessageByIdData, _callback);
+        okhttp3.Call localVarCall = reportMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, reportMessageByIdData, _callback);
         Type localVarReturnType = new TypeToken<ReportMessageByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for reportUserById
+     * @param apiToken  (required)
      * @param offendingUserId  (required)
-     * @param apiToken  (optional)
      * @param reportUserByIdData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1049,7 +1079,7 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call reportUserByIdCall(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call reportUserByIdCall(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1101,7 +1131,12 @@ public class ReportContentSubjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call reportUserByIdValidateBeforeCall(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call reportUserByIdValidateBeforeCall(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling reportUserById(Async)");
+        }
         
         // verify the required parameter 'offendingUserId' is set
         if (offendingUserId == null) {
@@ -1109,7 +1144,7 @@ public class ReportContentSubjectApi {
         }
         
 
-        okhttp3.Call localVarCall = reportUserByIdCall(offendingUserId, apiToken, reportUserByIdData, _callback);
+        okhttp3.Call localVarCall = reportUserByIdCall(apiToken, offendingUserId, reportUserByIdData, _callback);
         return localVarCall;
 
     }
@@ -1117,8 +1152,8 @@ public class ReportContentSubjectApi {
     /**
      * Report a user
      * ## Report a user  Reports a user who sends an offensive message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-user ----------------------------
+     * @param apiToken  (required)
      * @param offendingUserId  (required)
-     * @param apiToken  (optional)
      * @param reportUserByIdData  (optional)
      * @return ReportUserByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1128,16 +1163,16 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ReportUserByIdResponse reportUserById(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData) throws ApiException {
-        ApiResponse<ReportUserByIdResponse> localVarResp = reportUserByIdWithHttpInfo(offendingUserId, apiToken, reportUserByIdData);
+    public ReportUserByIdResponse reportUserById(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData) throws ApiException {
+        ApiResponse<ReportUserByIdResponse> localVarResp = reportUserByIdWithHttpInfo(apiToken, offendingUserId, reportUserByIdData);
         return localVarResp.getData();
     }
 
     /**
      * Report a user
      * ## Report a user  Reports a user who sends an offensive message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-user ----------------------------
+     * @param apiToken  (required)
      * @param offendingUserId  (required)
-     * @param apiToken  (optional)
      * @param reportUserByIdData  (optional)
      * @return ApiResponse&lt;ReportUserByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1147,8 +1182,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData) throws ApiException {
-        okhttp3.Call localVarCall = reportUserByIdValidateBeforeCall(offendingUserId, apiToken, reportUserByIdData, null);
+    public ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData) throws ApiException {
+        okhttp3.Call localVarCall = reportUserByIdValidateBeforeCall(apiToken, offendingUserId, reportUserByIdData, null);
         Type localVarReturnType = new TypeToken<ReportUserByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1156,8 +1191,8 @@ public class ReportContentSubjectApi {
     /**
      * Report a user (asynchronously)
      * ## Report a user  Reports a user who sends an offensive message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-user ----------------------------
+     * @param apiToken  (required)
      * @param offendingUserId  (required)
-     * @param apiToken  (optional)
      * @param reportUserByIdData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1168,19 +1203,19 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call reportUserByIdAsync(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData, final ApiCallback<ReportUserByIdResponse> _callback) throws ApiException {
+    public okhttp3.Call reportUserByIdAsync(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData, final ApiCallback<ReportUserByIdResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = reportUserByIdValidateBeforeCall(offendingUserId, apiToken, reportUserByIdData, _callback);
+        okhttp3.Call localVarCall = reportUserByIdValidateBeforeCall(apiToken, offendingUserId, reportUserByIdData, _callback);
         Type localVarReturnType = new TypeToken<ReportUserByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewModeratedMessageById
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1190,7 +1225,7 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewModeratedMessageByIdCall(String channelType, String channelUrl, String messageId, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewModeratedMessageByIdCall(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1244,7 +1279,12 @@ public class ReportContentSubjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewModeratedMessageByIdValidateBeforeCall(String channelType, String channelUrl, String messageId, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewModeratedMessageByIdValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewModeratedMessageById(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1262,7 +1302,7 @@ public class ReportContentSubjectApi {
         }
         
 
-        okhttp3.Call localVarCall = viewModeratedMessageByIdCall(channelType, channelUrl, messageId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewModeratedMessageByIdCall(apiToken, channelType, channelUrl, messageId, _callback);
         return localVarCall;
 
     }
@@ -1270,10 +1310,10 @@ public class ReportContentSubjectApi {
     /**
      * View a moderated message
      * ## View a moderated message  Retrieves information on a message that has been moderated by the [profanity filter](https://sendbird.com/docs/chat/v3/platform-api/guides/filter-and-moderation#2-profanity-filter).  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-view-a-moderated-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @return Map&lt;String, String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1282,18 +1322,18 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, String> viewModeratedMessageById(String channelType, String channelUrl, String messageId, String apiToken) throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = viewModeratedMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken);
+    public Map<String, String> viewModeratedMessageById(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+        ApiResponse<Map<String, String>> localVarResp = viewModeratedMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
         return localVarResp.getData();
     }
 
     /**
      * View a moderated message
      * ## View a moderated message  Retrieves information on a message that has been moderated by the [profanity filter](https://sendbird.com/docs/chat/v3/platform-api/guides/filter-and-moderation#2-profanity-filter).  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-view-a-moderated-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1302,8 +1342,8 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, String>> viewModeratedMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewModeratedMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, null);
+    public ApiResponse<Map<String, String>> viewModeratedMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+        okhttp3.Call localVarCall = viewModeratedMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, null);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1311,10 +1351,10 @@ public class ReportContentSubjectApi {
     /**
      * View a moderated message (asynchronously)
      * ## View a moderated message  Retrieves information on a message that has been moderated by the [profanity filter](https://sendbird.com/docs/chat/v3/platform-api/guides/filter-and-moderation#2-profanity-filter).  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-view-a-moderated-message ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1324,9 +1364,9 @@ public class ReportContentSubjectApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewModeratedMessageByIdAsync(String channelType, String channelUrl, String messageId, String apiToken, final ApiCallback<Map<String, String>> _callback) throws ApiException {
+    public okhttp3.Call viewModeratedMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback<Map<String, String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewModeratedMessageByIdValidateBeforeCall(channelType, channelUrl, messageId, apiToken, _callback);
+        okhttp3.Call localVarCall = viewModeratedMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, _callback);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

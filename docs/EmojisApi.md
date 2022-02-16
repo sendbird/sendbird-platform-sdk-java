@@ -61,7 +61,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **body** | **Object**|  | [optional]
 
 ### Return type
@@ -125,7 +125,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **addEmojisData** | [**AddEmojisData**](AddEmojisData.md)|  | [optional]
 
 ### Return type
@@ -148,7 +148,7 @@ No authorization required
 
 <a name="deleteEmojiByKey"></a>
 # **deleteEmojiByKey**
-> deleteEmojiByKey(emojiKey, apiToken)
+> deleteEmojiByKey(apiToken, emojiKey)
 
 Delete an emoji
 
@@ -169,10 +169,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     EmojisApi apiInstance = new EmojisApi(defaultClient);
-    String emojiKey = "emojiKey_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String emojiKey = "emojiKey_example"; // String | 
     try {
-      apiInstance.deleteEmojiByKey(emojiKey, apiToken);
+      apiInstance.deleteEmojiByKey(apiToken, emojiKey);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#deleteEmojiByKey");
       System.err.println("Status code: " + e.getCode());
@@ -188,8 +188,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **emojiKey** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -211,7 +211,7 @@ No authorization required
 
 <a name="deleteEmojiCategoryById"></a>
 # **deleteEmojiCategoryById**
-> deleteEmojiCategoryById(emojiCategoryId, apiToken)
+> deleteEmojiCategoryById(apiToken, emojiCategoryId)
 
 Delete an emoji category
 
@@ -232,10 +232,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     EmojisApi apiInstance = new EmojisApi(defaultClient);
-    String emojiCategoryId = "emojiCategoryId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String emojiCategoryId = "emojiCategoryId_example"; // String | 
     try {
-      apiInstance.deleteEmojiCategoryById(emojiCategoryId, apiToken);
+      apiInstance.deleteEmojiCategoryById(apiToken, emojiCategoryId);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#deleteEmojiCategoryById");
       System.err.println("Status code: " + e.getCode());
@@ -251,8 +251,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **emojiCategoryId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -315,7 +315,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **enableReactionsData** | [**EnableReactionsData**](EnableReactionsData.md)|  | [optional]
 
 ### Return type
@@ -338,7 +338,7 @@ No authorization required
 
 <a name="getEmojiByKey"></a>
 # **getEmojiByKey**
-> SendBirdEmoji getEmojiByKey(emojiKey, apiToken)
+> SendBirdEmoji getEmojiByKey(apiToken, emojiKey)
 
 Get an emoji
 
@@ -359,10 +359,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     EmojisApi apiInstance = new EmojisApi(defaultClient);
-    String emojiKey = "emojiKey_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String emojiKey = "emojiKey_example"; // String | 
     try {
-      SendBirdEmoji result = apiInstance.getEmojiByKey(emojiKey, apiToken);
+      SendBirdEmoji result = apiInstance.getEmojiByKey(apiToken, emojiKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#getEmojiByKey");
@@ -379,8 +379,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **emojiKey** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -402,7 +402,7 @@ No authorization required
 
 <a name="getEmojiCategoryById"></a>
 # **getEmojiCategoryById**
-> SendBirdEmojiCategory getEmojiCategoryById(emojiCategoryId, apiToken)
+> SendBirdEmojiCategory getEmojiCategoryById(apiToken, emojiCategoryId)
 
 Get an emoji category
 
@@ -423,10 +423,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     EmojisApi apiInstance = new EmojisApi(defaultClient);
-    String emojiCategoryId = "emojiCategoryId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String emojiCategoryId = "emojiCategoryId_example"; // String | 
     try {
-      SendBirdEmojiCategory result = apiInstance.getEmojiCategoryById(emojiCategoryId, apiToken);
+      SendBirdEmojiCategory result = apiInstance.getEmojiCategoryById(apiToken, emojiCategoryId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#getEmojiCategoryById");
@@ -443,8 +443,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **emojiCategoryId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -506,7 +506,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
 
 ### Return type
 
@@ -568,7 +568,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
 
 ### Return type
 
@@ -590,7 +590,7 @@ No authorization required
 
 <a name="updateEmojiCategoryUrlById"></a>
 # **updateEmojiCategoryUrlById**
-> SendBirdEmojiCategory updateEmojiCategoryUrlById(emojiCategoryId, apiToken, updateEmojiCategoryUrlByIdData)
+> SendBirdEmojiCategory updateEmojiCategoryUrlById(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData)
 
 Update an emoji category URL
 
@@ -611,11 +611,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     EmojisApi apiInstance = new EmojisApi(defaultClient);
-    String emojiCategoryId = "emojiCategoryId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String emojiCategoryId = "emojiCategoryId_example"; // String | 
     UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData = new UpdateEmojiCategoryUrlByIdData(); // UpdateEmojiCategoryUrlByIdData | 
     try {
-      SendBirdEmojiCategory result = apiInstance.updateEmojiCategoryUrlById(emojiCategoryId, apiToken, updateEmojiCategoryUrlByIdData);
+      SendBirdEmojiCategory result = apiInstance.updateEmojiCategoryUrlById(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#updateEmojiCategoryUrlById");
@@ -632,8 +632,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **emojiCategoryId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateEmojiCategoryUrlByIdData** | [**UpdateEmojiCategoryUrlByIdData**](UpdateEmojiCategoryUrlByIdData.md)|  | [optional]
 
 ### Return type
@@ -656,7 +656,7 @@ No authorization required
 
 <a name="updateEmojiUrlByKey"></a>
 # **updateEmojiUrlByKey**
-> SendBirdEmoji updateEmojiUrlByKey(emojiKey, apiToken, updateEmojiUrlByKeyData)
+> SendBirdEmoji updateEmojiUrlByKey(apiToken, emojiKey, updateEmojiUrlByKeyData)
 
 Update an emoji URL
 
@@ -677,11 +677,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     EmojisApi apiInstance = new EmojisApi(defaultClient);
-    String emojiKey = "emojiKey_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String emojiKey = "emojiKey_example"; // String | 
     UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData = new UpdateEmojiUrlByKeyData(); // UpdateEmojiUrlByKeyData | 
     try {
-      SendBirdEmoji result = apiInstance.updateEmojiUrlByKey(emojiKey, apiToken, updateEmojiUrlByKeyData);
+      SendBirdEmoji result = apiInstance.updateEmojiUrlByKey(apiToken, emojiKey, updateEmojiUrlByKeyData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#updateEmojiUrlByKey");
@@ -698,8 +698,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **emojiKey** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateEmojiUrlByKeyData** | [**UpdateEmojiUrlByKeyData**](UpdateEmojiUrlByKeyData.md)|  | [optional]
 
 ### Return type
@@ -763,7 +763,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **useDefaultEmojisData** | [**UseDefaultEmojisData**](UseDefaultEmojisData.md)|  | [optional]
 
 ### Return type

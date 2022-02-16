@@ -75,7 +75,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **addApnsPushConfigurationData** | [**AddApnsPushConfigurationData**](AddApnsPushConfigurationData.md)|  | [optional]
 
 ### Return type
@@ -139,7 +139,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **addFcmPushConfigurationData** | [**AddFcmPushConfigurationData**](AddFcmPushConfigurationData.md)|  | [optional]
 
 ### Return type
@@ -203,7 +203,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **addHmsPushConfigurationData** | [**AddHmsPushConfigurationData**](AddHmsPushConfigurationData.md)|  | [optional]
 
 ### Return type
@@ -267,7 +267,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **addIpToWhitelistData** | [**AddIpToWhitelistData**](AddIpToWhitelistData.md)|  | [optional]
 
 ### Return type
@@ -290,7 +290,7 @@ No authorization required
 
 <a name="deleteAllowedIpsFromWhitelist"></a>
 # **deleteAllowedIpsFromWhitelist**
-> DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist(ipWhitelistAddresses, apiToken)
+> DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist(apiToken, ipWhitelistAddresses)
 
 Delete allowed IPs from a whitelist
 
@@ -311,10 +311,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    List<String> ipWhitelistAddresses = Arrays.asList(); // List<String> | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    List<String> ipWhitelistAddresses = Arrays.asList(); // List<String> | 
     try {
-      DeleteAllowedIpsFromWhitelistResponse result = apiInstance.deleteAllowedIpsFromWhitelist(ipWhitelistAddresses, apiToken);
+      DeleteAllowedIpsFromWhitelistResponse result = apiInstance.deleteAllowedIpsFromWhitelist(apiToken, ipWhitelistAddresses);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#deleteAllowedIpsFromWhitelist");
@@ -331,8 +331,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **ipWhitelistAddresses** | [**List&lt;String&gt;**](String.md)|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -354,7 +354,7 @@ No authorization required
 
 <a name="deleteApnsCertificateById"></a>
 # **deleteApnsCertificateById**
-> DeleteApnsCertificateByIdResponse deleteApnsCertificateById(providerId, apiToken)
+> DeleteApnsCertificateByIdResponse deleteApnsCertificateById(apiToken, providerId)
 
 Delete an APNs certificate
 
@@ -375,10 +375,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    String providerId = "providerId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String providerId = "providerId_example"; // String | 
     try {
-      DeleteApnsCertificateByIdResponse result = apiInstance.deleteApnsCertificateById(providerId, apiToken);
+      DeleteApnsCertificateByIdResponse result = apiInstance.deleteApnsCertificateById(apiToken, providerId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#deleteApnsCertificateById");
@@ -395,8 +395,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **providerId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -459,7 +459,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **generateSecondaryApiTokenData** | [**GenerateSecondaryApiTokenData**](GenerateSecondaryApiTokenData.md)|  | [optional]
 
 ### Return type
@@ -482,7 +482,7 @@ No authorization required
 
 <a name="listPushConfigurations"></a>
 # **listPushConfigurations**
-> ListPushConfigurationsResponse listPushConfigurations(pushType, apiToken)
+> ListPushConfigurationsResponse listPushConfigurations(apiToken, pushType)
 
 List push configurations
 
@@ -503,10 +503,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    String pushType = "pushType_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String pushType = "pushType_example"; // String | 
     try {
-      ListPushConfigurationsResponse result = apiInstance.listPushConfigurations(pushType, apiToken);
+      ListPushConfigurationsResponse result = apiInstance.listPushConfigurations(apiToken, pushType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#listPushConfigurations");
@@ -523,8 +523,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **pushType** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -586,7 +586,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
 
 ### Return type
 
@@ -648,7 +648,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
 
 ### Return type
 
@@ -670,7 +670,7 @@ No authorization required
 
 <a name="removePushConfigurationById"></a>
 # **removePushConfigurationById**
-> RemovePushConfigurationByIdResponse removePushConfigurationById(pushType, providerId, apiToken)
+> RemovePushConfigurationByIdResponse removePushConfigurationById(apiToken, pushType, providerId)
 
 Remove a push configuration
 
@@ -691,11 +691,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String pushType = "pushType_example"; // String | 
     String providerId = "providerId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      RemovePushConfigurationByIdResponse result = apiInstance.removePushConfigurationById(pushType, providerId, apiToken);
+      RemovePushConfigurationByIdResponse result = apiInstance.removePushConfigurationById(apiToken, pushType, providerId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#removePushConfigurationById");
@@ -712,9 +712,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **pushType** | **String**|  |
  **providerId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -776,7 +776,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
 
 ### Return type
 
@@ -798,7 +798,7 @@ No authorization required
 
 <a name="revokeSecondaryApiTokenByToken"></a>
 # **revokeSecondaryApiTokenByToken**
-> RevokeSecondaryApiTokenByTokenResponse revokeSecondaryApiTokenByToken(apiToken2, apiToken)
+> RevokeSecondaryApiTokenByTokenResponse revokeSecondaryApiTokenByToken(apiToken, apiToken2)
 
 Revoke a secondary API token
 
@@ -819,10 +819,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    String apiToken2 = "apiToken_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String apiToken2 = "apiToken_example"; // String | 
     try {
-      RevokeSecondaryApiTokenByTokenResponse result = apiInstance.revokeSecondaryApiTokenByToken(apiToken2, apiToken);
+      RevokeSecondaryApiTokenByTokenResponse result = apiInstance.revokeSecondaryApiTokenByToken(apiToken, apiToken2);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#revokeSecondaryApiTokenByToken");
@@ -839,8 +839,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **apiToken2** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -862,7 +862,7 @@ No authorization required
 
 <a name="updateApnsPushConfigurationById"></a>
 # **updateApnsPushConfigurationById**
-> UpdateApnsPushConfigurationByIdResponse updateApnsPushConfigurationById(providerId, apiToken, updateApnsPushConfigurationByIdData)
+> UpdateApnsPushConfigurationByIdResponse updateApnsPushConfigurationById(apiToken, providerId, updateApnsPushConfigurationByIdData)
 
 Update an APNs push configuration
 
@@ -883,11 +883,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    String providerId = "providerId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String providerId = "providerId_example"; // String | 
     UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData = new UpdateApnsPushConfigurationByIdData(); // UpdateApnsPushConfigurationByIdData | 
     try {
-      UpdateApnsPushConfigurationByIdResponse result = apiInstance.updateApnsPushConfigurationById(providerId, apiToken, updateApnsPushConfigurationByIdData);
+      UpdateApnsPushConfigurationByIdResponse result = apiInstance.updateApnsPushConfigurationById(apiToken, providerId, updateApnsPushConfigurationByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#updateApnsPushConfigurationById");
@@ -904,8 +904,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **providerId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateApnsPushConfigurationByIdData** | [**UpdateApnsPushConfigurationByIdData**](UpdateApnsPushConfigurationByIdData.md)|  | [optional]
 
 ### Return type
@@ -969,7 +969,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **updateDefaultChannelInvitationPreferenceData** | [**UpdateDefaultChannelInvitationPreferenceData**](UpdateDefaultChannelInvitationPreferenceData.md)|  | [optional]
 
 ### Return type
@@ -992,7 +992,7 @@ No authorization required
 
 <a name="updateFcmPushConfigurationById"></a>
 # **updateFcmPushConfigurationById**
-> UpdateFcmPushConfigurationByIdResponse updateFcmPushConfigurationById(providerId, apiToken, updateFcmPushConfigurationByIdData)
+> UpdateFcmPushConfigurationByIdResponse updateFcmPushConfigurationById(apiToken, providerId, updateFcmPushConfigurationByIdData)
 
 Update a FCM push configuration
 
@@ -1013,11 +1013,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    String providerId = "providerId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String providerId = "providerId_example"; // String | 
     UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData = new UpdateFcmPushConfigurationByIdData(); // UpdateFcmPushConfigurationByIdData | 
     try {
-      UpdateFcmPushConfigurationByIdResponse result = apiInstance.updateFcmPushConfigurationById(providerId, apiToken, updateFcmPushConfigurationByIdData);
+      UpdateFcmPushConfigurationByIdResponse result = apiInstance.updateFcmPushConfigurationById(apiToken, providerId, updateFcmPushConfigurationByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#updateFcmPushConfigurationById");
@@ -1034,8 +1034,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **providerId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateFcmPushConfigurationByIdData** | [**UpdateFcmPushConfigurationByIdData**](UpdateFcmPushConfigurationByIdData.md)|  | [optional]
 
 ### Return type
@@ -1058,7 +1058,7 @@ No authorization required
 
 <a name="updateHmsPushConfigurationById"></a>
 # **updateHmsPushConfigurationById**
-> UpdateHmsPushConfigurationByIdResponse updateHmsPushConfigurationById(providerId, apiToken, updateHmsPushConfigurationByIdData)
+> UpdateHmsPushConfigurationByIdResponse updateHmsPushConfigurationById(apiToken, providerId, updateHmsPushConfigurationByIdData)
 
 Update an HMS push configuration
 
@@ -1079,11 +1079,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    String providerId = "providerId_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String providerId = "providerId_example"; // String | 
     UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData = new UpdateHmsPushConfigurationByIdData(); // UpdateHmsPushConfigurationByIdData | 
     try {
-      UpdateHmsPushConfigurationByIdResponse result = apiInstance.updateHmsPushConfigurationById(providerId, apiToken, updateHmsPushConfigurationByIdData);
+      UpdateHmsPushConfigurationByIdResponse result = apiInstance.updateHmsPushConfigurationById(apiToken, providerId, updateHmsPushConfigurationByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#updateHmsPushConfigurationById");
@@ -1100,8 +1100,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **providerId** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updateHmsPushConfigurationByIdData** | [**UpdateHmsPushConfigurationByIdData**](UpdateHmsPushConfigurationByIdData.md)|  | [optional]
 
 ### Return type
@@ -1124,7 +1124,7 @@ No authorization required
 
 <a name="updatePushNotificationContentTemplate"></a>
 # **updatePushNotificationContentTemplate**
-> UpdatePushNotificationContentTemplateResponse updatePushNotificationContentTemplate(templateName, apiToken, updatePushNotificationContentTemplateData)
+> UpdatePushNotificationContentTemplateResponse updatePushNotificationContentTemplate(apiToken, templateName, updatePushNotificationContentTemplateData)
 
 Update a push notification content template
 
@@ -1145,11 +1145,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    String templateName = "templateName_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String templateName = "templateName_example"; // String | 
     UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData = new UpdatePushNotificationContentTemplateData(); // UpdatePushNotificationContentTemplateData | 
     try {
-      UpdatePushNotificationContentTemplateResponse result = apiInstance.updatePushNotificationContentTemplate(templateName, apiToken, updatePushNotificationContentTemplateData);
+      UpdatePushNotificationContentTemplateResponse result = apiInstance.updatePushNotificationContentTemplate(apiToken, templateName, updatePushNotificationContentTemplateData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#updatePushNotificationContentTemplate");
@@ -1166,8 +1166,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **templateName** | **String**|  |
- **apiToken** | **String**|  | [optional]
  **updatePushNotificationContentTemplateData** | [**UpdatePushNotificationContentTemplateData**](UpdatePushNotificationContentTemplateData.md)|  | [optional]
 
 ### Return type
@@ -1230,7 +1230,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
 
 ### Return type
 
@@ -1292,7 +1292,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
 
 ### Return type
 
@@ -1355,7 +1355,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **date** | **String**|  | [optional]
 
 ### Return type
@@ -1419,7 +1419,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  | [optional]
+ **apiToken** | **String**|  |
  **date** | **String**|  | [optional]
 
 ### Return type
@@ -1442,7 +1442,7 @@ No authorization required
 
 <a name="viewNumberOfPeakConnections"></a>
 # **viewNumberOfPeakConnections**
-> ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay)
+> ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay)
 
 View number of peak connections
 
@@ -1463,16 +1463,16 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String timeDimension = "timeDimension_example"; // String | 
     Integer startYear = 56; // Integer | 
     Integer startMonth = 56; // Integer | 
     Integer endYear = 56; // Integer | 
     Integer endMonth = 56; // Integer | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     Integer startDay = 56; // Integer | 
     Integer endDay = 56; // Integer | 
     try {
-      ViewNumberOfPeakConnectionsResponse result = apiInstance.viewNumberOfPeakConnections(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay);
+      ViewNumberOfPeakConnectionsResponse result = apiInstance.viewNumberOfPeakConnections(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewNumberOfPeakConnections");
@@ -1489,12 +1489,12 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **timeDimension** | **String**|  |
  **startYear** | **Integer**|  |
  **startMonth** | **Integer**|  |
  **endYear** | **Integer**|  |
  **endMonth** | **Integer**|  |
- **apiToken** | **String**|  | [optional]
  **startDay** | **Integer**|  | [optional]
  **endDay** | **Integer**|  | [optional]
 
@@ -1518,7 +1518,7 @@ No authorization required
 
 <a name="viewPushConfigurationById"></a>
 # **viewPushConfigurationById**
-> ViewPushConfigurationByIdResponse viewPushConfigurationById(pushType, providerId, apiToken)
+> ViewPushConfigurationByIdResponse viewPushConfigurationById(apiToken, pushType, providerId)
 
 View a push configuration
 
@@ -1539,11 +1539,11 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
+    String apiToken = "{{API_TOKEN}}"; // String | 
     String pushType = "pushType_example"; // String | 
     String providerId = "providerId_example"; // String | 
-    String apiToken = "{{API_TOKEN}}"; // String | 
     try {
-      ViewPushConfigurationByIdResponse result = apiInstance.viewPushConfigurationById(pushType, providerId, apiToken);
+      ViewPushConfigurationByIdResponse result = apiInstance.viewPushConfigurationById(apiToken, pushType, providerId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewPushConfigurationById");
@@ -1560,9 +1560,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **pushType** | **String**|  |
  **providerId** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1584,7 +1584,7 @@ No authorization required
 
 <a name="viewPushNotificationContentTemplate"></a>
 # **viewPushNotificationContentTemplate**
-> ViewPushNotificationContentTemplateResponse viewPushNotificationContentTemplate(templateName, apiToken)
+> ViewPushNotificationContentTemplateResponse viewPushNotificationContentTemplate(apiToken, templateName)
 
 View a push notification content template
 
@@ -1605,10 +1605,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    String templateName = "templateName_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String templateName = "templateName_example"; // String | 
     try {
-      ViewPushNotificationContentTemplateResponse result = apiInstance.viewPushNotificationContentTemplate(templateName, apiToken);
+      ViewPushNotificationContentTemplateResponse result = apiInstance.viewPushNotificationContentTemplate(apiToken, templateName);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewPushNotificationContentTemplate");
@@ -1625,8 +1625,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **templateName** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 
@@ -1648,7 +1648,7 @@ No authorization required
 
 <a name="viewSecondaryApiTokenByToken"></a>
 # **viewSecondaryApiTokenByToken**
-> ViewSecondaryApiTokenByTokenResponse viewSecondaryApiTokenByToken(apiToken2, apiToken)
+> ViewSecondaryApiTokenByTokenResponse viewSecondaryApiTokenByToken(apiToken, apiToken2)
 
 View a secondary API token
 
@@ -1669,10 +1669,10 @@ public class Example {
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
     ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-    String apiToken2 = "apiToken_example"; // String | 
     String apiToken = "{{API_TOKEN}}"; // String | 
+    String apiToken2 = "apiToken_example"; // String | 
     try {
-      ViewSecondaryApiTokenByTokenResponse result = apiInstance.viewSecondaryApiTokenByToken(apiToken2, apiToken);
+      ViewSecondaryApiTokenByTokenResponse result = apiInstance.viewSecondaryApiTokenByToken(apiToken, apiToken2);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApplicationApi#viewSecondaryApiTokenByToken");
@@ -1689,8 +1689,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **apiToken** | **String**|  |
  **apiToken2** | **String**|  |
- **apiToken** | **String**|  | [optional]
 
 ### Return type
 

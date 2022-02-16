@@ -84,9 +84,9 @@ public class UserChannelMetadataApi {
 
     /**
      * Build call for createChannelMetacounter
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param createChannelMetacounterData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -97,7 +97,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createChannelMetacounterCall(String channelType, String channelUrl, String apiToken, CreateChannelMetacounterData createChannelMetacounterData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createChannelMetacounterCall(String apiToken, String channelType, String channelUrl, CreateChannelMetacounterData createChannelMetacounterData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -150,7 +150,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createChannelMetacounterValidateBeforeCall(String channelType, String channelUrl, String apiToken, CreateChannelMetacounterData createChannelMetacounterData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createChannelMetacounterValidateBeforeCall(String apiToken, String channelType, String channelUrl, CreateChannelMetacounterData createChannelMetacounterData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling createChannelMetacounter(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -163,7 +168,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = createChannelMetacounterCall(channelType, channelUrl, apiToken, createChannelMetacounterData, _callback);
+        okhttp3.Call localVarCall = createChannelMetacounterCall(apiToken, channelType, channelUrl, createChannelMetacounterData, _callback);
         return localVarCall;
 
     }
@@ -171,9 +176,9 @@ public class UserChannelMetadataApi {
     /**
      * Create a channel metacounter
      * ## Create a channel metacounter  Creates a channel metacounter&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metacounter ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param createChannelMetacounterData  (optional)
      * @return Map&lt;String, SendBirdAdditionalProperties&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -183,17 +188,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, SendBirdAdditionalProperties> createChannelMetacounter(String channelType, String channelUrl, String apiToken, CreateChannelMetacounterData createChannelMetacounterData) throws ApiException {
-        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = createChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken, createChannelMetacounterData);
+    public Map<String, SendBirdAdditionalProperties> createChannelMetacounter(String apiToken, String channelType, String channelUrl, CreateChannelMetacounterData createChannelMetacounterData) throws ApiException {
+        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = createChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl, createChannelMetacounterData);
         return localVarResp.getData();
     }
 
     /**
      * Create a channel metacounter
      * ## Create a channel metacounter  Creates a channel metacounter&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metacounter ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param createChannelMetacounterData  (optional)
      * @return ApiResponse&lt;Map&lt;String, SendBirdAdditionalProperties&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -203,8 +208,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, SendBirdAdditionalProperties>> createChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateChannelMetacounterData createChannelMetacounterData) throws ApiException {
-        okhttp3.Call localVarCall = createChannelMetacounterValidateBeforeCall(channelType, channelUrl, apiToken, createChannelMetacounterData, null);
+    public ApiResponse<Map<String, SendBirdAdditionalProperties>> createChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, CreateChannelMetacounterData createChannelMetacounterData) throws ApiException {
+        okhttp3.Call localVarCall = createChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, createChannelMetacounterData, null);
         Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -212,9 +217,9 @@ public class UserChannelMetadataApi {
     /**
      * Create a channel metacounter (asynchronously)
      * ## Create a channel metacounter  Creates a channel metacounter&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metacounter ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param createChannelMetacounterData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -225,18 +230,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createChannelMetacounterAsync(String channelType, String channelUrl, String apiToken, CreateChannelMetacounterData createChannelMetacounterData, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
+    public okhttp3.Call createChannelMetacounterAsync(String apiToken, String channelType, String channelUrl, CreateChannelMetacounterData createChannelMetacounterData, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createChannelMetacounterValidateBeforeCall(channelType, channelUrl, apiToken, createChannelMetacounterData, _callback);
+        okhttp3.Call localVarCall = createChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, createChannelMetacounterData, _callback);
         Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for createChannelMetadata
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param createChannelMetadataData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -247,7 +252,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createChannelMetadataCall(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createChannelMetadataCall(String apiToken, String channelType, String channelUrl, CreateChannelMetadataData createChannelMetadataData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -300,7 +305,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createChannelMetadataValidateBeforeCall(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createChannelMetadataValidateBeforeCall(String apiToken, String channelType, String channelUrl, CreateChannelMetadataData createChannelMetadataData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling createChannelMetadata(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -313,7 +323,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = createChannelMetadataCall(channelType, channelUrl, apiToken, createChannelMetadataData, _callback);
+        okhttp3.Call localVarCall = createChannelMetadataCall(apiToken, channelType, channelUrl, createChannelMetadataData, _callback);
         return localVarCall;
 
     }
@@ -321,9 +331,9 @@ public class UserChannelMetadataApi {
     /**
      * Create a channel metadata
      * ## Create a channel metadata  Creates a channel metadata&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metadata ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param createChannelMetadataData  (optional)
      * @return CreateChannelMetadataResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -333,17 +343,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public CreateChannelMetadataResponse createChannelMetadata(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
-        ApiResponse<CreateChannelMetadataResponse> localVarResp = createChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, createChannelMetadataData);
+    public CreateChannelMetadataResponse createChannelMetadata(String apiToken, String channelType, String channelUrl, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
+        ApiResponse<CreateChannelMetadataResponse> localVarResp = createChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, createChannelMetadataData);
         return localVarResp.getData();
     }
 
     /**
      * Create a channel metadata
      * ## Create a channel metadata  Creates a channel metadata&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metadata ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param createChannelMetadataData  (optional)
      * @return ApiResponse&lt;CreateChannelMetadataResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -353,8 +363,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
-        okhttp3.Call localVarCall = createChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, createChannelMetadataData, null);
+    public ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
+        okhttp3.Call localVarCall = createChannelMetadataValidateBeforeCall(apiToken, channelType, channelUrl, createChannelMetadataData, null);
         Type localVarReturnType = new TypeToken<CreateChannelMetadataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -362,9 +372,9 @@ public class UserChannelMetadataApi {
     /**
      * Create a channel metadata (asynchronously)
      * ## Create a channel metadata  Creates a channel metadata&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metadata ----------------------------
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param createChannelMetadataData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -375,17 +385,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createChannelMetadataAsync(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData, final ApiCallback<CreateChannelMetadataResponse> _callback) throws ApiException {
+    public okhttp3.Call createChannelMetadataAsync(String apiToken, String channelType, String channelUrl, CreateChannelMetadataData createChannelMetadataData, final ApiCallback<CreateChannelMetadataResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, createChannelMetadataData, _callback);
+        okhttp3.Call localVarCall = createChannelMetadataValidateBeforeCall(apiToken, channelType, channelUrl, createChannelMetadataData, _callback);
         Type localVarReturnType = new TypeToken<CreateChannelMetadataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for createUserMetadata
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param createUserMetadataData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -396,7 +406,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createUserMetadataCall(String userId, String apiToken, CreateUserMetadataData createUserMetadataData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createUserMetadataCall(String apiToken, String userId, CreateUserMetadataData createUserMetadataData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -448,7 +458,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createUserMetadataValidateBeforeCall(String userId, String apiToken, CreateUserMetadataData createUserMetadataData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createUserMetadataValidateBeforeCall(String apiToken, String userId, CreateUserMetadataData createUserMetadataData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling createUserMetadata(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -456,7 +471,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = createUserMetadataCall(userId, apiToken, createUserMetadataData, _callback);
+        okhttp3.Call localVarCall = createUserMetadataCall(apiToken, userId, createUserMetadataData, _callback);
         return localVarCall;
 
     }
@@ -464,8 +479,8 @@ public class UserChannelMetadataApi {
     /**
      * Create a user metadata
      * ## Create a user metadata  Creates a user metadata&#39;s items to store in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-user-metadata ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param createUserMetadataData  (optional)
      * @return CreateUserMetadataResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -475,16 +490,16 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public CreateUserMetadataResponse createUserMetadata(String userId, String apiToken, CreateUserMetadataData createUserMetadataData) throws ApiException {
-        ApiResponse<CreateUserMetadataResponse> localVarResp = createUserMetadataWithHttpInfo(userId, apiToken, createUserMetadataData);
+    public CreateUserMetadataResponse createUserMetadata(String apiToken, String userId, CreateUserMetadataData createUserMetadataData) throws ApiException {
+        ApiResponse<CreateUserMetadataResponse> localVarResp = createUserMetadataWithHttpInfo(apiToken, userId, createUserMetadataData);
         return localVarResp.getData();
     }
 
     /**
      * Create a user metadata
      * ## Create a user metadata  Creates a user metadata&#39;s items to store in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-user-metadata ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param createUserMetadataData  (optional)
      * @return ApiResponse&lt;CreateUserMetadataResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -494,8 +509,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(String userId, String apiToken, CreateUserMetadataData createUserMetadataData) throws ApiException {
-        okhttp3.Call localVarCall = createUserMetadataValidateBeforeCall(userId, apiToken, createUserMetadataData, null);
+    public ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(String apiToken, String userId, CreateUserMetadataData createUserMetadataData) throws ApiException {
+        okhttp3.Call localVarCall = createUserMetadataValidateBeforeCall(apiToken, userId, createUserMetadataData, null);
         Type localVarReturnType = new TypeToken<CreateUserMetadataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -503,8 +518,8 @@ public class UserChannelMetadataApi {
     /**
      * Create a user metadata (asynchronously)
      * ## Create a user metadata  Creates a user metadata&#39;s items to store in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-user-metadata ----------------------------
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param createUserMetadataData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -515,18 +530,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createUserMetadataAsync(String userId, String apiToken, CreateUserMetadataData createUserMetadataData, final ApiCallback<CreateUserMetadataResponse> _callback) throws ApiException {
+    public okhttp3.Call createUserMetadataAsync(String apiToken, String userId, CreateUserMetadataData createUserMetadataData, final ApiCallback<CreateUserMetadataResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createUserMetadataValidateBeforeCall(userId, apiToken, createUserMetadataData, _callback);
+        okhttp3.Call localVarCall = createUserMetadataValidateBeforeCall(apiToken, userId, createUserMetadataData, _callback);
         Type localVarReturnType = new TypeToken<CreateUserMetadataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteChannelMetacounter
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -536,7 +551,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteChannelMetacounterCall(String channelType, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteChannelMetacounterCall(String apiToken, String channelType, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -589,7 +604,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteChannelMetacounterValidateBeforeCall(String channelType, String channelUrl, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteChannelMetacounterValidateBeforeCall(String apiToken, String channelType, String channelUrl, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteChannelMetacounter(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -602,7 +622,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteChannelMetacounterCall(channelType, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteChannelMetacounterCall(apiToken, channelType, channelUrl, _callback);
         return localVarCall;
 
     }
@@ -610,9 +630,9 @@ public class UserChannelMetadataApi {
     /**
      * Delete a channel metacounter - When deleting all items of a channel metacounter
      * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -620,16 +640,16 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteChannelMetacounter(String channelType, String channelUrl, String apiToken) throws ApiException {
-        deleteChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken);
+    public void deleteChannelMetacounter(String apiToken, String channelType, String channelUrl) throws ApiException {
+        deleteChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl);
     }
 
     /**
      * Delete a channel metacounter - When deleting all items of a channel metacounter
      * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -638,17 +658,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = deleteChannelMetacounterValidateBeforeCall(channelType, channelUrl, apiToken, null);
+    public ApiResponse<Void> deleteChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl) throws ApiException {
+        okhttp3.Call localVarCall = deleteChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a channel metacounter - When deleting all items of a channel metacounter (asynchronously)
      * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -658,18 +678,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteChannelMetacounterAsync(String channelType, String channelUrl, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteChannelMetacounterAsync(String apiToken, String channelType, String channelUrl, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteChannelMetacounterValidateBeforeCall(channelType, channelUrl, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteChannelMetacounterByKey
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -679,7 +699,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteChannelMetacounterByKeyCall(String channelType, String channelUrl, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteChannelMetacounterByKeyCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -733,7 +753,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteChannelMetacounterByKeyValidateBeforeCall(String channelType, String channelUrl, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteChannelMetacounterByKeyValidateBeforeCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteChannelMetacounterByKey(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -751,7 +776,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteChannelMetacounterByKeyCall(channelType, channelUrl, key, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteChannelMetacounterByKeyCall(apiToken, channelType, channelUrl, key, _callback);
         return localVarCall;
 
     }
@@ -759,10 +784,10 @@ public class UserChannelMetadataApi {
     /**
      * Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
      * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -770,17 +795,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteChannelMetacounterByKey(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-        deleteChannelMetacounterByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
+    public void deleteChannelMetacounterByKey(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        deleteChannelMetacounterByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
     }
 
     /**
      * Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
      * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -789,18 +814,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = deleteChannelMetacounterByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, null);
+    public ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        okhttp3.Call localVarCall = deleteChannelMetacounterByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key (asynchronously)
      * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -810,17 +835,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteChannelMetacounterByKeyAsync(String channelType, String channelUrl, String key, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteChannelMetacounterByKeyAsync(String apiToken, String channelType, String channelUrl, String key, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteChannelMetacounterByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteChannelMetacounterByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteChannelMetadata
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -831,7 +856,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteChannelMetadataCall(String channelType, String channelUrl, String apiToken, String key, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteChannelMetadataCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -888,7 +913,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteChannelMetadataValidateBeforeCall(String channelType, String channelUrl, String apiToken, String key, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteChannelMetadataValidateBeforeCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteChannelMetadata(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -901,7 +931,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteChannelMetadataCall(channelType, channelUrl, apiToken, key, _callback);
+        okhttp3.Call localVarCall = deleteChannelMetadataCall(apiToken, channelType, channelUrl, key, _callback);
         return localVarCall;
 
     }
@@ -909,9 +939,9 @@ public class UserChannelMetadataApi {
     /**
      * Delete a channel metadata - When deleting all items of a channel metadata
      * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -920,16 +950,16 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteChannelMetadata(String channelType, String channelUrl, String apiToken, String key) throws ApiException {
-        deleteChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, key);
+    public void deleteChannelMetadata(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        deleteChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, key);
     }
 
     /**
      * Delete a channel metadata - When deleting all items of a channel metadata
      * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -939,17 +969,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, String key) throws ApiException {
-        okhttp3.Call localVarCall = deleteChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, key, null);
+    public ApiResponse<Void> deleteChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        okhttp3.Call localVarCall = deleteChannelMetadataValidateBeforeCall(apiToken, channelType, channelUrl, key, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a channel metadata - When deleting all items of a channel metadata (asynchronously)
      * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -960,18 +990,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteChannelMetadataAsync(String channelType, String channelUrl, String apiToken, String key, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteChannelMetadataAsync(String apiToken, String channelType, String channelUrl, String key, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, key, _callback);
+        okhttp3.Call localVarCall = deleteChannelMetadataValidateBeforeCall(apiToken, channelType, channelUrl, key, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteChannelMetadataByKey
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -981,7 +1011,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteChannelMetadataByKeyCall(String channelType, String channelUrl, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteChannelMetadataByKeyCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1035,7 +1065,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteChannelMetadataByKeyValidateBeforeCall(String channelType, String channelUrl, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteChannelMetadataByKeyValidateBeforeCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteChannelMetadataByKey(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1053,7 +1088,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteChannelMetadataByKeyCall(channelType, channelUrl, key, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteChannelMetadataByKeyCall(apiToken, channelType, channelUrl, key, _callback);
         return localVarCall;
 
     }
@@ -1061,10 +1096,10 @@ public class UserChannelMetadataApi {
     /**
      * Delete a channel metadata - When deleting a specific item of a channel metadata by its key
      * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1072,17 +1107,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteChannelMetadataByKey(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-        deleteChannelMetadataByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
+    public void deleteChannelMetadataByKey(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        deleteChannelMetadataByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
     }
 
     /**
      * Delete a channel metadata - When deleting a specific item of a channel metadata by its key
      * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1091,18 +1126,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteChannelMetadataByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = deleteChannelMetadataByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, null);
+    public ApiResponse<Void> deleteChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        okhttp3.Call localVarCall = deleteChannelMetadataByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a channel metadata - When deleting a specific item of a channel metadata by its key (asynchronously)
      * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1112,16 +1147,16 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteChannelMetadataByKeyAsync(String channelType, String channelUrl, String key, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteChannelMetadataByKeyAsync(String apiToken, String channelType, String channelUrl, String key, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteChannelMetadataByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteChannelMetadataByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteUserMetadata
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1132,7 +1167,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserMetadataCall(String userId, String apiToken, String key, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteUserMetadataCall(String apiToken, String userId, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1188,7 +1223,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteUserMetadataValidateBeforeCall(String userId, String apiToken, String key, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteUserMetadataValidateBeforeCall(String apiToken, String userId, String key, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteUserMetadata(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -1196,7 +1236,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteUserMetadataCall(userId, apiToken, key, _callback);
+        okhttp3.Call localVarCall = deleteUserMetadataCall(apiToken, userId, key, _callback);
         return localVarCall;
 
     }
@@ -1204,8 +1244,8 @@ public class UserChannelMetadataApi {
     /**
      * Delete a user metadata - When deleting all items of a user metadata
      * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1214,15 +1254,15 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteUserMetadata(String userId, String apiToken, String key) throws ApiException {
-        deleteUserMetadataWithHttpInfo(userId, apiToken, key);
+    public void deleteUserMetadata(String apiToken, String userId, String key) throws ApiException {
+        deleteUserMetadataWithHttpInfo(apiToken, userId, key);
     }
 
     /**
      * Delete a user metadata - When deleting all items of a user metadata
      * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1232,16 +1272,16 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteUserMetadataWithHttpInfo(String userId, String apiToken, String key) throws ApiException {
-        okhttp3.Call localVarCall = deleteUserMetadataValidateBeforeCall(userId, apiToken, key, null);
+    public ApiResponse<Void> deleteUserMetadataWithHttpInfo(String apiToken, String userId, String key) throws ApiException {
+        okhttp3.Call localVarCall = deleteUserMetadataValidateBeforeCall(apiToken, userId, key, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a user metadata - When deleting all items of a user metadata (asynchronously)
      * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1252,17 +1292,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserMetadataAsync(String userId, String apiToken, String key, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteUserMetadataAsync(String apiToken, String userId, String key, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteUserMetadataValidateBeforeCall(userId, apiToken, key, _callback);
+        okhttp3.Call localVarCall = deleteUserMetadataValidateBeforeCall(apiToken, userId, key, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteUserMetadataByKey
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1272,7 +1312,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserMetadataByKeyCall(String userId, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteUserMetadataByKeyCall(String apiToken, String userId, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1325,7 +1365,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteUserMetadataByKeyValidateBeforeCall(String userId, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteUserMetadataByKeyValidateBeforeCall(String apiToken, String userId, String key, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling deleteUserMetadataByKey(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -1338,7 +1383,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = deleteUserMetadataByKeyCall(userId, key, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteUserMetadataByKeyCall(apiToken, userId, key, _callback);
         return localVarCall;
 
     }
@@ -1346,9 +1391,9 @@ public class UserChannelMetadataApi {
     /**
      * Delete a user metadata - When deleting a specific item of a user metadata by its key
      * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1356,16 +1401,16 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteUserMetadataByKey(String userId, String key, String apiToken) throws ApiException {
-        deleteUserMetadataByKeyWithHttpInfo(userId, key, apiToken);
+    public void deleteUserMetadataByKey(String apiToken, String userId, String key) throws ApiException {
+        deleteUserMetadataByKeyWithHttpInfo(apiToken, userId, key);
     }
 
     /**
      * Delete a user metadata - When deleting a specific item of a user metadata by its key
      * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1374,17 +1419,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteUserMetadataByKeyWithHttpInfo(String userId, String key, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = deleteUserMetadataByKeyValidateBeforeCall(userId, key, apiToken, null);
+    public ApiResponse<Void> deleteUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key) throws ApiException {
+        okhttp3.Call localVarCall = deleteUserMetadataByKeyValidateBeforeCall(apiToken, userId, key, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a user metadata - When deleting a specific item of a user metadata by its key (asynchronously)
      * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1394,17 +1439,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserMetadataByKeyAsync(String userId, String key, String apiToken, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteUserMetadataByKeyAsync(String apiToken, String userId, String key, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteUserMetadataByKeyValidateBeforeCall(userId, key, apiToken, _callback);
+        okhttp3.Call localVarCall = deleteUserMetadataByKeyValidateBeforeCall(apiToken, userId, key, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateChannelMetacounter
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateChannelMetacounterData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1415,7 +1460,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelMetacounterCall(String channelType, String channelUrl, String apiToken, UpdateChannelMetacounterData updateChannelMetacounterData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateChannelMetacounterCall(String apiToken, String channelType, String channelUrl, UpdateChannelMetacounterData updateChannelMetacounterData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1468,7 +1513,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateChannelMetacounterValidateBeforeCall(String channelType, String channelUrl, String apiToken, UpdateChannelMetacounterData updateChannelMetacounterData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateChannelMetacounterValidateBeforeCall(String apiToken, String channelType, String channelUrl, UpdateChannelMetacounterData updateChannelMetacounterData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateChannelMetacounter(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1481,7 +1531,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = updateChannelMetacounterCall(channelType, channelUrl, apiToken, updateChannelMetacounterData, _callback);
+        okhttp3.Call localVarCall = updateChannelMetacounterCall(apiToken, channelType, channelUrl, updateChannelMetacounterData, _callback);
         return localVarCall;
 
     }
@@ -1489,9 +1539,9 @@ public class UserChannelMetadataApi {
     /**
      * Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
      * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateChannelMetacounterData  (optional)
      * @return Map&lt;String, SendBirdAdditionalProperties&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1501,17 +1551,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, SendBirdAdditionalProperties> updateChannelMetacounter(String channelType, String channelUrl, String apiToken, UpdateChannelMetacounterData updateChannelMetacounterData) throws ApiException {
-        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = updateChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken, updateChannelMetacounterData);
+    public Map<String, SendBirdAdditionalProperties> updateChannelMetacounter(String apiToken, String channelType, String channelUrl, UpdateChannelMetacounterData updateChannelMetacounterData) throws ApiException {
+        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = updateChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl, updateChannelMetacounterData);
         return localVarResp.getData();
     }
 
     /**
      * Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
      * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateChannelMetacounterData  (optional)
      * @return ApiResponse&lt;Map&lt;String, SendBirdAdditionalProperties&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1521,8 +1571,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, SendBirdAdditionalProperties>> updateChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken, UpdateChannelMetacounterData updateChannelMetacounterData) throws ApiException {
-        okhttp3.Call localVarCall = updateChannelMetacounterValidateBeforeCall(channelType, channelUrl, apiToken, updateChannelMetacounterData, null);
+    public ApiResponse<Map<String, SendBirdAdditionalProperties>> updateChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, UpdateChannelMetacounterData updateChannelMetacounterData) throws ApiException {
+        okhttp3.Call localVarCall = updateChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, updateChannelMetacounterData, null);
         Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1530,9 +1580,9 @@ public class UserChannelMetadataApi {
     /**
      * Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter (asynchronously)
      * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateChannelMetacounterData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1543,19 +1593,19 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelMetacounterAsync(String channelType, String channelUrl, String apiToken, UpdateChannelMetacounterData updateChannelMetacounterData, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
+    public okhttp3.Call updateChannelMetacounterAsync(String apiToken, String channelType, String channelUrl, UpdateChannelMetacounterData updateChannelMetacounterData, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateChannelMetacounterValidateBeforeCall(channelType, channelUrl, apiToken, updateChannelMetacounterData, _callback);
+        okhttp3.Call localVarCall = updateChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, updateChannelMetacounterData, _callback);
         Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateChannelMetacounterByKey
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1566,7 +1616,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelMetacounterByKeyCall(String channelType, String channelUrl, String key, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateChannelMetacounterByKeyCall(String apiToken, String channelType, String channelUrl, String key, Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1620,7 +1670,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateChannelMetacounterByKeyValidateBeforeCall(String channelType, String channelUrl, String key, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateChannelMetacounterByKeyValidateBeforeCall(String apiToken, String channelType, String channelUrl, String key, Object body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateChannelMetacounterByKey(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1638,7 +1693,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = updateChannelMetacounterByKeyCall(channelType, channelUrl, key, apiToken, body, _callback);
+        okhttp3.Call localVarCall = updateChannelMetacounterByKeyCall(apiToken, channelType, channelUrl, key, body, _callback);
         return localVarCall;
 
     }
@@ -1646,10 +1701,10 @@ public class UserChannelMetadataApi {
     /**
      * Update a channel metacounter - When updating a specific item of a channel metacounter by its key
      * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return Map&lt;String, String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1659,18 +1714,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, String> updateChannelMetacounterByKey(String channelType, String channelUrl, String key, String apiToken, Object body) throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = updateChannelMetacounterByKeyWithHttpInfo(channelType, channelUrl, key, apiToken, body);
+    public Map<String, String> updateChannelMetacounterByKey(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+        ApiResponse<Map<String, String>> localVarResp = updateChannelMetacounterByKeyWithHttpInfo(apiToken, channelType, channelUrl, key, body);
         return localVarResp.getData();
     }
 
     /**
      * Update a channel metacounter - When updating a specific item of a channel metacounter by its key
      * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1680,8 +1735,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken, Object body) throws ApiException {
-        okhttp3.Call localVarCall = updateChannelMetacounterByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, body, null);
+    public ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+        okhttp3.Call localVarCall = updateChannelMetacounterByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, body, null);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1689,10 +1744,10 @@ public class UserChannelMetadataApi {
     /**
      * Update a channel metacounter - When updating a specific item of a channel metacounter by its key (asynchronously)
      * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1703,18 +1758,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelMetacounterByKeyAsync(String channelType, String channelUrl, String key, String apiToken, Object body, final ApiCallback<Map<String, String>> _callback) throws ApiException {
+    public okhttp3.Call updateChannelMetacounterByKeyAsync(String apiToken, String channelType, String channelUrl, String key, Object body, final ApiCallback<Map<String, String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateChannelMetacounterByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, body, _callback);
+        okhttp3.Call localVarCall = updateChannelMetacounterByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, body, _callback);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateChannelMetadata
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateChannelMetadataData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1725,7 +1780,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelMetadataCall(String channelType, String channelUrl, String apiToken, UpdateChannelMetadataData updateChannelMetadataData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateChannelMetadataCall(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1778,7 +1833,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateChannelMetadataValidateBeforeCall(String channelType, String channelUrl, String apiToken, UpdateChannelMetadataData updateChannelMetadataData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateChannelMetadataValidateBeforeCall(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateChannelMetadata(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1791,7 +1851,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = updateChannelMetadataCall(channelType, channelUrl, apiToken, updateChannelMetadataData, _callback);
+        okhttp3.Call localVarCall = updateChannelMetadataCall(apiToken, channelType, channelUrl, updateChannelMetadataData, _callback);
         return localVarCall;
 
     }
@@ -1799,9 +1859,9 @@ public class UserChannelMetadataApi {
     /**
      * Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
      * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateChannelMetadataData  (optional)
      * @return Map&lt;String, String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1811,17 +1871,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, String> updateChannelMetadata(String channelType, String channelUrl, String apiToken, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = updateChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, updateChannelMetadataData);
+    public Map<String, String> updateChannelMetadata(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
+        ApiResponse<Map<String, String>> localVarResp = updateChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, updateChannelMetadataData);
         return localVarResp.getData();
     }
 
     /**
      * Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
      * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateChannelMetadataData  (optional)
      * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1831,8 +1891,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
-        okhttp3.Call localVarCall = updateChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, updateChannelMetadataData, null);
+    public ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
+        okhttp3.Call localVarCall = updateChannelMetadataValidateBeforeCall(apiToken, channelType, channelUrl, updateChannelMetadataData, null);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1840,9 +1900,9 @@ public class UserChannelMetadataApi {
     /**
      * Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata (asynchronously)
      * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param updateChannelMetadataData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1853,19 +1913,19 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelMetadataAsync(String channelType, String channelUrl, String apiToken, UpdateChannelMetadataData updateChannelMetadataData, final ApiCallback<Map<String, String>> _callback) throws ApiException {
+    public okhttp3.Call updateChannelMetadataAsync(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData, final ApiCallback<Map<String, String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, updateChannelMetadataData, _callback);
+        okhttp3.Call localVarCall = updateChannelMetadataValidateBeforeCall(apiToken, channelType, channelUrl, updateChannelMetadataData, _callback);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateChannelMetadataByKey
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1876,7 +1936,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelMetadataByKeyCall(String channelType, String channelUrl, String key, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateChannelMetadataByKeyCall(String apiToken, String channelType, String channelUrl, String key, Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -1930,7 +1990,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateChannelMetadataByKeyValidateBeforeCall(String channelType, String channelUrl, String key, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateChannelMetadataByKeyValidateBeforeCall(String apiToken, String channelType, String channelUrl, String key, Object body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateChannelMetadataByKey(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -1948,7 +2013,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = updateChannelMetadataByKeyCall(channelType, channelUrl, key, apiToken, body, _callback);
+        okhttp3.Call localVarCall = updateChannelMetadataByKeyCall(apiToken, channelType, channelUrl, key, body, _callback);
         return localVarCall;
 
     }
@@ -1956,10 +2021,10 @@ public class UserChannelMetadataApi {
     /**
      * Update a channel metadata - When updating a specific item of a channel metadata by its key
      * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return Map&lt;String, String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1969,18 +2034,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, String> updateChannelMetadataByKey(String channelType, String channelUrl, String key, String apiToken, Object body) throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = updateChannelMetadataByKeyWithHttpInfo(channelType, channelUrl, key, apiToken, body);
+    public Map<String, String> updateChannelMetadataByKey(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+        ApiResponse<Map<String, String>> localVarResp = updateChannelMetadataByKeyWithHttpInfo(apiToken, channelType, channelUrl, key, body);
         return localVarResp.getData();
     }
 
     /**
      * Update a channel metadata - When updating a specific item of a channel metadata by its key
      * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1990,8 +2055,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken, Object body) throws ApiException {
-        okhttp3.Call localVarCall = updateChannelMetadataByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, body, null);
+    public ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+        okhttp3.Call localVarCall = updateChannelMetadataByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, body, null);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1999,10 +2064,10 @@ public class UserChannelMetadataApi {
     /**
      * Update a channel metadata - When updating a specific item of a channel metadata by its key (asynchronously)
      * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2013,17 +2078,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateChannelMetadataByKeyAsync(String channelType, String channelUrl, String key, String apiToken, Object body, final ApiCallback<Map<String, String>> _callback) throws ApiException {
+    public okhttp3.Call updateChannelMetadataByKeyAsync(String apiToken, String channelType, String channelUrl, String key, Object body, final ApiCallback<Map<String, String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateChannelMetadataByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, body, _callback);
+        okhttp3.Call localVarCall = updateChannelMetadataByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, body, _callback);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateUserMetadata
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateUserMetadataData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2034,7 +2099,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserMetadataCall(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateUserMetadataCall(String apiToken, String userId, UpdateUserMetadataData updateUserMetadataData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2086,7 +2151,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateUserMetadataValidateBeforeCall(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateUserMetadataValidateBeforeCall(String apiToken, String userId, UpdateUserMetadataData updateUserMetadataData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateUserMetadata(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -2094,7 +2164,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = updateUserMetadataCall(userId, apiToken, updateUserMetadataData, _callback);
+        okhttp3.Call localVarCall = updateUserMetadataCall(apiToken, userId, updateUserMetadataData, _callback);
         return localVarCall;
 
     }
@@ -2102,8 +2172,8 @@ public class UserChannelMetadataApi {
     /**
      * Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
      * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateUserMetadataData  (optional)
      * @return UpdateUserMetadataResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2113,16 +2183,16 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public UpdateUserMetadataResponse updateUserMetadata(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
-        ApiResponse<UpdateUserMetadataResponse> localVarResp = updateUserMetadataWithHttpInfo(userId, apiToken, updateUserMetadataData);
+    public UpdateUserMetadataResponse updateUserMetadata(String apiToken, String userId, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
+        ApiResponse<UpdateUserMetadataResponse> localVarResp = updateUserMetadataWithHttpInfo(apiToken, userId, updateUserMetadataData);
         return localVarResp.getData();
     }
 
     /**
      * Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
      * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateUserMetadataData  (optional)
      * @return ApiResponse&lt;UpdateUserMetadataResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2132,8 +2202,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
-        okhttp3.Call localVarCall = updateUserMetadataValidateBeforeCall(userId, apiToken, updateUserMetadataData, null);
+    public ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(String apiToken, String userId, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
+        okhttp3.Call localVarCall = updateUserMetadataValidateBeforeCall(apiToken, userId, updateUserMetadataData, null);
         Type localVarReturnType = new TypeToken<UpdateUserMetadataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2141,8 +2211,8 @@ public class UserChannelMetadataApi {
     /**
      * Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata (asynchronously)
      * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param updateUserMetadataData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2153,18 +2223,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserMetadataAsync(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData, final ApiCallback<UpdateUserMetadataResponse> _callback) throws ApiException {
+    public okhttp3.Call updateUserMetadataAsync(String apiToken, String userId, UpdateUserMetadataData updateUserMetadataData, final ApiCallback<UpdateUserMetadataResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateUserMetadataValidateBeforeCall(userId, apiToken, updateUserMetadataData, _callback);
+        okhttp3.Call localVarCall = updateUserMetadataValidateBeforeCall(apiToken, userId, updateUserMetadataData, _callback);
         Type localVarReturnType = new TypeToken<UpdateUserMetadataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateUserMetadataByKey
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2175,7 +2245,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserMetadataByKeyCall(String userId, String key, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateUserMetadataByKeyCall(String apiToken, String userId, String key, Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2228,7 +2298,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateUserMetadataByKeyValidateBeforeCall(String userId, String key, String apiToken, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateUserMetadataByKeyValidateBeforeCall(String apiToken, String userId, String key, Object body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling updateUserMetadataByKey(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -2241,7 +2316,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = updateUserMetadataByKeyCall(userId, key, apiToken, body, _callback);
+        okhttp3.Call localVarCall = updateUserMetadataByKeyCall(apiToken, userId, key, body, _callback);
         return localVarCall;
 
     }
@@ -2249,9 +2324,9 @@ public class UserChannelMetadataApi {
     /**
      * Update a user metadata - When updating a specific item of a user metadata by its key
      * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return Map&lt;String, String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2261,17 +2336,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, String> updateUserMetadataByKey(String userId, String key, String apiToken, Object body) throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = updateUserMetadataByKeyWithHttpInfo(userId, key, apiToken, body);
+    public Map<String, String> updateUserMetadataByKey(String apiToken, String userId, String key, Object body) throws ApiException {
+        ApiResponse<Map<String, String>> localVarResp = updateUserMetadataByKeyWithHttpInfo(apiToken, userId, key, body);
         return localVarResp.getData();
     }
 
     /**
      * Update a user metadata - When updating a specific item of a user metadata by its key
      * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2281,8 +2356,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(String userId, String key, String apiToken, Object body) throws ApiException {
-        okhttp3.Call localVarCall = updateUserMetadataByKeyValidateBeforeCall(userId, key, apiToken, body, null);
+    public ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key, Object body) throws ApiException {
+        okhttp3.Call localVarCall = updateUserMetadataByKeyValidateBeforeCall(apiToken, userId, key, body, null);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2290,9 +2365,9 @@ public class UserChannelMetadataApi {
     /**
      * Update a user metadata - When updating a specific item of a user metadata by its key (asynchronously)
      * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2303,18 +2378,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserMetadataByKeyAsync(String userId, String key, String apiToken, Object body, final ApiCallback<Map<String, String>> _callback) throws ApiException {
+    public okhttp3.Call updateUserMetadataByKeyAsync(String apiToken, String userId, String key, Object body, final ApiCallback<Map<String, String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateUserMetadataByKeyValidateBeforeCall(userId, key, apiToken, body, _callback);
+        okhttp3.Call localVarCall = updateUserMetadataByKeyValidateBeforeCall(apiToken, userId, key, body, _callback);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewChannelMetacounter
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @param _callback Callback for upload/download progress
@@ -2326,7 +2401,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetacounterCall(String channelType, String channelUrl, String apiToken, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetacounterCall(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2387,7 +2462,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewChannelMetacounterValidateBeforeCall(String channelType, String channelUrl, String apiToken, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewChannelMetacounterValidateBeforeCall(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewChannelMetacounter(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -2400,7 +2480,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = viewChannelMetacounterCall(channelType, channelUrl, apiToken, key, keys, _callback);
+        okhttp3.Call localVarCall = viewChannelMetacounterCall(apiToken, channelType, channelUrl, key, keys, _callback);
         return localVarCall;
 
     }
@@ -2408,9 +2488,9 @@ public class UserChannelMetadataApi {
     /**
      * View a channel metacounter - When retrieving all items of a channel metacounter
      * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @return Map&lt;String, SendBirdAdditionalProperties&gt;
@@ -2421,17 +2501,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, SendBirdAdditionalProperties> viewChannelMetacounter(String channelType, String channelUrl, String apiToken, String key, List<String> keys) throws ApiException {
-        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = viewChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken, key, keys);
+    public Map<String, SendBirdAdditionalProperties> viewChannelMetacounter(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = viewChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl, key, keys);
         return localVarResp.getData();
     }
 
     /**
      * View a channel metacounter - When retrieving all items of a channel metacounter
      * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @return ApiResponse&lt;Map&lt;String, SendBirdAdditionalProperties&gt;&gt;
@@ -2442,8 +2522,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, SendBirdAdditionalProperties>> viewChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken, String key, List<String> keys) throws ApiException {
-        okhttp3.Call localVarCall = viewChannelMetacounterValidateBeforeCall(channelType, channelUrl, apiToken, key, keys, null);
+    public ApiResponse<Map<String, SendBirdAdditionalProperties>> viewChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+        okhttp3.Call localVarCall = viewChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, key, keys, null);
         Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2451,9 +2531,9 @@ public class UserChannelMetadataApi {
     /**
      * View a channel metacounter - When retrieving all items of a channel metacounter (asynchronously)
      * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -2465,19 +2545,19 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetacounterAsync(String channelType, String channelUrl, String apiToken, String key, List<String> keys, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetacounterAsync(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewChannelMetacounterValidateBeforeCall(channelType, channelUrl, apiToken, key, keys, _callback);
+        okhttp3.Call localVarCall = viewChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, key, keys, _callback);
         Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewChannelMetacounterByKey
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2487,7 +2567,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetacounterByKeyCall(String channelType, String channelUrl, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetacounterByKeyCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2541,7 +2621,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewChannelMetacounterByKeyValidateBeforeCall(String channelType, String channelUrl, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewChannelMetacounterByKeyValidateBeforeCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewChannelMetacounterByKey(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -2559,7 +2644,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = viewChannelMetacounterByKeyCall(channelType, channelUrl, key, apiToken, _callback);
+        okhttp3.Call localVarCall = viewChannelMetacounterByKeyCall(apiToken, channelType, channelUrl, key, _callback);
         return localVarCall;
 
     }
@@ -2567,10 +2652,10 @@ public class UserChannelMetadataApi {
     /**
      * View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
      * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @return Map&lt;String, SendBirdAdditionalProperties&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2579,18 +2664,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, SendBirdAdditionalProperties> viewChannelMetacounterByKey(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = viewChannelMetacounterByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
+    public Map<String, SendBirdAdditionalProperties> viewChannelMetacounterByKey(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = viewChannelMetacounterByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
         return localVarResp.getData();
     }
 
     /**
      * View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
      * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Map&lt;String, SendBirdAdditionalProperties&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2599,8 +2684,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, SendBirdAdditionalProperties>> viewChannelMetacounterByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewChannelMetacounterByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, null);
+    public ApiResponse<Map<String, SendBirdAdditionalProperties>> viewChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        okhttp3.Call localVarCall = viewChannelMetacounterByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, null);
         Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2608,10 +2693,10 @@ public class UserChannelMetadataApi {
     /**
      * View a channel metacounter - When retrieving a specific item of a channel metacounter by its key (asynchronously)
      * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2621,18 +2706,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetacounterByKeyAsync(String channelType, String channelUrl, String key, String apiToken, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetacounterByKeyAsync(String apiToken, String channelType, String channelUrl, String key, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewChannelMetacounterByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, _callback);
+        okhttp3.Call localVarCall = viewChannelMetacounterByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, _callback);
         Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewChannelMetadata
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @param _callback Callback for upload/download progress
@@ -2644,7 +2729,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetadataCall(String channelType, String channelUrl, String apiToken, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetadataCall(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2705,7 +2790,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewChannelMetadataValidateBeforeCall(String channelType, String channelUrl, String apiToken, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewChannelMetadataValidateBeforeCall(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewChannelMetadata(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -2718,7 +2808,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = viewChannelMetadataCall(channelType, channelUrl, apiToken, key, keys, _callback);
+        okhttp3.Call localVarCall = viewChannelMetadataCall(apiToken, channelType, channelUrl, key, keys, _callback);
         return localVarCall;
 
     }
@@ -2726,9 +2816,9 @@ public class UserChannelMetadataApi {
     /**
      * View a channel metadata - When retrieving all items of a channel metadata
      * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @return Map&lt;String, String&gt;
@@ -2739,17 +2829,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, String> viewChannelMetadata(String channelType, String channelUrl, String apiToken, String key, List<String> keys) throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = viewChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, key, keys);
+    public Map<String, String> viewChannelMetadata(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+        ApiResponse<Map<String, String>> localVarResp = viewChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, key, keys);
         return localVarResp.getData();
     }
 
     /**
      * View a channel metadata - When retrieving all items of a channel metadata
      * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
@@ -2760,8 +2850,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, String key, List<String> keys) throws ApiException {
-        okhttp3.Call localVarCall = viewChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, key, keys, null);
+    public ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+        okhttp3.Call localVarCall = viewChannelMetadataValidateBeforeCall(apiToken, channelType, channelUrl, key, keys, null);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2769,9 +2859,9 @@ public class UserChannelMetadataApi {
     /**
      * View a channel metadata - When retrieving all items of a channel metadata (asynchronously)
      * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -2783,19 +2873,19 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetadataAsync(String channelType, String channelUrl, String apiToken, String key, List<String> keys, final ApiCallback<Map<String, String>> _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetadataAsync(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback<Map<String, String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewChannelMetadataValidateBeforeCall(channelType, channelUrl, apiToken, key, keys, _callback);
+        okhttp3.Call localVarCall = viewChannelMetadataValidateBeforeCall(apiToken, channelType, channelUrl, key, keys, _callback);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewChannelMetadataByKey
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2805,7 +2895,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetadataByKeyCall(String channelType, String channelUrl, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetadataByKeyCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -2859,7 +2949,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewChannelMetadataByKeyValidateBeforeCall(String channelType, String channelUrl, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewChannelMetadataByKeyValidateBeforeCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewChannelMetadataByKey(Async)");
+        }
         
         // verify the required parameter 'channelType' is set
         if (channelType == null) {
@@ -2877,7 +2972,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = viewChannelMetadataByKeyCall(channelType, channelUrl, key, apiToken, _callback);
+        okhttp3.Call localVarCall = viewChannelMetadataByKeyCall(apiToken, channelType, channelUrl, key, _callback);
         return localVarCall;
 
     }
@@ -2885,10 +2980,10 @@ public class UserChannelMetadataApi {
     /**
      * View a channel metadata - When retrieving a specific item of a channel metadata by its key
      * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @return Map&lt;String, String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2897,18 +2992,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, String> viewChannelMetadataByKey(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = viewChannelMetadataByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
+    public Map<String, String> viewChannelMetadataByKey(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        ApiResponse<Map<String, String>> localVarResp = viewChannelMetadataByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
         return localVarResp.getData();
     }
 
     /**
      * View a channel metadata - When retrieving a specific item of a channel metadata by its key
      * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2917,8 +3012,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewChannelMetadataByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, null);
+    public ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        okhttp3.Call localVarCall = viewChannelMetadataByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, null);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2926,10 +3021,10 @@ public class UserChannelMetadataApi {
     /**
      * View a channel metadata - When retrieving a specific item of a channel metadata by its key (asynchronously)
      * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * @param apiToken  (required)
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2939,17 +3034,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetadataByKeyAsync(String channelType, String channelUrl, String key, String apiToken, final ApiCallback<Map<String, String>> _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetadataByKeyAsync(String apiToken, String channelType, String channelUrl, String key, final ApiCallback<Map<String, String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewChannelMetadataByKeyValidateBeforeCall(channelType, channelUrl, key, apiToken, _callback);
+        okhttp3.Call localVarCall = viewChannelMetadataByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, _callback);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewUserMetadata
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @param _callback Callback for upload/download progress
@@ -2961,7 +3056,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewUserMetadataCall(String userId, String apiToken, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewUserMetadataCall(String apiToken, String userId, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -3021,7 +3116,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewUserMetadataValidateBeforeCall(String userId, String apiToken, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewUserMetadataValidateBeforeCall(String apiToken, String userId, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewUserMetadata(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -3029,7 +3129,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = viewUserMetadataCall(userId, apiToken, key, keys, _callback);
+        okhttp3.Call localVarCall = viewUserMetadataCall(apiToken, userId, key, keys, _callback);
         return localVarCall;
 
     }
@@ -3037,8 +3137,8 @@ public class UserChannelMetadataApi {
     /**
      * View a user metadata - When retrieving all items of a user metadata
      * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @return ViewUserMetadataResponse
@@ -3049,16 +3149,16 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ViewUserMetadataResponse viewUserMetadata(String userId, String apiToken, String key, List<String> keys) throws ApiException {
-        ApiResponse<ViewUserMetadataResponse> localVarResp = viewUserMetadataWithHttpInfo(userId, apiToken, key, keys);
+    public ViewUserMetadataResponse viewUserMetadata(String apiToken, String userId, String key, List<String> keys) throws ApiException {
+        ApiResponse<ViewUserMetadataResponse> localVarResp = viewUserMetadataWithHttpInfo(apiToken, userId, key, keys);
         return localVarResp.getData();
     }
 
     /**
      * View a user metadata - When retrieving all items of a user metadata
      * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @return ApiResponse&lt;ViewUserMetadataResponse&gt;
@@ -3069,8 +3169,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(String userId, String apiToken, String key, List<String> keys) throws ApiException {
-        okhttp3.Call localVarCall = viewUserMetadataValidateBeforeCall(userId, apiToken, key, keys, null);
+    public ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(String apiToken, String userId, String key, List<String> keys) throws ApiException {
+        okhttp3.Call localVarCall = viewUserMetadataValidateBeforeCall(apiToken, userId, key, keys, null);
         Type localVarReturnType = new TypeToken<ViewUserMetadataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3078,8 +3178,8 @@ public class UserChannelMetadataApi {
     /**
      * View a user metadata - When retrieving all items of a user metadata (asynchronously)
      * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
-     * @param apiToken  (optional)
      * @param key  (optional)
      * @param keys  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -3091,18 +3191,18 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewUserMetadataAsync(String userId, String apiToken, String key, List<String> keys, final ApiCallback<ViewUserMetadataResponse> _callback) throws ApiException {
+    public okhttp3.Call viewUserMetadataAsync(String apiToken, String userId, String key, List<String> keys, final ApiCallback<ViewUserMetadataResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewUserMetadataValidateBeforeCall(userId, apiToken, key, keys, _callback);
+        okhttp3.Call localVarCall = viewUserMetadataValidateBeforeCall(apiToken, userId, key, keys, _callback);
         Type localVarReturnType = new TypeToken<ViewUserMetadataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for viewUserMetadataByKey
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -3112,7 +3212,7 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewUserMetadataByKeyCall(String userId, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call viewUserMetadataByKeyCall(String apiToken, String userId, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -3165,7 +3265,12 @@ public class UserChannelMetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewUserMetadataByKeyValidateBeforeCall(String userId, String key, String apiToken, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call viewUserMetadataByKeyValidateBeforeCall(String apiToken, String userId, String key, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling viewUserMetadataByKey(Async)");
+        }
         
         // verify the required parameter 'userId' is set
         if (userId == null) {
@@ -3178,7 +3283,7 @@ public class UserChannelMetadataApi {
         }
         
 
-        okhttp3.Call localVarCall = viewUserMetadataByKeyCall(userId, key, apiToken, _callback);
+        okhttp3.Call localVarCall = viewUserMetadataByKeyCall(apiToken, userId, key, _callback);
         return localVarCall;
 
     }
@@ -3186,9 +3291,9 @@ public class UserChannelMetadataApi {
     /**
      * View a user metadata - When retrieving a specific item of a user metadata by its key
      * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @return Map&lt;String, String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3197,17 +3302,17 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, String> viewUserMetadataByKey(String userId, String key, String apiToken) throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = viewUserMetadataByKeyWithHttpInfo(userId, key, apiToken);
+    public Map<String, String> viewUserMetadataByKey(String apiToken, String userId, String key) throws ApiException {
+        ApiResponse<Map<String, String>> localVarResp = viewUserMetadataByKeyWithHttpInfo(apiToken, userId, key);
         return localVarResp.getData();
     }
 
     /**
      * View a user metadata - When retrieving a specific item of a user metadata by its key
      * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -3216,8 +3321,8 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, String>> viewUserMetadataByKeyWithHttpInfo(String userId, String key, String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewUserMetadataByKeyValidateBeforeCall(userId, key, apiToken, null);
+    public ApiResponse<Map<String, String>> viewUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key) throws ApiException {
+        okhttp3.Call localVarCall = viewUserMetadataByKeyValidateBeforeCall(apiToken, userId, key, null);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -3225,9 +3330,9 @@ public class UserChannelMetadataApi {
     /**
      * View a user metadata - When retrieving a specific item of a user metadata by its key (asynchronously)
      * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
+     * @param apiToken  (required)
      * @param userId  (required)
      * @param key  (required)
-     * @param apiToken  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -3237,9 +3342,9 @@ public class UserChannelMetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewUserMetadataByKeyAsync(String userId, String key, String apiToken, final ApiCallback<Map<String, String>> _callback) throws ApiException {
+    public okhttp3.Call viewUserMetadataByKeyAsync(String apiToken, String userId, String key, final ApiCallback<Map<String, String>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = viewUserMetadataByKeyValidateBeforeCall(userId, key, apiToken, _callback);
+        okhttp3.Call localVarCall = viewUserMetadataByKeyValidateBeforeCall(apiToken, userId, key, _callback);
         Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
