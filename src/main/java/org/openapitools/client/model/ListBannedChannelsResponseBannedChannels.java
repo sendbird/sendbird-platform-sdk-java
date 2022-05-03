@@ -29,15 +29,11 @@ import org.openapitools.client.model.SendBirdChannelResponse;
 /**
  * ListBannedChannelsResponseBannedChannels
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class ListBannedChannelsResponseBannedChannels {
   public static final String SERIALIZED_NAME_START_AT = "start_at";
   @SerializedName(SERIALIZED_NAME_START_AT)
   private BigDecimal startAt;
-
-  public static final String SERIALIZED_NAME_END_AT = "end_at";
-  @SerializedName(SERIALIZED_NAME_END_AT)
-  private BigDecimal endAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -46,6 +42,10 @@ public class ListBannedChannelsResponseBannedChannels {
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
   private SendBirdChannelResponse channel;
+
+  public static final String SERIALIZED_NAME_END_AT = "end_at";
+  @SerializedName(SERIALIZED_NAME_END_AT)
+  private BigDecimal endAt;
 
   public ListBannedChannelsResponseBannedChannels() { 
   }
@@ -70,29 +70,6 @@ public class ListBannedChannelsResponseBannedChannels {
 
   public void setStartAt(BigDecimal startAt) {
     this.startAt = startAt;
-  }
-
-
-  public ListBannedChannelsResponseBannedChannels endAt(BigDecimal endAt) {
-    
-    this.endAt = endAt;
-    return this;
-  }
-
-   /**
-   * Get endAt
-   * @return endAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getEndAt() {
-    return endAt;
-  }
-
-
-  public void setEndAt(BigDecimal endAt) {
-    this.endAt = endAt;
   }
 
 
@@ -142,6 +119,29 @@ public class ListBannedChannelsResponseBannedChannels {
   }
 
 
+  public ListBannedChannelsResponseBannedChannels endAt(BigDecimal endAt) {
+    
+    this.endAt = endAt;
+    return this;
+  }
+
+   /**
+   * Get endAt
+   * @return endAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getEndAt() {
+    return endAt;
+  }
+
+
+  public void setEndAt(BigDecimal endAt) {
+    this.endAt = endAt;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -152,14 +152,14 @@ public class ListBannedChannelsResponseBannedChannels {
     }
     ListBannedChannelsResponseBannedChannels listBannedChannelsResponseBannedChannels = (ListBannedChannelsResponseBannedChannels) o;
     return Objects.equals(this.startAt, listBannedChannelsResponseBannedChannels.startAt) &&
-        Objects.equals(this.endAt, listBannedChannelsResponseBannedChannels.endAt) &&
         Objects.equals(this.description, listBannedChannelsResponseBannedChannels.description) &&
-        Objects.equals(this.channel, listBannedChannelsResponseBannedChannels.channel);
+        Objects.equals(this.channel, listBannedChannelsResponseBannedChannels.channel) &&
+        Objects.equals(this.endAt, listBannedChannelsResponseBannedChannels.endAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startAt, endAt, description, channel);
+    return Objects.hash(startAt, description, channel, endAt);
   }
 
   @Override
@@ -167,9 +167,9 @@ public class ListBannedChannelsResponseBannedChannels {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListBannedChannelsResponseBannedChannels {\n");
     sb.append("    startAt: ").append(toIndentedString(startAt)).append("\n");
-    sb.append("    endAt: ").append(toIndentedString(endAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    sb.append("    endAt: ").append(toIndentedString(endAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

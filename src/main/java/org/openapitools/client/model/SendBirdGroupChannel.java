@@ -26,6 +26,9 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
+import org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage;
+import org.openapitools.client.model.SendBirdGroupChannelSmsFallback;
 import org.openapitools.client.model.SendBirdMember;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdUser;
@@ -33,8 +36,12 @@ import org.openapitools.client.model.SendBirdUser;
 /**
  * SendBirdGroupChannel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class SendBirdGroupChannel {
+  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
+  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  private String channelUrl;
+
   public static final String SERIALIZED_NAME_COVER_URL = "cover_url";
   @SerializedName(SERIALIZED_NAME_COVER_URL)
   private String coverUrl;
@@ -42,6 +49,10 @@ public class SendBirdGroupChannel {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   private BigDecimal createdAt;
+
+  public static final String SERIALIZED_NAME_CREATED_BY = "created_by";
+  @SerializedName(SERIALIZED_NAME_CREATED_BY)
+  private SendBirdGroupChannelCreatedBy createdBy;
 
   public static final String SERIALIZED_NAME_CREATOR = "creator";
   @SerializedName(SERIALIZED_NAME_CREATOR)
@@ -54,6 +65,18 @@ public class SendBirdGroupChannel {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   private String data;
+
+  public static final String SERIALIZED_NAME_DISAPPEARING_MESSAGE = "disappearing_message";
+  @SerializedName(SERIALIZED_NAME_DISAPPEARING_MESSAGE)
+  private SendBirdGroupChannelDisappearingMessage disappearingMessage;
+
+  public static final String SERIALIZED_NAME_FREEZE = "freeze";
+  @SerializedName(SERIALIZED_NAME_FREEZE)
+  private Boolean freeze;
+
+  public static final String SERIALIZED_NAME_IGNORE_PROFANITY_FILTER = "ignore_profanity_filter";
+  @SerializedName(SERIALIZED_NAME_IGNORE_PROFANITY_FILTER)
+  private Boolean ignoreProfanityFilter;
 
   /**
    * Gets or Sets hiddenState
@@ -124,6 +147,10 @@ public class SendBirdGroupChannel {
   @SerializedName(SERIALIZED_NAME_IS_BROADCAST)
   private Boolean isBroadcast;
 
+  public static final String SERIALIZED_NAME_IS_CREATED = "is_created";
+  @SerializedName(SERIALIZED_NAME_IS_CREATED)
+  private Boolean isCreated;
+
   public static final String SERIALIZED_NAME_IS_DISCOVERABLE = "is_discoverable";
   @SerializedName(SERIALIZED_NAME_IS_DISCOVERABLE)
   private Boolean isDiscoverable;
@@ -167,6 +194,10 @@ public class SendBirdGroupChannel {
   public static final String SERIALIZED_NAME_LAST_MESSAGE = "last_message";
   @SerializedName(SERIALIZED_NAME_LAST_MESSAGE)
   private SendBirdMessageResponse lastMessage;
+
+  public static final String SERIALIZED_NAME_MAX_LENGTH_MESSAGE = "max_length_message";
+  @SerializedName(SERIALIZED_NAME_MAX_LENGTH_MESSAGE)
+  private BigDecimal maxLengthMessage;
 
   public static final String SERIALIZED_NAME_MEMBER_COUNT = "member_count";
   @SerializedName(SERIALIZED_NAME_MEMBER_COUNT)
@@ -406,6 +437,14 @@ public class SendBirdGroupChannel {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  public static final String SERIALIZED_NAME_OPERATORS = "operators";
+  @SerializedName(SERIALIZED_NAME_OPERATORS)
+  private List<String> operators = null;
+
+  public static final String SERIALIZED_NAME_SMS_FALLBACK = "sms_fallback";
+  @SerializedName(SERIALIZED_NAME_SMS_FALLBACK)
+  private SendBirdGroupChannelSmsFallback smsFallback;
+
   public static final String SERIALIZED_NAME_UNREAD_MENTION_COUNT = "unread_mention_count";
   @SerializedName(SERIALIZED_NAME_UNREAD_MENTION_COUNT)
   private BigDecimal unreadMentionCount;
@@ -414,12 +453,31 @@ public class SendBirdGroupChannel {
   @SerializedName(SERIALIZED_NAME_UNREAD_MESSAGE_COUNT)
   private BigDecimal unreadMessageCount;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
-  private String channelUrl;
-
   public SendBirdGroupChannel() { 
   }
+
+  public SendBirdGroupChannel channelUrl(String channelUrl) {
+    
+    this.channelUrl = channelUrl;
+    return this;
+  }
+
+   /**
+   * Get channelUrl
+   * @return channelUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getChannelUrl() {
+    return channelUrl;
+  }
+
+
+  public void setChannelUrl(String channelUrl) {
+    this.channelUrl = channelUrl;
+  }
+
 
   public SendBirdGroupChannel coverUrl(String coverUrl) {
     
@@ -464,6 +522,29 @@ public class SendBirdGroupChannel {
 
   public void setCreatedAt(BigDecimal createdAt) {
     this.createdAt = createdAt;
+  }
+
+
+  public SendBirdGroupChannel createdBy(SendBirdGroupChannelCreatedBy createdBy) {
+    
+    this.createdBy = createdBy;
+    return this;
+  }
+
+   /**
+   * Get createdBy
+   * @return createdBy
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SendBirdGroupChannelCreatedBy getCreatedBy() {
+    return createdBy;
+  }
+
+
+  public void setCreatedBy(SendBirdGroupChannelCreatedBy createdBy) {
+    this.createdBy = createdBy;
   }
 
 
@@ -533,6 +614,75 @@ public class SendBirdGroupChannel {
 
   public void setData(String data) {
     this.data = data;
+  }
+
+
+  public SendBirdGroupChannel disappearingMessage(SendBirdGroupChannelDisappearingMessage disappearingMessage) {
+    
+    this.disappearingMessage = disappearingMessage;
+    return this;
+  }
+
+   /**
+   * Get disappearingMessage
+   * @return disappearingMessage
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SendBirdGroupChannelDisappearingMessage getDisappearingMessage() {
+    return disappearingMessage;
+  }
+
+
+  public void setDisappearingMessage(SendBirdGroupChannelDisappearingMessage disappearingMessage) {
+    this.disappearingMessage = disappearingMessage;
+  }
+
+
+  public SendBirdGroupChannel freeze(Boolean freeze) {
+    
+    this.freeze = freeze;
+    return this;
+  }
+
+   /**
+   * Get freeze
+   * @return freeze
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getFreeze() {
+    return freeze;
+  }
+
+
+  public void setFreeze(Boolean freeze) {
+    this.freeze = freeze;
+  }
+
+
+  public SendBirdGroupChannel ignoreProfanityFilter(Boolean ignoreProfanityFilter) {
+    
+    this.ignoreProfanityFilter = ignoreProfanityFilter;
+    return this;
+  }
+
+   /**
+   * Get ignoreProfanityFilter
+   * @return ignoreProfanityFilter
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIgnoreProfanityFilter() {
+    return ignoreProfanityFilter;
+  }
+
+
+  public void setIgnoreProfanityFilter(Boolean ignoreProfanityFilter) {
+    this.ignoreProfanityFilter = ignoreProfanityFilter;
   }
 
 
@@ -648,6 +798,29 @@ public class SendBirdGroupChannel {
 
   public void setIsBroadcast(Boolean isBroadcast) {
     this.isBroadcast = isBroadcast;
+  }
+
+
+  public SendBirdGroupChannel isCreated(Boolean isCreated) {
+    
+    this.isCreated = isCreated;
+    return this;
+  }
+
+   /**
+   * Get isCreated
+   * @return isCreated
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsCreated() {
+    return isCreated;
+  }
+
+
+  public void setIsCreated(Boolean isCreated) {
+    this.isCreated = isCreated;
   }
 
 
@@ -901,6 +1074,29 @@ public class SendBirdGroupChannel {
 
   public void setLastMessage(SendBirdMessageResponse lastMessage) {
     this.lastMessage = lastMessage;
+  }
+
+
+  public SendBirdGroupChannel maxLengthMessage(BigDecimal maxLengthMessage) {
+    
+    this.maxLengthMessage = maxLengthMessage;
+    return this;
+  }
+
+   /**
+   * Get maxLengthMessage
+   * @return maxLengthMessage
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getMaxLengthMessage() {
+    return maxLengthMessage;
+  }
+
+
+  public void setMaxLengthMessage(BigDecimal maxLengthMessage) {
+    this.maxLengthMessage = maxLengthMessage;
   }
 
 
@@ -1165,6 +1361,60 @@ public class SendBirdGroupChannel {
   }
 
 
+  public SendBirdGroupChannel operators(List<String> operators) {
+    
+    this.operators = operators;
+    return this;
+  }
+
+  public SendBirdGroupChannel addOperatorsItem(String operatorsItem) {
+    if (this.operators == null) {
+      this.operators = new ArrayList<String>();
+    }
+    this.operators.add(operatorsItem);
+    return this;
+  }
+
+   /**
+   * Get operators
+   * @return operators
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getOperators() {
+    return operators;
+  }
+
+
+  public void setOperators(List<String> operators) {
+    this.operators = operators;
+  }
+
+
+  public SendBirdGroupChannel smsFallback(SendBirdGroupChannelSmsFallback smsFallback) {
+    
+    this.smsFallback = smsFallback;
+    return this;
+  }
+
+   /**
+   * Get smsFallback
+   * @return smsFallback
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SendBirdGroupChannelSmsFallback getSmsFallback() {
+    return smsFallback;
+  }
+
+
+  public void setSmsFallback(SendBirdGroupChannelSmsFallback smsFallback) {
+    this.smsFallback = smsFallback;
+  }
+
+
   public SendBirdGroupChannel unreadMentionCount(BigDecimal unreadMentionCount) {
     
     this.unreadMentionCount = unreadMentionCount;
@@ -1211,29 +1461,6 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel channelUrl(String channelUrl) {
-    
-    this.channelUrl = channelUrl;
-    return this;
-  }
-
-   /**
-   * Get channelUrl
-   * @return channelUrl
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getChannelUrl() {
-    return channelUrl;
-  }
-
-
-  public void setChannelUrl(String channelUrl) {
-    this.channelUrl = channelUrl;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1243,16 +1470,22 @@ public class SendBirdGroupChannel {
       return false;
     }
     SendBirdGroupChannel sendBirdGroupChannel = (SendBirdGroupChannel) o;
-    return Objects.equals(this.coverUrl, sendBirdGroupChannel.coverUrl) &&
+    return Objects.equals(this.channelUrl, sendBirdGroupChannel.channelUrl) &&
+        Objects.equals(this.coverUrl, sendBirdGroupChannel.coverUrl) &&
         Objects.equals(this.createdAt, sendBirdGroupChannel.createdAt) &&
+        Objects.equals(this.createdBy, sendBirdGroupChannel.createdBy) &&
         Objects.equals(this.creator, sendBirdGroupChannel.creator) &&
         Objects.equals(this.customType, sendBirdGroupChannel.customType) &&
         Objects.equals(this.data, sendBirdGroupChannel.data) &&
+        Objects.equals(this.disappearingMessage, sendBirdGroupChannel.disappearingMessage) &&
+        Objects.equals(this.freeze, sendBirdGroupChannel.freeze) &&
+        Objects.equals(this.ignoreProfanityFilter, sendBirdGroupChannel.ignoreProfanityFilter) &&
         Objects.equals(this.hiddenState, sendBirdGroupChannel.hiddenState) &&
         Objects.equals(this.invitedAt, sendBirdGroupChannel.invitedAt) &&
         Objects.equals(this.inviter, sendBirdGroupChannel.inviter) &&
         Objects.equals(this.isAccessCodeRequired, sendBirdGroupChannel.isAccessCodeRequired) &&
         Objects.equals(this.isBroadcast, sendBirdGroupChannel.isBroadcast) &&
+        Objects.equals(this.isCreated, sendBirdGroupChannel.isCreated) &&
         Objects.equals(this.isDiscoverable, sendBirdGroupChannel.isDiscoverable) &&
         Objects.equals(this.isDistinct, sendBirdGroupChannel.isDistinct) &&
         Objects.equals(this.isEphemeral, sendBirdGroupChannel.isEphemeral) &&
@@ -1264,6 +1497,7 @@ public class SendBirdGroupChannel {
         Objects.equals(this.joinedAt, sendBirdGroupChannel.joinedAt) &&
         Objects.equals(this.joinedMemberCount, sendBirdGroupChannel.joinedMemberCount) &&
         Objects.equals(this.lastMessage, sendBirdGroupChannel.lastMessage) &&
+        Objects.equals(this.maxLengthMessage, sendBirdGroupChannel.maxLengthMessage) &&
         Objects.equals(this.memberCount, sendBirdGroupChannel.memberCount) &&
         Objects.equals(this.members, sendBirdGroupChannel.members) &&
         Objects.equals(this.messageOffsetTimestamp, sendBirdGroupChannel.messageOffsetTimestamp) &&
@@ -1275,30 +1509,37 @@ public class SendBirdGroupChannel {
         Objects.equals(this.myPushTriggerOption, sendBirdGroupChannel.myPushTriggerOption) &&
         Objects.equals(this.myRole, sendBirdGroupChannel.myRole) &&
         Objects.equals(this.name, sendBirdGroupChannel.name) &&
+        Objects.equals(this.operators, sendBirdGroupChannel.operators) &&
+        Objects.equals(this.smsFallback, sendBirdGroupChannel.smsFallback) &&
         Objects.equals(this.unreadMentionCount, sendBirdGroupChannel.unreadMentionCount) &&
-        Objects.equals(this.unreadMessageCount, sendBirdGroupChannel.unreadMessageCount) &&
-        Objects.equals(this.channelUrl, sendBirdGroupChannel.channelUrl);
+        Objects.equals(this.unreadMessageCount, sendBirdGroupChannel.unreadMessageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(coverUrl, createdAt, creator, customType, data, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, lastMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, unreadMentionCount, unreadMessageCount, channelUrl);
+    return Objects.hash(channelUrl, coverUrl, createdAt, createdBy, creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, lastMessage, maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SendBirdGroupChannel {\n");
+    sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
     sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("    customType: ").append(toIndentedString(customType)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    disappearingMessage: ").append(toIndentedString(disappearingMessage)).append("\n");
+    sb.append("    freeze: ").append(toIndentedString(freeze)).append("\n");
+    sb.append("    ignoreProfanityFilter: ").append(toIndentedString(ignoreProfanityFilter)).append("\n");
     sb.append("    hiddenState: ").append(toIndentedString(hiddenState)).append("\n");
     sb.append("    invitedAt: ").append(toIndentedString(invitedAt)).append("\n");
     sb.append("    inviter: ").append(toIndentedString(inviter)).append("\n");
     sb.append("    isAccessCodeRequired: ").append(toIndentedString(isAccessCodeRequired)).append("\n");
     sb.append("    isBroadcast: ").append(toIndentedString(isBroadcast)).append("\n");
+    sb.append("    isCreated: ").append(toIndentedString(isCreated)).append("\n");
     sb.append("    isDiscoverable: ").append(toIndentedString(isDiscoverable)).append("\n");
     sb.append("    isDistinct: ").append(toIndentedString(isDistinct)).append("\n");
     sb.append("    isEphemeral: ").append(toIndentedString(isEphemeral)).append("\n");
@@ -1310,6 +1551,7 @@ public class SendBirdGroupChannel {
     sb.append("    joinedAt: ").append(toIndentedString(joinedAt)).append("\n");
     sb.append("    joinedMemberCount: ").append(toIndentedString(joinedMemberCount)).append("\n");
     sb.append("    lastMessage: ").append(toIndentedString(lastMessage)).append("\n");
+    sb.append("    maxLengthMessage: ").append(toIndentedString(maxLengthMessage)).append("\n");
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
     sb.append("    members: ").append(toIndentedString(members)).append("\n");
     sb.append("    messageOffsetTimestamp: ").append(toIndentedString(messageOffsetTimestamp)).append("\n");
@@ -1321,9 +1563,10 @@ public class SendBirdGroupChannel {
     sb.append("    myPushTriggerOption: ").append(toIndentedString(myPushTriggerOption)).append("\n");
     sb.append("    myRole: ").append(toIndentedString(myRole)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    operators: ").append(toIndentedString(operators)).append("\n");
+    sb.append("    smsFallback: ").append(toIndentedString(smsFallback)).append("\n");
     sb.append("    unreadMentionCount: ").append(toIndentedString(unreadMentionCount)).append("\n");
     sb.append("    unreadMessageCount: ").append(toIndentedString(unreadMessageCount)).append("\n");
-    sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

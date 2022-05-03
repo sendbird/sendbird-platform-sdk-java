@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unread** | [**GcViewNumberOfEachMembersUnreadMessagesResponseUnread**](GcViewNumberOfEachMembersUnreadMessagesResponseUnread.md) |  |  [optional]
+**unread** | **Map&lt;String, BigDecimal&gt;** |  |  [optional]
 
 
 

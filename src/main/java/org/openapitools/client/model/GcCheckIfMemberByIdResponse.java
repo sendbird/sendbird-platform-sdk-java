@@ -27,11 +27,15 @@ import java.io.IOException;
 /**
  * GcCheckIfMemberByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class GcCheckIfMemberByIdResponse {
   public static final String SERIALIZED_NAME_IS_MEMBER = "is_member";
   @SerializedName(SERIALIZED_NAME_IS_MEMBER)
   private Boolean isMember;
+
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
+  private String state;
 
   public GcCheckIfMemberByIdResponse() { 
   }
@@ -59,6 +63,29 @@ public class GcCheckIfMemberByIdResponse {
   }
 
 
+  public GcCheckIfMemberByIdResponse state(String state) {
+    
+    this.state = state;
+    return this;
+  }
+
+   /**
+   * Get state
+   * @return state
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getState() {
+    return state;
+  }
+
+
+  public void setState(String state) {
+    this.state = state;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -68,12 +95,13 @@ public class GcCheckIfMemberByIdResponse {
       return false;
     }
     GcCheckIfMemberByIdResponse gcCheckIfMemberByIdResponse = (GcCheckIfMemberByIdResponse) o;
-    return Objects.equals(this.isMember, gcCheckIfMemberByIdResponse.isMember);
+    return Objects.equals(this.isMember, gcCheckIfMemberByIdResponse.isMember) &&
+        Objects.equals(this.state, gcCheckIfMemberByIdResponse.state);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isMember);
+    return Objects.hash(isMember, state);
   }
 
   @Override
@@ -81,6 +109,7 @@ public class GcCheckIfMemberByIdResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class GcCheckIfMemberByIdResponse {\n");
     sb.append("    isMember: ").append(toIndentedString(isMember)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("}");
     return sb.toString();
   }

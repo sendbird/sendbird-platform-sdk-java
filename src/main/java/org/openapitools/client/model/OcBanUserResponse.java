@@ -24,17 +24,15 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.openapitools.client.model.InlineResponse200;
+import org.openapitools.client.model.ModelBoolean;
 import org.openapitools.client.model.SendBirdUser;
 
 /**
  * OcBanUserResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class OcBanUserResponse {
-  public static final String SERIALIZED_NAME_USER = "user";
-  @SerializedName(SERIALIZED_NAME_USER)
-  private SendBirdUser user;
-
   public static final String SERIALIZED_NAME_START_AT = "start_at";
   @SerializedName(SERIALIZED_NAME_START_AT)
   private BigDecimal startAt;
@@ -47,31 +45,36 @@ public class OcBanUserResponse {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
+  public static final String SERIALIZED_NAME_USER_ID = "user_id";
+  @SerializedName(SERIALIZED_NAME_USER_ID)
+  private String userId;
+
+  public static final String SERIALIZED_NAME_USER = "user";
+  @SerializedName(SERIALIZED_NAME_USER)
+  private SendBirdUser user;
+
+  public static final String SERIALIZED_NAME_NEXT_URL = "next_url";
+  @SerializedName(SERIALIZED_NAME_NEXT_URL)
+  private String nextUrl;
+
+  public static final String SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
+  @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  private ModelBoolean requireAuthForProfileImage = null;
+
+  public static final String SERIALIZED_NAME_NICKNAME = "nickname";
+  @SerializedName(SERIALIZED_NAME_NICKNAME)
+  private String nickname;
+
+  public static final String SERIALIZED_NAME_PROFILE_URL = "profile_url";
+  @SerializedName(SERIALIZED_NAME_PROFILE_URL)
+  private String profileUrl;
+
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private InlineResponse200 metadata;
+
   public OcBanUserResponse() { 
   }
-
-  public OcBanUserResponse user(SendBirdUser user) {
-    
-    this.user = user;
-    return this;
-  }
-
-   /**
-   * Get user
-   * @return user
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SendBirdUser getUser() {
-    return user;
-  }
-
-
-  public void setUser(SendBirdUser user) {
-    this.user = user;
-  }
-
 
   public OcBanUserResponse startAt(BigDecimal startAt) {
     
@@ -142,6 +145,167 @@ public class OcBanUserResponse {
   }
 
 
+  public OcBanUserResponse userId(String userId) {
+    
+    this.userId = userId;
+    return this;
+  }
+
+   /**
+   * Get userId
+   * @return userId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getUserId() {
+    return userId;
+  }
+
+
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
+
+
+  public OcBanUserResponse user(SendBirdUser user) {
+    
+    this.user = user;
+    return this;
+  }
+
+   /**
+   * Get user
+   * @return user
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SendBirdUser getUser() {
+    return user;
+  }
+
+
+  public void setUser(SendBirdUser user) {
+    this.user = user;
+  }
+
+
+  public OcBanUserResponse nextUrl(String nextUrl) {
+    
+    this.nextUrl = nextUrl;
+    return this;
+  }
+
+   /**
+   * Get nextUrl
+   * @return nextUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getNextUrl() {
+    return nextUrl;
+  }
+
+
+  public void setNextUrl(String nextUrl) {
+    this.nextUrl = nextUrl;
+  }
+
+
+  public OcBanUserResponse requireAuthForProfileImage(ModelBoolean requireAuthForProfileImage) {
+    
+    this.requireAuthForProfileImage = requireAuthForProfileImage;
+    return this;
+  }
+
+   /**
+   * Get requireAuthForProfileImage
+   * @return requireAuthForProfileImage
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ModelBoolean getRequireAuthForProfileImage() {
+    return requireAuthForProfileImage;
+  }
+
+
+  public void setRequireAuthForProfileImage(ModelBoolean requireAuthForProfileImage) {
+    this.requireAuthForProfileImage = requireAuthForProfileImage;
+  }
+
+
+  public OcBanUserResponse nickname(String nickname) {
+    
+    this.nickname = nickname;
+    return this;
+  }
+
+   /**
+   * Get nickname
+   * @return nickname
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getNickname() {
+    return nickname;
+  }
+
+
+  public void setNickname(String nickname) {
+    this.nickname = nickname;
+  }
+
+
+  public OcBanUserResponse profileUrl(String profileUrl) {
+    
+    this.profileUrl = profileUrl;
+    return this;
+  }
+
+   /**
+   * Get profileUrl
+   * @return profileUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getProfileUrl() {
+    return profileUrl;
+  }
+
+
+  public void setProfileUrl(String profileUrl) {
+    this.profileUrl = profileUrl;
+  }
+
+
+  public OcBanUserResponse metadata(InlineResponse200 metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Get metadata
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public InlineResponse200 getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(InlineResponse200 metadata) {
+    this.metadata = metadata;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -151,25 +315,37 @@ public class OcBanUserResponse {
       return false;
     }
     OcBanUserResponse ocBanUserResponse = (OcBanUserResponse) o;
-    return Objects.equals(this.user, ocBanUserResponse.user) &&
-        Objects.equals(this.startAt, ocBanUserResponse.startAt) &&
+    return Objects.equals(this.startAt, ocBanUserResponse.startAt) &&
         Objects.equals(this.endAt, ocBanUserResponse.endAt) &&
-        Objects.equals(this.description, ocBanUserResponse.description);
+        Objects.equals(this.description, ocBanUserResponse.description) &&
+        Objects.equals(this.userId, ocBanUserResponse.userId) &&
+        Objects.equals(this.user, ocBanUserResponse.user) &&
+        Objects.equals(this.nextUrl, ocBanUserResponse.nextUrl) &&
+        Objects.equals(this.requireAuthForProfileImage, ocBanUserResponse.requireAuthForProfileImage) &&
+        Objects.equals(this.nickname, ocBanUserResponse.nickname) &&
+        Objects.equals(this.profileUrl, ocBanUserResponse.profileUrl) &&
+        Objects.equals(this.metadata, ocBanUserResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, startAt, endAt, description);
+    return Objects.hash(startAt, endAt, description, userId, user, nextUrl, requireAuthForProfileImage, nickname, profileUrl, metadata);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OcBanUserResponse {\n");
-    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    startAt: ").append(toIndentedString(startAt)).append("\n");
     sb.append("    endAt: ").append(toIndentedString(endAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    nextUrl: ").append(toIndentedString(nextUrl)).append("\n");
+    sb.append("    requireAuthForProfileImage: ").append(toIndentedString(requireAuthForProfileImage)).append("\n");
+    sb.append("    nickname: ").append(toIndentedString(nickname)).append("\n");
+    sb.append("    profileUrl: ").append(toIndentedString(profileUrl)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

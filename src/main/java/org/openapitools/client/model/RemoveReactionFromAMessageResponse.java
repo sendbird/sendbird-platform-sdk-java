@@ -28,32 +28,59 @@ import java.math.BigDecimal;
 /**
  * RemoveReactionFromAMessageResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class RemoveReactionFromAMessageResponse {
+  public static final String SERIALIZED_NAME_REACTION = "reaction";
+  @SerializedName(SERIALIZED_NAME_REACTION)
+  private String reaction;
+
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  private String userId;
-
-  public static final String SERIALIZED_NAME_OPERATION = "operation";
-  @SerializedName(SERIALIZED_NAME_OPERATION)
-  private String operation;
+  private BigDecimal userId;
 
   public static final String SERIALIZED_NAME_SUCCESS = "success";
   @SerializedName(SERIALIZED_NAME_SUCCESS)
   private Boolean success;
 
-  public static final String SERIALIZED_NAME_REACTION = "reaction";
-  @SerializedName(SERIALIZED_NAME_REACTION)
-  private String reaction;
+  public static final String SERIALIZED_NAME_MSG_ID = "msg_id";
+  @SerializedName(SERIALIZED_NAME_MSG_ID)
+  private BigDecimal msgId;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private BigDecimal updatedAt;
 
+  public static final String SERIALIZED_NAME_OPERATION = "operation";
+  @SerializedName(SERIALIZED_NAME_OPERATION)
+  private String operation;
+
   public RemoveReactionFromAMessageResponse() { 
   }
 
-  public RemoveReactionFromAMessageResponse userId(String userId) {
+  public RemoveReactionFromAMessageResponse reaction(String reaction) {
+    
+    this.reaction = reaction;
+    return this;
+  }
+
+   /**
+   * Get reaction
+   * @return reaction
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getReaction() {
+    return reaction;
+  }
+
+
+  public void setReaction(String reaction) {
+    this.reaction = reaction;
+  }
+
+
+  public RemoveReactionFromAMessageResponse userId(BigDecimal userId) {
     
     this.userId = userId;
     return this;
@@ -66,36 +93,13 @@ public class RemoveReactionFromAMessageResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getUserId() {
+  public BigDecimal getUserId() {
     return userId;
   }
 
 
-  public void setUserId(String userId) {
+  public void setUserId(BigDecimal userId) {
     this.userId = userId;
-  }
-
-
-  public RemoveReactionFromAMessageResponse operation(String operation) {
-    
-    this.operation = operation;
-    return this;
-  }
-
-   /**
-   * Get operation
-   * @return operation
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getOperation() {
-    return operation;
-  }
-
-
-  public void setOperation(String operation) {
-    this.operation = operation;
   }
 
 
@@ -122,26 +126,26 @@ public class RemoveReactionFromAMessageResponse {
   }
 
 
-  public RemoveReactionFromAMessageResponse reaction(String reaction) {
+  public RemoveReactionFromAMessageResponse msgId(BigDecimal msgId) {
     
-    this.reaction = reaction;
+    this.msgId = msgId;
     return this;
   }
 
    /**
-   * Get reaction
-   * @return reaction
+   * Get msgId
+   * @return msgId
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getReaction() {
-    return reaction;
+  public BigDecimal getMsgId() {
+    return msgId;
   }
 
 
-  public void setReaction(String reaction) {
-    this.reaction = reaction;
+  public void setMsgId(BigDecimal msgId) {
+    this.msgId = msgId;
   }
 
 
@@ -168,6 +172,29 @@ public class RemoveReactionFromAMessageResponse {
   }
 
 
+  public RemoveReactionFromAMessageResponse operation(String operation) {
+    
+    this.operation = operation;
+    return this;
+  }
+
+   /**
+   * Get operation
+   * @return operation
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getOperation() {
+    return operation;
+  }
+
+
+  public void setOperation(String operation) {
+    this.operation = operation;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -177,27 +204,29 @@ public class RemoveReactionFromAMessageResponse {
       return false;
     }
     RemoveReactionFromAMessageResponse removeReactionFromAMessageResponse = (RemoveReactionFromAMessageResponse) o;
-    return Objects.equals(this.userId, removeReactionFromAMessageResponse.userId) &&
-        Objects.equals(this.operation, removeReactionFromAMessageResponse.operation) &&
+    return Objects.equals(this.reaction, removeReactionFromAMessageResponse.reaction) &&
+        Objects.equals(this.userId, removeReactionFromAMessageResponse.userId) &&
         Objects.equals(this.success, removeReactionFromAMessageResponse.success) &&
-        Objects.equals(this.reaction, removeReactionFromAMessageResponse.reaction) &&
-        Objects.equals(this.updatedAt, removeReactionFromAMessageResponse.updatedAt);
+        Objects.equals(this.msgId, removeReactionFromAMessageResponse.msgId) &&
+        Objects.equals(this.updatedAt, removeReactionFromAMessageResponse.updatedAt) &&
+        Objects.equals(this.operation, removeReactionFromAMessageResponse.operation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, operation, success, reaction, updatedAt);
+    return Objects.hash(reaction, userId, success, msgId, updatedAt, operation);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RemoveReactionFromAMessageResponse {\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
-    sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    reaction: ").append(toIndentedString(reaction)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    success: ").append(toIndentedString(success)).append("\n");
+    sb.append("    msgId: ").append(toIndentedString(msgId)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

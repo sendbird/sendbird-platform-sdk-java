@@ -24,12 +24,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.openapitools.client.model.InlineResponse200;
 import org.openapitools.client.model.SendBirdUser;
 
 /**
  * GcBanUserResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class GcBanUserResponse {
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
@@ -46,6 +47,30 @@ public class GcBanUserResponse {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
+
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private InlineResponse200 metadata;
+
+  public static final String SERIALIZED_NAME_NEXT_URL = "next_url";
+  @SerializedName(SERIALIZED_NAME_NEXT_URL)
+  private String nextUrl;
+
+  public static final String SERIALIZED_NAME_NICKNAME = "nickname";
+  @SerializedName(SERIALIZED_NAME_NICKNAME)
+  private String nickname;
+
+  public static final String SERIALIZED_NAME_PROFILE_URL = "profile_url";
+  @SerializedName(SERIALIZED_NAME_PROFILE_URL)
+  private String profileUrl;
+
+  public static final String SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
+  @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  private Boolean requireAuthForProfileImage;
+
+  public static final String SERIALIZED_NAME_USER_ID = "user_id";
+  @SerializedName(SERIALIZED_NAME_USER_ID)
+  private String userId;
 
   public GcBanUserResponse() { 
   }
@@ -142,6 +167,144 @@ public class GcBanUserResponse {
   }
 
 
+  public GcBanUserResponse metadata(InlineResponse200 metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Get metadata
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public InlineResponse200 getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(InlineResponse200 metadata) {
+    this.metadata = metadata;
+  }
+
+
+  public GcBanUserResponse nextUrl(String nextUrl) {
+    
+    this.nextUrl = nextUrl;
+    return this;
+  }
+
+   /**
+   * Get nextUrl
+   * @return nextUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getNextUrl() {
+    return nextUrl;
+  }
+
+
+  public void setNextUrl(String nextUrl) {
+    this.nextUrl = nextUrl;
+  }
+
+
+  public GcBanUserResponse nickname(String nickname) {
+    
+    this.nickname = nickname;
+    return this;
+  }
+
+   /**
+   * Get nickname
+   * @return nickname
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getNickname() {
+    return nickname;
+  }
+
+
+  public void setNickname(String nickname) {
+    this.nickname = nickname;
+  }
+
+
+  public GcBanUserResponse profileUrl(String profileUrl) {
+    
+    this.profileUrl = profileUrl;
+    return this;
+  }
+
+   /**
+   * Get profileUrl
+   * @return profileUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getProfileUrl() {
+    return profileUrl;
+  }
+
+
+  public void setProfileUrl(String profileUrl) {
+    this.profileUrl = profileUrl;
+  }
+
+
+  public GcBanUserResponse requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
+    
+    this.requireAuthForProfileImage = requireAuthForProfileImage;
+    return this;
+  }
+
+   /**
+   * Get requireAuthForProfileImage
+   * @return requireAuthForProfileImage
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getRequireAuthForProfileImage() {
+    return requireAuthForProfileImage;
+  }
+
+
+  public void setRequireAuthForProfileImage(Boolean requireAuthForProfileImage) {
+    this.requireAuthForProfileImage = requireAuthForProfileImage;
+  }
+
+
+  public GcBanUserResponse userId(String userId) {
+    
+    this.userId = userId;
+    return this;
+  }
+
+   /**
+   * Get userId
+   * @return userId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getUserId() {
+    return userId;
+  }
+
+
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -154,12 +317,18 @@ public class GcBanUserResponse {
     return Objects.equals(this.user, gcBanUserResponse.user) &&
         Objects.equals(this.startAt, gcBanUserResponse.startAt) &&
         Objects.equals(this.endAt, gcBanUserResponse.endAt) &&
-        Objects.equals(this.description, gcBanUserResponse.description);
+        Objects.equals(this.description, gcBanUserResponse.description) &&
+        Objects.equals(this.metadata, gcBanUserResponse.metadata) &&
+        Objects.equals(this.nextUrl, gcBanUserResponse.nextUrl) &&
+        Objects.equals(this.nickname, gcBanUserResponse.nickname) &&
+        Objects.equals(this.profileUrl, gcBanUserResponse.profileUrl) &&
+        Objects.equals(this.requireAuthForProfileImage, gcBanUserResponse.requireAuthForProfileImage) &&
+        Objects.equals(this.userId, gcBanUserResponse.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, startAt, endAt, description);
+    return Objects.hash(user, startAt, endAt, description, metadata, nextUrl, nickname, profileUrl, requireAuthForProfileImage, userId);
   }
 
   @Override
@@ -170,6 +339,12 @@ public class GcBanUserResponse {
     sb.append("    startAt: ").append(toIndentedString(startAt)).append("\n");
     sb.append("    endAt: ").append(toIndentedString(endAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    nextUrl: ").append(toIndentedString(nextUrl)).append("\n");
+    sb.append("    nickname: ").append(toIndentedString(nickname)).append("\n");
+    sb.append("    profileUrl: ").append(toIndentedString(profileUrl)).append("\n");
+    sb.append("    requireAuthForProfileImage: ").append(toIndentedString(requireAuthForProfileImage)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

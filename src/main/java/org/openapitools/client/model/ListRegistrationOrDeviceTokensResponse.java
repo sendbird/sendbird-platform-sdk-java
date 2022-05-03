@@ -30,8 +30,12 @@ import org.openapitools.client.model.SendBirdUser;
 /**
  * ListRegistrationOrDeviceTokensResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class ListRegistrationOrDeviceTokensResponse {
+  public static final String SERIALIZED_NAME_TOKEN = "token";
+  @SerializedName(SERIALIZED_NAME_TOKEN)
+  private List<String> token = null;
+
   public static final String SERIALIZED_NAME_TOKENS = "tokens";
   @SerializedName(SERIALIZED_NAME_TOKENS)
   private List<String> tokens = null;
@@ -46,6 +50,37 @@ public class ListRegistrationOrDeviceTokensResponse {
 
   public ListRegistrationOrDeviceTokensResponse() { 
   }
+
+  public ListRegistrationOrDeviceTokensResponse token(List<String> token) {
+    
+    this.token = token;
+    return this;
+  }
+
+  public ListRegistrationOrDeviceTokensResponse addTokenItem(String tokenItem) {
+    if (this.token == null) {
+      this.token = new ArrayList<String>();
+    }
+    this.token.add(tokenItem);
+    return this;
+  }
+
+   /**
+   * Get token
+   * @return token
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getToken() {
+    return token;
+  }
+
+
+  public void setToken(List<String> token) {
+    this.token = token;
+  }
+
 
   public ListRegistrationOrDeviceTokensResponse tokens(List<String> tokens) {
     
@@ -133,20 +168,22 @@ public class ListRegistrationOrDeviceTokensResponse {
       return false;
     }
     ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokensResponse = (ListRegistrationOrDeviceTokensResponse) o;
-    return Objects.equals(this.tokens, listRegistrationOrDeviceTokensResponse.tokens) &&
+    return Objects.equals(this.token, listRegistrationOrDeviceTokensResponse.token) &&
+        Objects.equals(this.tokens, listRegistrationOrDeviceTokensResponse.tokens) &&
         Objects.equals(this.type, listRegistrationOrDeviceTokensResponse.type) &&
         Objects.equals(this.user, listRegistrationOrDeviceTokensResponse.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tokens, type, user);
+    return Objects.hash(token, tokens, type, user);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListRegistrationOrDeviceTokensResponse {\n");
+    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    tokens: ").append(toIndentedString(tokens)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

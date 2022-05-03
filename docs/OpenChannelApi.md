@@ -224,7 +224,7 @@ No authorization required
 
 <a name="ocDeleteChannelByUrl"></a>
 # **ocDeleteChannelByUrl**
-> ocDeleteChannelByUrl(apiToken, channelUrl)
+> InlineResponse200 ocDeleteChannelByUrl(apiToken, channelUrl)
 
 Delete a channel
 
@@ -248,7 +248,8 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     try {
-      apiInstance.ocDeleteChannelByUrl(apiToken, channelUrl);
+      InlineResponse200 result = apiInstance.ocDeleteChannelByUrl(apiToken, channelUrl);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocDeleteChannelByUrl");
       System.err.println("Status code: " + e.getCode());
@@ -269,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -278,7 +279,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -769,7 +770,7 @@ No authorization required
 
 <a name="ocRegisterOperators"></a>
 # **ocRegisterOperators**
-> ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData)
+> InlineResponse200 ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData)
 
 Register operators
 
@@ -794,7 +795,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     OcRegisterOperatorsData ocRegisterOperatorsData = new OcRegisterOperatorsData(); // OcRegisterOperatorsData | 
     try {
-      apiInstance.ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData);
+      InlineResponse200 result = apiInstance.ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocRegisterOperators");
       System.err.println("Status code: " + e.getCode());
@@ -816,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -825,7 +827,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -834,7 +836,7 @@ No authorization required
 
 <a name="ocUnbanUserById"></a>
 # **ocUnbanUserById**
-> ocUnbanUserById(apiToken, channelUrl, bannedUserId)
+> InlineResponse200 ocUnbanUserById(apiToken, channelUrl, bannedUserId)
 
 Unban a user
 
@@ -859,7 +861,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String bannedUserId = "bannedUserId_example"; // String | 
     try {
-      apiInstance.ocUnbanUserById(apiToken, channelUrl, bannedUserId);
+      InlineResponse200 result = apiInstance.ocUnbanUserById(apiToken, channelUrl, bannedUserId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocUnbanUserById");
       System.err.println("Status code: " + e.getCode());
@@ -881,7 +884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -890,7 +893,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -899,7 +902,7 @@ No authorization required
 
 <a name="ocUnmuteUserById"></a>
 # **ocUnmuteUserById**
-> ocUnmuteUserById(apiToken, channelUrl, mutedUserId)
+> InlineResponse200 ocUnmuteUserById(apiToken, channelUrl, mutedUserId)
 
 Unmute a user
 
@@ -924,7 +927,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String mutedUserId = "mutedUserId_example"; // String | 
     try {
-      apiInstance.ocUnmuteUserById(apiToken, channelUrl, mutedUserId);
+      InlineResponse200 result = apiInstance.ocUnmuteUserById(apiToken, channelUrl, mutedUserId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocUnmuteUserById");
       System.err.println("Status code: " + e.getCode());
@@ -946,7 +950,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -955,7 +959,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -964,7 +968,7 @@ No authorization required
 
 <a name="ocUpdateBanById"></a>
 # **ocUpdateBanById**
-> SendBirdUser ocUpdateBanById(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData)
+> OcUpdateBanByIdResponse ocUpdateBanById(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData)
 
 Update a ban
 
@@ -990,7 +994,7 @@ public class Example {
     String bannedUserId = "bannedUserId_example"; // String | 
     OcUpdateBanByIdData ocUpdateBanByIdData = new OcUpdateBanByIdData(); // OcUpdateBanByIdData | 
     try {
-      SendBirdUser result = apiInstance.ocUpdateBanById(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
+      OcUpdateBanByIdResponse result = apiInstance.ocUpdateBanById(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocUpdateBanById");
@@ -1014,7 +1018,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SendBirdUser**](SendBirdUser.md)
+[**OcUpdateBanByIdResponse**](OcUpdateBanByIdResponse.md)
 
 ### Authorization
 
@@ -1098,7 +1102,7 @@ No authorization required
 
 <a name="ocViewBanById"></a>
 # **ocViewBanById**
-> SendBirdUser ocViewBanById(apiToken, channelUrl, bannedUserId)
+> OcViewBanByIdResponse ocViewBanById(apiToken, channelUrl, bannedUserId)
 
 View a ban
 
@@ -1123,7 +1127,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String bannedUserId = "bannedUserId_example"; // String | 
     try {
-      SendBirdUser result = apiInstance.ocViewBanById(apiToken, channelUrl, bannedUserId);
+      OcViewBanByIdResponse result = apiInstance.ocViewBanById(apiToken, channelUrl, bannedUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocViewBanById");
@@ -1146,7 +1150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SendBirdUser**](SendBirdUser.md)
+[**OcViewBanByIdResponse**](OcViewBanByIdResponse.md)
 
 ### Authorization
 

@@ -25,29 +25,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListMessagesResponseSortedMetaarray;
+import org.openapitools.client.model.UpdateExtraDataInMessageResponseSortedMetaarray;
 
 /**
  * UpdateExtraDataInMessageResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class UpdateExtraDataInMessageResponse {
   public static final String SERIALIZED_NAME_SORTED_METAARRAY = "sorted_metaarray";
   @SerializedName(SERIALIZED_NAME_SORTED_METAARRAY)
-  private List<ListMessagesResponseSortedMetaarray> sortedMetaarray = null;
+  private List<UpdateExtraDataInMessageResponseSortedMetaarray> sortedMetaarray = null;
 
   public UpdateExtraDataInMessageResponse() { 
   }
 
-  public UpdateExtraDataInMessageResponse sortedMetaarray(List<ListMessagesResponseSortedMetaarray> sortedMetaarray) {
+  public UpdateExtraDataInMessageResponse sortedMetaarray(List<UpdateExtraDataInMessageResponseSortedMetaarray> sortedMetaarray) {
     
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
 
-  public UpdateExtraDataInMessageResponse addSortedMetaarrayItem(ListMessagesResponseSortedMetaarray sortedMetaarrayItem) {
+  public UpdateExtraDataInMessageResponse addSortedMetaarrayItem(UpdateExtraDataInMessageResponseSortedMetaarray sortedMetaarrayItem) {
     if (this.sortedMetaarray == null) {
-      this.sortedMetaarray = new ArrayList<ListMessagesResponseSortedMetaarray>();
+      this.sortedMetaarray = new ArrayList<UpdateExtraDataInMessageResponseSortedMetaarray>();
     }
     this.sortedMetaarray.add(sortedMetaarrayItem);
     return this;
@@ -60,12 +60,12 @@ public class UpdateExtraDataInMessageResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<ListMessagesResponseSortedMetaarray> getSortedMetaarray() {
+  public List<UpdateExtraDataInMessageResponseSortedMetaarray> getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
-  public void setSortedMetaarray(List<ListMessagesResponseSortedMetaarray> sortedMetaarray) {
+  public void setSortedMetaarray(List<UpdateExtraDataInMessageResponseSortedMetaarray> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 

@@ -24,102 +24,93 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ViewPushPreferencesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class ViewPushPreferencesResponse {
-  public static final String SERIALIZED_NAME_PUSH_TRIGGER_OPTION = "push_trigger_option";
-  @SerializedName(SERIALIZED_NAME_PUSH_TRIGGER_OPTION)
-  private String pushTriggerOption;
-
-  public static final String SERIALIZED_NAME_DO_NOT_DISTURB = "do_not_disturb";
-  @SerializedName(SERIALIZED_NAME_DO_NOT_DISTURB)
-  private Boolean doNotDisturb;
+  public static final String SERIALIZED_NAME_SNOOZE_START_TS = "snooze_start_ts";
+  @SerializedName(SERIALIZED_NAME_SNOOZE_START_TS)
+  private String snoozeStartTs;
 
   public static final String SERIALIZED_NAME_START_HOUR = "start_hour";
   @SerializedName(SERIALIZED_NAME_START_HOUR)
   private BigDecimal startHour;
 
-  public static final String SERIALIZED_NAME_START_MIN = "start_min";
-  @SerializedName(SERIALIZED_NAME_START_MIN)
-  private BigDecimal startMin;
-
-  public static final String SERIALIZED_NAME_END_HOUR = "end_hour";
-  @SerializedName(SERIALIZED_NAME_END_HOUR)
-  private BigDecimal endHour;
+  public static final String SERIALIZED_NAME_SNOOZE_ENABLED = "snooze_enabled";
+  @SerializedName(SERIALIZED_NAME_SNOOZE_ENABLED)
+  private Boolean snoozeEnabled;
 
   public static final String SERIALIZED_NAME_END_MIN = "end_min";
   @SerializedName(SERIALIZED_NAME_END_MIN)
   private BigDecimal endMin;
 
-  public static final String SERIALIZED_NAME_SNOOZE_ENABLED = "snooze_enabled";
-  @SerializedName(SERIALIZED_NAME_SNOOZE_ENABLED)
-  private Boolean snoozeEnabled;
-
-  public static final String SERIALIZED_NAME_SNOOZE_START_TS = "snooze_start_ts";
-  @SerializedName(SERIALIZED_NAME_SNOOZE_START_TS)
-  private BigDecimal snoozeStartTs;
-
-  public static final String SERIALIZED_NAME_SNOOZE_END_TS = "snooze_end_ts";
-  @SerializedName(SERIALIZED_NAME_SNOOZE_END_TS)
-  private BigDecimal snoozeEndTs;
-
   public static final String SERIALIZED_NAME_TIMEZONE = "timezone";
   @SerializedName(SERIALIZED_NAME_TIMEZONE)
   private String timezone;
+
+  public static final String SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
+  @SerializedName(SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS)
+  private Boolean blockPushFromBots;
+
+  public static final String SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS = "push_blocked_bot_ids";
+  @SerializedName(SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS)
+  private List<String> pushBlockedBotIds = null;
+
+  public static final String SERIALIZED_NAME_START_MIN = "start_min";
+  @SerializedName(SERIALIZED_NAME_START_MIN)
+  private BigDecimal startMin;
+
+  public static final String SERIALIZED_NAME_SNOOZE_END_TS = "snooze_end_ts";
+  @SerializedName(SERIALIZED_NAME_SNOOZE_END_TS)
+  private String snoozeEndTs;
+
+  public static final String SERIALIZED_NAME_DO_NOT_DISTURB = "do_not_disturb";
+  @SerializedName(SERIALIZED_NAME_DO_NOT_DISTURB)
+  private Boolean doNotDisturb;
+
+  public static final String SERIALIZED_NAME_END_HOUR = "end_hour";
+  @SerializedName(SERIALIZED_NAME_END_HOUR)
+  private BigDecimal endHour;
+
+  public static final String SERIALIZED_NAME_ENABLE_PUSH_FOR_REPLIES = "enable_push_for_replies";
+  @SerializedName(SERIALIZED_NAME_ENABLE_PUSH_FOR_REPLIES)
+  private Boolean enablePushForReplies;
 
   public static final String SERIALIZED_NAME_PUSH_SOUND = "push_sound";
   @SerializedName(SERIALIZED_NAME_PUSH_SOUND)
   private String pushSound;
 
+  public static final String SERIALIZED_NAME_PUSH_TRIGGER_OPTION = "push_trigger_option";
+  @SerializedName(SERIALIZED_NAME_PUSH_TRIGGER_OPTION)
+  private String pushTriggerOption;
+
   public ViewPushPreferencesResponse() { 
   }
 
-  public ViewPushPreferencesResponse pushTriggerOption(String pushTriggerOption) {
+  public ViewPushPreferencesResponse snoozeStartTs(String snoozeStartTs) {
     
-    this.pushTriggerOption = pushTriggerOption;
+    this.snoozeStartTs = snoozeStartTs;
     return this;
   }
 
    /**
-   * Get pushTriggerOption
-   * @return pushTriggerOption
+   * Get snoozeStartTs
+   * @return snoozeStartTs
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getPushTriggerOption() {
-    return pushTriggerOption;
+  public String getSnoozeStartTs() {
+    return snoozeStartTs;
   }
 
 
-  public void setPushTriggerOption(String pushTriggerOption) {
-    this.pushTriggerOption = pushTriggerOption;
-  }
-
-
-  public ViewPushPreferencesResponse doNotDisturb(Boolean doNotDisturb) {
-    
-    this.doNotDisturb = doNotDisturb;
-    return this;
-  }
-
-   /**
-   * Get doNotDisturb
-   * @return doNotDisturb
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getDoNotDisturb() {
-    return doNotDisturb;
-  }
-
-
-  public void setDoNotDisturb(Boolean doNotDisturb) {
-    this.doNotDisturb = doNotDisturb;
+  public void setSnoozeStartTs(String snoozeStartTs) {
+    this.snoozeStartTs = snoozeStartTs;
   }
 
 
@@ -146,49 +137,26 @@ public class ViewPushPreferencesResponse {
   }
 
 
-  public ViewPushPreferencesResponse startMin(BigDecimal startMin) {
+  public ViewPushPreferencesResponse snoozeEnabled(Boolean snoozeEnabled) {
     
-    this.startMin = startMin;
+    this.snoozeEnabled = snoozeEnabled;
     return this;
   }
 
    /**
-   * Get startMin
-   * @return startMin
+   * Get snoozeEnabled
+   * @return snoozeEnabled
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public BigDecimal getStartMin() {
-    return startMin;
+  public Boolean getSnoozeEnabled() {
+    return snoozeEnabled;
   }
 
 
-  public void setStartMin(BigDecimal startMin) {
-    this.startMin = startMin;
-  }
-
-
-  public ViewPushPreferencesResponse endHour(BigDecimal endHour) {
-    
-    this.endHour = endHour;
-    return this;
-  }
-
-   /**
-   * Get endHour
-   * @return endHour
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getEndHour() {
-    return endHour;
-  }
-
-
-  public void setEndHour(BigDecimal endHour) {
-    this.endHour = endHour;
+  public void setSnoozeEnabled(Boolean snoozeEnabled) {
+    this.snoozeEnabled = snoozeEnabled;
   }
 
 
@@ -215,75 +183,6 @@ public class ViewPushPreferencesResponse {
   }
 
 
-  public ViewPushPreferencesResponse snoozeEnabled(Boolean snoozeEnabled) {
-    
-    this.snoozeEnabled = snoozeEnabled;
-    return this;
-  }
-
-   /**
-   * Get snoozeEnabled
-   * @return snoozeEnabled
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getSnoozeEnabled() {
-    return snoozeEnabled;
-  }
-
-
-  public void setSnoozeEnabled(Boolean snoozeEnabled) {
-    this.snoozeEnabled = snoozeEnabled;
-  }
-
-
-  public ViewPushPreferencesResponse snoozeStartTs(BigDecimal snoozeStartTs) {
-    
-    this.snoozeStartTs = snoozeStartTs;
-    return this;
-  }
-
-   /**
-   * Get snoozeStartTs
-   * @return snoozeStartTs
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getSnoozeStartTs() {
-    return snoozeStartTs;
-  }
-
-
-  public void setSnoozeStartTs(BigDecimal snoozeStartTs) {
-    this.snoozeStartTs = snoozeStartTs;
-  }
-
-
-  public ViewPushPreferencesResponse snoozeEndTs(BigDecimal snoozeEndTs) {
-    
-    this.snoozeEndTs = snoozeEndTs;
-    return this;
-  }
-
-   /**
-   * Get snoozeEndTs
-   * @return snoozeEndTs
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getSnoozeEndTs() {
-    return snoozeEndTs;
-  }
-
-
-  public void setSnoozeEndTs(BigDecimal snoozeEndTs) {
-    this.snoozeEndTs = snoozeEndTs;
-  }
-
-
   public ViewPushPreferencesResponse timezone(String timezone) {
     
     this.timezone = timezone;
@@ -304,6 +203,175 @@ public class ViewPushPreferencesResponse {
 
   public void setTimezone(String timezone) {
     this.timezone = timezone;
+  }
+
+
+  public ViewPushPreferencesResponse blockPushFromBots(Boolean blockPushFromBots) {
+    
+    this.blockPushFromBots = blockPushFromBots;
+    return this;
+  }
+
+   /**
+   * Get blockPushFromBots
+   * @return blockPushFromBots
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getBlockPushFromBots() {
+    return blockPushFromBots;
+  }
+
+
+  public void setBlockPushFromBots(Boolean blockPushFromBots) {
+    this.blockPushFromBots = blockPushFromBots;
+  }
+
+
+  public ViewPushPreferencesResponse pushBlockedBotIds(List<String> pushBlockedBotIds) {
+    
+    this.pushBlockedBotIds = pushBlockedBotIds;
+    return this;
+  }
+
+  public ViewPushPreferencesResponse addPushBlockedBotIdsItem(String pushBlockedBotIdsItem) {
+    if (this.pushBlockedBotIds == null) {
+      this.pushBlockedBotIds = new ArrayList<String>();
+    }
+    this.pushBlockedBotIds.add(pushBlockedBotIdsItem);
+    return this;
+  }
+
+   /**
+   * Get pushBlockedBotIds
+   * @return pushBlockedBotIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getPushBlockedBotIds() {
+    return pushBlockedBotIds;
+  }
+
+
+  public void setPushBlockedBotIds(List<String> pushBlockedBotIds) {
+    this.pushBlockedBotIds = pushBlockedBotIds;
+  }
+
+
+  public ViewPushPreferencesResponse startMin(BigDecimal startMin) {
+    
+    this.startMin = startMin;
+    return this;
+  }
+
+   /**
+   * Get startMin
+   * @return startMin
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getStartMin() {
+    return startMin;
+  }
+
+
+  public void setStartMin(BigDecimal startMin) {
+    this.startMin = startMin;
+  }
+
+
+  public ViewPushPreferencesResponse snoozeEndTs(String snoozeEndTs) {
+    
+    this.snoozeEndTs = snoozeEndTs;
+    return this;
+  }
+
+   /**
+   * Get snoozeEndTs
+   * @return snoozeEndTs
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSnoozeEndTs() {
+    return snoozeEndTs;
+  }
+
+
+  public void setSnoozeEndTs(String snoozeEndTs) {
+    this.snoozeEndTs = snoozeEndTs;
+  }
+
+
+  public ViewPushPreferencesResponse doNotDisturb(Boolean doNotDisturb) {
+    
+    this.doNotDisturb = doNotDisturb;
+    return this;
+  }
+
+   /**
+   * Get doNotDisturb
+   * @return doNotDisturb
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getDoNotDisturb() {
+    return doNotDisturb;
+  }
+
+
+  public void setDoNotDisturb(Boolean doNotDisturb) {
+    this.doNotDisturb = doNotDisturb;
+  }
+
+
+  public ViewPushPreferencesResponse endHour(BigDecimal endHour) {
+    
+    this.endHour = endHour;
+    return this;
+  }
+
+   /**
+   * Get endHour
+   * @return endHour
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getEndHour() {
+    return endHour;
+  }
+
+
+  public void setEndHour(BigDecimal endHour) {
+    this.endHour = endHour;
+  }
+
+
+  public ViewPushPreferencesResponse enablePushForReplies(Boolean enablePushForReplies) {
+    
+    this.enablePushForReplies = enablePushForReplies;
+    return this;
+  }
+
+   /**
+   * Get enablePushForReplies
+   * @return enablePushForReplies
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getEnablePushForReplies() {
+    return enablePushForReplies;
+  }
+
+
+  public void setEnablePushForReplies(Boolean enablePushForReplies) {
+    this.enablePushForReplies = enablePushForReplies;
   }
 
 
@@ -330,6 +398,29 @@ public class ViewPushPreferencesResponse {
   }
 
 
+  public ViewPushPreferencesResponse pushTriggerOption(String pushTriggerOption) {
+    
+    this.pushTriggerOption = pushTriggerOption;
+    return this;
+  }
+
+   /**
+   * Get pushTriggerOption
+   * @return pushTriggerOption
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getPushTriggerOption() {
+    return pushTriggerOption;
+  }
+
+
+  public void setPushTriggerOption(String pushTriggerOption) {
+    this.pushTriggerOption = pushTriggerOption;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -339,39 +430,45 @@ public class ViewPushPreferencesResponse {
       return false;
     }
     ViewPushPreferencesResponse viewPushPreferencesResponse = (ViewPushPreferencesResponse) o;
-    return Objects.equals(this.pushTriggerOption, viewPushPreferencesResponse.pushTriggerOption) &&
-        Objects.equals(this.doNotDisturb, viewPushPreferencesResponse.doNotDisturb) &&
+    return Objects.equals(this.snoozeStartTs, viewPushPreferencesResponse.snoozeStartTs) &&
         Objects.equals(this.startHour, viewPushPreferencesResponse.startHour) &&
-        Objects.equals(this.startMin, viewPushPreferencesResponse.startMin) &&
-        Objects.equals(this.endHour, viewPushPreferencesResponse.endHour) &&
-        Objects.equals(this.endMin, viewPushPreferencesResponse.endMin) &&
         Objects.equals(this.snoozeEnabled, viewPushPreferencesResponse.snoozeEnabled) &&
-        Objects.equals(this.snoozeStartTs, viewPushPreferencesResponse.snoozeStartTs) &&
-        Objects.equals(this.snoozeEndTs, viewPushPreferencesResponse.snoozeEndTs) &&
+        Objects.equals(this.endMin, viewPushPreferencesResponse.endMin) &&
         Objects.equals(this.timezone, viewPushPreferencesResponse.timezone) &&
-        Objects.equals(this.pushSound, viewPushPreferencesResponse.pushSound);
+        Objects.equals(this.blockPushFromBots, viewPushPreferencesResponse.blockPushFromBots) &&
+        Objects.equals(this.pushBlockedBotIds, viewPushPreferencesResponse.pushBlockedBotIds) &&
+        Objects.equals(this.startMin, viewPushPreferencesResponse.startMin) &&
+        Objects.equals(this.snoozeEndTs, viewPushPreferencesResponse.snoozeEndTs) &&
+        Objects.equals(this.doNotDisturb, viewPushPreferencesResponse.doNotDisturb) &&
+        Objects.equals(this.endHour, viewPushPreferencesResponse.endHour) &&
+        Objects.equals(this.enablePushForReplies, viewPushPreferencesResponse.enablePushForReplies) &&
+        Objects.equals(this.pushSound, viewPushPreferencesResponse.pushSound) &&
+        Objects.equals(this.pushTriggerOption, viewPushPreferencesResponse.pushTriggerOption);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pushTriggerOption, doNotDisturb, startHour, startMin, endHour, endMin, snoozeEnabled, snoozeStartTs, snoozeEndTs, timezone, pushSound);
+    return Objects.hash(snoozeStartTs, startHour, snoozeEnabled, endMin, timezone, blockPushFromBots, pushBlockedBotIds, startMin, snoozeEndTs, doNotDisturb, endHour, enablePushForReplies, pushSound, pushTriggerOption);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ViewPushPreferencesResponse {\n");
-    sb.append("    pushTriggerOption: ").append(toIndentedString(pushTriggerOption)).append("\n");
-    sb.append("    doNotDisturb: ").append(toIndentedString(doNotDisturb)).append("\n");
-    sb.append("    startHour: ").append(toIndentedString(startHour)).append("\n");
-    sb.append("    startMin: ").append(toIndentedString(startMin)).append("\n");
-    sb.append("    endHour: ").append(toIndentedString(endHour)).append("\n");
-    sb.append("    endMin: ").append(toIndentedString(endMin)).append("\n");
-    sb.append("    snoozeEnabled: ").append(toIndentedString(snoozeEnabled)).append("\n");
     sb.append("    snoozeStartTs: ").append(toIndentedString(snoozeStartTs)).append("\n");
-    sb.append("    snoozeEndTs: ").append(toIndentedString(snoozeEndTs)).append("\n");
+    sb.append("    startHour: ").append(toIndentedString(startHour)).append("\n");
+    sb.append("    snoozeEnabled: ").append(toIndentedString(snoozeEnabled)).append("\n");
+    sb.append("    endMin: ").append(toIndentedString(endMin)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    sb.append("    blockPushFromBots: ").append(toIndentedString(blockPushFromBots)).append("\n");
+    sb.append("    pushBlockedBotIds: ").append(toIndentedString(pushBlockedBotIds)).append("\n");
+    sb.append("    startMin: ").append(toIndentedString(startMin)).append("\n");
+    sb.append("    snoozeEndTs: ").append(toIndentedString(snoozeEndTs)).append("\n");
+    sb.append("    doNotDisturb: ").append(toIndentedString(doNotDisturb)).append("\n");
+    sb.append("    endHour: ").append(toIndentedString(endHour)).append("\n");
+    sb.append("    enablePushForReplies: ").append(toIndentedString(enablePushForReplies)).append("\n");
     sb.append("    pushSound: ").append(toIndentedString(pushSound)).append("\n");
+    sb.append("    pushTriggerOption: ").append(toIndentedString(pushTriggerOption)).append("\n");
     sb.append("}");
     return sb.toString();
   }

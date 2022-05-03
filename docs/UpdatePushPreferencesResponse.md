@@ -7,6 +7,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**blockPushFromBots** | **Boolean** |  |  [optional]
+**enablePushForReplies** | **Boolean** |  |  [optional]
+**pushBlockedBotIds** | **List&lt;String&gt;** |  |  [optional]
 **pushTriggerOption** | **String** |  |  [optional]
 **doNotDisturb** | **Boolean** |  |  [optional]
 **startHour** | **BigDecimal** |  |  [optional]

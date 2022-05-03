@@ -29,11 +29,11 @@ import java.util.List;
 /**
  * ListAnnouncementGroupsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class ListAnnouncementGroupsResponse {
-  public static final String SERIALIZED_NAME_ANNOUNCEMENT_GROUP = "announcement_group";
-  @SerializedName(SERIALIZED_NAME_ANNOUNCEMENT_GROUP)
-  private List<String> announcementGroup = null;
+  public static final String SERIALIZED_NAME_ANNOUNCEMENT_GROUPS = "announcement_groups";
+  @SerializedName(SERIALIZED_NAME_ANNOUNCEMENT_GROUPS)
+  private List<String> announcementGroups = null;
 
   public static final String SERIALIZED_NAME_NEXT = "next";
   @SerializedName(SERIALIZED_NAME_NEXT)
@@ -42,34 +42,34 @@ public class ListAnnouncementGroupsResponse {
   public ListAnnouncementGroupsResponse() { 
   }
 
-  public ListAnnouncementGroupsResponse announcementGroup(List<String> announcementGroup) {
+  public ListAnnouncementGroupsResponse announcementGroups(List<String> announcementGroups) {
     
-    this.announcementGroup = announcementGroup;
+    this.announcementGroups = announcementGroups;
     return this;
   }
 
-  public ListAnnouncementGroupsResponse addAnnouncementGroupItem(String announcementGroupItem) {
-    if (this.announcementGroup == null) {
-      this.announcementGroup = new ArrayList<String>();
+  public ListAnnouncementGroupsResponse addAnnouncementGroupsItem(String announcementGroupsItem) {
+    if (this.announcementGroups == null) {
+      this.announcementGroups = new ArrayList<String>();
     }
-    this.announcementGroup.add(announcementGroupItem);
+    this.announcementGroups.add(announcementGroupsItem);
     return this;
   }
 
    /**
-   * Get announcementGroup
-   * @return announcementGroup
+   * Get announcementGroups
+   * @return announcementGroups
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<String> getAnnouncementGroup() {
-    return announcementGroup;
+  public List<String> getAnnouncementGroups() {
+    return announcementGroups;
   }
 
 
-  public void setAnnouncementGroup(List<String> announcementGroup) {
-    this.announcementGroup = announcementGroup;
+  public void setAnnouncementGroups(List<String> announcementGroups) {
+    this.announcementGroups = announcementGroups;
   }
 
 
@@ -105,20 +105,20 @@ public class ListAnnouncementGroupsResponse {
       return false;
     }
     ListAnnouncementGroupsResponse listAnnouncementGroupsResponse = (ListAnnouncementGroupsResponse) o;
-    return Objects.equals(this.announcementGroup, listAnnouncementGroupsResponse.announcementGroup) &&
+    return Objects.equals(this.announcementGroups, listAnnouncementGroupsResponse.announcementGroups) &&
         Objects.equals(this.next, listAnnouncementGroupsResponse.next);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(announcementGroup, next);
+    return Objects.hash(announcementGroups, next);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListAnnouncementGroupsResponse {\n");
-    sb.append("    announcementGroup: ").append(toIndentedString(announcementGroup)).append("\n");
+    sb.append("    announcementGroups: ").append(toIndentedString(announcementGroups)).append("\n");
     sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("}");
     return sb.toString();

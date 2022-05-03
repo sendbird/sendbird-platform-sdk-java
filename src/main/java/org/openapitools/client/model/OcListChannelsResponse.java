@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdOpenChannel;
@@ -30,7 +31,7 @@ import org.openapitools.client.model.SendBirdOpenChannel;
 /**
  * OcListChannelsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class OcListChannelsResponse {
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
@@ -39,6 +40,10 @@ public class OcListChannelsResponse {
   public static final String SERIALIZED_NAME_NEXT = "next";
   @SerializedName(SERIALIZED_NAME_NEXT)
   private String next;
+
+  public static final String SERIALIZED_NAME_TS = "ts";
+  @SerializedName(SERIALIZED_NAME_TS)
+  private BigDecimal ts;
 
   public OcListChannelsResponse() { 
   }
@@ -97,6 +102,29 @@ public class OcListChannelsResponse {
   }
 
 
+  public OcListChannelsResponse ts(BigDecimal ts) {
+    
+    this.ts = ts;
+    return this;
+  }
+
+   /**
+   * Get ts
+   * @return ts
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getTs() {
+    return ts;
+  }
+
+
+  public void setTs(BigDecimal ts) {
+    this.ts = ts;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -107,12 +135,13 @@ public class OcListChannelsResponse {
     }
     OcListChannelsResponse ocListChannelsResponse = (OcListChannelsResponse) o;
     return Objects.equals(this.channels, ocListChannelsResponse.channels) &&
-        Objects.equals(this.next, ocListChannelsResponse.next);
+        Objects.equals(this.next, ocListChannelsResponse.next) &&
+        Objects.equals(this.ts, ocListChannelsResponse.ts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channels, next);
+    return Objects.hash(channels, next, ts);
   }
 
   @Override
@@ -121,6 +150,7 @@ public class OcListChannelsResponse {
     sb.append("class OcListChannelsResponse {\n");
     sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
     sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("    ts: ").append(toIndentedString(ts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

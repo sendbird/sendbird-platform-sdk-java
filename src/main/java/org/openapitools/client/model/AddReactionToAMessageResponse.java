@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * AddReactionToAMessageResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class AddReactionToAMessageResponse {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -49,6 +49,10 @@ public class AddReactionToAMessageResponse {
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private BigDecimal updatedAt;
+
+  public static final String SERIALIZED_NAME_MSG_ID = "msg_id";
+  @SerializedName(SERIALIZED_NAME_MSG_ID)
+  private BigDecimal msgId;
 
   public AddReactionToAMessageResponse() { 
   }
@@ -168,6 +172,29 @@ public class AddReactionToAMessageResponse {
   }
 
 
+  public AddReactionToAMessageResponse msgId(BigDecimal msgId) {
+    
+    this.msgId = msgId;
+    return this;
+  }
+
+   /**
+   * Get msgId
+   * @return msgId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getMsgId() {
+    return msgId;
+  }
+
+
+  public void setMsgId(BigDecimal msgId) {
+    this.msgId = msgId;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -181,12 +208,13 @@ public class AddReactionToAMessageResponse {
         Objects.equals(this.operation, addReactionToAMessageResponse.operation) &&
         Objects.equals(this.success, addReactionToAMessageResponse.success) &&
         Objects.equals(this.reaction, addReactionToAMessageResponse.reaction) &&
-        Objects.equals(this.updatedAt, addReactionToAMessageResponse.updatedAt);
+        Objects.equals(this.updatedAt, addReactionToAMessageResponse.updatedAt) &&
+        Objects.equals(this.msgId, addReactionToAMessageResponse.msgId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, operation, success, reaction, updatedAt);
+    return Objects.hash(userId, operation, success, reaction, updatedAt, msgId);
   }
 
   @Override
@@ -198,6 +226,7 @@ public class AddReactionToAMessageResponse {
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    reaction: ").append(toIndentedString(reaction)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    msgId: ").append(toIndentedString(msgId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

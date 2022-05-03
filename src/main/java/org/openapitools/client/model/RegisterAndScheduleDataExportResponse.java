@@ -31,8 +31,16 @@ import org.openapitools.client.model.ListDataExportsByMessageChannelOrUserRespon
 /**
  * RegisterAndScheduleDataExportResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class RegisterAndScheduleDataExportResponse {
+  public static final String SERIALIZED_NAME_CHANNEL_CUSTOM_TYPES = "channel_custom_types";
+  @SerializedName(SERIALIZED_NAME_CHANNEL_CUSTOM_TYPES)
+  private List<String> channelCustomTypes = null;
+
+  public static final String SERIALIZED_NAME_DATA_TYPE = "data_type";
+  @SerializedName(SERIALIZED_NAME_DATA_TYPE)
+  private String dataType;
+
   public static final String SERIALIZED_NAME_REQUEST_ID = "request_id";
   @SerializedName(SERIALIZED_NAME_REQUEST_ID)
   private String requestId;
@@ -83,6 +91,60 @@ public class RegisterAndScheduleDataExportResponse {
 
   public RegisterAndScheduleDataExportResponse() { 
   }
+
+  public RegisterAndScheduleDataExportResponse channelCustomTypes(List<String> channelCustomTypes) {
+    
+    this.channelCustomTypes = channelCustomTypes;
+    return this;
+  }
+
+  public RegisterAndScheduleDataExportResponse addChannelCustomTypesItem(String channelCustomTypesItem) {
+    if (this.channelCustomTypes == null) {
+      this.channelCustomTypes = new ArrayList<String>();
+    }
+    this.channelCustomTypes.add(channelCustomTypesItem);
+    return this;
+  }
+
+   /**
+   * Get channelCustomTypes
+   * @return channelCustomTypes
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getChannelCustomTypes() {
+    return channelCustomTypes;
+  }
+
+
+  public void setChannelCustomTypes(List<String> channelCustomTypes) {
+    this.channelCustomTypes = channelCustomTypes;
+  }
+
+
+  public RegisterAndScheduleDataExportResponse dataType(String dataType) {
+    
+    this.dataType = dataType;
+    return this;
+  }
+
+   /**
+   * Get dataType
+   * @return dataType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getDataType() {
+    return dataType;
+  }
+
+
+  public void setDataType(String dataType) {
+    this.dataType = dataType;
+  }
+
 
   public RegisterAndScheduleDataExportResponse requestId(String requestId) {
     
@@ -393,7 +455,9 @@ public class RegisterAndScheduleDataExportResponse {
       return false;
     }
     RegisterAndScheduleDataExportResponse registerAndScheduleDataExportResponse = (RegisterAndScheduleDataExportResponse) o;
-    return Objects.equals(this.requestId, registerAndScheduleDataExportResponse.requestId) &&
+    return Objects.equals(this.channelCustomTypes, registerAndScheduleDataExportResponse.channelCustomTypes) &&
+        Objects.equals(this.dataType, registerAndScheduleDataExportResponse.dataType) &&
+        Objects.equals(this.requestId, registerAndScheduleDataExportResponse.requestId) &&
         Objects.equals(this.status, registerAndScheduleDataExportResponse.status) &&
         Objects.equals(this.format, registerAndScheduleDataExportResponse.format) &&
         Objects.equals(this.csvDelimiter, registerAndScheduleDataExportResponse.csvDelimiter) &&
@@ -409,13 +473,15 @@ public class RegisterAndScheduleDataExportResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestId, status, format, csvDelimiter, timezone, createdAt, startTs, endTs, channelUrls, senderIds, file, userIds);
+    return Objects.hash(channelCustomTypes, dataType, requestId, status, format, csvDelimiter, timezone, createdAt, startTs, endTs, channelUrls, senderIds, file, userIds);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RegisterAndScheduleDataExportResponse {\n");
+    sb.append("    channelCustomTypes: ").append(toIndentedString(channelCustomTypes)).append("\n");
+    sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
     sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");

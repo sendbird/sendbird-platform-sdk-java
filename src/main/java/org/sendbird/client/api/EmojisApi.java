@@ -536,7 +536,7 @@ public class EmojisApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -579,6 +579,7 @@ public class EmojisApi {
      * ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------
      * @param apiToken  (required)
      * @param emojiCategoryId  (required)
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -586,8 +587,9 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteEmojiCategoryById(String apiToken, String emojiCategoryId) throws ApiException {
-        deleteEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId);
+    public Object deleteEmojiCategoryById(String apiToken, String emojiCategoryId) throws ApiException {
+        ApiResponse<Object> localVarResp = deleteEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId);
+        return localVarResp.getData();
     }
 
     /**
@@ -595,7 +597,7 @@ public class EmojisApi {
      * ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------
      * @param apiToken  (required)
      * @param emojiCategoryId  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -603,9 +605,10 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
+    public ApiResponse<Object> deleteEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
         okhttp3.Call localVarCall = deleteEmojiCategoryByIdValidateBeforeCall(apiToken, emojiCategoryId, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -622,10 +625,11 @@ public class EmojisApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEmojiCategoryByIdAsync(String apiToken, String emojiCategoryId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteEmojiCategoryByIdAsync(String apiToken, String emojiCategoryId, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteEmojiCategoryByIdValidateBeforeCall(apiToken, emojiCategoryId, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**

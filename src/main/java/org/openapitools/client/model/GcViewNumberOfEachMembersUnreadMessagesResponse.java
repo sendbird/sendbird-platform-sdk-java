@@ -23,23 +23,34 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.GcViewNumberOfEachMembersUnreadMessagesResponseUnread;
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * GcViewNumberOfEachMembersUnreadMessagesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class GcViewNumberOfEachMembersUnreadMessagesResponse {
   public static final String SERIALIZED_NAME_UNREAD = "unread";
   @SerializedName(SERIALIZED_NAME_UNREAD)
-  private GcViewNumberOfEachMembersUnreadMessagesResponseUnread unread;
+  private Map<String, BigDecimal> unread = null;
 
   public GcViewNumberOfEachMembersUnreadMessagesResponse() { 
   }
 
-  public GcViewNumberOfEachMembersUnreadMessagesResponse unread(GcViewNumberOfEachMembersUnreadMessagesResponseUnread unread) {
+  public GcViewNumberOfEachMembersUnreadMessagesResponse unread(Map<String, BigDecimal> unread) {
     
     this.unread = unread;
+    return this;
+  }
+
+  public GcViewNumberOfEachMembersUnreadMessagesResponse putUnreadItem(String key, BigDecimal unreadItem) {
+    if (this.unread == null) {
+      this.unread = new HashMap<String, BigDecimal>();
+    }
+    this.unread.put(key, unreadItem);
     return this;
   }
 
@@ -50,12 +61,12 @@ public class GcViewNumberOfEachMembersUnreadMessagesResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public GcViewNumberOfEachMembersUnreadMessagesResponseUnread getUnread() {
+  public Map<String, BigDecimal> getUnread() {
     return unread;
   }
 
 
-  public void setUnread(GcViewNumberOfEachMembersUnreadMessagesResponseUnread unread) {
+  public void setUnread(Map<String, BigDecimal> unread) {
     this.unread = unread;
   }
 

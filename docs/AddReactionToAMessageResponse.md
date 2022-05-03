@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **success** | **Boolean** |  |  [optional]
 **reaction** | **String** |  |  [optional]
 **updatedAt** | **BigDecimal** |  |  [optional]
+**msgId** | **BigDecimal** |  |  [optional]
 
 
 

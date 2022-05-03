@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**announcementGroup** | **List&lt;String&gt;** |  |  [optional]
+**announcementGroups** | **List&lt;String&gt;** |  |  [optional]
 **next** | **String** |  |  [optional]
 
 

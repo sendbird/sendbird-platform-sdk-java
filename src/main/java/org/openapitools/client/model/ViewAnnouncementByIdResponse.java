@@ -24,12 +24,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.openapitools.client.model.ScheduleAnnouncementResponseCreateChannelOptions;
 import org.openapitools.client.model.ScheduleAnnouncementResponseMessage;
 
 /**
  * ViewAnnouncementByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class ViewAnnouncementByIdResponse {
   public static final String SERIALIZED_NAME_UNIQUE_ID = "unique_id";
   @SerializedName(SERIALIZED_NAME_UNIQUE_ID)
@@ -90,6 +91,34 @@ public class ViewAnnouncementByIdResponse {
   public static final String SERIALIZED_NAME_OPEN_RATE = "open_rate";
   @SerializedName(SERIALIZED_NAME_OPEN_RATE)
   private BigDecimal openRate;
+
+  public static final String SERIALIZED_NAME_CREATE_CHANNEL = "create_channel";
+  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL)
+  private Boolean createChannel;
+
+  public static final String SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS = "create_channel_options";
+  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS)
+  private ScheduleAnnouncementResponseCreateChannelOptions createChannelOptions;
+
+  public static final String SERIALIZED_NAME_END_AT = "end_at";
+  @SerializedName(SERIALIZED_NAME_END_AT)
+  private BigDecimal endAt;
+
+  public static final String SERIALIZED_NAME_MARK_AS_READ = "mark_as_read";
+  @SerializedName(SERIALIZED_NAME_MARK_AS_READ)
+  private Boolean markAsRead;
+
+  public static final String SERIALIZED_NAME_SENT_CHANNEL_COUNT = "sent_channel_count";
+  @SerializedName(SERIALIZED_NAME_SENT_CHANNEL_COUNT)
+  private BigDecimal sentChannelCount;
+
+  public static final String SERIALIZED_NAME_TARGET_CHANNEL_TYPE = "target_channel_type";
+  @SerializedName(SERIALIZED_NAME_TARGET_CHANNEL_TYPE)
+  private String targetChannelType;
+
+  public static final String SERIALIZED_NAME_TARGET_CUSTOM_TYPE = "target_custom_type";
+  @SerializedName(SERIALIZED_NAME_TARGET_CUSTOM_TYPE)
+  private String targetCustomType;
 
   public ViewAnnouncementByIdResponse() { 
   }
@@ -439,6 +468,167 @@ public class ViewAnnouncementByIdResponse {
   }
 
 
+  public ViewAnnouncementByIdResponse createChannel(Boolean createChannel) {
+    
+    this.createChannel = createChannel;
+    return this;
+  }
+
+   /**
+   * Get createChannel
+   * @return createChannel
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getCreateChannel() {
+    return createChannel;
+  }
+
+
+  public void setCreateChannel(Boolean createChannel) {
+    this.createChannel = createChannel;
+  }
+
+
+  public ViewAnnouncementByIdResponse createChannelOptions(ScheduleAnnouncementResponseCreateChannelOptions createChannelOptions) {
+    
+    this.createChannelOptions = createChannelOptions;
+    return this;
+  }
+
+   /**
+   * Get createChannelOptions
+   * @return createChannelOptions
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ScheduleAnnouncementResponseCreateChannelOptions getCreateChannelOptions() {
+    return createChannelOptions;
+  }
+
+
+  public void setCreateChannelOptions(ScheduleAnnouncementResponseCreateChannelOptions createChannelOptions) {
+    this.createChannelOptions = createChannelOptions;
+  }
+
+
+  public ViewAnnouncementByIdResponse endAt(BigDecimal endAt) {
+    
+    this.endAt = endAt;
+    return this;
+  }
+
+   /**
+   * Get endAt
+   * @return endAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getEndAt() {
+    return endAt;
+  }
+
+
+  public void setEndAt(BigDecimal endAt) {
+    this.endAt = endAt;
+  }
+
+
+  public ViewAnnouncementByIdResponse markAsRead(Boolean markAsRead) {
+    
+    this.markAsRead = markAsRead;
+    return this;
+  }
+
+   /**
+   * Get markAsRead
+   * @return markAsRead
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getMarkAsRead() {
+    return markAsRead;
+  }
+
+
+  public void setMarkAsRead(Boolean markAsRead) {
+    this.markAsRead = markAsRead;
+  }
+
+
+  public ViewAnnouncementByIdResponse sentChannelCount(BigDecimal sentChannelCount) {
+    
+    this.sentChannelCount = sentChannelCount;
+    return this;
+  }
+
+   /**
+   * Get sentChannelCount
+   * @return sentChannelCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getSentChannelCount() {
+    return sentChannelCount;
+  }
+
+
+  public void setSentChannelCount(BigDecimal sentChannelCount) {
+    this.sentChannelCount = sentChannelCount;
+  }
+
+
+  public ViewAnnouncementByIdResponse targetChannelType(String targetChannelType) {
+    
+    this.targetChannelType = targetChannelType;
+    return this;
+  }
+
+   /**
+   * Get targetChannelType
+   * @return targetChannelType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTargetChannelType() {
+    return targetChannelType;
+  }
+
+
+  public void setTargetChannelType(String targetChannelType) {
+    this.targetChannelType = targetChannelType;
+  }
+
+
+  public ViewAnnouncementByIdResponse targetCustomType(String targetCustomType) {
+    
+    this.targetCustomType = targetCustomType;
+    return this;
+  }
+
+   /**
+   * Get targetCustomType
+   * @return targetCustomType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTargetCustomType() {
+    return targetCustomType;
+  }
+
+
+  public void setTargetCustomType(String targetCustomType) {
+    this.targetCustomType = targetCustomType;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -462,12 +652,19 @@ public class ViewAnnouncementByIdResponse {
         Objects.equals(this.completedAt, viewAnnouncementByIdResponse.completedAt) &&
         Objects.equals(this.sentUserCount, viewAnnouncementByIdResponse.sentUserCount) &&
         Objects.equals(this.openCount, viewAnnouncementByIdResponse.openCount) &&
-        Objects.equals(this.openRate, viewAnnouncementByIdResponse.openRate);
+        Objects.equals(this.openRate, viewAnnouncementByIdResponse.openRate) &&
+        Objects.equals(this.createChannel, viewAnnouncementByIdResponse.createChannel) &&
+        Objects.equals(this.createChannelOptions, viewAnnouncementByIdResponse.createChannelOptions) &&
+        Objects.equals(this.endAt, viewAnnouncementByIdResponse.endAt) &&
+        Objects.equals(this.markAsRead, viewAnnouncementByIdResponse.markAsRead) &&
+        Objects.equals(this.sentChannelCount, viewAnnouncementByIdResponse.sentChannelCount) &&
+        Objects.equals(this.targetChannelType, viewAnnouncementByIdResponse.targetChannelType) &&
+        Objects.equals(this.targetCustomType, viewAnnouncementByIdResponse.targetCustomType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uniqueId, announcementGroup, message, enablePush, targetAt, targetUserCount, targetChannelCount, status, scheduledAt, ceaseAt, resumeAt, completedAt, sentUserCount, openCount, openRate);
+    return Objects.hash(uniqueId, announcementGroup, message, enablePush, targetAt, targetUserCount, targetChannelCount, status, scheduledAt, ceaseAt, resumeAt, completedAt, sentUserCount, openCount, openRate, createChannel, createChannelOptions, endAt, markAsRead, sentChannelCount, targetChannelType, targetCustomType);
   }
 
   @Override
@@ -489,6 +686,13 @@ public class ViewAnnouncementByIdResponse {
     sb.append("    sentUserCount: ").append(toIndentedString(sentUserCount)).append("\n");
     sb.append("    openCount: ").append(toIndentedString(openCount)).append("\n");
     sb.append("    openRate: ").append(toIndentedString(openRate)).append("\n");
+    sb.append("    createChannel: ").append(toIndentedString(createChannel)).append("\n");
+    sb.append("    createChannelOptions: ").append(toIndentedString(createChannelOptions)).append("\n");
+    sb.append("    endAt: ").append(toIndentedString(endAt)).append("\n");
+    sb.append("    markAsRead: ").append(toIndentedString(markAsRead)).append("\n");
+    sb.append("    sentChannelCount: ").append(toIndentedString(sentChannelCount)).append("\n");
+    sb.append("    targetChannelType: ").append(toIndentedString(targetChannelType)).append("\n");
+    sb.append("    targetCustomType: ").append(toIndentedString(targetCustomType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

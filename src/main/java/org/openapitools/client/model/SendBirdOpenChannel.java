@@ -31,27 +31,39 @@ import org.openapitools.client.model.SendBirdUser;
 /**
  * SendBirdOpenChannel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class SendBirdOpenChannel {
-  public static final String SERIALIZED_NAME_COVER_URL = "cover_url";
-  @SerializedName(SERIALIZED_NAME_COVER_URL)
-  private String coverUrl;
-
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private BigDecimal createdAt;
-
-  public static final String SERIALIZED_NAME_CREATOR = "creator";
-  @SerializedName(SERIALIZED_NAME_CREATOR)
-  private SendBirdUser creator;
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
   @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
   private String customType;
 
+  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
+  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  private String channelUrl;
+
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private BigDecimal createdAt;
+
+  public static final String SERIALIZED_NAME_COVER_URL = "cover_url";
+  @SerializedName(SERIALIZED_NAME_COVER_URL)
+  private String coverUrl;
+
+  public static final String SERIALIZED_NAME_CREATOR = "creator";
+  @SerializedName(SERIALIZED_NAME_CREATOR)
+  private SendBirdUser creator;
+
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   private String data;
+
+  public static final String SERIALIZED_NAME_IS_DYNAMIC_PARTITIONED = "is_dynamic_partitioned";
+  @SerializedName(SERIALIZED_NAME_IS_DYNAMIC_PARTITIONED)
+  private Boolean isDynamicPartitioned;
 
   public static final String SERIALIZED_NAME_IS_EPHEMERAL = "is_ephemeral";
   @SerializedName(SERIALIZED_NAME_IS_EPHEMERAL)
@@ -61,9 +73,9 @@ public class SendBirdOpenChannel {
   @SerializedName(SERIALIZED_NAME_IS_FROZEN)
   private Boolean isFrozen;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+  public static final String SERIALIZED_NAME_MAX_LENGTH_MESSAGE = "max_length_message";
+  @SerializedName(SERIALIZED_NAME_MAX_LENGTH_MESSAGE)
+  private BigDecimal maxLengthMessage;
 
   public static final String SERIALIZED_NAME_OPERATORS = "operators";
   @SerializedName(SERIALIZED_NAME_OPERATORS)
@@ -73,79 +85,33 @@ public class SendBirdOpenChannel {
   @SerializedName(SERIALIZED_NAME_PARTICIPANT_COUNT)
   private BigDecimal participantCount;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
-  private String channelUrl;
+  public static final String SERIALIZED_NAME_FREEZE = "freeze";
+  @SerializedName(SERIALIZED_NAME_FREEZE)
+  private Boolean freeze;
 
   public SendBirdOpenChannel() { 
   }
 
-  public SendBirdOpenChannel coverUrl(String coverUrl) {
+  public SendBirdOpenChannel name(String name) {
     
-    this.coverUrl = coverUrl;
+    this.name = name;
     return this;
   }
 
    /**
-   * Get coverUrl
-   * @return coverUrl
+   * Get name
+   * @return name
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getCoverUrl() {
-    return coverUrl;
+  public String getName() {
+    return name;
   }
 
 
-  public void setCoverUrl(String coverUrl) {
-    this.coverUrl = coverUrl;
-  }
-
-
-  public SendBirdOpenChannel createdAt(BigDecimal createdAt) {
-    
-    this.createdAt = createdAt;
-    return this;
-  }
-
-   /**
-   * Get createdAt
-   * @return createdAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getCreatedAt() {
-    return createdAt;
-  }
-
-
-  public void setCreatedAt(BigDecimal createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public SendBirdOpenChannel creator(SendBirdUser creator) {
-    
-    this.creator = creator;
-    return this;
-  }
-
-   /**
-   * Get creator
-   * @return creator
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SendBirdUser getCreator() {
-    return creator;
-  }
-
-
-  public void setCreator(SendBirdUser creator) {
-    this.creator = creator;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -172,6 +138,98 @@ public class SendBirdOpenChannel {
   }
 
 
+  public SendBirdOpenChannel channelUrl(String channelUrl) {
+    
+    this.channelUrl = channelUrl;
+    return this;
+  }
+
+   /**
+   * Get channelUrl
+   * @return channelUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getChannelUrl() {
+    return channelUrl;
+  }
+
+
+  public void setChannelUrl(String channelUrl) {
+    this.channelUrl = channelUrl;
+  }
+
+
+  public SendBirdOpenChannel createdAt(BigDecimal createdAt) {
+    
+    this.createdAt = createdAt;
+    return this;
+  }
+
+   /**
+   * Get createdAt
+   * @return createdAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getCreatedAt() {
+    return createdAt;
+  }
+
+
+  public void setCreatedAt(BigDecimal createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public SendBirdOpenChannel coverUrl(String coverUrl) {
+    
+    this.coverUrl = coverUrl;
+    return this;
+  }
+
+   /**
+   * Get coverUrl
+   * @return coverUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getCoverUrl() {
+    return coverUrl;
+  }
+
+
+  public void setCoverUrl(String coverUrl) {
+    this.coverUrl = coverUrl;
+  }
+
+
+  public SendBirdOpenChannel creator(SendBirdUser creator) {
+    
+    this.creator = creator;
+    return this;
+  }
+
+   /**
+   * Get creator
+   * @return creator
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SendBirdUser getCreator() {
+    return creator;
+  }
+
+
+  public void setCreator(SendBirdUser creator) {
+    this.creator = creator;
+  }
+
+
   public SendBirdOpenChannel data(String data) {
     
     this.data = data;
@@ -192,6 +250,29 @@ public class SendBirdOpenChannel {
 
   public void setData(String data) {
     this.data = data;
+  }
+
+
+  public SendBirdOpenChannel isDynamicPartitioned(Boolean isDynamicPartitioned) {
+    
+    this.isDynamicPartitioned = isDynamicPartitioned;
+    return this;
+  }
+
+   /**
+   * Get isDynamicPartitioned
+   * @return isDynamicPartitioned
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsDynamicPartitioned() {
+    return isDynamicPartitioned;
+  }
+
+
+  public void setIsDynamicPartitioned(Boolean isDynamicPartitioned) {
+    this.isDynamicPartitioned = isDynamicPartitioned;
   }
 
 
@@ -241,26 +322,26 @@ public class SendBirdOpenChannel {
   }
 
 
-  public SendBirdOpenChannel name(String name) {
+  public SendBirdOpenChannel maxLengthMessage(BigDecimal maxLengthMessage) {
     
-    this.name = name;
+    this.maxLengthMessage = maxLengthMessage;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get maxLengthMessage
+   * @return maxLengthMessage
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getName() {
-    return name;
+  public BigDecimal getMaxLengthMessage() {
+    return maxLengthMessage;
   }
 
 
-  public void setName(String name) {
-    this.name = name;
+  public void setMaxLengthMessage(BigDecimal maxLengthMessage) {
+    this.maxLengthMessage = maxLengthMessage;
   }
 
 
@@ -318,26 +399,26 @@ public class SendBirdOpenChannel {
   }
 
 
-  public SendBirdOpenChannel channelUrl(String channelUrl) {
+  public SendBirdOpenChannel freeze(Boolean freeze) {
     
-    this.channelUrl = channelUrl;
+    this.freeze = freeze;
     return this;
   }
 
    /**
-   * Get channelUrl
-   * @return channelUrl
+   * Get freeze
+   * @return freeze
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getChannelUrl() {
-    return channelUrl;
+  public Boolean getFreeze() {
+    return freeze;
   }
 
 
-  public void setChannelUrl(String channelUrl) {
-    this.channelUrl = channelUrl;
+  public void setFreeze(Boolean freeze) {
+    this.freeze = freeze;
   }
 
 
@@ -350,39 +431,45 @@ public class SendBirdOpenChannel {
       return false;
     }
     SendBirdOpenChannel sendBirdOpenChannel = (SendBirdOpenChannel) o;
-    return Objects.equals(this.coverUrl, sendBirdOpenChannel.coverUrl) &&
-        Objects.equals(this.createdAt, sendBirdOpenChannel.createdAt) &&
-        Objects.equals(this.creator, sendBirdOpenChannel.creator) &&
+    return Objects.equals(this.name, sendBirdOpenChannel.name) &&
         Objects.equals(this.customType, sendBirdOpenChannel.customType) &&
+        Objects.equals(this.channelUrl, sendBirdOpenChannel.channelUrl) &&
+        Objects.equals(this.createdAt, sendBirdOpenChannel.createdAt) &&
+        Objects.equals(this.coverUrl, sendBirdOpenChannel.coverUrl) &&
+        Objects.equals(this.creator, sendBirdOpenChannel.creator) &&
         Objects.equals(this.data, sendBirdOpenChannel.data) &&
+        Objects.equals(this.isDynamicPartitioned, sendBirdOpenChannel.isDynamicPartitioned) &&
         Objects.equals(this.isEphemeral, sendBirdOpenChannel.isEphemeral) &&
         Objects.equals(this.isFrozen, sendBirdOpenChannel.isFrozen) &&
-        Objects.equals(this.name, sendBirdOpenChannel.name) &&
+        Objects.equals(this.maxLengthMessage, sendBirdOpenChannel.maxLengthMessage) &&
         Objects.equals(this.operators, sendBirdOpenChannel.operators) &&
         Objects.equals(this.participantCount, sendBirdOpenChannel.participantCount) &&
-        Objects.equals(this.channelUrl, sendBirdOpenChannel.channelUrl);
+        Objects.equals(this.freeze, sendBirdOpenChannel.freeze);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(coverUrl, createdAt, creator, customType, data, isEphemeral, isFrozen, name, operators, participantCount, channelUrl);
+    return Objects.hash(name, customType, channelUrl, createdAt, coverUrl, creator, data, isDynamicPartitioned, isEphemeral, isFrozen, maxLengthMessage, operators, participantCount, freeze);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SendBirdOpenChannel {\n");
-    sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    customType: ").append(toIndentedString(customType)).append("\n");
+    sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
+    sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    isDynamicPartitioned: ").append(toIndentedString(isDynamicPartitioned)).append("\n");
     sb.append("    isEphemeral: ").append(toIndentedString(isEphemeral)).append("\n");
     sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    maxLengthMessage: ").append(toIndentedString(maxLengthMessage)).append("\n");
     sb.append("    operators: ").append(toIndentedString(operators)).append("\n");
     sb.append("    participantCount: ").append(toIndentedString(participantCount)).append("\n");
-    sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
+    sb.append("    freeze: ").append(toIndentedString(freeze)).append("\n");
     sb.append("}");
     return sb.toString();
   }

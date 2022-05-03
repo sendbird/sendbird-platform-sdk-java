@@ -7,11 +7,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userId** | **String** |  |  [optional]
-**operation** | **String** |  |  [optional]
-**success** | **Boolean** |  |  [optional]
 **reaction** | **String** |  |  [optional]
+**userId** | **BigDecimal** |  |  [optional]
+**success** | **Boolean** |  |  [optional]
+**msgId** | **BigDecimal** |  |  [optional]
 **updatedAt** | **BigDecimal** |  |  [optional]
+**operation** | **String** |  |  [optional]
 
 
 

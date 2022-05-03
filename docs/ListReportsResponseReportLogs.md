@@ -7,6 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**reportingUser** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional]
 **reportType** | **String** |  |  [optional]
 **reportCategory** | **String** |  |  [optional]
 **offendingUser** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional]

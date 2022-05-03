@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **includeMembers** | **Boolean** |  |  [optional]
 **enabledEvents** | **List&lt;String&gt;** |  |  [optional]
 **allWebhookCategories** | **List&lt;String&gt;** |  |  [optional]
+**includeUnreadCount** | **Boolean** |  |  [optional]
 
 
 

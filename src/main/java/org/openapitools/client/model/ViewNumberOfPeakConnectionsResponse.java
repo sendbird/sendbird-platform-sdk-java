@@ -30,7 +30,7 @@ import org.openapitools.client.model.ViewNumberOfPeakConnectionsResponsePeakConn
 /**
  * ViewNumberOfPeakConnectionsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class ViewNumberOfPeakConnectionsResponse {
   public static final String SERIALIZED_NAME_PEAK_CONNECTIONS = "peak_connections";
   @SerializedName(SERIALIZED_NAME_PEAK_CONNECTIONS)

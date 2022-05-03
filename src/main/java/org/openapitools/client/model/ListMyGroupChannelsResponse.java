@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdGroupChannel;
@@ -30,7 +31,7 @@ import org.openapitools.client.model.SendBirdGroupChannel;
 /**
  * ListMyGroupChannelsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class ListMyGroupChannelsResponse {
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
@@ -39,6 +40,10 @@ public class ListMyGroupChannelsResponse {
   public static final String SERIALIZED_NAME_NEXT = "next";
   @SerializedName(SERIALIZED_NAME_NEXT)
   private String next;
+
+  public static final String SERIALIZED_NAME_TS = "ts";
+  @SerializedName(SERIALIZED_NAME_TS)
+  private BigDecimal ts;
 
   public ListMyGroupChannelsResponse() { 
   }
@@ -97,6 +102,29 @@ public class ListMyGroupChannelsResponse {
   }
 
 
+  public ListMyGroupChannelsResponse ts(BigDecimal ts) {
+    
+    this.ts = ts;
+    return this;
+  }
+
+   /**
+   * Get ts
+   * @return ts
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getTs() {
+    return ts;
+  }
+
+
+  public void setTs(BigDecimal ts) {
+    this.ts = ts;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -107,12 +135,13 @@ public class ListMyGroupChannelsResponse {
     }
     ListMyGroupChannelsResponse listMyGroupChannelsResponse = (ListMyGroupChannelsResponse) o;
     return Objects.equals(this.channels, listMyGroupChannelsResponse.channels) &&
-        Objects.equals(this.next, listMyGroupChannelsResponse.next);
+        Objects.equals(this.next, listMyGroupChannelsResponse.next) &&
+        Objects.equals(this.ts, listMyGroupChannelsResponse.ts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channels, next);
+    return Objects.hash(channels, next, ts);
   }
 
   @Override
@@ -121,6 +150,7 @@ public class ListMyGroupChannelsResponse {
     sb.append("class ListMyGroupChannelsResponse {\n");
     sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
     sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("    ts: ").append(toIndentedString(ts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

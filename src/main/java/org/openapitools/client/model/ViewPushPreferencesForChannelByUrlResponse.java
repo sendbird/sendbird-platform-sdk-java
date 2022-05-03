@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * ViewPushPreferencesForChannelByUrlResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class ViewPushPreferencesForChannelByUrlResponse {
   public static final String SERIALIZED_NAME_PUSH_TRIGGER_OPTION = "push_trigger_option";
   @SerializedName(SERIALIZED_NAME_PUSH_TRIGGER_OPTION)
@@ -73,6 +73,10 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   public static final String SERIALIZED_NAME_PUSH_SOUND = "push_sound";
   @SerializedName(SERIALIZED_NAME_PUSH_SOUND)
   private String pushSound;
+
+  public static final String SERIALIZED_NAME_ENABLE = "enable";
+  @SerializedName(SERIALIZED_NAME_ENABLE)
+  private Boolean enable;
 
   public ViewPushPreferencesForChannelByUrlResponse() { 
   }
@@ -330,6 +334,29 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   }
 
 
+  public ViewPushPreferencesForChannelByUrlResponse enable(Boolean enable) {
+    
+    this.enable = enable;
+    return this;
+  }
+
+   /**
+   * Get enable
+   * @return enable
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getEnable() {
+    return enable;
+  }
+
+
+  public void setEnable(Boolean enable) {
+    this.enable = enable;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -349,12 +376,13 @@ public class ViewPushPreferencesForChannelByUrlResponse {
         Objects.equals(this.snoozeStartTs, viewPushPreferencesForChannelByUrlResponse.snoozeStartTs) &&
         Objects.equals(this.snoozeEndTs, viewPushPreferencesForChannelByUrlResponse.snoozeEndTs) &&
         Objects.equals(this.timezone, viewPushPreferencesForChannelByUrlResponse.timezone) &&
-        Objects.equals(this.pushSound, viewPushPreferencesForChannelByUrlResponse.pushSound);
+        Objects.equals(this.pushSound, viewPushPreferencesForChannelByUrlResponse.pushSound) &&
+        Objects.equals(this.enable, viewPushPreferencesForChannelByUrlResponse.enable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pushTriggerOption, doNotDisturb, startHour, startMin, endHour, endMin, snoozeEnabled, snoozeStartTs, snoozeEndTs, timezone, pushSound);
+    return Objects.hash(pushTriggerOption, doNotDisturb, startHour, startMin, endHour, endMin, snoozeEnabled, snoozeStartTs, snoozeEndTs, timezone, pushSound, enable);
   }
 
   @Override
@@ -372,6 +400,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
     sb.append("    snoozeEndTs: ").append(toIndentedString(snoozeEndTs)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    pushSound: ").append(toIndentedString(pushSound)).append("\n");
+    sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
     sb.append("}");
     return sb.toString();
   }

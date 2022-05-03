@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sortedMetaarray** | [**List&lt;ListMessagesResponseSortedMetaarray&gt;**](ListMessagesResponseSortedMetaarray.md) |  |  [optional]
+**sortedMetaarray** | [**List&lt;UpdateExtraDataInMessageResponseSortedMetaarray&gt;**](UpdateExtraDataInMessageResponseSortedMetaarray.md) |  |  [optional]
 
 
 

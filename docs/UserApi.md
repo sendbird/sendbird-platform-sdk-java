@@ -112,7 +112,7 @@ No authorization required
 
 <a name="banFromChannelsWithCustomChannelTypes"></a>
 # **banFromChannelsWithCustomChannelTypes**
-> banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData)
+> Object banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData)
 
 Ban from channels with custom channel types
 
@@ -137,7 +137,8 @@ public class Example {
     String userId = "userId_example"; // String | 
     BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData = new BanFromChannelsWithCustomChannelTypesData(); // BanFromChannelsWithCustomChannelTypesData | 
     try {
-      apiInstance.banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData);
+      Object result = apiInstance.banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#banFromChannelsWithCustomChannelTypes");
       System.err.println("Status code: " + e.getCode());
@@ -159,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -168,7 +169,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -177,7 +178,7 @@ No authorization required
 
 <a name="blockUser"></a>
 # **blockUser**
-> SendBirdUser blockUser(apiToken, userId, blockUserData)
+> BlockUserResponse blockUser(apiToken, userId, blockUserData)
 
 Block a user
 
@@ -202,7 +203,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     BlockUserData blockUserData = new BlockUserData(); // BlockUserData | 
     try {
-      SendBirdUser result = apiInstance.blockUser(apiToken, userId, blockUserData);
+      BlockUserResponse result = apiInstance.blockUser(apiToken, userId, blockUserData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#blockUser");
@@ -225,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SendBirdUser**](SendBirdUser.md)
+[**BlockUserResponse**](BlockUserResponse.md)
 
 ### Authorization
 
@@ -373,7 +374,7 @@ No authorization required
 
 <a name="deleteUserById"></a>
 # **deleteUserById**
-> deleteUserById(apiToken, userId)
+> Object deleteUserById(apiToken, userId)
 
 Delete a user
 
@@ -397,7 +398,8 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     try {
-      apiInstance.deleteUserById(apiToken, userId);
+      Object result = apiInstance.deleteUserById(apiToken, userId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#deleteUserById");
       System.err.println("Status code: " + e.getCode());
@@ -418,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -427,7 +429,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -436,7 +438,7 @@ No authorization required
 
 <a name="leaveMyGroupChannels"></a>
 # **leaveMyGroupChannels**
-> leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData)
+> Object leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData)
 
 Leave my group channels
 
@@ -461,7 +463,8 @@ public class Example {
     String userId = "userId_example"; // String | 
     LeaveMyGroupChannelsData leaveMyGroupChannelsData = new LeaveMyGroupChannelsData(); // LeaveMyGroupChannelsData | 
     try {
-      apiInstance.leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData);
+      Object result = apiInstance.leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#leaveMyGroupChannels");
       System.err.println("Status code: " + e.getCode());
@@ -483,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -492,7 +495,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1001,7 +1004,7 @@ No authorization required
 
 <a name="markAllMessagesAsRead"></a>
 # **markAllMessagesAsRead**
-> markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData)
+> Object markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData)
 
 Mark all messages as read
 
@@ -1026,7 +1029,8 @@ public class Example {
     String userId = "userId_example"; // String | 
     MarkAllMessagesAsReadData markAllMessagesAsReadData = new MarkAllMessagesAsReadData(); // MarkAllMessagesAsReadData | 
     try {
-      apiInstance.markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData);
+      Object result = apiInstance.markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#markAllMessagesAsRead");
       System.err.println("Status code: " + e.getCode());
@@ -1048,7 +1052,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -1057,7 +1061,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1066,7 +1070,7 @@ No authorization required
 
 <a name="muteInChannelsWithCustomChannelTypes"></a>
 # **muteInChannelsWithCustomChannelTypes**
-> muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData)
+> Object muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData)
 
 Mute in channels with custom channel types
 
@@ -1091,7 +1095,8 @@ public class Example {
     String userId = "userId_example"; // String | 
     MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData = new MuteInChannelsWithCustomChannelTypesData(); // MuteInChannelsWithCustomChannelTypesData | 
     try {
-      apiInstance.muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData);
+      Object result = apiInstance.muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#muteInChannelsWithCustomChannelTypes");
       System.err.println("Status code: " + e.getCode());
@@ -1113,7 +1118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -1122,7 +1127,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1131,7 +1136,7 @@ No authorization required
 
 <a name="registerAsOperatorToChannelsWithCustomChannelTypes"></a>
 # **registerAsOperatorToChannelsWithCustomChannelTypes**
-> registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData)
+> Object registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData)
 
 Register as an operator to channels with custom channel types
 
@@ -1156,7 +1161,8 @@ public class Example {
     String userId = "userId_example"; // String | 
     RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData = new RegisterAsOperatorToChannelsWithCustomChannelTypesData(); // RegisterAsOperatorToChannelsWithCustomChannelTypesData | 
     try {
-      apiInstance.registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData);
+      Object result = apiInstance.registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#registerAsOperatorToChannelsWithCustomChannelTypes");
       System.err.println("Status code: " + e.getCode());
@@ -1178,7 +1184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -1187,7 +1193,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1394,7 +1400,7 @@ No authorization required
 
 <a name="resetPushPreferences"></a>
 # **resetPushPreferences**
-> resetPushPreferences(apiToken, userId)
+> ResetPushPreferencesResponse resetPushPreferences(apiToken, userId)
 
 Reset push preferences
 
@@ -1418,7 +1424,8 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String userId = "userId_example"; // String | 
     try {
-      apiInstance.resetPushPreferences(apiToken, userId);
+      ResetPushPreferencesResponse result = apiInstance.resetPushPreferences(apiToken, userId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#resetPushPreferences");
       System.err.println("Status code: " + e.getCode());
@@ -1439,7 +1446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**ResetPushPreferencesResponse**](ResetPushPreferencesResponse.md)
 
 ### Authorization
 
@@ -1448,7 +1455,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1457,7 +1464,7 @@ No authorization required
 
 <a name="unblockUserById"></a>
 # **unblockUserById**
-> unblockUserById(apiToken, userId, targetId)
+> Object unblockUserById(apiToken, userId, targetId)
 
 Unblock a user
 
@@ -1482,7 +1489,8 @@ public class Example {
     String userId = "userId_example"; // String | 
     String targetId = "targetId_example"; // String | 
     try {
-      apiInstance.unblockUserById(apiToken, userId, targetId);
+      Object result = apiInstance.unblockUserById(apiToken, userId, targetId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#unblockUserById");
       System.err.println("Status code: " + e.getCode());
@@ -1504,7 +1512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -1513,7 +1521,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -2456,7 +2464,7 @@ No authorization required
 
 <a name="viewWhoOwnsRegistrationOrDeviceTokenByToken"></a>
 # **viewWhoOwnsRegistrationOrDeviceTokenByToken**
-> ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token)
+> List&lt;Object&gt; viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token)
 
 View who owns a registration or device token
 
@@ -2481,7 +2489,7 @@ public class Example {
     String tokenType = "tokenType_example"; // String | 
     String token = "token_example"; // String | 
     try {
-      ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse result = apiInstance.viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token);
+      List<Object> result = apiInstance.viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewWhoOwnsRegistrationOrDeviceTokenByToken");
@@ -2504,7 +2512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse**](ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponse.md)
+**List&lt;Object&gt;**
 
 ### Authorization
 

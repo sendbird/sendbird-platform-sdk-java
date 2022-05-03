@@ -22,6 +22,13 @@ Name | Type | Description | Notes
 **sentUserCount** | **BigDecimal** |  |  [optional]
 **openCount** | **BigDecimal** |  |  [optional]
 **openRate** | **BigDecimal** |  |  [optional]
+**createChannel** | **Boolean** |  |  [optional]
+**createChannelOptions** | [**ScheduleAnnouncementResponseCreateChannelOptions**](ScheduleAnnouncementResponseCreateChannelOptions.md) |  |  [optional]
+**endAt** | **BigDecimal** |  |  [optional]
+**markAsRead** | **Boolean** |  |  [optional]
+**sentChannelCount** | **BigDecimal** |  |  [optional]
+**targetChannelType** | **String** |  |  [optional]
+**targetCustomType** | **String** |  |  [optional]
 
 
 

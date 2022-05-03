@@ -30,8 +30,8 @@ import java.io.IOException;
 import org.openapitools.client.model.CreateBotData;
 import org.openapitools.client.model.CreateBotResponse;
 import org.openapitools.client.model.JoinChannelsData;
+import org.openapitools.client.model.JoinChannelsResponse;
 import org.openapitools.client.model.ListBotsResponse;
-import org.openapitools.client.model.SendBirdGroupChannelCollection;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBotSMessageData;
 import org.openapitools.client.model.UpdateBotByIdData;
@@ -261,7 +261,7 @@ public class BotInterfaceApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -304,6 +304,7 @@ public class BotInterfaceApi {
      * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
      * @param apiToken  (required)
      * @param botUserid  (required)
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -311,8 +312,9 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteBotById(String apiToken, String botUserid) throws ApiException {
-        deleteBotByIdWithHttpInfo(apiToken, botUserid);
+    public Object deleteBotById(String apiToken, String botUserid) throws ApiException {
+        ApiResponse<Object> localVarResp = deleteBotByIdWithHttpInfo(apiToken, botUserid);
+        return localVarResp.getData();
     }
 
     /**
@@ -320,7 +322,7 @@ public class BotInterfaceApi {
      * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
      * @param apiToken  (required)
      * @param botUserid  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -328,9 +330,10 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
+    public ApiResponse<Object> deleteBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
         okhttp3.Call localVarCall = deleteBotByIdValidateBeforeCall(apiToken, botUserid, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -347,10 +350,11 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteBotByIdAsync(String apiToken, String botUserid, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteBotByIdAsync(String apiToken, String botUserid, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteBotByIdValidateBeforeCall(apiToken, botUserid, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -443,7 +447,7 @@ public class BotInterfaceApi {
      * @param apiToken  (required)
      * @param botUserid  (required)
      * @param joinChannelsData  (optional)
-     * @return SendBirdGroupChannelCollection
+     * @return JoinChannelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -451,8 +455,8 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdGroupChannelCollection joinChannels(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
-        ApiResponse<SendBirdGroupChannelCollection> localVarResp = joinChannelsWithHttpInfo(apiToken, botUserid, joinChannelsData);
+    public JoinChannelsResponse joinChannels(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
+        ApiResponse<JoinChannelsResponse> localVarResp = joinChannelsWithHttpInfo(apiToken, botUserid, joinChannelsData);
         return localVarResp.getData();
     }
 
@@ -462,7 +466,7 @@ public class BotInterfaceApi {
      * @param apiToken  (required)
      * @param botUserid  (required)
      * @param joinChannelsData  (optional)
-     * @return ApiResponse&lt;SendBirdGroupChannelCollection&gt;
+     * @return ApiResponse&lt;JoinChannelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -470,9 +474,9 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdGroupChannelCollection> joinChannelsWithHttpInfo(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
+    public ApiResponse<JoinChannelsResponse> joinChannelsWithHttpInfo(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
         okhttp3.Call localVarCall = joinChannelsValidateBeforeCall(apiToken, botUserid, joinChannelsData, null);
-        Type localVarReturnType = new TypeToken<SendBirdGroupChannelCollection>(){}.getType();
+        Type localVarReturnType = new TypeToken<JoinChannelsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -491,10 +495,10 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call joinChannelsAsync(String apiToken, String botUserid, JoinChannelsData joinChannelsData, final ApiCallback<SendBirdGroupChannelCollection> _callback) throws ApiException {
+    public okhttp3.Call joinChannelsAsync(String apiToken, String botUserid, JoinChannelsData joinChannelsData, final ApiCallback<JoinChannelsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = joinChannelsValidateBeforeCall(apiToken, botUserid, joinChannelsData, _callback);
-        Type localVarReturnType = new TypeToken<SendBirdGroupChannelCollection>(){}.getType();
+        Type localVarReturnType = new TypeToken<JoinChannelsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -690,7 +694,7 @@ public class BotInterfaceApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -739,6 +743,7 @@ public class BotInterfaceApi {
      * @param apiToken  (required)
      * @param botUserid  (required)
      * @param channelUrl  (required)
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -746,8 +751,9 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void leaveChannelsByUrl(String apiToken, String botUserid, String channelUrl) throws ApiException {
-        leaveChannelsByUrlWithHttpInfo(apiToken, botUserid, channelUrl);
+    public Object leaveChannelsByUrl(String apiToken, String botUserid, String channelUrl) throws ApiException {
+        ApiResponse<Object> localVarResp = leaveChannelsByUrlWithHttpInfo(apiToken, botUserid, channelUrl);
+        return localVarResp.getData();
     }
 
     /**
@@ -756,7 +762,7 @@ public class BotInterfaceApi {
      * @param apiToken  (required)
      * @param botUserid  (required)
      * @param channelUrl  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -764,9 +770,10 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> leaveChannelsByUrlWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
+    public ApiResponse<Object> leaveChannelsByUrlWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
         okhttp3.Call localVarCall = leaveChannelsByUrlValidateBeforeCall(apiToken, botUserid, channelUrl, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -784,10 +791,11 @@ public class BotInterfaceApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call leaveChannelsByUrlAsync(String apiToken, String botUserid, String channelUrl, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call leaveChannelsByUrlAsync(String apiToken, String botUserid, String channelUrl, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = leaveChannelsByUrlValidateBeforeCall(apiToken, botUserid, channelUrl, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**

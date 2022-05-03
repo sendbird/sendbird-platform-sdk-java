@@ -7,6 +7,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**channelCustomTypes** | **List&lt;String&gt;** |  |  [optional]
+**dataType** | **String** |  |  [optional]
 **requestId** | **String** |  |  [optional]
 **status** | **String** |  |  [optional]
 **format** | **String** |  |  [optional]

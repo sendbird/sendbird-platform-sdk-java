@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * RetrieveListOfSubscribedEventsResponseWebhook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class RetrieveListOfSubscribedEventsResponseWebhook {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -50,6 +50,10 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
   public static final String SERIALIZED_NAME_ALL_WEBHOOK_CATEGORIES = "all_webhook_categories";
   @SerializedName(SERIALIZED_NAME_ALL_WEBHOOK_CATEGORIES)
   private List<String> allWebhookCategories = null;
+
+  public static final String SERIALIZED_NAME_INCLUDE_UNREAD_COUNT = "include_unread_count";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_UNREAD_COUNT)
+  private Boolean includeUnreadCount;
 
   public RetrieveListOfSubscribedEventsResponseWebhook() { 
   }
@@ -185,6 +189,29 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
   }
 
 
+  public RetrieveListOfSubscribedEventsResponseWebhook includeUnreadCount(Boolean includeUnreadCount) {
+    
+    this.includeUnreadCount = includeUnreadCount;
+    return this;
+  }
+
+   /**
+   * Get includeUnreadCount
+   * @return includeUnreadCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIncludeUnreadCount() {
+    return includeUnreadCount;
+  }
+
+
+  public void setIncludeUnreadCount(Boolean includeUnreadCount) {
+    this.includeUnreadCount = includeUnreadCount;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -198,12 +225,13 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
         Objects.equals(this.url, retrieveListOfSubscribedEventsResponseWebhook.url) &&
         Objects.equals(this.includeMembers, retrieveListOfSubscribedEventsResponseWebhook.includeMembers) &&
         Objects.equals(this.enabledEvents, retrieveListOfSubscribedEventsResponseWebhook.enabledEvents) &&
-        Objects.equals(this.allWebhookCategories, retrieveListOfSubscribedEventsResponseWebhook.allWebhookCategories);
+        Objects.equals(this.allWebhookCategories, retrieveListOfSubscribedEventsResponseWebhook.allWebhookCategories) &&
+        Objects.equals(this.includeUnreadCount, retrieveListOfSubscribedEventsResponseWebhook.includeUnreadCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, url, includeMembers, enabledEvents, allWebhookCategories);
+    return Objects.hash(enabled, url, includeMembers, enabledEvents, allWebhookCategories, includeUnreadCount);
   }
 
   @Override
@@ -215,6 +243,7 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
     sb.append("    includeMembers: ").append(toIndentedString(includeMembers)).append("\n");
     sb.append("    enabledEvents: ").append(toIndentedString(enabledEvents)).append("\n");
     sb.append("    allWebhookCategories: ").append(toIndentedString(allWebhookCategories)).append("\n");
+    sb.append("    includeUnreadCount: ").append(toIndentedString(includeUnreadCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

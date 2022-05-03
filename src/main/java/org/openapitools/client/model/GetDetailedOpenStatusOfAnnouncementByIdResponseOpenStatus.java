@@ -23,11 +23,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -40,6 +41,14 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus {
   public static final String SERIALIZED_NAME_HAS_OPENED = "has_opened";
   @SerializedName(SERIALIZED_NAME_HAS_OPENED)
   private Boolean hasOpened;
+
+  public static final String SERIALIZED_NAME_SENT_AT = "sent_at";
+  @SerializedName(SERIALIZED_NAME_SENT_AT)
+  private BigDecimal sentAt;
+
+  public static final String SERIALIZED_NAME_OPEN_AT = "open_at";
+  @SerializedName(SERIALIZED_NAME_OPEN_AT)
+  private BigDecimal openAt;
 
   public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus() { 
   }
@@ -113,6 +122,52 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus {
   }
 
 
+  public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus sentAt(BigDecimal sentAt) {
+    
+    this.sentAt = sentAt;
+    return this;
+  }
+
+   /**
+   * Get sentAt
+   * @return sentAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getSentAt() {
+    return sentAt;
+  }
+
+
+  public void setSentAt(BigDecimal sentAt) {
+    this.sentAt = sentAt;
+  }
+
+
+  public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus openAt(BigDecimal openAt) {
+    
+    this.openAt = openAt;
+    return this;
+  }
+
+   /**
+   * Get openAt
+   * @return openAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getOpenAt() {
+    return openAt;
+  }
+
+
+  public void setOpenAt(BigDecimal openAt) {
+    this.openAt = openAt;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -124,12 +179,14 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus {
     GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus getDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus = (GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus) o;
     return Objects.equals(this.userId, getDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus.userId) &&
         Objects.equals(this.channelUrl, getDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus.channelUrl) &&
-        Objects.equals(this.hasOpened, getDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus.hasOpened);
+        Objects.equals(this.hasOpened, getDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus.hasOpened) &&
+        Objects.equals(this.sentAt, getDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus.sentAt) &&
+        Objects.equals(this.openAt, getDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus.openAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, channelUrl, hasOpened);
+    return Objects.hash(userId, channelUrl, hasOpened, sentAt, openAt);
   }
 
   @Override
@@ -139,6 +196,8 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatus {
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
     sb.append("    hasOpened: ").append(toIndentedString(hasOpened)).append("\n");
+    sb.append("    sentAt: ").append(toIndentedString(sentAt)).append("\n");
+    sb.append("    openAt: ").append(toIndentedString(openAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

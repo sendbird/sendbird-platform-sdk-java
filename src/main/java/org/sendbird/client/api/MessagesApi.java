@@ -467,7 +467,7 @@ public class MessagesApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -522,6 +522,7 @@ public class MessagesApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -529,8 +530,9 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteMessageById(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
-        deleteMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
+    public Object deleteMessageById(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+        ApiResponse<Object> localVarResp = deleteMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
+        return localVarResp.getData();
     }
 
     /**
@@ -540,7 +542,7 @@ public class MessagesApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -548,9 +550,10 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+    public ApiResponse<Object> deleteMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
         okhttp3.Call localVarCall = deleteMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -569,10 +572,11 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -766,7 +770,7 @@ public class MessagesApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -810,6 +814,7 @@ public class MessagesApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcMarkAllMessagesAsReadData  (optional)
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -817,8 +822,9 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void gcMarkAllMessagesAsRead(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
-        gcMarkAllMessagesAsReadWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
+    public Object gcMarkAllMessagesAsRead(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
+        ApiResponse<Object> localVarResp = gcMarkAllMessagesAsReadWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
+        return localVarResp.getData();
     }
 
     /**
@@ -827,7 +833,7 @@ public class MessagesApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcMarkAllMessagesAsReadData  (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -835,9 +841,10 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
+    public ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
         okhttp3.Call localVarCall = gcMarkAllMessagesAsReadValidateBeforeCall(apiToken, channelUrl, gcMarkAllMessagesAsReadData, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -855,10 +862,11 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcMarkAllMessagesAsReadAsync(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call gcMarkAllMessagesAsReadAsync(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcMarkAllMessagesAsReadValidateBeforeCall(apiToken, channelUrl, gcMarkAllMessagesAsReadData, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -1528,7 +1536,7 @@ public class MessagesApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1584,6 +1592,7 @@ public class MessagesApi {
      * @param channelUrl  (required)
      * @param messageId  (required)
      * @param keys  (optional)
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1591,8 +1600,9 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void removeExtraDataFromMessage(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
-        removeExtraDataFromMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, keys);
+    public Object removeExtraDataFromMessage(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
+        ApiResponse<Object> localVarResp = removeExtraDataFromMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, keys);
+        return localVarResp.getData();
     }
 
     /**
@@ -1603,7 +1613,7 @@ public class MessagesApi {
      * @param channelUrl  (required)
      * @param messageId  (required)
      * @param keys  (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1611,9 +1621,10 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> removeExtraDataFromMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
+    public ApiResponse<Object> removeExtraDataFromMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
         okhttp3.Call localVarCall = removeExtraDataFromMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, keys, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -1633,10 +1644,11 @@ public class MessagesApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeExtraDataFromMessageAsync(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call removeExtraDataFromMessageAsync(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removeExtraDataFromMessageValidateBeforeCall(apiToken, channelType, channelUrl, messageId, keys, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**

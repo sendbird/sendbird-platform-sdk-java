@@ -164,7 +164,7 @@ No authorization required
 
 <a name="deleteMessageById"></a>
 # **deleteMessageById**
-> deleteMessageById(apiToken, channelType, channelUrl, messageId)
+> Object deleteMessageById(apiToken, channelType, channelUrl, messageId)
 
 Delete a message
 
@@ -190,7 +190,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
     try {
-      apiInstance.deleteMessageById(apiToken, channelType, channelUrl, messageId);
+      Object result = apiInstance.deleteMessageById(apiToken, channelType, channelUrl, messageId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#deleteMessageById");
       System.err.println("Status code: " + e.getCode());
@@ -213,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -222,7 +223,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -297,7 +298,7 @@ No authorization required
 
 <a name="gcMarkAllMessagesAsRead"></a>
 # **gcMarkAllMessagesAsRead**
-> gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData)
+> Object gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData)
 
 Mark all messages as read
 
@@ -322,7 +323,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData = new GcMarkAllMessagesAsReadData(); // GcMarkAllMessagesAsReadData | 
     try {
-      apiInstance.gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
+      Object result = apiInstance.gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#gcMarkAllMessagesAsRead");
       System.err.println("Status code: " + e.getCode());
@@ -344,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -353,7 +355,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -600,7 +602,7 @@ No authorization required
 
 <a name="removeExtraDataFromMessage"></a>
 # **removeExtraDataFromMessage**
-> removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys)
+> Object removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys)
 
 Remove extra data from a message
 
@@ -627,7 +629,8 @@ public class Example {
     String messageId = "messageId_example"; // String | 
     List<String> keys = Arrays.asList(); // List<String> | 
     try {
-      apiInstance.removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys);
+      Object result = apiInstance.removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessagesApi#removeExtraDataFromMessage");
       System.err.println("Status code: " + e.getCode());
@@ -651,7 +654,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -660,7 +663,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

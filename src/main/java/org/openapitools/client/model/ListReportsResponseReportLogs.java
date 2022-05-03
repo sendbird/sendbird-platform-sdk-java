@@ -31,8 +31,12 @@ import org.openapitools.client.model.SendBirdUser;
 /**
  * ListReportsResponseReportLogs
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class ListReportsResponseReportLogs {
+  public static final String SERIALIZED_NAME_REPORTING_USER = "reporting_user";
+  @SerializedName(SERIALIZED_NAME_REPORTING_USER)
+  private SendBirdUser reportingUser;
+
   public static final String SERIALIZED_NAME_REPORT_TYPE = "report_type";
   @SerializedName(SERIALIZED_NAME_REPORT_TYPE)
   private String reportType;
@@ -63,6 +67,29 @@ public class ListReportsResponseReportLogs {
 
   public ListReportsResponseReportLogs() { 
   }
+
+  public ListReportsResponseReportLogs reportingUser(SendBirdUser reportingUser) {
+    
+    this.reportingUser = reportingUser;
+    return this;
+  }
+
+   /**
+   * Get reportingUser
+   * @return reportingUser
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SendBirdUser getReportingUser() {
+    return reportingUser;
+  }
+
+
+  public void setReportingUser(SendBirdUser reportingUser) {
+    this.reportingUser = reportingUser;
+  }
+
 
   public ListReportsResponseReportLogs reportType(String reportType) {
     
@@ -234,7 +261,8 @@ public class ListReportsResponseReportLogs {
       return false;
     }
     ListReportsResponseReportLogs listReportsResponseReportLogs = (ListReportsResponseReportLogs) o;
-    return Objects.equals(this.reportType, listReportsResponseReportLogs.reportType) &&
+    return Objects.equals(this.reportingUser, listReportsResponseReportLogs.reportingUser) &&
+        Objects.equals(this.reportType, listReportsResponseReportLogs.reportType) &&
         Objects.equals(this.reportCategory, listReportsResponseReportLogs.reportCategory) &&
         Objects.equals(this.offendingUser, listReportsResponseReportLogs.offendingUser) &&
         Objects.equals(this.reportedMessage, listReportsResponseReportLogs.reportedMessage) &&
@@ -245,13 +273,14 @@ public class ListReportsResponseReportLogs {
 
   @Override
   public int hashCode() {
-    return Objects.hash(reportType, reportCategory, offendingUser, reportedMessage, channel, reportDescription, createdAt);
+    return Objects.hash(reportingUser, reportType, reportCategory, offendingUser, reportedMessage, channel, reportDescription, createdAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListReportsResponseReportLogs {\n");
+    sb.append("    reportingUser: ").append(toIndentedString(reportingUser)).append("\n");
     sb.append("    reportType: ").append(toIndentedString(reportType)).append("\n");
     sb.append("    reportCategory: ").append(toIndentedString(reportCategory)).append("\n");
     sb.append("    offendingUser: ").append(toIndentedString(offendingUser)).append("\n");

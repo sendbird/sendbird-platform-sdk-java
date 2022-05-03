@@ -24,12 +24,26 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * UpdatePushPreferencesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class UpdatePushPreferencesResponse {
+  public static final String SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
+  @SerializedName(SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS)
+  private Boolean blockPushFromBots;
+
+  public static final String SERIALIZED_NAME_ENABLE_PUSH_FOR_REPLIES = "enable_push_for_replies";
+  @SerializedName(SERIALIZED_NAME_ENABLE_PUSH_FOR_REPLIES)
+  private Boolean enablePushForReplies;
+
+  public static final String SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS = "push_blocked_bot_ids";
+  @SerializedName(SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS)
+  private List<String> pushBlockedBotIds = null;
+
   public static final String SERIALIZED_NAME_PUSH_TRIGGER_OPTION = "push_trigger_option";
   @SerializedName(SERIALIZED_NAME_PUSH_TRIGGER_OPTION)
   private String pushTriggerOption;
@@ -76,6 +90,83 @@ public class UpdatePushPreferencesResponse {
 
   public UpdatePushPreferencesResponse() { 
   }
+
+  public UpdatePushPreferencesResponse blockPushFromBots(Boolean blockPushFromBots) {
+    
+    this.blockPushFromBots = blockPushFromBots;
+    return this;
+  }
+
+   /**
+   * Get blockPushFromBots
+   * @return blockPushFromBots
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getBlockPushFromBots() {
+    return blockPushFromBots;
+  }
+
+
+  public void setBlockPushFromBots(Boolean blockPushFromBots) {
+    this.blockPushFromBots = blockPushFromBots;
+  }
+
+
+  public UpdatePushPreferencesResponse enablePushForReplies(Boolean enablePushForReplies) {
+    
+    this.enablePushForReplies = enablePushForReplies;
+    return this;
+  }
+
+   /**
+   * Get enablePushForReplies
+   * @return enablePushForReplies
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getEnablePushForReplies() {
+    return enablePushForReplies;
+  }
+
+
+  public void setEnablePushForReplies(Boolean enablePushForReplies) {
+    this.enablePushForReplies = enablePushForReplies;
+  }
+
+
+  public UpdatePushPreferencesResponse pushBlockedBotIds(List<String> pushBlockedBotIds) {
+    
+    this.pushBlockedBotIds = pushBlockedBotIds;
+    return this;
+  }
+
+  public UpdatePushPreferencesResponse addPushBlockedBotIdsItem(String pushBlockedBotIdsItem) {
+    if (this.pushBlockedBotIds == null) {
+      this.pushBlockedBotIds = new ArrayList<String>();
+    }
+    this.pushBlockedBotIds.add(pushBlockedBotIdsItem);
+    return this;
+  }
+
+   /**
+   * Get pushBlockedBotIds
+   * @return pushBlockedBotIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getPushBlockedBotIds() {
+    return pushBlockedBotIds;
+  }
+
+
+  public void setPushBlockedBotIds(List<String> pushBlockedBotIds) {
+    this.pushBlockedBotIds = pushBlockedBotIds;
+  }
+
 
   public UpdatePushPreferencesResponse pushTriggerOption(String pushTriggerOption) {
     
@@ -339,7 +430,10 @@ public class UpdatePushPreferencesResponse {
       return false;
     }
     UpdatePushPreferencesResponse updatePushPreferencesResponse = (UpdatePushPreferencesResponse) o;
-    return Objects.equals(this.pushTriggerOption, updatePushPreferencesResponse.pushTriggerOption) &&
+    return Objects.equals(this.blockPushFromBots, updatePushPreferencesResponse.blockPushFromBots) &&
+        Objects.equals(this.enablePushForReplies, updatePushPreferencesResponse.enablePushForReplies) &&
+        Objects.equals(this.pushBlockedBotIds, updatePushPreferencesResponse.pushBlockedBotIds) &&
+        Objects.equals(this.pushTriggerOption, updatePushPreferencesResponse.pushTriggerOption) &&
         Objects.equals(this.doNotDisturb, updatePushPreferencesResponse.doNotDisturb) &&
         Objects.equals(this.startHour, updatePushPreferencesResponse.startHour) &&
         Objects.equals(this.startMin, updatePushPreferencesResponse.startMin) &&
@@ -354,13 +448,16 @@ public class UpdatePushPreferencesResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(pushTriggerOption, doNotDisturb, startHour, startMin, endHour, endMin, snoozeEnabled, snoozeStartTs, snoozeEndTs, timezone, pushSound);
+    return Objects.hash(blockPushFromBots, enablePushForReplies, pushBlockedBotIds, pushTriggerOption, doNotDisturb, startHour, startMin, endHour, endMin, snoozeEnabled, snoozeStartTs, snoozeEndTs, timezone, pushSound);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdatePushPreferencesResponse {\n");
+    sb.append("    blockPushFromBots: ").append(toIndentedString(blockPushFromBots)).append("\n");
+    sb.append("    enablePushForReplies: ").append(toIndentedString(enablePushForReplies)).append("\n");
+    sb.append("    pushBlockedBotIds: ").append(toIndentedString(pushBlockedBotIds)).append("\n");
     sb.append("    pushTriggerOption: ").append(toIndentedString(pushTriggerOption)).append("\n");
     sb.append("    doNotDisturb: ").append(toIndentedString(doNotDisturb)).append("\n");
     sb.append("    startHour: ").append(toIndentedString(startHour)).append("\n");

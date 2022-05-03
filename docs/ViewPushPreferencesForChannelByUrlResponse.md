@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **snoozeEndTs** | **BigDecimal** |  |  [optional]
 **timezone** | **String** |  |  [optional]
 **pushSound** | **String** |  |  [optional]
+**enable** | **Boolean** |  |  [optional]
 
 
 

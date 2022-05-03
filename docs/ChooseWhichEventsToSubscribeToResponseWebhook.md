@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **url** | **String** |  |  [optional]
 **includeMembers** | **Boolean** |  |  [optional]
 **enabledEvents** | **List&lt;String&gt;** |  |  [optional]
+**includeUnreadCount** | **Boolean** |  |  [optional]
 
 
 

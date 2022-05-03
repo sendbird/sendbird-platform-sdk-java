@@ -211,7 +211,7 @@ No authorization required
 
 <a name="deleteEmojiCategoryById"></a>
 # **deleteEmojiCategoryById**
-> deleteEmojiCategoryById(apiToken, emojiCategoryId)
+> Object deleteEmojiCategoryById(apiToken, emojiCategoryId)
 
 Delete an emoji category
 
@@ -235,7 +235,8 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String emojiCategoryId = "emojiCategoryId_example"; // String | 
     try {
-      apiInstance.deleteEmojiCategoryById(apiToken, emojiCategoryId);
+      Object result = apiInstance.deleteEmojiCategoryById(apiToken, emojiCategoryId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmojisApi#deleteEmojiCategoryById");
       System.err.println("Status code: " + e.getCode());
@@ -256,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -265,7 +266,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

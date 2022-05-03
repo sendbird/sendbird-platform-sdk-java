@@ -81,7 +81,7 @@ No authorization required
 
 <a name="deleteBotById"></a>
 # **deleteBotById**
-> deleteBotById(apiToken, botUserid)
+> Object deleteBotById(apiToken, botUserid)
 
 Delete a bot
 
@@ -105,7 +105,8 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String botUserid = "botUserid_example"; // String | 
     try {
-      apiInstance.deleteBotById(apiToken, botUserid);
+      Object result = apiInstance.deleteBotById(apiToken, botUserid);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#deleteBotById");
       System.err.println("Status code: " + e.getCode());
@@ -126,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -135,7 +136,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -144,7 +145,7 @@ No authorization required
 
 <a name="joinChannels"></a>
 # **joinChannels**
-> SendBirdGroupChannelCollection joinChannels(apiToken, botUserid, joinChannelsData)
+> JoinChannelsResponse joinChannels(apiToken, botUserid, joinChannelsData)
 
 Join channels
 
@@ -169,7 +170,7 @@ public class Example {
     String botUserid = "botUserid_example"; // String | 
     JoinChannelsData joinChannelsData = new JoinChannelsData(); // JoinChannelsData | 
     try {
-      SendBirdGroupChannelCollection result = apiInstance.joinChannels(apiToken, botUserid, joinChannelsData);
+      JoinChannelsResponse result = apiInstance.joinChannels(apiToken, botUserid, joinChannelsData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#joinChannels");
@@ -192,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SendBirdGroupChannelCollection**](SendBirdGroupChannelCollection.md)
+[**JoinChannelsResponse**](JoinChannelsResponse.md)
 
 ### Authorization
 
@@ -275,7 +276,7 @@ No authorization required
 
 <a name="leaveChannelsByUrl"></a>
 # **leaveChannelsByUrl**
-> leaveChannelsByUrl(apiToken, botUserid, channelUrl)
+> Object leaveChannelsByUrl(apiToken, botUserid, channelUrl)
 
 Leave channels - When leaving a channel by its channel URL
 
@@ -300,7 +301,8 @@ public class Example {
     String botUserid = "botUserid_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     try {
-      apiInstance.leaveChannelsByUrl(apiToken, botUserid, channelUrl);
+      Object result = apiInstance.leaveChannelsByUrl(apiToken, botUserid, channelUrl);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BotInterfaceApi#leaveChannelsByUrl");
       System.err.println("Status code: " + e.getCode());
@@ -322,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**Object**
 
 ### Authorization
 
@@ -331,7 +333,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

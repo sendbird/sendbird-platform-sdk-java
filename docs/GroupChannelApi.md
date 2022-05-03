@@ -168,7 +168,7 @@ No authorization required
 
 <a name="gcCancelTheRegistrationOfOperators"></a>
 # **gcCancelTheRegistrationOfOperators**
-> gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll)
+> InlineResponse200 gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll)
 
 Cancel the registration of operators
 
@@ -194,7 +194,8 @@ public class Example {
     List<String> operatorIds = Arrays.asList(); // List<String> | 
     Boolean deleteAll = true; // Boolean | 
     try {
-      apiInstance.gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
+      InlineResponse200 result = apiInstance.gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcCancelTheRegistrationOfOperators");
       System.err.println("Status code: " + e.getCode());
@@ -217,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -226,7 +227,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -365,7 +366,7 @@ No authorization required
 
 <a name="gcDeclineInvitation"></a>
 # **gcDeclineInvitation**
-> gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData)
+> InlineResponse200 gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData)
 
 Decline an invitation
 
@@ -390,7 +391,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     GcDeclineInvitationData gcDeclineInvitationData = new GcDeclineInvitationData(); // GcDeclineInvitationData | 
     try {
-      apiInstance.gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData);
+      InlineResponse200 result = apiInstance.gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcDeclineInvitation");
       System.err.println("Status code: " + e.getCode());
@@ -412,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -421,7 +423,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -430,7 +432,7 @@ No authorization required
 
 <a name="gcDeleteChannelByUrl"></a>
 # **gcDeleteChannelByUrl**
-> gcDeleteChannelByUrl(apiToken, channelUrl)
+> InlineResponse200 gcDeleteChannelByUrl(apiToken, channelUrl)
 
 Delete a channel
 
@@ -454,7 +456,8 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     try {
-      apiInstance.gcDeleteChannelByUrl(apiToken, channelUrl);
+      InlineResponse200 result = apiInstance.gcDeleteChannelByUrl(apiToken, channelUrl);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcDeleteChannelByUrl");
       System.err.println("Status code: " + e.getCode());
@@ -475,7 +478,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -484,7 +487,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -559,7 +562,7 @@ No authorization required
 
 <a name="gcHideOrArchiveChannel"></a>
 # **gcHideOrArchiveChannel**
-> gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData)
+> InlineResponse200 gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData)
 
 Hide or archive a channel
 
@@ -584,7 +587,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     GcHideOrArchiveChannelData gcHideOrArchiveChannelData = new GcHideOrArchiveChannelData(); // GcHideOrArchiveChannelData | 
     try {
-      apiInstance.gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData);
+      InlineResponse200 result = apiInstance.gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcHideOrArchiveChannel");
       System.err.println("Status code: " + e.getCode());
@@ -606,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -615,7 +619,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -755,7 +759,7 @@ No authorization required
 
 <a name="gcLeaveChannel"></a>
 # **gcLeaveChannel**
-> gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData)
+> InlineResponse200 gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData)
 
 Leave a channel
 
@@ -780,7 +784,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     GcLeaveChannelData gcLeaveChannelData = new GcLeaveChannelData(); // GcLeaveChannelData | 
     try {
-      apiInstance.gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData);
+      InlineResponse200 result = apiInstance.gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcLeaveChannel");
       System.err.println("Status code: " + e.getCode());
@@ -802,7 +807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -811,7 +816,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1384,7 +1389,7 @@ No authorization required
 
 <a name="gcResetChatHistory"></a>
 # **gcResetChatHistory**
-> gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData)
+> GcResetChatHistoryResponse gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData)
 
 Reset chat history
 
@@ -1409,7 +1414,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     GcResetChatHistoryData gcResetChatHistoryData = new GcResetChatHistoryData(); // GcResetChatHistoryData | 
     try {
-      apiInstance.gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData);
+      GcResetChatHistoryResponse result = apiInstance.gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcResetChatHistory");
       System.err.println("Status code: " + e.getCode());
@@ -1431,7 +1437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**GcResetChatHistoryResponse**](GcResetChatHistoryResponse.md)
 
 ### Authorization
 
@@ -1440,7 +1446,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1449,7 +1455,7 @@ No authorization required
 
 <a name="gcUnbanUserById"></a>
 # **gcUnbanUserById**
-> gcUnbanUserById(apiToken, channelUrl, bannedUserId)
+> InlineResponse200 gcUnbanUserById(apiToken, channelUrl, bannedUserId)
 
 Unban a user
 
@@ -1474,7 +1480,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String bannedUserId = "bannedUserId_example"; // String | 
     try {
-      apiInstance.gcUnbanUserById(apiToken, channelUrl, bannedUserId);
+      InlineResponse200 result = apiInstance.gcUnbanUserById(apiToken, channelUrl, bannedUserId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUnbanUserById");
       System.err.println("Status code: " + e.getCode());
@@ -1496,7 +1503,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -1505,7 +1512,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1514,7 +1521,7 @@ No authorization required
 
 <a name="gcUnhideOrUnarchiveChannel"></a>
 # **gcUnhideOrUnarchiveChannel**
-> gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll)
+> InlineResponse200 gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll)
 
 Unhide or unarchive a channel
 
@@ -1540,7 +1547,8 @@ public class Example {
     String userId = "userId_example"; // String | 
     Boolean shouldUnhideAll = true; // Boolean | 
     try {
-      apiInstance.gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll);
+      InlineResponse200 result = apiInstance.gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUnhideOrUnarchiveChannel");
       System.err.println("Status code: " + e.getCode());
@@ -1563,7 +1571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -1572,7 +1580,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1581,7 +1589,7 @@ No authorization required
 
 <a name="gcUnmuteUserById"></a>
 # **gcUnmuteUserById**
-> gcUnmuteUserById(apiToken, channelUrl, mutedUserId)
+> InlineResponse200 gcUnmuteUserById(apiToken, channelUrl, mutedUserId)
 
 Unmute a user
 
@@ -1606,7 +1614,8 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String mutedUserId = "mutedUserId_example"; // String | 
     try {
-      apiInstance.gcUnmuteUserById(apiToken, channelUrl, mutedUserId);
+      InlineResponse200 result = apiInstance.gcUnmuteUserById(apiToken, channelUrl, mutedUserId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUnmuteUserById");
       System.err.println("Status code: " + e.getCode());
@@ -1628,7 +1637,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -1637,7 +1646,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -1646,7 +1655,7 @@ No authorization required
 
 <a name="gcUpdateBanById"></a>
 # **gcUpdateBanById**
-> SendBirdUser gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData)
+> GcUpdateBanByIdResponse gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData)
 
 Update a ban
 
@@ -1672,7 +1681,7 @@ public class Example {
     String bannedUserId = "bannedUserId_example"; // String | 
     GcUpdateBanByIdData gcUpdateBanByIdData = new GcUpdateBanByIdData(); // GcUpdateBanByIdData | 
     try {
-      SendBirdUser result = apiInstance.gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData);
+      GcUpdateBanByIdResponse result = apiInstance.gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUpdateBanById");
@@ -1696,7 +1705,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SendBirdUser**](SendBirdUser.md)
+[**GcUpdateBanByIdResponse**](GcUpdateBanByIdResponse.md)
 
 ### Authorization
 
@@ -1780,7 +1789,7 @@ No authorization required
 
 <a name="gcViewBanById"></a>
 # **gcViewBanById**
-> SendBirdUser gcViewBanById(apiToken, channelUrl, bannedUserId)
+> GcViewBanByIdResponse gcViewBanById(apiToken, channelUrl, bannedUserId)
 
 View a ban
 
@@ -1805,7 +1814,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String bannedUserId = "bannedUserId_example"; // String | 
     try {
-      SendBirdUser result = apiInstance.gcViewBanById(apiToken, channelUrl, bannedUserId);
+      GcViewBanByIdResponse result = apiInstance.gcViewBanById(apiToken, channelUrl, bannedUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcViewBanById");
@@ -1828,7 +1837,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SendBirdUser**](SendBirdUser.md)
+[**GcViewBanByIdResponse**](GcViewBanByIdResponse.md)
 
 ### Authorization
 

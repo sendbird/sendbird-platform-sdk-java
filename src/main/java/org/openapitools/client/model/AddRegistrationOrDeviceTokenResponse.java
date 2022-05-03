@@ -23,16 +23,22 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
 
 /**
  * AddRegistrationOrDeviceTokenResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-03T07:39:00.941714+01:00[Europe/London]")
 public class AddRegistrationOrDeviceTokenResponse {
+  public static final String SERIALIZED_NAME_TOKENS = "tokens";
+  @SerializedName(SERIALIZED_NAME_TOKENS)
+  private List<String> tokens = null;
+
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
-  private String token;
+  private List<String> token = null;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -45,9 +51,48 @@ public class AddRegistrationOrDeviceTokenResponse {
   public AddRegistrationOrDeviceTokenResponse() { 
   }
 
-  public AddRegistrationOrDeviceTokenResponse token(String token) {
+  public AddRegistrationOrDeviceTokenResponse tokens(List<String> tokens) {
+    
+    this.tokens = tokens;
+    return this;
+  }
+
+  public AddRegistrationOrDeviceTokenResponse addTokensItem(String tokensItem) {
+    if (this.tokens == null) {
+      this.tokens = new ArrayList<String>();
+    }
+    this.tokens.add(tokensItem);
+    return this;
+  }
+
+   /**
+   * Get tokens
+   * @return tokens
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<String> getTokens() {
+    return tokens;
+  }
+
+
+  public void setTokens(List<String> tokens) {
+    this.tokens = tokens;
+  }
+
+
+  public AddRegistrationOrDeviceTokenResponse token(List<String> token) {
     
     this.token = token;
+    return this;
+  }
+
+  public AddRegistrationOrDeviceTokenResponse addTokenItem(String tokenItem) {
+    if (this.token == null) {
+      this.token = new ArrayList<String>();
+    }
+    this.token.add(tokenItem);
     return this;
   }
 
@@ -58,12 +103,12 @@ public class AddRegistrationOrDeviceTokenResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getToken() {
+  public List<String> getToken() {
     return token;
   }
 
 
-  public void setToken(String token) {
+  public void setToken(List<String> token) {
     this.token = token;
   }
 
@@ -123,20 +168,22 @@ public class AddRegistrationOrDeviceTokenResponse {
       return false;
     }
     AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceTokenResponse = (AddRegistrationOrDeviceTokenResponse) o;
-    return Objects.equals(this.token, addRegistrationOrDeviceTokenResponse.token) &&
+    return Objects.equals(this.tokens, addRegistrationOrDeviceTokenResponse.tokens) &&
+        Objects.equals(this.token, addRegistrationOrDeviceTokenResponse.token) &&
         Objects.equals(this.type, addRegistrationOrDeviceTokenResponse.type) &&
         Objects.equals(this.user, addRegistrationOrDeviceTokenResponse.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(token, type, user);
+    return Objects.hash(tokens, token, type, user);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddRegistrationOrDeviceTokenResponse {\n");
+    sb.append("    tokens: ").append(toIndentedString(tokens)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

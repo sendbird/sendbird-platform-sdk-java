@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.InlineResponse200;
 import org.openapitools.client.model.OcBanUserData;
 import org.openapitools.client.model.OcBanUserResponse;
 import org.openapitools.client.model.OcCreateChannelData;
@@ -39,10 +40,11 @@ import org.openapitools.client.model.OcListParticipantsResponse;
 import org.openapitools.client.model.OcMuteUserData;
 import org.openapitools.client.model.OcRegisterOperatorsData;
 import org.openapitools.client.model.OcUpdateBanByIdData;
+import org.openapitools.client.model.OcUpdateBanByIdResponse;
 import org.openapitools.client.model.OcUpdateChannelByUrlData;
+import org.openapitools.client.model.OcViewBanByIdResponse;
 import org.openapitools.client.model.OcViewMuteByIdResponse;
 import org.openapitools.client.model.SendBirdOpenChannel;
-import org.openapitools.client.model.SendBirdUser;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -570,7 +572,7 @@ public class OpenChannelApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -613,6 +615,7 @@ public class OpenChannelApi {
      * ## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------
      * @param apiToken  (required)
      * @param channelUrl  (required)
+     * @return InlineResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -620,8 +623,9 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void ocDeleteChannelByUrl(String apiToken, String channelUrl) throws ApiException {
-        ocDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
+    public InlineResponse200 ocDeleteChannelByUrl(String apiToken, String channelUrl) throws ApiException {
+        ApiResponse<InlineResponse200> localVarResp = ocDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
+        return localVarResp.getData();
     }
 
     /**
@@ -629,7 +633,7 @@ public class OpenChannelApi {
      * ## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------
      * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;InlineResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -637,9 +641,10 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> ocDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
+    public ApiResponse<InlineResponse200> ocDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
         okhttp3.Call localVarCall = ocDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -656,10 +661,11 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocDeleteChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call ocDeleteChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<InlineResponse200> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -1821,7 +1827,7 @@ public class OpenChannelApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1865,6 +1871,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param ocRegisterOperatorsData  (optional)
+     * @return InlineResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1872,8 +1879,9 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void ocRegisterOperators(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
-        ocRegisterOperatorsWithHttpInfo(apiToken, channelUrl, ocRegisterOperatorsData);
+    public InlineResponse200 ocRegisterOperators(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
+        ApiResponse<InlineResponse200> localVarResp = ocRegisterOperatorsWithHttpInfo(apiToken, channelUrl, ocRegisterOperatorsData);
+        return localVarResp.getData();
     }
 
     /**
@@ -1882,7 +1890,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param ocRegisterOperatorsData  (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;InlineResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1890,9 +1898,10 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> ocRegisterOperatorsWithHttpInfo(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
+    public ApiResponse<InlineResponse200> ocRegisterOperatorsWithHttpInfo(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
         okhttp3.Call localVarCall = ocRegisterOperatorsValidateBeforeCall(apiToken, channelUrl, ocRegisterOperatorsData, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -1910,10 +1919,11 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocRegisterOperatorsAsync(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call ocRegisterOperatorsAsync(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback<InlineResponse200> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocRegisterOperatorsValidateBeforeCall(apiToken, channelUrl, ocRegisterOperatorsData, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -1963,7 +1973,7 @@ public class OpenChannelApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -2012,6 +2022,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
+     * @return InlineResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2019,8 +2030,9 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void ocUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-        ocUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+    public InlineResponse200 ocUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+        ApiResponse<InlineResponse200> localVarResp = ocUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+        return localVarResp.getData();
     }
 
     /**
@@ -2029,7 +2041,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;InlineResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2037,9 +2049,10 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> ocUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+    public ApiResponse<InlineResponse200> ocUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
         okhttp3.Call localVarCall = ocUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -2057,10 +2070,11 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUnbanUserByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call ocUnbanUserByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<InlineResponse200> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -2110,7 +2124,7 @@ public class OpenChannelApi {
         }
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -2159,6 +2173,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
+     * @return InlineResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2166,8 +2181,9 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public void ocUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-        ocUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+    public InlineResponse200 ocUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+        ApiResponse<InlineResponse200> localVarResp = ocUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+        return localVarResp.getData();
     }
 
     /**
@@ -2176,7 +2192,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;InlineResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2184,9 +2200,10 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> ocUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+    public ApiResponse<InlineResponse200> ocUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
         okhttp3.Call localVarCall = ocUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -2204,10 +2221,11 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUnmuteUserByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call ocUnmuteUserByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<InlineResponse200> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -2308,7 +2326,7 @@ public class OpenChannelApi {
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
      * @param ocUpdateBanByIdData  (optional)
-     * @return SendBirdUser
+     * @return OcUpdateBanByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2316,8 +2334,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdUser ocUpdateBanById(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
-        ApiResponse<SendBirdUser> localVarResp = ocUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
+    public OcUpdateBanByIdResponse ocUpdateBanById(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
+        ApiResponse<OcUpdateBanByIdResponse> localVarResp = ocUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
         return localVarResp.getData();
     }
 
@@ -2328,7 +2346,7 @@ public class OpenChannelApi {
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
      * @param ocUpdateBanByIdData  (optional)
-     * @return ApiResponse&lt;SendBirdUser&gt;
+     * @return ApiResponse&lt;OcUpdateBanByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2336,9 +2354,9 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdUser> ocUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
+    public ApiResponse<OcUpdateBanByIdResponse> ocUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
         okhttp3.Call localVarCall = ocUpdateBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData, null);
-        Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcUpdateBanByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2358,10 +2376,10 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUpdateBanByIdAsync(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData, final ApiCallback<SendBirdUser> _callback) throws ApiException {
+    public okhttp3.Call ocUpdateBanByIdAsync(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData, final ApiCallback<OcUpdateBanByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocUpdateBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData, _callback);
-        Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcUpdateBanByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2606,7 +2624,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @return SendBirdUser
+     * @return OcViewBanByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2614,8 +2632,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdUser ocViewBanById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-        ApiResponse<SendBirdUser> localVarResp = ocViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+    public OcViewBanByIdResponse ocViewBanById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+        ApiResponse<OcViewBanByIdResponse> localVarResp = ocViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
         return localVarResp.getData();
     }
 
@@ -2625,7 +2643,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @return ApiResponse&lt;SendBirdUser&gt;
+     * @return ApiResponse&lt;OcViewBanByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2633,9 +2651,9 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdUser> ocViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+    public ApiResponse<OcViewBanByIdResponse> ocViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
         okhttp3.Call localVarCall = ocViewBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, null);
-        Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcViewBanByIdResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2654,10 +2672,10 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocViewBanByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<SendBirdUser> _callback) throws ApiException {
+    public okhttp3.Call ocViewBanByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<OcViewBanByIdResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocViewBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, _callback);
-        Type localVarReturnType = new TypeToken<SendBirdUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcViewBanByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

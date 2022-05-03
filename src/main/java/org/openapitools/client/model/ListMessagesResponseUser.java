@@ -28,7 +28,7 @@ import org.openapitools.client.model.ListMessagesResponseUserMetadata;
 /**
  * ListMessagesResponseUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-16T16:47:24.427118Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-03T22:45:27.704832Z[Europe/London]")
 public class ListMessagesResponseUser {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
