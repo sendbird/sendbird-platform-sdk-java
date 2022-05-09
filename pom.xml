@@ -16,7 +16,7 @@
 
     <licenses>
         <license>
-            <name>Unlicense</name>
+            <name>MIT</name>
             <url>http://unlicense.org</url>
             <distribution>repo</distribution>
         </license>

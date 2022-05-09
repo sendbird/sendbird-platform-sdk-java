@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * ViewNumberOfUnreadItemsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-05T15:12:57.551715+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
 public class ViewNumberOfUnreadItemsResponse {
   public static final String SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "non_super_group_channel_unread_message_count";
   @SerializedName(SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)

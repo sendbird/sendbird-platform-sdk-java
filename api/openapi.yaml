@@ -16217,7 +16217,7 @@ components:
         end_at: 6.027456183070403
         metadata:
           anyOf: anyOf
-        require_auth_for_profile_image: ""
+        require_auth_for_profile_image: true
         user_id: user_id
         profile_url: profile_url
         next_url: next_url
@@ -16272,7 +16272,7 @@ components:
         next_url:
           type: string
         require_auth_for_profile_image:
-          type: boolean,
+          type: boolean
         nickname:
           type: string
         profile_url:

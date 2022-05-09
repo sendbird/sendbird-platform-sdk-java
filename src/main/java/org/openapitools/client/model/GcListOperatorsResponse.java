@@ -30,7 +30,7 @@ import org.openapitools.client.model.SendBirdUser;
 /**
  * GcListOperatorsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-05T15:12:57.551715+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
 public class GcListOperatorsResponse {
   public static final String SERIALIZED_NAME_OPERATORS = "operators";
   @SerializedName(SERIALIZED_NAME_OPERATORS)

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * UpdateEmojiUrlByKeyData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-05T15:12:57.551715+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
 public class UpdateEmojiUrlByKeyData {
   public static final String SERIALIZED_NAME_EMOJI_KEY = "emoji_key";
   @SerializedName(SERIALIZED_NAME_EMOJI_KEY)

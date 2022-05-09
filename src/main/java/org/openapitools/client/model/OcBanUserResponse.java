@@ -25,13 +25,12 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
 import org.openapitools.client.model.InlineResponse200;
-import org.openapitools.client.model.ModelBoolean;
 import org.openapitools.client.model.SendBirdUser;
 
 /**
  * OcBanUserResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-05T15:12:57.551715+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
 public class OcBanUserResponse {
   public static final String SERIALIZED_NAME_START_AT = "start_at";
   @SerializedName(SERIALIZED_NAME_START_AT)
@@ -59,7 +58,7 @@ public class OcBanUserResponse {
 
   public static final String SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
-  private ModelBoolean requireAuthForProfileImage = null;
+  private Boolean requireAuthForProfileImage;
 
   public static final String SERIALIZED_NAME_NICKNAME = "nickname";
   @SerializedName(SERIALIZED_NAME_NICKNAME)
@@ -214,7 +213,7 @@ public class OcBanUserResponse {
   }
 
 
-  public OcBanUserResponse requireAuthForProfileImage(ModelBoolean requireAuthForProfileImage) {
+  public OcBanUserResponse requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
     
     this.requireAuthForProfileImage = requireAuthForProfileImage;
     return this;
@@ -227,12 +226,12 @@ public class OcBanUserResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public ModelBoolean getRequireAuthForProfileImage() {
+  public Boolean getRequireAuthForProfileImage() {
     return requireAuthForProfileImage;
   }
 
 
-  public void setRequireAuthForProfileImage(ModelBoolean requireAuthForProfileImage) {
+  public void setRequireAuthForProfileImage(Boolean requireAuthForProfileImage) {
     this.requireAuthForProfileImage = requireAuthForProfileImage;
   }
 

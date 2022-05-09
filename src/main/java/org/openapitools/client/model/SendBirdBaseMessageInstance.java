@@ -39,7 +39,7 @@ import org.openapitools.client.model.SendBirdUser;
  * Message
  */
 @ApiModel(description = "Message")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-05T15:12:57.551715+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
 public class SendBirdBaseMessageInstance {
   public static final String SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   @SerializedName(SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS)
