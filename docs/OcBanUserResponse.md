@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **requireAuthForProfileImage** | **Boolean** |  |  [optional]
 **nickname** | **String** |  |  [optional]
 **profileUrl** | **String** |  |  [optional]
-**metadata** | [**InlineResponse200**](InlineResponse200.md) |  |  [optional]
+**metadata** | [**InlineResponse2001**](InlineResponse2001.md) |  |  [optional]
 
 
 

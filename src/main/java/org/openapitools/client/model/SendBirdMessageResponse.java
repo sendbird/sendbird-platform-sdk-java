@@ -32,7 +32,7 @@ import org.openapitools.client.model.SendBirdMessageResponseUser;
 /**
  * SendBirdMessageResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
 public class SendBirdMessageResponse {
   public static final String SERIALIZED_NAME_REQUIRE_AUTH = "require_auth";
   @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH)

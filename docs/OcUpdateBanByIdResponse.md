@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user** | **SendbirdUser** |  |  [optional]
+**user** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional]
 **description** | **String** |  |  [optional]
 **endAt** | **BigDecimal** |  |  [optional]
 **startAt** | **BigDecimal** |  |  [optional]

@@ -35,16 +35,22 @@ import org.openapitools.client.model.AddHmsPushConfigurationData;
 import org.openapitools.client.model.AddHmsPushConfigurationResponse;
 import org.openapitools.client.model.AddIpToWhitelistData;
 import org.openapitools.client.model.AddIpToWhitelistResponse;
+import org.openapitools.client.model.BanUsersInChannelsWithCustomChannelTypeData;
+import org.openapitools.client.model.CustomTypeListBannedUsersResponse;
 import org.openapitools.client.model.DeleteAllowedIpsFromWhitelistResponse;
 import org.openapitools.client.model.DeleteApnsCertificateByIdResponse;
 import org.openapitools.client.model.GenerateSecondaryApiTokenData;
 import org.openapitools.client.model.GenerateSecondaryApiTokenResponse;
+import org.openapitools.client.model.InlineResponse200;
 import org.openapitools.client.model.ListPushConfigurationsResponse;
 import org.openapitools.client.model.ListPushNotificationContentTemplatesResponse;
 import org.openapitools.client.model.ListSecondaryApiTokensResponse;
+import org.openapitools.client.model.MuteUsersInChannelsWithCustomChannelTypeData;
 import org.openapitools.client.model.RemovePushConfigurationByIdResponse;
 import org.openapitools.client.model.RetrieveIpWhitelistResponse;
 import org.openapitools.client.model.RevokeSecondaryApiTokenByTokenResponse;
+import org.openapitools.client.model.SendBirdChannelResponse;
+import org.openapitools.client.model.SetDomainFilterData;
 import org.openapitools.client.model.UpdateApnsPushConfigurationByIdData;
 import org.openapitools.client.model.UpdateApnsPushConfigurationByIdResponse;
 import org.openapitools.client.model.UpdateDefaultChannelInvitationPreferenceData;
@@ -56,10 +62,6 @@ import org.openapitools.client.model.UpdateHmsPushConfigurationByIdResponse;
 import org.openapitools.client.model.UpdatePushNotificationContentTemplateData;
 import org.openapitools.client.model.UpdatePushNotificationContentTemplateResponse;
 import org.openapitools.client.model.ViewDefaultChannelInvitationPreferenceResponse;
-import org.openapitools.client.model.ViewNumberOfConcurrentConnectionsResponse;
-import org.openapitools.client.model.ViewNumberOfDailyActiveUsersResponse;
-import org.openapitools.client.model.ViewNumberOfMonthlyActiveUsersResponse;
-import org.openapitools.client.model.ViewNumberOfPeakConnectionsResponse;
 import org.openapitools.client.model.ViewPushConfigurationByIdResponse;
 import org.openapitools.client.model.ViewPushNotificationContentTemplateResponse;
 import org.openapitools.client.model.ViewSecondaryApiTokenByTokenResponse;
@@ -648,6 +650,151 @@ public class ApplicationApi {
         return localVarCall;
     }
     /**
+     * Build call for banUsersInChannelsWithCustomChannelType
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param banUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call banUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = banUsersInChannelsWithCustomChannelTypeData;
+
+        // create path and map variables
+        String localVarPath = "/v3/applications/settings_by_channel_custom_type/{custom_type}/ban"
+            .replaceAll("\\{" + "custom_type" + "\\}", localVarApiClient.escapeString(customType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (apiToken != null) {
+            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call banUsersInChannelsWithCustomChannelTypeValidateBeforeCall(String apiToken, String customType, BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling banUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+        // verify the required parameter 'customType' is set
+        if (customType == null) {
+            throw new ApiException("Missing the required parameter 'customType' when calling banUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = banUsersInChannelsWithCustomChannelTypeCall(apiToken, customType, banUsersInChannelsWithCustomChannelTypeData, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Ban users in channels with a custom channel type
+     * ## Ban specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param banUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object banUsersInChannelsWithCustomChannelType(String apiToken, String customType, BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData) throws ApiException {
+        ApiResponse<Object> localVarResp = banUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, banUsersInChannelsWithCustomChannelTypeData);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Ban users in channels with a custom channel type
+     * ## Ban specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param banUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> banUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData) throws ApiException {
+        okhttp3.Call localVarCall = banUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, banUsersInChannelsWithCustomChannelTypeData, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Ban users in channels with a custom channel type (asynchronously)
+     * ## Ban specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param banUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call banUsersInChannelsWithCustomChannelTypeAsync(String apiToken, String customType, BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = banUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, banUsersInChannelsWithCustomChannelTypeData, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for deleteAllowedIpsFromWhitelist
      * @param apiToken  (required)
      * @param ipWhitelistAddresses  (required)
@@ -1068,6 +1215,320 @@ public class ApplicationApi {
         return localVarCall;
     }
     /**
+     * Build call for listBannedUsersInChannelsWithCustomChannelType
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param token  (optional)
+     * @param limit  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listBannedUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/applications/settings_by_channel_custom_type/{custom_type}/ban"
+            .replaceAll("\\{" + "custom_type" + "\\}", localVarApiClient.escapeString(customType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (token != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("token", token));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (apiToken != null) {
+            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listBannedUsersInChannelsWithCustomChannelTypeValidateBeforeCall(String apiToken, String customType, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listBannedUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+        // verify the required parameter 'customType' is set
+        if (customType == null) {
+            throw new ApiException("Missing the required parameter 'customType' when calling listBannedUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listBannedUsersInChannelsWithCustomChannelTypeCall(apiToken, customType, token, limit, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List banned users in channels with a custom channel type
+     * ## Retrieves a list of users banned from channels with the specified custom channel type.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param token  (optional)
+     * @param limit  (optional)
+     * @return CustomTypeListBannedUsersResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public CustomTypeListBannedUsersResponse listBannedUsersInChannelsWithCustomChannelType(String apiToken, String customType, String token, Integer limit) throws ApiException {
+        ApiResponse<CustomTypeListBannedUsersResponse> localVarResp = listBannedUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, token, limit);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List banned users in channels with a custom channel type
+     * ## Retrieves a list of users banned from channels with the specified custom channel type.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param token  (optional)
+     * @param limit  (optional)
+     * @return ApiResponse&lt;CustomTypeListBannedUsersResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CustomTypeListBannedUsersResponse> listBannedUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listBannedUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, token, limit, null);
+        Type localVarReturnType = new TypeToken<CustomTypeListBannedUsersResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List banned users in channels with a custom channel type (asynchronously)
+     * ## Retrieves a list of users banned from channels with the specified custom channel type.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param token  (optional)
+     * @param limit  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listBannedUsersInChannelsWithCustomChannelTypeAsync(String apiToken, String customType, String token, Integer limit, final ApiCallback<CustomTypeListBannedUsersResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listBannedUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, token, limit, _callback);
+        Type localVarReturnType = new TypeToken<CustomTypeListBannedUsersResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listMutedUsersInChannelsWithCustomChannelType
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param token  (optional)
+     * @param limit  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listMutedUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/applications/settings_by_channel_custom_type/{custom_type}/mute"
+            .replaceAll("\\{" + "custom_type" + "\\}", localVarApiClient.escapeString(customType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (token != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("token", token));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (apiToken != null) {
+            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listMutedUsersInChannelsWithCustomChannelTypeValidateBeforeCall(String apiToken, String customType, String token, Integer limit, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling listMutedUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+        // verify the required parameter 'customType' is set
+        if (customType == null) {
+            throw new ApiException("Missing the required parameter 'customType' when calling listMutedUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listMutedUsersInChannelsWithCustomChannelTypeCall(apiToken, customType, token, limit, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List muted users in channels with a custom channel type
+     * ## Retrieves a list of the muted users in channels with a custom channel type.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param token  (optional)
+     * @param limit  (optional)
+     * @return InlineResponse200
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public InlineResponse200 listMutedUsersInChannelsWithCustomChannelType(String apiToken, String customType, String token, Integer limit) throws ApiException {
+        ApiResponse<InlineResponse200> localVarResp = listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, token, limit);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List muted users in channels with a custom channel type
+     * ## Retrieves a list of the muted users in channels with a custom channel type.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param token  (optional)
+     * @param limit  (optional)
+     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<InlineResponse200> listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, String token, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listMutedUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, token, limit, null);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List muted users in channels with a custom channel type (asynchronously)
+     * ## Retrieves a list of the muted users in channels with a custom channel type.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param token  (optional)
+     * @param limit  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listMutedUsersInChannelsWithCustomChannelTypeAsync(String apiToken, String customType, String token, Integer limit, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listMutedUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, token, limit, _callback);
+        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for listPushConfigurations
      * @param apiToken  (required)
      * @param pushType  (required)
@@ -1467,6 +1928,151 @@ public class ApplicationApi {
 
         okhttp3.Call localVarCall = listSecondaryApiTokensValidateBeforeCall(apiToken, _callback);
         Type localVarReturnType = new TypeToken<ListSecondaryApiTokensResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for muteUsersInChannelsWithCustomChannelType
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param muteUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call muteUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = muteUsersInChannelsWithCustomChannelTypeData;
+
+        // create path and map variables
+        String localVarPath = "/v3/applications/settings_by_channel_custom_type/{custom_type}/mute"
+            .replaceAll("\\{" + "custom_type" + "\\}", localVarApiClient.escapeString(customType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (apiToken != null) {
+            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call muteUsersInChannelsWithCustomChannelTypeValidateBeforeCall(String apiToken, String customType, MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling muteUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+        // verify the required parameter 'customType' is set
+        if (customType == null) {
+            throw new ApiException("Missing the required parameter 'customType' when calling muteUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = muteUsersInChannelsWithCustomChannelTypeCall(apiToken, customType, muteUsersInChannelsWithCustomChannelTypeData, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Mute users in channels with a custom channel type
+     * ## Mutes specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param muteUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object muteUsersInChannelsWithCustomChannelType(String apiToken, String customType, MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData) throws ApiException {
+        ApiResponse<Object> localVarResp = muteUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, muteUsersInChannelsWithCustomChannelTypeData);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Mute users in channels with a custom channel type
+     * ## Mutes specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param muteUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> muteUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData) throws ApiException {
+        okhttp3.Call localVarCall = muteUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, muteUsersInChannelsWithCustomChannelTypeData, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Mute users in channels with a custom channel type (asynchronously)
+     * ## Mutes specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param muteUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call muteUsersInChannelsWithCustomChannelTypeAsync(String apiToken, String customType, MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = muteUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, muteUsersInChannelsWithCustomChannelTypeData, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1890,6 +2496,459 @@ public class ApplicationApi {
 
         okhttp3.Call localVarCall = revokeSecondaryApiTokenByTokenValidateBeforeCall(apiToken, apiToken2, _callback);
         Type localVarReturnType = new TypeToken<RevokeSecondaryApiTokenByTokenResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for setDomainFilter
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param setDomainFilterData  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call setDomainFilterCall(String apiToken, String customType, SetDomainFilterData setDomainFilterData, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = setDomainFilterData;
+
+        // create path and map variables
+        String localVarPath = "/v3/applications/settings_global/{custom_type}"
+            .replaceAll("\\{" + "custom_type" + "\\}", localVarApiClient.escapeString(customType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (apiToken != null) {
+            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call setDomainFilterValidateBeforeCall(String apiToken, String customType, SetDomainFilterData setDomainFilterData, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling setDomainFilter(Async)");
+        }
+        
+        // verify the required parameter 'customType' is set
+        if (customType == null) {
+            throw new ApiException("Missing the required parameter 'customType' when calling setDomainFilter(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = setDomainFilterCall(apiToken, customType, setDomainFilterData, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Message moderation
+     * ## 
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param setDomainFilterData  (optional)
+     * @return SendBirdChannelResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public SendBirdChannelResponse setDomainFilter(String apiToken, String customType, SetDomainFilterData setDomainFilterData) throws ApiException {
+        ApiResponse<SendBirdChannelResponse> localVarResp = setDomainFilterWithHttpInfo(apiToken, customType, setDomainFilterData);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Message moderation
+     * ## 
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param setDomainFilterData  (optional)
+     * @return ApiResponse&lt;SendBirdChannelResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SendBirdChannelResponse> setDomainFilterWithHttpInfo(String apiToken, String customType, SetDomainFilterData setDomainFilterData) throws ApiException {
+        okhttp3.Call localVarCall = setDomainFilterValidateBeforeCall(apiToken, customType, setDomainFilterData, null);
+        Type localVarReturnType = new TypeToken<SendBirdChannelResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Message moderation (asynchronously)
+     * ## 
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param setDomainFilterData  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call setDomainFilterAsync(String apiToken, String customType, SetDomainFilterData setDomainFilterData, final ApiCallback<SendBirdChannelResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = setDomainFilterValidateBeforeCall(apiToken, customType, setDomainFilterData, _callback);
+        Type localVarReturnType = new TypeToken<SendBirdChannelResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for unbanUsersInChannelsWithCustomChannelType
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param userIds  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call unbanUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, List<String> userIds, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/applications/settings_by_channel_custom_type/{custom_type}/ban"
+            .replaceAll("\\{" + "custom_type" + "\\}", localVarApiClient.escapeString(customType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (userIds != null) {
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "user_ids", userIds));
+        }
+
+        if (apiToken != null) {
+            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call unbanUsersInChannelsWithCustomChannelTypeValidateBeforeCall(String apiToken, String customType, List<String> userIds, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling unbanUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+        // verify the required parameter 'customType' is set
+        if (customType == null) {
+            throw new ApiException("Missing the required parameter 'customType' when calling unbanUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+        // verify the required parameter 'userIds' is set
+        if (userIds == null) {
+            throw new ApiException("Missing the required parameter 'userIds' when calling unbanUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = unbanUsersInChannelsWithCustomChannelTypeCall(apiToken, customType, userIds, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Unban users in channels with a custom channel type
+     * ## Unban specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param userIds  (required)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object unbanUsersInChannelsWithCustomChannelType(String apiToken, String customType, List<String> userIds) throws ApiException {
+        ApiResponse<Object> localVarResp = unbanUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, userIds);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Unban users in channels with a custom channel type
+     * ## Unban specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param userIds  (required)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> unbanUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, List<String> userIds) throws ApiException {
+        okhttp3.Call localVarCall = unbanUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, userIds, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Unban users in channels with a custom channel type (asynchronously)
+     * ## Unban specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param userIds  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call unbanUsersInChannelsWithCustomChannelTypeAsync(String apiToken, String customType, List<String> userIds, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = unbanUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, userIds, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for unmuteUsersInChannelsWithCustomChannelType
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param userIds  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call unmuteUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, List<String> userIds, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/applications/settings_by_channel_custom_type/{custom_type}/mute"
+            .replaceAll("\\{" + "custom_type" + "\\}", localVarApiClient.escapeString(customType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (userIds != null) {
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "user_ids", userIds));
+        }
+
+        if (apiToken != null) {
+            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call unmuteUsersInChannelsWithCustomChannelTypeValidateBeforeCall(String apiToken, String customType, List<String> userIds, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'apiToken' is set
+        if (apiToken == null) {
+            throw new ApiException("Missing the required parameter 'apiToken' when calling unmuteUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+        // verify the required parameter 'customType' is set
+        if (customType == null) {
+            throw new ApiException("Missing the required parameter 'customType' when calling unmuteUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+        // verify the required parameter 'userIds' is set
+        if (userIds == null) {
+            throw new ApiException("Missing the required parameter 'userIds' when calling unmuteUsersInChannelsWithCustomChannelType(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = unmuteUsersInChannelsWithCustomChannelTypeCall(apiToken, customType, userIds, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Unmute users in channels with a custom channel type
+     * ## Unmute specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param userIds  (required)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object unmuteUsersInChannelsWithCustomChannelType(String apiToken, String customType, List<String> userIds) throws ApiException {
+        ApiResponse<Object> localVarResp = unmuteUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, userIds);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Unmute users in channels with a custom channel type
+     * ## Unmute specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param userIds  (required)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> unmuteUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, List<String> userIds) throws ApiException {
+        okhttp3.Call localVarCall = unmuteUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, userIds, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Unmute users in channels with a custom channel type (asynchronously)
+     * ## Unmute specified users in channels with a custom channel type at once.
+     * @param apiToken  (required)
+     * @param customType  (required)
+     * @param userIds  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call unmuteUsersInChannelsWithCustomChannelTypeAsync(String apiToken, String customType, List<String> userIds, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = unmuteUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, userIds, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2736,627 +3795,6 @@ public class ApplicationApi {
 
         okhttp3.Call localVarCall = viewDefaultChannelInvitationPreferenceValidateBeforeCall(apiToken, _callback);
         Type localVarReturnType = new TypeToken<ViewDefaultChannelInvitationPreferenceResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for viewNumberOfConcurrentConnections
-     * @param apiToken  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call viewNumberOfConcurrentConnectionsCall(String apiToken, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/applications/ccu";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewNumberOfConcurrentConnectionsValidateBeforeCall(String apiToken, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling viewNumberOfConcurrentConnections(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = viewNumberOfConcurrentConnectionsCall(apiToken, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * View number of concurrent connections
-     * ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
-     * @param apiToken  (required)
-     * @return ViewNumberOfConcurrentConnectionsResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ViewNumberOfConcurrentConnectionsResponse viewNumberOfConcurrentConnections(String apiToken) throws ApiException {
-        ApiResponse<ViewNumberOfConcurrentConnectionsResponse> localVarResp = viewNumberOfConcurrentConnectionsWithHttpInfo(apiToken);
-        return localVarResp.getData();
-    }
-
-    /**
-     * View number of concurrent connections
-     * ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
-     * @param apiToken  (required)
-     * @return ApiResponse&lt;ViewNumberOfConcurrentConnectionsResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ViewNumberOfConcurrentConnectionsResponse> viewNumberOfConcurrentConnectionsWithHttpInfo(String apiToken) throws ApiException {
-        okhttp3.Call localVarCall = viewNumberOfConcurrentConnectionsValidateBeforeCall(apiToken, null);
-        Type localVarReturnType = new TypeToken<ViewNumberOfConcurrentConnectionsResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * View number of concurrent connections (asynchronously)
-     * ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
-     * @param apiToken  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call viewNumberOfConcurrentConnectionsAsync(String apiToken, final ApiCallback<ViewNumberOfConcurrentConnectionsResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = viewNumberOfConcurrentConnectionsValidateBeforeCall(apiToken, _callback);
-        Type localVarReturnType = new TypeToken<ViewNumberOfConcurrentConnectionsResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for viewNumberOfDailyActiveUsers
-     * @param apiToken  (required)
-     * @param date  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call viewNumberOfDailyActiveUsersCall(String apiToken, String date, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/applications/dau";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (date != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("date", date));
-        }
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewNumberOfDailyActiveUsersValidateBeforeCall(String apiToken, String date, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling viewNumberOfDailyActiveUsers(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = viewNumberOfDailyActiveUsersCall(apiToken, date, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * View number of daily active users
-     * ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
-     * @param apiToken  (required)
-     * @param date  (optional)
-     * @return ViewNumberOfDailyActiveUsersResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ViewNumberOfDailyActiveUsersResponse viewNumberOfDailyActiveUsers(String apiToken, String date) throws ApiException {
-        ApiResponse<ViewNumberOfDailyActiveUsersResponse> localVarResp = viewNumberOfDailyActiveUsersWithHttpInfo(apiToken, date);
-        return localVarResp.getData();
-    }
-
-    /**
-     * View number of daily active users
-     * ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
-     * @param apiToken  (required)
-     * @param date  (optional)
-     * @return ApiResponse&lt;ViewNumberOfDailyActiveUsersResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
-        okhttp3.Call localVarCall = viewNumberOfDailyActiveUsersValidateBeforeCall(apiToken, date, null);
-        Type localVarReturnType = new TypeToken<ViewNumberOfDailyActiveUsersResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * View number of daily active users (asynchronously)
-     * ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
-     * @param apiToken  (required)
-     * @param date  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call viewNumberOfDailyActiveUsersAsync(String apiToken, String date, final ApiCallback<ViewNumberOfDailyActiveUsersResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = viewNumberOfDailyActiveUsersValidateBeforeCall(apiToken, date, _callback);
-        Type localVarReturnType = new TypeToken<ViewNumberOfDailyActiveUsersResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for viewNumberOfMonthlyActiveUsers
-     * @param apiToken  (required)
-     * @param date  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call viewNumberOfMonthlyActiveUsersCall(String apiToken, String date, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/applications/mau";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (date != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("date", date));
-        }
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewNumberOfMonthlyActiveUsersValidateBeforeCall(String apiToken, String date, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling viewNumberOfMonthlyActiveUsers(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = viewNumberOfMonthlyActiveUsersCall(apiToken, date, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * View number of monthly active users
-     * ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
-     * @param apiToken  (required)
-     * @param date  (optional)
-     * @return ViewNumberOfMonthlyActiveUsersResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ViewNumberOfMonthlyActiveUsersResponse viewNumberOfMonthlyActiveUsers(String apiToken, String date) throws ApiException {
-        ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> localVarResp = viewNumberOfMonthlyActiveUsersWithHttpInfo(apiToken, date);
-        return localVarResp.getData();
-    }
-
-    /**
-     * View number of monthly active users
-     * ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
-     * @param apiToken  (required)
-     * @param date  (optional)
-     * @return ApiResponse&lt;ViewNumberOfMonthlyActiveUsersResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
-        okhttp3.Call localVarCall = viewNumberOfMonthlyActiveUsersValidateBeforeCall(apiToken, date, null);
-        Type localVarReturnType = new TypeToken<ViewNumberOfMonthlyActiveUsersResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * View number of monthly active users (asynchronously)
-     * ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
-     * @param apiToken  (required)
-     * @param date  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call viewNumberOfMonthlyActiveUsersAsync(String apiToken, String date, final ApiCallback<ViewNumberOfMonthlyActiveUsersResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = viewNumberOfMonthlyActiveUsersValidateBeforeCall(apiToken, date, _callback);
-        Type localVarReturnType = new TypeToken<ViewNumberOfMonthlyActiveUsersResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for viewNumberOfPeakConnections
-     * @param apiToken  (required)
-     * @param timeDimension  (required)
-     * @param startYear  (required)
-     * @param startMonth  (required)
-     * @param endYear  (required)
-     * @param endMonth  (required)
-     * @param startDay  (optional)
-     * @param endDay  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call viewNumberOfPeakConnectionsCall(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/applications/peak_connections";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (timeDimension != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("time_dimension", timeDimension));
-        }
-
-        if (startYear != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start_year", startYear));
-        }
-
-        if (startMonth != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start_month", startMonth));
-        }
-
-        if (endYear != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end_year", endYear));
-        }
-
-        if (endMonth != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end_month", endMonth));
-        }
-
-        if (startDay != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start_day", startDay));
-        }
-
-        if (endDay != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end_day", endDay));
-        }
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call viewNumberOfPeakConnectionsValidateBeforeCall(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling viewNumberOfPeakConnections(Async)");
-        }
-        
-        // verify the required parameter 'timeDimension' is set
-        if (timeDimension == null) {
-            throw new ApiException("Missing the required parameter 'timeDimension' when calling viewNumberOfPeakConnections(Async)");
-        }
-        
-        // verify the required parameter 'startYear' is set
-        if (startYear == null) {
-            throw new ApiException("Missing the required parameter 'startYear' when calling viewNumberOfPeakConnections(Async)");
-        }
-        
-        // verify the required parameter 'startMonth' is set
-        if (startMonth == null) {
-            throw new ApiException("Missing the required parameter 'startMonth' when calling viewNumberOfPeakConnections(Async)");
-        }
-        
-        // verify the required parameter 'endYear' is set
-        if (endYear == null) {
-            throw new ApiException("Missing the required parameter 'endYear' when calling viewNumberOfPeakConnections(Async)");
-        }
-        
-        // verify the required parameter 'endMonth' is set
-        if (endMonth == null) {
-            throw new ApiException("Missing the required parameter 'endMonth' when calling viewNumberOfPeakConnections(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = viewNumberOfPeakConnectionsCall(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * View number of peak connections
-     * ## View number of peak connections  Retrieves the number of concurrently connected devices to Sendbird server during the requested time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-peak-connections ----------------------------
-     * @param apiToken  (required)
-     * @param timeDimension  (required)
-     * @param startYear  (required)
-     * @param startMonth  (required)
-     * @param endYear  (required)
-     * @param endMonth  (required)
-     * @param startDay  (optional)
-     * @param endDay  (optional)
-     * @return ViewNumberOfPeakConnectionsResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay) throws ApiException {
-        ApiResponse<ViewNumberOfPeakConnectionsResponse> localVarResp = viewNumberOfPeakConnectionsWithHttpInfo(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay);
-        return localVarResp.getData();
-    }
-
-    /**
-     * View number of peak connections
-     * ## View number of peak connections  Retrieves the number of concurrently connected devices to Sendbird server during the requested time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-peak-connections ----------------------------
-     * @param apiToken  (required)
-     * @param timeDimension  (required)
-     * @param startYear  (required)
-     * @param startMonth  (required)
-     * @param endYear  (required)
-     * @param endMonth  (required)
-     * @param startDay  (optional)
-     * @param endDay  (optional)
-     * @return ApiResponse&lt;ViewNumberOfPeakConnectionsResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ViewNumberOfPeakConnectionsResponse> viewNumberOfPeakConnectionsWithHttpInfo(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay) throws ApiException {
-        okhttp3.Call localVarCall = viewNumberOfPeakConnectionsValidateBeforeCall(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay, null);
-        Type localVarReturnType = new TypeToken<ViewNumberOfPeakConnectionsResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * View number of peak connections (asynchronously)
-     * ## View number of peak connections  Retrieves the number of concurrently connected devices to Sendbird server during the requested time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-peak-connections ----------------------------
-     * @param apiToken  (required)
-     * @param timeDimension  (required)
-     * @param startYear  (required)
-     * @param startMonth  (required)
-     * @param endYear  (required)
-     * @param endMonth  (required)
-     * @param startDay  (optional)
-     * @param endDay  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call viewNumberOfPeakConnectionsAsync(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay, final ApiCallback<ViewNumberOfPeakConnectionsResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = viewNumberOfPeakConnectionsValidateBeforeCall(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay, _callback);
-        Type localVarReturnType = new TypeToken<ViewNumberOfPeakConnectionsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

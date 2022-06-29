@@ -19,7 +19,7 @@ import java.util.Arrays;
 /**
  * SendBirdAdditionalProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
 public class SendBirdAdditionalProperties {
   public SendBirdAdditionalProperties() { 
   }

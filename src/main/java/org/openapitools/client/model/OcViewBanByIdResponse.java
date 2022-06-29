@@ -24,16 +24,16 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.openapitools.client.model.SendbirdUser;
+import org.openapitools.client.model.SendBirdUser;
 
 /**
  * OcViewBanByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
 public class OcViewBanByIdResponse {
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
-  private SendbirdUser user = null;
+  private SendBirdUser user;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -50,7 +50,7 @@ public class OcViewBanByIdResponse {
   public OcViewBanByIdResponse() { 
   }
 
-  public OcViewBanByIdResponse user(SendbirdUser user) {
+  public OcViewBanByIdResponse user(SendBirdUser user) {
     
     this.user = user;
     return this;
@@ -63,12 +63,12 @@ public class OcViewBanByIdResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public SendbirdUser getUser() {
+  public SendBirdUser getUser() {
     return user;
   }
 
 
-  public void setUser(SendbirdUser user) {
+  public void setUser(SendBirdUser user) {
     this.user = user;
   }
 

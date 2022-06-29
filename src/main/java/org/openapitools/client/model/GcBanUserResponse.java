@@ -24,13 +24,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.openapitools.client.model.InlineResponse200;
+import org.openapitools.client.model.InlineResponse2001;
 import org.openapitools.client.model.SendBirdUser;
 
 /**
  * GcBanUserResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
 public class GcBanUserResponse {
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
@@ -50,7 +50,7 @@ public class GcBanUserResponse {
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  private InlineResponse200 metadata;
+  private InlineResponse2001 metadata;
 
   public static final String SERIALIZED_NAME_NEXT_URL = "next_url";
   @SerializedName(SERIALIZED_NAME_NEXT_URL)
@@ -167,7 +167,7 @@ public class GcBanUserResponse {
   }
 
 
-  public GcBanUserResponse metadata(InlineResponse200 metadata) {
+  public GcBanUserResponse metadata(InlineResponse2001 metadata) {
     
     this.metadata = metadata;
     return this;
@@ -180,12 +180,12 @@ public class GcBanUserResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public InlineResponse200 getMetadata() {
+  public InlineResponse2001 getMetadata() {
     return metadata;
   }
 
 
-  public void setMetadata(InlineResponse200 metadata) {
+  public void setMetadata(InlineResponse2001 metadata) {
     this.metadata = metadata;
   }
 

@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListPushNotificationContentTemplatesRespons
 /**
  * ListPushNotificationContentTemplatesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
 public class ListPushNotificationContentTemplatesResponse {
   public static final String SERIALIZED_NAME_PUSH_MESSAGE_TEMPLATES = "push_message_templates";
   @SerializedName(SERIALIZED_NAME_PUSH_MESSAGE_TEMPLATES)

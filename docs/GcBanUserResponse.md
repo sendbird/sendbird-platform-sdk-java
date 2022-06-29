@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **startAt** | **BigDecimal** |  |  [optional]
 **endAt** | **BigDecimal** |  |  [optional]
 **description** | **String** |  |  [optional]
-**metadata** | [**InlineResponse200**](InlineResponse200.md) |  |  [optional]
+**metadata** | [**InlineResponse2001**](InlineResponse2001.md) |  |  [optional]
 **nextUrl** | **String** |  |  [optional]
 **nickname** | **String** |  |  [optional]
 **profileUrl** | **String** |  |  [optional]

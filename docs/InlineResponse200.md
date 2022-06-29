@@ -7,7 +7,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**anyOf** | **String** |  |  [optional]
+**mutedList** | [**List&lt;SendBirdUser&gt;**](SendBirdUser.md) |  |  [optional]
+**next** | **String** |  |  [optional]
 
 
 

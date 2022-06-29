@@ -13,23 +13,340 @@ servers:
       default: APP_ID
       description: Replace with the APP_ID for your app in the Sendbird dashboard
 tags:
-- name: Organization API
+- name: Announcement
 - name: Application
-- name: User
-- name: Open channel
-- name: Group channel
-- name: Announcements
-- name: Messages
-- name: Emojis
-- name: User & channel metadata
-- name: Migration
-- name: Advanced analytics
+- name: Bot
 - name: Data export
-- name: Bot interface
-- name: Webhooks
-- name: Data privacy
-- name: Report content & subject
+- name: Group channel
+- name: Message
+- name: Moderation
+- name: Open channel
+- name: Privacy
+- name: Report
+- name: Statistics
+- name: User
+- name: Webhook
 paths:
+  /v3/applications/settings_by_channel_custom_type/{custom_type}/mute:
+    delete:
+      description: '## Unmute specified users in channels with a custom channel type
+        at once.'
+      operationId: unmuteUsersInChannelsWithCustomChannelType
+      parameters:
+      - example: '{{API_TOKEN}}'
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: custom_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: user_ids
+        required: true
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successful response
+      summary: Unmute users in channels with a custom channel type
+      tags:
+      - Application
+      x-accepts: application/json
+    get:
+      description: '## Retrieves a list of the muted users in channels with a custom
+        channel type.'
+      operationId: listMutedUsersInChannelsWithCustomChannelType
+      parameters:
+      - example: '{{API_TOKEN}}'
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: custom_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: token
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+          description: Successful response
+      summary: List muted users in channels with a custom channel type
+      tags:
+      - Application
+      x-accepts: application/json
+    post:
+      description: '## Mutes specified users in channels with a custom channel type
+        at once.'
+      operationId: muteUsersInChannelsWithCustomChannelType
+      parameters:
+      - example: '{{API_TOKEN}}'
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: custom_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        $ref: '#/components/requestBodies/muteUsersInChannelsWithCustomChannelTypeData'
+        content:
+          application/json:
+            schema:
+              properties:
+                user_ids:
+                  items:
+                    type: string
+                  type: array
+                seconds:
+                  type: number
+                description:
+                  type: string
+                on_demand_upsert:
+                  type: boolean
+              required:
+              - user_ids
+              title: muteUsersInChannelsWithCustomChannelTypeData
+              type: object
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successful response
+      summary: Mute users in channels with a custom channel type
+      tags:
+      - Application
+      x-contentType: application/json
+      x-accepts: application/json
+  /v3/applications/settings_by_channel_custom_type/{custom_type}/ban:
+    delete:
+      description: '## Unban specified users in channels with a custom channel type
+        at once.'
+      operationId: unbanUsersInChannelsWithCustomChannelType
+      parameters:
+      - example: '{{API_TOKEN}}'
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: custom_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: user_ids
+        required: true
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successful response
+      summary: Unban users in channels with a custom channel type
+      tags:
+      - Application
+      x-accepts: application/json
+    get:
+      description: '## Retrieves a list of users banned from channels with the specified
+        custom channel type.'
+      operationId: listBannedUsersInChannelsWithCustomChannelType
+      parameters:
+      - example: '{{API_TOKEN}}'
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: custom_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: token
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customTypeListBannedUsersResponse'
+          description: Successful response
+      summary: List banned users in channels with a custom channel type
+      tags:
+      - Application
+      x-accepts: application/json
+    post:
+      description: '## Ban specified users in channels with a custom channel type
+        at once.'
+      operationId: banUsersInChannelsWithCustomChannelType
+      parameters:
+      - example: '{{API_TOKEN}}'
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: custom_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        $ref: '#/components/requestBodies/banUsersInChannelsWithCustomChannelTypeData'
+        content:
+          application/json:
+            schema:
+              properties:
+                banned_list:
+                  items:
+                    $ref: '#/components/schemas/_v3_applications_settings_by_channel_custom_type__custom_type__ban_banned_list'
+                  type: array
+                on_demand_upsert:
+                  type: boolean
+              required:
+              - banned_list
+              title: banUsersInChannelsWithCustomChannelTypeData
+              type: object
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successful response
+      summary: Ban users in channels with a custom channel type
+      tags:
+      - Application
+      x-contentType: application/json
+      x-accepts: application/json
+  /v3/applications/settings_global/{custom_type}:
+    put:
+      description: '## '
+      operationId: setDomainFilter
+      parameters:
+      - example: '{{API_TOKEN}}'
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: custom_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        $ref: '#/components/requestBodies/setDomainFilterData'
+        content:
+          application/json:
+            schema:
+              properties:
+                domain_filter:
+                  $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__domain_filter'
+                profanity_filter:
+                  $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__profanity_filter'
+                profanity_triggered_moderation:
+                  $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__profanity_triggered_moderation'
+                image_moderation:
+                  $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__image_moderation'
+              title: setDomainFilterData
+              type: object
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.ChannelResponse'
+          description: Successful response
+      summary: Message moderation
+      tags:
+      - Application
+      x-contentType: application/json
+      x-accepts: application/json
   /v3/applications/ccu:
     get:
       description: |-
@@ -57,7 +374,7 @@ paths:
           description: Successful response
       summary: View number of concurrent connections
       tags:
-      - Application
+      - Statistics
       x-accepts: application/json
   /v3/applications/push/fcm:
     post:
@@ -701,7 +1018,7 @@ paths:
           description: Successful response
       summary: View number of peak connections
       tags:
-      - Application
+      - Statistics
       x-accepts: application/json
   /v3/applications/mau:
     get:
@@ -738,7 +1055,7 @@ paths:
           description: Successful response
       summary: View number of monthly active users
       tags:
-      - Application
+      - Statistics
       x-accepts: application/json
   /v3/applications/dau:
     get:
@@ -775,7 +1092,7 @@ paths:
           description: Successful response
       summary: View number of daily active users
       tags:
-      - Application
+      - Statistics
       x-accepts: application/json
   /v3/applications/push/{push_type}:
     get:
@@ -2664,7 +2981,7 @@ paths:
           description: Successful response
       summary: List banned channels
       tags:
-      - User
+      - Moderation
       x-accepts: application/json
   /v3/users/{user_id}/banned_channel_custom_types:
     post:
@@ -2718,7 +3035,7 @@ paths:
           description: Successful response
       summary: Ban from channels with custom channel types
       tags:
-      - User
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/users/{user_id}/mute:
@@ -2774,7 +3091,7 @@ paths:
           description: Successful response
       summary: List muted channels
       tags:
-      - User
+      - Moderation
       x-accepts: application/json
   /v3/users/{user_id}/muted_channel_custom_types:
     post:
@@ -2828,7 +3145,7 @@ paths:
           description: Successful response
       summary: Mute in channels with custom channel types
       tags:
-      - User
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/users/{user_id}/block:
@@ -2905,7 +3222,7 @@ paths:
           description: Successful response
       summary: List blocked users
       tags:
-      - User
+      - Moderation
       x-accepts: application/json
     post:
       description: |-
@@ -2973,7 +3290,7 @@ paths:
           description: Successful response
       summary: Block a user
       tags:
-      - User
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/users/{user_id}/block/{target_id}:
@@ -3018,7 +3335,7 @@ paths:
           description: Successful response
       summary: Unblock a user
       tags:
-      - User
+      - Moderation
       x-accepts: application/json
   /v3/users/{user_id}/push/{token_type}:
     get:
@@ -3937,7 +4254,7 @@ paths:
           description: Successful response
       summary: List muted users
       tags:
-      - Open channel
+      - Moderation
       x-accepts: application/json
     post:
       description: |-
@@ -3995,7 +4312,7 @@ paths:
           description: Successful response
       summary: Mute a user
       tags:
-      - Open channel
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/open_channels/{channel_url}:
@@ -4029,7 +4346,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Delete a channel
       tags:
@@ -4281,7 +4598,7 @@ paths:
           description: Successful response
       summary: Freeze a channel
       tags:
-      - Open channel
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/open_channels/{channel_url}/ban:
@@ -4337,7 +4654,7 @@ paths:
           description: Successful response
       summary: List banned users
       tags:
-      - Open channel
+      - Moderation
       x-accepts: application/json
     post:
       description: |-
@@ -4407,7 +4724,7 @@ paths:
           description: Successful response
       summary: Ban a user
       tags:
-      - Open channel
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/open_channels/{channel_url}/operators:
@@ -4569,7 +4886,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Register operators
       tags:
@@ -4614,11 +4931,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Unban a user
       tags:
-      - Open channel
+      - Moderation
       x-accepts: application/json
     get:
       description: |-
@@ -4661,7 +4978,7 @@ paths:
           description: Successful response
       summary: View a ban
       tags:
-      - Open channel
+      - Moderation
       x-accepts: application/json
     put:
       description: |-
@@ -4731,7 +5048,7 @@ paths:
           description: Successful response
       summary: Update a ban
       tags:
-      - Open channel
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/open_channels/{channel_url}/mute/{muted_user_id}:
@@ -4772,11 +5089,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Unmute a user
       tags:
-      - Open channel
+      - Moderation
       x-accepts: application/json
     get:
       description: |-
@@ -4819,7 +5136,7 @@ paths:
           description: Successful response
       summary: View a mute
       tags:
-      - Open channel
+      - Moderation
       x-accepts: application/json
   /v3/group_channels:
     get:
@@ -5375,7 +5692,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Delete a channel
       tags:
@@ -5941,7 +6258,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Decline an invitation
       tags:
@@ -6065,7 +6382,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Leave a channel
       tags:
@@ -6121,7 +6438,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Unhide or unarchive a channel
       tags:
@@ -6210,7 +6527,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Hide or archive a channel
       tags:
@@ -6340,7 +6657,7 @@ paths:
           description: Successful response
       summary: Freeze a channel
       tags:
-      - Group channel
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/group_channels/{channel_url}/operators:
@@ -6394,7 +6711,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Cancel the registration of operators
       tags:
@@ -6570,7 +6887,7 @@ paths:
           description: Successful response
       summary: List banned users
       tags:
-      - Group channel
+      - Moderation
       x-accepts: application/json
     post:
       description: |-
@@ -6639,7 +6956,7 @@ paths:
           description: Successful response
       summary: Ban a user
       tags:
-      - Group channel
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/group_channels/{channel_url}/ban/{banned_user_id}:
@@ -6680,11 +6997,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Unban a user
       tags:
-      - Group channel
+      - Moderation
       x-accepts: application/json
     get:
       description: |-
@@ -6727,7 +7044,7 @@ paths:
           description: Successful response
       summary: View a ban
       tags:
-      - Group channel
+      - Moderation
       x-accepts: application/json
     put:
       description: |-
@@ -6797,7 +7114,7 @@ paths:
           description: Successful response
       summary: Update a ban
       tags:
-      - Group channel
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/group_channels/{channel_url}/mute:
@@ -6853,7 +7170,7 @@ paths:
           description: Successful response
       summary: List muted users
       tags:
-      - Group channel
+      - Moderation
       x-accepts: application/json
     post:
       description: |-
@@ -6916,7 +7233,7 @@ paths:
           description: Successful response
       summary: Mute a user
       tags:
-      - Group channel
+      - Moderation
       x-contentType: application/json
       x-accepts: application/json
   /v3/group_channels/{channel_url}/mute/{muted_user_id}:
@@ -6957,11 +7274,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: Successful response
       summary: Unmute a user
       tags:
-      - Group channel
+      - Moderation
       x-accepts: application/json
     get:
       description: |-
@@ -7004,7 +7321,7 @@ paths:
           description: Successful response
       summary: View a mute
       tags:
-      - Group channel
+      - Moderation
       x-accepts: application/json
   /v3/announcements:
     get:
@@ -7069,7 +7386,7 @@ paths:
           description: Successful response
       summary: List announcements
       tags:
-      - Announcements
+      - Message
       x-accepts: application/json
     post:
       description: |-
@@ -7253,7 +7570,7 @@ paths:
           description: Successful response
       summary: Schedule an announcement
       tags:
-      - Announcements
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/announcements/{unique_id}:
@@ -7291,7 +7608,7 @@ paths:
           description: Successful response
       summary: View an announcement
       tags:
-      - Announcements
+      - Announcement
       x-accepts: application/json
     put:
       description: |-
@@ -7414,7 +7731,7 @@ paths:
           description: Successful response
       summary: Update an announcement
       tags:
-      - Announcements
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/announcement_open_rate/{unique_id}:
@@ -7456,7 +7773,7 @@ paths:
           description: Successful response
       summary: Get detailed open rate of an announcement
       tags:
-      - Announcements
+      - Announcement
       x-accepts: application/json
   /v3/announcement_open_status/{unique_id}:
     get:
@@ -7532,7 +7849,7 @@ paths:
           description: Successful response
       summary: Get detailed open status of an announcement
       tags:
-      - Announcements
+      - Announcement
       x-accepts: application/json
   /v3/announcement_stats/daily:
     get:
@@ -7611,7 +7928,7 @@ paths:
           description: Successful response
       summary: Get statistics - daily
       tags:
-      - Announcements
+      - Message
       x-accepts: application/json
   /v3/announcement_stats/weekly:
     get:
@@ -7641,7 +7958,7 @@ paths:
           description: Successful response
       summary: Get statistics - weekly
       tags:
-      - Announcements
+      - Message
       x-accepts: application/json
   /v3/announcement_stats/monthly:
     get:
@@ -7671,7 +7988,7 @@ paths:
           description: Successful response
       summary: Get statistics - monthly
       tags:
-      - Announcements
+      - Message
       x-accepts: application/json
   /v3/announcement_group:
     get:
@@ -7715,7 +8032,7 @@ paths:
           description: Successful response
       summary: List announcement groups
       tags:
-      - Announcements
+      - Message
       x-accepts: application/json
   /v3/announcement_open_rate_by_group/{announcement_group}:
     get:
@@ -7752,7 +8069,7 @@ paths:
           description: Successful response
       summary: Get detailed open rate of an announcement group
       tags:
-      - Announcements
+      - Announcement
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/messages:
     get:
@@ -7931,7 +8248,7 @@ paths:
           description: Successful response
       summary: List messages
       tags:
-      - Messages
+      - Message
       x-accepts: application/json
     post:
       description: |-
@@ -8082,7 +8399,7 @@ paths:
           description: Successful response
       summary: Send a message
       tags:
-      - Messages
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/messages/{message_id}:
@@ -8134,7 +8451,7 @@ paths:
           description: Successful response
       summary: Delete a message
       tags:
-      - Messages
+      - Message
       x-accepts: application/json
     get:
       description: |-
@@ -8208,7 +8525,7 @@ paths:
           description: Successful response
       summary: View a message
       tags:
-      - Messages
+      - Message
       x-accepts: application/json
     put:
       description: |-
@@ -8309,7 +8626,7 @@ paths:
           description: Successful response
       summary: Update a message
       tags:
-      - Messages
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/messages/total_count:
@@ -8354,7 +8671,7 @@ paths:
           description: Successful response
       summary: View total number of messages in a channel
       tags:
-      - Messages
+      - Message
       x-accepts: application/json
   /v3/group_channels/{channel_url}/messages/unread_count:
     get:
@@ -8398,7 +8715,7 @@ paths:
           description: Successful response
       summary: View number of each member's unread messages
       tags:
-      - Messages
+      - Message
       x-accepts: application/json
   /v3/group_channels/{channel_url}/messages/mark_as_delivered:
     put:
@@ -8457,7 +8774,7 @@ paths:
           description: Successful response
       summary: Mark all messages as delivered
       tags:
-      - Messages
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/group_channels/{channel_url}/messages/mark_as_read:
@@ -8519,7 +8836,7 @@ paths:
           description: Successful response
       summary: Mark all messages as read
       tags:
-      - Messages
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/applications/settings/reactions:
@@ -8565,7 +8882,7 @@ paths:
           description: Successful response
       summary: Enable reactions
       tags:
-      - Emojis
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/messages/{message_id}/reactions:
@@ -8633,7 +8950,7 @@ paths:
           description: Successful response
       summary: Remove a reaction from a message
       tags:
-      - Messages
+      - Message
       x-accepts: application/json
     get:
       description: |-
@@ -8702,7 +9019,7 @@ paths:
           description: Successful response
       summary: List reactions of a message
       tags:
-      - Messages
+      - Message
       x-accepts: application/json
     post:
       description: |-
@@ -8786,7 +9103,7 @@ paths:
           description: Successful response
       summary: Add a reaction to a message
       tags:
-      - Messages
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray:
@@ -8847,7 +9164,7 @@ paths:
           description: Successful response
       summary: Remove extra data from a message
       tags:
-      - Messages
+      - Message
       x-accepts: application/json
     post:
       description: |-
@@ -8927,7 +9244,7 @@ paths:
           description: Successful response
       summary: Add extra data to a message
       tags:
-      - Messages
+      - Message
       x-contentType: application/json
       x-accepts: application/json
     put:
@@ -9027,7 +9344,7 @@ paths:
           description: Successful response
       summary: Update extra data in a message
       tags:
-      - Messages
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/messages/{message_id}/translation:
@@ -9088,7 +9405,7 @@ paths:
           description: Successful response
       summary: Translate a message into other languages
       tags:
-      - Messages
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/applications/settings/use_default_emoji:
@@ -9132,7 +9449,7 @@ paths:
           description: Successful response
       summary: Use default emojis
       tags:
-      - Emojis
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/emoji_categories:
@@ -9162,7 +9479,7 @@ paths:
           description: Successful response
       summary: List all emojis and emoji categories
       tags:
-      - Emojis
+      - Message
       x-accepts: application/json
     post:
       description: |-
@@ -9197,7 +9514,7 @@ paths:
           description: Successful response
       summary: Add emoji categories
       tags:
-      - Emojis
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/emojis:
@@ -9227,7 +9544,7 @@ paths:
           description: Successful response
       summary: List emojis
       tags:
-      - Emojis
+      - Message
       x-accepts: application/json
     post:
       description: |-
@@ -9275,7 +9592,7 @@ paths:
           description: Successful response
       summary: Add emojis
       tags:
-      - Emojis
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/emoji_categories/{emoji_category_id}:
@@ -9313,7 +9630,7 @@ paths:
           description: Successful response
       summary: Delete an emoji category
       tags:
-      - Emojis
+      - Message
       x-accepts: application/json
     get:
       description: |-
@@ -9353,7 +9670,7 @@ paths:
           description: Successful response
       summary: Get an emoji category
       tags:
-      - Emojis
+      - Message
       x-accepts: application/json
     put:
       description: |-
@@ -9406,7 +9723,7 @@ paths:
           description: Successful response
       summary: Update an emoji category URL
       tags:
-      - Emojis
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/emojis/{emoji_key}:
@@ -9440,7 +9757,7 @@ paths:
           description: Successful response
       summary: Delete an emoji
       tags:
-      - Emojis
+      - Message
       x-accepts: application/json
     get:
       description: |-
@@ -9476,7 +9793,7 @@ paths:
           description: Successful response
       summary: Get an emoji
       tags:
-      - Emojis
+      - Message
       x-accepts: application/json
     put:
       description: |-
@@ -9529,7 +9846,7 @@ paths:
           description: Successful response
       summary: Update an emoji URL
       tags:
-      - Emojis
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/users/{user_id}/metadata:
@@ -9574,7 +9891,7 @@ paths:
           description: Successful response
       summary: Delete a user metadata - When deleting all items of a user metadata
       tags:
-      - User & channel metadata
+      - User
       x-accepts: application/json
     get:
       description: |-
@@ -9630,7 +9947,7 @@ paths:
           description: Successful response
       summary: View a user metadata - When retrieving all items of a user metadata
       tags:
-      - User & channel metadata
+      - Metadata
       x-accepts: application/json
     post:
       description: |-
@@ -9687,7 +10004,7 @@ paths:
           description: Successful response
       summary: Create a user metadata
       tags:
-      - User & channel metadata
+      - User
       x-contentType: application/json
       x-accepts: application/json
     put:
@@ -9748,7 +10065,7 @@ paths:
       summary: Update a user metadata - When updating existing items of a user metadata
         by their keys or adding new items to the metadata
       tags:
-      - User & channel metadata
+      - User
       x-contentType: application/json
       x-accepts: application/json
   /v3/users/{user_id}/metadata/{key}:
@@ -9794,7 +10111,7 @@ paths:
       summary: Delete a user metadata - When deleting a specific item of a user metadata
         by its key
       tags:
-      - User & channel metadata
+      - User
       x-accepts: application/json
     get:
       description: |-
@@ -9842,7 +10159,7 @@ paths:
       summary: View a user metadata - When retrieving a specific item of a user metadata
         by its key
       tags:
-      - User & channel metadata
+      - Metadata
       x-accepts: application/json
     put:
       description: |-
@@ -9897,7 +10214,7 @@ paths:
       summary: Update a user metadata - When updating a specific item of a user metadata
         by its key
       tags:
-      - User & channel metadata
+      - User
       x-contentType: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/metadata:
@@ -9952,7 +10269,7 @@ paths:
           description: Successful response
       summary: Delete a channel metadata - When deleting all items of a channel metadata
       tags:
-      - User & channel metadata
+      - User
       x-accepts: application/json
     get:
       description: |-
@@ -10018,7 +10335,7 @@ paths:
           description: Successful response
       summary: View a channel metadata - When retrieving all items of a channel metadata
       tags:
-      - User & channel metadata
+      - Metadata
       x-accepts: application/json
     post:
       description: |-
@@ -10091,7 +10408,7 @@ paths:
           description: Successful response
       summary: Create a channel metadata
       tags:
-      - User & channel metadata
+      - User
       x-contentType: application/json
       x-accepts: application/json
     put:
@@ -10162,7 +10479,7 @@ paths:
       summary: Update a channel metadata - When updating existing items of a channel
         metadata by their keys or adding new items to the metadata
       tags:
-      - User & channel metadata
+      - User
       x-contentType: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/metadata/{key}:
@@ -10218,7 +10535,7 @@ paths:
       summary: Delete a channel metadata - When deleting a specific item of a channel
         metadata by its key
       tags:
-      - User & channel metadata
+      - User
       x-accepts: application/json
     get:
       description: |-
@@ -10276,7 +10593,7 @@ paths:
       summary: View a channel metadata - When retrieving a specific item of a channel
         metadata by its key
       tags:
-      - User & channel metadata
+      - Metadata
       x-accepts: application/json
     put:
       description: |-
@@ -10341,7 +10658,7 @@ paths:
       summary: Update a channel metadata - When updating a specific item of a channel
         metadata by its key
       tags:
-      - User & channel metadata
+      - User
       x-contentType: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/metacounter:
@@ -10390,7 +10707,7 @@ paths:
       summary: Delete a channel metacounter - When deleting all items of a channel
         metacounter
       tags:
-      - User & channel metadata
+      - User
       x-accepts: application/json
     get:
       description: |-
@@ -10457,7 +10774,7 @@ paths:
       summary: View a channel metacounter - When retrieving all items of a channel
         metacounter
       tags:
-      - User & channel metadata
+      - Metadata
       x-accepts: application/json
     post:
       description: |-
@@ -10526,7 +10843,7 @@ paths:
           description: Successful response
       summary: Create a channel metacounter
       tags:
-      - User & channel metadata
+      - User
       x-contentType: application/json
       x-accepts: application/json
     put:
@@ -10603,7 +10920,7 @@ paths:
       summary: Update a channel metacounter - When updating existing items of a channel
         metacounter by their keys or adding new items to the metacounter
       tags:
-      - User & channel metadata
+      - User
       x-contentType: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/metacounter/{key}:
@@ -10659,7 +10976,7 @@ paths:
       summary: Delete a channel metacounter - When deleting a specific item of a channel
         metacounter by its key
       tags:
-      - User & channel metadata
+      - User
       x-accepts: application/json
     get:
       description: |-
@@ -10717,7 +11034,7 @@ paths:
       summary: View a channel metacounter - When retrieving a specific item of a channel
         metacounter by its key
       tags:
-      - User & channel metadata
+      - Metadata
       x-accepts: application/json
     put:
       description: |-
@@ -10782,7 +11099,7 @@ paths:
       summary: Update a channel metacounter - When updating a specific item of a channel
         metacounter by its key
       tags:
-      - User & channel metadata
+      - User
       x-contentType: application/json
       x-accepts: application/json
   /v3/migration/{target_channel_url}:
@@ -10831,7 +11148,7 @@ paths:
           description: Successful response
       summary: Migrate messages
       tags:
-      - Migration
+      - Message
       x-contentType: application/json
       x-accepts: application/json
   /v3/statistics/metric:
@@ -10864,7 +11181,7 @@ paths:
           description: Successful response
       summary: Retrieve Advanced analytics metrics
       tags:
-      - Advanced analytics
+      - Statistics
       x-accepts: application/json
   /v3/export/{data_type}:
     get:
@@ -11153,7 +11470,7 @@ paths:
           description: Successful response
       summary: List bots
       tags:
-      - Bot interface
+      - Bot
       x-accepts: application/json
     post:
       description: |-
@@ -11238,7 +11555,7 @@ paths:
           description: Successful response
       summary: Create a bot
       tags:
-      - Bot interface
+      - Bot
       x-contentType: application/json
       x-accepts: application/json
   /v3/bots/{bot_userid}:
@@ -11276,7 +11593,7 @@ paths:
           description: Successful response
       summary: Delete a bot
       tags:
-      - Bot interface
+      - Bot
       x-accepts: application/json
     get:
       description: |-
@@ -11312,7 +11629,7 @@ paths:
           description: Successful response
       summary: View a bot
       tags:
-      - Bot interface
+      - Bot
       x-accepts: application/json
     put:
       description: |-
@@ -11404,7 +11721,7 @@ paths:
           description: Successful response
       summary: Update a bot
       tags:
-      - Bot interface
+      - Bot
       x-contentType: application/json
       x-accepts: application/json
   /v3/bots/{bot_userid}/channels:
@@ -11445,7 +11762,7 @@ paths:
           description: Successful response
       summary: Leave channels - When leaving all channels
       tags:
-      - Bot interface
+      - Bot
       x-accepts: application/json
     post:
       description: |-
@@ -11501,7 +11818,7 @@ paths:
           description: Successful response
       summary: Join channels
       tags:
-      - Bot interface
+      - Bot
       x-contentType: application/json
       x-accepts: application/json
   /v3/bots/{bot_userid}/send:
@@ -11593,7 +11910,7 @@ paths:
           description: Successful response
       summary: Send a bot's message
       tags:
-      - Bot interface
+      - Bot
       x-contentType: application/json
       x-accepts: application/json
   /v3/bots/{bot_userid}/channels/{channel_url}:
@@ -11638,7 +11955,7 @@ paths:
           description: Successful response
       summary: Leave channels - When leaving a channel by its channel URL
       tags:
-      - Bot interface
+      - Bot
       x-accepts: application/json
   /v3/applications/settings/webhook:
     get:
@@ -11780,7 +12097,7 @@ paths:
           description: Successful response
       summary: List GDPR requests
       tags:
-      - Data privacy
+      - Privacy
       x-accepts: application/json
     post:
       description: |-
@@ -11856,7 +12173,7 @@ paths:
           description: Successful response
       summary: Register a GDPR request
       tags:
-      - Data privacy
+      - Privacy
       x-contentType: application/json
       x-accepts: application/json
   /v3/privacy/gdpr/{request_id}:
@@ -11890,7 +12207,7 @@ paths:
           description: Successful response
       summary: Cancel the registration of a GDPR request
       tags:
-      - Data privacy
+      - Privacy
       x-accepts: application/json
     get:
       description: |-
@@ -11926,7 +12243,7 @@ paths:
           description: Successful response
       summary: View a GDPR request
       tags:
-      - Data privacy
+      - Privacy
       x-accepts: application/json
   /v3/report:
     get:
@@ -11984,7 +12301,7 @@ paths:
           description: Successful response
       summary: List reports
       tags:
-      - Report content & subject
+      - Report
       x-accepts: application/json
   /v3/report/{channel_type}/{channel_url}/messages/{message_id}:
     get:
@@ -12059,7 +12376,7 @@ paths:
           description: Successful response
       summary: List reports on a message
       tags:
-      - Report content & subject
+      - Report
       x-accepts: application/json
     post:
       description: |-
@@ -12148,7 +12465,7 @@ paths:
           description: Successful response
       summary: Report a message
       tags:
-      - Report content & subject
+      - Report
       x-contentType: application/json
       x-accepts: application/json
   /v3/report/users/{offending_user_id}:
@@ -12204,7 +12521,7 @@ paths:
           description: Successful response
       summary: List reports on a user
       tags:
-      - Report content & subject
+      - Report
       x-accepts: application/json
     post:
       description: |-
@@ -12277,7 +12594,7 @@ paths:
           description: Successful response
       summary: Report a user
       tags:
-      - Report content & subject
+      - Report
       x-contentType: application/json
       x-accepts: application/json
   /v3/report/{channel_type}/{channel_url}:
@@ -12343,7 +12660,7 @@ paths:
           description: Successful response
       summary: List reports on a channel
       tags:
-      - Report content & subject
+      - Report
       x-accepts: application/json
     post:
       description: |-
@@ -12417,7 +12734,7 @@ paths:
           description: Successful response
       summary: Report a channel
       tags:
-      - Report content & subject
+      - Report
       x-contentType: application/json
       x-accepts: application/json
   /v3/report/{channel_type}/{channel_url}/profanity_messages/{message_id}:
@@ -12469,7 +12786,7 @@ paths:
           description: Successful response
       summary: View a moderated message
       tags:
-      - Report content & subject
+      - Report
       x-accepts: application/json
 components:
   requestBodies:
@@ -12693,6 +13010,11 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/addFcmPushConfigurationData'
+    setDomainFilterData:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/setDomainFilterData'
     registerAsOperatorToChannelsWithCustomChannelTypesData:
       content:
         application/json:
@@ -12768,6 +13090,11 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/leaveMyGroupChannelsData'
+    muteUsersInChannelsWithCustomChannelTypeData:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/muteUsersInChannelsWithCustomChannelTypeData'
     addHmsPushConfigurationData:
       content:
         application/json:
@@ -12838,6 +13165,11 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/updateUserByIdData'
+    banUsersInChannelsWithCustomChannelTypeData:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/banUsersInChannelsWithCustomChannelTypeData'
     registerAndScheduleDataExportData:
       content:
         application/json:
@@ -16126,7 +16458,7 @@ components:
     ocListBannedUsersResponse:
       example:
         next: next
-        total_ban_count: 1.4658129805029452
+        total_ban_count: 0.8008281904610115
         banned_list:
         - end_at: 6.027456183070403
           description: description
@@ -16212,6 +16544,92 @@ components:
         next:
           type: string
       type: object
+    customTypeListBannedUsersResponse:
+      example:
+        next: next
+        banned_list:
+        - end_at: 6.027456183070403
+          description: description
+          start_at: 0.8008281904610115
+          user:
+            end_at: 5.962133916683182
+            metadata:
+              constructor:
+                length: 1.4658129805029452
+                arguments: ""
+                prototype: ""
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.637376656633329
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - session_tokens
+            - session_tokens
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+        - end_at: 6.027456183070403
+          description: description
+          start_at: 0.8008281904610115
+          user:
+            end_at: 5.962133916683182
+            metadata:
+              constructor:
+                length: 1.4658129805029452
+                arguments: ""
+                prototype: ""
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.637376656633329
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - session_tokens
+            - session_tokens
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+      properties:
+        banned_list:
+          items:
+            $ref: '#/components/schemas/ocListBannedUsersResponse_banned_list'
+          type: array
+        next:
+          type: string
+      type: object
     ocBanUserResponse:
       example:
         end_at: 6.027456183070403
@@ -16278,7 +16696,7 @@ components:
         profile_url:
           type: string
         metadata:
-          $ref: '#/components/schemas/inline_response_200'
+          $ref: '#/components/schemas/inline_response_200_1'
       type: object
     ocListOperatorsResponse:
       example:
@@ -16363,10 +16781,43 @@ components:
         end_at: 0.8008281904610115
         description: description
         start_at: 6.027456183070403
-        user: '{}'
+        user:
+          end_at: 5.962133916683182
+          metadata:
+            constructor:
+              length: 1.4658129805029452
+              arguments: ""
+              prototype: ""
+          require_auth_for_profile_image: true
+          is_active: true
+          preferred_languages:
+          - preferred_languages
+          - preferred_languages
+          discovery_keys:
+          - discovery_keys
+          - discovery_keys
+          profile_url: profile_url
+          is_created: true
+          created_at: 6
+          description: description
+          has_ever_logged_in: true
+          locale: locale
+          start_at: 5.637376656633329
+          local: local
+          access_token: access_token
+          is_shadow_blocked: true
+          user_id: user_id
+          nickname: nickname
+          session_tokens:
+          - session_tokens
+          - session_tokens
+          phone_number: phone_number
+          is_online: true
+          last_seen_at: 0
+          is_hide_me_from_friends: true
       properties:
         user:
-          $ref: '#/components/schemas/Sendbird.User'
+          $ref: '#/components/schemas/SendBird.User'
         description:
           type: string
         end_at:
@@ -16379,10 +16830,43 @@ components:
         end_at: 0.8008281904610115
         description: description
         start_at: 6.027456183070403
-        user: '{}'
+        user:
+          end_at: 5.962133916683182
+          metadata:
+            constructor:
+              length: 1.4658129805029452
+              arguments: ""
+              prototype: ""
+          require_auth_for_profile_image: true
+          is_active: true
+          preferred_languages:
+          - preferred_languages
+          - preferred_languages
+          discovery_keys:
+          - discovery_keys
+          - discovery_keys
+          profile_url: profile_url
+          is_created: true
+          created_at: 6
+          description: description
+          has_ever_logged_in: true
+          locale: locale
+          start_at: 5.637376656633329
+          local: local
+          access_token: access_token
+          is_shadow_blocked: true
+          user_id: user_id
+          nickname: nickname
+          session_tokens:
+          - session_tokens
+          - session_tokens
+          phone_number: phone_number
+          is_online: true
+          last_seen_at: 0
+          is_hide_me_from_friends: true
       properties:
         user:
-          $ref: '#/components/schemas/Sendbird.User'
+          $ref: '#/components/schemas/SendBird.User'
         description:
           type: string
         end_at:
@@ -17202,7 +17686,7 @@ components:
         description:
           type: string
         metadata:
-          $ref: '#/components/schemas/inline_response_200'
+          $ref: '#/components/schemas/inline_response_200_1'
         next_url:
           type: string
         nickname:
@@ -20646,6 +21130,199 @@ components:
       additionalProperties:
         type: string
       type: object
+    inline_response_200:
+      example:
+        next: next
+        muted_list:
+        - end_at: 5.962133916683182
+          metadata:
+            constructor:
+              length: 1.4658129805029452
+              arguments: ""
+              prototype: ""
+          require_auth_for_profile_image: true
+          is_active: true
+          preferred_languages:
+          - preferred_languages
+          - preferred_languages
+          discovery_keys:
+          - discovery_keys
+          - discovery_keys
+          profile_url: profile_url
+          is_created: true
+          created_at: 6
+          description: description
+          has_ever_logged_in: true
+          locale: locale
+          start_at: 5.637376656633329
+          local: local
+          access_token: access_token
+          is_shadow_blocked: true
+          user_id: user_id
+          nickname: nickname
+          session_tokens:
+          - session_tokens
+          - session_tokens
+          phone_number: phone_number
+          is_online: true
+          last_seen_at: 0
+          is_hide_me_from_friends: true
+        - end_at: 5.962133916683182
+          metadata:
+            constructor:
+              length: 1.4658129805029452
+              arguments: ""
+              prototype: ""
+          require_auth_for_profile_image: true
+          is_active: true
+          preferred_languages:
+          - preferred_languages
+          - preferred_languages
+          discovery_keys:
+          - discovery_keys
+          - discovery_keys
+          profile_url: profile_url
+          is_created: true
+          created_at: 6
+          description: description
+          has_ever_logged_in: true
+          locale: locale
+          start_at: 5.637376656633329
+          local: local
+          access_token: access_token
+          is_shadow_blocked: true
+          user_id: user_id
+          nickname: nickname
+          session_tokens:
+          - session_tokens
+          - session_tokens
+          phone_number: phone_number
+          is_online: true
+          last_seen_at: 0
+          is_hide_me_from_friends: true
+      properties:
+        muted_list:
+          items:
+            $ref: '#/components/schemas/SendBird.User'
+          type: array
+        next:
+          type: string
+      type: object
+    muteUsersInChannelsWithCustomChannelTypeData:
+      properties:
+        user_ids:
+          items:
+            type: string
+          type: array
+        seconds:
+          type: number
+        description:
+          type: string
+        on_demand_upsert:
+          type: boolean
+      required:
+      - user_ids
+      title: muteUsersInChannelsWithCustomChannelTypeData
+      type: object
+    _v3_applications_settings_by_channel_custom_type__custom_type__ban_banned_list:
+      properties:
+        user_id:
+          type: string
+        seconds:
+          type: number
+        description:
+          type: string
+      required:
+      - user_id
+      type: object
+    banUsersInChannelsWithCustomChannelTypeData:
+      properties:
+        banned_list:
+          items:
+            $ref: '#/components/schemas/_v3_applications_settings_by_channel_custom_type__custom_type__ban_banned_list'
+          type: array
+        on_demand_upsert:
+          type: boolean
+      required:
+      - banned_list
+      title: banUsersInChannelsWithCustomChannelTypeData
+      type: object
+    _v3_applications_settings_global__custom_type__domain_filter:
+      properties:
+        domains:
+          items:
+            type: string
+          type: array
+        type:
+          type: integer
+        should_check_global:
+          type: boolean
+      type: object
+    _v3_applications_settings_global__custom_type__profanity_filter_regex_filters:
+      properties:
+        regex:
+          type: string
+      type: object
+    _v3_applications_settings_global__custom_type__profanity_filter:
+      properties:
+        keywords:
+          items:
+            type: string
+          type: array
+        regex_filters:
+          items:
+            $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__profanity_filter_regex_filters'
+          type: array
+        type:
+          type: integer
+        should_check_global:
+          type: boolean
+      type: object
+    _v3_applications_settings_global__custom_type__profanity_triggered_moderation:
+      properties:
+        count:
+          type: integer
+        duration:
+          type: integer
+        action:
+          type: integer
+      type: object
+    _v3_applications_settings_global__custom_type__image_moderation_limits:
+      properties:
+        adult:
+          type: integer
+        spoof:
+          type: integer
+        medical:
+          type: integer
+        violence:
+          type: integer
+        racy:
+          type: integer
+      type: object
+    _v3_applications_settings_global__custom_type__image_moderation:
+      properties:
+        type:
+          type: integer
+        soft_block:
+          type: boolean
+        limits:
+          $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__image_moderation_limits'
+        check_urls:
+          type: boolean
+      type: object
+    setDomainFilterData:
+      properties:
+        domain_filter:
+          $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__domain_filter'
+        profanity_filter:
+          $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__profanity_filter'
+        profanity_triggered_moderation:
+          $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__profanity_triggered_moderation'
+        image_moderation:
+          $ref: '#/components/schemas/_v3_applications_settings_global__custom_type__image_moderation'
+      title: setDomainFilterData
+      type: object
     addFcmPushConfigurationData:
       properties:
         api_key:
@@ -21457,7 +22134,7 @@ components:
       - operators
       title: ocUpdateChannelByUrlData
       type: object
-    inline_response_200:
+    inline_response_200_1:
       example:
         anyOf: anyOf
       properties:
@@ -23157,7 +23834,7 @@ components:
         profile_url:
           type: string
         metadata:
-          $ref: '#/components/schemas/inline_response_200'
+          $ref: '#/components/schemas/inline_response_200_1'
       type: object
     SendBird_MessageResponse_user:
       example:
@@ -23183,7 +23860,7 @@ components:
         profile_url:
           type: string
         metadata:
-          $ref: '#/components/schemas/inline_response_200'
+          $ref: '#/components/schemas/inline_response_200_1'
       type: object
     SendBird_GroupChannel_created_by:
       example:

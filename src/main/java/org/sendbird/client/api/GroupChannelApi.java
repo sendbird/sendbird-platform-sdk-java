@@ -28,32 +28,22 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.GcAcceptInvitationData;
-import org.openapitools.client.model.GcBanUserData;
-import org.openapitools.client.model.GcBanUserResponse;
 import org.openapitools.client.model.GcCheckIfMemberByIdResponse;
 import org.openapitools.client.model.GcCreateChannelData;
 import org.openapitools.client.model.GcDeclineInvitationData;
-import org.openapitools.client.model.GcFreezeChannelData;
 import org.openapitools.client.model.GcHideOrArchiveChannelData;
 import org.openapitools.client.model.GcInviteAsMembersData;
 import org.openapitools.client.model.GcJoinChannelData;
 import org.openapitools.client.model.GcLeaveChannelData;
-import org.openapitools.client.model.GcListBannedUsersResponse;
 import org.openapitools.client.model.GcListChannelsResponse;
 import org.openapitools.client.model.GcListMembersResponse;
-import org.openapitools.client.model.GcListMutedUsersResponse;
 import org.openapitools.client.model.GcListOperatorsResponse;
-import org.openapitools.client.model.GcMuteUserData;
 import org.openapitools.client.model.GcRegisterOperatorsData;
 import org.openapitools.client.model.GcRegisterOperatorsResponse;
 import org.openapitools.client.model.GcResetChatHistoryData;
 import org.openapitools.client.model.GcResetChatHistoryResponse;
-import org.openapitools.client.model.GcUpdateBanByIdData;
-import org.openapitools.client.model.GcUpdateBanByIdResponse;
 import org.openapitools.client.model.GcUpdateChannelByUrlData;
-import org.openapitools.client.model.GcViewBanByIdResponse;
-import org.openapitools.client.model.GcViewMuteByIdResponse;
-import org.openapitools.client.model.InlineResponse200;
+import org.openapitools.client.model.InlineResponse2001;
 import org.openapitools.client.model.SendBirdGroupChannel;
 
 import java.lang.reflect.Type;
@@ -245,151 +235,6 @@ public class GroupChannelApi {
         return localVarCall;
     }
     /**
-     * Build call for gcBanUser
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcBanUserData  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcBanUserCall(String apiToken, String channelUrl, GcBanUserData gcBanUserData, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = gcBanUserData;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/ban"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcBanUserValidateBeforeCall(String apiToken, String channelUrl, GcBanUserData gcBanUserData, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcBanUser(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcBanUser(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcBanUserCall(apiToken, channelUrl, gcBanUserData, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Ban a user
-     * ## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcBanUserData  (optional)
-     * @return GcBanUserResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GcBanUserResponse gcBanUser(String apiToken, String channelUrl, GcBanUserData gcBanUserData) throws ApiException {
-        ApiResponse<GcBanUserResponse> localVarResp = gcBanUserWithHttpInfo(apiToken, channelUrl, gcBanUserData);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Ban a user
-     * ## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcBanUserData  (optional)
-     * @return ApiResponse&lt;GcBanUserResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String apiToken, String channelUrl, GcBanUserData gcBanUserData) throws ApiException {
-        okhttp3.Call localVarCall = gcBanUserValidateBeforeCall(apiToken, channelUrl, gcBanUserData, null);
-        Type localVarReturnType = new TypeToken<GcBanUserResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Ban a user (asynchronously)
-     * ## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcBanUserData  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcBanUserAsync(String apiToken, String channelUrl, GcBanUserData gcBanUserData, final ApiCallback<GcBanUserResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcBanUserValidateBeforeCall(apiToken, channelUrl, gcBanUserData, _callback);
-        Type localVarReturnType = new TypeToken<GcBanUserResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
      * Build call for gcCancelTheRegistrationOfOperators
      * @param apiToken  (required)
      * @param channelUrl  (required)
@@ -494,7 +339,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param operatorIds  (required)
      * @param deleteAll  (optional)
-     * @return InlineResponse200
+     * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -502,8 +347,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse200 gcCancelTheRegistrationOfOperators(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = gcCancelTheRegistrationOfOperatorsWithHttpInfo(apiToken, channelUrl, operatorIds, deleteAll);
+    public InlineResponse2001 gcCancelTheRegistrationOfOperators(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
+        ApiResponse<InlineResponse2001> localVarResp = gcCancelTheRegistrationOfOperatorsWithHttpInfo(apiToken, channelUrl, operatorIds, deleteAll);
         return localVarResp.getData();
     }
 
@@ -514,7 +359,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param operatorIds  (required)
      * @param deleteAll  (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;InlineResponse2001&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -522,9 +367,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse200> gcCancelTheRegistrationOfOperatorsWithHttpInfo(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
+    public ApiResponse<InlineResponse2001> gcCancelTheRegistrationOfOperatorsWithHttpInfo(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
         okhttp3.Call localVarCall = gcCancelTheRegistrationOfOperatorsValidateBeforeCall(apiToken, channelUrl, operatorIds, deleteAll, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -544,10 +389,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcCancelTheRegistrationOfOperatorsAsync(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call gcCancelTheRegistrationOfOperatorsAsync(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcCancelTheRegistrationOfOperatorsValidateBeforeCall(apiToken, channelUrl, operatorIds, deleteAll, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -927,7 +772,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcDeclineInvitationData  (optional)
-     * @return InlineResponse200
+     * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -935,8 +780,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse200 gcDeclineInvitation(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = gcDeclineInvitationWithHttpInfo(apiToken, channelUrl, gcDeclineInvitationData);
+    public InlineResponse2001 gcDeclineInvitation(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
+        ApiResponse<InlineResponse2001> localVarResp = gcDeclineInvitationWithHttpInfo(apiToken, channelUrl, gcDeclineInvitationData);
         return localVarResp.getData();
     }
 
@@ -946,7 +791,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcDeclineInvitationData  (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;InlineResponse2001&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -954,9 +799,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse200> gcDeclineInvitationWithHttpInfo(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
+    public ApiResponse<InlineResponse2001> gcDeclineInvitationWithHttpInfo(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
         okhttp3.Call localVarCall = gcDeclineInvitationValidateBeforeCall(apiToken, channelUrl, gcDeclineInvitationData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -975,10 +820,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcDeclineInvitationAsync(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call gcDeclineInvitationAsync(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcDeclineInvitationValidateBeforeCall(apiToken, channelUrl, gcDeclineInvitationData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1070,7 +915,7 @@ public class GroupChannelApi {
      * ## Delete a channel  Deletes a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-delete-a-channel ----------------------------
      * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @return InlineResponse200
+     * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1078,8 +923,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse200 gcDeleteChannelByUrl(String apiToken, String channelUrl) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = gcDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
+    public InlineResponse2001 gcDeleteChannelByUrl(String apiToken, String channelUrl) throws ApiException {
+        ApiResponse<InlineResponse2001> localVarResp = gcDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
         return localVarResp.getData();
     }
 
@@ -1088,7 +933,7 @@ public class GroupChannelApi {
      * ## Delete a channel  Deletes a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-delete-a-channel ----------------------------
      * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;InlineResponse2001&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1096,9 +941,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse200> gcDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
+    public ApiResponse<InlineResponse2001> gcDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
         okhttp3.Call localVarCall = gcDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1116,155 +961,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcDeleteChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call gcDeleteChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for gcFreezeChannel
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcFreezeChannelData  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcFreezeChannelCall(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = gcFreezeChannelData;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/freeze"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcFreezeChannelValidateBeforeCall(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcFreezeChannel(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcFreezeChannel(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcFreezeChannelCall(apiToken, channelUrl, gcFreezeChannelData, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Freeze a channel
-     * ## Freeze a channel  Freezes or unfreezes a group channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcFreezeChannelData  (optional)
-     * @return SendBirdGroupChannel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public SendBirdGroupChannel gcFreezeChannel(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData) throws ApiException {
-        ApiResponse<SendBirdGroupChannel> localVarResp = gcFreezeChannelWithHttpInfo(apiToken, channelUrl, gcFreezeChannelData);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Freeze a channel
-     * ## Freeze a channel  Freezes or unfreezes a group channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcFreezeChannelData  (optional)
-     * @return ApiResponse&lt;SendBirdGroupChannel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<SendBirdGroupChannel> gcFreezeChannelWithHttpInfo(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData) throws ApiException {
-        okhttp3.Call localVarCall = gcFreezeChannelValidateBeforeCall(apiToken, channelUrl, gcFreezeChannelData, null);
-        Type localVarReturnType = new TypeToken<SendBirdGroupChannel>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Freeze a channel (asynchronously)
-     * ## Freeze a channel  Freezes or unfreezes a group channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcFreezeChannelData  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcFreezeChannelAsync(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData, final ApiCallback<SendBirdGroupChannel> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcFreezeChannelValidateBeforeCall(apiToken, channelUrl, gcFreezeChannelData, _callback);
-        Type localVarReturnType = new TypeToken<SendBirdGroupChannel>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1358,7 +1058,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcHideOrArchiveChannelData  (optional)
-     * @return InlineResponse200
+     * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1366,8 +1066,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse200 gcHideOrArchiveChannel(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = gcHideOrArchiveChannelWithHttpInfo(apiToken, channelUrl, gcHideOrArchiveChannelData);
+    public InlineResponse2001 gcHideOrArchiveChannel(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
+        ApiResponse<InlineResponse2001> localVarResp = gcHideOrArchiveChannelWithHttpInfo(apiToken, channelUrl, gcHideOrArchiveChannelData);
         return localVarResp.getData();
     }
 
@@ -1377,7 +1077,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcHideOrArchiveChannelData  (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;InlineResponse2001&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1385,9 +1085,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse200> gcHideOrArchiveChannelWithHttpInfo(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
+    public ApiResponse<InlineResponse2001> gcHideOrArchiveChannelWithHttpInfo(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
         okhttp3.Call localVarCall = gcHideOrArchiveChannelValidateBeforeCall(apiToken, channelUrl, gcHideOrArchiveChannelData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1406,10 +1106,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcHideOrArchiveChannelAsync(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call gcHideOrArchiveChannelAsync(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcHideOrArchiveChannelValidateBeforeCall(apiToken, channelUrl, gcHideOrArchiveChannelData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1789,7 +1489,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcLeaveChannelData  (optional)
-     * @return InlineResponse200
+     * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1797,8 +1497,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse200 gcLeaveChannel(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = gcLeaveChannelWithHttpInfo(apiToken, channelUrl, gcLeaveChannelData);
+    public InlineResponse2001 gcLeaveChannel(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
+        ApiResponse<InlineResponse2001> localVarResp = gcLeaveChannelWithHttpInfo(apiToken, channelUrl, gcLeaveChannelData);
         return localVarResp.getData();
     }
 
@@ -1808,7 +1508,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcLeaveChannelData  (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;InlineResponse2001&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1816,9 +1516,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse200> gcLeaveChannelWithHttpInfo(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
+    public ApiResponse<InlineResponse2001> gcLeaveChannelWithHttpInfo(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
         okhttp3.Call localVarCall = gcLeaveChannelValidateBeforeCall(apiToken, channelUrl, gcLeaveChannelData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1837,167 +1537,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcLeaveChannelAsync(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call gcLeaveChannelAsync(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcLeaveChannelValidateBeforeCall(apiToken, channelUrl, gcLeaveChannelData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for gcListBannedUsers
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param token  (optional)
-     * @param limit  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcListBannedUsersCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/ban"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (token != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("token", token));
-        }
-
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcListBannedUsersValidateBeforeCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcListBannedUsers(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcListBannedUsers(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcListBannedUsersCall(apiToken, channelUrl, token, limit, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * List banned users
-     * ## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param token  (optional)
-     * @param limit  (optional)
-     * @return GcListBannedUsersResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GcListBannedUsersResponse gcListBannedUsers(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
-        ApiResponse<GcListBannedUsersResponse> localVarResp = gcListBannedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
-        return localVarResp.getData();
-    }
-
-    /**
-     * List banned users
-     * ## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param token  (optional)
-     * @param limit  (optional)
-     * @return ApiResponse&lt;GcListBannedUsersResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = gcListBannedUsersValidateBeforeCall(apiToken, channelUrl, token, limit, null);
-        Type localVarReturnType = new TypeToken<GcListBannedUsersResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * List banned users (asynchronously)
-     * ## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param token  (optional)
-     * @param limit  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcListBannedUsersAsync(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback<GcListBannedUsersResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcListBannedUsersValidateBeforeCall(apiToken, channelUrl, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<GcListBannedUsersResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2682,163 +2225,6 @@ public class GroupChannelApi {
         return localVarCall;
     }
     /**
-     * Build call for gcListMutedUsers
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param token  (optional)
-     * @param limit  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcListMutedUsersCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/mute"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (token != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("token", token));
-        }
-
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcListMutedUsersValidateBeforeCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcListMutedUsers(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcListMutedUsers(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcListMutedUsersCall(apiToken, channelUrl, token, limit, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * List muted users
-     * ## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param token  (optional)
-     * @param limit  (optional)
-     * @return GcListMutedUsersResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GcListMutedUsersResponse gcListMutedUsers(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
-        ApiResponse<GcListMutedUsersResponse> localVarResp = gcListMutedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
-        return localVarResp.getData();
-    }
-
-    /**
-     * List muted users
-     * ## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param token  (optional)
-     * @param limit  (optional)
-     * @return ApiResponse&lt;GcListMutedUsersResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = gcListMutedUsersValidateBeforeCall(apiToken, channelUrl, token, limit, null);
-        Type localVarReturnType = new TypeToken<GcListMutedUsersResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * List muted users (asynchronously)
-     * ## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param token  (optional)
-     * @param limit  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcListMutedUsersAsync(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback<GcListMutedUsersResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcListMutedUsersValidateBeforeCall(apiToken, channelUrl, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<GcListMutedUsersResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
      * Build call for gcListOperators
      * @param apiToken  (required)
      * @param channelUrl  (required)
@@ -2992,151 +2378,6 @@ public class GroupChannelApi {
 
         okhttp3.Call localVarCall = gcListOperatorsValidateBeforeCall(apiToken, channelUrl, token, limit, _callback);
         Type localVarReturnType = new TypeToken<GcListOperatorsResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for gcMuteUser
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcMuteUserData  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcMuteUserCall(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = gcMuteUserData;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/mute"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcMuteUserValidateBeforeCall(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcMuteUser(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcMuteUser(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcMuteUserCall(apiToken, channelUrl, gcMuteUserData, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Mute a user
-     * ## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcMuteUserData  (optional)
-     * @return SendBirdGroupChannel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public SendBirdGroupChannel gcMuteUser(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData) throws ApiException {
-        ApiResponse<SendBirdGroupChannel> localVarResp = gcMuteUserWithHttpInfo(apiToken, channelUrl, gcMuteUserData);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Mute a user
-     * ## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcMuteUserData  (optional)
-     * @return ApiResponse&lt;SendBirdGroupChannel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<SendBirdGroupChannel> gcMuteUserWithHttpInfo(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData) throws ApiException {
-        okhttp3.Call localVarCall = gcMuteUserValidateBeforeCall(apiToken, channelUrl, gcMuteUserData, null);
-        Type localVarReturnType = new TypeToken<SendBirdGroupChannel>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Mute a user (asynchronously)
-     * ## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param gcMuteUserData  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcMuteUserAsync(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData, final ApiCallback<SendBirdGroupChannel> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcMuteUserValidateBeforeCall(apiToken, channelUrl, gcMuteUserData, _callback);
-        Type localVarReturnType = new TypeToken<SendBirdGroupChannel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3431,157 +2672,6 @@ public class GroupChannelApi {
         return localVarCall;
     }
     /**
-     * Build call for gcUnbanUserById
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcUnbanUserByIdCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/ban/{banned_user_id}"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()))
-            .replaceAll("\\{" + "banned_user_id" + "\\}", localVarApiClient.escapeString(bannedUserId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcUnbanUserByIdValidateBeforeCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcUnbanUserById(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcUnbanUserById(Async)");
-        }
-        
-        // verify the required parameter 'bannedUserId' is set
-        if (bannedUserId == null) {
-            throw new ApiException("Missing the required parameter 'bannedUserId' when calling gcUnbanUserById(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcUnbanUserByIdCall(apiToken, channelUrl, bannedUserId, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Unban a user
-     * ## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @return InlineResponse200
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public InlineResponse200 gcUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = gcUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Unban a user
-     * ## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @return ApiResponse&lt;InlineResponse200&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<InlineResponse200> gcUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-        okhttp3.Call localVarCall = gcUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Unban a user (asynchronously)
-     * ## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcUnbanUserByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<InlineResponse200> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
      * Build call for gcUnhideOrUnarchiveChannel
      * @param apiToken  (required)
      * @param channelUrl  (required)
@@ -3686,7 +2776,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param userId  (required)
      * @param shouldUnhideAll  (optional)
-     * @return InlineResponse200
+     * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3694,8 +2784,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse200 gcUnhideOrUnarchiveChannel(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = gcUnhideOrUnarchiveChannelWithHttpInfo(apiToken, channelUrl, userId, shouldUnhideAll);
+    public InlineResponse2001 gcUnhideOrUnarchiveChannel(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll) throws ApiException {
+        ApiResponse<InlineResponse2001> localVarResp = gcUnhideOrUnarchiveChannelWithHttpInfo(apiToken, channelUrl, userId, shouldUnhideAll);
         return localVarResp.getData();
     }
 
@@ -3706,7 +2796,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param userId  (required)
      * @param shouldUnhideAll  (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;InlineResponse2001&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3714,9 +2804,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse200> gcUnhideOrUnarchiveChannelWithHttpInfo(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll) throws ApiException {
+    public ApiResponse<InlineResponse2001> gcUnhideOrUnarchiveChannelWithHttpInfo(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll) throws ApiException {
         okhttp3.Call localVarCall = gcUnhideOrUnarchiveChannelValidateBeforeCall(apiToken, channelUrl, userId, shouldUnhideAll, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3736,316 +2826,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcUnhideOrUnarchiveChannelAsync(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call gcUnhideOrUnarchiveChannelAsync(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcUnhideOrUnarchiveChannelValidateBeforeCall(apiToken, channelUrl, userId, shouldUnhideAll, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for gcUnmuteUserById
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param mutedUserId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcUnmuteUserByIdCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/mute/{muted_user_id}"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()))
-            .replaceAll("\\{" + "muted_user_id" + "\\}", localVarApiClient.escapeString(mutedUserId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcUnmuteUserByIdValidateBeforeCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcUnmuteUserById(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcUnmuteUserById(Async)");
-        }
-        
-        // verify the required parameter 'mutedUserId' is set
-        if (mutedUserId == null) {
-            throw new ApiException("Missing the required parameter 'mutedUserId' when calling gcUnmuteUserById(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcUnmuteUserByIdCall(apiToken, channelUrl, mutedUserId, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Unmute a user
-     * ## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param mutedUserId  (required)
-     * @return InlineResponse200
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public InlineResponse200 gcUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = gcUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Unmute a user
-     * ## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param mutedUserId  (required)
-     * @return ApiResponse&lt;InlineResponse200&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<InlineResponse200> gcUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-        okhttp3.Call localVarCall = gcUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Unmute a user (asynchronously)
-     * ## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param mutedUserId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcUnmuteUserByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<InlineResponse200> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for gcUpdateBanById
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @param gcUpdateBanByIdData  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcUpdateBanByIdCall(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = gcUpdateBanByIdData;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/ban/{banned_user_id}"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()))
-            .replaceAll("\\{" + "banned_user_id" + "\\}", localVarApiClient.escapeString(bannedUserId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcUpdateBanByIdValidateBeforeCall(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcUpdateBanById(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcUpdateBanById(Async)");
-        }
-        
-        // verify the required parameter 'bannedUserId' is set
-        if (bannedUserId == null) {
-            throw new ApiException("Missing the required parameter 'bannedUserId' when calling gcUpdateBanById(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcUpdateBanByIdCall(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Update a ban
-     * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @param gcUpdateBanByIdData  (optional)
-     * @return GcUpdateBanByIdResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GcUpdateBanByIdResponse gcUpdateBanById(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData) throws ApiException {
-        ApiResponse<GcUpdateBanByIdResponse> localVarResp = gcUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Update a ban
-     * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @param gcUpdateBanByIdData  (optional)
-     * @return ApiResponse&lt;GcUpdateBanByIdResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GcUpdateBanByIdResponse> gcUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData) throws ApiException {
-        okhttp3.Call localVarCall = gcUpdateBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData, null);
-        Type localVarReturnType = new TypeToken<GcUpdateBanByIdResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Update a ban (asynchronously)
-     * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @param gcUpdateBanByIdData  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcUpdateBanByIdAsync(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData, final ApiCallback<GcUpdateBanByIdResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcUpdateBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData, _callback);
-        Type localVarReturnType = new TypeToken<GcUpdateBanByIdResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4191,157 +2975,6 @@ public class GroupChannelApi {
 
         okhttp3.Call localVarCall = gcUpdateChannelByUrlValidateBeforeCall(apiToken, channelUrl, gcUpdateChannelByUrlData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdGroupChannel>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for gcViewBanById
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcViewBanByIdCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/ban/{banned_user_id}"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()))
-            .replaceAll("\\{" + "banned_user_id" + "\\}", localVarApiClient.escapeString(bannedUserId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcViewBanByIdValidateBeforeCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcViewBanById(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcViewBanById(Async)");
-        }
-        
-        // verify the required parameter 'bannedUserId' is set
-        if (bannedUserId == null) {
-            throw new ApiException("Missing the required parameter 'bannedUserId' when calling gcViewBanById(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcViewBanByIdCall(apiToken, channelUrl, bannedUserId, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * View a ban
-     * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @return GcViewBanByIdResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GcViewBanByIdResponse gcViewBanById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-        ApiResponse<GcViewBanByIdResponse> localVarResp = gcViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * View a ban
-     * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @return ApiResponse&lt;GcViewBanByIdResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GcViewBanByIdResponse> gcViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-        okhttp3.Call localVarCall = gcViewBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, null);
-        Type localVarReturnType = new TypeToken<GcViewBanByIdResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * View a ban (asynchronously)
-     * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param bannedUserId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcViewBanByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<GcViewBanByIdResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcViewBanByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, _callback);
-        Type localVarReturnType = new TypeToken<GcViewBanByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4523,157 +3156,6 @@ public class GroupChannelApi {
 
         okhttp3.Call localVarCall = gcViewChannelByUrlValidateBeforeCall(apiToken, channelUrl, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member, _callback);
         Type localVarReturnType = new TypeToken<SendBirdGroupChannel>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for gcViewMuteById
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param mutedUserId  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcViewMuteByIdCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v3/group_channels/{channel_url}/mute/{muted_user_id}"
-            .replaceAll("\\{" + "channel_url" + "\\}", localVarApiClient.escapeString(channelUrl.toString()))
-            .replaceAll("\\{" + "muted_user_id" + "\\}", localVarApiClient.escapeString(mutedUserId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (apiToken != null) {
-            localVarHeaderParams.put("Api-Token", localVarApiClient.parameterToString(apiToken));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call gcViewMuteByIdValidateBeforeCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'apiToken' is set
-        if (apiToken == null) {
-            throw new ApiException("Missing the required parameter 'apiToken' when calling gcViewMuteById(Async)");
-        }
-        
-        // verify the required parameter 'channelUrl' is set
-        if (channelUrl == null) {
-            throw new ApiException("Missing the required parameter 'channelUrl' when calling gcViewMuteById(Async)");
-        }
-        
-        // verify the required parameter 'mutedUserId' is set
-        if (mutedUserId == null) {
-            throw new ApiException("Missing the required parameter 'mutedUserId' when calling gcViewMuteById(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = gcViewMuteByIdCall(apiToken, channelUrl, mutedUserId, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * View a mute
-     * ## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param mutedUserId  (required)
-     * @return GcViewMuteByIdResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GcViewMuteByIdResponse gcViewMuteById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-        ApiResponse<GcViewMuteByIdResponse> localVarResp = gcViewMuteByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
-        return localVarResp.getData();
-    }
-
-    /**
-     * View a mute
-     * ## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param mutedUserId  (required)
-     * @return ApiResponse&lt;GcViewMuteByIdResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-        okhttp3.Call localVarCall = gcViewMuteByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, null);
-        Type localVarReturnType = new TypeToken<GcViewMuteByIdResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * View a mute (asynchronously)
-     * ## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------
-     * @param apiToken  (required)
-     * @param channelUrl  (required)
-     * @param mutedUserId  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call gcViewMuteByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<GcViewMuteByIdResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = gcViewMuteByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, _callback);
-        Type localVarReturnType = new TypeToken<GcViewMuteByIdResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

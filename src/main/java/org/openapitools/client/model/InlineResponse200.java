@@ -23,39 +23,77 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.SendBirdUser;
 
 /**
  * InlineResponse200
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-09T11:12:40.042740+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
 public class InlineResponse200 {
-  public static final String SERIALIZED_NAME_ANY_OF = "anyOf";
-  @SerializedName(SERIALIZED_NAME_ANY_OF)
-  private String anyOf;
+  public static final String SERIALIZED_NAME_MUTED_LIST = "muted_list";
+  @SerializedName(SERIALIZED_NAME_MUTED_LIST)
+  private List<SendBirdUser> mutedList = null;
+
+  public static final String SERIALIZED_NAME_NEXT = "next";
+  @SerializedName(SERIALIZED_NAME_NEXT)
+  private String next;
 
   public InlineResponse200() { 
   }
 
-  public InlineResponse200 anyOf(String anyOf) {
+  public InlineResponse200 mutedList(List<SendBirdUser> mutedList) {
     
-    this.anyOf = anyOf;
+    this.mutedList = mutedList;
+    return this;
+  }
+
+  public InlineResponse200 addMutedListItem(SendBirdUser mutedListItem) {
+    if (this.mutedList == null) {
+      this.mutedList = new ArrayList<SendBirdUser>();
+    }
+    this.mutedList.add(mutedListItem);
     return this;
   }
 
    /**
-   * Get anyOf
-   * @return anyOf
+   * Get mutedList
+   * @return mutedList
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getAnyOf() {
-    return anyOf;
+  public List<SendBirdUser> getMutedList() {
+    return mutedList;
   }
 
 
-  public void setAnyOf(String anyOf) {
-    this.anyOf = anyOf;
+  public void setMutedList(List<SendBirdUser> mutedList) {
+    this.mutedList = mutedList;
+  }
+
+
+  public InlineResponse200 next(String next) {
+    
+    this.next = next;
+    return this;
+  }
+
+   /**
+   * Get next
+   * @return next
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getNext() {
+    return next;
+  }
+
+
+  public void setNext(String next) {
+    this.next = next;
   }
 
 
@@ -68,19 +106,21 @@ public class InlineResponse200 {
       return false;
     }
     InlineResponse200 inlineResponse200 = (InlineResponse200) o;
-    return Objects.equals(this.anyOf, inlineResponse200.anyOf);
+    return Objects.equals(this.mutedList, inlineResponse200.mutedList) &&
+        Objects.equals(this.next, inlineResponse200.next);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(anyOf);
+    return Objects.hash(mutedList, next);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse200 {\n");
-    sb.append("    anyOf: ").append(toIndentedString(anyOf)).append("\n");
+    sb.append("    mutedList: ").append(toIndentedString(mutedList)).append("\n");
+    sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("}");
     return sb.toString();
   }
