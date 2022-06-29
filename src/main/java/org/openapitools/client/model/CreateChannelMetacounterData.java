@@ -47,7 +47,7 @@ import org.sendbird.client.JSON;
 /**
  * CreateChannelMetacounterData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T14:16:58.424760+01:00[Europe/London]")
 public class CreateChannelMetacounterData {
   public static final String SERIALIZED_NAME_CHANNEL_TYPE = "channel_type";
   @SerializedName(SERIALIZED_NAME_CHANNEL_TYPE)

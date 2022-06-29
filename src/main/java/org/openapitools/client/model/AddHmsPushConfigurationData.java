@@ -47,7 +47,7 @@ import org.sendbird.client.JSON;
 /**
  * AddHmsPushConfigurationData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T14:16:58.424760+01:00[Europe/London]")
 public class AddHmsPushConfigurationData {
   public static final String SERIALIZED_NAME_HUAWEI_APP_ID = "huawei_app_id";
   @SerializedName(SERIALIZED_NAME_HUAWEI_APP_ID)
