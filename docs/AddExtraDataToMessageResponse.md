@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**sortedMetaarray** | [**List&lt;ListMessagesResponseSortedMetaarray&gt;**](ListMessagesResponseSortedMetaarray.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**sortedMetaarray** | [**List&lt;ListMessagesResponseMessagesInnerSortedMetaarrayInner&gt;**](ListMessagesResponseMessagesInnerSortedMetaarrayInner.md) |  |  [optional] |
 
 
 

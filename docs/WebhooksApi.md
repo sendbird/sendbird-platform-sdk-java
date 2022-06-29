@@ -2,10 +2,10 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**chooseWhichEventsToSubscribeTo**](WebhooksApi.md#chooseWhichEventsToSubscribeTo) | **PUT** /v3/applications/settings/webhook | Choose which events to subscribe to
-[**retrieveListOfSubscribedEvents**](WebhooksApi.md#retrieveListOfSubscribedEvents) | **GET** /v3/applications/settings/webhook | Retrieve a list of subscribed events
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**chooseWhichEventsToSubscribeTo**](WebhooksApi.md#chooseWhichEventsToSubscribeTo) | **PUT** /v3/applications/settings/webhook | Choose which events to subscribe to |
+| [**retrieveListOfSubscribedEvents**](WebhooksApi.md#retrieveListOfSubscribedEvents) | **GET** /v3/applications/settings/webhook | Retrieve a list of subscribed events |
 
 
 <a name="chooseWhichEventsToSubscribeTo"></a>
@@ -49,10 +49,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **chooseWhichEventsToSubscribeToData** | [**ChooseWhichEventsToSubscribeToData**](ChooseWhichEventsToSubscribeToData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **chooseWhichEventsToSubscribeToData** | [**ChooseWhichEventsToSubscribeToData**](ChooseWhichEventsToSubscribeToData.md)|  | [optional] |
 
 ### Return type
 
@@ -70,7 +70,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="retrieveListOfSubscribedEvents"></a>
 # **retrieveListOfSubscribedEvents**
@@ -113,10 +113,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **displayAllWebhookCategories** | **Boolean**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **displayAllWebhookCategories** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -134,5 +134,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

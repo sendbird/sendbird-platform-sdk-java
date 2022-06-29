@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getDetailedOpenRateOfAnnouncementById**](AnnouncementApi.md#getDetailedOpenRateOfAnnouncementById) | **GET** /v3/announcement_open_rate/{unique_id} | Get detailed open rate of an announcement
-[**getDetailedOpenRateOfAnnouncementGroup**](AnnouncementApi.md#getDetailedOpenRateOfAnnouncementGroup) | **GET** /v3/announcement_open_rate_by_group/{announcement_group} | Get detailed open rate of an announcement group
-[**getDetailedOpenStatusOfAnnouncementById**](AnnouncementApi.md#getDetailedOpenStatusOfAnnouncementById) | **GET** /v3/announcement_open_status/{unique_id} | Get detailed open status of an announcement
-[**viewAnnouncementById**](AnnouncementApi.md#viewAnnouncementById) | **GET** /v3/announcements/{unique_id} | View an announcement
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getDetailedOpenRateOfAnnouncementById**](AnnouncementApi.md#getDetailedOpenRateOfAnnouncementById) | **GET** /v3/announcement_open_rate/{unique_id} | Get detailed open rate of an announcement |
+| [**getDetailedOpenRateOfAnnouncementGroup**](AnnouncementApi.md#getDetailedOpenRateOfAnnouncementGroup) | **GET** /v3/announcement_open_rate_by_group/{announcement_group} | Get detailed open rate of an announcement group |
+| [**getDetailedOpenStatusOfAnnouncementById**](AnnouncementApi.md#getDetailedOpenStatusOfAnnouncementById) | **GET** /v3/announcement_open_status/{unique_id} | Get detailed open status of an announcement |
+| [**viewAnnouncementById**](AnnouncementApi.md#viewAnnouncementById) | **GET** /v3/announcements/{unique_id} | View an announcement |
 
 
 <a name="getDetailedOpenRateOfAnnouncementById"></a>
@@ -51,10 +51,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **uniqueId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **uniqueId** | **String**|  | |
 
 ### Return type
 
@@ -72,7 +72,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="getDetailedOpenRateOfAnnouncementGroup"></a>
 # **getDetailedOpenRateOfAnnouncementGroup**
@@ -115,10 +115,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **announcementGroup** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **announcementGroup** | **String**|  | |
 
 ### Return type
 
@@ -136,7 +136,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="getDetailedOpenStatusOfAnnouncementById"></a>
 # **getDetailedOpenStatusOfAnnouncementById**
@@ -184,15 +184,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **uniqueId** | **String**|  |
- **limit** | **Integer**|  | [optional]
- **next** | **String**|  | [optional]
- **uniqueIds** | [**List&lt;String&gt;**](String.md)|  | [optional]
- **channelUrls** | [**List&lt;String&gt;**](String.md)|  | [optional]
- **hasOpened** | **Boolean**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **uniqueId** | **String**|  | |
+| **limit** | **Integer**|  | [optional] |
+| **next** | **String**|  | [optional] |
+| **uniqueIds** | [**List&lt;String&gt;**](String.md)|  | [optional] |
+| **channelUrls** | [**List&lt;String&gt;**](String.md)|  | [optional] |
+| **hasOpened** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -210,7 +210,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewAnnouncementById"></a>
 # **viewAnnouncementById**
@@ -253,10 +253,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **uniqueId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **uniqueId** | **String**|  | |
 
 ### Return type
 
@@ -274,5 +274,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

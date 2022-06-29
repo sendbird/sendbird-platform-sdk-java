@@ -35,1612 +35,251 @@ import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdOpenChannel;
 import org.openapitools.client.model.SendBirdUser;
 
-/**
- * SendBirdChannelResponse
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
-public class SendBirdChannelResponse {
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
-  private String channelUrl;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_COVER_URL = "cover_url";
-  @SerializedName(SERIALIZED_NAME_COVER_URL)
-  private String coverUrl;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private BigDecimal createdAt;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public static final String SERIALIZED_NAME_CREATED_BY = "created_by";
-  @SerializedName(SERIALIZED_NAME_CREATED_BY)
-  private SendBirdGroupChannelCreatedBy createdBy;
+import org.sendbird.client.JSON;
 
-  public static final String SERIALIZED_NAME_CREATOR = "creator";
-  @SerializedName(SERIALIZED_NAME_CREATOR)
-  private SendBirdUser creator;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
+public class SendBirdChannelResponse extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(SendBirdChannelResponse.class.getName());
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
-  private String customType;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!SendBirdChannelResponse.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'SendBirdChannelResponse' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<SendBirdGroupChannel> adapterSendBirdGroupChannel = gson.getDelegateAdapter(this, TypeToken.get(SendBirdGroupChannel.class));
+            final TypeAdapter<SendBirdOpenChannel> adapterSendBirdOpenChannel = gson.getDelegateAdapter(this, TypeToken.get(SendBirdOpenChannel.class));
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
-  private String data;
+            return (TypeAdapter<T>) new TypeAdapter<SendBirdChannelResponse>() {
+                @Override
+                public void write(JsonWriter out, SendBirdChannelResponse value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
-  public static final String SERIALIZED_NAME_DISAPPEARING_MESSAGE = "disappearing_message";
-  @SerializedName(SERIALIZED_NAME_DISAPPEARING_MESSAGE)
-  private SendBirdGroupChannelDisappearingMessage disappearingMessage;
+                    // check if the actual instance is of the type `SendBirdGroupChannel`
+                    if (value.getActualInstance() instanceof SendBirdGroupChannel) {
+                        JsonObject obj = adapterSendBirdGroupChannel.toJsonTree((SendBirdGroupChannel)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public static final String SERIALIZED_NAME_FREEZE = "freeze";
-  @SerializedName(SERIALIZED_NAME_FREEZE)
-  private Boolean freeze;
+                    // check if the actual instance is of the type `SendBirdOpenChannel`
+                    if (value.getActualInstance() instanceof SendBirdOpenChannel) {
+                        JsonObject obj = adapterSendBirdOpenChannel.toJsonTree((SendBirdOpenChannel)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public static final String SERIALIZED_NAME_IGNORE_PROFANITY_FILTER = "ignore_profanity_filter";
-  @SerializedName(SERIALIZED_NAME_IGNORE_PROFANITY_FILTER)
-  private Boolean ignoreProfanityFilter;
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: SendBirdGroupChannel, SendBirdOpenChannel");
+                }
 
-  /**
-   * Gets or Sets hiddenState
-   */
-  @JsonAdapter(HiddenStateEnum.Adapter.class)
-  public enum HiddenStateEnum {
-    HIDDEN_ALLOW_AUTO_UNHIDE("hidden_allow_auto_unhide"),
-    
-    HIDDEN_PREVENT_AUTO_UNHIDE("hidden_prevent_auto_unhide"),
-    
-    UNHIDDEN("unhidden");
+                @Override
+                public SendBirdChannelResponse read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-    private String value;
+                    // deserialize SendBirdGroupChannel
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        SendBirdGroupChannel.validateJsonObject(jsonObject);
+                        log.log(Level.FINER, "Input data matches schema 'SendBirdGroupChannel'");
+                        SendBirdChannelResponse ret = new SendBirdChannelResponse();
+                        ret.setActualInstance(adapterSendBirdGroupChannel.fromJsonTree(jsonObject));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'SendBirdGroupChannel'", e);
+                    }
 
-    HiddenStateEnum(String value) {
-      this.value = value;
+                    // deserialize SendBirdOpenChannel
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        SendBirdOpenChannel.validateJsonObject(jsonObject);
+                        log.log(Level.FINER, "Input data matches schema 'SendBirdOpenChannel'");
+                        SendBirdChannelResponse ret = new SendBirdChannelResponse();
+                        ret.setActualInstance(adapterSendBirdOpenChannel.fromJsonTree(jsonObject));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'SendBirdOpenChannel'", e);
+                    }
+
+
+                    throw new IOException(String.format("Failed deserialization for SendBirdChannelResponse: no class matched. JSON: %s", jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
 
-    public String getValue() {
-      return value;
+    // store a list of schema names defined in anyOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public SendBirdChannelResponse() {
+        super("anyOf", Boolean.FALSE);
+    }
+
+    public SendBirdChannelResponse(SendBirdGroupChannel o) {
+        super("anyOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public SendBirdChannelResponse(SendBirdOpenChannel o) {
+        super("anyOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("SendBirdGroupChannel", new GenericType<SendBirdGroupChannel>() {
+        });
+        schemas.put("SendBirdOpenChannel", new GenericType<SendBirdOpenChannel>() {
+        });
     }
 
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Map<String, GenericType> getSchemas() {
+        return SendBirdChannelResponse.schemas;
     }
 
-    public static HiddenStateEnum fromValue(String value) {
-      for (HiddenStateEnum b : HiddenStateEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<HiddenStateEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final HiddenStateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public HiddenStateEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return HiddenStateEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_HIDDEN_STATE = "hidden_state";
-  @SerializedName(SERIALIZED_NAME_HIDDEN_STATE)
-  private HiddenStateEnum hiddenState;
-
-  public static final String SERIALIZED_NAME_INVITED_AT = "invited_at";
-  @SerializedName(SERIALIZED_NAME_INVITED_AT)
-  private BigDecimal invitedAt;
-
-  public static final String SERIALIZED_NAME_INVITER = "inviter";
-  @SerializedName(SERIALIZED_NAME_INVITER)
-  private SendBirdUser inviter;
-
-  public static final String SERIALIZED_NAME_IS_ACCESS_CODE_REQUIRED = "is_access_code_required";
-  @SerializedName(SERIALIZED_NAME_IS_ACCESS_CODE_REQUIRED)
-  private Boolean isAccessCodeRequired;
-
-  public static final String SERIALIZED_NAME_IS_BROADCAST = "is_broadcast";
-  @SerializedName(SERIALIZED_NAME_IS_BROADCAST)
-  private Boolean isBroadcast;
-
-  public static final String SERIALIZED_NAME_IS_CREATED = "is_created";
-  @SerializedName(SERIALIZED_NAME_IS_CREATED)
-  private Boolean isCreated;
-
-  public static final String SERIALIZED_NAME_IS_DISCOVERABLE = "is_discoverable";
-  @SerializedName(SERIALIZED_NAME_IS_DISCOVERABLE)
-  private Boolean isDiscoverable;
-
-  public static final String SERIALIZED_NAME_IS_DISTINCT = "is_distinct";
-  @SerializedName(SERIALIZED_NAME_IS_DISTINCT)
-  private Boolean isDistinct;
-
-  public static final String SERIALIZED_NAME_IS_EPHEMERAL = "is_ephemeral";
-  @SerializedName(SERIALIZED_NAME_IS_EPHEMERAL)
-  private Boolean isEphemeral;
-
-  public static final String SERIALIZED_NAME_IS_FROZEN = "is_frozen";
-  @SerializedName(SERIALIZED_NAME_IS_FROZEN)
-  private Boolean isFrozen;
-
-  public static final String SERIALIZED_NAME_IS_HIDDEN = "is_hidden";
-  @SerializedName(SERIALIZED_NAME_IS_HIDDEN)
-  private Boolean isHidden;
-
-  public static final String SERIALIZED_NAME_IS_PUBLIC = "is_public";
-  @SerializedName(SERIALIZED_NAME_IS_PUBLIC)
-  private Boolean isPublic;
-
-  public static final String SERIALIZED_NAME_IS_PUSH_ENABLED = "is_push_enabled";
-  @SerializedName(SERIALIZED_NAME_IS_PUSH_ENABLED)
-  private Boolean isPushEnabled;
-
-  public static final String SERIALIZED_NAME_IS_SUPER = "is_super";
-  @SerializedName(SERIALIZED_NAME_IS_SUPER)
-  private Boolean isSuper;
-
-  public static final String SERIALIZED_NAME_JOINED_AT = "joined_at";
-  @SerializedName(SERIALIZED_NAME_JOINED_AT)
-  private BigDecimal joinedAt;
-
-  public static final String SERIALIZED_NAME_JOINED_MEMBER_COUNT = "joined_member_count";
-  @SerializedName(SERIALIZED_NAME_JOINED_MEMBER_COUNT)
-  private BigDecimal joinedMemberCount;
-
-  public static final String SERIALIZED_NAME_LAST_MESSAGE = "last_message";
-  @SerializedName(SERIALIZED_NAME_LAST_MESSAGE)
-  private SendBirdMessageResponse lastMessage;
-
-  public static final String SERIALIZED_NAME_MAX_LENGTH_MESSAGE = "max_length_message";
-  @SerializedName(SERIALIZED_NAME_MAX_LENGTH_MESSAGE)
-  private BigDecimal maxLengthMessage;
-
-  public static final String SERIALIZED_NAME_MEMBER_COUNT = "member_count";
-  @SerializedName(SERIALIZED_NAME_MEMBER_COUNT)
-  private BigDecimal memberCount;
-
-  public static final String SERIALIZED_NAME_MEMBERS = "members";
-  @SerializedName(SERIALIZED_NAME_MEMBERS)
-  private List<SendBirdMember> members = null;
-
-  public static final String SERIALIZED_NAME_MESSAGE_OFFSET_TIMESTAMP = "message_offset_timestamp";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_OFFSET_TIMESTAMP)
-  private BigDecimal messageOffsetTimestamp;
-
-  public static final String SERIALIZED_NAME_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_SURVIVAL_SECONDS)
-  private BigDecimal messageSurvivalSeconds;
-
-  public static final String SERIALIZED_NAME_MY_COUNT_PREFERENCE = "my_count_preference";
-  @SerializedName(SERIALIZED_NAME_MY_COUNT_PREFERENCE)
-  private String myCountPreference;
-
-  public static final String SERIALIZED_NAME_MY_LAST_READ = "my_last_read";
-  @SerializedName(SERIALIZED_NAME_MY_LAST_READ)
-  private BigDecimal myLastRead;
-
-  /**
-   * Gets or Sets myMemberState
-   */
-  @JsonAdapter(MyMemberStateEnum.Adapter.class)
-  public enum MyMemberStateEnum {
-    INVITED("invited"),
-    
-    JOINED("joined"),
-    
-    NONE("none");
-
-    private String value;
-
-    MyMemberStateEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
+    /**
+     * Set the instance that matches the anyOf child schema, check
+     * the instance parameter is valid against the anyOf child schemas:
+     * SendBirdGroupChannel, SendBirdOpenChannel
+     *
+     * It could be an instance of the 'anyOf' schemas.
+     * The anyOf child schemas may themselves be a composed schema (allOf, anyOf, anyOf).
+     */
     @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static MyMemberStateEnum fromValue(String value) {
-      for (MyMemberStateEnum b : MyMemberStateEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    public void setActualInstance(Object instance) {
+        if (instance instanceof SendBirdGroupChannel) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+
+        if (instance instanceof SendBirdOpenChannel) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be SendBirdGroupChannel, SendBirdOpenChannel");
     }
 
-    public static class Adapter extends TypeAdapter<MyMemberStateEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MyMemberStateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MyMemberStateEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MyMemberStateEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_MY_MEMBER_STATE = "my_member_state";
-  @SerializedName(SERIALIZED_NAME_MY_MEMBER_STATE)
-  private MyMemberStateEnum myMemberState;
-
-  /**
-   * Gets or Sets myMutedState
-   */
-  @JsonAdapter(MyMutedStateEnum.Adapter.class)
-  public enum MyMutedStateEnum {
-    MUTED("muted"),
-    
-    UNMUTED("unmuted");
-
-    private String value;
-
-    MyMutedStateEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
+    /**
+     * Get the actual instance, which can be the following:
+     * SendBirdGroupChannel, SendBirdOpenChannel
+     *
+     * @return The actual instance (SendBirdGroupChannel, SendBirdOpenChannel)
+     */
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Object getActualInstance() {
+        return super.getActualInstance();
     }
 
-    public static MyMutedStateEnum fromValue(String value) {
-      for (MyMutedStateEnum b : MyMutedStateEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    /**
+     * Get the actual instance of `SendBirdGroupChannel`. If the actual instance is not `SendBirdGroupChannel`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `SendBirdGroupChannel`
+     * @throws ClassCastException if the instance is not `SendBirdGroupChannel`
+     */
+    public SendBirdGroupChannel getSendBirdGroupChannel() throws ClassCastException {
+        return (SendBirdGroupChannel)super.getActualInstance();
     }
 
-    public static class Adapter extends TypeAdapter<MyMutedStateEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MyMutedStateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MyMutedStateEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MyMutedStateEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_MY_MUTED_STATE = "my_muted_state";
-  @SerializedName(SERIALIZED_NAME_MY_MUTED_STATE)
-  private MyMutedStateEnum myMutedState;
-
-  /**
-   * Gets or Sets myPushTriggerOption
-   */
-  @JsonAdapter(MyPushTriggerOptionEnum.Adapter.class)
-  public enum MyPushTriggerOptionEnum {
-    ALL("all"),
-    
-    DEFAULT("default"),
-    
-    MENTION_ONLY("mention_only"),
-    
-    FALSE("false");
-
-    private String value;
-
-    MyPushTriggerOptionEnum(String value) {
-      this.value = value;
+    /**
+     * Get the actual instance of `SendBirdOpenChannel`. If the actual instance is not `SendBirdOpenChannel`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `SendBirdOpenChannel`
+     * @throws ClassCastException if the instance is not `SendBirdOpenChannel`
+     */
+    public SendBirdOpenChannel getSendBirdOpenChannel() throws ClassCastException {
+        return (SendBirdOpenChannel)super.getActualInstance();
     }
 
-    public String getValue() {
-      return value;
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to SendBirdChannelResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate anyOf schemas one by one
+    int validCount = 0;
+    // validate the json string with SendBirdGroupChannel
+    try {
+      SendBirdGroupChannel.validateJsonObject(jsonObj);
+      return; // return earlier as at least one schema is valid with respect to the Json object
+      //validCount++;
+    } catch (Exception e) {
+      // continue to the next one
     }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
+    // validate the json string with SendBirdOpenChannel
+    try {
+      SendBirdOpenChannel.validateJsonObject(jsonObj);
+      return; // return earlier as at least one schema is valid with respect to the Json object
+      //validCount++;
+    } catch (Exception e) {
+      // continue to the next one
     }
-
-    public static MyPushTriggerOptionEnum fromValue(String value) {
-      for (MyPushTriggerOptionEnum b : MyPushTriggerOptionEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<MyPushTriggerOptionEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MyPushTriggerOptionEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MyPushTriggerOptionEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MyPushTriggerOptionEnum.fromValue(value);
-      }
+    if (validCount == 0) {
+      throw new IOException(String.format("The JSON string is invalid for SendBirdChannelResponse with anyOf schemas: SendBirdGroupChannel, SendBirdOpenChannel. JSON: %s", jsonObj.toString()));
     }
   }
 
-  public static final String SERIALIZED_NAME_MY_PUSH_TRIGGER_OPTION = "my_push_trigger_option";
-  @SerializedName(SERIALIZED_NAME_MY_PUSH_TRIGGER_OPTION)
-  private MyPushTriggerOptionEnum myPushTriggerOption;
-
-  /**
-   * Gets or Sets myRole
-   */
-  @JsonAdapter(MyRoleEnum.Adapter.class)
-  public enum MyRoleEnum {
-    NONE("none"),
-    
-    OPERATOR("operator");
-
-    private String value;
-
-    MyRoleEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static MyRoleEnum fromValue(String value) {
-      for (MyRoleEnum b : MyRoleEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<MyRoleEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MyRoleEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MyRoleEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MyRoleEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_MY_ROLE = "my_role";
-  @SerializedName(SERIALIZED_NAME_MY_ROLE)
-  private MyRoleEnum myRole;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  public static final String SERIALIZED_NAME_OPERATORS = "operators";
-  @SerializedName(SERIALIZED_NAME_OPERATORS)
-  private List<SendBirdUser> operators = null;
-
-  public static final String SERIALIZED_NAME_SMS_FALLBACK = "sms_fallback";
-  @SerializedName(SERIALIZED_NAME_SMS_FALLBACK)
-  private SendBirdGroupChannelSmsFallback smsFallback;
-
-  public static final String SERIALIZED_NAME_UNREAD_MENTION_COUNT = "unread_mention_count";
-  @SerializedName(SERIALIZED_NAME_UNREAD_MENTION_COUNT)
-  private BigDecimal unreadMentionCount;
-
-  public static final String SERIALIZED_NAME_UNREAD_MESSAGE_COUNT = "unread_message_count";
-  @SerializedName(SERIALIZED_NAME_UNREAD_MESSAGE_COUNT)
-  private BigDecimal unreadMessageCount;
-
-  public static final String SERIALIZED_NAME_IS_DYNAMIC_PARTITIONED = "is_dynamic_partitioned";
-  @SerializedName(SERIALIZED_NAME_IS_DYNAMIC_PARTITIONED)
-  private Boolean isDynamicPartitioned;
-
-  public static final String SERIALIZED_NAME_PARTICIPANT_COUNT = "participant_count";
-  @SerializedName(SERIALIZED_NAME_PARTICIPANT_COUNT)
-  private BigDecimal participantCount;
-
-  public SendBirdChannelResponse() { 
-  }
-
-  public SendBirdChannelResponse channelUrl(String channelUrl) {
-    
-    this.channelUrl = channelUrl;
-    return this;
-  }
-
-   /**
-   * Get channelUrl
-   * @return channelUrl
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getChannelUrl() {
-    return channelUrl;
-  }
-
-
-  public void setChannelUrl(String channelUrl) {
-    this.channelUrl = channelUrl;
-  }
-
-
-  public SendBirdChannelResponse coverUrl(String coverUrl) {
-    
-    this.coverUrl = coverUrl;
-    return this;
-  }
-
-   /**
-   * Get coverUrl
-   * @return coverUrl
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getCoverUrl() {
-    return coverUrl;
-  }
-
-
-  public void setCoverUrl(String coverUrl) {
-    this.coverUrl = coverUrl;
-  }
-
-
-  public SendBirdChannelResponse createdAt(BigDecimal createdAt) {
-    
-    this.createdAt = createdAt;
-    return this;
-  }
-
-   /**
-   * Get createdAt
-   * @return createdAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getCreatedAt() {
-    return createdAt;
-  }
-
-
-  public void setCreatedAt(BigDecimal createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public SendBirdChannelResponse createdBy(SendBirdGroupChannelCreatedBy createdBy) {
-    
-    this.createdBy = createdBy;
-    return this;
-  }
-
-   /**
-   * Get createdBy
-   * @return createdBy
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SendBirdGroupChannelCreatedBy getCreatedBy() {
-    return createdBy;
-  }
-
-
-  public void setCreatedBy(SendBirdGroupChannelCreatedBy createdBy) {
-    this.createdBy = createdBy;
-  }
-
-
-  public SendBirdChannelResponse creator(SendBirdUser creator) {
-    
-    this.creator = creator;
-    return this;
-  }
-
-   /**
-   * Get creator
-   * @return creator
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SendBirdUser getCreator() {
-    return creator;
-  }
-
-
-  public void setCreator(SendBirdUser creator) {
-    this.creator = creator;
-  }
-
-
-  public SendBirdChannelResponse customType(String customType) {
-    
-    this.customType = customType;
-    return this;
-  }
-
-   /**
-   * Get customType
-   * @return customType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getCustomType() {
-    return customType;
-  }
-
-
-  public void setCustomType(String customType) {
-    this.customType = customType;
-  }
-
-
-  public SendBirdChannelResponse data(String data) {
-    
-    this.data = data;
-    return this;
-  }
-
-   /**
-   * Get data
-   * @return data
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getData() {
-    return data;
-  }
-
-
-  public void setData(String data) {
-    this.data = data;
-  }
-
-
-  public SendBirdChannelResponse disappearingMessage(SendBirdGroupChannelDisappearingMessage disappearingMessage) {
-    
-    this.disappearingMessage = disappearingMessage;
-    return this;
-  }
-
-   /**
-   * Get disappearingMessage
-   * @return disappearingMessage
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SendBirdGroupChannelDisappearingMessage getDisappearingMessage() {
-    return disappearingMessage;
-  }
-
-
-  public void setDisappearingMessage(SendBirdGroupChannelDisappearingMessage disappearingMessage) {
-    this.disappearingMessage = disappearingMessage;
-  }
-
-
-  public SendBirdChannelResponse freeze(Boolean freeze) {
-    
-    this.freeze = freeze;
-    return this;
-  }
-
-   /**
-   * Get freeze
-   * @return freeze
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getFreeze() {
-    return freeze;
-  }
-
-
-  public void setFreeze(Boolean freeze) {
-    this.freeze = freeze;
-  }
-
-
-  public SendBirdChannelResponse ignoreProfanityFilter(Boolean ignoreProfanityFilter) {
-    
-    this.ignoreProfanityFilter = ignoreProfanityFilter;
-    return this;
-  }
-
-   /**
-   * Get ignoreProfanityFilter
-   * @return ignoreProfanityFilter
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIgnoreProfanityFilter() {
-    return ignoreProfanityFilter;
-  }
-
-
-  public void setIgnoreProfanityFilter(Boolean ignoreProfanityFilter) {
-    this.ignoreProfanityFilter = ignoreProfanityFilter;
-  }
-
-
-  public SendBirdChannelResponse hiddenState(HiddenStateEnum hiddenState) {
-    
-    this.hiddenState = hiddenState;
-    return this;
-  }
-
-   /**
-   * Get hiddenState
-   * @return hiddenState
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public HiddenStateEnum getHiddenState() {
-    return hiddenState;
-  }
-
-
-  public void setHiddenState(HiddenStateEnum hiddenState) {
-    this.hiddenState = hiddenState;
-  }
-
-
-  public SendBirdChannelResponse invitedAt(BigDecimal invitedAt) {
-    
-    this.invitedAt = invitedAt;
-    return this;
-  }
-
-   /**
-   * Get invitedAt
-   * @return invitedAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getInvitedAt() {
-    return invitedAt;
-  }
-
-
-  public void setInvitedAt(BigDecimal invitedAt) {
-    this.invitedAt = invitedAt;
-  }
-
-
-  public SendBirdChannelResponse inviter(SendBirdUser inviter) {
-    
-    this.inviter = inviter;
-    return this;
-  }
-
-   /**
-   * Get inviter
-   * @return inviter
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SendBirdUser getInviter() {
-    return inviter;
-  }
-
-
-  public void setInviter(SendBirdUser inviter) {
-    this.inviter = inviter;
-  }
-
-
-  public SendBirdChannelResponse isAccessCodeRequired(Boolean isAccessCodeRequired) {
-    
-    this.isAccessCodeRequired = isAccessCodeRequired;
-    return this;
-  }
-
-   /**
-   * Get isAccessCodeRequired
-   * @return isAccessCodeRequired
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsAccessCodeRequired() {
-    return isAccessCodeRequired;
-  }
-
-
-  public void setIsAccessCodeRequired(Boolean isAccessCodeRequired) {
-    this.isAccessCodeRequired = isAccessCodeRequired;
-  }
-
-
-  public SendBirdChannelResponse isBroadcast(Boolean isBroadcast) {
-    
-    this.isBroadcast = isBroadcast;
-    return this;
-  }
-
-   /**
-   * Get isBroadcast
-   * @return isBroadcast
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsBroadcast() {
-    return isBroadcast;
-  }
-
-
-  public void setIsBroadcast(Boolean isBroadcast) {
-    this.isBroadcast = isBroadcast;
-  }
-
-
-  public SendBirdChannelResponse isCreated(Boolean isCreated) {
-    
-    this.isCreated = isCreated;
-    return this;
-  }
-
-   /**
-   * Get isCreated
-   * @return isCreated
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsCreated() {
-    return isCreated;
-  }
-
-
-  public void setIsCreated(Boolean isCreated) {
-    this.isCreated = isCreated;
-  }
-
-
-  public SendBirdChannelResponse isDiscoverable(Boolean isDiscoverable) {
-    
-    this.isDiscoverable = isDiscoverable;
-    return this;
-  }
-
-   /**
-   * Get isDiscoverable
-   * @return isDiscoverable
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsDiscoverable() {
-    return isDiscoverable;
-  }
-
-
-  public void setIsDiscoverable(Boolean isDiscoverable) {
-    this.isDiscoverable = isDiscoverable;
-  }
-
-
-  public SendBirdChannelResponse isDistinct(Boolean isDistinct) {
-    
-    this.isDistinct = isDistinct;
-    return this;
-  }
-
-   /**
-   * Get isDistinct
-   * @return isDistinct
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsDistinct() {
-    return isDistinct;
-  }
-
-
-  public void setIsDistinct(Boolean isDistinct) {
-    this.isDistinct = isDistinct;
-  }
-
-
-  public SendBirdChannelResponse isEphemeral(Boolean isEphemeral) {
-    
-    this.isEphemeral = isEphemeral;
-    return this;
-  }
-
-   /**
-   * Get isEphemeral
-   * @return isEphemeral
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsEphemeral() {
-    return isEphemeral;
-  }
-
-
-  public void setIsEphemeral(Boolean isEphemeral) {
-    this.isEphemeral = isEphemeral;
-  }
-
-
-  public SendBirdChannelResponse isFrozen(Boolean isFrozen) {
-    
-    this.isFrozen = isFrozen;
-    return this;
-  }
-
-   /**
-   * Get isFrozen
-   * @return isFrozen
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsFrozen() {
-    return isFrozen;
-  }
-
-
-  public void setIsFrozen(Boolean isFrozen) {
-    this.isFrozen = isFrozen;
-  }
-
-
-  public SendBirdChannelResponse isHidden(Boolean isHidden) {
-    
-    this.isHidden = isHidden;
-    return this;
-  }
-
-   /**
-   * Get isHidden
-   * @return isHidden
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsHidden() {
-    return isHidden;
-  }
-
-
-  public void setIsHidden(Boolean isHidden) {
-    this.isHidden = isHidden;
-  }
-
-
-  public SendBirdChannelResponse isPublic(Boolean isPublic) {
-    
-    this.isPublic = isPublic;
-    return this;
-  }
-
-   /**
-   * Get isPublic
-   * @return isPublic
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsPublic() {
-    return isPublic;
-  }
-
-
-  public void setIsPublic(Boolean isPublic) {
-    this.isPublic = isPublic;
-  }
-
-
-  public SendBirdChannelResponse isPushEnabled(Boolean isPushEnabled) {
-    
-    this.isPushEnabled = isPushEnabled;
-    return this;
+ /**
+  * Create an instance of SendBirdChannelResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SendBirdChannelResponse
+  * @throws IOException if the JSON string is invalid with respect to SendBirdChannelResponse
+  */
+  public static SendBirdChannelResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SendBirdChannelResponse.class);
+  }
+
+ /**
+  * Convert an instance of SendBirdChannelResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
-
-   /**
-   * Get isPushEnabled
-   * @return isPushEnabled
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsPushEnabled() {
-    return isPushEnabled;
-  }
-
-
-  public void setIsPushEnabled(Boolean isPushEnabled) {
-    this.isPushEnabled = isPushEnabled;
-  }
-
-
-  public SendBirdChannelResponse isSuper(Boolean isSuper) {
-    
-    this.isSuper = isSuper;
-    return this;
-  }
-
-   /**
-   * Get isSuper
-   * @return isSuper
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsSuper() {
-    return isSuper;
-  }
-
-
-  public void setIsSuper(Boolean isSuper) {
-    this.isSuper = isSuper;
-  }
-
-
-  public SendBirdChannelResponse joinedAt(BigDecimal joinedAt) {
-    
-    this.joinedAt = joinedAt;
-    return this;
-  }
-
-   /**
-   * Get joinedAt
-   * @return joinedAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getJoinedAt() {
-    return joinedAt;
-  }
-
-
-  public void setJoinedAt(BigDecimal joinedAt) {
-    this.joinedAt = joinedAt;
-  }
-
-
-  public SendBirdChannelResponse joinedMemberCount(BigDecimal joinedMemberCount) {
-    
-    this.joinedMemberCount = joinedMemberCount;
-    return this;
-  }
-
-   /**
-   * Get joinedMemberCount
-   * @return joinedMemberCount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getJoinedMemberCount() {
-    return joinedMemberCount;
-  }
-
-
-  public void setJoinedMemberCount(BigDecimal joinedMemberCount) {
-    this.joinedMemberCount = joinedMemberCount;
-  }
-
-
-  public SendBirdChannelResponse lastMessage(SendBirdMessageResponse lastMessage) {
-    
-    this.lastMessage = lastMessage;
-    return this;
-  }
-
-   /**
-   * Get lastMessage
-   * @return lastMessage
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SendBirdMessageResponse getLastMessage() {
-    return lastMessage;
-  }
-
-
-  public void setLastMessage(SendBirdMessageResponse lastMessage) {
-    this.lastMessage = lastMessage;
-  }
-
-
-  public SendBirdChannelResponse maxLengthMessage(BigDecimal maxLengthMessage) {
-    
-    this.maxLengthMessage = maxLengthMessage;
-    return this;
-  }
-
-   /**
-   * Get maxLengthMessage
-   * @return maxLengthMessage
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getMaxLengthMessage() {
-    return maxLengthMessage;
-  }
-
-
-  public void setMaxLengthMessage(BigDecimal maxLengthMessage) {
-    this.maxLengthMessage = maxLengthMessage;
-  }
-
-
-  public SendBirdChannelResponse memberCount(BigDecimal memberCount) {
-    
-    this.memberCount = memberCount;
-    return this;
-  }
-
-   /**
-   * Get memberCount
-   * @return memberCount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getMemberCount() {
-    return memberCount;
-  }
-
-
-  public void setMemberCount(BigDecimal memberCount) {
-    this.memberCount = memberCount;
-  }
-
-
-  public SendBirdChannelResponse members(List<SendBirdMember> members) {
-    
-    this.members = members;
-    return this;
-  }
-
-  public SendBirdChannelResponse addMembersItem(SendBirdMember membersItem) {
-    if (this.members == null) {
-      this.members = new ArrayList<SendBirdMember>();
-    }
-    this.members.add(membersItem);
-    return this;
-  }
-
-   /**
-   * Get members
-   * @return members
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<SendBirdMember> getMembers() {
-    return members;
-  }
-
-
-  public void setMembers(List<SendBirdMember> members) {
-    this.members = members;
-  }
-
-
-  public SendBirdChannelResponse messageOffsetTimestamp(BigDecimal messageOffsetTimestamp) {
-    
-    this.messageOffsetTimestamp = messageOffsetTimestamp;
-    return this;
-  }
-
-   /**
-   * Get messageOffsetTimestamp
-   * @return messageOffsetTimestamp
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getMessageOffsetTimestamp() {
-    return messageOffsetTimestamp;
-  }
-
-
-  public void setMessageOffsetTimestamp(BigDecimal messageOffsetTimestamp) {
-    this.messageOffsetTimestamp = messageOffsetTimestamp;
-  }
-
-
-  public SendBirdChannelResponse messageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
-    
-    this.messageSurvivalSeconds = messageSurvivalSeconds;
-    return this;
-  }
-
-   /**
-   * Get messageSurvivalSeconds
-   * @return messageSurvivalSeconds
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getMessageSurvivalSeconds() {
-    return messageSurvivalSeconds;
-  }
-
-
-  public void setMessageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
-    this.messageSurvivalSeconds = messageSurvivalSeconds;
-  }
-
-
-  public SendBirdChannelResponse myCountPreference(String myCountPreference) {
-    
-    this.myCountPreference = myCountPreference;
-    return this;
-  }
-
-   /**
-   * Get myCountPreference
-   * @return myCountPreference
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getMyCountPreference() {
-    return myCountPreference;
-  }
-
-
-  public void setMyCountPreference(String myCountPreference) {
-    this.myCountPreference = myCountPreference;
-  }
-
-
-  public SendBirdChannelResponse myLastRead(BigDecimal myLastRead) {
-    
-    this.myLastRead = myLastRead;
-    return this;
-  }
-
-   /**
-   * Get myLastRead
-   * @return myLastRead
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getMyLastRead() {
-    return myLastRead;
-  }
-
-
-  public void setMyLastRead(BigDecimal myLastRead) {
-    this.myLastRead = myLastRead;
-  }
-
-
-  public SendBirdChannelResponse myMemberState(MyMemberStateEnum myMemberState) {
-    
-    this.myMemberState = myMemberState;
-    return this;
-  }
-
-   /**
-   * Get myMemberState
-   * @return myMemberState
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public MyMemberStateEnum getMyMemberState() {
-    return myMemberState;
-  }
-
-
-  public void setMyMemberState(MyMemberStateEnum myMemberState) {
-    this.myMemberState = myMemberState;
-  }
-
-
-  public SendBirdChannelResponse myMutedState(MyMutedStateEnum myMutedState) {
-    
-    this.myMutedState = myMutedState;
-    return this;
-  }
-
-   /**
-   * Get myMutedState
-   * @return myMutedState
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public MyMutedStateEnum getMyMutedState() {
-    return myMutedState;
-  }
-
-
-  public void setMyMutedState(MyMutedStateEnum myMutedState) {
-    this.myMutedState = myMutedState;
-  }
-
-
-  public SendBirdChannelResponse myPushTriggerOption(MyPushTriggerOptionEnum myPushTriggerOption) {
-    
-    this.myPushTriggerOption = myPushTriggerOption;
-    return this;
-  }
-
-   /**
-   * Get myPushTriggerOption
-   * @return myPushTriggerOption
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public MyPushTriggerOptionEnum getMyPushTriggerOption() {
-    return myPushTriggerOption;
-  }
-
-
-  public void setMyPushTriggerOption(MyPushTriggerOptionEnum myPushTriggerOption) {
-    this.myPushTriggerOption = myPushTriggerOption;
-  }
-
-
-  public SendBirdChannelResponse myRole(MyRoleEnum myRole) {
-    
-    this.myRole = myRole;
-    return this;
-  }
-
-   /**
-   * Get myRole
-   * @return myRole
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public MyRoleEnum getMyRole() {
-    return myRole;
-  }
-
-
-  public void setMyRole(MyRoleEnum myRole) {
-    this.myRole = myRole;
-  }
-
-
-  public SendBirdChannelResponse name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public SendBirdChannelResponse operators(List<SendBirdUser> operators) {
-    
-    this.operators = operators;
-    return this;
-  }
-
-  public SendBirdChannelResponse addOperatorsItem(SendBirdUser operatorsItem) {
-    if (this.operators == null) {
-      this.operators = new ArrayList<SendBirdUser>();
-    }
-    this.operators.add(operatorsItem);
-    return this;
-  }
-
-   /**
-   * Get operators
-   * @return operators
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<SendBirdUser> getOperators() {
-    return operators;
-  }
-
-
-  public void setOperators(List<SendBirdUser> operators) {
-    this.operators = operators;
-  }
-
-
-  public SendBirdChannelResponse smsFallback(SendBirdGroupChannelSmsFallback smsFallback) {
-    
-    this.smsFallback = smsFallback;
-    return this;
-  }
-
-   /**
-   * Get smsFallback
-   * @return smsFallback
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SendBirdGroupChannelSmsFallback getSmsFallback() {
-    return smsFallback;
-  }
-
-
-  public void setSmsFallback(SendBirdGroupChannelSmsFallback smsFallback) {
-    this.smsFallback = smsFallback;
-  }
-
-
-  public SendBirdChannelResponse unreadMentionCount(BigDecimal unreadMentionCount) {
-    
-    this.unreadMentionCount = unreadMentionCount;
-    return this;
-  }
-
-   /**
-   * Get unreadMentionCount
-   * @return unreadMentionCount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getUnreadMentionCount() {
-    return unreadMentionCount;
-  }
-
-
-  public void setUnreadMentionCount(BigDecimal unreadMentionCount) {
-    this.unreadMentionCount = unreadMentionCount;
-  }
-
-
-  public SendBirdChannelResponse unreadMessageCount(BigDecimal unreadMessageCount) {
-    
-    this.unreadMessageCount = unreadMessageCount;
-    return this;
-  }
-
-   /**
-   * Get unreadMessageCount
-   * @return unreadMessageCount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getUnreadMessageCount() {
-    return unreadMessageCount;
-  }
-
-
-  public void setUnreadMessageCount(BigDecimal unreadMessageCount) {
-    this.unreadMessageCount = unreadMessageCount;
-  }
-
-
-  public SendBirdChannelResponse isDynamicPartitioned(Boolean isDynamicPartitioned) {
-    
-    this.isDynamicPartitioned = isDynamicPartitioned;
-    return this;
-  }
-
-   /**
-   * Get isDynamicPartitioned
-   * @return isDynamicPartitioned
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsDynamicPartitioned() {
-    return isDynamicPartitioned;
-  }
-
-
-  public void setIsDynamicPartitioned(Boolean isDynamicPartitioned) {
-    this.isDynamicPartitioned = isDynamicPartitioned;
-  }
-
-
-  public SendBirdChannelResponse participantCount(BigDecimal participantCount) {
-    
-    this.participantCount = participantCount;
-    return this;
-  }
-
-   /**
-   * Get participantCount
-   * @return participantCount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public BigDecimal getParticipantCount() {
-    return participantCount;
-  }
-
-
-  public void setParticipantCount(BigDecimal participantCount) {
-    this.participantCount = participantCount;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SendBirdChannelResponse sendBirdChannelResponse = (SendBirdChannelResponse) o;
-    return Objects.equals(this.channelUrl, sendBirdChannelResponse.channelUrl) &&
-        Objects.equals(this.coverUrl, sendBirdChannelResponse.coverUrl) &&
-        Objects.equals(this.createdAt, sendBirdChannelResponse.createdAt) &&
-        Objects.equals(this.createdBy, sendBirdChannelResponse.createdBy) &&
-        Objects.equals(this.creator, sendBirdChannelResponse.creator) &&
-        Objects.equals(this.customType, sendBirdChannelResponse.customType) &&
-        Objects.equals(this.data, sendBirdChannelResponse.data) &&
-        Objects.equals(this.disappearingMessage, sendBirdChannelResponse.disappearingMessage) &&
-        Objects.equals(this.freeze, sendBirdChannelResponse.freeze) &&
-        Objects.equals(this.ignoreProfanityFilter, sendBirdChannelResponse.ignoreProfanityFilter) &&
-        Objects.equals(this.hiddenState, sendBirdChannelResponse.hiddenState) &&
-        Objects.equals(this.invitedAt, sendBirdChannelResponse.invitedAt) &&
-        Objects.equals(this.inviter, sendBirdChannelResponse.inviter) &&
-        Objects.equals(this.isAccessCodeRequired, sendBirdChannelResponse.isAccessCodeRequired) &&
-        Objects.equals(this.isBroadcast, sendBirdChannelResponse.isBroadcast) &&
-        Objects.equals(this.isCreated, sendBirdChannelResponse.isCreated) &&
-        Objects.equals(this.isDiscoverable, sendBirdChannelResponse.isDiscoverable) &&
-        Objects.equals(this.isDistinct, sendBirdChannelResponse.isDistinct) &&
-        Objects.equals(this.isEphemeral, sendBirdChannelResponse.isEphemeral) &&
-        Objects.equals(this.isFrozen, sendBirdChannelResponse.isFrozen) &&
-        Objects.equals(this.isHidden, sendBirdChannelResponse.isHidden) &&
-        Objects.equals(this.isPublic, sendBirdChannelResponse.isPublic) &&
-        Objects.equals(this.isPushEnabled, sendBirdChannelResponse.isPushEnabled) &&
-        Objects.equals(this.isSuper, sendBirdChannelResponse.isSuper) &&
-        Objects.equals(this.joinedAt, sendBirdChannelResponse.joinedAt) &&
-        Objects.equals(this.joinedMemberCount, sendBirdChannelResponse.joinedMemberCount) &&
-        Objects.equals(this.lastMessage, sendBirdChannelResponse.lastMessage) &&
-        Objects.equals(this.maxLengthMessage, sendBirdChannelResponse.maxLengthMessage) &&
-        Objects.equals(this.memberCount, sendBirdChannelResponse.memberCount) &&
-        Objects.equals(this.members, sendBirdChannelResponse.members) &&
-        Objects.equals(this.messageOffsetTimestamp, sendBirdChannelResponse.messageOffsetTimestamp) &&
-        Objects.equals(this.messageSurvivalSeconds, sendBirdChannelResponse.messageSurvivalSeconds) &&
-        Objects.equals(this.myCountPreference, sendBirdChannelResponse.myCountPreference) &&
-        Objects.equals(this.myLastRead, sendBirdChannelResponse.myLastRead) &&
-        Objects.equals(this.myMemberState, sendBirdChannelResponse.myMemberState) &&
-        Objects.equals(this.myMutedState, sendBirdChannelResponse.myMutedState) &&
-        Objects.equals(this.myPushTriggerOption, sendBirdChannelResponse.myPushTriggerOption) &&
-        Objects.equals(this.myRole, sendBirdChannelResponse.myRole) &&
-        Objects.equals(this.name, sendBirdChannelResponse.name) &&
-        Objects.equals(this.operators, sendBirdChannelResponse.operators) &&
-        Objects.equals(this.smsFallback, sendBirdChannelResponse.smsFallback) &&
-        Objects.equals(this.unreadMentionCount, sendBirdChannelResponse.unreadMentionCount) &&
-        Objects.equals(this.unreadMessageCount, sendBirdChannelResponse.unreadMessageCount) &&
-        Objects.equals(this.isDynamicPartitioned, sendBirdChannelResponse.isDynamicPartitioned) &&
-        Objects.equals(this.participantCount, sendBirdChannelResponse.participantCount);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(channelUrl, coverUrl, createdAt, createdBy, creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, lastMessage, maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, isDynamicPartitioned, participantCount);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdChannelResponse {\n");
-    sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
-    sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
-    sb.append("    customType: ").append(toIndentedString(customType)).append("\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
-    sb.append("    disappearingMessage: ").append(toIndentedString(disappearingMessage)).append("\n");
-    sb.append("    freeze: ").append(toIndentedString(freeze)).append("\n");
-    sb.append("    ignoreProfanityFilter: ").append(toIndentedString(ignoreProfanityFilter)).append("\n");
-    sb.append("    hiddenState: ").append(toIndentedString(hiddenState)).append("\n");
-    sb.append("    invitedAt: ").append(toIndentedString(invitedAt)).append("\n");
-    sb.append("    inviter: ").append(toIndentedString(inviter)).append("\n");
-    sb.append("    isAccessCodeRequired: ").append(toIndentedString(isAccessCodeRequired)).append("\n");
-    sb.append("    isBroadcast: ").append(toIndentedString(isBroadcast)).append("\n");
-    sb.append("    isCreated: ").append(toIndentedString(isCreated)).append("\n");
-    sb.append("    isDiscoverable: ").append(toIndentedString(isDiscoverable)).append("\n");
-    sb.append("    isDistinct: ").append(toIndentedString(isDistinct)).append("\n");
-    sb.append("    isEphemeral: ").append(toIndentedString(isEphemeral)).append("\n");
-    sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
-    sb.append("    isHidden: ").append(toIndentedString(isHidden)).append("\n");
-    sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
-    sb.append("    isPushEnabled: ").append(toIndentedString(isPushEnabled)).append("\n");
-    sb.append("    isSuper: ").append(toIndentedString(isSuper)).append("\n");
-    sb.append("    joinedAt: ").append(toIndentedString(joinedAt)).append("\n");
-    sb.append("    joinedMemberCount: ").append(toIndentedString(joinedMemberCount)).append("\n");
-    sb.append("    lastMessage: ").append(toIndentedString(lastMessage)).append("\n");
-    sb.append("    maxLengthMessage: ").append(toIndentedString(maxLengthMessage)).append("\n");
-    sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
-    sb.append("    members: ").append(toIndentedString(members)).append("\n");
-    sb.append("    messageOffsetTimestamp: ").append(toIndentedString(messageOffsetTimestamp)).append("\n");
-    sb.append("    messageSurvivalSeconds: ").append(toIndentedString(messageSurvivalSeconds)).append("\n");
-    sb.append("    myCountPreference: ").append(toIndentedString(myCountPreference)).append("\n");
-    sb.append("    myLastRead: ").append(toIndentedString(myLastRead)).append("\n");
-    sb.append("    myMemberState: ").append(toIndentedString(myMemberState)).append("\n");
-    sb.append("    myMutedState: ").append(toIndentedString(myMutedState)).append("\n");
-    sb.append("    myPushTriggerOption: ").append(toIndentedString(myPushTriggerOption)).append("\n");
-    sb.append("    myRole: ").append(toIndentedString(myRole)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    operators: ").append(toIndentedString(operators)).append("\n");
-    sb.append("    smsFallback: ").append(toIndentedString(smsFallback)).append("\n");
-    sb.append("    unreadMentionCount: ").append(toIndentedString(unreadMentionCount)).append("\n");
-    sb.append("    unreadMessageCount: ").append(toIndentedString(unreadMessageCount)).append("\n");
-    sb.append("    isDynamicPartitioned: ").append(toIndentedString(isDynamicPartitioned)).append("\n");
-    sb.append("    participantCount: ").append(toIndentedString(participantCount)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
 }
 

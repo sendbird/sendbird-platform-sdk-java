@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class StatisticsApi {
     private ApiClient localVarApiClient;
@@ -90,7 +91,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call retrieveAdvancedAnalyticsMetricsCall(String apiToken, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -130,7 +130,7 @@ public class StatisticsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -221,7 +221,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call viewNumberOfConcurrentConnectionsCall(String apiToken, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -261,7 +260,7 @@ public class StatisticsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -353,7 +352,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call viewNumberOfDailyActiveUsersCall(String apiToken, String date, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -397,7 +395,7 @@ public class StatisticsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -492,7 +490,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call viewNumberOfMonthlyActiveUsersCall(String apiToken, String date, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -536,7 +533,7 @@ public class StatisticsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -637,7 +634,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call viewNumberOfPeakConnectionsCall(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -705,7 +701,7 @@ public class StatisticsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

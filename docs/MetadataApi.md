@@ -2,19 +2,19 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**viewChannelMetacounter**](MetadataApi.md#viewChannelMetacounter) | **GET** /v3/{channel_type}/{channel_url}/metacounter | View a channel metacounter - When retrieving all items of a channel metacounter
-[**viewChannelMetacounterByKey**](MetadataApi.md#viewChannelMetacounterByKey) | **GET** /v3/{channel_type}/{channel_url}/metacounter/{key} | View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
-[**viewChannelMetadata**](MetadataApi.md#viewChannelMetadata) | **GET** /v3/{channel_type}/{channel_url}/metadata | View a channel metadata - When retrieving all items of a channel metadata
-[**viewChannelMetadataByKey**](MetadataApi.md#viewChannelMetadataByKey) | **GET** /v3/{channel_type}/{channel_url}/metadata/{key} | View a channel metadata - When retrieving a specific item of a channel metadata by its key
-[**viewUserMetadata**](MetadataApi.md#viewUserMetadata) | **GET** /v3/users/{user_id}/metadata | View a user metadata - When retrieving all items of a user metadata
-[**viewUserMetadataByKey**](MetadataApi.md#viewUserMetadataByKey) | **GET** /v3/users/{user_id}/metadata/{key} | View a user metadata - When retrieving a specific item of a user metadata by its key
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**viewChannelMetacounter**](MetadataApi.md#viewChannelMetacounter) | **GET** /v3/{channel_type}/{channel_url}/metacounter | View a channel metacounter - When retrieving all items of a channel metacounter |
+| [**viewChannelMetacounterByKey**](MetadataApi.md#viewChannelMetacounterByKey) | **GET** /v3/{channel_type}/{channel_url}/metacounter/{key} | View a channel metacounter - When retrieving a specific item of a channel metacounter by its key |
+| [**viewChannelMetadata**](MetadataApi.md#viewChannelMetadata) | **GET** /v3/{channel_type}/{channel_url}/metadata | View a channel metadata - When retrieving all items of a channel metadata |
+| [**viewChannelMetadataByKey**](MetadataApi.md#viewChannelMetadataByKey) | **GET** /v3/{channel_type}/{channel_url}/metadata/{key} | View a channel metadata - When retrieving a specific item of a channel metadata by its key |
+| [**viewUserMetadata**](MetadataApi.md#viewUserMetadata) | **GET** /v3/users/{user_id}/metadata | View a user metadata - When retrieving all items of a user metadata |
+| [**viewUserMetadataByKey**](MetadataApi.md#viewUserMetadataByKey) | **GET** /v3/users/{user_id}/metadata/{key} | View a user metadata - When retrieving a specific item of a user metadata by its key |
 
 
 <a name="viewChannelMetacounter"></a>
 # **viewChannelMetacounter**
-> Map&lt;String, SendBirdAdditionalProperties&gt; viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys)
+> Map&lt;String, String&gt; viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys)
 
 View a channel metacounter - When retrieving all items of a channel metacounter
 
@@ -41,7 +41,7 @@ public class Example {
     String key = "key_example"; // String | 
     List<String> keys = Arrays.asList(); // List<String> | 
     try {
-      Map<String, SendBirdAdditionalProperties> result = apiInstance.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
+      Map<String, String> result = apiInstance.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetadataApi#viewChannelMetacounter");
@@ -56,17 +56,17 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **key** | **String**|  | [optional]
- **keys** | [**List&lt;String&gt;**](String.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **key** | **String**|  | [optional] |
+| **keys** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 
 ### Return type
 
-[**Map&lt;String, SendBirdAdditionalProperties&gt;**](SendBirdAdditionalProperties.md)
+**Map&lt;String, String&gt;**
 
 ### Authorization
 
@@ -80,11 +80,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewChannelMetacounterByKey"></a>
 # **viewChannelMetacounterByKey**
-> Map&lt;String, SendBirdAdditionalProperties&gt; viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key)
+> Object viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key)
 
 View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
 
@@ -110,7 +110,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String key = "key_example"; // String | 
     try {
-      Map<String, SendBirdAdditionalProperties> result = apiInstance.viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
+      Object result = apiInstance.viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetadataApi#viewChannelMetacounterByKey");
@@ -125,16 +125,16 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **key** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **key** | **String**|  | |
 
 ### Return type
 
-[**Map&lt;String, SendBirdAdditionalProperties&gt;**](SendBirdAdditionalProperties.md)
+**Object**
 
 ### Authorization
 
@@ -148,7 +148,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewChannelMetadata"></a>
 # **viewChannelMetadata**
@@ -194,13 +194,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **key** | **String**|  | [optional]
- **keys** | [**List&lt;String&gt;**](String.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **key** | **String**|  | [optional] |
+| **keys** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 
 ### Return type
 
@@ -218,7 +218,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewChannelMetadataByKey"></a>
 # **viewChannelMetadataByKey**
@@ -263,12 +263,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **key** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **key** | **String**|  | |
 
 ### Return type
 
@@ -286,7 +286,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewUserMetadata"></a>
 # **viewUserMetadata**
@@ -331,12 +331,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **key** | **String**|  | [optional]
- **keys** | [**List&lt;String&gt;**](String.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **key** | **String**|  | [optional] |
+| **keys** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 
 ### Return type
 
@@ -354,7 +354,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewUserMetadataByKey"></a>
 # **viewUserMetadataByKey**
@@ -398,11 +398,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **key** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **key** | **String**|  | |
 
 ### Return type
 
@@ -420,5 +420,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

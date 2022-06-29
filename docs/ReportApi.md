@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**listReports**](ReportApi.md#listReports) | **GET** /v3/report | List reports
-[**listReportsOnChannelByUrl**](ReportApi.md#listReportsOnChannelByUrl) | **GET** /v3/report/{channel_type}/{channel_url} | List reports on a channel
-[**listReportsOnMessageById**](ReportApi.md#listReportsOnMessageById) | **GET** /v3/report/{channel_type}/{channel_url}/messages/{message_id} | List reports on a message
-[**listReportsOnUserById**](ReportApi.md#listReportsOnUserById) | **GET** /v3/report/users/{offending_user_id} | List reports on a user
-[**reportChannelByUrl**](ReportApi.md#reportChannelByUrl) | **POST** /v3/report/{channel_type}/{channel_url} | Report a channel
-[**reportMessageById**](ReportApi.md#reportMessageById) | **POST** /v3/report/{channel_type}/{channel_url}/messages/{message_id} | Report a message
-[**reportUserById**](ReportApi.md#reportUserById) | **POST** /v3/report/users/{offending_user_id} | Report a user
-[**viewModeratedMessageById**](ReportApi.md#viewModeratedMessageById) | **GET** /v3/report/{channel_type}/{channel_url}/profanity_messages/{message_id} | View a moderated message
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**listReports**](ReportApi.md#listReports) | **GET** /v3/report | List reports |
+| [**listReportsOnChannelByUrl**](ReportApi.md#listReportsOnChannelByUrl) | **GET** /v3/report/{channel_type}/{channel_url} | List reports on a channel |
+| [**listReportsOnMessageById**](ReportApi.md#listReportsOnMessageById) | **GET** /v3/report/{channel_type}/{channel_url}/messages/{message_id} | List reports on a message |
+| [**listReportsOnUserById**](ReportApi.md#listReportsOnUserById) | **GET** /v3/report/users/{offending_user_id} | List reports on a user |
+| [**reportChannelByUrl**](ReportApi.md#reportChannelByUrl) | **POST** /v3/report/{channel_type}/{channel_url} | Report a channel |
+| [**reportMessageById**](ReportApi.md#reportMessageById) | **POST** /v3/report/{channel_type}/{channel_url}/messages/{message_id} | Report a message |
+| [**reportUserById**](ReportApi.md#reportUserById) | **POST** /v3/report/users/{offending_user_id} | Report a user |
+| [**viewModeratedMessageById**](ReportApi.md#viewModeratedMessageById) | **GET** /v3/report/{channel_type}/{channel_url}/profanity_messages/{message_id} | View a moderated message |
 
 
 <a name="listReports"></a>
@@ -58,13 +58,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **startTs** | **Integer**|  | [optional]
- **endTs** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **startTs** | **Integer**|  | [optional] |
+| **endTs** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -82,7 +82,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listReportsOnChannelByUrl"></a>
 # **listReportsOnChannelByUrl**
@@ -128,13 +128,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -152,7 +152,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listReportsOnMessageById"></a>
 # **listReportsOnMessageById**
@@ -199,14 +199,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -224,7 +224,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listReportsOnUserById"></a>
 # **listReportsOnUserById**
@@ -269,12 +269,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **offendingUserId** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **offendingUserId** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -292,7 +292,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="reportChannelByUrl"></a>
 # **reportChannelByUrl**
@@ -337,12 +337,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **reportChannelByUrlData** | [**ReportChannelByUrlData**](ReportChannelByUrlData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **reportChannelByUrlData** | [**ReportChannelByUrlData**](ReportChannelByUrlData.md)|  | [optional] |
 
 ### Return type
 
@@ -360,7 +360,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="reportMessageById"></a>
 # **reportMessageById**
@@ -406,13 +406,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **reportMessageByIdData** | [**ReportMessageByIdData**](ReportMessageByIdData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **reportMessageByIdData** | [**ReportMessageByIdData**](ReportMessageByIdData.md)|  | [optional] |
 
 ### Return type
 
@@ -430,7 +430,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="reportUserById"></a>
 # **reportUserById**
@@ -474,11 +474,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **offendingUserId** | **String**|  |
- **reportUserByIdData** | [**ReportUserByIdData**](ReportUserByIdData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **offendingUserId** | **String**|  | |
+| **reportUserByIdData** | [**ReportUserByIdData**](ReportUserByIdData.md)|  | [optional] |
 
 ### Return type
 
@@ -496,7 +496,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewModeratedMessageById"></a>
 # **viewModeratedMessageById**
@@ -541,12 +541,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
 
 ### Return type
 
@@ -564,5 +564,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse2001;
 import org.openapitools.client.model.OcCreateChannelData;
+import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.OcListChannelsResponse;
 import org.openapitools.client.model.OcListOperatorsResponse;
 import org.openapitools.client.model.OcListParticipantsResponse;
@@ -41,6 +41,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class OpenChannelApi {
     private ApiClient localVarApiClient;
@@ -96,7 +97,6 @@ public class OpenChannelApi {
      */
     public okhttp3.Call ocCancelTheRegistrationOfOperatorsCall(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -145,7 +145,7 @@ public class OpenChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -252,7 +252,6 @@ public class OpenChannelApi {
      */
     public okhttp3.Call ocCreateChannelCall(String apiToken, OcCreateChannelData ocCreateChannelData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -292,7 +291,7 @@ public class OpenChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -387,7 +386,6 @@ public class OpenChannelApi {
      */
     public okhttp3.Call ocDeleteChannelByUrlCall(String apiToken, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -428,7 +426,7 @@ public class OpenChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -460,7 +458,7 @@ public class OpenChannelApi {
      * ## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------
      * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -468,8 +466,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 ocDeleteChannelByUrl(String apiToken, String channelUrl) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = ocDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
+    public OcDeleteChannelByUrl200Response ocDeleteChannelByUrl(String apiToken, String channelUrl) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = ocDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
         return localVarResp.getData();
     }
 
@@ -478,7 +476,7 @@ public class OpenChannelApi {
      * ## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------
      * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -486,9 +484,9 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> ocDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
         okhttp3.Call localVarCall = ocDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -506,10 +504,10 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocDeleteChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call ocDeleteChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -535,7 +533,6 @@ public class OpenChannelApi {
      */
     public okhttp3.Call ocListChannelsCall(String apiToken, String token, Integer limit, String customTypes, String nameContains, String urlContains, Boolean showFrozen, Boolean showMetadata, String customType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -607,7 +604,7 @@ public class OpenChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -725,7 +722,6 @@ public class OpenChannelApi {
      */
     public okhttp3.Call ocListOperatorsCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -774,7 +770,7 @@ public class OpenChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -882,7 +878,6 @@ public class OpenChannelApi {
      */
     public okhttp3.Call ocListParticipantsCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -931,7 +926,7 @@ public class OpenChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1038,7 +1033,6 @@ public class OpenChannelApi {
      */
     public okhttp3.Call ocRegisterOperatorsCall(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1079,7 +1073,7 @@ public class OpenChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1112,7 +1106,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param ocRegisterOperatorsData  (optional)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1120,8 +1114,8 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 ocRegisterOperators(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = ocRegisterOperatorsWithHttpInfo(apiToken, channelUrl, ocRegisterOperatorsData);
+    public OcDeleteChannelByUrl200Response ocRegisterOperators(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = ocRegisterOperatorsWithHttpInfo(apiToken, channelUrl, ocRegisterOperatorsData);
         return localVarResp.getData();
     }
 
@@ -1131,7 +1125,7 @@ public class OpenChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param ocRegisterOperatorsData  (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1139,9 +1133,9 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> ocRegisterOperatorsWithHttpInfo(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttpInfo(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
         okhttp3.Call localVarCall = ocRegisterOperatorsValidateBeforeCall(apiToken, channelUrl, ocRegisterOperatorsData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1160,10 +1154,10 @@ public class OpenChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocRegisterOperatorsAsync(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call ocRegisterOperatorsAsync(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocRegisterOperatorsValidateBeforeCall(apiToken, channelUrl, ocRegisterOperatorsData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1183,7 +1177,6 @@ public class OpenChannelApi {
      */
     public okhttp3.Call ocUpdateChannelByUrlCall(String apiToken, String channelUrl, OcUpdateChannelByUrlData ocUpdateChannelByUrlData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1224,7 +1217,7 @@ public class OpenChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1327,7 +1320,6 @@ public class OpenChannelApi {
      */
     public okhttp3.Call ocViewChannelByUrlCall(String apiToken, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1368,7 +1360,7 @@ public class OpenChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

@@ -2,17 +2,17 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ocCancelTheRegistrationOfOperators**](OpenChannelApi.md#ocCancelTheRegistrationOfOperators) | **DELETE** /v3/open_channels/{channel_url}/operators | Cancel the registration of operators
-[**ocCreateChannel**](OpenChannelApi.md#ocCreateChannel) | **POST** /v3/open_channels | Create a channel
-[**ocDeleteChannelByUrl**](OpenChannelApi.md#ocDeleteChannelByUrl) | **DELETE** /v3/open_channels/{channel_url} | Delete a channel
-[**ocListChannels**](OpenChannelApi.md#ocListChannels) | **GET** /v3/open_channels | List channels
-[**ocListOperators**](OpenChannelApi.md#ocListOperators) | **GET** /v3/open_channels/{channel_url}/operators | List operators
-[**ocListParticipants**](OpenChannelApi.md#ocListParticipants) | **GET** /v3/open_channels/{channel_url}/participants | List participants
-[**ocRegisterOperators**](OpenChannelApi.md#ocRegisterOperators) | **POST** /v3/open_channels/{channel_url}/operators | Register operators
-[**ocUpdateChannelByUrl**](OpenChannelApi.md#ocUpdateChannelByUrl) | **PUT** /v3/open_channels/{channel_url} | Update a channel
-[**ocViewChannelByUrl**](OpenChannelApi.md#ocViewChannelByUrl) | **GET** /v3/open_channels/{channel_url} | View a channel
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**ocCancelTheRegistrationOfOperators**](OpenChannelApi.md#ocCancelTheRegistrationOfOperators) | **DELETE** /v3/open_channels/{channel_url}/operators | Cancel the registration of operators |
+| [**ocCreateChannel**](OpenChannelApi.md#ocCreateChannel) | **POST** /v3/open_channels | Create a channel |
+| [**ocDeleteChannelByUrl**](OpenChannelApi.md#ocDeleteChannelByUrl) | **DELETE** /v3/open_channels/{channel_url} | Delete a channel |
+| [**ocListChannels**](OpenChannelApi.md#ocListChannels) | **GET** /v3/open_channels | List channels |
+| [**ocListOperators**](OpenChannelApi.md#ocListOperators) | **GET** /v3/open_channels/{channel_url}/operators | List operators |
+| [**ocListParticipants**](OpenChannelApi.md#ocListParticipants) | **GET** /v3/open_channels/{channel_url}/participants | List participants |
+| [**ocRegisterOperators**](OpenChannelApi.md#ocRegisterOperators) | **POST** /v3/open_channels/{channel_url}/operators | Register operators |
+| [**ocUpdateChannelByUrl**](OpenChannelApi.md#ocUpdateChannelByUrl) | **PUT** /v3/open_channels/{channel_url} | Update a channel |
+| [**ocViewChannelByUrl**](OpenChannelApi.md#ocViewChannelByUrl) | **GET** /v3/open_channels/{channel_url} | View a channel |
 
 
 <a name="ocCancelTheRegistrationOfOperators"></a>
@@ -57,12 +57,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **operatorIds** | [**List&lt;String&gt;**](String.md)|  |
- **deleteAll** | **Boolean**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **operatorIds** | [**List&lt;String&gt;**](String.md)|  | |
+| **deleteAll** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -80,7 +80,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocCreateChannel"></a>
 # **ocCreateChannel**
@@ -123,10 +123,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **ocCreateChannelData** | [**OcCreateChannelData**](OcCreateChannelData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **ocCreateChannelData** | [**OcCreateChannelData**](OcCreateChannelData.md)|  | [optional] |
 
 ### Return type
 
@@ -144,11 +144,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocDeleteChannelByUrl"></a>
 # **ocDeleteChannelByUrl**
-> InlineResponse2001 ocDeleteChannelByUrl(apiToken, channelUrl)
+> OcDeleteChannelByUrl200Response ocDeleteChannelByUrl(apiToken, channelUrl)
 
 Delete a channel
 
@@ -172,7 +172,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     try {
-      InlineResponse2001 result = apiInstance.ocDeleteChannelByUrl(apiToken, channelUrl);
+      OcDeleteChannelByUrl200Response result = apiInstance.ocDeleteChannelByUrl(apiToken, channelUrl);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocDeleteChannelByUrl");
@@ -187,14 +187,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocListChannels"></a>
 # **ocListChannels**
@@ -258,17 +258,17 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **customTypes** | **String**|  | [optional]
- **nameContains** | **String**|  | [optional]
- **urlContains** | **String**|  | [optional]
- **showFrozen** | **Boolean**|  | [optional]
- **showMetadata** | **Boolean**|  | [optional]
- **customType** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **customTypes** | **String**|  | [optional] |
+| **nameContains** | **String**|  | [optional] |
+| **urlContains** | **String**|  | [optional] |
+| **showFrozen** | **Boolean**|  | [optional] |
+| **showMetadata** | **Boolean**|  | [optional] |
+| **customType** | **String**|  | [optional] |
 
 ### Return type
 
@@ -286,7 +286,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocListOperators"></a>
 # **ocListOperators**
@@ -331,12 +331,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -354,7 +354,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocListParticipants"></a>
 # **ocListParticipants**
@@ -399,12 +399,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -422,11 +422,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocRegisterOperators"></a>
 # **ocRegisterOperators**
-> InlineResponse2001 ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData)
+> OcDeleteChannelByUrl200Response ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData)
 
 Register operators
 
@@ -451,7 +451,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     OcRegisterOperatorsData ocRegisterOperatorsData = new OcRegisterOperatorsData(); // OcRegisterOperatorsData | 
     try {
-      InlineResponse2001 result = apiInstance.ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData);
+      OcDeleteChannelByUrl200Response result = apiInstance.ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenChannelApi#ocRegisterOperators");
@@ -466,15 +466,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **ocRegisterOperatorsData** | [**OcRegisterOperatorsData**](OcRegisterOperatorsData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **ocRegisterOperatorsData** | [**OcRegisterOperatorsData**](OcRegisterOperatorsData.md)|  | [optional] |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -488,7 +488,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocUpdateChannelByUrl"></a>
 # **ocUpdateChannelByUrl**
@@ -532,11 +532,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **ocUpdateChannelByUrlData** | [**OcUpdateChannelByUrlData**](OcUpdateChannelByUrlData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **ocUpdateChannelByUrlData** | [**OcUpdateChannelByUrlData**](OcUpdateChannelByUrlData.md)|  | [optional] |
 
 ### Return type
 
@@ -554,7 +554,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocViewChannelByUrl"></a>
 # **ocViewChannelByUrl**
@@ -597,10 +597,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
 
 ### Return type
 
@@ -618,5 +618,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

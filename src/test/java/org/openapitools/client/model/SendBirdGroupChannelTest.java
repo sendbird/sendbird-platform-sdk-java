@@ -24,12 +24,14 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
+import org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage;
+import org.openapitools.client.model.SendBirdGroupChannelSmsFallback;
 import org.openapitools.client.model.SendBirdMember;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdUser;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -47,6 +49,14 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
+     * Test the property 'channelUrl'
+     */
+    @Test
+    public void channelUrlTest() {
+        // TODO: test channelUrl
+    }
+
+    /**
      * Test the property 'coverUrl'
      */
     @Test
@@ -60,6 +70,14 @@ public class SendBirdGroupChannelTest {
     @Test
     public void createdAtTest() {
         // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'createdBy'
+     */
+    @Test
+    public void createdByTest() {
+        // TODO: test createdBy
     }
 
     /**
@@ -84,6 +102,30 @@ public class SendBirdGroupChannelTest {
     @Test
     public void dataTest() {
         // TODO: test data
+    }
+
+    /**
+     * Test the property 'disappearingMessage'
+     */
+    @Test
+    public void disappearingMessageTest() {
+        // TODO: test disappearingMessage
+    }
+
+    /**
+     * Test the property 'freeze'
+     */
+    @Test
+    public void freezeTest() {
+        // TODO: test freeze
+    }
+
+    /**
+     * Test the property 'ignoreProfanityFilter'
+     */
+    @Test
+    public void ignoreProfanityFilterTest() {
+        // TODO: test ignoreProfanityFilter
     }
 
     /**
@@ -124,6 +166,14 @@ public class SendBirdGroupChannelTest {
     @Test
     public void isBroadcastTest() {
         // TODO: test isBroadcast
+    }
+
+    /**
+     * Test the property 'isCreated'
+     */
+    @Test
+    public void isCreatedTest() {
+        // TODO: test isCreated
     }
 
     /**
@@ -215,6 +265,14 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
+     * Test the property 'maxLengthMessage'
+     */
+    @Test
+    public void maxLengthMessageTest() {
+        // TODO: test maxLengthMessage
+    }
+
+    /**
      * Test the property 'memberCount'
      */
     @Test
@@ -303,6 +361,22 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
+     * Test the property 'operators'
+     */
+    @Test
+    public void operatorsTest() {
+        // TODO: test operators
+    }
+
+    /**
+     * Test the property 'smsFallback'
+     */
+    @Test
+    public void smsFallbackTest() {
+        // TODO: test smsFallback
+    }
+
+    /**
      * Test the property 'unreadMentionCount'
      */
     @Test
@@ -316,14 +390,6 @@ public class SendBirdGroupChannelTest {
     @Test
     public void unreadMessageCountTest() {
         // TODO: test unreadMessageCount
-    }
-
-    /**
-     * Test the property 'channelUrl'
-     */
-    @Test
-    public void channelUrlTest() {
-        // TODO: test channelUrl
     }
 
 }

@@ -27,10 +27,30 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * GetDetailedOpenRateOfAnnouncementByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class GetDetailedOpenRateOfAnnouncementByIdResponse {
   public static final String SERIALIZED_NAME_UNIQUE_ID = "unique_id";
   @SerializedName(SERIALIZED_NAME_UNIQUE_ID)
@@ -86,7 +106,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
 
   public GetDetailedOpenRateOfAnnouncementByIdResponse addOpenCountsItem(BigDecimal openCountsItem) {
     if (this.openCounts == null) {
-      this.openCounts = new ArrayList<BigDecimal>();
+      this.openCounts = new ArrayList<>();
     }
     this.openCounts.add(openCountsItem);
     return this;
@@ -117,7 +137,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
 
   public GetDetailedOpenRateOfAnnouncementByIdResponse addOpenRatesItem(BigDecimal openRatesItem) {
     if (this.openRates == null) {
-      this.openRates = new ArrayList<BigDecimal>();
+      this.openRates = new ArrayList<>();
     }
     this.openRates.add(openRatesItem);
     return this;
@@ -148,7 +168,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
 
   public GetDetailedOpenRateOfAnnouncementByIdResponse addCumulativeOpenCountsItem(BigDecimal cumulativeOpenCountsItem) {
     if (this.cumulativeOpenCounts == null) {
-      this.cumulativeOpenCounts = new ArrayList<BigDecimal>();
+      this.cumulativeOpenCounts = new ArrayList<>();
     }
     this.cumulativeOpenCounts.add(cumulativeOpenCountsItem);
     return this;
@@ -179,7 +199,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
 
   public GetDetailedOpenRateOfAnnouncementByIdResponse addCumulativeOpenRatesItem(BigDecimal cumulativeOpenRatesItem) {
     if (this.cumulativeOpenRates == null) {
-      this.cumulativeOpenRates = new ArrayList<BigDecimal>();
+      this.cumulativeOpenRates = new ArrayList<>();
     }
     this.cumulativeOpenRates.add(cumulativeOpenRatesItem);
     return this;
@@ -200,6 +220,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
   public void setCumulativeOpenRates(List<BigDecimal> cumulativeOpenRates) {
     this.cumulativeOpenRates = cumulativeOpenRates;
   }
+
 
 
   @Override
@@ -247,5 +268,113 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("unique_id");
+    openapiFields.add("open_counts");
+    openapiFields.add("open_rates");
+    openapiFields.add("cumulative_open_counts");
+    openapiFields.add("cumulative_open_rates");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetDetailedOpenRateOfAnnouncementByIdResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetDetailedOpenRateOfAnnouncementByIdResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetDetailedOpenRateOfAnnouncementByIdResponse is not found in the empty JSON string", GetDetailedOpenRateOfAnnouncementByIdResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetDetailedOpenRateOfAnnouncementByIdResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetDetailedOpenRateOfAnnouncementByIdResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("unique_id") != null && !jsonObj.get("unique_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unique_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unique_id").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("open_counts") != null && !jsonObj.get("open_counts").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `open_counts` to be an array in the JSON string but got `%s`", jsonObj.get("open_counts").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("open_rates") != null && !jsonObj.get("open_rates").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `open_rates` to be an array in the JSON string but got `%s`", jsonObj.get("open_rates").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("cumulative_open_counts") != null && !jsonObj.get("cumulative_open_counts").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cumulative_open_counts` to be an array in the JSON string but got `%s`", jsonObj.get("cumulative_open_counts").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("cumulative_open_rates") != null && !jsonObj.get("cumulative_open_rates").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cumulative_open_rates` to be an array in the JSON string but got `%s`", jsonObj.get("cumulative_open_rates").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetDetailedOpenRateOfAnnouncementByIdResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetDetailedOpenRateOfAnnouncementByIdResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetDetailedOpenRateOfAnnouncementByIdResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetDetailedOpenRateOfAnnouncementByIdResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetDetailedOpenRateOfAnnouncementByIdResponse>() {
+           @Override
+           public void write(JsonWriter out, GetDetailedOpenRateOfAnnouncementByIdResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetDetailedOpenRateOfAnnouncementByIdResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetDetailedOpenRateOfAnnouncementByIdResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetDetailedOpenRateOfAnnouncementByIdResponse
+  * @throws IOException if the JSON string is invalid with respect to GetDetailedOpenRateOfAnnouncementByIdResponse
+  */
+  public static GetDetailedOpenRateOfAnnouncementByIdResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetDetailedOpenRateOfAnnouncementByIdResponse.class);
+  }
+
+ /**
+  * Convert an instance of GetDetailedOpenRateOfAnnouncementByIdResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

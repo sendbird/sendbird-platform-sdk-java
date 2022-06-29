@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class PrivacyApi {
     private ApiClient localVarApiClient;
@@ -90,7 +91,6 @@ public class PrivacyApi {
      */
     public okhttp3.Call cancelTheRegistrationOfGdprRequestByIdCall(String apiToken, String requestId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -131,7 +131,7 @@ public class PrivacyApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -228,7 +228,6 @@ public class PrivacyApi {
      */
     public okhttp3.Call listGdprRequestsCall(String apiToken, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -276,7 +275,7 @@ public class PrivacyApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -374,7 +373,6 @@ public class PrivacyApi {
      */
     public okhttp3.Call registerGdprRequestCall(String apiToken, RegisterGdprRequestData registerGdprRequestData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -414,7 +412,7 @@ public class PrivacyApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -509,7 +507,6 @@ public class PrivacyApi {
      */
     public okhttp3.Call viewGdprRequestByIdCall(String apiToken, String requestId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -550,7 +547,7 @@ public class PrivacyApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

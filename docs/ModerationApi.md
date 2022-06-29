@@ -2,35 +2,35 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**banFromChannelsWithCustomChannelTypes**](ModerationApi.md#banFromChannelsWithCustomChannelTypes) | **POST** /v3/users/{user_id}/banned_channel_custom_types | Ban from channels with custom channel types
-[**blockUser**](ModerationApi.md#blockUser) | **POST** /v3/users/{user_id}/block | Block a user
-[**gcBanUser**](ModerationApi.md#gcBanUser) | **POST** /v3/group_channels/{channel_url}/ban | Ban a user
-[**gcFreezeChannel**](ModerationApi.md#gcFreezeChannel) | **PUT** /v3/group_channels/{channel_url}/freeze | Freeze a channel
-[**gcListBannedUsers**](ModerationApi.md#gcListBannedUsers) | **GET** /v3/group_channels/{channel_url}/ban | List banned users
-[**gcListMutedUsers**](ModerationApi.md#gcListMutedUsers) | **GET** /v3/group_channels/{channel_url}/mute | List muted users
-[**gcMuteUser**](ModerationApi.md#gcMuteUser) | **POST** /v3/group_channels/{channel_url}/mute | Mute a user
-[**gcUnbanUserById**](ModerationApi.md#gcUnbanUserById) | **DELETE** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Unban a user
-[**gcUnmuteUserById**](ModerationApi.md#gcUnmuteUserById) | **DELETE** /v3/group_channels/{channel_url}/mute/{muted_user_id} | Unmute a user
-[**gcUpdateBanById**](ModerationApi.md#gcUpdateBanById) | **PUT** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Update a ban
-[**gcViewBanById**](ModerationApi.md#gcViewBanById) | **GET** /v3/group_channels/{channel_url}/ban/{banned_user_id} | View a ban
-[**gcViewMuteById**](ModerationApi.md#gcViewMuteById) | **GET** /v3/group_channels/{channel_url}/mute/{muted_user_id} | View a mute
-[**listBannedChannels**](ModerationApi.md#listBannedChannels) | **GET** /v3/users/{user_id}/ban | List banned channels
-[**listBlockedUsers**](ModerationApi.md#listBlockedUsers) | **GET** /v3/users/{user_id}/block | List blocked users
-[**listMutedChannels**](ModerationApi.md#listMutedChannels) | **GET** /v3/users/{user_id}/mute | List muted channels
-[**muteInChannelsWithCustomChannelTypes**](ModerationApi.md#muteInChannelsWithCustomChannelTypes) | **POST** /v3/users/{user_id}/muted_channel_custom_types | Mute in channels with custom channel types
-[**ocBanUser**](ModerationApi.md#ocBanUser) | **POST** /v3/open_channels/{channel_url}/ban | Ban a user
-[**ocFreezeChannel**](ModerationApi.md#ocFreezeChannel) | **PUT** /v3/open_channels/{channel_url}/freeze | Freeze a channel
-[**ocListBannedUsers**](ModerationApi.md#ocListBannedUsers) | **GET** /v3/open_channels/{channel_url}/ban | List banned users
-[**ocListMutedUsers**](ModerationApi.md#ocListMutedUsers) | **GET** /v3/open_channels/{channel_url}/mute | List muted users
-[**ocMuteUser**](ModerationApi.md#ocMuteUser) | **POST** /v3/open_channels/{channel_url}/mute | Mute a user
-[**ocUnbanUserById**](ModerationApi.md#ocUnbanUserById) | **DELETE** /v3/open_channels/{channel_url}/ban/{banned_user_id} | Unban a user
-[**ocUnmuteUserById**](ModerationApi.md#ocUnmuteUserById) | **DELETE** /v3/open_channels/{channel_url}/mute/{muted_user_id} | Unmute a user
-[**ocUpdateBanById**](ModerationApi.md#ocUpdateBanById) | **PUT** /v3/open_channels/{channel_url}/ban/{banned_user_id} | Update a ban
-[**ocViewBanById**](ModerationApi.md#ocViewBanById) | **GET** /v3/open_channels/{channel_url}/ban/{banned_user_id} | View a ban
-[**ocViewMuteById**](ModerationApi.md#ocViewMuteById) | **GET** /v3/open_channels/{channel_url}/mute/{muted_user_id} | View a mute
-[**unblockUserById**](ModerationApi.md#unblockUserById) | **DELETE** /v3/users/{user_id}/block/{target_id} | Unblock a user
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**banFromChannelsWithCustomChannelTypes**](ModerationApi.md#banFromChannelsWithCustomChannelTypes) | **POST** /v3/users/{user_id}/banned_channel_custom_types | Ban from channels with custom channel types |
+| [**blockUser**](ModerationApi.md#blockUser) | **POST** /v3/users/{user_id}/block | Block a user |
+| [**gcBanUser**](ModerationApi.md#gcBanUser) | **POST** /v3/group_channels/{channel_url}/ban | Ban a user |
+| [**gcFreezeChannel**](ModerationApi.md#gcFreezeChannel) | **PUT** /v3/group_channels/{channel_url}/freeze | Freeze a channel |
+| [**gcListBannedUsers**](ModerationApi.md#gcListBannedUsers) | **GET** /v3/group_channels/{channel_url}/ban | List banned users |
+| [**gcListMutedUsers**](ModerationApi.md#gcListMutedUsers) | **GET** /v3/group_channels/{channel_url}/mute | List muted users |
+| [**gcMuteUser**](ModerationApi.md#gcMuteUser) | **POST** /v3/group_channels/{channel_url}/mute | Mute a user |
+| [**gcUnbanUserById**](ModerationApi.md#gcUnbanUserById) | **DELETE** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Unban a user |
+| [**gcUnmuteUserById**](ModerationApi.md#gcUnmuteUserById) | **DELETE** /v3/group_channels/{channel_url}/mute/{muted_user_id} | Unmute a user |
+| [**gcUpdateBanById**](ModerationApi.md#gcUpdateBanById) | **PUT** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Update a ban |
+| [**gcViewBanById**](ModerationApi.md#gcViewBanById) | **GET** /v3/group_channels/{channel_url}/ban/{banned_user_id} | View a ban |
+| [**gcViewMuteById**](ModerationApi.md#gcViewMuteById) | **GET** /v3/group_channels/{channel_url}/mute/{muted_user_id} | View a mute |
+| [**listBannedChannels**](ModerationApi.md#listBannedChannels) | **GET** /v3/users/{user_id}/ban | List banned channels |
+| [**listBlockedUsers**](ModerationApi.md#listBlockedUsers) | **GET** /v3/users/{user_id}/block | List blocked users |
+| [**listMutedChannels**](ModerationApi.md#listMutedChannels) | **GET** /v3/users/{user_id}/mute | List muted channels |
+| [**muteInChannelsWithCustomChannelTypes**](ModerationApi.md#muteInChannelsWithCustomChannelTypes) | **POST** /v3/users/{user_id}/muted_channel_custom_types | Mute in channels with custom channel types |
+| [**ocBanUser**](ModerationApi.md#ocBanUser) | **POST** /v3/open_channels/{channel_url}/ban | Ban a user |
+| [**ocFreezeChannel**](ModerationApi.md#ocFreezeChannel) | **PUT** /v3/open_channels/{channel_url}/freeze | Freeze a channel |
+| [**ocListBannedUsers**](ModerationApi.md#ocListBannedUsers) | **GET** /v3/open_channels/{channel_url}/ban | List banned users |
+| [**ocListMutedUsers**](ModerationApi.md#ocListMutedUsers) | **GET** /v3/open_channels/{channel_url}/mute | List muted users |
+| [**ocMuteUser**](ModerationApi.md#ocMuteUser) | **POST** /v3/open_channels/{channel_url}/mute | Mute a user |
+| [**ocUnbanUserById**](ModerationApi.md#ocUnbanUserById) | **DELETE** /v3/open_channels/{channel_url}/ban/{banned_user_id} | Unban a user |
+| [**ocUnmuteUserById**](ModerationApi.md#ocUnmuteUserById) | **DELETE** /v3/open_channels/{channel_url}/mute/{muted_user_id} | Unmute a user |
+| [**ocUpdateBanById**](ModerationApi.md#ocUpdateBanById) | **PUT** /v3/open_channels/{channel_url}/ban/{banned_user_id} | Update a ban |
+| [**ocViewBanById**](ModerationApi.md#ocViewBanById) | **GET** /v3/open_channels/{channel_url}/ban/{banned_user_id} | View a ban |
+| [**ocViewMuteById**](ModerationApi.md#ocViewMuteById) | **GET** /v3/open_channels/{channel_url}/mute/{muted_user_id} | View a mute |
+| [**unblockUserById**](ModerationApi.md#unblockUserById) | **DELETE** /v3/users/{user_id}/block/{target_id} | Unblock a user |
 
 
 <a name="banFromChannelsWithCustomChannelTypes"></a>
@@ -75,11 +75,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **banFromChannelsWithCustomChannelTypesData** | [**BanFromChannelsWithCustomChannelTypesData**](BanFromChannelsWithCustomChannelTypesData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **banFromChannelsWithCustomChannelTypesData** | [**BanFromChannelsWithCustomChannelTypesData**](BanFromChannelsWithCustomChannelTypesData.md)|  | [optional] |
 
 ### Return type
 
@@ -97,7 +97,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="blockUser"></a>
 # **blockUser**
@@ -141,11 +141,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **blockUserData** | [**BlockUserData**](BlockUserData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **blockUserData** | [**BlockUserData**](BlockUserData.md)|  | [optional] |
 
 ### Return type
 
@@ -163,7 +163,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcBanUser"></a>
 # **gcBanUser**
@@ -207,11 +207,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcBanUserData** | [**GcBanUserData**](GcBanUserData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcBanUserData** | [**GcBanUserData**](GcBanUserData.md)|  | [optional] |
 
 ### Return type
 
@@ -229,7 +229,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcFreezeChannel"></a>
 # **gcFreezeChannel**
@@ -273,11 +273,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcFreezeChannelData** | [**GcFreezeChannelData**](GcFreezeChannelData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcFreezeChannelData** | [**GcFreezeChannelData**](GcFreezeChannelData.md)|  | [optional] |
 
 ### Return type
 
@@ -295,7 +295,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcListBannedUsers"></a>
 # **gcListBannedUsers**
@@ -340,12 +340,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -363,7 +363,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcListMutedUsers"></a>
 # **gcListMutedUsers**
@@ -408,12 +408,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -431,7 +431,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcMuteUser"></a>
 # **gcMuteUser**
@@ -475,11 +475,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcMuteUserData** | [**GcMuteUserData**](GcMuteUserData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcMuteUserData** | [**GcMuteUserData**](GcMuteUserData.md)|  | [optional] |
 
 ### Return type
 
@@ -497,11 +497,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcUnbanUserById"></a>
 # **gcUnbanUserById**
-> InlineResponse2001 gcUnbanUserById(apiToken, channelUrl, bannedUserId)
+> OcDeleteChannelByUrl200Response gcUnbanUserById(apiToken, channelUrl, bannedUserId)
 
 Unban a user
 
@@ -526,7 +526,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String bannedUserId = "bannedUserId_example"; // String | 
     try {
-      InlineResponse2001 result = apiInstance.gcUnbanUserById(apiToken, channelUrl, bannedUserId);
+      OcDeleteChannelByUrl200Response result = apiInstance.gcUnbanUserById(apiToken, channelUrl, bannedUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ModerationApi#gcUnbanUserById");
@@ -541,15 +541,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **bannedUserId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **bannedUserId** | **String**|  | |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -563,11 +563,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcUnmuteUserById"></a>
 # **gcUnmuteUserById**
-> InlineResponse2001 gcUnmuteUserById(apiToken, channelUrl, mutedUserId)
+> OcDeleteChannelByUrl200Response gcUnmuteUserById(apiToken, channelUrl, mutedUserId)
 
 Unmute a user
 
@@ -592,7 +592,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String mutedUserId = "mutedUserId_example"; // String | 
     try {
-      InlineResponse2001 result = apiInstance.gcUnmuteUserById(apiToken, channelUrl, mutedUserId);
+      OcDeleteChannelByUrl200Response result = apiInstance.gcUnmuteUserById(apiToken, channelUrl, mutedUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ModerationApi#gcUnmuteUserById");
@@ -607,15 +607,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **mutedUserId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **mutedUserId** | **String**|  | |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -629,7 +629,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcUpdateBanById"></a>
 # **gcUpdateBanById**
@@ -674,12 +674,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **bannedUserId** | **String**|  |
- **gcUpdateBanByIdData** | [**GcUpdateBanByIdData**](GcUpdateBanByIdData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **bannedUserId** | **String**|  | |
+| **gcUpdateBanByIdData** | [**GcUpdateBanByIdData**](GcUpdateBanByIdData.md)|  | [optional] |
 
 ### Return type
 
@@ -697,7 +697,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcViewBanById"></a>
 # **gcViewBanById**
@@ -741,11 +741,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **bannedUserId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **bannedUserId** | **String**|  | |
 
 ### Return type
 
@@ -763,7 +763,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcViewMuteById"></a>
 # **gcViewMuteById**
@@ -807,11 +807,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **mutedUserId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **mutedUserId** | **String**|  | |
 
 ### Return type
 
@@ -829,7 +829,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listBannedChannels"></a>
 # **listBannedChannels**
@@ -874,12 +874,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -897,7 +897,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listBlockedUsers"></a>
 # **listBlockedUsers**
@@ -945,15 +945,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **userIds** | **String**|  | [optional]
- **metadatakey** | **String**|  | [optional]
- **metadatavaluesIn** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **userIds** | **String**|  | [optional] |
+| **metadatakey** | **String**|  | [optional] |
+| **metadatavaluesIn** | **String**|  | [optional] |
 
 ### Return type
 
@@ -971,7 +971,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listMutedChannels"></a>
 # **listMutedChannels**
@@ -1016,12 +1016,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -1039,7 +1039,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="muteInChannelsWithCustomChannelTypes"></a>
 # **muteInChannelsWithCustomChannelTypes**
@@ -1083,11 +1083,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **muteInChannelsWithCustomChannelTypesData** | [**MuteInChannelsWithCustomChannelTypesData**](MuteInChannelsWithCustomChannelTypesData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **muteInChannelsWithCustomChannelTypesData** | [**MuteInChannelsWithCustomChannelTypesData**](MuteInChannelsWithCustomChannelTypesData.md)|  | [optional] |
 
 ### Return type
 
@@ -1105,7 +1105,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocBanUser"></a>
 # **ocBanUser**
@@ -1149,11 +1149,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **ocBanUserData** | [**OcBanUserData**](OcBanUserData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **ocBanUserData** | [**OcBanUserData**](OcBanUserData.md)|  | [optional] |
 
 ### Return type
 
@@ -1171,7 +1171,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocFreezeChannel"></a>
 # **ocFreezeChannel**
@@ -1215,11 +1215,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **ocFreezeChannelData** | [**OcFreezeChannelData**](OcFreezeChannelData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **ocFreezeChannelData** | [**OcFreezeChannelData**](OcFreezeChannelData.md)|  | [optional] |
 
 ### Return type
 
@@ -1237,7 +1237,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocListBannedUsers"></a>
 # **ocListBannedUsers**
@@ -1282,12 +1282,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -1305,7 +1305,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocListMutedUsers"></a>
 # **ocListMutedUsers**
@@ -1350,12 +1350,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -1373,7 +1373,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocMuteUser"></a>
 # **ocMuteUser**
@@ -1417,11 +1417,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **ocMuteUserData** | [**OcMuteUserData**](OcMuteUserData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **ocMuteUserData** | [**OcMuteUserData**](OcMuteUserData.md)|  | [optional] |
 
 ### Return type
 
@@ -1439,11 +1439,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocUnbanUserById"></a>
 # **ocUnbanUserById**
-> InlineResponse2001 ocUnbanUserById(apiToken, channelUrl, bannedUserId)
+> OcDeleteChannelByUrl200Response ocUnbanUserById(apiToken, channelUrl, bannedUserId)
 
 Unban a user
 
@@ -1468,7 +1468,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String bannedUserId = "bannedUserId_example"; // String | 
     try {
-      InlineResponse2001 result = apiInstance.ocUnbanUserById(apiToken, channelUrl, bannedUserId);
+      OcDeleteChannelByUrl200Response result = apiInstance.ocUnbanUserById(apiToken, channelUrl, bannedUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ModerationApi#ocUnbanUserById");
@@ -1483,15 +1483,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **bannedUserId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **bannedUserId** | **String**|  | |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -1505,11 +1505,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocUnmuteUserById"></a>
 # **ocUnmuteUserById**
-> InlineResponse2001 ocUnmuteUserById(apiToken, channelUrl, mutedUserId)
+> OcDeleteChannelByUrl200Response ocUnmuteUserById(apiToken, channelUrl, mutedUserId)
 
 Unmute a user
 
@@ -1534,7 +1534,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String mutedUserId = "mutedUserId_example"; // String | 
     try {
-      InlineResponse2001 result = apiInstance.ocUnmuteUserById(apiToken, channelUrl, mutedUserId);
+      OcDeleteChannelByUrl200Response result = apiInstance.ocUnmuteUserById(apiToken, channelUrl, mutedUserId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ModerationApi#ocUnmuteUserById");
@@ -1549,15 +1549,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **mutedUserId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **mutedUserId** | **String**|  | |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -1571,7 +1571,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocUpdateBanById"></a>
 # **ocUpdateBanById**
@@ -1616,12 +1616,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **bannedUserId** | **String**|  |
- **ocUpdateBanByIdData** | [**OcUpdateBanByIdData**](OcUpdateBanByIdData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **bannedUserId** | **String**|  | |
+| **ocUpdateBanByIdData** | [**OcUpdateBanByIdData**](OcUpdateBanByIdData.md)|  | [optional] |
 
 ### Return type
 
@@ -1639,7 +1639,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocViewBanById"></a>
 # **ocViewBanById**
@@ -1683,11 +1683,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **bannedUserId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **bannedUserId** | **String**|  | |
 
 ### Return type
 
@@ -1705,7 +1705,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="ocViewMuteById"></a>
 # **ocViewMuteById**
@@ -1749,11 +1749,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **mutedUserId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **mutedUserId** | **String**|  | |
 
 ### Return type
 
@@ -1771,7 +1771,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="unblockUserById"></a>
 # **unblockUserById**
@@ -1815,11 +1815,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **targetId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **targetId** | **String**|  | |
 
 ### Return type
 
@@ -1837,5 +1837,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

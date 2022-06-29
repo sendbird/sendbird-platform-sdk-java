@@ -22,9 +22,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -42,19 +43,11 @@ public class ViewPushPreferencesResponseTest {
     }
 
     /**
-     * Test the property 'pushTriggerOption'
+     * Test the property 'snoozeStartTs'
      */
     @Test
-    public void pushTriggerOptionTest() {
-        // TODO: test pushTriggerOption
-    }
-
-    /**
-     * Test the property 'doNotDisturb'
-     */
-    @Test
-    public void doNotDisturbTest() {
-        // TODO: test doNotDisturb
+    public void snoozeStartTsTest() {
+        // TODO: test snoozeStartTs
     }
 
     /**
@@ -66,19 +59,11 @@ public class ViewPushPreferencesResponseTest {
     }
 
     /**
-     * Test the property 'startMin'
+     * Test the property 'snoozeEnabled'
      */
     @Test
-    public void startMinTest() {
-        // TODO: test startMin
-    }
-
-    /**
-     * Test the property 'endHour'
-     */
-    @Test
-    public void endHourTest() {
-        // TODO: test endHour
+    public void snoozeEnabledTest() {
+        // TODO: test snoozeEnabled
     }
 
     /**
@@ -90,19 +75,35 @@ public class ViewPushPreferencesResponseTest {
     }
 
     /**
-     * Test the property 'snoozeEnabled'
+     * Test the property 'timezone'
      */
     @Test
-    public void snoozeEnabledTest() {
-        // TODO: test snoozeEnabled
+    public void timezoneTest() {
+        // TODO: test timezone
     }
 
     /**
-     * Test the property 'snoozeStartTs'
+     * Test the property 'blockPushFromBots'
      */
     @Test
-    public void snoozeStartTsTest() {
-        // TODO: test snoozeStartTs
+    public void blockPushFromBotsTest() {
+        // TODO: test blockPushFromBots
+    }
+
+    /**
+     * Test the property 'pushBlockedBotIds'
+     */
+    @Test
+    public void pushBlockedBotIdsTest() {
+        // TODO: test pushBlockedBotIds
+    }
+
+    /**
+     * Test the property 'startMin'
+     */
+    @Test
+    public void startMinTest() {
+        // TODO: test startMin
     }
 
     /**
@@ -114,11 +115,27 @@ public class ViewPushPreferencesResponseTest {
     }
 
     /**
-     * Test the property 'timezone'
+     * Test the property 'doNotDisturb'
      */
     @Test
-    public void timezoneTest() {
-        // TODO: test timezone
+    public void doNotDisturbTest() {
+        // TODO: test doNotDisturb
+    }
+
+    /**
+     * Test the property 'endHour'
+     */
+    @Test
+    public void endHourTest() {
+        // TODO: test endHour
+    }
+
+    /**
+     * Test the property 'enablePushForReplies'
+     */
+    @Test
+    public void enablePushForRepliesTest() {
+        // TODO: test enablePushForReplies
     }
 
     /**
@@ -127,6 +144,14 @@ public class ViewPushPreferencesResponseTest {
     @Test
     public void pushSoundTest() {
         // TODO: test pushSound
+    }
+
+    /**
+     * Test the property 'pushTriggerOption'
+     */
+    @Test
+    public void pushTriggerOptionTest() {
+        // TODO: test pushTriggerOption
     }
 
 }

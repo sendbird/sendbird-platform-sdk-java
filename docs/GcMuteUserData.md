@@ -5,12 +5,12 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**channelUrl** | **String** | Specifies the URL of the target channel. | 
-**userId** | **String** | Specifies the ID of the target user to mute. | 
-**seconds** | **Integer** | Specifies the duration of mute status. If set to -1, the user will be muted permanently (10 years, technically). (Default: -1) | 
-**description** | **String** | Specifies a reason for the muting. | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**channelUrl** | **String** | Specifies the URL of the target channel. |  |
+|**userId** | **String** | Specifies the ID of the target user to mute. |  |
+|**seconds** | **Integer** | Specifies the duration of mute status. If set to -1, the user will be muted permanently (10 years, technically). (Default: -1) |  |
+|**description** | **String** | Specifies a reason for the muting. |  |
 
 
 

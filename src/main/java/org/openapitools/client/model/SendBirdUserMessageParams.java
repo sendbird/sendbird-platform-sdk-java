@@ -30,10 +30,30 @@ import org.openapitools.client.model.SendBirdAppleCriticalAlertOptions;
 import org.openapitools.client.model.SendBirdMessageMetaArray;
 import org.openapitools.client.model.SendBirdUser;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * SendBirdUserMessageParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class SendBirdUserMessageParams {
   public static final String SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   @SerializedName(SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS)
@@ -315,7 +335,7 @@ public class SendBirdUserMessageParams {
 
   public SendBirdUserMessageParams addMentionedUserIdsItem(String mentionedUserIdsItem) {
     if (this.mentionedUserIds == null) {
-      this.mentionedUserIds = new ArrayList<String>();
+      this.mentionedUserIds = new ArrayList<>();
     }
     this.mentionedUserIds.add(mentionedUserIdsItem);
     return this;
@@ -346,7 +366,7 @@ public class SendBirdUserMessageParams {
 
   public SendBirdUserMessageParams addMentionedUsersItem(SendBirdUser mentionedUsersItem) {
     if (this.mentionedUsers == null) {
-      this.mentionedUsers = new ArrayList<SendBirdUser>();
+      this.mentionedUsers = new ArrayList<>();
     }
     this.mentionedUsers.add(mentionedUsersItem);
     return this;
@@ -400,7 +420,7 @@ public class SendBirdUserMessageParams {
 
   public SendBirdUserMessageParams addMetaArrayKeysItem(String metaArrayKeysItem) {
     if (this.metaArrayKeys == null) {
-      this.metaArrayKeys = new ArrayList<String>();
+      this.metaArrayKeys = new ArrayList<>();
     }
     this.metaArrayKeys.add(metaArrayKeysItem);
     return this;
@@ -431,7 +451,7 @@ public class SendBirdUserMessageParams {
 
   public SendBirdUserMessageParams addMetaArraysItem(SendBirdMessageMetaArray metaArraysItem) {
     if (this.metaArrays == null) {
-      this.metaArrays = new ArrayList<SendBirdMessageMetaArray>();
+      this.metaArrays = new ArrayList<>();
     }
     this.metaArrays.add(metaArraysItem);
     return this;
@@ -531,7 +551,7 @@ public class SendBirdUserMessageParams {
 
   public SendBirdUserMessageParams addTargetLanguagesItem(String targetLanguagesItem) {
     if (this.targetLanguages == null) {
-      this.targetLanguages = new ArrayList<String>();
+      this.targetLanguages = new ArrayList<>();
     }
     this.targetLanguages.add(targetLanguagesItem);
     return this;
@@ -562,7 +582,7 @@ public class SendBirdUserMessageParams {
 
   public SendBirdUserMessageParams addTranslationTargetLanguagesItem(String translationTargetLanguagesItem) {
     if (this.translationTargetLanguages == null) {
-      this.translationTargetLanguages = new ArrayList<String>();
+      this.translationTargetLanguages = new ArrayList<>();
     }
     this.translationTargetLanguages.add(translationTargetLanguagesItem);
     return this;
@@ -583,6 +603,7 @@ public class SendBirdUserMessageParams {
   public void setTranslationTargetLanguages(List<String> translationTargetLanguages) {
     this.translationTargetLanguages = translationTargetLanguages;
   }
+
 
 
   @Override
@@ -650,5 +671,163 @@ public class SendBirdUserMessageParams {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("apple_critical_alert_options");
+    openapiFields.add("custom_type");
+    openapiFields.add("data");
+    openapiFields.add("is_reply_to_channel");
+    openapiFields.add("mention_type");
+    openapiFields.add("mentioned_user_ids");
+    openapiFields.add("mentioned_users");
+    openapiFields.add("message");
+    openapiFields.add("meta_array_keys");
+    openapiFields.add("meta_arrays");
+    openapiFields.add("parent_message_id");
+    openapiFields.add("poll_id");
+    openapiFields.add("push_notification_delivery_option");
+    openapiFields.add("target_languages");
+    openapiFields.add("translation_target_languages");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to SendBirdUserMessageParams
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (SendBirdUserMessageParams.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdUserMessageParams is not found in the empty JSON string", SendBirdUserMessageParams.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!SendBirdUserMessageParams.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdUserMessageParams` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      // validate the optional field `apple_critical_alert_options`
+      if (jsonObj.getAsJsonObject("apple_critical_alert_options") != null) {
+        SendBirdAppleCriticalAlertOptions.validateJsonObject(jsonObj.getAsJsonObject("apple_critical_alert_options"));
+      }
+      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
+      }
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
+      }
+      if (jsonObj.get("mention_type") != null && !jsonObj.get("mention_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mention_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mention_type").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("mentioned_user_ids") != null && !jsonObj.get("mentioned_user_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mentioned_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_user_ids").toString()));
+      }
+      JsonArray jsonArraymentionedUsers = jsonObj.getAsJsonArray("mentioned_users");
+      if (jsonArraymentionedUsers != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("mentioned_users").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `mentioned_users` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_users").toString()));
+        }
+
+        // validate the optional field `mentioned_users` (array)
+        for (int i = 0; i < jsonArraymentionedUsers.size(); i++) {
+          SendBirdUser.validateJsonObject(jsonArraymentionedUsers.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("message") != null && !jsonObj.get("message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("meta_array_keys") != null && !jsonObj.get("meta_array_keys").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `meta_array_keys` to be an array in the JSON string but got `%s`", jsonObj.get("meta_array_keys").toString()));
+      }
+      JsonArray jsonArraymetaArrays = jsonObj.getAsJsonArray("meta_arrays");
+      if (jsonArraymetaArrays != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("meta_arrays").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `meta_arrays` to be an array in the JSON string but got `%s`", jsonObj.get("meta_arrays").toString()));
+        }
+
+        // validate the optional field `meta_arrays` (array)
+        for (int i = 0; i < jsonArraymetaArrays.size(); i++) {
+          SendBirdMessageMetaArray.validateJsonObject(jsonArraymetaArrays.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("push_notification_delivery_option") != null && !jsonObj.get("push_notification_delivery_option").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `push_notification_delivery_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_notification_delivery_option").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("target_languages") != null && !jsonObj.get("target_languages").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `target_languages` to be an array in the JSON string but got `%s`", jsonObj.get("target_languages").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("translation_target_languages") != null && !jsonObj.get("translation_target_languages").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `translation_target_languages` to be an array in the JSON string but got `%s`", jsonObj.get("translation_target_languages").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SendBirdUserMessageParams.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SendBirdUserMessageParams' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SendBirdUserMessageParams> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdUserMessageParams.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SendBirdUserMessageParams>() {
+           @Override
+           public void write(JsonWriter out, SendBirdUserMessageParams value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SendBirdUserMessageParams read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of SendBirdUserMessageParams given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SendBirdUserMessageParams
+  * @throws IOException if the JSON string is invalid with respect to SendBirdUserMessageParams
+  */
+  public static SendBirdUserMessageParams fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SendBirdUserMessageParams.class);
+  }
+
+ /**
+  * Convert an instance of SendBirdUserMessageParams to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

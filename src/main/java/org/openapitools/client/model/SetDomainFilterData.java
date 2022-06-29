@@ -23,36 +23,56 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.V3ApplicationsSettingsGlobalCustomTypeDomainFilter;
-import org.openapitools.client.model.V3ApplicationsSettingsGlobalCustomTypeImageModeration;
-import org.openapitools.client.model.V3ApplicationsSettingsGlobalCustomTypeProfanityFilter;
-import org.openapitools.client.model.V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration;
+import org.openapitools.client.model.SetDomainFilterDataDomainFilter;
+import org.openapitools.client.model.SetDomainFilterDataImageModeration;
+import org.openapitools.client.model.SetDomainFilterDataProfanityFilter;
+import org.openapitools.client.model.SetDomainFilterDataProfanityTriggeredModeration;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
 
 /**
  * SetDomainFilterData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class SetDomainFilterData {
   public static final String SERIALIZED_NAME_DOMAIN_FILTER = "domain_filter";
   @SerializedName(SERIALIZED_NAME_DOMAIN_FILTER)
-  private V3ApplicationsSettingsGlobalCustomTypeDomainFilter domainFilter;
+  private SetDomainFilterDataDomainFilter domainFilter;
 
   public static final String SERIALIZED_NAME_PROFANITY_FILTER = "profanity_filter";
   @SerializedName(SERIALIZED_NAME_PROFANITY_FILTER)
-  private V3ApplicationsSettingsGlobalCustomTypeProfanityFilter profanityFilter;
+  private SetDomainFilterDataProfanityFilter profanityFilter;
 
   public static final String SERIALIZED_NAME_PROFANITY_TRIGGERED_MODERATION = "profanity_triggered_moderation";
   @SerializedName(SERIALIZED_NAME_PROFANITY_TRIGGERED_MODERATION)
-  private V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration profanityTriggeredModeration;
+  private SetDomainFilterDataProfanityTriggeredModeration profanityTriggeredModeration;
 
   public static final String SERIALIZED_NAME_IMAGE_MODERATION = "image_moderation";
   @SerializedName(SERIALIZED_NAME_IMAGE_MODERATION)
-  private V3ApplicationsSettingsGlobalCustomTypeImageModeration imageModeration;
+  private SetDomainFilterDataImageModeration imageModeration;
 
   public SetDomainFilterData() { 
   }
 
-  public SetDomainFilterData domainFilter(V3ApplicationsSettingsGlobalCustomTypeDomainFilter domainFilter) {
+  public SetDomainFilterData domainFilter(SetDomainFilterDataDomainFilter domainFilter) {
     
     this.domainFilter = domainFilter;
     return this;
@@ -65,17 +85,17 @@ public class SetDomainFilterData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public V3ApplicationsSettingsGlobalCustomTypeDomainFilter getDomainFilter() {
+  public SetDomainFilterDataDomainFilter getDomainFilter() {
     return domainFilter;
   }
 
 
-  public void setDomainFilter(V3ApplicationsSettingsGlobalCustomTypeDomainFilter domainFilter) {
+  public void setDomainFilter(SetDomainFilterDataDomainFilter domainFilter) {
     this.domainFilter = domainFilter;
   }
 
 
-  public SetDomainFilterData profanityFilter(V3ApplicationsSettingsGlobalCustomTypeProfanityFilter profanityFilter) {
+  public SetDomainFilterData profanityFilter(SetDomainFilterDataProfanityFilter profanityFilter) {
     
     this.profanityFilter = profanityFilter;
     return this;
@@ -88,17 +108,17 @@ public class SetDomainFilterData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public V3ApplicationsSettingsGlobalCustomTypeProfanityFilter getProfanityFilter() {
+  public SetDomainFilterDataProfanityFilter getProfanityFilter() {
     return profanityFilter;
   }
 
 
-  public void setProfanityFilter(V3ApplicationsSettingsGlobalCustomTypeProfanityFilter profanityFilter) {
+  public void setProfanityFilter(SetDomainFilterDataProfanityFilter profanityFilter) {
     this.profanityFilter = profanityFilter;
   }
 
 
-  public SetDomainFilterData profanityTriggeredModeration(V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration profanityTriggeredModeration) {
+  public SetDomainFilterData profanityTriggeredModeration(SetDomainFilterDataProfanityTriggeredModeration profanityTriggeredModeration) {
     
     this.profanityTriggeredModeration = profanityTriggeredModeration;
     return this;
@@ -111,17 +131,17 @@ public class SetDomainFilterData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration getProfanityTriggeredModeration() {
+  public SetDomainFilterDataProfanityTriggeredModeration getProfanityTriggeredModeration() {
     return profanityTriggeredModeration;
   }
 
 
-  public void setProfanityTriggeredModeration(V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration profanityTriggeredModeration) {
+  public void setProfanityTriggeredModeration(SetDomainFilterDataProfanityTriggeredModeration profanityTriggeredModeration) {
     this.profanityTriggeredModeration = profanityTriggeredModeration;
   }
 
 
-  public SetDomainFilterData imageModeration(V3ApplicationsSettingsGlobalCustomTypeImageModeration imageModeration) {
+  public SetDomainFilterData imageModeration(SetDomainFilterDataImageModeration imageModeration) {
     
     this.imageModeration = imageModeration;
     return this;
@@ -134,14 +154,15 @@ public class SetDomainFilterData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public V3ApplicationsSettingsGlobalCustomTypeImageModeration getImageModeration() {
+  public SetDomainFilterDataImageModeration getImageModeration() {
     return imageModeration;
   }
 
 
-  public void setImageModeration(V3ApplicationsSettingsGlobalCustomTypeImageModeration imageModeration) {
+  public void setImageModeration(SetDomainFilterDataImageModeration imageModeration) {
     this.imageModeration = imageModeration;
   }
+
 
 
   @Override
@@ -187,5 +208,109 @@ public class SetDomainFilterData {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("domain_filter");
+    openapiFields.add("profanity_filter");
+    openapiFields.add("profanity_triggered_moderation");
+    openapiFields.add("image_moderation");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to SetDomainFilterData
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (SetDomainFilterData.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SetDomainFilterData is not found in the empty JSON string", SetDomainFilterData.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!SetDomainFilterData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SetDomainFilterData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      // validate the optional field `domain_filter`
+      if (jsonObj.getAsJsonObject("domain_filter") != null) {
+        SetDomainFilterDataDomainFilter.validateJsonObject(jsonObj.getAsJsonObject("domain_filter"));
+      }
+      // validate the optional field `profanity_filter`
+      if (jsonObj.getAsJsonObject("profanity_filter") != null) {
+        SetDomainFilterDataProfanityFilter.validateJsonObject(jsonObj.getAsJsonObject("profanity_filter"));
+      }
+      // validate the optional field `profanity_triggered_moderation`
+      if (jsonObj.getAsJsonObject("profanity_triggered_moderation") != null) {
+        SetDomainFilterDataProfanityTriggeredModeration.validateJsonObject(jsonObj.getAsJsonObject("profanity_triggered_moderation"));
+      }
+      // validate the optional field `image_moderation`
+      if (jsonObj.getAsJsonObject("image_moderation") != null) {
+        SetDomainFilterDataImageModeration.validateJsonObject(jsonObj.getAsJsonObject("image_moderation"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SetDomainFilterData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SetDomainFilterData' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SetDomainFilterData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SetDomainFilterData.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SetDomainFilterData>() {
+           @Override
+           public void write(JsonWriter out, SetDomainFilterData value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SetDomainFilterData read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of SetDomainFilterData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SetDomainFilterData
+  * @throws IOException if the JSON string is invalid with respect to SetDomainFilterData
+  */
+  public static SetDomainFilterData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SetDomainFilterData.class);
+  }
+
+ /**
+  * Convert an instance of SetDomainFilterData to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

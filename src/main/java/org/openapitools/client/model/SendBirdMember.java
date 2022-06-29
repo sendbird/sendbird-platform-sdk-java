@@ -28,10 +28,30 @@ import java.util.List;
 import org.openapitools.client.model.SBObject;
 import org.openapitools.client.model.SendBirdRestrictionInfo;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * SendBirdMember
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class SendBirdMember {
   public static final String SERIALIZED_NAME_CONNECTION_STATUS = "connection_status";
   @SerializedName(SERIALIZED_NAME_CONNECTION_STATUS)
@@ -463,7 +483,7 @@ public class SendBirdMember {
 
   public SendBirdMember addPreferredLanguagesItem(String preferredLanguagesItem) {
     if (this.preferredLanguages == null) {
-      this.preferredLanguages = new ArrayList<String>();
+      this.preferredLanguages = new ArrayList<>();
     }
     this.preferredLanguages.add(preferredLanguagesItem);
     return this;
@@ -624,6 +644,7 @@ public class SendBirdMember {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -695,5 +716,146 @@ public class SendBirdMember {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("connection_status");
+    openapiFields.add("friend_discovery_key");
+    openapiFields.add("friend_name");
+    openapiFields.add("is_active");
+    openapiFields.add("is_blocked_by_me");
+    openapiFields.add("is_blocking_me");
+    openapiFields.add("is_muted");
+    openapiFields.add("last_seen_at");
+    openapiFields.add("meta_data");
+    openapiFields.add("nickname");
+    openapiFields.add("plain_profile_url");
+    openapiFields.add("preferred_languages");
+    openapiFields.add("profile_url");
+    openapiFields.add("require_auth");
+    openapiFields.add("restriction_info");
+    openapiFields.add("role");
+    openapiFields.add("state");
+    openapiFields.add("user_id");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to SendBirdMember
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (SendBirdMember.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdMember is not found in the empty JSON string", SendBirdMember.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!SendBirdMember.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdMember` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("connection_status") != null && !jsonObj.get("connection_status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `connection_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connection_status").toString()));
+      }
+      if (jsonObj.get("friend_discovery_key") != null && !jsonObj.get("friend_discovery_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `friend_discovery_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friend_discovery_key").toString()));
+      }
+      if (jsonObj.get("friend_name") != null && !jsonObj.get("friend_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `friend_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friend_name").toString()));
+      }
+      // validate the optional field `meta_data`
+      if (jsonObj.getAsJsonObject("meta_data") != null) {
+        SBObject.validateJsonObject(jsonObj.getAsJsonObject("meta_data"));
+      }
+      if (jsonObj.get("nickname") != null && !jsonObj.get("nickname").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));
+      }
+      if (jsonObj.get("plain_profile_url") != null && !jsonObj.get("plain_profile_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `plain_profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("plain_profile_url").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("preferred_languages") != null && !jsonObj.get("preferred_languages").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `preferred_languages` to be an array in the JSON string but got `%s`", jsonObj.get("preferred_languages").toString()));
+      }
+      if (jsonObj.get("profile_url") != null && !jsonObj.get("profile_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profile_url").toString()));
+      }
+      // validate the optional field `restriction_info`
+      if (jsonObj.getAsJsonObject("restriction_info") != null) {
+        SendBirdRestrictionInfo.validateJsonObject(jsonObj.getAsJsonObject("restriction_info"));
+      }
+      if (jsonObj.get("role") != null && !jsonObj.get("role").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+      }
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
+      }
+      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SendBirdMember.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SendBirdMember' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SendBirdMember> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdMember.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SendBirdMember>() {
+           @Override
+           public void write(JsonWriter out, SendBirdMember value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SendBirdMember read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of SendBirdMember given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SendBirdMember
+  * @throws IOException if the JSON string is invalid with respect to SendBirdMember
+  */
+  public static SendBirdMember fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SendBirdMember.class);
+  }
+
+ /**
+  * Convert an instance of SendBirdMember to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

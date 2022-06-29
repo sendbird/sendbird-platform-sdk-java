@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class AnnouncementApi {
     private ApiClient localVarApiClient;
@@ -90,7 +91,6 @@ public class AnnouncementApi {
      */
     public okhttp3.Call getDetailedOpenRateOfAnnouncementByIdCall(String apiToken, String uniqueId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -131,7 +131,7 @@ public class AnnouncementApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -231,7 +231,6 @@ public class AnnouncementApi {
      */
     public okhttp3.Call getDetailedOpenRateOfAnnouncementGroupCall(String apiToken, String announcementGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -272,7 +271,7 @@ public class AnnouncementApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -377,7 +376,6 @@ public class AnnouncementApi {
      */
     public okhttp3.Call getDetailedOpenStatusOfAnnouncementByIdCall(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -438,7 +436,7 @@ public class AnnouncementApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -553,7 +551,6 @@ public class AnnouncementApi {
      */
     public okhttp3.Call viewAnnouncementByIdCall(String apiToken, String uniqueId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -594,7 +591,7 @@ public class AnnouncementApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

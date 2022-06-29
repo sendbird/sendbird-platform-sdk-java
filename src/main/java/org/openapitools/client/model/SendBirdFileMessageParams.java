@@ -32,10 +32,30 @@ import org.openapitools.client.model.SendBirdMessageMetaArray;
 import org.openapitools.client.model.SendBirdThumbnailSize;
 import org.openapitools.client.model.SendBirdUser;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * SendBirdFileMessageParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class SendBirdFileMessageParams {
   public static final String SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   @SerializedName(SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS)
@@ -51,7 +71,7 @@ public class SendBirdFileMessageParams {
 
   public static final String SERIALIZED_NAME_FILE = "file";
   @SerializedName(SERIALIZED_NAME_FILE)
-  private Blob file;
+  private Blob _file;
 
   public static final String SERIALIZED_NAME_FILE_NAME = "file_name";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
@@ -271,26 +291,26 @@ public class SendBirdFileMessageParams {
   }
 
 
-  public SendBirdFileMessageParams file(Blob file) {
+  public SendBirdFileMessageParams _file(Blob _file) {
     
-    this.file = file;
+    this._file = _file;
     return this;
   }
 
    /**
-   * Get file
-   * @return file
+   * Get _file
+   * @return _file
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
   public Blob getFile() {
-    return file;
+    return _file;
   }
 
 
-  public void setFile(Blob file) {
-    this.file = file;
+  public void setFile(Blob _file) {
+    this._file = _file;
   }
 
 
@@ -417,7 +437,7 @@ public class SendBirdFileMessageParams {
 
   public SendBirdFileMessageParams addMentionedUserIdsItem(String mentionedUserIdsItem) {
     if (this.mentionedUserIds == null) {
-      this.mentionedUserIds = new ArrayList<String>();
+      this.mentionedUserIds = new ArrayList<>();
     }
     this.mentionedUserIds.add(mentionedUserIdsItem);
     return this;
@@ -448,7 +468,7 @@ public class SendBirdFileMessageParams {
 
   public SendBirdFileMessageParams addMentionedUsersItem(SendBirdUser mentionedUsersItem) {
     if (this.mentionedUsers == null) {
-      this.mentionedUsers = new ArrayList<SendBirdUser>();
+      this.mentionedUsers = new ArrayList<>();
     }
     this.mentionedUsers.add(mentionedUsersItem);
     return this;
@@ -479,7 +499,7 @@ public class SendBirdFileMessageParams {
 
   public SendBirdFileMessageParams addMetaArrayKeysItem(String metaArrayKeysItem) {
     if (this.metaArrayKeys == null) {
-      this.metaArrayKeys = new ArrayList<String>();
+      this.metaArrayKeys = new ArrayList<>();
     }
     this.metaArrayKeys.add(metaArrayKeysItem);
     return this;
@@ -510,7 +530,7 @@ public class SendBirdFileMessageParams {
 
   public SendBirdFileMessageParams addMetaArraysItem(SendBirdMessageMetaArray metaArraysItem) {
     if (this.metaArrays == null) {
-      this.metaArrays = new ArrayList<SendBirdMessageMetaArray>();
+      this.metaArrays = new ArrayList<>();
     }
     this.metaArrays.add(metaArraysItem);
     return this;
@@ -610,7 +630,7 @@ public class SendBirdFileMessageParams {
 
   public SendBirdFileMessageParams addThumbnailSizesItem(SendBirdThumbnailSize thumbnailSizesItem) {
     if (this.thumbnailSizes == null) {
-      this.thumbnailSizes = new ArrayList<SendBirdThumbnailSize>();
+      this.thumbnailSizes = new ArrayList<>();
     }
     this.thumbnailSizes.add(thumbnailSizesItem);
     return this;
@@ -633,6 +653,7 @@ public class SendBirdFileMessageParams {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -645,7 +666,7 @@ public class SendBirdFileMessageParams {
     return Objects.equals(this.appleCriticalAlertOptions, sendBirdFileMessageParams.appleCriticalAlertOptions) &&
         Objects.equals(this.customType, sendBirdFileMessageParams.customType) &&
         Objects.equals(this.data, sendBirdFileMessageParams.data) &&
-        Objects.equals(this.file, sendBirdFileMessageParams.file) &&
+        Objects.equals(this._file, sendBirdFileMessageParams._file) &&
         Objects.equals(this.fileName, sendBirdFileMessageParams.fileName) &&
         Objects.equals(this.fileSize, sendBirdFileMessageParams.fileSize) &&
         Objects.equals(this.fileUrl, sendBirdFileMessageParams.fileUrl) &&
@@ -663,7 +684,7 @@ public class SendBirdFileMessageParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(appleCriticalAlertOptions, customType, data, file, fileName, fileSize, fileUrl, isReplyToChannel, mentionType, mentionedUserIds, mentionedUsers, metaArrayKeys, metaArrays, mimeType, parentMessageId, pushNotificationDeliveryOption, thumbnailSizes);
+    return Objects.hash(appleCriticalAlertOptions, customType, data, _file, fileName, fileSize, fileUrl, isReplyToChannel, mentionType, mentionedUserIds, mentionedUsers, metaArrayKeys, metaArrays, mimeType, parentMessageId, pushNotificationDeliveryOption, thumbnailSizes);
   }
 
   @Override
@@ -673,7 +694,7 @@ public class SendBirdFileMessageParams {
     sb.append("    appleCriticalAlertOptions: ").append(toIndentedString(appleCriticalAlertOptions)).append("\n");
     sb.append("    customType: ").append(toIndentedString(customType)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
-    sb.append("    file: ").append(toIndentedString(file)).append("\n");
+    sb.append("    _file: ").append(toIndentedString(_file)).append("\n");
     sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
     sb.append("    fileSize: ").append(toIndentedString(fileSize)).append("\n");
     sb.append("    fileUrl: ").append(toIndentedString(fileUrl)).append("\n");
@@ -702,5 +723,179 @@ public class SendBirdFileMessageParams {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("apple_critical_alert_options");
+    openapiFields.add("custom_type");
+    openapiFields.add("data");
+    openapiFields.add("file");
+    openapiFields.add("file_name");
+    openapiFields.add("file_size");
+    openapiFields.add("file_url");
+    openapiFields.add("is_reply_to_channel");
+    openapiFields.add("mention_type");
+    openapiFields.add("mentioned_user_ids");
+    openapiFields.add("mentioned_users");
+    openapiFields.add("meta_array_keys");
+    openapiFields.add("meta_arrays");
+    openapiFields.add("mime_type");
+    openapiFields.add("parent_message_id");
+    openapiFields.add("push_notification_delivery_option");
+    openapiFields.add("thumbnail_sizes");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to SendBirdFileMessageParams
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (SendBirdFileMessageParams.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdFileMessageParams is not found in the empty JSON string", SendBirdFileMessageParams.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!SendBirdFileMessageParams.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdFileMessageParams` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      // validate the optional field `apple_critical_alert_options`
+      if (jsonObj.getAsJsonObject("apple_critical_alert_options") != null) {
+        SendBirdAppleCriticalAlertOptions.validateJsonObject(jsonObj.getAsJsonObject("apple_critical_alert_options"));
+      }
+      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
+      }
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
+      }
+      // validate the optional field `file`
+      if (jsonObj.getAsJsonObject("file") != null) {
+        Blob.validateJsonObject(jsonObj.getAsJsonObject("file"));
+      }
+      if (jsonObj.get("file_name") != null && !jsonObj.get("file_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `file_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_name").toString()));
+      }
+      if (jsonObj.get("file_url") != null && !jsonObj.get("file_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `file_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_url").toString()));
+      }
+      if (jsonObj.get("mention_type") != null && !jsonObj.get("mention_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mention_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mention_type").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("mentioned_user_ids") != null && !jsonObj.get("mentioned_user_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mentioned_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_user_ids").toString()));
+      }
+      JsonArray jsonArraymentionedUsers = jsonObj.getAsJsonArray("mentioned_users");
+      if (jsonArraymentionedUsers != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("mentioned_users").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `mentioned_users` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_users").toString()));
+        }
+
+        // validate the optional field `mentioned_users` (array)
+        for (int i = 0; i < jsonArraymentionedUsers.size(); i++) {
+          SendBirdUser.validateJsonObject(jsonArraymentionedUsers.get(i).getAsJsonObject());
+        };
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("meta_array_keys") != null && !jsonObj.get("meta_array_keys").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `meta_array_keys` to be an array in the JSON string but got `%s`", jsonObj.get("meta_array_keys").toString()));
+      }
+      JsonArray jsonArraymetaArrays = jsonObj.getAsJsonArray("meta_arrays");
+      if (jsonArraymetaArrays != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("meta_arrays").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `meta_arrays` to be an array in the JSON string but got `%s`", jsonObj.get("meta_arrays").toString()));
+        }
+
+        // validate the optional field `meta_arrays` (array)
+        for (int i = 0; i < jsonArraymetaArrays.size(); i++) {
+          SendBirdMessageMetaArray.validateJsonObject(jsonArraymetaArrays.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("mime_type") != null && !jsonObj.get("mime_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mime_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mime_type").toString()));
+      }
+      if (jsonObj.get("push_notification_delivery_option") != null && !jsonObj.get("push_notification_delivery_option").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `push_notification_delivery_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_notification_delivery_option").toString()));
+      }
+      JsonArray jsonArraythumbnailSizes = jsonObj.getAsJsonArray("thumbnail_sizes");
+      if (jsonArraythumbnailSizes != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("thumbnail_sizes").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `thumbnail_sizes` to be an array in the JSON string but got `%s`", jsonObj.get("thumbnail_sizes").toString()));
+        }
+
+        // validate the optional field `thumbnail_sizes` (array)
+        for (int i = 0; i < jsonArraythumbnailSizes.size(); i++) {
+          SendBirdThumbnailSize.validateJsonObject(jsonArraythumbnailSizes.get(i).getAsJsonObject());
+        };
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SendBirdFileMessageParams.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SendBirdFileMessageParams' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SendBirdFileMessageParams> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdFileMessageParams.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SendBirdFileMessageParams>() {
+           @Override
+           public void write(JsonWriter out, SendBirdFileMessageParams value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SendBirdFileMessageParams read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of SendBirdFileMessageParams given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SendBirdFileMessageParams
+  * @throws IOException if the JSON string is invalid with respect to SendBirdFileMessageParams
+  */
+  public static SendBirdFileMessageParams fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SendBirdFileMessageParams.class);
+  }
+
+ /**
+  * Convert an instance of SendBirdFileMessageParams to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

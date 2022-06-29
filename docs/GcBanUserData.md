@@ -5,13 +5,13 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**channelUrl** | **String** | Specifies the URL of the channel where to ban a user. | 
-**userId** | **String** | Specifies the unique ID of the user to ban. | 
-**agentId** | **String** | Specifies the ID of the agent (operator) who bans the user. | 
-**seconds** | **Integer** | Specifies the ban duration. If set to -1, the user will be banned permanently (10 years, technically). (Default: -1) | 
-**description** | **String** | Specifies a reason for the banning. The length is limited to 250 characters. | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**channelUrl** | **String** | Specifies the URL of the channel where to ban a user. |  |
+|**userId** | **String** | Specifies the unique ID of the user to ban. |  |
+|**agentId** | **String** | Specifies the ID of the agent (operator) who bans the user. |  |
+|**seconds** | **Integer** | Specifies the ban duration. If set to -1, the user will be banned permanently (10 years, technically). (Default: -1) |  |
+|**description** | **String** | Specifies a reason for the banning. The length is limited to 250 characters. |  |
 
 
 

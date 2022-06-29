@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class WebhooksApi {
     private ApiClient localVarApiClient;
@@ -89,7 +90,6 @@ public class WebhooksApi {
      */
     public okhttp3.Call chooseWhichEventsToSubscribeToCall(String apiToken, ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -129,7 +129,7 @@ public class WebhooksApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -224,7 +224,6 @@ public class WebhooksApi {
      */
     public okhttp3.Call retrieveListOfSubscribedEventsCall(String apiToken, Boolean displayAllWebhookCategories, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -268,7 +267,7 @@ public class WebhooksApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

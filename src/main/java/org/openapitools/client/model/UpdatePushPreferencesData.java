@@ -26,10 +26,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * UpdatePushPreferencesData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class UpdatePushPreferencesData {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -77,7 +97,7 @@ public class UpdatePushPreferencesData {
 
   public static final String SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS = "push_blocked_bot_ids";
   @SerializedName(SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS)
-  private List<Integer> pushBlockedBotIds = new ArrayList<Integer>();
+  private List<Integer> pushBlockedBotIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMEZONE = "timezone";
   @SerializedName(SERIALIZED_NAME_TIMEZONE)
@@ -417,6 +437,7 @@ public class UpdatePushPreferencesData {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -480,5 +501,140 @@ public class UpdatePushPreferencesData {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("user_id");
+    openapiFields.add("push_trigger_option");
+    openapiFields.add("do_not_disturb");
+    openapiFields.add("start_hour");
+    openapiFields.add("start_min");
+    openapiFields.add("end_hour");
+    openapiFields.add("end_min");
+    openapiFields.add("snooze_enabled");
+    openapiFields.add("snooze_start_ts");
+    openapiFields.add("snooze_end_ts");
+    openapiFields.add("block_push_from_bots");
+    openapiFields.add("push_blocked_bot_ids");
+    openapiFields.add("timezone");
+    openapiFields.add("push_sound");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("user_id");
+    openapiRequiredFields.add("push_trigger_option");
+    openapiRequiredFields.add("do_not_disturb");
+    openapiRequiredFields.add("start_hour");
+    openapiRequiredFields.add("start_min");
+    openapiRequiredFields.add("end_hour");
+    openapiRequiredFields.add("end_min");
+    openapiRequiredFields.add("snooze_enabled");
+    openapiRequiredFields.add("snooze_start_ts");
+    openapiRequiredFields.add("snooze_end_ts");
+    openapiRequiredFields.add("block_push_from_bots");
+    openapiRequiredFields.add("push_blocked_bot_ids");
+    openapiRequiredFields.add("timezone");
+    openapiRequiredFields.add("push_sound");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to UpdatePushPreferencesData
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (UpdatePushPreferencesData.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdatePushPreferencesData is not found in the empty JSON string", UpdatePushPreferencesData.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!UpdatePushPreferencesData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdatePushPreferencesData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : UpdatePushPreferencesData.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
+      }
+      if (jsonObj.get("push_trigger_option") != null && !jsonObj.get("push_trigger_option").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `push_trigger_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_trigger_option").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("push_blocked_bot_ids") != null && !jsonObj.get("push_blocked_bot_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `push_blocked_bot_ids` to be an array in the JSON string but got `%s`", jsonObj.get("push_blocked_bot_ids").toString()));
+      }
+      if (jsonObj.get("timezone") != null && !jsonObj.get("timezone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `timezone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timezone").toString()));
+      }
+      if (jsonObj.get("push_sound") != null && !jsonObj.get("push_sound").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `push_sound` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_sound").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!UpdatePushPreferencesData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UpdatePushPreferencesData' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<UpdatePushPreferencesData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UpdatePushPreferencesData.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<UpdatePushPreferencesData>() {
+           @Override
+           public void write(JsonWriter out, UpdatePushPreferencesData value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public UpdatePushPreferencesData read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of UpdatePushPreferencesData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of UpdatePushPreferencesData
+  * @throws IOException if the JSON string is invalid with respect to UpdatePushPreferencesData
+  */
+  public static UpdatePushPreferencesData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UpdatePushPreferencesData.class);
+  }
+
+ /**
+  * Convert an instance of UpdatePushPreferencesData to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

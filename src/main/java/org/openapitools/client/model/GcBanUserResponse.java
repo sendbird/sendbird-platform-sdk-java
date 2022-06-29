@@ -24,13 +24,33 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.openapitools.client.model.InlineResponse2001;
+import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.SendBirdUser;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
 
 /**
  * GcBanUserResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class GcBanUserResponse {
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
@@ -50,7 +70,7 @@ public class GcBanUserResponse {
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  private InlineResponse2001 metadata;
+  private OcDeleteChannelByUrl200Response metadata;
 
   public static final String SERIALIZED_NAME_NEXT_URL = "next_url";
   @SerializedName(SERIALIZED_NAME_NEXT_URL)
@@ -167,7 +187,7 @@ public class GcBanUserResponse {
   }
 
 
-  public GcBanUserResponse metadata(InlineResponse2001 metadata) {
+  public GcBanUserResponse metadata(OcDeleteChannelByUrl200Response metadata) {
     
     this.metadata = metadata;
     return this;
@@ -180,12 +200,12 @@ public class GcBanUserResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public InlineResponse2001 getMetadata() {
+  public OcDeleteChannelByUrl200Response getMetadata() {
     return metadata;
   }
 
 
-  public void setMetadata(InlineResponse2001 metadata) {
+  public void setMetadata(OcDeleteChannelByUrl200Response metadata) {
     this.metadata = metadata;
   }
 
@@ -305,6 +325,7 @@ public class GcBanUserResponse {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -360,5 +381,122 @@ public class GcBanUserResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("user");
+    openapiFields.add("start_at");
+    openapiFields.add("end_at");
+    openapiFields.add("description");
+    openapiFields.add("metadata");
+    openapiFields.add("next_url");
+    openapiFields.add("nickname");
+    openapiFields.add("profile_url");
+    openapiFields.add("require_auth_for_profile_image");
+    openapiFields.add("user_id");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GcBanUserResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GcBanUserResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GcBanUserResponse is not found in the empty JSON string", GcBanUserResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GcBanUserResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GcBanUserResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      // validate the optional field `user`
+      if (jsonObj.getAsJsonObject("user") != null) {
+        SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("user"));
+      }
+      if (jsonObj.get("description") != null && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // validate the optional field `metadata`
+      if (jsonObj.getAsJsonObject("metadata") != null) {
+        OcDeleteChannelByUrl200Response.validateJsonObject(jsonObj.getAsJsonObject("metadata"));
+      }
+      if (jsonObj.get("next_url") != null && !jsonObj.get("next_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `next_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next_url").toString()));
+      }
+      if (jsonObj.get("nickname") != null && !jsonObj.get("nickname").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));
+      }
+      if (jsonObj.get("profile_url") != null && !jsonObj.get("profile_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profile_url").toString()));
+      }
+      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GcBanUserResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GcBanUserResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GcBanUserResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GcBanUserResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GcBanUserResponse>() {
+           @Override
+           public void write(JsonWriter out, GcBanUserResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GcBanUserResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GcBanUserResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GcBanUserResponse
+  * @throws IOException if the JSON string is invalid with respect to GcBanUserResponse
+  */
+  public static GcBanUserResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GcBanUserResponse.class);
+  }
+
+ /**
+  * Convert an instance of GcBanUserResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

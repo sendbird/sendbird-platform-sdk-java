@@ -25,9 +25,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -45,27 +44,11 @@ public class SendBirdOpenChannelTest {
     }
 
     /**
-     * Test the property 'coverUrl'
+     * Test the property 'name'
      */
     @Test
-    public void coverUrlTest() {
-        // TODO: test coverUrl
-    }
-
-    /**
-     * Test the property 'createdAt'
-     */
-    @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
-     * Test the property 'creator'
-     */
-    @Test
-    public void creatorTest() {
-        // TODO: test creator
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
@@ -77,11 +60,51 @@ public class SendBirdOpenChannelTest {
     }
 
     /**
+     * Test the property 'channelUrl'
+     */
+    @Test
+    public void channelUrlTest() {
+        // TODO: test channelUrl
+    }
+
+    /**
+     * Test the property 'createdAt'
+     */
+    @Test
+    public void createdAtTest() {
+        // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'coverUrl'
+     */
+    @Test
+    public void coverUrlTest() {
+        // TODO: test coverUrl
+    }
+
+    /**
+     * Test the property 'creator'
+     */
+    @Test
+    public void creatorTest() {
+        // TODO: test creator
+    }
+
+    /**
      * Test the property 'data'
      */
     @Test
     public void dataTest() {
         // TODO: test data
+    }
+
+    /**
+     * Test the property 'isDynamicPartitioned'
+     */
+    @Test
+    public void isDynamicPartitionedTest() {
+        // TODO: test isDynamicPartitioned
     }
 
     /**
@@ -101,11 +124,11 @@ public class SendBirdOpenChannelTest {
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'maxLengthMessage'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
+    public void maxLengthMessageTest() {
+        // TODO: test maxLengthMessage
     }
 
     /**
@@ -125,11 +148,11 @@ public class SendBirdOpenChannelTest {
     }
 
     /**
-     * Test the property 'channelUrl'
+     * Test the property 'freeze'
      */
     @Test
-    public void channelUrlTest() {
-        // TODO: test channelUrl
+    public void freezeTest() {
+        // TODO: test freeze
     }
 
 }

@@ -22,9 +22,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -127,6 +126,14 @@ public class ViewPushPreferencesForChannelByUrlResponseTest {
     @Test
     public void pushSoundTest() {
         // TODO: test pushSound
+    }
+
+    /**
+     * Test the property 'enable'
+     */
+    @Test
+    public void enableTest() {
+        // TODO: test enable
     }
 
 }

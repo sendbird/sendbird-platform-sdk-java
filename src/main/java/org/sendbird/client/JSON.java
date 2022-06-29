@@ -23,11 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import com.google.gson.JsonElement;
 import io.gsonfire.GsonFireBuilder;
 import io.gsonfire.TypeSelector;
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
-import org.threeten.bp.format.DateTimeFormatter;
 
-import org.openapitools.client.model.*;
 import okio.ByteString;
 
 import java.io.IOException;
@@ -36,19 +32,28 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 import java.util.HashMap;
 
+/*
+ * A JSON utility class
+ *
+ * NOTE: in the future, this class may be converted to static, which may break
+ *       backward-compatibility
+ */
 public class JSON {
-    private Gson gson;
-    private boolean isLenientOnJson = false;
-    private DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
-    private SqlDateTypeAdapter sqlDateTypeAdapter = new SqlDateTypeAdapter();
-    private OffsetDateTimeTypeAdapter offsetDateTimeTypeAdapter = new OffsetDateTimeTypeAdapter();
-    private LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
-    private ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
+    private static Gson gson;
+    private static boolean isLenientOnJson = false;
+    private static DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
+    private static SqlDateTypeAdapter sqlDateTypeAdapter = new SqlDateTypeAdapter();
+    private static OffsetDateTimeTypeAdapter offsetDateTimeTypeAdapter = new OffsetDateTimeTypeAdapter();
+    private static LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
+    private static ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
 
     @SuppressWarnings("unchecked")
     public static GsonBuilder createGson() {
@@ -81,13 +86,296 @@ public class JSON {
         return clazz;
     }
 
-    public JSON() {
+    {
         gson = createGson()
             .registerTypeAdapter(Date.class, dateTypeAdapter)
             .registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter)
             .registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter)
             .registerTypeAdapter(LocalDate.class, localDateTypeAdapter)
             .registerTypeAdapter(byte[].class, byteArrayAdapter)
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddApnsPushConfigurationData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddApnsPushConfigurationResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddApnsPushConfigurationResponsePushConfigurationsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddEmojiCategoriesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddEmojiCategoriesResponseEmojiCategoriesInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddEmojisData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddEmojisResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddExtraDataToMessageData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddExtraDataToMessageResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddFcmPushConfigurationData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddFcmPushConfigurationResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddFcmPushConfigurationResponsePushConfigurationsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddHmsPushConfigurationData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddHmsPushConfigurationResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddHmsPushConfigurationResponsePushConfigurationsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddIpToWhitelistData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddIpToWhitelistResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddReactionToAMessageData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddReactionToAMessageResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddRegistrationOrDeviceTokenData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.AddRegistrationOrDeviceTokenResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.BanFromChannelsWithCustomChannelTypesData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.BanUsersInChannelsWithCustomChannelTypeData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.BanUsersInChannelsWithCustomChannelTypeDataBannedListInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.Blob.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.BlockUserData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.BlockUserResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ChoosePushNotificationContentTemplateResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ChooseWhichEventsToSubscribeToData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ChooseWhichEventsToSubscribeToResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ChooseWhichEventsToSubscribeToResponseWebhook.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CreateBotData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CreateBotResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CreateBotResponseBot.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CreateChannelMetacounterData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CreateChannelMetadataData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CreateChannelMetadataResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CreateUserData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CreateUserMetadataData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CreateUserMetadataResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.CustomTypeListBannedUsersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.DeleteAllowedIpsFromWhitelistResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.DeleteApnsCertificateByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.EnableReactionsData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.EnableReactionsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.Function.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcAcceptInvitationData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcBanUserData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcBanUserResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcCheckIfMemberByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcCreateChannelData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcDeclineInvitationData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcFreezeChannelData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcHideOrArchiveChannelData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcInviteAsMembersData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcJoinChannelData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcLeaveChannelData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcListBannedUsersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcListChannelsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcListMembersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcListMutedUsersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcListOperatorsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcMarkAllMessagesAsDeliveredData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcMarkAllMessagesAsDeliveredResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcMarkAllMessagesAsReadData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcMuteUserData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcRegisterOperatorsData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcRegisterOperatorsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcResetChatHistoryData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcResetChatHistoryResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcUpdateBanByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcUpdateBanByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcUpdateChannelByUrlData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcViewBanByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcViewMuteByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GcViewNumberOfEachMembersUnreadMessagesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GenerateSecondaryApiTokenData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GenerateSecondaryApiTokenResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementGroupResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GetStatisticsDailyResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GetStatisticsDailyResponseStatisticsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GetStatisticsMonthlyResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.GetStatisticsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.JoinChannelsData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.JoinChannelsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.LeaveMyGroupChannelsData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListAllEmojisAndEmojiCategoriesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInnerEmojisInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListAnnouncementGroupsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListAnnouncementsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListAnnouncementsResponseAnnouncementsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListBannedChannelsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListBannedChannelsResponseBannedChannelsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListBlockedUsersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListBotsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListBotsResponseBotsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponseExportedDataInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListEmojisResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListGdprRequestsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListGdprRequestsResponseRequestsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListMessagesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListMessagesResponseMessagesInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListMessagesResponseMessagesInnerOgTag.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListMessagesResponseMessagesInnerOgTagOgImage.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListMessagesResponseMessagesInnerSortedMetaarrayInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListMutedChannelsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListMutedUsersInChannelsWithCustomChannelType200Response.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListMyGroupChannelsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListPushConfigurationsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListPushConfigurationsResponsePushConfigurationsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListPushNotificationContentTemplatesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListPushNotificationContentTemplatesResponsePushMessageTemplatesInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListReactionsOfMessageResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListRegistrationOrDeviceTokensResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListReportsOnChannelByUrlResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListReportsOnMessageByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListReportsOnMessageByIdResponseReportLogsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListReportsOnUserByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListReportsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListReportsResponseReportLogsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListSecondaryApiTokensResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListSecondaryApiTokensResponseApiTokensInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ListUsersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.MarkAllMessagesAsReadData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ModelFile.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.MuteInChannelsWithCustomChannelTypesData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.MuteUsersInChannelsWithCustomChannelTypeData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcBanUserData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcBanUserResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcCreateChannelData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcDeleteChannelByUrl200Response.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcFreezeChannelData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcListBannedUsersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcListBannedUsersResponseBannedListInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcListChannelsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcListMutedUsersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcListOperatorsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcListParticipantsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcMuteUserData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcRegisterOperatorsData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcUpdateBanByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcUpdateBanByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcUpdateChannelByUrlData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcViewBanByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.OcViewMuteByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RegisterAndScheduleDataExportData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RegisterAndScheduleDataExportResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RegisterAsOperatorToChannelsWithCustomChannelTypesData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RegisterGdprRequestData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RegisterGdprRequestResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RemovePushConfigurationByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RemoveReactionFromAMessageResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RemoveRegistrationOrDeviceTokenByTokenResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RemoveRegistrationOrDeviceTokenResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ReportChannelByUrlData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ReportChannelByUrlResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ReportMessageByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ReportMessageByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ReportUserByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ReportUserByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ResetPushPreferencesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RetrieveAdvancedAnalyticsMetricsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RetrieveIpWhitelistResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RetrieveListOfSubscribedEventsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RetrieveListOfSubscribedEventsResponseWebhook.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.RevokeSecondaryApiTokenByTokenResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SBObject.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ScheduleAnnouncementData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ScheduleAnnouncementResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ScheduleAnnouncementResponseCreateChannelOptions.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ScheduleAnnouncementResponseMessage.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdAdminMessage.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdAppleCriticalAlertOptions.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdBaseChannel.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdBaseMessageInstance.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdChannelResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdEmoji.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdEmojiCategory.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdFileMessageParams.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannel.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannelCollection.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannelCreatedBy.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannelSmsFallback.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdMember.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdMessageMetaArray.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdMessageResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdMessageResponseMentionedUsersInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdMessageResponseUser.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdOGImage.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdOGMetaData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdOpenChannel.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdPlugin.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdPoll.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdPollDetails.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdPollOption.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdPollUpdatedVoteCount.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdReaction.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdRestrictionInfo.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdSender.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdThreadInfo.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdThumbnailSBObject.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdThumbnailSize.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdUser.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdUserMessageParams.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBotSMessageData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendMessageData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterDataDomainFilter.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterDataImageModeration.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterDataImageModerationLimits.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterDataProfanityFilter.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterDataProfanityFilterRegexFiltersInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterDataProfanityTriggeredModeration.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateAnnouncementByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateAnnouncementByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateAnnouncementByIdResponseMessage.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateApnsPushConfigurationByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateApnsPushConfigurationByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateBotByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateBotByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateChannelInvitationPreferenceData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateChannelInvitationPreferenceResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateChannelMetacounterData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateChannelMetadataData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateDefaultChannelInvitationPreferenceData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateDefaultChannelInvitationPreferenceResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateEmojiCategoryUrlByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateEmojiUrlByKeyData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateExtraDataInMessageData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateExtraDataInMessageResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateExtraDataInMessageResponseSortedMetaarrayInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateFcmPushConfigurationByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateFcmPushConfigurationByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateHmsPushConfigurationByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateHmsPushConfigurationByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateMessageByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdatePushNotificationContentTemplateData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdatePushNotificationContentTemplateResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdatePushPreferencesData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdatePushPreferencesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateUserByIdData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateUserMetadataData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateUserMetadataResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UseDefaultEmojisData.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.UseDefaultEmojisResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewAnnouncementByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewBotByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewChannelInvitationPreferenceResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewCountPreferenceOfChannelByUrlResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewDataExportByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewDefaultChannelInvitationPreferenceResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewGdprRequestByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewNumberOfChannelsByJoinStatusResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewNumberOfChannelsWithUnreadMessagesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewNumberOfConcurrentConnectionsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewNumberOfDailyActiveUsersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewNumberOfMonthlyActiveUsersResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewNumberOfPeakConnectionsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewNumberOfPeakConnectionsResponsePeakConnectionsInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewNumberOfUnreadItemsResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewNumberOfUnreadMessagesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewPushConfigurationByIdResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewPushNotificationContentTemplateResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewPushNotificationContentTemplateResponsePushMessageTemplatesInner.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewPushPreferencesForChannelByUrlResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewPushPreferencesResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewSecondaryApiTokenByTokenResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewTotalNumberOfMessagesInChannelResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewUserMetadataResponse.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner.CustomTypeAdapterFactory())
             .create();
     }
 
@@ -96,7 +384,7 @@ public class JSON {
      *
      * @return Gson
      */
-    public Gson getGson() {
+    public static Gson getGson() {
         return gson;
     }
 
@@ -104,23 +392,13 @@ public class JSON {
      * Set Gson.
      *
      * @param gson Gson
-     * @return JSON
      */
-    public JSON setGson(Gson gson) {
-        this.gson = gson;
-        return this;
+    public static void setGson(Gson gson) {
+        JSON.gson = gson;
     }
 
-    /**
-     * Configure the parser to be liberal in what it accepts.
-     *
-     * @param lenientOnJson Set it to true to ignore some syntax errors
-     * @return JSON
-     * @see <a href="https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5/com/google/gson/stream/JsonReader.html">https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5/com/google/gson/stream/JsonReader.html</a>
-     */
-    public JSON setLenientOnJson(boolean lenientOnJson) {
+    public static void setLenientOnJson(boolean lenientOnJson) {
         isLenientOnJson = lenientOnJson;
-        return this;
     }
 
     /**
@@ -129,7 +407,7 @@ public class JSON {
      * @param obj Object
      * @return String representation of the JSON
      */
-    public String serialize(Object obj) {
+    public static String serialize(Object obj) {
         return gson.toJson(obj);
     }
 
@@ -142,11 +420,11 @@ public class JSON {
      * @return The deserialized Java object
      */
     @SuppressWarnings("unchecked")
-    public <T> T deserialize(String body, Type returnType) {
+    public static <T> T deserialize(String body, Type returnType) {
         try {
             if (isLenientOnJson) {
                 JsonReader jsonReader = new JsonReader(new StringReader(body));
-                // see https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5/com/google/gson/stream/JsonReader.html
+                // see https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/stream/JsonReader.html#setLenient(boolean)
                 jsonReader.setLenient(true);
                 return gson.fromJson(jsonReader, returnType);
             } else {
@@ -166,7 +444,7 @@ public class JSON {
     /**
      * Gson TypeAdapter for Byte Array type
      */
-    public class ByteArrayAdapter extends TypeAdapter<byte[]> {
+    public static class ByteArrayAdapter extends TypeAdapter<byte[]> {
 
         @Override
         public void write(JsonWriter out, byte[] value) throws IOException {
@@ -238,7 +516,7 @@ public class JSON {
     /**
      * Gson TypeAdapter for JSR310 LocalDate type
      */
-    public class LocalDateTypeAdapter extends TypeAdapter<LocalDate> {
+    public static class LocalDateTypeAdapter extends TypeAdapter<LocalDate> {
 
         private DateTimeFormatter formatter;
 
@@ -276,14 +554,12 @@ public class JSON {
         }
     }
 
-    public JSON setOffsetDateTimeFormat(DateTimeFormatter dateFormat) {
+    public static void setOffsetDateTimeFormat(DateTimeFormatter dateFormat) {
         offsetDateTimeTypeAdapter.setFormat(dateFormat);
-        return this;
     }
 
-    public JSON setLocalDateFormat(DateTimeFormatter dateFormat) {
+    public static void setLocalDateFormat(DateTimeFormatter dateFormat) {
         localDateTypeAdapter.setFormat(dateFormat);
-        return this;
     }
 
     /**
@@ -397,14 +673,11 @@ public class JSON {
         }
     }
 
-    public JSON setDateFormat(DateFormat dateFormat) {
+    public static void setDateFormat(DateFormat dateFormat) {
         dateTypeAdapter.setFormat(dateFormat);
-        return this;
     }
 
-    public JSON setSqlDateFormat(DateFormat dateFormat) {
+    public static void setSqlDateFormat(DateFormat dateFormat) {
         sqlDateTypeAdapter.setFormat(dateFormat);
-        return this;
     }
-
 }

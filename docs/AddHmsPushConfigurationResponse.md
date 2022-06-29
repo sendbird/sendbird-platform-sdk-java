@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pushConfigurations** | [**List&lt;AddHmsPushConfigurationResponsePushConfigurations&gt;**](AddHmsPushConfigurationResponsePushConfigurations.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**pushConfigurations** | [**List&lt;AddHmsPushConfigurationResponsePushConfigurationsInner&gt;**](AddHmsPushConfigurationResponsePushConfigurationsInner.md) |  |  [optional] |
 
 
 

@@ -5,12 +5,12 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**domainFilter** | [**V3ApplicationsSettingsGlobalCustomTypeDomainFilter**](V3ApplicationsSettingsGlobalCustomTypeDomainFilter.md) |  |  [optional]
-**profanityFilter** | [**V3ApplicationsSettingsGlobalCustomTypeProfanityFilter**](V3ApplicationsSettingsGlobalCustomTypeProfanityFilter.md) |  |  [optional]
-**profanityTriggeredModeration** | [**V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration**](V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration.md) |  |  [optional]
-**imageModeration** | [**V3ApplicationsSettingsGlobalCustomTypeImageModeration**](V3ApplicationsSettingsGlobalCustomTypeImageModeration.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**domainFilter** | [**SetDomainFilterDataDomainFilter**](SetDomainFilterDataDomainFilter.md) |  |  [optional] |
+|**profanityFilter** | [**SetDomainFilterDataProfanityFilter**](SetDomainFilterDataProfanityFilter.md) |  |  [optional] |
+|**profanityTriggeredModeration** | [**SetDomainFilterDataProfanityTriggeredModeration**](SetDomainFilterDataProfanityTriggeredModeration.md) |  |  [optional] |
+|**imageModeration** | [**SetDomainFilterDataImageModeration**](SetDomainFilterDataImageModeration.md) |  |  [optional] |
 
 
 

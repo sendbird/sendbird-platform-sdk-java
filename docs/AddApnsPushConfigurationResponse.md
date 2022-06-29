@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pushConfigurations** | [**List&lt;AddApnsPushConfigurationResponsePushConfigurations&gt;**](AddApnsPushConfigurationResponsePushConfigurations.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**pushConfigurations** | [**List&lt;AddApnsPushConfigurationResponsePushConfigurationsInner&gt;**](AddApnsPushConfigurationResponsePushConfigurationsInner.md) |  |  [optional] |
 
 
 

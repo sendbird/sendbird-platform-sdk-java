@@ -22,9 +22,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -42,19 +41,19 @@ public class RemoveReactionFromAMessageResponseTest {
     }
 
     /**
+     * Test the property 'reaction'
+     */
+    @Test
+    public void reactionTest() {
+        // TODO: test reaction
+    }
+
+    /**
      * Test the property 'userId'
      */
     @Test
     public void userIdTest() {
         // TODO: test userId
-    }
-
-    /**
-     * Test the property 'operation'
-     */
-    @Test
-    public void operationTest() {
-        // TODO: test operation
     }
 
     /**
@@ -66,11 +65,11 @@ public class RemoveReactionFromAMessageResponseTest {
     }
 
     /**
-     * Test the property 'reaction'
+     * Test the property 'msgId'
      */
     @Test
-    public void reactionTest() {
-        // TODO: test reaction
+    public void msgIdTest() {
+        // TODO: test msgId
     }
 
     /**
@@ -79,6 +78,14 @@ public class RemoveReactionFromAMessageResponseTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
+    }
+
+    /**
+     * Test the property 'operation'
+     */
+    @Test
+    public void operationTest() {
+        // TODO: test operation
     }
 
 }

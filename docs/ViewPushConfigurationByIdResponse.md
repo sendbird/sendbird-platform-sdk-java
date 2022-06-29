@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pushConfigurations** | [**List&lt;ListPushConfigurationsResponsePushConfigurations&gt;**](ListPushConfigurationsResponsePushConfigurations.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**pushConfigurations** | [**List&lt;ListPushConfigurationsResponsePushConfigurationsInner&gt;**](ListPushConfigurationsResponsePushConfigurationsInner.md) |  |  [optional] |
 
 
 

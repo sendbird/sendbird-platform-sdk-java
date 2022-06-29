@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**bots** | [**List&lt;ListBotsResponseBots&gt;**](ListBotsResponseBots.md) |  |  [optional]
-**next** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**bots** | [**List&lt;ListBotsResponseBotsInner&gt;**](ListBotsResponseBotsInner.md) |  |  [optional] |
+|**next** | **String** |  |  [optional] |
 
 
 

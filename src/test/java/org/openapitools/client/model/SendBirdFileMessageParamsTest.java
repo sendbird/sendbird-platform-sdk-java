@@ -29,9 +29,8 @@ import org.openapitools.client.model.SendBirdAppleCriticalAlertOptions;
 import org.openapitools.client.model.SendBirdMessageMetaArray;
 import org.openapitools.client.model.SendBirdThumbnailSize;
 import org.openapitools.client.model.SendBirdUser;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -73,11 +72,11 @@ public class SendBirdFileMessageParamsTest {
     }
 
     /**
-     * Test the property 'file'
+     * Test the property '_file'
      */
     @Test
-    public void fileTest() {
-        // TODO: test file
+    public void _fileTest() {
+        // TODO: test _file
     }
 
     /**

@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**webhook** | [**ChooseWhichEventsToSubscribeToResponseWebhook**](ChooseWhichEventsToSubscribeToResponseWebhook.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**webhook** | [**ChooseWhichEventsToSubscribeToResponseWebhook**](ChooseWhichEventsToSubscribeToResponseWebhook.md) |  |  [optional] |
 
 
 

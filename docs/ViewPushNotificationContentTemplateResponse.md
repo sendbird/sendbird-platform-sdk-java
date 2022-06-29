@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pushMessageTemplates** | [**List&lt;ViewPushNotificationContentTemplateResponsePushMessageTemplates&gt;**](ViewPushNotificationContentTemplateResponsePushMessageTemplates.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**pushMessageTemplates** | [**List&lt;ViewPushNotificationContentTemplateResponsePushMessageTemplatesInner&gt;**](ViewPushNotificationContentTemplateResponsePushMessageTemplatesInner.md) |  |  [optional] |
 
 
 

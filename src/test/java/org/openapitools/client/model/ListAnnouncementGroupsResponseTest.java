@@ -23,9 +23,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -43,11 +42,11 @@ public class ListAnnouncementGroupsResponseTest {
     }
 
     /**
-     * Test the property 'announcementGroup'
+     * Test the property 'announcementGroups'
      */
     @Test
-    public void announcementGroupTest() {
-        // TODO: test announcementGroup
+    public void announcementGroupsTest() {
+        // TODO: test announcementGroups
     }
 
     /**

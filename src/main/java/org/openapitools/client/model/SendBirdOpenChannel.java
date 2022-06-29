@@ -28,10 +28,30 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * SendBirdOpenChannel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class SendBirdOpenChannel {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -353,7 +373,7 @@ public class SendBirdOpenChannel {
 
   public SendBirdOpenChannel addOperatorsItem(SendBirdUser operatorsItem) {
     if (this.operators == null) {
-      this.operators = new ArrayList<SendBirdUser>();
+      this.operators = new ArrayList<>();
     }
     this.operators.add(operatorsItem);
     return this;
@@ -422,6 +442,7 @@ public class SendBirdOpenChannel {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -485,5 +506,134 @@ public class SendBirdOpenChannel {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("name");
+    openapiFields.add("custom_type");
+    openapiFields.add("channel_url");
+    openapiFields.add("created_at");
+    openapiFields.add("cover_url");
+    openapiFields.add("creator");
+    openapiFields.add("data");
+    openapiFields.add("is_dynamic_partitioned");
+    openapiFields.add("is_ephemeral");
+    openapiFields.add("is_frozen");
+    openapiFields.add("max_length_message");
+    openapiFields.add("operators");
+    openapiFields.add("participant_count");
+    openapiFields.add("freeze");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to SendBirdOpenChannel
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (SendBirdOpenChannel.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdOpenChannel is not found in the empty JSON string", SendBirdOpenChannel.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!SendBirdOpenChannel.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdOpenChannel` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
+      }
+      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
+      }
+      if (jsonObj.get("cover_url") != null && !jsonObj.get("cover_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cover_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cover_url").toString()));
+      }
+      // validate the optional field `creator`
+      if (jsonObj.getAsJsonObject("creator") != null) {
+        SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("creator"));
+      }
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
+      }
+      JsonArray jsonArrayoperators = jsonObj.getAsJsonArray("operators");
+      if (jsonArrayoperators != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("operators").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `operators` to be an array in the JSON string but got `%s`", jsonObj.get("operators").toString()));
+        }
+
+        // validate the optional field `operators` (array)
+        for (int i = 0; i < jsonArrayoperators.size(); i++) {
+          SendBirdUser.validateJsonObject(jsonArrayoperators.get(i).getAsJsonObject());
+        };
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SendBirdOpenChannel.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SendBirdOpenChannel' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SendBirdOpenChannel> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdOpenChannel.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SendBirdOpenChannel>() {
+           @Override
+           public void write(JsonWriter out, SendBirdOpenChannel value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SendBirdOpenChannel read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of SendBirdOpenChannel given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SendBirdOpenChannel
+  * @throws IOException if the JSON string is invalid with respect to SendBirdOpenChannel
+  */
+  public static SendBirdOpenChannel fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SendBirdOpenChannel.class);
+  }
+
+ /**
+  * Convert an instance of SendBirdOpenChannel to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

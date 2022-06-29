@@ -40,13 +40,13 @@ import org.openapitools.client.model.GcUpdateBanByIdData;
 import org.openapitools.client.model.GcUpdateBanByIdResponse;
 import org.openapitools.client.model.GcViewBanByIdResponse;
 import org.openapitools.client.model.GcViewMuteByIdResponse;
-import org.openapitools.client.model.InlineResponse2001;
 import org.openapitools.client.model.ListBannedChannelsResponse;
 import org.openapitools.client.model.ListBlockedUsersResponse;
 import org.openapitools.client.model.ListMutedChannelsResponse;
 import org.openapitools.client.model.MuteInChannelsWithCustomChannelTypesData;
 import org.openapitools.client.model.OcBanUserData;
 import org.openapitools.client.model.OcBanUserResponse;
+import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.OcFreezeChannelData;
 import org.openapitools.client.model.OcListBannedUsersResponse;
 import org.openapitools.client.model.OcListMutedUsersResponse;
@@ -63,6 +63,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class ModerationApi {
     private ApiClient localVarApiClient;
@@ -117,7 +118,6 @@ public class ModerationApi {
      */
     public okhttp3.Call banFromChannelsWithCustomChannelTypesCall(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -158,7 +158,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -262,7 +262,6 @@ public class ModerationApi {
      */
     public okhttp3.Call blockUserCall(String apiToken, String userId, BlockUserData blockUserData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -303,7 +302,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -407,7 +406,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcBanUserCall(String apiToken, String channelUrl, GcBanUserData gcBanUserData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -448,7 +446,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -552,7 +550,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcFreezeChannelCall(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -593,7 +590,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -698,7 +695,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcListBannedUsersCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -747,7 +743,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -855,7 +851,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcListMutedUsersCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -904,7 +899,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1011,7 +1006,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcMuteUserCall(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1052,7 +1046,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1156,7 +1150,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcUnbanUserByIdCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1198,7 +1191,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1236,7 +1229,7 @@ public class ModerationApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1244,8 +1237,8 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 gcUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = gcUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+    public OcDeleteChannelByUrl200Response gcUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = gcUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
         return localVarResp.getData();
     }
 
@@ -1255,7 +1248,7 @@ public class ModerationApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1263,9 +1256,9 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> gcUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> gcUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
         okhttp3.Call localVarCall = gcUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1284,10 +1277,10 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcUnbanUserByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call gcUnbanUserByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1307,7 +1300,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcUnmuteUserByIdCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1349,7 +1341,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1387,7 +1379,7 @@ public class ModerationApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1395,8 +1387,8 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 gcUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = gcUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+    public OcDeleteChannelByUrl200Response gcUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = gcUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
         return localVarResp.getData();
     }
 
@@ -1406,7 +1398,7 @@ public class ModerationApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1414,9 +1406,9 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> gcUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> gcUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
         okhttp3.Call localVarCall = gcUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1435,10 +1427,10 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcUnmuteUserByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call gcUnmuteUserByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1459,7 +1451,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcUpdateBanByIdCall(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1501,7 +1492,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1613,7 +1604,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcViewBanByIdCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1655,7 +1645,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1764,7 +1754,6 @@ public class ModerationApi {
      */
     public okhttp3.Call gcViewMuteByIdCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1806,7 +1795,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1916,7 +1905,6 @@ public class ModerationApi {
      */
     public okhttp3.Call listBannedChannelsCall(String apiToken, String userId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1965,7 +1953,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2076,7 +2064,6 @@ public class ModerationApi {
      */
     public okhttp3.Call listBlockedUsersCall(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2137,7 +2124,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2254,7 +2241,6 @@ public class ModerationApi {
      */
     public okhttp3.Call listMutedChannelsCall(String apiToken, String userId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2303,7 +2289,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2410,7 +2396,6 @@ public class ModerationApi {
      */
     public okhttp3.Call muteInChannelsWithCustomChannelTypesCall(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2451,7 +2436,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2555,7 +2540,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocBanUserCall(String apiToken, String channelUrl, OcBanUserData ocBanUserData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2596,7 +2580,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2700,7 +2684,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocFreezeChannelCall(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2741,7 +2724,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2846,7 +2829,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocListBannedUsersCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2895,7 +2877,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3003,7 +2985,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocListMutedUsersCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3052,7 +3033,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3159,7 +3140,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocMuteUserCall(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3200,7 +3180,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3304,7 +3284,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocUnbanUserByIdCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3346,7 +3325,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3384,7 +3363,7 @@ public class ModerationApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3392,8 +3371,8 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 ocUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = ocUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+    public OcDeleteChannelByUrl200Response ocUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = ocUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
         return localVarResp.getData();
     }
 
@@ -3403,7 +3382,7 @@ public class ModerationApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param bannedUserId  (required)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3411,9 +3390,9 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> ocUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> ocUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
         okhttp3.Call localVarCall = ocUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3432,10 +3411,10 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUnbanUserByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call ocUnbanUserByIdAsync(String apiToken, String channelUrl, String bannedUserId, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocUnbanUserByIdValidateBeforeCall(apiToken, channelUrl, bannedUserId, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3455,7 +3434,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocUnmuteUserByIdCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3497,7 +3475,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3535,7 +3513,7 @@ public class ModerationApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3543,8 +3521,8 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 ocUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = ocUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+    public OcDeleteChannelByUrl200Response ocUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = ocUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
         return localVarResp.getData();
     }
 
@@ -3554,7 +3532,7 @@ public class ModerationApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param mutedUserId  (required)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3562,9 +3540,9 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> ocUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> ocUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
         okhttp3.Call localVarCall = ocUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3583,10 +3561,10 @@ public class ModerationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call ocUnmuteUserByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call ocUnmuteUserByIdAsync(String apiToken, String channelUrl, String mutedUserId, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = ocUnmuteUserByIdValidateBeforeCall(apiToken, channelUrl, mutedUserId, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3607,7 +3585,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocUpdateBanByIdCall(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3649,7 +3626,7 @@ public class ModerationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3761,7 +3738,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocViewBanByIdCall(String apiToken, String channelUrl, String bannedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3803,7 +3779,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3912,7 +3888,6 @@ public class ModerationApi {
      */
     public okhttp3.Call ocViewMuteByIdCall(String apiToken, String channelUrl, String mutedUserId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3954,7 +3929,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -4063,7 +4038,6 @@ public class ModerationApi {
      */
     public okhttp3.Call unblockUserByIdCall(String apiToken, String userId, String targetId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -4105,7 +4079,7 @@ public class ModerationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

@@ -26,10 +26,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * ScheduleAnnouncementData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class ScheduleAnnouncementData {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
@@ -53,7 +73,7 @@ public class ScheduleAnnouncementData {
 
   public static final String SERIALIZED_NAME_TARGET_LIST = "target_list";
   @SerializedName(SERIALIZED_NAME_TARGET_LIST)
-  private List<String> targetList = new ArrayList<String>();
+  private List<String> targetList = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TARGET_CHANNEL_TYPE = "target_channel_type";
   @SerializedName(SERIALIZED_NAME_TARGET_CHANNEL_TYPE)
@@ -687,6 +707,7 @@ public class ScheduleAnnouncementData {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -770,5 +791,185 @@ public class ScheduleAnnouncementData {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("message");
+    openapiFields.add("message.type");
+    openapiFields.add("message.user_id");
+    openapiFields.add("message.content");
+    openapiFields.add("target_at");
+    openapiFields.add("target_list");
+    openapiFields.add("target_channel_type");
+    openapiFields.add("unique_id");
+    openapiFields.add("message.custom_type");
+    openapiFields.add("message.data");
+    openapiFields.add("create_channel");
+    openapiFields.add("announcement_group");
+    openapiFields.add("create_channel_options");
+    openapiFields.add("create_channel_options.name");
+    openapiFields.add("create_channel_options.cover_url");
+    openapiFields.add("create_channel_options.custom_type");
+    openapiFields.add("create_channel_options.data");
+    openapiFields.add("create_channel_options.distinct");
+    openapiFields.add("scheduled_at");
+    openapiFields.add("cease_at");
+    openapiFields.add("resume_at");
+    openapiFields.add("end_at");
+    openapiFields.add("enable_push");
+    openapiFields.add("assign_sender_as_channel_inviter");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("message");
+    openapiRequiredFields.add("message.type");
+    openapiRequiredFields.add("message.user_id");
+    openapiRequiredFields.add("message.content");
+    openapiRequiredFields.add("target_at");
+    openapiRequiredFields.add("target_list");
+    openapiRequiredFields.add("target_channel_type");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ScheduleAnnouncementData
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ScheduleAnnouncementData.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ScheduleAnnouncementData is not found in the empty JSON string", ScheduleAnnouncementData.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ScheduleAnnouncementData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ScheduleAnnouncementData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ScheduleAnnouncementData.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("message") != null && !jsonObj.get("message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+      }
+      if (jsonObj.get("message.type") != null && !jsonObj.get("message.type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message.type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.type").toString()));
+      }
+      if (jsonObj.get("message.user_id") != null && !jsonObj.get("message.user_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message.user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.user_id").toString()));
+      }
+      if (jsonObj.get("message.content") != null && !jsonObj.get("message.content").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message.content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.content").toString()));
+      }
+      if (jsonObj.get("target_at") != null && !jsonObj.get("target_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `target_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_at").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("target_list") != null && !jsonObj.get("target_list").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `target_list` to be an array in the JSON string but got `%s`", jsonObj.get("target_list").toString()));
+      }
+      if (jsonObj.get("target_channel_type") != null && !jsonObj.get("target_channel_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `target_channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_channel_type").toString()));
+      }
+      if (jsonObj.get("unique_id") != null && !jsonObj.get("unique_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unique_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unique_id").toString()));
+      }
+      if (jsonObj.get("message.custom_type") != null && !jsonObj.get("message.custom_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message.custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.custom_type").toString()));
+      }
+      if (jsonObj.get("message.data") != null && !jsonObj.get("message.data").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message.data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.data").toString()));
+      }
+      if (jsonObj.get("announcement_group") != null && !jsonObj.get("announcement_group").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `announcement_group` to be a primitive type in the JSON string but got `%s`", jsonObj.get("announcement_group").toString()));
+      }
+      if (jsonObj.get("create_channel_options") != null && !jsonObj.get("create_channel_options").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options").toString()));
+      }
+      if (jsonObj.get("create_channel_options.name") != null && !jsonObj.get("create_channel_options.name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.name").toString()));
+      }
+      if (jsonObj.get("create_channel_options.cover_url") != null && !jsonObj.get("create_channel_options.cover_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.cover_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.cover_url").toString()));
+      }
+      if (jsonObj.get("create_channel_options.custom_type") != null && !jsonObj.get("create_channel_options.custom_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.custom_type").toString()));
+      }
+      if (jsonObj.get("create_channel_options.data") != null && !jsonObj.get("create_channel_options.data").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.data").toString()));
+      }
+      if (jsonObj.get("create_channel_options.distinct") != null && !jsonObj.get("create_channel_options.distinct").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.distinct` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.distinct").toString()));
+      }
+      if (jsonObj.get("cease_at") != null && !jsonObj.get("cease_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cease_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cease_at").toString()));
+      }
+      if (jsonObj.get("resume_at") != null && !jsonObj.get("resume_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `resume_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resume_at").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ScheduleAnnouncementData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ScheduleAnnouncementData' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ScheduleAnnouncementData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ScheduleAnnouncementData.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ScheduleAnnouncementData>() {
+           @Override
+           public void write(JsonWriter out, ScheduleAnnouncementData value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ScheduleAnnouncementData read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ScheduleAnnouncementData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ScheduleAnnouncementData
+  * @throws IOException if the JSON string is invalid with respect to ScheduleAnnouncementData
+  */
+  public static ScheduleAnnouncementData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ScheduleAnnouncementData.class);
+  }
+
+ /**
+  * Convert an instance of ScheduleAnnouncementData to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

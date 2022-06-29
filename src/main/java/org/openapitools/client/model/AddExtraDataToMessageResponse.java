@@ -25,29 +25,49 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListMessagesResponseSortedMetaarray;
+import org.openapitools.client.model.ListMessagesResponseMessagesInnerSortedMetaarrayInner;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
 
 /**
  * AddExtraDataToMessageResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class AddExtraDataToMessageResponse {
   public static final String SERIALIZED_NAME_SORTED_METAARRAY = "sorted_metaarray";
   @SerializedName(SERIALIZED_NAME_SORTED_METAARRAY)
-  private List<ListMessagesResponseSortedMetaarray> sortedMetaarray = null;
+  private List<ListMessagesResponseMessagesInnerSortedMetaarrayInner> sortedMetaarray = null;
 
   public AddExtraDataToMessageResponse() { 
   }
 
-  public AddExtraDataToMessageResponse sortedMetaarray(List<ListMessagesResponseSortedMetaarray> sortedMetaarray) {
+  public AddExtraDataToMessageResponse sortedMetaarray(List<ListMessagesResponseMessagesInnerSortedMetaarrayInner> sortedMetaarray) {
     
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
 
-  public AddExtraDataToMessageResponse addSortedMetaarrayItem(ListMessagesResponseSortedMetaarray sortedMetaarrayItem) {
+  public AddExtraDataToMessageResponse addSortedMetaarrayItem(ListMessagesResponseMessagesInnerSortedMetaarrayInner sortedMetaarrayItem) {
     if (this.sortedMetaarray == null) {
-      this.sortedMetaarray = new ArrayList<ListMessagesResponseSortedMetaarray>();
+      this.sortedMetaarray = new ArrayList<>();
     }
     this.sortedMetaarray.add(sortedMetaarrayItem);
     return this;
@@ -60,14 +80,15 @@ public class AddExtraDataToMessageResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<ListMessagesResponseSortedMetaarray> getSortedMetaarray() {
+  public List<ListMessagesResponseMessagesInnerSortedMetaarrayInner> getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
-  public void setSortedMetaarray(List<ListMessagesResponseSortedMetaarray> sortedMetaarray) {
+  public void setSortedMetaarray(List<ListMessagesResponseMessagesInnerSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
+
 
 
   @Override
@@ -107,5 +128,102 @@ public class AddExtraDataToMessageResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("sorted_metaarray");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to AddExtraDataToMessageResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (AddExtraDataToMessageResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in AddExtraDataToMessageResponse is not found in the empty JSON string", AddExtraDataToMessageResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!AddExtraDataToMessageResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddExtraDataToMessageResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      JsonArray jsonArraysortedMetaarray = jsonObj.getAsJsonArray("sorted_metaarray");
+      if (jsonArraysortedMetaarray != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("sorted_metaarray").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `sorted_metaarray` to be an array in the JSON string but got `%s`", jsonObj.get("sorted_metaarray").toString()));
+        }
+
+        // validate the optional field `sorted_metaarray` (array)
+        for (int i = 0; i < jsonArraysortedMetaarray.size(); i++) {
+          ListMessagesResponseMessagesInnerSortedMetaarrayInner.validateJsonObject(jsonArraysortedMetaarray.get(i).getAsJsonObject());
+        };
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!AddExtraDataToMessageResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'AddExtraDataToMessageResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<AddExtraDataToMessageResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(AddExtraDataToMessageResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<AddExtraDataToMessageResponse>() {
+           @Override
+           public void write(JsonWriter out, AddExtraDataToMessageResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public AddExtraDataToMessageResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of AddExtraDataToMessageResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of AddExtraDataToMessageResponse
+  * @throws IOException if the JSON string is invalid with respect to AddExtraDataToMessageResponse
+  */
+  public static AddExtraDataToMessageResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, AddExtraDataToMessageResponse.class);
+  }
+
+ /**
+  * Convert an instance of AddExtraDataToMessageResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

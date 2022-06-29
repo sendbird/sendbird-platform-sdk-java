@@ -27,10 +27,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * OcUpdateChannelByUrlData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class OcUpdateChannelByUrlData {
   public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
   @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
@@ -58,11 +78,11 @@ public class OcUpdateChannelByUrlData {
 
   public static final String SERIALIZED_NAME_OPERATOR_IDS = "operator_ids";
   @SerializedName(SERIALIZED_NAME_OPERATOR_IDS)
-  private List<Integer> operatorIds = new ArrayList<Integer>();
+  private List<Integer> operatorIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OPERATORS = "operators";
   @SerializedName(SERIALIZED_NAME_OPERATORS)
-  private List<String> operators = new ArrayList<String>();
+  private List<String> operators = new ArrayList<>();
 
   public OcUpdateChannelByUrlData() { 
   }
@@ -261,6 +281,7 @@ public class OcUpdateChannelByUrlData {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -312,5 +333,135 @@ public class OcUpdateChannelByUrlData {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("channel_url");
+    openapiFields.add("name");
+    openapiFields.add("cover_url");
+    openapiFields.add("cover_file");
+    openapiFields.add("custom_type");
+    openapiFields.add("data");
+    openapiFields.add("operator_ids");
+    openapiFields.add("operators");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("channel_url");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("cover_url");
+    openapiRequiredFields.add("cover_file");
+    openapiRequiredFields.add("custom_type");
+    openapiRequiredFields.add("data");
+    openapiRequiredFields.add("operator_ids");
+    openapiRequiredFields.add("operators");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to OcUpdateChannelByUrlData
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (OcUpdateChannelByUrlData.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in OcUpdateChannelByUrlData is not found in the empty JSON string", OcUpdateChannelByUrlData.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!OcUpdateChannelByUrlData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OcUpdateChannelByUrlData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OcUpdateChannelByUrlData.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
+      }
+      if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if (jsonObj.get("cover_url") != null && !jsonObj.get("cover_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cover_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cover_url").toString()));
+      }
+      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
+      }
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("operator_ids") != null && !jsonObj.get("operator_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `operator_ids` to be an array in the JSON string but got `%s`", jsonObj.get("operator_ids").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("operators") != null && !jsonObj.get("operators").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `operators` to be an array in the JSON string but got `%s`", jsonObj.get("operators").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!OcUpdateChannelByUrlData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'OcUpdateChannelByUrlData' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<OcUpdateChannelByUrlData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(OcUpdateChannelByUrlData.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<OcUpdateChannelByUrlData>() {
+           @Override
+           public void write(JsonWriter out, OcUpdateChannelByUrlData value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public OcUpdateChannelByUrlData read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of OcUpdateChannelByUrlData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of OcUpdateChannelByUrlData
+  * @throws IOException if the JSON string is invalid with respect to OcUpdateChannelByUrlData
+  */
+  public static OcUpdateChannelByUrlData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, OcUpdateChannelByUrlData.class);
+  }
+
+ /**
+  * Convert an instance of OcUpdateChannelByUrlData to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

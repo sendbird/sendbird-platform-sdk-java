@@ -41,7 +41,7 @@ import org.openapitools.client.model.DeleteAllowedIpsFromWhitelistResponse;
 import org.openapitools.client.model.DeleteApnsCertificateByIdResponse;
 import org.openapitools.client.model.GenerateSecondaryApiTokenData;
 import org.openapitools.client.model.GenerateSecondaryApiTokenResponse;
-import org.openapitools.client.model.InlineResponse200;
+import org.openapitools.client.model.ListMutedUsersInChannelsWithCustomChannelType200Response;
 import org.openapitools.client.model.ListPushConfigurationsResponse;
 import org.openapitools.client.model.ListPushNotificationContentTemplatesResponse;
 import org.openapitools.client.model.ListSecondaryApiTokensResponse;
@@ -71,6 +71,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class ApplicationApi {
     private ApiClient localVarApiClient;
@@ -124,7 +125,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call addApnsPushConfigurationCall(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -164,7 +164,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -259,7 +259,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call addFcmPushConfigurationCall(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -299,7 +298,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -394,7 +393,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call addHmsPushConfigurationCall(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -434,7 +432,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -529,7 +527,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call addIpToWhitelistCall(String apiToken, AddIpToWhitelistData addIpToWhitelistData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -569,7 +566,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -665,7 +662,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call banUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -706,7 +702,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -809,7 +805,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call deleteAllowedIpsFromWhitelistCall(String apiToken, List<String> ipWhitelistAddresses, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -853,7 +848,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -953,7 +948,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call deleteApnsCertificateByIdCall(String apiToken, String providerId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -994,7 +988,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1094,7 +1088,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call generateSecondaryApiTokenCall(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1134,7 +1127,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1231,7 +1224,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call listBannedUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1280,7 +1272,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1388,7 +1380,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call listMutedUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1437,7 +1428,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1471,7 +1462,7 @@ public class ApplicationApi {
      * @param customType  (required)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return InlineResponse200
+     * @return ListMutedUsersInChannelsWithCustomChannelType200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1479,8 +1470,8 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse200 listMutedUsersInChannelsWithCustomChannelType(String apiToken, String customType, String token, Integer limit) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, token, limit);
+    public ListMutedUsersInChannelsWithCustomChannelType200Response listMutedUsersInChannelsWithCustomChannelType(String apiToken, String customType, String token, Integer limit) throws ApiException {
+        ApiResponse<ListMutedUsersInChannelsWithCustomChannelType200Response> localVarResp = listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, token, limit);
         return localVarResp.getData();
     }
 
@@ -1491,7 +1482,7 @@ public class ApplicationApi {
      * @param customType  (required)
      * @param token  (optional)
      * @param limit  (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;ListMutedUsersInChannelsWithCustomChannelType200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1499,9 +1490,9 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse200> listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, String token, Integer limit) throws ApiException {
+    public ApiResponse<ListMutedUsersInChannelsWithCustomChannelType200Response> listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, String token, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listMutedUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, token, limit, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListMutedUsersInChannelsWithCustomChannelType200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1521,10 +1512,10 @@ public class ApplicationApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMutedUsersInChannelsWithCustomChannelTypeAsync(String apiToken, String customType, String token, Integer limit, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call listMutedUsersInChannelsWithCustomChannelTypeAsync(String apiToken, String customType, String token, Integer limit, final ApiCallback<ListMutedUsersInChannelsWithCustomChannelType200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listMutedUsersInChannelsWithCustomChannelTypeValidateBeforeCall(apiToken, customType, token, limit, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListMutedUsersInChannelsWithCustomChannelType200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1543,7 +1534,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call listPushConfigurationsCall(String apiToken, String pushType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1584,7 +1574,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1683,7 +1673,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call listPushNotificationContentTemplatesCall(String apiToken, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1723,7 +1712,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1814,7 +1803,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call listSecondaryApiTokensCall(String apiToken, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1854,7 +1842,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1947,7 +1935,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call muteUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1988,7 +1975,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2092,7 +2079,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call removePushConfigurationByIdCall(String apiToken, String pushType, String providerId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2134,7 +2120,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2241,7 +2227,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call retrieveIpWhitelistCall(String apiToken, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2281,7 +2266,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2373,7 +2358,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call revokeSecondaryApiTokenByTokenCall(String apiToken, String apiToken2, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2414,7 +2398,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2515,7 +2499,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call setDomainFilterCall(String apiToken, String customType, SetDomainFilterData setDomainFilterData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2556,7 +2539,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2660,7 +2643,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call unbanUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, List<String> userIds, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2705,7 +2687,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2814,7 +2796,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call unmuteUsersInChannelsWithCustomChannelTypeCall(String apiToken, String customType, List<String> userIds, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2859,7 +2840,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2968,7 +2949,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call updateApnsPushConfigurationByIdCall(String apiToken, String providerId, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3009,7 +2989,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3112,7 +3092,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call updateDefaultChannelInvitationPreferenceCall(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3152,7 +3131,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3248,7 +3227,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call updateFcmPushConfigurationByIdCall(String apiToken, String providerId, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3289,7 +3267,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3393,7 +3371,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call updateHmsPushConfigurationByIdCall(String apiToken, String providerId, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3434,7 +3411,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3538,7 +3515,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call updatePushNotificationContentTemplateCall(String apiToken, String templateName, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3579,7 +3555,7 @@ public class ApplicationApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3681,7 +3657,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call viewDefaultChannelInvitationPreferenceCall(String apiToken, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3721,7 +3696,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3814,7 +3789,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call viewPushConfigurationByIdCall(String apiToken, String pushType, String providerId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3856,7 +3830,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -3964,7 +3938,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call viewPushNotificationContentTemplateCall(String apiToken, String templateName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -4005,7 +3978,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -4105,7 +4078,6 @@ public class ApplicationApi {
      */
     public okhttp3.Call viewSecondaryApiTokenByTokenCall(String apiToken, String apiToken2, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -4146,7 +4118,7 @@ public class ApplicationApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

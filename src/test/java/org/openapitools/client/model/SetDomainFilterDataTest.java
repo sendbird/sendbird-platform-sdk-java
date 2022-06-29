@@ -21,13 +21,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.V3ApplicationsSettingsGlobalCustomTypeDomainFilter;
-import org.openapitools.client.model.V3ApplicationsSettingsGlobalCustomTypeImageModeration;
-import org.openapitools.client.model.V3ApplicationsSettingsGlobalCustomTypeProfanityFilter;
-import org.openapitools.client.model.V3ApplicationsSettingsGlobalCustomTypeProfanityTriggeredModeration;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.openapitools.client.model.SetDomainFilterDataDomainFilter;
+import org.openapitools.client.model.SetDomainFilterDataImageModeration;
+import org.openapitools.client.model.SetDomainFilterDataProfanityFilter;
+import org.openapitools.client.model.SetDomainFilterDataProfanityTriggeredModeration;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

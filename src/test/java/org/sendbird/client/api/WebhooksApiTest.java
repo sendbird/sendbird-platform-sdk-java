@@ -17,8 +17,8 @@ import org.sendbird.client.ApiException;
 import org.openapitools.client.model.ChooseWhichEventsToSubscribeToData;
 import org.openapitools.client.model.ChooseWhichEventsToSubscribeToResponse;
 import org.openapitools.client.model.RetrieveListOfSubscribedEventsResponse;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,42 +28,39 @@ import java.util.Map;
 /**
  * API tests for WebhooksApi
  */
-@Ignore
+@Disabled
 public class WebhooksApiTest {
 
     private final WebhooksApi api = new WebhooksApi();
 
-    
     /**
      * Choose which events to subscribe to
      *
      * ## Choose which events to subscribe to  Chooses which events for your webhook server to receive payloads for. By subscribing to specific events based on your own needs, you can control the number of HTTP requests to your webhook server.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-choose-which-events-to-subscribe-to
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void chooseWhichEventsToSubscribeToTest() throws ApiException {
         String apiToken = null;
         ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData = null;
-                ChooseWhichEventsToSubscribeToResponse response = api.chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData);
+        ChooseWhichEventsToSubscribeToResponse response = api.chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData);
         // TODO: test validations
     }
-    
+
     /**
      * Retrieve a list of subscribed events
      *
      * ## Retrieve a list of subscribed events  Retrieves a list of events for your webhook server to receive payloads for.  https://sendbird.com/docs/chat/v3/platform-api/guides/webhooks#2-retrieve-a-list-of-subscribed-events ----------------------------
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void retrieveListOfSubscribedEventsTest() throws ApiException {
         String apiToken = null;
         Boolean displayAllWebhookCategories = null;
-                RetrieveListOfSubscribedEventsResponse response = api.retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories);
+        RetrieveListOfSubscribedEventsResponse response = api.retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories);
         // TODO: test validations
     }
-    
+
 }

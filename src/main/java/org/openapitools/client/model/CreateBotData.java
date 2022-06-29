@@ -24,10 +24,30 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * CreateBotData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class CreateBotData {
   public static final String SERIALIZED_NAME_BOT_USERID = "bot_userid";
   @SerializedName(SERIALIZED_NAME_BOT_USERID)
@@ -275,6 +295,7 @@ public class CreateBotData {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -328,5 +349,126 @@ public class CreateBotData {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("bot_userid");
+    openapiFields.add("bot_nickname");
+    openapiFields.add("bot_profile_url");
+    openapiFields.add("bot_type");
+    openapiFields.add("bot_callback_url");
+    openapiFields.add("is_privacy_mode");
+    openapiFields.add("enable_mark_as_read");
+    openapiFields.add("show_member");
+    openapiFields.add("channel_invitation_preference");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("bot_userid");
+    openapiRequiredFields.add("bot_nickname");
+    openapiRequiredFields.add("bot_profile_url");
+    openapiRequiredFields.add("bot_type");
+    openapiRequiredFields.add("bot_callback_url");
+    openapiRequiredFields.add("is_privacy_mode");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to CreateBotData
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (CreateBotData.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateBotData is not found in the empty JSON string", CreateBotData.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!CreateBotData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateBotData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CreateBotData.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("bot_userid") != null && !jsonObj.get("bot_userid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bot_userid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_userid").toString()));
+      }
+      if (jsonObj.get("bot_nickname") != null && !jsonObj.get("bot_nickname").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bot_nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_nickname").toString()));
+      }
+      if (jsonObj.get("bot_profile_url") != null && !jsonObj.get("bot_profile_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bot_profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_profile_url").toString()));
+      }
+      if (jsonObj.get("bot_type") != null && !jsonObj.get("bot_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bot_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_type").toString()));
+      }
+      if (jsonObj.get("bot_callback_url") != null && !jsonObj.get("bot_callback_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bot_callback_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_callback_url").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!CreateBotData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CreateBotData' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<CreateBotData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CreateBotData.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<CreateBotData>() {
+           @Override
+           public void write(JsonWriter out, CreateBotData value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public CreateBotData read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of CreateBotData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CreateBotData
+  * @throws IOException if the JSON string is invalid with respect to CreateBotData
+  */
+  public static CreateBotData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateBotData.class);
+  }
+
+ /**
+  * Convert an instance of CreateBotData to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

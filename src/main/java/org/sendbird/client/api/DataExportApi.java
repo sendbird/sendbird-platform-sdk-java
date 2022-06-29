@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class DataExportApi {
     private ApiClient localVarApiClient;
@@ -92,7 +93,6 @@ public class DataExportApi {
      */
     public okhttp3.Call listDataExportsByMessageChannelOrUserCall(String apiToken, String dataType, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -141,7 +141,7 @@ public class DataExportApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -248,7 +248,6 @@ public class DataExportApi {
      */
     public okhttp3.Call registerAndScheduleDataExportCall(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -289,7 +288,7 @@ public class DataExportApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -393,7 +392,6 @@ public class DataExportApi {
      */
     public okhttp3.Call viewDataExportByIdCall(String apiToken, String dataType, String requestId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -435,7 +433,7 @@ public class DataExportApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

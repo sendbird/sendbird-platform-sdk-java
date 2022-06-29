@@ -25,29 +25,49 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ViewNumberOfPeakConnectionsResponsePeakConnections;
+import org.openapitools.client.model.ViewNumberOfPeakConnectionsResponsePeakConnectionsInner;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
 
 /**
  * ViewNumberOfPeakConnectionsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class ViewNumberOfPeakConnectionsResponse {
   public static final String SERIALIZED_NAME_PEAK_CONNECTIONS = "peak_connections";
   @SerializedName(SERIALIZED_NAME_PEAK_CONNECTIONS)
-  private List<ViewNumberOfPeakConnectionsResponsePeakConnections> peakConnections = null;
+  private List<ViewNumberOfPeakConnectionsResponsePeakConnectionsInner> peakConnections = null;
 
   public ViewNumberOfPeakConnectionsResponse() { 
   }
 
-  public ViewNumberOfPeakConnectionsResponse peakConnections(List<ViewNumberOfPeakConnectionsResponsePeakConnections> peakConnections) {
+  public ViewNumberOfPeakConnectionsResponse peakConnections(List<ViewNumberOfPeakConnectionsResponsePeakConnectionsInner> peakConnections) {
     
     this.peakConnections = peakConnections;
     return this;
   }
 
-  public ViewNumberOfPeakConnectionsResponse addPeakConnectionsItem(ViewNumberOfPeakConnectionsResponsePeakConnections peakConnectionsItem) {
+  public ViewNumberOfPeakConnectionsResponse addPeakConnectionsItem(ViewNumberOfPeakConnectionsResponsePeakConnectionsInner peakConnectionsItem) {
     if (this.peakConnections == null) {
-      this.peakConnections = new ArrayList<ViewNumberOfPeakConnectionsResponsePeakConnections>();
+      this.peakConnections = new ArrayList<>();
     }
     this.peakConnections.add(peakConnectionsItem);
     return this;
@@ -60,14 +80,15 @@ public class ViewNumberOfPeakConnectionsResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<ViewNumberOfPeakConnectionsResponsePeakConnections> getPeakConnections() {
+  public List<ViewNumberOfPeakConnectionsResponsePeakConnectionsInner> getPeakConnections() {
     return peakConnections;
   }
 
 
-  public void setPeakConnections(List<ViewNumberOfPeakConnectionsResponsePeakConnections> peakConnections) {
+  public void setPeakConnections(List<ViewNumberOfPeakConnectionsResponsePeakConnectionsInner> peakConnections) {
     this.peakConnections = peakConnections;
   }
+
 
 
   @Override
@@ -107,5 +128,102 @@ public class ViewNumberOfPeakConnectionsResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("peak_connections");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ViewNumberOfPeakConnectionsResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ViewNumberOfPeakConnectionsResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewNumberOfPeakConnectionsResponse is not found in the empty JSON string", ViewNumberOfPeakConnectionsResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ViewNumberOfPeakConnectionsResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ViewNumberOfPeakConnectionsResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      JsonArray jsonArraypeakConnections = jsonObj.getAsJsonArray("peak_connections");
+      if (jsonArraypeakConnections != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("peak_connections").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `peak_connections` to be an array in the JSON string but got `%s`", jsonObj.get("peak_connections").toString()));
+        }
+
+        // validate the optional field `peak_connections` (array)
+        for (int i = 0; i < jsonArraypeakConnections.size(); i++) {
+          ViewNumberOfPeakConnectionsResponsePeakConnectionsInner.validateJsonObject(jsonArraypeakConnections.get(i).getAsJsonObject());
+        };
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ViewNumberOfPeakConnectionsResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ViewNumberOfPeakConnectionsResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ViewNumberOfPeakConnectionsResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ViewNumberOfPeakConnectionsResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ViewNumberOfPeakConnectionsResponse>() {
+           @Override
+           public void write(JsonWriter out, ViewNumberOfPeakConnectionsResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ViewNumberOfPeakConnectionsResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ViewNumberOfPeakConnectionsResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ViewNumberOfPeakConnectionsResponse
+  * @throws IOException if the JSON string is invalid with respect to ViewNumberOfPeakConnectionsResponse
+  */
+  public static ViewNumberOfPeakConnectionsResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ViewNumberOfPeakConnectionsResponse.class);
+  }
+
+ /**
+  * Convert an instance of ViewNumberOfPeakConnectionsResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

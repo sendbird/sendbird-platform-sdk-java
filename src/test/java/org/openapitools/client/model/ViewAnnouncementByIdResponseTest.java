@@ -22,10 +22,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.openapitools.client.model.ScheduleAnnouncementResponseCreateChannelOptions;
 import org.openapitools.client.model.ScheduleAnnouncementResponseMessage;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -160,6 +160,62 @@ public class ViewAnnouncementByIdResponseTest {
     @Test
     public void openRateTest() {
         // TODO: test openRate
+    }
+
+    /**
+     * Test the property 'createChannel'
+     */
+    @Test
+    public void createChannelTest() {
+        // TODO: test createChannel
+    }
+
+    /**
+     * Test the property 'createChannelOptions'
+     */
+    @Test
+    public void createChannelOptionsTest() {
+        // TODO: test createChannelOptions
+    }
+
+    /**
+     * Test the property 'endAt'
+     */
+    @Test
+    public void endAtTest() {
+        // TODO: test endAt
+    }
+
+    /**
+     * Test the property 'markAsRead'
+     */
+    @Test
+    public void markAsReadTest() {
+        // TODO: test markAsRead
+    }
+
+    /**
+     * Test the property 'sentChannelCount'
+     */
+    @Test
+    public void sentChannelCountTest() {
+        // TODO: test sentChannelCount
+    }
+
+    /**
+     * Test the property 'targetChannelType'
+     */
+    @Test
+    public void targetChannelTypeTest() {
+        // TODO: test targetChannelType
+    }
+
+    /**
+     * Test the property 'targetCustomType'
+     */
+    @Test
+    public void targetCustomTypeTest() {
+        // TODO: test targetCustomType
     }
 
 }

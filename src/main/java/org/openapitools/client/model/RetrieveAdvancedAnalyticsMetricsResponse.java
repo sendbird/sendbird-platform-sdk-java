@@ -25,10 +25,30 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * RetrieveAdvancedAnalyticsMetricsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class RetrieveAdvancedAnalyticsMetricsResponse {
   public static final String SERIALIZED_NAME_SEGMENTS = "segments";
   @SerializedName(SERIALIZED_NAME_SEGMENTS)
@@ -195,6 +215,7 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -242,5 +263,110 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("segments");
+    openapiFields.add("date");
+    openapiFields.add("value");
+    openapiFields.add("channel_type");
+    openapiFields.add("custom_channel_type");
+    openapiFields.add("custom_message_type");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to RetrieveAdvancedAnalyticsMetricsResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (RetrieveAdvancedAnalyticsMetricsResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RetrieveAdvancedAnalyticsMetricsResponse is not found in the empty JSON string", RetrieveAdvancedAnalyticsMetricsResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!RetrieveAdvancedAnalyticsMetricsResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RetrieveAdvancedAnalyticsMetricsResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("segments") != null && !jsonObj.get("segments").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `segments` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segments").toString()));
+      }
+      if (jsonObj.get("date") != null && !jsonObj.get("date").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("date").toString()));
+      }
+      if (jsonObj.get("channel_type") != null && !jsonObj.get("channel_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_type").toString()));
+      }
+      if (jsonObj.get("custom_channel_type") != null && !jsonObj.get("custom_channel_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_channel_type").toString()));
+      }
+      if (jsonObj.get("custom_message_type") != null && !jsonObj.get("custom_message_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_message_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_message_type").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!RetrieveAdvancedAnalyticsMetricsResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RetrieveAdvancedAnalyticsMetricsResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<RetrieveAdvancedAnalyticsMetricsResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RetrieveAdvancedAnalyticsMetricsResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<RetrieveAdvancedAnalyticsMetricsResponse>() {
+           @Override
+           public void write(JsonWriter out, RetrieveAdvancedAnalyticsMetricsResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public RetrieveAdvancedAnalyticsMetricsResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of RetrieveAdvancedAnalyticsMetricsResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of RetrieveAdvancedAnalyticsMetricsResponse
+  * @throws IOException if the JSON string is invalid with respect to RetrieveAdvancedAnalyticsMetricsResponse
+  */
+  public static RetrieveAdvancedAnalyticsMetricsResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RetrieveAdvancedAnalyticsMetricsResponse.class);
+  }
+
+ /**
+  * Convert an instance of RetrieveAdvancedAnalyticsMetricsResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

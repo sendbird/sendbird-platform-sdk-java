@@ -14,10 +14,9 @@
 package org.sendbird.client.api;
 
 import org.sendbird.client.ApiException;
-import org.openapitools.client.model.SendBirdAdditionalProperties;
 import org.openapitools.client.model.ViewUserMetadataResponse;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,19 +26,17 @@ import java.util.Map;
 /**
  * API tests for MetadataApi
  */
-@Ignore
+@Disabled
 public class MetadataApiTest {
 
     private final MetadataApi api = new MetadataApi();
 
-    
     /**
      * View a channel metacounter - When retrieving all items of a channel metacounter
      *
      * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void viewChannelMetacounterTest() throws ApiException {
@@ -48,17 +45,16 @@ public class MetadataApiTest {
         String channelUrl = null;
         String key = null;
         List<String> keys = null;
-                Map<String, SendBirdAdditionalProperties> response = api.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
+        Map<String, String> response = api.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
         // TODO: test validations
     }
-    
+
     /**
      * View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
      *
      * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void viewChannelMetacounterByKeyTest() throws ApiException {
@@ -66,17 +62,16 @@ public class MetadataApiTest {
         String channelType = null;
         String channelUrl = null;
         String key = null;
-                Map<String, SendBirdAdditionalProperties> response = api.viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
+        Object response = api.viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
         // TODO: test validations
     }
-    
+
     /**
      * View a channel metadata - When retrieving all items of a channel metadata
      *
      * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void viewChannelMetadataTest() throws ApiException {
@@ -85,17 +80,16 @@ public class MetadataApiTest {
         String channelUrl = null;
         String key = null;
         List<String> keys = null;
-                Map<String, String> response = api.viewChannelMetadata(apiToken, channelType, channelUrl, key, keys);
+        Map<String, String> response = api.viewChannelMetadata(apiToken, channelType, channelUrl, key, keys);
         // TODO: test validations
     }
-    
+
     /**
      * View a channel metadata - When retrieving a specific item of a channel metadata by its key
      *
      * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void viewChannelMetadataByKeyTest() throws ApiException {
@@ -103,17 +97,16 @@ public class MetadataApiTest {
         String channelType = null;
         String channelUrl = null;
         String key = null;
-                Map<String, String> response = api.viewChannelMetadataByKey(apiToken, channelType, channelUrl, key);
+        Map<String, String> response = api.viewChannelMetadataByKey(apiToken, channelType, channelUrl, key);
         // TODO: test validations
     }
-    
+
     /**
      * View a user metadata - When retrieving all items of a user metadata
      *
      * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void viewUserMetadataTest() throws ApiException {
@@ -121,25 +114,24 @@ public class MetadataApiTest {
         String userId = null;
         String key = null;
         List<String> keys = null;
-                ViewUserMetadataResponse response = api.viewUserMetadata(apiToken, userId, key, keys);
+        ViewUserMetadataResponse response = api.viewUserMetadata(apiToken, userId, key, keys);
         // TODO: test validations
     }
-    
+
     /**
      * View a user metadata - When retrieving a specific item of a user metadata by its key
      *
      * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void viewUserMetadataByKeyTest() throws ApiException {
         String apiToken = null;
         String userId = null;
         String key = null;
-                Map<String, String> response = api.viewUserMetadataByKey(apiToken, userId, key);
+        Map<String, String> response = api.viewUserMetadataByKey(apiToken, userId, key);
         // TODO: test validations
     }
-    
+
 }

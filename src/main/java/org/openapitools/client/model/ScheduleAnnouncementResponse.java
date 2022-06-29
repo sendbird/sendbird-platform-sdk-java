@@ -27,10 +27,30 @@ import java.math.BigDecimal;
 import org.openapitools.client.model.ScheduleAnnouncementResponseCreateChannelOptions;
 import org.openapitools.client.model.ScheduleAnnouncementResponseMessage;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * ScheduleAnnouncementResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class ScheduleAnnouncementResponse {
   public static final String SERIALIZED_NAME_UNIQUE_ID = "unique_id";
   @SerializedName(SERIALIZED_NAME_UNIQUE_ID)
@@ -521,6 +541,7 @@ public class ScheduleAnnouncementResponse {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -592,5 +613,136 @@ public class ScheduleAnnouncementResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("unique_id");
+    openapiFields.add("announcement_group");
+    openapiFields.add("message");
+    openapiFields.add("enable_push");
+    openapiFields.add("target_at");
+    openapiFields.add("target_user_count");
+    openapiFields.add("target_channel_count");
+    openapiFields.add("target_channel_type");
+    openapiFields.add("create_channel_options");
+    openapiFields.add("status");
+    openapiFields.add("scheduled_at");
+    openapiFields.add("cease_at");
+    openapiFields.add("resume_at");
+    openapiFields.add("completed_at");
+    openapiFields.add("sent_user_count");
+    openapiFields.add("sent_channel_count");
+    openapiFields.add("open_count");
+    openapiFields.add("open_rate");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ScheduleAnnouncementResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ScheduleAnnouncementResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ScheduleAnnouncementResponse is not found in the empty JSON string", ScheduleAnnouncementResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ScheduleAnnouncementResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ScheduleAnnouncementResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("unique_id") != null && !jsonObj.get("unique_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unique_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unique_id").toString()));
+      }
+      if (jsonObj.get("announcement_group") != null && !jsonObj.get("announcement_group").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `announcement_group` to be a primitive type in the JSON string but got `%s`", jsonObj.get("announcement_group").toString()));
+      }
+      // validate the optional field `message`
+      if (jsonObj.getAsJsonObject("message") != null) {
+        ScheduleAnnouncementResponseMessage.validateJsonObject(jsonObj.getAsJsonObject("message"));
+      }
+      if (jsonObj.get("target_at") != null && !jsonObj.get("target_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `target_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_at").toString()));
+      }
+      if (jsonObj.get("target_channel_type") != null && !jsonObj.get("target_channel_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `target_channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_channel_type").toString()));
+      }
+      // validate the optional field `create_channel_options`
+      if (jsonObj.getAsJsonObject("create_channel_options") != null) {
+        ScheduleAnnouncementResponseCreateChannelOptions.validateJsonObject(jsonObj.getAsJsonObject("create_channel_options"));
+      }
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      if (jsonObj.get("cease_at") != null && !jsonObj.get("cease_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cease_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cease_at").toString()));
+      }
+      if (jsonObj.get("resume_at") != null && !jsonObj.get("resume_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `resume_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resume_at").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ScheduleAnnouncementResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ScheduleAnnouncementResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ScheduleAnnouncementResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ScheduleAnnouncementResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ScheduleAnnouncementResponse>() {
+           @Override
+           public void write(JsonWriter out, ScheduleAnnouncementResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ScheduleAnnouncementResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ScheduleAnnouncementResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ScheduleAnnouncementResponse
+  * @throws IOException if the JSON string is invalid with respect to ScheduleAnnouncementResponse
+  */
+  public static ScheduleAnnouncementResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ScheduleAnnouncementResponse.class);
+  }
+
+ /**
+  * Convert an instance of ScheduleAnnouncementResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

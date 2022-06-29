@@ -22,10 +22,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.SendBirdUser;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -72,6 +72,54 @@ public class GcBanUserResponseTest {
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property 'metadata'
+     */
+    @Test
+    public void metadataTest() {
+        // TODO: test metadata
+    }
+
+    /**
+     * Test the property 'nextUrl'
+     */
+    @Test
+    public void nextUrlTest() {
+        // TODO: test nextUrl
+    }
+
+    /**
+     * Test the property 'nickname'
+     */
+    @Test
+    public void nicknameTest() {
+        // TODO: test nickname
+    }
+
+    /**
+     * Test the property 'profileUrl'
+     */
+    @Test
+    public void profileUrlTest() {
+        // TODO: test profileUrl
+    }
+
+    /**
+     * Test the property 'requireAuthForProfileImage'
+     */
+    @Test
+    public void requireAuthForProfileImageTest() {
+        // TODO: test requireAuthForProfileImage
+    }
+
+    /**
+     * Test the property 'userId'
+     */
+    @Test
+    public void userIdTest() {
+        // TODO: test userId
     }
 
 }

@@ -21,12 +21,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdGroupChannel;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -57,6 +57,14 @@ public class ListMyGroupChannelsResponseTest {
     @Test
     public void nextTest() {
         // TODO: test next
+    }
+
+    /**
+     * Test the property 'ts'
+     */
+    @Test
+    public void tsTest() {
+        // TODO: test ts
     }
 
 }

@@ -18,8 +18,8 @@ import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementByIdRespon
 import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementGroupResponse;
 import org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResponse;
 import org.openapitools.client.model.ViewAnnouncementByIdResponse;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,51 +29,47 @@ import java.util.Map;
 /**
  * API tests for AnnouncementApi
  */
-@Ignore
+@Disabled
 public class AnnouncementApiTest {
 
     private final AnnouncementApi api = new AnnouncementApi();
 
-    
     /**
      * Get detailed open rate of an announcement
      *
      * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getDetailedOpenRateOfAnnouncementByIdTest() throws ApiException {
         String apiToken = null;
         String uniqueId = null;
-                GetDetailedOpenRateOfAnnouncementByIdResponse response = api.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
+        GetDetailedOpenRateOfAnnouncementByIdResponse response = api.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
         // TODO: test validations
     }
-    
+
     /**
      * Get detailed open rate of an announcement group
      *
      * ## Get detailed open rate of an announcement group  Retrieves the detailed open rate information of an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement-group ----------------------------
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getDetailedOpenRateOfAnnouncementGroupTest() throws ApiException {
         String apiToken = null;
         String announcementGroup = null;
-                GetDetailedOpenRateOfAnnouncementGroupResponse response = api.getDetailedOpenRateOfAnnouncementGroup(apiToken, announcementGroup);
+        GetDetailedOpenRateOfAnnouncementGroupResponse response = api.getDetailedOpenRateOfAnnouncementGroup(apiToken, announcementGroup);
         // TODO: test validations
     }
-    
+
     /**
      * Get detailed open status of an announcement
      *
      * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getDetailedOpenStatusOfAnnouncementByIdTest() throws ApiException {
@@ -84,24 +80,23 @@ public class AnnouncementApiTest {
         List<String> uniqueIds = null;
         List<String> channelUrls = null;
         Boolean hasOpened = null;
-                GetDetailedOpenStatusOfAnnouncementByIdResponse response = api.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
+        GetDetailedOpenStatusOfAnnouncementByIdResponse response = api.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
         // TODO: test validations
     }
-    
+
     /**
      * View an announcement
      *
      * ## View an announcement  Retrieves information on a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-view-an-announcement ----------------------------
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void viewAnnouncementByIdTest() throws ApiException {
         String apiToken = null;
         String uniqueId = null;
-                ViewAnnouncementByIdResponse response = api.viewAnnouncementById(apiToken, uniqueId);
+        ViewAnnouncementByIdResponse response = api.viewAnnouncementById(apiToken, uniqueId);
         // TODO: test validations
     }
-    
+
 }

@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**optionId** | **BigDecimal** |  |  [optional]
-**voteCount** | **BigDecimal** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**optionId** | **BigDecimal** |  |  [optional] |
+|**voteCount** | **BigDecimal** |  |  [optional] |
 
 
 

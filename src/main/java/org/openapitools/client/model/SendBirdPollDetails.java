@@ -28,10 +28,30 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdPollOption;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * SendBirdPollDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class SendBirdPollDetails {
   public static final String SERIALIZED_NAME_ALLOW_MULTIPLE_VOTES = "allow_multiple_votes";
   @SerializedName(SERIALIZED_NAME_ALLOW_MULTIPLE_VOTES)
@@ -271,7 +291,7 @@ public class SendBirdPollDetails {
 
   public SendBirdPollDetails addOptionsItem(SendBirdPollOption optionsItem) {
     if (this.options == null) {
-      this.options = new ArrayList<SendBirdPollOption>();
+      this.options = new ArrayList<>();
     }
     this.options.add(optionsItem);
     return this;
@@ -363,6 +383,7 @@ public class SendBirdPollDetails {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -418,5 +439,117 @@ public class SendBirdPollDetails {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("allow_multiple_votes");
+    openapiFields.add("allow_user_suggestion");
+    openapiFields.add("close_at");
+    openapiFields.add("created_at");
+    openapiFields.add("created_by");
+    openapiFields.add("is_anonymous");
+    openapiFields.add("options");
+    openapiFields.add("status");
+    openapiFields.add("updated_at");
+    openapiFields.add("voter_count");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to SendBirdPollDetails
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (SendBirdPollDetails.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdPollDetails is not found in the empty JSON string", SendBirdPollDetails.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!SendBirdPollDetails.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdPollDetails` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("created_by") != null && !jsonObj.get("created_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `created_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_by").toString()));
+      }
+      JsonArray jsonArrayoptions = jsonObj.getAsJsonArray("options");
+      if (jsonArrayoptions != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("options").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `options` to be an array in the JSON string but got `%s`", jsonObj.get("options").toString()));
+        }
+
+        // validate the optional field `options` (array)
+        for (int i = 0; i < jsonArrayoptions.size(); i++) {
+          SendBirdPollOption.validateJsonObject(jsonArrayoptions.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SendBirdPollDetails.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SendBirdPollDetails' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SendBirdPollDetails> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdPollDetails.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SendBirdPollDetails>() {
+           @Override
+           public void write(JsonWriter out, SendBirdPollDetails value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SendBirdPollDetails read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of SendBirdPollDetails given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SendBirdPollDetails
+  * @throws IOException if the JSON string is invalid with respect to SendBirdPollDetails
+  */
+  public static SendBirdPollDetails fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SendBirdPollDetails.class);
+  }
+
+ /**
+  * Convert an instance of SendBirdPollDetails to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

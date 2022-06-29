@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**emojiCategories** | [**List&lt;AddEmojiCategoriesResponseEmojiCategories&gt;**](AddEmojiCategoriesResponseEmojiCategories.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**emojiCategories** | [**List&lt;AddEmojiCategoriesResponseEmojiCategoriesInner&gt;**](AddEmojiCategoriesResponseEmojiCategoriesInner.md) |  |  [optional] |
 
 
 

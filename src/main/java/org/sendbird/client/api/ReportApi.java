@@ -43,6 +43,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class ReportApi {
     private ApiClient localVarApiClient;
@@ -99,7 +100,6 @@ public class ReportApi {
      */
     public okhttp3.Call listReportsCall(String apiToken, String token, Integer limit, Integer startTs, Integer endTs, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -155,7 +155,7 @@ public class ReportApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -262,7 +262,6 @@ public class ReportApi {
      */
     public okhttp3.Call listReportsOnChannelByUrlCall(String apiToken, String channelType, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -312,7 +311,7 @@ public class ReportApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -430,7 +429,6 @@ public class ReportApi {
      */
     public okhttp3.Call listReportsOnMessageByIdCall(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -481,7 +479,7 @@ public class ReportApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -605,7 +603,6 @@ public class ReportApi {
      */
     public okhttp3.Call listReportsOnUserByIdCall(String apiToken, String offendingUserId, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -654,7 +651,7 @@ public class ReportApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -762,7 +759,6 @@ public class ReportApi {
      */
     public okhttp3.Call reportChannelByUrlCall(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -804,7 +800,7 @@ public class ReportApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -918,7 +914,6 @@ public class ReportApi {
      */
     public okhttp3.Call reportMessageByIdCall(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -961,7 +956,7 @@ public class ReportApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1081,7 +1076,6 @@ public class ReportApi {
      */
     public okhttp3.Call reportUserByIdCall(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1122,7 +1116,7 @@ public class ReportApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1227,7 +1221,6 @@ public class ReportApi {
      */
     public okhttp3.Call viewModeratedMessageByIdCall(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1270,7 +1263,7 @@ public class ReportApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

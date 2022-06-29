@@ -18,8 +18,8 @@ import org.openapitools.client.model.ListDataExportsByMessageChannelOrUserRespon
 import org.openapitools.client.model.RegisterAndScheduleDataExportData;
 import org.openapitools.client.model.RegisterAndScheduleDataExportResponse;
 import org.openapitools.client.model.ViewDataExportByIdResponse;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,62 +29,58 @@ import java.util.Map;
 /**
  * API tests for DataExportApi
  */
-@Ignore
+@Disabled
 public class DataExportApiTest {
 
     private final DataExportApi api = new DataExportApi();
 
-    
     /**
      * List data exports by message, channel, or user
      *
      * ## List data exports by message, channel, or user  Retrieves a list of message, channel or user data exports  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-list-data-exports-by-message,-channel,-or-user ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a data export to retrieve. Acceptable values are messages, channels, users, and failed_webhooks.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listDataExportsByMessageChannelOrUserTest() throws ApiException {
-        String dataType = null;
         String apiToken = null;
+        String dataType = null;
         String token = null;
         Integer limit = null;
-                ListDataExportsByMessageChannelOrUserResponse response = api.listDataExportsByMessageChannelOrUser(dataType, apiToken, token, limit);
+        ListDataExportsByMessageChannelOrUserResponse response = api.listDataExportsByMessageChannelOrUser(apiToken, dataType, token, limit);
         // TODO: test validations
     }
-    
+
     /**
      * Register and schedule a data export
      *
      * ## Register and schedule a data export  Registers and schedules a message, channel, or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-register-and-schedule-a-data-export ----------------------------
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void registerAndScheduleDataExportTest() throws ApiException {
-        String dataType = null;
         String apiToken = null;
+        String dataType = null;
         RegisterAndScheduleDataExportData registerAndScheduleDataExportData = null;
-                RegisterAndScheduleDataExportResponse response = api.registerAndScheduleDataExport(dataType, apiToken, registerAndScheduleDataExportData);
+        RegisterAndScheduleDataExportResponse response = api.registerAndScheduleDataExport(apiToken, dataType, registerAndScheduleDataExportData);
         // TODO: test validations
     }
-    
+
     /**
      * View a data export
      *
      * ## View a data export  Retrieves information on a message, channel or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-view-a-data-export ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a targeted data export. Acceptable values are messages, channels,  users, and failed_webhooks.  &#x60;request_id&#x60;      Type: string      Description: Specifies the unique ID of a data export to retrieve.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void viewDataExportByIdTest() throws ApiException {
+        String apiToken = null;
         String dataType = null;
         String requestId = null;
-        String apiToken = null;
-                ViewDataExportByIdResponse response = api.viewDataExportById(dataType, requestId, apiToken);
+        ViewDataExportByIdResponse response = api.viewDataExportById(apiToken, dataType, requestId);
         // TODO: test validations
     }
-    
+
 }

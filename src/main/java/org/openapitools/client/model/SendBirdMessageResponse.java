@@ -26,13 +26,33 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdMessageResponseMentionedUsers;
+import org.openapitools.client.model.SendBirdMessageResponseMentionedUsersInner;
 import org.openapitools.client.model.SendBirdMessageResponseUser;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
 
 /**
  * SendBirdMessageResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class SendBirdMessageResponse {
   public static final String SERIALIZED_NAME_REQUIRE_AUTH = "require_auth";
   @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH)
@@ -48,7 +68,7 @@ public class SendBirdMessageResponse {
 
   public static final String SERIALIZED_NAME_MENTIONED_USERS = "mentioned_users";
   @SerializedName(SERIALIZED_NAME_MENTIONED_USERS)
-  private List<SendBirdMessageResponseMentionedUsers> mentionedUsers = null;
+  private List<SendBirdMessageResponseMentionedUsersInner> mentionedUsers = null;
 
   public static final String SERIALIZED_NAME_TRANSLATIONS = "translations";
   @SerializedName(SERIALIZED_NAME_TRANSLATIONS)
@@ -72,7 +92,7 @@ public class SendBirdMessageResponse {
 
   public static final String SERIALIZED_NAME_FILE = "file";
   @SerializedName(SERIALIZED_NAME_FILE)
-  private Object file;
+  private Object _file;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
@@ -214,15 +234,15 @@ public class SendBirdMessageResponse {
   }
 
 
-  public SendBirdMessageResponse mentionedUsers(List<SendBirdMessageResponseMentionedUsers> mentionedUsers) {
+  public SendBirdMessageResponse mentionedUsers(List<SendBirdMessageResponseMentionedUsersInner> mentionedUsers) {
     
     this.mentionedUsers = mentionedUsers;
     return this;
   }
 
-  public SendBirdMessageResponse addMentionedUsersItem(SendBirdMessageResponseMentionedUsers mentionedUsersItem) {
+  public SendBirdMessageResponse addMentionedUsersItem(SendBirdMessageResponseMentionedUsersInner mentionedUsersItem) {
     if (this.mentionedUsers == null) {
-      this.mentionedUsers = new ArrayList<SendBirdMessageResponseMentionedUsers>();
+      this.mentionedUsers = new ArrayList<>();
     }
     this.mentionedUsers.add(mentionedUsersItem);
     return this;
@@ -235,12 +255,12 @@ public class SendBirdMessageResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<SendBirdMessageResponseMentionedUsers> getMentionedUsers() {
+  public List<SendBirdMessageResponseMentionedUsersInner> getMentionedUsers() {
     return mentionedUsers;
   }
 
 
-  public void setMentionedUsers(List<SendBirdMessageResponseMentionedUsers> mentionedUsers) {
+  public void setMentionedUsers(List<SendBirdMessageResponseMentionedUsersInner> mentionedUsers) {
     this.mentionedUsers = mentionedUsers;
   }
 
@@ -360,26 +380,26 @@ public class SendBirdMessageResponse {
   }
 
 
-  public SendBirdMessageResponse file(Object file) {
+  public SendBirdMessageResponse _file(Object _file) {
     
-    this.file = file;
+    this._file = _file;
     return this;
   }
 
    /**
-   * Get file
-   * @return file
+   * Get _file
+   * @return _file
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
   public Object getFile() {
-    return file;
+    return _file;
   }
 
 
-  public void setFile(Object file) {
-    this.file = file;
+  public void setFile(Object _file) {
+    this._file = _file;
   }
 
 
@@ -667,7 +687,7 @@ public class SendBirdMessageResponse {
 
   public SendBirdMessageResponse addSortedMetaarrayItem(Object sortedMetaarrayItem) {
     if (this.sortedMetaarray == null) {
-      this.sortedMetaarray = new ArrayList<Object>();
+      this.sortedMetaarray = new ArrayList<>();
     }
     this.sortedMetaarray.add(sortedMetaarrayItem);
     return this;
@@ -782,6 +802,7 @@ public class SendBirdMessageResponse {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -800,7 +821,7 @@ public class SendBirdMessageResponse {
         Objects.equals(this.isOpMsg, sendBirdMessageResponse.isOpMsg) &&
         Objects.equals(this.isRemoved, sendBirdMessageResponse.isRemoved) &&
         Objects.equals(this.user, sendBirdMessageResponse.user) &&
-        Objects.equals(this.file, sendBirdMessageResponse.file) &&
+        Objects.equals(this._file, sendBirdMessageResponse._file) &&
         Objects.equals(this.message, sendBirdMessageResponse.message) &&
         Objects.equals(this.data, sendBirdMessageResponse.data) &&
         Objects.equals(this.messageRetentionHour, sendBirdMessageResponse.messageRetentionHour) &&
@@ -822,7 +843,7 @@ public class SendBirdMessageResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(requireAuth, messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, file, message, data, messageRetentionHour, silent, type, createdAt, channelType, reqId, mentionType, channelUrl, messageId, size, sortedMetaarray, threadInfo, parentMessageId, parentMessageInfo, isReplyToChannel);
+    return Objects.hash(requireAuth, messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, _file, message, data, messageRetentionHour, silent, type, createdAt, channelType, reqId, mentionType, channelUrl, messageId, size, sortedMetaarray, threadInfo, parentMessageId, parentMessageInfo, isReplyToChannel);
   }
 
   @Override
@@ -838,7 +859,7 @@ public class SendBirdMessageResponse {
     sb.append("    isOpMsg: ").append(toIndentedString(isOpMsg)).append("\n");
     sb.append("    isRemoved: ").append(toIndentedString(isRemoved)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
-    sb.append("    file: ").append(toIndentedString(file)).append("\n");
+    sb.append("    _file: ").append(toIndentedString(_file)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    messageRetentionHour: ").append(toIndentedString(messageRetentionHour)).append("\n");
@@ -871,5 +892,160 @@ public class SendBirdMessageResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("require_auth");
+    openapiFields.add("message_survival_seconds");
+    openapiFields.add("custom_type");
+    openapiFields.add("mentioned_users");
+    openapiFields.add("translations");
+    openapiFields.add("updated_at");
+    openapiFields.add("is_op_msg");
+    openapiFields.add("is_removed");
+    openapiFields.add("user");
+    openapiFields.add("file");
+    openapiFields.add("message");
+    openapiFields.add("data");
+    openapiFields.add("message_retention_hour");
+    openapiFields.add("silent");
+    openapiFields.add("type");
+    openapiFields.add("created_at");
+    openapiFields.add("channel_type");
+    openapiFields.add("req_id");
+    openapiFields.add("mention_type");
+    openapiFields.add("channel_url");
+    openapiFields.add("message_id");
+    openapiFields.add("size");
+    openapiFields.add("sorted_metaarray");
+    openapiFields.add("thread_info");
+    openapiFields.add("parent_message_id");
+    openapiFields.add("parent_message_info");
+    openapiFields.add("is_reply_to_channel");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to SendBirdMessageResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (SendBirdMessageResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdMessageResponse is not found in the empty JSON string", SendBirdMessageResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!SendBirdMessageResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdMessageResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
+      }
+      JsonArray jsonArraymentionedUsers = jsonObj.getAsJsonArray("mentioned_users");
+      if (jsonArraymentionedUsers != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("mentioned_users").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `mentioned_users` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_users").toString()));
+        }
+
+        // validate the optional field `mentioned_users` (array)
+        for (int i = 0; i < jsonArraymentionedUsers.size(); i++) {
+          SendBirdMessageResponseMentionedUsersInner.validateJsonObject(jsonArraymentionedUsers.get(i).getAsJsonObject());
+        };
+      }
+      // validate the optional field `user`
+      if (jsonObj.getAsJsonObject("user") != null) {
+        SendBirdMessageResponseUser.validateJsonObject(jsonObj.getAsJsonObject("user"));
+      }
+      if (jsonObj.get("message") != null && !jsonObj.get("message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+      }
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
+      }
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      if (jsonObj.get("channel_type") != null && !jsonObj.get("channel_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_type").toString()));
+      }
+      if (jsonObj.get("req_id") != null && !jsonObj.get("req_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `req_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("req_id").toString()));
+      }
+      if (jsonObj.get("mention_type") != null && !jsonObj.get("mention_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mention_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mention_type").toString()));
+      }
+      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("sorted_metaarray") != null && !jsonObj.get("sorted_metaarray").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sorted_metaarray` to be an array in the JSON string but got `%s`", jsonObj.get("sorted_metaarray").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SendBirdMessageResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SendBirdMessageResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SendBirdMessageResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdMessageResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SendBirdMessageResponse>() {
+           @Override
+           public void write(JsonWriter out, SendBirdMessageResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SendBirdMessageResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of SendBirdMessageResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SendBirdMessageResponse
+  * @throws IOException if the JSON string is invalid with respect to SendBirdMessageResponse
+  */
+  public static SendBirdMessageResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SendBirdMessageResponse.class);
+  }
+
+ /**
+  * Convert an instance of SendBirdMessageResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

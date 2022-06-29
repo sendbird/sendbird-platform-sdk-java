@@ -24,10 +24,9 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponseFile;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -42,6 +41,22 @@ public class RegisterAndScheduleDataExportResponseTest {
     @Test
     public void testRegisterAndScheduleDataExportResponse() {
         // TODO: test RegisterAndScheduleDataExportResponse
+    }
+
+    /**
+     * Test the property 'channelCustomTypes'
+     */
+    @Test
+    public void channelCustomTypesTest() {
+        // TODO: test channelCustomTypes
+    }
+
+    /**
+     * Test the property 'dataType'
+     */
+    @Test
+    public void dataTypeTest() {
+        // TODO: test dataType
     }
 
     /**
@@ -125,11 +140,11 @@ public class RegisterAndScheduleDataExportResponseTest {
     }
 
     /**
-     * Test the property 'file'
+     * Test the property '_file'
      */
     @Test
-    public void fileTest() {
-        // TODO: test file
+    public void _fileTest() {
+        // TODO: test _file
     }
 
     /**

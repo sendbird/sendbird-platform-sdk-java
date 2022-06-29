@@ -26,10 +26,30 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import org.openapitools.client.model.CreateBotResponseBot;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * CreateBotResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class CreateBotResponse {
   public static final String SERIALIZED_NAME_BOT = "bot";
   @SerializedName(SERIALIZED_NAME_BOT)
@@ -196,6 +216,7 @@ public class CreateBotResponse {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -243,5 +264,102 @@ public class CreateBotResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("bot");
+    openapiFields.add("bot_callback_url");
+    openapiFields.add("enable_mark_as_read");
+    openapiFields.add("is_privacy_mode");
+    openapiFields.add("show_member");
+    openapiFields.add("channel_invitation_preference");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to CreateBotResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (CreateBotResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateBotResponse is not found in the empty JSON string", CreateBotResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!CreateBotResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateBotResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      // validate the optional field `bot`
+      if (jsonObj.getAsJsonObject("bot") != null) {
+        CreateBotResponseBot.validateJsonObject(jsonObj.getAsJsonObject("bot"));
+      }
+      if (jsonObj.get("bot_callback_url") != null && !jsonObj.get("bot_callback_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bot_callback_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_callback_url").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!CreateBotResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CreateBotResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<CreateBotResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CreateBotResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<CreateBotResponse>() {
+           @Override
+           public void write(JsonWriter out, CreateBotResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public CreateBotResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of CreateBotResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CreateBotResponse
+  * @throws IOException if the JSON string is invalid with respect to CreateBotResponse
+  */
+  public static CreateBotResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateBotResponse.class);
+  }
+
+ /**
+  * Convert an instance of CreateBotResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

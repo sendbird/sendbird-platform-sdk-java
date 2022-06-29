@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.SendBirdAdditionalProperties;
 import org.openapitools.client.model.ViewUserMetadataResponse;
 
 import java.lang.reflect.Type;
@@ -35,6 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class MetadataApi {
     private ApiClient localVarApiClient;
@@ -91,7 +91,6 @@ public class MetadataApi {
      */
     public okhttp3.Call viewChannelMetacounterCall(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -141,7 +140,7 @@ public class MetadataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -181,7 +180,7 @@ public class MetadataApi {
      * @param channelUrl  (required)
      * @param key  (optional)
      * @param keys  (optional)
-     * @return Map&lt;String, SendBirdAdditionalProperties&gt;
+     * @return Map&lt;String, String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -189,8 +188,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, SendBirdAdditionalProperties> viewChannelMetacounter(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
-        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = viewChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl, key, keys);
+    public Map<String, String> viewChannelMetacounter(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+        ApiResponse<Map<String, String>> localVarResp = viewChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl, key, keys);
         return localVarResp.getData();
     }
 
@@ -202,7 +201,7 @@ public class MetadataApi {
      * @param channelUrl  (required)
      * @param key  (optional)
      * @param keys  (optional)
-     * @return ApiResponse&lt;Map&lt;String, SendBirdAdditionalProperties&gt;&gt;
+     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -210,9 +209,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, SendBirdAdditionalProperties>> viewChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+    public ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
         okhttp3.Call localVarCall = viewChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, key, keys, null);
-        Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -233,10 +232,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetacounterAsync(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetacounterAsync(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback<Map<String, String>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewChannelMetacounterValidateBeforeCall(apiToken, channelType, channelUrl, key, keys, _callback);
-        Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -257,7 +256,6 @@ public class MetadataApi {
      */
     public okhttp3.Call viewChannelMetacounterByKeyCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -300,7 +298,7 @@ public class MetadataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -344,7 +342,7 @@ public class MetadataApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @return Map&lt;String, SendBirdAdditionalProperties&gt;
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -352,8 +350,8 @@ public class MetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, SendBirdAdditionalProperties> viewChannelMetacounterByKey(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
-        ApiResponse<Map<String, SendBirdAdditionalProperties>> localVarResp = viewChannelMetacounterByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
+    public Object viewChannelMetacounterByKey(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+        ApiResponse<Object> localVarResp = viewChannelMetacounterByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
         return localVarResp.getData();
     }
 
@@ -364,7 +362,7 @@ public class MetadataApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param key  (required)
-     * @return ApiResponse&lt;Map&lt;String, SendBirdAdditionalProperties&gt;&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -372,9 +370,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, SendBirdAdditionalProperties>> viewChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+    public ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
         okhttp3.Call localVarCall = viewChannelMetacounterByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, null);
-        Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -394,10 +392,10 @@ public class MetadataApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewChannelMetacounterByKeyAsync(String apiToken, String channelType, String channelUrl, String key, final ApiCallback<Map<String, SendBirdAdditionalProperties>> _callback) throws ApiException {
+    public okhttp3.Call viewChannelMetacounterByKeyAsync(String apiToken, String channelType, String channelUrl, String key, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewChannelMetacounterByKeyValidateBeforeCall(apiToken, channelType, channelUrl, key, _callback);
-        Type localVarReturnType = new TypeToken<Map<String, SendBirdAdditionalProperties>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -419,7 +417,6 @@ public class MetadataApi {
      */
     public okhttp3.Call viewChannelMetadataCall(String apiToken, String channelType, String channelUrl, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -469,7 +466,7 @@ public class MetadataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -585,7 +582,6 @@ public class MetadataApi {
      */
     public okhttp3.Call viewChannelMetadataByKeyCall(String apiToken, String channelType, String channelUrl, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -628,7 +624,7 @@ public class MetadataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -746,7 +742,6 @@ public class MetadataApi {
      */
     public okhttp3.Call viewUserMetadataCall(String apiToken, String userId, String key, List<String> keys, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -795,7 +790,7 @@ public class MetadataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -902,7 +897,6 @@ public class MetadataApi {
      */
     public okhttp3.Call viewUserMetadataByKeyCall(String apiToken, String userId, String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -944,7 +938,7 @@ public class MetadataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

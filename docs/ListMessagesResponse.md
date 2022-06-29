@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**messages** | [**List&lt;ListMessagesResponseMessages&gt;**](ListMessagesResponseMessages.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**messages** | [**List&lt;ListMessagesResponseMessagesInner&gt;**](ListMessagesResponseMessagesInner.md) |  |  [optional] |
 
 
 

@@ -26,16 +26,36 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.OcListBannedUsersResponseBannedList;
+import org.openapitools.client.model.OcListBannedUsersResponseBannedListInner;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
 
 /**
  * GcListBannedUsersResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class GcListBannedUsersResponse {
   public static final String SERIALIZED_NAME_BANNED_LIST = "banned_list";
   @SerializedName(SERIALIZED_NAME_BANNED_LIST)
-  private List<OcListBannedUsersResponseBannedList> bannedList = null;
+  private List<OcListBannedUsersResponseBannedListInner> bannedList = null;
 
   public static final String SERIALIZED_NAME_TOTAL_BAN_COUNT = "total_ban_count";
   @SerializedName(SERIALIZED_NAME_TOTAL_BAN_COUNT)
@@ -48,15 +68,15 @@ public class GcListBannedUsersResponse {
   public GcListBannedUsersResponse() { 
   }
 
-  public GcListBannedUsersResponse bannedList(List<OcListBannedUsersResponseBannedList> bannedList) {
+  public GcListBannedUsersResponse bannedList(List<OcListBannedUsersResponseBannedListInner> bannedList) {
     
     this.bannedList = bannedList;
     return this;
   }
 
-  public GcListBannedUsersResponse addBannedListItem(OcListBannedUsersResponseBannedList bannedListItem) {
+  public GcListBannedUsersResponse addBannedListItem(OcListBannedUsersResponseBannedListInner bannedListItem) {
     if (this.bannedList == null) {
-      this.bannedList = new ArrayList<OcListBannedUsersResponseBannedList>();
+      this.bannedList = new ArrayList<>();
     }
     this.bannedList.add(bannedListItem);
     return this;
@@ -69,12 +89,12 @@ public class GcListBannedUsersResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<OcListBannedUsersResponseBannedList> getBannedList() {
+  public List<OcListBannedUsersResponseBannedListInner> getBannedList() {
     return bannedList;
   }
 
 
-  public void setBannedList(List<OcListBannedUsersResponseBannedList> bannedList) {
+  public void setBannedList(List<OcListBannedUsersResponseBannedListInner> bannedList) {
     this.bannedList = bannedList;
   }
 
@@ -125,6 +145,7 @@ public class GcListBannedUsersResponse {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -166,5 +187,107 @@ public class GcListBannedUsersResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("banned_list");
+    openapiFields.add("total_ban_count");
+    openapiFields.add("next");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GcListBannedUsersResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GcListBannedUsersResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GcListBannedUsersResponse is not found in the empty JSON string", GcListBannedUsersResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GcListBannedUsersResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GcListBannedUsersResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      JsonArray jsonArraybannedList = jsonObj.getAsJsonArray("banned_list");
+      if (jsonArraybannedList != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("banned_list").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `banned_list` to be an array in the JSON string but got `%s`", jsonObj.get("banned_list").toString()));
+        }
+
+        // validate the optional field `banned_list` (array)
+        for (int i = 0; i < jsonArraybannedList.size(); i++) {
+          OcListBannedUsersResponseBannedListInner.validateJsonObject(jsonArraybannedList.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("next") != null && !jsonObj.get("next").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GcListBannedUsersResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GcListBannedUsersResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GcListBannedUsersResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GcListBannedUsersResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GcListBannedUsersResponse>() {
+           @Override
+           public void write(JsonWriter out, GcListBannedUsersResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GcListBannedUsersResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GcListBannedUsersResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GcListBannedUsersResponse
+  * @throws IOException if the JSON string is invalid with respect to GcListBannedUsersResponse
+  */
+  public static GcListBannedUsersResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GcListBannedUsersResponse.class);
+  }
+
+ /**
+  * Convert an instance of GcListBannedUsersResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

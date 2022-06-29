@@ -43,7 +43,7 @@ import org.openapitools.client.model.GcRegisterOperatorsResponse;
 import org.openapitools.client.model.GcResetChatHistoryData;
 import org.openapitools.client.model.GcResetChatHistoryResponse;
 import org.openapitools.client.model.GcUpdateChannelByUrlData;
-import org.openapitools.client.model.InlineResponse2001;
+import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.SendBirdGroupChannel;
 
 import java.lang.reflect.Type;
@@ -51,6 +51,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class GroupChannelApi {
     private ApiClient localVarApiClient;
@@ -105,7 +106,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcAcceptInvitationCall(String apiToken, String channelUrl, GcAcceptInvitationData gcAcceptInvitationData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -146,7 +146,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -251,7 +251,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcCancelTheRegistrationOfOperatorsCall(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -300,7 +299,7 @@ public class GroupChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -339,7 +338,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param operatorIds  (required)
      * @param deleteAll  (optional)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -347,8 +346,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 gcCancelTheRegistrationOfOperators(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = gcCancelTheRegistrationOfOperatorsWithHttpInfo(apiToken, channelUrl, operatorIds, deleteAll);
+    public OcDeleteChannelByUrl200Response gcCancelTheRegistrationOfOperators(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = gcCancelTheRegistrationOfOperatorsWithHttpInfo(apiToken, channelUrl, operatorIds, deleteAll);
         return localVarResp.getData();
     }
 
@@ -359,7 +358,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param operatorIds  (required)
      * @param deleteAll  (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -367,9 +366,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> gcCancelTheRegistrationOfOperatorsWithHttpInfo(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> gcCancelTheRegistrationOfOperatorsWithHttpInfo(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
         okhttp3.Call localVarCall = gcCancelTheRegistrationOfOperatorsValidateBeforeCall(apiToken, channelUrl, operatorIds, deleteAll, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -389,10 +388,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcCancelTheRegistrationOfOperatorsAsync(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call gcCancelTheRegistrationOfOperatorsAsync(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcCancelTheRegistrationOfOperatorsValidateBeforeCall(apiToken, channelUrl, operatorIds, deleteAll, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -412,7 +411,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcCheckIfMemberByIdCall(String apiToken, String channelUrl, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -454,7 +452,7 @@ public class GroupChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -562,7 +560,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcCreateChannelCall(String apiToken, GcCreateChannelData gcCreateChannelData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -602,7 +599,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -698,7 +695,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcDeclineInvitationCall(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -739,7 +735,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -772,7 +768,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcDeclineInvitationData  (optional)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -780,8 +776,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 gcDeclineInvitation(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = gcDeclineInvitationWithHttpInfo(apiToken, channelUrl, gcDeclineInvitationData);
+    public OcDeleteChannelByUrl200Response gcDeclineInvitation(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = gcDeclineInvitationWithHttpInfo(apiToken, channelUrl, gcDeclineInvitationData);
         return localVarResp.getData();
     }
 
@@ -791,7 +787,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcDeclineInvitationData  (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -799,9 +795,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> gcDeclineInvitationWithHttpInfo(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> gcDeclineInvitationWithHttpInfo(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
         okhttp3.Call localVarCall = gcDeclineInvitationValidateBeforeCall(apiToken, channelUrl, gcDeclineInvitationData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -820,10 +816,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcDeclineInvitationAsync(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call gcDeclineInvitationAsync(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcDeclineInvitationValidateBeforeCall(apiToken, channelUrl, gcDeclineInvitationData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -842,7 +838,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcDeleteChannelByUrlCall(String apiToken, String channelUrl, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -883,7 +878,7 @@ public class GroupChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -915,7 +910,7 @@ public class GroupChannelApi {
      * ## Delete a channel  Deletes a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-delete-a-channel ----------------------------
      * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -923,8 +918,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 gcDeleteChannelByUrl(String apiToken, String channelUrl) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = gcDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
+    public OcDeleteChannelByUrl200Response gcDeleteChannelByUrl(String apiToken, String channelUrl) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = gcDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
         return localVarResp.getData();
     }
 
@@ -933,7 +928,7 @@ public class GroupChannelApi {
      * ## Delete a channel  Deletes a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-delete-a-channel ----------------------------
      * @param apiToken  (required)
      * @param channelUrl  (required)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -941,9 +936,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> gcDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> gcDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
         okhttp3.Call localVarCall = gcDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -961,10 +956,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcDeleteChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call gcDeleteChannelByUrlAsync(String apiToken, String channelUrl, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcDeleteChannelByUrlValidateBeforeCall(apiToken, channelUrl, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -984,7 +979,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcHideOrArchiveChannelCall(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1025,7 +1019,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1058,7 +1052,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcHideOrArchiveChannelData  (optional)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1066,8 +1060,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 gcHideOrArchiveChannel(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = gcHideOrArchiveChannelWithHttpInfo(apiToken, channelUrl, gcHideOrArchiveChannelData);
+    public OcDeleteChannelByUrl200Response gcHideOrArchiveChannel(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = gcHideOrArchiveChannelWithHttpInfo(apiToken, channelUrl, gcHideOrArchiveChannelData);
         return localVarResp.getData();
     }
 
@@ -1077,7 +1071,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcHideOrArchiveChannelData  (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1085,9 +1079,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> gcHideOrArchiveChannelWithHttpInfo(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> gcHideOrArchiveChannelWithHttpInfo(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
         okhttp3.Call localVarCall = gcHideOrArchiveChannelValidateBeforeCall(apiToken, channelUrl, gcHideOrArchiveChannelData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1106,10 +1100,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcHideOrArchiveChannelAsync(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call gcHideOrArchiveChannelAsync(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcHideOrArchiveChannelValidateBeforeCall(apiToken, channelUrl, gcHideOrArchiveChannelData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1129,7 +1123,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcInviteAsMembersCall(String apiToken, String channelUrl, GcInviteAsMembersData gcInviteAsMembersData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1170,7 +1163,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1274,7 +1267,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcJoinChannelCall(String apiToken, String channelUrl, GcJoinChannelData gcJoinChannelData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1315,7 +1307,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1415,7 +1407,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcLeaveChannelCall(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1456,7 +1447,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1489,7 +1480,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcLeaveChannelData  (optional)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1497,8 +1488,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 gcLeaveChannel(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = gcLeaveChannelWithHttpInfo(apiToken, channelUrl, gcLeaveChannelData);
+    public OcDeleteChannelByUrl200Response gcLeaveChannel(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = gcLeaveChannelWithHttpInfo(apiToken, channelUrl, gcLeaveChannelData);
         return localVarResp.getData();
     }
 
@@ -1508,7 +1499,7 @@ public class GroupChannelApi {
      * @param apiToken  (required)
      * @param channelUrl  (required)
      * @param gcLeaveChannelData  (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1516,9 +1507,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> gcLeaveChannelWithHttpInfo(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> gcLeaveChannelWithHttpInfo(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
         okhttp3.Call localVarCall = gcLeaveChannelValidateBeforeCall(apiToken, channelUrl, gcLeaveChannelData, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1537,10 +1528,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcLeaveChannelAsync(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call gcLeaveChannelAsync(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcLeaveChannelValidateBeforeCall(apiToken, channelUrl, gcLeaveChannelData, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1600,7 +1591,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcListChannelsCall(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1808,7 +1798,7 @@ public class GroupChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2035,7 +2025,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcListMembersCall(String apiToken, String channelUrl, String token, Integer limit, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String operatorFilter, String memberStateFilter, String mutedMemberFilter, String nicknameStartswith, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2112,7 +2101,7 @@ public class GroupChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2241,7 +2230,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcListOperatorsCall(String apiToken, String channelUrl, String token, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2290,7 +2278,7 @@ public class GroupChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2397,7 +2385,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcRegisterOperatorsCall(String apiToken, String channelUrl, GcRegisterOperatorsData gcRegisterOperatorsData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2438,7 +2425,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2542,7 +2529,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcResetChatHistoryCall(String apiToken, String channelUrl, GcResetChatHistoryData gcResetChatHistoryData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2583,7 +2569,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2688,7 +2674,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcUnhideOrUnarchiveChannelCall(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2737,7 +2722,7 @@ public class GroupChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2776,7 +2761,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param userId  (required)
      * @param shouldUnhideAll  (optional)
-     * @return InlineResponse2001
+     * @return OcDeleteChannelByUrl200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2784,8 +2769,8 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse2001 gcUnhideOrUnarchiveChannel(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = gcUnhideOrUnarchiveChannelWithHttpInfo(apiToken, channelUrl, userId, shouldUnhideAll);
+    public OcDeleteChannelByUrl200Response gcUnhideOrUnarchiveChannel(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll) throws ApiException {
+        ApiResponse<OcDeleteChannelByUrl200Response> localVarResp = gcUnhideOrUnarchiveChannelWithHttpInfo(apiToken, channelUrl, userId, shouldUnhideAll);
         return localVarResp.getData();
     }
 
@@ -2796,7 +2781,7 @@ public class GroupChannelApi {
      * @param channelUrl  (required)
      * @param userId  (required)
      * @param shouldUnhideAll  (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2804,9 +2789,9 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse2001> gcUnhideOrUnarchiveChannelWithHttpInfo(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll) throws ApiException {
+    public ApiResponse<OcDeleteChannelByUrl200Response> gcUnhideOrUnarchiveChannelWithHttpInfo(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll) throws ApiException {
         okhttp3.Call localVarCall = gcUnhideOrUnarchiveChannelValidateBeforeCall(apiToken, channelUrl, userId, shouldUnhideAll, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2826,10 +2811,10 @@ public class GroupChannelApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call gcUnhideOrUnarchiveChannelAsync(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call gcUnhideOrUnarchiveChannelAsync(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll, final ApiCallback<OcDeleteChannelByUrl200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = gcUnhideOrUnarchiveChannelValidateBeforeCall(apiToken, channelUrl, userId, shouldUnhideAll, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<OcDeleteChannelByUrl200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2849,7 +2834,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcUpdateChannelByUrlCall(String apiToken, String channelUrl, GcUpdateChannelByUrlData gcUpdateChannelByUrlData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2890,7 +2874,7 @@ public class GroupChannelApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2998,7 +2982,6 @@ public class GroupChannelApi {
      */
     public okhttp3.Call gcViewChannelByUrlCall(String apiToken, String channelUrl, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMember, Boolean readReceipt, Boolean member, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -3059,7 +3042,7 @@ public class GroupChannelApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

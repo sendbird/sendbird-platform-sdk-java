@@ -2,52 +2,52 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addRegistrationOrDeviceToken**](UserApi.md#addRegistrationOrDeviceToken) | **POST** /v3/users/{user_id}/push/{token_type} | Add a registration or device token
-[**choosePushNotificationContentTemplate**](UserApi.md#choosePushNotificationContentTemplate) | **PUT** /v3/users/{user_id}/push/template | Choose a push notification content template
-[**createChannelMetacounter**](UserApi.md#createChannelMetacounter) | **POST** /v3/{channel_type}/{channel_url}/metacounter | Create a channel metacounter
-[**createChannelMetadata**](UserApi.md#createChannelMetadata) | **POST** /v3/{channel_type}/{channel_url}/metadata | Create a channel metadata
-[**createUser**](UserApi.md#createUser) | **POST** /v3/users | Create a user
-[**createUserMetadata**](UserApi.md#createUserMetadata) | **POST** /v3/users/{user_id}/metadata | Create a user metadata
-[**deleteChannelMetacounter**](UserApi.md#deleteChannelMetacounter) | **DELETE** /v3/{channel_type}/{channel_url}/metacounter | Delete a channel metacounter - When deleting all items of a channel metacounter
-[**deleteChannelMetacounterByKey**](UserApi.md#deleteChannelMetacounterByKey) | **DELETE** /v3/{channel_type}/{channel_url}/metacounter/{key} | Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
-[**deleteChannelMetadata**](UserApi.md#deleteChannelMetadata) | **DELETE** /v3/{channel_type}/{channel_url}/metadata | Delete a channel metadata - When deleting all items of a channel metadata
-[**deleteChannelMetadataByKey**](UserApi.md#deleteChannelMetadataByKey) | **DELETE** /v3/{channel_type}/{channel_url}/metadata/{key} | Delete a channel metadata - When deleting a specific item of a channel metadata by its key
-[**deleteUserById**](UserApi.md#deleteUserById) | **DELETE** /v3/users/{user_id} | Delete a user
-[**deleteUserMetadata**](UserApi.md#deleteUserMetadata) | **DELETE** /v3/users/{user_id}/metadata | Delete a user metadata - When deleting all items of a user metadata
-[**deleteUserMetadataByKey**](UserApi.md#deleteUserMetadataByKey) | **DELETE** /v3/users/{user_id}/metadata/{key} | Delete a user metadata - When deleting a specific item of a user metadata by its key
-[**leaveMyGroupChannels**](UserApi.md#leaveMyGroupChannels) | **PUT** /v3/users/{user_id}/my_group_channels/leave | Leave my group channels
-[**listMyGroupChannels**](UserApi.md#listMyGroupChannels) | **GET** /v3/users/{user_id}/my_group_channels | List my group channels
-[**listRegistrationOrDeviceTokens**](UserApi.md#listRegistrationOrDeviceTokens) | **GET** /v3/users/{user_id}/push/{token_type} | List registration or device tokens
-[**listUsers**](UserApi.md#listUsers) | **GET** /v3/users | List users
-[**markAllMessagesAsRead**](UserApi.md#markAllMessagesAsRead) | **PUT** /v3/users/{user_id}/mark_as_read_all | Mark all messages as read
-[**registerAsOperatorToChannelsWithCustomChannelTypes**](UserApi.md#registerAsOperatorToChannelsWithCustomChannelTypes) | **POST** /v3/users/{user_id}/operating_channel_custom_types | Register as an operator to channels with custom channel types
-[**removeRegistrationOrDeviceToken**](UserApi.md#removeRegistrationOrDeviceToken) | **DELETE** /v3/users/{user_id}/push | Remove a registration or device token - When unregistering all device tokens
-[**removeRegistrationOrDeviceTokenByToken**](UserApi.md#removeRegistrationOrDeviceTokenByToken) | **DELETE** /v3/users/{user_id}/push/{token_type}/{token} | Remove a registration or device token - When unregistering a specific token
-[**removeRegistrationOrDeviceTokenFromOwnerByToken**](UserApi.md#removeRegistrationOrDeviceTokenFromOwnerByToken) | **DELETE** /v3/push/device_tokens/{token_type}/{token} | Remove a registration or device token from an owner
-[**resetPushPreferences**](UserApi.md#resetPushPreferences) | **DELETE** /v3/users/{user_id}/push_preference | Reset push preferences
-[**updateChannelInvitationPreference**](UserApi.md#updateChannelInvitationPreference) | **PUT** /v3/users/{user_id}/channel_invitation_preference | Update channel invitation preference
-[**updateChannelMetacounter**](UserApi.md#updateChannelMetacounter) | **PUT** /v3/{channel_type}/{channel_url}/metacounter | Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
-[**updateChannelMetacounterByKey**](UserApi.md#updateChannelMetacounterByKey) | **PUT** /v3/{channel_type}/{channel_url}/metacounter/{key} | Update a channel metacounter - When updating a specific item of a channel metacounter by its key
-[**updateChannelMetadata**](UserApi.md#updateChannelMetadata) | **PUT** /v3/{channel_type}/{channel_url}/metadata | Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
-[**updateChannelMetadataByKey**](UserApi.md#updateChannelMetadataByKey) | **PUT** /v3/{channel_type}/{channel_url}/metadata/{key} | Update a channel metadata - When updating a specific item of a channel metadata by its key
-[**updateCountPreferenceOfChannelByUrl**](UserApi.md#updateCountPreferenceOfChannelByUrl) | **PUT** /v3/users/{user_id}/count_preference/{channel_url} | Update count preference of a channel
-[**updatePushPreferences**](UserApi.md#updatePushPreferences) | **PUT** /v3/users/{user_id}/push_preference | Update push preferences
-[**updatePushPreferencesForChannelByUrl**](UserApi.md#updatePushPreferencesForChannelByUrl) | **PUT** /v3/users/{user_id}/push_preference/{channel_url} | Update push preferences for a channel
-[**updateUserById**](UserApi.md#updateUserById) | **PUT** /v3/users/{user_id} | Update a user
-[**updateUserMetadata**](UserApi.md#updateUserMetadata) | **PUT** /v3/users/{user_id}/metadata | Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
-[**updateUserMetadataByKey**](UserApi.md#updateUserMetadataByKey) | **PUT** /v3/users/{user_id}/metadata/{key} | Update a user metadata - When updating a specific item of a user metadata by its key
-[**viewChannelInvitationPreference**](UserApi.md#viewChannelInvitationPreference) | **GET** /v3/users/{user_id}/channel_invitation_preference | View channel invitation preference
-[**viewCountPreferenceOfChannelByUrl**](UserApi.md#viewCountPreferenceOfChannelByUrl) | **GET** /v3/users/{user_id}/count_preference/{channel_url} | View count preference of a channel
-[**viewNumberOfChannelsByJoinStatus**](UserApi.md#viewNumberOfChannelsByJoinStatus) | **GET** /v3/users/{user_id}/group_channel_count | View number of channels by join status
-[**viewNumberOfChannelsWithUnreadMessages**](UserApi.md#viewNumberOfChannelsWithUnreadMessages) | **GET** /v3/users/{user_id}/unread_channel_count | View number of channels with unread messages
-[**viewNumberOfUnreadItems**](UserApi.md#viewNumberOfUnreadItems) | **GET** /v3/users/{user_id}/unread_item_count | View number of unread items
-[**viewNumberOfUnreadMessages**](UserApi.md#viewNumberOfUnreadMessages) | **GET** /v3/users/{user_id}/unread_message_count | View number of unread messages
-[**viewPushPreferences**](UserApi.md#viewPushPreferences) | **GET** /v3/users/{user_id}/push_preference | View push preferences
-[**viewPushPreferencesForChannelByUrl**](UserApi.md#viewPushPreferencesForChannelByUrl) | **GET** /v3/users/{user_id}/push_preference/{channel_url} | View push preferences for a channel
-[**viewUserById**](UserApi.md#viewUserById) | **GET** /v3/users/{user_id} | View a user
-[**viewWhoOwnsRegistrationOrDeviceTokenByToken**](UserApi.md#viewWhoOwnsRegistrationOrDeviceTokenByToken) | **GET** /v3/push/device_tokens/{token_type}/{token} | View who owns a registration or device token
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**addRegistrationOrDeviceToken**](UserApi.md#addRegistrationOrDeviceToken) | **POST** /v3/users/{user_id}/push/{token_type} | Add a registration or device token |
+| [**choosePushNotificationContentTemplate**](UserApi.md#choosePushNotificationContentTemplate) | **PUT** /v3/users/{user_id}/push/template | Choose a push notification content template |
+| [**createChannelMetacounter**](UserApi.md#createChannelMetacounter) | **POST** /v3/{channel_type}/{channel_url}/metacounter | Create a channel metacounter |
+| [**createChannelMetadata**](UserApi.md#createChannelMetadata) | **POST** /v3/{channel_type}/{channel_url}/metadata | Create a channel metadata |
+| [**createUser**](UserApi.md#createUser) | **POST** /v3/users | Create a user |
+| [**createUserMetadata**](UserApi.md#createUserMetadata) | **POST** /v3/users/{user_id}/metadata | Create a user metadata |
+| [**deleteChannelMetacounter**](UserApi.md#deleteChannelMetacounter) | **DELETE** /v3/{channel_type}/{channel_url}/metacounter | Delete a channel metacounter - When deleting all items of a channel metacounter |
+| [**deleteChannelMetacounterByKey**](UserApi.md#deleteChannelMetacounterByKey) | **DELETE** /v3/{channel_type}/{channel_url}/metacounter/{key} | Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key |
+| [**deleteChannelMetadata**](UserApi.md#deleteChannelMetadata) | **DELETE** /v3/{channel_type}/{channel_url}/metadata | Delete a channel metadata - When deleting all items of a channel metadata |
+| [**deleteChannelMetadataByKey**](UserApi.md#deleteChannelMetadataByKey) | **DELETE** /v3/{channel_type}/{channel_url}/metadata/{key} | Delete a channel metadata - When deleting a specific item of a channel metadata by its key |
+| [**deleteUserById**](UserApi.md#deleteUserById) | **DELETE** /v3/users/{user_id} | Delete a user |
+| [**deleteUserMetadata**](UserApi.md#deleteUserMetadata) | **DELETE** /v3/users/{user_id}/metadata | Delete a user metadata - When deleting all items of a user metadata |
+| [**deleteUserMetadataByKey**](UserApi.md#deleteUserMetadataByKey) | **DELETE** /v3/users/{user_id}/metadata/{key} | Delete a user metadata - When deleting a specific item of a user metadata by its key |
+| [**leaveMyGroupChannels**](UserApi.md#leaveMyGroupChannels) | **PUT** /v3/users/{user_id}/my_group_channels/leave | Leave my group channels |
+| [**listMyGroupChannels**](UserApi.md#listMyGroupChannels) | **GET** /v3/users/{user_id}/my_group_channels | List my group channels |
+| [**listRegistrationOrDeviceTokens**](UserApi.md#listRegistrationOrDeviceTokens) | **GET** /v3/users/{user_id}/push/{token_type} | List registration or device tokens |
+| [**listUsers**](UserApi.md#listUsers) | **GET** /v3/users | List users |
+| [**markAllMessagesAsRead**](UserApi.md#markAllMessagesAsRead) | **PUT** /v3/users/{user_id}/mark_as_read_all | Mark all messages as read |
+| [**registerAsOperatorToChannelsWithCustomChannelTypes**](UserApi.md#registerAsOperatorToChannelsWithCustomChannelTypes) | **POST** /v3/users/{user_id}/operating_channel_custom_types | Register as an operator to channels with custom channel types |
+| [**removeRegistrationOrDeviceToken**](UserApi.md#removeRegistrationOrDeviceToken) | **DELETE** /v3/users/{user_id}/push | Remove a registration or device token - When unregistering all device tokens |
+| [**removeRegistrationOrDeviceTokenByToken**](UserApi.md#removeRegistrationOrDeviceTokenByToken) | **DELETE** /v3/users/{user_id}/push/{token_type}/{token} | Remove a registration or device token - When unregistering a specific token |
+| [**removeRegistrationOrDeviceTokenFromOwnerByToken**](UserApi.md#removeRegistrationOrDeviceTokenFromOwnerByToken) | **DELETE** /v3/push/device_tokens/{token_type}/{token} | Remove a registration or device token from an owner |
+| [**resetPushPreferences**](UserApi.md#resetPushPreferences) | **DELETE** /v3/users/{user_id}/push_preference | Reset push preferences |
+| [**updateChannelInvitationPreference**](UserApi.md#updateChannelInvitationPreference) | **PUT** /v3/users/{user_id}/channel_invitation_preference | Update channel invitation preference |
+| [**updateChannelMetacounter**](UserApi.md#updateChannelMetacounter) | **PUT** /v3/{channel_type}/{channel_url}/metacounter | Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter |
+| [**updateChannelMetacounterByKey**](UserApi.md#updateChannelMetacounterByKey) | **PUT** /v3/{channel_type}/{channel_url}/metacounter/{key} | Update a channel metacounter - When updating a specific item of a channel metacounter by its key |
+| [**updateChannelMetadata**](UserApi.md#updateChannelMetadata) | **PUT** /v3/{channel_type}/{channel_url}/metadata | Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata |
+| [**updateChannelMetadataByKey**](UserApi.md#updateChannelMetadataByKey) | **PUT** /v3/{channel_type}/{channel_url}/metadata/{key} | Update a channel metadata - When updating a specific item of a channel metadata by its key |
+| [**updateCountPreferenceOfChannelByUrl**](UserApi.md#updateCountPreferenceOfChannelByUrl) | **PUT** /v3/users/{user_id}/count_preference/{channel_url} | Update count preference of a channel |
+| [**updatePushPreferences**](UserApi.md#updatePushPreferences) | **PUT** /v3/users/{user_id}/push_preference | Update push preferences |
+| [**updatePushPreferencesForChannelByUrl**](UserApi.md#updatePushPreferencesForChannelByUrl) | **PUT** /v3/users/{user_id}/push_preference/{channel_url} | Update push preferences for a channel |
+| [**updateUserById**](UserApi.md#updateUserById) | **PUT** /v3/users/{user_id} | Update a user |
+| [**updateUserMetadata**](UserApi.md#updateUserMetadata) | **PUT** /v3/users/{user_id}/metadata | Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata |
+| [**updateUserMetadataByKey**](UserApi.md#updateUserMetadataByKey) | **PUT** /v3/users/{user_id}/metadata/{key} | Update a user metadata - When updating a specific item of a user metadata by its key |
+| [**viewChannelInvitationPreference**](UserApi.md#viewChannelInvitationPreference) | **GET** /v3/users/{user_id}/channel_invitation_preference | View channel invitation preference |
+| [**viewCountPreferenceOfChannelByUrl**](UserApi.md#viewCountPreferenceOfChannelByUrl) | **GET** /v3/users/{user_id}/count_preference/{channel_url} | View count preference of a channel |
+| [**viewNumberOfChannelsByJoinStatus**](UserApi.md#viewNumberOfChannelsByJoinStatus) | **GET** /v3/users/{user_id}/group_channel_count | View number of channels by join status |
+| [**viewNumberOfChannelsWithUnreadMessages**](UserApi.md#viewNumberOfChannelsWithUnreadMessages) | **GET** /v3/users/{user_id}/unread_channel_count | View number of channels with unread messages |
+| [**viewNumberOfUnreadItems**](UserApi.md#viewNumberOfUnreadItems) | **GET** /v3/users/{user_id}/unread_item_count | View number of unread items |
+| [**viewNumberOfUnreadMessages**](UserApi.md#viewNumberOfUnreadMessages) | **GET** /v3/users/{user_id}/unread_message_count | View number of unread messages |
+| [**viewPushPreferences**](UserApi.md#viewPushPreferences) | **GET** /v3/users/{user_id}/push_preference | View push preferences |
+| [**viewPushPreferencesForChannelByUrl**](UserApi.md#viewPushPreferencesForChannelByUrl) | **GET** /v3/users/{user_id}/push_preference/{channel_url} | View push preferences for a channel |
+| [**viewUserById**](UserApi.md#viewUserById) | **GET** /v3/users/{user_id} | View a user |
+| [**viewWhoOwnsRegistrationOrDeviceTokenByToken**](UserApi.md#viewWhoOwnsRegistrationOrDeviceTokenByToken) | **GET** /v3/push/device_tokens/{token_type}/{token} | View who owns a registration or device token |
 
 
 <a name="addRegistrationOrDeviceToken"></a>
@@ -93,12 +93,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **tokenType** | **String**|  |
- **addRegistrationOrDeviceTokenData** | [**AddRegistrationOrDeviceTokenData**](AddRegistrationOrDeviceTokenData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **tokenType** | **String**|  | |
+| **addRegistrationOrDeviceTokenData** | [**AddRegistrationOrDeviceTokenData**](AddRegistrationOrDeviceTokenData.md)|  | [optional] |
 
 ### Return type
 
@@ -116,7 +116,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="choosePushNotificationContentTemplate"></a>
 # **choosePushNotificationContentTemplate**
@@ -160,11 +160,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **body** | **Object**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -182,11 +182,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="createChannelMetacounter"></a>
 # **createChannelMetacounter**
-> Map&lt;String, SendBirdAdditionalProperties&gt; createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData)
+> Object createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData)
 
 Create a channel metacounter
 
@@ -212,7 +212,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     CreateChannelMetacounterData createChannelMetacounterData = new CreateChannelMetacounterData(); // CreateChannelMetacounterData | 
     try {
-      Map<String, SendBirdAdditionalProperties> result = apiInstance.createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData);
+      Object result = apiInstance.createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#createChannelMetacounter");
@@ -227,16 +227,16 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **createChannelMetacounterData** | [**CreateChannelMetacounterData**](CreateChannelMetacounterData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **createChannelMetacounterData** | [**CreateChannelMetacounterData**](CreateChannelMetacounterData.md)|  | [optional] |
 
 ### Return type
 
-[**Map&lt;String, SendBirdAdditionalProperties&gt;**](SendBirdAdditionalProperties.md)
+**Object**
 
 ### Authorization
 
@@ -250,7 +250,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="createChannelMetadata"></a>
 # **createChannelMetadata**
@@ -295,12 +295,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **createChannelMetadataData** | [**CreateChannelMetadataData**](CreateChannelMetadataData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **createChannelMetadataData** | [**CreateChannelMetadataData**](CreateChannelMetadataData.md)|  | [optional] |
 
 ### Return type
 
@@ -318,7 +318,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="createUser"></a>
 # **createUser**
@@ -361,10 +361,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **createUserData** | [**CreateUserData**](CreateUserData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **createUserData** | [**CreateUserData**](CreateUserData.md)|  | [optional] |
 
 ### Return type
 
@@ -382,7 +382,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="createUserMetadata"></a>
 # **createUserMetadata**
@@ -426,11 +426,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **createUserMetadataData** | [**CreateUserMetadataData**](CreateUserMetadataData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **createUserMetadataData** | [**CreateUserMetadataData**](CreateUserMetadataData.md)|  | [optional] |
 
 ### Return type
 
@@ -448,7 +448,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteChannelMetacounter"></a>
 # **deleteChannelMetacounter**
@@ -491,11 +491,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
 
 ### Return type
 
@@ -513,7 +513,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteChannelMetacounterByKey"></a>
 # **deleteChannelMetacounterByKey**
@@ -557,12 +557,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **key** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **key** | **String**|  | |
 
 ### Return type
 
@@ -580,7 +580,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteChannelMetadata"></a>
 # **deleteChannelMetadata**
@@ -624,12 +624,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **key** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **key** | **String**|  | [optional] |
 
 ### Return type
 
@@ -647,7 +647,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteChannelMetadataByKey"></a>
 # **deleteChannelMetadataByKey**
@@ -691,12 +691,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **key** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **key** | **String**|  | |
 
 ### Return type
 
@@ -714,7 +714,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteUserById"></a>
 # **deleteUserById**
@@ -757,10 +757,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
 
 ### Return type
 
@@ -778,7 +778,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteUserMetadata"></a>
 # **deleteUserMetadata**
@@ -821,11 +821,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **key** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **key** | **String**|  | [optional] |
 
 ### Return type
 
@@ -843,7 +843,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteUserMetadataByKey"></a>
 # **deleteUserMetadataByKey**
@@ -886,11 +886,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **key** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **key** | **String**|  | |
 
 ### Return type
 
@@ -908,7 +908,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="leaveMyGroupChannels"></a>
 # **leaveMyGroupChannels**
@@ -952,11 +952,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **leaveMyGroupChannelsData** | [**LeaveMyGroupChannelsData**](LeaveMyGroupChannelsData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **leaveMyGroupChannelsData** | [**LeaveMyGroupChannelsData**](LeaveMyGroupChannelsData.md)|  | [optional] |
 
 ### Return type
 
@@ -974,7 +974,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listMyGroupChannels"></a>
 # **listMyGroupChannels**
@@ -1057,50 +1057,50 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **distinctMode** | **String**|  | [optional]
- **publicMode** | **String**|  | [optional]
- **superMode** | **String**|  | [optional]
- **hiddenMode** | **String**|  | [optional]
- **memberStateFilter** | **String**|  | [optional]
- **unreadFilter** | **String**|  | [optional]
- **createdAfter** | **Integer**|  | [optional]
- **createdBefore** | **Integer**|  | [optional]
- **showEmpty** | **Boolean**|  | [optional]
- **showFrozen** | **Boolean**|  | [optional]
- **showMember** | **Boolean**|  | [optional]
- **showDeliveryReceipt** | **Boolean**|  | [optional]
- **showReadReceipt** | **Boolean**|  | [optional]
- **order** | **String**|  | [optional]
- **metadataOrderKey** | **String**|  | [optional]
- **customTypes** | **String**|  | [optional]
- **customTypeStartswith** | **String**|  | [optional]
- **channelUrls** | **String**|  | [optional]
- **name** | **String**|  | [optional]
- **nameContains** | **String**|  | [optional]
- **nameStartswith** | **String**|  | [optional]
- **membersExactlyIn** | **String**|  | [optional]
- **membersIncludeIn** | **String**|  | [optional]
- **queryType** | **String**|  | [optional]
- **membersNickname** | **String**|  | [optional]
- **membersNicknameContains** | **String**|  | [optional]
- **searchQuery** | **String**|  | [optional]
- **searchFields** | **String**|  | [optional]
- **metadataKey** | **String**|  | [optional]
- **metadataValues** | **String**|  | [optional]
- **metadataValueStartswith** | **String**|  | [optional]
- **metacounterKey** | **String**|  | [optional]
- **metacounterValues** | **String**|  | [optional]
- **metacounterValueGt** | **String**|  | [optional]
- **metacounterValueGte** | **String**|  | [optional]
- **metacounterValueLt** | **String**|  | [optional]
- **metacounterValueLte** | **String**|  | [optional]
- **customType** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **distinctMode** | **String**|  | [optional] |
+| **publicMode** | **String**|  | [optional] |
+| **superMode** | **String**|  | [optional] |
+| **hiddenMode** | **String**|  | [optional] |
+| **memberStateFilter** | **String**|  | [optional] |
+| **unreadFilter** | **String**|  | [optional] |
+| **createdAfter** | **Integer**|  | [optional] |
+| **createdBefore** | **Integer**|  | [optional] |
+| **showEmpty** | **Boolean**|  | [optional] |
+| **showFrozen** | **Boolean**|  | [optional] |
+| **showMember** | **Boolean**|  | [optional] |
+| **showDeliveryReceipt** | **Boolean**|  | [optional] |
+| **showReadReceipt** | **Boolean**|  | [optional] |
+| **order** | **String**|  | [optional] |
+| **metadataOrderKey** | **String**|  | [optional] |
+| **customTypes** | **String**|  | [optional] |
+| **customTypeStartswith** | **String**|  | [optional] |
+| **channelUrls** | **String**|  | [optional] |
+| **name** | **String**|  | [optional] |
+| **nameContains** | **String**|  | [optional] |
+| **nameStartswith** | **String**|  | [optional] |
+| **membersExactlyIn** | **String**|  | [optional] |
+| **membersIncludeIn** | **String**|  | [optional] |
+| **queryType** | **String**|  | [optional] |
+| **membersNickname** | **String**|  | [optional] |
+| **membersNicknameContains** | **String**|  | [optional] |
+| **searchQuery** | **String**|  | [optional] |
+| **searchFields** | **String**|  | [optional] |
+| **metadataKey** | **String**|  | [optional] |
+| **metadataValues** | **String**|  | [optional] |
+| **metadataValueStartswith** | **String**|  | [optional] |
+| **metacounterKey** | **String**|  | [optional] |
+| **metacounterValues** | **String**|  | [optional] |
+| **metacounterValueGt** | **String**|  | [optional] |
+| **metacounterValueGte** | **String**|  | [optional] |
+| **metacounterValueLt** | **String**|  | [optional] |
+| **metacounterValueLte** | **String**|  | [optional] |
+| **customType** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1118,7 +1118,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listRegistrationOrDeviceTokens"></a>
 # **listRegistrationOrDeviceTokens**
@@ -1162,11 +1162,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **tokenType** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **tokenType** | **String**|  | |
 
 ### Return type
 
@@ -1184,7 +1184,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listUsers"></a>
 # **listUsers**
@@ -1235,18 +1235,18 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **activeMode** | **String**|  | [optional]
- **showBot** | **Boolean**|  | [optional]
- **userIds** | **String**|  | [optional]
- **nickname** | **String**|  | [optional]
- **nicknameStartswith** | **String**|  | [optional]
- **metadatakey** | **String**|  | [optional]
- **metadatavaluesIn** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **activeMode** | **String**|  | [optional] |
+| **showBot** | **Boolean**|  | [optional] |
+| **userIds** | **String**|  | [optional] |
+| **nickname** | **String**|  | [optional] |
+| **nicknameStartswith** | **String**|  | [optional] |
+| **metadatakey** | **String**|  | [optional] |
+| **metadatavaluesIn** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1264,7 +1264,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="markAllMessagesAsRead"></a>
 # **markAllMessagesAsRead**
@@ -1308,11 +1308,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **markAllMessagesAsReadData** | [**MarkAllMessagesAsReadData**](MarkAllMessagesAsReadData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **markAllMessagesAsReadData** | [**MarkAllMessagesAsReadData**](MarkAllMessagesAsReadData.md)|  | [optional] |
 
 ### Return type
 
@@ -1330,7 +1330,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="registerAsOperatorToChannelsWithCustomChannelTypes"></a>
 # **registerAsOperatorToChannelsWithCustomChannelTypes**
@@ -1374,11 +1374,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **registerAsOperatorToChannelsWithCustomChannelTypesData** | [**RegisterAsOperatorToChannelsWithCustomChannelTypesData**](RegisterAsOperatorToChannelsWithCustomChannelTypesData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **registerAsOperatorToChannelsWithCustomChannelTypesData** | [**RegisterAsOperatorToChannelsWithCustomChannelTypesData**](RegisterAsOperatorToChannelsWithCustomChannelTypesData.md)|  | [optional] |
 
 ### Return type
 
@@ -1396,7 +1396,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="removeRegistrationOrDeviceToken"></a>
 # **removeRegistrationOrDeviceToken**
@@ -1439,10 +1439,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
 
 ### Return type
 
@@ -1460,7 +1460,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="removeRegistrationOrDeviceTokenByToken"></a>
 # **removeRegistrationOrDeviceTokenByToken**
@@ -1505,12 +1505,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **tokenType** | **String**|  |
- **token** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **tokenType** | **String**|  | |
+| **token** | **String**|  | |
 
 ### Return type
 
@@ -1528,7 +1528,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="removeRegistrationOrDeviceTokenFromOwnerByToken"></a>
 # **removeRegistrationOrDeviceTokenFromOwnerByToken**
@@ -1572,11 +1572,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **tokenType** | **String**|  |
- **token** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **tokenType** | **String**|  | |
+| **token** | **String**|  | |
 
 ### Return type
 
@@ -1594,7 +1594,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="resetPushPreferences"></a>
 # **resetPushPreferences**
@@ -1637,10 +1637,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
 
 ### Return type
 
@@ -1658,7 +1658,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateChannelInvitationPreference"></a>
 # **updateChannelInvitationPreference**
@@ -1702,11 +1702,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **updateChannelInvitationPreferenceData** | [**UpdateChannelInvitationPreferenceData**](UpdateChannelInvitationPreferenceData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **updateChannelInvitationPreferenceData** | [**UpdateChannelInvitationPreferenceData**](UpdateChannelInvitationPreferenceData.md)|  | [optional] |
 
 ### Return type
 
@@ -1724,11 +1724,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateChannelMetacounter"></a>
 # **updateChannelMetacounter**
-> Map&lt;String, SendBirdAdditionalProperties&gt; updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData)
+> Object updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData)
 
 Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
 
@@ -1754,7 +1754,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     UpdateChannelMetacounterData updateChannelMetacounterData = new UpdateChannelMetacounterData(); // UpdateChannelMetacounterData | 
     try {
-      Map<String, SendBirdAdditionalProperties> result = apiInstance.updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData);
+      Object result = apiInstance.updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#updateChannelMetacounter");
@@ -1769,16 +1769,16 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **updateChannelMetacounterData** | [**UpdateChannelMetacounterData**](UpdateChannelMetacounterData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **updateChannelMetacounterData** | [**UpdateChannelMetacounterData**](UpdateChannelMetacounterData.md)|  | [optional] |
 
 ### Return type
 
-[**Map&lt;String, SendBirdAdditionalProperties&gt;**](SendBirdAdditionalProperties.md)
+**Object**
 
 ### Authorization
 
@@ -1792,7 +1792,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateChannelMetacounterByKey"></a>
 # **updateChannelMetacounterByKey**
@@ -1838,13 +1838,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **key** | **String**|  |
- **body** | **Object**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **key** | **String**|  | |
+| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -1862,7 +1862,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateChannelMetadata"></a>
 # **updateChannelMetadata**
@@ -1907,12 +1907,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **updateChannelMetadataData** | [**UpdateChannelMetadataData**](UpdateChannelMetadataData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **updateChannelMetadataData** | [**UpdateChannelMetadataData**](UpdateChannelMetadataData.md)|  | [optional] |
 
 ### Return type
 
@@ -1930,7 +1930,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateChannelMetadataByKey"></a>
 # **updateChannelMetadataByKey**
@@ -1976,13 +1976,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **key** | **String**|  |
- **body** | **Object**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **key** | **String**|  | |
+| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -2000,7 +2000,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateCountPreferenceOfChannelByUrl"></a>
 # **updateCountPreferenceOfChannelByUrl**
@@ -2045,12 +2045,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **channelUrl** | **String**|  |
- **updateCountPreferenceOfChannelByUrlData** | [**UpdateCountPreferenceOfChannelByUrlData**](UpdateCountPreferenceOfChannelByUrlData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **updateCountPreferenceOfChannelByUrlData** | [**UpdateCountPreferenceOfChannelByUrlData**](UpdateCountPreferenceOfChannelByUrlData.md)|  | [optional] |
 
 ### Return type
 
@@ -2068,7 +2068,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updatePushPreferences"></a>
 # **updatePushPreferences**
@@ -2112,11 +2112,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **updatePushPreferencesData** | [**UpdatePushPreferencesData**](UpdatePushPreferencesData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **updatePushPreferencesData** | [**UpdatePushPreferencesData**](UpdatePushPreferencesData.md)|  | [optional] |
 
 ### Return type
 
@@ -2134,7 +2134,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updatePushPreferencesForChannelByUrl"></a>
 # **updatePushPreferencesForChannelByUrl**
@@ -2179,12 +2179,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **channelUrl** | **String**|  |
- **updatePushPreferencesForChannelByUrlData** | [**UpdatePushPreferencesForChannelByUrlData**](UpdatePushPreferencesForChannelByUrlData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **updatePushPreferencesForChannelByUrlData** | [**UpdatePushPreferencesForChannelByUrlData**](UpdatePushPreferencesForChannelByUrlData.md)|  | [optional] |
 
 ### Return type
 
@@ -2202,7 +2202,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateUserById"></a>
 # **updateUserById**
@@ -2246,11 +2246,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **updateUserByIdData** | [**UpdateUserByIdData**](UpdateUserByIdData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **updateUserByIdData** | [**UpdateUserByIdData**](UpdateUserByIdData.md)|  | [optional] |
 
 ### Return type
 
@@ -2268,7 +2268,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateUserMetadata"></a>
 # **updateUserMetadata**
@@ -2312,11 +2312,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **updateUserMetadataData** | [**UpdateUserMetadataData**](UpdateUserMetadataData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **updateUserMetadataData** | [**UpdateUserMetadataData**](UpdateUserMetadataData.md)|  | [optional] |
 
 ### Return type
 
@@ -2334,7 +2334,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateUserMetadataByKey"></a>
 # **updateUserMetadataByKey**
@@ -2379,12 +2379,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **key** | **String**|  |
- **body** | **Object**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **key** | **String**|  | |
+| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -2402,7 +2402,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewChannelInvitationPreference"></a>
 # **viewChannelInvitationPreference**
@@ -2445,10 +2445,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
 
 ### Return type
 
@@ -2466,7 +2466,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewCountPreferenceOfChannelByUrl"></a>
 # **viewCountPreferenceOfChannelByUrl**
@@ -2510,11 +2510,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **channelUrl** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **channelUrl** | **String**|  | |
 
 ### Return type
 
@@ -2532,7 +2532,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewNumberOfChannelsByJoinStatus"></a>
 # **viewNumberOfChannelsByJoinStatus**
@@ -2576,11 +2576,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **state** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **state** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2598,7 +2598,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewNumberOfChannelsWithUnreadMessages"></a>
 # **viewNumberOfChannelsWithUnreadMessages**
@@ -2643,12 +2643,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **customTypes** | [**List&lt;String&gt;**](String.md)|  | [optional]
- **superMode** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **customTypes** | [**List&lt;String&gt;**](String.md)|  | [optional] |
+| **superMode** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2666,7 +2666,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewNumberOfUnreadItems"></a>
 # **viewNumberOfUnreadItems**
@@ -2711,12 +2711,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **customType** | **String**|  | [optional]
- **itemKeys** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **customType** | **String**|  | [optional] |
+| **itemKeys** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2734,7 +2734,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewNumberOfUnreadMessages"></a>
 # **viewNumberOfUnreadMessages**
@@ -2779,12 +2779,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **customTypes** | **String**|  | [optional]
- **superMode** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **customTypes** | **String**|  | [optional] |
+| **superMode** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2802,7 +2802,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewPushPreferences"></a>
 # **viewPushPreferences**
@@ -2845,10 +2845,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
 
 ### Return type
 
@@ -2866,7 +2866,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewPushPreferencesForChannelByUrl"></a>
 # **viewPushPreferencesForChannelByUrl**
@@ -2910,11 +2910,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **channelUrl** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **channelUrl** | **String**|  | |
 
 ### Return type
 
@@ -2932,7 +2932,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewUserById"></a>
 # **viewUserById**
@@ -2978,13 +2978,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **userId** | **String**|  |
- **includeUnreadCount** | **Boolean**|  | [optional]
- **customTypes** | **String**|  | [optional]
- **superMode** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **includeUnreadCount** | **Boolean**|  | [optional] |
+| **customTypes** | **String**|  | [optional] |
+| **superMode** | **String**|  | [optional] |
 
 ### Return type
 
@@ -3002,11 +3002,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewWhoOwnsRegistrationOrDeviceTokenByToken"></a>
 # **viewWhoOwnsRegistrationOrDeviceTokenByToken**
-> List&lt;Object&gt; viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token)
+> List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt; viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token)
 
 View who owns a registration or device token
 
@@ -3031,7 +3031,7 @@ public class Example {
     String tokenType = "tokenType_example"; // String | 
     String token = "token_example"; // String | 
     try {
-      List<Object> result = apiInstance.viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token);
+      List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> result = apiInstance.viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#viewWhoOwnsRegistrationOrDeviceTokenByToken");
@@ -3046,15 +3046,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **tokenType** | **String**|  |
- **token** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **tokenType** | **String**|  | |
+| **token** | **String**|  | |
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt;**](ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner.md)
 
 ### Authorization
 
@@ -3068,5 +3068,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

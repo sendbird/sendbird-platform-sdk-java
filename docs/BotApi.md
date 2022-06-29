@@ -2,17 +2,17 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createBot**](BotApi.md#createBot) | **POST** /v3/bots | Create a bot
-[**deleteBotById**](BotApi.md#deleteBotById) | **DELETE** /v3/bots/{bot_userid} | Delete a bot
-[**joinChannels**](BotApi.md#joinChannels) | **POST** /v3/bots/{bot_userid}/channels | Join channels
-[**leaveChannels**](BotApi.md#leaveChannels) | **DELETE** /v3/bots/{bot_userid}/channels | Leave channels - When leaving all channels
-[**leaveChannelsByUrl**](BotApi.md#leaveChannelsByUrl) | **DELETE** /v3/bots/{bot_userid}/channels/{channel_url} | Leave channels - When leaving a channel by its channel URL
-[**listBots**](BotApi.md#listBots) | **GET** /v3/bots | List bots
-[**sendBotsMessage**](BotApi.md#sendBotsMessage) | **POST** /v3/bots/{bot_userid}/send | Send a bot&#39;s message
-[**updateBotById**](BotApi.md#updateBotById) | **PUT** /v3/bots/{bot_userid} | Update a bot
-[**viewBotById**](BotApi.md#viewBotById) | **GET** /v3/bots/{bot_userid} | View a bot
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createBot**](BotApi.md#createBot) | **POST** /v3/bots | Create a bot |
+| [**deleteBotById**](BotApi.md#deleteBotById) | **DELETE** /v3/bots/{bot_userid} | Delete a bot |
+| [**joinChannels**](BotApi.md#joinChannels) | **POST** /v3/bots/{bot_userid}/channels | Join channels |
+| [**leaveChannels**](BotApi.md#leaveChannels) | **DELETE** /v3/bots/{bot_userid}/channels | Leave channels - When leaving all channels |
+| [**leaveChannelsByUrl**](BotApi.md#leaveChannelsByUrl) | **DELETE** /v3/bots/{bot_userid}/channels/{channel_url} | Leave channels - When leaving a channel by its channel URL |
+| [**listBots**](BotApi.md#listBots) | **GET** /v3/bots | List bots |
+| [**sendBotsMessage**](BotApi.md#sendBotsMessage) | **POST** /v3/bots/{bot_userid}/send | Send a bot&#39;s message |
+| [**updateBotById**](BotApi.md#updateBotById) | **PUT** /v3/bots/{bot_userid} | Update a bot |
+| [**viewBotById**](BotApi.md#viewBotById) | **GET** /v3/bots/{bot_userid} | View a bot |
 
 
 <a name="createBot"></a>
@@ -56,10 +56,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **createBotData** | [**CreateBotData**](CreateBotData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **createBotData** | [**CreateBotData**](CreateBotData.md)|  | [optional] |
 
 ### Return type
 
@@ -77,7 +77,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteBotById"></a>
 # **deleteBotById**
@@ -120,10 +120,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **botUserid** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **botUserid** | **String**|  | |
 
 ### Return type
 
@@ -141,7 +141,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="joinChannels"></a>
 # **joinChannels**
@@ -185,11 +185,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **botUserid** | **String**|  |
- **joinChannelsData** | [**JoinChannelsData**](JoinChannelsData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **botUserid** | **String**|  | |
+| **joinChannelsData** | [**JoinChannelsData**](JoinChannelsData.md)|  | [optional] |
 
 ### Return type
 
@@ -207,7 +207,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="leaveChannels"></a>
 # **leaveChannels**
@@ -250,11 +250,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **botUserid** | **String**|  |
- **channelUrl** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **botUserid** | **String**|  | |
+| **channelUrl** | **String**|  | [optional] |
 
 ### Return type
 
@@ -272,7 +272,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="leaveChannelsByUrl"></a>
 # **leaveChannelsByUrl**
@@ -316,11 +316,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **botUserid** | **String**|  |
- **channelUrl** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **botUserid** | **String**|  | |
+| **channelUrl** | **String**|  | |
 
 ### Return type
 
@@ -338,7 +338,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listBots"></a>
 # **listBots**
@@ -382,11 +382,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -404,7 +404,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="sendBotsMessage"></a>
 # **sendBotsMessage**
@@ -448,11 +448,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **botUserid** | **String**|  |
- **sendBotSMessageData** | [**SendBotSMessageData**](SendBotSMessageData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **botUserid** | **String**|  | |
+| **sendBotSMessageData** | [**SendBotSMessageData**](SendBotSMessageData.md)|  | [optional] |
 
 ### Return type
 
@@ -470,7 +470,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateBotById"></a>
 # **updateBotById**
@@ -514,11 +514,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **botUserid** | **String**|  |
- **updateBotByIdData** | [**UpdateBotByIdData**](UpdateBotByIdData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **botUserid** | **String**|  | |
+| **updateBotByIdData** | [**UpdateBotByIdData**](UpdateBotByIdData.md)|  | [optional] |
 
 ### Return type
 
@@ -536,7 +536,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewBotById"></a>
 # **viewBotById**
@@ -579,10 +579,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **botUserid** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **botUserid** | **String**|  | |
 
 ### Return type
 
@@ -600,5 +600,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

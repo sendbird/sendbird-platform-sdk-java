@@ -23,9 +23,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -80,6 +79,14 @@ public class RetrieveListOfSubscribedEventsResponseWebhookTest {
     @Test
     public void allWebhookCategoriesTest() {
         // TODO: test allWebhookCategories
+    }
+
+    /**
+     * Test the property 'includeUnreadCount'
+     */
+    @Test
+    public void includeUnreadCountTest() {
+        // TODO: test includeUnreadCount
     }
 
 }

@@ -2,26 +2,26 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**gcAcceptInvitation**](GroupChannelApi.md#gcAcceptInvitation) | **PUT** /v3/group_channels/{channel_url}/accept | Accept an invitation
-[**gcCancelTheRegistrationOfOperators**](GroupChannelApi.md#gcCancelTheRegistrationOfOperators) | **DELETE** /v3/group_channels/{channel_url}/operators | Cancel the registration of operators
-[**gcCheckIfMemberById**](GroupChannelApi.md#gcCheckIfMemberById) | **GET** /v3/group_channels/{channel_url}/members/{user_id} | Check if member
-[**gcCreateChannel**](GroupChannelApi.md#gcCreateChannel) | **POST** /v3/group_channels | Create a channel
-[**gcDeclineInvitation**](GroupChannelApi.md#gcDeclineInvitation) | **PUT** /v3/group_channels/{channel_url}/decline | Decline an invitation
-[**gcDeleteChannelByUrl**](GroupChannelApi.md#gcDeleteChannelByUrl) | **DELETE** /v3/group_channels/{channel_url} | Delete a channel
-[**gcHideOrArchiveChannel**](GroupChannelApi.md#gcHideOrArchiveChannel) | **PUT** /v3/group_channels/{channel_url}/hide | Hide or archive a channel
-[**gcInviteAsMembers**](GroupChannelApi.md#gcInviteAsMembers) | **POST** /v3/group_channels/{channel_url}/invite | Invite as members
-[**gcJoinChannel**](GroupChannelApi.md#gcJoinChannel) | **PUT** /v3/group_channels/{channel_url}/join | Join a channel
-[**gcLeaveChannel**](GroupChannelApi.md#gcLeaveChannel) | **PUT** /v3/group_channels/{channel_url}/leave | Leave a channel
-[**gcListChannels**](GroupChannelApi.md#gcListChannels) | **GET** /v3/group_channels | List channels
-[**gcListMembers**](GroupChannelApi.md#gcListMembers) | **GET** /v3/group_channels/{channel_url}/members | List members
-[**gcListOperators**](GroupChannelApi.md#gcListOperators) | **GET** /v3/group_channels/{channel_url}/operators | List operators
-[**gcRegisterOperators**](GroupChannelApi.md#gcRegisterOperators) | **POST** /v3/group_channels/{channel_url}/operators | Register operators
-[**gcResetChatHistory**](GroupChannelApi.md#gcResetChatHistory) | **PUT** /v3/group_channels/{channel_url}/reset_user_history | Reset chat history
-[**gcUnhideOrUnarchiveChannel**](GroupChannelApi.md#gcUnhideOrUnarchiveChannel) | **DELETE** /v3/group_channels/{channel_url}/hide | Unhide or unarchive a channel
-[**gcUpdateChannelByUrl**](GroupChannelApi.md#gcUpdateChannelByUrl) | **PUT** /v3/group_channels/{channel_url} | Update a channel
-[**gcViewChannelByUrl**](GroupChannelApi.md#gcViewChannelByUrl) | **GET** /v3/group_channels/{channel_url} | View a channel
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**gcAcceptInvitation**](GroupChannelApi.md#gcAcceptInvitation) | **PUT** /v3/group_channels/{channel_url}/accept | Accept an invitation |
+| [**gcCancelTheRegistrationOfOperators**](GroupChannelApi.md#gcCancelTheRegistrationOfOperators) | **DELETE** /v3/group_channels/{channel_url}/operators | Cancel the registration of operators |
+| [**gcCheckIfMemberById**](GroupChannelApi.md#gcCheckIfMemberById) | **GET** /v3/group_channels/{channel_url}/members/{user_id} | Check if member |
+| [**gcCreateChannel**](GroupChannelApi.md#gcCreateChannel) | **POST** /v3/group_channels | Create a channel |
+| [**gcDeclineInvitation**](GroupChannelApi.md#gcDeclineInvitation) | **PUT** /v3/group_channels/{channel_url}/decline | Decline an invitation |
+| [**gcDeleteChannelByUrl**](GroupChannelApi.md#gcDeleteChannelByUrl) | **DELETE** /v3/group_channels/{channel_url} | Delete a channel |
+| [**gcHideOrArchiveChannel**](GroupChannelApi.md#gcHideOrArchiveChannel) | **PUT** /v3/group_channels/{channel_url}/hide | Hide or archive a channel |
+| [**gcInviteAsMembers**](GroupChannelApi.md#gcInviteAsMembers) | **POST** /v3/group_channels/{channel_url}/invite | Invite as members |
+| [**gcJoinChannel**](GroupChannelApi.md#gcJoinChannel) | **PUT** /v3/group_channels/{channel_url}/join | Join a channel |
+| [**gcLeaveChannel**](GroupChannelApi.md#gcLeaveChannel) | **PUT** /v3/group_channels/{channel_url}/leave | Leave a channel |
+| [**gcListChannels**](GroupChannelApi.md#gcListChannels) | **GET** /v3/group_channels | List channels |
+| [**gcListMembers**](GroupChannelApi.md#gcListMembers) | **GET** /v3/group_channels/{channel_url}/members | List members |
+| [**gcListOperators**](GroupChannelApi.md#gcListOperators) | **GET** /v3/group_channels/{channel_url}/operators | List operators |
+| [**gcRegisterOperators**](GroupChannelApi.md#gcRegisterOperators) | **POST** /v3/group_channels/{channel_url}/operators | Register operators |
+| [**gcResetChatHistory**](GroupChannelApi.md#gcResetChatHistory) | **PUT** /v3/group_channels/{channel_url}/reset_user_history | Reset chat history |
+| [**gcUnhideOrUnarchiveChannel**](GroupChannelApi.md#gcUnhideOrUnarchiveChannel) | **DELETE** /v3/group_channels/{channel_url}/hide | Unhide or unarchive a channel |
+| [**gcUpdateChannelByUrl**](GroupChannelApi.md#gcUpdateChannelByUrl) | **PUT** /v3/group_channels/{channel_url} | Update a channel |
+| [**gcViewChannelByUrl**](GroupChannelApi.md#gcViewChannelByUrl) | **GET** /v3/group_channels/{channel_url} | View a channel |
 
 
 <a name="gcAcceptInvitation"></a>
@@ -66,11 +66,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcAcceptInvitationData** | [**GcAcceptInvitationData**](GcAcceptInvitationData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcAcceptInvitationData** | [**GcAcceptInvitationData**](GcAcceptInvitationData.md)|  | [optional] |
 
 ### Return type
 
@@ -88,11 +88,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcCancelTheRegistrationOfOperators"></a>
 # **gcCancelTheRegistrationOfOperators**
-> InlineResponse2001 gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll)
+> OcDeleteChannelByUrl200Response gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll)
 
 Cancel the registration of operators
 
@@ -118,7 +118,7 @@ public class Example {
     List<String> operatorIds = Arrays.asList(); // List<String> | 
     Boolean deleteAll = true; // Boolean | 
     try {
-      InlineResponse2001 result = apiInstance.gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
+      OcDeleteChannelByUrl200Response result = apiInstance.gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcCancelTheRegistrationOfOperators");
@@ -133,16 +133,16 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **operatorIds** | [**List&lt;String&gt;**](String.md)|  |
- **deleteAll** | **Boolean**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **operatorIds** | [**List&lt;String&gt;**](String.md)|  | |
+| **deleteAll** | **Boolean**|  | [optional] |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcCheckIfMemberById"></a>
 # **gcCheckIfMemberById**
@@ -200,11 +200,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **userId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **userId** | **String**|  | |
 
 ### Return type
 
@@ -222,7 +222,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcCreateChannel"></a>
 # **gcCreateChannel**
@@ -265,10 +265,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **gcCreateChannelData** | [**GcCreateChannelData**](GcCreateChannelData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **gcCreateChannelData** | [**GcCreateChannelData**](GcCreateChannelData.md)|  | [optional] |
 
 ### Return type
 
@@ -286,11 +286,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcDeclineInvitation"></a>
 # **gcDeclineInvitation**
-> InlineResponse2001 gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData)
+> OcDeleteChannelByUrl200Response gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData)
 
 Decline an invitation
 
@@ -315,7 +315,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     GcDeclineInvitationData gcDeclineInvitationData = new GcDeclineInvitationData(); // GcDeclineInvitationData | 
     try {
-      InlineResponse2001 result = apiInstance.gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData);
+      OcDeleteChannelByUrl200Response result = apiInstance.gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcDeclineInvitation");
@@ -330,15 +330,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcDeclineInvitationData** | [**GcDeclineInvitationData**](GcDeclineInvitationData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcDeclineInvitationData** | [**GcDeclineInvitationData**](GcDeclineInvitationData.md)|  | [optional] |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -352,11 +352,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcDeleteChannelByUrl"></a>
 # **gcDeleteChannelByUrl**
-> InlineResponse2001 gcDeleteChannelByUrl(apiToken, channelUrl)
+> OcDeleteChannelByUrl200Response gcDeleteChannelByUrl(apiToken, channelUrl)
 
 Delete a channel
 
@@ -380,7 +380,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     try {
-      InlineResponse2001 result = apiInstance.gcDeleteChannelByUrl(apiToken, channelUrl);
+      OcDeleteChannelByUrl200Response result = apiInstance.gcDeleteChannelByUrl(apiToken, channelUrl);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcDeleteChannelByUrl");
@@ -395,14 +395,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -416,11 +416,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcHideOrArchiveChannel"></a>
 # **gcHideOrArchiveChannel**
-> InlineResponse2001 gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData)
+> OcDeleteChannelByUrl200Response gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData)
 
 Hide or archive a channel
 
@@ -445,7 +445,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     GcHideOrArchiveChannelData gcHideOrArchiveChannelData = new GcHideOrArchiveChannelData(); // GcHideOrArchiveChannelData | 
     try {
-      InlineResponse2001 result = apiInstance.gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData);
+      OcDeleteChannelByUrl200Response result = apiInstance.gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcHideOrArchiveChannel");
@@ -460,15 +460,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcHideOrArchiveChannelData** | [**GcHideOrArchiveChannelData**](GcHideOrArchiveChannelData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcHideOrArchiveChannelData** | [**GcHideOrArchiveChannelData**](GcHideOrArchiveChannelData.md)|  | [optional] |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -482,7 +482,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcInviteAsMembers"></a>
 # **gcInviteAsMembers**
@@ -526,11 +526,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcInviteAsMembersData** | [**GcInviteAsMembersData**](GcInviteAsMembersData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcInviteAsMembersData** | [**GcInviteAsMembersData**](GcInviteAsMembersData.md)|  | [optional] |
 
 ### Return type
 
@@ -548,7 +548,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcJoinChannel"></a>
 # **gcJoinChannel**
@@ -591,11 +591,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcJoinChannelData** | [**GcJoinChannelData**](GcJoinChannelData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcJoinChannelData** | [**GcJoinChannelData**](GcJoinChannelData.md)|  | [optional] |
 
 ### Return type
 
@@ -613,11 +613,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcLeaveChannel"></a>
 # **gcLeaveChannel**
-> InlineResponse2001 gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData)
+> OcDeleteChannelByUrl200Response gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData)
 
 Leave a channel
 
@@ -642,7 +642,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     GcLeaveChannelData gcLeaveChannelData = new GcLeaveChannelData(); // GcLeaveChannelData | 
     try {
-      InlineResponse2001 result = apiInstance.gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData);
+      OcDeleteChannelByUrl200Response result = apiInstance.gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcLeaveChannel");
@@ -657,15 +657,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcLeaveChannelData** | [**GcLeaveChannelData**](GcLeaveChannelData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcLeaveChannelData** | [**GcLeaveChannelData**](GcLeaveChannelData.md)|  | [optional] |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -679,7 +679,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcListChannels"></a>
 # **gcListChannels**
@@ -763,51 +763,51 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **distinctMode** | **String**|  | [optional]
- **publicMode** | **String**|  | [optional]
- **superMode** | **String**|  | [optional]
- **createdAfter** | **Integer**|  | [optional]
- **createdBefore** | **Integer**|  | [optional]
- **showEmpty** | **Boolean**|  | [optional]
- **showMember** | **Boolean**|  | [optional]
- **showDeliveryReceipt** | **Boolean**|  | [optional]
- **showReadReceipt** | **Boolean**|  | [optional]
- **showMetadata** | **Boolean**|  | [optional]
- **showFrozen** | **Boolean**|  | [optional]
- **order** | **String**|  | [optional]
- **metadataOrderKey** | **String**|  | [optional]
- **customTypes** | **String**|  | [optional]
- **customTypeStartswith** | **String**|  | [optional]
- **channelUrls** | **String**|  | [optional]
- **name** | **String**|  | [optional]
- **nameContains** | **String**|  | [optional]
- **nameStartswith** | **String**|  | [optional]
- **membersExactlyIn** | **String**|  | [optional]
- **membersIncludeIn** | **String**|  | [optional]
- **queryType** | **String**|  | [optional]
- **membersNickname** | **String**|  | [optional]
- **membersNicknameContains** | **String**|  | [optional]
- **metadataKey** | **String**|  | [optional]
- **metadataValues** | **String**|  | [optional]
- **metadataValueStartswith** | **String**|  | [optional]
- **metacounterKey** | **String**|  | [optional]
- **metacounterValues** | **String**|  | [optional]
- **metacounterValueGt** | **String**|  | [optional]
- **metacounterValueGte** | **String**|  | [optional]
- **metacounterValueLt** | **String**|  | [optional]
- **metacounterValueLte** | **String**|  | [optional]
- **includeSortedMetaarrayInLastMessage** | **Boolean**|  | [optional]
- **customType** | **String**|  | [optional]
- **readReceipt** | **Boolean**|  | [optional]
- **member** | **Boolean**|  | [optional]
- **isDistinct** | **Boolean**|  | [optional]
- **membersIn** | **String**|  | [optional]
- **userId** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **distinctMode** | **String**|  | [optional] |
+| **publicMode** | **String**|  | [optional] |
+| **superMode** | **String**|  | [optional] |
+| **createdAfter** | **Integer**|  | [optional] |
+| **createdBefore** | **Integer**|  | [optional] |
+| **showEmpty** | **Boolean**|  | [optional] |
+| **showMember** | **Boolean**|  | [optional] |
+| **showDeliveryReceipt** | **Boolean**|  | [optional] |
+| **showReadReceipt** | **Boolean**|  | [optional] |
+| **showMetadata** | **Boolean**|  | [optional] |
+| **showFrozen** | **Boolean**|  | [optional] |
+| **order** | **String**|  | [optional] |
+| **metadataOrderKey** | **String**|  | [optional] |
+| **customTypes** | **String**|  | [optional] |
+| **customTypeStartswith** | **String**|  | [optional] |
+| **channelUrls** | **String**|  | [optional] |
+| **name** | **String**|  | [optional] |
+| **nameContains** | **String**|  | [optional] |
+| **nameStartswith** | **String**|  | [optional] |
+| **membersExactlyIn** | **String**|  | [optional] |
+| **membersIncludeIn** | **String**|  | [optional] |
+| **queryType** | **String**|  | [optional] |
+| **membersNickname** | **String**|  | [optional] |
+| **membersNicknameContains** | **String**|  | [optional] |
+| **metadataKey** | **String**|  | [optional] |
+| **metadataValues** | **String**|  | [optional] |
+| **metadataValueStartswith** | **String**|  | [optional] |
+| **metacounterKey** | **String**|  | [optional] |
+| **metacounterValues** | **String**|  | [optional] |
+| **metacounterValueGt** | **String**|  | [optional] |
+| **metacounterValueGte** | **String**|  | [optional] |
+| **metacounterValueLt** | **String**|  | [optional] |
+| **metacounterValueLte** | **String**|  | [optional] |
+| **includeSortedMetaarrayInLastMessage** | **Boolean**|  | [optional] |
+| **customType** | **String**|  | [optional] |
+| **readReceipt** | **Boolean**|  | [optional] |
+| **member** | **Boolean**|  | [optional] |
+| **isDistinct** | **Boolean**|  | [optional] |
+| **membersIn** | **String**|  | [optional] |
+| **userId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -825,7 +825,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcListMembers"></a>
 # **gcListMembers**
@@ -877,19 +877,19 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **showDeliveryReceipt** | **Boolean**|  | [optional]
- **showReadReceipt** | **Boolean**|  | [optional]
- **order** | **String**|  | [optional]
- **operatorFilter** | **String**|  | [optional]
- **memberStateFilter** | **String**|  | [optional]
- **mutedMemberFilter** | **String**|  | [optional]
- **nicknameStartswith** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **showDeliveryReceipt** | **Boolean**|  | [optional] |
+| **showReadReceipt** | **Boolean**|  | [optional] |
+| **order** | **String**|  | [optional] |
+| **operatorFilter** | **String**|  | [optional] |
+| **memberStateFilter** | **String**|  | [optional] |
+| **mutedMemberFilter** | **String**|  | [optional] |
+| **nicknameStartswith** | **String**|  | [optional] |
 
 ### Return type
 
@@ -907,7 +907,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcListOperators"></a>
 # **gcListOperators**
@@ -952,12 +952,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -975,7 +975,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcRegisterOperators"></a>
 # **gcRegisterOperators**
@@ -1019,11 +1019,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcRegisterOperatorsData** | [**GcRegisterOperatorsData**](GcRegisterOperatorsData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcRegisterOperatorsData** | [**GcRegisterOperatorsData**](GcRegisterOperatorsData.md)|  | [optional] |
 
 ### Return type
 
@@ -1041,7 +1041,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcResetChatHistory"></a>
 # **gcResetChatHistory**
@@ -1085,11 +1085,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcResetChatHistoryData** | [**GcResetChatHistoryData**](GcResetChatHistoryData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcResetChatHistoryData** | [**GcResetChatHistoryData**](GcResetChatHistoryData.md)|  | [optional] |
 
 ### Return type
 
@@ -1107,11 +1107,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcUnhideOrUnarchiveChannel"></a>
 # **gcUnhideOrUnarchiveChannel**
-> InlineResponse2001 gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll)
+> OcDeleteChannelByUrl200Response gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll)
 
 Unhide or unarchive a channel
 
@@ -1137,7 +1137,7 @@ public class Example {
     String userId = "userId_example"; // String | 
     Boolean shouldUnhideAll = true; // Boolean | 
     try {
-      InlineResponse2001 result = apiInstance.gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll);
+      OcDeleteChannelByUrl200Response result = apiInstance.gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupChannelApi#gcUnhideOrUnarchiveChannel");
@@ -1152,16 +1152,16 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **userId** | **String**|  |
- **shouldUnhideAll** | **Boolean**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **userId** | **String**|  | |
+| **shouldUnhideAll** | **Boolean**|  | [optional] |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 
@@ -1175,7 +1175,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcUpdateChannelByUrl"></a>
 # **gcUpdateChannelByUrl**
@@ -1219,11 +1219,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcUpdateChannelByUrlData** | [**GcUpdateChannelByUrlData**](GcUpdateChannelByUrlData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcUpdateChannelByUrlData** | [**GcUpdateChannelByUrlData**](GcUpdateChannelByUrlData.md)|  | [optional] |
 
 ### Return type
 
@@ -1241,7 +1241,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcViewChannelByUrl"></a>
 # **gcViewChannelByUrl**
@@ -1289,15 +1289,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **showDeliveryReceipt** | **Boolean**|  | [optional]
- **showReadReceipt** | **Boolean**|  | [optional]
- **showMember** | **Boolean**|  | [optional]
- **readReceipt** | **Boolean**|  | [optional]
- **member** | **Boolean**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **showDeliveryReceipt** | **Boolean**|  | [optional] |
+| **showReadReceipt** | **Boolean**|  | [optional] |
+| **showMember** | **Boolean**|  | [optional] |
+| **readReceipt** | **Boolean**|  | [optional] |
+| **member** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -1315,5 +1315,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

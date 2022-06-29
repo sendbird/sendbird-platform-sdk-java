@@ -2,44 +2,44 @@
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addEmojiCategories**](MessageApi.md#addEmojiCategories) | **POST** /v3/emoji_categories | Add emoji categories
-[**addEmojis**](MessageApi.md#addEmojis) | **POST** /v3/emojis | Add emojis
-[**addExtraDataToMessage**](MessageApi.md#addExtraDataToMessage) | **POST** /v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray | Add extra data to a message
-[**addReactionToAMessage**](MessageApi.md#addReactionToAMessage) | **POST** /v3/{channel_type}/{channel_url}/messages/{message_id}/reactions | Add a reaction to a message
-[**deleteEmojiByKey**](MessageApi.md#deleteEmojiByKey) | **DELETE** /v3/emojis/{emoji_key} | Delete an emoji
-[**deleteEmojiCategoryById**](MessageApi.md#deleteEmojiCategoryById) | **DELETE** /v3/emoji_categories/{emoji_category_id} | Delete an emoji category
-[**deleteMessageById**](MessageApi.md#deleteMessageById) | **DELETE** /v3/{channel_type}/{channel_url}/messages/{message_id} | Delete a message
-[**enableReactions**](MessageApi.md#enableReactions) | **PUT** /v3/applications/settings/reactions | Enable reactions
-[**gcMarkAllMessagesAsDelivered**](MessageApi.md#gcMarkAllMessagesAsDelivered) | **PUT** /v3/group_channels/{channel_url}/messages/mark_as_delivered | Mark all messages as delivered
-[**gcMarkAllMessagesAsRead**](MessageApi.md#gcMarkAllMessagesAsRead) | **PUT** /v3/group_channels/{channel_url}/messages/mark_as_read | Mark all messages as read
-[**gcViewNumberOfEachMembersUnreadMessages**](MessageApi.md#gcViewNumberOfEachMembersUnreadMessages) | **GET** /v3/group_channels/{channel_url}/messages/unread_count | View number of each member&#39;s unread messages
-[**getEmojiByKey**](MessageApi.md#getEmojiByKey) | **GET** /v3/emojis/{emoji_key} | Get an emoji
-[**getEmojiCategoryById**](MessageApi.md#getEmojiCategoryById) | **GET** /v3/emoji_categories/{emoji_category_id} | Get an emoji category
-[**getStatistics**](MessageApi.md#getStatistics) | **GET** /v3/announcement_stats/weekly | Get statistics - weekly
-[**getStatisticsDaily**](MessageApi.md#getStatisticsDaily) | **GET** /v3/announcement_stats/daily | Get statistics - daily
-[**getStatisticsMonthly**](MessageApi.md#getStatisticsMonthly) | **GET** /v3/announcement_stats/monthly | Get statistics - monthly
-[**listAllEmojisAndEmojiCategories**](MessageApi.md#listAllEmojisAndEmojiCategories) | **GET** /v3/emoji_categories | List all emojis and emoji categories
-[**listAnnouncementGroups**](MessageApi.md#listAnnouncementGroups) | **GET** /v3/announcement_group | List announcement groups
-[**listAnnouncements**](MessageApi.md#listAnnouncements) | **GET** /v3/announcements | List announcements
-[**listEmojis**](MessageApi.md#listEmojis) | **GET** /v3/emojis | List emojis
-[**listMessages**](MessageApi.md#listMessages) | **GET** /v3/{channel_type}/{channel_url}/messages | List messages
-[**listReactionsOfMessage**](MessageApi.md#listReactionsOfMessage) | **GET** /v3/{channel_type}/{channel_url}/messages/{message_id}/reactions | List reactions of a message
-[**migrateMessagesByUrl**](MessageApi.md#migrateMessagesByUrl) | **POST** /v3/migration/{target_channel_url} | Migrate messages
-[**removeExtraDataFromMessage**](MessageApi.md#removeExtraDataFromMessage) | **DELETE** /v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray | Remove extra data from a message
-[**removeReactionFromAMessage**](MessageApi.md#removeReactionFromAMessage) | **DELETE** /v3/{channel_type}/{channel_url}/messages/{message_id}/reactions | Remove a reaction from a message
-[**scheduleAnnouncement**](MessageApi.md#scheduleAnnouncement) | **POST** /v3/announcements | Schedule an announcement
-[**sendMessage**](MessageApi.md#sendMessage) | **POST** /v3/{channel_type}/{channel_url}/messages | Send a message
-[**translateMessageIntoOtherLanguages**](MessageApi.md#translateMessageIntoOtherLanguages) | **POST** /v3/{channel_type}/{channel_url}/messages/{message_id}/translation | Translate a message into other languages
-[**updateAnnouncementById**](MessageApi.md#updateAnnouncementById) | **PUT** /v3/announcements/{unique_id} | Update an announcement
-[**updateEmojiCategoryUrlById**](MessageApi.md#updateEmojiCategoryUrlById) | **PUT** /v3/emoji_categories/{emoji_category_id} | Update an emoji category URL
-[**updateEmojiUrlByKey**](MessageApi.md#updateEmojiUrlByKey) | **PUT** /v3/emojis/{emoji_key} | Update an emoji URL
-[**updateExtraDataInMessage**](MessageApi.md#updateExtraDataInMessage) | **PUT** /v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray | Update extra data in a message
-[**updateMessageById**](MessageApi.md#updateMessageById) | **PUT** /v3/{channel_type}/{channel_url}/messages/{message_id} | Update a message
-[**useDefaultEmojis**](MessageApi.md#useDefaultEmojis) | **PUT** /v3/applications/settings/use_default_emoji | Use default emojis
-[**viewMessageById**](MessageApi.md#viewMessageById) | **GET** /v3/{channel_type}/{channel_url}/messages/{message_id} | View a message
-[**viewTotalNumberOfMessagesInChannel**](MessageApi.md#viewTotalNumberOfMessagesInChannel) | **GET** /v3/{channel_type}/{channel_url}/messages/total_count | View total number of messages in a channel
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**addEmojiCategories**](MessageApi.md#addEmojiCategories) | **POST** /v3/emoji_categories | Add emoji categories |
+| [**addEmojis**](MessageApi.md#addEmojis) | **POST** /v3/emojis | Add emojis |
+| [**addExtraDataToMessage**](MessageApi.md#addExtraDataToMessage) | **POST** /v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray | Add extra data to a message |
+| [**addReactionToAMessage**](MessageApi.md#addReactionToAMessage) | **POST** /v3/{channel_type}/{channel_url}/messages/{message_id}/reactions | Add a reaction to a message |
+| [**deleteEmojiByKey**](MessageApi.md#deleteEmojiByKey) | **DELETE** /v3/emojis/{emoji_key} | Delete an emoji |
+| [**deleteEmojiCategoryById**](MessageApi.md#deleteEmojiCategoryById) | **DELETE** /v3/emoji_categories/{emoji_category_id} | Delete an emoji category |
+| [**deleteMessageById**](MessageApi.md#deleteMessageById) | **DELETE** /v3/{channel_type}/{channel_url}/messages/{message_id} | Delete a message |
+| [**enableReactions**](MessageApi.md#enableReactions) | **PUT** /v3/applications/settings/reactions | Enable reactions |
+| [**gcMarkAllMessagesAsDelivered**](MessageApi.md#gcMarkAllMessagesAsDelivered) | **PUT** /v3/group_channels/{channel_url}/messages/mark_as_delivered | Mark all messages as delivered |
+| [**gcMarkAllMessagesAsRead**](MessageApi.md#gcMarkAllMessagesAsRead) | **PUT** /v3/group_channels/{channel_url}/messages/mark_as_read | Mark all messages as read |
+| [**gcViewNumberOfEachMembersUnreadMessages**](MessageApi.md#gcViewNumberOfEachMembersUnreadMessages) | **GET** /v3/group_channels/{channel_url}/messages/unread_count | View number of each member&#39;s unread messages |
+| [**getEmojiByKey**](MessageApi.md#getEmojiByKey) | **GET** /v3/emojis/{emoji_key} | Get an emoji |
+| [**getEmojiCategoryById**](MessageApi.md#getEmojiCategoryById) | **GET** /v3/emoji_categories/{emoji_category_id} | Get an emoji category |
+| [**getStatistics**](MessageApi.md#getStatistics) | **GET** /v3/announcement_stats/weekly | Get statistics - weekly |
+| [**getStatisticsDaily**](MessageApi.md#getStatisticsDaily) | **GET** /v3/announcement_stats/daily | Get statistics - daily |
+| [**getStatisticsMonthly**](MessageApi.md#getStatisticsMonthly) | **GET** /v3/announcement_stats/monthly | Get statistics - monthly |
+| [**listAllEmojisAndEmojiCategories**](MessageApi.md#listAllEmojisAndEmojiCategories) | **GET** /v3/emoji_categories | List all emojis and emoji categories |
+| [**listAnnouncementGroups**](MessageApi.md#listAnnouncementGroups) | **GET** /v3/announcement_group | List announcement groups |
+| [**listAnnouncements**](MessageApi.md#listAnnouncements) | **GET** /v3/announcements | List announcements |
+| [**listEmojis**](MessageApi.md#listEmojis) | **GET** /v3/emojis | List emojis |
+| [**listMessages**](MessageApi.md#listMessages) | **GET** /v3/{channel_type}/{channel_url}/messages | List messages |
+| [**listReactionsOfMessage**](MessageApi.md#listReactionsOfMessage) | **GET** /v3/{channel_type}/{channel_url}/messages/{message_id}/reactions | List reactions of a message |
+| [**migrateMessagesByUrl**](MessageApi.md#migrateMessagesByUrl) | **POST** /v3/migration/{target_channel_url} | Migrate messages |
+| [**removeExtraDataFromMessage**](MessageApi.md#removeExtraDataFromMessage) | **DELETE** /v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray | Remove extra data from a message |
+| [**removeReactionFromAMessage**](MessageApi.md#removeReactionFromAMessage) | **DELETE** /v3/{channel_type}/{channel_url}/messages/{message_id}/reactions | Remove a reaction from a message |
+| [**scheduleAnnouncement**](MessageApi.md#scheduleAnnouncement) | **POST** /v3/announcements | Schedule an announcement |
+| [**sendMessage**](MessageApi.md#sendMessage) | **POST** /v3/{channel_type}/{channel_url}/messages | Send a message |
+| [**translateMessageIntoOtherLanguages**](MessageApi.md#translateMessageIntoOtherLanguages) | **POST** /v3/{channel_type}/{channel_url}/messages/{message_id}/translation | Translate a message into other languages |
+| [**updateAnnouncementById**](MessageApi.md#updateAnnouncementById) | **PUT** /v3/announcements/{unique_id} | Update an announcement |
+| [**updateEmojiCategoryUrlById**](MessageApi.md#updateEmojiCategoryUrlById) | **PUT** /v3/emoji_categories/{emoji_category_id} | Update an emoji category URL |
+| [**updateEmojiUrlByKey**](MessageApi.md#updateEmojiUrlByKey) | **PUT** /v3/emojis/{emoji_key} | Update an emoji URL |
+| [**updateExtraDataInMessage**](MessageApi.md#updateExtraDataInMessage) | **PUT** /v3/{channel_type}/{channel_url}/messages/{message_id}/sorted_metaarray | Update extra data in a message |
+| [**updateMessageById**](MessageApi.md#updateMessageById) | **PUT** /v3/{channel_type}/{channel_url}/messages/{message_id} | Update a message |
+| [**useDefaultEmojis**](MessageApi.md#useDefaultEmojis) | **PUT** /v3/applications/settings/use_default_emoji | Use default emojis |
+| [**viewMessageById**](MessageApi.md#viewMessageById) | **GET** /v3/{channel_type}/{channel_url}/messages/{message_id} | View a message |
+| [**viewTotalNumberOfMessagesInChannel**](MessageApi.md#viewTotalNumberOfMessagesInChannel) | **GET** /v3/{channel_type}/{channel_url}/messages/total_count | View total number of messages in a channel |
 
 
 <a name="addEmojiCategories"></a>
@@ -83,10 +83,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **body** | **Object**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -104,7 +104,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="addEmojis"></a>
 # **addEmojis**
@@ -147,10 +147,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **addEmojisData** | [**AddEmojisData**](AddEmojisData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **addEmojisData** | [**AddEmojisData**](AddEmojisData.md)|  | [optional] |
 
 ### Return type
 
@@ -168,7 +168,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="addExtraDataToMessage"></a>
 # **addExtraDataToMessage**
@@ -214,13 +214,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **addExtraDataToMessageData** | [**AddExtraDataToMessageData**](AddExtraDataToMessageData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **addExtraDataToMessageData** | [**AddExtraDataToMessageData**](AddExtraDataToMessageData.md)|  | [optional] |
 
 ### Return type
 
@@ -238,7 +238,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="addReactionToAMessage"></a>
 # **addReactionToAMessage**
@@ -284,13 +284,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **addReactionToAMessageData** | [**AddReactionToAMessageData**](AddReactionToAMessageData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **addReactionToAMessageData** | [**AddReactionToAMessageData**](AddReactionToAMessageData.md)|  | [optional] |
 
 ### Return type
 
@@ -308,7 +308,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteEmojiByKey"></a>
 # **deleteEmojiByKey**
@@ -350,10 +350,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **emojiKey** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **emojiKey** | **String**|  | |
 
 ### Return type
 
@@ -371,7 +371,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteEmojiCategoryById"></a>
 # **deleteEmojiCategoryById**
@@ -414,10 +414,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **emojiCategoryId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **emojiCategoryId** | **String**|  | |
 
 ### Return type
 
@@ -435,7 +435,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="deleteMessageById"></a>
 # **deleteMessageById**
@@ -480,12 +480,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
 
 ### Return type
 
@@ -503,7 +503,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="enableReactions"></a>
 # **enableReactions**
@@ -546,10 +546,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **enableReactionsData** | [**EnableReactionsData**](EnableReactionsData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **enableReactionsData** | [**EnableReactionsData**](EnableReactionsData.md)|  | [optional] |
 
 ### Return type
 
@@ -567,7 +567,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcMarkAllMessagesAsDelivered"></a>
 # **gcMarkAllMessagesAsDelivered**
@@ -611,11 +611,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcMarkAllMessagesAsDeliveredData** | [**GcMarkAllMessagesAsDeliveredData**](GcMarkAllMessagesAsDeliveredData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcMarkAllMessagesAsDeliveredData** | [**GcMarkAllMessagesAsDeliveredData**](GcMarkAllMessagesAsDeliveredData.md)|  | [optional] |
 
 ### Return type
 
@@ -633,7 +633,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcMarkAllMessagesAsRead"></a>
 # **gcMarkAllMessagesAsRead**
@@ -677,11 +677,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **gcMarkAllMessagesAsReadData** | [**GcMarkAllMessagesAsReadData**](GcMarkAllMessagesAsReadData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **gcMarkAllMessagesAsReadData** | [**GcMarkAllMessagesAsReadData**](GcMarkAllMessagesAsReadData.md)|  | [optional] |
 
 ### Return type
 
@@ -699,7 +699,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="gcViewNumberOfEachMembersUnreadMessages"></a>
 # **gcViewNumberOfEachMembersUnreadMessages**
@@ -743,11 +743,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelUrl** | **String**|  |
- **userIds** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **userIds** | **String**|  | [optional] |
 
 ### Return type
 
@@ -765,7 +765,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="getEmojiByKey"></a>
 # **getEmojiByKey**
@@ -808,10 +808,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **emojiKey** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **emojiKey** | **String**|  | |
 
 ### Return type
 
@@ -829,7 +829,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="getEmojiCategoryById"></a>
 # **getEmojiCategoryById**
@@ -872,10 +872,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **emojiCategoryId** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **emojiCategoryId** | **String**|  | |
 
 ### Return type
 
@@ -893,7 +893,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="getStatistics"></a>
 # **getStatistics**
@@ -935,9 +935,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
 
 ### Return type
 
@@ -955,7 +955,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="getStatisticsDaily"></a>
 # **getStatisticsDaily**
@@ -1004,16 +1004,16 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **startDate** | **String**|  |
- **endDate** | **String**|  |
- **startWeek** | **String**|  |
- **endWeek** | **String**|  |
- **startMonth** | **String**|  |
- **endMonth** | **String**|  |
- **announcementGroup** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **startDate** | **String**|  | |
+| **endDate** | **String**|  | |
+| **startWeek** | **String**|  | |
+| **endWeek** | **String**|  | |
+| **startMonth** | **String**|  | |
+| **endMonth** | **String**|  | |
+| **announcementGroup** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1031,7 +1031,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="getStatisticsMonthly"></a>
 # **getStatisticsMonthly**
@@ -1073,9 +1073,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
 
 ### Return type
 
@@ -1093,7 +1093,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listAllEmojisAndEmojiCategories"></a>
 # **listAllEmojisAndEmojiCategories**
@@ -1135,9 +1135,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
 
 ### Return type
 
@@ -1155,7 +1155,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listAnnouncementGroups"></a>
 # **listAnnouncementGroups**
@@ -1199,11 +1199,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
@@ -1221,7 +1221,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listAnnouncements"></a>
 # **listAnnouncements**
@@ -1268,14 +1268,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **token** | **String**|  | [optional]
- **limit** | **Integer**|  | [optional]
- **order** | **String**|  | [optional]
- **status** | **String**|  | [optional]
- **announcementGroup** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **order** | **String**|  | [optional] |
+| **status** | **String**|  | [optional] |
+| **announcementGroup** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1293,7 +1293,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listEmojis"></a>
 # **listEmojis**
@@ -1335,9 +1335,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
 
 ### Return type
 
@@ -1355,7 +1355,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listMessages"></a>
 # **listMessages**
@@ -1417,29 +1417,29 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageTs** | **Integer**|  | [optional]
- **messageId** | **Integer**|  | [optional]
- **prevLimit** | **Integer**|  | [optional]
- **nextLimit** | **Integer**|  | [optional]
- **include** | **Boolean**|  | [optional]
- **reverse** | **Boolean**|  | [optional]
- **senderId** | **String**|  | [optional]
- **senderIds** | **String**|  | [optional]
- **operatorFilter** | **String**|  | [optional]
- **customTypes** | **String**|  | [optional]
- **messageType** | **String**|  | [optional]
- **includingRemoved** | **Boolean**|  | [optional]
- **includeReactions** | **Boolean**|  | [optional]
- **withSortedMetaArray** | **Boolean**|  | [optional]
- **showSubchannelMessagesOnly** | **Boolean**|  | [optional]
- **userId** | **String**|  | [optional]
- **customType** | **String**|  | [optional]
- **withMetaArray** | **Boolean**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageTs** | **Integer**|  | [optional] |
+| **messageId** | **Integer**|  | [optional] |
+| **prevLimit** | **Integer**|  | [optional] |
+| **nextLimit** | **Integer**|  | [optional] |
+| **include** | **Boolean**|  | [optional] |
+| **reverse** | **Boolean**|  | [optional] |
+| **senderId** | **String**|  | [optional] |
+| **senderIds** | **String**|  | [optional] |
+| **operatorFilter** | **String**|  | [optional] |
+| **customTypes** | **String**|  | [optional] |
+| **messageType** | **String**|  | [optional] |
+| **includingRemoved** | **Boolean**|  | [optional] |
+| **includeReactions** | **Boolean**|  | [optional] |
+| **withSortedMetaArray** | **Boolean**|  | [optional] |
+| **showSubchannelMessagesOnly** | **Boolean**|  | [optional] |
+| **userId** | **String**|  | [optional] |
+| **customType** | **String**|  | [optional] |
+| **withMetaArray** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -1457,7 +1457,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="listReactionsOfMessage"></a>
 # **listReactionsOfMessage**
@@ -1503,13 +1503,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **listUsers** | **Boolean**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **listUsers** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -1527,7 +1527,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="migrateMessagesByUrl"></a>
 # **migrateMessagesByUrl**
@@ -1570,11 +1570,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **targetChannelUrl** | **String**|  |
- **body** | **Object**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **targetChannelUrl** | **String**|  | |
+| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -1592,7 +1592,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="removeExtraDataFromMessage"></a>
 # **removeExtraDataFromMessage**
@@ -1638,13 +1638,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **keys** | [**List&lt;String&gt;**](String.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **keys** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 
 ### Return type
 
@@ -1662,7 +1662,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="removeReactionFromAMessage"></a>
 # **removeReactionFromAMessage**
@@ -1709,14 +1709,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **userId** | **String**|  | [optional]
- **reaction** | **String**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **userId** | **String**|  | [optional] |
+| **reaction** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1734,7 +1734,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="scheduleAnnouncement"></a>
 # **scheduleAnnouncement**
@@ -1777,10 +1777,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **scheduleAnnouncementData** | [**ScheduleAnnouncementData**](ScheduleAnnouncementData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **scheduleAnnouncementData** | [**ScheduleAnnouncementData**](ScheduleAnnouncementData.md)|  | [optional] |
 
 ### Return type
 
@@ -1798,7 +1798,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="sendMessage"></a>
 # **sendMessage**
@@ -1843,12 +1843,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **sendMessageData** | [**SendMessageData**](SendMessageData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **sendMessageData** | [**SendMessageData**](SendMessageData.md)|  | [optional] |
 
 ### Return type
 
@@ -1866,7 +1866,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="translateMessageIntoOtherLanguages"></a>
 # **translateMessageIntoOtherLanguages**
@@ -1912,13 +1912,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **body** | **Object**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -1936,7 +1936,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateAnnouncementById"></a>
 # **updateAnnouncementById**
@@ -1980,11 +1980,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **uniqueId** | **String**|  |
- **updateAnnouncementByIdData** | [**UpdateAnnouncementByIdData**](UpdateAnnouncementByIdData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **uniqueId** | **String**|  | |
+| **updateAnnouncementByIdData** | [**UpdateAnnouncementByIdData**](UpdateAnnouncementByIdData.md)|  | [optional] |
 
 ### Return type
 
@@ -2002,7 +2002,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateEmojiCategoryUrlById"></a>
 # **updateEmojiCategoryUrlById**
@@ -2046,11 +2046,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **emojiCategoryId** | **String**|  |
- **updateEmojiCategoryUrlByIdData** | [**UpdateEmojiCategoryUrlByIdData**](UpdateEmojiCategoryUrlByIdData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **emojiCategoryId** | **String**|  | |
+| **updateEmojiCategoryUrlByIdData** | [**UpdateEmojiCategoryUrlByIdData**](UpdateEmojiCategoryUrlByIdData.md)|  | [optional] |
 
 ### Return type
 
@@ -2068,7 +2068,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateEmojiUrlByKey"></a>
 # **updateEmojiUrlByKey**
@@ -2112,11 +2112,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **emojiKey** | **String**|  |
- **updateEmojiUrlByKeyData** | [**UpdateEmojiUrlByKeyData**](UpdateEmojiUrlByKeyData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **emojiKey** | **String**|  | |
+| **updateEmojiUrlByKeyData** | [**UpdateEmojiUrlByKeyData**](UpdateEmojiUrlByKeyData.md)|  | [optional] |
 
 ### Return type
 
@@ -2134,7 +2134,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateExtraDataInMessage"></a>
 # **updateExtraDataInMessage**
@@ -2180,13 +2180,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **updateExtraDataInMessageData** | [**UpdateExtraDataInMessageData**](UpdateExtraDataInMessageData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **updateExtraDataInMessageData** | [**UpdateExtraDataInMessageData**](UpdateExtraDataInMessageData.md)|  | [optional] |
 
 ### Return type
 
@@ -2204,7 +2204,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="updateMessageById"></a>
 # **updateMessageById**
@@ -2250,13 +2250,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **updateMessageByIdData** | [**UpdateMessageByIdData**](UpdateMessageByIdData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **updateMessageByIdData** | [**UpdateMessageByIdData**](UpdateMessageByIdData.md)|  | [optional] |
 
 ### Return type
 
@@ -2274,7 +2274,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="useDefaultEmojis"></a>
 # **useDefaultEmojis**
@@ -2317,10 +2317,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **useDefaultEmojisData** | [**UseDefaultEmojisData**](UseDefaultEmojisData.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **useDefaultEmojisData** | [**UseDefaultEmojisData**](UseDefaultEmojisData.md)|  | [optional] |
 
 ### Return type
 
@@ -2338,7 +2338,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewMessageById"></a>
 # **viewMessageById**
@@ -2385,14 +2385,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
- **messageId** | **String**|  |
- **withSortedMetaArray** | **Boolean**|  | [optional]
- **withMetaArray** | **Boolean**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
+| **messageId** | **String**|  | |
+| **withSortedMetaArray** | **Boolean**|  | [optional] |
+| **withMetaArray** | **Boolean**|  | [optional] |
 
 ### Return type
 
@@ -2410,7 +2410,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 
 <a name="viewTotalNumberOfMessagesInChannel"></a>
 # **viewTotalNumberOfMessagesInChannel**
@@ -2454,11 +2454,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiToken** | **String**|  |
- **channelType** | **String**|  |
- **channelUrl** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **channelType** | **String**|  | |
+| **channelUrl** | **String**|  | |
 
 ### Return type
 
@@ -2476,5 +2476,5 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful response |  -  |
+| **200** | Successful response |  -  |
 

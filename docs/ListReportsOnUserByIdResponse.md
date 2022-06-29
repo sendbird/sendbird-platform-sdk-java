@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**reportLogs** | [**List&lt;ListReportsOnMessageByIdResponseReportLogs&gt;**](ListReportsOnMessageByIdResponseReportLogs.md) |  |  [optional]
-**next** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**reportLogs** | [**List&lt;ListReportsOnMessageByIdResponseReportLogsInner&gt;**](ListReportsOnMessageByIdResponseReportLogsInner.md) |  |  [optional] |
+|**next** | **String** |  |  [optional] |
 
 
 

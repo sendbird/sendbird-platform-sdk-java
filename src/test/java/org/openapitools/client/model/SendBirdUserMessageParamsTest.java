@@ -27,9 +27,8 @@ import java.util.List;
 import org.openapitools.client.model.SendBirdAppleCriticalAlertOptions;
 import org.openapitools.client.model.SendBirdMessageMetaArray;
 import org.openapitools.client.model.SendBirdUser;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

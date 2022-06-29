@@ -24,10 +24,30 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
+
 /**
  * ScheduleAnnouncementResponseCreateChannelOptions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class ScheduleAnnouncementResponseCreateChannelOptions {
   public static final String SERIALIZED_NAME_DISTINCT = "distinct";
   @SerializedName(SERIALIZED_NAME_DISTINCT)
@@ -167,6 +187,7 @@ public class ScheduleAnnouncementResponseCreateChannelOptions {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -212,5 +233,106 @@ public class ScheduleAnnouncementResponseCreateChannelOptions {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("distinct");
+    openapiFields.add("data");
+    openapiFields.add("name");
+    openapiFields.add("cover_url");
+    openapiFields.add("custom_type");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ScheduleAnnouncementResponseCreateChannelOptions
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ScheduleAnnouncementResponseCreateChannelOptions.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ScheduleAnnouncementResponseCreateChannelOptions is not found in the empty JSON string", ScheduleAnnouncementResponseCreateChannelOptions.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ScheduleAnnouncementResponseCreateChannelOptions.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ScheduleAnnouncementResponseCreateChannelOptions` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
+      }
+      if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if (jsonObj.get("cover_url") != null && !jsonObj.get("cover_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cover_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cover_url").toString()));
+      }
+      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ScheduleAnnouncementResponseCreateChannelOptions.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ScheduleAnnouncementResponseCreateChannelOptions' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ScheduleAnnouncementResponseCreateChannelOptions> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ScheduleAnnouncementResponseCreateChannelOptions.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ScheduleAnnouncementResponseCreateChannelOptions>() {
+           @Override
+           public void write(JsonWriter out, ScheduleAnnouncementResponseCreateChannelOptions value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ScheduleAnnouncementResponseCreateChannelOptions read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ScheduleAnnouncementResponseCreateChannelOptions given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ScheduleAnnouncementResponseCreateChannelOptions
+  * @throws IOException if the JSON string is invalid with respect to ScheduleAnnouncementResponseCreateChannelOptions
+  */
+  public static ScheduleAnnouncementResponseCreateChannelOptions fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ScheduleAnnouncementResponseCreateChannelOptions.class);
+  }
+
+ /**
+  * Convert an instance of ScheduleAnnouncementResponseCreateChannelOptions to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

@@ -26,16 +26,36 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetStatisticsDailyResponseStatistics;
+import org.openapitools.client.model.GetStatisticsDailyResponseStatisticsInner;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.sendbird.client.JSON;
 
 /**
  * GetStatisticsMonthlyResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T11:00:21.022543+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T13:37:01.045476+01:00[Europe/London]")
 public class GetStatisticsMonthlyResponse {
   public static final String SERIALIZED_NAME_STATISTICS = "statistics";
   @SerializedName(SERIALIZED_NAME_STATISTICS)
-  private List<GetStatisticsDailyResponseStatistics> statistics = null;
+  private List<GetStatisticsDailyResponseStatisticsInner> statistics = null;
 
   public static final String SERIALIZED_NAME_WEEK = "week";
   @SerializedName(SERIALIZED_NAME_WEEK)
@@ -44,15 +64,15 @@ public class GetStatisticsMonthlyResponse {
   public GetStatisticsMonthlyResponse() { 
   }
 
-  public GetStatisticsMonthlyResponse statistics(List<GetStatisticsDailyResponseStatistics> statistics) {
+  public GetStatisticsMonthlyResponse statistics(List<GetStatisticsDailyResponseStatisticsInner> statistics) {
     
     this.statistics = statistics;
     return this;
   }
 
-  public GetStatisticsMonthlyResponse addStatisticsItem(GetStatisticsDailyResponseStatistics statisticsItem) {
+  public GetStatisticsMonthlyResponse addStatisticsItem(GetStatisticsDailyResponseStatisticsInner statisticsItem) {
     if (this.statistics == null) {
-      this.statistics = new ArrayList<GetStatisticsDailyResponseStatistics>();
+      this.statistics = new ArrayList<>();
     }
     this.statistics.add(statisticsItem);
     return this;
@@ -65,12 +85,12 @@ public class GetStatisticsMonthlyResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<GetStatisticsDailyResponseStatistics> getStatistics() {
+  public List<GetStatisticsDailyResponseStatisticsInner> getStatistics() {
     return statistics;
   }
 
 
-  public void setStatistics(List<GetStatisticsDailyResponseStatistics> statistics) {
+  public void setStatistics(List<GetStatisticsDailyResponseStatisticsInner> statistics) {
     this.statistics = statistics;
   }
 
@@ -96,6 +116,7 @@ public class GetStatisticsMonthlyResponse {
   public void setWeek(BigDecimal week) {
     this.week = week;
   }
+
 
 
   @Override
@@ -137,5 +158,103 @@ public class GetStatisticsMonthlyResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("statistics");
+    openapiFields.add("week");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetStatisticsMonthlyResponse
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetStatisticsMonthlyResponse.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetStatisticsMonthlyResponse is not found in the empty JSON string", GetStatisticsMonthlyResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetStatisticsMonthlyResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetStatisticsMonthlyResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+      JsonArray jsonArraystatistics = jsonObj.getAsJsonArray("statistics");
+      if (jsonArraystatistics != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("statistics").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `statistics` to be an array in the JSON string but got `%s`", jsonObj.get("statistics").toString()));
+        }
+
+        // validate the optional field `statistics` (array)
+        for (int i = 0; i < jsonArraystatistics.size(); i++) {
+          GetStatisticsDailyResponseStatisticsInner.validateJsonObject(jsonArraystatistics.get(i).getAsJsonObject());
+        };
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetStatisticsMonthlyResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetStatisticsMonthlyResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetStatisticsMonthlyResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetStatisticsMonthlyResponse.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetStatisticsMonthlyResponse>() {
+           @Override
+           public void write(JsonWriter out, GetStatisticsMonthlyResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetStatisticsMonthlyResponse read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetStatisticsMonthlyResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetStatisticsMonthlyResponse
+  * @throws IOException if the JSON string is invalid with respect to GetStatisticsMonthlyResponse
+  */
+  public static GetStatisticsMonthlyResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetStatisticsMonthlyResponse.class);
+  }
+
+ /**
+  * Convert an instance of GetStatisticsMonthlyResponse to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

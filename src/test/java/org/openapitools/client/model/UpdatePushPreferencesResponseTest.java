@@ -22,9 +22,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -39,6 +40,30 @@ public class UpdatePushPreferencesResponseTest {
     @Test
     public void testUpdatePushPreferencesResponse() {
         // TODO: test UpdatePushPreferencesResponse
+    }
+
+    /**
+     * Test the property 'blockPushFromBots'
+     */
+    @Test
+    public void blockPushFromBotsTest() {
+        // TODO: test blockPushFromBots
+    }
+
+    /**
+     * Test the property 'enablePushForReplies'
+     */
+    @Test
+    public void enablePushForRepliesTest() {
+        // TODO: test enablePushForReplies
+    }
+
+    /**
+     * Test the property 'pushBlockedBotIds'
+     */
+    @Test
+    public void pushBlockedBotIdsTest() {
+        // TODO: test pushBlockedBotIds
     }
 
     /**
