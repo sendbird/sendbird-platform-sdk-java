@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**userIds** | **List&lt;Integer&gt;** | Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The users below and this property can be used interchangeably. |  |
-|**users** | **List&lt;Integer&gt;** | Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably. |  |
+|**userIds** | **List&lt;String&gt;** | Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The users below and this property can be used interchangeably. |  |
+|**users** | **List&lt;String&gt;** | Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably. |  |
 |**name** | **String** | Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel) |  |
 |**channelUrl** | **String** | Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated. |  |
 |**coverUrl** | **String** | Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters. |  |

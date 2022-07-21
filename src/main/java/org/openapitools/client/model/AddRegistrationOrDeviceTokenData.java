@@ -47,7 +47,7 @@ import org.sendbird.client.JSON;
 /**
  * AddRegistrationOrDeviceTokenData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T14:16:58.424760+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
 public class AddRegistrationOrDeviceTokenData {
   public static final String SERIALIZED_NAME_GCM_REG_TOKEN = "gcm_reg_token";
   @SerializedName(SERIALIZED_NAME_GCM_REG_TOKEN)

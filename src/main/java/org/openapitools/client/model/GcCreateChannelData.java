@@ -50,15 +50,15 @@ import org.sendbird.client.JSON;
 /**
  * GcCreateChannelData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-29T14:16:58.424760+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
 public class GcCreateChannelData {
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
-  private List<Integer> userIds = new ArrayList<>();
+  private List<String> userIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  private List<Integer> users = new ArrayList<>();
+  private List<String> users = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -131,13 +131,13 @@ public class GcCreateChannelData {
   public GcCreateChannelData() { 
   }
 
-  public GcCreateChannelData userIds(List<Integer> userIds) {
+  public GcCreateChannelData userIds(List<String> userIds) {
     
     this.userIds = userIds;
     return this;
   }
 
-  public GcCreateChannelData addUserIdsItem(Integer userIdsItem) {
+  public GcCreateChannelData addUserIdsItem(String userIdsItem) {
     this.userIds.add(userIdsItem);
     return this;
   }
@@ -149,23 +149,23 @@ public class GcCreateChannelData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The users below and this property can be used interchangeably.")
 
-  public List<Integer> getUserIds() {
+  public List<String> getUserIds() {
     return userIds;
   }
 
 
-  public void setUserIds(List<Integer> userIds) {
+  public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
   }
 
 
-  public GcCreateChannelData users(List<Integer> users) {
+  public GcCreateChannelData users(List<String> users) {
     
     this.users = users;
     return this;
   }
 
-  public GcCreateChannelData addUsersItem(Integer usersItem) {
+  public GcCreateChannelData addUsersItem(String usersItem) {
     this.users.add(usersItem);
     return this;
   }
@@ -177,12 +177,12 @@ public class GcCreateChannelData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.")
 
-  public List<Integer> getUsers() {
+  public List<String> getUsers() {
     return users;
   }
 
 
-  public void setUsers(List<Integer> users) {
+  public void setUsers(List<String> users) {
     this.users = users;
   }
 
