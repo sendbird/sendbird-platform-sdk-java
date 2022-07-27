@@ -176,7 +176,7 @@ public class ReportApiTest {
         String channelType = null;
         String channelUrl = null;
         String messageId = null;
-        Map<String, String> response = api.viewModeratedMessageById(apiToken, channelType, channelUrl, messageId);
+        Object response = api.viewModeratedMessageById(apiToken, channelType, channelUrl, messageId);
         // TODO: test validations
     }
 

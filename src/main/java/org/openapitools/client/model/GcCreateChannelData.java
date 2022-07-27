@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
 /**
  * GcCreateChannelData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class GcCreateChannelData {
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
@@ -114,15 +114,15 @@ public class GcCreateChannelData {
 
   public static final String SERIALIZED_NAME_INVITATION_STATUS = "invitation_status";
   @SerializedName(SERIALIZED_NAME_INVITATION_STATUS)
-  private List<String> invitationStatus = new ArrayList<>();
+  private Object invitationStatus;
 
   public static final String SERIALIZED_NAME_HIDDEN_STATUS = "hidden_status";
   @SerializedName(SERIALIZED_NAME_HIDDEN_STATUS)
-  private List<String> hiddenStatus = new ArrayList<>();
+  private Object hiddenStatus;
 
   public static final String SERIALIZED_NAME_OPERATOR_IDS = "operator_ids";
   @SerializedName(SERIALIZED_NAME_OPERATOR_IDS)
-  private List<Integer> operatorIds = new ArrayList<>();
+  private List<String> operatorIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BLOCK_SDK_USER_CHANNEL_JOIN = "block_sdk_user_channel_join";
   @SerializedName(SERIALIZED_NAME_BLOCK_SDK_USER_CHANNEL_JOIN)
@@ -486,69 +486,59 @@ public class GcCreateChannelData {
   }
 
 
-  public GcCreateChannelData invitationStatus(List<String> invitationStatus) {
+  public GcCreateChannelData invitationStatus(Object invitationStatus) {
     
     this.invitationStatus = invitationStatus;
     return this;
   }
 
-  public GcCreateChannelData addInvitationStatusItem(String invitationStatusItem) {
-    this.invitationStatus.add(invitationStatusItem);
-    return this;
-  }
-
    /**
-   * Specifies an array of one or more information about the join status of each invited user to the channel. Each item of the array should be specified with a combination of the unique ID of a user in the user_ids or users property, a colon (:), and the user&#39;s join status (for example, user_id_1: join status). Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)
+   * Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)
    * @return invitationStatus
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies an array of one or more information about the join status of each invited user to the channel. Each item of the array should be specified with a combination of the unique ID of a user in the user_ids or users property, a colon (:), and the user's join status (for example, user_id_1: join status). Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)")
+  @ApiModelProperty(required = true, value = "Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)")
 
-  public List<String> getInvitationStatus() {
+  public Object getInvitationStatus() {
     return invitationStatus;
   }
 
 
-  public void setInvitationStatus(List<String> invitationStatus) {
+  public void setInvitationStatus(Object invitationStatus) {
     this.invitationStatus = invitationStatus;
   }
 
 
-  public GcCreateChannelData hiddenStatus(List<String> hiddenStatus) {
+  public GcCreateChannelData hiddenStatus(Object hiddenStatus) {
     
     this.hiddenStatus = hiddenStatus;
     return this;
   }
 
-  public GcCreateChannelData addHiddenStatusItem(String hiddenStatusItem) {
-    this.hiddenStatus.add(hiddenStatusItem);
-    return this;
-  }
-
    /**
-   * Specifies an array of one or more channel hidden statuses about whether to hide the channel from each invited user&#39;s list of group channels, and whether to automatically unhide the hidden channel when receiving a new message from other member of that channel. Each item of the array should be specified with a combination of the unique ID of a user in the user_ids or users property, a colon (:), and the channel hidden status (for example, user_id_1: channel hidden status). Acceptable values are limited to the following:&lt;br /&gt;- unhidden (default): the channel is included in when retrieving a list of group channels.&lt;br /&gt;- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.&lt;br /&gt;- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.
+   * Specifies one or more key-value pair items which set the channel&#39;s hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:&lt;br /&gt;- unhidden (default): the channel is included in when retrieving a list of group channels.&lt;br /&gt;- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.&lt;br /&gt;- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.
    * @return hiddenStatus
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies an array of one or more channel hidden statuses about whether to hide the channel from each invited user's list of group channels, and whether to automatically unhide the hidden channel when receiving a new message from other member of that channel. Each item of the array should be specified with a combination of the unique ID of a user in the user_ids or users property, a colon (:), and the channel hidden status (for example, user_id_1: channel hidden status). Acceptable values are limited to the following:<br />- unhidden (default): the channel is included in when retrieving a list of group channels.<br />- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.<br />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.")
+  @ApiModelProperty(required = true, value = "Specifies one or more key-value pair items which set the channel's hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:<br />- unhidden (default): the channel is included in when retrieving a list of group channels.<br />- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.<br />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.")
 
-  public List<String> getHiddenStatus() {
+  public Object getHiddenStatus() {
     return hiddenStatus;
   }
 
 
-  public void setHiddenStatus(List<String> hiddenStatus) {
+  public void setHiddenStatus(Object hiddenStatus) {
     this.hiddenStatus = hiddenStatus;
   }
 
 
-  public GcCreateChannelData operatorIds(List<Integer> operatorIds) {
+  public GcCreateChannelData operatorIds(List<String> operatorIds) {
     
     this.operatorIds = operatorIds;
     return this;
   }
 
-  public GcCreateChannelData addOperatorIdsItem(Integer operatorIdsItem) {
+  public GcCreateChannelData addOperatorIdsItem(String operatorIdsItem) {
     this.operatorIds.add(operatorIdsItem);
     return this;
   }
@@ -560,12 +550,12 @@ public class GcCreateChannelData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.")
 
-  public List<Integer> getOperatorIds() {
+  public List<String> getOperatorIds() {
     return operatorIds;
   }
 
 
-  public void setOperatorIds(List<Integer> operatorIds) {
+  public void setOperatorIds(List<String> operatorIds) {
     this.operatorIds = operatorIds;
   }
 
@@ -774,14 +764,6 @@ public class GcCreateChannelData {
       }
       if (jsonObj.get("inviter_id") != null && !jsonObj.get("inviter_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `inviter_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("inviter_id").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("invitation_status") != null && !jsonObj.get("invitation_status").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `invitation_status` to be an array in the JSON string but got `%s`", jsonObj.get("invitation_status").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("hidden_status") != null && !jsonObj.get("hidden_status").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hidden_status` to be an array in the JSON string but got `%s`", jsonObj.get("hidden_status").toString()));
       }
       // ensure the json data is an array
       if (jsonObj.get("operator_ids") != null && !jsonObj.get("operator_ids").isJsonArray()) {

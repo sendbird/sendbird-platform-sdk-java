@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
 /**
  * GcLeaveChannelData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class GcLeaveChannelData {
   public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
   @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
@@ -57,7 +57,7 @@ public class GcLeaveChannelData {
 
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
-  private List<Integer> userIds = new ArrayList<>();
+  private List<String> userIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SHOULD_LEAVE_ALL = "should_leave_all";
   @SerializedName(SERIALIZED_NAME_SHOULD_LEAVE_ALL)
@@ -89,13 +89,13 @@ public class GcLeaveChannelData {
   }
 
 
-  public GcLeaveChannelData userIds(List<Integer> userIds) {
+  public GcLeaveChannelData userIds(List<String> userIds) {
     
     this.userIds = userIds;
     return this;
   }
 
-  public GcLeaveChannelData addUserIdsItem(Integer userIdsItem) {
+  public GcLeaveChannelData addUserIdsItem(String userIdsItem) {
     this.userIds.add(userIdsItem);
     return this;
   }
@@ -107,12 +107,12 @@ public class GcLeaveChannelData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of the users to leave the channel.")
 
-  public List<Integer> getUserIds() {
+  public List<String> getUserIds() {
     return userIds;
   }
 
 
-  public void setUserIds(List<Integer> userIds) {
+  public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
   }
 

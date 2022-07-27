@@ -7105,9 +7105,7 @@ paths:
         content:
           application/json:
             schema:
-              properties: {}
-              title: translateMessageIntoOtherLanguagesData
-              type: object
+              $ref: '#/components/schemas/translateMessageIntoOtherLanguagesData'
       responses:
         "200":
           content:
@@ -7538,7 +7536,7 @@ paths:
           description: Successful response
       summary: Delete a user metadata - When deleting all items of a user metadata
       tags:
-      - User
+      - Metadata
       x-accepts: application/json
     get:
       description: "## View a user metadata\n\nRetrieves a user metadata's one or\
@@ -7628,7 +7626,7 @@ paths:
           description: Successful response
       summary: Create a user metadata
       tags:
-      - User
+      - Metadata
       x-content-type: application/json
       x-accepts: application/json
     put:
@@ -7668,7 +7666,7 @@ paths:
       summary: Update a user metadata - When updating existing items of a user metadata
         by their keys or adding new items to the metadata
       tags:
-      - User
+      - Metadata
       x-content-type: application/json
       x-accepts: application/json
   /v3/users/{user_id}/metadata/{key}:
@@ -7707,7 +7705,7 @@ paths:
       summary: Delete a user metadata - When deleting a specific item of a user metadata
         by its key
       tags:
-      - User
+      - Metadata
       x-accepts: application/json
     get:
       description: "## View a user metadata\n\nRetrieves a user metadata's one or\
@@ -7796,7 +7794,7 @@ paths:
       summary: Update a user metadata - When updating a specific item of a user metadata
         by its key
       tags:
-      - User
+      - Metadata
       x-content-type: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/metadata:
@@ -7843,7 +7841,7 @@ paths:
           description: Successful response
       summary: Delete a channel metadata - When deleting all items of a channel metadata
       tags:
-      - User
+      - Metadata
       x-accepts: application/json
     get:
       description: "## View a channel metadata\n\nRetrieves a channel metadata's one\
@@ -7949,7 +7947,7 @@ paths:
           description: Successful response
       summary: Create a channel metadata
       tags:
-      - User
+      - Metadata
       x-content-type: application/json
       x-accepts: application/json
     put:
@@ -7998,7 +7996,7 @@ paths:
       summary: Update a channel metadata - When updating existing items of a channel
         metadata by their keys or adding new items to the metadata
       tags:
-      - User
+      - Metadata
       x-content-type: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/metadata/{key}:
@@ -8046,7 +8044,7 @@ paths:
       summary: Delete a channel metadata - When deleting a specific item of a channel
         metadata by its key
       tags:
-      - User
+      - Metadata
       x-accepts: application/json
     get:
       description: "## View a channel metadata\n\nRetrieves a channel metadata's one\
@@ -8153,7 +8151,7 @@ paths:
       summary: Update a channel metadata - When updating a specific item of a channel
         metadata by its key
       tags:
-      - User
+      - Metadata
       x-content-type: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/metacounter:
@@ -8194,7 +8192,7 @@ paths:
       summary: Delete a channel metacounter - When deleting all items of a channel
         metacounter
       tags:
-      - User
+      - Metadata
       x-accepts: application/json
     get:
       description: "## View a channel metacounter\n\nRetrieves channel metacounter's\
@@ -8301,7 +8299,7 @@ paths:
           description: Successful response
       summary: Create a channel metacounter
       tags:
-      - User
+      - Metadata
       x-content-type: application/json
       x-accepts: application/json
     put:
@@ -8351,7 +8349,7 @@ paths:
       summary: Update a channel metacounter - When updating existing items of a channel
         metacounter by their keys or adding new items to the metacounter
       tags:
-      - User
+      - Metadata
       x-content-type: application/json
       x-accepts: application/json
   /v3/{channel_type}/{channel_url}/metacounter/{key}:
@@ -8399,7 +8397,7 @@ paths:
       summary: Delete a channel metacounter - When deleting a specific item of a channel
         metacounter by its key
       tags:
-      - User
+      - Metadata
       x-accepts: application/json
     get:
       description: "## View a channel metacounter\n\nRetrieves channel metacounter's\
@@ -8507,7 +8505,7 @@ paths:
       summary: Update a channel metacounter - When updating a specific item of a channel
         metacounter by its key
       tags:
-      - User
+      - Metadata
       x-content-type: application/json
       x-accepts: application/json
   /v3/migration/{target_channel_url}:
@@ -9114,7 +9112,7 @@ paths:
           description: Successful response
       summary: Retrieve a list of subscribed events
       tags:
-      - Webhooks
+      - Webhook
       x-accepts: application/json
     put:
       description: "## Choose which events to subscribe to\n\nChooses which events\
@@ -9145,7 +9143,7 @@ paths:
           description: Successful response
       summary: Choose which events to subscribe to
       tags:
-      - Webhooks
+      - Webhook
       x-content-type: application/json
       x-accepts: application/json
   /v3/privacy/gdpr:
@@ -15337,16 +15335,10 @@ components:
           type: boolean
       type: object
     viewUserMetadataByKeyResponse:
-      additionalProperties:
-        type: string
       type: object
     updateUserMetadataByKeyResponse:
-      additionalProperties:
-        type: string
       type: object
     viewChannelMetadataResponse:
-      additionalProperties:
-        type: string
       type: object
     createChannelMetadataResponse:
       example:
@@ -15362,20 +15354,12 @@ components:
           type: number
       type: object
     updateChannelMetadataResponse:
-      additionalProperties:
-        type: string
       type: object
     viewChannelMetadataByKeyResponse:
-      additionalProperties:
-        type: string
       type: object
     updateChannelMetadataByKeyResponse:
-      additionalProperties:
-        type: string
       type: object
     viewChannelMetacounterResponse:
-      additionalProperties:
-        type: string
       type: object
     createChannelMetacounterResponse:
       type: object
@@ -15384,8 +15368,6 @@ components:
     viewChannelMetacounterByKeyResponse:
       type: object
     updateChannelMetacounterByKeyResponse:
-      additionalProperties:
-        type: string
       type: object
     retrieveAdvancedAnalyticsMetricsResponse:
       example:
@@ -15423,8 +15405,8 @@ components:
           end_ts: 1.4658129805029452
           timezone: timezone
           user_ids:
-          - 5.637376656633329
-          - 5.637376656633329
+          - user_ids
+          - user_ids
           format: format
           created_at: 0.8008281904610115
           channel_urls:
@@ -15443,8 +15425,8 @@ components:
           end_ts: 1.4658129805029452
           timezone: timezone
           user_ids:
-          - 5.637376656633329
-          - 5.637376656633329
+          - user_ids
+          - user_ids
           format: format
           created_at: 0.8008281904610115
           channel_urls:
@@ -15466,8 +15448,8 @@ components:
         start_ts: 6.027456183070403
         timezone: timezone
         user_ids:
-        - 5.962133916683182
-        - 5.962133916683182
+        - user_ids
+        - user_ids
         format: format
         created_at: 0.8008281904610115
         channel_urls:
@@ -15522,7 +15504,7 @@ components:
           $ref: '#/components/schemas/listDataExportsByMessageChannelOrUserResponse_exported_data_inner_file'
         user_ids:
           items:
-            type: number
+            type: string
           type: array
       type: object
     viewDataExportByIdResponse:
@@ -15530,8 +15512,8 @@ components:
         start_ts: 6.027456183070403
         timezone: timezone
         user_ids:
-        - 5.962133916683182
-        - 5.962133916683182
+        - user_ids
+        - user_ids
         format: format
         created_at: 0.8008281904610115
         channel_urls:
@@ -15586,7 +15568,7 @@ components:
           $ref: '#/components/schemas/listDataExportsByMessageChannelOrUserResponse_exported_data_inner_file'
         user_ids:
           items:
-            type: number
+            type: string
           type: array
       type: object
     createBotResponse:
@@ -17764,8 +17746,6 @@ components:
           type: number
       type: object
     viewModeratedMessageByIdResponse:
-      additionalProperties:
-        type: string
       type: object
     listMutedUsersInChannelsWithCustomChannelType_200_response:
       example:
@@ -18280,7 +18260,7 @@ components:
             \ the user. The key must not have a comma (,) and its length is limited\
             \ to 128 characters. The value must be a string and its length is limited\
             \ to 190 characters. This property can have up to 5 items."
-          type: string
+          type: object
       required:
       - nickname
       - profile_url
@@ -18383,17 +18363,12 @@ components:
       type: object
     leaveMyGroupChannelsData:
       properties:
-        user_id:
-          description: Specifies the unique ID of the user to leave all joined group
-            channels.
-          type: string
         custom_type:
           description: Specifies the custom channel type to make the user leave joined
             group channels with the corresponding type.
           type: string
       required:
       - custom_type
-      - user_id
       title: leaveMyGroupChannelsData
       type: object
     updateCountPreferenceOfChannelByUrlData:
@@ -18415,9 +18390,6 @@ components:
       type: object
     markAllMessagesAsReadData:
       properties:
-        user_id:
-          description: Specifies the unique ID of the target user.
-          type: string
         channel_urls:
           description: "Specifies an array of one or more group channel URLs to mark\
             \ all of the unread messages in as read. If not specified, all of the\
@@ -18427,7 +18399,6 @@ components:
           type: array
       required:
       - channel_urls
-      - user_id
       title: markAllMessagesAsReadData
       type: object
     registerAsOperatorToChannelsWithCustomChannelTypesData:
@@ -18481,14 +18452,14 @@ components:
           description: Specifies an array of the IDs of the users to be blocked at
             a time. (for bulk mode)
           items:
-            type: integer
+            type: string
           type: array
         users:
           description: Specifies an array of the IDs of the users to be blocked at
             a time. The user_ids above and this property can be used interchangeably.
             (for bulk mode)
           items:
-            type: integer
+            type: string
           type: array
       required:
       - target_id
@@ -18517,9 +18488,6 @@ components:
       type: object
     updatePushPreferencesData:
       properties:
-        user_id:
-          description: Specifies the unique ID of the target user.
-          type: string
         push_trigger_option:
           description: "Determines the type of push notification trigger to apply\
             \ to the user's joined group channels. Valid values are the following:<br\
@@ -18596,7 +18564,6 @@ components:
       - start_hour
       - start_min
       - timezone
-      - user_id
       title: updatePushPreferencesData
       type: object
     updatePushPreferencesForChannelByUrlData:
@@ -18679,7 +18646,7 @@ components:
             \ the domain filter or profanity filter. Only the sender will be notified\
             \ that the message has been blocked."
           items:
-            type: integer
+            type: string
           type: array
         operators:
           description: "(Deprecated) Specifies the string IDs of the users registered\
@@ -18755,7 +18722,7 @@ components:
             \ the domain filter or profanity filter. Only the sender will be notified\
             \ that the message has been blocked."
           items:
-            type: integer
+            type: string
           type: array
         operators:
           description: "(Deprecated) Specifies the string IDs of the users registered\
@@ -18833,7 +18800,7 @@ components:
             as operators of the channel. The maximum allowed number of operators per
             channel is 100.
           items:
-            type: integer
+            type: string
           type: array
       required:
       - channel_url
@@ -18953,31 +18920,21 @@ components:
             \ error. (Default: false)"
           type: boolean
         invitation_status:
-          description: "Specifies an array of one or more information about the join\
-            \ status of each invited user to the channel. Each item of the array should\
-            \ be specified with a combination of the unique ID of a user in the user_ids\
-            \ or users property, a colon (:), and the user's join status (for example,\
-            \ user_id_1: join status). Acceptable values are joined, invited_by_friend,\
-            \ and invited_by_non_friend. (Default: joined)"
-          items:
-            type: string
-          type: array
+          description: "Specifies one or more key-value pair items which set the invitation\
+            \ status of each user invited to the channel. The key should be a user_id\
+            \ and the value should be their joining status. Acceptable values are\
+            \ joined, invited_by_friend, and invited_by_non_friend. (Default: joined)"
+          type: object
         hidden_status:
-          description: "Specifies an array of one or more channel hidden statuses\
-            \ about whether to hide the channel from each invited user's list of group\
-            \ channels, and whether to automatically unhide the hidden channel when\
-            \ receiving a new message from other member of that channel. Each item\
-            \ of the array should be specified with a combination of the unique ID\
-            \ of a user in the user_ids or users property, a colon (:), and the channel\
-            \ hidden status (for example, user_id_1: channel hidden status). Acceptable\
-            \ values are limited to the following:<br />- unhidden (default): the\
-            \ channel is included in when retrieving a list of group channels.<br\
-            \ />- hidden_allow_auto_unhide: the channel automatically gets unhidden\
-            \ when receiving a new message.<br />- hidden_prevent_auto_unhide: the\
-            \ channel keeps hidden though receiving a new message."
-          items:
-            type: string
-          type: array
+          description: "Specifies one or more key-value pair items which set the channel's\
+            \ hidden status for each user. The key should be a user_id and the value\
+            \ should be their hidden status. Acceptable values are limited to the\
+            \ following:<br />- unhidden (default): the channel is included in when\
+            \ retrieving a list of group channels.<br />- hidden_allow_auto_unhide:\
+            \ the channel automatically gets unhidden when receiving a new message.<br\
+            \ />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving\
+            \ a new message."
+          type: object
         operator_ids:
           description: "Specifies an array of one or more IDs of users to register\
             \ as operators of the channel. You should also include these IDs in the\
@@ -18986,7 +18943,7 @@ components:
             \ any filtering or throttling. The maximum allowed number of operators\
             \ per channel is 100."
           items:
-            type: integer
+            type: string
           type: array
         block_sdk_user_channel_join:
           description: "Determines whether to block users from joining the channel\
@@ -19074,7 +19031,7 @@ components:
             \ group channel. The maximum allowed number of operators per channel is\
             \ 100."
           items:
-            type: integer
+            type: string
           type: array
       required:
       - access_code
@@ -19099,7 +19056,7 @@ components:
             channel. The maximum number of users to be invited at once is 100. The
             users can be used instead of this property.
           items:
-            type: integer
+            type: string
           type: array
         users:
           description: Specifies a list of one or more `JSON` objects which contain
@@ -19107,34 +19064,24 @@ components:
             users to be invited at once is 100. The user_ids can be used instead of
             this property.
           items:
-            type: integer
+            type: string
           type: array
         invitation_status:
-          description: "Specifies an array of one or more information about the join\
-            \ status of each invited user to the channel. Each item of the array should\
-            \ be specified with a combination of the unique ID of a user in the user_ids\
-            \ or users property, a colon (:), and the user's join status (for example,\
-            \ user_id_1: join status). Acceptable values are joined, invited_by_friend,\
-            \ and invited_by_non_friend. (Default: joined)"
-          items:
-            type: string
-          type: array
+          description: "Specifies one or more key-value pair items which set the invitation\
+            \ status of each user invited to the channel. The key should be a user_id\
+            \ and the value should be their joining status. Acceptable values are\
+            \ joined, invited_by_friend, and invited_by_non_friend. (Default: joined)"
+          type: object
         hidden_status:
-          description: "Specifies an array of one or more channel hidden statuses\
-            \ about whether to hide the channel from each invited user's list of group\
-            \ channels, and whether to automatically unhide the hidden channel when\
-            \ receiving a new message from other member of that channel. Each item\
-            \ of the array should be specified with a combination of the unique ID\
-            \ of a user in the user_ids or users property, a colon (:), and the channel\
-            \ hidden status (for example, user_id_1: channel hidden status). Acceptable\
-            \ values are limited to the following:<br />- unhidden (default): the\
-            \ channel is included in when retrieving a list of group channels.<br\
-            \ />- hidden_allow_auto_unhide: the channel automatically gets unhidden\
-            \ when receiving a new message.<br />- hidden_prevent_auto_unhide: the\
-            \ channel keeps hidden though receiving a new message."
-          items:
-            type: string
-          type: array
+          description: "Specifies one or more key-value pair items which set the channel's\
+            \ hidden status for each user. The key should be a user_id and the value\
+            \ should be their hidden status. Acceptable values are limited to the\
+            \ following:<br />- unhidden (default): the channel is included in when\
+            \ retrieving a list of group channels.<br />- hidden_allow_auto_unhide:\
+            \ the channel automatically gets unhidden when receiving a new message.<br\
+            \ />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving\
+            \ a new message."
+          type: object
       required:
       - channel_url
       - hidden_status
@@ -19207,7 +19154,7 @@ components:
           description: Specifies an array of one or more IDs of the users to leave
             the channel.
           items:
-            type: integer
+            type: string
           type: array
         should_leave_all:
           description: "Determines whether to make all members leave the channel.\
@@ -19312,7 +19259,7 @@ components:
             \ group channel. The maximum allowed number of operators per channel is\
             \ 100."
           items:
-            type: integer
+            type: string
           type: array
       required:
       - channel_url
@@ -19742,7 +19689,7 @@ components:
           description: Specifies an array of one or more IDs of the users who will
             get a notification for the message.
           items:
-            type: integer
+            type: string
           type: array
       required:
       - message_id
@@ -19891,6 +19838,16 @@ components:
       - sorted_metaarray
       title: addExtraDataToMessageData
       type: object
+    translateMessageIntoOtherLanguagesData:
+      properties:
+        target_langs:
+          description: "Specifies an array of one or more codes of [translation](/docs/chat/v3/platform-api/message/translations/translation-engine)\
+            \ to translate the message."
+          items:
+            type: string
+          type: array
+      title: translateMessageIntoOtherLanguagesData
+      type: object
     useDefaultEmojisData:
       properties:
         use_default_emoji:
@@ -19909,7 +19866,7 @@ components:
         emojis:
           description: Specifies a list of one or more new emojis to register.
           items:
-            type: string
+            type: object
           type: array
       required:
       - emoji_category_id
@@ -19949,7 +19906,7 @@ components:
             \ key must not have a comma (,) and its length is limited to 128 characters.\
             \ The value must be a string and its length is limited to 190 characters.\
             \ This property can have up to 5 items."
-          type: string
+          type: object
         upsert:
           type: boolean
       required:
@@ -19959,18 +19916,14 @@ components:
       type: object
     createUserMetadataData:
       properties:
-        user_id:
-          description: Specifies the ID of the user to store the metadata in.
-          type: string
         metadata:
           description: "Specifies a `JSON` object that stores key-value items. The\
             \ key must not have a comma (,) and its length is limited to 128 characters.\
             \ The value must be a string and its length is limited to 190 characters.\
             \ This property can have up to 5 items."
-          type: string
+          type: object
       required:
       - metadata
-      - user_id
       title: createUserMetadataData
       type: object
     updateChannelMetadataData:
@@ -19980,7 +19933,7 @@ components:
             \ A key can't contain a comma (,) and its length is limited to 128 characters.\
             \ A value must be a string and its length is limited to 190 characters.\
             \ This property can have up to 5 items."
-          type: string
+          type: object
         upsert:
           type: boolean
       required:
@@ -20002,7 +19955,7 @@ components:
             \ key must not have a comma (,) and its length is limited to 128 characters.\
             \ The value must be a string and its length is limited to 190 characters.\
             \ This property can have up to 5 items."
-          type: string
+          type: object
         include_ts:
           description: "Determines whether to include the timestamp of when a metadata\
             \ has been created in the response. (Default: false)"
@@ -20090,7 +20043,7 @@ components:
             \ can be specified up to 10 IDs in the request. (Default: all messages\
             \ sent by any user)"
           items:
-            type: integer
+            type: string
           type: array
         exclude_sender_ids:
           description: "Specifies an array of the IDs of the users which are used\
@@ -20098,7 +20051,7 @@ components:
             \ only when the data_type parameter is set to messages, and can be specified\
             \ up to 10 IDs. (Default: all messages sent by any user)"
           items:
-            type: integer
+            type: string
           type: array
         channel_urls:
           description: "Specifies an array of one or more URLs of channels to export\
@@ -20120,7 +20073,7 @@ components:
             \ information. This property is effective only when the data_type parameter\
             \ is set to users. (Default: all users)"
           items:
-            type: integer
+            type: string
           type: array
         show_read_receipt:
           description: "Determines whether to include information about the read receipts\
@@ -20287,7 +20240,7 @@ components:
           description: Specifies an array of one or more IDs of the users who get
             a notification for the message.
           items:
-            type: integer
+            type: string
           type: array
         mark_as_read:
           description: "Determines whether to mark the message as read for the bot.\
@@ -20353,7 +20306,7 @@ components:
             at once is 100. This should be specified when the value of the action
             property is delete.
           items:
-            type: integer
+            type: string
           type: array
         channel_delete_option:
           description: "Determines the scope of group channels to delete in addition\
@@ -21241,8 +21194,8 @@ components:
         end_ts: 1.4658129805029452
         timezone: timezone
         user_ids:
-        - 5.637376656633329
-        - 5.637376656633329
+        - user_ids
+        - user_ids
         format: format
         created_at: 0.8008281904610115
         channel_urls:
@@ -21280,7 +21233,7 @@ components:
           $ref: '#/components/schemas/listDataExportsByMessageChannelOrUserResponse_exported_data_inner_file'
         user_ids:
           items:
-            type: number
+            type: string
           type: array
       type: object
     createBotResponse_bot:

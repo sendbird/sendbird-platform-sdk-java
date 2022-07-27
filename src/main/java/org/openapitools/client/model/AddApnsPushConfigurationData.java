@@ -48,7 +48,7 @@ import org.sendbird.client.JSON;
 /**
  * AddApnsPushConfigurationData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class AddApnsPushConfigurationData {
   public static final String SERIALIZED_NAME_APNS_CERT = "apns_cert";
   @SerializedName(SERIALIZED_NAME_APNS_CERT)

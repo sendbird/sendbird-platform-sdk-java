@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
 /**
  * SendBotSMessageData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class SendBotSMessageData {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
@@ -73,7 +73,7 @@ public class SendBotSMessageData {
 
   public static final String SERIALIZED_NAME_MENTIONED = "mentioned";
   @SerializedName(SERIALIZED_NAME_MENTIONED)
-  private List<Integer> mentioned = null;
+  private List<String> mentioned = null;
 
   public static final String SERIALIZED_NAME_MARK_AS_READ = "mark_as_read";
   @SerializedName(SERIALIZED_NAME_MARK_AS_READ)
@@ -205,13 +205,13 @@ public class SendBotSMessageData {
   }
 
 
-  public SendBotSMessageData mentioned(List<Integer> mentioned) {
+  public SendBotSMessageData mentioned(List<String> mentioned) {
     
     this.mentioned = mentioned;
     return this;
   }
 
-  public SendBotSMessageData addMentionedItem(Integer mentionedItem) {
+  public SendBotSMessageData addMentionedItem(String mentionedItem) {
     if (this.mentioned == null) {
       this.mentioned = new ArrayList<>();
     }
@@ -226,12 +226,12 @@ public class SendBotSMessageData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of the users who get a notification for the message.")
 
-  public List<Integer> getMentioned() {
+  public List<String> getMentioned() {
     return mentioned;
   }
 
 
-  public void setMentioned(List<Integer> mentioned) {
+  public void setMentioned(List<String> mentioned) {
     this.mentioned = mentioned;
   }
 

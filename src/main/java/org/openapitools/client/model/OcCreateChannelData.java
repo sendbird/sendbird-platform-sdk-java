@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
 /**
  * OcCreateChannelData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class OcCreateChannelData {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -86,7 +86,7 @@ public class OcCreateChannelData {
 
   public static final String SERIALIZED_NAME_OPERATOR_IDS = "operator_ids";
   @SerializedName(SERIALIZED_NAME_OPERATOR_IDS)
-  private List<Integer> operatorIds = new ArrayList<>();
+  private List<String> operatorIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OPERATORS = "operators";
   @SerializedName(SERIALIZED_NAME_OPERATORS)
@@ -279,13 +279,13 @@ public class OcCreateChannelData {
   }
 
 
-  public OcCreateChannelData operatorIds(List<Integer> operatorIds) {
+  public OcCreateChannelData operatorIds(List<String> operatorIds) {
     
     this.operatorIds = operatorIds;
     return this;
   }
 
-  public OcCreateChannelData addOperatorIdsItem(Integer operatorIdsItem) {
+  public OcCreateChannelData addOperatorIdsItem(String operatorIdsItem) {
     this.operatorIds.add(operatorIdsItem);
     return this;
   }
@@ -297,12 +297,12 @@ public class OcCreateChannelData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.")
 
-  public List<Integer> getOperatorIds() {
+  public List<String> getOperatorIds() {
     return operatorIds;
   }
 
 
-  public void setOperatorIds(List<Integer> operatorIds) {
+  public void setOperatorIds(List<String> operatorIds) {
     this.operatorIds = operatorIds;
   }
 

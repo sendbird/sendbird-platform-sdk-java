@@ -42,14 +42,6 @@ public class UpdatePushPreferencesDataTest {
     }
 
     /**
-     * Test the property 'userId'
-     */
-    @Test
-    public void userIdTest() {
-        // TODO: test userId
-    }
-
-    /**
      * Test the property 'pushTriggerOption'
      */
     @Test

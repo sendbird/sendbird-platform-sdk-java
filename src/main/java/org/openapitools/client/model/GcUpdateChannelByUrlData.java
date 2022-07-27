@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
 /**
  * GcUpdateChannelByUrlData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class GcUpdateChannelByUrlData {
   public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
   @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
@@ -90,7 +90,7 @@ public class GcUpdateChannelByUrlData {
 
   public static final String SERIALIZED_NAME_OPERATOR_IDS = "operator_ids";
   @SerializedName(SERIALIZED_NAME_OPERATOR_IDS)
-  private List<Integer> operatorIds = new ArrayList<>();
+  private List<String> operatorIds = new ArrayList<>();
 
   public GcUpdateChannelByUrlData() { 
   }
@@ -302,13 +302,13 @@ public class GcUpdateChannelByUrlData {
   }
 
 
-  public GcUpdateChannelByUrlData operatorIds(List<Integer> operatorIds) {
+  public GcUpdateChannelByUrlData operatorIds(List<String> operatorIds) {
     
     this.operatorIds = operatorIds;
     return this;
   }
 
-  public GcUpdateChannelByUrlData addOperatorIdsItem(Integer operatorIdsItem) {
+  public GcUpdateChannelByUrlData addOperatorIdsItem(String operatorIdsItem) {
     this.operatorIds.add(operatorIdsItem);
     return this;
   }
@@ -320,12 +320,12 @@ public class GcUpdateChannelByUrlData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of users to register as operators of the channel. If the operators are not members of the channel yet, they need an [invitation](#2-invite-as-members) to [join](#2-join-a-channel) a privte group channel while they don't need any to join a [public](#-3-private-vs-public) group channel. The maximum allowed number of operators per channel is 100.")
 
-  public List<Integer> getOperatorIds() {
+  public List<String> getOperatorIds() {
     return operatorIds;
   }
 
 
-  public void setOperatorIds(List<Integer> operatorIds) {
+  public void setOperatorIds(List<String> operatorIds) {
     this.operatorIds = operatorIds;
   }
 

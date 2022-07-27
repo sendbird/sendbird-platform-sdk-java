@@ -1307,7 +1307,7 @@ public class ReportApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @return Map&lt;String, String&gt;
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1315,8 +1315,8 @@ public class ReportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, String> viewModeratedMessageById(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
-        ApiResponse<Map<String, String>> localVarResp = viewModeratedMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
+    public Object viewModeratedMessageById(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+        ApiResponse<Object> localVarResp = viewModeratedMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
         return localVarResp.getData();
     }
 
@@ -1327,7 +1327,7 @@ public class ReportApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1335,9 +1335,9 @@ public class ReportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, String>> viewModeratedMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+    public ApiResponse<Object> viewModeratedMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
         okhttp3.Call localVarCall = viewModeratedMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, null);
-        Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1357,10 +1357,10 @@ public class ReportApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call viewModeratedMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback<Map<String, String>> _callback) throws ApiException {
+    public okhttp3.Call viewModeratedMessageByIdAsync(String apiToken, String channelType, String channelUrl, String messageId, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = viewModeratedMessageByIdValidateBeforeCall(apiToken, channelType, channelUrl, messageId, _callback);
-        Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

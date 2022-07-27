@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
 /**
  * AddEmojisData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class AddEmojisData {
   public static final String SERIALIZED_NAME_EMOJI_CATEGORY_ID = "emoji_category_id";
   @SerializedName(SERIALIZED_NAME_EMOJI_CATEGORY_ID)
@@ -57,7 +57,7 @@ public class AddEmojisData {
 
   public static final String SERIALIZED_NAME_EMOJIS = "emojis";
   @SerializedName(SERIALIZED_NAME_EMOJIS)
-  private List<String> emojis = new ArrayList<>();
+  private List<Object> emojis = new ArrayList<>();
 
   public AddEmojisData() { 
   }
@@ -85,13 +85,13 @@ public class AddEmojisData {
   }
 
 
-  public AddEmojisData emojis(List<String> emojis) {
+  public AddEmojisData emojis(List<Object> emojis) {
     
     this.emojis = emojis;
     return this;
   }
 
-  public AddEmojisData addEmojisItem(String emojisItem) {
+  public AddEmojisData addEmojisItem(Object emojisItem) {
     this.emojis.add(emojisItem);
     return this;
   }
@@ -103,12 +103,12 @@ public class AddEmojisData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a list of one or more new emojis to register.")
 
-  public List<String> getEmojis() {
+  public List<Object> getEmojis() {
     return emojis;
   }
 
 
-  public void setEmojis(List<String> emojis) {
+  public void setEmojis(List<Object> emojis) {
     this.emojis = emojis;
   }
 

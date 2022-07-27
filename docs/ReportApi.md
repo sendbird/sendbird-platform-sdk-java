@@ -500,7 +500,7 @@ No authorization required
 
 <a name="viewModeratedMessageById"></a>
 # **viewModeratedMessageById**
-> Map&lt;String, String&gt; viewModeratedMessageById(apiToken, channelType, channelUrl, messageId)
+> Object viewModeratedMessageById(apiToken, channelType, channelUrl, messageId)
 
 View a moderated message
 
@@ -526,7 +526,7 @@ public class Example {
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
     try {
-      Map<String, String> result = apiInstance.viewModeratedMessageById(apiToken, channelType, channelUrl, messageId);
+      Object result = apiInstance.viewModeratedMessageById(apiToken, channelType, channelUrl, messageId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReportApi#viewModeratedMessageById");
@@ -550,7 +550,7 @@ public class Example {
 
 ### Return type
 
-**Map&lt;String, String&gt;**
+**Object**
 
 ### Authorization
 

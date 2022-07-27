@@ -1870,7 +1870,7 @@ No authorization required
 
 <a name="translateMessageIntoOtherLanguages"></a>
 # **translateMessageIntoOtherLanguages**
-> SendBirdMessageResponse translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, body)
+> SendBirdMessageResponse translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData)
 
 Translate a message into other languages
 
@@ -1895,9 +1895,9 @@ public class Example {
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
     String messageId = "messageId_example"; // String | 
-    Object body = null; // Object | 
+    TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData = new TranslateMessageIntoOtherLanguagesData(); // TranslateMessageIntoOtherLanguagesData | 
     try {
-      SendBirdMessageResponse result = apiInstance.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, body);
+      SendBirdMessageResponse result = apiInstance.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MessageApi#translateMessageIntoOtherLanguages");
@@ -1918,7 +1918,7 @@ public class Example {
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
-| **body** | **Object**|  | [optional] |
+| **translateMessageIntoOtherLanguagesData** | [**TranslateMessageIntoOtherLanguagesData**](TranslateMessageIntoOtherLanguagesData.md)|  | [optional] |
 
 ### Return type
 

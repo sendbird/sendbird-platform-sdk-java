@@ -43,6 +43,7 @@ import org.openapitools.client.model.SendBirdEmoji;
 import org.openapitools.client.model.SendBirdEmojiCategory;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendMessageData;
+import org.openapitools.client.model.TranslateMessageIntoOtherLanguagesData;
 import org.openapitools.client.model.UpdateAnnouncementByIdData;
 import org.openapitools.client.model.UpdateAnnouncementByIdResponse;
 import org.openapitools.client.model.UpdateEmojiCategoryUrlByIdData;
@@ -537,8 +538,8 @@ public class MessageApiTest {
         String channelType = null;
         String channelUrl = null;
         String messageId = null;
-        Object body = null;
-        SendBirdMessageResponse response = api.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, body);
+        TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData = null;
+        SendBirdMessageResponse response = api.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
         // TODO: test validations
     }
 

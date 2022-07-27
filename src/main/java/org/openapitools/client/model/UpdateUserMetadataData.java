@@ -47,11 +47,11 @@ import org.sendbird.client.JSON;
 /**
  * UpdateUserMetadataData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class UpdateUserMetadataData {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  private String metadata;
+  private Object metadata;
 
   public static final String SERIALIZED_NAME_UPSERT = "upsert";
   @SerializedName(SERIALIZED_NAME_UPSERT)
@@ -60,7 +60,7 @@ public class UpdateUserMetadataData {
   public UpdateUserMetadataData() { 
   }
 
-  public UpdateUserMetadataData metadata(String metadata) {
+  public UpdateUserMetadataData metadata(Object metadata) {
     
     this.metadata = metadata;
     return this;
@@ -73,12 +73,12 @@ public class UpdateUserMetadataData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be a string and its length is limited to 190 characters. This property can have up to 5 items.")
 
-  public String getMetadata() {
+  public Object getMetadata() {
     return metadata;
   }
 
 
-  public void setMetadata(String metadata) {
+  public void setMetadata(Object metadata) {
     this.metadata = metadata;
   }
 
@@ -190,9 +190,6 @@ public class UpdateUserMetadataData {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
-      }
-      if (jsonObj.get("metadata") != null && !jsonObj.get("metadata").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metadata` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metadata").toString()));
       }
   }
 

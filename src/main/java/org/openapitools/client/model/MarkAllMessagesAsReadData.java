@@ -49,41 +49,14 @@ import org.sendbird.client.JSON;
 /**
  * MarkAllMessagesAsReadData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class MarkAllMessagesAsReadData {
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
-  private String userId;
-
   public static final String SERIALIZED_NAME_CHANNEL_URLS = "channel_urls";
   @SerializedName(SERIALIZED_NAME_CHANNEL_URLS)
   private List<String> channelUrls = new ArrayList<>();
 
   public MarkAllMessagesAsReadData() { 
   }
-
-  public MarkAllMessagesAsReadData userId(String userId) {
-    
-    this.userId = userId;
-    return this;
-  }
-
-   /**
-   * Specifies the unique ID of the target user.
-   * @return userId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the unique ID of the target user.")
-
-  public String getUserId() {
-    return userId;
-  }
-
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
-
 
   public MarkAllMessagesAsReadData channelUrls(List<String> channelUrls) {
     
@@ -123,20 +96,18 @@ public class MarkAllMessagesAsReadData {
       return false;
     }
     MarkAllMessagesAsReadData markAllMessagesAsReadData = (MarkAllMessagesAsReadData) o;
-    return Objects.equals(this.userId, markAllMessagesAsReadData.userId) &&
-        Objects.equals(this.channelUrls, markAllMessagesAsReadData.channelUrls);
+    return Objects.equals(this.channelUrls, markAllMessagesAsReadData.channelUrls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, channelUrls);
+    return Objects.hash(channelUrls);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MarkAllMessagesAsReadData {\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    channelUrls: ").append(toIndentedString(channelUrls)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -160,12 +131,10 @@ public class MarkAllMessagesAsReadData {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("user_id");
     openapiFields.add("channel_urls");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("user_id");
     openapiRequiredFields.add("channel_urls");
   }
 
@@ -197,9 +166,6 @@ public class MarkAllMessagesAsReadData {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
       }
       // ensure the json data is an array
       if (jsonObj.get("channel_urls") != null && !jsonObj.get("channel_urls").isJsonArray()) {

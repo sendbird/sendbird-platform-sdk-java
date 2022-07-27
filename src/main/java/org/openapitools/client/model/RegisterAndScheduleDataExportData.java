@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
 /**
  * RegisterAndScheduleDataExportData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class RegisterAndScheduleDataExportData {
   public static final String SERIALIZED_NAME_START_TS = "start_ts";
   @SerializedName(SERIALIZED_NAME_START_TS)
@@ -73,11 +73,11 @@ public class RegisterAndScheduleDataExportData {
 
   public static final String SERIALIZED_NAME_SENDER_IDS = "sender_ids";
   @SerializedName(SERIALIZED_NAME_SENDER_IDS)
-  private List<Integer> senderIds = null;
+  private List<String> senderIds = null;
 
   public static final String SERIALIZED_NAME_EXCLUDE_SENDER_IDS = "exclude_sender_ids";
   @SerializedName(SERIALIZED_NAME_EXCLUDE_SENDER_IDS)
-  private List<Integer> excludeSenderIds = null;
+  private List<String> excludeSenderIds = null;
 
   public static final String SERIALIZED_NAME_CHANNEL_URLS = "channel_urls";
   @SerializedName(SERIALIZED_NAME_CHANNEL_URLS)
@@ -89,7 +89,7 @@ public class RegisterAndScheduleDataExportData {
 
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
-  private List<Integer> userIds = null;
+  private List<String> userIds = null;
 
   public static final String SERIALIZED_NAME_SHOW_READ_RECEIPT = "show_read_receipt";
   @SerializedName(SERIALIZED_NAME_SHOW_READ_RECEIPT)
@@ -221,13 +221,13 @@ public class RegisterAndScheduleDataExportData {
   }
 
 
-  public RegisterAndScheduleDataExportData senderIds(List<Integer> senderIds) {
+  public RegisterAndScheduleDataExportData senderIds(List<String> senderIds) {
     
     this.senderIds = senderIds;
     return this;
   }
 
-  public RegisterAndScheduleDataExportData addSenderIdsItem(Integer senderIdsItem) {
+  public RegisterAndScheduleDataExportData addSenderIdsItem(String senderIdsItem) {
     if (this.senderIds == null) {
       this.senderIds = new ArrayList<>();
     }
@@ -242,23 +242,23 @@ public class RegisterAndScheduleDataExportData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user)")
 
-  public List<Integer> getSenderIds() {
+  public List<String> getSenderIds() {
     return senderIds;
   }
 
 
-  public void setSenderIds(List<Integer> senderIds) {
+  public void setSenderIds(List<String> senderIds) {
     this.senderIds = senderIds;
   }
 
 
-  public RegisterAndScheduleDataExportData excludeSenderIds(List<Integer> excludeSenderIds) {
+  public RegisterAndScheduleDataExportData excludeSenderIds(List<String> excludeSenderIds) {
     
     this.excludeSenderIds = excludeSenderIds;
     return this;
   }
 
-  public RegisterAndScheduleDataExportData addExcludeSenderIdsItem(Integer excludeSenderIdsItem) {
+  public RegisterAndScheduleDataExportData addExcludeSenderIdsItem(String excludeSenderIdsItem) {
     if (this.excludeSenderIds == null) {
       this.excludeSenderIds = new ArrayList<>();
     }
@@ -273,12 +273,12 @@ public class RegisterAndScheduleDataExportData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user)")
 
-  public List<Integer> getExcludeSenderIds() {
+  public List<String> getExcludeSenderIds() {
     return excludeSenderIds;
   }
 
 
-  public void setExcludeSenderIds(List<Integer> excludeSenderIds) {
+  public void setExcludeSenderIds(List<String> excludeSenderIds) {
     this.excludeSenderIds = excludeSenderIds;
   }
 
@@ -345,13 +345,13 @@ public class RegisterAndScheduleDataExportData {
   }
 
 
-  public RegisterAndScheduleDataExportData userIds(List<Integer> userIds) {
+  public RegisterAndScheduleDataExportData userIds(List<String> userIds) {
     
     this.userIds = userIds;
     return this;
   }
 
-  public RegisterAndScheduleDataExportData addUserIdsItem(Integer userIdsItem) {
+  public RegisterAndScheduleDataExportData addUserIdsItem(String userIdsItem) {
     if (this.userIds == null) {
       this.userIds = new ArrayList<>();
     }
@@ -366,12 +366,12 @@ public class RegisterAndScheduleDataExportData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users)")
 
-  public List<Integer> getUserIds() {
+  public List<String> getUserIds() {
     return userIds;
   }
 
 
-  public void setUserIds(List<Integer> userIds) {
+  public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
   }
 

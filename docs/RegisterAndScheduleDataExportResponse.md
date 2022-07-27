@@ -20,7 +20,7 @@
 |**channelUrls** | **List&lt;String&gt;** |  |  [optional] |
 |**senderIds** | **List&lt;String&gt;** |  |  [optional] |
 |**_file** | [**ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile**](ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile.md) |  |  [optional] |
-|**userIds** | **List&lt;BigDecimal&gt;** |  |  [optional] |
+|**userIds** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

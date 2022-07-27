@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
 /**
  * UpdateMessageByIdData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class UpdateMessageByIdData {
   public static final String SERIALIZED_NAME_CHANNEL_TYPE = "channel_type";
   @SerializedName(SERIALIZED_NAME_CHANNEL_TYPE)
@@ -85,7 +85,7 @@ public class UpdateMessageByIdData {
 
   public static final String SERIALIZED_NAME_MENTIONED_USER_IDS = "mentioned_user_ids";
   @SerializedName(SERIALIZED_NAME_MENTIONED_USER_IDS)
-  private List<Integer> mentionedUserIds = null;
+  private List<String> mentionedUserIds = null;
 
   public UpdateMessageByIdData() { 
   }
@@ -274,13 +274,13 @@ public class UpdateMessageByIdData {
   }
 
 
-  public UpdateMessageByIdData mentionedUserIds(List<Integer> mentionedUserIds) {
+  public UpdateMessageByIdData mentionedUserIds(List<String> mentionedUserIds) {
     
     this.mentionedUserIds = mentionedUserIds;
     return this;
   }
 
-  public UpdateMessageByIdData addMentionedUserIdsItem(Integer mentionedUserIdsItem) {
+  public UpdateMessageByIdData addMentionedUserIdsItem(String mentionedUserIdsItem) {
     if (this.mentionedUserIds == null) {
       this.mentionedUserIds = new ArrayList<>();
     }
@@ -295,12 +295,12 @@ public class UpdateMessageByIdData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of the users who will get a notification for the message.")
 
-  public List<Integer> getMentionedUserIds() {
+  public List<String> getMentionedUserIds() {
     return mentionedUserIds;
   }
 
 
-  public void setMentionedUserIds(List<Integer> mentionedUserIds) {
+  public void setMentionedUserIds(List<String> mentionedUserIds) {
     this.mentionedUserIds = mentionedUserIds;
   }
 

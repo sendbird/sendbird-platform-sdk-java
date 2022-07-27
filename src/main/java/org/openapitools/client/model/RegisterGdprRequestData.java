@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
 /**
  * RegisterGdprRequestData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class RegisterGdprRequestData {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
@@ -57,7 +57,7 @@ public class RegisterGdprRequestData {
 
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
-  private List<Integer> userIds = new ArrayList<>();
+  private List<String> userIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CHANNEL_DELETE_OPTION = "channel_delete_option";
   @SerializedName(SERIALIZED_NAME_CHANNEL_DELETE_OPTION)
@@ -93,13 +93,13 @@ public class RegisterGdprRequestData {
   }
 
 
-  public RegisterGdprRequestData userIds(List<Integer> userIds) {
+  public RegisterGdprRequestData userIds(List<String> userIds) {
     
     this.userIds = userIds;
     return this;
   }
 
-  public RegisterGdprRequestData addUserIdsItem(Integer userIdsItem) {
+  public RegisterGdprRequestData addUserIdsItem(String userIdsItem) {
     this.userIds.add(userIdsItem);
     return this;
   }
@@ -111,12 +111,12 @@ public class RegisterGdprRequestData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of the IDs of the users to delete in order to meet the GDPR's requirements. The maximum number of users to be processed at once is 100. This should be specified when the value of the action property is delete.")
 
-  public List<Integer> getUserIds() {
+  public List<String> getUserIds() {
     return userIds;
   }
 
 
-  public void setUserIds(List<Integer> userIds) {
+  public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
   }
 

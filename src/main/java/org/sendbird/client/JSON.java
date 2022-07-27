@@ -315,6 +315,7 @@ public class JSON {
             .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterDataProfanityFilter.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterDataProfanityFilterRegexFiltersInner.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.SetDomainFilterDataProfanityTriggeredModeration.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.TranslateMessageIntoOtherLanguagesData.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateAnnouncementByIdData.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateAnnouncementByIdResponse.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.UpdateAnnouncementByIdResponseMessage.CustomTypeAdapterFactory())

@@ -1,11 +1,11 @@
-# WebhooksApi
+# WebhookApi
 
 All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**chooseWhichEventsToSubscribeTo**](WebhooksApi.md#chooseWhichEventsToSubscribeTo) | **PUT** /v3/applications/settings/webhook | Choose which events to subscribe to |
-| [**retrieveListOfSubscribedEvents**](WebhooksApi.md#retrieveListOfSubscribedEvents) | **GET** /v3/applications/settings/webhook | Retrieve a list of subscribed events |
+| [**chooseWhichEventsToSubscribeTo**](WebhookApi.md#chooseWhichEventsToSubscribeTo) | **PUT** /v3/applications/settings/webhook | Choose which events to subscribe to |
+| [**retrieveListOfSubscribedEvents**](WebhookApi.md#retrieveListOfSubscribedEvents) | **GET** /v3/applications/settings/webhook | Retrieve a list of subscribed events |
 
 
 <a name="chooseWhichEventsToSubscribeTo"></a>
@@ -23,21 +23,21 @@ import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
 import org.sendbird.client.models.*;
-import org.sendbird.client.api.WebhooksApi;
+import org.sendbird.client.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    WebhookApi apiInstance = new WebhookApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData = new ChooseWhichEventsToSubscribeToData(); // ChooseWhichEventsToSubscribeToData | 
     try {
       ChooseWhichEventsToSubscribeToResponse result = apiInstance.chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#chooseWhichEventsToSubscribeTo");
+      System.err.println("Exception when calling WebhookApi#chooseWhichEventsToSubscribeTo");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -87,21 +87,21 @@ import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
 import org.sendbird.client.models.*;
-import org.sendbird.client.api.WebhooksApi;
+import org.sendbird.client.api.WebhookApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    WebhookApi apiInstance = new WebhookApi(defaultClient);
     String apiToken = "{{API_TOKEN}}"; // String | 
     Boolean displayAllWebhookCategories = true; // Boolean | 
     try {
       RetrieveListOfSubscribedEventsResponse result = apiInstance.retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling WebhooksApi#retrieveListOfSubscribedEvents");
+      System.err.println("Exception when calling WebhookApi#retrieveListOfSubscribedEvents");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

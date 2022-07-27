@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
 /**
  * OcRegisterOperatorsData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class OcRegisterOperatorsData {
   public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
   @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
@@ -57,7 +57,7 @@ public class OcRegisterOperatorsData {
 
   public static final String SERIALIZED_NAME_OPERATOR_IDS = "operator_ids";
   @SerializedName(SERIALIZED_NAME_OPERATOR_IDS)
-  private List<Integer> operatorIds = new ArrayList<>();
+  private List<String> operatorIds = new ArrayList<>();
 
   public OcRegisterOperatorsData() { 
   }
@@ -85,13 +85,13 @@ public class OcRegisterOperatorsData {
   }
 
 
-  public OcRegisterOperatorsData operatorIds(List<Integer> operatorIds) {
+  public OcRegisterOperatorsData operatorIds(List<String> operatorIds) {
     
     this.operatorIds = operatorIds;
     return this;
   }
 
-  public OcRegisterOperatorsData addOperatorIdsItem(Integer operatorIdsItem) {
+  public OcRegisterOperatorsData addOperatorIdsItem(String operatorIdsItem) {
     this.operatorIds.add(operatorIdsItem);
     return this;
   }
@@ -103,12 +103,12 @@ public class OcRegisterOperatorsData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of users to register as operators of the channel. The maximum allowed number of operators per channel is 100.")
 
-  public List<Integer> getOperatorIds() {
+  public List<String> getOperatorIds() {
     return operatorIds;
   }
 
 
-  public void setOperatorIds(List<Integer> operatorIds) {
+  public void setOperatorIds(List<String> operatorIds) {
     this.operatorIds = operatorIds;
   }
 

@@ -26,12 +26,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for WebhooksApi
+ * API tests for WebhookApi
  */
 @Disabled
-public class WebhooksApiTest {
+public class WebhookApiTest {
 
-    private final WebhooksApi api = new WebhooksApi();
+    private final WebhookApi api = new WebhookApi();
 
     /**
      * Choose which events to subscribe to

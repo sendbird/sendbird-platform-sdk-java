@@ -38,16 +38,16 @@ import java.util.List;
 import java.util.Map;
 import javax.ws.rs.core.GenericType;
 
-public class WebhooksApi {
+public class WebhookApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public WebhooksApi() {
+    public WebhookApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public WebhooksApi(ApiClient apiClient) {
+    public WebhookApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 

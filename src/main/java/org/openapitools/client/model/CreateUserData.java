@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
 /**
  * CreateUserData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class CreateUserData {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -78,7 +78,7 @@ public class CreateUserData {
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  private String metadata;
+  private Object metadata;
 
   public CreateUserData() { 
   }
@@ -229,7 +229,7 @@ public class CreateUserData {
   }
 
 
-  public CreateUserData metadata(String metadata) {
+  public CreateUserData metadata(Object metadata) {
     
     this.metadata = metadata;
     return this;
@@ -242,12 +242,12 @@ public class CreateUserData {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies a `JSON` object to store key-value items for additional user information such as phone number, email or a long description of the user. The key must not have a comma (,) and its length is limited to 128 characters. The value must be a string and its length is limited to 190 characters. This property can have up to 5 items.")
 
-  public String getMetadata() {
+  public Object getMetadata() {
     return metadata;
   }
 
 
-  public void setMetadata(String metadata) {
+  public void setMetadata(Object metadata) {
     this.metadata = metadata;
   }
 
@@ -365,9 +365,6 @@ public class CreateUserData {
       // ensure the json data is an array
       if (jsonObj.get("discovery_keys") != null && !jsonObj.get("discovery_keys").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `discovery_keys` to be an array in the JSON string but got `%s`", jsonObj.get("discovery_keys").toString()));
-      }
-      if (jsonObj.get("metadata") != null && !jsonObj.get("metadata").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metadata` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metadata").toString()));
       }
   }
 

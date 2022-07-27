@@ -40,14 +40,6 @@ public class LeaveMyGroupChannelsDataTest {
     }
 
     /**
-     * Test the property 'userId'
-     */
-    @Test
-    public void userIdTest() {
-        // TODO: test userId
-    }
-
-    /**
      * Test the property 'customType'
      */
     @Test

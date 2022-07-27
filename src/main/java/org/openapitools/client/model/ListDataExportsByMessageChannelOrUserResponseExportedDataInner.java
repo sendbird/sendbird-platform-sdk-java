@@ -51,7 +51,7 @@ import org.sendbird.client.JSON;
 /**
  * ListDataExportsByMessageChannelOrUserResponseExportedDataInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   public static final String SERIALIZED_NAME_REQUEST_ID = "request_id";
   @SerializedName(SERIALIZED_NAME_REQUEST_ID)
@@ -99,7 +99,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
 
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
-  private List<BigDecimal> userIds = null;
+  private List<String> userIds = null;
 
   public ListDataExportsByMessageChannelOrUserResponseExportedDataInner() { 
   }
@@ -373,13 +373,13 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   }
 
 
-  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner userIds(List<BigDecimal> userIds) {
+  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner userIds(List<String> userIds) {
     
     this.userIds = userIds;
     return this;
   }
 
-  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner addUserIdsItem(BigDecimal userIdsItem) {
+  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner addUserIdsItem(String userIdsItem) {
     if (this.userIds == null) {
       this.userIds = new ArrayList<>();
     }
@@ -394,12 +394,12 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<BigDecimal> getUserIds() {
+  public List<String> getUserIds() {
     return userIds;
   }
 
 
-  public void setUserIds(List<BigDecimal> userIds) {
+  public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
   }
 

@@ -56,6 +56,7 @@ import org.openapitools.client.model.SendBirdEmoji;
 import org.openapitools.client.model.SendBirdEmojiCategory;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendMessageData;
+import org.openapitools.client.model.TranslateMessageIntoOtherLanguagesData;
 import org.openapitools.client.model.UpdateAnnouncementByIdData;
 import org.openapitools.client.model.UpdateAnnouncementByIdResponse;
 import org.openapitools.client.model.UpdateEmojiCategoryUrlByIdData;
@@ -4285,7 +4286,7 @@ public class MessageApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param body  (optional)
+     * @param translateMessageIntoOtherLanguagesData  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -4295,7 +4296,7 @@ public class MessageApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call translateMessageIntoOtherLanguagesCall(String apiToken, String channelType, String channelUrl, String messageId, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call translateMessageIntoOtherLanguagesCall(String apiToken, String channelType, String channelUrl, String messageId, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4309,7 +4310,7 @@ public class MessageApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = translateMessageIntoOtherLanguagesData;
 
         // create path and map variables
         String localVarPath = "/v3/{channel_type}/{channel_url}/messages/{message_id}/translation"
@@ -4348,7 +4349,7 @@ public class MessageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call translateMessageIntoOtherLanguagesValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call translateMessageIntoOtherLanguagesValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageId, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'apiToken' is set
         if (apiToken == null) {
@@ -4371,7 +4372,7 @@ public class MessageApi {
         }
         
 
-        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesCall(apiToken, channelType, channelUrl, messageId, body, _callback);
+        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesCall(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData, _callback);
         return localVarCall;
 
     }
@@ -4383,7 +4384,7 @@ public class MessageApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param body  (optional)
+     * @param translateMessageIntoOtherLanguagesData  (optional)
      * @return SendBirdMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4392,8 +4393,8 @@ public class MessageApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public SendBirdMessageResponse translateMessageIntoOtherLanguages(String apiToken, String channelType, String channelUrl, String messageId, Object body) throws ApiException {
-        ApiResponse<SendBirdMessageResponse> localVarResp = translateMessageIntoOtherLanguagesWithHttpInfo(apiToken, channelType, channelUrl, messageId, body);
+    public SendBirdMessageResponse translateMessageIntoOtherLanguages(String apiToken, String channelType, String channelUrl, String messageId, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData) throws ApiException {
+        ApiResponse<SendBirdMessageResponse> localVarResp = translateMessageIntoOtherLanguagesWithHttpInfo(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
         return localVarResp.getData();
     }
 
@@ -4404,7 +4405,7 @@ public class MessageApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param body  (optional)
+     * @param translateMessageIntoOtherLanguagesData  (optional)
      * @return ApiResponse&lt;SendBirdMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -4413,8 +4414,8 @@ public class MessageApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Object body) throws ApiException {
-        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesValidateBeforeCall(apiToken, channelType, channelUrl, messageId, body, null);
+    public ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData) throws ApiException {
+        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesValidateBeforeCall(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData, null);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -4426,7 +4427,7 @@ public class MessageApi {
      * @param channelType  (required)
      * @param channelUrl  (required)
      * @param messageId  (required)
-     * @param body  (optional)
+     * @param translateMessageIntoOtherLanguagesData  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -4436,9 +4437,9 @@ public class MessageApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call translateMessageIntoOtherLanguagesAsync(String apiToken, String channelType, String channelUrl, String messageId, Object body, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
+    public okhttp3.Call translateMessageIntoOtherLanguagesAsync(String apiToken, String channelType, String channelUrl, String messageId, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData, final ApiCallback<SendBirdMessageResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesValidateBeforeCall(apiToken, channelType, channelUrl, messageId, body, _callback);
+        okhttp3.Call localVarCall = translateMessageIntoOtherLanguagesValidateBeforeCall(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData, _callback);
         Type localVarReturnType = new TypeToken<SendBirdMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
 /**
  * BlockUserData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class BlockUserData {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -61,11 +61,11 @@ public class BlockUserData {
 
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
-  private List<Integer> userIds = new ArrayList<>();
+  private List<String> userIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  private List<Integer> users = new ArrayList<>();
+  private List<String> users = new ArrayList<>();
 
   public BlockUserData() { 
   }
@@ -116,13 +116,13 @@ public class BlockUserData {
   }
 
 
-  public BlockUserData userIds(List<Integer> userIds) {
+  public BlockUserData userIds(List<String> userIds) {
     
     this.userIds = userIds;
     return this;
   }
 
-  public BlockUserData addUserIdsItem(Integer userIdsItem) {
+  public BlockUserData addUserIdsItem(String userIdsItem) {
     this.userIds.add(userIdsItem);
     return this;
   }
@@ -134,23 +134,23 @@ public class BlockUserData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of the IDs of the users to be blocked at a time. (for bulk mode)")
 
-  public List<Integer> getUserIds() {
+  public List<String> getUserIds() {
     return userIds;
   }
 
 
-  public void setUserIds(List<Integer> userIds) {
+  public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
   }
 
 
-  public BlockUserData users(List<Integer> users) {
+  public BlockUserData users(List<String> users) {
     
     this.users = users;
     return this;
   }
 
-  public BlockUserData addUsersItem(Integer usersItem) {
+  public BlockUserData addUsersItem(String usersItem) {
     this.users.add(usersItem);
     return this;
   }
@@ -162,12 +162,12 @@ public class BlockUserData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of the IDs of the users to be blocked at a time. The user_ids above and this property can be used interchangeably. (for bulk mode)")
 
-  public List<Integer> getUsers() {
+  public List<String> getUsers() {
     return users;
   }
 
 
-  public void setUsers(List<Integer> users) {
+  public void setUsers(List<String> users) {
     this.users = users;
   }
 

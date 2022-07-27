@@ -49,12 +49,8 @@ import org.sendbird.client.JSON;
 /**
  * UpdatePushPreferencesData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-21T17:39:57.479198+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
 public class UpdatePushPreferencesData {
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
-  private String userId;
-
   public static final String SERIALIZED_NAME_PUSH_TRIGGER_OPTION = "push_trigger_option";
   @SerializedName(SERIALIZED_NAME_PUSH_TRIGGER_OPTION)
   private String pushTriggerOption;
@@ -109,29 +105,6 @@ public class UpdatePushPreferencesData {
 
   public UpdatePushPreferencesData() { 
   }
-
-  public UpdatePushPreferencesData userId(String userId) {
-    
-    this.userId = userId;
-    return this;
-  }
-
-   /**
-   * Specifies the unique ID of the target user.
-   * @return userId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the unique ID of the target user.")
-
-  public String getUserId() {
-    return userId;
-  }
-
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
-
 
   public UpdatePushPreferencesData pushTriggerOption(String pushTriggerOption) {
     
@@ -447,8 +420,7 @@ public class UpdatePushPreferencesData {
       return false;
     }
     UpdatePushPreferencesData updatePushPreferencesData = (UpdatePushPreferencesData) o;
-    return Objects.equals(this.userId, updatePushPreferencesData.userId) &&
-        Objects.equals(this.pushTriggerOption, updatePushPreferencesData.pushTriggerOption) &&
+    return Objects.equals(this.pushTriggerOption, updatePushPreferencesData.pushTriggerOption) &&
         Objects.equals(this.doNotDisturb, updatePushPreferencesData.doNotDisturb) &&
         Objects.equals(this.startHour, updatePushPreferencesData.startHour) &&
         Objects.equals(this.startMin, updatePushPreferencesData.startMin) &&
@@ -465,14 +437,13 @@ public class UpdatePushPreferencesData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, pushTriggerOption, doNotDisturb, startHour, startMin, endHour, endMin, snoozeEnabled, snoozeStartTs, snoozeEndTs, blockPushFromBots, pushBlockedBotIds, timezone, pushSound);
+    return Objects.hash(pushTriggerOption, doNotDisturb, startHour, startMin, endHour, endMin, snoozeEnabled, snoozeStartTs, snoozeEndTs, blockPushFromBots, pushBlockedBotIds, timezone, pushSound);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdatePushPreferencesData {\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    pushTriggerOption: ").append(toIndentedString(pushTriggerOption)).append("\n");
     sb.append("    doNotDisturb: ").append(toIndentedString(doNotDisturb)).append("\n");
     sb.append("    startHour: ").append(toIndentedString(startHour)).append("\n");
@@ -508,7 +479,6 @@ public class UpdatePushPreferencesData {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("user_id");
     openapiFields.add("push_trigger_option");
     openapiFields.add("do_not_disturb");
     openapiFields.add("start_hour");
@@ -525,7 +495,6 @@ public class UpdatePushPreferencesData {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("user_id");
     openapiRequiredFields.add("push_trigger_option");
     openapiRequiredFields.add("do_not_disturb");
     openapiRequiredFields.add("start_hour");
@@ -569,9 +538,6 @@ public class UpdatePushPreferencesData {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
       }
       if (jsonObj.get("push_trigger_option") != null && !jsonObj.get("push_trigger_option").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `push_trigger_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_trigger_option").toString()));
