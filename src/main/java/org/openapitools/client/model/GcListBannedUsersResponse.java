@@ -51,7 +51,7 @@ import org.sendbird.client.JSON;
 /**
  * GcListBannedUsersResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:32:02.424301+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:53:12.807119+01:00[Europe/London]")
 public class GcListBannedUsersResponse {
   public static final String SERIALIZED_NAME_BANNED_LIST = "banned_list";
   @SerializedName(SERIALIZED_NAME_BANNED_LIST)
