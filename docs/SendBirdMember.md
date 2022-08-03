@@ -11,8 +11,6 @@
 |**friendDiscoveryKey** | **String** |  |  [optional] |
 |**friendName** | **String** |  |  [optional] |
 |**isActive** | **Boolean** |  |  [optional] |
-|**isBlockedByMe** | **Boolean** |  |  [optional] |
-|**isBlockingMe** | **Boolean** |  |  [optional] |
 |**isMuted** | **Boolean** |  |  [optional] |
 |**lastSeenAt** | **Integer** |  |  [optional] |
 |**metaData** | [**SBObject**](SBObject.md) |  |  [optional] |
@@ -21,6 +19,11 @@
 |**preferredLanguages** | **List&lt;String&gt;** |  |  [optional] |
 |**profileUrl** | **String** |  |  [optional] |
 |**requireAuth** | **Boolean** |  |  [optional] |
+|**requireAuthForProfileImage** | **Boolean** |  |  [optional] |
+|**metadata** | **Object** |  |  [optional] |
+|**isOnline** | **Boolean** |  |  [optional] |
+|**mutedEndAt** | **BigDecimal** |  |  [optional] |
+|**mutedDescription** | **String** |  |  [optional] |
 |**restrictionInfo** | [**SendBirdRestrictionInfo**](SendBirdRestrictionInfo.md) |  |  [optional] |
 |**role** | [**RoleEnum**](#RoleEnum) |  |  [optional] |
 |**state** | [**StateEnum**](#StateEnum) |  |  [optional] |

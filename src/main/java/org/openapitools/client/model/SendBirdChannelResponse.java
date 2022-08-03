@@ -27,6 +27,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdGroupChannel;
+import org.openapitools.client.model.SendBirdGroupChannelChannel;
 import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
 import org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage;
 import org.openapitools.client.model.SendBirdGroupChannelSmsFallback;
@@ -34,6 +35,7 @@ import org.openapitools.client.model.SendBirdMember;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdOpenChannel;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import javax.ws.rs.core.GenericType;
 
@@ -68,7 +70,7 @@ import com.google.gson.JsonParseException;
 
 import org.sendbird.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:53:12.807119+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
 public class SendBirdChannelResponse extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SendBirdChannelResponse.class.getName());
 

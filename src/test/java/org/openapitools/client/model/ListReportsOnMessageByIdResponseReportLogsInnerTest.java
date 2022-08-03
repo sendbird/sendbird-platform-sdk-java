@@ -25,6 +25,7 @@ import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdChannelResponse;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

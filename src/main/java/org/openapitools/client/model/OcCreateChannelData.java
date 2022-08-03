@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
 /**
  * OcCreateChannelData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:53:12.807119+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
 public class OcCreateChannelData {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -86,11 +86,11 @@ public class OcCreateChannelData {
 
   public static final String SERIALIZED_NAME_OPERATOR_IDS = "operator_ids";
   @SerializedName(SERIALIZED_NAME_OPERATOR_IDS)
-  private List<String> operatorIds = new ArrayList<>();
+  private List<String> operatorIds = null;
 
   public static final String SERIALIZED_NAME_OPERATORS = "operators";
   @SerializedName(SERIALIZED_NAME_OPERATORS)
-  private List<String> operators = new ArrayList<>();
+  private List<String> operators = null;
 
   public OcCreateChannelData() { 
   }
@@ -105,8 +105,8 @@ public class OcCreateChannelData {
    * Specifies the channel topic, or the name of the channel. The length is limited to 191 characters. (Default: open channel)
    * @return name
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the channel topic, or the name of the channel. The length is limited to 191 characters. (Default: open channel)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the channel topic, or the name of the channel. The length is limited to 191 characters. (Default: open channel)")
 
   public String getName() {
     return name;
@@ -128,8 +128,8 @@ public class OcCreateChannelData {
    * Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.")
 
   public String getChannelUrl() {
     return channelUrl;
@@ -151,8 +151,8 @@ public class OcCreateChannelData {
    * Specifies the URL of the cover image. The length is limited to 2,048 characters.
    * @return coverUrl
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the URL of the cover image. The length is limited to 2,048 characters.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the URL of the cover image. The length is limited to 2,048 characters.")
 
   public String getCoverUrl() {
     return coverUrl;
@@ -174,8 +174,8 @@ public class OcCreateChannelData {
    * Uploads a file for the channel cover image.
    * @return coverFile
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Uploads a file for the channel cover image.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Uploads a file for the channel cover image.")
 
   public File getCoverFile() {
     return coverFile;
@@ -197,8 +197,8 @@ public class OcCreateChannelData {
    * Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.&lt;br /&gt;&lt;br /&gt; Custom types are also used within Sendbird&#39;s [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
    * @return customType
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
 
   public String getCustomType() {
     return customType;
@@ -220,8 +220,8 @@ public class OcCreateChannelData {
    * Specifies additional channel information such as a long description of the channel or &#x60;JSON&#x60; formatted string.
    * @return data
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
 
   public String getData() {
     return data;
@@ -243,8 +243,8 @@ public class OcCreateChannelData {
    * Determines whether to preserve the messages in the channel for the purpose of retrieving chat history or not. It set to true, the messages in the channel are not saved in the Sendbird database and the chat history can&#39;t be retrieved. (Default: false)
    * @return isEphemeral
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Determines whether to preserve the messages in the channel for the purpose of retrieving chat history or not. It set to true, the messages in the channel are not saved in the Sendbird database and the chat history can't be retrieved. (Default: false)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Determines whether to preserve the messages in the channel for the purpose of retrieving chat history or not. It set to true, the messages in the channel are not saved in the Sendbird database and the chat history can't be retrieved. (Default: false)")
 
   public Boolean getIsEphemeral() {
     return isEphemeral;
@@ -266,8 +266,8 @@ public class OcCreateChannelData {
    * Determines whether the channel is an open channel with dynamic partitioning or not. If the value of this property is true, the open channel can create several subchannels in order to accommodate a massive number of usres. (Default: false)&lt;br/&gt;&lt;br/&gt;  For the new Sendbird applications created after December 15, 2020, this property will be automatically set to true.
    * @return isDynamicPartitionedHash2HowDynamicPartitioningWorks
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Determines whether the channel is an open channel with dynamic partitioning or not. If the value of this property is true, the open channel can create several subchannels in order to accommodate a massive number of usres. (Default: false)<br/><br/>  For the new Sendbird applications created after December 15, 2020, this property will be automatically set to true.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Determines whether the channel is an open channel with dynamic partitioning or not. If the value of this property is true, the open channel can create several subchannels in order to accommodate a massive number of usres. (Default: false)<br/><br/>  For the new Sendbird applications created after December 15, 2020, this property will be automatically set to true.")
 
   public Boolean getIsDynamicPartitionedHash2HowDynamicPartitioningWorks() {
     return isDynamicPartitionedHash2HowDynamicPartitioningWorks;
@@ -286,6 +286,9 @@ public class OcCreateChannelData {
   }
 
   public OcCreateChannelData addOperatorIdsItem(String operatorIdsItem) {
+    if (this.operatorIds == null) {
+      this.operatorIds = new ArrayList<>();
+    }
     this.operatorIds.add(operatorIdsItem);
     return this;
   }
@@ -294,8 +297,8 @@ public class OcCreateChannelData {
    * Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.&lt;br/&gt;&lt;br/&gt;  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.
    * @return operatorIds
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.")
 
   public List<String> getOperatorIds() {
     return operatorIds;
@@ -314,6 +317,9 @@ public class OcCreateChannelData {
   }
 
   public OcCreateChannelData addOperatorsItem(String operatorsItem) {
+    if (this.operators == null) {
+      this.operators = new ArrayList<>();
+    }
     this.operators.add(operatorsItem);
     return this;
   }
@@ -322,8 +328,8 @@ public class OcCreateChannelData {
    * (Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.
    * @return operators
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "(Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "(Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.")
 
   public List<String> getOperators() {
     return operators;
@@ -411,16 +417,6 @@ public class OcCreateChannelData {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("channel_url");
-    openapiRequiredFields.add("cover_url");
-    openapiRequiredFields.add("cover_file");
-    openapiRequiredFields.add("custom_type");
-    openapiRequiredFields.add("data");
-    openapiRequiredFields.add("is_ephemeral");
-    openapiRequiredFields.add("[is_dynamic_partitioned](#2-how-dynamic-partitioning-works)");
-    openapiRequiredFields.add("operator_ids");
-    openapiRequiredFields.add("operators");
   }
 
  /**
@@ -443,13 +439,6 @@ public class OcCreateChannelData {
       for (Entry<String, JsonElement> entry : entries) {
         if (!OcCreateChannelData.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OcCreateChannelData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : OcCreateChannelData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
       if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {

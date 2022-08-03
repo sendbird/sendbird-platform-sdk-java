@@ -25,6 +25,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdGroupChannel;
+import org.openapitools.client.model.SendBirdGroupChannelChannel;
 import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
 import org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage;
 import org.openapitools.client.model.SendBirdGroupChannelSmsFallback;
@@ -32,6 +33,7 @@ import org.openapitools.client.model.SendBirdMember;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdOpenChannel;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -392,6 +394,14 @@ public class SendBirdChannelResponseTest {
     @Test
     public void unreadMessageCountTest() {
         // TODO: test unreadMessageCount
+    }
+
+    /**
+     * Test the property 'channel'
+     */
+    @Test
+    public void channelTest() {
+        // TODO: test channel
     }
 
     /**

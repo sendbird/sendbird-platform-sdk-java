@@ -23,10 +23,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SBObject;
 import org.openapitools.client.model.SendBirdRestrictionInfo;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +53,7 @@ import org.sendbird.client.JSON;
 /**
  * SendBirdMember
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:53:12.807119+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
 public class SendBirdMember {
   public static final String SERIALIZED_NAME_CONNECTION_STATUS = "connection_status";
   @SerializedName(SERIALIZED_NAME_CONNECTION_STATUS)
@@ -68,14 +70,6 @@ public class SendBirdMember {
   public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
   @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
   private Boolean isActive;
-
-  public static final String SERIALIZED_NAME_IS_BLOCKED_BY_ME = "is_blocked_by_me";
-  @SerializedName(SERIALIZED_NAME_IS_BLOCKED_BY_ME)
-  private Boolean isBlockedByMe;
-
-  public static final String SERIALIZED_NAME_IS_BLOCKING_ME = "is_blocking_me";
-  @SerializedName(SERIALIZED_NAME_IS_BLOCKING_ME)
-  private Boolean isBlockingMe;
 
   public static final String SERIALIZED_NAME_IS_MUTED = "is_muted";
   @SerializedName(SERIALIZED_NAME_IS_MUTED)
@@ -108,6 +102,26 @@ public class SendBirdMember {
   public static final String SERIALIZED_NAME_REQUIRE_AUTH = "require_auth";
   @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH)
   private Boolean requireAuth;
+
+  public static final String SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
+  @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  private Boolean requireAuthForProfileImage;
+
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private Object metadata;
+
+  public static final String SERIALIZED_NAME_IS_ONLINE = "is_online";
+  @SerializedName(SERIALIZED_NAME_IS_ONLINE)
+  private Boolean isOnline;
+
+  public static final String SERIALIZED_NAME_MUTED_END_AT = "muted_end_at";
+  @SerializedName(SERIALIZED_NAME_MUTED_END_AT)
+  private BigDecimal mutedEndAt;
+
+  public static final String SERIALIZED_NAME_MUTED_DESCRIPTION = "muted_description";
+  @SerializedName(SERIALIZED_NAME_MUTED_DESCRIPTION)
+  private String mutedDescription;
 
   public static final String SERIALIZED_NAME_RESTRICTION_INFO = "restriction_info";
   @SerializedName(SERIALIZED_NAME_RESTRICTION_INFO)
@@ -143,7 +157,7 @@ public class SendBirdMember {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return null;
     }
 
     public static class Adapter extends TypeAdapter<RoleEnum> {
@@ -311,52 +325,6 @@ public class SendBirdMember {
 
   public void setIsActive(Boolean isActive) {
     this.isActive = isActive;
-  }
-
-
-  public SendBirdMember isBlockedByMe(Boolean isBlockedByMe) {
-    
-    this.isBlockedByMe = isBlockedByMe;
-    return this;
-  }
-
-   /**
-   * Get isBlockedByMe
-   * @return isBlockedByMe
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsBlockedByMe() {
-    return isBlockedByMe;
-  }
-
-
-  public void setIsBlockedByMe(Boolean isBlockedByMe) {
-    this.isBlockedByMe = isBlockedByMe;
-  }
-
-
-  public SendBirdMember isBlockingMe(Boolean isBlockingMe) {
-    
-    this.isBlockingMe = isBlockingMe;
-    return this;
-  }
-
-   /**
-   * Get isBlockingMe
-   * @return isBlockingMe
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsBlockingMe() {
-    return isBlockingMe;
-  }
-
-
-  public void setIsBlockingMe(Boolean isBlockingMe) {
-    this.isBlockingMe = isBlockingMe;
   }
 
 
@@ -552,6 +520,121 @@ public class SendBirdMember {
   }
 
 
+  public SendBirdMember requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
+    
+    this.requireAuthForProfileImage = requireAuthForProfileImage;
+    return this;
+  }
+
+   /**
+   * Get requireAuthForProfileImage
+   * @return requireAuthForProfileImage
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getRequireAuthForProfileImage() {
+    return requireAuthForProfileImage;
+  }
+
+
+  public void setRequireAuthForProfileImage(Boolean requireAuthForProfileImage) {
+    this.requireAuthForProfileImage = requireAuthForProfileImage;
+  }
+
+
+  public SendBirdMember metadata(Object metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Get metadata
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
+
+  public SendBirdMember isOnline(Boolean isOnline) {
+    
+    this.isOnline = isOnline;
+    return this;
+  }
+
+   /**
+   * Get isOnline
+   * @return isOnline
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsOnline() {
+    return isOnline;
+  }
+
+
+  public void setIsOnline(Boolean isOnline) {
+    this.isOnline = isOnline;
+  }
+
+
+  public SendBirdMember mutedEndAt(BigDecimal mutedEndAt) {
+    
+    this.mutedEndAt = mutedEndAt;
+    return this;
+  }
+
+   /**
+   * Get mutedEndAt
+   * @return mutedEndAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getMutedEndAt() {
+    return mutedEndAt;
+  }
+
+
+  public void setMutedEndAt(BigDecimal mutedEndAt) {
+    this.mutedEndAt = mutedEndAt;
+  }
+
+
+  public SendBirdMember mutedDescription(String mutedDescription) {
+    
+    this.mutedDescription = mutedDescription;
+    return this;
+  }
+
+   /**
+   * Get mutedDescription
+   * @return mutedDescription
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getMutedDescription() {
+    return mutedDescription;
+  }
+
+
+  public void setMutedDescription(String mutedDescription) {
+    this.mutedDescription = mutedDescription;
+  }
+
+
   public SendBirdMember restrictionInfo(SendBirdRestrictionInfo restrictionInfo) {
     
     this.restrictionInfo = restrictionInfo;
@@ -658,8 +741,6 @@ public class SendBirdMember {
         Objects.equals(this.friendDiscoveryKey, sendBirdMember.friendDiscoveryKey) &&
         Objects.equals(this.friendName, sendBirdMember.friendName) &&
         Objects.equals(this.isActive, sendBirdMember.isActive) &&
-        Objects.equals(this.isBlockedByMe, sendBirdMember.isBlockedByMe) &&
-        Objects.equals(this.isBlockingMe, sendBirdMember.isBlockingMe) &&
         Objects.equals(this.isMuted, sendBirdMember.isMuted) &&
         Objects.equals(this.lastSeenAt, sendBirdMember.lastSeenAt) &&
         Objects.equals(this.metaData, sendBirdMember.metaData) &&
@@ -668,15 +749,31 @@ public class SendBirdMember {
         Objects.equals(this.preferredLanguages, sendBirdMember.preferredLanguages) &&
         Objects.equals(this.profileUrl, sendBirdMember.profileUrl) &&
         Objects.equals(this.requireAuth, sendBirdMember.requireAuth) &&
+        Objects.equals(this.requireAuthForProfileImage, sendBirdMember.requireAuthForProfileImage) &&
+        Objects.equals(this.metadata, sendBirdMember.metadata) &&
+        Objects.equals(this.isOnline, sendBirdMember.isOnline) &&
+        Objects.equals(this.mutedEndAt, sendBirdMember.mutedEndAt) &&
+        Objects.equals(this.mutedDescription, sendBirdMember.mutedDescription) &&
         Objects.equals(this.restrictionInfo, sendBirdMember.restrictionInfo) &&
         Objects.equals(this.role, sendBirdMember.role) &&
         Objects.equals(this.state, sendBirdMember.state) &&
         Objects.equals(this.userId, sendBirdMember.userId);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(connectionStatus, friendDiscoveryKey, friendName, isActive, isBlockedByMe, isBlockingMe, isMuted, lastSeenAt, metaData, nickname, plainProfileUrl, preferredLanguages, profileUrl, requireAuth, restrictionInfo, role, state, userId);
+    return Objects.hash(connectionStatus, friendDiscoveryKey, friendName, isActive, isMuted, lastSeenAt, metaData, nickname, plainProfileUrl, preferredLanguages, profileUrl, requireAuth, requireAuthForProfileImage, metadata, isOnline, mutedEndAt, mutedDescription, restrictionInfo, role, state, userId);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -687,8 +784,6 @@ public class SendBirdMember {
     sb.append("    friendDiscoveryKey: ").append(toIndentedString(friendDiscoveryKey)).append("\n");
     sb.append("    friendName: ").append(toIndentedString(friendName)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
-    sb.append("    isBlockedByMe: ").append(toIndentedString(isBlockedByMe)).append("\n");
-    sb.append("    isBlockingMe: ").append(toIndentedString(isBlockingMe)).append("\n");
     sb.append("    isMuted: ").append(toIndentedString(isMuted)).append("\n");
     sb.append("    lastSeenAt: ").append(toIndentedString(lastSeenAt)).append("\n");
     sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
@@ -697,6 +792,11 @@ public class SendBirdMember {
     sb.append("    preferredLanguages: ").append(toIndentedString(preferredLanguages)).append("\n");
     sb.append("    profileUrl: ").append(toIndentedString(profileUrl)).append("\n");
     sb.append("    requireAuth: ").append(toIndentedString(requireAuth)).append("\n");
+    sb.append("    requireAuthForProfileImage: ").append(toIndentedString(requireAuthForProfileImage)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    isOnline: ").append(toIndentedString(isOnline)).append("\n");
+    sb.append("    mutedEndAt: ").append(toIndentedString(mutedEndAt)).append("\n");
+    sb.append("    mutedDescription: ").append(toIndentedString(mutedDescription)).append("\n");
     sb.append("    restrictionInfo: ").append(toIndentedString(restrictionInfo)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
@@ -727,8 +827,6 @@ public class SendBirdMember {
     openapiFields.add("friend_discovery_key");
     openapiFields.add("friend_name");
     openapiFields.add("is_active");
-    openapiFields.add("is_blocked_by_me");
-    openapiFields.add("is_blocking_me");
     openapiFields.add("is_muted");
     openapiFields.add("last_seen_at");
     openapiFields.add("meta_data");
@@ -737,6 +835,11 @@ public class SendBirdMember {
     openapiFields.add("preferred_languages");
     openapiFields.add("profile_url");
     openapiFields.add("require_auth");
+    openapiFields.add("require_auth_for_profile_image");
+    openapiFields.add("metadata");
+    openapiFields.add("is_online");
+    openapiFields.add("muted_end_at");
+    openapiFields.add("muted_description");
     openapiFields.add("restriction_info");
     openapiFields.add("role");
     openapiFields.add("state");
@@ -793,6 +896,9 @@ public class SendBirdMember {
       }
       if (jsonObj.get("profile_url") != null && !jsonObj.get("profile_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profile_url").toString()));
+      }
+      if (jsonObj.get("muted_description") != null && !jsonObj.get("muted_description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `muted_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("muted_description").toString()));
       }
       // validate the optional field `restriction_info`
       if (jsonObj.getAsJsonObject("restriction_info") != null) {

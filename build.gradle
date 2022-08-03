@@ -4,7 +4,7 @@ apply plugin: 'java'
 apply plugin: 'com.diffplug.spotless'
 
 group = 'org.openapitools'
-version = '1.0.5'
+version = '1.0.7'
 
 buildscript {
     repositories {

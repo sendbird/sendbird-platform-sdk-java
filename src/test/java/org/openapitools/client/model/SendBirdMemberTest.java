@@ -21,10 +21,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SBObject;
 import org.openapitools.client.model.SendBirdRestrictionInfo;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -73,22 +75,6 @@ public class SendBirdMemberTest {
     @Test
     public void isActiveTest() {
         // TODO: test isActive
-    }
-
-    /**
-     * Test the property 'isBlockedByMe'
-     */
-    @Test
-    public void isBlockedByMeTest() {
-        // TODO: test isBlockedByMe
-    }
-
-    /**
-     * Test the property 'isBlockingMe'
-     */
-    @Test
-    public void isBlockingMeTest() {
-        // TODO: test isBlockingMe
     }
 
     /**
@@ -153,6 +139,46 @@ public class SendBirdMemberTest {
     @Test
     public void requireAuthTest() {
         // TODO: test requireAuth
+    }
+
+    /**
+     * Test the property 'requireAuthForProfileImage'
+     */
+    @Test
+    public void requireAuthForProfileImageTest() {
+        // TODO: test requireAuthForProfileImage
+    }
+
+    /**
+     * Test the property 'metadata'
+     */
+    @Test
+    public void metadataTest() {
+        // TODO: test metadata
+    }
+
+    /**
+     * Test the property 'isOnline'
+     */
+    @Test
+    public void isOnlineTest() {
+        // TODO: test isOnline
+    }
+
+    /**
+     * Test the property 'mutedEndAt'
+     */
+    @Test
+    public void mutedEndAtTest() {
+        // TODO: test mutedEndAt
+    }
+
+    /**
+     * Test the property 'mutedDescription'
+     */
+    @Test
+    public void mutedDescriptionTest() {
+        // TODO: test mutedDescription
     }
 
     /**

@@ -205,6 +205,7 @@ docs/SendBirdEmoji.md
 docs/SendBirdEmojiCategory.md
 docs/SendBirdFileMessageParams.md
 docs/SendBirdGroupChannel.md
+docs/SendBirdGroupChannelChannel.md
 docs/SendBirdGroupChannelCollection.md
 docs/SendBirdGroupChannelCreatedBy.md
 docs/SendBirdGroupChannelDisappearingMessage.md
@@ -502,6 +503,7 @@ src/main/java/org/openapitools/client/model/SendBirdEmoji.java
 src/main/java/org/openapitools/client/model/SendBirdEmojiCategory.java
 src/main/java/org/openapitools/client/model/SendBirdFileMessageParams.java
 src/main/java/org/openapitools/client/model/SendBirdGroupChannel.java
+src/main/java/org/openapitools/client/model/SendBirdGroupChannelChannel.java
 src/main/java/org/openapitools/client/model/SendBirdGroupChannelCollection.java
 src/main/java/org/openapitools/client/model/SendBirdGroupChannelCreatedBy.java
 src/main/java/org/openapitools/client/model/SendBirdGroupChannelDisappearingMessage.java
@@ -816,6 +818,7 @@ src/test/java/org/openapitools/client/model/SendBirdChannelResponseTest.java
 src/test/java/org/openapitools/client/model/SendBirdEmojiCategoryTest.java
 src/test/java/org/openapitools/client/model/SendBirdEmojiTest.java
 src/test/java/org/openapitools/client/model/SendBirdFileMessageParamsTest.java
+src/test/java/org/openapitools/client/model/SendBirdGroupChannelChannelTest.java
 src/test/java/org/openapitools/client/model/SendBirdGroupChannelCollectionTest.java
 src/test/java/org/openapitools/client/model/SendBirdGroupChannelCreatedByTest.java
 src/test/java/org/openapitools/client/model/SendBirdGroupChannelDisappearingMessageTest.java

@@ -9765,6 +9765,7 @@ components:
           user_id: user_id
           profile_url: profile_url
           nickname: nickname
+      nullable: true
       properties:
         require_auth:
           type: boolean
@@ -10121,7 +10122,7 @@ components:
       type: object
     SendBird.GroupChannel:
       example:
-        message_offset_timestamp: 7.457744773683766
+        message_offset_timestamp: 1.1730742509559433
         my_muted_state: muted
         data: data
         custom_type: custom_type
@@ -10130,6 +10131,15 @@ components:
           is_triggered_by_message_read: true
           message_survival_seconds: 6.027456183070403
         is_hidden: true
+        channel:
+          cover_url: cover_url
+          data: data
+          custom_type: custom_type
+          name: name
+          max_length_message: 9.018348186070783
+          created_at: 8.762042012749001
+          member_count: 6.438423552598547
+          channel_url: channel_url
         created_at: 0.8008281904610115
         is_super: true
         last_message:
@@ -10189,24 +10199,26 @@ components:
         - operators
         - operators
         members:
-        - is_active: true
-          is_blocking_me: true
+        - metadata: "{}"
+          is_active: true
           preferred_languages:
           - preferred_languages
           - preferred_languages
+          require_auth_for_profile_image: true
           role: none
           profile_url: profile_url
           connection_status: connection_status
+          muted_end_at: 6.84685269835264
           require_auth: true
           restriction_info:
             restriction_type: banned
-            end_at: 6.84685269835264
+            end_at: 7.457744773683766
             description: description
           is_muted: true
-          is_blocked_by_me: true
           plain_profile_url: plain_profile_url
           friend_name: friend_name
           friend_discovery_key: friend_discovery_key
+          muted_description: muted_description
           user_id: user_id
           meta_data:
             constructor:
@@ -10215,26 +10227,29 @@ components:
               arguments: ""
               prototype: ""
           nickname: nickname
+          is_online: true
           state: invited
           last_seen_at: 1
-        - is_active: true
-          is_blocking_me: true
+        - metadata: "{}"
+          is_active: true
           preferred_languages:
           - preferred_languages
           - preferred_languages
+          require_auth_for_profile_image: true
           role: none
           profile_url: profile_url
           connection_status: connection_status
+          muted_end_at: 6.84685269835264
           require_auth: true
           restriction_info:
             restriction_type: banned
-            end_at: 6.84685269835264
+            end_at: 7.457744773683766
             description: description
           is_muted: true
-          is_blocked_by_me: true
           plain_profile_url: plain_profile_url
           friend_name: friend_name
           friend_discovery_key: friend_discovery_key
+          muted_description: muted_description
           user_id: user_id
           meta_data:
             constructor:
@@ -10243,6 +10258,7 @@ components:
               arguments: ""
               prototype: ""
           nickname: nickname
+          is_online: true
           state: invited
           last_seen_at: 1
         max_length_message: 1.2315135367772556
@@ -10283,7 +10299,7 @@ components:
           last_seen_at: 0
           is_hide_me_from_friends: true
         member_count: 1.0246457001441578
-        message_survival_seconds: 1.1730742509559433
+        message_survival_seconds: 4.965218492984954
         cover_url: cover_url
         creator:
           end_at: 5.962133916683182
@@ -10325,17 +10341,17 @@ components:
         my_count_preference: my_count_preference
         my_member_state: invited
         is_created: true
-        unread_mention_count: 9.965781217890562
+        unread_mention_count: 9.369310271410669
         created_by:
           require_auth_for_profile_image: true
           user_id: user_id
           profile_url: profile_url
           nickname: nickname
-        unread_message_count: 9.369310271410669
+        unread_message_count: 6.683562403749608
         channel_url: channel_url
         is_broadcast: true
         joined_at: 5.962133916683182
-        my_last_read: 4.965218492984954
+        my_last_read: 5.025004791520295
         hidden_state: hidden_allow_auto_unhide
         is_push_enabled: true
         is_public: true
@@ -10344,7 +10360,7 @@ components:
           exclude_user_ids:
           - exclude_user_ids
           - exclude_user_ids
-          wait_seconds: 5.025004791520295
+          wait_seconds: 9.965781217890562
         ignore_profanity_filter: true
         is_access_code_required: true
       properties:
@@ -10457,6 +10473,8 @@ components:
           type: number
         unread_message_count:
           type: number
+        channel:
+          $ref: '#/components/schemas/SendBird_GroupChannel_channel'
       type: object
     SendBird.GroupChannelCollection:
       properties:
@@ -10469,24 +10487,26 @@ components:
       type: object
     SendBird.Member:
       example:
+        metadata: "{}"
         is_active: true
-        is_blocking_me: true
         preferred_languages:
         - preferred_languages
         - preferred_languages
+        require_auth_for_profile_image: true
         role: none
         profile_url: profile_url
         connection_status: connection_status
+        muted_end_at: 6.84685269835264
         require_auth: true
         restriction_info:
           restriction_type: banned
-          end_at: 6.84685269835264
+          end_at: 7.457744773683766
           description: description
         is_muted: true
-        is_blocked_by_me: true
         plain_profile_url: plain_profile_url
         friend_name: friend_name
         friend_discovery_key: friend_discovery_key
+        muted_description: muted_description
         user_id: user_id
         meta_data:
           constructor:
@@ -10495,6 +10515,7 @@ components:
             arguments: ""
             prototype: ""
         nickname: nickname
+        is_online: true
         state: invited
         last_seen_at: 1
       properties:
@@ -10505,10 +10526,6 @@ components:
         friend_name:
           type: string
         is_active:
-          type: boolean
-        is_blocked_by_me:
-          type: boolean
-        is_blocking_me:
           type: boolean
         is_muted:
           type: boolean
@@ -10528,12 +10545,23 @@ components:
           type: string
         require_auth:
           type: boolean
+        require_auth_for_profile_image:
+          type: boolean
+        metadata:
+          type: object
+        is_online:
+          type: boolean
+        muted_end_at:
+          type: number
+        muted_description:
+          type: string
         restriction_info:
           $ref: '#/components/schemas/SendBird.RestrictionInfo'
         role:
           enum:
           - none
           - operator
+          nullable: true
           type: string
         state:
           enum:
@@ -10818,7 +10846,7 @@ components:
     SendBird.RestrictionInfo:
       example:
         restriction_type: banned
-        end_at: 6.84685269835264
+        end_at: 7.457744773683766
         description: description
       properties:
         description:
@@ -11490,7 +11518,7 @@ components:
       example:
         next: next
         channels:
-        - message_offset_timestamp: 7.457744773683766
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -11499,6 +11527,15 @@ components:
             is_triggered_by_message_read: true
             message_survival_seconds: 6.027456183070403
           is_hidden: true
+          channel:
+            cover_url: cover_url
+            data: data
+            custom_type: custom_type
+            name: name
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
+            channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
           last_message:
@@ -11558,24 +11595,26 @@ components:
           - operators
           - operators
           members:
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -11584,26 +11623,29 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -11612,6 +11654,7 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
           max_length_message: 1.2315135367772556
@@ -11652,7 +11695,7 @@ components:
             last_seen_at: 0
             is_hide_me_from_friends: true
           member_count: 1.0246457001441578
-          message_survival_seconds: 1.1730742509559433
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 5.962133916683182
@@ -11694,17 +11737,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.965781217890562
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 9.369310271410669
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 4.965218492984954
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -11713,10 +11756,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 5.025004791520295
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
-        - message_offset_timestamp: 7.457744773683766
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -11725,6 +11768,15 @@ components:
             is_triggered_by_message_read: true
             message_survival_seconds: 6.027456183070403
           is_hidden: true
+          channel:
+            cover_url: cover_url
+            data: data
+            custom_type: custom_type
+            name: name
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
+            channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
           last_message:
@@ -11784,24 +11836,26 @@ components:
           - operators
           - operators
           members:
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -11810,26 +11864,29 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -11838,6 +11895,7 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
           max_length_message: 1.2315135367772556
@@ -11878,7 +11936,7 @@ components:
             last_seen_at: 0
             is_hide_me_from_friends: true
           member_count: 1.0246457001441578
-          message_survival_seconds: 1.1730742509559433
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 5.962133916683182
@@ -11920,17 +11978,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.965781217890562
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 9.369310271410669
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 4.965218492984954
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -11939,10 +11997,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 5.025004791520295
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
-        ts: 6.683562403749608
+        ts: 3.5571952270680973
       properties:
         channels:
           items:
@@ -13480,7 +13538,7 @@ components:
       example:
         next: next
         channels:
-        - message_offset_timestamp: 7.457744773683766
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -13489,6 +13547,15 @@ components:
             is_triggered_by_message_read: true
             message_survival_seconds: 6.027456183070403
           is_hidden: true
+          channel:
+            cover_url: cover_url
+            data: data
+            custom_type: custom_type
+            name: name
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
+            channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
           last_message:
@@ -13548,24 +13615,26 @@ components:
           - operators
           - operators
           members:
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -13574,26 +13643,29 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -13602,6 +13674,7 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
           max_length_message: 1.2315135367772556
@@ -13642,7 +13715,7 @@ components:
             last_seen_at: 0
             is_hide_me_from_friends: true
           member_count: 1.0246457001441578
-          message_survival_seconds: 1.1730742509559433
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 5.962133916683182
@@ -13684,17 +13757,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.965781217890562
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 9.369310271410669
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 4.965218492984954
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -13703,10 +13776,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 5.025004791520295
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
-        - message_offset_timestamp: 7.457744773683766
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -13715,6 +13788,15 @@ components:
             is_triggered_by_message_read: true
             message_survival_seconds: 6.027456183070403
           is_hidden: true
+          channel:
+            cover_url: cover_url
+            data: data
+            custom_type: custom_type
+            name: name
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
+            channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
           last_message:
@@ -13774,24 +13856,26 @@ components:
           - operators
           - operators
           members:
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -13800,26 +13884,29 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -13828,6 +13915,7 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
           max_length_message: 1.2315135367772556
@@ -13868,7 +13956,7 @@ components:
             last_seen_at: 0
             is_hide_me_from_friends: true
           member_count: 1.0246457001441578
-          message_survival_seconds: 1.1730742509559433
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 5.962133916683182
@@ -13910,17 +13998,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.965781217890562
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 9.369310271410669
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 4.965218492984954
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -13929,7 +14017,7 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 5.025004791520295
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
         ts: 0.8008281904610115
@@ -15694,7 +15782,7 @@ components:
     joinChannelsResponse:
       example:
         channels:
-        - message_offset_timestamp: 7.457744773683766
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -15703,6 +15791,15 @@ components:
             is_triggered_by_message_read: true
             message_survival_seconds: 6.027456183070403
           is_hidden: true
+          channel:
+            cover_url: cover_url
+            data: data
+            custom_type: custom_type
+            name: name
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
+            channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
           last_message:
@@ -15762,24 +15859,26 @@ components:
           - operators
           - operators
           members:
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -15788,26 +15887,29 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -15816,6 +15918,7 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
           max_length_message: 1.2315135367772556
@@ -15856,7 +15959,7 @@ components:
             last_seen_at: 0
             is_hide_me_from_friends: true
           member_count: 1.0246457001441578
-          message_survival_seconds: 1.1730742509559433
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 5.962133916683182
@@ -15898,17 +16001,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.965781217890562
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 9.369310271410669
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 4.965218492984954
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -15917,10 +16020,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 5.025004791520295
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
-        - message_offset_timestamp: 7.457744773683766
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -15929,6 +16032,15 @@ components:
             is_triggered_by_message_read: true
             message_survival_seconds: 6.027456183070403
           is_hidden: true
+          channel:
+            cover_url: cover_url
+            data: data
+            custom_type: custom_type
+            name: name
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
+            channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
           last_message:
@@ -15988,24 +16100,26 @@ components:
           - operators
           - operators
           members:
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -16014,26 +16128,29 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
-          - is_active: true
-            is_blocking_me: true
+          - metadata: "{}"
+            is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
+            require_auth_for_profile_image: true
             role: none
             profile_url: profile_url
             connection_status: connection_status
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 6.84685269835264
+              end_at: 7.457744773683766
               description: description
             is_muted: true
-            is_blocked_by_me: true
             plain_profile_url: plain_profile_url
             friend_name: friend_name
             friend_discovery_key: friend_discovery_key
+            muted_description: muted_description
             user_id: user_id
             meta_data:
               constructor:
@@ -16042,6 +16159,7 @@ components:
                 arguments: ""
                 prototype: ""
             nickname: nickname
+            is_online: true
             state: invited
             last_seen_at: 1
           max_length_message: 1.2315135367772556
@@ -16082,7 +16200,7 @@ components:
             last_seen_at: 0
             is_hide_me_from_friends: true
           member_count: 1.0246457001441578
-          message_survival_seconds: 1.1730742509559433
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 5.962133916683182
@@ -16124,17 +16242,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.965781217890562
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 9.369310271410669
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 4.965218492984954
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -16143,7 +16261,7 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 5.025004791520295
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
       properties:
@@ -18655,17 +18773,6 @@ components:
           items:
             type: string
           type: array
-      required:
-      - "[is_dynamic_partitioned](#2-how-dynamic-partitioning-works)"
-      - channel_url
-      - cover_file
-      - cover_url
-      - custom_type
-      - data
-      - is_ephemeral
-      - name
-      - operator_ids
-      - operators
       title: ocCreateChannelData
       type: object
     ocMuteUserData:
@@ -18844,7 +18951,7 @@ components:
             the channel. The maximum number of users to be invited at once is 100.
             The user_ids above and this property can be used interchangeably.
           items:
-            type: string
+            $ref: '#/components/schemas/SendBird.User'
           type: array
         name:
           description: "Specifies the name of the channel, or the channel topic. The\
@@ -18952,25 +19059,7 @@ components:
             \ action can add a user to the channel. (Default: false)"
           type: boolean
       required:
-      - access_code
-      - block_sdk_user_channel_join
-      - channel_url
-      - cover_file
-      - cover_url
-      - custom_type
-      - data
-      - hidden_status
-      - invitation_status
-      - inviter_id
-      - is_distinct
-      - is_ephemeral
-      - is_public
-      - is_super
-      - name
-      - operator_ids
-      - strict
       - user_ids
-      - users
       title: gcCreateChannelData
       type: object
     gcUpdateChannelByUrlData:
@@ -20464,6 +20553,7 @@ components:
         user_id: user_id
         profile_url: profile_url
         nickname: nickname
+      nullable: true
       properties:
         require_auth_for_profile_image:
           type: boolean
@@ -20489,7 +20579,7 @@ components:
         exclude_user_ids:
         - exclude_user_ids
         - exclude_user_ids
-        wait_seconds: 5.025004791520295
+        wait_seconds: 9.965781217890562
       properties:
         wait_seconds:
           type: number
@@ -20497,6 +20587,34 @@ components:
           items:
             type: string
           type: array
+      type: object
+    SendBird_GroupChannel_channel:
+      example:
+        cover_url: cover_url
+        data: data
+        custom_type: custom_type
+        name: name
+        max_length_message: 9.018348186070783
+        created_at: 8.762042012749001
+        member_count: 6.438423552598547
+        channel_url: channel_url
+      properties:
+        channel_url:
+          type: string
+        name:
+          type: string
+        cover_url:
+          type: string
+        data:
+          type: string
+        created_at:
+          type: number
+        custom_type:
+          type: string
+        max_length_message:
+          type: number
+        member_count:
+          type: number
       type: object
     addFcmPushConfigurationResponse_push_configurations_inner:
       example:

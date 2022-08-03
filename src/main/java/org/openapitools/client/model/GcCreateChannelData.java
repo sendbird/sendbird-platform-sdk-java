@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.SendBirdUser;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +51,7 @@ import org.sendbird.client.JSON;
 /**
  * GcCreateChannelData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:53:12.807119+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
 public class GcCreateChannelData {
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
@@ -58,7 +59,7 @@ public class GcCreateChannelData {
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  private List<String> users = new ArrayList<>();
+  private List<SendBirdUser> users = null;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -122,7 +123,7 @@ public class GcCreateChannelData {
 
   public static final String SERIALIZED_NAME_OPERATOR_IDS = "operator_ids";
   @SerializedName(SERIALIZED_NAME_OPERATOR_IDS)
-  private List<String> operatorIds = new ArrayList<>();
+  private List<String> operatorIds = null;
 
   public static final String SERIALIZED_NAME_BLOCK_SDK_USER_CHANNEL_JOIN = "block_sdk_user_channel_join";
   @SerializedName(SERIALIZED_NAME_BLOCK_SDK_USER_CHANNEL_JOIN)
@@ -159,13 +160,16 @@ public class GcCreateChannelData {
   }
 
 
-  public GcCreateChannelData users(List<String> users) {
+  public GcCreateChannelData users(List<SendBirdUser> users) {
     
     this.users = users;
     return this;
   }
 
-  public GcCreateChannelData addUsersItem(String usersItem) {
+  public GcCreateChannelData addUsersItem(SendBirdUser usersItem) {
+    if (this.users == null) {
+      this.users = new ArrayList<>();
+    }
     this.users.add(usersItem);
     return this;
   }
@@ -174,15 +178,15 @@ public class GcCreateChannelData {
    * Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.
    * @return users
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.")
 
-  public List<String> getUsers() {
+  public List<SendBirdUser> getUsers() {
     return users;
   }
 
 
-  public void setUsers(List<String> users) {
+  public void setUsers(List<SendBirdUser> users) {
     this.users = users;
   }
 
@@ -197,8 +201,8 @@ public class GcCreateChannelData {
    * Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel)
    * @return name
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel)")
 
   public String getName() {
     return name;
@@ -220,8 +224,8 @@ public class GcCreateChannelData {
    * Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.")
 
   public String getChannelUrl() {
     return channelUrl;
@@ -243,8 +247,8 @@ public class GcCreateChannelData {
    * Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters.
    * @return coverUrl
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters.")
 
   public String getCoverUrl() {
     return coverUrl;
@@ -266,8 +270,8 @@ public class GcCreateChannelData {
    * Uploads the cover image file for the channel.
    * @return coverFile
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Uploads the cover image file for the channel.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Uploads the cover image file for the channel.")
 
   public File getCoverFile() {
     return coverFile;
@@ -289,8 +293,8 @@ public class GcCreateChannelData {
    * Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.&lt;br /&gt;&lt;br /&gt; Custom types are also used within Sendbird&#39;s [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
    * @return customType
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
 
   public String getCustomType() {
     return customType;
@@ -312,8 +316,8 @@ public class GcCreateChannelData {
    * Specifies additional channel information such as a long description of the channel or &#x60;JSON&#x60; formatted string.
    * @return data
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
 
   public String getData() {
     return data;
@@ -335,8 +339,8 @@ public class GcCreateChannelData {
    * Determines whether to reuse an existing channel or create a new channel. If set to true, returns a channel with the same users in the user_ids or users property or creates a new channel if no match is found. Sendbird server can also use the custom channel type in the custom_type property if specified along with the users to return the corresponding channel. If set to false, Sendbird server always creates a new channel with a combination of the users as well as the channel custom type if specified. (Default: false)&lt;br /&gt;&lt;br /&gt; Under this property, Sendbird server does not distinguish channels based on other properties such as channel URL or channel name.
    * @return isDistinct
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Determines whether to reuse an existing channel or create a new channel. If set to true, returns a channel with the same users in the user_ids or users property or creates a new channel if no match is found. Sendbird server can also use the custom channel type in the custom_type property if specified along with the users to return the corresponding channel. If set to false, Sendbird server always creates a new channel with a combination of the users as well as the channel custom type if specified. (Default: false)<br /><br /> Under this property, Sendbird server does not distinguish channels based on other properties such as channel URL or channel name.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Determines whether to reuse an existing channel or create a new channel. If set to true, returns a channel with the same users in the user_ids or users property or creates a new channel if no match is found. Sendbird server can also use the custom channel type in the custom_type property if specified along with the users to return the corresponding channel. If set to false, Sendbird server always creates a new channel with a combination of the users as well as the channel custom type if specified. (Default: false)<br /><br /> Under this property, Sendbird server does not distinguish channels based on other properties such as channel URL or channel name.")
 
   public Boolean getIsDistinct() {
     return isDistinct;
@@ -358,8 +362,8 @@ public class GcCreateChannelData {
    * Determines whether to allow a user to join the channel without an invitation. (Default: false)
    * @return isPublic
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Determines whether to allow a user to join the channel without an invitation. (Default: false)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Determines whether to allow a user to join the channel without an invitation. (Default: false)")
 
   public Boolean getIsPublic() {
     return isPublic;
@@ -381,8 +385,8 @@ public class GcCreateChannelData {
    * Determines whether to allow the channel to accommodate more than 2,000 members. (Default: false) &lt;br/&gt;&lt;br/&gt; Supergroup channels are not supported with the is_distinct property and the property is false by default.
    * @return isSuper
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Determines whether to allow the channel to accommodate more than 2,000 members. (Default: false) <br/><br/> Supergroup channels are not supported with the is_distinct property and the property is false by default.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Determines whether to allow the channel to accommodate more than 2,000 members. (Default: false) <br/><br/> Supergroup channels are not supported with the is_distinct property and the property is false by default.")
 
   public Boolean getIsSuper() {
     return isSuper;
@@ -404,8 +408,8 @@ public class GcCreateChannelData {
    * Determines whether to preserve the messages in the channel for the purpose of retrieving chat history. (Default: false)
    * @return isEphemeral
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Determines whether to preserve the messages in the channel for the purpose of retrieving chat history. (Default: false)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Determines whether to preserve the messages in the channel for the purpose of retrieving chat history. (Default: false)")
 
   public Boolean getIsEphemeral() {
     return isEphemeral;
@@ -427,8 +431,8 @@ public class GcCreateChannelData {
    * This parameter can only be used when the channel operator creates a public group channel. They can set an access code for the corresponding type of channel. The channel then requires the specified access code to a user who attempts to join. If specified, the is_access_code_required property of the channel resource is set to true.
    * @return accessCode
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "This parameter can only be used when the channel operator creates a public group channel. They can set an access code for the corresponding type of channel. The channel then requires the specified access code to a user who attempts to join. If specified, the is_access_code_required property of the channel resource is set to true.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "This parameter can only be used when the channel operator creates a public group channel. They can set an access code for the corresponding type of channel. The channel then requires the specified access code to a user who attempts to join. If specified, the is_access_code_required property of the channel resource is set to true.")
 
   public String getAccessCode() {
     return accessCode;
@@ -450,8 +454,8 @@ public class GcCreateChannelData {
    * Specifies the ID of the user who has invited other users as members of the channel. The inviter is not automatically registered to the channel as a member, so you should specify the ID of the inviter in the user_ids property below if needed.
    * @return inviterId
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the ID of the user who has invited other users as members of the channel. The inviter is not automatically registered to the channel as a member, so you should specify the ID of the inviter in the user_ids property below if needed.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the ID of the user who has invited other users as members of the channel. The inviter is not automatically registered to the channel as a member, so you should specify the ID of the inviter in the user_ids property below if needed.")
 
   public String getInviterId() {
     return inviterId;
@@ -473,8 +477,8 @@ public class GcCreateChannelData {
    * Determines whether to receive a &#x60;400111&#x60; error and cease channel creation when there is at least one non-existing user in the specified user_ids or users property above. If set to false, the channel will be created excluding the non-existing users without receiving the mentioned error. (Default: false)
    * @return strict
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Determines whether to receive a `400111` error and cease channel creation when there is at least one non-existing user in the specified user_ids or users property above. If set to false, the channel will be created excluding the non-existing users without receiving the mentioned error. (Default: false)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Determines whether to receive a `400111` error and cease channel creation when there is at least one non-existing user in the specified user_ids or users property above. If set to false, the channel will be created excluding the non-existing users without receiving the mentioned error. (Default: false)")
 
   public Boolean getStrict() {
     return strict;
@@ -496,8 +500,8 @@ public class GcCreateChannelData {
    * Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)
    * @return invitationStatus
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)")
 
   public Object getInvitationStatus() {
     return invitationStatus;
@@ -519,8 +523,8 @@ public class GcCreateChannelData {
    * Specifies one or more key-value pair items which set the channel&#39;s hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:&lt;br /&gt;- unhidden (default): the channel is included in when retrieving a list of group channels.&lt;br /&gt;- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.&lt;br /&gt;- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.
    * @return hiddenStatus
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies one or more key-value pair items which set the channel's hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:<br />- unhidden (default): the channel is included in when retrieving a list of group channels.<br />- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.<br />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies one or more key-value pair items which set the channel's hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:<br />- unhidden (default): the channel is included in when retrieving a list of group channels.<br />- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.<br />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.")
 
   public Object getHiddenStatus() {
     return hiddenStatus;
@@ -539,6 +543,9 @@ public class GcCreateChannelData {
   }
 
   public GcCreateChannelData addOperatorIdsItem(String operatorIdsItem) {
+    if (this.operatorIds == null) {
+      this.operatorIds = new ArrayList<>();
+    }
     this.operatorIds.add(operatorIdsItem);
     return this;
   }
@@ -547,8 +554,8 @@ public class GcCreateChannelData {
    * Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.
    * @return operatorIds
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.")
 
   public List<String> getOperatorIds() {
     return operatorIds;
@@ -570,8 +577,8 @@ public class GcCreateChannelData {
    * Determines whether to block users from joining the channel through the Chat SDK. This parameter can be used in order to restrict the ways for users to join the channel, and only using the [join a channel](#2-join-a-channel) action can add a user to the channel. (Default: false)
    * @return blockSdkUserChannelJoin
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Determines whether to block users from joining the channel through the Chat SDK. This parameter can be used in order to restrict the ways for users to join the channel, and only using the [join a channel](#2-join-a-channel) action can add a user to the channel. (Default: false)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Determines whether to block users from joining the channel through the Chat SDK. This parameter can be used in order to restrict the ways for users to join the channel, and only using the [join a channel](#2-join-a-channel) action can add a user to the channel. (Default: false)")
 
   public Boolean getBlockSdkUserChannelJoin() {
     return blockSdkUserChannelJoin;
@@ -687,24 +694,6 @@ public class GcCreateChannelData {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("user_ids");
-    openapiRequiredFields.add("users");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("channel_url");
-    openapiRequiredFields.add("cover_url");
-    openapiRequiredFields.add("cover_file");
-    openapiRequiredFields.add("custom_type");
-    openapiRequiredFields.add("data");
-    openapiRequiredFields.add("is_distinct");
-    openapiRequiredFields.add("is_public");
-    openapiRequiredFields.add("is_super");
-    openapiRequiredFields.add("is_ephemeral");
-    openapiRequiredFields.add("access_code");
-    openapiRequiredFields.add("inviter_id");
-    openapiRequiredFields.add("strict");
-    openapiRequiredFields.add("invitation_status");
-    openapiRequiredFields.add("hidden_status");
-    openapiRequiredFields.add("operator_ids");
-    openapiRequiredFields.add("block_sdk_user_channel_join");
   }
 
  /**
@@ -740,9 +729,17 @@ public class GcCreateChannelData {
       if (jsonObj.get("user_ids") != null && !jsonObj.get("user_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("user_ids").toString()));
       }
-      // ensure the json data is an array
-      if (jsonObj.get("users") != null && !jsonObj.get("users").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `users` to be an array in the JSON string but got `%s`", jsonObj.get("users").toString()));
+      JsonArray jsonArrayusers = jsonObj.getAsJsonArray("users");
+      if (jsonArrayusers != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("users").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `users` to be an array in the JSON string but got `%s`", jsonObj.get("users").toString()));
+        }
+
+        // validate the optional field `users` (array)
+        for (int i = 0; i < jsonArrayusers.size(); i++) {
+          SendBirdUser.validateJsonObject(jsonArrayusers.get(i).getAsJsonObject());
+        };
       }
       if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

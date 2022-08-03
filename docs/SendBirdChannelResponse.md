@@ -50,6 +50,7 @@
 |**smsFallback** | [**SendBirdGroupChannelSmsFallback**](SendBirdGroupChannelSmsFallback.md) |  |  [optional] |
 |**unreadMentionCount** | **BigDecimal** |  |  [optional] |
 |**unreadMessageCount** | **BigDecimal** |  |  [optional] |
+|**channel** | [**SendBirdGroupChannelChannel**](SendBirdGroupChannelChannel.md) |  |  [optional] |
 |**isDynamicPartitioned** | **Boolean** |  |  [optional] |
 |**participantCount** | **BigDecimal** |  |  [optional] |
 

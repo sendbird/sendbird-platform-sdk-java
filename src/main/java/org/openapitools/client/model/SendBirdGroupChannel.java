@@ -26,12 +26,14 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.SendBirdGroupChannelChannel;
 import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
 import org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage;
 import org.openapitools.client.model.SendBirdGroupChannelSmsFallback;
 import org.openapitools.client.model.SendBirdMember;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,7 +58,7 @@ import org.sendbird.client.JSON;
 /**
  * SendBirdGroupChannel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:53:12.807119+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
 public class SendBirdGroupChannel {
   public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
   @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
@@ -472,6 +474,10 @@ public class SendBirdGroupChannel {
   public static final String SERIALIZED_NAME_UNREAD_MESSAGE_COUNT = "unread_message_count";
   @SerializedName(SERIALIZED_NAME_UNREAD_MESSAGE_COUNT)
   private BigDecimal unreadMessageCount;
+
+  public static final String SERIALIZED_NAME_CHANNEL = "channel";
+  @SerializedName(SERIALIZED_NAME_CHANNEL)
+  private SendBirdGroupChannelChannel channel;
 
   public SendBirdGroupChannel() { 
   }
@@ -1481,6 +1487,29 @@ public class SendBirdGroupChannel {
   }
 
 
+  public SendBirdGroupChannel channel(SendBirdGroupChannelChannel channel) {
+    
+    this.channel = channel;
+    return this;
+  }
+
+   /**
+   * Get channel
+   * @return channel
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SendBirdGroupChannelChannel getChannel() {
+    return channel;
+  }
+
+
+  public void setChannel(SendBirdGroupChannelChannel channel) {
+    this.channel = channel;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -1533,12 +1562,24 @@ public class SendBirdGroupChannel {
         Objects.equals(this.operators, sendBirdGroupChannel.operators) &&
         Objects.equals(this.smsFallback, sendBirdGroupChannel.smsFallback) &&
         Objects.equals(this.unreadMentionCount, sendBirdGroupChannel.unreadMentionCount) &&
-        Objects.equals(this.unreadMessageCount, sendBirdGroupChannel.unreadMessageCount);
+        Objects.equals(this.unreadMessageCount, sendBirdGroupChannel.unreadMessageCount) &&
+        Objects.equals(this.channel, sendBirdGroupChannel.channel);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelUrl, coverUrl, createdAt, createdBy, creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, lastMessage, maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount);
+    return Objects.hash(channelUrl, coverUrl, createdAt, createdBy, creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, lastMessage, maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -1588,6 +1629,7 @@ public class SendBirdGroupChannel {
     sb.append("    smsFallback: ").append(toIndentedString(smsFallback)).append("\n");
     sb.append("    unreadMentionCount: ").append(toIndentedString(unreadMentionCount)).append("\n");
     sb.append("    unreadMessageCount: ").append(toIndentedString(unreadMessageCount)).append("\n");
+    sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1653,6 +1695,7 @@ public class SendBirdGroupChannel {
     openapiFields.add("sms_fallback");
     openapiFields.add("unread_mention_count");
     openapiFields.add("unread_message_count");
+    openapiFields.add("channel");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1687,7 +1730,7 @@ public class SendBirdGroupChannel {
         throw new IllegalArgumentException(String.format("Expected the field `cover_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cover_url").toString()));
       }
       // validate the optional field `created_by`
-      if (jsonObj.getAsJsonObject("created_by") != null) {
+      if (jsonObj.get("created_by") != null && !jsonObj.get("created_by").isJsonNull()) {
         SendBirdGroupChannelCreatedBy.validateJsonObject(jsonObj.getAsJsonObject("created_by"));
       }
       // validate the optional field `creator`
@@ -1712,7 +1755,7 @@ public class SendBirdGroupChannel {
         SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("inviter"));
       }
       // validate the optional field `last_message`
-      if (jsonObj.getAsJsonObject("last_message") != null) {
+      if (jsonObj.get("last_message") != null && !jsonObj.get("last_message").isJsonNull()) {
         SendBirdMessageResponse.validateJsonObject(jsonObj.getAsJsonObject("last_message"));
       }
       JsonArray jsonArraymembers = jsonObj.getAsJsonArray("members");
@@ -1752,6 +1795,10 @@ public class SendBirdGroupChannel {
       // validate the optional field `sms_fallback`
       if (jsonObj.getAsJsonObject("sms_fallback") != null) {
         SendBirdGroupChannelSmsFallback.validateJsonObject(jsonObj.getAsJsonObject("sms_fallback"));
+      }
+      // validate the optional field `channel`
+      if (jsonObj.getAsJsonObject("channel") != null) {
+        SendBirdGroupChannelChannel.validateJsonObject(jsonObj.getAsJsonObject("channel"));
       }
   }
 

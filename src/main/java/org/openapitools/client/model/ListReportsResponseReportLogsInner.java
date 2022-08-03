@@ -27,6 +27,7 @@ import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdChannelResponse;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +52,7 @@ import org.sendbird.client.JSON;
 /**
  * ListReportsResponseReportLogsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:53:12.807119+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
 public class ListReportsResponseReportLogsInner {
   public static final String SERIALIZED_NAME_REPORTING_USER = "reporting_user";
   @SerializedName(SERIALIZED_NAME_REPORTING_USER)
@@ -292,9 +293,20 @@ public class ListReportsResponseReportLogsInner {
         Objects.equals(this.createdAt, listReportsResponseReportLogsInner.createdAt);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(reportingUser, reportType, reportCategory, offendingUser, reportedMessage, channel, reportDescription, createdAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

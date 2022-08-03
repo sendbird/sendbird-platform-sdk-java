@@ -281,6 +281,7 @@ public class JSON {
             .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdEmojiCategory.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdFileMessageParams.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannel.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannelChannel.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannelCollection.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannelCreatedBy.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage.CustomTypeAdapterFactory())

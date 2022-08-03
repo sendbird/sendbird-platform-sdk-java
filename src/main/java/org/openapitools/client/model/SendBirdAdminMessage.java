@@ -34,6 +34,7 @@ import org.openapitools.client.model.SendBirdOGMetaData;
 import org.openapitools.client.model.SendBirdReaction;
 import org.openapitools.client.model.SendBirdThreadInfo;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -58,7 +59,7 @@ import org.sendbird.client.JSON;
 /**
  * SendBirdAdminMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-07-27T16:53:12.807119+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
 public class SendBirdAdminMessage {
   public static final String SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   @SerializedName(SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS)
@@ -873,9 +874,20 @@ public class SendBirdAdminMessage {
         Objects.equals(this.updatedAt, sendBirdAdminMessage.updatedAt);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(appleCriticalAlertOptions, channelType, channelUrl, createdAt, customType, data, isReplyToChannel, mentionType, mentionedUsers, message, messageId, messageType, metaArray, metaArrays, ogMetaData, parentMessage, parentMessageId, parentMessageText, reactions, sendingStatus, silent, threadInfo, translations, updatedAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

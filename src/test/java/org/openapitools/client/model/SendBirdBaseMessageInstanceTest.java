@@ -32,6 +32,7 @@ import org.openapitools.client.model.SendBirdOGMetaData;
 import org.openapitools.client.model.SendBirdReaction;
 import org.openapitools.client.model.SendBirdThreadInfo;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
