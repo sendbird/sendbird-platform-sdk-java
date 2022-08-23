@@ -11,36 +11,53 @@ This is a Java library that makes talking to the [Sendbird Platform API](https:/
 
 ```java
 
-import org.openapitools.client.model.ListUsersResponse;
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
 import org.sendbird.client.api.UserApi;
+import org.openapitools.client.model.ListUsersResponse;
 
-public class App {
+class User {
+    ApiClient defaultClient;
+    String apiToken;
+    UserApi apiInstance;
+    public User(ApiClient defaultClient){
+        System.out.println("constructor");
+        apiInstance = new UserApi(defaultClient);
+        apiToken = "cd4f6b80741fc4fb833754cb4147337a67a6b679";
+
+    }
+    public void listUsers(){
+
+        try {
+            String token = null;
+            Integer limit = 56;
+            String activeMode = "activated";
+            Boolean showBot = true;
+            String userIds = null;
+            String nickname = null;
+            String nicknameStartswith = null;
+            String metadatakey = null;
+            String metadatavaluesIn = null;
+            ListUsersResponse result = apiInstance.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
+            System.out.println(result);
+
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupChannelApi#gcCreateChannel");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+
+class App {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api-YOUR_APP_ID_FROM_DASHBOARD.sendbird.com");
-
-        UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "YOUR_MASTER_API_TOKEN_FROM_DASHBOARD";
-        String token = null;
-        Integer limit = 56;
-        String activeMode = "activated";
-        Boolean showBot = true;
-        String userIds = null;
-        String nickname = null;
-        String nicknameStartswith = null;
-        String metadatakey = null;
-        String metadatavaluesIn = null;
-        try {
-            ListUsersResponse  result = apiInstance.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
+        User user = new User(defaultClient);
+        user.listUsers();
     }
 }
 
@@ -78,12 +95,20 @@ Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) f
 Add this dependency to your project's POM:
 
 ```xml
-<dependency>
-  <groupId>org.openapitools</groupId>
-  <artifactId>openapi-java-client</artifactId>
-  <version>1.0.0</version>
-  <scope>compile</scope>
-</dependency>
+<repositories>
+    <repository>
+        <id>sb-repo</id>
+        <url>https://repo.sendbird.com/public/maven</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>org.sendbird</groupId>
+        <artifactId>sendbird-platform-sdk</artifactId>
+        <version>1.0.7</version>
+    </dependency>
+</dependencies>
 ```
 
 ### Gradle users
@@ -91,14 +116,11 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-  repositories {
-    mavenCentral()     // Needed if the 'openapi-java-client' jar has been published to maven central.
-    mavenLocal()       // Needed if the 'openapi-java-client' jar has been published to the local maven repo.
-  }
-
-  dependencies {
-     implementation "org.openapitools:openapi-java-client:1.0.0"
-  }
+allprojects {
+    repositories {
+        maven { url "https://repo.sendbird.com/public/maven" }
+    }
+}
 ```
 
 
