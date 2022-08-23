@@ -22,7 +22,6 @@ class User {
     String apiToken;
     UserApi apiInstance;
     public User(ApiClient defaultClient){
-        System.out.println("constructor");
         apiInstance = new UserApi(defaultClient);
         apiToken = "cd4f6b80741fc4fb833754cb4147337a67a6b679";
 
