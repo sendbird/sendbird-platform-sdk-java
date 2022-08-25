@@ -23,7 +23,7 @@ class User {
     UserApi apiInstance;
     public User(ApiClient defaultClient){
         apiInstance = new UserApi(defaultClient);
-        apiToken = "cd4f6b80741fc4fb833754cb4147337a67a6b679";
+        apiToken = "YOUR_API_KEY_FROM_DASHBOARD";
 
     }
     public void listUsers(){
