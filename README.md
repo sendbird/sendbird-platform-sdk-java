@@ -94,13 +94,6 @@ Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) f
 Add this dependency to your project's POM:
 
 ```xml
-<repositories>
-    <repository>
-        <id>sb-repo</id>
-        <url>https://repo.sendbird.com/public/maven</url>
-    </repository>
-</repositories>
-
 <dependencies>
     <dependency>
         <groupId>org.sendbird</groupId>
@@ -115,6 +108,11 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
+
+dependencies {
+    implementation "org.sendbird:sendbird-platform-sdk:1.0.7"
+}
+
 allprojects {
     repositories {
         maven { url "https://repo.sendbird.com/public/maven" }
