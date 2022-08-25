@@ -400,7 +400,7 @@ public class MessageApiTest {
         String apiToken = null;
         String channelType = null;
         String channelUrl = null;
-        Integer messageTs = null;
+        String messageTs = null;
         Integer messageId = null;
         Integer prevLimit = null;
         Integer nextLimit = null;

@@ -6160,7 +6160,7 @@ paths:
         name: message_ts
         required: false
         schema:
-          type: integer
+          type: string
         style: form
       - explode: true
         in: query
@@ -10121,6 +10121,7 @@ components:
           type: array
       type: object
     SendBird.GroupChannel:
+      additionalProperties: true
       example:
         message_offset_timestamp: 1.1730742509559433
         my_muted_state: muted
@@ -10220,12 +10221,6 @@ components:
           friend_discovery_key: friend_discovery_key
           muted_description: muted_description
           user_id: user_id
-          meta_data:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
           nickname: nickname
           is_online: true
           state: invited
@@ -10251,12 +10246,6 @@ components:
           friend_discovery_key: friend_discovery_key
           muted_description: muted_description
           user_id: user_id
-          meta_data:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
           nickname: nickname
           is_online: true
           state: invited
@@ -10508,12 +10497,6 @@ components:
         friend_discovery_key: friend_discovery_key
         muted_description: muted_description
         user_id: user_id
-        meta_data:
-          constructor:
-            caller: null
-            length: 1.4658129805029452
-            arguments: ""
-            prototype: ""
         nickname: nickname
         is_online: true
         state: invited
@@ -10531,8 +10514,6 @@ components:
           type: boolean
         last_seen_at:
           type: integer
-        meta_data:
-          $ref: '#/components/schemas/SBObject'
         nickname:
           type: string
         plain_profile_url:
@@ -10567,6 +10548,7 @@ components:
           enum:
           - invited
           - joined
+          nullable: true
           type: string
         user_id:
           type: string
@@ -11616,12 +11598,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -11647,12 +11623,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -11857,12 +11827,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -11888,12 +11852,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -13636,12 +13594,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -13667,12 +13619,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -13877,12 +13823,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -13908,12 +13848,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -15880,12 +15814,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -15911,12 +15839,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -16121,12 +16043,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited
@@ -16152,12 +16068,6 @@ components:
             friend_discovery_key: friend_discovery_key
             muted_description: muted_description
             user_id: user_id
-            meta_data:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
             nickname: nickname
             is_online: true
             state: invited

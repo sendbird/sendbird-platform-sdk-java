@@ -1383,7 +1383,7 @@ public class Example {
     String apiToken = "{{API_TOKEN}}"; // String | 
     String channelType = "channelType_example"; // String | 
     String channelUrl = "channelUrl_example"; // String | 
-    Integer messageTs = 56; // Integer | 
+    String messageTs = "messageTs_example"; // String | 
     Integer messageId = 56; // Integer | 
     Integer prevLimit = 56; // Integer | 
     Integer nextLimit = 56; // Integer | 
@@ -1422,7 +1422,7 @@ public class Example {
 | **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
-| **messageTs** | **Integer**|  | [optional] |
+| **messageTs** | **String**|  | [optional] |
 | **messageId** | **Integer**|  | [optional] |
 | **prevLimit** | **Integer**|  | [optional] |
 | **nextLimit** | **Integer**|  | [optional] |

@@ -70,7 +70,7 @@ import com.google.gson.JsonParseException;
 
 import org.sendbird.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
 public class SendBirdChannelResponse extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SendBirdChannelResponse.class.getName());
 

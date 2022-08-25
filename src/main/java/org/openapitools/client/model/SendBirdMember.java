@@ -26,7 +26,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SBObject;
 import org.openapitools.client.model.SendBirdRestrictionInfo;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -53,7 +52,7 @@ import org.sendbird.client.JSON;
 /**
  * SendBirdMember
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
 public class SendBirdMember {
   public static final String SERIALIZED_NAME_CONNECTION_STATUS = "connection_status";
   @SerializedName(SERIALIZED_NAME_CONNECTION_STATUS)
@@ -78,10 +77,6 @@ public class SendBirdMember {
   public static final String SERIALIZED_NAME_LAST_SEEN_AT = "last_seen_at";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN_AT)
   private Integer lastSeenAt;
-
-  public static final String SERIALIZED_NAME_META_DATA = "meta_data";
-  @SerializedName(SERIALIZED_NAME_META_DATA)
-  private SBObject metaData;
 
   public static final String SERIALIZED_NAME_NICKNAME = "nickname";
   @SerializedName(SERIALIZED_NAME_NICKNAME)
@@ -208,7 +203,7 @@ public class SendBirdMember {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return null;
     }
 
     public static class Adapter extends TypeAdapter<StateEnum> {
@@ -371,29 +366,6 @@ public class SendBirdMember {
 
   public void setLastSeenAt(Integer lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
-  }
-
-
-  public SendBirdMember metaData(SBObject metaData) {
-    
-    this.metaData = metaData;
-    return this;
-  }
-
-   /**
-   * Get metaData
-   * @return metaData
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public SBObject getMetaData() {
-    return metaData;
-  }
-
-
-  public void setMetaData(SBObject metaData) {
-    this.metaData = metaData;
   }
 
 
@@ -743,7 +715,6 @@ public class SendBirdMember {
         Objects.equals(this.isActive, sendBirdMember.isActive) &&
         Objects.equals(this.isMuted, sendBirdMember.isMuted) &&
         Objects.equals(this.lastSeenAt, sendBirdMember.lastSeenAt) &&
-        Objects.equals(this.metaData, sendBirdMember.metaData) &&
         Objects.equals(this.nickname, sendBirdMember.nickname) &&
         Objects.equals(this.plainProfileUrl, sendBirdMember.plainProfileUrl) &&
         Objects.equals(this.preferredLanguages, sendBirdMember.preferredLanguages) &&
@@ -766,7 +737,7 @@ public class SendBirdMember {
 
   @Override
   public int hashCode() {
-    return Objects.hash(connectionStatus, friendDiscoveryKey, friendName, isActive, isMuted, lastSeenAt, metaData, nickname, plainProfileUrl, preferredLanguages, profileUrl, requireAuth, requireAuthForProfileImage, metadata, isOnline, mutedEndAt, mutedDescription, restrictionInfo, role, state, userId);
+    return Objects.hash(connectionStatus, friendDiscoveryKey, friendName, isActive, isMuted, lastSeenAt, nickname, plainProfileUrl, preferredLanguages, profileUrl, requireAuth, requireAuthForProfileImage, metadata, isOnline, mutedEndAt, mutedDescription, restrictionInfo, role, state, userId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -786,7 +757,6 @@ public class SendBirdMember {
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    isMuted: ").append(toIndentedString(isMuted)).append("\n");
     sb.append("    lastSeenAt: ").append(toIndentedString(lastSeenAt)).append("\n");
-    sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
     sb.append("    nickname: ").append(toIndentedString(nickname)).append("\n");
     sb.append("    plainProfileUrl: ").append(toIndentedString(plainProfileUrl)).append("\n");
     sb.append("    preferredLanguages: ").append(toIndentedString(preferredLanguages)).append("\n");
@@ -829,7 +799,6 @@ public class SendBirdMember {
     openapiFields.add("is_active");
     openapiFields.add("is_muted");
     openapiFields.add("last_seen_at");
-    openapiFields.add("meta_data");
     openapiFields.add("nickname");
     openapiFields.add("plain_profile_url");
     openapiFields.add("preferred_languages");
@@ -879,10 +848,6 @@ public class SendBirdMember {
       }
       if (jsonObj.get("friend_name") != null && !jsonObj.get("friend_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `friend_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friend_name").toString()));
-      }
-      // validate the optional field `meta_data`
-      if (jsonObj.getAsJsonObject("meta_data") != null) {
-        SBObject.validateJsonObject(jsonObj.getAsJsonObject("meta_data"));
       }
       if (jsonObj.get("nickname") != null && !jsonObj.get("nickname").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));

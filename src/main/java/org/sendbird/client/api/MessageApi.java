@@ -3078,7 +3078,7 @@ public class MessageApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMessagesCall(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listMessagesCall(String apiToken, String channelType, String channelUrl, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3202,7 +3202,7 @@ public class MessageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listMessagesValidateBeforeCall(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listMessagesValidateBeforeCall(String apiToken, String channelType, String channelUrl, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'apiToken' is set
         if (apiToken == null) {
@@ -3257,7 +3257,7 @@ public class MessageApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ListMessagesResponse listMessages(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
+    public ListMessagesResponse listMessages(String apiToken, String channelType, String channelUrl, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
         ApiResponse<ListMessagesResponse> localVarResp = listMessagesWithHttpInfo(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
         return localVarResp.getData();
     }
@@ -3294,7 +3294,7 @@ public class MessageApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
+    public ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
         okhttp3.Call localVarCall = listMessagesValidateBeforeCall(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray, null);
         Type localVarReturnType = new TypeToken<ListMessagesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3333,7 +3333,7 @@ public class MessageApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMessagesAsync(String apiToken, String channelType, String channelUrl, Integer messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback<ListMessagesResponse> _callback) throws ApiException {
+    public okhttp3.Call listMessagesAsync(String apiToken, String channelType, String channelUrl, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray, final ApiCallback<ListMessagesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listMessagesValidateBeforeCall(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray, _callback);
         Type localVarReturnType = new TypeToken<ListMessagesResponse>(){}.getType();

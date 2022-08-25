@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**channelList** | [**List&lt;SendBirdGroupChannel&gt;**](SendBirdGroupChannel.md) |  |  [optional] |
+|**channelList** | **List&lt;SendBirdGroupChannel&gt;** |  |  [optional] |
 |**hasMore** | **Boolean** |  |  [optional] |
 
 

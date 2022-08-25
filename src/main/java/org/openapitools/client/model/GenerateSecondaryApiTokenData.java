@@ -47,7 +47,7 @@ import org.sendbird.client.JSON;
 /**
  * GenerateSecondaryApiTokenData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
 public class GenerateSecondaryApiTokenData {
   public static final String SERIALIZED_NAME_H_T_T_P_A_P_I_T_O_K_E_N = "HTTP_API_TOKEN";
   @SerializedName(SERIALIZED_NAME_H_T_T_P_A_P_I_T_O_K_E_N)

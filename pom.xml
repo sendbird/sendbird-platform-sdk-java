@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.openapitools</groupId>
-    <artifactId>openapi-java-client</artifactId>
+    <groupId>org.sendbird</groupId>
+    <artifactId>sendbird-platform-sdk</artifactId>
     <packaging>jar</packaging>
-    <name>openapi-java-client</name>
-    <version>1.0.7</version>
-    <url>https://github.com/openapitools/openapi-generator</url>
+    <name>sendbird-platform-sdk</name>
+    <version>1.0.8</version>
+    <url>https://github.com/sendbird/sendbird-platform-sdk-java</url>
     <description>Sendbird Platform API SDK</description>
     <scm>
         <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>

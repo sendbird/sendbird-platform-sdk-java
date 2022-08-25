@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
 /**
  * UpdatePushPreferencesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
 public class UpdatePushPreferencesResponse {
   public static final String SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
   @SerializedName(SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS)

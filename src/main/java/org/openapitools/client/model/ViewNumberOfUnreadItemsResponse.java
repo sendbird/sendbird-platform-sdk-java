@@ -48,7 +48,7 @@ import org.sendbird.client.JSON;
 /**
  * ViewNumberOfUnreadItemsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
 public class ViewNumberOfUnreadItemsResponse {
   public static final String SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "non_super_group_channel_unread_message_count";
   @SerializedName(SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)

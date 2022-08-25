@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
 /**
  * JoinChannelsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-03T14:38:17.329046+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
 public class JoinChannelsResponse {
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
@@ -163,17 +163,9 @@ public class JoinChannelsResponse {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `JoinChannelsResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      JsonArray jsonArraychannels = jsonObj.getAsJsonArray("channels");
-      if (jsonArraychannels != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("channels").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `channels` to be an array in the JSON string but got `%s`", jsonObj.get("channels").toString()));
-        }
-
-        // validate the optional field `channels` (array)
-        for (int i = 0; i < jsonArraychannels.size(); i++) {
-          SendBirdGroupChannel.validateJsonObject(jsonArraychannels.get(i).getAsJsonObject());
-        };
+      // ensure the json data is an array
+      if (jsonObj.get("channels") != null && !jsonObj.get("channels").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `channels` to be an array in the JSON string but got `%s`", jsonObj.get("channels").toString()));
       }
   }
 
