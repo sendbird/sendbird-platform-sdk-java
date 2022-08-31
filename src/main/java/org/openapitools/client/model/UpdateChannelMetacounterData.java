@@ -15,57 +15,43 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * UpdateChannelMetacounterData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  UpdateChannelMetacounterData.JSON_PROPERTY_METACOUNTER,
+  UpdateChannelMetacounterData.JSON_PROPERTY_MODE,
+  UpdateChannelMetacounterData.JSON_PROPERTY_UPSERT
+})
+@JsonTypeName("updateChannelMetacounterData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class UpdateChannelMetacounterData {
-  public static final String SERIALIZED_NAME_METACOUNTER = "metacounter";
-  @SerializedName(SERIALIZED_NAME_METACOUNTER)
+  public static final String JSON_PROPERTY_METACOUNTER = "metacounter";
   private String metacounter;
 
-  public static final String SERIALIZED_NAME_MODE = "mode";
-  @SerializedName(SERIALIZED_NAME_MODE)
+  public static final String JSON_PROPERTY_MODE = "mode";
   private String mode;
 
-  public static final String SERIALIZED_NAME_UPSERT = "upsert";
-  @SerializedName(SERIALIZED_NAME_UPSERT)
+  public static final String JSON_PROPERTY_UPSERT = "upsert";
   private Boolean upsert;
 
   public UpdateChannelMetacounterData() { 
   }
 
   public UpdateChannelMetacounterData metacounter(String metacounter) {
-    
     this.metacounter = metacounter;
     return this;
   }
@@ -76,19 +62,22 @@ public class UpdateChannelMetacounterData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be an integer. This property can have up to 5 items.")
+  @JsonProperty(JSON_PROPERTY_METACOUNTER)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getMetacounter() {
     return metacounter;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_METACOUNTER)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMetacounter(String metacounter) {
     this.metacounter = metacounter;
   }
 
 
   public UpdateChannelMetacounterData mode(String mode) {
-    
     this.mode = mode;
     return this;
   }
@@ -99,19 +88,22 @@ public class UpdateChannelMetacounterData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies how to calculate the item value of the metacounter. Acceptable values are increase, decrease, and set. If set to increase, increments the item value of the metacounter by the value specified in the metacounter property, while decrease decrements. set sets the item value to the specified value exactly. (Default: set)")
+  @JsonProperty(JSON_PROPERTY_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMode() {
     return mode;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMode(String mode) {
     this.mode = mode;
   }
 
 
   public UpdateChannelMetacounterData upsert(Boolean upsert) {
-    
     this.upsert = upsert;
     return this;
   }
@@ -122,18 +114,24 @@ public class UpdateChannelMetacounterData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UPSERT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getUpsert() {
     return upsert;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UPSERT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpsert(Boolean upsert) {
     this.upsert = upsert;
   }
 
 
-
+  /**
+   * Return true if this updateChannelMetacounterData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -175,106 +173,5 @@ public class UpdateChannelMetacounterData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("metacounter");
-    openapiFields.add("mode");
-    openapiFields.add("upsert");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("metacounter");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UpdateChannelMetacounterData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (UpdateChannelMetacounterData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateChannelMetacounterData is not found in the empty JSON string", UpdateChannelMetacounterData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UpdateChannelMetacounterData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateChannelMetacounterData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdateChannelMetacounterData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("metacounter") != null && !jsonObj.get("metacounter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metacounter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metacounter").toString()));
-      }
-      if (jsonObj.get("mode") != null && !jsonObj.get("mode").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mode").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateChannelMetacounterData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateChannelMetacounterData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateChannelMetacounterData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateChannelMetacounterData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpdateChannelMetacounterData>() {
-           @Override
-           public void write(JsonWriter out, UpdateChannelMetacounterData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpdateChannelMetacounterData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UpdateChannelMetacounterData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdateChannelMetacounterData
-  * @throws IOException if the JSON string is invalid with respect to UpdateChannelMetacounterData
-  */
-  public static UpdateChannelMetacounterData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateChannelMetacounterData.class);
-  }
-
- /**
-  * Convert an instance of UpdateChannelMetacounterData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

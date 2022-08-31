@@ -13,7 +13,8 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.ListReportsOnChannelByUrlResponse;
 import org.openapitools.client.model.ListReportsOnMessageByIdResponse;
 import org.openapitools.client.model.ListReportsOnUserByIdResponse;
@@ -24,6 +25,8 @@ import org.openapitools.client.model.ReportMessageByIdData;
 import org.openapitools.client.model.ReportMessageByIdResponse;
 import org.openapitools.client.model.ReportUserByIdData;
 import org.openapitools.client.model.ReportUserByIdResponse;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +38,6 @@ import java.util.Map;
 /**
  * API tests for ReportApi
  */
-@Disabled
 public class ReportApiTest {
 
     private final ReportApi api = new ReportApi();
@@ -49,12 +51,12 @@ public class ReportApiTest {
      */
     @Test
     public void listReportsTest() throws ApiException {
-        String apiToken = null;
-        String token = null;
-        Integer limit = null;
-        Integer startTs = null;
-        Integer endTs = null;
-        ListReportsResponse response = api.listReports(apiToken, token, limit, startTs, endTs);
+        //String apiToken = null;
+        //String token = null;
+        //Integer limit = null;
+        //Integer startTs = null;
+        //Integer endTs = null;
+        //ListReportsResponse response = api.listReports(apiToken, token, limit, startTs, endTs);
         // TODO: test validations
     }
 
@@ -67,12 +69,12 @@ public class ReportApiTest {
      */
     @Test
     public void listReportsOnChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String token = null;
-        Integer limit = null;
-        ListReportsOnChannelByUrlResponse response = api.listReportsOnChannelByUrl(apiToken, channelType, channelUrl, token, limit);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String token = null;
+        //Integer limit = null;
+        //ListReportsOnChannelByUrlResponse response = api.listReportsOnChannelByUrl(apiToken, channelType, channelUrl, token, limit);
         // TODO: test validations
     }
 
@@ -85,13 +87,13 @@ public class ReportApiTest {
      */
     @Test
     public void listReportsOnMessageByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        String token = null;
-        Integer limit = null;
-        ListReportsOnMessageByIdResponse response = api.listReportsOnMessageById(apiToken, channelType, channelUrl, messageId, token, limit);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //String token = null;
+        //Integer limit = null;
+        //ListReportsOnMessageByIdResponse response = api.listReportsOnMessageById(apiToken, channelType, channelUrl, messageId, token, limit);
         // TODO: test validations
     }
 
@@ -104,11 +106,11 @@ public class ReportApiTest {
      */
     @Test
     public void listReportsOnUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String offendingUserId = null;
-        String token = null;
-        Integer limit = null;
-        ListReportsOnUserByIdResponse response = api.listReportsOnUserById(apiToken, offendingUserId, token, limit);
+        //String apiToken = null;
+        //String offendingUserId = null;
+        //String token = null;
+        //Integer limit = null;
+        //ListReportsOnUserByIdResponse response = api.listReportsOnUserById(apiToken, offendingUserId, token, limit);
         // TODO: test validations
     }
 
@@ -121,11 +123,11 @@ public class ReportApiTest {
      */
     @Test
     public void reportChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        ReportChannelByUrlData reportChannelByUrlData = null;
-        ReportChannelByUrlResponse response = api.reportChannelByUrl(apiToken, channelType, channelUrl, reportChannelByUrlData);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //ReportChannelByUrlData reportChannelByUrlData = null;
+        //ReportChannelByUrlResponse response = api.reportChannelByUrl(apiToken, channelType, channelUrl, reportChannelByUrlData);
         // TODO: test validations
     }
 
@@ -138,12 +140,12 @@ public class ReportApiTest {
      */
     @Test
     public void reportMessageByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        ReportMessageByIdData reportMessageByIdData = null;
-        ReportMessageByIdResponse response = api.reportMessageById(apiToken, channelType, channelUrl, messageId, reportMessageByIdData);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //ReportMessageByIdData reportMessageByIdData = null;
+        //ReportMessageByIdResponse response = api.reportMessageById(apiToken, channelType, channelUrl, messageId, reportMessageByIdData);
         // TODO: test validations
     }
 
@@ -156,10 +158,10 @@ public class ReportApiTest {
      */
     @Test
     public void reportUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String offendingUserId = null;
-        ReportUserByIdData reportUserByIdData = null;
-        ReportUserByIdResponse response = api.reportUserById(apiToken, offendingUserId, reportUserByIdData);
+        //String apiToken = null;
+        //String offendingUserId = null;
+        //ReportUserByIdData reportUserByIdData = null;
+        //ReportUserByIdResponse response = api.reportUserById(apiToken, offendingUserId, reportUserByIdData);
         // TODO: test validations
     }
 
@@ -172,11 +174,11 @@ public class ReportApiTest {
      */
     @Test
     public void viewModeratedMessageByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        Object response = api.viewModeratedMessageById(apiToken, channelType, channelUrl, messageId);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //Object response = api.viewModeratedMessageById(apiToken, channelType, channelUrl, messageId);
         // TODO: test validations
     }
 

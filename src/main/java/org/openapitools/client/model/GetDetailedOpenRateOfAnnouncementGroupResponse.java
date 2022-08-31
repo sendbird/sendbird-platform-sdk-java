@@ -15,72 +15,58 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * GetDetailedOpenRateOfAnnouncementGroupResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  GetDetailedOpenRateOfAnnouncementGroupResponse.JSON_PROPERTY_UNIQUE_ID,
+  GetDetailedOpenRateOfAnnouncementGroupResponse.JSON_PROPERTY_ANNOUNCEMENT_GROUP,
+  GetDetailedOpenRateOfAnnouncementGroupResponse.JSON_PROPERTY_OPEN_COUNTS,
+  GetDetailedOpenRateOfAnnouncementGroupResponse.JSON_PROPERTY_OPEN_RATES,
+  GetDetailedOpenRateOfAnnouncementGroupResponse.JSON_PROPERTY_CUMULATIVE_OPEN_COUNTS,
+  GetDetailedOpenRateOfAnnouncementGroupResponse.JSON_PROPERTY_CUMULATIVE_OPEN_RATES
+})
+@JsonTypeName("getDetailedOpenRateOfAnnouncementGroupResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class GetDetailedOpenRateOfAnnouncementGroupResponse {
-  public static final String SERIALIZED_NAME_UNIQUE_ID = "unique_id";
-  @SerializedName(SERIALIZED_NAME_UNIQUE_ID)
+  public static final String JSON_PROPERTY_UNIQUE_ID = "unique_id";
   private String uniqueId;
 
-  public static final String SERIALIZED_NAME_ANNOUNCEMENT_GROUP = "announcement_group";
-  @SerializedName(SERIALIZED_NAME_ANNOUNCEMENT_GROUP)
+  public static final String JSON_PROPERTY_ANNOUNCEMENT_GROUP = "announcement_group";
   private String announcementGroup;
 
-  public static final String SERIALIZED_NAME_OPEN_COUNTS = "open_counts";
-  @SerializedName(SERIALIZED_NAME_OPEN_COUNTS)
+  public static final String JSON_PROPERTY_OPEN_COUNTS = "open_counts";
   private List<BigDecimal> openCounts = null;
 
-  public static final String SERIALIZED_NAME_OPEN_RATES = "open_rates";
-  @SerializedName(SERIALIZED_NAME_OPEN_RATES)
+  public static final String JSON_PROPERTY_OPEN_RATES = "open_rates";
   private List<BigDecimal> openRates = null;
 
-  public static final String SERIALIZED_NAME_CUMULATIVE_OPEN_COUNTS = "cumulative_open_counts";
-  @SerializedName(SERIALIZED_NAME_CUMULATIVE_OPEN_COUNTS)
+  public static final String JSON_PROPERTY_CUMULATIVE_OPEN_COUNTS = "cumulative_open_counts";
   private List<BigDecimal> cumulativeOpenCounts = null;
 
-  public static final String SERIALIZED_NAME_CUMULATIVE_OPEN_RATES = "cumulative_open_rates";
-  @SerializedName(SERIALIZED_NAME_CUMULATIVE_OPEN_RATES)
+  public static final String JSON_PROPERTY_CUMULATIVE_OPEN_RATES = "cumulative_open_rates";
   private List<BigDecimal> cumulativeOpenRates = null;
 
   public GetDetailedOpenRateOfAnnouncementGroupResponse() { 
   }
 
   public GetDetailedOpenRateOfAnnouncementGroupResponse uniqueId(String uniqueId) {
-    
     this.uniqueId = uniqueId;
     return this;
   }
@@ -91,19 +77,22 @@ public class GetDetailedOpenRateOfAnnouncementGroupResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUniqueId() {
     return uniqueId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUniqueId(String uniqueId) {
     this.uniqueId = uniqueId;
   }
 
 
   public GetDetailedOpenRateOfAnnouncementGroupResponse announcementGroup(String announcementGroup) {
-    
     this.announcementGroup = announcementGroup;
     return this;
   }
@@ -114,19 +103,22 @@ public class GetDetailedOpenRateOfAnnouncementGroupResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAnnouncementGroup() {
     return announcementGroup;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAnnouncementGroup(String announcementGroup) {
     this.announcementGroup = announcementGroup;
   }
 
 
   public GetDetailedOpenRateOfAnnouncementGroupResponse openCounts(List<BigDecimal> openCounts) {
-    
     this.openCounts = openCounts;
     return this;
   }
@@ -145,19 +137,22 @@ public class GetDetailedOpenRateOfAnnouncementGroupResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BigDecimal> getOpenCounts() {
     return openCounts;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpenCounts(List<BigDecimal> openCounts) {
     this.openCounts = openCounts;
   }
 
 
   public GetDetailedOpenRateOfAnnouncementGroupResponse openRates(List<BigDecimal> openRates) {
-    
     this.openRates = openRates;
     return this;
   }
@@ -176,19 +171,22 @@ public class GetDetailedOpenRateOfAnnouncementGroupResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPEN_RATES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BigDecimal> getOpenRates() {
     return openRates;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPEN_RATES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpenRates(List<BigDecimal> openRates) {
     this.openRates = openRates;
   }
 
 
   public GetDetailedOpenRateOfAnnouncementGroupResponse cumulativeOpenCounts(List<BigDecimal> cumulativeOpenCounts) {
-    
     this.cumulativeOpenCounts = cumulativeOpenCounts;
     return this;
   }
@@ -207,19 +205,22 @@ public class GetDetailedOpenRateOfAnnouncementGroupResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUMULATIVE_OPEN_COUNTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BigDecimal> getCumulativeOpenCounts() {
     return cumulativeOpenCounts;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUMULATIVE_OPEN_COUNTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCumulativeOpenCounts(List<BigDecimal> cumulativeOpenCounts) {
     this.cumulativeOpenCounts = cumulativeOpenCounts;
   }
 
 
   public GetDetailedOpenRateOfAnnouncementGroupResponse cumulativeOpenRates(List<BigDecimal> cumulativeOpenRates) {
-    
     this.cumulativeOpenRates = cumulativeOpenRates;
     return this;
   }
@@ -238,18 +239,24 @@ public class GetDetailedOpenRateOfAnnouncementGroupResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUMULATIVE_OPEN_RATES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BigDecimal> getCumulativeOpenRates() {
     return cumulativeOpenRates;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUMULATIVE_OPEN_RATES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCumulativeOpenRates(List<BigDecimal> cumulativeOpenRates) {
     this.cumulativeOpenRates = cumulativeOpenRates;
   }
 
 
-
+  /**
+   * Return true if this getDetailedOpenRateOfAnnouncementGroupResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -297,117 +304,5 @@ public class GetDetailedOpenRateOfAnnouncementGroupResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("unique_id");
-    openapiFields.add("announcement_group");
-    openapiFields.add("open_counts");
-    openapiFields.add("open_rates");
-    openapiFields.add("cumulative_open_counts");
-    openapiFields.add("cumulative_open_rates");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GetDetailedOpenRateOfAnnouncementGroupResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (GetDetailedOpenRateOfAnnouncementGroupResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GetDetailedOpenRateOfAnnouncementGroupResponse is not found in the empty JSON string", GetDetailedOpenRateOfAnnouncementGroupResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!GetDetailedOpenRateOfAnnouncementGroupResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetDetailedOpenRateOfAnnouncementGroupResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("unique_id") != null && !jsonObj.get("unique_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unique_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unique_id").toString()));
-      }
-      if (jsonObj.get("announcement_group") != null && !jsonObj.get("announcement_group").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `announcement_group` to be a primitive type in the JSON string but got `%s`", jsonObj.get("announcement_group").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("open_counts") != null && !jsonObj.get("open_counts").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `open_counts` to be an array in the JSON string but got `%s`", jsonObj.get("open_counts").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("open_rates") != null && !jsonObj.get("open_rates").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `open_rates` to be an array in the JSON string but got `%s`", jsonObj.get("open_rates").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("cumulative_open_counts") != null && !jsonObj.get("cumulative_open_counts").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cumulative_open_counts` to be an array in the JSON string but got `%s`", jsonObj.get("cumulative_open_counts").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("cumulative_open_rates") != null && !jsonObj.get("cumulative_open_rates").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cumulative_open_rates` to be an array in the JSON string but got `%s`", jsonObj.get("cumulative_open_rates").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GetDetailedOpenRateOfAnnouncementGroupResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GetDetailedOpenRateOfAnnouncementGroupResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GetDetailedOpenRateOfAnnouncementGroupResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GetDetailedOpenRateOfAnnouncementGroupResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<GetDetailedOpenRateOfAnnouncementGroupResponse>() {
-           @Override
-           public void write(JsonWriter out, GetDetailedOpenRateOfAnnouncementGroupResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public GetDetailedOpenRateOfAnnouncementGroupResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of GetDetailedOpenRateOfAnnouncementGroupResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GetDetailedOpenRateOfAnnouncementGroupResponse
-  * @throws IOException if the JSON string is invalid with respect to GetDetailedOpenRateOfAnnouncementGroupResponse
-  */
-  public static GetDetailedOpenRateOfAnnouncementGroupResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GetDetailedOpenRateOfAnnouncementGroupResponse.class);
-  }
-
- /**
-  * Convert an instance of GetDetailedOpenRateOfAnnouncementGroupResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

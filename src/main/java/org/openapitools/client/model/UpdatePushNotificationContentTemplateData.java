@@ -15,65 +15,51 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * UpdatePushNotificationContentTemplateData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  UpdatePushNotificationContentTemplateData.JSON_PROPERTY_TEMPLATE_NAME,
+  UpdatePushNotificationContentTemplateData.JSON_PROPERTY_TEMPLATE,
+  UpdatePushNotificationContentTemplateData.JSON_PROPERTY_TEMPLATE_M_E_S_G,
+  UpdatePushNotificationContentTemplateData.JSON_PROPERTY_TEMPLATE_F_I_L_E,
+  UpdatePushNotificationContentTemplateData.JSON_PROPERTY_TEMPLATE_A_D_M_N
+})
+@JsonTypeName("updatePushNotificationContentTemplateData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class UpdatePushNotificationContentTemplateData {
-  public static final String SERIALIZED_NAME_TEMPLATE_NAME = "template_name";
-  @SerializedName(SERIALIZED_NAME_TEMPLATE_NAME)
+  public static final String JSON_PROPERTY_TEMPLATE_NAME = "template_name";
   private String templateName;
 
-  public static final String SERIALIZED_NAME_TEMPLATE = "template";
-  @SerializedName(SERIALIZED_NAME_TEMPLATE)
+  public static final String JSON_PROPERTY_TEMPLATE = "template";
   private String template;
 
-  public static final String SERIALIZED_NAME_TEMPLATE_M_E_S_G = "template.MESG";
-  @SerializedName(SERIALIZED_NAME_TEMPLATE_M_E_S_G)
+  public static final String JSON_PROPERTY_TEMPLATE_M_E_S_G = "template.MESG";
   private String templateMESG;
 
-  public static final String SERIALIZED_NAME_TEMPLATE_F_I_L_E = "template.FILE";
-  @SerializedName(SERIALIZED_NAME_TEMPLATE_F_I_L_E)
+  public static final String JSON_PROPERTY_TEMPLATE_F_I_L_E = "template.FILE";
   private String templateFILE;
 
-  public static final String SERIALIZED_NAME_TEMPLATE_A_D_M_N = "template.ADMN";
-  @SerializedName(SERIALIZED_NAME_TEMPLATE_A_D_M_N)
+  public static final String JSON_PROPERTY_TEMPLATE_A_D_M_N = "template.ADMN";
   private String templateADMN;
 
   public UpdatePushNotificationContentTemplateData() { 
   }
 
   public UpdatePushNotificationContentTemplateData templateName(String templateName) {
-    
     this.templateName = templateName;
     return this;
   }
@@ -84,19 +70,22 @@ public class UpdatePushNotificationContentTemplateData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a push notification content template to update. Acceptable values are default and alternative.")
+  @JsonProperty(JSON_PROPERTY_TEMPLATE_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTemplateName() {
     return templateName;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEMPLATE_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTemplateName(String templateName) {
     this.templateName = templateName;
   }
 
 
   public UpdatePushNotificationContentTemplateData template(String template) {
-    
     this.template = template;
     return this;
   }
@@ -107,19 +96,22 @@ public class UpdatePushNotificationContentTemplateData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The push notification content template of which content types to be updated and their detailed format.")
+  @JsonProperty(JSON_PROPERTY_TEMPLATE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTemplate() {
     return template;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEMPLATE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTemplate(String template) {
     this.template = template;
   }
 
 
   public UpdatePushNotificationContentTemplateData templateMESG(String templateMESG) {
-    
     this.templateMESG = templateMESG;
     return this;
   }
@@ -130,19 +122,22 @@ public class UpdatePushNotificationContentTemplateData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a format for text messages. We support customization of two fields, which are the sender_name and message. These fields will be replaced with actual corresponding values when sending notification requests to FCM, HMS, or APNs.")
+  @JsonProperty(JSON_PROPERTY_TEMPLATE_M_E_S_G)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTemplateMESG() {
     return templateMESG;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEMPLATE_M_E_S_G)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTemplateMESG(String templateMESG) {
     this.templateMESG = templateMESG;
   }
 
 
   public UpdatePushNotificationContentTemplateData templateFILE(String templateFILE) {
-    
     this.templateFILE = templateFILE;
     return this;
   }
@@ -153,19 +148,22 @@ public class UpdatePushNotificationContentTemplateData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a format for file messages. We support customization with variables including filename and file_type_friendly. When sending notification requests to FCM, HMS, or APNs, the filename will be replaced with the corresponding string value while the file_type_friendly will indicate the type of the file sent, such as `Audio`, `Image`, and `Video`.")
+  @JsonProperty(JSON_PROPERTY_TEMPLATE_F_I_L_E)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTemplateFILE() {
     return templateFILE;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEMPLATE_F_I_L_E)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTemplateFILE(String templateFILE) {
     this.templateFILE = templateFILE;
   }
 
 
   public UpdatePushNotificationContentTemplateData templateADMN(String templateADMN) {
-    
     this.templateADMN = templateADMN;
     return this;
   }
@@ -176,18 +174,24 @@ public class UpdatePushNotificationContentTemplateData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a format for admin messages. We support customization of one field, which is the message. This field will be replaced with actual corresponding values when sending notification requests to FCM, HMS, or APNs.")
+  @JsonProperty(JSON_PROPERTY_TEMPLATE_A_D_M_N)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTemplateADMN() {
     return templateADMN;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TEMPLATE_A_D_M_N)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTemplateADMN(String templateADMN) {
     this.templateADMN = templateADMN;
   }
 
 
-
+  /**
+   * Return true if this updatePushNotificationContentTemplateData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -233,121 +237,5 @@ public class UpdatePushNotificationContentTemplateData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("template_name");
-    openapiFields.add("template");
-    openapiFields.add("template.MESG");
-    openapiFields.add("template.FILE");
-    openapiFields.add("template.ADMN");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("template_name");
-    openapiRequiredFields.add("template");
-    openapiRequiredFields.add("template.MESG");
-    openapiRequiredFields.add("template.FILE");
-    openapiRequiredFields.add("template.ADMN");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UpdatePushNotificationContentTemplateData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (UpdatePushNotificationContentTemplateData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdatePushNotificationContentTemplateData is not found in the empty JSON string", UpdatePushNotificationContentTemplateData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UpdatePushNotificationContentTemplateData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdatePushNotificationContentTemplateData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdatePushNotificationContentTemplateData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("template_name") != null && !jsonObj.get("template_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `template_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("template_name").toString()));
-      }
-      if (jsonObj.get("template") != null && !jsonObj.get("template").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `template` to be a primitive type in the JSON string but got `%s`", jsonObj.get("template").toString()));
-      }
-      if (jsonObj.get("template.MESG") != null && !jsonObj.get("template.MESG").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `template.MESG` to be a primitive type in the JSON string but got `%s`", jsonObj.get("template.MESG").toString()));
-      }
-      if (jsonObj.get("template.FILE") != null && !jsonObj.get("template.FILE").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `template.FILE` to be a primitive type in the JSON string but got `%s`", jsonObj.get("template.FILE").toString()));
-      }
-      if (jsonObj.get("template.ADMN") != null && !jsonObj.get("template.ADMN").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `template.ADMN` to be a primitive type in the JSON string but got `%s`", jsonObj.get("template.ADMN").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdatePushNotificationContentTemplateData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdatePushNotificationContentTemplateData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdatePushNotificationContentTemplateData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdatePushNotificationContentTemplateData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpdatePushNotificationContentTemplateData>() {
-           @Override
-           public void write(JsonWriter out, UpdatePushNotificationContentTemplateData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpdatePushNotificationContentTemplateData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UpdatePushNotificationContentTemplateData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdatePushNotificationContentTemplateData
-  * @throws IOException if the JSON string is invalid with respect to UpdatePushNotificationContentTemplateData
-  */
-  public static UpdatePushNotificationContentTemplateData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdatePushNotificationContentTemplateData.class);
-  }
-
- /**
-  * Convert an instance of UpdatePushNotificationContentTemplateData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

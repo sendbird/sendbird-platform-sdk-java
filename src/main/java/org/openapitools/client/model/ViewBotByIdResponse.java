@@ -15,71 +15,57 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import org.openapitools.client.model.CreateBotResponseBot;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ViewBotByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ViewBotByIdResponse.JSON_PROPERTY_BOT,
+  ViewBotByIdResponse.JSON_PROPERTY_BOT_CALLBACK_URL,
+  ViewBotByIdResponse.JSON_PROPERTY_ENABLE_MARK_AS_READ,
+  ViewBotByIdResponse.JSON_PROPERTY_IS_PRIVACY_MODE,
+  ViewBotByIdResponse.JSON_PROPERTY_SHOW_MEMBER,
+  ViewBotByIdResponse.JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE
+})
+@JsonTypeName("viewBotByIdResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ViewBotByIdResponse {
-  public static final String SERIALIZED_NAME_BOT = "bot";
-  @SerializedName(SERIALIZED_NAME_BOT)
+  public static final String JSON_PROPERTY_BOT = "bot";
   private CreateBotResponseBot bot;
 
-  public static final String SERIALIZED_NAME_BOT_CALLBACK_URL = "bot_callback_url";
-  @SerializedName(SERIALIZED_NAME_BOT_CALLBACK_URL)
+  public static final String JSON_PROPERTY_BOT_CALLBACK_URL = "bot_callback_url";
   private String botCallbackUrl;
 
-  public static final String SERIALIZED_NAME_ENABLE_MARK_AS_READ = "enable_mark_as_read";
-  @SerializedName(SERIALIZED_NAME_ENABLE_MARK_AS_READ)
+  public static final String JSON_PROPERTY_ENABLE_MARK_AS_READ = "enable_mark_as_read";
   private Boolean enableMarkAsRead;
 
-  public static final String SERIALIZED_NAME_IS_PRIVACY_MODE = "is_privacy_mode";
-  @SerializedName(SERIALIZED_NAME_IS_PRIVACY_MODE)
+  public static final String JSON_PROPERTY_IS_PRIVACY_MODE = "is_privacy_mode";
   private Boolean isPrivacyMode;
 
-  public static final String SERIALIZED_NAME_SHOW_MEMBER = "show_member";
-  @SerializedName(SERIALIZED_NAME_SHOW_MEMBER)
+  public static final String JSON_PROPERTY_SHOW_MEMBER = "show_member";
   private Boolean showMember;
 
-  public static final String SERIALIZED_NAME_CHANNEL_INVITATION_PREFERENCE = "channel_invitation_preference";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_INVITATION_PREFERENCE)
+  public static final String JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE = "channel_invitation_preference";
   private BigDecimal channelInvitationPreference;
 
   public ViewBotByIdResponse() { 
   }
 
   public ViewBotByIdResponse bot(CreateBotResponseBot bot) {
-    
     this.bot = bot;
     return this;
   }
@@ -90,19 +76,22 @@ public class ViewBotByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BOT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public CreateBotResponseBot getBot() {
     return bot;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BOT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBot(CreateBotResponseBot bot) {
     this.bot = bot;
   }
 
 
   public ViewBotByIdResponse botCallbackUrl(String botCallbackUrl) {
-    
     this.botCallbackUrl = botCallbackUrl;
     return this;
   }
@@ -113,19 +102,22 @@ public class ViewBotByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BOT_CALLBACK_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBotCallbackUrl() {
     return botCallbackUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BOT_CALLBACK_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBotCallbackUrl(String botCallbackUrl) {
     this.botCallbackUrl = botCallbackUrl;
   }
 
 
   public ViewBotByIdResponse enableMarkAsRead(Boolean enableMarkAsRead) {
-    
     this.enableMarkAsRead = enableMarkAsRead;
     return this;
   }
@@ -136,19 +128,22 @@ public class ViewBotByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ENABLE_MARK_AS_READ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getEnableMarkAsRead() {
     return enableMarkAsRead;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ENABLE_MARK_AS_READ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnableMarkAsRead(Boolean enableMarkAsRead) {
     this.enableMarkAsRead = enableMarkAsRead;
   }
 
 
   public ViewBotByIdResponse isPrivacyMode(Boolean isPrivacyMode) {
-    
     this.isPrivacyMode = isPrivacyMode;
     return this;
   }
@@ -159,19 +154,22 @@ public class ViewBotByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_PRIVACY_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsPrivacyMode() {
     return isPrivacyMode;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_PRIVACY_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsPrivacyMode(Boolean isPrivacyMode) {
     this.isPrivacyMode = isPrivacyMode;
   }
 
 
   public ViewBotByIdResponse showMember(Boolean showMember) {
-    
     this.showMember = showMember;
     return this;
   }
@@ -182,19 +180,22 @@ public class ViewBotByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SHOW_MEMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getShowMember() {
     return showMember;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SHOW_MEMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShowMember(Boolean showMember) {
     this.showMember = showMember;
   }
 
 
   public ViewBotByIdResponse channelInvitationPreference(BigDecimal channelInvitationPreference) {
-    
     this.channelInvitationPreference = channelInvitationPreference;
     return this;
   }
@@ -205,18 +206,24 @@ public class ViewBotByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getChannelInvitationPreference() {
     return channelInvitationPreference;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelInvitationPreference(BigDecimal channelInvitationPreference) {
     this.channelInvitationPreference = channelInvitationPreference;
   }
 
 
-
+  /**
+   * Return true if this viewBotByIdResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -264,102 +271,5 @@ public class ViewBotByIdResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("bot");
-    openapiFields.add("bot_callback_url");
-    openapiFields.add("enable_mark_as_read");
-    openapiFields.add("is_privacy_mode");
-    openapiFields.add("show_member");
-    openapiFields.add("channel_invitation_preference");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ViewBotByIdResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ViewBotByIdResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewBotByIdResponse is not found in the empty JSON string", ViewBotByIdResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ViewBotByIdResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ViewBotByIdResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `bot`
-      if (jsonObj.getAsJsonObject("bot") != null) {
-        CreateBotResponseBot.validateJsonObject(jsonObj.getAsJsonObject("bot"));
-      }
-      if (jsonObj.get("bot_callback_url") != null && !jsonObj.get("bot_callback_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bot_callback_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_callback_url").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ViewBotByIdResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ViewBotByIdResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ViewBotByIdResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ViewBotByIdResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ViewBotByIdResponse>() {
-           @Override
-           public void write(JsonWriter out, ViewBotByIdResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ViewBotByIdResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ViewBotByIdResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViewBotByIdResponse
-  * @throws IOException if the JSON string is invalid with respect to ViewBotByIdResponse
-  */
-  public static ViewBotByIdResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ViewBotByIdResponse.class);
-  }
-
- /**
-  * Convert an instance of ViewBotByIdResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

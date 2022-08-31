@@ -15,82 +15,68 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ViewNumberOfUnreadItemsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT,
+  ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT,
+  ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT,
+  ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_SUPER_GROUP_CHANNEL_INVITATION_COUNT,
+  ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_GROUP_CHANNEL_INVITATION_COUNT,
+  ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT,
+  ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MENTION_COUNT,
+  ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT,
+  ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT
+})
+@JsonTypeName("viewNumberOfUnreadItemsResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ViewNumberOfUnreadItemsResponse {
-  public static final String SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "non_super_group_channel_unread_message_count";
-  @SerializedName(SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
+  public static final String JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "non_super_group_channel_unread_message_count";
   private BigDecimal nonSuperGroupChannelUnreadMessageCount;
 
-  public static final String SERIALIZED_NAME_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "super_group_channel_unread_message_count";
-  @SerializedName(SERIALIZED_NAME_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
+  public static final String JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "super_group_channel_unread_message_count";
   private BigDecimal superGroupChannelUnreadMessageCount;
 
-  public static final String SERIALIZED_NAME_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "group_channel_unread_message_count";
-  @SerializedName(SERIALIZED_NAME_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
+  public static final String JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "group_channel_unread_message_count";
   private BigDecimal groupChannelUnreadMessageCount;
 
-  public static final String SERIALIZED_NAME_SUPER_GROUP_CHANNEL_INVITATION_COUNT = "super_group_channel_invitation_count";
-  @SerializedName(SERIALIZED_NAME_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
+  public static final String JSON_PROPERTY_SUPER_GROUP_CHANNEL_INVITATION_COUNT = "super_group_channel_invitation_count";
   private BigDecimal superGroupChannelInvitationCount;
 
-  public static final String SERIALIZED_NAME_GROUP_CHANNEL_INVITATION_COUNT = "group_channel_invitation_count";
-  @SerializedName(SERIALIZED_NAME_GROUP_CHANNEL_INVITATION_COUNT)
+  public static final String JSON_PROPERTY_GROUP_CHANNEL_INVITATION_COUNT = "group_channel_invitation_count";
   private BigDecimal groupChannelInvitationCount;
 
-  public static final String SERIALIZED_NAME_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT = "super_group_channel_unread_mention_count";
-  @SerializedName(SERIALIZED_NAME_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
+  public static final String JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT = "super_group_channel_unread_mention_count";
   private BigDecimal superGroupChannelUnreadMentionCount;
 
-  public static final String SERIALIZED_NAME_GROUP_CHANNEL_UNREAD_MENTION_COUNT = "group_channel_unread_mention_count";
-  @SerializedName(SERIALIZED_NAME_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
+  public static final String JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MENTION_COUNT = "group_channel_unread_mention_count";
   private BigDecimal groupChannelUnreadMentionCount;
 
-  public static final String SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT = "non_super_group_channel_unread_mention_count";
-  @SerializedName(SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
+  public static final String JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT = "non_super_group_channel_unread_mention_count";
   private BigDecimal nonSuperGroupChannelUnreadMentionCount;
 
-  public static final String SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT = "non_super_group_channel_invitation_count";
-  @SerializedName(SERIALIZED_NAME_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
+  public static final String JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT = "non_super_group_channel_invitation_count";
   private BigDecimal nonSuperGroupChannelInvitationCount;
 
   public ViewNumberOfUnreadItemsResponse() { 
   }
 
   public ViewNumberOfUnreadItemsResponse nonSuperGroupChannelUnreadMessageCount(BigDecimal nonSuperGroupChannelUnreadMessageCount) {
-    
     this.nonSuperGroupChannelUnreadMessageCount = nonSuperGroupChannelUnreadMessageCount;
     return this;
   }
@@ -101,19 +87,22 @@ public class ViewNumberOfUnreadItemsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getNonSuperGroupChannelUnreadMessageCount() {
     return nonSuperGroupChannelUnreadMessageCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNonSuperGroupChannelUnreadMessageCount(BigDecimal nonSuperGroupChannelUnreadMessageCount) {
     this.nonSuperGroupChannelUnreadMessageCount = nonSuperGroupChannelUnreadMessageCount;
   }
 
 
   public ViewNumberOfUnreadItemsResponse superGroupChannelUnreadMessageCount(BigDecimal superGroupChannelUnreadMessageCount) {
-    
     this.superGroupChannelUnreadMessageCount = superGroupChannelUnreadMessageCount;
     return this;
   }
@@ -124,19 +113,22 @@ public class ViewNumberOfUnreadItemsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSuperGroupChannelUnreadMessageCount() {
     return superGroupChannelUnreadMessageCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSuperGroupChannelUnreadMessageCount(BigDecimal superGroupChannelUnreadMessageCount) {
     this.superGroupChannelUnreadMessageCount = superGroupChannelUnreadMessageCount;
   }
 
 
   public ViewNumberOfUnreadItemsResponse groupChannelUnreadMessageCount(BigDecimal groupChannelUnreadMessageCount) {
-    
     this.groupChannelUnreadMessageCount = groupChannelUnreadMessageCount;
     return this;
   }
@@ -147,19 +139,22 @@ public class ViewNumberOfUnreadItemsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getGroupChannelUnreadMessageCount() {
     return groupChannelUnreadMessageCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroupChannelUnreadMessageCount(BigDecimal groupChannelUnreadMessageCount) {
     this.groupChannelUnreadMessageCount = groupChannelUnreadMessageCount;
   }
 
 
   public ViewNumberOfUnreadItemsResponse superGroupChannelInvitationCount(BigDecimal superGroupChannelInvitationCount) {
-    
     this.superGroupChannelInvitationCount = superGroupChannelInvitationCount;
     return this;
   }
@@ -170,19 +165,22 @@ public class ViewNumberOfUnreadItemsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSuperGroupChannelInvitationCount() {
     return superGroupChannelInvitationCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSuperGroupChannelInvitationCount(BigDecimal superGroupChannelInvitationCount) {
     this.superGroupChannelInvitationCount = superGroupChannelInvitationCount;
   }
 
 
   public ViewNumberOfUnreadItemsResponse groupChannelInvitationCount(BigDecimal groupChannelInvitationCount) {
-    
     this.groupChannelInvitationCount = groupChannelInvitationCount;
     return this;
   }
@@ -193,19 +191,22 @@ public class ViewNumberOfUnreadItemsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_INVITATION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getGroupChannelInvitationCount() {
     return groupChannelInvitationCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_INVITATION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroupChannelInvitationCount(BigDecimal groupChannelInvitationCount) {
     this.groupChannelInvitationCount = groupChannelInvitationCount;
   }
 
 
   public ViewNumberOfUnreadItemsResponse superGroupChannelUnreadMentionCount(BigDecimal superGroupChannelUnreadMentionCount) {
-    
     this.superGroupChannelUnreadMentionCount = superGroupChannelUnreadMentionCount;
     return this;
   }
@@ -216,19 +217,22 @@ public class ViewNumberOfUnreadItemsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSuperGroupChannelUnreadMentionCount() {
     return superGroupChannelUnreadMentionCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSuperGroupChannelUnreadMentionCount(BigDecimal superGroupChannelUnreadMentionCount) {
     this.superGroupChannelUnreadMentionCount = superGroupChannelUnreadMentionCount;
   }
 
 
   public ViewNumberOfUnreadItemsResponse groupChannelUnreadMentionCount(BigDecimal groupChannelUnreadMentionCount) {
-    
     this.groupChannelUnreadMentionCount = groupChannelUnreadMentionCount;
     return this;
   }
@@ -239,19 +243,22 @@ public class ViewNumberOfUnreadItemsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getGroupChannelUnreadMentionCount() {
     return groupChannelUnreadMentionCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroupChannelUnreadMentionCount(BigDecimal groupChannelUnreadMentionCount) {
     this.groupChannelUnreadMentionCount = groupChannelUnreadMentionCount;
   }
 
 
   public ViewNumberOfUnreadItemsResponse nonSuperGroupChannelUnreadMentionCount(BigDecimal nonSuperGroupChannelUnreadMentionCount) {
-    
     this.nonSuperGroupChannelUnreadMentionCount = nonSuperGroupChannelUnreadMentionCount;
     return this;
   }
@@ -262,19 +269,22 @@ public class ViewNumberOfUnreadItemsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getNonSuperGroupChannelUnreadMentionCount() {
     return nonSuperGroupChannelUnreadMentionCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNonSuperGroupChannelUnreadMentionCount(BigDecimal nonSuperGroupChannelUnreadMentionCount) {
     this.nonSuperGroupChannelUnreadMentionCount = nonSuperGroupChannelUnreadMentionCount;
   }
 
 
   public ViewNumberOfUnreadItemsResponse nonSuperGroupChannelInvitationCount(BigDecimal nonSuperGroupChannelInvitationCount) {
-    
     this.nonSuperGroupChannelInvitationCount = nonSuperGroupChannelInvitationCount;
     return this;
   }
@@ -285,18 +295,24 @@ public class ViewNumberOfUnreadItemsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getNonSuperGroupChannelInvitationCount() {
     return nonSuperGroupChannelInvitationCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNonSuperGroupChannelInvitationCount(BigDecimal nonSuperGroupChannelInvitationCount) {
     this.nonSuperGroupChannelInvitationCount = nonSuperGroupChannelInvitationCount;
   }
 
 
-
+  /**
+   * Return true if this viewNumberOfUnreadItemsResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -350,98 +366,5 @@ public class ViewNumberOfUnreadItemsResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("non_super_group_channel_unread_message_count");
-    openapiFields.add("super_group_channel_unread_message_count");
-    openapiFields.add("group_channel_unread_message_count");
-    openapiFields.add("super_group_channel_invitation_count");
-    openapiFields.add("group_channel_invitation_count");
-    openapiFields.add("super_group_channel_unread_mention_count");
-    openapiFields.add("group_channel_unread_mention_count");
-    openapiFields.add("non_super_group_channel_unread_mention_count");
-    openapiFields.add("non_super_group_channel_invitation_count");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ViewNumberOfUnreadItemsResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ViewNumberOfUnreadItemsResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewNumberOfUnreadItemsResponse is not found in the empty JSON string", ViewNumberOfUnreadItemsResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ViewNumberOfUnreadItemsResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ViewNumberOfUnreadItemsResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ViewNumberOfUnreadItemsResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ViewNumberOfUnreadItemsResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ViewNumberOfUnreadItemsResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ViewNumberOfUnreadItemsResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ViewNumberOfUnreadItemsResponse>() {
-           @Override
-           public void write(JsonWriter out, ViewNumberOfUnreadItemsResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ViewNumberOfUnreadItemsResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ViewNumberOfUnreadItemsResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViewNumberOfUnreadItemsResponse
-  * @throws IOException if the JSON string is invalid with respect to ViewNumberOfUnreadItemsResponse
-  */
-  public static ViewNumberOfUnreadItemsResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ViewNumberOfUnreadItemsResponse.class);
-  }
-
- /**
-  * Convert an instance of ViewNumberOfUnreadItemsResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

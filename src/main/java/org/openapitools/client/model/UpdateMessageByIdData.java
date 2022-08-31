@@ -15,83 +15,69 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * UpdateMessageByIdData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  UpdateMessageByIdData.JSON_PROPERTY_CHANNEL_TYPE,
+  UpdateMessageByIdData.JSON_PROPERTY_CHANNEL_URL,
+  UpdateMessageByIdData.JSON_PROPERTY_MESSAGE_ID,
+  UpdateMessageByIdData.JSON_PROPERTY_MESSAGE_TYPE,
+  UpdateMessageByIdData.JSON_PROPERTY_MESSAGE,
+  UpdateMessageByIdData.JSON_PROPERTY_CUSTOM_TYPE,
+  UpdateMessageByIdData.JSON_PROPERTY_DATA,
+  UpdateMessageByIdData.JSON_PROPERTY_MENTION_TYPE,
+  UpdateMessageByIdData.JSON_PROPERTY_MENTIONED_USER_IDS
+})
+@JsonTypeName("updateMessageByIdData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class UpdateMessageByIdData {
-  public static final String SERIALIZED_NAME_CHANNEL_TYPE = "channel_type";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_TYPE)
+  public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
-  public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
+  public static final String JSON_PROPERTY_MESSAGE_ID = "message_id";
   private Integer messageId;
 
-  public static final String SERIALIZED_NAME_MESSAGE_TYPE = "message_type";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_TYPE)
+  public static final String JSON_PROPERTY_MESSAGE_TYPE = "message_type";
   private String messageType;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_MENTION_TYPE = "mention_type";
-  @SerializedName(SERIALIZED_NAME_MENTION_TYPE)
+  public static final String JSON_PROPERTY_MENTION_TYPE = "mention_type";
   private String mentionType;
 
-  public static final String SERIALIZED_NAME_MENTIONED_USER_IDS = "mentioned_user_ids";
-  @SerializedName(SERIALIZED_NAME_MENTIONED_USER_IDS)
+  public static final String JSON_PROPERTY_MENTIONED_USER_IDS = "mentioned_user_ids";
   private List<String> mentionedUserIds = null;
 
   public UpdateMessageByIdData() { 
   }
 
   public UpdateMessageByIdData channelType(String channelType) {
-    
     this.channelType = channelType;
     return this;
   }
@@ -102,19 +88,22 @@ public class UpdateMessageByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the type of the channel. Either open_channels or group_channels.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelType() {
     return channelType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelType(String channelType) {
     this.channelType = channelType;
   }
 
 
   public UpdateMessageByIdData channelUrl(String channelUrl) {
-    
     this.channelUrl = channelUrl;
     return this;
   }
@@ -125,19 +114,22 @@ public class UpdateMessageByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the target channel.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelUrl() {
     return channelUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
   }
 
 
   public UpdateMessageByIdData messageId(Integer messageId) {
-    
     this.messageId = messageId;
     return this;
   }
@@ -148,19 +140,22 @@ public class UpdateMessageByIdData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the message to update.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getMessageId() {
     return messageId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessageId(Integer messageId) {
     this.messageId = messageId;
   }
 
 
   public UpdateMessageByIdData messageType(String messageType) {
-    
     this.messageType = messageType;
     return this;
   }
@@ -171,19 +166,22 @@ public class UpdateMessageByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the type of the message as ADMM.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMessageType() {
     return messageType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessageType(String messageType) {
     this.messageType = messageType;
   }
 
 
   public UpdateMessageByIdData message(String message) {
-    
     this.message = message;
     return this;
   }
@@ -194,19 +192,22 @@ public class UpdateMessageByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the content of the message.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMessage() {
     return message;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(String message) {
     this.message = message;
   }
 
 
   public UpdateMessageByIdData customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -217,19 +218,22 @@ public class UpdateMessageByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
   public UpdateMessageByIdData data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -240,19 +244,22 @@ public class UpdateMessageByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional message information such as custom font size, font type or `JSON` formatted string.")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public UpdateMessageByIdData mentionType(String mentionType) {
-    
     this.mentionType = mentionType;
     return this;
   }
@@ -263,19 +270,22 @@ public class UpdateMessageByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the mentioning method which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users)")
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMentionType() {
     return mentionType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionType(String mentionType) {
     this.mentionType = mentionType;
   }
 
 
   public UpdateMessageByIdData mentionedUserIds(List<String> mentionedUserIds) {
-    
     this.mentionedUserIds = mentionedUserIds;
     return this;
   }
@@ -294,18 +304,24 @@ public class UpdateMessageByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of the users who will get a notification for the message.")
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getMentionedUserIds() {
     return mentionedUserIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionedUserIds(List<String> mentionedUserIds) {
     this.mentionedUserIds = mentionedUserIds;
   }
 
 
-
+  /**
+   * Return true if this updateMessageByIdData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -359,131 +375,5 @@ public class UpdateMessageByIdData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("channel_type");
-    openapiFields.add("channel_url");
-    openapiFields.add("message_id");
-    openapiFields.add("message_type");
-    openapiFields.add("message");
-    openapiFields.add("custom_type");
-    openapiFields.add("data");
-    openapiFields.add("mention_type");
-    openapiFields.add("mentioned_user_ids");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("message_id");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UpdateMessageByIdData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (UpdateMessageByIdData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateMessageByIdData is not found in the empty JSON string", UpdateMessageByIdData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UpdateMessageByIdData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateMessageByIdData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdateMessageByIdData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("channel_type") != null && !jsonObj.get("channel_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_type").toString()));
-      }
-      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
-      }
-      if (jsonObj.get("message_type") != null && !jsonObj.get("message_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message_type").toString()));
-      }
-      if (jsonObj.get("message") != null && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      if (jsonObj.get("mention_type") != null && !jsonObj.get("mention_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mention_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mention_type").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("mentioned_user_ids") != null && !jsonObj.get("mentioned_user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mentioned_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_user_ids").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateMessageByIdData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateMessageByIdData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateMessageByIdData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateMessageByIdData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpdateMessageByIdData>() {
-           @Override
-           public void write(JsonWriter out, UpdateMessageByIdData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpdateMessageByIdData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UpdateMessageByIdData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdateMessageByIdData
-  * @throws IOException if the JSON string is invalid with respect to UpdateMessageByIdData
-  */
-  public static UpdateMessageByIdData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateMessageByIdData.class);
-  }
-
- /**
-  * Convert an instance of UpdateMessageByIdData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

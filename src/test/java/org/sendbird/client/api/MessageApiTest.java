@@ -13,7 +13,8 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.AddEmojiCategoriesResponse;
 import org.openapitools.client.model.AddEmojisData;
 import org.openapitools.client.model.AddEmojisResponse;
@@ -54,6 +55,8 @@ import org.openapitools.client.model.UpdateMessageByIdData;
 import org.openapitools.client.model.UseDefaultEmojisData;
 import org.openapitools.client.model.UseDefaultEmojisResponse;
 import org.openapitools.client.model.ViewTotalNumberOfMessagesInChannelResponse;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -65,7 +68,6 @@ import java.util.Map;
 /**
  * API tests for MessageApi
  */
-@Disabled
 public class MessageApiTest {
 
     private final MessageApi api = new MessageApi();
@@ -79,9 +81,9 @@ public class MessageApiTest {
      */
     @Test
     public void addEmojiCategoriesTest() throws ApiException {
-        String apiToken = null;
-        Object body = null;
-        AddEmojiCategoriesResponse response = api.addEmojiCategories(apiToken, body);
+        //String apiToken = null;
+        //Object body = null;
+        //AddEmojiCategoriesResponse response = api.addEmojiCategories(apiToken, body);
         // TODO: test validations
     }
 
@@ -94,9 +96,9 @@ public class MessageApiTest {
      */
     @Test
     public void addEmojisTest() throws ApiException {
-        String apiToken = null;
-        AddEmojisData addEmojisData = null;
-        AddEmojisResponse response = api.addEmojis(apiToken, addEmojisData);
+        //String apiToken = null;
+        //AddEmojisData addEmojisData = null;
+        //AddEmojisResponse response = api.addEmojis(apiToken, addEmojisData);
         // TODO: test validations
     }
 
@@ -109,12 +111,12 @@ public class MessageApiTest {
      */
     @Test
     public void addExtraDataToMessageTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        AddExtraDataToMessageData addExtraDataToMessageData = null;
-        AddExtraDataToMessageResponse response = api.addExtraDataToMessage(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //AddExtraDataToMessageData addExtraDataToMessageData = null;
+        //AddExtraDataToMessageResponse response = api.addExtraDataToMessage(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData);
         // TODO: test validations
     }
 
@@ -127,12 +129,12 @@ public class MessageApiTest {
      */
     @Test
     public void addReactionToAMessageTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        AddReactionToAMessageData addReactionToAMessageData = null;
-        AddReactionToAMessageResponse response = api.addReactionToAMessage(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //AddReactionToAMessageData addReactionToAMessageData = null;
+        //AddReactionToAMessageResponse response = api.addReactionToAMessage(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData);
         // TODO: test validations
     }
 
@@ -145,9 +147,9 @@ public class MessageApiTest {
      */
     @Test
     public void deleteEmojiByKeyTest() throws ApiException {
-        String apiToken = null;
-        String emojiKey = null;
-        api.deleteEmojiByKey(apiToken, emojiKey);
+        //String apiToken = null;
+        //String emojiKey = null;
+        //api.deleteEmojiByKey(apiToken, emojiKey);
         // TODO: test validations
     }
 
@@ -160,9 +162,9 @@ public class MessageApiTest {
      */
     @Test
     public void deleteEmojiCategoryByIdTest() throws ApiException {
-        String apiToken = null;
-        String emojiCategoryId = null;
-        Object response = api.deleteEmojiCategoryById(apiToken, emojiCategoryId);
+        //String apiToken = null;
+        //String emojiCategoryId = null;
+        //Object response = api.deleteEmojiCategoryById(apiToken, emojiCategoryId);
         // TODO: test validations
     }
 
@@ -175,11 +177,11 @@ public class MessageApiTest {
      */
     @Test
     public void deleteMessageByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        Object response = api.deleteMessageById(apiToken, channelType, channelUrl, messageId);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //Object response = api.deleteMessageById(apiToken, channelType, channelUrl, messageId);
         // TODO: test validations
     }
 
@@ -192,9 +194,9 @@ public class MessageApiTest {
      */
     @Test
     public void enableReactionsTest() throws ApiException {
-        String apiToken = null;
-        EnableReactionsData enableReactionsData = null;
-        EnableReactionsResponse response = api.enableReactions(apiToken, enableReactionsData);
+        //String apiToken = null;
+        //EnableReactionsData enableReactionsData = null;
+        //EnableReactionsResponse response = api.enableReactions(apiToken, enableReactionsData);
         // TODO: test validations
     }
 
@@ -207,10 +209,10 @@ public class MessageApiTest {
      */
     @Test
     public void gcMarkAllMessagesAsDeliveredTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData = null;
-        GcMarkAllMessagesAsDeliveredResponse response = api.gcMarkAllMessagesAsDelivered(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData = null;
+        //GcMarkAllMessagesAsDeliveredResponse response = api.gcMarkAllMessagesAsDelivered(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData);
         // TODO: test validations
     }
 
@@ -223,10 +225,10 @@ public class MessageApiTest {
      */
     @Test
     public void gcMarkAllMessagesAsReadTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData = null;
-        Object response = api.gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData = null;
+        //Object response = api.gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
         // TODO: test validations
     }
 
@@ -239,10 +241,10 @@ public class MessageApiTest {
      */
     @Test
     public void gcViewNumberOfEachMembersUnreadMessagesTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String userIds = null;
-        GcViewNumberOfEachMembersUnreadMessagesResponse response = api.gcViewNumberOfEachMembersUnreadMessages(apiToken, channelUrl, userIds);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String userIds = null;
+        //GcViewNumberOfEachMembersUnreadMessagesResponse response = api.gcViewNumberOfEachMembersUnreadMessages(apiToken, channelUrl, userIds);
         // TODO: test validations
     }
 
@@ -255,9 +257,9 @@ public class MessageApiTest {
      */
     @Test
     public void getEmojiByKeyTest() throws ApiException {
-        String apiToken = null;
-        String emojiKey = null;
-        SendBirdEmoji response = api.getEmojiByKey(apiToken, emojiKey);
+        //String apiToken = null;
+        //String emojiKey = null;
+        //SendBirdEmoji response = api.getEmojiByKey(apiToken, emojiKey);
         // TODO: test validations
     }
 
@@ -270,9 +272,9 @@ public class MessageApiTest {
      */
     @Test
     public void getEmojiCategoryByIdTest() throws ApiException {
-        String apiToken = null;
-        String emojiCategoryId = null;
-        SendBirdEmojiCategory response = api.getEmojiCategoryById(apiToken, emojiCategoryId);
+        //String apiToken = null;
+        //String emojiCategoryId = null;
+        //SendBirdEmojiCategory response = api.getEmojiCategoryById(apiToken, emojiCategoryId);
         // TODO: test validations
     }
 
@@ -285,8 +287,8 @@ public class MessageApiTest {
      */
     @Test
     public void getStatisticsTest() throws ApiException {
-        String apiToken = null;
-        GetStatisticsResponse response = api.getStatistics(apiToken);
+        //String apiToken = null;
+        //GetStatisticsResponse response = api.getStatistics(apiToken);
         // TODO: test validations
     }
 
@@ -299,15 +301,15 @@ public class MessageApiTest {
      */
     @Test
     public void getStatisticsDailyTest() throws ApiException {
-        String apiToken = null;
-        String startDate = null;
-        String endDate = null;
-        String startWeek = null;
-        String endWeek = null;
-        String startMonth = null;
-        String endMonth = null;
-        String announcementGroup = null;
-        GetStatisticsDailyResponse response = api.getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
+        //String apiToken = null;
+        //String startDate = null;
+        //String endDate = null;
+        //String startWeek = null;
+        //String endWeek = null;
+        //String startMonth = null;
+        //String endMonth = null;
+        //String announcementGroup = null;
+        //GetStatisticsDailyResponse response = api.getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
         // TODO: test validations
     }
 
@@ -320,8 +322,8 @@ public class MessageApiTest {
      */
     @Test
     public void getStatisticsMonthlyTest() throws ApiException {
-        String apiToken = null;
-        GetStatisticsMonthlyResponse response = api.getStatisticsMonthly(apiToken);
+        //String apiToken = null;
+        //GetStatisticsMonthlyResponse response = api.getStatisticsMonthly(apiToken);
         // TODO: test validations
     }
 
@@ -334,8 +336,8 @@ public class MessageApiTest {
      */
     @Test
     public void listAllEmojisAndEmojiCategoriesTest() throws ApiException {
-        String apiToken = null;
-        ListAllEmojisAndEmojiCategoriesResponse response = api.listAllEmojisAndEmojiCategories(apiToken);
+        //String apiToken = null;
+        //ListAllEmojisAndEmojiCategoriesResponse response = api.listAllEmojisAndEmojiCategories(apiToken);
         // TODO: test validations
     }
 
@@ -348,10 +350,10 @@ public class MessageApiTest {
      */
     @Test
     public void listAnnouncementGroupsTest() throws ApiException {
-        String apiToken = null;
-        String token = null;
-        Integer limit = null;
-        ListAnnouncementGroupsResponse response = api.listAnnouncementGroups(apiToken, token, limit);
+        //String apiToken = null;
+        //String token = null;
+        //Integer limit = null;
+        //ListAnnouncementGroupsResponse response = api.listAnnouncementGroups(apiToken, token, limit);
         // TODO: test validations
     }
 
@@ -364,13 +366,13 @@ public class MessageApiTest {
      */
     @Test
     public void listAnnouncementsTest() throws ApiException {
-        String apiToken = null;
-        String token = null;
-        Integer limit = null;
-        String order = null;
-        String status = null;
-        String announcementGroup = null;
-        ListAnnouncementsResponse response = api.listAnnouncements(apiToken, token, limit, order, status, announcementGroup);
+        //String apiToken = null;
+        //String token = null;
+        //Integer limit = null;
+        //String order = null;
+        //String status = null;
+        //String announcementGroup = null;
+        //ListAnnouncementsResponse response = api.listAnnouncements(apiToken, token, limit, order, status, announcementGroup);
         // TODO: test validations
     }
 
@@ -383,8 +385,8 @@ public class MessageApiTest {
      */
     @Test
     public void listEmojisTest() throws ApiException {
-        String apiToken = null;
-        ListEmojisResponse response = api.listEmojis(apiToken);
+        //String apiToken = null;
+        //ListEmojisResponse response = api.listEmojis(apiToken);
         // TODO: test validations
     }
 
@@ -397,28 +399,28 @@ public class MessageApiTest {
      */
     @Test
     public void listMessagesTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageTs = null;
-        Integer messageId = null;
-        Integer prevLimit = null;
-        Integer nextLimit = null;
-        Boolean include = null;
-        Boolean reverse = null;
-        String senderId = null;
-        String senderIds = null;
-        String operatorFilter = null;
-        String customTypes = null;
-        String messageType = null;
-        Boolean includingRemoved = null;
-        Boolean includeReactions = null;
-        Boolean withSortedMetaArray = null;
-        Boolean showSubchannelMessagesOnly = null;
-        String userId = null;
-        String customType = null;
-        Boolean withMetaArray = null;
-        ListMessagesResponse response = api.listMessages(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageTs = null;
+        //Integer messageId = null;
+        //Integer prevLimit = null;
+        //Integer nextLimit = null;
+        //Boolean include = null;
+        //Boolean reverse = null;
+        //String senderId = null;
+        //String senderIds = null;
+        //String operatorFilter = null;
+        //String customTypes = null;
+        //String messageType = null;
+        //Boolean includingRemoved = null;
+        //Boolean includeReactions = null;
+        //Boolean withSortedMetaArray = null;
+        //Boolean showSubchannelMessagesOnly = null;
+        //String userId = null;
+        //String customType = null;
+        //Boolean withMetaArray = null;
+        //ListMessagesResponse response = api.listMessages(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
         // TODO: test validations
     }
 
@@ -431,12 +433,12 @@ public class MessageApiTest {
      */
     @Test
     public void listReactionsOfMessageTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        Boolean listUsers = null;
-        ListReactionsOfMessageResponse response = api.listReactionsOfMessage(apiToken, channelType, channelUrl, messageId, listUsers);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //Boolean listUsers = null;
+        //ListReactionsOfMessageResponse response = api.listReactionsOfMessage(apiToken, channelType, channelUrl, messageId, listUsers);
         // TODO: test validations
     }
 
@@ -449,10 +451,10 @@ public class MessageApiTest {
      */
     @Test
     public void migrateMessagesByUrlTest() throws ApiException {
-        String apiToken = null;
-        String targetChannelUrl = null;
-        Object body = null;
-        api.migrateMessagesByUrl(apiToken, targetChannelUrl, body);
+        //String apiToken = null;
+        //String targetChannelUrl = null;
+        //Object body = null;
+        //api.migrateMessagesByUrl(apiToken, targetChannelUrl, body);
         // TODO: test validations
     }
 
@@ -465,12 +467,12 @@ public class MessageApiTest {
      */
     @Test
     public void removeExtraDataFromMessageTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        List<String> keys = null;
-        Object response = api.removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //List<String> keys = null;
+        //Object response = api.removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys);
         // TODO: test validations
     }
 
@@ -483,13 +485,13 @@ public class MessageApiTest {
      */
     @Test
     public void removeReactionFromAMessageTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        String userId = null;
-        String reaction = null;
-        RemoveReactionFromAMessageResponse response = api.removeReactionFromAMessage(apiToken, channelType, channelUrl, messageId, userId, reaction);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //String userId = null;
+        //String reaction = null;
+        //RemoveReactionFromAMessageResponse response = api.removeReactionFromAMessage(apiToken, channelType, channelUrl, messageId, userId, reaction);
         // TODO: test validations
     }
 
@@ -502,9 +504,9 @@ public class MessageApiTest {
      */
     @Test
     public void scheduleAnnouncementTest() throws ApiException {
-        String apiToken = null;
-        ScheduleAnnouncementData scheduleAnnouncementData = null;
-        ScheduleAnnouncementResponse response = api.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
+        //String apiToken = null;
+        //ScheduleAnnouncementData scheduleAnnouncementData = null;
+        //ScheduleAnnouncementResponse response = api.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
         // TODO: test validations
     }
 
@@ -517,11 +519,11 @@ public class MessageApiTest {
      */
     @Test
     public void sendMessageTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        SendMessageData sendMessageData = null;
-        SendBirdMessageResponse response = api.sendMessage(apiToken, channelType, channelUrl, sendMessageData);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //SendMessageData sendMessageData = null;
+        //SendBirdMessageResponse response = api.sendMessage(apiToken, channelType, channelUrl, sendMessageData);
         // TODO: test validations
     }
 
@@ -534,12 +536,12 @@ public class MessageApiTest {
      */
     @Test
     public void translateMessageIntoOtherLanguagesTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData = null;
-        SendBirdMessageResponse response = api.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData = null;
+        //SendBirdMessageResponse response = api.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
         // TODO: test validations
     }
 
@@ -552,10 +554,10 @@ public class MessageApiTest {
      */
     @Test
     public void updateAnnouncementByIdTest() throws ApiException {
-        String apiToken = null;
-        String uniqueId = null;
-        UpdateAnnouncementByIdData updateAnnouncementByIdData = null;
-        UpdateAnnouncementByIdResponse response = api.updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData);
+        //String apiToken = null;
+        //String uniqueId = null;
+        //UpdateAnnouncementByIdData updateAnnouncementByIdData = null;
+        //UpdateAnnouncementByIdResponse response = api.updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData);
         // TODO: test validations
     }
 
@@ -568,10 +570,10 @@ public class MessageApiTest {
      */
     @Test
     public void updateEmojiCategoryUrlByIdTest() throws ApiException {
-        String apiToken = null;
-        String emojiCategoryId = null;
-        UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData = null;
-        SendBirdEmojiCategory response = api.updateEmojiCategoryUrlById(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData);
+        //String apiToken = null;
+        //String emojiCategoryId = null;
+        //UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData = null;
+        //SendBirdEmojiCategory response = api.updateEmojiCategoryUrlById(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData);
         // TODO: test validations
     }
 
@@ -584,10 +586,10 @@ public class MessageApiTest {
      */
     @Test
     public void updateEmojiUrlByKeyTest() throws ApiException {
-        String apiToken = null;
-        String emojiKey = null;
-        UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData = null;
-        SendBirdEmoji response = api.updateEmojiUrlByKey(apiToken, emojiKey, updateEmojiUrlByKeyData);
+        //String apiToken = null;
+        //String emojiKey = null;
+        //UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData = null;
+        //SendBirdEmoji response = api.updateEmojiUrlByKey(apiToken, emojiKey, updateEmojiUrlByKeyData);
         // TODO: test validations
     }
 
@@ -600,12 +602,12 @@ public class MessageApiTest {
      */
     @Test
     public void updateExtraDataInMessageTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        UpdateExtraDataInMessageData updateExtraDataInMessageData = null;
-        UpdateExtraDataInMessageResponse response = api.updateExtraDataInMessage(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //UpdateExtraDataInMessageData updateExtraDataInMessageData = null;
+        //UpdateExtraDataInMessageResponse response = api.updateExtraDataInMessage(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData);
         // TODO: test validations
     }
 
@@ -618,12 +620,12 @@ public class MessageApiTest {
      */
     @Test
     public void updateMessageByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        UpdateMessageByIdData updateMessageByIdData = null;
-        SendBirdMessageResponse response = api.updateMessageById(apiToken, channelType, channelUrl, messageId, updateMessageByIdData);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //UpdateMessageByIdData updateMessageByIdData = null;
+        //SendBirdMessageResponse response = api.updateMessageById(apiToken, channelType, channelUrl, messageId, updateMessageByIdData);
         // TODO: test validations
     }
 
@@ -636,9 +638,9 @@ public class MessageApiTest {
      */
     @Test
     public void useDefaultEmojisTest() throws ApiException {
-        String apiToken = null;
-        UseDefaultEmojisData useDefaultEmojisData = null;
-        UseDefaultEmojisResponse response = api.useDefaultEmojis(apiToken, useDefaultEmojisData);
+        //String apiToken = null;
+        //UseDefaultEmojisData useDefaultEmojisData = null;
+        //UseDefaultEmojisResponse response = api.useDefaultEmojis(apiToken, useDefaultEmojisData);
         // TODO: test validations
     }
 
@@ -651,13 +653,13 @@ public class MessageApiTest {
      */
     @Test
     public void viewMessageByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        String messageId = null;
-        Boolean withSortedMetaArray = null;
-        Boolean withMetaArray = null;
-        SendBirdMessageResponse response = api.viewMessageById(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //String messageId = null;
+        //Boolean withSortedMetaArray = null;
+        //Boolean withMetaArray = null;
+        //SendBirdMessageResponse response = api.viewMessageById(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray);
         // TODO: test validations
     }
 
@@ -670,10 +672,10 @@ public class MessageApiTest {
      */
     @Test
     public void viewTotalNumberOfMessagesInChannelTest() throws ApiException {
-        String apiToken = null;
-        String channelType = null;
-        String channelUrl = null;
-        ViewTotalNumberOfMessagesInChannelResponse response = api.viewTotalNumberOfMessagesInChannel(apiToken, channelType, channelUrl);
+        //String apiToken = null;
+        //String channelType = null;
+        //String channelUrl = null;
+        //ViewTotalNumberOfMessagesInChannelResponse response = api.viewTotalNumberOfMessagesInChannel(apiToken, channelType, channelUrl);
         // TODO: test validations
     }
 

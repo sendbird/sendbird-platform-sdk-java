@@ -13,84 +13,77 @@
 
 package org.openapitools.client.model;
 
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdChannelResponse;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdUser;
 import org.openapitools.jackson.nullable.JsonNullable;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ReportMessageByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ReportMessageByIdResponse.JSON_PROPERTY_REPORT_TYPE,
+  ReportMessageByIdResponse.JSON_PROPERTY_REPORT_CATEGORY,
+  ReportMessageByIdResponse.JSON_PROPERTY_REPORTING_USER,
+  ReportMessageByIdResponse.JSON_PROPERTY_OFFENDING_USER,
+  ReportMessageByIdResponse.JSON_PROPERTY_REPORTED_MESSAGE,
+  ReportMessageByIdResponse.JSON_PROPERTY_CHANNEL,
+  ReportMessageByIdResponse.JSON_PROPERTY_REPORT_DESCRIPTION,
+  ReportMessageByIdResponse.JSON_PROPERTY_CREATED_AT
+})
+@JsonTypeName("reportMessageByIdResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ReportMessageByIdResponse {
-  public static final String SERIALIZED_NAME_REPORT_TYPE = "report_type";
-  @SerializedName(SERIALIZED_NAME_REPORT_TYPE)
+  public static final String JSON_PROPERTY_REPORT_TYPE = "report_type";
   private String reportType;
 
-  public static final String SERIALIZED_NAME_REPORT_CATEGORY = "report_category";
-  @SerializedName(SERIALIZED_NAME_REPORT_CATEGORY)
+  public static final String JSON_PROPERTY_REPORT_CATEGORY = "report_category";
   private String reportCategory;
 
-  public static final String SERIALIZED_NAME_REPORTING_USER = "reporting_user";
-  @SerializedName(SERIALIZED_NAME_REPORTING_USER)
+  public static final String JSON_PROPERTY_REPORTING_USER = "reporting_user";
   private SendBirdUser reportingUser;
 
-  public static final String SERIALIZED_NAME_OFFENDING_USER = "offending_user";
-  @SerializedName(SERIALIZED_NAME_OFFENDING_USER)
+  public static final String JSON_PROPERTY_OFFENDING_USER = "offending_user";
   private SendBirdUser offendingUser;
 
-  public static final String SERIALIZED_NAME_REPORTED_MESSAGE = "reported_message";
-  @SerializedName(SERIALIZED_NAME_REPORTED_MESSAGE)
-  private SendBirdMessageResponse reportedMessage;
+  public static final String JSON_PROPERTY_REPORTED_MESSAGE = "reported_message";
+  private JsonNullable<SendBirdMessageResponse> reportedMessage = JsonNullable.<SendBirdMessageResponse>undefined();
 
-  public static final String SERIALIZED_NAME_CHANNEL = "channel";
-  @SerializedName(SERIALIZED_NAME_CHANNEL)
+  public static final String JSON_PROPERTY_CHANNEL = "channel";
   private SendBirdChannelResponse channel;
 
-  public static final String SERIALIZED_NAME_REPORT_DESCRIPTION = "report_description";
-  @SerializedName(SERIALIZED_NAME_REPORT_DESCRIPTION)
+  public static final String JSON_PROPERTY_REPORT_DESCRIPTION = "report_description";
   private String reportDescription;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private BigDecimal createdAt;
 
   public ReportMessageByIdResponse() { 
   }
 
   public ReportMessageByIdResponse reportType(String reportType) {
-    
     this.reportType = reportType;
     return this;
   }
@@ -101,19 +94,22 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REPORT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReportType() {
     return reportType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REPORT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReportType(String reportType) {
     this.reportType = reportType;
   }
 
 
   public ReportMessageByIdResponse reportCategory(String reportCategory) {
-    
     this.reportCategory = reportCategory;
     return this;
   }
@@ -124,19 +120,22 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REPORT_CATEGORY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReportCategory() {
     return reportCategory;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REPORT_CATEGORY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReportCategory(String reportCategory) {
     this.reportCategory = reportCategory;
   }
 
 
   public ReportMessageByIdResponse reportingUser(SendBirdUser reportingUser) {
-    
     this.reportingUser = reportingUser;
     return this;
   }
@@ -147,19 +146,22 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REPORTING_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdUser getReportingUser() {
     return reportingUser;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REPORTING_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReportingUser(SendBirdUser reportingUser) {
     this.reportingUser = reportingUser;
   }
 
 
   public ReportMessageByIdResponse offendingUser(SendBirdUser offendingUser) {
-    
     this.offendingUser = offendingUser;
     return this;
   }
@@ -170,20 +172,23 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OFFENDING_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdUser getOffendingUser() {
     return offendingUser;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OFFENDING_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOffendingUser(SendBirdUser offendingUser) {
     this.offendingUser = offendingUser;
   }
 
 
   public ReportMessageByIdResponse reportedMessage(SendBirdMessageResponse reportedMessage) {
-    
-    this.reportedMessage = reportedMessage;
+    this.reportedMessage = JsonNullable.<SendBirdMessageResponse>of(reportedMessage);
     return this;
   }
 
@@ -193,19 +198,30 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonIgnore
 
   public SendBirdMessageResponse getReportedMessage() {
-    return reportedMessage;
+        return reportedMessage.orElse(null);
   }
 
+  @JsonProperty(JSON_PROPERTY_REPORTED_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SendBirdMessageResponse> getReportedMessage_JsonNullable() {
+    return reportedMessage;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REPORTED_MESSAGE)
+  public void setReportedMessage_JsonNullable(JsonNullable<SendBirdMessageResponse> reportedMessage) {
+    this.reportedMessage = reportedMessage;
+  }
 
   public void setReportedMessage(SendBirdMessageResponse reportedMessage) {
-    this.reportedMessage = reportedMessage;
+    this.reportedMessage = JsonNullable.<SendBirdMessageResponse>of(reportedMessage);
   }
 
 
   public ReportMessageByIdResponse channel(SendBirdChannelResponse channel) {
-    
     this.channel = channel;
     return this;
   }
@@ -216,19 +232,22 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdChannelResponse getChannel() {
     return channel;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannel(SendBirdChannelResponse channel) {
     this.channel = channel;
   }
 
 
   public ReportMessageByIdResponse reportDescription(String reportDescription) {
-    
     this.reportDescription = reportDescription;
     return this;
   }
@@ -239,19 +258,22 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REPORT_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReportDescription() {
     return reportDescription;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REPORT_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReportDescription(String reportDescription) {
     this.reportDescription = reportDescription;
   }
 
 
   public ReportMessageByIdResponse createdAt(BigDecimal createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -262,18 +284,61 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(BigDecimal createdAt) {
     this.createdAt = createdAt;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
+  /**
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   */
+  @JsonAnySetter
+  public ReportMessageByIdResponse putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
 
+  /**
+   * Return the additional (undeclared) property.
+   */
+  @JsonAnyGetter
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+  /**
+   * Return true if this reportMessageByIdResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -287,10 +352,11 @@ public class ReportMessageByIdResponse {
         Objects.equals(this.reportCategory, reportMessageByIdResponse.reportCategory) &&
         Objects.equals(this.reportingUser, reportMessageByIdResponse.reportingUser) &&
         Objects.equals(this.offendingUser, reportMessageByIdResponse.offendingUser) &&
-        Objects.equals(this.reportedMessage, reportMessageByIdResponse.reportedMessage) &&
+        equalsNullable(this.reportedMessage, reportMessageByIdResponse.reportedMessage) &&
         Objects.equals(this.channel, reportMessageByIdResponse.channel) &&
         Objects.equals(this.reportDescription, reportMessageByIdResponse.reportDescription) &&
-        Objects.equals(this.createdAt, reportMessageByIdResponse.createdAt);
+        Objects.equals(this.createdAt, reportMessageByIdResponse.createdAt)&&
+        Objects.equals(this.additionalProperties, reportMessageByIdResponse.additionalProperties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -299,7 +365,7 @@ public class ReportMessageByIdResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(reportType, reportCategory, reportingUser, offendingUser, reportedMessage, channel, reportDescription, createdAt);
+    return Objects.hash(reportType, reportCategory, reportingUser, offendingUser, hashCodeNullable(reportedMessage), channel, reportDescription, createdAt, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -321,6 +387,7 @@ public class ReportMessageByIdResponse {
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    reportDescription: ").append(toIndentedString(reportDescription)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -336,122 +403,5 @@ public class ReportMessageByIdResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("report_type");
-    openapiFields.add("report_category");
-    openapiFields.add("reporting_user");
-    openapiFields.add("offending_user");
-    openapiFields.add("reported_message");
-    openapiFields.add("channel");
-    openapiFields.add("report_description");
-    openapiFields.add("created_at");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ReportMessageByIdResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ReportMessageByIdResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReportMessageByIdResponse is not found in the empty JSON string", ReportMessageByIdResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ReportMessageByIdResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ReportMessageByIdResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("report_type") != null && !jsonObj.get("report_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `report_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("report_type").toString()));
-      }
-      if (jsonObj.get("report_category") != null && !jsonObj.get("report_category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `report_category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("report_category").toString()));
-      }
-      // validate the optional field `reporting_user`
-      if (jsonObj.getAsJsonObject("reporting_user") != null) {
-        SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("reporting_user"));
-      }
-      // validate the optional field `offending_user`
-      if (jsonObj.getAsJsonObject("offending_user") != null) {
-        SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("offending_user"));
-      }
-      // validate the optional field `reported_message`
-      if (jsonObj.getAsJsonObject("reported_message") != null) {
-        SendBirdMessageResponse.validateJsonObject(jsonObj.getAsJsonObject("reported_message"));
-      }
-      // validate the optional field `channel`
-      if (jsonObj.getAsJsonObject("channel") != null) {
-        SendBirdChannelResponse.validateJsonObject(jsonObj.getAsJsonObject("channel"));
-      }
-      if (jsonObj.get("report_description") != null && !jsonObj.get("report_description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `report_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("report_description").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ReportMessageByIdResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ReportMessageByIdResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ReportMessageByIdResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ReportMessageByIdResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ReportMessageByIdResponse>() {
-           @Override
-           public void write(JsonWriter out, ReportMessageByIdResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ReportMessageByIdResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ReportMessageByIdResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReportMessageByIdResponse
-  * @throws IOException if the JSON string is invalid with respect to ReportMessageByIdResponse
-  */
-  public static ReportMessageByIdResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ReportMessageByIdResponse.class);
-  }
-
- /**
-  * Convert an instance of ReportMessageByIdResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

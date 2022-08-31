@@ -13,7 +13,8 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.OcCreateChannelData;
 import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.OcListChannelsResponse;
@@ -22,6 +23,8 @@ import org.openapitools.client.model.OcListParticipantsResponse;
 import org.openapitools.client.model.OcRegisterOperatorsData;
 import org.openapitools.client.model.OcUpdateChannelByUrlData;
 import org.openapitools.client.model.SendBirdOpenChannel;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +36,6 @@ import java.util.Map;
 /**
  * API tests for OpenChannelApi
  */
-@Disabled
 public class OpenChannelApiTest {
 
     private final OpenChannelApi api = new OpenChannelApi();
@@ -47,11 +49,11 @@ public class OpenChannelApiTest {
      */
     @Test
     public void ocCancelTheRegistrationOfOperatorsTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        List<String> operatorIds = null;
-        Boolean deleteAll = null;
-        api.ocCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //List<String> operatorIds = null;
+        //Boolean deleteAll = null;
+        //api.ocCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
         // TODO: test validations
     }
 
@@ -64,9 +66,9 @@ public class OpenChannelApiTest {
      */
     @Test
     public void ocCreateChannelTest() throws ApiException {
-        String apiToken = null;
-        OcCreateChannelData ocCreateChannelData = null;
-        SendBirdOpenChannel response = api.ocCreateChannel(apiToken, ocCreateChannelData);
+        //String apiToken = null;
+        //OcCreateChannelData ocCreateChannelData = null;
+        //SendBirdOpenChannel response = api.ocCreateChannel(apiToken, ocCreateChannelData);
         // TODO: test validations
     }
 
@@ -79,9 +81,9 @@ public class OpenChannelApiTest {
      */
     @Test
     public void ocDeleteChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        OcDeleteChannelByUrl200Response response = api.ocDeleteChannelByUrl(apiToken, channelUrl);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //OcDeleteChannelByUrl200Response response = api.ocDeleteChannelByUrl(apiToken, channelUrl);
         // TODO: test validations
     }
 
@@ -94,16 +96,16 @@ public class OpenChannelApiTest {
      */
     @Test
     public void ocListChannelsTest() throws ApiException {
-        String apiToken = null;
-        String token = null;
-        Integer limit = null;
-        String customTypes = null;
-        String nameContains = null;
-        String urlContains = null;
-        Boolean showFrozen = null;
-        Boolean showMetadata = null;
-        String customType = null;
-        OcListChannelsResponse response = api.ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType);
+        //String apiToken = null;
+        //String token = null;
+        //Integer limit = null;
+        //String customTypes = null;
+        //String nameContains = null;
+        //String urlContains = null;
+        //Boolean showFrozen = null;
+        //Boolean showMetadata = null;
+        //String customType = null;
+        //OcListChannelsResponse response = api.ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType);
         // TODO: test validations
     }
 
@@ -116,11 +118,11 @@ public class OpenChannelApiTest {
      */
     @Test
     public void ocListOperatorsTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String token = null;
-        Integer limit = null;
-        OcListOperatorsResponse response = api.ocListOperators(apiToken, channelUrl, token, limit);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String token = null;
+        //Integer limit = null;
+        //OcListOperatorsResponse response = api.ocListOperators(apiToken, channelUrl, token, limit);
         // TODO: test validations
     }
 
@@ -133,11 +135,11 @@ public class OpenChannelApiTest {
      */
     @Test
     public void ocListParticipantsTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String token = null;
-        Integer limit = null;
-        OcListParticipantsResponse response = api.ocListParticipants(apiToken, channelUrl, token, limit);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String token = null;
+        //Integer limit = null;
+        //OcListParticipantsResponse response = api.ocListParticipants(apiToken, channelUrl, token, limit);
         // TODO: test validations
     }
 
@@ -150,10 +152,10 @@ public class OpenChannelApiTest {
      */
     @Test
     public void ocRegisterOperatorsTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        OcRegisterOperatorsData ocRegisterOperatorsData = null;
-        OcDeleteChannelByUrl200Response response = api.ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //OcRegisterOperatorsData ocRegisterOperatorsData = null;
+        //OcDeleteChannelByUrl200Response response = api.ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData);
         // TODO: test validations
     }
 
@@ -166,10 +168,10 @@ public class OpenChannelApiTest {
      */
     @Test
     public void ocUpdateChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        OcUpdateChannelByUrlData ocUpdateChannelByUrlData = null;
-        SendBirdOpenChannel response = api.ocUpdateChannelByUrl(apiToken, channelUrl, ocUpdateChannelByUrlData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //OcUpdateChannelByUrlData ocUpdateChannelByUrlData = null;
+        //SendBirdOpenChannel response = api.ocUpdateChannelByUrl(apiToken, channelUrl, ocUpdateChannelByUrlData);
         // TODO: test validations
     }
 
@@ -182,9 +184,9 @@ public class OpenChannelApiTest {
      */
     @Test
     public void ocViewChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        SendBirdOpenChannel response = api.ocViewChannelByUrl(apiToken, channelUrl);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //SendBirdOpenChannel response = api.ocViewChannelByUrl(apiToken, channelUrl);
         // TODO: test validations
     }
 

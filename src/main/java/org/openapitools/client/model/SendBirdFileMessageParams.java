@@ -15,14 +15,15 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,68 +32,62 @@ import org.openapitools.client.model.SendBirdAppleCriticalAlertOptions;
 import org.openapitools.client.model.SendBirdMessageMetaArray;
 import org.openapitools.client.model.SendBirdThumbnailSize;
 import org.openapitools.client.model.SendBirdUser;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SendBirdFileMessageParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendBirdFileMessageParams.JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS,
+  SendBirdFileMessageParams.JSON_PROPERTY_CUSTOM_TYPE,
+  SendBirdFileMessageParams.JSON_PROPERTY_DATA,
+  SendBirdFileMessageParams.JSON_PROPERTY_FILE,
+  SendBirdFileMessageParams.JSON_PROPERTY_FILE_NAME,
+  SendBirdFileMessageParams.JSON_PROPERTY_FILE_SIZE,
+  SendBirdFileMessageParams.JSON_PROPERTY_FILE_URL,
+  SendBirdFileMessageParams.JSON_PROPERTY_IS_REPLY_TO_CHANNEL,
+  SendBirdFileMessageParams.JSON_PROPERTY_MENTION_TYPE,
+  SendBirdFileMessageParams.JSON_PROPERTY_MENTIONED_USER_IDS,
+  SendBirdFileMessageParams.JSON_PROPERTY_MENTIONED_USERS,
+  SendBirdFileMessageParams.JSON_PROPERTY_META_ARRAY_KEYS,
+  SendBirdFileMessageParams.JSON_PROPERTY_META_ARRAYS,
+  SendBirdFileMessageParams.JSON_PROPERTY_MIME_TYPE,
+  SendBirdFileMessageParams.JSON_PROPERTY_PARENT_MESSAGE_ID,
+  SendBirdFileMessageParams.JSON_PROPERTY_PUSH_NOTIFICATION_DELIVERY_OPTION,
+  SendBirdFileMessageParams.JSON_PROPERTY_THUMBNAIL_SIZES
+})
+@JsonTypeName("SendBird.FileMessageParams")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendBirdFileMessageParams {
-  public static final String SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
-  @SerializedName(SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS)
+  public static final String JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   private SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_FILE = "file";
-  @SerializedName(SERIALIZED_NAME_FILE)
+  public static final String JSON_PROPERTY_FILE = "file";
   private Blob _file;
 
-  public static final String SERIALIZED_NAME_FILE_NAME = "file_name";
-  @SerializedName(SERIALIZED_NAME_FILE_NAME)
+  public static final String JSON_PROPERTY_FILE_NAME = "file_name";
   private String fileName;
 
-  public static final String SERIALIZED_NAME_FILE_SIZE = "file_size";
-  @SerializedName(SERIALIZED_NAME_FILE_SIZE)
+  public static final String JSON_PROPERTY_FILE_SIZE = "file_size";
   private BigDecimal fileSize;
 
-  public static final String SERIALIZED_NAME_FILE_URL = "file_url";
-  @SerializedName(SERIALIZED_NAME_FILE_URL)
+  public static final String JSON_PROPERTY_FILE_URL = "file_url";
   private String fileUrl;
 
-  public static final String SERIALIZED_NAME_IS_REPLY_TO_CHANNEL = "is_reply_to_channel";
-  @SerializedName(SERIALIZED_NAME_IS_REPLY_TO_CHANNEL)
+  public static final String JSON_PROPERTY_IS_REPLY_TO_CHANNEL = "is_reply_to_channel";
   private Boolean isReplyToChannel;
 
   /**
    * Gets or Sets mentionType
    */
-  @JsonAdapter(MentionTypeEnum.Adapter.class)
   public enum MentionTypeEnum {
     CHANNEL("channel"),
     
@@ -104,6 +99,7 @@ public class SendBirdFileMessageParams {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -113,6 +109,7 @@ public class SendBirdFileMessageParams {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static MentionTypeEnum fromValue(String value) {
       for (MentionTypeEnum b : MentionTypeEnum.values()) {
         if (b.value.equals(value)) {
@@ -121,53 +118,32 @@ public class SendBirdFileMessageParams {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<MentionTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MentionTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MentionTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MentionTypeEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_MENTION_TYPE = "mention_type";
-  @SerializedName(SERIALIZED_NAME_MENTION_TYPE)
+  public static final String JSON_PROPERTY_MENTION_TYPE = "mention_type";
   private MentionTypeEnum mentionType;
 
-  public static final String SERIALIZED_NAME_MENTIONED_USER_IDS = "mentioned_user_ids";
-  @SerializedName(SERIALIZED_NAME_MENTIONED_USER_IDS)
+  public static final String JSON_PROPERTY_MENTIONED_USER_IDS = "mentioned_user_ids";
   private List<String> mentionedUserIds = null;
 
-  public static final String SERIALIZED_NAME_MENTIONED_USERS = "mentioned_users";
-  @SerializedName(SERIALIZED_NAME_MENTIONED_USERS)
+  public static final String JSON_PROPERTY_MENTIONED_USERS = "mentioned_users";
   private List<SendBirdUser> mentionedUsers = null;
 
-  public static final String SERIALIZED_NAME_META_ARRAY_KEYS = "meta_array_keys";
-  @SerializedName(SERIALIZED_NAME_META_ARRAY_KEYS)
+  public static final String JSON_PROPERTY_META_ARRAY_KEYS = "meta_array_keys";
   private List<String> metaArrayKeys = null;
 
-  public static final String SERIALIZED_NAME_META_ARRAYS = "meta_arrays";
-  @SerializedName(SERIALIZED_NAME_META_ARRAYS)
+  public static final String JSON_PROPERTY_META_ARRAYS = "meta_arrays";
   private List<SendBirdMessageMetaArray> metaArrays = null;
 
-  public static final String SERIALIZED_NAME_MIME_TYPE = "mime_type";
-  @SerializedName(SERIALIZED_NAME_MIME_TYPE)
+  public static final String JSON_PROPERTY_MIME_TYPE = "mime_type";
   private String mimeType;
 
-  public static final String SERIALIZED_NAME_PARENT_MESSAGE_ID = "parent_message_id";
-  @SerializedName(SERIALIZED_NAME_PARENT_MESSAGE_ID)
+  public static final String JSON_PROPERTY_PARENT_MESSAGE_ID = "parent_message_id";
   private BigDecimal parentMessageId;
 
   /**
    * Gets or Sets pushNotificationDeliveryOption
    */
-  @JsonAdapter(PushNotificationDeliveryOptionEnum.Adapter.class)
   public enum PushNotificationDeliveryOptionEnum {
     DEFAULT("default"),
     
@@ -179,6 +155,7 @@ public class SendBirdFileMessageParams {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -188,6 +165,7 @@ public class SendBirdFileMessageParams {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static PushNotificationDeliveryOptionEnum fromValue(String value) {
       for (PushNotificationDeliveryOptionEnum b : PushNotificationDeliveryOptionEnum.values()) {
         if (b.value.equals(value)) {
@@ -196,34 +174,18 @@ public class SendBirdFileMessageParams {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<PushNotificationDeliveryOptionEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PushNotificationDeliveryOptionEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PushNotificationDeliveryOptionEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return PushNotificationDeliveryOptionEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_PUSH_NOTIFICATION_DELIVERY_OPTION = "push_notification_delivery_option";
-  @SerializedName(SERIALIZED_NAME_PUSH_NOTIFICATION_DELIVERY_OPTION)
+  public static final String JSON_PROPERTY_PUSH_NOTIFICATION_DELIVERY_OPTION = "push_notification_delivery_option";
   private PushNotificationDeliveryOptionEnum pushNotificationDeliveryOption;
 
-  public static final String SERIALIZED_NAME_THUMBNAIL_SIZES = "thumbnail_sizes";
-  @SerializedName(SERIALIZED_NAME_THUMBNAIL_SIZES)
+  public static final String JSON_PROPERTY_THUMBNAIL_SIZES = "thumbnail_sizes";
   private List<SendBirdThumbnailSize> thumbnailSizes = null;
 
   public SendBirdFileMessageParams() { 
   }
 
   public SendBirdFileMessageParams appleCriticalAlertOptions(SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions) {
-    
     this.appleCriticalAlertOptions = appleCriticalAlertOptions;
     return this;
   }
@@ -234,19 +196,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdAppleCriticalAlertOptions getAppleCriticalAlertOptions() {
     return appleCriticalAlertOptions;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAppleCriticalAlertOptions(SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions) {
     this.appleCriticalAlertOptions = appleCriticalAlertOptions;
   }
 
 
   public SendBirdFileMessageParams customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -257,19 +222,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
   public SendBirdFileMessageParams data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -280,19 +248,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public SendBirdFileMessageParams _file(Blob _file) {
-    
     this._file = _file;
     return this;
   }
@@ -303,19 +274,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Blob getFile() {
     return _file;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFile(Blob _file) {
     this._file = _file;
   }
 
 
   public SendBirdFileMessageParams fileName(String fileName) {
-    
     this.fileName = fileName;
     return this;
   }
@@ -326,19 +300,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILE_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFileName() {
     return fileName;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FILE_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFileName(String fileName) {
     this.fileName = fileName;
   }
 
 
   public SendBirdFileMessageParams fileSize(BigDecimal fileSize) {
-    
     this.fileSize = fileSize;
     return this;
   }
@@ -349,19 +326,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILE_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getFileSize() {
     return fileSize;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FILE_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFileSize(BigDecimal fileSize) {
     this.fileSize = fileSize;
   }
 
 
   public SendBirdFileMessageParams fileUrl(String fileUrl) {
-    
     this.fileUrl = fileUrl;
     return this;
   }
@@ -372,19 +352,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFileUrl() {
     return fileUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFileUrl(String fileUrl) {
     this.fileUrl = fileUrl;
   }
 
 
   public SendBirdFileMessageParams isReplyToChannel(Boolean isReplyToChannel) {
-    
     this.isReplyToChannel = isReplyToChannel;
     return this;
   }
@@ -395,19 +378,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_REPLY_TO_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsReplyToChannel() {
     return isReplyToChannel;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_REPLY_TO_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsReplyToChannel(Boolean isReplyToChannel) {
     this.isReplyToChannel = isReplyToChannel;
   }
 
 
   public SendBirdFileMessageParams mentionType(MentionTypeEnum mentionType) {
-    
     this.mentionType = mentionType;
     return this;
   }
@@ -418,19 +404,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public MentionTypeEnum getMentionType() {
     return mentionType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionType(MentionTypeEnum mentionType) {
     this.mentionType = mentionType;
   }
 
 
   public SendBirdFileMessageParams mentionedUserIds(List<String> mentionedUserIds) {
-    
     this.mentionedUserIds = mentionedUserIds;
     return this;
   }
@@ -449,19 +438,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getMentionedUserIds() {
     return mentionedUserIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionedUserIds(List<String> mentionedUserIds) {
     this.mentionedUserIds = mentionedUserIds;
   }
 
 
   public SendBirdFileMessageParams mentionedUsers(List<SendBirdUser> mentionedUsers) {
-    
     this.mentionedUsers = mentionedUsers;
     return this;
   }
@@ -480,19 +472,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SendBirdUser> getMentionedUsers() {
     return mentionedUsers;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionedUsers(List<SendBirdUser> mentionedUsers) {
     this.mentionedUsers = mentionedUsers;
   }
 
 
   public SendBirdFileMessageParams metaArrayKeys(List<String> metaArrayKeys) {
-    
     this.metaArrayKeys = metaArrayKeys;
     return this;
   }
@@ -511,19 +506,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_META_ARRAY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getMetaArrayKeys() {
     return metaArrayKeys;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_META_ARRAY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetaArrayKeys(List<String> metaArrayKeys) {
     this.metaArrayKeys = metaArrayKeys;
   }
 
 
   public SendBirdFileMessageParams metaArrays(List<SendBirdMessageMetaArray> metaArrays) {
-    
     this.metaArrays = metaArrays;
     return this;
   }
@@ -542,19 +540,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_META_ARRAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SendBirdMessageMetaArray> getMetaArrays() {
     return metaArrays;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_META_ARRAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetaArrays(List<SendBirdMessageMetaArray> metaArrays) {
     this.metaArrays = metaArrays;
   }
 
 
   public SendBirdFileMessageParams mimeType(String mimeType) {
-    
     this.mimeType = mimeType;
     return this;
   }
@@ -565,19 +566,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MIME_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMimeType() {
     return mimeType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MIME_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMimeType(String mimeType) {
     this.mimeType = mimeType;
   }
 
 
   public SendBirdFileMessageParams parentMessageId(BigDecimal parentMessageId) {
-    
     this.parentMessageId = parentMessageId;
     return this;
   }
@@ -588,19 +592,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getParentMessageId() {
     return parentMessageId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParentMessageId(BigDecimal parentMessageId) {
     this.parentMessageId = parentMessageId;
   }
 
 
   public SendBirdFileMessageParams pushNotificationDeliveryOption(PushNotificationDeliveryOptionEnum pushNotificationDeliveryOption) {
-    
     this.pushNotificationDeliveryOption = pushNotificationDeliveryOption;
     return this;
   }
@@ -611,19 +618,22 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_NOTIFICATION_DELIVERY_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public PushNotificationDeliveryOptionEnum getPushNotificationDeliveryOption() {
     return pushNotificationDeliveryOption;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_NOTIFICATION_DELIVERY_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushNotificationDeliveryOption(PushNotificationDeliveryOptionEnum pushNotificationDeliveryOption) {
     this.pushNotificationDeliveryOption = pushNotificationDeliveryOption;
   }
 
 
   public SendBirdFileMessageParams thumbnailSizes(List<SendBirdThumbnailSize> thumbnailSizes) {
-    
     this.thumbnailSizes = thumbnailSizes;
     return this;
   }
@@ -642,18 +652,24 @@ public class SendBirdFileMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_THUMBNAIL_SIZES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SendBirdThumbnailSize> getThumbnailSizes() {
     return thumbnailSizes;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_THUMBNAIL_SIZES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setThumbnailSizes(List<SendBirdThumbnailSize> thumbnailSizes) {
     this.thumbnailSizes = thumbnailSizes;
   }
 
 
-
+  /**
+   * Return true if this SendBird.FileMessageParams object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -723,179 +739,5 @@ public class SendBirdFileMessageParams {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("apple_critical_alert_options");
-    openapiFields.add("custom_type");
-    openapiFields.add("data");
-    openapiFields.add("file");
-    openapiFields.add("file_name");
-    openapiFields.add("file_size");
-    openapiFields.add("file_url");
-    openapiFields.add("is_reply_to_channel");
-    openapiFields.add("mention_type");
-    openapiFields.add("mentioned_user_ids");
-    openapiFields.add("mentioned_users");
-    openapiFields.add("meta_array_keys");
-    openapiFields.add("meta_arrays");
-    openapiFields.add("mime_type");
-    openapiFields.add("parent_message_id");
-    openapiFields.add("push_notification_delivery_option");
-    openapiFields.add("thumbnail_sizes");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendBirdFileMessageParams
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendBirdFileMessageParams.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdFileMessageParams is not found in the empty JSON string", SendBirdFileMessageParams.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SendBirdFileMessageParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdFileMessageParams` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `apple_critical_alert_options`
-      if (jsonObj.getAsJsonObject("apple_critical_alert_options") != null) {
-        SendBirdAppleCriticalAlertOptions.validateJsonObject(jsonObj.getAsJsonObject("apple_critical_alert_options"));
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      // validate the optional field `file`
-      if (jsonObj.getAsJsonObject("file") != null) {
-        Blob.validateJsonObject(jsonObj.getAsJsonObject("file"));
-      }
-      if (jsonObj.get("file_name") != null && !jsonObj.get("file_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `file_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_name").toString()));
-      }
-      if (jsonObj.get("file_url") != null && !jsonObj.get("file_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `file_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_url").toString()));
-      }
-      if (jsonObj.get("mention_type") != null && !jsonObj.get("mention_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mention_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mention_type").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("mentioned_user_ids") != null && !jsonObj.get("mentioned_user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mentioned_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_user_ids").toString()));
-      }
-      JsonArray jsonArraymentionedUsers = jsonObj.getAsJsonArray("mentioned_users");
-      if (jsonArraymentionedUsers != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("mentioned_users").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `mentioned_users` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_users").toString()));
-        }
-
-        // validate the optional field `mentioned_users` (array)
-        for (int i = 0; i < jsonArraymentionedUsers.size(); i++) {
-          SendBirdUser.validateJsonObject(jsonArraymentionedUsers.get(i).getAsJsonObject());
-        };
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("meta_array_keys") != null && !jsonObj.get("meta_array_keys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `meta_array_keys` to be an array in the JSON string but got `%s`", jsonObj.get("meta_array_keys").toString()));
-      }
-      JsonArray jsonArraymetaArrays = jsonObj.getAsJsonArray("meta_arrays");
-      if (jsonArraymetaArrays != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("meta_arrays").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `meta_arrays` to be an array in the JSON string but got `%s`", jsonObj.get("meta_arrays").toString()));
-        }
-
-        // validate the optional field `meta_arrays` (array)
-        for (int i = 0; i < jsonArraymetaArrays.size(); i++) {
-          SendBirdMessageMetaArray.validateJsonObject(jsonArraymetaArrays.get(i).getAsJsonObject());
-        };
-      }
-      if (jsonObj.get("mime_type") != null && !jsonObj.get("mime_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mime_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mime_type").toString()));
-      }
-      if (jsonObj.get("push_notification_delivery_option") != null && !jsonObj.get("push_notification_delivery_option").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_notification_delivery_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_notification_delivery_option").toString()));
-      }
-      JsonArray jsonArraythumbnailSizes = jsonObj.getAsJsonArray("thumbnail_sizes");
-      if (jsonArraythumbnailSizes != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("thumbnail_sizes").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `thumbnail_sizes` to be an array in the JSON string but got `%s`", jsonObj.get("thumbnail_sizes").toString()));
-        }
-
-        // validate the optional field `thumbnail_sizes` (array)
-        for (int i = 0; i < jsonArraythumbnailSizes.size(); i++) {
-          SendBirdThumbnailSize.validateJsonObject(jsonArraythumbnailSizes.get(i).getAsJsonObject());
-        };
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendBirdFileMessageParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendBirdFileMessageParams' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendBirdFileMessageParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdFileMessageParams.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendBirdFileMessageParams>() {
-           @Override
-           public void write(JsonWriter out, SendBirdFileMessageParams value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendBirdFileMessageParams read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendBirdFileMessageParams given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendBirdFileMessageParams
-  * @throws IOException if the JSON string is invalid with respect to SendBirdFileMessageParams
-  */
-  public static SendBirdFileMessageParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendBirdFileMessageParams.class);
-  }
-
- /**
-  * Convert an instance of SendBirdFileMessageParams to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

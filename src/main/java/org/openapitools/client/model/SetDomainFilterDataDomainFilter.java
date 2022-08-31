@@ -15,59 +15,45 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SetDomainFilterDataDomainFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SetDomainFilterDataDomainFilter.JSON_PROPERTY_DOMAINS,
+  SetDomainFilterDataDomainFilter.JSON_PROPERTY_TYPE,
+  SetDomainFilterDataDomainFilter.JSON_PROPERTY_SHOULD_CHECK_GLOBAL
+})
+@JsonTypeName("setDomainFilterData_domain_filter")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SetDomainFilterDataDomainFilter {
-  public static final String SERIALIZED_NAME_DOMAINS = "domains";
-  @SerializedName(SERIALIZED_NAME_DOMAINS)
+  public static final String JSON_PROPERTY_DOMAINS = "domains";
   private List<String> domains = null;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+  public static final String JSON_PROPERTY_TYPE = "type";
   private Integer type;
 
-  public static final String SERIALIZED_NAME_SHOULD_CHECK_GLOBAL = "should_check_global";
-  @SerializedName(SERIALIZED_NAME_SHOULD_CHECK_GLOBAL)
+  public static final String JSON_PROPERTY_SHOULD_CHECK_GLOBAL = "should_check_global";
   private Boolean shouldCheckGlobal;
 
   public SetDomainFilterDataDomainFilter() { 
   }
 
   public SetDomainFilterDataDomainFilter domains(List<String> domains) {
-    
     this.domains = domains;
     return this;
   }
@@ -86,19 +72,22 @@ public class SetDomainFilterDataDomainFilter {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DOMAINS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getDomains() {
     return domains;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DOMAINS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDomains(List<String> domains) {
     this.domains = domains;
   }
 
 
   public SetDomainFilterDataDomainFilter type(Integer type) {
-    
     this.type = type;
     return this;
   }
@@ -109,19 +98,22 @@ public class SetDomainFilterDataDomainFilter {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getType() {
     return type;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(Integer type) {
     this.type = type;
   }
 
 
   public SetDomainFilterDataDomainFilter shouldCheckGlobal(Boolean shouldCheckGlobal) {
-    
     this.shouldCheckGlobal = shouldCheckGlobal;
     return this;
   }
@@ -132,18 +124,24 @@ public class SetDomainFilterDataDomainFilter {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SHOULD_CHECK_GLOBAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getShouldCheckGlobal() {
     return shouldCheckGlobal;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SHOULD_CHECK_GLOBAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShouldCheckGlobal(Boolean shouldCheckGlobal) {
     this.shouldCheckGlobal = shouldCheckGlobal;
   }
 
 
-
+  /**
+   * Return true if this setDomainFilterData_domain_filter object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -185,96 +183,5 @@ public class SetDomainFilterDataDomainFilter {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("domains");
-    openapiFields.add("type");
-    openapiFields.add("should_check_global");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SetDomainFilterDataDomainFilter
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SetDomainFilterDataDomainFilter.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SetDomainFilterDataDomainFilter is not found in the empty JSON string", SetDomainFilterDataDomainFilter.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SetDomainFilterDataDomainFilter.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SetDomainFilterDataDomainFilter` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("domains") != null && !jsonObj.get("domains").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `domains` to be an array in the JSON string but got `%s`", jsonObj.get("domains").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SetDomainFilterDataDomainFilter.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SetDomainFilterDataDomainFilter' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SetDomainFilterDataDomainFilter> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SetDomainFilterDataDomainFilter.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SetDomainFilterDataDomainFilter>() {
-           @Override
-           public void write(JsonWriter out, SetDomainFilterDataDomainFilter value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SetDomainFilterDataDomainFilter read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SetDomainFilterDataDomainFilter given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SetDomainFilterDataDomainFilter
-  * @throws IOException if the JSON string is invalid with respect to SetDomainFilterDataDomainFilter
-  */
-  public static SetDomainFilterDataDomainFilter fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SetDomainFilterDataDomainFilter.class);
-  }
-
- /**
-  * Convert an instance of SetDomainFilterDataDomainFilter to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

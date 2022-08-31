@@ -13,11 +13,14 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementByIdResponse;
 import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementGroupResponse;
 import org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResponse;
 import org.openapitools.client.model.ViewAnnouncementByIdResponse;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +32,6 @@ import java.util.Map;
 /**
  * API tests for AnnouncementApi
  */
-@Disabled
 public class AnnouncementApiTest {
 
     private final AnnouncementApi api = new AnnouncementApi();
@@ -43,9 +45,9 @@ public class AnnouncementApiTest {
      */
     @Test
     public void getDetailedOpenRateOfAnnouncementByIdTest() throws ApiException {
-        String apiToken = null;
-        String uniqueId = null;
-        GetDetailedOpenRateOfAnnouncementByIdResponse response = api.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
+        //String apiToken = null;
+        //String uniqueId = null;
+        //GetDetailedOpenRateOfAnnouncementByIdResponse response = api.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
         // TODO: test validations
     }
 
@@ -58,9 +60,9 @@ public class AnnouncementApiTest {
      */
     @Test
     public void getDetailedOpenRateOfAnnouncementGroupTest() throws ApiException {
-        String apiToken = null;
-        String announcementGroup = null;
-        GetDetailedOpenRateOfAnnouncementGroupResponse response = api.getDetailedOpenRateOfAnnouncementGroup(apiToken, announcementGroup);
+        //String apiToken = null;
+        //String announcementGroup = null;
+        //GetDetailedOpenRateOfAnnouncementGroupResponse response = api.getDetailedOpenRateOfAnnouncementGroup(apiToken, announcementGroup);
         // TODO: test validations
     }
 
@@ -73,14 +75,14 @@ public class AnnouncementApiTest {
      */
     @Test
     public void getDetailedOpenStatusOfAnnouncementByIdTest() throws ApiException {
-        String apiToken = null;
-        String uniqueId = null;
-        Integer limit = null;
-        String next = null;
-        List<String> uniqueIds = null;
-        List<String> channelUrls = null;
-        Boolean hasOpened = null;
-        GetDetailedOpenStatusOfAnnouncementByIdResponse response = api.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
+        //String apiToken = null;
+        //String uniqueId = null;
+        //Integer limit = null;
+        //String next = null;
+        //List<String> uniqueIds = null;
+        //List<String> channelUrls = null;
+        //Boolean hasOpened = null;
+        //GetDetailedOpenStatusOfAnnouncementByIdResponse response = api.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
         // TODO: test validations
     }
 
@@ -93,9 +95,9 @@ public class AnnouncementApiTest {
      */
     @Test
     public void viewAnnouncementByIdTest() throws ApiException {
-        String apiToken = null;
-        String uniqueId = null;
-        ViewAnnouncementByIdResponse response = api.viewAnnouncementById(apiToken, uniqueId);
+        //String apiToken = null;
+        //String uniqueId = null;
+        //ViewAnnouncementByIdResponse response = api.viewAnnouncementById(apiToken, uniqueId);
         // TODO: test validations
     }
 

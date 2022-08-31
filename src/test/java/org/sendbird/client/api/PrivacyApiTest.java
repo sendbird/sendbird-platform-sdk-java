@@ -13,11 +13,14 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.ListGdprRequestsResponse;
 import org.openapitools.client.model.RegisterGdprRequestData;
 import org.openapitools.client.model.RegisterGdprRequestResponse;
 import org.openapitools.client.model.ViewGdprRequestByIdResponse;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +32,6 @@ import java.util.Map;
 /**
  * API tests for PrivacyApi
  */
-@Disabled
 public class PrivacyApiTest {
 
     private final PrivacyApi api = new PrivacyApi();
@@ -43,9 +45,9 @@ public class PrivacyApiTest {
      */
     @Test
     public void cancelTheRegistrationOfGdprRequestByIdTest() throws ApiException {
-        String apiToken = null;
-        String requestId = null;
-        api.cancelTheRegistrationOfGdprRequestById(apiToken, requestId);
+        //String apiToken = null;
+        //String requestId = null;
+        //api.cancelTheRegistrationOfGdprRequestById(apiToken, requestId);
         // TODO: test validations
     }
 
@@ -58,10 +60,10 @@ public class PrivacyApiTest {
      */
     @Test
     public void listGdprRequestsTest() throws ApiException {
-        String apiToken = null;
-        String token = null;
-        Integer limit = null;
-        ListGdprRequestsResponse response = api.listGdprRequests(apiToken, token, limit);
+        //String apiToken = null;
+        //String token = null;
+        //Integer limit = null;
+        //ListGdprRequestsResponse response = api.listGdprRequests(apiToken, token, limit);
         // TODO: test validations
     }
 
@@ -74,9 +76,9 @@ public class PrivacyApiTest {
      */
     @Test
     public void registerGdprRequestTest() throws ApiException {
-        String apiToken = null;
-        RegisterGdprRequestData registerGdprRequestData = null;
-        RegisterGdprRequestResponse response = api.registerGdprRequest(apiToken, registerGdprRequestData);
+        //String apiToken = null;
+        //RegisterGdprRequestData registerGdprRequestData = null;
+        //RegisterGdprRequestResponse response = api.registerGdprRequest(apiToken, registerGdprRequestData);
         // TODO: test validations
     }
 
@@ -89,9 +91,9 @@ public class PrivacyApiTest {
      */
     @Test
     public void viewGdprRequestByIdTest() throws ApiException {
-        String apiToken = null;
-        String requestId = null;
-        ViewGdprRequestByIdResponse response = api.viewGdprRequestById(apiToken, requestId);
+        //String apiToken = null;
+        //String requestId = null;
+        //ViewGdprRequestByIdResponse response = api.viewGdprRequestById(apiToken, requestId);
         // TODO: test validations
     }
 

@@ -15,66 +15,63 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdAppleCriticalAlertOptions;
 import org.openapitools.client.model.SendBirdMessageMetaArray;
 import org.openapitools.client.model.SendBirdUser;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SendBirdUserMessageParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendBirdUserMessageParams.JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS,
+  SendBirdUserMessageParams.JSON_PROPERTY_CUSTOM_TYPE,
+  SendBirdUserMessageParams.JSON_PROPERTY_DATA,
+  SendBirdUserMessageParams.JSON_PROPERTY_IS_REPLY_TO_CHANNEL,
+  SendBirdUserMessageParams.JSON_PROPERTY_MENTION_TYPE,
+  SendBirdUserMessageParams.JSON_PROPERTY_MENTIONED_USER_IDS,
+  SendBirdUserMessageParams.JSON_PROPERTY_MENTIONED_USERS,
+  SendBirdUserMessageParams.JSON_PROPERTY_MESSAGE,
+  SendBirdUserMessageParams.JSON_PROPERTY_META_ARRAY_KEYS,
+  SendBirdUserMessageParams.JSON_PROPERTY_META_ARRAYS,
+  SendBirdUserMessageParams.JSON_PROPERTY_PARENT_MESSAGE_ID,
+  SendBirdUserMessageParams.JSON_PROPERTY_POLL_ID,
+  SendBirdUserMessageParams.JSON_PROPERTY_PUSH_NOTIFICATION_DELIVERY_OPTION,
+  SendBirdUserMessageParams.JSON_PROPERTY_TARGET_LANGUAGES,
+  SendBirdUserMessageParams.JSON_PROPERTY_TRANSLATION_TARGET_LANGUAGES
+})
+@JsonTypeName("SendBird.UserMessageParams")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendBirdUserMessageParams {
-  public static final String SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
-  @SerializedName(SERIALIZED_NAME_APPLE_CRITICAL_ALERT_OPTIONS)
+  public static final String JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   private SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_IS_REPLY_TO_CHANNEL = "is_reply_to_channel";
-  @SerializedName(SERIALIZED_NAME_IS_REPLY_TO_CHANNEL)
+  public static final String JSON_PROPERTY_IS_REPLY_TO_CHANNEL = "is_reply_to_channel";
   private Boolean isReplyToChannel;
 
   /**
    * Gets or Sets mentionType
    */
-  @JsonAdapter(MentionTypeEnum.Adapter.class)
   public enum MentionTypeEnum {
     CHANNEL("channel"),
     
@@ -86,6 +83,7 @@ public class SendBirdUserMessageParams {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -95,6 +93,7 @@ public class SendBirdUserMessageParams {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static MentionTypeEnum fromValue(String value) {
       for (MentionTypeEnum b : MentionTypeEnum.values()) {
         if (b.value.equals(value)) {
@@ -103,57 +102,35 @@ public class SendBirdUserMessageParams {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<MentionTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MentionTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MentionTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MentionTypeEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_MENTION_TYPE = "mention_type";
-  @SerializedName(SERIALIZED_NAME_MENTION_TYPE)
+  public static final String JSON_PROPERTY_MENTION_TYPE = "mention_type";
   private MentionTypeEnum mentionType;
 
-  public static final String SERIALIZED_NAME_MENTIONED_USER_IDS = "mentioned_user_ids";
-  @SerializedName(SERIALIZED_NAME_MENTIONED_USER_IDS)
+  public static final String JSON_PROPERTY_MENTIONED_USER_IDS = "mentioned_user_ids";
   private List<String> mentionedUserIds = null;
 
-  public static final String SERIALIZED_NAME_MENTIONED_USERS = "mentioned_users";
-  @SerializedName(SERIALIZED_NAME_MENTIONED_USERS)
+  public static final String JSON_PROPERTY_MENTIONED_USERS = "mentioned_users";
   private List<SendBirdUser> mentionedUsers = null;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
 
-  public static final String SERIALIZED_NAME_META_ARRAY_KEYS = "meta_array_keys";
-  @SerializedName(SERIALIZED_NAME_META_ARRAY_KEYS)
+  public static final String JSON_PROPERTY_META_ARRAY_KEYS = "meta_array_keys";
   private List<String> metaArrayKeys = null;
 
-  public static final String SERIALIZED_NAME_META_ARRAYS = "meta_arrays";
-  @SerializedName(SERIALIZED_NAME_META_ARRAYS)
+  public static final String JSON_PROPERTY_META_ARRAYS = "meta_arrays";
   private List<SendBirdMessageMetaArray> metaArrays = null;
 
-  public static final String SERIALIZED_NAME_PARENT_MESSAGE_ID = "parent_message_id";
-  @SerializedName(SERIALIZED_NAME_PARENT_MESSAGE_ID)
+  public static final String JSON_PROPERTY_PARENT_MESSAGE_ID = "parent_message_id";
   private BigDecimal parentMessageId;
 
-  public static final String SERIALIZED_NAME_POLL_ID = "poll_id";
-  @SerializedName(SERIALIZED_NAME_POLL_ID)
+  public static final String JSON_PROPERTY_POLL_ID = "poll_id";
   private BigDecimal pollId;
 
   /**
    * Gets or Sets pushNotificationDeliveryOption
    */
-  @JsonAdapter(PushNotificationDeliveryOptionEnum.Adapter.class)
   public enum PushNotificationDeliveryOptionEnum {
     DEFAULT("default"),
     
@@ -165,6 +142,7 @@ public class SendBirdUserMessageParams {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -174,6 +152,7 @@ public class SendBirdUserMessageParams {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static PushNotificationDeliveryOptionEnum fromValue(String value) {
       for (PushNotificationDeliveryOptionEnum b : PushNotificationDeliveryOptionEnum.values()) {
         if (b.value.equals(value)) {
@@ -182,38 +161,21 @@ public class SendBirdUserMessageParams {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<PushNotificationDeliveryOptionEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PushNotificationDeliveryOptionEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PushNotificationDeliveryOptionEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return PushNotificationDeliveryOptionEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_PUSH_NOTIFICATION_DELIVERY_OPTION = "push_notification_delivery_option";
-  @SerializedName(SERIALIZED_NAME_PUSH_NOTIFICATION_DELIVERY_OPTION)
+  public static final String JSON_PROPERTY_PUSH_NOTIFICATION_DELIVERY_OPTION = "push_notification_delivery_option";
   private PushNotificationDeliveryOptionEnum pushNotificationDeliveryOption;
 
-  public static final String SERIALIZED_NAME_TARGET_LANGUAGES = "target_languages";
-  @SerializedName(SERIALIZED_NAME_TARGET_LANGUAGES)
+  public static final String JSON_PROPERTY_TARGET_LANGUAGES = "target_languages";
   private List<String> targetLanguages = null;
 
-  public static final String SERIALIZED_NAME_TRANSLATION_TARGET_LANGUAGES = "translation_target_languages";
-  @SerializedName(SERIALIZED_NAME_TRANSLATION_TARGET_LANGUAGES)
+  public static final String JSON_PROPERTY_TRANSLATION_TARGET_LANGUAGES = "translation_target_languages";
   private List<String> translationTargetLanguages = null;
 
   public SendBirdUserMessageParams() { 
   }
 
   public SendBirdUserMessageParams appleCriticalAlertOptions(SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions) {
-    
     this.appleCriticalAlertOptions = appleCriticalAlertOptions;
     return this;
   }
@@ -224,19 +186,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdAppleCriticalAlertOptions getAppleCriticalAlertOptions() {
     return appleCriticalAlertOptions;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAppleCriticalAlertOptions(SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions) {
     this.appleCriticalAlertOptions = appleCriticalAlertOptions;
   }
 
 
   public SendBirdUserMessageParams customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -247,19 +212,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
   public SendBirdUserMessageParams data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -270,19 +238,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public SendBirdUserMessageParams isReplyToChannel(Boolean isReplyToChannel) {
-    
     this.isReplyToChannel = isReplyToChannel;
     return this;
   }
@@ -293,19 +264,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_REPLY_TO_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsReplyToChannel() {
     return isReplyToChannel;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_REPLY_TO_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsReplyToChannel(Boolean isReplyToChannel) {
     this.isReplyToChannel = isReplyToChannel;
   }
 
 
   public SendBirdUserMessageParams mentionType(MentionTypeEnum mentionType) {
-    
     this.mentionType = mentionType;
     return this;
   }
@@ -316,19 +290,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public MentionTypeEnum getMentionType() {
     return mentionType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionType(MentionTypeEnum mentionType) {
     this.mentionType = mentionType;
   }
 
 
   public SendBirdUserMessageParams mentionedUserIds(List<String> mentionedUserIds) {
-    
     this.mentionedUserIds = mentionedUserIds;
     return this;
   }
@@ -347,19 +324,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getMentionedUserIds() {
     return mentionedUserIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionedUserIds(List<String> mentionedUserIds) {
     this.mentionedUserIds = mentionedUserIds;
   }
 
 
   public SendBirdUserMessageParams mentionedUsers(List<SendBirdUser> mentionedUsers) {
-    
     this.mentionedUsers = mentionedUsers;
     return this;
   }
@@ -378,19 +358,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SendBirdUser> getMentionedUsers() {
     return mentionedUsers;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionedUsers(List<SendBirdUser> mentionedUsers) {
     this.mentionedUsers = mentionedUsers;
   }
 
 
   public SendBirdUserMessageParams message(String message) {
-    
     this.message = message;
     return this;
   }
@@ -401,19 +384,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMessage() {
     return message;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(String message) {
     this.message = message;
   }
 
 
   public SendBirdUserMessageParams metaArrayKeys(List<String> metaArrayKeys) {
-    
     this.metaArrayKeys = metaArrayKeys;
     return this;
   }
@@ -432,19 +418,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_META_ARRAY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getMetaArrayKeys() {
     return metaArrayKeys;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_META_ARRAY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetaArrayKeys(List<String> metaArrayKeys) {
     this.metaArrayKeys = metaArrayKeys;
   }
 
 
   public SendBirdUserMessageParams metaArrays(List<SendBirdMessageMetaArray> metaArrays) {
-    
     this.metaArrays = metaArrays;
     return this;
   }
@@ -463,19 +452,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_META_ARRAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SendBirdMessageMetaArray> getMetaArrays() {
     return metaArrays;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_META_ARRAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetaArrays(List<SendBirdMessageMetaArray> metaArrays) {
     this.metaArrays = metaArrays;
   }
 
 
   public SendBirdUserMessageParams parentMessageId(BigDecimal parentMessageId) {
-    
     this.parentMessageId = parentMessageId;
     return this;
   }
@@ -486,19 +478,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getParentMessageId() {
     return parentMessageId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParentMessageId(BigDecimal parentMessageId) {
     this.parentMessageId = parentMessageId;
   }
 
 
   public SendBirdUserMessageParams pollId(BigDecimal pollId) {
-    
     this.pollId = pollId;
     return this;
   }
@@ -509,19 +504,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_POLL_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getPollId() {
     return pollId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_POLL_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPollId(BigDecimal pollId) {
     this.pollId = pollId;
   }
 
 
   public SendBirdUserMessageParams pushNotificationDeliveryOption(PushNotificationDeliveryOptionEnum pushNotificationDeliveryOption) {
-    
     this.pushNotificationDeliveryOption = pushNotificationDeliveryOption;
     return this;
   }
@@ -532,19 +530,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_NOTIFICATION_DELIVERY_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public PushNotificationDeliveryOptionEnum getPushNotificationDeliveryOption() {
     return pushNotificationDeliveryOption;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_NOTIFICATION_DELIVERY_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushNotificationDeliveryOption(PushNotificationDeliveryOptionEnum pushNotificationDeliveryOption) {
     this.pushNotificationDeliveryOption = pushNotificationDeliveryOption;
   }
 
 
   public SendBirdUserMessageParams targetLanguages(List<String> targetLanguages) {
-    
     this.targetLanguages = targetLanguages;
     return this;
   }
@@ -563,19 +564,22 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getTargetLanguages() {
     return targetLanguages;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetLanguages(List<String> targetLanguages) {
     this.targetLanguages = targetLanguages;
   }
 
 
   public SendBirdUserMessageParams translationTargetLanguages(List<String> translationTargetLanguages) {
-    
     this.translationTargetLanguages = translationTargetLanguages;
     return this;
   }
@@ -594,18 +598,24 @@ public class SendBirdUserMessageParams {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TRANSLATION_TARGET_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getTranslationTargetLanguages() {
     return translationTargetLanguages;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TRANSLATION_TARGET_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTranslationTargetLanguages(List<String> translationTargetLanguages) {
     this.translationTargetLanguages = translationTargetLanguages;
   }
 
 
-
+  /**
+   * Return true if this SendBird.UserMessageParams object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -671,163 +681,5 @@ public class SendBirdUserMessageParams {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("apple_critical_alert_options");
-    openapiFields.add("custom_type");
-    openapiFields.add("data");
-    openapiFields.add("is_reply_to_channel");
-    openapiFields.add("mention_type");
-    openapiFields.add("mentioned_user_ids");
-    openapiFields.add("mentioned_users");
-    openapiFields.add("message");
-    openapiFields.add("meta_array_keys");
-    openapiFields.add("meta_arrays");
-    openapiFields.add("parent_message_id");
-    openapiFields.add("poll_id");
-    openapiFields.add("push_notification_delivery_option");
-    openapiFields.add("target_languages");
-    openapiFields.add("translation_target_languages");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendBirdUserMessageParams
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendBirdUserMessageParams.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdUserMessageParams is not found in the empty JSON string", SendBirdUserMessageParams.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SendBirdUserMessageParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdUserMessageParams` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `apple_critical_alert_options`
-      if (jsonObj.getAsJsonObject("apple_critical_alert_options") != null) {
-        SendBirdAppleCriticalAlertOptions.validateJsonObject(jsonObj.getAsJsonObject("apple_critical_alert_options"));
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      if (jsonObj.get("mention_type") != null && !jsonObj.get("mention_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mention_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mention_type").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("mentioned_user_ids") != null && !jsonObj.get("mentioned_user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mentioned_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_user_ids").toString()));
-      }
-      JsonArray jsonArraymentionedUsers = jsonObj.getAsJsonArray("mentioned_users");
-      if (jsonArraymentionedUsers != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("mentioned_users").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `mentioned_users` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_users").toString()));
-        }
-
-        // validate the optional field `mentioned_users` (array)
-        for (int i = 0; i < jsonArraymentionedUsers.size(); i++) {
-          SendBirdUser.validateJsonObject(jsonArraymentionedUsers.get(i).getAsJsonObject());
-        };
-      }
-      if (jsonObj.get("message") != null && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("meta_array_keys") != null && !jsonObj.get("meta_array_keys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `meta_array_keys` to be an array in the JSON string but got `%s`", jsonObj.get("meta_array_keys").toString()));
-      }
-      JsonArray jsonArraymetaArrays = jsonObj.getAsJsonArray("meta_arrays");
-      if (jsonArraymetaArrays != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("meta_arrays").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `meta_arrays` to be an array in the JSON string but got `%s`", jsonObj.get("meta_arrays").toString()));
-        }
-
-        // validate the optional field `meta_arrays` (array)
-        for (int i = 0; i < jsonArraymetaArrays.size(); i++) {
-          SendBirdMessageMetaArray.validateJsonObject(jsonArraymetaArrays.get(i).getAsJsonObject());
-        };
-      }
-      if (jsonObj.get("push_notification_delivery_option") != null && !jsonObj.get("push_notification_delivery_option").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_notification_delivery_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_notification_delivery_option").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("target_languages") != null && !jsonObj.get("target_languages").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `target_languages` to be an array in the JSON string but got `%s`", jsonObj.get("target_languages").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("translation_target_languages") != null && !jsonObj.get("translation_target_languages").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `translation_target_languages` to be an array in the JSON string but got `%s`", jsonObj.get("translation_target_languages").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendBirdUserMessageParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendBirdUserMessageParams' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendBirdUserMessageParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdUserMessageParams.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendBirdUserMessageParams>() {
-           @Override
-           public void write(JsonWriter out, SendBirdUserMessageParams value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendBirdUserMessageParams read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendBirdUserMessageParams given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendBirdUserMessageParams
-  * @throws IOException if the JSON string is invalid with respect to SendBirdUserMessageParams
-  */
-  public static SendBirdUserMessageParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendBirdUserMessageParams.class);
-  }
-
- /**
-  * Convert an instance of SendBirdUserMessageParams to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

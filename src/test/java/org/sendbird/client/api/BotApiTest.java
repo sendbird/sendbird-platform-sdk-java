@@ -13,7 +13,8 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.CreateBotData;
 import org.openapitools.client.model.CreateBotResponse;
 import org.openapitools.client.model.JoinChannelsData;
@@ -24,6 +25,8 @@ import org.openapitools.client.model.SendBotSMessageData;
 import org.openapitools.client.model.UpdateBotByIdData;
 import org.openapitools.client.model.UpdateBotByIdResponse;
 import org.openapitools.client.model.ViewBotByIdResponse;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +38,6 @@ import java.util.Map;
 /**
  * API tests for BotApi
  */
-@Disabled
 public class BotApiTest {
 
     private final BotApi api = new BotApi();
@@ -49,9 +51,9 @@ public class BotApiTest {
      */
     @Test
     public void createBotTest() throws ApiException {
-        String apiToken = null;
-        CreateBotData createBotData = null;
-        CreateBotResponse response = api.createBot(apiToken, createBotData);
+        //String apiToken = null;
+        //CreateBotData createBotData = null;
+        //CreateBotResponse response = api.createBot(apiToken, createBotData);
         // TODO: test validations
     }
 
@@ -64,9 +66,9 @@ public class BotApiTest {
      */
     @Test
     public void deleteBotByIdTest() throws ApiException {
-        String apiToken = null;
-        String botUserid = null;
-        Object response = api.deleteBotById(apiToken, botUserid);
+        //String apiToken = null;
+        //String botUserid = null;
+        //Object response = api.deleteBotById(apiToken, botUserid);
         // TODO: test validations
     }
 
@@ -79,10 +81,10 @@ public class BotApiTest {
      */
     @Test
     public void joinChannelsTest() throws ApiException {
-        String apiToken = null;
-        String botUserid = null;
-        JoinChannelsData joinChannelsData = null;
-        JoinChannelsResponse response = api.joinChannels(apiToken, botUserid, joinChannelsData);
+        //String apiToken = null;
+        //String botUserid = null;
+        //JoinChannelsData joinChannelsData = null;
+        //JoinChannelsResponse response = api.joinChannels(apiToken, botUserid, joinChannelsData);
         // TODO: test validations
     }
 
@@ -95,10 +97,10 @@ public class BotApiTest {
      */
     @Test
     public void leaveChannelsTest() throws ApiException {
-        String apiToken = null;
-        String botUserid = null;
-        String channelUrl = null;
-        api.leaveChannels(apiToken, botUserid, channelUrl);
+        //String apiToken = null;
+        //String botUserid = null;
+        //String channelUrl = null;
+        //api.leaveChannels(apiToken, botUserid, channelUrl);
         // TODO: test validations
     }
 
@@ -111,10 +113,10 @@ public class BotApiTest {
      */
     @Test
     public void leaveChannelsByUrlTest() throws ApiException {
-        String apiToken = null;
-        String botUserid = null;
-        String channelUrl = null;
-        Object response = api.leaveChannelsByUrl(apiToken, botUserid, channelUrl);
+        //String apiToken = null;
+        //String botUserid = null;
+        //String channelUrl = null;
+        //Object response = api.leaveChannelsByUrl(apiToken, botUserid, channelUrl);
         // TODO: test validations
     }
 
@@ -127,10 +129,10 @@ public class BotApiTest {
      */
     @Test
     public void listBotsTest() throws ApiException {
-        String apiToken = null;
-        String token = null;
-        Integer limit = null;
-        ListBotsResponse response = api.listBots(apiToken, token, limit);
+        //String apiToken = null;
+        //String token = null;
+        //Integer limit = null;
+        //ListBotsResponse response = api.listBots(apiToken, token, limit);
         // TODO: test validations
     }
 
@@ -143,10 +145,10 @@ public class BotApiTest {
      */
     @Test
     public void sendBotsMessageTest() throws ApiException {
-        String apiToken = null;
-        String botUserid = null;
-        SendBotSMessageData sendBotSMessageData = null;
-        SendBirdMessageResponse response = api.sendBotsMessage(apiToken, botUserid, sendBotSMessageData);
+        //String apiToken = null;
+        //String botUserid = null;
+        //SendBotSMessageData sendBotSMessageData = null;
+        //SendBirdMessageResponse response = api.sendBotsMessage(apiToken, botUserid, sendBotSMessageData);
         // TODO: test validations
     }
 
@@ -159,10 +161,10 @@ public class BotApiTest {
      */
     @Test
     public void updateBotByIdTest() throws ApiException {
-        String apiToken = null;
-        String botUserid = null;
-        UpdateBotByIdData updateBotByIdData = null;
-        UpdateBotByIdResponse response = api.updateBotById(apiToken, botUserid, updateBotByIdData);
+        //String apiToken = null;
+        //String botUserid = null;
+        //UpdateBotByIdData updateBotByIdData = null;
+        //UpdateBotByIdResponse response = api.updateBotById(apiToken, botUserid, updateBotByIdData);
         // TODO: test validations
     }
 
@@ -175,9 +177,9 @@ public class BotApiTest {
      */
     @Test
     public void viewBotByIdTest() throws ApiException {
-        String apiToken = null;
-        String botUserid = null;
-        ViewBotByIdResponse response = api.viewBotById(apiToken, botUserid);
+        //String apiToken = null;
+        //String botUserid = null;
+        //ViewBotByIdResponse response = api.viewBotById(apiToken, botUserid);
         // TODO: test validations
     }
 

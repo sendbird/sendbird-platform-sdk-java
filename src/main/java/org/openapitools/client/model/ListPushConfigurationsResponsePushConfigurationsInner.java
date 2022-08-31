@@ -15,70 +15,56 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ListPushConfigurationsResponsePushConfigurationsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ListPushConfigurationsResponsePushConfigurationsInner.JSON_PROPERTY_ID,
+  ListPushConfigurationsResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_TYPE,
+  ListPushConfigurationsResponsePushConfigurationsInner.JSON_PROPERTY_CREATED_AT,
+  ListPushConfigurationsResponsePushConfigurationsInner.JSON_PROPERTY_API_KEY,
+  ListPushConfigurationsResponsePushConfigurationsInner.JSON_PROPERTY_SENDER_ID,
+  ListPushConfigurationsResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_SOUND
+})
+@JsonTypeName("listPushConfigurationsResponse_push_configurations_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ListPushConfigurationsResponsePushConfigurationsInner {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
+  public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
-  public static final String SERIALIZED_NAME_PUSH_TYPE = "push_type";
-  @SerializedName(SERIALIZED_NAME_PUSH_TYPE)
+  public static final String JSON_PROPERTY_PUSH_TYPE = "push_type";
   private String pushType;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private BigDecimal createdAt;
 
-  public static final String SERIALIZED_NAME_API_KEY = "api_key";
-  @SerializedName(SERIALIZED_NAME_API_KEY)
+  public static final String JSON_PROPERTY_API_KEY = "api_key";
   private String apiKey;
 
-  public static final String SERIALIZED_NAME_SENDER_ID = "sender_id";
-  @SerializedName(SERIALIZED_NAME_SENDER_ID)
+  public static final String JSON_PROPERTY_SENDER_ID = "sender_id";
   private String senderId;
 
-  public static final String SERIALIZED_NAME_PUSH_SOUND = "push_sound";
-  @SerializedName(SERIALIZED_NAME_PUSH_SOUND)
+  public static final String JSON_PROPERTY_PUSH_SOUND = "push_sound";
   private String pushSound;
 
   public ListPushConfigurationsResponsePushConfigurationsInner() { 
   }
 
   public ListPushConfigurationsResponsePushConfigurationsInner id(String id) {
-    
     this.id = id;
     return this;
   }
@@ -89,19 +75,22 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
     return id;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(String id) {
     this.id = id;
   }
 
 
   public ListPushConfigurationsResponsePushConfigurationsInner pushType(String pushType) {
-    
     this.pushType = pushType;
     return this;
   }
@@ -112,19 +101,22 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPushType() {
     return pushType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushType(String pushType) {
     this.pushType = pushType;
   }
 
 
   public ListPushConfigurationsResponsePushConfigurationsInner createdAt(BigDecimal createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -135,19 +127,22 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(BigDecimal createdAt) {
     this.createdAt = createdAt;
   }
 
 
   public ListPushConfigurationsResponsePushConfigurationsInner apiKey(String apiKey) {
-    
     this.apiKey = apiKey;
     return this;
   }
@@ -158,19 +153,22 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_API_KEY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getApiKey() {
     return apiKey;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_API_KEY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApiKey(String apiKey) {
     this.apiKey = apiKey;
   }
 
 
   public ListPushConfigurationsResponsePushConfigurationsInner senderId(String senderId) {
-    
     this.senderId = senderId;
     return this;
   }
@@ -181,19 +179,22 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SENDER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSenderId() {
     return senderId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SENDER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSenderId(String senderId) {
     this.senderId = senderId;
   }
 
 
   public ListPushConfigurationsResponsePushConfigurationsInner pushSound(String pushSound) {
-    
     this.pushSound = pushSound;
     return this;
   }
@@ -204,18 +205,24 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPushSound() {
     return pushSound;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushSound(String pushSound) {
     this.pushSound = pushSound;
   }
 
 
-
+  /**
+   * Return true if this listPushConfigurationsResponse_push_configurations_inner object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -263,110 +270,5 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("push_type");
-    openapiFields.add("created_at");
-    openapiFields.add("api_key");
-    openapiFields.add("sender_id");
-    openapiFields.add("push_sound");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ListPushConfigurationsResponsePushConfigurationsInner
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ListPushConfigurationsResponsePushConfigurationsInner.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ListPushConfigurationsResponsePushConfigurationsInner is not found in the empty JSON string", ListPushConfigurationsResponsePushConfigurationsInner.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ListPushConfigurationsResponsePushConfigurationsInner.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListPushConfigurationsResponsePushConfigurationsInner` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("id") != null && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
-      if (jsonObj.get("push_type") != null && !jsonObj.get("push_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_type").toString()));
-      }
-      if (jsonObj.get("api_key") != null && !jsonObj.get("api_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `api_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("api_key").toString()));
-      }
-      if (jsonObj.get("sender_id") != null && !jsonObj.get("sender_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sender_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sender_id").toString()));
-      }
-      if (jsonObj.get("push_sound") != null && !jsonObj.get("push_sound").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_sound` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_sound").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ListPushConfigurationsResponsePushConfigurationsInner.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ListPushConfigurationsResponsePushConfigurationsInner' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ListPushConfigurationsResponsePushConfigurationsInner> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ListPushConfigurationsResponsePushConfigurationsInner.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ListPushConfigurationsResponsePushConfigurationsInner>() {
-           @Override
-           public void write(JsonWriter out, ListPushConfigurationsResponsePushConfigurationsInner value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ListPushConfigurationsResponsePushConfigurationsInner read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ListPushConfigurationsResponsePushConfigurationsInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ListPushConfigurationsResponsePushConfigurationsInner
-  * @throws IOException if the JSON string is invalid with respect to ListPushConfigurationsResponsePushConfigurationsInner
-  */
-  public static ListPushConfigurationsResponsePushConfigurationsInner fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ListPushConfigurationsResponsePushConfigurationsInner.class);
-  }
-
- /**
-  * Convert an instance of ListPushConfigurationsResponsePushConfigurationsInner to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -15,64 +15,52 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import org.openapitools.jackson.nullable.JsonNullable;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * Function
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  Function.JSON_PROPERTY_ARGUMENTS,
+  Function.JSON_PROPERTY_CALLER,
+  Function.JSON_PROPERTY_LENGTH,
+  Function.JSON_PROPERTY_PROTOTYPE
+})
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class Function {
-  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
-  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
-  private Object arguments = null;
+  public static final String JSON_PROPERTY_ARGUMENTS = "arguments";
+  private JsonNullable<Object> arguments = JsonNullable.<Object>of(null);
 
-  public static final String SERIALIZED_NAME_CALLER = "caller";
-  @SerializedName(SERIALIZED_NAME_CALLER)
+  public static final String JSON_PROPERTY_CALLER = "caller";
   private Function caller;
 
-  public static final String SERIALIZED_NAME_LENGTH = "length";
-  @SerializedName(SERIALIZED_NAME_LENGTH)
+  public static final String JSON_PROPERTY_LENGTH = "length";
   private BigDecimal length;
 
-  public static final String SERIALIZED_NAME_PROTOTYPE = "prototype";
-  @SerializedName(SERIALIZED_NAME_PROTOTYPE)
-  private Object prototype = null;
+  public static final String JSON_PROPERTY_PROTOTYPE = "prototype";
+  private JsonNullable<Object> prototype = JsonNullable.<Object>of(null);
 
   public Function() { 
   }
 
   public Function arguments(Object arguments) {
-    
-    this.arguments = arguments;
+    this.arguments = JsonNullable.<Object>of(arguments);
     return this;
   }
 
@@ -82,19 +70,30 @@ public class Function {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonIgnore
 
   public Object getArguments() {
-    return arguments;
+        return arguments.orElse(null);
   }
 
+  @JsonProperty(JSON_PROPERTY_ARGUMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<Object> getArguments_JsonNullable() {
+    return arguments;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ARGUMENTS)
+  public void setArguments_JsonNullable(JsonNullable<Object> arguments) {
+    this.arguments = arguments;
+  }
 
   public void setArguments(Object arguments) {
-    this.arguments = arguments;
+    this.arguments = JsonNullable.<Object>of(arguments);
   }
 
 
   public Function caller(Function caller) {
-    
     this.caller = caller;
     return this;
   }
@@ -105,19 +104,22 @@ public class Function {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CALLER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Function getCaller() {
     return caller;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CALLER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCaller(Function caller) {
     this.caller = caller;
   }
 
 
   public Function length(BigDecimal length) {
-    
     this.length = length;
     return this;
   }
@@ -128,20 +130,23 @@ public class Function {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LENGTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getLength() {
     return length;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LENGTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLength(BigDecimal length) {
     this.length = length;
   }
 
 
   public Function prototype(Object prototype) {
-    
-    this.prototype = prototype;
+    this.prototype = JsonNullable.<Object>of(prototype);
     return this;
   }
 
@@ -151,18 +156,32 @@ public class Function {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonIgnore
 
   public Object getPrototype() {
-    return prototype;
+        return prototype.orElse(null);
   }
 
+  @JsonProperty(JSON_PROPERTY_PROTOTYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public void setPrototype(Object prototype) {
+  public JsonNullable<Object> getPrototype_JsonNullable() {
+    return prototype;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PROTOTYPE)
+  public void setPrototype_JsonNullable(JsonNullable<Object> prototype) {
     this.prototype = prototype;
   }
 
+  public void setPrototype(Object prototype) {
+    this.prototype = JsonNullable.<Object>of(prototype);
+  }
 
 
+  /**
+   * Return true if this Function object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -172,10 +191,10 @@ public class Function {
       return false;
     }
     Function function = (Function) o;
-    return Objects.equals(this.arguments, function.arguments) &&
+    return equalsNullable(this.arguments, function.arguments) &&
         Objects.equals(this.caller, function.caller) &&
         Objects.equals(this.length, function.length) &&
-        Objects.equals(this.prototype, function.prototype);
+        equalsNullable(this.prototype, function.prototype);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -184,7 +203,7 @@ public class Function {
 
   @Override
   public int hashCode() {
-    return Objects.hash(arguments, caller, length, prototype);
+    return Objects.hash(hashCodeNullable(arguments), caller, length, hashCodeNullable(prototype));
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -217,97 +236,5 @@ public class Function {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("arguments");
-    openapiFields.add("caller");
-    openapiFields.add("length");
-    openapiFields.add("prototype");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Function
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Function.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Function is not found in the empty JSON string", Function.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!Function.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Function` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `caller`
-      if (jsonObj.getAsJsonObject("caller") != null) {
-        Function.validateJsonObject(jsonObj.getAsJsonObject("caller"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Function.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Function' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Function> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Function.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<Function>() {
-           @Override
-           public void write(JsonWriter out, Function value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public Function read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of Function given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Function
-  * @throws IOException if the JSON string is invalid with respect to Function
-  */
-  public static Function fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Function.class);
-  }
-
- /**
-  * Convert an instance of Function to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

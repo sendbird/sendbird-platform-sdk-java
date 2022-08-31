@@ -15,120 +15,106 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import org.openapitools.client.model.ScheduleAnnouncementResponseCreateChannelOptions;
 import org.openapitools.client.model.ScheduleAnnouncementResponseMessage;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ScheduleAnnouncementResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ScheduleAnnouncementResponse.JSON_PROPERTY_UNIQUE_ID,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_ANNOUNCEMENT_GROUP,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_MESSAGE,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_ENABLE_PUSH,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_TARGET_AT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_TARGET_USER_COUNT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_TARGET_CHANNEL_COUNT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_TARGET_CHANNEL_TYPE,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_CREATE_CHANNEL_OPTIONS,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_STATUS,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_SCHEDULED_AT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_CEASE_AT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_RESUME_AT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_COMPLETED_AT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_SENT_USER_COUNT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_SENT_CHANNEL_COUNT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_OPEN_COUNT,
+  ScheduleAnnouncementResponse.JSON_PROPERTY_OPEN_RATE
+})
+@JsonTypeName("scheduleAnnouncementResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ScheduleAnnouncementResponse {
-  public static final String SERIALIZED_NAME_UNIQUE_ID = "unique_id";
-  @SerializedName(SERIALIZED_NAME_UNIQUE_ID)
+  public static final String JSON_PROPERTY_UNIQUE_ID = "unique_id";
   private String uniqueId;
 
-  public static final String SERIALIZED_NAME_ANNOUNCEMENT_GROUP = "announcement_group";
-  @SerializedName(SERIALIZED_NAME_ANNOUNCEMENT_GROUP)
+  public static final String JSON_PROPERTY_ANNOUNCEMENT_GROUP = "announcement_group";
   private String announcementGroup;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  public static final String JSON_PROPERTY_MESSAGE = "message";
   private ScheduleAnnouncementResponseMessage message;
 
-  public static final String SERIALIZED_NAME_ENABLE_PUSH = "enable_push";
-  @SerializedName(SERIALIZED_NAME_ENABLE_PUSH)
+  public static final String JSON_PROPERTY_ENABLE_PUSH = "enable_push";
   private Boolean enablePush;
 
-  public static final String SERIALIZED_NAME_TARGET_AT = "target_at";
-  @SerializedName(SERIALIZED_NAME_TARGET_AT)
+  public static final String JSON_PROPERTY_TARGET_AT = "target_at";
   private String targetAt;
 
-  public static final String SERIALIZED_NAME_TARGET_USER_COUNT = "target_user_count";
-  @SerializedName(SERIALIZED_NAME_TARGET_USER_COUNT)
+  public static final String JSON_PROPERTY_TARGET_USER_COUNT = "target_user_count";
   private BigDecimal targetUserCount;
 
-  public static final String SERIALIZED_NAME_TARGET_CHANNEL_COUNT = "target_channel_count";
-  @SerializedName(SERIALIZED_NAME_TARGET_CHANNEL_COUNT)
+  public static final String JSON_PROPERTY_TARGET_CHANNEL_COUNT = "target_channel_count";
   private BigDecimal targetChannelCount;
 
-  public static final String SERIALIZED_NAME_TARGET_CHANNEL_TYPE = "target_channel_type";
-  @SerializedName(SERIALIZED_NAME_TARGET_CHANNEL_TYPE)
+  public static final String JSON_PROPERTY_TARGET_CHANNEL_TYPE = "target_channel_type";
   private String targetChannelType;
 
-  public static final String SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS = "create_channel_options";
-  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS)
+  public static final String JSON_PROPERTY_CREATE_CHANNEL_OPTIONS = "create_channel_options";
   private ScheduleAnnouncementResponseCreateChannelOptions createChannelOptions;
 
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
+  public static final String JSON_PROPERTY_STATUS = "status";
   private String status;
 
-  public static final String SERIALIZED_NAME_SCHEDULED_AT = "scheduled_at";
-  @SerializedName(SERIALIZED_NAME_SCHEDULED_AT)
+  public static final String JSON_PROPERTY_SCHEDULED_AT = "scheduled_at";
   private BigDecimal scheduledAt;
 
-  public static final String SERIALIZED_NAME_CEASE_AT = "cease_at";
-  @SerializedName(SERIALIZED_NAME_CEASE_AT)
+  public static final String JSON_PROPERTY_CEASE_AT = "cease_at";
   private String ceaseAt;
 
-  public static final String SERIALIZED_NAME_RESUME_AT = "resume_at";
-  @SerializedName(SERIALIZED_NAME_RESUME_AT)
+  public static final String JSON_PROPERTY_RESUME_AT = "resume_at";
   private String resumeAt;
 
-  public static final String SERIALIZED_NAME_COMPLETED_AT = "completed_at";
-  @SerializedName(SERIALIZED_NAME_COMPLETED_AT)
+  public static final String JSON_PROPERTY_COMPLETED_AT = "completed_at";
   private BigDecimal completedAt;
 
-  public static final String SERIALIZED_NAME_SENT_USER_COUNT = "sent_user_count";
-  @SerializedName(SERIALIZED_NAME_SENT_USER_COUNT)
+  public static final String JSON_PROPERTY_SENT_USER_COUNT = "sent_user_count";
   private BigDecimal sentUserCount;
 
-  public static final String SERIALIZED_NAME_SENT_CHANNEL_COUNT = "sent_channel_count";
-  @SerializedName(SERIALIZED_NAME_SENT_CHANNEL_COUNT)
+  public static final String JSON_PROPERTY_SENT_CHANNEL_COUNT = "sent_channel_count";
   private BigDecimal sentChannelCount;
 
-  public static final String SERIALIZED_NAME_OPEN_COUNT = "open_count";
-  @SerializedName(SERIALIZED_NAME_OPEN_COUNT)
+  public static final String JSON_PROPERTY_OPEN_COUNT = "open_count";
   private BigDecimal openCount;
 
-  public static final String SERIALIZED_NAME_OPEN_RATE = "open_rate";
-  @SerializedName(SERIALIZED_NAME_OPEN_RATE)
+  public static final String JSON_PROPERTY_OPEN_RATE = "open_rate";
   private BigDecimal openRate;
 
   public ScheduleAnnouncementResponse() { 
   }
 
   public ScheduleAnnouncementResponse uniqueId(String uniqueId) {
-    
     this.uniqueId = uniqueId;
     return this;
   }
@@ -139,19 +125,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUniqueId() {
     return uniqueId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUniqueId(String uniqueId) {
     this.uniqueId = uniqueId;
   }
 
 
   public ScheduleAnnouncementResponse announcementGroup(String announcementGroup) {
-    
     this.announcementGroup = announcementGroup;
     return this;
   }
@@ -162,19 +151,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAnnouncementGroup() {
     return announcementGroup;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAnnouncementGroup(String announcementGroup) {
     this.announcementGroup = announcementGroup;
   }
 
 
   public ScheduleAnnouncementResponse message(ScheduleAnnouncementResponseMessage message) {
-    
     this.message = message;
     return this;
   }
@@ -185,19 +177,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ScheduleAnnouncementResponseMessage getMessage() {
     return message;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(ScheduleAnnouncementResponseMessage message) {
     this.message = message;
   }
 
 
   public ScheduleAnnouncementResponse enablePush(Boolean enablePush) {
-    
     this.enablePush = enablePush;
     return this;
   }
@@ -208,19 +203,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ENABLE_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getEnablePush() {
     return enablePush;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ENABLE_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnablePush(Boolean enablePush) {
     this.enablePush = enablePush;
   }
 
 
   public ScheduleAnnouncementResponse targetAt(String targetAt) {
-    
     this.targetAt = targetAt;
     return this;
   }
@@ -231,19 +229,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTargetAt() {
     return targetAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetAt(String targetAt) {
     this.targetAt = targetAt;
   }
 
 
   public ScheduleAnnouncementResponse targetUserCount(BigDecimal targetUserCount) {
-    
     this.targetUserCount = targetUserCount;
     return this;
   }
@@ -254,19 +255,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTargetUserCount() {
     return targetUserCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetUserCount(BigDecimal targetUserCount) {
     this.targetUserCount = targetUserCount;
   }
 
 
   public ScheduleAnnouncementResponse targetChannelCount(BigDecimal targetChannelCount) {
-    
     this.targetChannelCount = targetChannelCount;
     return this;
   }
@@ -277,19 +281,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTargetChannelCount() {
     return targetChannelCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetChannelCount(BigDecimal targetChannelCount) {
     this.targetChannelCount = targetChannelCount;
   }
 
 
   public ScheduleAnnouncementResponse targetChannelType(String targetChannelType) {
-    
     this.targetChannelType = targetChannelType;
     return this;
   }
@@ -300,19 +307,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTargetChannelType() {
     return targetChannelType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetChannelType(String targetChannelType) {
     this.targetChannelType = targetChannelType;
   }
 
 
   public ScheduleAnnouncementResponse createChannelOptions(ScheduleAnnouncementResponseCreateChannelOptions createChannelOptions) {
-    
     this.createChannelOptions = createChannelOptions;
     return this;
   }
@@ -323,19 +333,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ScheduleAnnouncementResponseCreateChannelOptions getCreateChannelOptions() {
     return createChannelOptions;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateChannelOptions(ScheduleAnnouncementResponseCreateChannelOptions createChannelOptions) {
     this.createChannelOptions = createChannelOptions;
   }
 
 
   public ScheduleAnnouncementResponse status(String status) {
-    
     this.status = status;
     return this;
   }
@@ -346,19 +359,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStatus() {
     return status;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStatus(String status) {
     this.status = status;
   }
 
 
   public ScheduleAnnouncementResponse scheduledAt(BigDecimal scheduledAt) {
-    
     this.scheduledAt = scheduledAt;
     return this;
   }
@@ -369,19 +385,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getScheduledAt() {
     return scheduledAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScheduledAt(BigDecimal scheduledAt) {
     this.scheduledAt = scheduledAt;
   }
 
 
   public ScheduleAnnouncementResponse ceaseAt(String ceaseAt) {
-    
     this.ceaseAt = ceaseAt;
     return this;
   }
@@ -392,19 +411,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CEASE_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCeaseAt() {
     return ceaseAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CEASE_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCeaseAt(String ceaseAt) {
     this.ceaseAt = ceaseAt;
   }
 
 
   public ScheduleAnnouncementResponse resumeAt(String resumeAt) {
-    
     this.resumeAt = resumeAt;
     return this;
   }
@@ -415,19 +437,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_RESUME_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getResumeAt() {
     return resumeAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_RESUME_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setResumeAt(String resumeAt) {
     this.resumeAt = resumeAt;
   }
 
 
   public ScheduleAnnouncementResponse completedAt(BigDecimal completedAt) {
-    
     this.completedAt = completedAt;
     return this;
   }
@@ -438,19 +463,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_COMPLETED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCompletedAt() {
     return completedAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_COMPLETED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompletedAt(BigDecimal completedAt) {
     this.completedAt = completedAt;
   }
 
 
   public ScheduleAnnouncementResponse sentUserCount(BigDecimal sentUserCount) {
-    
     this.sentUserCount = sentUserCount;
     return this;
   }
@@ -461,19 +489,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSentUserCount() {
     return sentUserCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSentUserCount(BigDecimal sentUserCount) {
     this.sentUserCount = sentUserCount;
   }
 
 
   public ScheduleAnnouncementResponse sentChannelCount(BigDecimal sentChannelCount) {
-    
     this.sentChannelCount = sentChannelCount;
     return this;
   }
@@ -484,19 +515,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SENT_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSentChannelCount() {
     return sentChannelCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SENT_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSentChannelCount(BigDecimal sentChannelCount) {
     this.sentChannelCount = sentChannelCount;
   }
 
 
   public ScheduleAnnouncementResponse openCount(BigDecimal openCount) {
-    
     this.openCount = openCount;
     return this;
   }
@@ -507,19 +541,22 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getOpenCount() {
     return openCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpenCount(BigDecimal openCount) {
     this.openCount = openCount;
   }
 
 
   public ScheduleAnnouncementResponse openRate(BigDecimal openRate) {
-    
     this.openRate = openRate;
     return this;
   }
@@ -530,18 +567,24 @@ public class ScheduleAnnouncementResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPEN_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getOpenRate() {
     return openRate;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPEN_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpenRate(BigDecimal openRate) {
     this.openRate = openRate;
   }
 
 
-
+  /**
+   * Return true if this scheduleAnnouncementResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -613,136 +656,5 @@ public class ScheduleAnnouncementResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("unique_id");
-    openapiFields.add("announcement_group");
-    openapiFields.add("message");
-    openapiFields.add("enable_push");
-    openapiFields.add("target_at");
-    openapiFields.add("target_user_count");
-    openapiFields.add("target_channel_count");
-    openapiFields.add("target_channel_type");
-    openapiFields.add("create_channel_options");
-    openapiFields.add("status");
-    openapiFields.add("scheduled_at");
-    openapiFields.add("cease_at");
-    openapiFields.add("resume_at");
-    openapiFields.add("completed_at");
-    openapiFields.add("sent_user_count");
-    openapiFields.add("sent_channel_count");
-    openapiFields.add("open_count");
-    openapiFields.add("open_rate");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ScheduleAnnouncementResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ScheduleAnnouncementResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ScheduleAnnouncementResponse is not found in the empty JSON string", ScheduleAnnouncementResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ScheduleAnnouncementResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ScheduleAnnouncementResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("unique_id") != null && !jsonObj.get("unique_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unique_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unique_id").toString()));
-      }
-      if (jsonObj.get("announcement_group") != null && !jsonObj.get("announcement_group").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `announcement_group` to be a primitive type in the JSON string but got `%s`", jsonObj.get("announcement_group").toString()));
-      }
-      // validate the optional field `message`
-      if (jsonObj.getAsJsonObject("message") != null) {
-        ScheduleAnnouncementResponseMessage.validateJsonObject(jsonObj.getAsJsonObject("message"));
-      }
-      if (jsonObj.get("target_at") != null && !jsonObj.get("target_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `target_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_at").toString()));
-      }
-      if (jsonObj.get("target_channel_type") != null && !jsonObj.get("target_channel_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `target_channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_channel_type").toString()));
-      }
-      // validate the optional field `create_channel_options`
-      if (jsonObj.getAsJsonObject("create_channel_options") != null) {
-        ScheduleAnnouncementResponseCreateChannelOptions.validateJsonObject(jsonObj.getAsJsonObject("create_channel_options"));
-      }
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
-      if (jsonObj.get("cease_at") != null && !jsonObj.get("cease_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cease_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cease_at").toString()));
-      }
-      if (jsonObj.get("resume_at") != null && !jsonObj.get("resume_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resume_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resume_at").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ScheduleAnnouncementResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ScheduleAnnouncementResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ScheduleAnnouncementResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ScheduleAnnouncementResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ScheduleAnnouncementResponse>() {
-           @Override
-           public void write(JsonWriter out, ScheduleAnnouncementResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ScheduleAnnouncementResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ScheduleAnnouncementResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ScheduleAnnouncementResponse
-  * @throws IOException if the JSON string is invalid with respect to ScheduleAnnouncementResponse
-  */
-  public static ScheduleAnnouncementResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ScheduleAnnouncementResponse.class);
-  }
-
- /**
-  * Convert an instance of ScheduleAnnouncementResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

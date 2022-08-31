@@ -15,142 +15,128 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SBObject;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * User
  */
 @ApiModel(description = "User")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendBirdUser.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
+  SendBirdUser.JSON_PROPERTY_IS_ONLINE,
+  SendBirdUser.JSON_PROPERTY_USER_ID,
+  SendBirdUser.JSON_PROPERTY_ACCESS_TOKEN,
+  SendBirdUser.JSON_PROPERTY_HAS_EVER_LOGGED_IN,
+  SendBirdUser.JSON_PROPERTY_IS_ACTIVE,
+  SendBirdUser.JSON_PROPERTY_LAST_SEEN_AT,
+  SendBirdUser.JSON_PROPERTY_NICKNAME,
+  SendBirdUser.JSON_PROPERTY_DISCOVERY_KEYS,
+  SendBirdUser.JSON_PROPERTY_SESSION_TOKENS,
+  SendBirdUser.JSON_PROPERTY_PREFERRED_LANGUAGES,
+  SendBirdUser.JSON_PROPERTY_PROFILE_URL,
+  SendBirdUser.JSON_PROPERTY_CREATED_AT,
+  SendBirdUser.JSON_PROPERTY_PHONE_NUMBER,
+  SendBirdUser.JSON_PROPERTY_LOCAL,
+  SendBirdUser.JSON_PROPERTY_LOCALE,
+  SendBirdUser.JSON_PROPERTY_IS_HIDE_ME_FROM_FRIENDS,
+  SendBirdUser.JSON_PROPERTY_IS_SHADOW_BLOCKED,
+  SendBirdUser.JSON_PROPERTY_IS_CREATED,
+  SendBirdUser.JSON_PROPERTY_METADATA,
+  SendBirdUser.JSON_PROPERTY_DESCRIPTION,
+  SendBirdUser.JSON_PROPERTY_END_AT,
+  SendBirdUser.JSON_PROPERTY_START_AT
+})
+@JsonTypeName("SendBird.User")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendBirdUser {
-  public static final String SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
-  @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;
 
-  public static final String SERIALIZED_NAME_IS_ONLINE = "is_online";
-  @SerializedName(SERIALIZED_NAME_IS_ONLINE)
+  public static final String JSON_PROPERTY_IS_ONLINE = "is_online";
   private Boolean isOnline;
 
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public static final String SERIALIZED_NAME_ACCESS_TOKEN = "access_token";
-  @SerializedName(SERIALIZED_NAME_ACCESS_TOKEN)
+  public static final String JSON_PROPERTY_ACCESS_TOKEN = "access_token";
   private String accessToken;
 
-  public static final String SERIALIZED_NAME_HAS_EVER_LOGGED_IN = "has_ever_logged_in";
-  @SerializedName(SERIALIZED_NAME_HAS_EVER_LOGGED_IN)
+  public static final String JSON_PROPERTY_HAS_EVER_LOGGED_IN = "has_ever_logged_in";
   private Boolean hasEverLoggedIn;
 
-  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
-  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
+  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
   private Boolean isActive;
 
-  public static final String SERIALIZED_NAME_LAST_SEEN_AT = "last_seen_at";
-  @SerializedName(SERIALIZED_NAME_LAST_SEEN_AT)
+  public static final String JSON_PROPERTY_LAST_SEEN_AT = "last_seen_at";
   private Integer lastSeenAt;
 
-  public static final String SERIALIZED_NAME_NICKNAME = "nickname";
-  @SerializedName(SERIALIZED_NAME_NICKNAME)
+  public static final String JSON_PROPERTY_NICKNAME = "nickname";
   private String nickname;
 
-  public static final String SERIALIZED_NAME_DISCOVERY_KEYS = "discovery_keys";
-  @SerializedName(SERIALIZED_NAME_DISCOVERY_KEYS)
+  public static final String JSON_PROPERTY_DISCOVERY_KEYS = "discovery_keys";
   private List<String> discoveryKeys = null;
 
-  public static final String SERIALIZED_NAME_SESSION_TOKENS = "session_tokens";
-  @SerializedName(SERIALIZED_NAME_SESSION_TOKENS)
+  public static final String JSON_PROPERTY_SESSION_TOKENS = "session_tokens";
   private List<String> sessionTokens = null;
 
-  public static final String SERIALIZED_NAME_PREFERRED_LANGUAGES = "preferred_languages";
-  @SerializedName(SERIALIZED_NAME_PREFERRED_LANGUAGES)
+  public static final String JSON_PROPERTY_PREFERRED_LANGUAGES = "preferred_languages";
   private List<String> preferredLanguages = null;
 
-  public static final String SERIALIZED_NAME_PROFILE_URL = "profile_url";
-  @SerializedName(SERIALIZED_NAME_PROFILE_URL)
+  public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
   private String profileUrl;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Integer createdAt;
 
-  public static final String SERIALIZED_NAME_PHONE_NUMBER = "phone_number";
-  @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
+  public static final String JSON_PROPERTY_PHONE_NUMBER = "phone_number";
   private String phoneNumber;
 
-  public static final String SERIALIZED_NAME_LOCAL = "local";
-  @SerializedName(SERIALIZED_NAME_LOCAL)
+  public static final String JSON_PROPERTY_LOCAL = "local";
   private String local;
 
-  public static final String SERIALIZED_NAME_LOCALE = "locale";
-  @SerializedName(SERIALIZED_NAME_LOCALE)
+  public static final String JSON_PROPERTY_LOCALE = "locale";
   private String locale;
 
-  public static final String SERIALIZED_NAME_IS_HIDE_ME_FROM_FRIENDS = "is_hide_me_from_friends";
-  @SerializedName(SERIALIZED_NAME_IS_HIDE_ME_FROM_FRIENDS)
+  public static final String JSON_PROPERTY_IS_HIDE_ME_FROM_FRIENDS = "is_hide_me_from_friends";
   private Boolean isHideMeFromFriends;
 
-  public static final String SERIALIZED_NAME_IS_SHADOW_BLOCKED = "is_shadow_blocked";
-  @SerializedName(SERIALIZED_NAME_IS_SHADOW_BLOCKED)
+  public static final String JSON_PROPERTY_IS_SHADOW_BLOCKED = "is_shadow_blocked";
   private Boolean isShadowBlocked;
 
-  public static final String SERIALIZED_NAME_IS_CREATED = "is_created";
-  @SerializedName(SERIALIZED_NAME_IS_CREATED)
+  public static final String JSON_PROPERTY_IS_CREATED = "is_created";
   private Boolean isCreated;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
+  public static final String JSON_PROPERTY_METADATA = "metadata";
   private SBObject metadata;
 
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
 
-  public static final String SERIALIZED_NAME_END_AT = "end_at";
-  @SerializedName(SERIALIZED_NAME_END_AT)
+  public static final String JSON_PROPERTY_END_AT = "end_at";
   private BigDecimal endAt;
 
-  public static final String SERIALIZED_NAME_START_AT = "start_at";
-  @SerializedName(SERIALIZED_NAME_START_AT)
+  public static final String JSON_PROPERTY_START_AT = "start_at";
   private BigDecimal startAt;
 
   public SendBirdUser() { 
   }
 
   public SendBirdUser requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
-    
     this.requireAuthForProfileImage = requireAuthForProfileImage;
     return this;
   }
@@ -161,19 +147,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getRequireAuthForProfileImage() {
     return requireAuthForProfileImage;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequireAuthForProfileImage(Boolean requireAuthForProfileImage) {
     this.requireAuthForProfileImage = requireAuthForProfileImage;
   }
 
 
   public SendBirdUser isOnline(Boolean isOnline) {
-    
     this.isOnline = isOnline;
     return this;
   }
@@ -184,19 +173,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_ONLINE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsOnline() {
     return isOnline;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_ONLINE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsOnline(Boolean isOnline) {
     this.isOnline = isOnline;
   }
 
 
   public SendBirdUser userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -207,19 +199,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
 
   public SendBirdUser accessToken(String accessToken) {
-    
     this.accessToken = accessToken;
     return this;
   }
@@ -230,19 +225,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ACCESS_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAccessToken() {
     return accessToken;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ACCESS_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAccessToken(String accessToken) {
     this.accessToken = accessToken;
   }
 
 
   public SendBirdUser hasEverLoggedIn(Boolean hasEverLoggedIn) {
-    
     this.hasEverLoggedIn = hasEverLoggedIn;
     return this;
   }
@@ -253,19 +251,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_HAS_EVER_LOGGED_IN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getHasEverLoggedIn() {
     return hasEverLoggedIn;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_HAS_EVER_LOGGED_IN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHasEverLoggedIn(Boolean hasEverLoggedIn) {
     this.hasEverLoggedIn = hasEverLoggedIn;
   }
 
 
   public SendBirdUser isActive(Boolean isActive) {
-    
     this.isActive = isActive;
     return this;
   }
@@ -276,19 +277,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsActive(Boolean isActive) {
     this.isActive = isActive;
   }
 
 
   public SendBirdUser lastSeenAt(Integer lastSeenAt) {
-    
     this.lastSeenAt = lastSeenAt;
     return this;
   }
@@ -299,19 +303,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getLastSeenAt() {
     return lastSeenAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastSeenAt(Integer lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
   }
 
 
   public SendBirdUser nickname(String nickname) {
-    
     this.nickname = nickname;
     return this;
   }
@@ -322,19 +329,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNickname() {
     return nickname;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNickname(String nickname) {
     this.nickname = nickname;
   }
 
 
   public SendBirdUser discoveryKeys(List<String> discoveryKeys) {
-    
     this.discoveryKeys = discoveryKeys;
     return this;
   }
@@ -353,19 +363,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getDiscoveryKeys() {
     return discoveryKeys;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscoveryKeys(List<String> discoveryKeys) {
     this.discoveryKeys = discoveryKeys;
   }
 
 
   public SendBirdUser sessionTokens(List<String> sessionTokens) {
-    
     this.sessionTokens = sessionTokens;
     return this;
   }
@@ -384,19 +397,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SESSION_TOKENS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getSessionTokens() {
     return sessionTokens;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SESSION_TOKENS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSessionTokens(List<String> sessionTokens) {
     this.sessionTokens = sessionTokens;
   }
 
 
   public SendBirdUser preferredLanguages(List<String> preferredLanguages) {
-    
     this.preferredLanguages = preferredLanguages;
     return this;
   }
@@ -415,19 +431,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getPreferredLanguages() {
     return preferredLanguages;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPreferredLanguages(List<String> preferredLanguages) {
     this.preferredLanguages = preferredLanguages;
   }
 
 
   public SendBirdUser profileUrl(String profileUrl) {
-    
     this.profileUrl = profileUrl;
     return this;
   }
@@ -438,19 +457,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getProfileUrl() {
     return profileUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
   }
 
 
   public SendBirdUser createdAt(Integer createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -461,19 +483,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(Integer createdAt) {
     this.createdAt = createdAt;
   }
 
 
   public SendBirdUser phoneNumber(String phoneNumber) {
-    
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -484,19 +509,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
 
   public SendBirdUser local(String local) {
-    
     this.local = local;
     return this;
   }
@@ -507,19 +535,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LOCAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLocal() {
     return local;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LOCAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocal(String local) {
     this.local = local;
   }
 
 
   public SendBirdUser locale(String locale) {
-    
     this.locale = locale;
     return this;
   }
@@ -530,19 +561,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LOCALE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLocale() {
     return locale;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LOCALE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocale(String locale) {
     this.locale = locale;
   }
 
 
   public SendBirdUser isHideMeFromFriends(Boolean isHideMeFromFriends) {
-    
     this.isHideMeFromFriends = isHideMeFromFriends;
     return this;
   }
@@ -553,19 +587,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_HIDE_ME_FROM_FRIENDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsHideMeFromFriends() {
     return isHideMeFromFriends;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_HIDE_ME_FROM_FRIENDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsHideMeFromFriends(Boolean isHideMeFromFriends) {
     this.isHideMeFromFriends = isHideMeFromFriends;
   }
 
 
   public SendBirdUser isShadowBlocked(Boolean isShadowBlocked) {
-    
     this.isShadowBlocked = isShadowBlocked;
     return this;
   }
@@ -576,19 +613,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_SHADOW_BLOCKED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsShadowBlocked() {
     return isShadowBlocked;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_SHADOW_BLOCKED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsShadowBlocked(Boolean isShadowBlocked) {
     this.isShadowBlocked = isShadowBlocked;
   }
 
 
   public SendBirdUser isCreated(Boolean isCreated) {
-    
     this.isCreated = isCreated;
     return this;
   }
@@ -599,19 +639,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_CREATED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsCreated() {
     return isCreated;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_CREATED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsCreated(Boolean isCreated) {
     this.isCreated = isCreated;
   }
 
 
   public SendBirdUser metadata(SBObject metadata) {
-    
     this.metadata = metadata;
     return this;
   }
@@ -622,19 +665,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SBObject getMetadata() {
     return metadata;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(SBObject metadata) {
     this.metadata = metadata;
   }
 
 
   public SendBirdUser description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -645,19 +691,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
     return description;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(String description) {
     this.description = description;
   }
 
 
   public SendBirdUser endAt(BigDecimal endAt) {
-    
     this.endAt = endAt;
     return this;
   }
@@ -668,19 +717,22 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getEndAt() {
     return endAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEndAt(BigDecimal endAt) {
     this.endAt = endAt;
   }
 
 
   public SendBirdUser startAt(BigDecimal startAt) {
-    
     this.startAt = startAt;
     return this;
   }
@@ -691,18 +743,24 @@ public class SendBirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_START_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getStartAt() {
     return startAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_START_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStartAt(BigDecimal startAt) {
     this.startAt = startAt;
   }
 
 
-
+  /**
+   * Return true if this SendBird.User object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -784,152 +842,5 @@ public class SendBirdUser {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("require_auth_for_profile_image");
-    openapiFields.add("is_online");
-    openapiFields.add("user_id");
-    openapiFields.add("access_token");
-    openapiFields.add("has_ever_logged_in");
-    openapiFields.add("is_active");
-    openapiFields.add("last_seen_at");
-    openapiFields.add("nickname");
-    openapiFields.add("discovery_keys");
-    openapiFields.add("session_tokens");
-    openapiFields.add("preferred_languages");
-    openapiFields.add("profile_url");
-    openapiFields.add("created_at");
-    openapiFields.add("phone_number");
-    openapiFields.add("local");
-    openapiFields.add("locale");
-    openapiFields.add("is_hide_me_from_friends");
-    openapiFields.add("is_shadow_blocked");
-    openapiFields.add("is_created");
-    openapiFields.add("metadata");
-    openapiFields.add("description");
-    openapiFields.add("end_at");
-    openapiFields.add("start_at");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendBirdUser
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendBirdUser.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdUser is not found in the empty JSON string", SendBirdUser.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SendBirdUser.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdUser` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-      if (jsonObj.get("access_token") != null && !jsonObj.get("access_token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `access_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("access_token").toString()));
-      }
-      if (jsonObj.get("nickname") != null && !jsonObj.get("nickname").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("discovery_keys") != null && !jsonObj.get("discovery_keys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `discovery_keys` to be an array in the JSON string but got `%s`", jsonObj.get("discovery_keys").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("session_tokens") != null && !jsonObj.get("session_tokens").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `session_tokens` to be an array in the JSON string but got `%s`", jsonObj.get("session_tokens").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("preferred_languages") != null && !jsonObj.get("preferred_languages").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `preferred_languages` to be an array in the JSON string but got `%s`", jsonObj.get("preferred_languages").toString()));
-      }
-      if (jsonObj.get("profile_url") != null && !jsonObj.get("profile_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profile_url").toString()));
-      }
-      if (jsonObj.get("phone_number") != null && !jsonObj.get("phone_number").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `phone_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_number").toString()));
-      }
-      if (jsonObj.get("local") != null && !jsonObj.get("local").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `local` to be a primitive type in the JSON string but got `%s`", jsonObj.get("local").toString()));
-      }
-      if (jsonObj.get("locale") != null && !jsonObj.get("locale").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `locale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("locale").toString()));
-      }
-      // validate the optional field `metadata`
-      if (jsonObj.getAsJsonObject("metadata") != null) {
-        SBObject.validateJsonObject(jsonObj.getAsJsonObject("metadata"));
-      }
-      if (jsonObj.get("description") != null && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendBirdUser.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendBirdUser' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendBirdUser> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdUser.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendBirdUser>() {
-           @Override
-           public void write(JsonWriter out, SendBirdUser value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendBirdUser read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendBirdUser given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendBirdUser
-  * @throws IOException if the JSON string is invalid with respect to SendBirdUser
-  */
-  public static SendBirdUser fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendBirdUser.class);
-  }
-
- /**
-  * Convert an instance of SendBirdUser to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

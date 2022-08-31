@@ -15,70 +15,56 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SendBirdOGImage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendBirdOGImage.JSON_PROPERTY_ALT,
+  SendBirdOGImage.JSON_PROPERTY_HEIGHT,
+  SendBirdOGImage.JSON_PROPERTY_SECURE_URL,
+  SendBirdOGImage.JSON_PROPERTY_TYPE,
+  SendBirdOGImage.JSON_PROPERTY_URL,
+  SendBirdOGImage.JSON_PROPERTY_WIDTH
+})
+@JsonTypeName("SendBird.OGImage")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendBirdOGImage {
-  public static final String SERIALIZED_NAME_ALT = "alt";
-  @SerializedName(SERIALIZED_NAME_ALT)
+  public static final String JSON_PROPERTY_ALT = "alt";
   private String alt;
 
-  public static final String SERIALIZED_NAME_HEIGHT = "height";
-  @SerializedName(SERIALIZED_NAME_HEIGHT)
+  public static final String JSON_PROPERTY_HEIGHT = "height";
   private BigDecimal height;
 
-  public static final String SERIALIZED_NAME_SECURE_URL = "secure_url";
-  @SerializedName(SERIALIZED_NAME_SECURE_URL)
+  public static final String JSON_PROPERTY_SECURE_URL = "secure_url";
   private String secureUrl;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+  public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
 
-  public static final String SERIALIZED_NAME_URL = "url";
-  @SerializedName(SERIALIZED_NAME_URL)
+  public static final String JSON_PROPERTY_URL = "url";
   private String url;
 
-  public static final String SERIALIZED_NAME_WIDTH = "width";
-  @SerializedName(SERIALIZED_NAME_WIDTH)
+  public static final String JSON_PROPERTY_WIDTH = "width";
   private BigDecimal width;
 
   public SendBirdOGImage() { 
   }
 
   public SendBirdOGImage alt(String alt) {
-    
     this.alt = alt;
     return this;
   }
@@ -89,19 +75,22 @@ public class SendBirdOGImage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ALT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAlt() {
     return alt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ALT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAlt(String alt) {
     this.alt = alt;
   }
 
 
   public SendBirdOGImage height(BigDecimal height) {
-    
     this.height = height;
     return this;
   }
@@ -112,19 +101,22 @@ public class SendBirdOGImage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_HEIGHT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getHeight() {
     return height;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_HEIGHT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHeight(BigDecimal height) {
     this.height = height;
   }
 
 
   public SendBirdOGImage secureUrl(String secureUrl) {
-    
     this.secureUrl = secureUrl;
     return this;
   }
@@ -135,19 +127,22 @@ public class SendBirdOGImage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SECURE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSecureUrl() {
     return secureUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SECURE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSecureUrl(String secureUrl) {
     this.secureUrl = secureUrl;
   }
 
 
   public SendBirdOGImage type(String type) {
-    
     this.type = type;
     return this;
   }
@@ -158,19 +153,22 @@ public class SendBirdOGImage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
     return type;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(String type) {
     this.type = type;
   }
 
 
   public SendBirdOGImage url(String url) {
-    
     this.url = url;
     return this;
   }
@@ -181,19 +179,22 @@ public class SendBirdOGImage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUrl() {
     return url;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUrl(String url) {
     this.url = url;
   }
 
 
   public SendBirdOGImage width(BigDecimal width) {
-    
     this.width = width;
     return this;
   }
@@ -204,18 +205,24 @@ public class SendBirdOGImage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_WIDTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getWidth() {
     return width;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_WIDTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWidth(BigDecimal width) {
     this.width = width;
   }
 
 
-
+  /**
+   * Return true if this SendBird.OGImage object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -263,107 +270,5 @@ public class SendBirdOGImage {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("alt");
-    openapiFields.add("height");
-    openapiFields.add("secure_url");
-    openapiFields.add("type");
-    openapiFields.add("url");
-    openapiFields.add("width");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendBirdOGImage
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendBirdOGImage.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdOGImage is not found in the empty JSON string", SendBirdOGImage.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SendBirdOGImage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdOGImage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("alt") != null && !jsonObj.get("alt").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `alt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alt").toString()));
-      }
-      if (jsonObj.get("secure_url") != null && !jsonObj.get("secure_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secure_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secure_url").toString()));
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
-      }
-      if (jsonObj.get("url") != null && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendBirdOGImage.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendBirdOGImage' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendBirdOGImage> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdOGImage.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendBirdOGImage>() {
-           @Override
-           public void write(JsonWriter out, SendBirdOGImage value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendBirdOGImage read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendBirdOGImage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendBirdOGImage
-  * @throws IOException if the JSON string is invalid with respect to SendBirdOGImage
-  */
-  public static SendBirdOGImage fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendBirdOGImage.class);
-  }
-
- /**
-  * Convert an instance of SendBirdOGImage to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

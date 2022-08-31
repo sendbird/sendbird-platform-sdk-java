@@ -15,56 +15,42 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * OcListOperatorsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  OcListOperatorsResponse.JSON_PROPERTY_OPERATORS,
+  OcListOperatorsResponse.JSON_PROPERTY_NEXT
+})
+@JsonTypeName("ocListOperatorsResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class OcListOperatorsResponse {
-  public static final String SERIALIZED_NAME_OPERATORS = "operators";
-  @SerializedName(SERIALIZED_NAME_OPERATORS)
+  public static final String JSON_PROPERTY_OPERATORS = "operators";
   private List<SendBirdUser> operators = null;
 
-  public static final String SERIALIZED_NAME_NEXT = "next";
-  @SerializedName(SERIALIZED_NAME_NEXT)
+  public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
 
   public OcListOperatorsResponse() { 
   }
 
   public OcListOperatorsResponse operators(List<SendBirdUser> operators) {
-    
     this.operators = operators;
     return this;
   }
@@ -83,19 +69,22 @@ public class OcListOperatorsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPERATORS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SendBirdUser> getOperators() {
     return operators;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPERATORS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOperators(List<SendBirdUser> operators) {
     this.operators = operators;
   }
 
 
   public OcListOperatorsResponse next(String next) {
-    
     this.next = next;
     return this;
   }
@@ -106,18 +95,24 @@ public class OcListOperatorsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNext() {
     return next;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNext(String next) {
     this.next = next;
   }
 
 
-
+  /**
+   * Return true if this ocListOperatorsResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -157,106 +152,5 @@ public class OcListOperatorsResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("operators");
-    openapiFields.add("next");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to OcListOperatorsResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (OcListOperatorsResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OcListOperatorsResponse is not found in the empty JSON string", OcListOperatorsResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!OcListOperatorsResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OcListOperatorsResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      JsonArray jsonArrayoperators = jsonObj.getAsJsonArray("operators");
-      if (jsonArrayoperators != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("operators").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `operators` to be an array in the JSON string but got `%s`", jsonObj.get("operators").toString()));
-        }
-
-        // validate the optional field `operators` (array)
-        for (int i = 0; i < jsonArrayoperators.size(); i++) {
-          SendBirdUser.validateJsonObject(jsonArrayoperators.get(i).getAsJsonObject());
-        };
-      }
-      if (jsonObj.get("next") != null && !jsonObj.get("next").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OcListOperatorsResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OcListOperatorsResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OcListOperatorsResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OcListOperatorsResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<OcListOperatorsResponse>() {
-           @Override
-           public void write(JsonWriter out, OcListOperatorsResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public OcListOperatorsResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of OcListOperatorsResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OcListOperatorsResponse
-  * @throws IOException if the JSON string is invalid with respect to OcListOperatorsResponse
-  */
-  public static OcListOperatorsResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OcListOperatorsResponse.class);
-  }
-
- /**
-  * Convert an instance of OcListOperatorsResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

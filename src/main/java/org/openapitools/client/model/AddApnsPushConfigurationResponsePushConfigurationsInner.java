@@ -15,86 +15,72 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * AddApnsPushConfigurationResponsePushConfigurationsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_ID,
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_TYPE,
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_CREATED_AT,
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_APNS_CER_ENV_TYPE,
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_APNS_EXPIRATION,
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_APNS_NAME,
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE,
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_CONTENT_AVAILABLE,
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_MUTABLE_CONTENT,
+  AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_SOUND
+})
+@JsonTypeName("addApnsPushConfigurationResponse_push_configurations_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class AddApnsPushConfigurationResponsePushConfigurationsInner {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
+  public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
-  public static final String SERIALIZED_NAME_PUSH_TYPE = "push_type";
-  @SerializedName(SERIALIZED_NAME_PUSH_TYPE)
+  public static final String JSON_PROPERTY_PUSH_TYPE = "push_type";
   private String pushType;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private BigDecimal createdAt;
 
-  public static final String SERIALIZED_NAME_APNS_CER_ENV_TYPE = "apns_cer_env_type";
-  @SerializedName(SERIALIZED_NAME_APNS_CER_ENV_TYPE)
+  public static final String JSON_PROPERTY_APNS_CER_ENV_TYPE = "apns_cer_env_type";
   private String apnsCerEnvType;
 
-  public static final String SERIALIZED_NAME_APNS_EXPIRATION = "apns_expiration";
-  @SerializedName(SERIALIZED_NAME_APNS_EXPIRATION)
+  public static final String JSON_PROPERTY_APNS_EXPIRATION = "apns_expiration";
   private BigDecimal apnsExpiration;
 
-  public static final String SERIALIZED_NAME_APNS_NAME = "apns_name";
-  @SerializedName(SERIALIZED_NAME_APNS_NAME)
+  public static final String JSON_PROPERTY_APNS_NAME = "apns_name";
   private String apnsName;
 
-  public static final String SERIALIZED_NAME_HAS_UNREAD_COUNT_BADGE = "has_unread_count_badge";
-  @SerializedName(SERIALIZED_NAME_HAS_UNREAD_COUNT_BADGE)
+  public static final String JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE = "has_unread_count_badge";
   private BigDecimal hasUnreadCountBadge;
 
-  public static final String SERIALIZED_NAME_CONTENT_AVAILABLE = "content_available";
-  @SerializedName(SERIALIZED_NAME_CONTENT_AVAILABLE)
+  public static final String JSON_PROPERTY_CONTENT_AVAILABLE = "content_available";
   private Boolean contentAvailable;
 
-  public static final String SERIALIZED_NAME_MUTABLE_CONTENT = "mutable_content";
-  @SerializedName(SERIALIZED_NAME_MUTABLE_CONTENT)
+  public static final String JSON_PROPERTY_MUTABLE_CONTENT = "mutable_content";
   private Boolean mutableContent;
 
-  public static final String SERIALIZED_NAME_PUSH_SOUND = "push_sound";
-  @SerializedName(SERIALIZED_NAME_PUSH_SOUND)
+  public static final String JSON_PROPERTY_PUSH_SOUND = "push_sound";
   private String pushSound;
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner() { 
   }
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner id(String id) {
-    
     this.id = id;
     return this;
   }
@@ -105,19 +91,22 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
     return id;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(String id) {
     this.id = id;
   }
 
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner pushType(String pushType) {
-    
     this.pushType = pushType;
     return this;
   }
@@ -128,19 +117,22 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPushType() {
     return pushType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushType(String pushType) {
     this.pushType = pushType;
   }
 
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner createdAt(BigDecimal createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -151,19 +143,22 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(BigDecimal createdAt) {
     this.createdAt = createdAt;
   }
 
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner apnsCerEnvType(String apnsCerEnvType) {
-    
     this.apnsCerEnvType = apnsCerEnvType;
     return this;
   }
@@ -174,19 +169,22 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_APNS_CER_ENV_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getApnsCerEnvType() {
     return apnsCerEnvType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APNS_CER_ENV_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApnsCerEnvType(String apnsCerEnvType) {
     this.apnsCerEnvType = apnsCerEnvType;
   }
 
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner apnsExpiration(BigDecimal apnsExpiration) {
-    
     this.apnsExpiration = apnsExpiration;
     return this;
   }
@@ -197,19 +195,22 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_APNS_EXPIRATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getApnsExpiration() {
     return apnsExpiration;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APNS_EXPIRATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApnsExpiration(BigDecimal apnsExpiration) {
     this.apnsExpiration = apnsExpiration;
   }
 
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner apnsName(String apnsName) {
-    
     this.apnsName = apnsName;
     return this;
   }
@@ -220,19 +221,22 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_APNS_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getApnsName() {
     return apnsName;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APNS_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApnsName(String apnsName) {
     this.apnsName = apnsName;
   }
 
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner hasUnreadCountBadge(BigDecimal hasUnreadCountBadge) {
-    
     this.hasUnreadCountBadge = hasUnreadCountBadge;
     return this;
   }
@@ -243,19 +247,22 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getHasUnreadCountBadge() {
     return hasUnreadCountBadge;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHasUnreadCountBadge(BigDecimal hasUnreadCountBadge) {
     this.hasUnreadCountBadge = hasUnreadCountBadge;
   }
 
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner contentAvailable(Boolean contentAvailable) {
-    
     this.contentAvailable = contentAvailable;
     return this;
   }
@@ -266,19 +273,22 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CONTENT_AVAILABLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getContentAvailable() {
     return contentAvailable;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CONTENT_AVAILABLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContentAvailable(Boolean contentAvailable) {
     this.contentAvailable = contentAvailable;
   }
 
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner mutableContent(Boolean mutableContent) {
-    
     this.mutableContent = mutableContent;
     return this;
   }
@@ -289,19 +299,22 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MUTABLE_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getMutableContent() {
     return mutableContent;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MUTABLE_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMutableContent(Boolean mutableContent) {
     this.mutableContent = mutableContent;
   }
 
 
   public AddApnsPushConfigurationResponsePushConfigurationsInner pushSound(String pushSound) {
-    
     this.pushSound = pushSound;
     return this;
   }
@@ -312,18 +325,24 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPushSound() {
     return pushSound;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushSound(String pushSound) {
     this.pushSound = pushSound;
   }
 
 
-
+  /**
+   * Return true if this addApnsPushConfigurationResponse_push_configurations_inner object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -379,114 +398,5 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("push_type");
-    openapiFields.add("created_at");
-    openapiFields.add("apns_cer_env_type");
-    openapiFields.add("apns_expiration");
-    openapiFields.add("apns_name");
-    openapiFields.add("has_unread_count_badge");
-    openapiFields.add("content_available");
-    openapiFields.add("mutable_content");
-    openapiFields.add("push_sound");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AddApnsPushConfigurationResponsePushConfigurationsInner
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AddApnsPushConfigurationResponsePushConfigurationsInner.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddApnsPushConfigurationResponsePushConfigurationsInner is not found in the empty JSON string", AddApnsPushConfigurationResponsePushConfigurationsInner.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AddApnsPushConfigurationResponsePushConfigurationsInner.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddApnsPushConfigurationResponsePushConfigurationsInner` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("id") != null && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
-      if (jsonObj.get("push_type") != null && !jsonObj.get("push_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_type").toString()));
-      }
-      if (jsonObj.get("apns_cer_env_type") != null && !jsonObj.get("apns_cer_env_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `apns_cer_env_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apns_cer_env_type").toString()));
-      }
-      if (jsonObj.get("apns_name") != null && !jsonObj.get("apns_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `apns_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apns_name").toString()));
-      }
-      if (jsonObj.get("push_sound") != null && !jsonObj.get("push_sound").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_sound` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_sound").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddApnsPushConfigurationResponsePushConfigurationsInner.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddApnsPushConfigurationResponsePushConfigurationsInner' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddApnsPushConfigurationResponsePushConfigurationsInner> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddApnsPushConfigurationResponsePushConfigurationsInner.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AddApnsPushConfigurationResponsePushConfigurationsInner>() {
-           @Override
-           public void write(JsonWriter out, AddApnsPushConfigurationResponsePushConfigurationsInner value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AddApnsPushConfigurationResponsePushConfigurationsInner read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AddApnsPushConfigurationResponsePushConfigurationsInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddApnsPushConfigurationResponsePushConfigurationsInner
-  * @throws IOException if the JSON string is invalid with respect to AddApnsPushConfigurationResponsePushConfigurationsInner
-  */
-  public static AddApnsPushConfigurationResponsePushConfigurationsInner fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddApnsPushConfigurationResponsePushConfigurationsInner.class);
-  }
-
- /**
-  * Convert an instance of AddApnsPushConfigurationResponsePushConfigurationsInner to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -15,69 +15,55 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * CreateBotResponseBot
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  CreateBotResponseBot.JSON_PROPERTY_BOT_TOKEN,
+  CreateBotResponseBot.JSON_PROPERTY_BOT_PROFILE_URL,
+  CreateBotResponseBot.JSON_PROPERTY_BOT_USERID,
+  CreateBotResponseBot.JSON_PROPERTY_BOT_NICKNAME,
+  CreateBotResponseBot.JSON_PROPERTY_BOT_TYPE,
+  CreateBotResponseBot.JSON_PROPERTY_BOT_METADATA
+})
+@JsonTypeName("createBotResponse_bot")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class CreateBotResponseBot {
-  public static final String SERIALIZED_NAME_BOT_TOKEN = "bot_token";
-  @SerializedName(SERIALIZED_NAME_BOT_TOKEN)
+  public static final String JSON_PROPERTY_BOT_TOKEN = "bot_token";
   private String botToken;
 
-  public static final String SERIALIZED_NAME_BOT_PROFILE_URL = "bot_profile_url";
-  @SerializedName(SERIALIZED_NAME_BOT_PROFILE_URL)
+  public static final String JSON_PROPERTY_BOT_PROFILE_URL = "bot_profile_url";
   private String botProfileUrl;
 
-  public static final String SERIALIZED_NAME_BOT_USERID = "bot_userid";
-  @SerializedName(SERIALIZED_NAME_BOT_USERID)
+  public static final String JSON_PROPERTY_BOT_USERID = "bot_userid";
   private String botUserid;
 
-  public static final String SERIALIZED_NAME_BOT_NICKNAME = "bot_nickname";
-  @SerializedName(SERIALIZED_NAME_BOT_NICKNAME)
+  public static final String JSON_PROPERTY_BOT_NICKNAME = "bot_nickname";
   private String botNickname;
 
-  public static final String SERIALIZED_NAME_BOT_TYPE = "bot_type";
-  @SerializedName(SERIALIZED_NAME_BOT_TYPE)
+  public static final String JSON_PROPERTY_BOT_TYPE = "bot_type";
   private String botType;
 
-  public static final String SERIALIZED_NAME_BOT_METADATA = "bot_metadata";
-  @SerializedName(SERIALIZED_NAME_BOT_METADATA)
+  public static final String JSON_PROPERTY_BOT_METADATA = "bot_metadata";
   private Object botMetadata;
 
   public CreateBotResponseBot() { 
   }
 
   public CreateBotResponseBot botToken(String botToken) {
-    
     this.botToken = botToken;
     return this;
   }
@@ -88,19 +74,22 @@ public class CreateBotResponseBot {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BOT_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBotToken() {
     return botToken;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BOT_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBotToken(String botToken) {
     this.botToken = botToken;
   }
 
 
   public CreateBotResponseBot botProfileUrl(String botProfileUrl) {
-    
     this.botProfileUrl = botProfileUrl;
     return this;
   }
@@ -111,19 +100,22 @@ public class CreateBotResponseBot {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BOT_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBotProfileUrl() {
     return botProfileUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BOT_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBotProfileUrl(String botProfileUrl) {
     this.botProfileUrl = botProfileUrl;
   }
 
 
   public CreateBotResponseBot botUserid(String botUserid) {
-    
     this.botUserid = botUserid;
     return this;
   }
@@ -134,19 +126,22 @@ public class CreateBotResponseBot {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BOT_USERID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBotUserid() {
     return botUserid;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BOT_USERID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBotUserid(String botUserid) {
     this.botUserid = botUserid;
   }
 
 
   public CreateBotResponseBot botNickname(String botNickname) {
-    
     this.botNickname = botNickname;
     return this;
   }
@@ -157,19 +152,22 @@ public class CreateBotResponseBot {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BOT_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBotNickname() {
     return botNickname;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BOT_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBotNickname(String botNickname) {
     this.botNickname = botNickname;
   }
 
 
   public CreateBotResponseBot botType(String botType) {
-    
     this.botType = botType;
     return this;
   }
@@ -180,19 +178,22 @@ public class CreateBotResponseBot {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BOT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBotType() {
     return botType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BOT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBotType(String botType) {
     this.botType = botType;
   }
 
 
   public CreateBotResponseBot botMetadata(Object botMetadata) {
-    
     this.botMetadata = botMetadata;
     return this;
   }
@@ -203,18 +204,24 @@ public class CreateBotResponseBot {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BOT_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getBotMetadata() {
     return botMetadata;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BOT_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBotMetadata(Object botMetadata) {
     this.botMetadata = botMetadata;
   }
 
 
-
+  /**
+   * Return true if this createBotResponse_bot object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -262,110 +269,5 @@ public class CreateBotResponseBot {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("bot_token");
-    openapiFields.add("bot_profile_url");
-    openapiFields.add("bot_userid");
-    openapiFields.add("bot_nickname");
-    openapiFields.add("bot_type");
-    openapiFields.add("bot_metadata");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CreateBotResponseBot
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (CreateBotResponseBot.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateBotResponseBot is not found in the empty JSON string", CreateBotResponseBot.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!CreateBotResponseBot.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateBotResponseBot` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("bot_token") != null && !jsonObj.get("bot_token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bot_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_token").toString()));
-      }
-      if (jsonObj.get("bot_profile_url") != null && !jsonObj.get("bot_profile_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bot_profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_profile_url").toString()));
-      }
-      if (jsonObj.get("bot_userid") != null && !jsonObj.get("bot_userid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bot_userid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_userid").toString()));
-      }
-      if (jsonObj.get("bot_nickname") != null && !jsonObj.get("bot_nickname").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bot_nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_nickname").toString()));
-      }
-      if (jsonObj.get("bot_type") != null && !jsonObj.get("bot_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bot_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bot_type").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CreateBotResponseBot.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CreateBotResponseBot' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CreateBotResponseBot> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CreateBotResponseBot.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<CreateBotResponseBot>() {
-           @Override
-           public void write(JsonWriter out, CreateBotResponseBot value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public CreateBotResponseBot read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of CreateBotResponseBot given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateBotResponseBot
-  * @throws IOException if the JSON string is invalid with respect to CreateBotResponseBot
-  */
-  public static CreateBotResponseBot fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CreateBotResponseBot.class);
-  }
-
- /**
-  * Convert an instance of CreateBotResponseBot to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

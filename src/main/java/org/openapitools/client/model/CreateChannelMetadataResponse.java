@@ -15,57 +15,43 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * CreateChannelMetadataResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  CreateChannelMetadataResponse.JSON_PROPERTY_METADATA,
+  CreateChannelMetadataResponse.JSON_PROPERTY_INCLUDE_TS
+})
+@JsonTypeName("createChannelMetadataResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class CreateChannelMetadataResponse {
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
+  public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, String> metadata = null;
 
-  public static final String SERIALIZED_NAME_INCLUDE_TS = "include_ts";
-  @SerializedName(SERIALIZED_NAME_INCLUDE_TS)
+  public static final String JSON_PROPERTY_INCLUDE_TS = "include_ts";
   private BigDecimal includeTs;
 
   public CreateChannelMetadataResponse() { 
   }
 
   public CreateChannelMetadataResponse metadata(Map<String, String> metadata) {
-    
     this.metadata = metadata;
     return this;
   }
@@ -84,19 +70,22 @@ public class CreateChannelMetadataResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, String> getMetadata() {
     return metadata;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, String> metadata) {
     this.metadata = metadata;
   }
 
 
   public CreateChannelMetadataResponse includeTs(BigDecimal includeTs) {
-    
     this.includeTs = includeTs;
     return this;
   }
@@ -107,18 +96,24 @@ public class CreateChannelMetadataResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_INCLUDE_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getIncludeTs() {
     return includeTs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_INCLUDE_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIncludeTs(BigDecimal includeTs) {
     this.includeTs = includeTs;
   }
 
 
-
+  /**
+   * Return true if this createChannelMetadataResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -158,91 +153,5 @@ public class CreateChannelMetadataResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("metadata");
-    openapiFields.add("include_ts");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CreateChannelMetadataResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (CreateChannelMetadataResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateChannelMetadataResponse is not found in the empty JSON string", CreateChannelMetadataResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!CreateChannelMetadataResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateChannelMetadataResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CreateChannelMetadataResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CreateChannelMetadataResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CreateChannelMetadataResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CreateChannelMetadataResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<CreateChannelMetadataResponse>() {
-           @Override
-           public void write(JsonWriter out, CreateChannelMetadataResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public CreateChannelMetadataResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of CreateChannelMetadataResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateChannelMetadataResponse
-  * @throws IOException if the JSON string is invalid with respect to CreateChannelMetadataResponse
-  */
-  public static CreateChannelMetadataResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CreateChannelMetadataResponse.class);
-  }
-
- /**
-  * Convert an instance of CreateChannelMetadataResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

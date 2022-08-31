@@ -15,83 +15,69 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdUser;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SendBirdBaseChannel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendBirdBaseChannel.JSON_PROPERTY_COVER_URL,
+  SendBirdBaseChannel.JSON_PROPERTY_CREATED_AT,
+  SendBirdBaseChannel.JSON_PROPERTY_CREATOR,
+  SendBirdBaseChannel.JSON_PROPERTY_CUSTOM_TYPE,
+  SendBirdBaseChannel.JSON_PROPERTY_DATA,
+  SendBirdBaseChannel.JSON_PROPERTY_IS_EPHEMERAL,
+  SendBirdBaseChannel.JSON_PROPERTY_IS_FROZEN,
+  SendBirdBaseChannel.JSON_PROPERTY_NAME,
+  SendBirdBaseChannel.JSON_PROPERTY_URL
+})
+@JsonTypeName("SendBird.BaseChannel")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendBirdBaseChannel {
-  public static final String SERIALIZED_NAME_COVER_URL = "cover_url";
-  @SerializedName(SERIALIZED_NAME_COVER_URL)
+  public static final String JSON_PROPERTY_COVER_URL = "cover_url";
   private String coverUrl;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private BigDecimal createdAt;
 
-  public static final String SERIALIZED_NAME_CREATOR = "creator";
-  @SerializedName(SERIALIZED_NAME_CREATOR)
+  public static final String JSON_PROPERTY_CREATOR = "creator";
   private SendBirdUser creator;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_IS_EPHEMERAL = "is_ephemeral";
-  @SerializedName(SERIALIZED_NAME_IS_EPHEMERAL)
+  public static final String JSON_PROPERTY_IS_EPHEMERAL = "is_ephemeral";
   private Boolean isEphemeral;
 
-  public static final String SERIALIZED_NAME_IS_FROZEN = "is_frozen";
-  @SerializedName(SERIALIZED_NAME_IS_FROZEN)
+  public static final String JSON_PROPERTY_IS_FROZEN = "is_frozen";
   private Boolean isFrozen;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String SERIALIZED_NAME_URL = "url";
-  @SerializedName(SERIALIZED_NAME_URL)
+  public static final String JSON_PROPERTY_URL = "url";
   private String url;
 
   public SendBirdBaseChannel() { 
   }
 
   public SendBirdBaseChannel coverUrl(String coverUrl) {
-    
     this.coverUrl = coverUrl;
     return this;
   }
@@ -102,19 +88,22 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_COVER_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCoverUrl() {
     return coverUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_COVER_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCoverUrl(String coverUrl) {
     this.coverUrl = coverUrl;
   }
 
 
   public SendBirdBaseChannel createdAt(BigDecimal createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -125,19 +114,22 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(BigDecimal createdAt) {
     this.createdAt = createdAt;
   }
 
 
   public SendBirdBaseChannel creator(SendBirdUser creator) {
-    
     this.creator = creator;
     return this;
   }
@@ -148,19 +140,22 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdUser getCreator() {
     return creator;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreator(SendBirdUser creator) {
     this.creator = creator;
   }
 
 
   public SendBirdBaseChannel customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -171,19 +166,22 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
   public SendBirdBaseChannel data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -194,19 +192,22 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public SendBirdBaseChannel isEphemeral(Boolean isEphemeral) {
-    
     this.isEphemeral = isEphemeral;
     return this;
   }
@@ -217,19 +218,22 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_EPHEMERAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsEphemeral() {
     return isEphemeral;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_EPHEMERAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsEphemeral(Boolean isEphemeral) {
     this.isEphemeral = isEphemeral;
   }
 
 
   public SendBirdBaseChannel isFrozen(Boolean isFrozen) {
-    
     this.isFrozen = isFrozen;
     return this;
   }
@@ -240,19 +244,22 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsFrozen() {
     return isFrozen;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsFrozen(Boolean isFrozen) {
     this.isFrozen = isFrozen;
   }
 
 
   public SendBirdBaseChannel name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -263,19 +270,22 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(String name) {
     this.name = name;
   }
 
 
   public SendBirdBaseChannel url(String url) {
-    
     this.url = url;
     return this;
   }
@@ -286,18 +296,24 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUrl() {
     return url;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUrl(String url) {
     this.url = url;
   }
 
 
-
+  /**
+   * Return true if this SendBird.BaseChannel object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -351,117 +367,5 @@ public class SendBirdBaseChannel {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("cover_url");
-    openapiFields.add("created_at");
-    openapiFields.add("creator");
-    openapiFields.add("custom_type");
-    openapiFields.add("data");
-    openapiFields.add("is_ephemeral");
-    openapiFields.add("is_frozen");
-    openapiFields.add("name");
-    openapiFields.add("url");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendBirdBaseChannel
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendBirdBaseChannel.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdBaseChannel is not found in the empty JSON string", SendBirdBaseChannel.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SendBirdBaseChannel.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdBaseChannel` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("cover_url") != null && !jsonObj.get("cover_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cover_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cover_url").toString()));
-      }
-      // validate the optional field `creator`
-      if (jsonObj.getAsJsonObject("creator") != null) {
-        SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("creator"));
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if (jsonObj.get("url") != null && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendBirdBaseChannel.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendBirdBaseChannel' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendBirdBaseChannel> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdBaseChannel.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendBirdBaseChannel>() {
-           @Override
-           public void write(JsonWriter out, SendBirdBaseChannel value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendBirdBaseChannel read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendBirdBaseChannel given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendBirdBaseChannel
-  * @throws IOException if the JSON string is invalid with respect to SendBirdBaseChannel
-  */
-  public static SendBirdBaseChannel fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendBirdBaseChannel.class);
-  }
-
- /**
-  * Convert an instance of SendBirdBaseChannel to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

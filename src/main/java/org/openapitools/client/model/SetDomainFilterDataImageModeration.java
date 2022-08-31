@@ -15,62 +15,48 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import org.openapitools.client.model.SetDomainFilterDataImageModerationLimits;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SetDomainFilterDataImageModeration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SetDomainFilterDataImageModeration.JSON_PROPERTY_TYPE,
+  SetDomainFilterDataImageModeration.JSON_PROPERTY_SOFT_BLOCK,
+  SetDomainFilterDataImageModeration.JSON_PROPERTY_LIMITS,
+  SetDomainFilterDataImageModeration.JSON_PROPERTY_CHECK_URLS
+})
+@JsonTypeName("setDomainFilterData_image_moderation")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SetDomainFilterDataImageModeration {
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+  public static final String JSON_PROPERTY_TYPE = "type";
   private Integer type;
 
-  public static final String SERIALIZED_NAME_SOFT_BLOCK = "soft_block";
-  @SerializedName(SERIALIZED_NAME_SOFT_BLOCK)
+  public static final String JSON_PROPERTY_SOFT_BLOCK = "soft_block";
   private Boolean softBlock;
 
-  public static final String SERIALIZED_NAME_LIMITS = "limits";
-  @SerializedName(SERIALIZED_NAME_LIMITS)
+  public static final String JSON_PROPERTY_LIMITS = "limits";
   private SetDomainFilterDataImageModerationLimits limits;
 
-  public static final String SERIALIZED_NAME_CHECK_URLS = "check_urls";
-  @SerializedName(SERIALIZED_NAME_CHECK_URLS)
+  public static final String JSON_PROPERTY_CHECK_URLS = "check_urls";
   private Boolean checkUrls;
 
   public SetDomainFilterDataImageModeration() { 
   }
 
   public SetDomainFilterDataImageModeration type(Integer type) {
-    
     this.type = type;
     return this;
   }
@@ -81,19 +67,22 @@ public class SetDomainFilterDataImageModeration {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getType() {
     return type;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(Integer type) {
     this.type = type;
   }
 
 
   public SetDomainFilterDataImageModeration softBlock(Boolean softBlock) {
-    
     this.softBlock = softBlock;
     return this;
   }
@@ -104,19 +93,22 @@ public class SetDomainFilterDataImageModeration {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SOFT_BLOCK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getSoftBlock() {
     return softBlock;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SOFT_BLOCK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSoftBlock(Boolean softBlock) {
     this.softBlock = softBlock;
   }
 
 
   public SetDomainFilterDataImageModeration limits(SetDomainFilterDataImageModerationLimits limits) {
-    
     this.limits = limits;
     return this;
   }
@@ -127,19 +119,22 @@ public class SetDomainFilterDataImageModeration {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LIMITS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SetDomainFilterDataImageModerationLimits getLimits() {
     return limits;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LIMITS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLimits(SetDomainFilterDataImageModerationLimits limits) {
     this.limits = limits;
   }
 
 
   public SetDomainFilterDataImageModeration checkUrls(Boolean checkUrls) {
-    
     this.checkUrls = checkUrls;
     return this;
   }
@@ -150,18 +145,24 @@ public class SetDomainFilterDataImageModeration {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHECK_URLS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getCheckUrls() {
     return checkUrls;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHECK_URLS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCheckUrls(Boolean checkUrls) {
     this.checkUrls = checkUrls;
   }
 
 
-
+  /**
+   * Return true if this setDomainFilterData_image_moderation object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -205,97 +206,5 @@ public class SetDomainFilterDataImageModeration {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("soft_block");
-    openapiFields.add("limits");
-    openapiFields.add("check_urls");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SetDomainFilterDataImageModeration
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SetDomainFilterDataImageModeration.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SetDomainFilterDataImageModeration is not found in the empty JSON string", SetDomainFilterDataImageModeration.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SetDomainFilterDataImageModeration.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SetDomainFilterDataImageModeration` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // validate the optional field `limits`
-      if (jsonObj.getAsJsonObject("limits") != null) {
-        SetDomainFilterDataImageModerationLimits.validateJsonObject(jsonObj.getAsJsonObject("limits"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SetDomainFilterDataImageModeration.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SetDomainFilterDataImageModeration' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SetDomainFilterDataImageModeration> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SetDomainFilterDataImageModeration.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SetDomainFilterDataImageModeration>() {
-           @Override
-           public void write(JsonWriter out, SetDomainFilterDataImageModeration value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SetDomainFilterDataImageModeration read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SetDomainFilterDataImageModeration given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SetDomainFilterDataImageModeration
-  * @throws IOException if the JSON string is invalid with respect to SetDomainFilterDataImageModeration
-  */
-  public static SetDomainFilterDataImageModeration fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SetDomainFilterDataImageModeration.class);
-  }
-
- /**
-  * Convert an instance of SetDomainFilterDataImageModeration to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

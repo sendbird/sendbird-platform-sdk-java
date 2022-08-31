@@ -15,65 +15,51 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ScheduleAnnouncementResponseCreateChannelOptions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ScheduleAnnouncementResponseCreateChannelOptions.JSON_PROPERTY_DISTINCT,
+  ScheduleAnnouncementResponseCreateChannelOptions.JSON_PROPERTY_DATA,
+  ScheduleAnnouncementResponseCreateChannelOptions.JSON_PROPERTY_NAME,
+  ScheduleAnnouncementResponseCreateChannelOptions.JSON_PROPERTY_COVER_URL,
+  ScheduleAnnouncementResponseCreateChannelOptions.JSON_PROPERTY_CUSTOM_TYPE
+})
+@JsonTypeName("scheduleAnnouncementResponse_create_channel_options")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ScheduleAnnouncementResponseCreateChannelOptions {
-  public static final String SERIALIZED_NAME_DISTINCT = "distinct";
-  @SerializedName(SERIALIZED_NAME_DISTINCT)
+  public static final String JSON_PROPERTY_DISTINCT = "distinct";
   private Boolean distinct;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String SERIALIZED_NAME_COVER_URL = "cover_url";
-  @SerializedName(SERIALIZED_NAME_COVER_URL)
+  public static final String JSON_PROPERTY_COVER_URL = "cover_url";
   private String coverUrl;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
   public ScheduleAnnouncementResponseCreateChannelOptions() { 
   }
 
   public ScheduleAnnouncementResponseCreateChannelOptions distinct(Boolean distinct) {
-    
     this.distinct = distinct;
     return this;
   }
@@ -84,19 +70,22 @@ public class ScheduleAnnouncementResponseCreateChannelOptions {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DISTINCT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getDistinct() {
     return distinct;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DISTINCT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDistinct(Boolean distinct) {
     this.distinct = distinct;
   }
 
 
   public ScheduleAnnouncementResponseCreateChannelOptions data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -107,19 +96,22 @@ public class ScheduleAnnouncementResponseCreateChannelOptions {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public ScheduleAnnouncementResponseCreateChannelOptions name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -130,19 +122,22 @@ public class ScheduleAnnouncementResponseCreateChannelOptions {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ScheduleAnnouncementResponseCreateChannelOptions coverUrl(String coverUrl) {
-    
     this.coverUrl = coverUrl;
     return this;
   }
@@ -153,19 +148,22 @@ public class ScheduleAnnouncementResponseCreateChannelOptions {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_COVER_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCoverUrl() {
     return coverUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_COVER_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCoverUrl(String coverUrl) {
     this.coverUrl = coverUrl;
   }
 
 
   public ScheduleAnnouncementResponseCreateChannelOptions customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -176,18 +174,24 @@ public class ScheduleAnnouncementResponseCreateChannelOptions {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
-
+  /**
+   * Return true if this scheduleAnnouncementResponse_create_channel_options object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -233,106 +237,5 @@ public class ScheduleAnnouncementResponseCreateChannelOptions {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("distinct");
-    openapiFields.add("data");
-    openapiFields.add("name");
-    openapiFields.add("cover_url");
-    openapiFields.add("custom_type");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ScheduleAnnouncementResponseCreateChannelOptions
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ScheduleAnnouncementResponseCreateChannelOptions.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ScheduleAnnouncementResponseCreateChannelOptions is not found in the empty JSON string", ScheduleAnnouncementResponseCreateChannelOptions.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ScheduleAnnouncementResponseCreateChannelOptions.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ScheduleAnnouncementResponseCreateChannelOptions` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if (jsonObj.get("cover_url") != null && !jsonObj.get("cover_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cover_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cover_url").toString()));
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ScheduleAnnouncementResponseCreateChannelOptions.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ScheduleAnnouncementResponseCreateChannelOptions' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ScheduleAnnouncementResponseCreateChannelOptions> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ScheduleAnnouncementResponseCreateChannelOptions.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ScheduleAnnouncementResponseCreateChannelOptions>() {
-           @Override
-           public void write(JsonWriter out, ScheduleAnnouncementResponseCreateChannelOptions value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ScheduleAnnouncementResponseCreateChannelOptions read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ScheduleAnnouncementResponseCreateChannelOptions given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ScheduleAnnouncementResponseCreateChannelOptions
-  * @throws IOException if the JSON string is invalid with respect to ScheduleAnnouncementResponseCreateChannelOptions
-  */
-  public static ScheduleAnnouncementResponseCreateChannelOptions fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ScheduleAnnouncementResponseCreateChannelOptions.class);
-  }
-
- /**
-  * Convert an instance of ScheduleAnnouncementResponseCreateChannelOptions to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

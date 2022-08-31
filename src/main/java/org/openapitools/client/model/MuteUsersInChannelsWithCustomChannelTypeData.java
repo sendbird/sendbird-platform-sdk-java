@@ -15,64 +15,50 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * MuteUsersInChannelsWithCustomChannelTypeData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  MuteUsersInChannelsWithCustomChannelTypeData.JSON_PROPERTY_USER_IDS,
+  MuteUsersInChannelsWithCustomChannelTypeData.JSON_PROPERTY_SECONDS,
+  MuteUsersInChannelsWithCustomChannelTypeData.JSON_PROPERTY_DESCRIPTION,
+  MuteUsersInChannelsWithCustomChannelTypeData.JSON_PROPERTY_ON_DEMAND_UPSERT
+})
+@JsonTypeName("muteUsersInChannelsWithCustomChannelTypeData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class MuteUsersInChannelsWithCustomChannelTypeData {
-  public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
-  @SerializedName(SERIALIZED_NAME_USER_IDS)
+  public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_SECONDS = "seconds";
-  @SerializedName(SERIALIZED_NAME_SECONDS)
+  public static final String JSON_PROPERTY_SECONDS = "seconds";
   private BigDecimal seconds;
 
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
 
-  public static final String SERIALIZED_NAME_ON_DEMAND_UPSERT = "on_demand_upsert";
-  @SerializedName(SERIALIZED_NAME_ON_DEMAND_UPSERT)
+  public static final String JSON_PROPERTY_ON_DEMAND_UPSERT = "on_demand_upsert";
   private Boolean onDemandUpsert;
 
   public MuteUsersInChannelsWithCustomChannelTypeData() { 
   }
 
   public MuteUsersInChannelsWithCustomChannelTypeData userIds(List<String> userIds) {
-    
     this.userIds = userIds;
     return this;
   }
@@ -88,19 +74,22 @@ public class MuteUsersInChannelsWithCustomChannelTypeData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
+  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<String> getUserIds() {
     return userIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
   }
 
 
   public MuteUsersInChannelsWithCustomChannelTypeData seconds(BigDecimal seconds) {
-    
     this.seconds = seconds;
     return this;
   }
@@ -111,19 +100,22 @@ public class MuteUsersInChannelsWithCustomChannelTypeData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SECONDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSeconds() {
     return seconds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SECONDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSeconds(BigDecimal seconds) {
     this.seconds = seconds;
   }
 
 
   public MuteUsersInChannelsWithCustomChannelTypeData description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -134,19 +126,22 @@ public class MuteUsersInChannelsWithCustomChannelTypeData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
     return description;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(String description) {
     this.description = description;
   }
 
 
   public MuteUsersInChannelsWithCustomChannelTypeData onDemandUpsert(Boolean onDemandUpsert) {
-    
     this.onDemandUpsert = onDemandUpsert;
     return this;
   }
@@ -157,18 +152,24 @@ public class MuteUsersInChannelsWithCustomChannelTypeData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ON_DEMAND_UPSERT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getOnDemandUpsert() {
     return onDemandUpsert;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ON_DEMAND_UPSERT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOnDemandUpsert(Boolean onDemandUpsert) {
     this.onDemandUpsert = onDemandUpsert;
   }
 
 
-
+  /**
+   * Return true if this muteUsersInChannelsWithCustomChannelTypeData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -212,108 +213,5 @@ public class MuteUsersInChannelsWithCustomChannelTypeData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("user_ids");
-    openapiFields.add("seconds");
-    openapiFields.add("description");
-    openapiFields.add("on_demand_upsert");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("user_ids");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to MuteUsersInChannelsWithCustomChannelTypeData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (MuteUsersInChannelsWithCustomChannelTypeData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MuteUsersInChannelsWithCustomChannelTypeData is not found in the empty JSON string", MuteUsersInChannelsWithCustomChannelTypeData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!MuteUsersInChannelsWithCustomChannelTypeData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `MuteUsersInChannelsWithCustomChannelTypeData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : MuteUsersInChannelsWithCustomChannelTypeData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("user_ids") != null && !jsonObj.get("user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("user_ids").toString()));
-      }
-      if (jsonObj.get("description") != null && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!MuteUsersInChannelsWithCustomChannelTypeData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'MuteUsersInChannelsWithCustomChannelTypeData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<MuteUsersInChannelsWithCustomChannelTypeData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(MuteUsersInChannelsWithCustomChannelTypeData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<MuteUsersInChannelsWithCustomChannelTypeData>() {
-           @Override
-           public void write(JsonWriter out, MuteUsersInChannelsWithCustomChannelTypeData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public MuteUsersInChannelsWithCustomChannelTypeData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of MuteUsersInChannelsWithCustomChannelTypeData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MuteUsersInChannelsWithCustomChannelTypeData
-  * @throws IOException if the JSON string is invalid with respect to MuteUsersInChannelsWithCustomChannelTypeData
-  */
-  public static MuteUsersInChannelsWithCustomChannelTypeData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, MuteUsersInChannelsWithCustomChannelTypeData.class);
-  }
-
- /**
-  * Convert an instance of MuteUsersInChannelsWithCustomChannelTypeData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

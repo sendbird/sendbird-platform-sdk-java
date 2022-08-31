@@ -15,56 +15,42 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponseExportedDataInner;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ListDataExportsByMessageChannelOrUserResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ListDataExportsByMessageChannelOrUserResponse.JSON_PROPERTY_EXPORTED_DATA,
+  ListDataExportsByMessageChannelOrUserResponse.JSON_PROPERTY_NEXT
+})
+@JsonTypeName("listDataExportsByMessageChannelOrUserResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ListDataExportsByMessageChannelOrUserResponse {
-  public static final String SERIALIZED_NAME_EXPORTED_DATA = "exported_data";
-  @SerializedName(SERIALIZED_NAME_EXPORTED_DATA)
+  public static final String JSON_PROPERTY_EXPORTED_DATA = "exported_data";
   private List<ListDataExportsByMessageChannelOrUserResponseExportedDataInner> exportedData = null;
 
-  public static final String SERIALIZED_NAME_NEXT = "next";
-  @SerializedName(SERIALIZED_NAME_NEXT)
+  public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
 
   public ListDataExportsByMessageChannelOrUserResponse() { 
   }
 
   public ListDataExportsByMessageChannelOrUserResponse exportedData(List<ListDataExportsByMessageChannelOrUserResponseExportedDataInner> exportedData) {
-    
     this.exportedData = exportedData;
     return this;
   }
@@ -83,19 +69,22 @@ public class ListDataExportsByMessageChannelOrUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_EXPORTED_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ListDataExportsByMessageChannelOrUserResponseExportedDataInner> getExportedData() {
     return exportedData;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_EXPORTED_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExportedData(List<ListDataExportsByMessageChannelOrUserResponseExportedDataInner> exportedData) {
     this.exportedData = exportedData;
   }
 
 
   public ListDataExportsByMessageChannelOrUserResponse next(String next) {
-    
     this.next = next;
     return this;
   }
@@ -106,18 +95,24 @@ public class ListDataExportsByMessageChannelOrUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNext() {
     return next;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNext(String next) {
     this.next = next;
   }
 
 
-
+  /**
+   * Return true if this listDataExportsByMessageChannelOrUserResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -157,106 +152,5 @@ public class ListDataExportsByMessageChannelOrUserResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("exported_data");
-    openapiFields.add("next");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ListDataExportsByMessageChannelOrUserResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ListDataExportsByMessageChannelOrUserResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ListDataExportsByMessageChannelOrUserResponse is not found in the empty JSON string", ListDataExportsByMessageChannelOrUserResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ListDataExportsByMessageChannelOrUserResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListDataExportsByMessageChannelOrUserResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      JsonArray jsonArrayexportedData = jsonObj.getAsJsonArray("exported_data");
-      if (jsonArrayexportedData != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("exported_data").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `exported_data` to be an array in the JSON string but got `%s`", jsonObj.get("exported_data").toString()));
-        }
-
-        // validate the optional field `exported_data` (array)
-        for (int i = 0; i < jsonArrayexportedData.size(); i++) {
-          ListDataExportsByMessageChannelOrUserResponseExportedDataInner.validateJsonObject(jsonArrayexportedData.get(i).getAsJsonObject());
-        };
-      }
-      if (jsonObj.get("next") != null && !jsonObj.get("next").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ListDataExportsByMessageChannelOrUserResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ListDataExportsByMessageChannelOrUserResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ListDataExportsByMessageChannelOrUserResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ListDataExportsByMessageChannelOrUserResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ListDataExportsByMessageChannelOrUserResponse>() {
-           @Override
-           public void write(JsonWriter out, ListDataExportsByMessageChannelOrUserResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ListDataExportsByMessageChannelOrUserResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ListDataExportsByMessageChannelOrUserResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ListDataExportsByMessageChannelOrUserResponse
-  * @throws IOException if the JSON string is invalid with respect to ListDataExportsByMessageChannelOrUserResponse
-  */
-  public static ListDataExportsByMessageChannelOrUserResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ListDataExportsByMessageChannelOrUserResponse.class);
-  }
-
- /**
-  * Convert an instance of ListDataExportsByMessageChannelOrUserResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

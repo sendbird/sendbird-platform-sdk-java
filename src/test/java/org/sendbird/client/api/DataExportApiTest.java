@@ -13,11 +13,14 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponse;
 import org.openapitools.client.model.RegisterAndScheduleDataExportData;
 import org.openapitools.client.model.RegisterAndScheduleDataExportResponse;
 import org.openapitools.client.model.ViewDataExportByIdResponse;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +32,6 @@ import java.util.Map;
 /**
  * API tests for DataExportApi
  */
-@Disabled
 public class DataExportApiTest {
 
     private final DataExportApi api = new DataExportApi();
@@ -43,11 +45,11 @@ public class DataExportApiTest {
      */
     @Test
     public void listDataExportsByMessageChannelOrUserTest() throws ApiException {
-        String apiToken = null;
-        String dataType = null;
-        String token = null;
-        Integer limit = null;
-        ListDataExportsByMessageChannelOrUserResponse response = api.listDataExportsByMessageChannelOrUser(apiToken, dataType, token, limit);
+        //String apiToken = null;
+        //String dataType = null;
+        //String token = null;
+        //Integer limit = null;
+        //ListDataExportsByMessageChannelOrUserResponse response = api.listDataExportsByMessageChannelOrUser(apiToken, dataType, token, limit);
         // TODO: test validations
     }
 
@@ -60,10 +62,10 @@ public class DataExportApiTest {
      */
     @Test
     public void registerAndScheduleDataExportTest() throws ApiException {
-        String apiToken = null;
-        String dataType = null;
-        RegisterAndScheduleDataExportData registerAndScheduleDataExportData = null;
-        RegisterAndScheduleDataExportResponse response = api.registerAndScheduleDataExport(apiToken, dataType, registerAndScheduleDataExportData);
+        //String apiToken = null;
+        //String dataType = null;
+        //RegisterAndScheduleDataExportData registerAndScheduleDataExportData = null;
+        //RegisterAndScheduleDataExportResponse response = api.registerAndScheduleDataExport(apiToken, dataType, registerAndScheduleDataExportData);
         // TODO: test validations
     }
 
@@ -76,10 +78,10 @@ public class DataExportApiTest {
      */
     @Test
     public void viewDataExportByIdTest() throws ApiException {
-        String apiToken = null;
-        String dataType = null;
-        String requestId = null;
-        ViewDataExportByIdResponse response = api.viewDataExportById(apiToken, dataType, requestId);
+        //String apiToken = null;
+        //String dataType = null;
+        //String requestId = null;
+        //ViewDataExportByIdResponse response = api.viewDataExportById(apiToken, dataType, requestId);
         // TODO: test validations
     }
 

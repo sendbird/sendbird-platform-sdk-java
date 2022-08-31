@@ -15,64 +15,50 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SetDomainFilterDataProfanityFilterRegexFiltersInner;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SetDomainFilterDataProfanityFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SetDomainFilterDataProfanityFilter.JSON_PROPERTY_KEYWORDS,
+  SetDomainFilterDataProfanityFilter.JSON_PROPERTY_REGEX_FILTERS,
+  SetDomainFilterDataProfanityFilter.JSON_PROPERTY_TYPE,
+  SetDomainFilterDataProfanityFilter.JSON_PROPERTY_SHOULD_CHECK_GLOBAL
+})
+@JsonTypeName("setDomainFilterData_profanity_filter")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SetDomainFilterDataProfanityFilter {
-  public static final String SERIALIZED_NAME_KEYWORDS = "keywords";
-  @SerializedName(SERIALIZED_NAME_KEYWORDS)
+  public static final String JSON_PROPERTY_KEYWORDS = "keywords";
   private List<String> keywords = null;
 
-  public static final String SERIALIZED_NAME_REGEX_FILTERS = "regex_filters";
-  @SerializedName(SERIALIZED_NAME_REGEX_FILTERS)
+  public static final String JSON_PROPERTY_REGEX_FILTERS = "regex_filters";
   private List<SetDomainFilterDataProfanityFilterRegexFiltersInner> regexFilters = null;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+  public static final String JSON_PROPERTY_TYPE = "type";
   private Integer type;
 
-  public static final String SERIALIZED_NAME_SHOULD_CHECK_GLOBAL = "should_check_global";
-  @SerializedName(SERIALIZED_NAME_SHOULD_CHECK_GLOBAL)
+  public static final String JSON_PROPERTY_SHOULD_CHECK_GLOBAL = "should_check_global";
   private Boolean shouldCheckGlobal;
 
   public SetDomainFilterDataProfanityFilter() { 
   }
 
   public SetDomainFilterDataProfanityFilter keywords(List<String> keywords) {
-    
     this.keywords = keywords;
     return this;
   }
@@ -91,19 +77,22 @@ public class SetDomainFilterDataProfanityFilter {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_KEYWORDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getKeywords() {
     return keywords;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_KEYWORDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setKeywords(List<String> keywords) {
     this.keywords = keywords;
   }
 
 
   public SetDomainFilterDataProfanityFilter regexFilters(List<SetDomainFilterDataProfanityFilterRegexFiltersInner> regexFilters) {
-    
     this.regexFilters = regexFilters;
     return this;
   }
@@ -122,19 +111,22 @@ public class SetDomainFilterDataProfanityFilter {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REGEX_FILTERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SetDomainFilterDataProfanityFilterRegexFiltersInner> getRegexFilters() {
     return regexFilters;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REGEX_FILTERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRegexFilters(List<SetDomainFilterDataProfanityFilterRegexFiltersInner> regexFilters) {
     this.regexFilters = regexFilters;
   }
 
 
   public SetDomainFilterDataProfanityFilter type(Integer type) {
-    
     this.type = type;
     return this;
   }
@@ -145,19 +137,22 @@ public class SetDomainFilterDataProfanityFilter {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getType() {
     return type;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(Integer type) {
     this.type = type;
   }
 
 
   public SetDomainFilterDataProfanityFilter shouldCheckGlobal(Boolean shouldCheckGlobal) {
-    
     this.shouldCheckGlobal = shouldCheckGlobal;
     return this;
   }
@@ -168,18 +163,24 @@ public class SetDomainFilterDataProfanityFilter {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SHOULD_CHECK_GLOBAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getShouldCheckGlobal() {
     return shouldCheckGlobal;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SHOULD_CHECK_GLOBAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShouldCheckGlobal(Boolean shouldCheckGlobal) {
     this.shouldCheckGlobal = shouldCheckGlobal;
   }
 
 
-
+  /**
+   * Return true if this setDomainFilterData_profanity_filter object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -223,109 +224,5 @@ public class SetDomainFilterDataProfanityFilter {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("keywords");
-    openapiFields.add("regex_filters");
-    openapiFields.add("type");
-    openapiFields.add("should_check_global");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SetDomainFilterDataProfanityFilter
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SetDomainFilterDataProfanityFilter.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SetDomainFilterDataProfanityFilter is not found in the empty JSON string", SetDomainFilterDataProfanityFilter.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SetDomainFilterDataProfanityFilter.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SetDomainFilterDataProfanityFilter` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("keywords") != null && !jsonObj.get("keywords").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `keywords` to be an array in the JSON string but got `%s`", jsonObj.get("keywords").toString()));
-      }
-      JsonArray jsonArrayregexFilters = jsonObj.getAsJsonArray("regex_filters");
-      if (jsonArrayregexFilters != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("regex_filters").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `regex_filters` to be an array in the JSON string but got `%s`", jsonObj.get("regex_filters").toString()));
-        }
-
-        // validate the optional field `regex_filters` (array)
-        for (int i = 0; i < jsonArrayregexFilters.size(); i++) {
-          SetDomainFilterDataProfanityFilterRegexFiltersInner.validateJsonObject(jsonArrayregexFilters.get(i).getAsJsonObject());
-        };
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SetDomainFilterDataProfanityFilter.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SetDomainFilterDataProfanityFilter' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SetDomainFilterDataProfanityFilter> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SetDomainFilterDataProfanityFilter.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SetDomainFilterDataProfanityFilter>() {
-           @Override
-           public void write(JsonWriter out, SetDomainFilterDataProfanityFilter value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SetDomainFilterDataProfanityFilter read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SetDomainFilterDataProfanityFilter given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SetDomainFilterDataProfanityFilter
-  * @throws IOException if the JSON string is invalid with respect to SetDomainFilterDataProfanityFilter
-  */
-  public static SetDomainFilterDataProfanityFilter fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SetDomainFilterDataProfanityFilter.class);
-  }
-
- /**
-  * Convert an instance of SetDomainFilterDataProfanityFilter to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

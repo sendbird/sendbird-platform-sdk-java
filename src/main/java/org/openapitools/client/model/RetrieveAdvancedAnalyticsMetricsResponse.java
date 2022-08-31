@@ -15,70 +15,56 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * RetrieveAdvancedAnalyticsMetricsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  RetrieveAdvancedAnalyticsMetricsResponse.JSON_PROPERTY_SEGMENTS,
+  RetrieveAdvancedAnalyticsMetricsResponse.JSON_PROPERTY_DATE,
+  RetrieveAdvancedAnalyticsMetricsResponse.JSON_PROPERTY_VALUE,
+  RetrieveAdvancedAnalyticsMetricsResponse.JSON_PROPERTY_CHANNEL_TYPE,
+  RetrieveAdvancedAnalyticsMetricsResponse.JSON_PROPERTY_CUSTOM_CHANNEL_TYPE,
+  RetrieveAdvancedAnalyticsMetricsResponse.JSON_PROPERTY_CUSTOM_MESSAGE_TYPE
+})
+@JsonTypeName("retrieveAdvancedAnalyticsMetricsResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class RetrieveAdvancedAnalyticsMetricsResponse {
-  public static final String SERIALIZED_NAME_SEGMENTS = "segments";
-  @SerializedName(SERIALIZED_NAME_SEGMENTS)
+  public static final String JSON_PROPERTY_SEGMENTS = "segments";
   private String segments;
 
-  public static final String SERIALIZED_NAME_DATE = "date";
-  @SerializedName(SERIALIZED_NAME_DATE)
+  public static final String JSON_PROPERTY_DATE = "date";
   private String date;
 
-  public static final String SERIALIZED_NAME_VALUE = "value";
-  @SerializedName(SERIALIZED_NAME_VALUE)
+  public static final String JSON_PROPERTY_VALUE = "value";
   private BigDecimal value;
 
-  public static final String SERIALIZED_NAME_CHANNEL_TYPE = "channel_type";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_TYPE)
+  public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
 
-  public static final String SERIALIZED_NAME_CUSTOM_CHANNEL_TYPE = "custom_channel_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_CHANNEL_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_CHANNEL_TYPE = "custom_channel_type";
   private String customChannelType;
 
-  public static final String SERIALIZED_NAME_CUSTOM_MESSAGE_TYPE = "custom_message_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_MESSAGE_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_MESSAGE_TYPE = "custom_message_type";
   private String customMessageType;
 
   public RetrieveAdvancedAnalyticsMetricsResponse() { 
   }
 
   public RetrieveAdvancedAnalyticsMetricsResponse segments(String segments) {
-    
     this.segments = segments;
     return this;
   }
@@ -89,19 +75,22 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SEGMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSegments() {
     return segments;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SEGMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSegments(String segments) {
     this.segments = segments;
   }
 
 
   public RetrieveAdvancedAnalyticsMetricsResponse date(String date) {
-    
     this.date = date;
     return this;
   }
@@ -112,19 +101,22 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDate() {
     return date;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDate(String date) {
     this.date = date;
   }
 
 
   public RetrieveAdvancedAnalyticsMetricsResponse value(BigDecimal value) {
-    
     this.value = value;
     return this;
   }
@@ -135,19 +127,22 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getValue() {
     return value;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(BigDecimal value) {
     this.value = value;
   }
 
 
   public RetrieveAdvancedAnalyticsMetricsResponse channelType(String channelType) {
-    
     this.channelType = channelType;
     return this;
   }
@@ -158,19 +153,22 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelType() {
     return channelType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelType(String channelType) {
     this.channelType = channelType;
   }
 
 
   public RetrieveAdvancedAnalyticsMetricsResponse customChannelType(String customChannelType) {
-    
     this.customChannelType = customChannelType;
     return this;
   }
@@ -181,19 +179,22 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomChannelType() {
     return customChannelType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomChannelType(String customChannelType) {
     this.customChannelType = customChannelType;
   }
 
 
   public RetrieveAdvancedAnalyticsMetricsResponse customMessageType(String customMessageType) {
-    
     this.customMessageType = customMessageType;
     return this;
   }
@@ -204,18 +205,24 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_MESSAGE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomMessageType() {
     return customMessageType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_MESSAGE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomMessageType(String customMessageType) {
     this.customMessageType = customMessageType;
   }
 
 
-
+  /**
+   * Return true if this retrieveAdvancedAnalyticsMetricsResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -263,110 +270,5 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("segments");
-    openapiFields.add("date");
-    openapiFields.add("value");
-    openapiFields.add("channel_type");
-    openapiFields.add("custom_channel_type");
-    openapiFields.add("custom_message_type");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RetrieveAdvancedAnalyticsMetricsResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (RetrieveAdvancedAnalyticsMetricsResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RetrieveAdvancedAnalyticsMetricsResponse is not found in the empty JSON string", RetrieveAdvancedAnalyticsMetricsResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!RetrieveAdvancedAnalyticsMetricsResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RetrieveAdvancedAnalyticsMetricsResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("segments") != null && !jsonObj.get("segments").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `segments` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segments").toString()));
-      }
-      if (jsonObj.get("date") != null && !jsonObj.get("date").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("date").toString()));
-      }
-      if (jsonObj.get("channel_type") != null && !jsonObj.get("channel_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_type").toString()));
-      }
-      if (jsonObj.get("custom_channel_type") != null && !jsonObj.get("custom_channel_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_channel_type").toString()));
-      }
-      if (jsonObj.get("custom_message_type") != null && !jsonObj.get("custom_message_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_message_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_message_type").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!RetrieveAdvancedAnalyticsMetricsResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'RetrieveAdvancedAnalyticsMetricsResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<RetrieveAdvancedAnalyticsMetricsResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(RetrieveAdvancedAnalyticsMetricsResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<RetrieveAdvancedAnalyticsMetricsResponse>() {
-           @Override
-           public void write(JsonWriter out, RetrieveAdvancedAnalyticsMetricsResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public RetrieveAdvancedAnalyticsMetricsResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of RetrieveAdvancedAnalyticsMetricsResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RetrieveAdvancedAnalyticsMetricsResponse
-  * @throws IOException if the JSON string is invalid with respect to RetrieveAdvancedAnalyticsMetricsResponse
-  */
-  public static RetrieveAdvancedAnalyticsMetricsResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, RetrieveAdvancedAnalyticsMetricsResponse.class);
-  }
-
- /**
-  * Convert an instance of RetrieveAdvancedAnalyticsMetricsResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

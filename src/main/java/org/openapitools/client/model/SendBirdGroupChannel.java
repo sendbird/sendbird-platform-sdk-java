@@ -13,16 +13,21 @@
 
 package org.openapitools.client.model;
 
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,76 +39,98 @@ import org.openapitools.client.model.SendBirdMember;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdUser;
 import org.openapitools.jackson.nullable.JsonNullable;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SendBirdGroupChannel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendBirdGroupChannel.JSON_PROPERTY_CHANNEL_URL,
+  SendBirdGroupChannel.JSON_PROPERTY_COVER_URL,
+  SendBirdGroupChannel.JSON_PROPERTY_CREATED_AT,
+  SendBirdGroupChannel.JSON_PROPERTY_CREATED_BY,
+  SendBirdGroupChannel.JSON_PROPERTY_CREATOR,
+  SendBirdGroupChannel.JSON_PROPERTY_CUSTOM_TYPE,
+  SendBirdGroupChannel.JSON_PROPERTY_DATA,
+  SendBirdGroupChannel.JSON_PROPERTY_DISAPPEARING_MESSAGE,
+  SendBirdGroupChannel.JSON_PROPERTY_FREEZE,
+  SendBirdGroupChannel.JSON_PROPERTY_IGNORE_PROFANITY_FILTER,
+  SendBirdGroupChannel.JSON_PROPERTY_HIDDEN_STATE,
+  SendBirdGroupChannel.JSON_PROPERTY_INVITED_AT,
+  SendBirdGroupChannel.JSON_PROPERTY_INVITER,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_BROADCAST,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_CREATED,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_DISCOVERABLE,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_DISTINCT,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_EPHEMERAL,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_FROZEN,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_HIDDEN,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_PUBLIC,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_PUSH_ENABLED,
+  SendBirdGroupChannel.JSON_PROPERTY_IS_SUPER,
+  SendBirdGroupChannel.JSON_PROPERTY_JOINED_AT,
+  SendBirdGroupChannel.JSON_PROPERTY_JOINED_MEMBER_COUNT,
+  SendBirdGroupChannel.JSON_PROPERTY_LAST_MESSAGE,
+  SendBirdGroupChannel.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
+  SendBirdGroupChannel.JSON_PROPERTY_MEMBER_COUNT,
+  SendBirdGroupChannel.JSON_PROPERTY_MEMBERS,
+  SendBirdGroupChannel.JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP,
+  SendBirdGroupChannel.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
+  SendBirdGroupChannel.JSON_PROPERTY_MY_COUNT_PREFERENCE,
+  SendBirdGroupChannel.JSON_PROPERTY_MY_LAST_READ,
+  SendBirdGroupChannel.JSON_PROPERTY_MY_MEMBER_STATE,
+  SendBirdGroupChannel.JSON_PROPERTY_MY_MUTED_STATE,
+  SendBirdGroupChannel.JSON_PROPERTY_MY_PUSH_TRIGGER_OPTION,
+  SendBirdGroupChannel.JSON_PROPERTY_MY_ROLE,
+  SendBirdGroupChannel.JSON_PROPERTY_NAME,
+  SendBirdGroupChannel.JSON_PROPERTY_OPERATORS,
+  SendBirdGroupChannel.JSON_PROPERTY_SMS_FALLBACK,
+  SendBirdGroupChannel.JSON_PROPERTY_UNREAD_MENTION_COUNT,
+  SendBirdGroupChannel.JSON_PROPERTY_UNREAD_MESSAGE_COUNT,
+  SendBirdGroupChannel.JSON_PROPERTY_CHANNEL
+})
+@JsonTypeName("SendBird.GroupChannel")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendBirdGroupChannel {
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
-  public static final String SERIALIZED_NAME_COVER_URL = "cover_url";
-  @SerializedName(SERIALIZED_NAME_COVER_URL)
+  public static final String JSON_PROPERTY_COVER_URL = "cover_url";
   private String coverUrl;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private BigDecimal createdAt;
 
-  public static final String SERIALIZED_NAME_CREATED_BY = "created_by";
-  @SerializedName(SERIALIZED_NAME_CREATED_BY)
-  private SendBirdGroupChannelCreatedBy createdBy;
+  public static final String JSON_PROPERTY_CREATED_BY = "created_by";
+  private JsonNullable<SendBirdGroupChannelCreatedBy> createdBy = JsonNullable.<SendBirdGroupChannelCreatedBy>undefined();
 
-  public static final String SERIALIZED_NAME_CREATOR = "creator";
-  @SerializedName(SERIALIZED_NAME_CREATOR)
+  public static final String JSON_PROPERTY_CREATOR = "creator";
   private SendBirdUser creator;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_DISAPPEARING_MESSAGE = "disappearing_message";
-  @SerializedName(SERIALIZED_NAME_DISAPPEARING_MESSAGE)
+  public static final String JSON_PROPERTY_DISAPPEARING_MESSAGE = "disappearing_message";
   private SendBirdGroupChannelDisappearingMessage disappearingMessage;
 
-  public static final String SERIALIZED_NAME_FREEZE = "freeze";
-  @SerializedName(SERIALIZED_NAME_FREEZE)
+  public static final String JSON_PROPERTY_FREEZE = "freeze";
   private Boolean freeze;
 
-  public static final String SERIALIZED_NAME_IGNORE_PROFANITY_FILTER = "ignore_profanity_filter";
-  @SerializedName(SERIALIZED_NAME_IGNORE_PROFANITY_FILTER)
+  public static final String JSON_PROPERTY_IGNORE_PROFANITY_FILTER = "ignore_profanity_filter";
   private Boolean ignoreProfanityFilter;
 
   /**
    * Gets or Sets hiddenState
    */
-  @JsonAdapter(HiddenStateEnum.Adapter.class)
   public enum HiddenStateEnum {
     HIDDEN_ALLOW_AUTO_UNHIDE("hidden_allow_auto_unhide"),
     
@@ -117,6 +144,7 @@ public class SendBirdGroupChannel {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -126,6 +154,7 @@ public class SendBirdGroupChannel {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static HiddenStateEnum fromValue(String value) {
       for (HiddenStateEnum b : HiddenStateEnum.values()) {
         if (b.value.equals(value)) {
@@ -134,121 +163,83 @@ public class SendBirdGroupChannel {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<HiddenStateEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final HiddenStateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public HiddenStateEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return HiddenStateEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_HIDDEN_STATE = "hidden_state";
-  @SerializedName(SERIALIZED_NAME_HIDDEN_STATE)
+  public static final String JSON_PROPERTY_HIDDEN_STATE = "hidden_state";
   private HiddenStateEnum hiddenState;
 
-  public static final String SERIALIZED_NAME_INVITED_AT = "invited_at";
-  @SerializedName(SERIALIZED_NAME_INVITED_AT)
+  public static final String JSON_PROPERTY_INVITED_AT = "invited_at";
   private BigDecimal invitedAt;
 
-  public static final String SERIALIZED_NAME_INVITER = "inviter";
-  @SerializedName(SERIALIZED_NAME_INVITER)
+  public static final String JSON_PROPERTY_INVITER = "inviter";
   private SendBirdUser inviter;
 
-  public static final String SERIALIZED_NAME_IS_ACCESS_CODE_REQUIRED = "is_access_code_required";
-  @SerializedName(SERIALIZED_NAME_IS_ACCESS_CODE_REQUIRED)
+  public static final String JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED = "is_access_code_required";
   private Boolean isAccessCodeRequired;
 
-  public static final String SERIALIZED_NAME_IS_BROADCAST = "is_broadcast";
-  @SerializedName(SERIALIZED_NAME_IS_BROADCAST)
+  public static final String JSON_PROPERTY_IS_BROADCAST = "is_broadcast";
   private Boolean isBroadcast;
 
-  public static final String SERIALIZED_NAME_IS_CREATED = "is_created";
-  @SerializedName(SERIALIZED_NAME_IS_CREATED)
+  public static final String JSON_PROPERTY_IS_CREATED = "is_created";
   private Boolean isCreated;
 
-  public static final String SERIALIZED_NAME_IS_DISCOVERABLE = "is_discoverable";
-  @SerializedName(SERIALIZED_NAME_IS_DISCOVERABLE)
+  public static final String JSON_PROPERTY_IS_DISCOVERABLE = "is_discoverable";
   private Boolean isDiscoverable;
 
-  public static final String SERIALIZED_NAME_IS_DISTINCT = "is_distinct";
-  @SerializedName(SERIALIZED_NAME_IS_DISTINCT)
+  public static final String JSON_PROPERTY_IS_DISTINCT = "is_distinct";
   private Boolean isDistinct;
 
-  public static final String SERIALIZED_NAME_IS_EPHEMERAL = "is_ephemeral";
-  @SerializedName(SERIALIZED_NAME_IS_EPHEMERAL)
+  public static final String JSON_PROPERTY_IS_EPHEMERAL = "is_ephemeral";
   private Boolean isEphemeral;
 
-  public static final String SERIALIZED_NAME_IS_FROZEN = "is_frozen";
-  @SerializedName(SERIALIZED_NAME_IS_FROZEN)
+  public static final String JSON_PROPERTY_IS_FROZEN = "is_frozen";
   private Boolean isFrozen;
 
-  public static final String SERIALIZED_NAME_IS_HIDDEN = "is_hidden";
-  @SerializedName(SERIALIZED_NAME_IS_HIDDEN)
+  public static final String JSON_PROPERTY_IS_HIDDEN = "is_hidden";
   private Boolean isHidden;
 
-  public static final String SERIALIZED_NAME_IS_PUBLIC = "is_public";
-  @SerializedName(SERIALIZED_NAME_IS_PUBLIC)
+  public static final String JSON_PROPERTY_IS_PUBLIC = "is_public";
   private Boolean isPublic;
 
-  public static final String SERIALIZED_NAME_IS_PUSH_ENABLED = "is_push_enabled";
-  @SerializedName(SERIALIZED_NAME_IS_PUSH_ENABLED)
+  public static final String JSON_PROPERTY_IS_PUSH_ENABLED = "is_push_enabled";
   private Boolean isPushEnabled;
 
-  public static final String SERIALIZED_NAME_IS_SUPER = "is_super";
-  @SerializedName(SERIALIZED_NAME_IS_SUPER)
+  public static final String JSON_PROPERTY_IS_SUPER = "is_super";
   private Boolean isSuper;
 
-  public static final String SERIALIZED_NAME_JOINED_AT = "joined_at";
-  @SerializedName(SERIALIZED_NAME_JOINED_AT)
+  public static final String JSON_PROPERTY_JOINED_AT = "joined_at";
   private BigDecimal joinedAt;
 
-  public static final String SERIALIZED_NAME_JOINED_MEMBER_COUNT = "joined_member_count";
-  @SerializedName(SERIALIZED_NAME_JOINED_MEMBER_COUNT)
+  public static final String JSON_PROPERTY_JOINED_MEMBER_COUNT = "joined_member_count";
   private BigDecimal joinedMemberCount;
 
-  public static final String SERIALIZED_NAME_LAST_MESSAGE = "last_message";
-  @SerializedName(SERIALIZED_NAME_LAST_MESSAGE)
-  private SendBirdMessageResponse lastMessage;
+  public static final String JSON_PROPERTY_LAST_MESSAGE = "last_message";
+  private JsonNullable<SendBirdMessageResponse> lastMessage = JsonNullable.<SendBirdMessageResponse>undefined();
 
-  public static final String SERIALIZED_NAME_MAX_LENGTH_MESSAGE = "max_length_message";
-  @SerializedName(SERIALIZED_NAME_MAX_LENGTH_MESSAGE)
+  public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
   private BigDecimal maxLengthMessage;
 
-  public static final String SERIALIZED_NAME_MEMBER_COUNT = "member_count";
-  @SerializedName(SERIALIZED_NAME_MEMBER_COUNT)
+  public static final String JSON_PROPERTY_MEMBER_COUNT = "member_count";
   private BigDecimal memberCount;
 
-  public static final String SERIALIZED_NAME_MEMBERS = "members";
-  @SerializedName(SERIALIZED_NAME_MEMBERS)
+  public static final String JSON_PROPERTY_MEMBERS = "members";
   private List<SendBirdMember> members = null;
 
-  public static final String SERIALIZED_NAME_MESSAGE_OFFSET_TIMESTAMP = "message_offset_timestamp";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_OFFSET_TIMESTAMP)
+  public static final String JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP = "message_offset_timestamp";
   private BigDecimal messageOffsetTimestamp;
 
-  public static final String SERIALIZED_NAME_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_SURVIVAL_SECONDS)
+  public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private BigDecimal messageSurvivalSeconds;
 
-  public static final String SERIALIZED_NAME_MY_COUNT_PREFERENCE = "my_count_preference";
-  @SerializedName(SERIALIZED_NAME_MY_COUNT_PREFERENCE)
+  public static final String JSON_PROPERTY_MY_COUNT_PREFERENCE = "my_count_preference";
   private String myCountPreference;
 
-  public static final String SERIALIZED_NAME_MY_LAST_READ = "my_last_read";
-  @SerializedName(SERIALIZED_NAME_MY_LAST_READ)
+  public static final String JSON_PROPERTY_MY_LAST_READ = "my_last_read";
   private BigDecimal myLastRead;
 
   /**
    * Gets or Sets myMemberState
    */
-  @JsonAdapter(MyMemberStateEnum.Adapter.class)
   public enum MyMemberStateEnum {
     INVITED("invited"),
     
@@ -262,6 +253,7 @@ public class SendBirdGroupChannel {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -271,6 +263,7 @@ public class SendBirdGroupChannel {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static MyMemberStateEnum fromValue(String value) {
       for (MyMemberStateEnum b : MyMemberStateEnum.values()) {
         if (b.value.equals(value)) {
@@ -279,29 +272,14 @@ public class SendBirdGroupChannel {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<MyMemberStateEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MyMemberStateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MyMemberStateEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MyMemberStateEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_MY_MEMBER_STATE = "my_member_state";
-  @SerializedName(SERIALIZED_NAME_MY_MEMBER_STATE)
+  public static final String JSON_PROPERTY_MY_MEMBER_STATE = "my_member_state";
   private MyMemberStateEnum myMemberState;
 
   /**
    * Gets or Sets myMutedState
    */
-  @JsonAdapter(MyMutedStateEnum.Adapter.class)
   public enum MyMutedStateEnum {
     MUTED("muted"),
     
@@ -313,6 +291,7 @@ public class SendBirdGroupChannel {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -322,6 +301,7 @@ public class SendBirdGroupChannel {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static MyMutedStateEnum fromValue(String value) {
       for (MyMutedStateEnum b : MyMutedStateEnum.values()) {
         if (b.value.equals(value)) {
@@ -330,29 +310,14 @@ public class SendBirdGroupChannel {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<MyMutedStateEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MyMutedStateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MyMutedStateEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MyMutedStateEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_MY_MUTED_STATE = "my_muted_state";
-  @SerializedName(SERIALIZED_NAME_MY_MUTED_STATE)
+  public static final String JSON_PROPERTY_MY_MUTED_STATE = "my_muted_state";
   private MyMutedStateEnum myMutedState;
 
   /**
    * Gets or Sets myPushTriggerOption
    */
-  @JsonAdapter(MyPushTriggerOptionEnum.Adapter.class)
   public enum MyPushTriggerOptionEnum {
     ALL("all"),
     
@@ -368,6 +333,7 @@ public class SendBirdGroupChannel {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -377,6 +343,7 @@ public class SendBirdGroupChannel {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static MyPushTriggerOptionEnum fromValue(String value) {
       for (MyPushTriggerOptionEnum b : MyPushTriggerOptionEnum.values()) {
         if (b.value.equals(value)) {
@@ -385,29 +352,14 @@ public class SendBirdGroupChannel {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<MyPushTriggerOptionEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MyPushTriggerOptionEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MyPushTriggerOptionEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MyPushTriggerOptionEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_MY_PUSH_TRIGGER_OPTION = "my_push_trigger_option";
-  @SerializedName(SERIALIZED_NAME_MY_PUSH_TRIGGER_OPTION)
+  public static final String JSON_PROPERTY_MY_PUSH_TRIGGER_OPTION = "my_push_trigger_option";
   private MyPushTriggerOptionEnum myPushTriggerOption;
 
   /**
    * Gets or Sets myRole
    */
-  @JsonAdapter(MyRoleEnum.Adapter.class)
   public enum MyRoleEnum {
     NONE("none"),
     
@@ -419,6 +371,7 @@ public class SendBirdGroupChannel {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -428,6 +381,7 @@ public class SendBirdGroupChannel {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static MyRoleEnum fromValue(String value) {
       for (MyRoleEnum b : MyRoleEnum.values()) {
         if (b.value.equals(value)) {
@@ -436,54 +390,33 @@ public class SendBirdGroupChannel {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<MyRoleEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MyRoleEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MyRoleEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MyRoleEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_MY_ROLE = "my_role";
-  @SerializedName(SERIALIZED_NAME_MY_ROLE)
+  public static final String JSON_PROPERTY_MY_ROLE = "my_role";
   private MyRoleEnum myRole;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String SERIALIZED_NAME_OPERATORS = "operators";
-  @SerializedName(SERIALIZED_NAME_OPERATORS)
+  public static final String JSON_PROPERTY_OPERATORS = "operators";
   private List<String> operators = null;
 
-  public static final String SERIALIZED_NAME_SMS_FALLBACK = "sms_fallback";
-  @SerializedName(SERIALIZED_NAME_SMS_FALLBACK)
+  public static final String JSON_PROPERTY_SMS_FALLBACK = "sms_fallback";
   private SendBirdGroupChannelSmsFallback smsFallback;
 
-  public static final String SERIALIZED_NAME_UNREAD_MENTION_COUNT = "unread_mention_count";
-  @SerializedName(SERIALIZED_NAME_UNREAD_MENTION_COUNT)
+  public static final String JSON_PROPERTY_UNREAD_MENTION_COUNT = "unread_mention_count";
   private BigDecimal unreadMentionCount;
 
-  public static final String SERIALIZED_NAME_UNREAD_MESSAGE_COUNT = "unread_message_count";
-  @SerializedName(SERIALIZED_NAME_UNREAD_MESSAGE_COUNT)
+  public static final String JSON_PROPERTY_UNREAD_MESSAGE_COUNT = "unread_message_count";
   private BigDecimal unreadMessageCount;
 
-  public static final String SERIALIZED_NAME_CHANNEL = "channel";
-  @SerializedName(SERIALIZED_NAME_CHANNEL)
+  public static final String JSON_PROPERTY_CHANNEL = "channel";
   private SendBirdGroupChannelChannel channel;
 
   public SendBirdGroupChannel() { 
   }
 
   public SendBirdGroupChannel channelUrl(String channelUrl) {
-    
     this.channelUrl = channelUrl;
     return this;
   }
@@ -494,19 +427,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelUrl() {
     return channelUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
   }
 
 
   public SendBirdGroupChannel coverUrl(String coverUrl) {
-    
     this.coverUrl = coverUrl;
     return this;
   }
@@ -517,19 +453,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_COVER_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCoverUrl() {
     return coverUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_COVER_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCoverUrl(String coverUrl) {
     this.coverUrl = coverUrl;
   }
 
 
   public SendBirdGroupChannel createdAt(BigDecimal createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -540,20 +479,23 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(BigDecimal createdAt) {
     this.createdAt = createdAt;
   }
 
 
   public SendBirdGroupChannel createdBy(SendBirdGroupChannelCreatedBy createdBy) {
-    
-    this.createdBy = createdBy;
+    this.createdBy = JsonNullable.<SendBirdGroupChannelCreatedBy>of(createdBy);
     return this;
   }
 
@@ -563,19 +505,30 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonIgnore
 
   public SendBirdGroupChannelCreatedBy getCreatedBy() {
-    return createdBy;
+        return createdBy.orElse(null);
   }
 
+  @JsonProperty(JSON_PROPERTY_CREATED_BY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SendBirdGroupChannelCreatedBy> getCreatedBy_JsonNullable() {
+    return createdBy;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CREATED_BY)
+  public void setCreatedBy_JsonNullable(JsonNullable<SendBirdGroupChannelCreatedBy> createdBy) {
+    this.createdBy = createdBy;
+  }
 
   public void setCreatedBy(SendBirdGroupChannelCreatedBy createdBy) {
-    this.createdBy = createdBy;
+    this.createdBy = JsonNullable.<SendBirdGroupChannelCreatedBy>of(createdBy);
   }
 
 
   public SendBirdGroupChannel creator(SendBirdUser creator) {
-    
     this.creator = creator;
     return this;
   }
@@ -586,19 +539,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdUser getCreator() {
     return creator;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreator(SendBirdUser creator) {
     this.creator = creator;
   }
 
 
   public SendBirdGroupChannel customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -609,19 +565,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
   public SendBirdGroupChannel data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -632,19 +591,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public SendBirdGroupChannel disappearingMessage(SendBirdGroupChannelDisappearingMessage disappearingMessage) {
-    
     this.disappearingMessage = disappearingMessage;
     return this;
   }
@@ -655,19 +617,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DISAPPEARING_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdGroupChannelDisappearingMessage getDisappearingMessage() {
     return disappearingMessage;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DISAPPEARING_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisappearingMessage(SendBirdGroupChannelDisappearingMessage disappearingMessage) {
     this.disappearingMessage = disappearingMessage;
   }
 
 
   public SendBirdGroupChannel freeze(Boolean freeze) {
-    
     this.freeze = freeze;
     return this;
   }
@@ -678,19 +643,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FREEZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getFreeze() {
     return freeze;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FREEZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFreeze(Boolean freeze) {
     this.freeze = freeze;
   }
 
 
   public SendBirdGroupChannel ignoreProfanityFilter(Boolean ignoreProfanityFilter) {
-    
     this.ignoreProfanityFilter = ignoreProfanityFilter;
     return this;
   }
@@ -701,19 +669,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IGNORE_PROFANITY_FILTER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIgnoreProfanityFilter() {
     return ignoreProfanityFilter;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IGNORE_PROFANITY_FILTER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIgnoreProfanityFilter(Boolean ignoreProfanityFilter) {
     this.ignoreProfanityFilter = ignoreProfanityFilter;
   }
 
 
   public SendBirdGroupChannel hiddenState(HiddenStateEnum hiddenState) {
-    
     this.hiddenState = hiddenState;
     return this;
   }
@@ -724,19 +695,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_HIDDEN_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public HiddenStateEnum getHiddenState() {
     return hiddenState;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_HIDDEN_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHiddenState(HiddenStateEnum hiddenState) {
     this.hiddenState = hiddenState;
   }
 
 
   public SendBirdGroupChannel invitedAt(BigDecimal invitedAt) {
-    
     this.invitedAt = invitedAt;
     return this;
   }
@@ -747,19 +721,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_INVITED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getInvitedAt() {
     return invitedAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_INVITED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInvitedAt(BigDecimal invitedAt) {
     this.invitedAt = invitedAt;
   }
 
 
   public SendBirdGroupChannel inviter(SendBirdUser inviter) {
-    
     this.inviter = inviter;
     return this;
   }
@@ -770,19 +747,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_INVITER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdUser getInviter() {
     return inviter;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_INVITER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInviter(SendBirdUser inviter) {
     this.inviter = inviter;
   }
 
 
   public SendBirdGroupChannel isAccessCodeRequired(Boolean isAccessCodeRequired) {
-    
     this.isAccessCodeRequired = isAccessCodeRequired;
     return this;
   }
@@ -793,19 +773,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsAccessCodeRequired() {
     return isAccessCodeRequired;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsAccessCodeRequired(Boolean isAccessCodeRequired) {
     this.isAccessCodeRequired = isAccessCodeRequired;
   }
 
 
   public SendBirdGroupChannel isBroadcast(Boolean isBroadcast) {
-    
     this.isBroadcast = isBroadcast;
     return this;
   }
@@ -816,19 +799,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_BROADCAST)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsBroadcast() {
     return isBroadcast;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_BROADCAST)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsBroadcast(Boolean isBroadcast) {
     this.isBroadcast = isBroadcast;
   }
 
 
   public SendBirdGroupChannel isCreated(Boolean isCreated) {
-    
     this.isCreated = isCreated;
     return this;
   }
@@ -839,19 +825,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_CREATED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsCreated() {
     return isCreated;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_CREATED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsCreated(Boolean isCreated) {
     this.isCreated = isCreated;
   }
 
 
   public SendBirdGroupChannel isDiscoverable(Boolean isDiscoverable) {
-    
     this.isDiscoverable = isDiscoverable;
     return this;
   }
@@ -862,19 +851,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_DISCOVERABLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsDiscoverable() {
     return isDiscoverable;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_DISCOVERABLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsDiscoverable(Boolean isDiscoverable) {
     this.isDiscoverable = isDiscoverable;
   }
 
 
   public SendBirdGroupChannel isDistinct(Boolean isDistinct) {
-    
     this.isDistinct = isDistinct;
     return this;
   }
@@ -885,19 +877,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_DISTINCT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsDistinct() {
     return isDistinct;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_DISTINCT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsDistinct(Boolean isDistinct) {
     this.isDistinct = isDistinct;
   }
 
 
   public SendBirdGroupChannel isEphemeral(Boolean isEphemeral) {
-    
     this.isEphemeral = isEphemeral;
     return this;
   }
@@ -908,19 +903,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_EPHEMERAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsEphemeral() {
     return isEphemeral;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_EPHEMERAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsEphemeral(Boolean isEphemeral) {
     this.isEphemeral = isEphemeral;
   }
 
 
   public SendBirdGroupChannel isFrozen(Boolean isFrozen) {
-    
     this.isFrozen = isFrozen;
     return this;
   }
@@ -931,19 +929,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsFrozen() {
     return isFrozen;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsFrozen(Boolean isFrozen) {
     this.isFrozen = isFrozen;
   }
 
 
   public SendBirdGroupChannel isHidden(Boolean isHidden) {
-    
     this.isHidden = isHidden;
     return this;
   }
@@ -954,19 +955,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_HIDDEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsHidden() {
     return isHidden;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_HIDDEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsHidden(Boolean isHidden) {
     this.isHidden = isHidden;
   }
 
 
   public SendBirdGroupChannel isPublic(Boolean isPublic) {
-    
     this.isPublic = isPublic;
     return this;
   }
@@ -977,19 +981,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_PUBLIC)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsPublic() {
     return isPublic;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_PUBLIC)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsPublic(Boolean isPublic) {
     this.isPublic = isPublic;
   }
 
 
   public SendBirdGroupChannel isPushEnabled(Boolean isPushEnabled) {
-    
     this.isPushEnabled = isPushEnabled;
     return this;
   }
@@ -1000,19 +1007,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_PUSH_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsPushEnabled() {
     return isPushEnabled;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_PUSH_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsPushEnabled(Boolean isPushEnabled) {
     this.isPushEnabled = isPushEnabled;
   }
 
 
   public SendBirdGroupChannel isSuper(Boolean isSuper) {
-    
     this.isSuper = isSuper;
     return this;
   }
@@ -1023,19 +1033,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_SUPER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsSuper() {
     return isSuper;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_SUPER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsSuper(Boolean isSuper) {
     this.isSuper = isSuper;
   }
 
 
   public SendBirdGroupChannel joinedAt(BigDecimal joinedAt) {
-    
     this.joinedAt = joinedAt;
     return this;
   }
@@ -1046,19 +1059,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_JOINED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getJoinedAt() {
     return joinedAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_JOINED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setJoinedAt(BigDecimal joinedAt) {
     this.joinedAt = joinedAt;
   }
 
 
   public SendBirdGroupChannel joinedMemberCount(BigDecimal joinedMemberCount) {
-    
     this.joinedMemberCount = joinedMemberCount;
     return this;
   }
@@ -1069,20 +1085,23 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_JOINED_MEMBER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getJoinedMemberCount() {
     return joinedMemberCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_JOINED_MEMBER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setJoinedMemberCount(BigDecimal joinedMemberCount) {
     this.joinedMemberCount = joinedMemberCount;
   }
 
 
   public SendBirdGroupChannel lastMessage(SendBirdMessageResponse lastMessage) {
-    
-    this.lastMessage = lastMessage;
+    this.lastMessage = JsonNullable.<SendBirdMessageResponse>of(lastMessage);
     return this;
   }
 
@@ -1092,19 +1111,30 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonIgnore
 
   public SendBirdMessageResponse getLastMessage() {
-    return lastMessage;
+        return lastMessage.orElse(null);
   }
 
+  @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<SendBirdMessageResponse> getLastMessage_JsonNullable() {
+    return lastMessage;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
+  public void setLastMessage_JsonNullable(JsonNullable<SendBirdMessageResponse> lastMessage) {
+    this.lastMessage = lastMessage;
+  }
 
   public void setLastMessage(SendBirdMessageResponse lastMessage) {
-    this.lastMessage = lastMessage;
+    this.lastMessage = JsonNullable.<SendBirdMessageResponse>of(lastMessage);
   }
 
 
   public SendBirdGroupChannel maxLengthMessage(BigDecimal maxLengthMessage) {
-    
     this.maxLengthMessage = maxLengthMessage;
     return this;
   }
@@ -1115,19 +1145,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getMaxLengthMessage() {
     return maxLengthMessage;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaxLengthMessage(BigDecimal maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
   }
 
 
   public SendBirdGroupChannel memberCount(BigDecimal memberCount) {
-    
     this.memberCount = memberCount;
     return this;
   }
@@ -1138,19 +1171,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getMemberCount() {
     return memberCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMemberCount(BigDecimal memberCount) {
     this.memberCount = memberCount;
   }
 
 
   public SendBirdGroupChannel members(List<SendBirdMember> members) {
-    
     this.members = members;
     return this;
   }
@@ -1169,19 +1205,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MEMBERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SendBirdMember> getMembers() {
     return members;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MEMBERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMembers(List<SendBirdMember> members) {
     this.members = members;
   }
 
 
   public SendBirdGroupChannel messageOffsetTimestamp(BigDecimal messageOffsetTimestamp) {
-    
     this.messageOffsetTimestamp = messageOffsetTimestamp;
     return this;
   }
@@ -1192,19 +1231,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getMessageOffsetTimestamp() {
     return messageOffsetTimestamp;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessageOffsetTimestamp(BigDecimal messageOffsetTimestamp) {
     this.messageOffsetTimestamp = messageOffsetTimestamp;
   }
 
 
   public SendBirdGroupChannel messageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
-    
     this.messageSurvivalSeconds = messageSurvivalSeconds;
     return this;
   }
@@ -1215,19 +1257,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getMessageSurvivalSeconds() {
     return messageSurvivalSeconds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
   }
 
 
   public SendBirdGroupChannel myCountPreference(String myCountPreference) {
-    
     this.myCountPreference = myCountPreference;
     return this;
   }
@@ -1238,19 +1283,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MY_COUNT_PREFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMyCountPreference() {
     return myCountPreference;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MY_COUNT_PREFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMyCountPreference(String myCountPreference) {
     this.myCountPreference = myCountPreference;
   }
 
 
   public SendBirdGroupChannel myLastRead(BigDecimal myLastRead) {
-    
     this.myLastRead = myLastRead;
     return this;
   }
@@ -1261,19 +1309,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MY_LAST_READ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getMyLastRead() {
     return myLastRead;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MY_LAST_READ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMyLastRead(BigDecimal myLastRead) {
     this.myLastRead = myLastRead;
   }
 
 
   public SendBirdGroupChannel myMemberState(MyMemberStateEnum myMemberState) {
-    
     this.myMemberState = myMemberState;
     return this;
   }
@@ -1284,19 +1335,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MY_MEMBER_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public MyMemberStateEnum getMyMemberState() {
     return myMemberState;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MY_MEMBER_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMyMemberState(MyMemberStateEnum myMemberState) {
     this.myMemberState = myMemberState;
   }
 
 
   public SendBirdGroupChannel myMutedState(MyMutedStateEnum myMutedState) {
-    
     this.myMutedState = myMutedState;
     return this;
   }
@@ -1307,19 +1361,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MY_MUTED_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public MyMutedStateEnum getMyMutedState() {
     return myMutedState;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MY_MUTED_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMyMutedState(MyMutedStateEnum myMutedState) {
     this.myMutedState = myMutedState;
   }
 
 
   public SendBirdGroupChannel myPushTriggerOption(MyPushTriggerOptionEnum myPushTriggerOption) {
-    
     this.myPushTriggerOption = myPushTriggerOption;
     return this;
   }
@@ -1330,19 +1387,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MY_PUSH_TRIGGER_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public MyPushTriggerOptionEnum getMyPushTriggerOption() {
     return myPushTriggerOption;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MY_PUSH_TRIGGER_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMyPushTriggerOption(MyPushTriggerOptionEnum myPushTriggerOption) {
     this.myPushTriggerOption = myPushTriggerOption;
   }
 
 
   public SendBirdGroupChannel myRole(MyRoleEnum myRole) {
-    
     this.myRole = myRole;
     return this;
   }
@@ -1353,19 +1413,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MY_ROLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public MyRoleEnum getMyRole() {
     return myRole;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MY_ROLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMyRole(MyRoleEnum myRole) {
     this.myRole = myRole;
   }
 
 
   public SendBirdGroupChannel name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -1376,19 +1439,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(String name) {
     this.name = name;
   }
 
 
   public SendBirdGroupChannel operators(List<String> operators) {
-    
     this.operators = operators;
     return this;
   }
@@ -1407,19 +1473,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPERATORS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getOperators() {
     return operators;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPERATORS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOperators(List<String> operators) {
     this.operators = operators;
   }
 
 
   public SendBirdGroupChannel smsFallback(SendBirdGroupChannelSmsFallback smsFallback) {
-    
     this.smsFallback = smsFallback;
     return this;
   }
@@ -1430,19 +1499,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdGroupChannelSmsFallback getSmsFallback() {
     return smsFallback;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSmsFallback(SendBirdGroupChannelSmsFallback smsFallback) {
     this.smsFallback = smsFallback;
   }
 
 
   public SendBirdGroupChannel unreadMentionCount(BigDecimal unreadMentionCount) {
-    
     this.unreadMentionCount = unreadMentionCount;
     return this;
   }
@@ -1453,19 +1525,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getUnreadMentionCount() {
     return unreadMentionCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUnreadMentionCount(BigDecimal unreadMentionCount) {
     this.unreadMentionCount = unreadMentionCount;
   }
 
 
   public SendBirdGroupChannel unreadMessageCount(BigDecimal unreadMessageCount) {
-    
     this.unreadMessageCount = unreadMessageCount;
     return this;
   }
@@ -1476,19 +1551,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getUnreadMessageCount() {
     return unreadMessageCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUnreadMessageCount(BigDecimal unreadMessageCount) {
     this.unreadMessageCount = unreadMessageCount;
   }
 
 
   public SendBirdGroupChannel channel(SendBirdGroupChannelChannel channel) {
-    
     this.channel = channel;
     return this;
   }
@@ -1499,12 +1577,16 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdGroupChannelChannel getChannel() {
     return channel;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannel(SendBirdGroupChannelChannel channel) {
     this.channel = channel;
   }
@@ -1520,6 +1602,7 @@ public class SendBirdGroupChannel {
    * Set the additional (undeclared) property with the specified name and value.
    * If the property does not already exist, create it otherwise replace it.
    */
+  @JsonAnySetter
   public SendBirdGroupChannel putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
@@ -1531,6 +1614,7 @@ public class SendBirdGroupChannel {
   /**
    * Return the additional (undeclared) property.
    */
+  @JsonAnyGetter
   public Map<String, Object> getAdditionalProperties() {
     return additionalProperties;
   }
@@ -1545,7 +1629,9 @@ public class SendBirdGroupChannel {
     return this.additionalProperties.get(key);
   }
 
-
+  /**
+   * Return true if this SendBird.GroupChannel object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1558,7 +1644,7 @@ public class SendBirdGroupChannel {
     return Objects.equals(this.channelUrl, sendBirdGroupChannel.channelUrl) &&
         Objects.equals(this.coverUrl, sendBirdGroupChannel.coverUrl) &&
         Objects.equals(this.createdAt, sendBirdGroupChannel.createdAt) &&
-        Objects.equals(this.createdBy, sendBirdGroupChannel.createdBy) &&
+        equalsNullable(this.createdBy, sendBirdGroupChannel.createdBy) &&
         Objects.equals(this.creator, sendBirdGroupChannel.creator) &&
         Objects.equals(this.customType, sendBirdGroupChannel.customType) &&
         Objects.equals(this.data, sendBirdGroupChannel.data) &&
@@ -1581,7 +1667,7 @@ public class SendBirdGroupChannel {
         Objects.equals(this.isSuper, sendBirdGroupChannel.isSuper) &&
         Objects.equals(this.joinedAt, sendBirdGroupChannel.joinedAt) &&
         Objects.equals(this.joinedMemberCount, sendBirdGroupChannel.joinedMemberCount) &&
-        Objects.equals(this.lastMessage, sendBirdGroupChannel.lastMessage) &&
+        equalsNullable(this.lastMessage, sendBirdGroupChannel.lastMessage) &&
         Objects.equals(this.maxLengthMessage, sendBirdGroupChannel.maxLengthMessage) &&
         Objects.equals(this.memberCount, sendBirdGroupChannel.memberCount) &&
         Objects.equals(this.members, sendBirdGroupChannel.members) &&
@@ -1608,7 +1694,7 @@ public class SendBirdGroupChannel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelUrl, coverUrl, createdAt, createdBy, creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, lastMessage, maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel, additionalProperties);
+    return Objects.hash(channelUrl, coverUrl, createdAt, hashCodeNullable(createdBy), creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1682,237 +1768,5 @@ public class SendBirdGroupChannel {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("channel_url");
-    openapiFields.add("cover_url");
-    openapiFields.add("created_at");
-    openapiFields.add("created_by");
-    openapiFields.add("creator");
-    openapiFields.add("custom_type");
-    openapiFields.add("data");
-    openapiFields.add("disappearing_message");
-    openapiFields.add("freeze");
-    openapiFields.add("ignore_profanity_filter");
-    openapiFields.add("hidden_state");
-    openapiFields.add("invited_at");
-    openapiFields.add("inviter");
-    openapiFields.add("is_access_code_required");
-    openapiFields.add("is_broadcast");
-    openapiFields.add("is_created");
-    openapiFields.add("is_discoverable");
-    openapiFields.add("is_distinct");
-    openapiFields.add("is_ephemeral");
-    openapiFields.add("is_frozen");
-    openapiFields.add("is_hidden");
-    openapiFields.add("is_public");
-    openapiFields.add("is_push_enabled");
-    openapiFields.add("is_super");
-    openapiFields.add("joined_at");
-    openapiFields.add("joined_member_count");
-    openapiFields.add("last_message");
-    openapiFields.add("max_length_message");
-    openapiFields.add("member_count");
-    openapiFields.add("members");
-    openapiFields.add("message_offset_timestamp");
-    openapiFields.add("message_survival_seconds");
-    openapiFields.add("my_count_preference");
-    openapiFields.add("my_last_read");
-    openapiFields.add("my_member_state");
-    openapiFields.add("my_muted_state");
-    openapiFields.add("my_push_trigger_option");
-    openapiFields.add("my_role");
-    openapiFields.add("name");
-    openapiFields.add("operators");
-    openapiFields.add("sms_fallback");
-    openapiFields.add("unread_mention_count");
-    openapiFields.add("unread_message_count");
-    openapiFields.add("channel");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendBirdGroupChannel
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendBirdGroupChannel.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdGroupChannel is not found in the empty JSON string", SendBirdGroupChannel.openapiRequiredFields.toString()));
-        }
-      }
-      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
-      }
-      if (jsonObj.get("cover_url") != null && !jsonObj.get("cover_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cover_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cover_url").toString()));
-      }
-      // validate the optional field `created_by`
-      if (jsonObj.get("created_by") != null && !jsonObj.get("created_by").isJsonNull()) {
-        SendBirdGroupChannelCreatedBy.validateJsonObject(jsonObj.getAsJsonObject("created_by"));
-      }
-      // validate the optional field `creator`
-      if (jsonObj.getAsJsonObject("creator") != null) {
-        SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("creator"));
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      // validate the optional field `disappearing_message`
-      if (jsonObj.getAsJsonObject("disappearing_message") != null) {
-        SendBirdGroupChannelDisappearingMessage.validateJsonObject(jsonObj.getAsJsonObject("disappearing_message"));
-      }
-      if (jsonObj.get("hidden_state") != null && !jsonObj.get("hidden_state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hidden_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hidden_state").toString()));
-      }
-      // validate the optional field `inviter`
-      if (jsonObj.get("inviter") != null && !jsonObj.get("inviter").isJsonNull()) {
-        SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("inviter"));
-      }
-      // validate the optional field `last_message`
-      if (jsonObj.get("last_message") != null && !jsonObj.get("last_message").isJsonNull()) {
-        SendBirdMessageResponse.validateJsonObject(jsonObj.getAsJsonObject("last_message"));
-      }
-      JsonArray jsonArraymembers = jsonObj.getAsJsonArray("members");
-      if (jsonArraymembers != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("members").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `members` to be an array in the JSON string but got `%s`", jsonObj.get("members").toString()));
-        }
-
-        // validate the optional field `members` (array)
-        for (int i = 0; i < jsonArraymembers.size(); i++) {
-          SendBirdMember.validateJsonObject(jsonArraymembers.get(i).getAsJsonObject());
-        };
-      }
-      if (jsonObj.get("my_count_preference") != null && !jsonObj.get("my_count_preference").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `my_count_preference` to be a primitive type in the JSON string but got `%s`", jsonObj.get("my_count_preference").toString()));
-      }
-      if (jsonObj.get("my_member_state") != null && !jsonObj.get("my_member_state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `my_member_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("my_member_state").toString()));
-      }
-      if (jsonObj.get("my_muted_state") != null && !jsonObj.get("my_muted_state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `my_muted_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("my_muted_state").toString()));
-      }
-      if (jsonObj.get("my_push_trigger_option") != null && !jsonObj.get("my_push_trigger_option").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `my_push_trigger_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("my_push_trigger_option").toString()));
-      }
-      if (jsonObj.get("my_role") != null && !jsonObj.get("my_role").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `my_role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("my_role").toString()));
-      }
-      if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("operators") != null && !jsonObj.get("operators").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `operators` to be an array in the JSON string but got `%s`", jsonObj.get("operators").toString()));
-      }
-      // validate the optional field `sms_fallback`
-      if (jsonObj.getAsJsonObject("sms_fallback") != null) {
-        SendBirdGroupChannelSmsFallback.validateJsonObject(jsonObj.getAsJsonObject("sms_fallback"));
-      }
-      // validate the optional field `channel`
-      if (jsonObj.getAsJsonObject("channel") != null) {
-        SendBirdGroupChannelChannel.validateJsonObject(jsonObj.getAsJsonObject("channel"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendBirdGroupChannel.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendBirdGroupChannel' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendBirdGroupChannel> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdGroupChannel.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendBirdGroupChannel>() {
-           @Override
-           public void write(JsonWriter out, SendBirdGroupChannel value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             obj.remove("additionalProperties");
-             // serialize additonal properties
-             if (value.getAdditionalProperties() != null) {
-               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
-                 if (entry.getValue() instanceof String)
-                   obj.addProperty(entry.getKey(), (String) entry.getValue());
-                 else if (entry.getValue() instanceof Number)
-                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
-                 else if (entry.getValue() instanceof Boolean)
-                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
-                 else if (entry.getValue() instanceof Character)
-                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
-                 else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
-                 }
-               }
-             }
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendBirdGroupChannel read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             // store additional fields in the deserialized instance
-             SendBirdGroupChannel instance = thisAdapter.fromJsonTree(jsonObj);
-             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
-               if (!openapiFields.contains(entry.getKey())) {
-                 if (entry.getValue().isJsonPrimitive()) { // primitive type
-                   if (entry.getValue().getAsJsonPrimitive().isString())
-                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
-                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
-                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
-                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
-                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
-                   else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
-                 } else { // non-primitive type
-                   instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
-                 }
-               }
-             }
-             return instance;
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendBirdGroupChannel given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendBirdGroupChannel
-  * @throws IOException if the JSON string is invalid with respect to SendBirdGroupChannel
-  */
-  public static SendBirdGroupChannel fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendBirdGroupChannel.class);
-  }
-
- /**
-  * Convert an instance of SendBirdGroupChannel to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

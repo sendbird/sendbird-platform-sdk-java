@@ -15,88 +15,74 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.SendBirdUser;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * OcBanUserResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  OcBanUserResponse.JSON_PROPERTY_START_AT,
+  OcBanUserResponse.JSON_PROPERTY_END_AT,
+  OcBanUserResponse.JSON_PROPERTY_DESCRIPTION,
+  OcBanUserResponse.JSON_PROPERTY_USER_ID,
+  OcBanUserResponse.JSON_PROPERTY_USER,
+  OcBanUserResponse.JSON_PROPERTY_NEXT_URL,
+  OcBanUserResponse.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
+  OcBanUserResponse.JSON_PROPERTY_NICKNAME,
+  OcBanUserResponse.JSON_PROPERTY_PROFILE_URL,
+  OcBanUserResponse.JSON_PROPERTY_METADATA
+})
+@JsonTypeName("ocBanUserResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class OcBanUserResponse {
-  public static final String SERIALIZED_NAME_START_AT = "start_at";
-  @SerializedName(SERIALIZED_NAME_START_AT)
+  public static final String JSON_PROPERTY_START_AT = "start_at";
   private BigDecimal startAt;
 
-  public static final String SERIALIZED_NAME_END_AT = "end_at";
-  @SerializedName(SERIALIZED_NAME_END_AT)
+  public static final String JSON_PROPERTY_END_AT = "end_at";
   private BigDecimal endAt;
 
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
 
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public static final String SERIALIZED_NAME_USER = "user";
-  @SerializedName(SERIALIZED_NAME_USER)
+  public static final String JSON_PROPERTY_USER = "user";
   private SendBirdUser user;
 
-  public static final String SERIALIZED_NAME_NEXT_URL = "next_url";
-  @SerializedName(SERIALIZED_NAME_NEXT_URL)
+  public static final String JSON_PROPERTY_NEXT_URL = "next_url";
   private String nextUrl;
 
-  public static final String SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
-  @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;
 
-  public static final String SERIALIZED_NAME_NICKNAME = "nickname";
-  @SerializedName(SERIALIZED_NAME_NICKNAME)
+  public static final String JSON_PROPERTY_NICKNAME = "nickname";
   private String nickname;
 
-  public static final String SERIALIZED_NAME_PROFILE_URL = "profile_url";
-  @SerializedName(SERIALIZED_NAME_PROFILE_URL)
+  public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
   private String profileUrl;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
+  public static final String JSON_PROPERTY_METADATA = "metadata";
   private OcDeleteChannelByUrl200Response metadata;
 
   public OcBanUserResponse() { 
   }
 
   public OcBanUserResponse startAt(BigDecimal startAt) {
-    
     this.startAt = startAt;
     return this;
   }
@@ -107,19 +93,22 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_START_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getStartAt() {
     return startAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_START_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStartAt(BigDecimal startAt) {
     this.startAt = startAt;
   }
 
 
   public OcBanUserResponse endAt(BigDecimal endAt) {
-    
     this.endAt = endAt;
     return this;
   }
@@ -130,19 +119,22 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getEndAt() {
     return endAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEndAt(BigDecimal endAt) {
     this.endAt = endAt;
   }
 
 
   public OcBanUserResponse description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -153,19 +145,22 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
     return description;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(String description) {
     this.description = description;
   }
 
 
   public OcBanUserResponse userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -176,19 +171,22 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
 
   public OcBanUserResponse user(SendBirdUser user) {
-    
     this.user = user;
     return this;
   }
@@ -199,19 +197,22 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdUser getUser() {
     return user;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(SendBirdUser user) {
     this.user = user;
   }
 
 
   public OcBanUserResponse nextUrl(String nextUrl) {
-    
     this.nextUrl = nextUrl;
     return this;
   }
@@ -222,19 +223,22 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NEXT_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNextUrl() {
     return nextUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NEXT_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNextUrl(String nextUrl) {
     this.nextUrl = nextUrl;
   }
 
 
   public OcBanUserResponse requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
-    
     this.requireAuthForProfileImage = requireAuthForProfileImage;
     return this;
   }
@@ -245,19 +249,22 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getRequireAuthForProfileImage() {
     return requireAuthForProfileImage;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequireAuthForProfileImage(Boolean requireAuthForProfileImage) {
     this.requireAuthForProfileImage = requireAuthForProfileImage;
   }
 
 
   public OcBanUserResponse nickname(String nickname) {
-    
     this.nickname = nickname;
     return this;
   }
@@ -268,19 +275,22 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNickname() {
     return nickname;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNickname(String nickname) {
     this.nickname = nickname;
   }
 
 
   public OcBanUserResponse profileUrl(String profileUrl) {
-    
     this.profileUrl = profileUrl;
     return this;
   }
@@ -291,19 +301,22 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getProfileUrl() {
     return profileUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
   }
 
 
   public OcBanUserResponse metadata(OcDeleteChannelByUrl200Response metadata) {
-    
     this.metadata = metadata;
     return this;
   }
@@ -314,18 +327,24 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public OcDeleteChannelByUrl200Response getMetadata() {
     return metadata;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(OcDeleteChannelByUrl200Response metadata) {
     this.metadata = metadata;
   }
 
 
-
+  /**
+   * Return true if this ocBanUserResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -381,122 +400,5 @@ public class OcBanUserResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("start_at");
-    openapiFields.add("end_at");
-    openapiFields.add("description");
-    openapiFields.add("user_id");
-    openapiFields.add("user");
-    openapiFields.add("next_url");
-    openapiFields.add("require_auth_for_profile_image");
-    openapiFields.add("nickname");
-    openapiFields.add("profile_url");
-    openapiFields.add("metadata");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to OcBanUserResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (OcBanUserResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OcBanUserResponse is not found in the empty JSON string", OcBanUserResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!OcBanUserResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OcBanUserResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("description") != null && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-      // validate the optional field `user`
-      if (jsonObj.getAsJsonObject("user") != null) {
-        SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("user"));
-      }
-      if (jsonObj.get("next_url") != null && !jsonObj.get("next_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `next_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next_url").toString()));
-      }
-      if (jsonObj.get("nickname") != null && !jsonObj.get("nickname").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));
-      }
-      if (jsonObj.get("profile_url") != null && !jsonObj.get("profile_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profile_url").toString()));
-      }
-      // validate the optional field `metadata`
-      if (jsonObj.getAsJsonObject("metadata") != null) {
-        OcDeleteChannelByUrl200Response.validateJsonObject(jsonObj.getAsJsonObject("metadata"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OcBanUserResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OcBanUserResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OcBanUserResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OcBanUserResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<OcBanUserResponse>() {
-           @Override
-           public void write(JsonWriter out, OcBanUserResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public OcBanUserResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of OcBanUserResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OcBanUserResponse
-  * @throws IOException if the JSON string is invalid with respect to OcBanUserResponse
-  */
-  public static OcBanUserResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OcBanUserResponse.class);
-  }
-
- /**
-  * Convert an instance of OcBanUserResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

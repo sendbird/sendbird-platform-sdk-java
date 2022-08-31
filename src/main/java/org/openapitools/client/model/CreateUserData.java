@@ -15,76 +15,62 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * CreateUserData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  CreateUserData.JSON_PROPERTY_USER_ID,
+  CreateUserData.JSON_PROPERTY_NICKNAME,
+  CreateUserData.JSON_PROPERTY_PROFILE_URL,
+  CreateUserData.JSON_PROPERTY_PROFILE_FILE,
+  CreateUserData.JSON_PROPERTY_ISSUE_ACCESS_TOKEN,
+  CreateUserData.JSON_PROPERTY_DISCOVERY_KEYS,
+  CreateUserData.JSON_PROPERTY_METADATA
+})
+@JsonTypeName("createUserData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class CreateUserData {
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public static final String SERIALIZED_NAME_NICKNAME = "nickname";
-  @SerializedName(SERIALIZED_NAME_NICKNAME)
+  public static final String JSON_PROPERTY_NICKNAME = "nickname";
   private String nickname;
 
-  public static final String SERIALIZED_NAME_PROFILE_URL = "profile_url";
-  @SerializedName(SERIALIZED_NAME_PROFILE_URL)
+  public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
   private String profileUrl;
 
-  public static final String SERIALIZED_NAME_PROFILE_FILE = "profile_file";
-  @SerializedName(SERIALIZED_NAME_PROFILE_FILE)
+  public static final String JSON_PROPERTY_PROFILE_FILE = "profile_file";
   private File profileFile;
 
-  public static final String SERIALIZED_NAME_ISSUE_ACCESS_TOKEN = "issue_access_token";
-  @SerializedName(SERIALIZED_NAME_ISSUE_ACCESS_TOKEN)
+  public static final String JSON_PROPERTY_ISSUE_ACCESS_TOKEN = "issue_access_token";
   private Boolean issueAccessToken;
 
-  public static final String SERIALIZED_NAME_DISCOVERY_KEYS = "discovery_keys";
-  @SerializedName(SERIALIZED_NAME_DISCOVERY_KEYS)
+  public static final String JSON_PROPERTY_DISCOVERY_KEYS = "discovery_keys";
   private List<String> discoveryKeys = null;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
+  public static final String JSON_PROPERTY_METADATA = "metadata";
   private Object metadata;
 
   public CreateUserData() { 
   }
 
   public CreateUserData userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -95,19 +81,22 @@ public class CreateUserData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a user's unique ID, which is used to sign into the Sendbird service. The length is limited to 80 characters.<br /><br /> Do not use PII (Personally Identifiable Information) of your service, such as user email address, legal name or phone number.")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
 
   public CreateUserData nickname(String nickname) {
-    
     this.nickname = nickname;
     return this;
   }
@@ -118,19 +107,22 @@ public class CreateUserData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a nickname for a new user. The length is limited to 80 characters.")
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getNickname() {
     return nickname;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setNickname(String nickname) {
     this.nickname = nickname;
   }
 
 
   public CreateUserData profileUrl(String profileUrl) {
-    
     this.profileUrl = profileUrl;
     return this;
   }
@@ -141,19 +133,22 @@ public class CreateUserData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the user's profile image. If left empty, no profile image is set for the user. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.")
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getProfileUrl() {
     return profileUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setProfileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
   }
 
 
   public CreateUserData profileFile(File profileFile) {
-    
     this.profileFile = profileFile;
     return this;
   }
@@ -164,19 +159,22 @@ public class CreateUserData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Uploads the file of the user's profile image. An acceptable image is limited to `JPG` (.jpg), `JPEG` (.jpeg), or `PNG` (.png) file of up to 25 MB.")
+  @JsonProperty(JSON_PROPERTY_PROFILE_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public File getProfileFile() {
     return profileFile;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PROFILE_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfileFile(File profileFile) {
     this.profileFile = profileFile;
   }
 
 
   public CreateUserData issueAccessToken(Boolean issueAccessToken) {
-    
     this.issueAccessToken = issueAccessToken;
     return this;
   }
@@ -187,19 +185,22 @@ public class CreateUserData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to create an access token for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, an access token is not required when the user logs in. (Default: false)")
+  @JsonProperty(JSON_PROPERTY_ISSUE_ACCESS_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIssueAccessToken() {
     return issueAccessToken;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ISSUE_ACCESS_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssueAccessToken(Boolean issueAccessToken) {
     this.issueAccessToken = issueAccessToken;
   }
 
 
   public CreateUserData discoveryKeys(List<String> discoveryKeys) {
-    
     this.discoveryKeys = discoveryKeys;
     return this;
   }
@@ -218,19 +219,22 @@ public class CreateUserData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of unique keys of the user which is provided to Sendbird server for discovering friends. By using the keys, the server can identify and match the user with other users.")
+  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getDiscoveryKeys() {
     return discoveryKeys;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscoveryKeys(List<String> discoveryKeys) {
     this.discoveryKeys = discoveryKeys;
   }
 
 
   public CreateUserData metadata(Object metadata) {
-    
     this.metadata = metadata;
     return this;
   }
@@ -241,18 +245,24 @@ public class CreateUserData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies a `JSON` object to store key-value items for additional user information such as phone number, email or a long description of the user. The key must not have a comma (,) and its length is limited to 128 characters. The value must be a string and its length is limited to 190 characters. This property can have up to 5 items.")
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getMetadata() {
     return metadata;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Object metadata) {
     this.metadata = metadata;
   }
 
 
-
+  /**
+   * Return true if this createUserData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -302,119 +312,5 @@ public class CreateUserData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("user_id");
-    openapiFields.add("nickname");
-    openapiFields.add("profile_url");
-    openapiFields.add("profile_file");
-    openapiFields.add("issue_access_token");
-    openapiFields.add("discovery_keys");
-    openapiFields.add("metadata");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("user_id");
-    openapiRequiredFields.add("nickname");
-    openapiRequiredFields.add("profile_url");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CreateUserData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (CreateUserData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateUserData is not found in the empty JSON string", CreateUserData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!CreateUserData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateUserData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : CreateUserData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-      if (jsonObj.get("nickname") != null && !jsonObj.get("nickname").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));
-      }
-      if (jsonObj.get("profile_url") != null && !jsonObj.get("profile_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profile_url").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("discovery_keys") != null && !jsonObj.get("discovery_keys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `discovery_keys` to be an array in the JSON string but got `%s`", jsonObj.get("discovery_keys").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CreateUserData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CreateUserData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CreateUserData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CreateUserData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<CreateUserData>() {
-           @Override
-           public void write(JsonWriter out, CreateUserData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public CreateUserData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of CreateUserData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateUserData
-  * @throws IOException if the JSON string is invalid with respect to CreateUserData
-  */
-  public static CreateUserData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CreateUserData.class);
-  }
-
- /**
-  * Convert an instance of CreateUserData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

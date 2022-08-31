@@ -15,104 +15,90 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ViewPushPreferencesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ViewPushPreferencesResponse.JSON_PROPERTY_SNOOZE_START_TS,
+  ViewPushPreferencesResponse.JSON_PROPERTY_START_HOUR,
+  ViewPushPreferencesResponse.JSON_PROPERTY_SNOOZE_ENABLED,
+  ViewPushPreferencesResponse.JSON_PROPERTY_END_MIN,
+  ViewPushPreferencesResponse.JSON_PROPERTY_TIMEZONE,
+  ViewPushPreferencesResponse.JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS,
+  ViewPushPreferencesResponse.JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS,
+  ViewPushPreferencesResponse.JSON_PROPERTY_START_MIN,
+  ViewPushPreferencesResponse.JSON_PROPERTY_SNOOZE_END_TS,
+  ViewPushPreferencesResponse.JSON_PROPERTY_DO_NOT_DISTURB,
+  ViewPushPreferencesResponse.JSON_PROPERTY_END_HOUR,
+  ViewPushPreferencesResponse.JSON_PROPERTY_ENABLE_PUSH_FOR_REPLIES,
+  ViewPushPreferencesResponse.JSON_PROPERTY_PUSH_SOUND,
+  ViewPushPreferencesResponse.JSON_PROPERTY_PUSH_TRIGGER_OPTION
+})
+@JsonTypeName("viewPushPreferencesResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ViewPushPreferencesResponse {
-  public static final String SERIALIZED_NAME_SNOOZE_START_TS = "snooze_start_ts";
-  @SerializedName(SERIALIZED_NAME_SNOOZE_START_TS)
+  public static final String JSON_PROPERTY_SNOOZE_START_TS = "snooze_start_ts";
   private String snoozeStartTs;
 
-  public static final String SERIALIZED_NAME_START_HOUR = "start_hour";
-  @SerializedName(SERIALIZED_NAME_START_HOUR)
+  public static final String JSON_PROPERTY_START_HOUR = "start_hour";
   private BigDecimal startHour;
 
-  public static final String SERIALIZED_NAME_SNOOZE_ENABLED = "snooze_enabled";
-  @SerializedName(SERIALIZED_NAME_SNOOZE_ENABLED)
+  public static final String JSON_PROPERTY_SNOOZE_ENABLED = "snooze_enabled";
   private Boolean snoozeEnabled;
 
-  public static final String SERIALIZED_NAME_END_MIN = "end_min";
-  @SerializedName(SERIALIZED_NAME_END_MIN)
+  public static final String JSON_PROPERTY_END_MIN = "end_min";
   private BigDecimal endMin;
 
-  public static final String SERIALIZED_NAME_TIMEZONE = "timezone";
-  @SerializedName(SERIALIZED_NAME_TIMEZONE)
+  public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;
 
-  public static final String SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
-  @SerializedName(SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS)
+  public static final String JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
   private Boolean blockPushFromBots;
 
-  public static final String SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS = "push_blocked_bot_ids";
-  @SerializedName(SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS)
+  public static final String JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS = "push_blocked_bot_ids";
   private List<String> pushBlockedBotIds = null;
 
-  public static final String SERIALIZED_NAME_START_MIN = "start_min";
-  @SerializedName(SERIALIZED_NAME_START_MIN)
+  public static final String JSON_PROPERTY_START_MIN = "start_min";
   private BigDecimal startMin;
 
-  public static final String SERIALIZED_NAME_SNOOZE_END_TS = "snooze_end_ts";
-  @SerializedName(SERIALIZED_NAME_SNOOZE_END_TS)
+  public static final String JSON_PROPERTY_SNOOZE_END_TS = "snooze_end_ts";
   private String snoozeEndTs;
 
-  public static final String SERIALIZED_NAME_DO_NOT_DISTURB = "do_not_disturb";
-  @SerializedName(SERIALIZED_NAME_DO_NOT_DISTURB)
+  public static final String JSON_PROPERTY_DO_NOT_DISTURB = "do_not_disturb";
   private Boolean doNotDisturb;
 
-  public static final String SERIALIZED_NAME_END_HOUR = "end_hour";
-  @SerializedName(SERIALIZED_NAME_END_HOUR)
+  public static final String JSON_PROPERTY_END_HOUR = "end_hour";
   private BigDecimal endHour;
 
-  public static final String SERIALIZED_NAME_ENABLE_PUSH_FOR_REPLIES = "enable_push_for_replies";
-  @SerializedName(SERIALIZED_NAME_ENABLE_PUSH_FOR_REPLIES)
+  public static final String JSON_PROPERTY_ENABLE_PUSH_FOR_REPLIES = "enable_push_for_replies";
   private Boolean enablePushForReplies;
 
-  public static final String SERIALIZED_NAME_PUSH_SOUND = "push_sound";
-  @SerializedName(SERIALIZED_NAME_PUSH_SOUND)
+  public static final String JSON_PROPERTY_PUSH_SOUND = "push_sound";
   private String pushSound;
 
-  public static final String SERIALIZED_NAME_PUSH_TRIGGER_OPTION = "push_trigger_option";
-  @SerializedName(SERIALIZED_NAME_PUSH_TRIGGER_OPTION)
+  public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
   private String pushTriggerOption;
 
   public ViewPushPreferencesResponse() { 
   }
 
   public ViewPushPreferencesResponse snoozeStartTs(String snoozeStartTs) {
-    
     this.snoozeStartTs = snoozeStartTs;
     return this;
   }
@@ -123,19 +109,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSnoozeStartTs() {
     return snoozeStartTs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSnoozeStartTs(String snoozeStartTs) {
     this.snoozeStartTs = snoozeStartTs;
   }
 
 
   public ViewPushPreferencesResponse startHour(BigDecimal startHour) {
-    
     this.startHour = startHour;
     return this;
   }
@@ -146,19 +135,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_START_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getStartHour() {
     return startHour;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_START_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStartHour(BigDecimal startHour) {
     this.startHour = startHour;
   }
 
 
   public ViewPushPreferencesResponse snoozeEnabled(Boolean snoozeEnabled) {
-    
     this.snoozeEnabled = snoozeEnabled;
     return this;
   }
@@ -169,19 +161,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SNOOZE_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getSnoozeEnabled() {
     return snoozeEnabled;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SNOOZE_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSnoozeEnabled(Boolean snoozeEnabled) {
     this.snoozeEnabled = snoozeEnabled;
   }
 
 
   public ViewPushPreferencesResponse endMin(BigDecimal endMin) {
-    
     this.endMin = endMin;
     return this;
   }
@@ -192,19 +187,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_END_MIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getEndMin() {
     return endMin;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_END_MIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEndMin(BigDecimal endMin) {
     this.endMin = endMin;
   }
 
 
   public ViewPushPreferencesResponse timezone(String timezone) {
-    
     this.timezone = timezone;
     return this;
   }
@@ -215,19 +213,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TIMEZONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTimezone() {
     return timezone;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TIMEZONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTimezone(String timezone) {
     this.timezone = timezone;
   }
 
 
   public ViewPushPreferencesResponse blockPushFromBots(Boolean blockPushFromBots) {
-    
     this.blockPushFromBots = blockPushFromBots;
     return this;
   }
@@ -238,19 +239,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getBlockPushFromBots() {
     return blockPushFromBots;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBlockPushFromBots(Boolean blockPushFromBots) {
     this.blockPushFromBots = blockPushFromBots;
   }
 
 
   public ViewPushPreferencesResponse pushBlockedBotIds(List<String> pushBlockedBotIds) {
-    
     this.pushBlockedBotIds = pushBlockedBotIds;
     return this;
   }
@@ -269,19 +273,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getPushBlockedBotIds() {
     return pushBlockedBotIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushBlockedBotIds(List<String> pushBlockedBotIds) {
     this.pushBlockedBotIds = pushBlockedBotIds;
   }
 
 
   public ViewPushPreferencesResponse startMin(BigDecimal startMin) {
-    
     this.startMin = startMin;
     return this;
   }
@@ -292,19 +299,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_START_MIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getStartMin() {
     return startMin;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_START_MIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStartMin(BigDecimal startMin) {
     this.startMin = startMin;
   }
 
 
   public ViewPushPreferencesResponse snoozeEndTs(String snoozeEndTs) {
-    
     this.snoozeEndTs = snoozeEndTs;
     return this;
   }
@@ -315,19 +325,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSnoozeEndTs() {
     return snoozeEndTs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSnoozeEndTs(String snoozeEndTs) {
     this.snoozeEndTs = snoozeEndTs;
   }
 
 
   public ViewPushPreferencesResponse doNotDisturb(Boolean doNotDisturb) {
-    
     this.doNotDisturb = doNotDisturb;
     return this;
   }
@@ -338,19 +351,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getDoNotDisturb() {
     return doNotDisturb;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDoNotDisturb(Boolean doNotDisturb) {
     this.doNotDisturb = doNotDisturb;
   }
 
 
   public ViewPushPreferencesResponse endHour(BigDecimal endHour) {
-    
     this.endHour = endHour;
     return this;
   }
@@ -361,19 +377,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_END_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getEndHour() {
     return endHour;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_END_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEndHour(BigDecimal endHour) {
     this.endHour = endHour;
   }
 
 
   public ViewPushPreferencesResponse enablePushForReplies(Boolean enablePushForReplies) {
-    
     this.enablePushForReplies = enablePushForReplies;
     return this;
   }
@@ -384,19 +403,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ENABLE_PUSH_FOR_REPLIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getEnablePushForReplies() {
     return enablePushForReplies;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ENABLE_PUSH_FOR_REPLIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnablePushForReplies(Boolean enablePushForReplies) {
     this.enablePushForReplies = enablePushForReplies;
   }
 
 
   public ViewPushPreferencesResponse pushSound(String pushSound) {
-    
     this.pushSound = pushSound;
     return this;
   }
@@ -407,19 +429,22 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPushSound() {
     return pushSound;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushSound(String pushSound) {
     this.pushSound = pushSound;
   }
 
 
   public ViewPushPreferencesResponse pushTriggerOption(String pushTriggerOption) {
-    
     this.pushTriggerOption = pushTriggerOption;
     return this;
   }
@@ -430,18 +455,24 @@ public class ViewPushPreferencesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPushTriggerOption() {
     return pushTriggerOption;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushTriggerOption(String pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
   }
 
 
-
+  /**
+   * Return true if this viewPushPreferencesResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -505,122 +536,5 @@ public class ViewPushPreferencesResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("snooze_start_ts");
-    openapiFields.add("start_hour");
-    openapiFields.add("snooze_enabled");
-    openapiFields.add("end_min");
-    openapiFields.add("timezone");
-    openapiFields.add("block_push_from_bots");
-    openapiFields.add("push_blocked_bot_ids");
-    openapiFields.add("start_min");
-    openapiFields.add("snooze_end_ts");
-    openapiFields.add("do_not_disturb");
-    openapiFields.add("end_hour");
-    openapiFields.add("enable_push_for_replies");
-    openapiFields.add("push_sound");
-    openapiFields.add("push_trigger_option");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ViewPushPreferencesResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ViewPushPreferencesResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewPushPreferencesResponse is not found in the empty JSON string", ViewPushPreferencesResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ViewPushPreferencesResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ViewPushPreferencesResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("snooze_start_ts") != null && !jsonObj.get("snooze_start_ts").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `snooze_start_ts` to be a primitive type in the JSON string but got `%s`", jsonObj.get("snooze_start_ts").toString()));
-      }
-      if (jsonObj.get("timezone") != null && !jsonObj.get("timezone").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `timezone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timezone").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("push_blocked_bot_ids") != null && !jsonObj.get("push_blocked_bot_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_blocked_bot_ids` to be an array in the JSON string but got `%s`", jsonObj.get("push_blocked_bot_ids").toString()));
-      }
-      if (jsonObj.get("snooze_end_ts") != null && !jsonObj.get("snooze_end_ts").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `snooze_end_ts` to be a primitive type in the JSON string but got `%s`", jsonObj.get("snooze_end_ts").toString()));
-      }
-      if (jsonObj.get("push_sound") != null && !jsonObj.get("push_sound").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_sound` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_sound").toString()));
-      }
-      if (jsonObj.get("push_trigger_option") != null && !jsonObj.get("push_trigger_option").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_trigger_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_trigger_option").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ViewPushPreferencesResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ViewPushPreferencesResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ViewPushPreferencesResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ViewPushPreferencesResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ViewPushPreferencesResponse>() {
-           @Override
-           public void write(JsonWriter out, ViewPushPreferencesResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ViewPushPreferencesResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ViewPushPreferencesResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViewPushPreferencesResponse
-  * @throws IOException if the JSON string is invalid with respect to ViewPushPreferencesResponse
-  */
-  public static ViewPushPreferencesResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ViewPushPreferencesResponse.class);
-  }
-
- /**
-  * Convert an instance of ViewPushPreferencesResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

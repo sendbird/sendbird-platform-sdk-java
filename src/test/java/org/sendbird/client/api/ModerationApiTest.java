@@ -13,7 +13,8 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.BanFromChannelsWithCustomChannelTypesData;
 import org.openapitools.client.model.BlockUserData;
 import org.openapitools.client.model.BlockUserResponse;
@@ -44,6 +45,8 @@ import org.openapitools.client.model.OcViewBanByIdResponse;
 import org.openapitools.client.model.OcViewMuteByIdResponse;
 import org.openapitools.client.model.SendBirdGroupChannel;
 import org.openapitools.client.model.SendBirdOpenChannel;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -55,7 +58,6 @@ import java.util.Map;
 /**
  * API tests for ModerationApi
  */
-@Disabled
 public class ModerationApiTest {
 
     private final ModerationApi api = new ModerationApi();
@@ -69,10 +71,10 @@ public class ModerationApiTest {
      */
     @Test
     public void banFromChannelsWithCustomChannelTypesTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData = null;
-        Object response = api.banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData);
+        //String apiToken = null;
+        //String userId = null;
+        //BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData = null;
+        //Object response = api.banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData);
         // TODO: test validations
     }
 
@@ -85,10 +87,10 @@ public class ModerationApiTest {
      */
     @Test
     public void blockUserTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        BlockUserData blockUserData = null;
-        BlockUserResponse response = api.blockUser(apiToken, userId, blockUserData);
+        //String apiToken = null;
+        //String userId = null;
+        //BlockUserData blockUserData = null;
+        //BlockUserResponse response = api.blockUser(apiToken, userId, blockUserData);
         // TODO: test validations
     }
 
@@ -101,10 +103,10 @@ public class ModerationApiTest {
      */
     @Test
     public void gcBanUserTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcBanUserData gcBanUserData = null;
-        GcBanUserResponse response = api.gcBanUser(apiToken, channelUrl, gcBanUserData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcBanUserData gcBanUserData = null;
+        //GcBanUserResponse response = api.gcBanUser(apiToken, channelUrl, gcBanUserData);
         // TODO: test validations
     }
 
@@ -117,10 +119,10 @@ public class ModerationApiTest {
      */
     @Test
     public void gcFreezeChannelTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcFreezeChannelData gcFreezeChannelData = null;
-        SendBirdGroupChannel response = api.gcFreezeChannel(apiToken, channelUrl, gcFreezeChannelData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcFreezeChannelData gcFreezeChannelData = null;
+        //SendBirdGroupChannel response = api.gcFreezeChannel(apiToken, channelUrl, gcFreezeChannelData);
         // TODO: test validations
     }
 
@@ -133,11 +135,11 @@ public class ModerationApiTest {
      */
     @Test
     public void gcListBannedUsersTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String token = null;
-        Integer limit = null;
-        GcListBannedUsersResponse response = api.gcListBannedUsers(apiToken, channelUrl, token, limit);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String token = null;
+        //Integer limit = null;
+        //GcListBannedUsersResponse response = api.gcListBannedUsers(apiToken, channelUrl, token, limit);
         // TODO: test validations
     }
 
@@ -150,11 +152,11 @@ public class ModerationApiTest {
      */
     @Test
     public void gcListMutedUsersTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String token = null;
-        Integer limit = null;
-        GcListMutedUsersResponse response = api.gcListMutedUsers(apiToken, channelUrl, token, limit);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String token = null;
+        //Integer limit = null;
+        //GcListMutedUsersResponse response = api.gcListMutedUsers(apiToken, channelUrl, token, limit);
         // TODO: test validations
     }
 
@@ -167,10 +169,10 @@ public class ModerationApiTest {
      */
     @Test
     public void gcMuteUserTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcMuteUserData gcMuteUserData = null;
-        SendBirdGroupChannel response = api.gcMuteUser(apiToken, channelUrl, gcMuteUserData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcMuteUserData gcMuteUserData = null;
+        //SendBirdGroupChannel response = api.gcMuteUser(apiToken, channelUrl, gcMuteUserData);
         // TODO: test validations
     }
 
@@ -183,10 +185,10 @@ public class ModerationApiTest {
      */
     @Test
     public void gcUnbanUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String bannedUserId = null;
-        OcDeleteChannelByUrl200Response response = api.gcUnbanUserById(apiToken, channelUrl, bannedUserId);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String bannedUserId = null;
+        //OcDeleteChannelByUrl200Response response = api.gcUnbanUserById(apiToken, channelUrl, bannedUserId);
         // TODO: test validations
     }
 
@@ -199,10 +201,10 @@ public class ModerationApiTest {
      */
     @Test
     public void gcUnmuteUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String mutedUserId = null;
-        OcDeleteChannelByUrl200Response response = api.gcUnmuteUserById(apiToken, channelUrl, mutedUserId);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String mutedUserId = null;
+        //OcDeleteChannelByUrl200Response response = api.gcUnmuteUserById(apiToken, channelUrl, mutedUserId);
         // TODO: test validations
     }
 
@@ -215,11 +217,11 @@ public class ModerationApiTest {
      */
     @Test
     public void gcUpdateBanByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String bannedUserId = null;
-        GcUpdateBanByIdData gcUpdateBanByIdData = null;
-        GcUpdateBanByIdResponse response = api.gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String bannedUserId = null;
+        //GcUpdateBanByIdData gcUpdateBanByIdData = null;
+        //GcUpdateBanByIdResponse response = api.gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData);
         // TODO: test validations
     }
 
@@ -232,10 +234,10 @@ public class ModerationApiTest {
      */
     @Test
     public void gcViewBanByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String bannedUserId = null;
-        GcViewBanByIdResponse response = api.gcViewBanById(apiToken, channelUrl, bannedUserId);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String bannedUserId = null;
+        //GcViewBanByIdResponse response = api.gcViewBanById(apiToken, channelUrl, bannedUserId);
         // TODO: test validations
     }
 
@@ -248,10 +250,10 @@ public class ModerationApiTest {
      */
     @Test
     public void gcViewMuteByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String mutedUserId = null;
-        GcViewMuteByIdResponse response = api.gcViewMuteById(apiToken, channelUrl, mutedUserId);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String mutedUserId = null;
+        //GcViewMuteByIdResponse response = api.gcViewMuteById(apiToken, channelUrl, mutedUserId);
         // TODO: test validations
     }
 
@@ -264,11 +266,11 @@ public class ModerationApiTest {
      */
     @Test
     public void listBannedChannelsTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String token = null;
-        Integer limit = null;
-        ListBannedChannelsResponse response = api.listBannedChannels(apiToken, userId, token, limit);
+        //String apiToken = null;
+        //String userId = null;
+        //String token = null;
+        //Integer limit = null;
+        //ListBannedChannelsResponse response = api.listBannedChannels(apiToken, userId, token, limit);
         // TODO: test validations
     }
 
@@ -281,14 +283,14 @@ public class ModerationApiTest {
      */
     @Test
     public void listBlockedUsersTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String token = null;
-        Integer limit = null;
-        String userIds = null;
-        String metadatakey = null;
-        String metadatavaluesIn = null;
-        ListBlockedUsersResponse response = api.listBlockedUsers(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn);
+        //String apiToken = null;
+        //String userId = null;
+        //String token = null;
+        //Integer limit = null;
+        //String userIds = null;
+        //String metadatakey = null;
+        //String metadatavaluesIn = null;
+        //ListBlockedUsersResponse response = api.listBlockedUsers(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn);
         // TODO: test validations
     }
 
@@ -301,11 +303,11 @@ public class ModerationApiTest {
      */
     @Test
     public void listMutedChannelsTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String token = null;
-        Integer limit = null;
-        ListMutedChannelsResponse response = api.listMutedChannels(apiToken, userId, token, limit);
+        //String apiToken = null;
+        //String userId = null;
+        //String token = null;
+        //Integer limit = null;
+        //ListMutedChannelsResponse response = api.listMutedChannels(apiToken, userId, token, limit);
         // TODO: test validations
     }
 
@@ -318,10 +320,10 @@ public class ModerationApiTest {
      */
     @Test
     public void muteInChannelsWithCustomChannelTypesTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData = null;
-        Object response = api.muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData);
+        //String apiToken = null;
+        //String userId = null;
+        //MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData = null;
+        //Object response = api.muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData);
         // TODO: test validations
     }
 
@@ -334,10 +336,10 @@ public class ModerationApiTest {
      */
     @Test
     public void ocBanUserTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        OcBanUserData ocBanUserData = null;
-        OcBanUserResponse response = api.ocBanUser(apiToken, channelUrl, ocBanUserData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //OcBanUserData ocBanUserData = null;
+        //OcBanUserResponse response = api.ocBanUser(apiToken, channelUrl, ocBanUserData);
         // TODO: test validations
     }
 
@@ -350,10 +352,10 @@ public class ModerationApiTest {
      */
     @Test
     public void ocFreezeChannelTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        OcFreezeChannelData ocFreezeChannelData = null;
-        SendBirdOpenChannel response = api.ocFreezeChannel(apiToken, channelUrl, ocFreezeChannelData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //OcFreezeChannelData ocFreezeChannelData = null;
+        //SendBirdOpenChannel response = api.ocFreezeChannel(apiToken, channelUrl, ocFreezeChannelData);
         // TODO: test validations
     }
 
@@ -366,11 +368,11 @@ public class ModerationApiTest {
      */
     @Test
     public void ocListBannedUsersTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String token = null;
-        Integer limit = null;
-        OcListBannedUsersResponse response = api.ocListBannedUsers(apiToken, channelUrl, token, limit);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String token = null;
+        //Integer limit = null;
+        //OcListBannedUsersResponse response = api.ocListBannedUsers(apiToken, channelUrl, token, limit);
         // TODO: test validations
     }
 
@@ -383,11 +385,11 @@ public class ModerationApiTest {
      */
     @Test
     public void ocListMutedUsersTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String token = null;
-        Integer limit = null;
-        OcListMutedUsersResponse response = api.ocListMutedUsers(apiToken, channelUrl, token, limit);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String token = null;
+        //Integer limit = null;
+        //OcListMutedUsersResponse response = api.ocListMutedUsers(apiToken, channelUrl, token, limit);
         // TODO: test validations
     }
 
@@ -400,10 +402,10 @@ public class ModerationApiTest {
      */
     @Test
     public void ocMuteUserTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        OcMuteUserData ocMuteUserData = null;
-        SendBirdOpenChannel response = api.ocMuteUser(apiToken, channelUrl, ocMuteUserData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //OcMuteUserData ocMuteUserData = null;
+        //SendBirdOpenChannel response = api.ocMuteUser(apiToken, channelUrl, ocMuteUserData);
         // TODO: test validations
     }
 
@@ -416,10 +418,10 @@ public class ModerationApiTest {
      */
     @Test
     public void ocUnbanUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String bannedUserId = null;
-        OcDeleteChannelByUrl200Response response = api.ocUnbanUserById(apiToken, channelUrl, bannedUserId);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String bannedUserId = null;
+        //OcDeleteChannelByUrl200Response response = api.ocUnbanUserById(apiToken, channelUrl, bannedUserId);
         // TODO: test validations
     }
 
@@ -432,10 +434,10 @@ public class ModerationApiTest {
      */
     @Test
     public void ocUnmuteUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String mutedUserId = null;
-        OcDeleteChannelByUrl200Response response = api.ocUnmuteUserById(apiToken, channelUrl, mutedUserId);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String mutedUserId = null;
+        //OcDeleteChannelByUrl200Response response = api.ocUnmuteUserById(apiToken, channelUrl, mutedUserId);
         // TODO: test validations
     }
 
@@ -448,11 +450,11 @@ public class ModerationApiTest {
      */
     @Test
     public void ocUpdateBanByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String bannedUserId = null;
-        OcUpdateBanByIdData ocUpdateBanByIdData = null;
-        OcUpdateBanByIdResponse response = api.ocUpdateBanById(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String bannedUserId = null;
+        //OcUpdateBanByIdData ocUpdateBanByIdData = null;
+        //OcUpdateBanByIdResponse response = api.ocUpdateBanById(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
         // TODO: test validations
     }
 
@@ -465,10 +467,10 @@ public class ModerationApiTest {
      */
     @Test
     public void ocViewBanByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String bannedUserId = null;
-        OcViewBanByIdResponse response = api.ocViewBanById(apiToken, channelUrl, bannedUserId);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String bannedUserId = null;
+        //OcViewBanByIdResponse response = api.ocViewBanById(apiToken, channelUrl, bannedUserId);
         // TODO: test validations
     }
 
@@ -481,10 +483,10 @@ public class ModerationApiTest {
      */
     @Test
     public void ocViewMuteByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String mutedUserId = null;
-        OcViewMuteByIdResponse response = api.ocViewMuteById(apiToken, channelUrl, mutedUserId);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String mutedUserId = null;
+        //OcViewMuteByIdResponse response = api.ocViewMuteById(apiToken, channelUrl, mutedUserId);
         // TODO: test validations
     }
 
@@ -497,10 +499,10 @@ public class ModerationApiTest {
      */
     @Test
     public void unblockUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String targetId = null;
-        Object response = api.unblockUserById(apiToken, userId, targetId);
+        //String apiToken = null;
+        //String userId = null;
+        //String targetId = null;
+        //Object response = api.unblockUserById(apiToken, userId, targetId);
         // TODO: test validations
     }
 

@@ -15,51 +15,37 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * GcRegisterOperatorsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  GcRegisterOperatorsResponse.JSON_PROPERTY_OPERATOR_IDS
+})
+@JsonTypeName("gcRegisterOperatorsResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class GcRegisterOperatorsResponse {
-  public static final String SERIALIZED_NAME_OPERATOR_IDS = "operator_ids";
-  @SerializedName(SERIALIZED_NAME_OPERATOR_IDS)
+  public static final String JSON_PROPERTY_OPERATOR_IDS = "operator_ids";
   private List<String> operatorIds = null;
 
   public GcRegisterOperatorsResponse() { 
   }
 
   public GcRegisterOperatorsResponse operatorIds(List<String> operatorIds) {
-    
     this.operatorIds = operatorIds;
     return this;
   }
@@ -78,18 +64,24 @@ public class GcRegisterOperatorsResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPERATOR_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getOperatorIds() {
     return operatorIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPERATOR_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOperatorIds(List<String> operatorIds) {
     this.operatorIds = operatorIds;
   }
 
 
-
+  /**
+   * Return true if this gcRegisterOperatorsResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -127,94 +119,5 @@ public class GcRegisterOperatorsResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("operator_ids");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GcRegisterOperatorsResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (GcRegisterOperatorsResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GcRegisterOperatorsResponse is not found in the empty JSON string", GcRegisterOperatorsResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!GcRegisterOperatorsResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GcRegisterOperatorsResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("operator_ids") != null && !jsonObj.get("operator_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `operator_ids` to be an array in the JSON string but got `%s`", jsonObj.get("operator_ids").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GcRegisterOperatorsResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GcRegisterOperatorsResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GcRegisterOperatorsResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GcRegisterOperatorsResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<GcRegisterOperatorsResponse>() {
-           @Override
-           public void write(JsonWriter out, GcRegisterOperatorsResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public GcRegisterOperatorsResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of GcRegisterOperatorsResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GcRegisterOperatorsResponse
-  * @throws IOException if the JSON string is invalid with respect to GcRegisterOperatorsResponse
-  */
-  public static GcRegisterOperatorsResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GcRegisterOperatorsResponse.class);
-  }
-
- /**
-  * Convert an instance of GcRegisterOperatorsResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

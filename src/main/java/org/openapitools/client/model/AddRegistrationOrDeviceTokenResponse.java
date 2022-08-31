@@ -15,64 +15,50 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * AddRegistrationOrDeviceTokenResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  AddRegistrationOrDeviceTokenResponse.JSON_PROPERTY_TOKENS,
+  AddRegistrationOrDeviceTokenResponse.JSON_PROPERTY_TOKEN,
+  AddRegistrationOrDeviceTokenResponse.JSON_PROPERTY_TYPE,
+  AddRegistrationOrDeviceTokenResponse.JSON_PROPERTY_USER
+})
+@JsonTypeName("addRegistrationOrDeviceTokenResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class AddRegistrationOrDeviceTokenResponse {
-  public static final String SERIALIZED_NAME_TOKENS = "tokens";
-  @SerializedName(SERIALIZED_NAME_TOKENS)
+  public static final String JSON_PROPERTY_TOKENS = "tokens";
   private List<String> tokens = null;
 
-  public static final String SERIALIZED_NAME_TOKEN = "token";
-  @SerializedName(SERIALIZED_NAME_TOKEN)
+  public static final String JSON_PROPERTY_TOKEN = "token";
   private List<String> token = null;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+  public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
 
-  public static final String SERIALIZED_NAME_USER = "user";
-  @SerializedName(SERIALIZED_NAME_USER)
+  public static final String JSON_PROPERTY_USER = "user";
   private SendBirdUser user;
 
   public AddRegistrationOrDeviceTokenResponse() { 
   }
 
   public AddRegistrationOrDeviceTokenResponse tokens(List<String> tokens) {
-    
     this.tokens = tokens;
     return this;
   }
@@ -91,19 +77,22 @@ public class AddRegistrationOrDeviceTokenResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TOKENS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getTokens() {
     return tokens;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TOKENS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTokens(List<String> tokens) {
     this.tokens = tokens;
   }
 
 
   public AddRegistrationOrDeviceTokenResponse token(List<String> token) {
-    
     this.token = token;
     return this;
   }
@@ -122,19 +111,22 @@ public class AddRegistrationOrDeviceTokenResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getToken() {
     return token;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setToken(List<String> token) {
     this.token = token;
   }
 
 
   public AddRegistrationOrDeviceTokenResponse type(String type) {
-    
     this.type = type;
     return this;
   }
@@ -145,19 +137,22 @@ public class AddRegistrationOrDeviceTokenResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
     return type;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(String type) {
     this.type = type;
   }
 
 
   public AddRegistrationOrDeviceTokenResponse user(SendBirdUser user) {
-    
     this.user = user;
     return this;
   }
@@ -168,18 +163,24 @@ public class AddRegistrationOrDeviceTokenResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdUser getUser() {
     return user;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(SendBirdUser user) {
     this.user = user;
   }
 
 
-
+  /**
+   * Return true if this addRegistrationOrDeviceTokenResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -223,108 +224,5 @@ public class AddRegistrationOrDeviceTokenResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("tokens");
-    openapiFields.add("token");
-    openapiFields.add("type");
-    openapiFields.add("user");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AddRegistrationOrDeviceTokenResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AddRegistrationOrDeviceTokenResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddRegistrationOrDeviceTokenResponse is not found in the empty JSON string", AddRegistrationOrDeviceTokenResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AddRegistrationOrDeviceTokenResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddRegistrationOrDeviceTokenResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("tokens") != null && !jsonObj.get("tokens").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tokens` to be an array in the JSON string but got `%s`", jsonObj.get("tokens").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("token") != null && !jsonObj.get("token").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `token` to be an array in the JSON string but got `%s`", jsonObj.get("token").toString()));
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
-      }
-      // validate the optional field `user`
-      if (jsonObj.getAsJsonObject("user") != null) {
-        SendBirdUser.validateJsonObject(jsonObj.getAsJsonObject("user"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddRegistrationOrDeviceTokenResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddRegistrationOrDeviceTokenResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddRegistrationOrDeviceTokenResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddRegistrationOrDeviceTokenResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AddRegistrationOrDeviceTokenResponse>() {
-           @Override
-           public void write(JsonWriter out, AddRegistrationOrDeviceTokenResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AddRegistrationOrDeviceTokenResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AddRegistrationOrDeviceTokenResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddRegistrationOrDeviceTokenResponse
-  * @throws IOException if the JSON string is invalid with respect to AddRegistrationOrDeviceTokenResponse
-  */
-  public static AddRegistrationOrDeviceTokenResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddRegistrationOrDeviceTokenResponse.class);
-  }
-
- /**
-  * Convert an instance of AddRegistrationOrDeviceTokenResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

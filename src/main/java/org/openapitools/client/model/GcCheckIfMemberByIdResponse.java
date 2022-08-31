@@ -15,53 +15,39 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * GcCheckIfMemberByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  GcCheckIfMemberByIdResponse.JSON_PROPERTY_IS_MEMBER,
+  GcCheckIfMemberByIdResponse.JSON_PROPERTY_STATE
+})
+@JsonTypeName("gcCheckIfMemberByIdResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class GcCheckIfMemberByIdResponse {
-  public static final String SERIALIZED_NAME_IS_MEMBER = "is_member";
-  @SerializedName(SERIALIZED_NAME_IS_MEMBER)
+  public static final String JSON_PROPERTY_IS_MEMBER = "is_member";
   private Boolean isMember;
 
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
+  public static final String JSON_PROPERTY_STATE = "state";
   private String state;
 
   public GcCheckIfMemberByIdResponse() { 
   }
 
   public GcCheckIfMemberByIdResponse isMember(Boolean isMember) {
-    
     this.isMember = isMember;
     return this;
   }
@@ -72,19 +58,22 @@ public class GcCheckIfMemberByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_MEMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsMember() {
     return isMember;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_MEMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsMember(Boolean isMember) {
     this.isMember = isMember;
   }
 
 
   public GcCheckIfMemberByIdResponse state(String state) {
-    
     this.state = state;
     return this;
   }
@@ -95,18 +84,24 @@ public class GcCheckIfMemberByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getState() {
     return state;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setState(String state) {
     this.state = state;
   }
 
 
-
+  /**
+   * Return true if this gcCheckIfMemberByIdResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -146,94 +141,5 @@ public class GcCheckIfMemberByIdResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("is_member");
-    openapiFields.add("state");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GcCheckIfMemberByIdResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (GcCheckIfMemberByIdResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GcCheckIfMemberByIdResponse is not found in the empty JSON string", GcCheckIfMemberByIdResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!GcCheckIfMemberByIdResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GcCheckIfMemberByIdResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GcCheckIfMemberByIdResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GcCheckIfMemberByIdResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GcCheckIfMemberByIdResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GcCheckIfMemberByIdResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<GcCheckIfMemberByIdResponse>() {
-           @Override
-           public void write(JsonWriter out, GcCheckIfMemberByIdResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public GcCheckIfMemberByIdResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of GcCheckIfMemberByIdResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GcCheckIfMemberByIdResponse
-  * @throws IOException if the JSON string is invalid with respect to GcCheckIfMemberByIdResponse
-  */
-  public static GcCheckIfMemberByIdResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GcCheckIfMemberByIdResponse.class);
-  }
-
- /**
-  * Convert an instance of GcCheckIfMemberByIdResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

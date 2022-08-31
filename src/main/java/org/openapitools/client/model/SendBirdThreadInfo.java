@@ -15,65 +15,51 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SendBirdThreadInfo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendBirdThreadInfo.JSON_PROPERTY_LAST_REPLIED_AT,
+  SendBirdThreadInfo.JSON_PROPERTY_MOST_REPLIED_USERS,
+  SendBirdThreadInfo.JSON_PROPERTY_REPLY_COUNT,
+  SendBirdThreadInfo.JSON_PROPERTY_UPDATED_AT
+})
+@JsonTypeName("SendBird.ThreadInfo")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendBirdThreadInfo {
-  public static final String SERIALIZED_NAME_LAST_REPLIED_AT = "last_replied_at";
-  @SerializedName(SERIALIZED_NAME_LAST_REPLIED_AT)
+  public static final String JSON_PROPERTY_LAST_REPLIED_AT = "last_replied_at";
   private BigDecimal lastRepliedAt;
 
-  public static final String SERIALIZED_NAME_MOST_REPLIED_USERS = "most_replied_users";
-  @SerializedName(SERIALIZED_NAME_MOST_REPLIED_USERS)
+  public static final String JSON_PROPERTY_MOST_REPLIED_USERS = "most_replied_users";
   private List<SendBirdUser> mostRepliedUsers = null;
 
-  public static final String SERIALIZED_NAME_REPLY_COUNT = "reply_count";
-  @SerializedName(SERIALIZED_NAME_REPLY_COUNT)
+  public static final String JSON_PROPERTY_REPLY_COUNT = "reply_count";
   private BigDecimal replyCount;
 
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
   private BigDecimal updatedAt;
 
   public SendBirdThreadInfo() { 
   }
 
   public SendBirdThreadInfo lastRepliedAt(BigDecimal lastRepliedAt) {
-    
     this.lastRepliedAt = lastRepliedAt;
     return this;
   }
@@ -84,19 +70,22 @@ public class SendBirdThreadInfo {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LAST_REPLIED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getLastRepliedAt() {
     return lastRepliedAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LAST_REPLIED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastRepliedAt(BigDecimal lastRepliedAt) {
     this.lastRepliedAt = lastRepliedAt;
   }
 
 
   public SendBirdThreadInfo mostRepliedUsers(List<SendBirdUser> mostRepliedUsers) {
-    
     this.mostRepliedUsers = mostRepliedUsers;
     return this;
   }
@@ -115,19 +104,22 @@ public class SendBirdThreadInfo {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MOST_REPLIED_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SendBirdUser> getMostRepliedUsers() {
     return mostRepliedUsers;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MOST_REPLIED_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMostRepliedUsers(List<SendBirdUser> mostRepliedUsers) {
     this.mostRepliedUsers = mostRepliedUsers;
   }
 
 
   public SendBirdThreadInfo replyCount(BigDecimal replyCount) {
-    
     this.replyCount = replyCount;
     return this;
   }
@@ -138,19 +130,22 @@ public class SendBirdThreadInfo {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REPLY_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getReplyCount() {
     return replyCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REPLY_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReplyCount(BigDecimal replyCount) {
     this.replyCount = replyCount;
   }
 
 
   public SendBirdThreadInfo updatedAt(BigDecimal updatedAt) {
-    
     this.updatedAt = updatedAt;
     return this;
   }
@@ -161,18 +156,24 @@ public class SendBirdThreadInfo {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getUpdatedAt() {
     return updatedAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpdatedAt(BigDecimal updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-
+  /**
+   * Return true if this SendBird.ThreadInfo object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -216,105 +217,5 @@ public class SendBirdThreadInfo {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("last_replied_at");
-    openapiFields.add("most_replied_users");
-    openapiFields.add("reply_count");
-    openapiFields.add("updated_at");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendBirdThreadInfo
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendBirdThreadInfo.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdThreadInfo is not found in the empty JSON string", SendBirdThreadInfo.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SendBirdThreadInfo.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdThreadInfo` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      JsonArray jsonArraymostRepliedUsers = jsonObj.getAsJsonArray("most_replied_users");
-      if (jsonArraymostRepliedUsers != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("most_replied_users").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `most_replied_users` to be an array in the JSON string but got `%s`", jsonObj.get("most_replied_users").toString()));
-        }
-
-        // validate the optional field `most_replied_users` (array)
-        for (int i = 0; i < jsonArraymostRepliedUsers.size(); i++) {
-          SendBirdUser.validateJsonObject(jsonArraymostRepliedUsers.get(i).getAsJsonObject());
-        };
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendBirdThreadInfo.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendBirdThreadInfo' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendBirdThreadInfo> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdThreadInfo.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendBirdThreadInfo>() {
-           @Override
-           public void write(JsonWriter out, SendBirdThreadInfo value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendBirdThreadInfo read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendBirdThreadInfo given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendBirdThreadInfo
-  * @throws IOException if the JSON string is invalid with respect to SendBirdThreadInfo
-  */
-  public static SendBirdThreadInfo fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendBirdThreadInfo.class);
-  }
-
- /**
-  * Convert an instance of SendBirdThreadInfo to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -91,14 +91,14 @@ Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) f
 
 ### Maven users
 
-Add this dependency to your project's POM:
+Add these dependency to your project's POM:
 
 ```xml
 <dependencies>
     <dependency>
         <groupId>org.sendbird</groupId>
         <artifactId>sendbird-platform-sdk</artifactId>
-        <version>1.0.8</version>
+        <version>1.0.9</version>
     </dependency>
 </dependencies>
 ```
@@ -110,7 +110,7 @@ Add this dependency to your project's build file:
 ```groovy
 
 dependencies {
-    implementation "org.sendbird:sendbird-platform-sdk:1.0.8"
+    implementation "org.sendbird:sendbird-platform-sdk:1.0.9"
 }
 
 allprojects {

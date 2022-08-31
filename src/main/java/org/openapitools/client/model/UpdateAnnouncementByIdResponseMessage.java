@@ -15,106 +15,92 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * UpdateAnnouncementByIdResponseMessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_TYPE,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_CUSTOM_TYPE,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_USER_ID,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_CONTENT,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_DATA,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_ENABLE_PUSH,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_TARGET_AT,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_TARGET_USER_COUNT,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_TARGET_CHANNEL_COUNT,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_STATUS,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_SCHEDULED_AT,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_COMPLETED_AT,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_SENT_USER_COUNT,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_OPEN_COUNT,
+  UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_OPEN_RATE
+})
+@JsonTypeName("updateAnnouncementByIdResponse_message")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class UpdateAnnouncementByIdResponseMessage {
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+  public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public static final String SERIALIZED_NAME_CONTENT = "content";
-  @SerializedName(SERIALIZED_NAME_CONTENT)
+  public static final String JSON_PROPERTY_CONTENT = "content";
   private String content;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_ENABLE_PUSH = "enable_push";
-  @SerializedName(SERIALIZED_NAME_ENABLE_PUSH)
+  public static final String JSON_PROPERTY_ENABLE_PUSH = "enable_push";
   private Boolean enablePush;
 
-  public static final String SERIALIZED_NAME_TARGET_AT = "target_at";
-  @SerializedName(SERIALIZED_NAME_TARGET_AT)
+  public static final String JSON_PROPERTY_TARGET_AT = "target_at";
   private String targetAt;
 
-  public static final String SERIALIZED_NAME_TARGET_USER_COUNT = "target_user_count";
-  @SerializedName(SERIALIZED_NAME_TARGET_USER_COUNT)
+  public static final String JSON_PROPERTY_TARGET_USER_COUNT = "target_user_count";
   private BigDecimal targetUserCount;
 
-  public static final String SERIALIZED_NAME_TARGET_CHANNEL_COUNT = "target_channel_count";
-  @SerializedName(SERIALIZED_NAME_TARGET_CHANNEL_COUNT)
+  public static final String JSON_PROPERTY_TARGET_CHANNEL_COUNT = "target_channel_count";
   private BigDecimal targetChannelCount;
 
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
+  public static final String JSON_PROPERTY_STATUS = "status";
   private String status;
 
-  public static final String SERIALIZED_NAME_SCHEDULED_AT = "scheduled_at";
-  @SerializedName(SERIALIZED_NAME_SCHEDULED_AT)
+  public static final String JSON_PROPERTY_SCHEDULED_AT = "scheduled_at";
   private BigDecimal scheduledAt;
 
-  public static final String SERIALIZED_NAME_COMPLETED_AT = "completed_at";
-  @SerializedName(SERIALIZED_NAME_COMPLETED_AT)
+  public static final String JSON_PROPERTY_COMPLETED_AT = "completed_at";
   private BigDecimal completedAt;
 
-  public static final String SERIALIZED_NAME_SENT_USER_COUNT = "sent_user_count";
-  @SerializedName(SERIALIZED_NAME_SENT_USER_COUNT)
+  public static final String JSON_PROPERTY_SENT_USER_COUNT = "sent_user_count";
   private BigDecimal sentUserCount;
 
-  public static final String SERIALIZED_NAME_OPEN_COUNT = "open_count";
-  @SerializedName(SERIALIZED_NAME_OPEN_COUNT)
+  public static final String JSON_PROPERTY_OPEN_COUNT = "open_count";
   private BigDecimal openCount;
 
-  public static final String SERIALIZED_NAME_OPEN_RATE = "open_rate";
-  @SerializedName(SERIALIZED_NAME_OPEN_RATE)
+  public static final String JSON_PROPERTY_OPEN_RATE = "open_rate";
   private BigDecimal openRate;
 
   public UpdateAnnouncementByIdResponseMessage() { 
   }
 
   public UpdateAnnouncementByIdResponseMessage type(String type) {
-    
     this.type = type;
     return this;
   }
@@ -125,19 +111,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
     return type;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(String type) {
     this.type = type;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -148,19 +137,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -171,19 +163,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage content(String content) {
-    
     this.content = content;
     return this;
   }
@@ -194,19 +189,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getContent() {
     return content;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContent(String content) {
     this.content = content;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -217,19 +215,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage enablePush(Boolean enablePush) {
-    
     this.enablePush = enablePush;
     return this;
   }
@@ -240,19 +241,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ENABLE_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getEnablePush() {
     return enablePush;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ENABLE_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnablePush(Boolean enablePush) {
     this.enablePush = enablePush;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage targetAt(String targetAt) {
-    
     this.targetAt = targetAt;
     return this;
   }
@@ -263,19 +267,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTargetAt() {
     return targetAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetAt(String targetAt) {
     this.targetAt = targetAt;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage targetUserCount(BigDecimal targetUserCount) {
-    
     this.targetUserCount = targetUserCount;
     return this;
   }
@@ -286,19 +293,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTargetUserCount() {
     return targetUserCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetUserCount(BigDecimal targetUserCount) {
     this.targetUserCount = targetUserCount;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage targetChannelCount(BigDecimal targetChannelCount) {
-    
     this.targetChannelCount = targetChannelCount;
     return this;
   }
@@ -309,19 +319,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTargetChannelCount() {
     return targetChannelCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetChannelCount(BigDecimal targetChannelCount) {
     this.targetChannelCount = targetChannelCount;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage status(String status) {
-    
     this.status = status;
     return this;
   }
@@ -332,19 +345,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStatus() {
     return status;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStatus(String status) {
     this.status = status;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage scheduledAt(BigDecimal scheduledAt) {
-    
     this.scheduledAt = scheduledAt;
     return this;
   }
@@ -355,19 +371,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getScheduledAt() {
     return scheduledAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScheduledAt(BigDecimal scheduledAt) {
     this.scheduledAt = scheduledAt;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage completedAt(BigDecimal completedAt) {
-    
     this.completedAt = completedAt;
     return this;
   }
@@ -378,19 +397,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_COMPLETED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCompletedAt() {
     return completedAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_COMPLETED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompletedAt(BigDecimal completedAt) {
     this.completedAt = completedAt;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage sentUserCount(BigDecimal sentUserCount) {
-    
     this.sentUserCount = sentUserCount;
     return this;
   }
@@ -401,19 +423,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSentUserCount() {
     return sentUserCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSentUserCount(BigDecimal sentUserCount) {
     this.sentUserCount = sentUserCount;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage openCount(BigDecimal openCount) {
-    
     this.openCount = openCount;
     return this;
   }
@@ -424,19 +449,22 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getOpenCount() {
     return openCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpenCount(BigDecimal openCount) {
     this.openCount = openCount;
   }
 
 
   public UpdateAnnouncementByIdResponseMessage openRate(BigDecimal openRate) {
-    
     this.openRate = openRate;
     return this;
   }
@@ -447,18 +475,24 @@ public class UpdateAnnouncementByIdResponseMessage {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPEN_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getOpenRate() {
     return openRate;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPEN_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpenRate(BigDecimal openRate) {
     this.openRate = openRate;
   }
 
 
-
+  /**
+   * Return true if this updateAnnouncementByIdResponse_message object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -524,125 +558,5 @@ public class UpdateAnnouncementByIdResponseMessage {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("custom_type");
-    openapiFields.add("user_id");
-    openapiFields.add("content");
-    openapiFields.add("data");
-    openapiFields.add("enable_push");
-    openapiFields.add("target_at");
-    openapiFields.add("target_user_count");
-    openapiFields.add("target_channel_count");
-    openapiFields.add("status");
-    openapiFields.add("scheduled_at");
-    openapiFields.add("completed_at");
-    openapiFields.add("sent_user_count");
-    openapiFields.add("open_count");
-    openapiFields.add("open_rate");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UpdateAnnouncementByIdResponseMessage
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (UpdateAnnouncementByIdResponseMessage.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateAnnouncementByIdResponseMessage is not found in the empty JSON string", UpdateAnnouncementByIdResponseMessage.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UpdateAnnouncementByIdResponseMessage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateAnnouncementByIdResponseMessage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-      if (jsonObj.get("content") != null && !jsonObj.get("content").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      if (jsonObj.get("target_at") != null && !jsonObj.get("target_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `target_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_at").toString()));
-      }
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateAnnouncementByIdResponseMessage.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateAnnouncementByIdResponseMessage' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateAnnouncementByIdResponseMessage> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateAnnouncementByIdResponseMessage.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpdateAnnouncementByIdResponseMessage>() {
-           @Override
-           public void write(JsonWriter out, UpdateAnnouncementByIdResponseMessage value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpdateAnnouncementByIdResponseMessage read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UpdateAnnouncementByIdResponseMessage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdateAnnouncementByIdResponseMessage
-  * @throws IOException if the JSON string is invalid with respect to UpdateAnnouncementByIdResponseMessage
-  */
-  public static UpdateAnnouncementByIdResponseMessage fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateAnnouncementByIdResponseMessage.class);
-  }
-
- /**
-  * Convert an instance of UpdateAnnouncementByIdResponseMessage to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -13,119 +13,115 @@
 
 package org.openapitools.client.model;
 
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdRestrictionInfo;
 import org.openapitools.jackson.nullable.JsonNullable;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SendBirdMember
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendBirdMember.JSON_PROPERTY_CONNECTION_STATUS,
+  SendBirdMember.JSON_PROPERTY_FRIEND_DISCOVERY_KEY,
+  SendBirdMember.JSON_PROPERTY_FRIEND_NAME,
+  SendBirdMember.JSON_PROPERTY_IS_ACTIVE,
+  SendBirdMember.JSON_PROPERTY_IS_MUTED,
+  SendBirdMember.JSON_PROPERTY_LAST_SEEN_AT,
+  SendBirdMember.JSON_PROPERTY_NICKNAME,
+  SendBirdMember.JSON_PROPERTY_PLAIN_PROFILE_URL,
+  SendBirdMember.JSON_PROPERTY_PREFERRED_LANGUAGES,
+  SendBirdMember.JSON_PROPERTY_PROFILE_URL,
+  SendBirdMember.JSON_PROPERTY_REQUIRE_AUTH,
+  SendBirdMember.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
+  SendBirdMember.JSON_PROPERTY_METADATA,
+  SendBirdMember.JSON_PROPERTY_IS_ONLINE,
+  SendBirdMember.JSON_PROPERTY_MUTED_END_AT,
+  SendBirdMember.JSON_PROPERTY_MUTED_DESCRIPTION,
+  SendBirdMember.JSON_PROPERTY_RESTRICTION_INFO,
+  SendBirdMember.JSON_PROPERTY_ROLE,
+  SendBirdMember.JSON_PROPERTY_STATE,
+  SendBirdMember.JSON_PROPERTY_USER_ID
+})
+@JsonTypeName("SendBird.Member")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendBirdMember {
-  public static final String SERIALIZED_NAME_CONNECTION_STATUS = "connection_status";
-  @SerializedName(SERIALIZED_NAME_CONNECTION_STATUS)
+  public static final String JSON_PROPERTY_CONNECTION_STATUS = "connection_status";
   private String connectionStatus;
 
-  public static final String SERIALIZED_NAME_FRIEND_DISCOVERY_KEY = "friend_discovery_key";
-  @SerializedName(SERIALIZED_NAME_FRIEND_DISCOVERY_KEY)
+  public static final String JSON_PROPERTY_FRIEND_DISCOVERY_KEY = "friend_discovery_key";
   private String friendDiscoveryKey;
 
-  public static final String SERIALIZED_NAME_FRIEND_NAME = "friend_name";
-  @SerializedName(SERIALIZED_NAME_FRIEND_NAME)
+  public static final String JSON_PROPERTY_FRIEND_NAME = "friend_name";
   private String friendName;
 
-  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
-  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
+  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
   private Boolean isActive;
 
-  public static final String SERIALIZED_NAME_IS_MUTED = "is_muted";
-  @SerializedName(SERIALIZED_NAME_IS_MUTED)
+  public static final String JSON_PROPERTY_IS_MUTED = "is_muted";
   private Boolean isMuted;
 
-  public static final String SERIALIZED_NAME_LAST_SEEN_AT = "last_seen_at";
-  @SerializedName(SERIALIZED_NAME_LAST_SEEN_AT)
+  public static final String JSON_PROPERTY_LAST_SEEN_AT = "last_seen_at";
   private Integer lastSeenAt;
 
-  public static final String SERIALIZED_NAME_NICKNAME = "nickname";
-  @SerializedName(SERIALIZED_NAME_NICKNAME)
+  public static final String JSON_PROPERTY_NICKNAME = "nickname";
   private String nickname;
 
-  public static final String SERIALIZED_NAME_PLAIN_PROFILE_URL = "plain_profile_url";
-  @SerializedName(SERIALIZED_NAME_PLAIN_PROFILE_URL)
+  public static final String JSON_PROPERTY_PLAIN_PROFILE_URL = "plain_profile_url";
   private String plainProfileUrl;
 
-  public static final String SERIALIZED_NAME_PREFERRED_LANGUAGES = "preferred_languages";
-  @SerializedName(SERIALIZED_NAME_PREFERRED_LANGUAGES)
+  public static final String JSON_PROPERTY_PREFERRED_LANGUAGES = "preferred_languages";
   private List<String> preferredLanguages = null;
 
-  public static final String SERIALIZED_NAME_PROFILE_URL = "profile_url";
-  @SerializedName(SERIALIZED_NAME_PROFILE_URL)
+  public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
   private String profileUrl;
 
-  public static final String SERIALIZED_NAME_REQUIRE_AUTH = "require_auth";
-  @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH)
+  public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;
 
-  public static final String SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
-  @SerializedName(SERIALIZED_NAME_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
+  public static final String JSON_PROPERTY_METADATA = "metadata";
   private Object metadata;
 
-  public static final String SERIALIZED_NAME_IS_ONLINE = "is_online";
-  @SerializedName(SERIALIZED_NAME_IS_ONLINE)
+  public static final String JSON_PROPERTY_IS_ONLINE = "is_online";
   private Boolean isOnline;
 
-  public static final String SERIALIZED_NAME_MUTED_END_AT = "muted_end_at";
-  @SerializedName(SERIALIZED_NAME_MUTED_END_AT)
+  public static final String JSON_PROPERTY_MUTED_END_AT = "muted_end_at";
   private BigDecimal mutedEndAt;
 
-  public static final String SERIALIZED_NAME_MUTED_DESCRIPTION = "muted_description";
-  @SerializedName(SERIALIZED_NAME_MUTED_DESCRIPTION)
+  public static final String JSON_PROPERTY_MUTED_DESCRIPTION = "muted_description";
   private String mutedDescription;
 
-  public static final String SERIALIZED_NAME_RESTRICTION_INFO = "restriction_info";
-  @SerializedName(SERIALIZED_NAME_RESTRICTION_INFO)
+  public static final String JSON_PROPERTY_RESTRICTION_INFO = "restriction_info";
   private SendBirdRestrictionInfo restrictionInfo;
 
   /**
    * Gets or Sets role
    */
-  @JsonAdapter(RoleEnum.Adapter.class)
   public enum RoleEnum {
     NONE("none"),
     
@@ -137,6 +133,7 @@ public class SendBirdMember {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -146,6 +143,7 @@ public class SendBirdMember {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static RoleEnum fromValue(String value) {
       for (RoleEnum b : RoleEnum.values()) {
         if (b.value.equals(value)) {
@@ -154,29 +152,14 @@ public class SendBirdMember {
       }
       return null;
     }
-
-    public static class Adapter extends TypeAdapter<RoleEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final RoleEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public RoleEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return RoleEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_ROLE = "role";
-  @SerializedName(SERIALIZED_NAME_ROLE)
-  private RoleEnum role;
+  public static final String JSON_PROPERTY_ROLE = "role";
+  private JsonNullable<RoleEnum> role = JsonNullable.<RoleEnum>undefined();
 
   /**
    * Gets or Sets state
    */
-  @JsonAdapter(StateEnum.Adapter.class)
   public enum StateEnum {
     INVITED("invited"),
     
@@ -188,6 +171,7 @@ public class SendBirdMember {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -197,6 +181,7 @@ public class SendBirdMember {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static StateEnum fromValue(String value) {
       for (StateEnum b : StateEnum.values()) {
         if (b.value.equals(value)) {
@@ -205,34 +190,18 @@ public class SendBirdMember {
       }
       return null;
     }
-
-    public static class Adapter extends TypeAdapter<StateEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StateEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return StateEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  private StateEnum state;
+  public static final String JSON_PROPERTY_STATE = "state";
+  private JsonNullable<StateEnum> state = JsonNullable.<StateEnum>undefined();
 
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
   public SendBirdMember() { 
   }
 
   public SendBirdMember connectionStatus(String connectionStatus) {
-    
     this.connectionStatus = connectionStatus;
     return this;
   }
@@ -243,19 +212,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CONNECTION_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getConnectionStatus() {
     return connectionStatus;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CONNECTION_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setConnectionStatus(String connectionStatus) {
     this.connectionStatus = connectionStatus;
   }
 
 
   public SendBirdMember friendDiscoveryKey(String friendDiscoveryKey) {
-    
     this.friendDiscoveryKey = friendDiscoveryKey;
     return this;
   }
@@ -266,19 +238,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FRIEND_DISCOVERY_KEY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFriendDiscoveryKey() {
     return friendDiscoveryKey;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FRIEND_DISCOVERY_KEY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFriendDiscoveryKey(String friendDiscoveryKey) {
     this.friendDiscoveryKey = friendDiscoveryKey;
   }
 
 
   public SendBirdMember friendName(String friendName) {
-    
     this.friendName = friendName;
     return this;
   }
@@ -289,19 +264,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FRIEND_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFriendName() {
     return friendName;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FRIEND_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFriendName(String friendName) {
     this.friendName = friendName;
   }
 
 
   public SendBirdMember isActive(Boolean isActive) {
-    
     this.isActive = isActive;
     return this;
   }
@@ -312,19 +290,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsActive(Boolean isActive) {
     this.isActive = isActive;
   }
 
 
   public SendBirdMember isMuted(Boolean isMuted) {
-    
     this.isMuted = isMuted;
     return this;
   }
@@ -335,19 +316,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_MUTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsMuted() {
     return isMuted;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_MUTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsMuted(Boolean isMuted) {
     this.isMuted = isMuted;
   }
 
 
   public SendBirdMember lastSeenAt(Integer lastSeenAt) {
-    
     this.lastSeenAt = lastSeenAt;
     return this;
   }
@@ -358,19 +342,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getLastSeenAt() {
     return lastSeenAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastSeenAt(Integer lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
   }
 
 
   public SendBirdMember nickname(String nickname) {
-    
     this.nickname = nickname;
     return this;
   }
@@ -381,19 +368,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNickname() {
     return nickname;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNickname(String nickname) {
     this.nickname = nickname;
   }
 
 
   public SendBirdMember plainProfileUrl(String plainProfileUrl) {
-    
     this.plainProfileUrl = plainProfileUrl;
     return this;
   }
@@ -404,19 +394,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PLAIN_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPlainProfileUrl() {
     return plainProfileUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PLAIN_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPlainProfileUrl(String plainProfileUrl) {
     this.plainProfileUrl = plainProfileUrl;
   }
 
 
   public SendBirdMember preferredLanguages(List<String> preferredLanguages) {
-    
     this.preferredLanguages = preferredLanguages;
     return this;
   }
@@ -435,19 +428,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getPreferredLanguages() {
     return preferredLanguages;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPreferredLanguages(List<String> preferredLanguages) {
     this.preferredLanguages = preferredLanguages;
   }
 
 
   public SendBirdMember profileUrl(String profileUrl) {
-    
     this.profileUrl = profileUrl;
     return this;
   }
@@ -458,19 +454,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getProfileUrl() {
     return profileUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
   }
 
 
   public SendBirdMember requireAuth(Boolean requireAuth) {
-    
     this.requireAuth = requireAuth;
     return this;
   }
@@ -481,19 +480,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getRequireAuth() {
     return requireAuth;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequireAuth(Boolean requireAuth) {
     this.requireAuth = requireAuth;
   }
 
 
   public SendBirdMember requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
-    
     this.requireAuthForProfileImage = requireAuthForProfileImage;
     return this;
   }
@@ -504,19 +506,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getRequireAuthForProfileImage() {
     return requireAuthForProfileImage;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequireAuthForProfileImage(Boolean requireAuthForProfileImage) {
     this.requireAuthForProfileImage = requireAuthForProfileImage;
   }
 
 
   public SendBirdMember metadata(Object metadata) {
-    
     this.metadata = metadata;
     return this;
   }
@@ -527,19 +532,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getMetadata() {
     return metadata;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Object metadata) {
     this.metadata = metadata;
   }
 
 
   public SendBirdMember isOnline(Boolean isOnline) {
-    
     this.isOnline = isOnline;
     return this;
   }
@@ -550,19 +558,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_ONLINE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsOnline() {
     return isOnline;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_ONLINE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsOnline(Boolean isOnline) {
     this.isOnline = isOnline;
   }
 
 
   public SendBirdMember mutedEndAt(BigDecimal mutedEndAt) {
-    
     this.mutedEndAt = mutedEndAt;
     return this;
   }
@@ -573,19 +584,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MUTED_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getMutedEndAt() {
     return mutedEndAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MUTED_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMutedEndAt(BigDecimal mutedEndAt) {
     this.mutedEndAt = mutedEndAt;
   }
 
 
   public SendBirdMember mutedDescription(String mutedDescription) {
-    
     this.mutedDescription = mutedDescription;
     return this;
   }
@@ -596,19 +610,22 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MUTED_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMutedDescription() {
     return mutedDescription;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MUTED_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMutedDescription(String mutedDescription) {
     this.mutedDescription = mutedDescription;
   }
 
 
   public SendBirdMember restrictionInfo(SendBirdRestrictionInfo restrictionInfo) {
-    
     this.restrictionInfo = restrictionInfo;
     return this;
   }
@@ -619,20 +636,23 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_RESTRICTION_INFO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdRestrictionInfo getRestrictionInfo() {
     return restrictionInfo;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_RESTRICTION_INFO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRestrictionInfo(SendBirdRestrictionInfo restrictionInfo) {
     this.restrictionInfo = restrictionInfo;
   }
 
 
   public SendBirdMember role(RoleEnum role) {
-    
-    this.role = role;
+    this.role = JsonNullable.<RoleEnum>of(role);
     return this;
   }
 
@@ -642,20 +662,31 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonIgnore
 
   public RoleEnum getRole() {
-    return role;
+        return role.orElse(null);
   }
 
+  @JsonProperty(JSON_PROPERTY_ROLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<RoleEnum> getRole_JsonNullable() {
+    return role;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ROLE)
+  public void setRole_JsonNullable(JsonNullable<RoleEnum> role) {
+    this.role = role;
+  }
 
   public void setRole(RoleEnum role) {
-    this.role = role;
+    this.role = JsonNullable.<RoleEnum>of(role);
   }
 
 
   public SendBirdMember state(StateEnum state) {
-    
-    this.state = state;
+    this.state = JsonNullable.<StateEnum>of(state);
     return this;
   }
 
@@ -665,19 +696,30 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonIgnore
 
   public StateEnum getState() {
-    return state;
+        return state.orElse(null);
   }
 
+  @JsonProperty(JSON_PROPERTY_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<StateEnum> getState_JsonNullable() {
+    return state;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_STATE)
+  public void setState_JsonNullable(JsonNullable<StateEnum> state) {
+    this.state = state;
+  }
 
   public void setState(StateEnum state) {
-    this.state = state;
+    this.state = JsonNullable.<StateEnum>of(state);
   }
 
 
   public SendBirdMember userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -688,18 +730,61 @@ public class SendBirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
 
+  /**
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   */
+  @JsonAnySetter
+  public SendBirdMember putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
 
+  /**
+   * Return the additional (undeclared) property.
+   */
+  @JsonAnyGetter
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+  /**
+   * Return true if this SendBird.Member object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -726,9 +811,10 @@ public class SendBirdMember {
         Objects.equals(this.mutedEndAt, sendBirdMember.mutedEndAt) &&
         Objects.equals(this.mutedDescription, sendBirdMember.mutedDescription) &&
         Objects.equals(this.restrictionInfo, sendBirdMember.restrictionInfo) &&
-        Objects.equals(this.role, sendBirdMember.role) &&
-        Objects.equals(this.state, sendBirdMember.state) &&
-        Objects.equals(this.userId, sendBirdMember.userId);
+        equalsNullable(this.role, sendBirdMember.role) &&
+        equalsNullable(this.state, sendBirdMember.state) &&
+        Objects.equals(this.userId, sendBirdMember.userId)&&
+        Objects.equals(this.additionalProperties, sendBirdMember.additionalProperties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -737,7 +823,7 @@ public class SendBirdMember {
 
   @Override
   public int hashCode() {
-    return Objects.hash(connectionStatus, friendDiscoveryKey, friendName, isActive, isMuted, lastSeenAt, nickname, plainProfileUrl, preferredLanguages, profileUrl, requireAuth, requireAuthForProfileImage, metadata, isOnline, mutedEndAt, mutedDescription, restrictionInfo, role, state, userId);
+    return Objects.hash(connectionStatus, friendDiscoveryKey, friendName, isActive, isMuted, lastSeenAt, nickname, plainProfileUrl, preferredLanguages, profileUrl, requireAuth, requireAuthForProfileImage, metadata, isOnline, mutedEndAt, mutedDescription, restrictionInfo, hashCodeNullable(role), hashCodeNullable(state), userId, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -771,6 +857,7 @@ public class SendBirdMember {
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -786,147 +873,5 @@ public class SendBirdMember {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("connection_status");
-    openapiFields.add("friend_discovery_key");
-    openapiFields.add("friend_name");
-    openapiFields.add("is_active");
-    openapiFields.add("is_muted");
-    openapiFields.add("last_seen_at");
-    openapiFields.add("nickname");
-    openapiFields.add("plain_profile_url");
-    openapiFields.add("preferred_languages");
-    openapiFields.add("profile_url");
-    openapiFields.add("require_auth");
-    openapiFields.add("require_auth_for_profile_image");
-    openapiFields.add("metadata");
-    openapiFields.add("is_online");
-    openapiFields.add("muted_end_at");
-    openapiFields.add("muted_description");
-    openapiFields.add("restriction_info");
-    openapiFields.add("role");
-    openapiFields.add("state");
-    openapiFields.add("user_id");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendBirdMember
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendBirdMember.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBirdMember is not found in the empty JSON string", SendBirdMember.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SendBirdMember.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBirdMember` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("connection_status") != null && !jsonObj.get("connection_status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `connection_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connection_status").toString()));
-      }
-      if (jsonObj.get("friend_discovery_key") != null && !jsonObj.get("friend_discovery_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `friend_discovery_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friend_discovery_key").toString()));
-      }
-      if (jsonObj.get("friend_name") != null && !jsonObj.get("friend_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `friend_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("friend_name").toString()));
-      }
-      if (jsonObj.get("nickname") != null && !jsonObj.get("nickname").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));
-      }
-      if (jsonObj.get("plain_profile_url") != null && !jsonObj.get("plain_profile_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `plain_profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("plain_profile_url").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("preferred_languages") != null && !jsonObj.get("preferred_languages").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `preferred_languages` to be an array in the JSON string but got `%s`", jsonObj.get("preferred_languages").toString()));
-      }
-      if (jsonObj.get("profile_url") != null && !jsonObj.get("profile_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profile_url").toString()));
-      }
-      if (jsonObj.get("muted_description") != null && !jsonObj.get("muted_description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `muted_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("muted_description").toString()));
-      }
-      // validate the optional field `restriction_info`
-      if (jsonObj.getAsJsonObject("restriction_info") != null) {
-        SendBirdRestrictionInfo.validateJsonObject(jsonObj.getAsJsonObject("restriction_info"));
-      }
-      if (jsonObj.get("role") != null && !jsonObj.get("role").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
-      }
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendBirdMember.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendBirdMember' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendBirdMember> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendBirdMember.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendBirdMember>() {
-           @Override
-           public void write(JsonWriter out, SendBirdMember value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendBirdMember read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendBirdMember given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendBirdMember
-  * @throws IOException if the JSON string is invalid with respect to SendBirdMember
-  */
-  public static SendBirdMember fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendBirdMember.class);
-  }
-
- /**
-  * Convert an instance of SendBirdMember to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

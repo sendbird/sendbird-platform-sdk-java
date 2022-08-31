@@ -15,66 +15,52 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ModelFile
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ModelFile.JSON_PROPERTY_LAST_MODIFIED,
+  ModelFile.JSON_PROPERTY_NAME,
+  ModelFile.JSON_PROPERTY_SIZE,
+  ModelFile.JSON_PROPERTY_TYPE,
+  ModelFile.JSON_PROPERTY_WEBKIT_RELATIVE_PATH
+})
+@JsonTypeName("File")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ModelFile {
-  public static final String SERIALIZED_NAME_LAST_MODIFIED = "last_modified";
-  @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  public static final String JSON_PROPERTY_LAST_MODIFIED = "last_modified";
   private BigDecimal lastModified;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String SERIALIZED_NAME_SIZE = "size";
-  @SerializedName(SERIALIZED_NAME_SIZE)
+  public static final String JSON_PROPERTY_SIZE = "size";
   private BigDecimal size;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+  public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
 
-  public static final String SERIALIZED_NAME_WEBKIT_RELATIVE_PATH = "webkit_relative_path";
-  @SerializedName(SERIALIZED_NAME_WEBKIT_RELATIVE_PATH)
+  public static final String JSON_PROPERTY_WEBKIT_RELATIVE_PATH = "webkit_relative_path";
   private String webkitRelativePath;
 
   public ModelFile() { 
   }
 
   public ModelFile lastModified(BigDecimal lastModified) {
-    
     this.lastModified = lastModified;
     return this;
   }
@@ -85,19 +71,22 @@ public class ModelFile {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_LAST_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getLastModified() {
     return lastModified;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LAST_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastModified(BigDecimal lastModified) {
     this.lastModified = lastModified;
   }
 
 
   public ModelFile name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -108,19 +97,22 @@ public class ModelFile {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(String name) {
     this.name = name;
   }
 
 
   public ModelFile size(BigDecimal size) {
-    
     this.size = size;
     return this;
   }
@@ -131,19 +123,22 @@ public class ModelFile {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSize() {
     return size;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSize(BigDecimal size) {
     this.size = size;
   }
 
 
   public ModelFile type(String type) {
-    
     this.type = type;
     return this;
   }
@@ -154,19 +149,22 @@ public class ModelFile {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
     return type;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(String type) {
     this.type = type;
   }
 
 
   public ModelFile webkitRelativePath(String webkitRelativePath) {
-    
     this.webkitRelativePath = webkitRelativePath;
     return this;
   }
@@ -177,18 +175,24 @@ public class ModelFile {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_WEBKIT_RELATIVE_PATH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getWebkitRelativePath() {
     return webkitRelativePath;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_WEBKIT_RELATIVE_PATH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWebkitRelativePath(String webkitRelativePath) {
     this.webkitRelativePath = webkitRelativePath;
   }
 
 
-
+  /**
+   * Return true if this File object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -234,103 +238,5 @@ public class ModelFile {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("last_modified");
-    openapiFields.add("name");
-    openapiFields.add("size");
-    openapiFields.add("type");
-    openapiFields.add("webkit_relative_path");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ModelFile
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ModelFile.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelFile is not found in the empty JSON string", ModelFile.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ModelFile.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelFile` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
-      }
-      if (jsonObj.get("webkit_relative_path") != null && !jsonObj.get("webkit_relative_path").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `webkit_relative_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webkit_relative_path").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ModelFile.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ModelFile' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ModelFile> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ModelFile.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ModelFile>() {
-           @Override
-           public void write(JsonWriter out, ModelFile value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ModelFile read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ModelFile given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ModelFile
-  * @throws IOException if the JSON string is invalid with respect to ModelFile
-  */
-  public static ModelFile fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ModelFile.class);
-  }
-
- /**
-  * Convert an instance of ModelFile to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

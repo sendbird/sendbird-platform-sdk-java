@@ -13,10 +13,13 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.ChooseWhichEventsToSubscribeToData;
 import org.openapitools.client.model.ChooseWhichEventsToSubscribeToResponse;
 import org.openapitools.client.model.RetrieveListOfSubscribedEventsResponse;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -28,7 +31,6 @@ import java.util.Map;
 /**
  * API tests for WebhookApi
  */
-@Disabled
 public class WebhookApiTest {
 
     private final WebhookApi api = new WebhookApi();
@@ -42,9 +44,9 @@ public class WebhookApiTest {
      */
     @Test
     public void chooseWhichEventsToSubscribeToTest() throws ApiException {
-        String apiToken = null;
-        ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData = null;
-        ChooseWhichEventsToSubscribeToResponse response = api.chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData);
+        //String apiToken = null;
+        //ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData = null;
+        //ChooseWhichEventsToSubscribeToResponse response = api.chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData);
         // TODO: test validations
     }
 
@@ -57,9 +59,9 @@ public class WebhookApiTest {
      */
     @Test
     public void retrieveListOfSubscribedEventsTest() throws ApiException {
-        String apiToken = null;
-        Boolean displayAllWebhookCategories = null;
-        RetrieveListOfSubscribedEventsResponse response = api.retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories);
+        //String apiToken = null;
+        //Boolean displayAllWebhookCategories = null;
+        //RetrieveListOfSubscribedEventsResponse response = api.retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories);
         // TODO: test validations
     }
 

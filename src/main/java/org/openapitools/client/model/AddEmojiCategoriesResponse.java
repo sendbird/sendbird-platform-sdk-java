@@ -15,52 +15,38 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AddEmojiCategoriesResponseEmojiCategoriesInner;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * AddEmojiCategoriesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  AddEmojiCategoriesResponse.JSON_PROPERTY_EMOJI_CATEGORIES
+})
+@JsonTypeName("addEmojiCategoriesResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class AddEmojiCategoriesResponse {
-  public static final String SERIALIZED_NAME_EMOJI_CATEGORIES = "emoji_categories";
-  @SerializedName(SERIALIZED_NAME_EMOJI_CATEGORIES)
+  public static final String JSON_PROPERTY_EMOJI_CATEGORIES = "emoji_categories";
   private List<AddEmojiCategoriesResponseEmojiCategoriesInner> emojiCategories = null;
 
   public AddEmojiCategoriesResponse() { 
   }
 
   public AddEmojiCategoriesResponse emojiCategories(List<AddEmojiCategoriesResponseEmojiCategoriesInner> emojiCategories) {
-    
     this.emojiCategories = emojiCategories;
     return this;
   }
@@ -79,18 +65,24 @@ public class AddEmojiCategoriesResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_EMOJI_CATEGORIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<AddEmojiCategoriesResponseEmojiCategoriesInner> getEmojiCategories() {
     return emojiCategories;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_EMOJI_CATEGORIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEmojiCategories(List<AddEmojiCategoriesResponseEmojiCategoriesInner> emojiCategories) {
     this.emojiCategories = emojiCategories;
   }
 
 
-
+  /**
+   * Return true if this addEmojiCategoriesResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -128,102 +120,5 @@ public class AddEmojiCategoriesResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("emoji_categories");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AddEmojiCategoriesResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AddEmojiCategoriesResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddEmojiCategoriesResponse is not found in the empty JSON string", AddEmojiCategoriesResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AddEmojiCategoriesResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddEmojiCategoriesResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      JsonArray jsonArrayemojiCategories = jsonObj.getAsJsonArray("emoji_categories");
-      if (jsonArrayemojiCategories != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("emoji_categories").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `emoji_categories` to be an array in the JSON string but got `%s`", jsonObj.get("emoji_categories").toString()));
-        }
-
-        // validate the optional field `emoji_categories` (array)
-        for (int i = 0; i < jsonArrayemojiCategories.size(); i++) {
-          AddEmojiCategoriesResponseEmojiCategoriesInner.validateJsonObject(jsonArrayemojiCategories.get(i).getAsJsonObject());
-        };
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddEmojiCategoriesResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddEmojiCategoriesResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddEmojiCategoriesResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddEmojiCategoriesResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AddEmojiCategoriesResponse>() {
-           @Override
-           public void write(JsonWriter out, AddEmojiCategoriesResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AddEmojiCategoriesResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AddEmojiCategoriesResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddEmojiCategoriesResponse
-  * @throws IOException if the JSON string is invalid with respect to AddEmojiCategoriesResponse
-  */
-  public static AddEmojiCategoriesResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddEmojiCategoriesResponse.class);
-  }
-
- /**
-  * Convert an instance of AddEmojiCategoriesResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

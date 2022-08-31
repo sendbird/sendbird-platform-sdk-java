@@ -15,76 +15,62 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * RegisterGdprRequestResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  RegisterGdprRequestResponse.JSON_PROPERTY_REQUEST_ID,
+  RegisterGdprRequestResponse.JSON_PROPERTY_ACTION,
+  RegisterGdprRequestResponse.JSON_PROPERTY_STATUS,
+  RegisterGdprRequestResponse.JSON_PROPERTY_USER_ID,
+  RegisterGdprRequestResponse.JSON_PROPERTY_USER_IDS,
+  RegisterGdprRequestResponse.JSON_PROPERTY_CHANNEL_DELETE_OPTION,
+  RegisterGdprRequestResponse.JSON_PROPERTY_CREATED_AT
+})
+@JsonTypeName("registerGdprRequestResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class RegisterGdprRequestResponse {
-  public static final String SERIALIZED_NAME_REQUEST_ID = "request_id";
-  @SerializedName(SERIALIZED_NAME_REQUEST_ID)
+  public static final String JSON_PROPERTY_REQUEST_ID = "request_id";
   private String requestId;
 
-  public static final String SERIALIZED_NAME_ACTION = "action";
-  @SerializedName(SERIALIZED_NAME_ACTION)
+  public static final String JSON_PROPERTY_ACTION = "action";
   private String action;
 
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
+  public static final String JSON_PROPERTY_STATUS = "status";
   private String status;
 
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
-  @SerializedName(SERIALIZED_NAME_USER_IDS)
+  public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = null;
 
-  public static final String SERIALIZED_NAME_CHANNEL_DELETE_OPTION = "channel_delete_option";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_DELETE_OPTION)
+  public static final String JSON_PROPERTY_CHANNEL_DELETE_OPTION = "channel_delete_option";
   private String channelDeleteOption;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private BigDecimal createdAt;
 
   public RegisterGdprRequestResponse() { 
   }
 
   public RegisterGdprRequestResponse requestId(String requestId) {
-    
     this.requestId = requestId;
     return this;
   }
@@ -95,19 +81,22 @@ public class RegisterGdprRequestResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REQUEST_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRequestId() {
     return requestId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REQUEST_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRequestId(String requestId) {
     this.requestId = requestId;
   }
 
 
   public RegisterGdprRequestResponse action(String action) {
-    
     this.action = action;
     return this;
   }
@@ -118,19 +107,22 @@ public class RegisterGdprRequestResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ACTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAction() {
     return action;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ACTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAction(String action) {
     this.action = action;
   }
 
 
   public RegisterGdprRequestResponse status(String status) {
-    
     this.status = status;
     return this;
   }
@@ -141,19 +133,22 @@ public class RegisterGdprRequestResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStatus() {
     return status;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStatus(String status) {
     this.status = status;
   }
 
 
   public RegisterGdprRequestResponse userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -164,19 +159,22 @@ public class RegisterGdprRequestResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
 
   public RegisterGdprRequestResponse userIds(List<String> userIds) {
-    
     this.userIds = userIds;
     return this;
   }
@@ -195,19 +193,22 @@ public class RegisterGdprRequestResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getUserIds() {
     return userIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
   }
 
 
   public RegisterGdprRequestResponse channelDeleteOption(String channelDeleteOption) {
-    
     this.channelDeleteOption = channelDeleteOption;
     return this;
   }
@@ -218,19 +219,22 @@ public class RegisterGdprRequestResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_DELETE_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelDeleteOption() {
     return channelDeleteOption;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_DELETE_OPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelDeleteOption(String channelDeleteOption) {
     this.channelDeleteOption = channelDeleteOption;
   }
 
 
   public RegisterGdprRequestResponse createdAt(BigDecimal createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -241,18 +245,24 @@ public class RegisterGdprRequestResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(BigDecimal createdAt) {
     this.createdAt = createdAt;
   }
 
 
-
+  /**
+   * Return true if this registerGdprRequestResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -302,115 +312,5 @@ public class RegisterGdprRequestResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("request_id");
-    openapiFields.add("action");
-    openapiFields.add("status");
-    openapiFields.add("user_id");
-    openapiFields.add("user_ids");
-    openapiFields.add("channel_delete_option");
-    openapiFields.add("created_at");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RegisterGdprRequestResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (RegisterGdprRequestResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RegisterGdprRequestResponse is not found in the empty JSON string", RegisterGdprRequestResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!RegisterGdprRequestResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RegisterGdprRequestResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("request_id") != null && !jsonObj.get("request_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `request_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_id").toString()));
-      }
-      if (jsonObj.get("action") != null && !jsonObj.get("action").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
-      }
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("user_ids") != null && !jsonObj.get("user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("user_ids").toString()));
-      }
-      if (jsonObj.get("channel_delete_option") != null && !jsonObj.get("channel_delete_option").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_delete_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_delete_option").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!RegisterGdprRequestResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'RegisterGdprRequestResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<RegisterGdprRequestResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(RegisterGdprRequestResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<RegisterGdprRequestResponse>() {
-           @Override
-           public void write(JsonWriter out, RegisterGdprRequestResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public RegisterGdprRequestResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of RegisterGdprRequestResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RegisterGdprRequestResponse
-  * @throws IOException if the JSON string is invalid with respect to RegisterGdprRequestResponse
-  */
-  public static RegisterGdprRequestResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, RegisterGdprRequestResponse.class);
-  }
-
- /**
-  * Convert an instance of RegisterGdprRequestResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

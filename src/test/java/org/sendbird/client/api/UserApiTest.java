@@ -13,7 +13,8 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.AddRegistrationOrDeviceTokenData;
 import org.openapitools.client.model.AddRegistrationOrDeviceTokenResponse;
 import org.openapitools.client.model.ChoosePushNotificationContentTemplateResponse;
@@ -47,6 +48,8 @@ import org.openapitools.client.model.ViewNumberOfUnreadMessagesResponse;
 import org.openapitools.client.model.ViewPushPreferencesForChannelByUrlResponse;
 import org.openapitools.client.model.ViewPushPreferencesResponse;
 import org.openapitools.client.model.ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -58,7 +61,6 @@ import java.util.Map;
 /**
  * API tests for UserApi
  */
-@Disabled
 public class UserApiTest {
 
     private final UserApi api = new UserApi();
@@ -72,11 +74,11 @@ public class UserApiTest {
      */
     @Test
     public void addRegistrationOrDeviceTokenTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String tokenType = null;
-        AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData = null;
-        AddRegistrationOrDeviceTokenResponse response = api.addRegistrationOrDeviceToken(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData);
+        //String apiToken = null;
+        //String userId = null;
+        //String tokenType = null;
+        //AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData = null;
+        //AddRegistrationOrDeviceTokenResponse response = api.addRegistrationOrDeviceToken(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData);
         // TODO: test validations
     }
 
@@ -89,10 +91,10 @@ public class UserApiTest {
      */
     @Test
     public void choosePushNotificationContentTemplateTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        Object body = null;
-        ChoosePushNotificationContentTemplateResponse response = api.choosePushNotificationContentTemplate(apiToken, userId, body);
+        //String apiToken = null;
+        //String userId = null;
+        //Object body = null;
+        //ChoosePushNotificationContentTemplateResponse response = api.choosePushNotificationContentTemplate(apiToken, userId, body);
         // TODO: test validations
     }
 
@@ -105,9 +107,9 @@ public class UserApiTest {
      */
     @Test
     public void createUserTest() throws ApiException {
-        String apiToken = null;
-        CreateUserData createUserData = null;
-        SendBirdUser response = api.createUser(apiToken, createUserData);
+        //String apiToken = null;
+        //CreateUserData createUserData = null;
+        //SendBirdUser response = api.createUser(apiToken, createUserData);
         // TODO: test validations
     }
 
@@ -120,9 +122,9 @@ public class UserApiTest {
      */
     @Test
     public void deleteUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        Object response = api.deleteUserById(apiToken, userId);
+        //String apiToken = null;
+        //String userId = null;
+        //Object response = api.deleteUserById(apiToken, userId);
         // TODO: test validations
     }
 
@@ -135,10 +137,10 @@ public class UserApiTest {
      */
     @Test
     public void leaveMyGroupChannelsTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        LeaveMyGroupChannelsData leaveMyGroupChannelsData = null;
-        Object response = api.leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData);
+        //String apiToken = null;
+        //String userId = null;
+        //LeaveMyGroupChannelsData leaveMyGroupChannelsData = null;
+        //Object response = api.leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData);
         // TODO: test validations
     }
 
@@ -151,49 +153,49 @@ public class UserApiTest {
      */
     @Test
     public void listMyGroupChannelsTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String token = null;
-        Integer limit = null;
-        String distinctMode = null;
-        String publicMode = null;
-        String superMode = null;
-        String hiddenMode = null;
-        String memberStateFilter = null;
-        String unreadFilter = null;
-        Integer createdAfter = null;
-        Integer createdBefore = null;
-        Boolean showEmpty = null;
-        Boolean showFrozen = null;
-        Boolean showMember = null;
-        Boolean showDeliveryReceipt = null;
-        Boolean showReadReceipt = null;
-        String order = null;
-        String metadataOrderKey = null;
-        String customTypes = null;
-        String customTypeStartswith = null;
-        String channelUrls = null;
-        String name = null;
-        String nameContains = null;
-        String nameStartswith = null;
-        String membersExactlyIn = null;
-        String membersIncludeIn = null;
-        String queryType = null;
-        String membersNickname = null;
-        String membersNicknameContains = null;
-        String searchQuery = null;
-        String searchFields = null;
-        String metadataKey = null;
-        String metadataValues = null;
-        String metadataValueStartswith = null;
-        String metacounterKey = null;
-        String metacounterValues = null;
-        String metacounterValueGt = null;
-        String metacounterValueGte = null;
-        String metacounterValueLt = null;
-        String metacounterValueLte = null;
-        String customType = null;
-        ListMyGroupChannelsResponse response = api.listMyGroupChannels(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+        //String apiToken = null;
+        //String userId = null;
+        //String token = null;
+        //Integer limit = null;
+        //String distinctMode = null;
+        //String publicMode = null;
+        //String superMode = null;
+        //String hiddenMode = null;
+        //String memberStateFilter = null;
+        //String unreadFilter = null;
+        //Integer createdAfter = null;
+        //Integer createdBefore = null;
+        //Boolean showEmpty = null;
+        //Boolean showFrozen = null;
+        //Boolean showMember = null;
+        //Boolean showDeliveryReceipt = null;
+        //Boolean showReadReceipt = null;
+        //String order = null;
+        //String metadataOrderKey = null;
+        //String customTypes = null;
+        //String customTypeStartswith = null;
+        //String channelUrls = null;
+        //String name = null;
+        //String nameContains = null;
+        //String nameStartswith = null;
+        //String membersExactlyIn = null;
+        //String membersIncludeIn = null;
+        //String queryType = null;
+        //String membersNickname = null;
+        //String membersNicknameContains = null;
+        //String searchQuery = null;
+        //String searchFields = null;
+        //String metadataKey = null;
+        //String metadataValues = null;
+        //String metadataValueStartswith = null;
+        //String metacounterKey = null;
+        //String metacounterValues = null;
+        //String metacounterValueGt = null;
+        //String metacounterValueGte = null;
+        //String metacounterValueLt = null;
+        //String metacounterValueLte = null;
+        //String customType = null;
+        //ListMyGroupChannelsResponse response = api.listMyGroupChannels(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
         // TODO: test validations
     }
 
@@ -206,10 +208,10 @@ public class UserApiTest {
      */
     @Test
     public void listRegistrationOrDeviceTokensTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String tokenType = null;
-        ListRegistrationOrDeviceTokensResponse response = api.listRegistrationOrDeviceTokens(apiToken, userId, tokenType);
+        //String apiToken = null;
+        //String userId = null;
+        //String tokenType = null;
+        //ListRegistrationOrDeviceTokensResponse response = api.listRegistrationOrDeviceTokens(apiToken, userId, tokenType);
         // TODO: test validations
     }
 
@@ -222,17 +224,17 @@ public class UserApiTest {
      */
     @Test
     public void listUsersTest() throws ApiException {
-        String apiToken = null;
-        String token = null;
-        Integer limit = null;
-        String activeMode = null;
-        Boolean showBot = null;
-        String userIds = null;
-        String nickname = null;
-        String nicknameStartswith = null;
-        String metadatakey = null;
-        String metadatavaluesIn = null;
-        ListUsersResponse response = api.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
+        //String apiToken = null;
+        //String token = null;
+        //Integer limit = null;
+        //String activeMode = null;
+        //Boolean showBot = null;
+        //String userIds = null;
+        //String nickname = null;
+        //String nicknameStartswith = null;
+        //String metadatakey = null;
+        //String metadatavaluesIn = null;
+        //ListUsersResponse response = api.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
         // TODO: test validations
     }
 
@@ -245,10 +247,10 @@ public class UserApiTest {
      */
     @Test
     public void markAllMessagesAsReadTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        MarkAllMessagesAsReadData markAllMessagesAsReadData = null;
-        Object response = api.markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData);
+        //String apiToken = null;
+        //String userId = null;
+        //MarkAllMessagesAsReadData markAllMessagesAsReadData = null;
+        //Object response = api.markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData);
         // TODO: test validations
     }
 
@@ -261,10 +263,10 @@ public class UserApiTest {
      */
     @Test
     public void registerAsOperatorToChannelsWithCustomChannelTypesTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData = null;
-        Object response = api.registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData);
+        //String apiToken = null;
+        //String userId = null;
+        //RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData = null;
+        //Object response = api.registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData);
         // TODO: test validations
     }
 
@@ -277,9 +279,9 @@ public class UserApiTest {
      */
     @Test
     public void removeRegistrationOrDeviceTokenTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        RemoveRegistrationOrDeviceTokenResponse response = api.removeRegistrationOrDeviceToken(apiToken, userId);
+        //String apiToken = null;
+        //String userId = null;
+        //RemoveRegistrationOrDeviceTokenResponse response = api.removeRegistrationOrDeviceToken(apiToken, userId);
         // TODO: test validations
     }
 
@@ -292,11 +294,11 @@ public class UserApiTest {
      */
     @Test
     public void removeRegistrationOrDeviceTokenByTokenTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String tokenType = null;
-        String token = null;
-        RemoveRegistrationOrDeviceTokenByTokenResponse response = api.removeRegistrationOrDeviceTokenByToken(apiToken, userId, tokenType, token);
+        //String apiToken = null;
+        //String userId = null;
+        //String tokenType = null;
+        //String token = null;
+        //RemoveRegistrationOrDeviceTokenByTokenResponse response = api.removeRegistrationOrDeviceTokenByToken(apiToken, userId, tokenType, token);
         // TODO: test validations
     }
 
@@ -309,10 +311,10 @@ public class UserApiTest {
      */
     @Test
     public void removeRegistrationOrDeviceTokenFromOwnerByTokenTest() throws ApiException {
-        String apiToken = null;
-        String tokenType = null;
-        String token = null;
-        RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse response = api.removeRegistrationOrDeviceTokenFromOwnerByToken(apiToken, tokenType, token);
+        //String apiToken = null;
+        //String tokenType = null;
+        //String token = null;
+        //RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse response = api.removeRegistrationOrDeviceTokenFromOwnerByToken(apiToken, tokenType, token);
         // TODO: test validations
     }
 
@@ -325,9 +327,9 @@ public class UserApiTest {
      */
     @Test
     public void resetPushPreferencesTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        ResetPushPreferencesResponse response = api.resetPushPreferences(apiToken, userId);
+        //String apiToken = null;
+        //String userId = null;
+        //ResetPushPreferencesResponse response = api.resetPushPreferences(apiToken, userId);
         // TODO: test validations
     }
 
@@ -340,10 +342,10 @@ public class UserApiTest {
      */
     @Test
     public void updateChannelInvitationPreferenceTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData = null;
-        UpdateChannelInvitationPreferenceResponse response = api.updateChannelInvitationPreference(apiToken, userId, updateChannelInvitationPreferenceData);
+        //String apiToken = null;
+        //String userId = null;
+        //UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData = null;
+        //UpdateChannelInvitationPreferenceResponse response = api.updateChannelInvitationPreference(apiToken, userId, updateChannelInvitationPreferenceData);
         // TODO: test validations
     }
 
@@ -356,11 +358,11 @@ public class UserApiTest {
      */
     @Test
     public void updateCountPreferenceOfChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String channelUrl = null;
-        UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData = null;
-        UpdateCountPreferenceOfChannelByUrlResponse response = api.updateCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData);
+        //String apiToken = null;
+        //String userId = null;
+        //String channelUrl = null;
+        //UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData = null;
+        //UpdateCountPreferenceOfChannelByUrlResponse response = api.updateCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData);
         // TODO: test validations
     }
 
@@ -373,10 +375,10 @@ public class UserApiTest {
      */
     @Test
     public void updatePushPreferencesTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        UpdatePushPreferencesData updatePushPreferencesData = null;
-        UpdatePushPreferencesResponse response = api.updatePushPreferences(apiToken, userId, updatePushPreferencesData);
+        //String apiToken = null;
+        //String userId = null;
+        //UpdatePushPreferencesData updatePushPreferencesData = null;
+        //UpdatePushPreferencesResponse response = api.updatePushPreferences(apiToken, userId, updatePushPreferencesData);
         // TODO: test validations
     }
 
@@ -389,11 +391,11 @@ public class UserApiTest {
      */
     @Test
     public void updatePushPreferencesForChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String channelUrl = null;
-        UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData = null;
-        UpdatePushPreferencesForChannelByUrlResponse response = api.updatePushPreferencesForChannelByUrl(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData);
+        //String apiToken = null;
+        //String userId = null;
+        //String channelUrl = null;
+        //UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData = null;
+        //UpdatePushPreferencesForChannelByUrlResponse response = api.updatePushPreferencesForChannelByUrl(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData);
         // TODO: test validations
     }
 
@@ -406,10 +408,10 @@ public class UserApiTest {
      */
     @Test
     public void updateUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        UpdateUserByIdData updateUserByIdData = null;
-        SendBirdUser response = api.updateUserById(apiToken, userId, updateUserByIdData);
+        //String apiToken = null;
+        //String userId = null;
+        //UpdateUserByIdData updateUserByIdData = null;
+        //SendBirdUser response = api.updateUserById(apiToken, userId, updateUserByIdData);
         // TODO: test validations
     }
 
@@ -422,9 +424,9 @@ public class UserApiTest {
      */
     @Test
     public void viewChannelInvitationPreferenceTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        ViewChannelInvitationPreferenceResponse response = api.viewChannelInvitationPreference(apiToken, userId);
+        //String apiToken = null;
+        //String userId = null;
+        //ViewChannelInvitationPreferenceResponse response = api.viewChannelInvitationPreference(apiToken, userId);
         // TODO: test validations
     }
 
@@ -437,10 +439,10 @@ public class UserApiTest {
      */
     @Test
     public void viewCountPreferenceOfChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String channelUrl = null;
-        ViewCountPreferenceOfChannelByUrlResponse response = api.viewCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl);
+        //String apiToken = null;
+        //String userId = null;
+        //String channelUrl = null;
+        //ViewCountPreferenceOfChannelByUrlResponse response = api.viewCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl);
         // TODO: test validations
     }
 
@@ -453,10 +455,10 @@ public class UserApiTest {
      */
     @Test
     public void viewNumberOfChannelsByJoinStatusTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String state = null;
-        ViewNumberOfChannelsByJoinStatusResponse response = api.viewNumberOfChannelsByJoinStatus(apiToken, userId, state);
+        //String apiToken = null;
+        //String userId = null;
+        //String state = null;
+        //ViewNumberOfChannelsByJoinStatusResponse response = api.viewNumberOfChannelsByJoinStatus(apiToken, userId, state);
         // TODO: test validations
     }
 
@@ -469,11 +471,11 @@ public class UserApiTest {
      */
     @Test
     public void viewNumberOfChannelsWithUnreadMessagesTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        List<String> customTypes = null;
-        String superMode = null;
-        ViewNumberOfChannelsWithUnreadMessagesResponse response = api.viewNumberOfChannelsWithUnreadMessages(apiToken, userId, customTypes, superMode);
+        //String apiToken = null;
+        //String userId = null;
+        //List<String> customTypes = null;
+        //String superMode = null;
+        //ViewNumberOfChannelsWithUnreadMessagesResponse response = api.viewNumberOfChannelsWithUnreadMessages(apiToken, userId, customTypes, superMode);
         // TODO: test validations
     }
 
@@ -486,11 +488,11 @@ public class UserApiTest {
      */
     @Test
     public void viewNumberOfUnreadItemsTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String customType = null;
-        String itemKeys = null;
-        ViewNumberOfUnreadItemsResponse response = api.viewNumberOfUnreadItems(apiToken, userId, customType, itemKeys);
+        //String apiToken = null;
+        //String userId = null;
+        //String customType = null;
+        //String itemKeys = null;
+        //ViewNumberOfUnreadItemsResponse response = api.viewNumberOfUnreadItems(apiToken, userId, customType, itemKeys);
         // TODO: test validations
     }
 
@@ -503,11 +505,11 @@ public class UserApiTest {
      */
     @Test
     public void viewNumberOfUnreadMessagesTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String customTypes = null;
-        String superMode = null;
-        ViewNumberOfUnreadMessagesResponse response = api.viewNumberOfUnreadMessages(apiToken, userId, customTypes, superMode);
+        //String apiToken = null;
+        //String userId = null;
+        //String customTypes = null;
+        //String superMode = null;
+        //ViewNumberOfUnreadMessagesResponse response = api.viewNumberOfUnreadMessages(apiToken, userId, customTypes, superMode);
         // TODO: test validations
     }
 
@@ -520,9 +522,9 @@ public class UserApiTest {
      */
     @Test
     public void viewPushPreferencesTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        ViewPushPreferencesResponse response = api.viewPushPreferences(apiToken, userId);
+        //String apiToken = null;
+        //String userId = null;
+        //ViewPushPreferencesResponse response = api.viewPushPreferences(apiToken, userId);
         // TODO: test validations
     }
 
@@ -535,10 +537,10 @@ public class UserApiTest {
      */
     @Test
     public void viewPushPreferencesForChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        String channelUrl = null;
-        ViewPushPreferencesForChannelByUrlResponse response = api.viewPushPreferencesForChannelByUrl(apiToken, userId, channelUrl);
+        //String apiToken = null;
+        //String userId = null;
+        //String channelUrl = null;
+        //ViewPushPreferencesForChannelByUrlResponse response = api.viewPushPreferencesForChannelByUrl(apiToken, userId, channelUrl);
         // TODO: test validations
     }
 
@@ -551,12 +553,12 @@ public class UserApiTest {
      */
     @Test
     public void viewUserByIdTest() throws ApiException {
-        String apiToken = null;
-        String userId = null;
-        Boolean includeUnreadCount = null;
-        String customTypes = null;
-        String superMode = null;
-        SendBirdUser response = api.viewUserById(apiToken, userId, includeUnreadCount, customTypes, superMode);
+        //String apiToken = null;
+        //String userId = null;
+        //Boolean includeUnreadCount = null;
+        //String customTypes = null;
+        //String superMode = null;
+        //SendBirdUser response = api.viewUserById(apiToken, userId, includeUnreadCount, customTypes, superMode);
         // TODO: test validations
     }
 
@@ -569,10 +571,10 @@ public class UserApiTest {
      */
     @Test
     public void viewWhoOwnsRegistrationOrDeviceTokenByTokenTest() throws ApiException {
-        String apiToken = null;
-        String tokenType = null;
-        String token = null;
-        List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> response = api.viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token);
+        //String apiToken = null;
+        //String tokenType = null;
+        //String token = null;
+        //List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> response = api.viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token);
         // TODO: test validations
     }
 

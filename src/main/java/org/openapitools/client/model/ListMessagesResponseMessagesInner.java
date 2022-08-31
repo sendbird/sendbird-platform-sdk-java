@@ -15,14 +15,15 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,125 +31,110 @@ import org.openapitools.client.model.ListMessagesResponseMessagesInnerOgTag;
 import org.openapitools.client.model.ListMessagesResponseMessagesInnerSortedMetaarrayInner;
 import org.openapitools.client.model.SendBirdMessageResponseMentionedUsersInner;
 import org.openapitools.client.model.SendBirdMessageResponseUser;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ListMessagesResponseMessagesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_CUSTOM_TYPE,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_MENTIONED_USERS,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_TRANSLATIONS,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_UPDATED_AT,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_IS_OP_MSG,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_IS_REMOVED,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_USER,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_FILE,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_MESSAGE,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_DATA,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_MESSAGE_RETENTION_HOUR,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_SILENT,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_TYPE,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_CREATED_AT,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_CHANNEL_TYPE,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_REQ_ID,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_MENTION_TYPE,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_CHANNEL_URL,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_MESSAGE_ID,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_SORTED_METAARRAY,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_OG_TAG
+})
+@JsonTypeName("listMessagesResponse_messages_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ListMessagesResponseMessagesInner {
-  public static final String SERIALIZED_NAME_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_SURVIVAL_SECONDS)
+  public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private BigDecimal messageSurvivalSeconds;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
-  public static final String SERIALIZED_NAME_MENTIONED_USERS = "mentioned_users";
-  @SerializedName(SERIALIZED_NAME_MENTIONED_USERS)
+  public static final String JSON_PROPERTY_MENTIONED_USERS = "mentioned_users";
   private List<SendBirdMessageResponseMentionedUsersInner> mentionedUsers = null;
 
-  public static final String SERIALIZED_NAME_TRANSLATIONS = "translations";
-  @SerializedName(SERIALIZED_NAME_TRANSLATIONS)
+  public static final String JSON_PROPERTY_TRANSLATIONS = "translations";
   private Object translations;
 
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
   private BigDecimal updatedAt;
 
-  public static final String SERIALIZED_NAME_IS_OP_MSG = "is_op_msg";
-  @SerializedName(SERIALIZED_NAME_IS_OP_MSG)
+  public static final String JSON_PROPERTY_IS_OP_MSG = "is_op_msg";
   private Boolean isOpMsg;
 
-  public static final String SERIALIZED_NAME_IS_REMOVED = "is_removed";
-  @SerializedName(SERIALIZED_NAME_IS_REMOVED)
+  public static final String JSON_PROPERTY_IS_REMOVED = "is_removed";
   private Boolean isRemoved;
 
-  public static final String SERIALIZED_NAME_USER = "user";
-  @SerializedName(SERIALIZED_NAME_USER)
+  public static final String JSON_PROPERTY_USER = "user";
   private SendBirdMessageResponseUser user;
 
-  public static final String SERIALIZED_NAME_FILE = "file";
-  @SerializedName(SERIALIZED_NAME_FILE)
+  public static final String JSON_PROPERTY_FILE = "file";
   private Object _file;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_MESSAGE_RETENTION_HOUR = "message_retention_hour";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_RETENTION_HOUR)
+  public static final String JSON_PROPERTY_MESSAGE_RETENTION_HOUR = "message_retention_hour";
   private BigDecimal messageRetentionHour;
 
-  public static final String SERIALIZED_NAME_SILENT = "silent";
-  @SerializedName(SERIALIZED_NAME_SILENT)
+  public static final String JSON_PROPERTY_SILENT = "silent";
   private Boolean silent;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+  public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private BigDecimal createdAt;
 
-  public static final String SERIALIZED_NAME_CHANNEL_TYPE = "channel_type";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_TYPE)
+  public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
 
-  public static final String SERIALIZED_NAME_REQ_ID = "req_id";
-  @SerializedName(SERIALIZED_NAME_REQ_ID)
+  public static final String JSON_PROPERTY_REQ_ID = "req_id";
   private String reqId;
 
-  public static final String SERIALIZED_NAME_MENTION_TYPE = "mention_type";
-  @SerializedName(SERIALIZED_NAME_MENTION_TYPE)
+  public static final String JSON_PROPERTY_MENTION_TYPE = "mention_type";
   private String mentionType;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
-  public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
+  public static final String JSON_PROPERTY_MESSAGE_ID = "message_id";
   private BigDecimal messageId;
 
-  public static final String SERIALIZED_NAME_SORTED_METAARRAY = "sorted_metaarray";
-  @SerializedName(SERIALIZED_NAME_SORTED_METAARRAY)
+  public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
   private List<ListMessagesResponseMessagesInnerSortedMetaarrayInner> sortedMetaarray = null;
 
-  public static final String SERIALIZED_NAME_OG_TAG = "og_tag";
-  @SerializedName(SERIALIZED_NAME_OG_TAG)
+  public static final String JSON_PROPERTY_OG_TAG = "og_tag";
   private ListMessagesResponseMessagesInnerOgTag ogTag;
 
   public ListMessagesResponseMessagesInner() { 
   }
 
   public ListMessagesResponseMessagesInner messageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
-    
     this.messageSurvivalSeconds = messageSurvivalSeconds;
     return this;
   }
@@ -159,19 +145,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getMessageSurvivalSeconds() {
     return messageSurvivalSeconds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
   }
 
 
   public ListMessagesResponseMessagesInner customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -182,19 +171,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
   public ListMessagesResponseMessagesInner mentionedUsers(List<SendBirdMessageResponseMentionedUsersInner> mentionedUsers) {
-    
     this.mentionedUsers = mentionedUsers;
     return this;
   }
@@ -213,19 +205,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<SendBirdMessageResponseMentionedUsersInner> getMentionedUsers() {
     return mentionedUsers;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionedUsers(List<SendBirdMessageResponseMentionedUsersInner> mentionedUsers) {
     this.mentionedUsers = mentionedUsers;
   }
 
 
   public ListMessagesResponseMessagesInner translations(Object translations) {
-    
     this.translations = translations;
     return this;
   }
@@ -236,19 +231,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TRANSLATIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getTranslations() {
     return translations;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TRANSLATIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTranslations(Object translations) {
     this.translations = translations;
   }
 
 
   public ListMessagesResponseMessagesInner updatedAt(BigDecimal updatedAt) {
-    
     this.updatedAt = updatedAt;
     return this;
   }
@@ -259,19 +257,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getUpdatedAt() {
     return updatedAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUpdatedAt(BigDecimal updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
   public ListMessagesResponseMessagesInner isOpMsg(Boolean isOpMsg) {
-    
     this.isOpMsg = isOpMsg;
     return this;
   }
@@ -282,19 +283,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_OP_MSG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsOpMsg() {
     return isOpMsg;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_OP_MSG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsOpMsg(Boolean isOpMsg) {
     this.isOpMsg = isOpMsg;
   }
 
 
   public ListMessagesResponseMessagesInner isRemoved(Boolean isRemoved) {
-    
     this.isRemoved = isRemoved;
     return this;
   }
@@ -305,19 +309,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_REMOVED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsRemoved() {
     return isRemoved;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_REMOVED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsRemoved(Boolean isRemoved) {
     this.isRemoved = isRemoved;
   }
 
 
   public ListMessagesResponseMessagesInner user(SendBirdMessageResponseUser user) {
-    
     this.user = user;
     return this;
   }
@@ -328,19 +335,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SendBirdMessageResponseUser getUser() {
     return user;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(SendBirdMessageResponseUser user) {
     this.user = user;
   }
 
 
   public ListMessagesResponseMessagesInner _file(Object _file) {
-    
     this._file = _file;
     return this;
   }
@@ -351,19 +361,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getFile() {
     return _file;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFile(Object _file) {
     this._file = _file;
   }
 
 
   public ListMessagesResponseMessagesInner message(String message) {
-    
     this.message = message;
     return this;
   }
@@ -374,19 +387,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMessage() {
     return message;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(String message) {
     this.message = message;
   }
 
 
   public ListMessagesResponseMessagesInner data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -397,19 +413,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public ListMessagesResponseMessagesInner messageRetentionHour(BigDecimal messageRetentionHour) {
-    
     this.messageRetentionHour = messageRetentionHour;
     return this;
   }
@@ -420,19 +439,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_RETENTION_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getMessageRetentionHour() {
     return messageRetentionHour;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_RETENTION_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessageRetentionHour(BigDecimal messageRetentionHour) {
     this.messageRetentionHour = messageRetentionHour;
   }
 
 
   public ListMessagesResponseMessagesInner silent(Boolean silent) {
-    
     this.silent = silent;
     return this;
   }
@@ -443,19 +465,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SILENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getSilent() {
     return silent;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SILENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSilent(Boolean silent) {
     this.silent = silent;
   }
 
 
   public ListMessagesResponseMessagesInner type(String type) {
-    
     this.type = type;
     return this;
   }
@@ -466,19 +491,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
     return type;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setType(String type) {
     this.type = type;
   }
 
 
   public ListMessagesResponseMessagesInner createdAt(BigDecimal createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -489,19 +517,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(BigDecimal createdAt) {
     this.createdAt = createdAt;
   }
 
 
   public ListMessagesResponseMessagesInner channelType(String channelType) {
-    
     this.channelType = channelType;
     return this;
   }
@@ -512,19 +543,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelType() {
     return channelType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelType(String channelType) {
     this.channelType = channelType;
   }
 
 
   public ListMessagesResponseMessagesInner reqId(String reqId) {
-    
     this.reqId = reqId;
     return this;
   }
@@ -535,19 +569,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REQ_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReqId() {
     return reqId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REQ_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReqId(String reqId) {
     this.reqId = reqId;
   }
 
 
   public ListMessagesResponseMessagesInner mentionType(String mentionType) {
-    
     this.mentionType = mentionType;
     return this;
   }
@@ -558,19 +595,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMentionType() {
     return mentionType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionType(String mentionType) {
     this.mentionType = mentionType;
   }
 
 
   public ListMessagesResponseMessagesInner channelUrl(String channelUrl) {
-    
     this.channelUrl = channelUrl;
     return this;
   }
@@ -581,19 +621,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelUrl() {
     return channelUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
   }
 
 
   public ListMessagesResponseMessagesInner messageId(BigDecimal messageId) {
-    
     this.messageId = messageId;
     return this;
   }
@@ -604,19 +647,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getMessageId() {
     return messageId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessageId(BigDecimal messageId) {
     this.messageId = messageId;
   }
 
 
   public ListMessagesResponseMessagesInner sortedMetaarray(List<ListMessagesResponseMessagesInnerSortedMetaarrayInner> sortedMetaarray) {
-    
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
@@ -635,19 +681,22 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ListMessagesResponseMessagesInnerSortedMetaarrayInner> getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSortedMetaarray(List<ListMessagesResponseMessagesInnerSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 
 
   public ListMessagesResponseMessagesInner ogTag(ListMessagesResponseMessagesInnerOgTag ogTag) {
-    
     this.ogTag = ogTag;
     return this;
   }
@@ -658,18 +707,24 @@ public class ListMessagesResponseMessagesInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OG_TAG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ListMessagesResponseMessagesInnerOgTag getOgTag() {
     return ogTag;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OG_TAG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOgTag(ListMessagesResponseMessagesInnerOgTag ogTag) {
     this.ogTag = ogTag;
   }
 
 
-
+  /**
+   * Return true if this listMessagesResponse_messages_inner object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -749,167 +804,5 @@ public class ListMessagesResponseMessagesInner {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("message_survival_seconds");
-    openapiFields.add("custom_type");
-    openapiFields.add("mentioned_users");
-    openapiFields.add("translations");
-    openapiFields.add("updated_at");
-    openapiFields.add("is_op_msg");
-    openapiFields.add("is_removed");
-    openapiFields.add("user");
-    openapiFields.add("file");
-    openapiFields.add("message");
-    openapiFields.add("data");
-    openapiFields.add("message_retention_hour");
-    openapiFields.add("silent");
-    openapiFields.add("type");
-    openapiFields.add("created_at");
-    openapiFields.add("channel_type");
-    openapiFields.add("req_id");
-    openapiFields.add("mention_type");
-    openapiFields.add("channel_url");
-    openapiFields.add("message_id");
-    openapiFields.add("sorted_metaarray");
-    openapiFields.add("og_tag");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ListMessagesResponseMessagesInner
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ListMessagesResponseMessagesInner.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ListMessagesResponseMessagesInner is not found in the empty JSON string", ListMessagesResponseMessagesInner.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ListMessagesResponseMessagesInner.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListMessagesResponseMessagesInner` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-      JsonArray jsonArraymentionedUsers = jsonObj.getAsJsonArray("mentioned_users");
-      if (jsonArraymentionedUsers != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("mentioned_users").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `mentioned_users` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_users").toString()));
-        }
-
-        // validate the optional field `mentioned_users` (array)
-        for (int i = 0; i < jsonArraymentionedUsers.size(); i++) {
-          SendBirdMessageResponseMentionedUsersInner.validateJsonObject(jsonArraymentionedUsers.get(i).getAsJsonObject());
-        };
-      }
-      // validate the optional field `user`
-      if (jsonObj.getAsJsonObject("user") != null) {
-        SendBirdMessageResponseUser.validateJsonObject(jsonObj.getAsJsonObject("user"));
-      }
-      if (jsonObj.get("message") != null && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
-      }
-      if (jsonObj.get("channel_type") != null && !jsonObj.get("channel_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_type").toString()));
-      }
-      if (jsonObj.get("req_id") != null && !jsonObj.get("req_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `req_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("req_id").toString()));
-      }
-      if (jsonObj.get("mention_type") != null && !jsonObj.get("mention_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mention_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mention_type").toString()));
-      }
-      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
-      }
-      JsonArray jsonArraysortedMetaarray = jsonObj.getAsJsonArray("sorted_metaarray");
-      if (jsonArraysortedMetaarray != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("sorted_metaarray").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `sorted_metaarray` to be an array in the JSON string but got `%s`", jsonObj.get("sorted_metaarray").toString()));
-        }
-
-        // validate the optional field `sorted_metaarray` (array)
-        for (int i = 0; i < jsonArraysortedMetaarray.size(); i++) {
-          ListMessagesResponseMessagesInnerSortedMetaarrayInner.validateJsonObject(jsonArraysortedMetaarray.get(i).getAsJsonObject());
-        };
-      }
-      // validate the optional field `og_tag`
-      if (jsonObj.getAsJsonObject("og_tag") != null) {
-        ListMessagesResponseMessagesInnerOgTag.validateJsonObject(jsonObj.getAsJsonObject("og_tag"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ListMessagesResponseMessagesInner.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ListMessagesResponseMessagesInner' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ListMessagesResponseMessagesInner> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ListMessagesResponseMessagesInner.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ListMessagesResponseMessagesInner>() {
-           @Override
-           public void write(JsonWriter out, ListMessagesResponseMessagesInner value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ListMessagesResponseMessagesInner read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ListMessagesResponseMessagesInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ListMessagesResponseMessagesInner
-  * @throws IOException if the JSON string is invalid with respect to ListMessagesResponseMessagesInner
-  */
-  public static ListMessagesResponseMessagesInner fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ListMessagesResponseMessagesInner.class);
-  }
-
- /**
-  * Convert an instance of ListMessagesResponseMessagesInner to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

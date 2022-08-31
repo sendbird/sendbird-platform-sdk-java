@@ -13,7 +13,8 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.GcAcceptInvitationData;
 import org.openapitools.client.model.GcCheckIfMemberByIdResponse;
 import org.openapitools.client.model.GcCreateChannelData;
@@ -32,6 +33,8 @@ import org.openapitools.client.model.GcResetChatHistoryResponse;
 import org.openapitools.client.model.GcUpdateChannelByUrlData;
 import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.SendBirdGroupChannel;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -43,7 +46,6 @@ import java.util.Map;
 /**
  * API tests for GroupChannelApi
  */
-@Disabled
 public class GroupChannelApiTest {
 
     private final GroupChannelApi api = new GroupChannelApi();
@@ -57,10 +59,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcAcceptInvitationTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcAcceptInvitationData gcAcceptInvitationData = null;
-        SendBirdGroupChannel response = api.gcAcceptInvitation(apiToken, channelUrl, gcAcceptInvitationData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcAcceptInvitationData gcAcceptInvitationData = null;
+        //SendBirdGroupChannel response = api.gcAcceptInvitation(apiToken, channelUrl, gcAcceptInvitationData);
         // TODO: test validations
     }
 
@@ -73,11 +75,11 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcCancelTheRegistrationOfOperatorsTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        List<String> operatorIds = null;
-        Boolean deleteAll = null;
-        OcDeleteChannelByUrl200Response response = api.gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //List<String> operatorIds = null;
+        //Boolean deleteAll = null;
+        //OcDeleteChannelByUrl200Response response = api.gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
         // TODO: test validations
     }
 
@@ -90,10 +92,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcCheckIfMemberByIdTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String userId = null;
-        GcCheckIfMemberByIdResponse response = api.gcCheckIfMemberById(apiToken, channelUrl, userId);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String userId = null;
+        //GcCheckIfMemberByIdResponse response = api.gcCheckIfMemberById(apiToken, channelUrl, userId);
         // TODO: test validations
     }
 
@@ -106,9 +108,9 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcCreateChannelTest() throws ApiException {
-        String apiToken = null;
-        GcCreateChannelData gcCreateChannelData = null;
-        SendBirdGroupChannel response = api.gcCreateChannel(apiToken, gcCreateChannelData);
+        //String apiToken = null;
+        //GcCreateChannelData gcCreateChannelData = null;
+        //SendBirdGroupChannel response = api.gcCreateChannel(apiToken, gcCreateChannelData);
         // TODO: test validations
     }
 
@@ -121,10 +123,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcDeclineInvitationTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcDeclineInvitationData gcDeclineInvitationData = null;
-        OcDeleteChannelByUrl200Response response = api.gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcDeclineInvitationData gcDeclineInvitationData = null;
+        //OcDeleteChannelByUrl200Response response = api.gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData);
         // TODO: test validations
     }
 
@@ -137,9 +139,9 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcDeleteChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        OcDeleteChannelByUrl200Response response = api.gcDeleteChannelByUrl(apiToken, channelUrl);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //OcDeleteChannelByUrl200Response response = api.gcDeleteChannelByUrl(apiToken, channelUrl);
         // TODO: test validations
     }
 
@@ -152,10 +154,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcHideOrArchiveChannelTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcHideOrArchiveChannelData gcHideOrArchiveChannelData = null;
-        OcDeleteChannelByUrl200Response response = api.gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcHideOrArchiveChannelData gcHideOrArchiveChannelData = null;
+        //OcDeleteChannelByUrl200Response response = api.gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData);
         // TODO: test validations
     }
 
@@ -168,10 +170,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcInviteAsMembersTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcInviteAsMembersData gcInviteAsMembersData = null;
-        SendBirdGroupChannel response = api.gcInviteAsMembers(apiToken, channelUrl, gcInviteAsMembersData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcInviteAsMembersData gcInviteAsMembersData = null;
+        //SendBirdGroupChannel response = api.gcInviteAsMembers(apiToken, channelUrl, gcInviteAsMembersData);
         // TODO: test validations
     }
 
@@ -184,10 +186,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcJoinChannelTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcJoinChannelData gcJoinChannelData = null;
-        api.gcJoinChannel(apiToken, channelUrl, gcJoinChannelData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcJoinChannelData gcJoinChannelData = null;
+        //api.gcJoinChannel(apiToken, channelUrl, gcJoinChannelData);
         // TODO: test validations
     }
 
@@ -200,10 +202,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcLeaveChannelTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcLeaveChannelData gcLeaveChannelData = null;
-        OcDeleteChannelByUrl200Response response = api.gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcLeaveChannelData gcLeaveChannelData = null;
+        //OcDeleteChannelByUrl200Response response = api.gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData);
         // TODO: test validations
     }
 
@@ -216,50 +218,50 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcListChannelsTest() throws ApiException {
-        String apiToken = null;
-        String token = null;
-        Integer limit = null;
-        String distinctMode = null;
-        String publicMode = null;
-        String superMode = null;
-        Integer createdAfter = null;
-        Integer createdBefore = null;
-        Boolean showEmpty = null;
-        Boolean showMember = null;
-        Boolean showDeliveryReceipt = null;
-        Boolean showReadReceipt = null;
-        Boolean showMetadata = null;
-        Boolean showFrozen = null;
-        String order = null;
-        String metadataOrderKey = null;
-        String customTypes = null;
-        String customTypeStartswith = null;
-        String channelUrls = null;
-        String name = null;
-        String nameContains = null;
-        String nameStartswith = null;
-        String membersExactlyIn = null;
-        String membersIncludeIn = null;
-        String queryType = null;
-        String membersNickname = null;
-        String membersNicknameContains = null;
-        String metadataKey = null;
-        String metadataValues = null;
-        String metadataValueStartswith = null;
-        String metacounterKey = null;
-        String metacounterValues = null;
-        String metacounterValueGt = null;
-        String metacounterValueGte = null;
-        String metacounterValueLt = null;
-        String metacounterValueLte = null;
-        Boolean includeSortedMetaarrayInLastMessage = null;
-        String customType = null;
-        Boolean readReceipt = null;
-        Boolean member = null;
-        Boolean isDistinct = null;
-        String membersIn = null;
-        String userId = null;
-        GcListChannelsResponse response = api.gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
+        //String apiToken = null;
+        //String token = null;
+        //Integer limit = null;
+        //String distinctMode = null;
+        //String publicMode = null;
+        //String superMode = null;
+        //Integer createdAfter = null;
+        //Integer createdBefore = null;
+        //Boolean showEmpty = null;
+        //Boolean showMember = null;
+        //Boolean showDeliveryReceipt = null;
+        //Boolean showReadReceipt = null;
+        //Boolean showMetadata = null;
+        //Boolean showFrozen = null;
+        //String order = null;
+        //String metadataOrderKey = null;
+        //String customTypes = null;
+        //String customTypeStartswith = null;
+        //String channelUrls = null;
+        //String name = null;
+        //String nameContains = null;
+        //String nameStartswith = null;
+        //String membersExactlyIn = null;
+        //String membersIncludeIn = null;
+        //String queryType = null;
+        //String membersNickname = null;
+        //String membersNicknameContains = null;
+        //String metadataKey = null;
+        //String metadataValues = null;
+        //String metadataValueStartswith = null;
+        //String metacounterKey = null;
+        //String metacounterValues = null;
+        //String metacounterValueGt = null;
+        //String metacounterValueGte = null;
+        //String metacounterValueLt = null;
+        //String metacounterValueLte = null;
+        //Boolean includeSortedMetaarrayInLastMessage = null;
+        //String customType = null;
+        //Boolean readReceipt = null;
+        //Boolean member = null;
+        //Boolean isDistinct = null;
+        //String membersIn = null;
+        //String userId = null;
+        //GcListChannelsResponse response = api.gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
         // TODO: test validations
     }
 
@@ -272,18 +274,18 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcListMembersTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String token = null;
-        Integer limit = null;
-        Boolean showDeliveryReceipt = null;
-        Boolean showReadReceipt = null;
-        String order = null;
-        String operatorFilter = null;
-        String memberStateFilter = null;
-        String mutedMemberFilter = null;
-        String nicknameStartswith = null;
-        GcListMembersResponse response = api.gcListMembers(apiToken, channelUrl, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String token = null;
+        //Integer limit = null;
+        //Boolean showDeliveryReceipt = null;
+        //Boolean showReadReceipt = null;
+        //String order = null;
+        //String operatorFilter = null;
+        //String memberStateFilter = null;
+        //String mutedMemberFilter = null;
+        //String nicknameStartswith = null;
+        //GcListMembersResponse response = api.gcListMembers(apiToken, channelUrl, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
         // TODO: test validations
     }
 
@@ -296,11 +298,11 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcListOperatorsTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String token = null;
-        Integer limit = null;
-        GcListOperatorsResponse response = api.gcListOperators(apiToken, channelUrl, token, limit);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String token = null;
+        //Integer limit = null;
+        //GcListOperatorsResponse response = api.gcListOperators(apiToken, channelUrl, token, limit);
         // TODO: test validations
     }
 
@@ -313,10 +315,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcRegisterOperatorsTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcRegisterOperatorsData gcRegisterOperatorsData = null;
-        GcRegisterOperatorsResponse response = api.gcRegisterOperators(apiToken, channelUrl, gcRegisterOperatorsData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcRegisterOperatorsData gcRegisterOperatorsData = null;
+        //GcRegisterOperatorsResponse response = api.gcRegisterOperators(apiToken, channelUrl, gcRegisterOperatorsData);
         // TODO: test validations
     }
 
@@ -329,10 +331,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcResetChatHistoryTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcResetChatHistoryData gcResetChatHistoryData = null;
-        GcResetChatHistoryResponse response = api.gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcResetChatHistoryData gcResetChatHistoryData = null;
+        //GcResetChatHistoryResponse response = api.gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData);
         // TODO: test validations
     }
 
@@ -345,11 +347,11 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcUnhideOrUnarchiveChannelTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        String userId = null;
-        Boolean shouldUnhideAll = null;
-        OcDeleteChannelByUrl200Response response = api.gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //String userId = null;
+        //Boolean shouldUnhideAll = null;
+        //OcDeleteChannelByUrl200Response response = api.gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll);
         // TODO: test validations
     }
 
@@ -362,10 +364,10 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcUpdateChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        GcUpdateChannelByUrlData gcUpdateChannelByUrlData = null;
-        SendBirdGroupChannel response = api.gcUpdateChannelByUrl(apiToken, channelUrl, gcUpdateChannelByUrlData);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //GcUpdateChannelByUrlData gcUpdateChannelByUrlData = null;
+        //SendBirdGroupChannel response = api.gcUpdateChannelByUrl(apiToken, channelUrl, gcUpdateChannelByUrlData);
         // TODO: test validations
     }
 
@@ -378,14 +380,14 @@ public class GroupChannelApiTest {
      */
     @Test
     public void gcViewChannelByUrlTest() throws ApiException {
-        String apiToken = null;
-        String channelUrl = null;
-        Boolean showDeliveryReceipt = null;
-        Boolean showReadReceipt = null;
-        Boolean showMember = null;
-        Boolean readReceipt = null;
-        Boolean member = null;
-        SendBirdGroupChannel response = api.gcViewChannelByUrl(apiToken, channelUrl, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member);
+        //String apiToken = null;
+        //String channelUrl = null;
+        //Boolean showDeliveryReceipt = null;
+        //Boolean showReadReceipt = null;
+        //Boolean showMember = null;
+        //Boolean readReceipt = null;
+        //Boolean member = null;
+        //SendBirdGroupChannel response = api.gcViewChannelByUrl(apiToken, channelUrl, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member);
         // TODO: test validations
     }
 

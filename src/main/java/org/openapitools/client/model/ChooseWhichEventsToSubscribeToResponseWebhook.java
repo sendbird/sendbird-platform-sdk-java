@@ -15,67 +15,53 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ChooseWhichEventsToSubscribeToResponseWebhook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ChooseWhichEventsToSubscribeToResponseWebhook.JSON_PROPERTY_ENABLED,
+  ChooseWhichEventsToSubscribeToResponseWebhook.JSON_PROPERTY_URL,
+  ChooseWhichEventsToSubscribeToResponseWebhook.JSON_PROPERTY_INCLUDE_MEMBERS,
+  ChooseWhichEventsToSubscribeToResponseWebhook.JSON_PROPERTY_ENABLED_EVENTS,
+  ChooseWhichEventsToSubscribeToResponseWebhook.JSON_PROPERTY_INCLUDE_UNREAD_COUNT
+})
+@JsonTypeName("chooseWhichEventsToSubscribeToResponse_webhook")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ChooseWhichEventsToSubscribeToResponseWebhook {
-  public static final String SERIALIZED_NAME_ENABLED = "enabled";
-  @SerializedName(SERIALIZED_NAME_ENABLED)
+  public static final String JSON_PROPERTY_ENABLED = "enabled";
   private Boolean enabled;
 
-  public static final String SERIALIZED_NAME_URL = "url";
-  @SerializedName(SERIALIZED_NAME_URL)
+  public static final String JSON_PROPERTY_URL = "url";
   private String url;
 
-  public static final String SERIALIZED_NAME_INCLUDE_MEMBERS = "include_members";
-  @SerializedName(SERIALIZED_NAME_INCLUDE_MEMBERS)
+  public static final String JSON_PROPERTY_INCLUDE_MEMBERS = "include_members";
   private Boolean includeMembers;
 
-  public static final String SERIALIZED_NAME_ENABLED_EVENTS = "enabled_events";
-  @SerializedName(SERIALIZED_NAME_ENABLED_EVENTS)
+  public static final String JSON_PROPERTY_ENABLED_EVENTS = "enabled_events";
   private List<String> enabledEvents = null;
 
-  public static final String SERIALIZED_NAME_INCLUDE_UNREAD_COUNT = "include_unread_count";
-  @SerializedName(SERIALIZED_NAME_INCLUDE_UNREAD_COUNT)
+  public static final String JSON_PROPERTY_INCLUDE_UNREAD_COUNT = "include_unread_count";
   private Boolean includeUnreadCount;
 
   public ChooseWhichEventsToSubscribeToResponseWebhook() { 
   }
 
   public ChooseWhichEventsToSubscribeToResponseWebhook enabled(Boolean enabled) {
-    
     this.enabled = enabled;
     return this;
   }
@@ -86,19 +72,22 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getEnabled() {
     return enabled;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnabled(Boolean enabled) {
     this.enabled = enabled;
   }
 
 
   public ChooseWhichEventsToSubscribeToResponseWebhook url(String url) {
-    
     this.url = url;
     return this;
   }
@@ -109,19 +98,22 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUrl() {
     return url;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUrl(String url) {
     this.url = url;
   }
 
 
   public ChooseWhichEventsToSubscribeToResponseWebhook includeMembers(Boolean includeMembers) {
-    
     this.includeMembers = includeMembers;
     return this;
   }
@@ -132,19 +124,22 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_INCLUDE_MEMBERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIncludeMembers() {
     return includeMembers;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_INCLUDE_MEMBERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIncludeMembers(Boolean includeMembers) {
     this.includeMembers = includeMembers;
   }
 
 
   public ChooseWhichEventsToSubscribeToResponseWebhook enabledEvents(List<String> enabledEvents) {
-    
     this.enabledEvents = enabledEvents;
     return this;
   }
@@ -163,19 +158,22 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ENABLED_EVENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getEnabledEvents() {
     return enabledEvents;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ENABLED_EVENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnabledEvents(List<String> enabledEvents) {
     this.enabledEvents = enabledEvents;
   }
 
 
   public ChooseWhichEventsToSubscribeToResponseWebhook includeUnreadCount(Boolean includeUnreadCount) {
-    
     this.includeUnreadCount = includeUnreadCount;
     return this;
   }
@@ -186,18 +184,24 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_INCLUDE_UNREAD_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIncludeUnreadCount() {
     return includeUnreadCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_INCLUDE_UNREAD_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIncludeUnreadCount(Boolean includeUnreadCount) {
     this.includeUnreadCount = includeUnreadCount;
   }
 
 
-
+  /**
+   * Return true if this chooseWhichEventsToSubscribeToResponse_webhook object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -243,101 +247,5 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("enabled");
-    openapiFields.add("url");
-    openapiFields.add("include_members");
-    openapiFields.add("enabled_events");
-    openapiFields.add("include_unread_count");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ChooseWhichEventsToSubscribeToResponseWebhook
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ChooseWhichEventsToSubscribeToResponseWebhook.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ChooseWhichEventsToSubscribeToResponseWebhook is not found in the empty JSON string", ChooseWhichEventsToSubscribeToResponseWebhook.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ChooseWhichEventsToSubscribeToResponseWebhook.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ChooseWhichEventsToSubscribeToResponseWebhook` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("url") != null && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("enabled_events") != null && !jsonObj.get("enabled_events").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `enabled_events` to be an array in the JSON string but got `%s`", jsonObj.get("enabled_events").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ChooseWhichEventsToSubscribeToResponseWebhook.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ChooseWhichEventsToSubscribeToResponseWebhook' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ChooseWhichEventsToSubscribeToResponseWebhook> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ChooseWhichEventsToSubscribeToResponseWebhook.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ChooseWhichEventsToSubscribeToResponseWebhook>() {
-           @Override
-           public void write(JsonWriter out, ChooseWhichEventsToSubscribeToResponseWebhook value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ChooseWhichEventsToSubscribeToResponseWebhook read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ChooseWhichEventsToSubscribeToResponseWebhook given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ChooseWhichEventsToSubscribeToResponseWebhook
-  * @throws IOException if the JSON string is invalid with respect to ChooseWhichEventsToSubscribeToResponseWebhook
-  */
-  public static ChooseWhichEventsToSubscribeToResponseWebhook fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ChooseWhichEventsToSubscribeToResponseWebhook.class);
-  }
-
- /**
-  * Convert an instance of ChooseWhichEventsToSubscribeToResponseWebhook to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

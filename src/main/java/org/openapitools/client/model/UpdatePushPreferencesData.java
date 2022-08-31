@@ -15,99 +15,85 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * UpdatePushPreferencesData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  UpdatePushPreferencesData.JSON_PROPERTY_PUSH_TRIGGER_OPTION,
+  UpdatePushPreferencesData.JSON_PROPERTY_DO_NOT_DISTURB,
+  UpdatePushPreferencesData.JSON_PROPERTY_START_HOUR,
+  UpdatePushPreferencesData.JSON_PROPERTY_START_MIN,
+  UpdatePushPreferencesData.JSON_PROPERTY_END_HOUR,
+  UpdatePushPreferencesData.JSON_PROPERTY_END_MIN,
+  UpdatePushPreferencesData.JSON_PROPERTY_SNOOZE_ENABLED,
+  UpdatePushPreferencesData.JSON_PROPERTY_SNOOZE_START_TS,
+  UpdatePushPreferencesData.JSON_PROPERTY_SNOOZE_END_TS,
+  UpdatePushPreferencesData.JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS,
+  UpdatePushPreferencesData.JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS,
+  UpdatePushPreferencesData.JSON_PROPERTY_TIMEZONE,
+  UpdatePushPreferencesData.JSON_PROPERTY_PUSH_SOUND
+})
+@JsonTypeName("updatePushPreferencesData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class UpdatePushPreferencesData {
-  public static final String SERIALIZED_NAME_PUSH_TRIGGER_OPTION = "push_trigger_option";
-  @SerializedName(SERIALIZED_NAME_PUSH_TRIGGER_OPTION)
+  public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
   private String pushTriggerOption;
 
-  public static final String SERIALIZED_NAME_DO_NOT_DISTURB = "do_not_disturb";
-  @SerializedName(SERIALIZED_NAME_DO_NOT_DISTURB)
+  public static final String JSON_PROPERTY_DO_NOT_DISTURB = "do_not_disturb";
   private Boolean doNotDisturb;
 
-  public static final String SERIALIZED_NAME_START_HOUR = "start_hour";
-  @SerializedName(SERIALIZED_NAME_START_HOUR)
+  public static final String JSON_PROPERTY_START_HOUR = "start_hour";
   private Integer startHour;
 
-  public static final String SERIALIZED_NAME_START_MIN = "start_min";
-  @SerializedName(SERIALIZED_NAME_START_MIN)
+  public static final String JSON_PROPERTY_START_MIN = "start_min";
   private Integer startMin;
 
-  public static final String SERIALIZED_NAME_END_HOUR = "end_hour";
-  @SerializedName(SERIALIZED_NAME_END_HOUR)
+  public static final String JSON_PROPERTY_END_HOUR = "end_hour";
   private Integer endHour;
 
-  public static final String SERIALIZED_NAME_END_MIN = "end_min";
-  @SerializedName(SERIALIZED_NAME_END_MIN)
+  public static final String JSON_PROPERTY_END_MIN = "end_min";
   private Integer endMin;
 
-  public static final String SERIALIZED_NAME_SNOOZE_ENABLED = "snooze_enabled";
-  @SerializedName(SERIALIZED_NAME_SNOOZE_ENABLED)
+  public static final String JSON_PROPERTY_SNOOZE_ENABLED = "snooze_enabled";
   private Boolean snoozeEnabled;
 
-  public static final String SERIALIZED_NAME_SNOOZE_START_TS = "snooze_start_ts";
-  @SerializedName(SERIALIZED_NAME_SNOOZE_START_TS)
+  public static final String JSON_PROPERTY_SNOOZE_START_TS = "snooze_start_ts";
   private Integer snoozeStartTs;
 
-  public static final String SERIALIZED_NAME_SNOOZE_END_TS = "snooze_end_ts";
-  @SerializedName(SERIALIZED_NAME_SNOOZE_END_TS)
+  public static final String JSON_PROPERTY_SNOOZE_END_TS = "snooze_end_ts";
   private Integer snoozeEndTs;
 
-  public static final String SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
-  @SerializedName(SERIALIZED_NAME_BLOCK_PUSH_FROM_BOTS)
+  public static final String JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
   private Boolean blockPushFromBots;
 
-  public static final String SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS = "push_blocked_bot_ids";
-  @SerializedName(SERIALIZED_NAME_PUSH_BLOCKED_BOT_IDS)
+  public static final String JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS = "push_blocked_bot_ids";
   private List<Integer> pushBlockedBotIds = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_TIMEZONE = "timezone";
-  @SerializedName(SERIALIZED_NAME_TIMEZONE)
+  public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;
 
-  public static final String SERIALIZED_NAME_PUSH_SOUND = "push_sound";
-  @SerializedName(SERIALIZED_NAME_PUSH_SOUND)
+  public static final String JSON_PROPERTY_PUSH_SOUND = "push_sound";
   private String pushSound;
 
   public UpdatePushPreferencesData() { 
   }
 
   public UpdatePushPreferencesData pushTriggerOption(String pushTriggerOption) {
-    
     this.pushTriggerOption = pushTriggerOption;
     return this;
   }
@@ -118,19 +104,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines the type of push notification trigger to apply to the user's joined group channels. Valid values are the following:<br />- all (default): when disconnected from Sendbird server, the user receives notifications for all new messages including mentioned messages the user has been mentioned in.<br />- mention_only: when disconnected from Sendbird server, the user only receives notifications for messages the user has been mentioned in.<br />- off: the user doesn't receive any notifications.")
+  @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPushTriggerOption() {
     return pushTriggerOption;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPushTriggerOption(String pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
   }
 
 
   public UpdatePushPreferencesData doNotDisturb(Boolean doNotDisturb) {
-    
     this.doNotDisturb = doNotDisturb;
     return this;
   }
@@ -141,19 +130,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to pause notification messages for the user during a specific time of day. (Default: false)")
+  @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getDoNotDisturb() {
     return doNotDisturb;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDoNotDisturb(Boolean doNotDisturb) {
     this.doNotDisturb = doNotDisturb;
   }
 
 
   public UpdatePushPreferencesData startHour(Integer startHour) {
-    
     this.startHour = startHour;
     return this;
   }
@@ -164,19 +156,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the hour to start pausing the notifications for Do Not Disturb of the user.")
+  @JsonProperty(JSON_PROPERTY_START_HOUR)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getStartHour() {
     return startHour;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_START_HOUR)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStartHour(Integer startHour) {
     this.startHour = startHour;
   }
 
 
   public UpdatePushPreferencesData startMin(Integer startMin) {
-    
     this.startMin = startMin;
     return this;
   }
@@ -187,19 +182,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the minute of the hour to start pausing the notifications for Do Not Disturb of the user.")
+  @JsonProperty(JSON_PROPERTY_START_MIN)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getStartMin() {
     return startMin;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_START_MIN)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStartMin(Integer startMin) {
     this.startMin = startMin;
   }
 
 
   public UpdatePushPreferencesData endHour(Integer endHour) {
-    
     this.endHour = endHour;
     return this;
   }
@@ -210,19 +208,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the hour to stop pausing the notifications for Do Not Disturb of the user.")
+  @JsonProperty(JSON_PROPERTY_END_HOUR)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getEndHour() {
     return endHour;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_END_HOUR)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setEndHour(Integer endHour) {
     this.endHour = endHour;
   }
 
 
   public UpdatePushPreferencesData endMin(Integer endMin) {
-    
     this.endMin = endMin;
     return this;
   }
@@ -233,19 +234,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the minute of the hour to stop pausing the notifications for Do Not Disturb of the user.")
+  @JsonProperty(JSON_PROPERTY_END_MIN)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getEndMin() {
     return endMin;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_END_MIN)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setEndMin(Integer endMin) {
     this.endMin = endMin;
   }
 
 
   public UpdatePushPreferencesData snoozeEnabled(Boolean snoozeEnabled) {
-    
     this.snoozeEnabled = snoozeEnabled;
     return this;
   }
@@ -256,19 +260,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to snooze notification messages for the user during a specific period of time. (Default: false)")
+  @JsonProperty(JSON_PROPERTY_SNOOZE_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getSnoozeEnabled() {
     return snoozeEnabled;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SNOOZE_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSnoozeEnabled(Boolean snoozeEnabled) {
     this.snoozeEnabled = snoozeEnabled;
   }
 
 
   public UpdatePushPreferencesData snoozeStartTs(Integer snoozeStartTs) {
-    
     this.snoozeStartTs = snoozeStartTs;
     return this;
   }
@@ -279,19 +286,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the timestamp of when to start snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).")
+  @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getSnoozeStartTs() {
     return snoozeStartTs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSnoozeStartTs(Integer snoozeStartTs) {
     this.snoozeStartTs = snoozeStartTs;
   }
 
 
   public UpdatePushPreferencesData snoozeEndTs(Integer snoozeEndTs) {
-    
     this.snoozeEndTs = snoozeEndTs;
     return this;
   }
@@ -302,19 +312,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the timestamp of when to end snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).")
+  @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getSnoozeEndTs() {
     return snoozeEndTs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSnoozeEndTs(Integer snoozeEndTs) {
     this.snoozeEndTs = snoozeEndTs;
   }
 
 
   public UpdatePushPreferencesData blockPushFromBots(Boolean blockPushFromBots) {
-    
     this.blockPushFromBots = blockPushFromBots;
     return this;
   }
@@ -325,19 +338,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false)")
+  @JsonProperty(JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getBlockPushFromBots() {
     return blockPushFromBots;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setBlockPushFromBots(Boolean blockPushFromBots) {
     this.blockPushFromBots = blockPushFromBots;
   }
 
 
   public UpdatePushPreferencesData pushBlockedBotIds(List<Integer> pushBlockedBotIds) {
-    
     this.pushBlockedBotIds = pushBlockedBotIds;
     return this;
   }
@@ -353,19 +369,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.")
+  @JsonProperty(JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<Integer> getPushBlockedBotIds() {
     return pushBlockedBotIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPushBlockedBotIds(List<Integer> pushBlockedBotIds) {
     this.pushBlockedBotIds = pushBlockedBotIds;
   }
 
 
   public UpdatePushPreferencesData timezone(String timezone) {
-    
     this.timezone = timezone;
     return this;
   }
@@ -376,19 +395,22 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the timezone to be applied to push preferences with a value such as UTC, Asia/Seoul, Europe/London, etc.")
+  @JsonProperty(JSON_PROPERTY_TIMEZONE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTimezone() {
     return timezone;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TIMEZONE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTimezone(String timezone) {
     this.timezone = timezone;
   }
 
 
   public UpdatePushPreferencesData pushSound(String pushSound) {
-    
     this.pushSound = pushSound;
     return this;
   }
@@ -399,18 +421,24 @@ public class UpdatePushPreferencesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a sound file to be played when a push notification is delivered to your client app.")
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPushSound() {
     return pushSound;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPushSound(String pushSound) {
     this.pushSound = pushSound;
   }
 
 
-
+  /**
+   * Return true if this updatePushPreferencesData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -472,135 +500,5 @@ public class UpdatePushPreferencesData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("push_trigger_option");
-    openapiFields.add("do_not_disturb");
-    openapiFields.add("start_hour");
-    openapiFields.add("start_min");
-    openapiFields.add("end_hour");
-    openapiFields.add("end_min");
-    openapiFields.add("snooze_enabled");
-    openapiFields.add("snooze_start_ts");
-    openapiFields.add("snooze_end_ts");
-    openapiFields.add("block_push_from_bots");
-    openapiFields.add("push_blocked_bot_ids");
-    openapiFields.add("timezone");
-    openapiFields.add("push_sound");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("push_trigger_option");
-    openapiRequiredFields.add("do_not_disturb");
-    openapiRequiredFields.add("start_hour");
-    openapiRequiredFields.add("start_min");
-    openapiRequiredFields.add("end_hour");
-    openapiRequiredFields.add("end_min");
-    openapiRequiredFields.add("snooze_enabled");
-    openapiRequiredFields.add("snooze_start_ts");
-    openapiRequiredFields.add("snooze_end_ts");
-    openapiRequiredFields.add("block_push_from_bots");
-    openapiRequiredFields.add("push_blocked_bot_ids");
-    openapiRequiredFields.add("timezone");
-    openapiRequiredFields.add("push_sound");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UpdatePushPreferencesData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (UpdatePushPreferencesData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdatePushPreferencesData is not found in the empty JSON string", UpdatePushPreferencesData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UpdatePushPreferencesData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdatePushPreferencesData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdatePushPreferencesData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("push_trigger_option") != null && !jsonObj.get("push_trigger_option").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_trigger_option` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_trigger_option").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("push_blocked_bot_ids") != null && !jsonObj.get("push_blocked_bot_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_blocked_bot_ids` to be an array in the JSON string but got `%s`", jsonObj.get("push_blocked_bot_ids").toString()));
-      }
-      if (jsonObj.get("timezone") != null && !jsonObj.get("timezone").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `timezone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timezone").toString()));
-      }
-      if (jsonObj.get("push_sound") != null && !jsonObj.get("push_sound").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_sound` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_sound").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdatePushPreferencesData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdatePushPreferencesData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdatePushPreferencesData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdatePushPreferencesData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpdatePushPreferencesData>() {
-           @Override
-           public void write(JsonWriter out, UpdatePushPreferencesData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpdatePushPreferencesData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UpdatePushPreferencesData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdatePushPreferencesData
-  * @throws IOException if the JSON string is invalid with respect to UpdatePushPreferencesData
-  */
-  public static UpdatePushPreferencesData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdatePushPreferencesData.class);
-  }
-
- /**
-  * Convert an instance of UpdatePushPreferencesData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

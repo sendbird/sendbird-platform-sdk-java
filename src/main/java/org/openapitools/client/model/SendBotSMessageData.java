@@ -15,83 +15,69 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SendBotSMessageData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendBotSMessageData.JSON_PROPERTY_MESSAGE,
+  SendBotSMessageData.JSON_PROPERTY_CHANNEL_URL,
+  SendBotSMessageData.JSON_PROPERTY_CUSTOM_TYPE,
+  SendBotSMessageData.JSON_PROPERTY_DATA,
+  SendBotSMessageData.JSON_PROPERTY_SEND_PUSH,
+  SendBotSMessageData.JSON_PROPERTY_MENTIONED,
+  SendBotSMessageData.JSON_PROPERTY_MARK_AS_READ,
+  SendBotSMessageData.JSON_PROPERTY_DEDUP_ID,
+  SendBotSMessageData.JSON_PROPERTY_CREATED_AT
+})
+@JsonTypeName("sendBot_sMessageData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendBotSMessageData {
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_SEND_PUSH = "send_push";
-  @SerializedName(SERIALIZED_NAME_SEND_PUSH)
+  public static final String JSON_PROPERTY_SEND_PUSH = "send_push";
   private Boolean sendPush;
 
-  public static final String SERIALIZED_NAME_MENTIONED = "mentioned";
-  @SerializedName(SERIALIZED_NAME_MENTIONED)
+  public static final String JSON_PROPERTY_MENTIONED = "mentioned";
   private List<String> mentioned = null;
 
-  public static final String SERIALIZED_NAME_MARK_AS_READ = "mark_as_read";
-  @SerializedName(SERIALIZED_NAME_MARK_AS_READ)
+  public static final String JSON_PROPERTY_MARK_AS_READ = "mark_as_read";
   private Boolean markAsRead;
 
-  public static final String SERIALIZED_NAME_DEDUP_ID = "dedup_id";
-  @SerializedName(SERIALIZED_NAME_DEDUP_ID)
+  public static final String JSON_PROPERTY_DEDUP_ID = "dedup_id";
   private String dedupId;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Integer createdAt;
 
   public SendBotSMessageData() { 
   }
 
   public SendBotSMessageData message(String message) {
-    
     this.message = message;
     return this;
   }
@@ -102,19 +88,22 @@ public class SendBotSMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the content of the message sent by the bot.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getMessage() {
     return message;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessage(String message) {
     this.message = message;
   }
 
 
   public SendBotSMessageData channelUrl(String channelUrl) {
-    
     this.channelUrl = channelUrl;
     return this;
   }
@@ -125,19 +114,22 @@ public class SendBotSMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the channel where the message is sent to.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getChannelUrl() {
     return channelUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setChannelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
   }
 
 
   public SendBotSMessageData customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -148,19 +140,22 @@ public class SendBotSMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
   public SendBotSMessageData data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -171,19 +166,22 @@ public class SendBotSMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional message information such as custom font size, font type or `JSON` formatted string.")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public SendBotSMessageData sendPush(Boolean sendPush) {
-    
     this.sendPush = sendPush;
     return this;
   }
@@ -194,19 +192,22 @@ public class SendBotSMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to send a push notification for the message to the members of the channel (Default: true)")
+  @JsonProperty(JSON_PROPERTY_SEND_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getSendPush() {
     return sendPush;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SEND_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSendPush(Boolean sendPush) {
     this.sendPush = sendPush;
   }
 
 
   public SendBotSMessageData mentioned(List<String> mentioned) {
-    
     this.mentioned = mentioned;
     return this;
   }
@@ -225,19 +226,22 @@ public class SendBotSMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of the users who get a notification for the message.")
+  @JsonProperty(JSON_PROPERTY_MENTIONED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getMentioned() {
     return mentioned;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTIONED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentioned(List<String> mentioned) {
     this.mentioned = mentioned;
   }
 
 
   public SendBotSMessageData markAsRead(Boolean markAsRead) {
-    
     this.markAsRead = markAsRead;
     return this;
   }
@@ -248,19 +252,22 @@ public class SendBotSMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to mark the message as read for the bot. If set to false, the bot's unread_count and read_receipt remain unchanged after the message is sent. (Default: true)")
+  @JsonProperty(JSON_PROPERTY_MARK_AS_READ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getMarkAsRead() {
     return markAsRead;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MARK_AS_READ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMarkAsRead(Boolean markAsRead) {
     this.markAsRead = markAsRead;
   }
 
 
   public SendBotSMessageData dedupId(String dedupId) {
-    
     this.dedupId = dedupId;
     return this;
   }
@@ -271,19 +278,22 @@ public class SendBotSMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID for the message to prevent the same message data from getting sent to the channel.")
+  @JsonProperty(JSON_PROPERTY_DEDUP_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDedupId() {
     return dedupId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DEDUP_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDedupId(String dedupId) {
     this.dedupId = dedupId;
   }
 
 
   public SendBotSMessageData createdAt(Integer createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -294,18 +304,24 @@ public class SendBotSMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(Integer createdAt) {
     this.createdAt = createdAt;
   }
 
 
-
+  /**
+   * Return true if this sendBot_sMessageData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -359,126 +375,5 @@ public class SendBotSMessageData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("message");
-    openapiFields.add("channel_url");
-    openapiFields.add("custom_type");
-    openapiFields.add("data");
-    openapiFields.add("send_push");
-    openapiFields.add("mentioned");
-    openapiFields.add("mark_as_read");
-    openapiFields.add("dedup_id");
-    openapiFields.add("created_at");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("message");
-    openapiRequiredFields.add("channel_url");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendBotSMessageData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendBotSMessageData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendBotSMessageData is not found in the empty JSON string", SendBotSMessageData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SendBotSMessageData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendBotSMessageData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : SendBotSMessageData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("message") != null && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
-      }
-      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("mentioned") != null && !jsonObj.get("mentioned").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mentioned` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned").toString()));
-      }
-      if (jsonObj.get("dedup_id") != null && !jsonObj.get("dedup_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `dedup_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dedup_id").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendBotSMessageData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendBotSMessageData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendBotSMessageData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendBotSMessageData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendBotSMessageData>() {
-           @Override
-           public void write(JsonWriter out, SendBotSMessageData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendBotSMessageData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendBotSMessageData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendBotSMessageData
-  * @throws IOException if the JSON string is invalid with respect to SendBotSMessageData
-  */
-  public static SendBotSMessageData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendBotSMessageData.class);
-  }
-
- /**
-  * Convert an instance of SendBotSMessageData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

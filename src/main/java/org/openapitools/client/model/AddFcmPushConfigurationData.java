@@ -15,53 +15,39 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * AddFcmPushConfigurationData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  AddFcmPushConfigurationData.JSON_PROPERTY_API_KEY,
+  AddFcmPushConfigurationData.JSON_PROPERTY_PUSH_SOUND
+})
+@JsonTypeName("addFcmPushConfigurationData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class AddFcmPushConfigurationData {
-  public static final String SERIALIZED_NAME_API_KEY = "api_key";
-  @SerializedName(SERIALIZED_NAME_API_KEY)
+  public static final String JSON_PROPERTY_API_KEY = "api_key";
   private String apiKey;
 
-  public static final String SERIALIZED_NAME_PUSH_SOUND = "push_sound";
-  @SerializedName(SERIALIZED_NAME_PUSH_SOUND)
+  public static final String JSON_PROPERTY_PUSH_SOUND = "push_sound";
   private String pushSound;
 
   public AddFcmPushConfigurationData() { 
   }
 
   public AddFcmPushConfigurationData apiKey(String apiKey) {
-    
     this.apiKey = apiKey;
     return this;
   }
@@ -72,19 +58,22 @@ public class AddFcmPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the FCM server key to register.")
+  @JsonProperty(JSON_PROPERTY_API_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getApiKey() {
     return apiKey;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_API_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setApiKey(String apiKey) {
     this.apiKey = apiKey;
   }
 
 
   public AddFcmPushConfigurationData pushSound(String pushSound) {
-    
     this.pushSound = pushSound;
     return this;
   }
@@ -95,18 +84,24 @@ public class AddFcmPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file should be located in the `/res/raw` folder.")
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPushSound() {
     return pushSound;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPushSound(String pushSound) {
     this.pushSound = pushSound;
   }
 
 
-
+  /**
+   * Return true if this addFcmPushConfigurationData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -146,106 +141,5 @@ public class AddFcmPushConfigurationData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("api_key");
-    openapiFields.add("push_sound");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("api_key");
-    openapiRequiredFields.add("push_sound");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AddFcmPushConfigurationData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AddFcmPushConfigurationData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddFcmPushConfigurationData is not found in the empty JSON string", AddFcmPushConfigurationData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AddFcmPushConfigurationData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddFcmPushConfigurationData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : AddFcmPushConfigurationData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("api_key") != null && !jsonObj.get("api_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `api_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("api_key").toString()));
-      }
-      if (jsonObj.get("push_sound") != null && !jsonObj.get("push_sound").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_sound` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_sound").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddFcmPushConfigurationData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddFcmPushConfigurationData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddFcmPushConfigurationData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddFcmPushConfigurationData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AddFcmPushConfigurationData>() {
-           @Override
-           public void write(JsonWriter out, AddFcmPushConfigurationData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AddFcmPushConfigurationData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AddFcmPushConfigurationData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddFcmPushConfigurationData
-  * @throws IOException if the JSON string is invalid with respect to AddFcmPushConfigurationData
-  */
-  public static AddFcmPushConfigurationData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddFcmPushConfigurationData.class);
-  }
-
- /**
-  * Convert an instance of AddFcmPushConfigurationData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

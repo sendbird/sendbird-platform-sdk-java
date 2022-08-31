@@ -15,62 +15,48 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import org.openapitools.client.model.ListMessagesResponseMessagesInnerOgTagOgImage;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ListMessagesResponseMessagesInnerOgTag
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ListMessagesResponseMessagesInnerOgTag.JSON_PROPERTY_OG_COLON_URL,
+  ListMessagesResponseMessagesInnerOgTag.JSON_PROPERTY_OG_COLON_TITLE,
+  ListMessagesResponseMessagesInnerOgTag.JSON_PROPERTY_OG_COLON_DESCRIPTION,
+  ListMessagesResponseMessagesInnerOgTag.JSON_PROPERTY_OG_COLON_IMAGE
+})
+@JsonTypeName("listMessagesResponse_messages_inner_og_tag")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ListMessagesResponseMessagesInnerOgTag {
-  public static final String SERIALIZED_NAME_OG_COLON_URL = "og:url";
-  @SerializedName(SERIALIZED_NAME_OG_COLON_URL)
+  public static final String JSON_PROPERTY_OG_COLON_URL = "og:url";
   private String ogColonUrl;
 
-  public static final String SERIALIZED_NAME_OG_COLON_TITLE = "og:title";
-  @SerializedName(SERIALIZED_NAME_OG_COLON_TITLE)
+  public static final String JSON_PROPERTY_OG_COLON_TITLE = "og:title";
   private String ogColonTitle;
 
-  public static final String SERIALIZED_NAME_OG_COLON_DESCRIPTION = "og:description";
-  @SerializedName(SERIALIZED_NAME_OG_COLON_DESCRIPTION)
+  public static final String JSON_PROPERTY_OG_COLON_DESCRIPTION = "og:description";
   private String ogColonDescription;
 
-  public static final String SERIALIZED_NAME_OG_COLON_IMAGE = "og:image";
-  @SerializedName(SERIALIZED_NAME_OG_COLON_IMAGE)
+  public static final String JSON_PROPERTY_OG_COLON_IMAGE = "og:image";
   private ListMessagesResponseMessagesInnerOgTagOgImage ogColonImage;
 
   public ListMessagesResponseMessagesInnerOgTag() { 
   }
 
   public ListMessagesResponseMessagesInnerOgTag ogColonUrl(String ogColonUrl) {
-    
     this.ogColonUrl = ogColonUrl;
     return this;
   }
@@ -81,19 +67,22 @@ public class ListMessagesResponseMessagesInnerOgTag {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OG_COLON_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOgColonUrl() {
     return ogColonUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OG_COLON_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOgColonUrl(String ogColonUrl) {
     this.ogColonUrl = ogColonUrl;
   }
 
 
   public ListMessagesResponseMessagesInnerOgTag ogColonTitle(String ogColonTitle) {
-    
     this.ogColonTitle = ogColonTitle;
     return this;
   }
@@ -104,19 +93,22 @@ public class ListMessagesResponseMessagesInnerOgTag {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OG_COLON_TITLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOgColonTitle() {
     return ogColonTitle;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OG_COLON_TITLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOgColonTitle(String ogColonTitle) {
     this.ogColonTitle = ogColonTitle;
   }
 
 
   public ListMessagesResponseMessagesInnerOgTag ogColonDescription(String ogColonDescription) {
-    
     this.ogColonDescription = ogColonDescription;
     return this;
   }
@@ -127,19 +119,22 @@ public class ListMessagesResponseMessagesInnerOgTag {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OG_COLON_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOgColonDescription() {
     return ogColonDescription;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OG_COLON_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOgColonDescription(String ogColonDescription) {
     this.ogColonDescription = ogColonDescription;
   }
 
 
   public ListMessagesResponseMessagesInnerOgTag ogColonImage(ListMessagesResponseMessagesInnerOgTagOgImage ogColonImage) {
-    
     this.ogColonImage = ogColonImage;
     return this;
   }
@@ -150,18 +145,24 @@ public class ListMessagesResponseMessagesInnerOgTag {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OG_COLON_IMAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ListMessagesResponseMessagesInnerOgTagOgImage getOgColonImage() {
     return ogColonImage;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OG_COLON_IMAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOgColonImage(ListMessagesResponseMessagesInnerOgTagOgImage ogColonImage) {
     this.ogColonImage = ogColonImage;
   }
 
 
-
+  /**
+   * Return true if this listMessagesResponse_messages_inner_og_tag object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -205,106 +206,5 @@ public class ListMessagesResponseMessagesInnerOgTag {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("og:url");
-    openapiFields.add("og:title");
-    openapiFields.add("og:description");
-    openapiFields.add("og:image");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ListMessagesResponseMessagesInnerOgTag
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ListMessagesResponseMessagesInnerOgTag.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ListMessagesResponseMessagesInnerOgTag is not found in the empty JSON string", ListMessagesResponseMessagesInnerOgTag.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ListMessagesResponseMessagesInnerOgTag.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListMessagesResponseMessagesInnerOgTag` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("og:url") != null && !jsonObj.get("og:url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `og:url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("og:url").toString()));
-      }
-      if (jsonObj.get("og:title") != null && !jsonObj.get("og:title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `og:title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("og:title").toString()));
-      }
-      if (jsonObj.get("og:description") != null && !jsonObj.get("og:description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `og:description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("og:description").toString()));
-      }
-      // validate the optional field `og:image`
-      if (jsonObj.getAsJsonObject("og:image") != null) {
-        ListMessagesResponseMessagesInnerOgTagOgImage.validateJsonObject(jsonObj.getAsJsonObject("og:image"));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ListMessagesResponseMessagesInnerOgTag.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ListMessagesResponseMessagesInnerOgTag' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ListMessagesResponseMessagesInnerOgTag> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ListMessagesResponseMessagesInnerOgTag.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ListMessagesResponseMessagesInnerOgTag>() {
-           @Override
-           public void write(JsonWriter out, ListMessagesResponseMessagesInnerOgTag value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ListMessagesResponseMessagesInnerOgTag read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ListMessagesResponseMessagesInnerOgTag given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ListMessagesResponseMessagesInnerOgTag
-  * @throws IOException if the JSON string is invalid with respect to ListMessagesResponseMessagesInnerOgTag
-  */
-  public static ListMessagesResponseMessagesInnerOgTag fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ListMessagesResponseMessagesInnerOgTag.class);
-  }
-
- /**
-  * Convert an instance of ListMessagesResponseMessagesInnerOgTag to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

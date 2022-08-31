@@ -15,65 +15,51 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * AddReactionToAMessageData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  AddReactionToAMessageData.JSON_PROPERTY_CHANNEL_TYPE,
+  AddReactionToAMessageData.JSON_PROPERTY_CHANNEL_URL,
+  AddReactionToAMessageData.JSON_PROPERTY_MESSAGE_ID,
+  AddReactionToAMessageData.JSON_PROPERTY_USER_ID,
+  AddReactionToAMessageData.JSON_PROPERTY_REACTION
+})
+@JsonTypeName("addReactionToAMessageData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class AddReactionToAMessageData {
-  public static final String SERIALIZED_NAME_CHANNEL_TYPE = "channel_type";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_TYPE)
+  public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
-  public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
+  public static final String JSON_PROPERTY_MESSAGE_ID = "message_id";
   private Integer messageId;
 
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public static final String SERIALIZED_NAME_REACTION = "reaction";
-  @SerializedName(SERIALIZED_NAME_REACTION)
+  public static final String JSON_PROPERTY_REACTION = "reaction";
   private String reaction;
 
   public AddReactionToAMessageData() { 
   }
 
   public AddReactionToAMessageData channelType(String channelType) {
-    
     this.channelType = channelType;
     return this;
   }
@@ -84,19 +70,22 @@ public class AddReactionToAMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the type of the channel. Currently, a value of group_channels is only available for the parameter.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getChannelType() {
     return channelType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setChannelType(String channelType) {
     this.channelType = channelType;
   }
 
 
   public AddReactionToAMessageData channelUrl(String channelUrl) {
-    
     this.channelUrl = channelUrl;
     return this;
   }
@@ -107,19 +96,22 @@ public class AddReactionToAMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the target channel.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getChannelUrl() {
     return channelUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setChannelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
   }
 
 
   public AddReactionToAMessageData messageId(Integer messageId) {
-    
     this.messageId = messageId;
     return this;
   }
@@ -130,19 +122,22 @@ public class AddReactionToAMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the message to add a reaction to.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getMessageId() {
     return messageId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessageId(Integer messageId) {
     this.messageId = messageId;
   }
 
 
   public AddReactionToAMessageData userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -153,19 +148,22 @@ public class AddReactionToAMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the user who reacts to the message.")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
 
   public AddReactionToAMessageData reaction(String reaction) {
-    
     this.reaction = reaction;
     return this;
   }
@@ -176,18 +174,24 @@ public class AddReactionToAMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique key of the reaction to be added to the message. The length is limited to 192 charaters.")
+  @JsonProperty(JSON_PROPERTY_REACTION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getReaction() {
     return reaction;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REACTION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setReaction(String reaction) {
     this.reaction = reaction;
   }
 
 
-
+  /**
+   * Return true if this addReactionToAMessageData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -233,118 +237,5 @@ public class AddReactionToAMessageData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("channel_type");
-    openapiFields.add("channel_url");
-    openapiFields.add("message_id");
-    openapiFields.add("user_id");
-    openapiFields.add("reaction");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("channel_type");
-    openapiRequiredFields.add("channel_url");
-    openapiRequiredFields.add("message_id");
-    openapiRequiredFields.add("user_id");
-    openapiRequiredFields.add("reaction");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AddReactionToAMessageData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AddReactionToAMessageData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddReactionToAMessageData is not found in the empty JSON string", AddReactionToAMessageData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AddReactionToAMessageData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddReactionToAMessageData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : AddReactionToAMessageData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("channel_type") != null && !jsonObj.get("channel_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_type").toString()));
-      }
-      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-      if (jsonObj.get("reaction") != null && !jsonObj.get("reaction").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `reaction` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reaction").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddReactionToAMessageData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddReactionToAMessageData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddReactionToAMessageData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddReactionToAMessageData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AddReactionToAMessageData>() {
-           @Override
-           public void write(JsonWriter out, AddReactionToAMessageData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AddReactionToAMessageData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AddReactionToAMessageData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddReactionToAMessageData
-  * @throws IOException if the JSON string is invalid with respect to AddReactionToAMessageData
-  */
-  public static AddReactionToAMessageData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddReactionToAMessageData.class);
-  }
-
- /**
-  * Convert an instance of AddReactionToAMessageData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -13,12 +13,15 @@
 
 package org.sendbird.client.api;
 
-import org.sendbird.client.ApiException;
+import org.sendbird.client.*;
+import org.sendbird.client.auth.*;
 import org.openapitools.client.model.RetrieveAdvancedAnalyticsMetricsResponse;
 import org.openapitools.client.model.ViewNumberOfConcurrentConnectionsResponse;
 import org.openapitools.client.model.ViewNumberOfDailyActiveUsersResponse;
 import org.openapitools.client.model.ViewNumberOfMonthlyActiveUsersResponse;
 import org.openapitools.client.model.ViewNumberOfPeakConnectionsResponse;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -30,7 +33,6 @@ import java.util.Map;
 /**
  * API tests for StatisticsApi
  */
-@Disabled
 public class StatisticsApiTest {
 
     private final StatisticsApi api = new StatisticsApi();
@@ -44,8 +46,8 @@ public class StatisticsApiTest {
      */
     @Test
     public void retrieveAdvancedAnalyticsMetricsTest() throws ApiException {
-        String apiToken = null;
-        RetrieveAdvancedAnalyticsMetricsResponse response = api.retrieveAdvancedAnalyticsMetrics(apiToken);
+        //String apiToken = null;
+        //RetrieveAdvancedAnalyticsMetricsResponse response = api.retrieveAdvancedAnalyticsMetrics(apiToken);
         // TODO: test validations
     }
 
@@ -58,8 +60,8 @@ public class StatisticsApiTest {
      */
     @Test
     public void viewNumberOfConcurrentConnectionsTest() throws ApiException {
-        String apiToken = null;
-        ViewNumberOfConcurrentConnectionsResponse response = api.viewNumberOfConcurrentConnections(apiToken);
+        //String apiToken = null;
+        //ViewNumberOfConcurrentConnectionsResponse response = api.viewNumberOfConcurrentConnections(apiToken);
         // TODO: test validations
     }
 
@@ -72,9 +74,9 @@ public class StatisticsApiTest {
      */
     @Test
     public void viewNumberOfDailyActiveUsersTest() throws ApiException {
-        String apiToken = null;
-        String date = null;
-        ViewNumberOfDailyActiveUsersResponse response = api.viewNumberOfDailyActiveUsers(apiToken, date);
+        //String apiToken = null;
+        //String date = null;
+        //ViewNumberOfDailyActiveUsersResponse response = api.viewNumberOfDailyActiveUsers(apiToken, date);
         // TODO: test validations
     }
 
@@ -87,9 +89,9 @@ public class StatisticsApiTest {
      */
     @Test
     public void viewNumberOfMonthlyActiveUsersTest() throws ApiException {
-        String apiToken = null;
-        String date = null;
-        ViewNumberOfMonthlyActiveUsersResponse response = api.viewNumberOfMonthlyActiveUsers(apiToken, date);
+        //String apiToken = null;
+        //String date = null;
+        //ViewNumberOfMonthlyActiveUsersResponse response = api.viewNumberOfMonthlyActiveUsers(apiToken, date);
         // TODO: test validations
     }
 
@@ -102,15 +104,15 @@ public class StatisticsApiTest {
      */
     @Test
     public void viewNumberOfPeakConnectionsTest() throws ApiException {
-        String apiToken = null;
-        String timeDimension = null;
-        Integer startYear = null;
-        Integer startMonth = null;
-        Integer endYear = null;
-        Integer endMonth = null;
-        Integer startDay = null;
-        Integer endDay = null;
-        ViewNumberOfPeakConnectionsResponse response = api.viewNumberOfPeakConnections(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay);
+        //String apiToken = null;
+        //String timeDimension = null;
+        //Integer startYear = null;
+        //Integer startMonth = null;
+        //Integer endYear = null;
+        //Integer endMonth = null;
+        //Integer startDay = null;
+        //Integer endDay = null;
+        //ViewNumberOfPeakConnectionsResponse response = api.viewNumberOfPeakConnections(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay);
         // TODO: test validations
     }
 

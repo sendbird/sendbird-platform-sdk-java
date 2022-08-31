@@ -15,65 +15,51 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SetDomainFilterDataImageModerationLimits
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SetDomainFilterDataImageModerationLimits.JSON_PROPERTY_ADULT,
+  SetDomainFilterDataImageModerationLimits.JSON_PROPERTY_SPOOF,
+  SetDomainFilterDataImageModerationLimits.JSON_PROPERTY_MEDICAL,
+  SetDomainFilterDataImageModerationLimits.JSON_PROPERTY_VIOLENCE,
+  SetDomainFilterDataImageModerationLimits.JSON_PROPERTY_RACY
+})
+@JsonTypeName("setDomainFilterData_image_moderation_limits")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SetDomainFilterDataImageModerationLimits {
-  public static final String SERIALIZED_NAME_ADULT = "adult";
-  @SerializedName(SERIALIZED_NAME_ADULT)
+  public static final String JSON_PROPERTY_ADULT = "adult";
   private Integer adult;
 
-  public static final String SERIALIZED_NAME_SPOOF = "spoof";
-  @SerializedName(SERIALIZED_NAME_SPOOF)
+  public static final String JSON_PROPERTY_SPOOF = "spoof";
   private Integer spoof;
 
-  public static final String SERIALIZED_NAME_MEDICAL = "medical";
-  @SerializedName(SERIALIZED_NAME_MEDICAL)
+  public static final String JSON_PROPERTY_MEDICAL = "medical";
   private Integer medical;
 
-  public static final String SERIALIZED_NAME_VIOLENCE = "violence";
-  @SerializedName(SERIALIZED_NAME_VIOLENCE)
+  public static final String JSON_PROPERTY_VIOLENCE = "violence";
   private Integer violence;
 
-  public static final String SERIALIZED_NAME_RACY = "racy";
-  @SerializedName(SERIALIZED_NAME_RACY)
+  public static final String JSON_PROPERTY_RACY = "racy";
   private Integer racy;
 
   public SetDomainFilterDataImageModerationLimits() { 
   }
 
   public SetDomainFilterDataImageModerationLimits adult(Integer adult) {
-    
     this.adult = adult;
     return this;
   }
@@ -84,19 +70,22 @@ public class SetDomainFilterDataImageModerationLimits {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ADULT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getAdult() {
     return adult;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ADULT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAdult(Integer adult) {
     this.adult = adult;
   }
 
 
   public SetDomainFilterDataImageModerationLimits spoof(Integer spoof) {
-    
     this.spoof = spoof;
     return this;
   }
@@ -107,19 +96,22 @@ public class SetDomainFilterDataImageModerationLimits {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SPOOF)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getSpoof() {
     return spoof;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SPOOF)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSpoof(Integer spoof) {
     this.spoof = spoof;
   }
 
 
   public SetDomainFilterDataImageModerationLimits medical(Integer medical) {
-    
     this.medical = medical;
     return this;
   }
@@ -130,19 +122,22 @@ public class SetDomainFilterDataImageModerationLimits {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MEDICAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getMedical() {
     return medical;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MEDICAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMedical(Integer medical) {
     this.medical = medical;
   }
 
 
   public SetDomainFilterDataImageModerationLimits violence(Integer violence) {
-    
     this.violence = violence;
     return this;
   }
@@ -153,19 +148,22 @@ public class SetDomainFilterDataImageModerationLimits {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_VIOLENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getViolence() {
     return violence;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_VIOLENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setViolence(Integer violence) {
     this.violence = violence;
   }
 
 
   public SetDomainFilterDataImageModerationLimits racy(Integer racy) {
-    
     this.racy = racy;
     return this;
   }
@@ -176,18 +174,24 @@ public class SetDomainFilterDataImageModerationLimits {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_RACY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getRacy() {
     return racy;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_RACY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRacy(Integer racy) {
     this.racy = racy;
   }
 
 
-
+  /**
+   * Return true if this setDomainFilterData_image_moderation_limits object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -233,94 +237,5 @@ public class SetDomainFilterDataImageModerationLimits {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("adult");
-    openapiFields.add("spoof");
-    openapiFields.add("medical");
-    openapiFields.add("violence");
-    openapiFields.add("racy");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SetDomainFilterDataImageModerationLimits
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SetDomainFilterDataImageModerationLimits.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SetDomainFilterDataImageModerationLimits is not found in the empty JSON string", SetDomainFilterDataImageModerationLimits.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SetDomainFilterDataImageModerationLimits.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SetDomainFilterDataImageModerationLimits` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SetDomainFilterDataImageModerationLimits.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SetDomainFilterDataImageModerationLimits' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SetDomainFilterDataImageModerationLimits> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SetDomainFilterDataImageModerationLimits.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SetDomainFilterDataImageModerationLimits>() {
-           @Override
-           public void write(JsonWriter out, SetDomainFilterDataImageModerationLimits value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SetDomainFilterDataImageModerationLimits read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SetDomainFilterDataImageModerationLimits given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SetDomainFilterDataImageModerationLimits
-  * @throws IOException if the JSON string is invalid with respect to SetDomainFilterDataImageModerationLimits
-  */
-  public static SetDomainFilterDataImageModerationLimits fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SetDomainFilterDataImageModerationLimits.class);
-  }
-
- /**
-  * Convert an instance of SetDomainFilterDataImageModerationLimits to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

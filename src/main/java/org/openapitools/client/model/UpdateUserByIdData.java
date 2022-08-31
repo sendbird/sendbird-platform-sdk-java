@@ -15,96 +15,82 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * UpdateUserByIdData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  UpdateUserByIdData.JSON_PROPERTY_USER_ID,
+  UpdateUserByIdData.JSON_PROPERTY_NICKNAME,
+  UpdateUserByIdData.JSON_PROPERTY_PROFILE_URL,
+  UpdateUserByIdData.JSON_PROPERTY_PROFILE_FILE,
+  UpdateUserByIdData.JSON_PROPERTY_ISSUE_ACCESS_TOKEN,
+  UpdateUserByIdData.JSON_PROPERTY_ISSUE_SESSION_TOKEN,
+  UpdateUserByIdData.JSON_PROPERTY_SESSION_TOKEN_EXPIRES_AT,
+  UpdateUserByIdData.JSON_PROPERTY_IS_ACTIVE,
+  UpdateUserByIdData.JSON_PROPERTY_LAST_SEEN_AT,
+  UpdateUserByIdData.JSON_PROPERTY_DISCOVERY_KEYS,
+  UpdateUserByIdData.JSON_PROPERTY_PREFERRED_LANGUAGES,
+  UpdateUserByIdData.JSON_PROPERTY_LEAVE_ALL_WHEN_DEACTIVATED
+})
+@JsonTypeName("updateUserByIdData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class UpdateUserByIdData {
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public static final String SERIALIZED_NAME_NICKNAME = "nickname";
-  @SerializedName(SERIALIZED_NAME_NICKNAME)
+  public static final String JSON_PROPERTY_NICKNAME = "nickname";
   private String nickname;
 
-  public static final String SERIALIZED_NAME_PROFILE_URL = "profile_url";
-  @SerializedName(SERIALIZED_NAME_PROFILE_URL)
+  public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
   private String profileUrl;
 
-  public static final String SERIALIZED_NAME_PROFILE_FILE = "profile_file";
-  @SerializedName(SERIALIZED_NAME_PROFILE_FILE)
+  public static final String JSON_PROPERTY_PROFILE_FILE = "profile_file";
   private File profileFile;
 
-  public static final String SERIALIZED_NAME_ISSUE_ACCESS_TOKEN = "issue_access_token";
-  @SerializedName(SERIALIZED_NAME_ISSUE_ACCESS_TOKEN)
+  public static final String JSON_PROPERTY_ISSUE_ACCESS_TOKEN = "issue_access_token";
   private Boolean issueAccessToken;
 
-  public static final String SERIALIZED_NAME_ISSUE_SESSION_TOKEN = "issue_session_token";
-  @SerializedName(SERIALIZED_NAME_ISSUE_SESSION_TOKEN)
+  public static final String JSON_PROPERTY_ISSUE_SESSION_TOKEN = "issue_session_token";
   private Boolean issueSessionToken;
 
-  public static final String SERIALIZED_NAME_SESSION_TOKEN_EXPIRES_AT = "session_token_expires_at";
-  @SerializedName(SERIALIZED_NAME_SESSION_TOKEN_EXPIRES_AT)
+  public static final String JSON_PROPERTY_SESSION_TOKEN_EXPIRES_AT = "session_token_expires_at";
   private Integer sessionTokenExpiresAt;
 
-  public static final String SERIALIZED_NAME_IS_ACTIVE = "is_active";
-  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
+  public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
   private Boolean isActive;
 
-  public static final String SERIALIZED_NAME_LAST_SEEN_AT = "last_seen_at";
-  @SerializedName(SERIALIZED_NAME_LAST_SEEN_AT)
+  public static final String JSON_PROPERTY_LAST_SEEN_AT = "last_seen_at";
   private Integer lastSeenAt;
 
-  public static final String SERIALIZED_NAME_DISCOVERY_KEYS = "discovery_keys";
-  @SerializedName(SERIALIZED_NAME_DISCOVERY_KEYS)
+  public static final String JSON_PROPERTY_DISCOVERY_KEYS = "discovery_keys";
   private List<String> discoveryKeys = null;
 
-  public static final String SERIALIZED_NAME_PREFERRED_LANGUAGES = "preferred_languages";
-  @SerializedName(SERIALIZED_NAME_PREFERRED_LANGUAGES)
+  public static final String JSON_PROPERTY_PREFERRED_LANGUAGES = "preferred_languages";
   private List<String> preferredLanguages = null;
 
-  public static final String SERIALIZED_NAME_LEAVE_ALL_WHEN_DEACTIVATED = "leave_all_when_deactivated";
-  @SerializedName(SERIALIZED_NAME_LEAVE_ALL_WHEN_DEACTIVATED)
+  public static final String JSON_PROPERTY_LEAVE_ALL_WHEN_DEACTIVATED = "leave_all_when_deactivated";
   private Boolean leaveAllWhenDeactivated;
 
   public UpdateUserByIdData() { 
   }
 
   public UpdateUserByIdData userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -115,19 +101,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the user to update.")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
 
   public UpdateUserByIdData nickname(String nickname) {
-    
     this.nickname = nickname;
     return this;
   }
@@ -138,19 +127,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the user's nickname. The length is limited to 80 characters.")
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getNickname() {
     return nickname;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setNickname(String nickname) {
     this.nickname = nickname;
   }
 
 
   public UpdateUserByIdData profileUrl(String profileUrl) {
-    
     this.profileUrl = profileUrl;
     return this;
   }
@@ -161,19 +153,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the user's profile image. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.")
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getProfileUrl() {
     return profileUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setProfileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
   }
 
 
   public UpdateUserByIdData profileFile(File profileFile) {
-    
     this.profileFile = profileFile;
     return this;
   }
@@ -184,19 +179,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Uploads the file of the user's profile image. An acceptable image is limited to `JPG` (.jpg), `JPEG` (.jpeg), or `PNG` (.png) file of up to 25 MB.")
+  @JsonProperty(JSON_PROPERTY_PROFILE_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public File getProfileFile() {
     return profileFile;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PROFILE_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfileFile(File profileFile) {
     this.profileFile = profileFile;
   }
 
 
   public UpdateUserByIdData issueAccessToken(Boolean issueAccessToken) {
-    
     this.issueAccessToken = issueAccessToken;
     return this;
   }
@@ -207,19 +205,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to revoke the existing access token and create a new one for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, an access token is not required when the user logs in. (Default: false)")
+  @JsonProperty(JSON_PROPERTY_ISSUE_ACCESS_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIssueAccessToken() {
     return issueAccessToken;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ISSUE_ACCESS_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssueAccessToken(Boolean issueAccessToken) {
     this.issueAccessToken = issueAccessToken;
   }
 
 
   public UpdateUserByIdData issueSessionToken(Boolean issueSessionToken) {
-    
     this.issueSessionToken = issueSessionToken;
     return this;
   }
@@ -230,19 +231,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to add a new session token for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, a session token is not required when the user logs in. (Default: false)")
+  @JsonProperty(JSON_PROPERTY_ISSUE_SESSION_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIssueSessionToken() {
     return issueSessionToken;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ISSUE_SESSION_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIssueSessionToken(Boolean issueSessionToken) {
     this.issueSessionToken = issueSessionToken;
   }
 
 
   public UpdateUserByIdData sessionTokenExpiresAt(Integer sessionTokenExpiresAt) {
-    
     this.sessionTokenExpiresAt = sessionTokenExpiresAt;
     return this;
   }
@@ -253,19 +257,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time for the issued session token to expire in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The length should be 13. If not specified and the issue_session_token property above is true, the value of this property is set to the sum of the current timestamp and 604800000 by default, which indicates that the token will be valid for the next 7 days starting from the current timestamp.")
+  @JsonProperty(JSON_PROPERTY_SESSION_TOKEN_EXPIRES_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getSessionTokenExpiresAt() {
     return sessionTokenExpiresAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SESSION_TOKEN_EXPIRES_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSessionTokenExpiresAt(Integer sessionTokenExpiresAt) {
     this.sessionTokenExpiresAt = sessionTokenExpiresAt;
   }
 
 
   public UpdateUserByIdData isActive(Boolean isActive) {
-    
     this.isActive = isActive;
     return this;
   }
@@ -276,19 +283,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to activate or deactivate the user within the application.")
+  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsActive() {
     return isActive;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsActive(Boolean isActive) {
     this.isActive = isActive;
   }
 
 
   public UpdateUserByIdData lastSeenAt(Integer lastSeenAt) {
-    
     this.lastSeenAt = lastSeenAt;
     return this;
   }
@@ -299,19 +309,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time when the user goes offline, to indicate when they were last online, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.")
+  @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getLastSeenAt() {
     return lastSeenAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastSeenAt(Integer lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
   }
 
 
   public UpdateUserByIdData discoveryKeys(List<String> discoveryKeys) {
-    
     this.discoveryKeys = discoveryKeys;
     return this;
   }
@@ -330,19 +343,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of unique keys of the user which is provided to Sendbird server for discovering friends. By using the keys, the server can identify and match the user with other users.")
+  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getDiscoveryKeys() {
     return discoveryKeys;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscoveryKeys(List<String> discoveryKeys) {
     this.discoveryKeys = discoveryKeys;
   }
 
 
   public UpdateUserByIdData preferredLanguages(List<String> preferredLanguages) {
-    
     this.preferredLanguages = preferredLanguages;
     return this;
   }
@@ -361,19 +377,22 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more [language codes](/docs/chat/v3/platform-api/guides/miscellaneous#2-language-codes-for-auto-translation) to translate notification messages to preferred languages. Up to 4 languages can be set for the user. If messages are sent in one of the preferred languages, notification messages won't be translated. If messages are sent in a language other than the preferred languages, notification messages will be translated into the first language in the array. In addition, the messages translated into other preferred languages will be provided in the `sendbird` property of a notification message payload.")
+  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getPreferredLanguages() {
     return preferredLanguages;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPreferredLanguages(List<String> preferredLanguages) {
     this.preferredLanguages = preferredLanguages;
   }
 
 
   public UpdateUserByIdData leaveAllWhenDeactivated(Boolean leaveAllWhenDeactivated) {
-    
     this.leaveAllWhenDeactivated = leaveAllWhenDeactivated;
     return this;
   }
@@ -384,18 +403,24 @@ public class UpdateUserByIdData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether the user leaves all joined group channels upon deactivation. Note that this value is true by default. Use in conjunction with the is_active property above.")
+  @JsonProperty(JSON_PROPERTY_LEAVE_ALL_WHEN_DEACTIVATED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getLeaveAllWhenDeactivated() {
     return leaveAllWhenDeactivated;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_LEAVE_ALL_WHEN_DEACTIVATED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLeaveAllWhenDeactivated(Boolean leaveAllWhenDeactivated) {
     this.leaveAllWhenDeactivated = leaveAllWhenDeactivated;
   }
 
 
-
+  /**
+   * Return true if this updateUserByIdData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -455,128 +480,5 @@ public class UpdateUserByIdData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("user_id");
-    openapiFields.add("nickname");
-    openapiFields.add("profile_url");
-    openapiFields.add("profile_file");
-    openapiFields.add("issue_access_token");
-    openapiFields.add("issue_session_token");
-    openapiFields.add("session_token_expires_at");
-    openapiFields.add("is_active");
-    openapiFields.add("last_seen_at");
-    openapiFields.add("discovery_keys");
-    openapiFields.add("preferred_languages");
-    openapiFields.add("leave_all_when_deactivated");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("user_id");
-    openapiRequiredFields.add("nickname");
-    openapiRequiredFields.add("profile_url");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UpdateUserByIdData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (UpdateUserByIdData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateUserByIdData is not found in the empty JSON string", UpdateUserByIdData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!UpdateUserByIdData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateUserByIdData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdateUserByIdData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-      if (jsonObj.get("nickname") != null && !jsonObj.get("nickname").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));
-      }
-      if (jsonObj.get("profile_url") != null && !jsonObj.get("profile_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `profile_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profile_url").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("discovery_keys") != null && !jsonObj.get("discovery_keys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `discovery_keys` to be an array in the JSON string but got `%s`", jsonObj.get("discovery_keys").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("preferred_languages") != null && !jsonObj.get("preferred_languages").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `preferred_languages` to be an array in the JSON string but got `%s`", jsonObj.get("preferred_languages").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateUserByIdData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateUserByIdData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateUserByIdData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateUserByIdData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpdateUserByIdData>() {
-           @Override
-           public void write(JsonWriter out, UpdateUserByIdData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpdateUserByIdData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of UpdateUserByIdData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdateUserByIdData
-  * @throws IOException if the JSON string is invalid with respect to UpdateUserByIdData
-  */
-  public static UpdateUserByIdData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateUserByIdData.class);
-  }
-
- /**
-  * Convert an instance of UpdateUserByIdData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

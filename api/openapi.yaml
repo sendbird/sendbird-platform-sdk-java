@@ -10475,6 +10475,7 @@ components:
           type: boolean
       type: object
     SendBird.Member:
+      additionalProperties: true
       example:
         metadata: "{}"
         is_active: true
@@ -16829,6 +16830,7 @@ components:
           type: string
       type: object
     reportMessageByIdResponse:
+      additionalProperties: true
       example:
         reported_message:
           data: data

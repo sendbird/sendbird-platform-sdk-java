@@ -15,90 +15,76 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * GetStatisticsDailyResponseStatisticsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_DATE_RANGE,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_CANCELED_ANNOUNCEMENT_COUNT,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_STOPPED_ANNOUNCEMENT_COUNT,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_COMPLETED_ANNOUNCEMENT_COUNT,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_TOTAL_ANNOUNCEMENT_COUNT,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_TARGET_CHANNEL_COUNT,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_TARGET_USER_COUNT,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_SENT_CHANNEL_COUNT,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_SENT_USER_COUNT,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_OPEN_RATE,
+  GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_OPEN_COUNT
+})
+@JsonTypeName("getStatisticsDailyResponse_statistics_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class GetStatisticsDailyResponseStatisticsInner {
-  public static final String SERIALIZED_NAME_DATE_RANGE = "date_range";
-  @SerializedName(SERIALIZED_NAME_DATE_RANGE)
+  public static final String JSON_PROPERTY_DATE_RANGE = "date_range";
   private String dateRange;
 
-  public static final String SERIALIZED_NAME_CANCELED_ANNOUNCEMENT_COUNT = "canceled_announcement_count";
-  @SerializedName(SERIALIZED_NAME_CANCELED_ANNOUNCEMENT_COUNT)
+  public static final String JSON_PROPERTY_CANCELED_ANNOUNCEMENT_COUNT = "canceled_announcement_count";
   private BigDecimal canceledAnnouncementCount;
 
-  public static final String SERIALIZED_NAME_STOPPED_ANNOUNCEMENT_COUNT = "stopped_announcement_count";
-  @SerializedName(SERIALIZED_NAME_STOPPED_ANNOUNCEMENT_COUNT)
+  public static final String JSON_PROPERTY_STOPPED_ANNOUNCEMENT_COUNT = "stopped_announcement_count";
   private BigDecimal stoppedAnnouncementCount;
 
-  public static final String SERIALIZED_NAME_COMPLETED_ANNOUNCEMENT_COUNT = "completed_announcement_count";
-  @SerializedName(SERIALIZED_NAME_COMPLETED_ANNOUNCEMENT_COUNT)
+  public static final String JSON_PROPERTY_COMPLETED_ANNOUNCEMENT_COUNT = "completed_announcement_count";
   private BigDecimal completedAnnouncementCount;
 
-  public static final String SERIALIZED_NAME_TOTAL_ANNOUNCEMENT_COUNT = "total_announcement_count";
-  @SerializedName(SERIALIZED_NAME_TOTAL_ANNOUNCEMENT_COUNT)
+  public static final String JSON_PROPERTY_TOTAL_ANNOUNCEMENT_COUNT = "total_announcement_count";
   private BigDecimal totalAnnouncementCount;
 
-  public static final String SERIALIZED_NAME_TARGET_CHANNEL_COUNT = "target_channel_count";
-  @SerializedName(SERIALIZED_NAME_TARGET_CHANNEL_COUNT)
+  public static final String JSON_PROPERTY_TARGET_CHANNEL_COUNT = "target_channel_count";
   private BigDecimal targetChannelCount;
 
-  public static final String SERIALIZED_NAME_TARGET_USER_COUNT = "target_user_count";
-  @SerializedName(SERIALIZED_NAME_TARGET_USER_COUNT)
+  public static final String JSON_PROPERTY_TARGET_USER_COUNT = "target_user_count";
   private BigDecimal targetUserCount;
 
-  public static final String SERIALIZED_NAME_SENT_CHANNEL_COUNT = "sent_channel_count";
-  @SerializedName(SERIALIZED_NAME_SENT_CHANNEL_COUNT)
+  public static final String JSON_PROPERTY_SENT_CHANNEL_COUNT = "sent_channel_count";
   private BigDecimal sentChannelCount;
 
-  public static final String SERIALIZED_NAME_SENT_USER_COUNT = "sent_user_count";
-  @SerializedName(SERIALIZED_NAME_SENT_USER_COUNT)
+  public static final String JSON_PROPERTY_SENT_USER_COUNT = "sent_user_count";
   private BigDecimal sentUserCount;
 
-  public static final String SERIALIZED_NAME_OPEN_RATE = "open_rate";
-  @SerializedName(SERIALIZED_NAME_OPEN_RATE)
+  public static final String JSON_PROPERTY_OPEN_RATE = "open_rate";
   private BigDecimal openRate;
 
-  public static final String SERIALIZED_NAME_OPEN_COUNT = "open_count";
-  @SerializedName(SERIALIZED_NAME_OPEN_COUNT)
+  public static final String JSON_PROPERTY_OPEN_COUNT = "open_count";
   private BigDecimal openCount;
 
   public GetStatisticsDailyResponseStatisticsInner() { 
   }
 
   public GetStatisticsDailyResponseStatisticsInner dateRange(String dateRange) {
-    
     this.dateRange = dateRange;
     return this;
   }
@@ -109,19 +95,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DATE_RANGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDateRange() {
     return dateRange;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATE_RANGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDateRange(String dateRange) {
     this.dateRange = dateRange;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner canceledAnnouncementCount(BigDecimal canceledAnnouncementCount) {
-    
     this.canceledAnnouncementCount = canceledAnnouncementCount;
     return this;
   }
@@ -132,19 +121,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CANCELED_ANNOUNCEMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCanceledAnnouncementCount() {
     return canceledAnnouncementCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CANCELED_ANNOUNCEMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCanceledAnnouncementCount(BigDecimal canceledAnnouncementCount) {
     this.canceledAnnouncementCount = canceledAnnouncementCount;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner stoppedAnnouncementCount(BigDecimal stoppedAnnouncementCount) {
-    
     this.stoppedAnnouncementCount = stoppedAnnouncementCount;
     return this;
   }
@@ -155,19 +147,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_STOPPED_ANNOUNCEMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getStoppedAnnouncementCount() {
     return stoppedAnnouncementCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_STOPPED_ANNOUNCEMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStoppedAnnouncementCount(BigDecimal stoppedAnnouncementCount) {
     this.stoppedAnnouncementCount = stoppedAnnouncementCount;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner completedAnnouncementCount(BigDecimal completedAnnouncementCount) {
-    
     this.completedAnnouncementCount = completedAnnouncementCount;
     return this;
   }
@@ -178,19 +173,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_COMPLETED_ANNOUNCEMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getCompletedAnnouncementCount() {
     return completedAnnouncementCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_COMPLETED_ANNOUNCEMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCompletedAnnouncementCount(BigDecimal completedAnnouncementCount) {
     this.completedAnnouncementCount = completedAnnouncementCount;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner totalAnnouncementCount(BigDecimal totalAnnouncementCount) {
-    
     this.totalAnnouncementCount = totalAnnouncementCount;
     return this;
   }
@@ -201,19 +199,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TOTAL_ANNOUNCEMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTotalAnnouncementCount() {
     return totalAnnouncementCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TOTAL_ANNOUNCEMENT_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTotalAnnouncementCount(BigDecimal totalAnnouncementCount) {
     this.totalAnnouncementCount = totalAnnouncementCount;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner targetChannelCount(BigDecimal targetChannelCount) {
-    
     this.targetChannelCount = targetChannelCount;
     return this;
   }
@@ -224,19 +225,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTargetChannelCount() {
     return targetChannelCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetChannelCount(BigDecimal targetChannelCount) {
     this.targetChannelCount = targetChannelCount;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner targetUserCount(BigDecimal targetUserCount) {
-    
     this.targetUserCount = targetUserCount;
     return this;
   }
@@ -247,19 +251,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getTargetUserCount() {
     return targetUserCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTargetUserCount(BigDecimal targetUserCount) {
     this.targetUserCount = targetUserCount;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner sentChannelCount(BigDecimal sentChannelCount) {
-    
     this.sentChannelCount = sentChannelCount;
     return this;
   }
@@ -270,19 +277,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SENT_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSentChannelCount() {
     return sentChannelCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SENT_CHANNEL_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSentChannelCount(BigDecimal sentChannelCount) {
     this.sentChannelCount = sentChannelCount;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner sentUserCount(BigDecimal sentUserCount) {
-    
     this.sentUserCount = sentUserCount;
     return this;
   }
@@ -293,19 +303,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSentUserCount() {
     return sentUserCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSentUserCount(BigDecimal sentUserCount) {
     this.sentUserCount = sentUserCount;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner openRate(BigDecimal openRate) {
-    
     this.openRate = openRate;
     return this;
   }
@@ -316,19 +329,22 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPEN_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getOpenRate() {
     return openRate;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPEN_RATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpenRate(BigDecimal openRate) {
     this.openRate = openRate;
   }
 
 
   public GetStatisticsDailyResponseStatisticsInner openCount(BigDecimal openCount) {
-    
     this.openCount = openCount;
     return this;
   }
@@ -339,18 +355,24 @@ public class GetStatisticsDailyResponseStatisticsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getOpenCount() {
     return openCount;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpenCount(BigDecimal openCount) {
     this.openCount = openCount;
   }
 
 
-
+  /**
+   * Return true if this getStatisticsDailyResponse_statistics_inner object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -408,103 +430,5 @@ public class GetStatisticsDailyResponseStatisticsInner {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("date_range");
-    openapiFields.add("canceled_announcement_count");
-    openapiFields.add("stopped_announcement_count");
-    openapiFields.add("completed_announcement_count");
-    openapiFields.add("total_announcement_count");
-    openapiFields.add("target_channel_count");
-    openapiFields.add("target_user_count");
-    openapiFields.add("sent_channel_count");
-    openapiFields.add("sent_user_count");
-    openapiFields.add("open_rate");
-    openapiFields.add("open_count");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GetStatisticsDailyResponseStatisticsInner
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (GetStatisticsDailyResponseStatisticsInner.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GetStatisticsDailyResponseStatisticsInner is not found in the empty JSON string", GetStatisticsDailyResponseStatisticsInner.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!GetStatisticsDailyResponseStatisticsInner.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetStatisticsDailyResponseStatisticsInner` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("date_range") != null && !jsonObj.get("date_range").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `date_range` to be a primitive type in the JSON string but got `%s`", jsonObj.get("date_range").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GetStatisticsDailyResponseStatisticsInner.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GetStatisticsDailyResponseStatisticsInner' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GetStatisticsDailyResponseStatisticsInner> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GetStatisticsDailyResponseStatisticsInner.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<GetStatisticsDailyResponseStatisticsInner>() {
-           @Override
-           public void write(JsonWriter out, GetStatisticsDailyResponseStatisticsInner value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public GetStatisticsDailyResponseStatisticsInner read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of GetStatisticsDailyResponseStatisticsInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GetStatisticsDailyResponseStatisticsInner
-  * @throws IOException if the JSON string is invalid with respect to GetStatisticsDailyResponseStatisticsInner
-  */
-  public static GetStatisticsDailyResponseStatisticsInner fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GetStatisticsDailyResponseStatisticsInner.class);
-  }
-
- /**
-  * Convert an instance of GetStatisticsDailyResponseStatisticsInner to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

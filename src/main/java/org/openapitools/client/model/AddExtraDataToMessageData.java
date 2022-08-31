@@ -15,61 +15,47 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * AddExtraDataToMessageData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  AddExtraDataToMessageData.JSON_PROPERTY_CHANNEL_TYPE,
+  AddExtraDataToMessageData.JSON_PROPERTY_CHANNEL_URL,
+  AddExtraDataToMessageData.JSON_PROPERTY_MESSAGE_ID,
+  AddExtraDataToMessageData.JSON_PROPERTY_SORTED_METAARRAY
+})
+@JsonTypeName("addExtraDataToMessageData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class AddExtraDataToMessageData {
-  public static final String SERIALIZED_NAME_CHANNEL_TYPE = "channel_type";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_TYPE)
+  public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
-  public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
+  public static final String JSON_PROPERTY_MESSAGE_ID = "message_id";
   private Integer messageId;
 
-  public static final String SERIALIZED_NAME_SORTED_METAARRAY = "sorted_metaarray";
-  @SerializedName(SERIALIZED_NAME_SORTED_METAARRAY)
+  public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
   private String sortedMetaarray;
 
   public AddExtraDataToMessageData() { 
   }
 
   public AddExtraDataToMessageData channelType(String channelType) {
-    
     this.channelType = channelType;
     return this;
   }
@@ -80,19 +66,22 @@ public class AddExtraDataToMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the type of the channel. Either open_channels or group_channels.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getChannelType() {
     return channelType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setChannelType(String channelType) {
     this.channelType = channelType;
   }
 
 
   public AddExtraDataToMessageData channelUrl(String channelUrl) {
-    
     this.channelUrl = channelUrl;
     return this;
   }
@@ -103,19 +92,22 @@ public class AddExtraDataToMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the target channel.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getChannelUrl() {
     return channelUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setChannelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
   }
 
 
   public AddExtraDataToMessageData messageId(Integer messageId) {
-    
     this.messageId = messageId;
     return this;
   }
@@ -126,19 +118,22 @@ public class AddExtraDataToMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the message to add key-values items for additional information.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getMessageId() {
     return messageId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessageId(Integer messageId) {
     this.messageId = messageId;
   }
 
 
   public AddExtraDataToMessageData sortedMetaarray(String sortedMetaarray) {
-    
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
@@ -149,18 +144,24 @@ public class AddExtraDataToMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a `JSON` object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they've been specified.")
+  @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSortedMetaarray(String sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 
 
-
+  /**
+   * Return true if this addExtraDataToMessageData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -204,113 +205,5 @@ public class AddExtraDataToMessageData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("channel_type");
-    openapiFields.add("channel_url");
-    openapiFields.add("message_id");
-    openapiFields.add("sorted_metaarray");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("channel_type");
-    openapiRequiredFields.add("channel_url");
-    openapiRequiredFields.add("message_id");
-    openapiRequiredFields.add("sorted_metaarray");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AddExtraDataToMessageData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AddExtraDataToMessageData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddExtraDataToMessageData is not found in the empty JSON string", AddExtraDataToMessageData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AddExtraDataToMessageData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddExtraDataToMessageData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : AddExtraDataToMessageData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("channel_type") != null && !jsonObj.get("channel_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_type").toString()));
-      }
-      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
-      }
-      if (jsonObj.get("sorted_metaarray") != null && !jsonObj.get("sorted_metaarray").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sorted_metaarray` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sorted_metaarray").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddExtraDataToMessageData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddExtraDataToMessageData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddExtraDataToMessageData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddExtraDataToMessageData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AddExtraDataToMessageData>() {
-           @Override
-           public void write(JsonWriter out, AddExtraDataToMessageData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AddExtraDataToMessageData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AddExtraDataToMessageData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddExtraDataToMessageData
-  * @throws IOException if the JSON string is invalid with respect to AddExtraDataToMessageData
-  */
-  public static AddExtraDataToMessageData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddExtraDataToMessageData.class);
-  }
-
- /**
-  * Convert an instance of AddExtraDataToMessageData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

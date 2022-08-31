@@ -15,65 +15,51 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * AddHmsPushConfigurationResponsePushConfigurationsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  AddHmsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_ID,
+  AddHmsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_TYPE,
+  AddHmsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_HUAWEI_APP_ID,
+  AddHmsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_HUAWEI_APP_SECRET,
+  AddHmsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_SOUND
+})
+@JsonTypeName("addHmsPushConfigurationResponse_push_configurations_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class AddHmsPushConfigurationResponsePushConfigurationsInner {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
+  public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
-  public static final String SERIALIZED_NAME_PUSH_TYPE = "push_type";
-  @SerializedName(SERIALIZED_NAME_PUSH_TYPE)
+  public static final String JSON_PROPERTY_PUSH_TYPE = "push_type";
   private String pushType;
 
-  public static final String SERIALIZED_NAME_HUAWEI_APP_ID = "huawei_app_id";
-  @SerializedName(SERIALIZED_NAME_HUAWEI_APP_ID)
+  public static final String JSON_PROPERTY_HUAWEI_APP_ID = "huawei_app_id";
   private String huaweiAppId;
 
-  public static final String SERIALIZED_NAME_HUAWEI_APP_SECRET = "huawei_app_secret";
-  @SerializedName(SERIALIZED_NAME_HUAWEI_APP_SECRET)
+  public static final String JSON_PROPERTY_HUAWEI_APP_SECRET = "huawei_app_secret";
   private String huaweiAppSecret;
 
-  public static final String SERIALIZED_NAME_PUSH_SOUND = "push_sound";
-  @SerializedName(SERIALIZED_NAME_PUSH_SOUND)
+  public static final String JSON_PROPERTY_PUSH_SOUND = "push_sound";
   private String pushSound;
 
   public AddHmsPushConfigurationResponsePushConfigurationsInner() { 
   }
 
   public AddHmsPushConfigurationResponsePushConfigurationsInner id(String id) {
-    
     this.id = id;
     return this;
   }
@@ -84,19 +70,22 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
     return id;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(String id) {
     this.id = id;
   }
 
 
   public AddHmsPushConfigurationResponsePushConfigurationsInner pushType(String pushType) {
-    
     this.pushType = pushType;
     return this;
   }
@@ -107,19 +96,22 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPushType() {
     return pushType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushType(String pushType) {
     this.pushType = pushType;
   }
 
 
   public AddHmsPushConfigurationResponsePushConfigurationsInner huaweiAppId(String huaweiAppId) {
-    
     this.huaweiAppId = huaweiAppId;
     return this;
   }
@@ -130,19 +122,22 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_HUAWEI_APP_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getHuaweiAppId() {
     return huaweiAppId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_HUAWEI_APP_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHuaweiAppId(String huaweiAppId) {
     this.huaweiAppId = huaweiAppId;
   }
 
 
   public AddHmsPushConfigurationResponsePushConfigurationsInner huaweiAppSecret(String huaweiAppSecret) {
-    
     this.huaweiAppSecret = huaweiAppSecret;
     return this;
   }
@@ -153,19 +148,22 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_HUAWEI_APP_SECRET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getHuaweiAppSecret() {
     return huaweiAppSecret;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_HUAWEI_APP_SECRET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHuaweiAppSecret(String huaweiAppSecret) {
     this.huaweiAppSecret = huaweiAppSecret;
   }
 
 
   public AddHmsPushConfigurationResponsePushConfigurationsInner pushSound(String pushSound) {
-    
     this.pushSound = pushSound;
     return this;
   }
@@ -176,18 +174,24 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPushSound() {
     return pushSound;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPushSound(String pushSound) {
     this.pushSound = pushSound;
   }
 
 
-
+  /**
+   * Return true if this addHmsPushConfigurationResponse_push_configurations_inner object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -233,109 +237,5 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("push_type");
-    openapiFields.add("huawei_app_id");
-    openapiFields.add("huawei_app_secret");
-    openapiFields.add("push_sound");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AddHmsPushConfigurationResponsePushConfigurationsInner
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AddHmsPushConfigurationResponsePushConfigurationsInner.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddHmsPushConfigurationResponsePushConfigurationsInner is not found in the empty JSON string", AddHmsPushConfigurationResponsePushConfigurationsInner.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AddHmsPushConfigurationResponsePushConfigurationsInner.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddHmsPushConfigurationResponsePushConfigurationsInner` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("id") != null && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
-      if (jsonObj.get("push_type") != null && !jsonObj.get("push_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_type").toString()));
-      }
-      if (jsonObj.get("huawei_app_id") != null && !jsonObj.get("huawei_app_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `huawei_app_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("huawei_app_id").toString()));
-      }
-      if (jsonObj.get("huawei_app_secret") != null && !jsonObj.get("huawei_app_secret").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `huawei_app_secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("huawei_app_secret").toString()));
-      }
-      if (jsonObj.get("push_sound") != null && !jsonObj.get("push_sound").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_sound` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_sound").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddHmsPushConfigurationResponsePushConfigurationsInner.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddHmsPushConfigurationResponsePushConfigurationsInner' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddHmsPushConfigurationResponsePushConfigurationsInner> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddHmsPushConfigurationResponsePushConfigurationsInner.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AddHmsPushConfigurationResponsePushConfigurationsInner>() {
-           @Override
-           public void write(JsonWriter out, AddHmsPushConfigurationResponsePushConfigurationsInner value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AddHmsPushConfigurationResponsePushConfigurationsInner read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AddHmsPushConfigurationResponsePushConfigurationsInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddHmsPushConfigurationResponsePushConfigurationsInner
-  * @throws IOException if the JSON string is invalid with respect to AddHmsPushConfigurationResponsePushConfigurationsInner
-  */
-  public static AddHmsPushConfigurationResponsePushConfigurationsInner fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddHmsPushConfigurationResponsePushConfigurationsInner.class);
-  }
-
- /**
-  * Convert an instance of AddHmsPushConfigurationResponsePushConfigurationsInner to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

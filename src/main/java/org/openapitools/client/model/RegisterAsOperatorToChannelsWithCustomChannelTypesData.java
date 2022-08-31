@@ -15,51 +15,37 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * RegisterAsOperatorToChannelsWithCustomChannelTypesData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  RegisterAsOperatorToChannelsWithCustomChannelTypesData.JSON_PROPERTY_CHANNEL_CUSTOM_TYPES
+})
+@JsonTypeName("registerAsOperatorToChannelsWithCustomChannelTypesData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class RegisterAsOperatorToChannelsWithCustomChannelTypesData {
-  public static final String SERIALIZED_NAME_CHANNEL_CUSTOM_TYPES = "channel_custom_types";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_CUSTOM_TYPES)
+  public static final String JSON_PROPERTY_CHANNEL_CUSTOM_TYPES = "channel_custom_types";
   private List<String> channelCustomTypes = new ArrayList<>();
 
   public RegisterAsOperatorToChannelsWithCustomChannelTypesData() { 
   }
 
   public RegisterAsOperatorToChannelsWithCustomChannelTypesData channelCustomTypes(List<String> channelCustomTypes) {
-    
     this.channelCustomTypes = channelCustomTypes;
     return this;
   }
@@ -75,18 +61,24 @@ public class RegisterAsOperatorToChannelsWithCustomChannelTypesData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more custom channel types, in order to register the user as an operator to channels with the channel types.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_CUSTOM_TYPES)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<String> getChannelCustomTypes() {
     return channelCustomTypes;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_CUSTOM_TYPES)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setChannelCustomTypes(List<String> channelCustomTypes) {
     this.channelCustomTypes = channelCustomTypes;
   }
 
 
-
+  /**
+   * Return true if this registerAsOperatorToChannelsWithCustomChannelTypesData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -124,102 +116,5 @@ public class RegisterAsOperatorToChannelsWithCustomChannelTypesData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("channel_custom_types");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("channel_custom_types");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RegisterAsOperatorToChannelsWithCustomChannelTypesData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (RegisterAsOperatorToChannelsWithCustomChannelTypesData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RegisterAsOperatorToChannelsWithCustomChannelTypesData is not found in the empty JSON string", RegisterAsOperatorToChannelsWithCustomChannelTypesData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!RegisterAsOperatorToChannelsWithCustomChannelTypesData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RegisterAsOperatorToChannelsWithCustomChannelTypesData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : RegisterAsOperatorToChannelsWithCustomChannelTypesData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("channel_custom_types") != null && !jsonObj.get("channel_custom_types").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_custom_types` to be an array in the JSON string but got `%s`", jsonObj.get("channel_custom_types").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!RegisterAsOperatorToChannelsWithCustomChannelTypesData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'RegisterAsOperatorToChannelsWithCustomChannelTypesData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<RegisterAsOperatorToChannelsWithCustomChannelTypesData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(RegisterAsOperatorToChannelsWithCustomChannelTypesData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<RegisterAsOperatorToChannelsWithCustomChannelTypesData>() {
-           @Override
-           public void write(JsonWriter out, RegisterAsOperatorToChannelsWithCustomChannelTypesData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public RegisterAsOperatorToChannelsWithCustomChannelTypesData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of RegisterAsOperatorToChannelsWithCustomChannelTypesData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RegisterAsOperatorToChannelsWithCustomChannelTypesData
-  * @throws IOException if the JSON string is invalid with respect to RegisterAsOperatorToChannelsWithCustomChannelTypesData
-  */
-  public static RegisterAsOperatorToChannelsWithCustomChannelTypesData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, RegisterAsOperatorToChannelsWithCustomChannelTypesData.class);
-  }
-
- /**
-  * Convert an instance of RegisterAsOperatorToChannelsWithCustomChannelTypesData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

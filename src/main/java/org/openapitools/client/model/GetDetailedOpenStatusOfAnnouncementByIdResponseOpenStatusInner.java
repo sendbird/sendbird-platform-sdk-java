@@ -15,66 +15,52 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.JSON_PROPERTY_USER_ID,
+  GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.JSON_PROPERTY_CHANNEL_URL,
+  GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.JSON_PROPERTY_HAS_OPENED,
+  GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.JSON_PROPERTY_SENT_AT,
+  GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.JSON_PROPERTY_OPEN_AT
+})
+@JsonTypeName("getDetailedOpenStatusOfAnnouncementByIdResponse_open_status_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
-  public static final String SERIALIZED_NAME_HAS_OPENED = "has_opened";
-  @SerializedName(SERIALIZED_NAME_HAS_OPENED)
+  public static final String JSON_PROPERTY_HAS_OPENED = "has_opened";
   private Boolean hasOpened;
 
-  public static final String SERIALIZED_NAME_SENT_AT = "sent_at";
-  @SerializedName(SERIALIZED_NAME_SENT_AT)
+  public static final String JSON_PROPERTY_SENT_AT = "sent_at";
   private BigDecimal sentAt;
 
-  public static final String SERIALIZED_NAME_OPEN_AT = "open_at";
-  @SerializedName(SERIALIZED_NAME_OPEN_AT)
+  public static final String JSON_PROPERTY_OPEN_AT = "open_at";
   private BigDecimal openAt;
 
   public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner() { 
   }
 
   public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -85,19 +71,22 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
 
   public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner channelUrl(String channelUrl) {
-    
     this.channelUrl = channelUrl;
     return this;
   }
@@ -108,19 +97,22 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelUrl() {
     return channelUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
   }
 
 
   public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner hasOpened(Boolean hasOpened) {
-    
     this.hasOpened = hasOpened;
     return this;
   }
@@ -131,19 +123,22 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_HAS_OPENED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getHasOpened() {
     return hasOpened;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_HAS_OPENED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setHasOpened(Boolean hasOpened) {
     this.hasOpened = hasOpened;
   }
 
 
   public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner sentAt(BigDecimal sentAt) {
-    
     this.sentAt = sentAt;
     return this;
   }
@@ -154,19 +149,22 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SENT_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getSentAt() {
     return sentAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SENT_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSentAt(BigDecimal sentAt) {
     this.sentAt = sentAt;
   }
 
 
   public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner openAt(BigDecimal openAt) {
-    
     this.openAt = openAt;
     return this;
   }
@@ -177,18 +175,24 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_OPEN_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getOpenAt() {
     return openAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_OPEN_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOpenAt(BigDecimal openAt) {
     this.openAt = openAt;
   }
 
 
-
+  /**
+   * Return true if this getDetailedOpenStatusOfAnnouncementByIdResponse_open_status_inner object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -234,100 +238,5 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("user_id");
-    openapiFields.add("channel_url");
-    openapiFields.add("has_opened");
-    openapiFields.add("sent_at");
-    openapiFields.add("open_at");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner is not found in the empty JSON string", GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner>() {
-           @Override
-           public void write(JsonWriter out, GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner
-  * @throws IOException if the JSON string is invalid with respect to GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner
-  */
-  public static GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.class);
-  }
-
- /**
-  * Convert an instance of GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

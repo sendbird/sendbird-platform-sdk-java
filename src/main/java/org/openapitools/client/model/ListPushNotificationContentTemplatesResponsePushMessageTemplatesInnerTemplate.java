@@ -15,57 +15,43 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.JSON_PROPERTY_M_E_S_G,
+  ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.JSON_PROPERTY_F_I_L_E,
+  ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.JSON_PROPERTY_A_D_M_M
+})
+@JsonTypeName("listPushNotificationContentTemplatesResponse_push_message_templates_inner_template")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate {
-  public static final String SERIALIZED_NAME_M_E_S_G = "MESG";
-  @SerializedName(SERIALIZED_NAME_M_E_S_G)
+  public static final String JSON_PROPERTY_M_E_S_G = "MESG";
   private String MESG;
 
-  public static final String SERIALIZED_NAME_F_I_L_E = "FILE";
-  @SerializedName(SERIALIZED_NAME_F_I_L_E)
+  public static final String JSON_PROPERTY_F_I_L_E = "FILE";
   private String FILE;
 
-  public static final String SERIALIZED_NAME_A_D_M_M = "ADMM";
-  @SerializedName(SERIALIZED_NAME_A_D_M_M)
+  public static final String JSON_PROPERTY_A_D_M_M = "ADMM";
   private String ADMM;
 
   public ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate() { 
   }
 
   public ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate MESG(String MESG) {
-    
     this.MESG = MESG;
     return this;
   }
@@ -76,19 +62,22 @@ public class ListPushNotificationContentTemplatesResponsePushMessageTemplatesInn
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_M_E_S_G)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMESG() {
     return MESG;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_M_E_S_G)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMESG(String MESG) {
     this.MESG = MESG;
   }
 
 
   public ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate FILE(String FILE) {
-    
     this.FILE = FILE;
     return this;
   }
@@ -99,19 +88,22 @@ public class ListPushNotificationContentTemplatesResponsePushMessageTemplatesInn
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_F_I_L_E)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFILE() {
     return FILE;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_F_I_L_E)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFILE(String FILE) {
     this.FILE = FILE;
   }
 
 
   public ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate ADMM(String ADMM) {
-    
     this.ADMM = ADMM;
     return this;
   }
@@ -122,18 +114,24 @@ public class ListPushNotificationContentTemplatesResponsePushMessageTemplatesInn
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_A_D_M_M)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getADMM() {
     return ADMM;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_A_D_M_M)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setADMM(String ADMM) {
     this.ADMM = ADMM;
   }
 
 
-
+  /**
+   * Return true if this listPushNotificationContentTemplatesResponse_push_message_templates_inner_template object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -175,101 +173,5 @@ public class ListPushNotificationContentTemplatesResponsePushMessageTemplatesInn
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MESG");
-    openapiFields.add("FILE");
-    openapiFields.add("ADMM");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate is not found in the empty JSON string", ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("MESG") != null && !jsonObj.get("MESG").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `MESG` to be a primitive type in the JSON string but got `%s`", jsonObj.get("MESG").toString()));
-      }
-      if (jsonObj.get("FILE") != null && !jsonObj.get("FILE").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `FILE` to be a primitive type in the JSON string but got `%s`", jsonObj.get("FILE").toString()));
-      }
-      if (jsonObj.get("ADMM") != null && !jsonObj.get("ADMM").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ADMM` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ADMM").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate>() {
-           @Override
-           public void write(JsonWriter out, ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate
-  * @throws IOException if the JSON string is invalid with respect to ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate
-  */
-  public static ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.class);
-  }
-
- /**
-  * Convert an instance of ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

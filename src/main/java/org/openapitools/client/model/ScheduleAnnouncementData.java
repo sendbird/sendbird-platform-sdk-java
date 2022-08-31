@@ -15,143 +15,129 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * ScheduleAnnouncementData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE,
+  ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE_TYPE,
+  ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE_USER_ID,
+  ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE_CONTENT,
+  ScheduleAnnouncementData.JSON_PROPERTY_TARGET_AT,
+  ScheduleAnnouncementData.JSON_PROPERTY_TARGET_LIST,
+  ScheduleAnnouncementData.JSON_PROPERTY_TARGET_CHANNEL_TYPE,
+  ScheduleAnnouncementData.JSON_PROPERTY_UNIQUE_ID,
+  ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE_CUSTOM_TYPE,
+  ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE_DATA,
+  ScheduleAnnouncementData.JSON_PROPERTY_CREATE_CHANNEL,
+  ScheduleAnnouncementData.JSON_PROPERTY_ANNOUNCEMENT_GROUP,
+  ScheduleAnnouncementData.JSON_PROPERTY_CREATE_CHANNEL_OPTIONS,
+  ScheduleAnnouncementData.JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_NAME,
+  ScheduleAnnouncementData.JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_COVER_URL,
+  ScheduleAnnouncementData.JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_CUSTOM_TYPE,
+  ScheduleAnnouncementData.JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DATA,
+  ScheduleAnnouncementData.JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DISTINCT,
+  ScheduleAnnouncementData.JSON_PROPERTY_SCHEDULED_AT,
+  ScheduleAnnouncementData.JSON_PROPERTY_CEASE_AT,
+  ScheduleAnnouncementData.JSON_PROPERTY_RESUME_AT,
+  ScheduleAnnouncementData.JSON_PROPERTY_END_AT,
+  ScheduleAnnouncementData.JSON_PROPERTY_ENABLE_PUSH,
+  ScheduleAnnouncementData.JSON_PROPERTY_ASSIGN_SENDER_AS_CHANNEL_INVITER
+})
+@JsonTypeName("scheduleAnnouncementData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class ScheduleAnnouncementData {
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
 
-  public static final String SERIALIZED_NAME_MESSAGE_TYPE = "message.type";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_TYPE)
+  public static final String JSON_PROPERTY_MESSAGE_TYPE = "message.type";
   private String messageType;
 
-  public static final String SERIALIZED_NAME_MESSAGE_USER_ID = "message.user_id";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_USER_ID)
+  public static final String JSON_PROPERTY_MESSAGE_USER_ID = "message.user_id";
   private String messageUserId;
 
-  public static final String SERIALIZED_NAME_MESSAGE_CONTENT = "message.content";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_CONTENT)
+  public static final String JSON_PROPERTY_MESSAGE_CONTENT = "message.content";
   private String messageContent;
 
-  public static final String SERIALIZED_NAME_TARGET_AT = "target_at";
-  @SerializedName(SERIALIZED_NAME_TARGET_AT)
+  public static final String JSON_PROPERTY_TARGET_AT = "target_at";
   private String targetAt;
 
-  public static final String SERIALIZED_NAME_TARGET_LIST = "target_list";
-  @SerializedName(SERIALIZED_NAME_TARGET_LIST)
+  public static final String JSON_PROPERTY_TARGET_LIST = "target_list";
   private List<String> targetList = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_TARGET_CHANNEL_TYPE = "target_channel_type";
-  @SerializedName(SERIALIZED_NAME_TARGET_CHANNEL_TYPE)
+  public static final String JSON_PROPERTY_TARGET_CHANNEL_TYPE = "target_channel_type";
   private String targetChannelType;
 
-  public static final String SERIALIZED_NAME_UNIQUE_ID = "unique_id";
-  @SerializedName(SERIALIZED_NAME_UNIQUE_ID)
+  public static final String JSON_PROPERTY_UNIQUE_ID = "unique_id";
   private String uniqueId;
 
-  public static final String SERIALIZED_NAME_MESSAGE_CUSTOM_TYPE = "message.custom_type";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_MESSAGE_CUSTOM_TYPE = "message.custom_type";
   private String messageCustomType;
 
-  public static final String SERIALIZED_NAME_MESSAGE_DATA = "message.data";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_DATA)
+  public static final String JSON_PROPERTY_MESSAGE_DATA = "message.data";
   private String messageData;
 
-  public static final String SERIALIZED_NAME_CREATE_CHANNEL = "create_channel";
-  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL)
+  public static final String JSON_PROPERTY_CREATE_CHANNEL = "create_channel";
   private Boolean createChannel;
 
-  public static final String SERIALIZED_NAME_ANNOUNCEMENT_GROUP = "announcement_group";
-  @SerializedName(SERIALIZED_NAME_ANNOUNCEMENT_GROUP)
+  public static final String JSON_PROPERTY_ANNOUNCEMENT_GROUP = "announcement_group";
   private String announcementGroup;
 
-  public static final String SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS = "create_channel_options";
-  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS)
+  public static final String JSON_PROPERTY_CREATE_CHANNEL_OPTIONS = "create_channel_options";
   private String createChannelOptions;
 
-  public static final String SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_NAME = "create_channel_options.name";
-  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_NAME)
+  public static final String JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_NAME = "create_channel_options.name";
   private String createChannelOptionsName;
 
-  public static final String SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_COVER_URL = "create_channel_options.cover_url";
-  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_COVER_URL)
+  public static final String JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_COVER_URL = "create_channel_options.cover_url";
   private String createChannelOptionsCoverUrl;
 
-  public static final String SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_CUSTOM_TYPE = "create_channel_options.custom_type";
-  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_CUSTOM_TYPE = "create_channel_options.custom_type";
   private String createChannelOptionsCustomType;
 
-  public static final String SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_DATA = "create_channel_options.data";
-  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_DATA)
+  public static final String JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DATA = "create_channel_options.data";
   private String createChannelOptionsData;
 
-  public static final String SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_DISTINCT = "create_channel_options.distinct";
-  @SerializedName(SERIALIZED_NAME_CREATE_CHANNEL_OPTIONS_DISTINCT)
+  public static final String JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DISTINCT = "create_channel_options.distinct";
   private String createChannelOptionsDistinct;
 
-  public static final String SERIALIZED_NAME_SCHEDULED_AT = "scheduled_at";
-  @SerializedName(SERIALIZED_NAME_SCHEDULED_AT)
+  public static final String JSON_PROPERTY_SCHEDULED_AT = "scheduled_at";
   private Integer scheduledAt;
 
-  public static final String SERIALIZED_NAME_CEASE_AT = "cease_at";
-  @SerializedName(SERIALIZED_NAME_CEASE_AT)
+  public static final String JSON_PROPERTY_CEASE_AT = "cease_at";
   private String ceaseAt;
 
-  public static final String SERIALIZED_NAME_RESUME_AT = "resume_at";
-  @SerializedName(SERIALIZED_NAME_RESUME_AT)
+  public static final String JSON_PROPERTY_RESUME_AT = "resume_at";
   private String resumeAt;
 
-  public static final String SERIALIZED_NAME_END_AT = "end_at";
-  @SerializedName(SERIALIZED_NAME_END_AT)
+  public static final String JSON_PROPERTY_END_AT = "end_at";
   private Integer endAt;
 
-  public static final String SERIALIZED_NAME_ENABLE_PUSH = "enable_push";
-  @SerializedName(SERIALIZED_NAME_ENABLE_PUSH)
+  public static final String JSON_PROPERTY_ENABLE_PUSH = "enable_push";
   private Boolean enablePush;
 
-  public static final String SERIALIZED_NAME_ASSIGN_SENDER_AS_CHANNEL_INVITER = "assign_sender_as_channel_inviter";
-  @SerializedName(SERIALIZED_NAME_ASSIGN_SENDER_AS_CHANNEL_INVITER)
+  public static final String JSON_PROPERTY_ASSIGN_SENDER_AS_CHANNEL_INVITER = "assign_sender_as_channel_inviter";
   private Boolean assignSenderAsChannelInviter;
 
   public ScheduleAnnouncementData() { 
   }
 
   public ScheduleAnnouncementData message(String message) {
-    
     this.message = message;
     return this;
   }
@@ -162,19 +148,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The [message](/docs/chat/v3/platform-api/guides/messages#-3-resource-representation) of a new announcement.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getMessage() {
     return message;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessage(String message) {
     this.message = message;
   }
 
 
   public ScheduleAnnouncementData messageType(String messageType) {
-    
     this.messageType = messageType;
     return this;
   }
@@ -185,19 +174,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the type of the message, which can be either MESG for a text message and ADMM for an admin message.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getMessageType() {
     return messageType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessageType(String messageType) {
     this.messageType = messageType;
   }
 
 
   public ScheduleAnnouncementData messageUserId(String messageUserId) {
-    
     this.messageUserId = messageUserId;
     return this;
   }
@@ -208,19 +200,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the sender when the message.type is MESG. When the message.type value is ADMM, this property is not effective.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getMessageUserId() {
     return messageUserId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessageUserId(String messageUserId) {
     this.messageUserId = messageUserId;
   }
 
 
   public ScheduleAnnouncementData messageContent(String messageContent) {
-    
     this.messageContent = messageContent;
     return this;
   }
@@ -231,19 +226,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the content of the message.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getMessageContent() {
     return messageContent;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessageContent(String messageContent) {
     this.messageContent = messageContent;
   }
 
 
   public ScheduleAnnouncementData targetAt(String targetAt) {
-    
     this.targetAt = targetAt;
     return this;
   }
@@ -254,19 +252,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the target channels to send the announcement to. Acceptable values are the following: <br/> - sender_all_channels (Default): sends the announcement to all of the sender's group channels.<br />- target_channels: sends the announcement to all target group channels. When the `message.type` of the announcement is ADMM, this is the only valid option. <br /> - target_users_included_channels: sends the announcement to group channels consisting of the sender, target users, and other members. <br/> - target_users_only_channels: sends the announcement to group channels consisting of the sender and target users only.")
+  @JsonProperty(JSON_PROPERTY_TARGET_AT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTargetAt() {
     return targetAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_AT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTargetAt(String targetAt) {
     this.targetAt = targetAt;
   }
 
 
   public ScheduleAnnouncementData targetList(List<String> targetList) {
-    
     this.targetList = targetList;
     return this;
   }
@@ -282,19 +283,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more target user IDs or target channel URLs to send the announcement to when the target_at is  target_channels, target_users_only_channels, or target_users_included_channels.<br /><br />  When the target_at value is sender_all_channels, this property is not effective.")
+  @JsonProperty(JSON_PROPERTY_TARGET_LIST)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<String> getTargetList() {
     return targetList;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_LIST)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTargetList(List<String> targetList) {
     this.targetList = targetList;
   }
 
 
   public ScheduleAnnouncementData targetChannelType(String targetChannelType) {
-    
     this.targetChannelType = targetChannelType;
     return this;
   }
@@ -305,19 +309,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines which type of group channel to send the announcement to, based on the target_at and target_list. This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels and the target_list is specified. Acceptable values are limited to the following:<br/>- all: send the announcement to all channels that have all target users and the sender in them, regardless of channel type.<br/>- distinct (default): sends this announcement to the distinct channels. Distinct channels continue to use the same existing channels whenever someone attempts to create a new channel with the same members.<br/>- non-distinct: sends this announcement to the non-distinct channels. Non-distinct channels always create a new channel even if there is an existing channel with the same members.<br/><br/> The distinct and non-distinct channels are a subtype of group channels, determined by the [is_distinct](/docs/chat/v3/platform-api/guides/group-channel#2-types-of-a-channel-3-resource-representation) property.")
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTargetChannelType() {
     return targetChannelType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTargetChannelType(String targetChannelType) {
     this.targetChannelType = targetChannelType;
   }
 
 
   public ScheduleAnnouncementData uniqueId(String uniqueId) {
-    
     this.uniqueId = uniqueId;
     return this;
   }
@@ -328,19 +335,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID of the new announcement. The unique_id will be automatically created unless specified.")
+  @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUniqueId() {
     return uniqueId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUniqueId(String uniqueId) {
     this.uniqueId = uniqueId;
   }
 
 
   public ScheduleAnnouncementData messageCustomType(String messageCustomType) {
-    
     this.messageCustomType = messageCustomType;
     return this;
   }
@@ -351,19 +361,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the custom message type of the message of the new announcement.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMessageCustomType() {
     return messageCustomType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessageCustomType(String messageCustomType) {
     this.messageCustomType = messageCustomType;
   }
 
 
   public ScheduleAnnouncementData messageData(String messageData) {
-    
     this.messageData = messageData;
     return this;
   }
@@ -374,19 +387,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional message information such as custom font size, font type or `JSON` formatted string.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMessageData() {
     return messageData;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessageData(String messageData) {
     this.messageData = messageData;
   }
 
 
   public ScheduleAnnouncementData createChannel(Boolean createChannel) {
-    
     this.createChannel = createChannel;
     return this;
   }
@@ -397,19 +413,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list. By specifying the create_channel_options, you can configure the properties of newly created channels. (Default: false)")
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getCreateChannel() {
     return createChannel;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateChannel(Boolean createChannel) {
     this.createChannel = createChannel;
   }
 
 
   public ScheduleAnnouncementData announcementGroup(String announcementGroup) {
-    
     this.announcementGroup = announcementGroup;
     return this;
   }
@@ -420,19 +439,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the announcement group that the new announcement belongs to.<br/> <br/> This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels.")
+  @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAnnouncementGroup() {
     return announcementGroup;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAnnouncementGroup(String announcementGroup) {
     this.announcementGroup = announcementGroup;
   }
 
 
   public ScheduleAnnouncementData createChannelOptions(String createChannelOptions) {
-    
     this.createChannelOptions = createChannelOptions;
     return this;
   }
@@ -443,19 +465,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "A newly created channel configuration.")
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreateChannelOptions() {
     return createChannelOptions;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateChannelOptions(String createChannelOptions) {
     this.createChannelOptions = createChannelOptions;
   }
 
 
   public ScheduleAnnouncementData createChannelOptionsName(String createChannelOptionsName) {
-    
     this.createChannelOptionsName = createChannelOptionsName;
     return this;
   }
@@ -466,19 +491,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the name of channels to be created. (Default: Group Channel)")
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreateChannelOptionsName() {
     return createChannelOptionsName;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateChannelOptionsName(String createChannelOptionsName) {
     this.createChannelOptionsName = createChannelOptionsName;
   }
 
 
   public ScheduleAnnouncementData createChannelOptionsCoverUrl(String createChannelOptionsCoverUrl) {
-    
     this.createChannelOptionsCoverUrl = createChannelOptionsCoverUrl;
     return this;
   }
@@ -489,19 +517,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the cover image for the new channels.")
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_COVER_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreateChannelOptionsCoverUrl() {
     return createChannelOptionsCoverUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_COVER_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateChannelOptionsCoverUrl(String createChannelOptionsCoverUrl) {
     this.createChannelOptionsCoverUrl = createChannelOptionsCoverUrl;
   }
 
 
   public ScheduleAnnouncementData createChannelOptionsCustomType(String createChannelOptionsCustomType) {
-    
     this.createChannelOptionsCustomType = createChannelOptionsCustomType;
     return this;
   }
@@ -512,19 +543,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the custom channel type of the new channels.")
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreateChannelOptionsCustomType() {
     return createChannelOptionsCustomType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateChannelOptionsCustomType(String createChannelOptionsCustomType) {
     this.createChannelOptionsCustomType = createChannelOptionsCustomType;
   }
 
 
   public ScheduleAnnouncementData createChannelOptionsData(String createChannelOptionsData) {
-    
     this.createChannelOptionsData = createChannelOptionsData;
     return this;
   }
@@ -535,19 +569,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreateChannelOptionsData() {
     return createChannelOptionsData;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateChannelOptionsData(String createChannelOptionsData) {
     this.createChannelOptionsData = createChannelOptionsData;
   }
 
 
   public ScheduleAnnouncementData createChannelOptionsDistinct(String createChannelOptionsDistinct) {
-    
     this.createChannelOptionsDistinct = createChannelOptionsDistinct;
     return this;
   }
@@ -558,19 +595,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true)")
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DISTINCT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreateChannelOptionsDistinct() {
     return createChannelOptionsDistinct;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DISTINCT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateChannelOptionsDistinct(String createChannelOptionsDistinct) {
     this.createChannelOptionsDistinct = createChannelOptionsDistinct;
   }
 
 
   public ScheduleAnnouncementData scheduledAt(Integer scheduledAt) {
-    
     this.scheduledAt = scheduledAt;
     return this;
   }
@@ -581,19 +621,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. If not specified, the default is the timestamp of when the request was delivered to Sendbird server. (Default: current timestamp)")
+  @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getScheduledAt() {
     return scheduledAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setScheduledAt(Integer scheduledAt) {
     this.scheduledAt = scheduledAt;
   }
 
 
   public ScheduleAnnouncementData ceaseAt(String ceaseAt) {
-    
     this.ceaseAt = ceaseAt;
     return this;
   }
@@ -604,19 +647,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This should be specified in conjunction with the resume_at property.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.")
+  @JsonProperty(JSON_PROPERTY_CEASE_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCeaseAt() {
     return ceaseAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CEASE_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCeaseAt(String ceaseAt) {
     this.ceaseAt = ceaseAt;
   }
 
 
   public ScheduleAnnouncementData resumeAt(String resumeAt) {
-    
     this.resumeAt = resumeAt;
     return this;
   }
@@ -627,19 +673,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This should be specified in conjunction with the cease_at property above.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.")
+  @JsonProperty(JSON_PROPERTY_RESUME_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getResumeAt() {
     return resumeAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_RESUME_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setResumeAt(String resumeAt) {
     this.resumeAt = resumeAt;
   }
 
 
   public ScheduleAnnouncementData endAt(Integer endAt) {
-    
     this.endAt = endAt;
     return this;
   }
@@ -650,19 +699,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous##2-timestamps) format. If this property is specified, the announcement ends even when the announcement is not sent to all its targets. <br/><br/> For the announcement to run safely, the end_at time should be set at least 10 minutes later than the scheduled_at time.")
+  @JsonProperty(JSON_PROPERTY_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getEndAt() {
     return endAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEndAt(Integer endAt) {
     this.endAt = endAt;
   }
 
 
   public ScheduleAnnouncementData enablePush(Boolean enablePush) {
-    
     this.enablePush = enablePush;
     return this;
   }
@@ -673,19 +725,22 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for the announcement. (Default: true)")
+  @JsonProperty(JSON_PROPERTY_ENABLE_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getEnablePush() {
     return enablePush;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ENABLE_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnablePush(Boolean enablePush) {
     this.enablePush = enablePush;
   }
 
 
   public ScheduleAnnouncementData assignSenderAsChannelInviter(Boolean assignSenderAsChannelInviter) {
-    
     this.assignSenderAsChannelInviter = assignSenderAsChannelInviter;
     return this;
   }
@@ -696,18 +751,24 @@ public class ScheduleAnnouncementData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to assign an announcement sender as an inviter of the newly created channels. (Default: false)")
+  @JsonProperty(JSON_PROPERTY_ASSIGN_SENDER_AS_CHANNEL_INVITER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getAssignSenderAsChannelInviter() {
     return assignSenderAsChannelInviter;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_ASSIGN_SENDER_AS_CHANNEL_INVITER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAssignSenderAsChannelInviter(Boolean assignSenderAsChannelInviter) {
     this.assignSenderAsChannelInviter = assignSenderAsChannelInviter;
   }
 
 
-
+  /**
+   * Return true if this scheduleAnnouncementData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -791,185 +852,5 @@ public class ScheduleAnnouncementData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("message");
-    openapiFields.add("message.type");
-    openapiFields.add("message.user_id");
-    openapiFields.add("message.content");
-    openapiFields.add("target_at");
-    openapiFields.add("target_list");
-    openapiFields.add("target_channel_type");
-    openapiFields.add("unique_id");
-    openapiFields.add("message.custom_type");
-    openapiFields.add("message.data");
-    openapiFields.add("create_channel");
-    openapiFields.add("announcement_group");
-    openapiFields.add("create_channel_options");
-    openapiFields.add("create_channel_options.name");
-    openapiFields.add("create_channel_options.cover_url");
-    openapiFields.add("create_channel_options.custom_type");
-    openapiFields.add("create_channel_options.data");
-    openapiFields.add("create_channel_options.distinct");
-    openapiFields.add("scheduled_at");
-    openapiFields.add("cease_at");
-    openapiFields.add("resume_at");
-    openapiFields.add("end_at");
-    openapiFields.add("enable_push");
-    openapiFields.add("assign_sender_as_channel_inviter");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("message");
-    openapiRequiredFields.add("message.type");
-    openapiRequiredFields.add("message.user_id");
-    openapiRequiredFields.add("message.content");
-    openapiRequiredFields.add("target_at");
-    openapiRequiredFields.add("target_list");
-    openapiRequiredFields.add("target_channel_type");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ScheduleAnnouncementData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ScheduleAnnouncementData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ScheduleAnnouncementData is not found in the empty JSON string", ScheduleAnnouncementData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!ScheduleAnnouncementData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ScheduleAnnouncementData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ScheduleAnnouncementData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("message") != null && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
-      }
-      if (jsonObj.get("message.type") != null && !jsonObj.get("message.type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message.type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.type").toString()));
-      }
-      if (jsonObj.get("message.user_id") != null && !jsonObj.get("message.user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message.user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.user_id").toString()));
-      }
-      if (jsonObj.get("message.content") != null && !jsonObj.get("message.content").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message.content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.content").toString()));
-      }
-      if (jsonObj.get("target_at") != null && !jsonObj.get("target_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `target_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_at").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("target_list") != null && !jsonObj.get("target_list").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `target_list` to be an array in the JSON string but got `%s`", jsonObj.get("target_list").toString()));
-      }
-      if (jsonObj.get("target_channel_type") != null && !jsonObj.get("target_channel_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `target_channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_channel_type").toString()));
-      }
-      if (jsonObj.get("unique_id") != null && !jsonObj.get("unique_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unique_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unique_id").toString()));
-      }
-      if (jsonObj.get("message.custom_type") != null && !jsonObj.get("message.custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message.custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.custom_type").toString()));
-      }
-      if (jsonObj.get("message.data") != null && !jsonObj.get("message.data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message.data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message.data").toString()));
-      }
-      if (jsonObj.get("announcement_group") != null && !jsonObj.get("announcement_group").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `announcement_group` to be a primitive type in the JSON string but got `%s`", jsonObj.get("announcement_group").toString()));
-      }
-      if (jsonObj.get("create_channel_options") != null && !jsonObj.get("create_channel_options").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options").toString()));
-      }
-      if (jsonObj.get("create_channel_options.name") != null && !jsonObj.get("create_channel_options.name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.name").toString()));
-      }
-      if (jsonObj.get("create_channel_options.cover_url") != null && !jsonObj.get("create_channel_options.cover_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.cover_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.cover_url").toString()));
-      }
-      if (jsonObj.get("create_channel_options.custom_type") != null && !jsonObj.get("create_channel_options.custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.custom_type").toString()));
-      }
-      if (jsonObj.get("create_channel_options.data") != null && !jsonObj.get("create_channel_options.data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.data").toString()));
-      }
-      if (jsonObj.get("create_channel_options.distinct") != null && !jsonObj.get("create_channel_options.distinct").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `create_channel_options.distinct` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_channel_options.distinct").toString()));
-      }
-      if (jsonObj.get("cease_at") != null && !jsonObj.get("cease_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cease_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cease_at").toString()));
-      }
-      if (jsonObj.get("resume_at") != null && !jsonObj.get("resume_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resume_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resume_at").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ScheduleAnnouncementData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ScheduleAnnouncementData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ScheduleAnnouncementData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ScheduleAnnouncementData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ScheduleAnnouncementData>() {
-           @Override
-           public void write(JsonWriter out, ScheduleAnnouncementData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ScheduleAnnouncementData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of ScheduleAnnouncementData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ScheduleAnnouncementData
-  * @throws IOException if the JSON string is invalid with respect to ScheduleAnnouncementData
-  */
-  public static ScheduleAnnouncementData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ScheduleAnnouncementData.class);
-  }
-
- /**
-  * Convert an instance of ScheduleAnnouncementData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

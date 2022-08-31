@@ -15,66 +15,52 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * GcViewMuteByIdResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  GcViewMuteByIdResponse.JSON_PROPERTY_IS_MUTED,
+  GcViewMuteByIdResponse.JSON_PROPERTY_REMAINING_DURATION,
+  GcViewMuteByIdResponse.JSON_PROPERTY_START_AT,
+  GcViewMuteByIdResponse.JSON_PROPERTY_END_AT,
+  GcViewMuteByIdResponse.JSON_PROPERTY_DESCRIPTION
+})
+@JsonTypeName("gcViewMuteByIdResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class GcViewMuteByIdResponse {
-  public static final String SERIALIZED_NAME_IS_MUTED = "is_muted";
-  @SerializedName(SERIALIZED_NAME_IS_MUTED)
+  public static final String JSON_PROPERTY_IS_MUTED = "is_muted";
   private Boolean isMuted;
 
-  public static final String SERIALIZED_NAME_REMAINING_DURATION = "remaining_duration";
-  @SerializedName(SERIALIZED_NAME_REMAINING_DURATION)
+  public static final String JSON_PROPERTY_REMAINING_DURATION = "remaining_duration";
   private BigDecimal remainingDuration;
 
-  public static final String SERIALIZED_NAME_START_AT = "start_at";
-  @SerializedName(SERIALIZED_NAME_START_AT)
+  public static final String JSON_PROPERTY_START_AT = "start_at";
   private BigDecimal startAt;
 
-  public static final String SERIALIZED_NAME_END_AT = "end_at";
-  @SerializedName(SERIALIZED_NAME_END_AT)
+  public static final String JSON_PROPERTY_END_AT = "end_at";
   private BigDecimal endAt;
 
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
 
   public GcViewMuteByIdResponse() { 
   }
 
   public GcViewMuteByIdResponse isMuted(Boolean isMuted) {
-    
     this.isMuted = isMuted;
     return this;
   }
@@ -85,19 +71,22 @@ public class GcViewMuteByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_MUTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsMuted() {
     return isMuted;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_MUTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsMuted(Boolean isMuted) {
     this.isMuted = isMuted;
   }
 
 
   public GcViewMuteByIdResponse remainingDuration(BigDecimal remainingDuration) {
-    
     this.remainingDuration = remainingDuration;
     return this;
   }
@@ -108,19 +97,22 @@ public class GcViewMuteByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_REMAINING_DURATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getRemainingDuration() {
     return remainingDuration;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_REMAINING_DURATION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRemainingDuration(BigDecimal remainingDuration) {
     this.remainingDuration = remainingDuration;
   }
 
 
   public GcViewMuteByIdResponse startAt(BigDecimal startAt) {
-    
     this.startAt = startAt;
     return this;
   }
@@ -131,19 +123,22 @@ public class GcViewMuteByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_START_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getStartAt() {
     return startAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_START_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStartAt(BigDecimal startAt) {
     this.startAt = startAt;
   }
 
 
   public GcViewMuteByIdResponse endAt(BigDecimal endAt) {
-    
     this.endAt = endAt;
     return this;
   }
@@ -154,19 +149,22 @@ public class GcViewMuteByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getEndAt() {
     return endAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_END_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEndAt(BigDecimal endAt) {
     this.endAt = endAt;
   }
 
 
   public GcViewMuteByIdResponse description(String description) {
-    
     this.description = description;
     return this;
   }
@@ -177,18 +175,24 @@ public class GcViewMuteByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
     return description;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(String description) {
     this.description = description;
   }
 
 
-
+  /**
+   * Return true if this gcViewMuteByIdResponse object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -234,97 +238,5 @@ public class GcViewMuteByIdResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("is_muted");
-    openapiFields.add("remaining_duration");
-    openapiFields.add("start_at");
-    openapiFields.add("end_at");
-    openapiFields.add("description");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GcViewMuteByIdResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (GcViewMuteByIdResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GcViewMuteByIdResponse is not found in the empty JSON string", GcViewMuteByIdResponse.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!GcViewMuteByIdResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GcViewMuteByIdResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("description") != null && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GcViewMuteByIdResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GcViewMuteByIdResponse' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GcViewMuteByIdResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GcViewMuteByIdResponse.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<GcViewMuteByIdResponse>() {
-           @Override
-           public void write(JsonWriter out, GcViewMuteByIdResponse value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public GcViewMuteByIdResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of GcViewMuteByIdResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GcViewMuteByIdResponse
-  * @throws IOException if the JSON string is invalid with respect to GcViewMuteByIdResponse
-  */
-  public static GcViewMuteByIdResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GcViewMuteByIdResponse.class);
-  }
-
- /**
-  * Convert an instance of GcViewMuteByIdResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

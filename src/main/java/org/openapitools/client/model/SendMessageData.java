@@ -15,116 +15,102 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * SendMessageData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  SendMessageData.JSON_PROPERTY_USER_ID,
+  SendMessageData.JSON_PROPERTY_CHANNEL_TYPE,
+  SendMessageData.JSON_PROPERTY_CHANNEL_URL,
+  SendMessageData.JSON_PROPERTY_MESSAGE_TYPE,
+  SendMessageData.JSON_PROPERTY_MESSAGE,
+  SendMessageData.JSON_PROPERTY_CUSTOM_TYPE,
+  SendMessageData.JSON_PROPERTY_DATA,
+  SendMessageData.JSON_PROPERTY_SEND_PUSH,
+  SendMessageData.JSON_PROPERTY_MENTION_TYPE,
+  SendMessageData.JSON_PROPERTY_MENTIONED_USER_IDS,
+  SendMessageData.JSON_PROPERTY_IS_SILENT,
+  SendMessageData.JSON_PROPERTY_SORTED_METAARRAY,
+  SendMessageData.JSON_PROPERTY_CREATED_AT,
+  SendMessageData.JSON_PROPERTY_DEDUP_ID,
+  SendMessageData.JSON_PROPERTY_APNS_BUNDLE_ID,
+  SendMessageData.JSON_PROPERTY_SOUND,
+  SendMessageData.JSON_PROPERTY_VOLUME
+})
+@JsonTypeName("sendMessageData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class SendMessageData {
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public static final String SERIALIZED_NAME_CHANNEL_TYPE = "channel_type";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_TYPE)
+  public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URL = "channel_url";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URL)
+  public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
-  public static final String SERIALIZED_NAME_MESSAGE_TYPE = "message_type";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_TYPE)
+  public static final String JSON_PROPERTY_MESSAGE_TYPE = "message_type";
   private String messageType;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
 
-  public static final String SERIALIZED_NAME_CUSTOM_TYPE = "custom_type";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_TYPE)
+  public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
-  public static final String SERIALIZED_NAME_SEND_PUSH = "send_push";
-  @SerializedName(SERIALIZED_NAME_SEND_PUSH)
+  public static final String JSON_PROPERTY_SEND_PUSH = "send_push";
   private Boolean sendPush;
 
-  public static final String SERIALIZED_NAME_MENTION_TYPE = "mention_type";
-  @SerializedName(SERIALIZED_NAME_MENTION_TYPE)
+  public static final String JSON_PROPERTY_MENTION_TYPE = "mention_type";
   private String mentionType;
 
-  public static final String SERIALIZED_NAME_MENTIONED_USER_IDS = "mentioned_user_ids";
-  @SerializedName(SERIALIZED_NAME_MENTIONED_USER_IDS)
+  public static final String JSON_PROPERTY_MENTIONED_USER_IDS = "mentioned_user_ids";
   private List<String> mentionedUserIds = null;
 
-  public static final String SERIALIZED_NAME_IS_SILENT = "is_silent";
-  @SerializedName(SERIALIZED_NAME_IS_SILENT)
+  public static final String JSON_PROPERTY_IS_SILENT = "is_silent";
   private Boolean isSilent;
 
-  public static final String SERIALIZED_NAME_SORTED_METAARRAY = "sorted_metaarray";
-  @SerializedName(SERIALIZED_NAME_SORTED_METAARRAY)
+  public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
   private String sortedMetaarray;
 
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Integer createdAt;
 
-  public static final String SERIALIZED_NAME_DEDUP_ID = "dedup_id";
-  @SerializedName(SERIALIZED_NAME_DEDUP_ID)
+  public static final String JSON_PROPERTY_DEDUP_ID = "dedup_id";
   private String dedupId;
 
-  public static final String SERIALIZED_NAME_APNS_BUNDLE_ID = "apns_bundle_id";
-  @SerializedName(SERIALIZED_NAME_APNS_BUNDLE_ID)
+  public static final String JSON_PROPERTY_APNS_BUNDLE_ID = "apns_bundle_id";
   private String apnsBundleId;
 
-  public static final String SERIALIZED_NAME_SOUND = "sound";
-  @SerializedName(SERIALIZED_NAME_SOUND)
+  public static final String JSON_PROPERTY_SOUND = "sound";
   private String sound;
 
-  public static final String SERIALIZED_NAME_VOLUME = "volume";
-  @SerializedName(SERIALIZED_NAME_VOLUME)
+  public static final String JSON_PROPERTY_VOLUME = "volume";
   private BigDecimal volume;
 
   public SendMessageData() { 
   }
 
   public SendMessageData userId(String userId) {
-    
     this.userId = userId;
     return this;
   }
@@ -135,19 +121,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the user ID of the sender.")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUserId() {
     return userId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUserId(String userId) {
     this.userId = userId;
   }
 
 
   public SendMessageData channelType(String channelType) {
-    
     this.channelType = channelType;
     return this;
   }
@@ -158,19 +147,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the type of the channel. Either open_channels or group_channels.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelType() {
     return channelType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelType(String channelType) {
     this.channelType = channelType;
   }
 
 
   public SendMessageData channelUrl(String channelUrl) {
-    
     this.channelUrl = channelUrl;
     return this;
   }
@@ -181,19 +173,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the channel to send a message to.")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChannelUrl() {
     return channelUrl;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
   }
 
 
   public SendMessageData messageType(String messageType) {
-    
     this.messageType = messageType;
     return this;
   }
@@ -204,19 +199,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the type of the message as MESG, FILE or ADMM")
+  @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getMessageType() {
     return messageType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessageType(String messageType) {
     this.messageType = messageType;
   }
 
 
   public SendMessageData message(String message) {
-    
     this.message = message;
     return this;
   }
@@ -227,19 +225,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the content of the message.")
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getMessage() {
     return message;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMessage(String message) {
     this.message = message;
   }
 
 
   public SendMessageData customType(String customType) {
-    
     this.customType = customType;
     return this;
   }
@@ -250,19 +251,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
 
 
   public SendMessageData data(String data) {
-    
     this.data = data;
     return this;
   }
@@ -273,19 +277,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional message information such as custom font size, font type or `JSON` formatted string.")
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
 
 
   public SendMessageData sendPush(Boolean sendPush) {
-    
     this.sendPush = sendPush;
     return this;
   }
@@ -296,19 +303,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to send a push notification for the message to the members of the channel (applicable to group channels only). Unlike text and file messages, a push notification for an admin message is not sent by default. (Default: true)")
+  @JsonProperty(JSON_PROPERTY_SEND_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getSendPush() {
     return sendPush;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SEND_PUSH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSendPush(Boolean sendPush) {
     this.sendPush = sendPush;
   }
 
 
   public SendMessageData mentionType(String mentionType) {
-    
     this.mentionType = mentionType;
     return this;
   }
@@ -319,19 +329,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the mentioning type which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users)")
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMentionType() {
     return mentionType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionType(String mentionType) {
     this.mentionType = mentionType;
   }
 
 
   public SendMessageData mentionedUserIds(List<String> mentionedUserIds) {
-    
     this.mentionedUserIds = mentionedUserIds;
     return this;
   }
@@ -350,19 +363,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of the users who will get a notification for the message.")
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getMentionedUserIds() {
     return mentionedUserIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMentionedUserIds(List<String> mentionedUserIds) {
     this.mentionedUserIds = mentionedUserIds;
   }
 
 
   public SendMessageData isSilent(Boolean isSilent) {
-    
     this.isSilent = isSilent;
     return this;
   }
@@ -373,19 +389,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to send a message without updating some of the channel properties. If a message is sent in a channel, with this property set to true, the channel's last_message is updated only for the sender while its unread_message_count remains unchanged for all channel members. Also, the message doesn't send a push notification to message receivers. If the message is sent to a hidden channel, the channel still remains hidden. (Default: false)</br></br>  Once the value of this property is set, it can't be reverted.")
+  @JsonProperty(JSON_PROPERTY_IS_SILENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsSilent() {
     return isSilent;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_IS_SILENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsSilent(Boolean isSilent) {
     this.isSilent = isSilent;
   }
 
 
   public SendMessageData sortedMetaarray(String sortedMetaarray) {
-    
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
@@ -396,19 +415,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies a `JSON` object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they've been specified.")
+  @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSortedMetaarray(String sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 
 
   public SendMessageData createdAt(Integer createdAt) {
-    
     this.createdAt = createdAt;
     return this;
   }
@@ -419,19 +441,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. This property can be used when migrating the messages of other system to Sendbird server. If specified, the server sets the message's creation time as the property value.")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getCreatedAt() {
     return createdAt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreatedAt(Integer createdAt) {
     this.createdAt = createdAt;
   }
 
 
   public SendMessageData dedupId(String dedupId) {
-    
     this.dedupId = dedupId;
     return this;
   }
@@ -442,19 +467,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique message ID created by other system. In general, this property is used to prevent the same message data from getting inserted when migrating the messages of the other system to Sendbird server. If specified, the server performs a duplicate check using the property value.")
+  @JsonProperty(JSON_PROPERTY_DEDUP_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDedupId() {
     return dedupId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_DEDUP_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDedupId(String dedupId) {
     this.dedupId = dedupId;
   }
 
 
   public SendMessageData apnsBundleId(String apnsBundleId) {
-    
     this.apnsBundleId = apnsBundleId;
     return this;
   }
@@ -465,19 +493,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the bundle ID of the client app in order to send a push notification to iOS devices. You can find this in Settings > Chat > Notifications > Push notification services")
+  @JsonProperty(JSON_PROPERTY_APNS_BUNDLE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getApnsBundleId() {
     return apnsBundleId;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APNS_BUNDLE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setApnsBundleId(String apnsBundleId) {
     this.apnsBundleId = apnsBundleId;
   }
 
 
   public SendMessageData sound(String sound) {
-    
     this.sound = sound;
     return this;
   }
@@ -488,19 +519,22 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the name of the file that sounds for critical alerts.")
+  @JsonProperty(JSON_PROPERTY_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSound() {
     return sound;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSound(String sound) {
     this.sound = sound;
   }
 
 
   public SendMessageData volume(BigDecimal volume) {
-    
     this.volume = volume;
     return this;
   }
@@ -511,18 +545,24 @@ public class SendMessageData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the volume of the critical alert sound. The volume ranges from 0.0 to 1.0, which indicates silent and full volume, respectively. (Default 1.0)")
+  @JsonProperty(JSON_PROPERTY_VOLUME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public BigDecimal getVolume() {
     return volume;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_VOLUME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVolume(BigDecimal volume) {
     this.volume = volume;
   }
 
 
-
+  /**
+   * Return true if this sendMessageData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -592,156 +632,5 @@ public class SendMessageData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("user_id");
-    openapiFields.add("channel_type");
-    openapiFields.add("channel_url");
-    openapiFields.add("message_type");
-    openapiFields.add("message");
-    openapiFields.add("custom_type");
-    openapiFields.add("data");
-    openapiFields.add("send_push");
-    openapiFields.add("mention_type");
-    openapiFields.add("mentioned_user_ids");
-    openapiFields.add("is_silent");
-    openapiFields.add("sorted_metaarray");
-    openapiFields.add("created_at");
-    openapiFields.add("dedup_id");
-    openapiFields.add("apns_bundle_id");
-    openapiFields.add("sound");
-    openapiFields.add("volume");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("user_id");
-    openapiRequiredFields.add("message_type");
-    openapiRequiredFields.add("message");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SendMessageData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SendMessageData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendMessageData is not found in the empty JSON string", SendMessageData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!SendMessageData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendMessageData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : SendMessageData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
-      }
-      if (jsonObj.get("channel_type") != null && !jsonObj.get("channel_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_type").toString()));
-      }
-      if (jsonObj.get("channel_url") != null && !jsonObj.get("channel_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel_url").toString()));
-      }
-      if (jsonObj.get("message_type") != null && !jsonObj.get("message_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message_type").toString()));
-      }
-      if (jsonObj.get("message") != null && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
-      }
-      if (jsonObj.get("custom_type") != null && !jsonObj.get("custom_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_type").toString()));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("data").toString()));
-      }
-      if (jsonObj.get("mention_type") != null && !jsonObj.get("mention_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mention_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mention_type").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("mentioned_user_ids") != null && !jsonObj.get("mentioned_user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mentioned_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("mentioned_user_ids").toString()));
-      }
-      if (jsonObj.get("sorted_metaarray") != null && !jsonObj.get("sorted_metaarray").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sorted_metaarray` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sorted_metaarray").toString()));
-      }
-      if (jsonObj.get("dedup_id") != null && !jsonObj.get("dedup_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `dedup_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dedup_id").toString()));
-      }
-      if (jsonObj.get("apns_bundle_id") != null && !jsonObj.get("apns_bundle_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `apns_bundle_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apns_bundle_id").toString()));
-      }
-      if (jsonObj.get("sound") != null && !jsonObj.get("sound").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sound` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sound").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendMessageData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendMessageData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendMessageData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendMessageData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendMessageData>() {
-           @Override
-           public void write(JsonWriter out, SendMessageData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendMessageData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of SendMessageData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SendMessageData
-  * @throws IOException if the JSON string is invalid with respect to SendMessageData
-  */
-  public static SendMessageData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendMessageData.class);
-  }
-
- /**
-  * Convert an instance of SendMessageData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

@@ -27,48 +27,56 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 | [**viewUserMetadataByKey**](MetadataApi.md#viewUserMetadataByKey) | **GET** /v3/users/{user_id}/metadata/{key} | View a user metadata - When retrieving a specific item of a user metadata by its key |
 
 
-<a name="createChannelMetacounter"></a>
-# **createChannelMetacounter**
+
+## createChannelMetacounter
+
 > Object createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData)
 
 Create a channel metacounter
 
-## Create a channel metacounter  Creates a channel metacounter&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metacounter ----------------------------
+## Create a channel metacounter
+
+Creates a channel metacounter's items to store in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metacounter
+----------------------------
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    CreateChannelMetacounterData createChannelMetacounterData = new CreateChannelMetacounterData(); // CreateChannelMetacounterData | 
-    try {
-      Object result = apiInstance.createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#createChannelMetacounter");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        CreateChannelMetacounterData createChannelMetacounterData = new CreateChannelMetacounterData(); // CreateChannelMetacounterData | 
+        try {
+            Object result = apiInstance.createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#createChannelMetacounter");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -87,56 +95,64 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="createChannelMetadata"></a>
-# **createChannelMetadata**
+
+## createChannelMetadata
+
 > CreateChannelMetadataResponse createChannelMetadata(apiToken, channelType, channelUrl, createChannelMetadataData)
 
 Create a channel metadata
 
-## Create a channel metadata  Creates a channel metadata&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metadata ----------------------------
+## Create a channel metadata
+
+Creates a channel metadata's items to store in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metadata
+----------------------------
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    CreateChannelMetadataData createChannelMetadataData = new CreateChannelMetadataData(); // CreateChannelMetadataData | 
-    try {
-      CreateChannelMetadataResponse result = apiInstance.createChannelMetadata(apiToken, channelType, channelUrl, createChannelMetadataData);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#createChannelMetadata");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        CreateChannelMetadataData createChannelMetadataData = new CreateChannelMetadataData(); // CreateChannelMetadataData | 
+        try {
+            CreateChannelMetadataResponse result = apiInstance.createChannelMetadata(apiToken, channelType, channelUrl, createChannelMetadataData);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#createChannelMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -155,55 +171,63 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="createUserMetadata"></a>
-# **createUserMetadata**
+
+## createUserMetadata
+
 > CreateUserMetadataResponse createUserMetadata(apiToken, userId, createUserMetadataData)
 
 Create a user metadata
 
-## Create a user metadata  Creates a user metadata&#39;s items to store in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-user-metadata ----------------------------
+## Create a user metadata
+
+Creates a user metadata's items to store in a user.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-user-metadata
+----------------------------
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String userId = "userId_example"; // String | 
-    CreateUserMetadataData createUserMetadataData = new CreateUserMetadataData(); // CreateUserMetadataData | 
-    try {
-      CreateUserMetadataResponse result = apiInstance.createUserMetadata(apiToken, userId, createUserMetadataData);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#createUserMetadata");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String userId = "userId_example"; // String | 
+        CreateUserMetadataData createUserMetadataData = new CreateUserMetadataData(); // CreateUserMetadataData | 
+        try {
+            CreateUserMetadataResponse result = apiInstance.createUserMetadata(apiToken, userId, createUserMetadataData);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#createUserMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -221,54 +245,69 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="deleteChannelMetacounter"></a>
-# **deleteChannelMetacounter**
+
+## deleteChannelMetacounter
+
 > deleteChannelMetacounter(apiToken, channelType, channelUrl)
 
 Delete a channel metacounter - When deleting all items of a channel metacounter
 
-## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+## Delete a channel metacounter
+
+Deletes a channel metacounter's item that is stored in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the channel which has the metacounter to delete.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    try {
-      apiInstance.deleteChannelMetacounter(apiToken, channelType, channelUrl);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#deleteChannelMetacounter");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        try {
+            apiInstance.deleteChannelMetacounter(apiToken, channelType, channelUrl);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#deleteChannelMetacounter");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -286,55 +325,70 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="deleteChannelMetacounterByKey"></a>
-# **deleteChannelMetacounterByKey**
+
+## deleteChannelMetacounterByKey
+
 > deleteChannelMetacounterByKey(apiToken, channelType, channelUrl, key)
 
 Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
 
-## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
+## Delete a channel metacounter
+
+Deletes a channel metacounter's item that is stored in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the channel which has the metacounter to delete.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    String key = "key_example"; // String | 
-    try {
-      apiInstance.deleteChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#deleteChannelMetacounterByKey");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        String key = "key_example"; // String | 
+        try {
+            apiInstance.deleteChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#deleteChannelMetacounterByKey");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -353,55 +407,70 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="deleteChannelMetadata"></a>
-# **deleteChannelMetadata**
+
+## deleteChannelMetadata
+
 > deleteChannelMetadata(apiToken, channelType, channelUrl, key)
 
 Delete a channel metadata - When deleting all items of a channel metadata
 
-## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+## Delete a channel metadata
+
+Deletes a channel metadata's one or all items that are stored in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the channel which has the metadata to delete.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    String key = "key_example"; // String | 
-    try {
-      apiInstance.deleteChannelMetadata(apiToken, channelType, channelUrl, key);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#deleteChannelMetadata");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        String key = "key_example"; // String | 
+        try {
+            apiInstance.deleteChannelMetadata(apiToken, channelType, channelUrl, key);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#deleteChannelMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -420,55 +489,70 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="deleteChannelMetadataByKey"></a>
-# **deleteChannelMetadataByKey**
+
+## deleteChannelMetadataByKey
+
 > deleteChannelMetadataByKey(apiToken, channelType, channelUrl, key)
 
 Delete a channel metadata - When deleting a specific item of a channel metadata by its key
 
-## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+## Delete a channel metadata
+
+Deletes a channel metadata's one or all items that are stored in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the channel which has the metadata to delete.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    String key = "key_example"; // String | 
-    try {
-      apiInstance.deleteChannelMetadataByKey(apiToken, channelType, channelUrl, key);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#deleteChannelMetadataByKey");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        String key = "key_example"; // String | 
+        try {
+            apiInstance.deleteChannelMetadataByKey(apiToken, channelType, channelUrl, key);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#deleteChannelMetadataByKey");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -487,54 +571,66 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="deleteUserMetadata"></a>
-# **deleteUserMetadata**
+
+## deleteUserMetadata
+
 > deleteUserMetadata(apiToken, userId, key)
 
 Delete a user metadata - When deleting all items of a user metadata
 
-## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+## Delete a user metadata
+
+Deletes a user metadata's one or all items that are stored in a user.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata
+----------------------------
+
+ `user_id`
+     Type: string
+     Description: Specifies the ID of the user who has the metadata to delete.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String userId = "userId_example"; // String | 
-    String key = "key_example"; // String | 
-    try {
-      apiInstance.deleteUserMetadata(apiToken, userId, key);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#deleteUserMetadata");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String userId = "userId_example"; // String | 
+        String key = "key_example"; // String | 
+        try {
+            apiInstance.deleteUserMetadata(apiToken, userId, key);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#deleteUserMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -552,54 +648,66 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="deleteUserMetadataByKey"></a>
-# **deleteUserMetadataByKey**
+
+## deleteUserMetadataByKey
+
 > deleteUserMetadataByKey(apiToken, userId, key)
 
 Delete a user metadata - When deleting a specific item of a user metadata by its key
 
-## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
+## Delete a user metadata
+
+Deletes a user metadata's one or all items that are stored in a user.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata
+----------------------------
+
+ `user_id`
+     Type: string
+     Description: Specifies the ID of the user who has the metadata to delete.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String userId = "userId_example"; // String | 
-    String key = "key_example"; // String | 
-    try {
-      apiInstance.deleteUserMetadataByKey(apiToken, userId, key);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#deleteUserMetadataByKey");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String userId = "userId_example"; // String | 
+        String key = "key_example"; // String | 
+        try {
+            apiInstance.deleteUserMetadataByKey(apiToken, userId, key);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#deleteUserMetadataByKey");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -617,56 +725,71 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="updateChannelMetacounter"></a>
-# **updateChannelMetacounter**
+
+## updateChannelMetacounter
+
 > Object updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData)
 
 Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
 
-## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+## Update a channel metacounter
+
+Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the target channel.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    UpdateChannelMetacounterData updateChannelMetacounterData = new UpdateChannelMetacounterData(); // UpdateChannelMetacounterData | 
-    try {
-      Object result = apiInstance.updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#updateChannelMetacounter");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        UpdateChannelMetacounterData updateChannelMetacounterData = new UpdateChannelMetacounterData(); // UpdateChannelMetacounterData | 
+        try {
+            Object result = apiInstance.updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#updateChannelMetacounter");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -685,57 +808,72 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="updateChannelMetacounterByKey"></a>
-# **updateChannelMetacounterByKey**
+
+## updateChannelMetacounterByKey
+
 > Object updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body)
 
 Update a channel metacounter - When updating a specific item of a channel metacounter by its key
 
-## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+## Update a channel metacounter
+
+Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the target channel.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    String key = "key_example"; // String | 
-    Object body = null; // Object | 
-    try {
-      Object result = apiInstance.updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#updateChannelMetacounterByKey");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        String key = "key_example"; // String | 
+        Object body = null; // Object | 
+        try {
+            Object result = apiInstance.updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#updateChannelMetacounterByKey");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -755,56 +893,71 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="updateChannelMetadata"></a>
-# **updateChannelMetadata**
+
+## updateChannelMetadata
+
 > Object updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData)
 
 Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
 
-## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+## Update a channel metadata
+
+Updates existing items of a channel metadata by their keys, or adds new items to the metadata.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the target channel.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    UpdateChannelMetadataData updateChannelMetadataData = new UpdateChannelMetadataData(); // UpdateChannelMetadataData | 
-    try {
-      Object result = apiInstance.updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#updateChannelMetadata");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        UpdateChannelMetadataData updateChannelMetadataData = new UpdateChannelMetadataData(); // UpdateChannelMetadataData | 
+        try {
+            Object result = apiInstance.updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#updateChannelMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -823,57 +976,72 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="updateChannelMetadataByKey"></a>
-# **updateChannelMetadataByKey**
+
+## updateChannelMetadataByKey
+
 > Object updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body)
 
 Update a channel metadata - When updating a specific item of a channel metadata by its key
 
-## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+## Update a channel metadata
+
+Updates existing items of a channel metadata by their keys, or adds new items to the metadata.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the target channel.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    String key = "key_example"; // String | 
-    Object body = null; // Object | 
-    try {
-      Object result = apiInstance.updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#updateChannelMetadataByKey");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        String key = "key_example"; // String | 
+        Object body = null; // Object | 
+        try {
+            Object result = apiInstance.updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#updateChannelMetadataByKey");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -893,55 +1061,67 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="updateUserMetadata"></a>
-# **updateUserMetadata**
+
+## updateUserMetadata
+
 > UpdateUserMetadataResponse updateUserMetadata(apiToken, userId, updateUserMetadataData)
 
 Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
 
-## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
+## Update a user metadata
+
+Updates existing items of a user metadata by their keys, or adds new items to the metadata.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata
+----------------------------
+
+ `user_id`
+     Type: string
+     Description: Specifies the ID of the user to update the metadata in.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String userId = "userId_example"; // String | 
-    UpdateUserMetadataData updateUserMetadataData = new UpdateUserMetadataData(); // UpdateUserMetadataData | 
-    try {
-      UpdateUserMetadataResponse result = apiInstance.updateUserMetadata(apiToken, userId, updateUserMetadataData);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#updateUserMetadata");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String userId = "userId_example"; // String | 
+        UpdateUserMetadataData updateUserMetadataData = new UpdateUserMetadataData(); // UpdateUserMetadataData | 
+        try {
+            UpdateUserMetadataResponse result = apiInstance.updateUserMetadata(apiToken, userId, updateUserMetadataData);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#updateUserMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -959,56 +1139,68 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="updateUserMetadataByKey"></a>
-# **updateUserMetadataByKey**
+
+## updateUserMetadataByKey
+
 > Object updateUserMetadataByKey(apiToken, userId, key, body)
 
 Update a user metadata - When updating a specific item of a user metadata by its key
 
-## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
+## Update a user metadata
+
+Updates existing items of a user metadata by their keys, or adds new items to the metadata.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata
+----------------------------
+
+ `user_id`
+     Type: string
+     Description: Specifies the ID of the user to update the metadata in.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String userId = "userId_example"; // String | 
-    String key = "key_example"; // String | 
-    Object body = null; // Object | 
-    try {
-      Object result = apiInstance.updateUserMetadataByKey(apiToken, userId, key, body);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#updateUserMetadataByKey");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String userId = "userId_example"; // String | 
+        String key = "key_example"; // String | 
+        Object body = null; // Object | 
+        try {
+            Object result = apiInstance.updateUserMetadataByKey(apiToken, userId, key, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#updateUserMetadataByKey");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -1027,57 +1219,72 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="viewChannelMetacounter"></a>
-# **viewChannelMetacounter**
+
+## viewChannelMetacounter
+
 > Object viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys)
 
 View a channel metacounter - When retrieving all items of a channel metacounter
 
-## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+## View a channel metacounter
+
+Retrieves channel metacounter's one or more items that are stored in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the target channel.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    String key = "key_example"; // String | 
-    List<String> keys = Arrays.asList(); // List<String> | 
-    try {
-      Object result = apiInstance.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#viewChannelMetacounter");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        String key = "key_example"; // String | 
+        List<String> keys = Arrays.asList(); // List<String> | 
+        try {
+            Object result = apiInstance.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#viewChannelMetacounter");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -1085,7 +1292,7 @@ public class Example {
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **key** | **String**|  | [optional] |
-| **keys** | [**List&lt;String&gt;**](String.md)|  | [optional] |
+| **keys** | **List&lt;String&gt;**|  | [optional] |
 
 ### Return type
 
@@ -1097,56 +1304,71 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="viewChannelMetacounterByKey"></a>
-# **viewChannelMetacounterByKey**
+
+## viewChannelMetacounterByKey
+
 > Object viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key)
 
 View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
 
-## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+## View a channel metacounter
+
+Retrieves channel metacounter's one or more items that are stored in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the target channel.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    String key = "key_example"; // String | 
-    try {
-      Object result = apiInstance.viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#viewChannelMetacounterByKey");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        String key = "key_example"; // String | 
+        try {
+            Object result = apiInstance.viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#viewChannelMetacounterByKey");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -1165,57 +1387,72 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="viewChannelMetadata"></a>
-# **viewChannelMetadata**
+
+## viewChannelMetadata
+
 > Object viewChannelMetadata(apiToken, channelType, channelUrl, key, keys)
 
 View a channel metadata - When retrieving all items of a channel metadata
 
-## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+## View a channel metadata
+
+Retrieves a channel metadata's one or more items that are stored in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the target channel.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    String key = "key_example"; // String | 
-    List<String> keys = Arrays.asList(); // List<String> | 
-    try {
-      Object result = apiInstance.viewChannelMetadata(apiToken, channelType, channelUrl, key, keys);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#viewChannelMetadata");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        String key = "key_example"; // String | 
+        List<String> keys = Arrays.asList(); // List<String> | 
+        try {
+            Object result = apiInstance.viewChannelMetadata(apiToken, channelType, channelUrl, key, keys);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#viewChannelMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -1223,7 +1460,7 @@ public class Example {
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **key** | **String**|  | [optional] |
-| **keys** | [**List&lt;String&gt;**](String.md)|  | [optional] |
+| **keys** | **List&lt;String&gt;**|  | [optional] |
 
 ### Return type
 
@@ -1235,56 +1472,71 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="viewChannelMetadataByKey"></a>
-# **viewChannelMetadataByKey**
+
+## viewChannelMetadataByKey
+
 > Object viewChannelMetadataByKey(apiToken, channelType, channelUrl, key)
 
 View a channel metadata - When retrieving a specific item of a channel metadata by its key
 
-## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+## View a channel metadata
+
+Retrieves a channel metadata's one or more items that are stored in a channel.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata
+----------------------------
+
+ `channel_type`
+     Type: string
+     Description: Specifies the type of the channel. Either open_channels or group_channels.
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the target channel.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String channelType = "channelType_example"; // String | 
-    String channelUrl = "channelUrl_example"; // String | 
-    String key = "key_example"; // String | 
-    try {
-      Object result = apiInstance.viewChannelMetadataByKey(apiToken, channelType, channelUrl, key);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#viewChannelMetadataByKey");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String channelType = "channelType_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | 
+        String key = "key_example"; // String | 
+        try {
+            Object result = apiInstance.viewChannelMetadataByKey(apiToken, channelType, channelUrl, key);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#viewChannelMetadataByKey");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -1303,63 +1555,75 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="viewUserMetadata"></a>
-# **viewUserMetadata**
+
+## viewUserMetadata
+
 > ViewUserMetadataResponse viewUserMetadata(apiToken, userId, key, keys)
 
 View a user metadata - When retrieving all items of a user metadata
 
-## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
+## View a user metadata
+
+Retrieves a user metadata's one or more items that are stored in a user.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata
+----------------------------
+
+ `user_id`
+     Type: string
+     Description: Specifies the ID of the user to retrieve the metadata in.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String userId = "userId_example"; // String | 
-    String key = "key_example"; // String | 
-    List<String> keys = Arrays.asList(); // List<String> | 
-    try {
-      ViewUserMetadataResponse result = apiInstance.viewUserMetadata(apiToken, userId, key, keys);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#viewUserMetadata");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String userId = "userId_example"; // String | 
+        String key = "key_example"; // String | 
+        List<String> keys = Arrays.asList(); // List<String> | 
+        try {
+            ViewUserMetadataResponse result = apiInstance.viewUserMetadata(apiToken, userId, key, keys);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#viewUserMetadata");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **key** | **String**|  | [optional] |
-| **keys** | [**List&lt;String&gt;**](String.md)|  | [optional] |
+| **keys** | **List&lt;String&gt;**|  | [optional] |
 
 ### Return type
 
@@ -1371,55 +1635,67 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 
-<a name="viewUserMetadataByKey"></a>
-# **viewUserMetadataByKey**
+
+## viewUserMetadataByKey
+
 > Object viewUserMetadataByKey(apiToken, userId, key)
 
 View a user metadata - When retrieving a specific item of a user metadata by its key
 
-## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
+## View a user metadata
+
+Retrieves a user metadata's one or more items that are stored in a user.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata
+----------------------------
+
+ `user_id`
+     Type: string
+     Description: Specifies the ID of the user to retrieve the metadata in.
 
 ### Example
+
 ```java
 // Import classes:
 import org.sendbird.client.ApiClient;
 import org.sendbird.client.ApiException;
 import org.sendbird.client.Configuration;
-import org.sendbird.client.models.*;
+import org.sendbird.client.model.*;
 import org.sendbird.client.api.MetadataApi;
 
 public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
-    MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String apiToken = "{{API_TOKEN}}"; // String | 
-    String userId = "userId_example"; // String | 
-    String key = "key_example"; // String | 
-    try {
-      Object result = apiInstance.viewUserMetadataByKey(apiToken, userId, key);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling MetadataApi#viewUserMetadataByKey");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+        MetadataApi apiInstance = new MetadataApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String userId = "userId_example"; // String | 
+        String key = "key_example"; // String | 
+        try {
+            Object result = apiInstance.viewUserMetadataByKey(apiToken, userId, key);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MetadataApi#viewUserMetadataByKey");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
 
 ### Parameters
+
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
@@ -1437,8 +1713,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

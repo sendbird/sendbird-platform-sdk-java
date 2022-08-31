@@ -15,78 +15,64 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
-import java.io.IOException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * AddApnsPushConfigurationData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  AddApnsPushConfigurationData.JSON_PROPERTY_APNS_CERT,
+  AddApnsPushConfigurationData.JSON_PROPERTY_APNS_CERT_ENV_TYPE,
+  AddApnsPushConfigurationData.JSON_PROPERTY_APNS_CERT_PASSWORD,
+  AddApnsPushConfigurationData.JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE,
+  AddApnsPushConfigurationData.JSON_PROPERTY_CONTENT_AVAILABLE,
+  AddApnsPushConfigurationData.JSON_PROPERTY_MUTABLE_CONTENT,
+  AddApnsPushConfigurationData.JSON_PROPERTY_PUSH_SOUND,
+  AddApnsPushConfigurationData.JSON_PROPERTY_APNS_TYPE
+})
+@JsonTypeName("addApnsPushConfigurationData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class AddApnsPushConfigurationData {
-  public static final String SERIALIZED_NAME_APNS_CERT = "apns_cert";
-  @SerializedName(SERIALIZED_NAME_APNS_CERT)
+  public static final String JSON_PROPERTY_APNS_CERT = "apns_cert";
   private File apnsCert;
 
-  public static final String SERIALIZED_NAME_APNS_CERT_ENV_TYPE = "apns_cert_env_type";
-  @SerializedName(SERIALIZED_NAME_APNS_CERT_ENV_TYPE)
+  public static final String JSON_PROPERTY_APNS_CERT_ENV_TYPE = "apns_cert_env_type";
   private String apnsCertEnvType;
 
-  public static final String SERIALIZED_NAME_APNS_CERT_PASSWORD = "apns_cert_password";
-  @SerializedName(SERIALIZED_NAME_APNS_CERT_PASSWORD)
+  public static final String JSON_PROPERTY_APNS_CERT_PASSWORD = "apns_cert_password";
   private String apnsCertPassword;
 
-  public static final String SERIALIZED_NAME_HAS_UNREAD_COUNT_BADGE = "has_unread_count_badge";
-  @SerializedName(SERIALIZED_NAME_HAS_UNREAD_COUNT_BADGE)
+  public static final String JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE = "has_unread_count_badge";
   private Boolean hasUnreadCountBadge;
 
-  public static final String SERIALIZED_NAME_CONTENT_AVAILABLE = "content_available";
-  @SerializedName(SERIALIZED_NAME_CONTENT_AVAILABLE)
+  public static final String JSON_PROPERTY_CONTENT_AVAILABLE = "content_available";
   private Boolean contentAvailable;
 
-  public static final String SERIALIZED_NAME_MUTABLE_CONTENT = "mutable_content";
-  @SerializedName(SERIALIZED_NAME_MUTABLE_CONTENT)
+  public static final String JSON_PROPERTY_MUTABLE_CONTENT = "mutable_content";
   private Boolean mutableContent;
 
-  public static final String SERIALIZED_NAME_PUSH_SOUND = "push_sound";
-  @SerializedName(SERIALIZED_NAME_PUSH_SOUND)
+  public static final String JSON_PROPERTY_PUSH_SOUND = "push_sound";
   private String pushSound;
 
-  public static final String SERIALIZED_NAME_APNS_TYPE = "apns_type";
-  @SerializedName(SERIALIZED_NAME_APNS_TYPE)
+  public static final String JSON_PROPERTY_APNS_TYPE = "apns_type";
   private String apnsType;
 
   public AddApnsPushConfigurationData() { 
   }
 
   public AddApnsPushConfigurationData apnsCert(File apnsCert) {
-    
     this.apnsCert = apnsCert;
     return this;
   }
@@ -97,19 +83,22 @@ public class AddApnsPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "In a form of the `multipart/form-data` content type, specifies a [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) file of which type is either development or production. Sendbird server scans the content of the file, finds out the certificate type, and then registers the file as the corresponding type. If you upload a wrong file, you will receive an error.")
+  @JsonProperty(JSON_PROPERTY_APNS_CERT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public File getApnsCert() {
     return apnsCert;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APNS_CERT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setApnsCert(File apnsCert) {
     this.apnsCert = apnsCert;
   }
 
 
   public AddApnsPushConfigurationData apnsCertEnvType(String apnsCertEnvType) {
-    
     this.apnsCertEnvType = apnsCertEnvType;
     return this;
   }
@@ -120,19 +109,22 @@ public class AddApnsPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the certificate type of the [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) file. Acceptable values are development and production. There is no need to specify this property when the apns_cert above is specified.")
+  @JsonProperty(JSON_PROPERTY_APNS_CERT_ENV_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getApnsCertEnvType() {
     return apnsCertEnvType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APNS_CERT_ENV_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setApnsCertEnvType(String apnsCertEnvType) {
     this.apnsCertEnvType = apnsCertEnvType;
   }
 
 
   public AddApnsPushConfigurationData apnsCertPassword(String apnsCertPassword) {
-    
     this.apnsCertPassword = apnsCertPassword;
     return this;
   }
@@ -143,19 +135,22 @@ public class AddApnsPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the password of the cerfificate file which has been set during the [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) export.")
+  @JsonProperty(JSON_PROPERTY_APNS_CERT_PASSWORD)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getApnsCertPassword() {
     return apnsCertPassword;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APNS_CERT_PASSWORD)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setApnsCertPassword(String apnsCertPassword) {
     this.apnsCertPassword = apnsCertPassword;
   }
 
 
   public AddApnsPushConfigurationData hasUnreadCountBadge(Boolean hasUnreadCountBadge) {
-    
     this.hasUnreadCountBadge = hasUnreadCountBadge;
     return this;
   }
@@ -166,19 +161,22 @@ public class AddApnsPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to badge your client app's icon with the number of a user's unread messages. (Default: true)")
+  @JsonProperty(JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getHasUnreadCountBadge() {
     return hasUnreadCountBadge;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setHasUnreadCountBadge(Boolean hasUnreadCountBadge) {
     this.hasUnreadCountBadge = hasUnreadCountBadge;
   }
 
 
   public AddApnsPushConfigurationData contentAvailable(Boolean contentAvailable) {
-    
     this.contentAvailable = contentAvailable;
     return this;
   }
@@ -189,19 +187,22 @@ public class AddApnsPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines for your client app whether to perform a silent background update on a user's device. For more information, see the Apple Developer Documentation's [Pushing Updates to Your App Silently](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently). (Default: false)")
+  @JsonProperty(JSON_PROPERTY_CONTENT_AVAILABLE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getContentAvailable() {
     return contentAvailable;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CONTENT_AVAILABLE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setContentAvailable(Boolean contentAvailable) {
     this.contentAvailable = contentAvailable;
   }
 
 
   public AddApnsPushConfigurationData mutableContent(Boolean mutableContent) {
-    
     this.mutableContent = mutableContent;
     return this;
   }
@@ -212,19 +213,22 @@ public class AddApnsPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines for your client app whether or not to modify the payload of a push notification before it is displayed on a user's device. For more information, see the Apple Developer Documentation's [Modifying Content in Newly Delivered Notifications](https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications). (Default: false)")
+  @JsonProperty(JSON_PROPERTY_MUTABLE_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getMutableContent() {
     return mutableContent;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_MUTABLE_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMutableContent(Boolean mutableContent) {
     this.mutableContent = mutableContent;
   }
 
 
   public AddApnsPushConfigurationData pushSound(String pushSound) {
-    
     this.pushSound = pushSound;
     return this;
   }
@@ -235,19 +239,22 @@ public class AddApnsPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file can be in the app's main bundle or in the `Library/Sounds` folder of the app's data container.")
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPushSound() {
     return pushSound;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPushSound(String pushSound) {
     this.pushSound = pushSound;
   }
 
 
   public AddApnsPushConfigurationData apnsType(String apnsType) {
-    
     this.apnsType = apnsType;
     return this;
   }
@@ -258,18 +265,24 @@ public class AddApnsPushConfigurationData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "(Deprecated)  Specifies the certificate type of the [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) file. Acceptable values are development and production. You should specify either this property or the apns_cert above to inform the server of which certificate type to update.")
+  @JsonProperty(JSON_PROPERTY_APNS_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getApnsType() {
     return apnsType;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_APNS_TYPE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setApnsType(String apnsType) {
     this.apnsType = apnsType;
   }
 
 
-
+  /**
+   * Return true if this addApnsPushConfigurationData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -321,124 +334,5 @@ public class AddApnsPushConfigurationData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("apns_cert");
-    openapiFields.add("apns_cert_env_type");
-    openapiFields.add("apns_cert_password");
-    openapiFields.add("has_unread_count_badge");
-    openapiFields.add("content_available");
-    openapiFields.add("mutable_content");
-    openapiFields.add("push_sound");
-    openapiFields.add("apns_type");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("apns_cert");
-    openapiRequiredFields.add("apns_cert_env_type");
-    openapiRequiredFields.add("apns_cert_password");
-    openapiRequiredFields.add("has_unread_count_badge");
-    openapiRequiredFields.add("content_available");
-    openapiRequiredFields.add("mutable_content");
-    openapiRequiredFields.add("push_sound");
-    openapiRequiredFields.add("apns_type");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AddApnsPushConfigurationData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (AddApnsPushConfigurationData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddApnsPushConfigurationData is not found in the empty JSON string", AddApnsPushConfigurationData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!AddApnsPushConfigurationData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddApnsPushConfigurationData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : AddApnsPushConfigurationData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("apns_cert_env_type") != null && !jsonObj.get("apns_cert_env_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `apns_cert_env_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apns_cert_env_type").toString()));
-      }
-      if (jsonObj.get("apns_cert_password") != null && !jsonObj.get("apns_cert_password").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `apns_cert_password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apns_cert_password").toString()));
-      }
-      if (jsonObj.get("push_sound") != null && !jsonObj.get("push_sound").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `push_sound` to be a primitive type in the JSON string but got `%s`", jsonObj.get("push_sound").toString()));
-      }
-      if (jsonObj.get("apns_type") != null && !jsonObj.get("apns_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `apns_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apns_type").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddApnsPushConfigurationData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddApnsPushConfigurationData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddApnsPushConfigurationData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddApnsPushConfigurationData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AddApnsPushConfigurationData>() {
-           @Override
-           public void write(JsonWriter out, AddApnsPushConfigurationData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AddApnsPushConfigurationData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of AddApnsPushConfigurationData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AddApnsPushConfigurationData
-  * @throws IOException if the JSON string is invalid with respect to AddApnsPushConfigurationData
-  */
-  public static AddApnsPushConfigurationData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddApnsPushConfigurationData.class);
-  }
-
- /**
-  * Convert an instance of AddApnsPushConfigurationData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

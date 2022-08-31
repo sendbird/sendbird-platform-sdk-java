@@ -15,99 +15,85 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
+
 
 /**
  * RegisterAndScheduleDataExportData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-25T20:54:55.542602+01:00[Europe/London]")
+@JsonPropertyOrder({
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_START_TS,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_END_TS,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_FORMAT,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_CSV_DELIMITER,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_TIMEZONE,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_SENDER_IDS,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_EXCLUDE_SENDER_IDS,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_CHANNEL_URLS,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_EXCLUDE_CHANNEL_URLS,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_USER_IDS,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_SHOW_READ_RECEIPT,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_SHOW_CHANNEL_METADATA,
+  RegisterAndScheduleDataExportData.JSON_PROPERTY_NEIGHBORING_MESSAGE_LIMIT
+})
+@JsonTypeName("registerAndScheduleDataExportData")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
 public class RegisterAndScheduleDataExportData {
-  public static final String SERIALIZED_NAME_START_TS = "start_ts";
-  @SerializedName(SERIALIZED_NAME_START_TS)
+  public static final String JSON_PROPERTY_START_TS = "start_ts";
   private Integer startTs;
 
-  public static final String SERIALIZED_NAME_END_TS = "end_ts";
-  @SerializedName(SERIALIZED_NAME_END_TS)
+  public static final String JSON_PROPERTY_END_TS = "end_ts";
   private Integer endTs;
 
-  public static final String SERIALIZED_NAME_FORMAT = "format";
-  @SerializedName(SERIALIZED_NAME_FORMAT)
+  public static final String JSON_PROPERTY_FORMAT = "format";
   private String format;
 
-  public static final String SERIALIZED_NAME_CSV_DELIMITER = "csv_delimiter";
-  @SerializedName(SERIALIZED_NAME_CSV_DELIMITER)
+  public static final String JSON_PROPERTY_CSV_DELIMITER = "csv_delimiter";
   private String csvDelimiter;
 
-  public static final String SERIALIZED_NAME_TIMEZONE = "timezone";
-  @SerializedName(SERIALIZED_NAME_TIMEZONE)
+  public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;
 
-  public static final String SERIALIZED_NAME_SENDER_IDS = "sender_ids";
-  @SerializedName(SERIALIZED_NAME_SENDER_IDS)
+  public static final String JSON_PROPERTY_SENDER_IDS = "sender_ids";
   private List<String> senderIds = null;
 
-  public static final String SERIALIZED_NAME_EXCLUDE_SENDER_IDS = "exclude_sender_ids";
-  @SerializedName(SERIALIZED_NAME_EXCLUDE_SENDER_IDS)
+  public static final String JSON_PROPERTY_EXCLUDE_SENDER_IDS = "exclude_sender_ids";
   private List<String> excludeSenderIds = null;
 
-  public static final String SERIALIZED_NAME_CHANNEL_URLS = "channel_urls";
-  @SerializedName(SERIALIZED_NAME_CHANNEL_URLS)
+  public static final String JSON_PROPERTY_CHANNEL_URLS = "channel_urls";
   private List<String> channelUrls = null;
 
-  public static final String SERIALIZED_NAME_EXCLUDE_CHANNEL_URLS = "exclude_channel_urls";
-  @SerializedName(SERIALIZED_NAME_EXCLUDE_CHANNEL_URLS)
+  public static final String JSON_PROPERTY_EXCLUDE_CHANNEL_URLS = "exclude_channel_urls";
   private List<String> excludeChannelUrls = null;
 
-  public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
-  @SerializedName(SERIALIZED_NAME_USER_IDS)
+  public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = null;
 
-  public static final String SERIALIZED_NAME_SHOW_READ_RECEIPT = "show_read_receipt";
-  @SerializedName(SERIALIZED_NAME_SHOW_READ_RECEIPT)
+  public static final String JSON_PROPERTY_SHOW_READ_RECEIPT = "show_read_receipt";
   private Boolean showReadReceipt;
 
-  public static final String SERIALIZED_NAME_SHOW_CHANNEL_METADATA = "show_channel_metadata";
-  @SerializedName(SERIALIZED_NAME_SHOW_CHANNEL_METADATA)
+  public static final String JSON_PROPERTY_SHOW_CHANNEL_METADATA = "show_channel_metadata";
   private Boolean showChannelMetadata;
 
-  public static final String SERIALIZED_NAME_NEIGHBORING_MESSAGE_LIMIT = "neighboring_message_limit";
-  @SerializedName(SERIALIZED_NAME_NEIGHBORING_MESSAGE_LIMIT)
+  public static final String JSON_PROPERTY_NEIGHBORING_MESSAGE_LIMIT = "neighboring_message_limit";
   private Integer neighboringMessageLimit;
 
   public RegisterAndScheduleDataExportData() { 
   }
 
   public RegisterAndScheduleDataExportData startTs(Integer startTs) {
-    
     this.startTs = startTs;
     return this;
   }
@@ -118,19 +104,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the starting timestamp of a period for target objects' creation date, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The creation time of messages, channels, and users will be in-between the start_ts and end_ts.")
+  @JsonProperty(JSON_PROPERTY_START_TS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getStartTs() {
     return startTs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_START_TS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStartTs(Integer startTs) {
     this.startTs = startTs;
   }
 
 
   public RegisterAndScheduleDataExportData endTs(Integer endTs) {
-    
     this.endTs = endTs;
     return this;
   }
@@ -141,19 +130,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ending timestamp of a period for target objects' creation date, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. The creation time of messages, channels, and users will be in-between the start_ts and end_ts.")
+  @JsonProperty(JSON_PROPERTY_END_TS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getEndTs() {
     return endTs;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_END_TS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setEndTs(Integer endTs) {
     this.endTs = endTs;
   }
 
 
   public RegisterAndScheduleDataExportData format(String format) {
-    
     this.format = format;
     return this;
   }
@@ -164,19 +156,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the format of the file to export the messages to. Acceptable values are json and csv. (Default: json)")
+  @JsonProperty(JSON_PROPERTY_FORMAT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFormat() {
     return format;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_FORMAT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFormat(String format) {
     this.format = format;
   }
 
 
   public RegisterAndScheduleDataExportData csvDelimiter(String csvDelimiter) {
-    
     this.csvDelimiter = csvDelimiter;
     return this;
   }
@@ -187,19 +182,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Sets a single character delimiter to separate the values in each row of the csv file which stores two-dimensional arrays of the exported message data. Either English alphabets or special characters can be used as a delimiter, including a horizontal tab (\\t), a line feed (\\n), a vertical bar (\\")
+  @JsonProperty(JSON_PROPERTY_CSV_DELIMITER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCsvDelimiter() {
     return csvDelimiter;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CSV_DELIMITER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCsvDelimiter(String csvDelimiter) {
     this.csvDelimiter = csvDelimiter;
   }
 
 
   public RegisterAndScheduleDataExportData timezone(String timezone) {
-    
     this.timezone = timezone;
     return this;
   }
@@ -210,19 +208,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the timezone to be applied to the timestamp of the exported messages. For example, US/Pacific, Asia/Seoul, Europe/London, etc. (Default: UTC)")
+  @JsonProperty(JSON_PROPERTY_TIMEZONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTimezone() {
     return timezone;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_TIMEZONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTimezone(String timezone) {
     this.timezone = timezone;
   }
 
 
   public RegisterAndScheduleDataExportData senderIds(List<String> senderIds) {
-    
     this.senderIds = senderIds;
     return this;
   }
@@ -241,19 +242,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of the IDs of the users which are used to filter the messages by its sender for the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs in the request. (Default: all messages sent by any user)")
+  @JsonProperty(JSON_PROPERTY_SENDER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getSenderIds() {
     return senderIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SENDER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSenderIds(List<String> senderIds) {
     this.senderIds = senderIds;
   }
 
 
   public RegisterAndScheduleDataExportData excludeSenderIds(List<String> excludeSenderIds) {
-    
     this.excludeSenderIds = excludeSenderIds;
     return this;
   }
@@ -272,19 +276,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of the IDs of the users which are used to exclude their sent messages from the export. This property is effective only when the data_type parameter is set to messages, and can be specified up to 10 IDs. (Default: all messages sent by any user)")
+  @JsonProperty(JSON_PROPERTY_EXCLUDE_SENDER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getExcludeSenderIds() {
     return excludeSenderIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_EXCLUDE_SENDER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExcludeSenderIds(List<String> excludeSenderIds) {
     this.excludeSenderIds = excludeSenderIds;
   }
 
 
   public RegisterAndScheduleDataExportData channelUrls(List<String> channelUrls) {
-    
     this.channelUrls = channelUrls;
     return this;
   }
@@ -303,19 +310,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more URLs of channels to export the messages from. This property is effective only when the data_type parameter is set to messages or channels. (Default: all channels)")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URLS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getChannelUrls() {
     return channelUrls;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_CHANNEL_URLS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChannelUrls(List<String> channelUrls) {
     this.channelUrls = channelUrls;
   }
 
 
   public RegisterAndScheduleDataExportData excludeChannelUrls(List<String> excludeChannelUrls) {
-    
     this.excludeChannelUrls = excludeChannelUrls;
     return this;
   }
@@ -334,19 +344,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more URLs of channels to exclude when exporting the messages. This property is effective only when the data_type parameter is set to messages or channels. (Default: include all channels)")
+  @JsonProperty(JSON_PROPERTY_EXCLUDE_CHANNEL_URLS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getExcludeChannelUrls() {
     return excludeChannelUrls;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_EXCLUDE_CHANNEL_URLS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExcludeChannelUrls(List<String> excludeChannelUrls) {
     this.excludeChannelUrls = excludeChannelUrls;
   }
 
 
   public RegisterAndScheduleDataExportData userIds(List<String> userIds) {
-    
     this.userIds = userIds;
     return this;
   }
@@ -365,19 +378,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of the IDs of the users to export their information. This property is effective only when the data_type parameter is set to users. (Default: all users)")
+  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getUserIds() {
     return userIds;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_USER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
   }
 
 
   public RegisterAndScheduleDataExportData showReadReceipt(Boolean showReadReceipt) {
-    
     this.showReadReceipt = showReadReceipt;
     return this;
   }
@@ -388,19 +404,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to include information about the read receipts of each channel in the exported data. The read receipt indicates the timestamps of when each user has last read the messages in the channel, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps). (Default: true)")
+  @JsonProperty(JSON_PROPERTY_SHOW_READ_RECEIPT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getShowReadReceipt() {
     return showReadReceipt;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SHOW_READ_RECEIPT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShowReadReceipt(Boolean showReadReceipt) {
     this.showReadReceipt = showReadReceipt;
   }
 
 
   public RegisterAndScheduleDataExportData showChannelMetadata(Boolean showChannelMetadata) {
-    
     this.showChannelMetadata = showChannelMetadata;
     return this;
   }
@@ -411,19 +430,22 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to include [channel metadata](/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata) in the result files.")
+  @JsonProperty(JSON_PROPERTY_SHOW_CHANNEL_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getShowChannelMetadata() {
     return showChannelMetadata;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_SHOW_CHANNEL_METADATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setShowChannelMetadata(Boolean showChannelMetadata) {
     this.showChannelMetadata = showChannelMetadata;
   }
 
 
   public RegisterAndScheduleDataExportData neighboringMessageLimit(Integer neighboringMessageLimit) {
-    
     this.neighboringMessageLimit = neighboringMessageLimit;
     return this;
   }
@@ -434,18 +456,24 @@ public class RegisterAndScheduleDataExportData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Specifies the maximum number of other users' messages to be exported, which took place after the specified message of a user filtered by the sender_ids property. Even if there may be more messages that took place, if the quantity exceeds the number of the neighboring_message_limit, they are omitted. Only the messages that took place right after the specified message will be counted and exported. This can be used to better analyze the context. Acceptable values are 1 to 10, inclusive. (Default: 0)")
+  @JsonProperty(JSON_PROPERTY_NEIGHBORING_MESSAGE_LIMIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getNeighboringMessageLimit() {
     return neighboringMessageLimit;
   }
 
 
+  @JsonProperty(JSON_PROPERTY_NEIGHBORING_MESSAGE_LIMIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNeighboringMessageLimit(Integer neighboringMessageLimit) {
     this.neighboringMessageLimit = neighboringMessageLimit;
   }
 
 
-
+  /**
+   * Return true if this registerAndScheduleDataExportData object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -507,140 +535,5 @@ public class RegisterAndScheduleDataExportData {
     return o.toString().replace("\n", "\n    ");
   }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("start_ts");
-    openapiFields.add("end_ts");
-    openapiFields.add("format");
-    openapiFields.add("csv_delimiter");
-    openapiFields.add("timezone");
-    openapiFields.add("sender_ids");
-    openapiFields.add("exclude_sender_ids");
-    openapiFields.add("channel_urls");
-    openapiFields.add("exclude_channel_urls");
-    openapiFields.add("user_ids");
-    openapiFields.add("show_read_receipt");
-    openapiFields.add("show_channel_metadata");
-    openapiFields.add("neighboring_message_limit");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("start_ts");
-    openapiRequiredFields.add("end_ts");
-  }
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RegisterAndScheduleDataExportData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (RegisterAndScheduleDataExportData.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RegisterAndScheduleDataExportData is not found in the empty JSON string", RegisterAndScheduleDataExportData.openapiRequiredFields.toString()));
-        }
-      }
-
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
-        if (!RegisterAndScheduleDataExportData.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RegisterAndScheduleDataExportData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : RegisterAndScheduleDataExportData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
-        }
-      }
-      if (jsonObj.get("format") != null && !jsonObj.get("format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
-      }
-      if (jsonObj.get("csv_delimiter") != null && !jsonObj.get("csv_delimiter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `csv_delimiter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("csv_delimiter").toString()));
-      }
-      if (jsonObj.get("timezone") != null && !jsonObj.get("timezone").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `timezone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timezone").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("sender_ids") != null && !jsonObj.get("sender_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sender_ids` to be an array in the JSON string but got `%s`", jsonObj.get("sender_ids").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("exclude_sender_ids") != null && !jsonObj.get("exclude_sender_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `exclude_sender_ids` to be an array in the JSON string but got `%s`", jsonObj.get("exclude_sender_ids").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("channel_urls") != null && !jsonObj.get("channel_urls").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channel_urls` to be an array in the JSON string but got `%s`", jsonObj.get("channel_urls").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("exclude_channel_urls") != null && !jsonObj.get("exclude_channel_urls").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `exclude_channel_urls` to be an array in the JSON string but got `%s`", jsonObj.get("exclude_channel_urls").toString()));
-      }
-      // ensure the json data is an array
-      if (jsonObj.get("user_ids") != null && !jsonObj.get("user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("user_ids").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!RegisterAndScheduleDataExportData.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'RegisterAndScheduleDataExportData' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<RegisterAndScheduleDataExportData> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(RegisterAndScheduleDataExportData.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<RegisterAndScheduleDataExportData>() {
-           @Override
-           public void write(JsonWriter out, RegisterAndScheduleDataExportData value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public RegisterAndScheduleDataExportData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
-           }
-
-       }.nullSafe();
-    }
-  }
-
- /**
-  * Create an instance of RegisterAndScheduleDataExportData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RegisterAndScheduleDataExportData
-  * @throws IOException if the JSON string is invalid with respect to RegisterAndScheduleDataExportData
-  */
-  public static RegisterAndScheduleDataExportData fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, RegisterAndScheduleDataExportData.class);
-  }
-
- /**
-  * Convert an instance of RegisterAndScheduleDataExportData to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
 

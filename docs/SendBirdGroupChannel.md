@@ -36,7 +36,7 @@
 |**lastMessage** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  |  [optional] |
 |**maxLengthMessage** | **BigDecimal** |  |  [optional] |
 |**memberCount** | **BigDecimal** |  |  [optional] |
-|**members** | [**List&lt;SendBirdMember&gt;**](SendBirdMember.md) |  |  [optional] |
+|**members** | **List&lt;SendBirdMember&gt;** |  |  [optional] |
 |**messageOffsetTimestamp** | **BigDecimal** |  |  [optional] |
 |**messageSurvivalSeconds** | **BigDecimal** |  |  [optional] |
 |**myCountPreference** | **String** |  |  [optional] |
