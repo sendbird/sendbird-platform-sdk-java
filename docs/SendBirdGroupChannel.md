@@ -19,7 +19,7 @@
 |**ignoreProfanityFilter** | **Boolean** |  |  [optional] |
 |**hiddenState** | [**HiddenStateEnum**](#HiddenStateEnum) |  |  [optional] |
 |**invitedAt** | **BigDecimal** |  |  [optional] |
-|**inviter** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
+|**inviter** | [**SendBirdGroupChannelInviter**](SendBirdGroupChannelInviter.md) |  |  [optional] |
 |**isAccessCodeRequired** | **Boolean** |  |  [optional] |
 |**isBroadcast** | **Boolean** |  |  [optional] |
 |**isCreated** | **Boolean** |  |  [optional] |
@@ -33,10 +33,10 @@
 |**isSuper** | **Boolean** |  |  [optional] |
 |**joinedAt** | **BigDecimal** |  |  [optional] |
 |**joinedMemberCount** | **BigDecimal** |  |  [optional] |
-|**lastMessage** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  |  [optional] |
+|**lastMessage** | [**SendBirdGroupChannelLastMessage**](SendBirdGroupChannelLastMessage.md) |  |  [optional] |
 |**maxLengthMessage** | **BigDecimal** |  |  [optional] |
 |**memberCount** | **BigDecimal** |  |  [optional] |
-|**members** | **List&lt;SendBirdMember&gt;** |  |  [optional] |
+|**members** | [**List&lt;SendBirdMember&gt;**](SendBirdMember.md) |  |  [optional] |
 |**messageOffsetTimestamp** | **BigDecimal** |  |  [optional] |
 |**messageSurvivalSeconds** | **BigDecimal** |  |  [optional] |
 |**myCountPreference** | **String** |  |  [optional] |
@@ -46,7 +46,7 @@
 |**myPushTriggerOption** | [**MyPushTriggerOptionEnum**](#MyPushTriggerOptionEnum) |  |  [optional] |
 |**myRole** | [**MyRoleEnum**](#MyRoleEnum) |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**operators** | **List&lt;String&gt;** |  |  [optional] |
+|**operators** | **List&lt;Object&gt;** |  |  [optional] |
 |**smsFallback** | [**SendBirdGroupChannelSmsFallback**](SendBirdGroupChannelSmsFallback.md) |  |  [optional] |
 |**unreadMentionCount** | **BigDecimal** |  |  [optional] |
 |**unreadMessageCount** | **BigDecimal** |  |  [optional] |
@@ -98,6 +98,7 @@
 
 | Name | Value |
 |---- | -----|
+| EMPTY | &quot;&quot; |
 | NONE | &quot;none&quot; |
 | OPERATOR | &quot;operator&quot; |
 

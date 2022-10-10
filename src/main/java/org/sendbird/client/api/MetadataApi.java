@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
 public class MetadataApi {
   private ApiClient apiClient;
 
@@ -908,7 +908,7 @@ public class MetadataApi {
    * @param channelUrl  (required)
    * @param key  (required)
    * @param body  (optional)
-   * @return Object
+   * @return Map&lt;String, String&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -916,7 +916,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public Object updateChannelMetacounterByKey(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+  public Map<String, String> updateChannelMetacounterByKey(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
     return updateChannelMetacounterByKeyWithHttpInfo(apiToken, channelType, channelUrl, key, body).getData();
   }
 
@@ -928,7 +928,7 @@ public class MetadataApi {
    * @param channelUrl  (required)
    * @param key  (required)
    * @param body  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -936,7 +936,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Object> updateChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+  public ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
     Object localVarPostBody = body;
     
     // verify the required parameter 'apiToken' is set
@@ -989,7 +989,7 @@ public class MetadataApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
 
     return apiClient.invokeAPI("MetadataApi.updateChannelMetacounterByKey", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1002,7 +1002,7 @@ public class MetadataApi {
    * @param channelType  (required)
    * @param channelUrl  (required)
    * @param updateChannelMetadataData  (optional)
-   * @return Object
+   * @return Map&lt;String, String&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1010,7 +1010,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public Object updateChannelMetadata(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
+  public Map<String, String> updateChannelMetadata(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
     return updateChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, updateChannelMetadataData).getData();
   }
 
@@ -1021,7 +1021,7 @@ public class MetadataApi {
    * @param channelType  (required)
    * @param channelUrl  (required)
    * @param updateChannelMetadataData  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1029,7 +1029,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Object> updateChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
+  public ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
     Object localVarPostBody = updateChannelMetadataData;
     
     // verify the required parameter 'apiToken' is set
@@ -1076,7 +1076,7 @@ public class MetadataApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
 
     return apiClient.invokeAPI("MetadataApi.updateChannelMetadata", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1090,7 +1090,7 @@ public class MetadataApi {
    * @param channelUrl  (required)
    * @param key  (required)
    * @param body  (optional)
-   * @return Object
+   * @return Map&lt;String, String&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1098,7 +1098,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public Object updateChannelMetadataByKey(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+  public Map<String, String> updateChannelMetadataByKey(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
     return updateChannelMetadataByKeyWithHttpInfo(apiToken, channelType, channelUrl, key, body).getData();
   }
 
@@ -1110,7 +1110,7 @@ public class MetadataApi {
    * @param channelUrl  (required)
    * @param key  (required)
    * @param body  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1118,7 +1118,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Object> updateChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+  public ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
     Object localVarPostBody = body;
     
     // verify the required parameter 'apiToken' is set
@@ -1171,7 +1171,7 @@ public class MetadataApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
 
     return apiClient.invokeAPI("MetadataApi.updateChannelMetadataByKey", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1263,7 +1263,7 @@ public class MetadataApi {
    * @param userId  (required)
    * @param key  (required)
    * @param body  (optional)
-   * @return Object
+   * @return Map&lt;String, String&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1271,7 +1271,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public Object updateUserMetadataByKey(String apiToken, String userId, String key, Object body) throws ApiException {
+  public Map<String, String> updateUserMetadataByKey(String apiToken, String userId, String key, Object body) throws ApiException {
     return updateUserMetadataByKeyWithHttpInfo(apiToken, userId, key, body).getData();
   }
 
@@ -1282,7 +1282,7 @@ public class MetadataApi {
    * @param userId  (required)
    * @param key  (required)
    * @param body  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1290,7 +1290,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Object> updateUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key, Object body) throws ApiException {
+  public ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key, Object body) throws ApiException {
     Object localVarPostBody = body;
     
     // verify the required parameter 'apiToken' is set
@@ -1337,7 +1337,7 @@ public class MetadataApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
 
     return apiClient.invokeAPI("MetadataApi.updateUserMetadataByKey", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1351,7 +1351,7 @@ public class MetadataApi {
    * @param channelUrl  (required)
    * @param key  (optional)
    * @param keys  (optional)
-   * @return Object
+   * @return Map&lt;String, String&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1359,7 +1359,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public Object viewChannelMetacounter(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+  public Map<String, String> viewChannelMetacounter(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
     return viewChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl, key, keys).getData();
   }
 
@@ -1371,7 +1371,7 @@ public class MetadataApi {
    * @param channelUrl  (required)
    * @param key  (optional)
    * @param keys  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1379,7 +1379,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Object> viewChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+  public ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1428,7 +1428,7 @@ public class MetadataApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
 
     return apiClient.invokeAPI("MetadataApi.viewChannelMetacounter", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1535,7 +1535,7 @@ public class MetadataApi {
    * @param channelUrl  (required)
    * @param key  (optional)
    * @param keys  (optional)
-   * @return Object
+   * @return Map&lt;String, String&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1543,7 +1543,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public Object viewChannelMetadata(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+  public Map<String, String> viewChannelMetadata(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
     return viewChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, key, keys).getData();
   }
 
@@ -1555,7 +1555,7 @@ public class MetadataApi {
    * @param channelUrl  (required)
    * @param key  (optional)
    * @param keys  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1563,7 +1563,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Object> viewChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+  public ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1612,7 +1612,7 @@ public class MetadataApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
 
     return apiClient.invokeAPI("MetadataApi.viewChannelMetadata", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1625,7 +1625,7 @@ public class MetadataApi {
    * @param channelType  (required)
    * @param channelUrl  (required)
    * @param key  (required)
-   * @return Object
+   * @return Map&lt;String, String&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1633,7 +1633,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public Object viewChannelMetadataByKey(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+  public Map<String, String> viewChannelMetadataByKey(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
     return viewChannelMetadataByKeyWithHttpInfo(apiToken, channelType, channelUrl, key).getData();
   }
 
@@ -1644,7 +1644,7 @@ public class MetadataApi {
    * @param channelType  (required)
    * @param channelUrl  (required)
    * @param key  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1652,7 +1652,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Object> viewChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+  public ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1705,7 +1705,7 @@ public class MetadataApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
 
     return apiClient.invokeAPI("MetadataApi.viewChannelMetadataByKey", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1800,7 +1800,7 @@ public class MetadataApi {
    * @param apiToken  (required)
    * @param userId  (required)
    * @param key  (required)
-   * @return Object
+   * @return Map&lt;String, String&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1808,7 +1808,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public Object viewUserMetadataByKey(String apiToken, String userId, String key) throws ApiException {
+  public Map<String, String> viewUserMetadataByKey(String apiToken, String userId, String key) throws ApiException {
     return viewUserMetadataByKeyWithHttpInfo(apiToken, userId, key).getData();
   }
 
@@ -1818,7 +1818,7 @@ public class MetadataApi {
    * @param apiToken  (required)
    * @param userId  (required)
    * @param key  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -1826,7 +1826,7 @@ public class MetadataApi {
        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<Object> viewUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key) throws ApiException {
+  public ApiResponse<Map<String, String>> viewUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1873,7 +1873,7 @@ public class MetadataApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
 
     return apiClient.invokeAPI("MetadataApi.viewUserMetadataByKey", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,

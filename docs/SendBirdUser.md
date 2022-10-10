@@ -17,7 +17,7 @@ User
 |**lastSeenAt** | **Integer** |  |  [optional] |
 |**nickname** | **String** |  |  [optional] |
 |**discoveryKeys** | **List&lt;String&gt;** |  |  [optional] |
-|**sessionTokens** | **List&lt;String&gt;** |  |  [optional] |
+|**sessionTokens** | **List&lt;Object&gt;** |  |  [optional] |
 |**preferredLanguages** | **List&lt;String&gt;** |  |  [optional] |
 |**profileUrl** | **String** |  |  [optional] |
 |**createdAt** | **Integer** |  |  [optional] |
@@ -27,7 +27,7 @@ User
 |**isHideMeFromFriends** | **Boolean** |  |  [optional] |
 |**isShadowBlocked** | **Boolean** |  |  [optional] |
 |**isCreated** | **Boolean** |  |  [optional] |
-|**metadata** | [**SBObject**](SBObject.md) |  |  [optional] |
+|**metadata** | **Object** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**endAt** | **BigDecimal** |  |  [optional] |
 |**startAt** | **BigDecimal** |  |  [optional] |

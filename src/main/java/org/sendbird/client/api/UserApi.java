@@ -12,6 +12,8 @@ import org.openapitools.client.model.AddRegistrationOrDeviceTokenData;
 import org.openapitools.client.model.AddRegistrationOrDeviceTokenResponse;
 import org.openapitools.client.model.ChoosePushNotificationContentTemplateResponse;
 import org.openapitools.client.model.CreateUserData;
+import org.openapitools.client.model.CreateUserTokenData;
+import org.openapitools.client.model.CreateUserTokenResponse;
 import org.openapitools.client.model.LeaveMyGroupChannelsData;
 import org.openapitools.client.model.ListMyGroupChannelsResponse;
 import org.openapitools.client.model.ListRegistrationOrDeviceTokensResponse;
@@ -47,7 +49,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-08-31T16:21:40.271053+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
 public class UserApi {
   private ApiClient apiClient;
 
@@ -311,6 +313,85 @@ public class UserApi {
     GenericType<SendBirdUser> localVarReturnType = new GenericType<SendBirdUser>() {};
 
     return apiClient.invokeAPI("UserApi.createUser", localVarPath, "POST", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
+   * Create user token
+   * ## Create user token
+   * @param apiToken  (required)
+   * @param userId  (required)
+   * @param createUserTokenData  (optional)
+   * @return CreateUserTokenResponse
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public CreateUserTokenResponse createUserToken(String apiToken, String userId, CreateUserTokenData createUserTokenData) throws ApiException {
+    return createUserTokenWithHttpInfo(apiToken, userId, createUserTokenData).getData();
+  }
+
+  /**
+   * Create user token
+   * ## Create user token
+   * @param apiToken  (required)
+   * @param userId  (required)
+   * @param createUserTokenData  (optional)
+   * @return ApiResponse&lt;CreateUserTokenResponse&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String apiToken, String userId, CreateUserTokenData createUserTokenData) throws ApiException {
+    Object localVarPostBody = createUserTokenData;
+    
+    // verify the required parameter 'apiToken' is set
+    if (apiToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling createUserToken");
+    }
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling createUserToken");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}/token"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<CreateUserTokenResponse> localVarReturnType = new GenericType<CreateUserTokenResponse>() {};
+
+    return apiClient.invokeAPI("UserApi.createUserToken", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

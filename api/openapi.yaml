@@ -1,7 +1,11 @@
 openapi: 3.0.0
 info:
+  contact:
+    email: support@sendbird.com
+    name: Sendbird
+    url: https://sendbird.com
   description: |-
-    Sendbird Platform API Javascript SDK
+    Sendbird Platform API SDK
 
     https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
   title: Sendbird Platform SDK
@@ -1403,6 +1407,43 @@ paths:
                 $ref: '#/components/schemas/createUserResponse'
           description: Successful response
       summary: Create a user
+      tags:
+      - User
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/users/{user_id}/token:
+    post:
+      description: '## Create user token'
+      operationId: createUserToken
+      parameters:
+      - example: "{{API_TOKEN}}"
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createUserTokenData'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createUserTokenResponse'
+          description: Successful response
+      summary: Create user token
       tags:
       - User
       x-content-type: application/json
@@ -9721,12 +9762,12 @@ components:
         data: data
         custom_type: custom_type
         is_reply_to_channel: true
-        created_at: 3.616076749251911
+        created_at: 5.962133916683182
         is_removed: true
         type: type
         req_id: req_id
         file: "{}"
-        updated_at: 7.061401241503109
+        updated_at: 6.027456183070403
         translations: "{}"
         thread_info: "{}"
         mentioned_users:
@@ -9741,12 +9782,12 @@ components:
           profile_url: profile_url
           nickname: nickname
         channel_type: channel_type
-        message_survival_seconds: 2.3021358869347655
+        message_survival_seconds: 0.8008281904610115
         silent: true
-        parent_message_id: 7.386281948385884
+        parent_message_id: 7.061401241503109
         parent_message_info: "{}"
         require_auth: true
-        message_id: 2.027123023002322
+        message_id: 5.637376656633329
         sorted_metaarray:
         - "{}"
         - "{}"
@@ -9754,8 +9795,8 @@ components:
         message: message
         channel_url: channel_url
         is_op_msg: true
-        message_retention_hour: 9.301444243932576
-        size: 4.145608029883936
+        message_retention_hour: 1.4658129805029452
+        size: 2.3021358869347655
         user:
           metadata:
             anyOf: anyOf
@@ -9851,11 +9892,6 @@ components:
           type: string
       type: object
     Function:
-      example:
-        caller: null
-        length: 1.4658129805029452
-        arguments: ""
-        prototype: ""
       properties:
         arguments: {}
         caller:
@@ -9865,12 +9901,6 @@ components:
         prototype: {}
       type: object
     SBObject:
-      example:
-        constructor:
-          caller: null
-          length: 1.4658129805029452
-          arguments: ""
-          prototype: ""
       properties:
         constructor:
           $ref: '#/components/schemas/Function'
@@ -10121,9 +10151,8 @@ components:
           type: array
       type: object
     SendBird.GroupChannel:
-      additionalProperties: true
       example:
-        message_offset_timestamp: 1.1730742509559433
+        message_offset_timestamp: 4.145608029883936
         my_muted_state: muted
         data: data
         custom_type: custom_type
@@ -10137,68 +10166,21 @@ components:
           data: data
           custom_type: custom_type
           name: name
-          max_length_message: 9.018348186070783
-          created_at: 8.762042012749001
-          member_count: 6.438423552598547
+          max_length_message: 1.1730742509559433
+          created_at: 7.457744773683766
+          member_count: 4.965218492984954
           channel_url: channel_url
         created_at: 0.8008281904610115
         is_super: true
-        last_message:
-          data: data
-          custom_type: custom_type
-          is_reply_to_channel: true
-          created_at: 3.616076749251911
-          is_removed: true
-          type: type
-          req_id: req_id
-          file: "{}"
-          updated_at: 7.061401241503109
-          translations: "{}"
-          thread_info: "{}"
-          mentioned_users:
-          - metadata:
-              anyOf: anyOf
-            user_id: user_id
-            profile_url: profile_url
-            nickname: nickname
-          - metadata:
-              anyOf: anyOf
-            user_id: user_id
-            profile_url: profile_url
-            nickname: nickname
-          channel_type: channel_type
-          message_survival_seconds: 2.3021358869347655
-          silent: true
-          parent_message_id: 7.386281948385884
-          parent_message_info: "{}"
-          require_auth: true
-          message_id: 2.027123023002322
-          sorted_metaarray:
-          - "{}"
-          - "{}"
-          mention_type: mention_type
-          message: message
-          channel_url: channel_url
-          is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
-          user:
-            metadata:
-              anyOf: anyOf
-            require_auth_for_profile_image: true
-            is_active: true
-            role: role
-            user_id: user_id
-            profile_url: profile_url
-            nickname: nickname
+        last_message: null
         my_push_trigger_option: all
         is_discoverable: true
         joined_member_count: 5.637376656633329
         freeze: true
         is_distinct: true
         operators:
-        - operators
-        - operators
+        - "{}"
+        - "{}"
         members:
         - metadata: "{}"
           is_active: true
@@ -10206,14 +10188,14 @@ components:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          role: none
+          role: ""
           profile_url: profile_url
           connection_status: connection_status
-          muted_end_at: 6.84685269835264
+          muted_end_at: 3.616076749251911
           require_auth: true
           restriction_info:
             restriction_type: banned
-            end_at: 7.457744773683766
+            end_at: 2.027123023002322
             description: description
           is_muted: true
           plain_profile_url: plain_profile_url
@@ -10223,22 +10205,22 @@ components:
           user_id: user_id
           nickname: nickname
           is_online: true
-          state: invited
-          last_seen_at: 1
+          state: ""
+          last_seen_at: 9
         - metadata: "{}"
           is_active: true
           preferred_languages:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          role: none
+          role: ""
           profile_url: profile_url
           connection_status: connection_status
-          muted_end_at: 6.84685269835264
+          muted_end_at: 3.616076749251911
           require_auth: true
           restriction_info:
             restriction_type: banned
-            end_at: 7.457744773683766
+            end_at: 2.027123023002322
             description: description
           is_muted: true
           plain_profile_url: plain_profile_url
@@ -10248,56 +10230,17 @@ components:
           user_id: user_id
           nickname: nickname
           is_online: true
-          state: invited
-          last_seen_at: 1
-        max_length_message: 1.2315135367772556
-        my_role: none
-        inviter:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
-          require_auth_for_profile_image: true
-          is_active: true
-          preferred_languages:
-          - preferred_languages
-          - preferred_languages
-          discovery_keys:
-          - discovery_keys
-          - discovery_keys
-          profile_url: profile_url
-          is_created: true
-          created_at: 6
-          description: description
-          has_ever_logged_in: true
-          locale: locale
-          start_at: 5.637376656633329
-          local: local
-          access_token: access_token
-          is_shadow_blocked: true
-          user_id: user_id
-          nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
-          phone_number: phone_number
-          is_online: true
-          last_seen_at: 0
-          is_hide_me_from_friends: true
-        member_count: 1.0246457001441578
-        message_survival_seconds: 4.965218492984954
+          state: ""
+          last_seen_at: 9
+        max_length_message: 2.3021358869347655
+        my_role: ""
+        inviter: null
+        member_count: 7.061401241503109
+        message_survival_seconds: 7.386281948385884
         cover_url: cover_url
         creator:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -10312,15 +10255,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -10330,17 +10273,17 @@ components:
         my_count_preference: my_count_preference
         my_member_state: invited
         is_created: true
-        unread_mention_count: 9.369310271410669
+        unread_mention_count: 1.4894159098541704
         created_by:
           require_auth_for_profile_image: true
           user_id: user_id
           profile_url: profile_url
           nickname: nickname
-        unread_message_count: 6.683562403749608
+        unread_message_count: 6.84685269835264
         channel_url: channel_url
         is_broadcast: true
         joined_at: 5.962133916683182
-        my_last_read: 5.025004791520295
+        my_last_read: 1.2315135367772556
         hidden_state: hidden_allow_auto_unhide
         is_push_enabled: true
         is_public: true
@@ -10349,7 +10292,7 @@ components:
           exclude_user_ids:
           - exclude_user_ids
           - exclude_user_ids
-          wait_seconds: 9.965781217890562
+          wait_seconds: 1.0246457001441578
         ignore_profanity_filter: true
         is_access_code_required: true
       properties:
@@ -10382,7 +10325,7 @@ components:
         invited_at:
           type: number
         inviter:
-          $ref: '#/components/schemas/SendBird.User'
+          $ref: '#/components/schemas/SendBird_GroupChannel_inviter'
         is_access_code_required:
           type: boolean
         is_broadcast:
@@ -10410,7 +10353,7 @@ components:
         joined_member_count:
           type: number
         last_message:
-          $ref: '#/components/schemas/SendBird.MessageResponse'
+          $ref: '#/components/schemas/SendBird_GroupChannel_last_message'
         max_length_message:
           type: number
         member_count:
@@ -10447,6 +10390,7 @@ components:
           type: string
         my_role:
           enum:
+          - ""
           - none
           - operator
           type: string
@@ -10454,7 +10398,7 @@ components:
           type: string
         operators:
           items:
-            type: string
+            type: object
           type: array
         sms_fallback:
           $ref: '#/components/schemas/SendBird_GroupChannel_sms_fallback'
@@ -10475,7 +10419,6 @@ components:
           type: boolean
       type: object
     SendBird.Member:
-      additionalProperties: true
       example:
         metadata: "{}"
         is_active: true
@@ -10483,14 +10426,14 @@ components:
         - preferred_languages
         - preferred_languages
         require_auth_for_profile_image: true
-        role: none
+        role: ""
         profile_url: profile_url
         connection_status: connection_status
-        muted_end_at: 6.84685269835264
+        muted_end_at: 3.616076749251911
         require_auth: true
         restriction_info:
           restriction_type: banned
-          end_at: 7.457744773683766
+          end_at: 2.027123023002322
           description: description
         is_muted: true
         plain_profile_url: plain_profile_url
@@ -10500,14 +10443,16 @@ components:
         user_id: user_id
         nickname: nickname
         is_online: true
-        state: invited
-        last_seen_at: 1
+        state: ""
+        last_seen_at: 9
       properties:
         connection_status:
           type: string
         friend_discovery_key:
+          nullable: true
           type: string
         friend_name:
+          nullable: true
           type: string
         is_active:
           type: boolean
@@ -10541,12 +10486,14 @@ components:
           $ref: '#/components/schemas/SendBird.RestrictionInfo'
         role:
           enum:
+          - ""
           - none
           - operator
           nullable: true
           type: string
         state:
           enum:
+          - ""
           - invited
           - joined
           nullable: true
@@ -10593,13 +10540,8 @@ components:
       example:
         cover_url: cover_url
         creator:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -10614,15 +10556,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -10637,13 +10579,8 @@ components:
         participant_count: 1.4658129805029452
         freeze: true
         operators:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -10658,26 +10595,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -10692,15 +10624,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -10829,7 +10761,7 @@ components:
     SendBird.RestrictionInfo:
       example:
         restriction_type: banned
-        end_at: 7.457744773683766
+        end_at: 2.027123023002322
         description: description
       properties:
         description:
@@ -10856,8 +10788,8 @@ components:
           type: boolean
         last_seen_at:
           type: integer
-        meta_data:
-          $ref: '#/components/schemas/SBObject'
+        metadata:
+          type: object
         nickname:
           type: string
         plain_profile_url:
@@ -10911,13 +10843,8 @@ components:
     SendBird.User:
       description: User
       example:
-        end_at: 5.962133916683182
-        metadata:
-          constructor:
-            caller: null
-            length: 1.4658129805029452
-            arguments: ""
-            prototype: ""
+        end_at: 1.4658129805029452
+        metadata: "{}"
         require_auth_for_profile_image: true
         is_active: true
         preferred_languages:
@@ -10932,15 +10859,15 @@ components:
         description: description
         has_ever_logged_in: true
         locale: locale
-        start_at: 5.637376656633329
+        start_at: 5.962133916683182
         local: local
         access_token: access_token
         is_shadow_blocked: true
         user_id: user_id
         nickname: nickname
         session_tokens:
-        - session_tokens
-        - session_tokens
+        - "{}"
+        - "{}"
         phone_number: phone_number
         is_online: true
         last_seen_at: 0
@@ -10968,7 +10895,7 @@ components:
           type: array
         session_tokens:
           items:
-            type: string
+            type: object
           type: array
         preferred_languages:
           items:
@@ -10991,7 +10918,7 @@ components:
         is_created:
           type: boolean
         metadata:
-          $ref: '#/components/schemas/SBObject'
+          type: object
         description:
           type: string
         end_at:
@@ -11403,13 +11330,8 @@ components:
       example:
         next: next
         users:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -11424,26 +11346,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -11458,15 +11375,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -11501,7 +11418,7 @@ components:
       example:
         next: next
         channels:
-        - message_offset_timestamp: 1.1730742509559433
+        - message_offset_timestamp: 4.145608029883936
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -11515,68 +11432,21 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 9.018348186070783
-            created_at: 8.762042012749001
-            member_count: 6.438423552598547
+            max_length_message: 1.1730742509559433
+            created_at: 7.457744773683766
+            member_count: 4.965218492984954
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message:
-            data: data
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 3.616076749251911
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7.061401241503109
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
-            silent: true
-            parent_message_id: 7.386281948385884
-            parent_message_info: "{}"
-            require_auth: true
-            message_id: 2.027123023002322
-            sorted_metaarray:
-            - "{}"
-            - "{}"
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
-            user:
-              metadata:
-                anyOf: anyOf
-              require_auth_for_profile_image: true
-              is_active: true
-              role: role
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
+          last_message: null
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
           freeze: true
           is_distinct: true
           operators:
-          - operators
-          - operators
+          - "{}"
+          - "{}"
           members:
           - metadata: "{}"
             is_active: true
@@ -11584,14 +11454,14 @@ components:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -11601,22 +11471,22 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
+            state: ""
+            last_seen_at: 9
           - metadata: "{}"
             is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -11626,56 +11496,17 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
-          max_length_message: 1.2315135367772556
-          my_role: none
-          inviter:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
-            require_auth_for_profile_image: true
-            is_active: true
-            preferred_languages:
-            - preferred_languages
-            - preferred_languages
-            discovery_keys:
-            - discovery_keys
-            - discovery_keys
-            profile_url: profile_url
-            is_created: true
-            created_at: 6
-            description: description
-            has_ever_logged_in: true
-            locale: locale
-            start_at: 5.637376656633329
-            local: local
-            access_token: access_token
-            is_shadow_blocked: true
-            user_id: user_id
-            nickname: nickname
-            session_tokens:
-            - session_tokens
-            - session_tokens
-            phone_number: phone_number
-            is_online: true
-            last_seen_at: 0
-            is_hide_me_from_friends: true
-          member_count: 1.0246457001441578
-          message_survival_seconds: 4.965218492984954
+            state: ""
+            last_seen_at: 9
+          max_length_message: 2.3021358869347655
+          my_role: ""
+          inviter: null
+          member_count: 7.061401241503109
+          message_survival_seconds: 7.386281948385884
           cover_url: cover_url
           creator:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -11690,15 +11521,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -11708,17 +11539,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.369310271410669
+          unread_mention_count: 1.4894159098541704
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.683562403749608
+          unread_message_count: 6.84685269835264
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 5.025004791520295
+          my_last_read: 1.2315135367772556
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -11727,10 +11558,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 9.965781217890562
+            wait_seconds: 1.0246457001441578
           ignore_profanity_filter: true
           is_access_code_required: true
-        - message_offset_timestamp: 1.1730742509559433
+        - message_offset_timestamp: 4.145608029883936
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -11744,68 +11575,21 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 9.018348186070783
-            created_at: 8.762042012749001
-            member_count: 6.438423552598547
+            max_length_message: 1.1730742509559433
+            created_at: 7.457744773683766
+            member_count: 4.965218492984954
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message:
-            data: data
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 3.616076749251911
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7.061401241503109
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
-            silent: true
-            parent_message_id: 7.386281948385884
-            parent_message_info: "{}"
-            require_auth: true
-            message_id: 2.027123023002322
-            sorted_metaarray:
-            - "{}"
-            - "{}"
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
-            user:
-              metadata:
-                anyOf: anyOf
-              require_auth_for_profile_image: true
-              is_active: true
-              role: role
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
+          last_message: null
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
           freeze: true
           is_distinct: true
           operators:
-          - operators
-          - operators
+          - "{}"
+          - "{}"
           members:
           - metadata: "{}"
             is_active: true
@@ -11813,14 +11597,14 @@ components:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -11830,22 +11614,22 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
+            state: ""
+            last_seen_at: 9
           - metadata: "{}"
             is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -11855,56 +11639,17 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
-          max_length_message: 1.2315135367772556
-          my_role: none
-          inviter:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
-            require_auth_for_profile_image: true
-            is_active: true
-            preferred_languages:
-            - preferred_languages
-            - preferred_languages
-            discovery_keys:
-            - discovery_keys
-            - discovery_keys
-            profile_url: profile_url
-            is_created: true
-            created_at: 6
-            description: description
-            has_ever_logged_in: true
-            locale: locale
-            start_at: 5.637376656633329
-            local: local
-            access_token: access_token
-            is_shadow_blocked: true
-            user_id: user_id
-            nickname: nickname
-            session_tokens:
-            - session_tokens
-            - session_tokens
-            phone_number: phone_number
-            is_online: true
-            last_seen_at: 0
-            is_hide_me_from_friends: true
-          member_count: 1.0246457001441578
-          message_survival_seconds: 4.965218492984954
+            state: ""
+            last_seen_at: 9
+          max_length_message: 2.3021358869347655
+          my_role: ""
+          inviter: null
+          member_count: 7.061401241503109
+          message_survival_seconds: 7.386281948385884
           cover_url: cover_url
           creator:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -11919,15 +11664,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -11937,17 +11682,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.369310271410669
+          unread_mention_count: 1.4894159098541704
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.683562403749608
+          unread_message_count: 6.84685269835264
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 5.025004791520295
+          my_last_read: 1.2315135367772556
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -11956,10 +11701,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 9.965781217890562
+            wait_seconds: 1.0246457001441578
           ignore_profanity_filter: true
           is_access_code_required: true
-        ts: 3.5571952270680973
+        ts: 5.025004791520295
       properties:
         channels:
           items:
@@ -12074,13 +11819,8 @@ components:
       example:
         next: next
         users:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -12095,26 +11835,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -12129,15 +11864,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -12171,13 +11906,8 @@ components:
         - tokens
         type: type
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -12192,15 +11922,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -12229,13 +11959,8 @@ components:
         - tokens
         type: type
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -12250,15 +11975,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -12283,13 +12008,8 @@ components:
     removeRegistrationOrDeviceTokenByTokenResponse:
       example:
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -12304,15 +12024,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -12331,13 +12051,8 @@ components:
     removeRegistrationOrDeviceTokenResponse:
       example:
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -12352,15 +12067,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -12632,13 +12347,8 @@ components:
         channels:
         - cover_url: cover_url
           creator:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -12653,15 +12363,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -12676,13 +12386,8 @@ components:
           participant_count: 1.4658129805029452
           freeze: true
           operators:
-          - end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+          - end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -12697,26 +12402,21 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          - end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+          - end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -12731,15 +12431,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -12748,13 +12448,8 @@ components:
           max_length_message: 6.027456183070403
         - cover_url: cover_url
           creator:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -12769,15 +12464,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -12792,13 +12487,8 @@ components:
           participant_count: 1.4658129805029452
           freeze: true
           operators:
-          - end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+          - end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -12813,26 +12503,21 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          - end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+          - end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -12847,15 +12532,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -12879,13 +12564,8 @@ components:
       example:
         next: next
         muted_list:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -12900,26 +12580,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -12934,15 +12609,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -12966,13 +12641,8 @@ components:
       example:
         next: next
         participants:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -12987,26 +12657,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -13021,15 +12686,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -13053,13 +12718,8 @@ components:
           description: description
           start_at: 0.8008281904610115
           user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -13074,15 +12734,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -13091,13 +12751,8 @@ components:
           description: description
           start_at: 0.8008281904610115
           user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -13112,15 +12767,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -13143,13 +12798,8 @@ components:
           description: description
           start_at: 0.8008281904610115
           user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -13164,15 +12814,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -13181,13 +12831,8 @@ components:
           description: description
           start_at: 0.8008281904610115
           user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -13202,15 +12847,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -13236,13 +12881,8 @@ components:
         description: description
         start_at: 0.8008281904610115
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -13257,15 +12897,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -13296,13 +12936,8 @@ components:
       example:
         next: next
         operators:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -13317,26 +12952,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -13351,15 +12981,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -13378,13 +13008,8 @@ components:
         description: description
         start_at: 6.027456183070403
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -13399,15 +13024,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -13428,13 +13053,8 @@ components:
         description: description
         start_at: 6.027456183070403
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -13449,15 +13069,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -13497,7 +13117,7 @@ components:
       example:
         next: next
         channels:
-        - message_offset_timestamp: 1.1730742509559433
+        - message_offset_timestamp: 4.145608029883936
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -13511,68 +13131,21 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 9.018348186070783
-            created_at: 8.762042012749001
-            member_count: 6.438423552598547
+            max_length_message: 1.1730742509559433
+            created_at: 7.457744773683766
+            member_count: 4.965218492984954
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message:
-            data: data
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 3.616076749251911
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7.061401241503109
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
-            silent: true
-            parent_message_id: 7.386281948385884
-            parent_message_info: "{}"
-            require_auth: true
-            message_id: 2.027123023002322
-            sorted_metaarray:
-            - "{}"
-            - "{}"
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
-            user:
-              metadata:
-                anyOf: anyOf
-              require_auth_for_profile_image: true
-              is_active: true
-              role: role
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
+          last_message: null
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
           freeze: true
           is_distinct: true
           operators:
-          - operators
-          - operators
+          - "{}"
+          - "{}"
           members:
           - metadata: "{}"
             is_active: true
@@ -13580,14 +13153,14 @@ components:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -13597,22 +13170,22 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
+            state: ""
+            last_seen_at: 9
           - metadata: "{}"
             is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -13622,56 +13195,17 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
-          max_length_message: 1.2315135367772556
-          my_role: none
-          inviter:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
-            require_auth_for_profile_image: true
-            is_active: true
-            preferred_languages:
-            - preferred_languages
-            - preferred_languages
-            discovery_keys:
-            - discovery_keys
-            - discovery_keys
-            profile_url: profile_url
-            is_created: true
-            created_at: 6
-            description: description
-            has_ever_logged_in: true
-            locale: locale
-            start_at: 5.637376656633329
-            local: local
-            access_token: access_token
-            is_shadow_blocked: true
-            user_id: user_id
-            nickname: nickname
-            session_tokens:
-            - session_tokens
-            - session_tokens
-            phone_number: phone_number
-            is_online: true
-            last_seen_at: 0
-            is_hide_me_from_friends: true
-          member_count: 1.0246457001441578
-          message_survival_seconds: 4.965218492984954
+            state: ""
+            last_seen_at: 9
+          max_length_message: 2.3021358869347655
+          my_role: ""
+          inviter: null
+          member_count: 7.061401241503109
+          message_survival_seconds: 7.386281948385884
           cover_url: cover_url
           creator:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -13686,15 +13220,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -13704,17 +13238,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.369310271410669
+          unread_mention_count: 1.4894159098541704
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.683562403749608
+          unread_message_count: 6.84685269835264
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 5.025004791520295
+          my_last_read: 1.2315135367772556
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -13723,10 +13257,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 9.965781217890562
+            wait_seconds: 1.0246457001441578
           ignore_profanity_filter: true
           is_access_code_required: true
-        - message_offset_timestamp: 1.1730742509559433
+        - message_offset_timestamp: 4.145608029883936
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -13740,68 +13274,21 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 9.018348186070783
-            created_at: 8.762042012749001
-            member_count: 6.438423552598547
+            max_length_message: 1.1730742509559433
+            created_at: 7.457744773683766
+            member_count: 4.965218492984954
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message:
-            data: data
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 3.616076749251911
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7.061401241503109
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
-            silent: true
-            parent_message_id: 7.386281948385884
-            parent_message_info: "{}"
-            require_auth: true
-            message_id: 2.027123023002322
-            sorted_metaarray:
-            - "{}"
-            - "{}"
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
-            user:
-              metadata:
-                anyOf: anyOf
-              require_auth_for_profile_image: true
-              is_active: true
-              role: role
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
+          last_message: null
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
           freeze: true
           is_distinct: true
           operators:
-          - operators
-          - operators
+          - "{}"
+          - "{}"
           members:
           - metadata: "{}"
             is_active: true
@@ -13809,14 +13296,14 @@ components:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -13826,22 +13313,22 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
+            state: ""
+            last_seen_at: 9
           - metadata: "{}"
             is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -13851,56 +13338,17 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
-          max_length_message: 1.2315135367772556
-          my_role: none
-          inviter:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
-            require_auth_for_profile_image: true
-            is_active: true
-            preferred_languages:
-            - preferred_languages
-            - preferred_languages
-            discovery_keys:
-            - discovery_keys
-            - discovery_keys
-            profile_url: profile_url
-            is_created: true
-            created_at: 6
-            description: description
-            has_ever_logged_in: true
-            locale: locale
-            start_at: 5.637376656633329
-            local: local
-            access_token: access_token
-            is_shadow_blocked: true
-            user_id: user_id
-            nickname: nickname
-            session_tokens:
-            - session_tokens
-            - session_tokens
-            phone_number: phone_number
-            is_online: true
-            last_seen_at: 0
-            is_hide_me_from_friends: true
-          member_count: 1.0246457001441578
-          message_survival_seconds: 4.965218492984954
+            state: ""
+            last_seen_at: 9
+          max_length_message: 2.3021358869347655
+          my_role: ""
+          inviter: null
+          member_count: 7.061401241503109
+          message_survival_seconds: 7.386281948385884
           cover_url: cover_url
           creator:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -13915,15 +13363,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -13933,17 +13381,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.369310271410669
+          unread_mention_count: 1.4894159098541704
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.683562403749608
+          unread_message_count: 6.84685269835264
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 5.025004791520295
+          my_last_read: 1.2315135367772556
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -13952,7 +13400,7 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 9.965781217890562
+            wait_seconds: 1.0246457001441578
           ignore_profanity_filter: true
           is_access_code_required: true
         ts: 0.8008281904610115
@@ -13974,13 +13422,8 @@ components:
       example:
         next: next
         members:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -13995,26 +13438,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -14029,15 +13467,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -14070,13 +13508,8 @@ components:
       example:
         next: next
         operators:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -14091,26 +13524,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -14125,15 +13553,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -14166,13 +13594,8 @@ components:
           description: description
           start_at: 0.8008281904610115
           user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -14187,15 +13610,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -14204,13 +13627,8 @@ components:
           description: description
           start_at: 0.8008281904610115
           user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -14225,15 +13643,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -14261,13 +13679,8 @@ components:
         description: description
         start_at: 0.8008281904610115
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -14282,15 +13695,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -14323,13 +13736,8 @@ components:
         description: description
         start_at: 0.8008281904610115
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -14344,15 +13752,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -14373,13 +13781,8 @@ components:
         description: description
         start_at: 0.8008281904610115
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -14394,15 +13797,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -14421,13 +13824,8 @@ components:
       example:
         next: next
         muted_list:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -14442,26 +13840,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -14476,15 +13869,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -15330,6 +14723,16 @@ components:
       $ref: '#/components/schemas/SendBird.Emoji'
     updateEmojiUrlByKeyResponse:
       $ref: '#/components/schemas/SendBird.Emoji'
+    createUserTokenResponse:
+      example:
+        expires_at: 0.8008281904610115
+        token: token
+      properties:
+        token:
+          type: string
+        expires_at:
+          type: number
+      type: object
     viewUserMetadataResponse:
       example:
         anyOf: anyOf
@@ -15358,10 +14761,16 @@ components:
           type: boolean
       type: object
     viewUserMetadataByKeyResponse:
+      additionalProperties:
+        type: string
       type: object
     updateUserMetadataByKeyResponse:
+      additionalProperties:
+        type: string
       type: object
     viewChannelMetadataResponse:
+      additionalProperties:
+        type: string
       type: object
     createChannelMetadataResponse:
       example:
@@ -15377,12 +14786,20 @@ components:
           type: number
       type: object
     updateChannelMetadataResponse:
+      additionalProperties:
+        type: string
       type: object
     viewChannelMetadataByKeyResponse:
+      additionalProperties:
+        type: string
       type: object
     updateChannelMetadataByKeyResponse:
+      additionalProperties:
+        type: string
       type: object
     viewChannelMetacounterResponse:
+      additionalProperties:
+        type: string
       type: object
     createChannelMetacounterResponse:
       type: object
@@ -15391,6 +14808,8 @@ components:
     viewChannelMetacounterByKeyResponse:
       type: object
     updateChannelMetacounterByKeyResponse:
+      additionalProperties:
+        type: string
       type: object
     retrieveAdvancedAnalyticsMetricsResponse:
       example:
@@ -15717,7 +15136,7 @@ components:
     joinChannelsResponse:
       example:
         channels:
-        - message_offset_timestamp: 1.1730742509559433
+        - message_offset_timestamp: 4.145608029883936
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -15731,68 +15150,21 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 9.018348186070783
-            created_at: 8.762042012749001
-            member_count: 6.438423552598547
+            max_length_message: 1.1730742509559433
+            created_at: 7.457744773683766
+            member_count: 4.965218492984954
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message:
-            data: data
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 3.616076749251911
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7.061401241503109
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
-            silent: true
-            parent_message_id: 7.386281948385884
-            parent_message_info: "{}"
-            require_auth: true
-            message_id: 2.027123023002322
-            sorted_metaarray:
-            - "{}"
-            - "{}"
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
-            user:
-              metadata:
-                anyOf: anyOf
-              require_auth_for_profile_image: true
-              is_active: true
-              role: role
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
+          last_message: null
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
           freeze: true
           is_distinct: true
           operators:
-          - operators
-          - operators
+          - "{}"
+          - "{}"
           members:
           - metadata: "{}"
             is_active: true
@@ -15800,14 +15172,14 @@ components:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -15817,22 +15189,22 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
+            state: ""
+            last_seen_at: 9
           - metadata: "{}"
             is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -15842,56 +15214,17 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
-          max_length_message: 1.2315135367772556
-          my_role: none
-          inviter:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
-            require_auth_for_profile_image: true
-            is_active: true
-            preferred_languages:
-            - preferred_languages
-            - preferred_languages
-            discovery_keys:
-            - discovery_keys
-            - discovery_keys
-            profile_url: profile_url
-            is_created: true
-            created_at: 6
-            description: description
-            has_ever_logged_in: true
-            locale: locale
-            start_at: 5.637376656633329
-            local: local
-            access_token: access_token
-            is_shadow_blocked: true
-            user_id: user_id
-            nickname: nickname
-            session_tokens:
-            - session_tokens
-            - session_tokens
-            phone_number: phone_number
-            is_online: true
-            last_seen_at: 0
-            is_hide_me_from_friends: true
-          member_count: 1.0246457001441578
-          message_survival_seconds: 4.965218492984954
+            state: ""
+            last_seen_at: 9
+          max_length_message: 2.3021358869347655
+          my_role: ""
+          inviter: null
+          member_count: 7.061401241503109
+          message_survival_seconds: 7.386281948385884
           cover_url: cover_url
           creator:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -15906,15 +15239,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -15924,17 +15257,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.369310271410669
+          unread_mention_count: 1.4894159098541704
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.683562403749608
+          unread_message_count: 6.84685269835264
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 5.025004791520295
+          my_last_read: 1.2315135367772556
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -15943,10 +15276,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 9.965781217890562
+            wait_seconds: 1.0246457001441578
           ignore_profanity_filter: true
           is_access_code_required: true
-        - message_offset_timestamp: 1.1730742509559433
+        - message_offset_timestamp: 4.145608029883936
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -15960,68 +15293,21 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 9.018348186070783
-            created_at: 8.762042012749001
-            member_count: 6.438423552598547
+            max_length_message: 1.1730742509559433
+            created_at: 7.457744773683766
+            member_count: 4.965218492984954
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message:
-            data: data
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 3.616076749251911
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7.061401241503109
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            - metadata:
-                anyOf: anyOf
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-            channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
-            silent: true
-            parent_message_id: 7.386281948385884
-            parent_message_info: "{}"
-            require_auth: true
-            message_id: 2.027123023002322
-            sorted_metaarray:
-            - "{}"
-            - "{}"
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
-            user:
-              metadata:
-                anyOf: anyOf
-              require_auth_for_profile_image: true
-              is_active: true
-              role: role
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
+          last_message: null
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
           freeze: true
           is_distinct: true
           operators:
-          - operators
-          - operators
+          - "{}"
+          - "{}"
           members:
           - metadata: "{}"
             is_active: true
@@ -16029,14 +15315,14 @@ components:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -16046,22 +15332,22 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
+            state: ""
+            last_seen_at: 9
           - metadata: "{}"
             is_active: true
             preferred_languages:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            role: none
+            role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 6.84685269835264
+            muted_end_at: 3.616076749251911
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 7.457744773683766
+              end_at: 2.027123023002322
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -16071,56 +15357,17 @@ components:
             user_id: user_id
             nickname: nickname
             is_online: true
-            state: invited
-            last_seen_at: 1
-          max_length_message: 1.2315135367772556
-          my_role: none
-          inviter:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
-            require_auth_for_profile_image: true
-            is_active: true
-            preferred_languages:
-            - preferred_languages
-            - preferred_languages
-            discovery_keys:
-            - discovery_keys
-            - discovery_keys
-            profile_url: profile_url
-            is_created: true
-            created_at: 6
-            description: description
-            has_ever_logged_in: true
-            locale: locale
-            start_at: 5.637376656633329
-            local: local
-            access_token: access_token
-            is_shadow_blocked: true
-            user_id: user_id
-            nickname: nickname
-            session_tokens:
-            - session_tokens
-            - session_tokens
-            phone_number: phone_number
-            is_online: true
-            last_seen_at: 0
-            is_hide_me_from_friends: true
-          member_count: 1.0246457001441578
-          message_survival_seconds: 4.965218492984954
+            state: ""
+            last_seen_at: 9
+          max_length_message: 2.3021358869347655
+          my_role: ""
+          inviter: null
+          member_count: 7.061401241503109
+          message_survival_seconds: 7.386281948385884
           cover_url: cover_url
           creator:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -16135,15 +15382,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -16153,17 +15400,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 9.369310271410669
+          unread_mention_count: 1.4894159098541704
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.683562403749608
+          unread_message_count: 6.84685269835264
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 5.025004791520295
+          my_last_read: 1.2315135367772556
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -16172,7 +15419,7 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 9.965781217890562
+            wait_seconds: 1.0246457001441578
           ignore_profanity_filter: true
           is_access_code_required: true
       properties:
@@ -16320,12 +15567,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 5.962133916683182
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 7.061401241503109
+            updated_at: 6.027456183070403
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -16340,12 +15587,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
+            message_survival_seconds: 0.8008281904610115
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.061401241503109
             parent_message_info: "{}"
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 5.637376656633329
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -16353,8 +15600,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.4658129805029452
+            size: 2.3021358869347655
             user:
               metadata:
                 anyOf: anyOf
@@ -16366,13 +15613,8 @@ components:
               nickname: nickname
           report_description: report_description
           reporting_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -16387,15 +15629,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -16404,13 +15646,8 @@ components:
           created_at: 0.8008281904610115
           report_type: report_type
           offending_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -16425,15 +15662,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -16443,12 +15680,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 5.962133916683182
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 7.061401241503109
+            updated_at: 6.027456183070403
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -16463,12 +15700,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
+            message_survival_seconds: 0.8008281904610115
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.061401241503109
             parent_message_info: "{}"
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 5.637376656633329
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -16476,8 +15713,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.4658129805029452
+            size: 2.3021358869347655
             user:
               metadata:
                 anyOf: anyOf
@@ -16489,13 +15726,8 @@ components:
               nickname: nickname
           report_description: report_description
           reporting_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -16510,15 +15742,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -16527,13 +15759,8 @@ components:
           created_at: 0.8008281904610115
           report_type: report_type
           offending_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -16548,15 +15775,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -16578,12 +15805,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 5.962133916683182
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 7.061401241503109
+            updated_at: 6.027456183070403
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -16598,12 +15825,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
+            message_survival_seconds: 0.8008281904610115
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.061401241503109
             parent_message_info: "{}"
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 5.637376656633329
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -16611,8 +15838,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.4658129805029452
+            size: 2.3021358869347655
             user:
               metadata:
                 anyOf: anyOf
@@ -16624,13 +15851,8 @@ components:
               nickname: nickname
           report_description: report_description
           reporting_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -16645,15 +15867,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -16662,13 +15884,8 @@ components:
           created_at: 0.8008281904610115
           report_type: report_type
           offending_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -16683,15 +15900,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -16701,12 +15918,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 5.962133916683182
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 7.061401241503109
+            updated_at: 6.027456183070403
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -16721,12 +15938,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
+            message_survival_seconds: 0.8008281904610115
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.061401241503109
             parent_message_info: "{}"
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 5.637376656633329
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -16734,8 +15951,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.4658129805029452
+            size: 2.3021358869347655
             user:
               metadata:
                 anyOf: anyOf
@@ -16747,13 +15964,8 @@ components:
               nickname: nickname
           report_description: report_description
           reporting_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -16768,15 +15980,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -16785,13 +15997,8 @@ components:
           created_at: 0.8008281904610115
           report_type: report_type
           offending_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -16806,15 +16013,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -16830,18 +16037,17 @@ components:
           type: string
       type: object
     reportMessageByIdResponse:
-      additionalProperties: true
       example:
         reported_message:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 5.962133916683182
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 7.061401241503109
+          updated_at: 6.027456183070403
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -16856,12 +16062,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 2.3021358869347655
+          message_survival_seconds: 0.8008281904610115
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.061401241503109
           parent_message_info: "{}"
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 5.637376656633329
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -16869,8 +16075,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.4658129805029452
+          size: 2.3021358869347655
           user:
             metadata:
               anyOf: anyOf
@@ -16882,13 +16088,8 @@ components:
             nickname: nickname
         report_description: report_description
         reporting_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -16903,15 +16104,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -16920,13 +16121,8 @@ components:
         created_at: 0.8008281904610115
         report_type: report_type
         offending_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -16941,15 +16137,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -16980,12 +16176,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 5.962133916683182
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 7.061401241503109
+            updated_at: 6.027456183070403
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -17000,12 +16196,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
+            message_survival_seconds: 0.8008281904610115
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.061401241503109
             parent_message_info: "{}"
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 5.637376656633329
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -17013,8 +16209,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.4658129805029452
+            size: 2.3021358869347655
             user:
               metadata:
                 anyOf: anyOf
@@ -17026,13 +16222,8 @@ components:
               nickname: nickname
           report_description: report_description
           reporting_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -17047,15 +16238,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -17064,13 +16255,8 @@ components:
           created_at: 0.8008281904610115
           report_type: report_type
           offending_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -17085,15 +16271,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -17103,12 +16289,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 5.962133916683182
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 7.061401241503109
+            updated_at: 6.027456183070403
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -17123,12 +16309,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
+            message_survival_seconds: 0.8008281904610115
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.061401241503109
             parent_message_info: "{}"
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 5.637376656633329
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -17136,8 +16322,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.4658129805029452
+            size: 2.3021358869347655
             user:
               metadata:
                 anyOf: anyOf
@@ -17149,13 +16335,8 @@ components:
               nickname: nickname
           report_description: report_description
           reporting_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -17170,15 +16351,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -17187,13 +16368,8 @@ components:
           created_at: 0.8008281904610115
           report_type: report_type
           offending_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -17208,15 +16384,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -17237,12 +16413,12 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 5.962133916683182
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 7.061401241503109
+          updated_at: 6.027456183070403
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -17257,12 +16433,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 2.3021358869347655
+          message_survival_seconds: 0.8008281904610115
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.061401241503109
           parent_message_info: "{}"
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 5.637376656633329
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -17270,8 +16446,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.4658129805029452
+          size: 2.3021358869347655
           user:
             metadata:
               anyOf: anyOf
@@ -17283,13 +16459,8 @@ components:
             nickname: nickname
         report_description: report_description
         reporting_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -17304,15 +16475,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -17321,13 +16492,8 @@ components:
         created_at: 0.8008281904610115
         report_type: report_type
         offending_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -17342,15 +16508,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -17381,12 +16547,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 5.962133916683182
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 7.061401241503109
+            updated_at: 6.027456183070403
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -17401,12 +16567,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
+            message_survival_seconds: 0.8008281904610115
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.061401241503109
             parent_message_info: "{}"
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 5.637376656633329
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -17414,8 +16580,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.4658129805029452
+            size: 2.3021358869347655
             user:
               metadata:
                 anyOf: anyOf
@@ -17427,13 +16593,8 @@ components:
               nickname: nickname
           report_description: report_description
           reporting_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -17448,15 +16609,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -17465,13 +16626,8 @@ components:
           created_at: 0.8008281904610115
           report_type: report_type
           offending_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -17486,15 +16642,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -17504,12 +16660,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 5.962133916683182
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 7.061401241503109
+            updated_at: 6.027456183070403
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -17524,12 +16680,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 2.3021358869347655
+            message_survival_seconds: 0.8008281904610115
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.061401241503109
             parent_message_info: "{}"
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 5.637376656633329
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -17537,8 +16693,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.4658129805029452
+            size: 2.3021358869347655
             user:
               metadata:
                 anyOf: anyOf
@@ -17550,13 +16706,8 @@ components:
               nickname: nickname
           report_description: report_description
           reporting_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -17571,15 +16722,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -17588,13 +16739,8 @@ components:
           created_at: 0.8008281904610115
           report_type: report_type
           offending_user:
-            end_at: 5.962133916683182
-            metadata:
-              constructor:
-                caller: null
-                length: 1.4658129805029452
-                arguments: ""
-                prototype: ""
+            end_at: 1.4658129805029452
+            metadata: "{}"
             require_auth_for_profile_image: true
             is_active: true
             preferred_languages:
@@ -17609,15 +16755,15 @@ components:
             description: description
             has_ever_logged_in: true
             locale: locale
-            start_at: 5.637376656633329
+            start_at: 5.962133916683182
             local: local
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
             session_tokens:
-            - session_tokens
-            - session_tokens
+            - "{}"
+            - "{}"
             phone_number: phone_number
             is_online: true
             last_seen_at: 0
@@ -17638,12 +16784,12 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 5.962133916683182
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 7.061401241503109
+          updated_at: 6.027456183070403
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -17658,12 +16804,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 2.3021358869347655
+          message_survival_seconds: 0.8008281904610115
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.061401241503109
           parent_message_info: "{}"
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 5.637376656633329
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -17671,8 +16817,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.4658129805029452
+          size: 2.3021358869347655
           user:
             metadata:
               anyOf: anyOf
@@ -17684,13 +16830,8 @@ components:
             nickname: nickname
         report_description: report_description
         reporting_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -17705,15 +16846,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -17722,13 +16863,8 @@ components:
         created_at: 0.8008281904610115
         report_type: report_type
         offending_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -17743,15 +16879,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -17781,13 +16917,8 @@ components:
       example:
         next: next
         muted_list:
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -17802,26 +16933,21 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        - end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+        - end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -17836,15 +16962,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -18296,6 +17422,15 @@ components:
       - profile_url
       - user_id
       title: createUserData
+      type: object
+    createUserTokenData:
+      properties:
+        expires_at:
+          description: "Specifies the expiration time of the new session token in\
+            \ Unix milliseconds format. By default, the expiration time of a session\
+            \ token is seven days from the timestamp when the token was issued."
+          type: number
+      title: createUserTokenData
       type: object
     updateChannelInvitationPreferenceData:
       properties:
@@ -20486,12 +19621,20 @@ components:
         is_triggered_by_message_read:
           type: boolean
       type: object
+    SendBird_GroupChannel_inviter:
+      anyOf:
+      - $ref: '#/components/schemas/SendBird.User'
+      - type: "null"
+    SendBird_GroupChannel_last_message:
+      anyOf:
+      - $ref: '#/components/schemas/SendBird.MessageResponse'
+      - type: "null"
     SendBird_GroupChannel_sms_fallback:
       example:
         exclude_user_ids:
         - exclude_user_ids
         - exclude_user_ids
-        wait_seconds: 9.965781217890562
+        wait_seconds: 1.0246457001441578
       properties:
         wait_seconds:
           type: number
@@ -20506,9 +19649,9 @@ components:
         data: data
         custom_type: custom_type
         name: name
-        max_length_message: 9.018348186070783
-        created_at: 8.762042012749001
-        member_count: 6.438423552598547
+        max_length_message: 1.1730742509559433
+        created_at: 7.457744773683766
+        member_count: 4.965218492984954
         channel_url: channel_url
       properties:
         channel_url:
@@ -20713,13 +19856,8 @@ components:
         description: description
         start_at: 0.8008281904610115
         user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -20734,15 +19872,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -21409,12 +20547,12 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 5.962133916683182
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 7.061401241503109
+          updated_at: 6.027456183070403
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -21429,12 +20567,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 2.3021358869347655
+          message_survival_seconds: 0.8008281904610115
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.061401241503109
           parent_message_info: "{}"
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 5.637376656633329
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -21442,8 +20580,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.4658129805029452
+          size: 2.3021358869347655
           user:
             metadata:
               anyOf: anyOf
@@ -21455,13 +20593,8 @@ components:
             nickname: nickname
         report_description: report_description
         reporting_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -21476,15 +20609,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -21493,13 +20626,8 @@ components:
         created_at: 0.8008281904610115
         report_type: report_type
         offending_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -21514,15 +20642,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -21552,12 +20680,12 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 5.962133916683182
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 7.061401241503109
+          updated_at: 6.027456183070403
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -21572,12 +20700,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 2.3021358869347655
+          message_survival_seconds: 0.8008281904610115
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.061401241503109
           parent_message_info: "{}"
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 5.637376656633329
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -21585,8 +20713,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.4658129805029452
+          size: 2.3021358869347655
           user:
             metadata:
               anyOf: anyOf
@@ -21598,13 +20726,8 @@ components:
             nickname: nickname
         report_description: report_description
         reporting_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -21619,15 +20742,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0
@@ -21636,13 +20759,8 @@ components:
         created_at: 0.8008281904610115
         report_type: report_type
         offending_user:
-          end_at: 5.962133916683182
-          metadata:
-            constructor:
-              caller: null
-              length: 1.4658129805029452
-              arguments: ""
-              prototype: ""
+          end_at: 1.4658129805029452
+          metadata: "{}"
           require_auth_for_profile_image: true
           is_active: true
           preferred_languages:
@@ -21657,15 +20775,15 @@ components:
           description: description
           has_ever_logged_in: true
           locale: locale
-          start_at: 5.637376656633329
+          start_at: 5.962133916683182
           local: local
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
           session_tokens:
-          - session_tokens
-          - session_tokens
+          - "{}"
+          - "{}"
           phone_number: phone_number
           is_online: true
           last_seen_at: 0

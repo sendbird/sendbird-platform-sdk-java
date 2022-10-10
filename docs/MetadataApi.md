@@ -819,7 +819,7 @@ No authorization required
 
 ## updateChannelMetacounterByKey
 
-> Object updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body)
+> Map&lt;String, String&gt; updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body)
 
 Update a channel metacounter - When updating a specific item of a channel metacounter by its key
 
@@ -859,7 +859,7 @@ public class Example {
         String key = "key_example"; // String | 
         Object body = null; // Object | 
         try {
-            Object result = apiInstance.updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body);
+            Map<String, String> result = apiInstance.updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateChannelMetacounterByKey");
@@ -885,7 +885,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+**Map&lt;String, String&gt;**
 
 ### Authorization
 
@@ -904,7 +904,7 @@ No authorization required
 
 ## updateChannelMetadata
 
-> Object updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData)
+> Map&lt;String, String&gt; updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData)
 
 Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
 
@@ -943,7 +943,7 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         UpdateChannelMetadataData updateChannelMetadataData = new UpdateChannelMetadataData(); // UpdateChannelMetadataData | 
         try {
-            Object result = apiInstance.updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData);
+            Map<String, String> result = apiInstance.updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateChannelMetadata");
@@ -968,7 +968,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+**Map&lt;String, String&gt;**
 
 ### Authorization
 
@@ -987,7 +987,7 @@ No authorization required
 
 ## updateChannelMetadataByKey
 
-> Object updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body)
+> Map&lt;String, String&gt; updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body)
 
 Update a channel metadata - When updating a specific item of a channel metadata by its key
 
@@ -1027,7 +1027,7 @@ public class Example {
         String key = "key_example"; // String | 
         Object body = null; // Object | 
         try {
-            Object result = apiInstance.updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body);
+            Map<String, String> result = apiInstance.updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateChannelMetadataByKey");
@@ -1053,7 +1053,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+**Map&lt;String, String&gt;**
 
 ### Authorization
 
@@ -1150,7 +1150,7 @@ No authorization required
 
 ## updateUserMetadataByKey
 
-> Object updateUserMetadataByKey(apiToken, userId, key, body)
+> Map&lt;String, String&gt; updateUserMetadataByKey(apiToken, userId, key, body)
 
 Update a user metadata - When updating a specific item of a user metadata by its key
 
@@ -1186,7 +1186,7 @@ public class Example {
         String key = "key_example"; // String | 
         Object body = null; // Object | 
         try {
-            Object result = apiInstance.updateUserMetadataByKey(apiToken, userId, key, body);
+            Map<String, String> result = apiInstance.updateUserMetadataByKey(apiToken, userId, key, body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateUserMetadataByKey");
@@ -1211,7 +1211,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+**Map&lt;String, String&gt;**
 
 ### Authorization
 
@@ -1230,7 +1230,7 @@ No authorization required
 
 ## viewChannelMetacounter
 
-> Object viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys)
+> Map&lt;String, String&gt; viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys)
 
 View a channel metacounter - When retrieving all items of a channel metacounter
 
@@ -1270,7 +1270,7 @@ public class Example {
         String key = "key_example"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
-            Object result = apiInstance.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
+            Map<String, String> result = apiInstance.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewChannelMetacounter");
@@ -1296,7 +1296,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+**Map&lt;String, String&gt;**
 
 ### Authorization
 
@@ -1398,7 +1398,7 @@ No authorization required
 
 ## viewChannelMetadata
 
-> Object viewChannelMetadata(apiToken, channelType, channelUrl, key, keys)
+> Map&lt;String, String&gt; viewChannelMetadata(apiToken, channelType, channelUrl, key, keys)
 
 View a channel metadata - When retrieving all items of a channel metadata
 
@@ -1438,7 +1438,7 @@ public class Example {
         String key = "key_example"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
-            Object result = apiInstance.viewChannelMetadata(apiToken, channelType, channelUrl, key, keys);
+            Map<String, String> result = apiInstance.viewChannelMetadata(apiToken, channelType, channelUrl, key, keys);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewChannelMetadata");
@@ -1464,7 +1464,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+**Map&lt;String, String&gt;**
 
 ### Authorization
 
@@ -1483,7 +1483,7 @@ No authorization required
 
 ## viewChannelMetadataByKey
 
-> Object viewChannelMetadataByKey(apiToken, channelType, channelUrl, key)
+> Map&lt;String, String&gt; viewChannelMetadataByKey(apiToken, channelType, channelUrl, key)
 
 View a channel metadata - When retrieving a specific item of a channel metadata by its key
 
@@ -1522,7 +1522,7 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            Object result = apiInstance.viewChannelMetadataByKey(apiToken, channelType, channelUrl, key);
+            Map<String, String> result = apiInstance.viewChannelMetadataByKey(apiToken, channelType, channelUrl, key);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewChannelMetadataByKey");
@@ -1547,7 +1547,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+**Map&lt;String, String&gt;**
 
 ### Authorization
 
@@ -1646,7 +1646,7 @@ No authorization required
 
 ## viewUserMetadataByKey
 
-> Object viewUserMetadataByKey(apiToken, userId, key)
+> Map&lt;String, String&gt; viewUserMetadataByKey(apiToken, userId, key)
 
 View a user metadata - When retrieving a specific item of a user metadata by its key
 
@@ -1681,7 +1681,7 @@ public class Example {
         String userId = "userId_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            Object result = apiInstance.viewUserMetadataByKey(apiToken, userId, key);
+            Map<String, String> result = apiInstance.viewUserMetadataByKey(apiToken, userId, key);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewUserMetadataByKey");
@@ -1705,7 +1705,7 @@ public class Example {
 
 ### Return type
 
-**Object**
+**Map&lt;String, String&gt;**
 
 ### Authorization
 

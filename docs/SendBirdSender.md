@@ -13,7 +13,7 @@
 |**isActive** | **Boolean** |  |  [optional] |
 |**isBlockedByMe** | **Boolean** |  |  [optional] |
 |**lastSeenAt** | **Integer** |  |  [optional] |
-|**metaData** | [**SBObject**](SBObject.md) |  |  [optional] |
+|**metadata** | **Object** |  |  [optional] |
 |**nickname** | **String** |  |  [optional] |
 |**plainProfileUrl** | **String** |  |  [optional] |
 |**preferredLanguages** | **List&lt;String&gt;** |  |  [optional] |

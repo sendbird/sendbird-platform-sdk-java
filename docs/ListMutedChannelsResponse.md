@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**mutedChannels** | **List&lt;SendBirdChannelResponse&gt;** |  |  [optional] |
+|**mutedChannels** | [**List&lt;SendBirdChannelResponse&gt;**](SendBirdChannelResponse.md) |  |  [optional] |
 |**next** | **String** |  |  [optional] |
 
 

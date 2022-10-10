@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**startAt** | **BigDecimal** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**channel** | **SendBirdChannelResponse** |  |  [optional] |
+|**channel** | [**SendBirdChannelResponse**](SendBirdChannelResponse.md) |  |  [optional] |
 |**endAt** | **BigDecimal** |  |  [optional] |
 
 

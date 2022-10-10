@@ -7,6 +7,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 | [**addRegistrationOrDeviceToken**](UserApi.md#addRegistrationOrDeviceToken) | **POST** /v3/users/{user_id}/push/{token_type} | Add a registration or device token |
 | [**choosePushNotificationContentTemplate**](UserApi.md#choosePushNotificationContentTemplate) | **PUT** /v3/users/{user_id}/push/template | Choose a push notification content template |
 | [**createUser**](UserApi.md#createUser) | **POST** /v3/users | Create a user |
+| [**createUserToken**](UserApi.md#createUserToken) | **POST** /v3/users/{user_id}/token | Create user token |
 | [**deleteUserById**](UserApi.md#deleteUserById) | **DELETE** /v3/users/{user_id} | Delete a user |
 | [**leaveMyGroupChannels**](UserApi.md#leaveMyGroupChannels) | **PUT** /v3/users/{user_id}/my_group_channels/leave | Leave my group channels |
 | [**listMyGroupChannels**](UserApi.md#listMyGroupChannels) | **GET** /v3/users/{user_id}/my_group_channels | List my group channels |
@@ -247,6 +248,75 @@ public class Example {
 ### Return type
 
 [**SendBirdUser**](SendBirdUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## createUserToken
+
+> CreateUserTokenResponse createUserToken(apiToken, userId, createUserTokenData)
+
+Create user token
+
+## Create user token
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.UserApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        UserApi apiInstance = new UserApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String userId = "userId_example"; // String | 
+        CreateUserTokenData createUserTokenData = new CreateUserTokenData(); // CreateUserTokenData | 
+        try {
+            CreateUserTokenResponse result = apiInstance.createUserToken(apiToken, userId, createUserTokenData);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserApi#createUserToken");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **userId** | **String**|  | |
+| **createUserTokenData** | [**CreateUserTokenData**](CreateUserTokenData.md)|  | [optional] |
+
+### Return type
+
+[**CreateUserTokenResponse**](CreateUserTokenResponse.md)
 
 ### Authorization
 

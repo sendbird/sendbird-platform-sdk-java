@@ -34,6 +34,7 @@
 
 | Name | Value |
 |---- | -----|
+| EMPTY | &quot;&quot; |
 | NONE | &quot;none&quot; |
 | OPERATOR | &quot;operator&quot; |
 
@@ -43,6 +44,7 @@
 
 | Name | Value |
 |---- | -----|
+| EMPTY | &quot;&quot; |
 | INVITED | &quot;invited&quot; |
 | JOINED | &quot;joined&quot; |
 
