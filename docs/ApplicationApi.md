@@ -9,9 +9,11 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 | [**addHmsPushConfiguration**](ApplicationApi.md#addHmsPushConfiguration) | **POST** /v3/applications/push/hms | Add an HMS push configuration |
 | [**addIpToWhitelist**](ApplicationApi.md#addIpToWhitelist) | **PUT** /v3/applications/settings/ip_whitelist | Add an IP to a whitelist |
 | [**banUsersInChannelsWithCustomChannelType**](ApplicationApi.md#banUsersInChannelsWithCustomChannelType) | **POST** /v3/applications/settings_by_channel_custom_type/{custom_type}/ban | Ban users in channels with a custom channel type |
+| [**configureAutoEventMessages**](ApplicationApi.md#configureAutoEventMessages) | **PUT** /v3/applications/settings/auto_event_message | Configure auto event message settings |
 | [**deleteAllowedIpsFromWhitelist**](ApplicationApi.md#deleteAllowedIpsFromWhitelist) | **DELETE** /v3/applications/settings/ip_whitelist | Delete allowed IPs from a whitelist |
 | [**deleteApnsCertificateById**](ApplicationApi.md#deleteApnsCertificateById) | **DELETE** /v3/applications/push/apns/cert/{provider_id} | Delete an APNs certificate |
 | [**generateSecondaryApiToken**](ApplicationApi.md#generateSecondaryApiToken) | **POST** /v3/applications/api_tokens | Generate a secondary API token |
+| [**listAutoEventMessages**](ApplicationApi.md#listAutoEventMessages) | **GET** /v3/applications/settings/auto_event_message | List auto event messages |
 | [**listBannedUsersInChannelsWithCustomChannelType**](ApplicationApi.md#listBannedUsersInChannelsWithCustomChannelType) | **GET** /v3/applications/settings_by_channel_custom_type/{custom_type}/ban | List banned users in channels with a custom channel type |
 | [**listMutedUsersInChannelsWithCustomChannelType**](ApplicationApi.md#listMutedUsersInChannelsWithCustomChannelType) | **GET** /v3/applications/settings_by_channel_custom_type/{custom_type}/mute | List muted users in channels with a custom channel type |
 | [**listPushConfigurations**](ApplicationApi.md#listPushConfigurations) | **GET** /v3/applications/push/{push_type} | List push configurations |
@@ -391,6 +393,78 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
+## configureAutoEventMessages
+
+> SendBirdAutoEventMessageSettings configureAutoEventMessages(apiToken, configureAutoEventData)
+
+Configure auto event message settings
+
+## Configure auto event message settings
+
+Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard
+
+https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings
+----------------------------
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.ApplicationApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        ApplicationApi apiInstance = new ApplicationApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        ConfigureAutoEventData configureAutoEventData = new ConfigureAutoEventData(); // ConfigureAutoEventData | 
+        try {
+            SendBirdAutoEventMessageSettings result = apiInstance.configureAutoEventMessages(apiToken, configureAutoEventData);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ApplicationApi#configureAutoEventMessages");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **configureAutoEventData** | [**ConfigureAutoEventData**](ConfigureAutoEventData.md)|  | [optional] |
+
+### Return type
+
+[**SendBirdAutoEventMessageSettings**](SendBirdAutoEventMessageSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
 ## deleteAllowedIpsFromWhitelist
 
 > DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist(apiToken, ipWhitelistAddresses)
@@ -597,6 +671,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## listAutoEventMessages
+
+> SendBirdAutoEventMessageSettings listAutoEventMessages(apiToken)
+
+List auto event messages
+
+## List auto event messages
+
+Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.
+
+https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages
+----------------------------
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.ApplicationApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        ApplicationApi apiInstance = new ApplicationApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        try {
+            SendBirdAutoEventMessageSettings result = apiInstance.listAutoEventMessages(apiToken);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ApplicationApi#listAutoEventMessages");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+
+### Return type
+
+[**SendBirdAutoEventMessageSettings**](SendBirdAutoEventMessageSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 ### HTTP response details

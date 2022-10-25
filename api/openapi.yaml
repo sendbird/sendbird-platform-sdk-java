@@ -1287,6 +1287,71 @@ paths:
       - Application
       x-content-type: application/json
       x-accepts: application/json
+  /v3/applications/settings/auto_event_message:
+    get:
+      description: |-
+        ## List auto event messages
+
+        Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.
+
+        https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages
+        ----------------------------
+      operationId: listAutoEventMessages
+      parameters:
+      - example: "{{API_TOKEN}}"
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.AutoEventMessageSettings'
+          description: Successful response
+      summary: List auto event messages
+      tags:
+      - Application
+      x-accepts: application/json
+    put:
+      description: |-
+        ## Configure auto event message settings
+
+        Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard
+
+        https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings
+        ----------------------------
+      operationId: configureAutoEventMessages
+      parameters:
+      - example: "{{API_TOKEN}}"
+        explode: false
+        in: header
+        name: Api-Token
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/configureAutoEventData'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.AutoEventMessageSettings'
+          description: Successful response
+      summary: Configure auto event message settings
+      tags:
+      - Application
+      x-content-type: application/json
+      x-accepts: application/json
   /v3/users:
     get:
       description: |-
@@ -5762,7 +5827,7 @@ paths:
           description: Successful response
       summary: Schedule an announcement
       tags:
-      - Message
+      - Announcement
       x-content-type: application/json
       x-accepts: application/json
   /v3/announcements/{unique_id}:
@@ -5841,7 +5906,7 @@ paths:
           description: Successful response
       summary: Update an announcement
       tags:
-      - Message
+      - Announcement
       x-content-type: application/json
       x-accepts: application/json
   /v3/announcement_open_rate/{unique_id}:
@@ -5876,7 +5941,7 @@ paths:
           description: Successful response
       summary: Get detailed open rate of an announcement
       tags:
-      - Announcement
+      - Statistics
       x-accepts: application/json
   /v3/announcement_open_status/{unique_id}:
     get:
@@ -5952,7 +6017,7 @@ paths:
           description: Successful response
       summary: Get detailed open status of an announcement
       tags:
-      - Announcement
+      - Statistics
       x-accepts: application/json
   /v3/announcement_stats/daily:
     get:
@@ -6027,7 +6092,7 @@ paths:
           description: Successful response
       summary: Get statistics - daily
       tags:
-      - Message
+      - Announcement
       x-accepts: application/json
   /v3/announcement_stats/weekly:
     get:
@@ -6053,7 +6118,7 @@ paths:
           description: Successful response
       summary: Get statistics - weekly
       tags:
-      - Message
+      - Announcement
       x-accepts: application/json
   /v3/announcement_stats/monthly:
     get:
@@ -6079,7 +6144,7 @@ paths:
           description: Successful response
       summary: Get statistics - monthly
       tags:
-      - Message
+      - Announcement
       x-accepts: application/json
   /v3/announcement_group:
     get:
@@ -6123,7 +6188,7 @@ paths:
           description: Successful response
       summary: List announcement groups
       tags:
-      - Message
+      - Announcement
       x-accepts: application/json
   /v3/announcement_open_rate_by_group/{announcement_group}:
     get:
@@ -11324,6 +11389,17 @@ components:
             $ref: '#/components/schemas/viewPushNotificationContentTemplateResponse_push_message_templates_inner'
           type: array
       type: object
+    SendBird.AutoEventMessageSettings:
+      example:
+        auto_event_message:
+          channel_change: "{}"
+          user_join: "{}"
+          user_leave: "{}"
+          channel_create: "{}"
+      properties:
+        auto_event_message:
+          $ref: '#/components/schemas/configureAutoEventData_auto_event_message'
+      type: object
     createUserResponse:
       $ref: '#/components/schemas/SendBird.User'
     listUsersResponse:
@@ -11954,9 +12030,6 @@ components:
       type: object
     addRegistrationOrDeviceTokenResponse:
       example:
-        tokens:
-        - tokens
-        - tokens
         type: type
         user:
           end_at: 1.4658129805029452
@@ -11988,18 +12061,10 @@ components:
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        token:
-        - token
-        - token
+        token: token
       properties:
-        tokens:
-          items:
-            type: string
-          type: array
         token:
-          items:
-            type: string
-          type: array
+          type: string
         type:
           type: string
         user:
@@ -17372,6 +17437,28 @@ components:
       - template_name
       title: updatePushNotificationContentTemplateData
       type: object
+    configureAutoEventData_auto_event_message:
+      example:
+        channel_change: "{}"
+        user_join: "{}"
+        user_leave: "{}"
+        channel_create: "{}"
+      properties:
+        user_leave:
+          type: object
+        user_join:
+          type: object
+        channel_create:
+          type: object
+        channel_change:
+          type: object
+      type: object
+    configureAutoEventData:
+      properties:
+        auto_event_message:
+          $ref: '#/components/schemas/configureAutoEventData_auto_event_message'
+      title: configureAutoEventData
+      type: object
     createUserData:
       properties:
         user_id:
@@ -18474,21 +18561,30 @@ components:
       - user_id
       title: gcMuteUserData
       type: object
+    scheduleAnnouncementData_message:
+      description: "The [message](/docs/chat/v3/platform-api/guides/messages#-3-resource-representation)\
+        \ of a new announcement."
+      properties:
+        type:
+          type: string
+        user_id:
+          type: string
+        content:
+          type: string
+      type: object
     scheduleAnnouncementData:
       properties:
         message:
-          description: "The [message](/docs/chat/v3/platform-api/guides/messages#-3-resource-representation)\
-            \ of a new announcement."
-          type: string
-        message.type:
+          $ref: '#/components/schemas/scheduleAnnouncementData_message'
+        message_type:
           description: "Specifies the type of the message, which can be either MESG\
             \ for a text message and ADMM for an admin message."
           type: string
-        message.user_id:
+        user_id:
           description: "Specifies the unique ID of the sender when the message.type\
             \ is MESG. When the message.type value is ADMM, this property is not effective."
           type: string
-        message.content:
+        content:
           description: Specifies the content of the message.
           type: string
         target_at:
@@ -18780,6 +18876,26 @@ components:
             \ ranges from 0.0 to 1.0, which indicates silent and full volume, respectively.\
             \ (Default 1.0)"
           type: number
+        url:
+          type: string
+        file:
+          type: string
+        file_name:
+          type: string
+        file_size:
+          type: number
+        file_type:
+          type: string
+        thumbnails:
+          items:
+            type: string
+          type: array
+        thumbnail1:
+          type: string
+        thumbnail2:
+          type: string
+        thumbnail3:
+          type: string
       required:
       - message
       - message_type

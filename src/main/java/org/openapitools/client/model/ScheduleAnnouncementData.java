@@ -26,6 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.ScheduleAnnouncementDataMessage;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,8 +37,8 @@ import org.sendbird.client.JSON;
 @JsonPropertyOrder({
   ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE,
   ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE_TYPE,
-  ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE_USER_ID,
-  ScheduleAnnouncementData.JSON_PROPERTY_MESSAGE_CONTENT,
+  ScheduleAnnouncementData.JSON_PROPERTY_USER_ID,
+  ScheduleAnnouncementData.JSON_PROPERTY_CONTENT,
   ScheduleAnnouncementData.JSON_PROPERTY_TARGET_AT,
   ScheduleAnnouncementData.JSON_PROPERTY_TARGET_LIST,
   ScheduleAnnouncementData.JSON_PROPERTY_TARGET_CHANNEL_TYPE,
@@ -60,19 +61,19 @@ import org.sendbird.client.JSON;
   ScheduleAnnouncementData.JSON_PROPERTY_ASSIGN_SENDER_AS_CHANNEL_INVITER
 })
 @JsonTypeName("scheduleAnnouncementData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class ScheduleAnnouncementData {
   public static final String JSON_PROPERTY_MESSAGE = "message";
-  private String message;
+  private ScheduleAnnouncementDataMessage message;
 
-  public static final String JSON_PROPERTY_MESSAGE_TYPE = "message.type";
+  public static final String JSON_PROPERTY_MESSAGE_TYPE = "message_type";
   private String messageType;
 
-  public static final String JSON_PROPERTY_MESSAGE_USER_ID = "message.user_id";
-  private String messageUserId;
+  public static final String JSON_PROPERTY_USER_ID = "user_id";
+  private String userId;
 
-  public static final String JSON_PROPERTY_MESSAGE_CONTENT = "message.content";
-  private String messageContent;
+  public static final String JSON_PROPERTY_CONTENT = "content";
+  private String content;
 
   public static final String JSON_PROPERTY_TARGET_AT = "target_at";
   private String targetAt;
@@ -137,28 +138,28 @@ public class ScheduleAnnouncementData {
   public ScheduleAnnouncementData() { 
   }
 
-  public ScheduleAnnouncementData message(String message) {
+  public ScheduleAnnouncementData message(ScheduleAnnouncementDataMessage message) {
     this.message = message;
     return this;
   }
 
    /**
-   * The [message](/docs/chat/v3/platform-api/guides/messages#-3-resource-representation) of a new announcement.
+   * Get message
    * @return message
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The [message](/docs/chat/v3/platform-api/guides/messages#-3-resource-representation) of a new announcement.")
+  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getMessage() {
+  public ScheduleAnnouncementDataMessage getMessage() {
     return message;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMessage(String message) {
+  public void setMessage(ScheduleAnnouncementDataMessage message) {
     this.message = message;
   }
 
@@ -172,10 +173,10 @@ public class ScheduleAnnouncementData {
    * Specifies the type of the message, which can be either MESG for a text message and ADMM for an admin message.
    * @return messageType
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the type of the message, which can be either MESG for a text message and ADMM for an admin message.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the type of the message, which can be either MESG for a text message and ADMM for an admin message.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMessageType() {
     return messageType;
@@ -183,61 +184,61 @@ public class ScheduleAnnouncementData {
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessageType(String messageType) {
     this.messageType = messageType;
   }
 
 
-  public ScheduleAnnouncementData messageUserId(String messageUserId) {
-    this.messageUserId = messageUserId;
+  public ScheduleAnnouncementData userId(String userId) {
+    this.userId = userId;
     return this;
   }
 
    /**
    * Specifies the unique ID of the sender when the message.type is MESG. When the message.type value is ADMM, this property is not effective.
-   * @return messageUserId
+   * @return userId
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the unique ID of the sender when the message.type is MESG. When the message.type value is ADMM, this property is not effective.")
-  @JsonProperty(JSON_PROPERTY_MESSAGE_USER_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the unique ID of the sender when the message.type is MESG. When the message.type value is ADMM, this property is not effective.")
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getMessageUserId() {
-    return messageUserId;
+  public String getUserId() {
+    return userId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MESSAGE_USER_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMessageUserId(String messageUserId) {
-    this.messageUserId = messageUserId;
+  @JsonProperty(JSON_PROPERTY_USER_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUserId(String userId) {
+    this.userId = userId;
   }
 
 
-  public ScheduleAnnouncementData messageContent(String messageContent) {
-    this.messageContent = messageContent;
+  public ScheduleAnnouncementData content(String content) {
+    this.content = content;
     return this;
   }
 
    /**
    * Specifies the content of the message.
-   * @return messageContent
+   * @return content
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the content of the message.")
-  @JsonProperty(JSON_PROPERTY_MESSAGE_CONTENT)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the content of the message.")
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getMessageContent() {
-    return messageContent;
+  public String getContent() {
+    return content;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MESSAGE_CONTENT)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMessageContent(String messageContent) {
-    this.messageContent = messageContent;
+  @JsonProperty(JSON_PROPERTY_CONTENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContent(String content) {
+    this.content = content;
   }
 
 
@@ -780,8 +781,8 @@ public class ScheduleAnnouncementData {
     ScheduleAnnouncementData scheduleAnnouncementData = (ScheduleAnnouncementData) o;
     return Objects.equals(this.message, scheduleAnnouncementData.message) &&
         Objects.equals(this.messageType, scheduleAnnouncementData.messageType) &&
-        Objects.equals(this.messageUserId, scheduleAnnouncementData.messageUserId) &&
-        Objects.equals(this.messageContent, scheduleAnnouncementData.messageContent) &&
+        Objects.equals(this.userId, scheduleAnnouncementData.userId) &&
+        Objects.equals(this.content, scheduleAnnouncementData.content) &&
         Objects.equals(this.targetAt, scheduleAnnouncementData.targetAt) &&
         Objects.equals(this.targetList, scheduleAnnouncementData.targetList) &&
         Objects.equals(this.targetChannelType, scheduleAnnouncementData.targetChannelType) &&
@@ -806,7 +807,7 @@ public class ScheduleAnnouncementData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, messageType, messageUserId, messageContent, targetAt, targetList, targetChannelType, uniqueId, messageCustomType, messageData, createChannel, announcementGroup, createChannelOptions, createChannelOptionsName, createChannelOptionsCoverUrl, createChannelOptionsCustomType, createChannelOptionsData, createChannelOptionsDistinct, scheduledAt, ceaseAt, resumeAt, endAt, enablePush, assignSenderAsChannelInviter);
+    return Objects.hash(message, messageType, userId, content, targetAt, targetList, targetChannelType, uniqueId, messageCustomType, messageData, createChannel, announcementGroup, createChannelOptions, createChannelOptionsName, createChannelOptionsCoverUrl, createChannelOptionsCustomType, createChannelOptionsData, createChannelOptionsDistinct, scheduledAt, ceaseAt, resumeAt, endAt, enablePush, assignSenderAsChannelInviter);
   }
 
   @Override
@@ -815,8 +816,8 @@ public class ScheduleAnnouncementData {
     sb.append("class ScheduleAnnouncementData {\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
-    sb.append("    messageUserId: ").append(toIndentedString(messageUserId)).append("\n");
-    sb.append("    messageContent: ").append(toIndentedString(messageContent)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    targetAt: ").append(toIndentedString(targetAt)).append("\n");
     sb.append("    targetList: ").append(toIndentedString(targetList)).append("\n");
     sb.append("    targetChannelType: ").append(toIndentedString(targetChannelType)).append("\n");

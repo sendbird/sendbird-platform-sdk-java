@@ -28,25 +28,17 @@ import org.openapitools.client.model.GcMarkAllMessagesAsDeliveredData;
 import org.openapitools.client.model.GcMarkAllMessagesAsDeliveredResponse;
 import org.openapitools.client.model.GcMarkAllMessagesAsReadData;
 import org.openapitools.client.model.GcViewNumberOfEachMembersUnreadMessagesResponse;
-import org.openapitools.client.model.GetStatisticsDailyResponse;
-import org.openapitools.client.model.GetStatisticsMonthlyResponse;
-import org.openapitools.client.model.GetStatisticsResponse;
 import org.openapitools.client.model.ListAllEmojisAndEmojiCategoriesResponse;
-import org.openapitools.client.model.ListAnnouncementGroupsResponse;
 import org.openapitools.client.model.ListAnnouncementsResponse;
 import org.openapitools.client.model.ListEmojisResponse;
 import org.openapitools.client.model.ListMessagesResponse;
 import org.openapitools.client.model.ListReactionsOfMessageResponse;
 import org.openapitools.client.model.RemoveReactionFromAMessageResponse;
-import org.openapitools.client.model.ScheduleAnnouncementData;
-import org.openapitools.client.model.ScheduleAnnouncementResponse;
 import org.openapitools.client.model.SendBirdEmoji;
 import org.openapitools.client.model.SendBirdEmojiCategory;
 import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendMessageData;
 import org.openapitools.client.model.TranslateMessageIntoOtherLanguagesData;
-import org.openapitools.client.model.UpdateAnnouncementByIdData;
-import org.openapitools.client.model.UpdateAnnouncementByIdResponse;
 import org.openapitools.client.model.UpdateEmojiCategoryUrlByIdData;
 import org.openapitools.client.model.UpdateEmojiUrlByKeyData;
 import org.openapitools.client.model.UpdateExtraDataInMessageData;
@@ -279,55 +271,6 @@ public class MessageApiTest {
     }
 
     /**
-     * Get statistics - weekly
-     *
-     * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getStatisticsTest() throws ApiException {
-        //String apiToken = null;
-        //GetStatisticsResponse response = api.getStatistics(apiToken);
-        // TODO: test validations
-    }
-
-    /**
-     * Get statistics - daily
-     *
-     * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getStatisticsDailyTest() throws ApiException {
-        //String apiToken = null;
-        //String startDate = null;
-        //String endDate = null;
-        //String startWeek = null;
-        //String endWeek = null;
-        //String startMonth = null;
-        //String endMonth = null;
-        //String announcementGroup = null;
-        //GetStatisticsDailyResponse response = api.getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
-        // TODO: test validations
-    }
-
-    /**
-     * Get statistics - monthly
-     *
-     * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getStatisticsMonthlyTest() throws ApiException {
-        //String apiToken = null;
-        //GetStatisticsMonthlyResponse response = api.getStatisticsMonthly(apiToken);
-        // TODO: test validations
-    }
-
-    /**
      * List all emojis and emoji categories
      *
      * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
@@ -338,22 +281,6 @@ public class MessageApiTest {
     public void listAllEmojisAndEmojiCategoriesTest() throws ApiException {
         //String apiToken = null;
         //ListAllEmojisAndEmojiCategoriesResponse response = api.listAllEmojisAndEmojiCategories(apiToken);
-        // TODO: test validations
-    }
-
-    /**
-     * List announcement groups
-     *
-     * ## List announcement groups  Retrieves a list of announcement groups.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcement-groups ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void listAnnouncementGroupsTest() throws ApiException {
-        //String apiToken = null;
-        //String token = null;
-        //Integer limit = null;
-        //ListAnnouncementGroupsResponse response = api.listAnnouncementGroups(apiToken, token, limit);
         // TODO: test validations
     }
 
@@ -496,21 +423,6 @@ public class MessageApiTest {
     }
 
     /**
-     * Schedule an announcement
-     *
-     * ## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void scheduleAnnouncementTest() throws ApiException {
-        //String apiToken = null;
-        //ScheduleAnnouncementData scheduleAnnouncementData = null;
-        //ScheduleAnnouncementResponse response = api.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
-        // TODO: test validations
-    }
-
-    /**
      * Send a message
      *
      * ## Send a message  Sends a message to a channel. You can send a text message, a file message, and an admin message.  &gt;__Note__: With Sendbird Chat SDKs and the platform API, any type of files in messages can be uploaded to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-send-a-message ----------------------------
@@ -542,22 +454,6 @@ public class MessageApiTest {
         //String messageId = null;
         //TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData = null;
         //SendBirdMessageResponse response = api.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
-        // TODO: test validations
-    }
-
-    /**
-     * Update an announcement
-     *
-     * ## Update an announcement  Updates information of a specific announcement before it starts or changes the status of a specific announcement after it starts. For the 2 different applications, refer to the request body below.  &gt;__Note__: Updating information of an announcement is possible only when the announcement status is scheduled, indicating it hasn&#39;t started yet.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-update-an-announcement ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateAnnouncementByIdTest() throws ApiException {
-        //String apiToken = null;
-        //String uniqueId = null;
-        //UpdateAnnouncementByIdData updateAnnouncementByIdData = null;
-        //UpdateAnnouncementByIdResponse response = api.updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData);
         // TODO: test validations
     }
 

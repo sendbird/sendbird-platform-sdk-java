@@ -24,6 +24,15 @@
 |**apnsBundleId** | **String** | Specifies the bundle ID of the client app in order to send a push notification to iOS devices. You can find this in Settings &gt; Chat &gt; Notifications &gt; Push notification services |  [optional] |
 |**sound** | **String** | Specifies the name of the file that sounds for critical alerts. |  [optional] |
 |**volume** | **BigDecimal** | Specifies the volume of the critical alert sound. The volume ranges from 0.0 to 1.0, which indicates silent and full volume, respectively. (Default 1.0) |  [optional] |
+|**url** | **String** |  |  [optional] |
+|**_file** | **String** |  |  [optional] |
+|**fileName** | **String** |  |  [optional] |
+|**fileSize** | **BigDecimal** |  |  [optional] |
+|**fileType** | **String** |  |  [optional] |
+|**thumbnails** | **List&lt;String&gt;** |  |  [optional] |
+|**thumbnail1** | **String** |  |  [optional] |
+|**thumbnail2** | **String** |  |  [optional] |
+|**thumbnail3** | **String** |  |  [optional] |
 
 
 

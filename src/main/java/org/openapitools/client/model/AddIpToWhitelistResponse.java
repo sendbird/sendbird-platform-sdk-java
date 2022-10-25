@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   AddIpToWhitelistResponse.JSON_PROPERTY_IP_WHITELIST_ADDRESSES
 })
 @JsonTypeName("addIpToWhitelistResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class AddIpToWhitelistResponse {
   public static final String JSON_PROPERTY_IP_WHITELIST_ADDRESSES = "ip_whitelist_addresses";
   private List<String> ipWhitelistAddresses = null;

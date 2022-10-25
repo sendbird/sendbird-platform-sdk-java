@@ -20,8 +20,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
 
 import org.junit.jupiter.api.Assertions;
@@ -40,14 +38,6 @@ public class AddRegistrationOrDeviceTokenResponseTest {
     @Test
     public void testAddRegistrationOrDeviceTokenResponse() {
         // TODO: test AddRegistrationOrDeviceTokenResponse
-    }
-
-    /**
-     * Test the property 'tokens'
-     */
-    @Test
-    public void tokensTest() {
-        // TODO: test tokens
     }
 
     /**

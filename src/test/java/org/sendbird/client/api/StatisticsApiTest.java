@@ -15,6 +15,8 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.*;
 import org.sendbird.client.auth.*;
+import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementByIdResponse;
+import org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResponse;
 import org.openapitools.client.model.RetrieveAdvancedAnalyticsMetricsResponse;
 import org.openapitools.client.model.ViewNumberOfConcurrentConnectionsResponse;
 import org.openapitools.client.model.ViewNumberOfDailyActiveUsersResponse;
@@ -36,6 +38,41 @@ import java.util.Map;
 public class StatisticsApiTest {
 
     private final StatisticsApi api = new StatisticsApi();
+
+    /**
+     * Get detailed open rate of an announcement
+     *
+     * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getDetailedOpenRateOfAnnouncementByIdTest() throws ApiException {
+        //String apiToken = null;
+        //String uniqueId = null;
+        //GetDetailedOpenRateOfAnnouncementByIdResponse response = api.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
+        // TODO: test validations
+    }
+
+    /**
+     * Get detailed open status of an announcement
+     *
+     * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getDetailedOpenStatusOfAnnouncementByIdTest() throws ApiException {
+        //String apiToken = null;
+        //String uniqueId = null;
+        //Integer limit = null;
+        //String next = null;
+        //List<String> uniqueIds = null;
+        //List<String> channelUrls = null;
+        //Boolean hasOpened = null;
+        //GetDetailedOpenStatusOfAnnouncementByIdResponse response = api.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
+        // TODO: test validations
+    }
 
     /**
      * Retrieve Advanced analytics metrics

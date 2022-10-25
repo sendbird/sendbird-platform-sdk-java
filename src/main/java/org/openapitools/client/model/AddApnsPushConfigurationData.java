@@ -43,7 +43,7 @@ import org.sendbird.client.JSON;
   AddApnsPushConfigurationData.JSON_PROPERTY_APNS_TYPE
 })
 @JsonTypeName("addApnsPushConfigurationData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class AddApnsPushConfigurationData {
   public static final String JSON_PROPERTY_APNS_CERT = "apns_cert";
   private File apnsCert;

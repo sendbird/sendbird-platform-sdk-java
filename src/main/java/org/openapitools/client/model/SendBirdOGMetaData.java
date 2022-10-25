@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SendBirdOGMetaData.JSON_PROPERTY_URL
 })
 @JsonTypeName("SendBird.OGMetaData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class SendBirdOGMetaData {
   public static final String JSON_PROPERTY_DEFAULT_IMAGE = "default_image";
   private SendBirdOGImage defaultImage;

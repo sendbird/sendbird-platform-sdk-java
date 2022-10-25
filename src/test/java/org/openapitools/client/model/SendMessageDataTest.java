@@ -178,4 +178,76 @@ public class SendMessageDataTest {
         // TODO: test volume
     }
 
+    /**
+     * Test the property 'url'
+     */
+    @Test
+    public void urlTest() {
+        // TODO: test url
+    }
+
+    /**
+     * Test the property '_file'
+     */
+    @Test
+    public void _fileTest() {
+        // TODO: test _file
+    }
+
+    /**
+     * Test the property 'fileName'
+     */
+    @Test
+    public void fileNameTest() {
+        // TODO: test fileName
+    }
+
+    /**
+     * Test the property 'fileSize'
+     */
+    @Test
+    public void fileSizeTest() {
+        // TODO: test fileSize
+    }
+
+    /**
+     * Test the property 'fileType'
+     */
+    @Test
+    public void fileTypeTest() {
+        // TODO: test fileType
+    }
+
+    /**
+     * Test the property 'thumbnails'
+     */
+    @Test
+    public void thumbnailsTest() {
+        // TODO: test thumbnails
+    }
+
+    /**
+     * Test the property 'thumbnail1'
+     */
+    @Test
+    public void thumbnail1Test() {
+        // TODO: test thumbnail1
+    }
+
+    /**
+     * Test the property 'thumbnail2'
+     */
+    @Test
+    public void thumbnail2Test() {
+        // TODO: test thumbnail2
+    }
+
+    /**
+     * Test the property 'thumbnail3'
+     */
+    @Test
+    public void thumbnail3Test() {
+        // TODO: test thumbnail3
+    }
+
 }

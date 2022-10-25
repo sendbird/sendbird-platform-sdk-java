@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInnerOgTag.JSON_PROPERTY_OG_COLON_IMAGE
 })
 @JsonTypeName("listMessagesResponse_messages_inner_og_tag")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class ListMessagesResponseMessagesInnerOgTag {
   public static final String JSON_PROPERTY_OG_COLON_URL = "og:url";
   private String ogColonUrl;

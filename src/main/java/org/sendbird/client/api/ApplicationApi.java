@@ -17,6 +17,7 @@ import org.openapitools.client.model.AddHmsPushConfigurationResponse;
 import org.openapitools.client.model.AddIpToWhitelistData;
 import org.openapitools.client.model.AddIpToWhitelistResponse;
 import org.openapitools.client.model.BanUsersInChannelsWithCustomChannelTypeData;
+import org.openapitools.client.model.ConfigureAutoEventData;
 import org.openapitools.client.model.CustomTypeListBannedUsersResponse;
 import org.openapitools.client.model.DeleteAllowedIpsFromWhitelistResponse;
 import org.openapitools.client.model.DeleteApnsCertificateByIdResponse;
@@ -30,6 +31,7 @@ import org.openapitools.client.model.MuteUsersInChannelsWithCustomChannelTypeDat
 import org.openapitools.client.model.RemovePushConfigurationByIdResponse;
 import org.openapitools.client.model.RetrieveIpWhitelistResponse;
 import org.openapitools.client.model.RevokeSecondaryApiTokenByTokenResponse;
+import org.openapitools.client.model.SendBirdAutoEventMessageSettings;
 import org.openapitools.client.model.SendBirdChannelResponse;
 import org.openapitools.client.model.SetDomainFilterData;
 import org.openapitools.client.model.UpdateApnsPushConfigurationByIdData;
@@ -52,7 +54,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class ApplicationApi {
   private ApiClient apiClient;
 
@@ -446,6 +448,77 @@ public class ApplicationApi {
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
+   * Configure auto event message settings
+   * ## Configure auto event message settings  Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings ----------------------------
+   * @param apiToken  (required)
+   * @param configureAutoEventData  (optional)
+   * @return SendBirdAutoEventMessageSettings
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public SendBirdAutoEventMessageSettings configureAutoEventMessages(String apiToken, ConfigureAutoEventData configureAutoEventData) throws ApiException {
+    return configureAutoEventMessagesWithHttpInfo(apiToken, configureAutoEventData).getData();
+  }
+
+  /**
+   * Configure auto event message settings
+   * ## Configure auto event message settings  Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings ----------------------------
+   * @param apiToken  (required)
+   * @param configureAutoEventData  (optional)
+   * @return ApiResponse&lt;SendBirdAutoEventMessageSettings&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<SendBirdAutoEventMessageSettings> configureAutoEventMessagesWithHttpInfo(String apiToken, ConfigureAutoEventData configureAutoEventData) throws ApiException {
+    Object localVarPostBody = configureAutoEventData;
+    
+    // verify the required parameter 'apiToken' is set
+    if (apiToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling configureAutoEventMessages");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/applications/settings/auto_event_message";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<SendBirdAutoEventMessageSettings> localVarReturnType = new GenericType<SendBirdAutoEventMessageSettings>() {};
+
+    return apiClient.invokeAPI("ApplicationApi.configureAutoEventMessages", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
    * Delete allowed IPs from a whitelist
    * ## Delete allowed IPs from a whitelist  Deletes allowed IPs from the whitelist by specifying their IP addresses or ranges. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-allowed-ips-from-a-whitelist
    * @param apiToken  (required)
@@ -667,6 +740,75 @@ public class ApplicationApi {
     GenericType<GenerateSecondaryApiTokenResponse> localVarReturnType = new GenericType<GenerateSecondaryApiTokenResponse>() {};
 
     return apiClient.invokeAPI("ApplicationApi.generateSecondaryApiToken", localVarPath, "POST", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
+   * List auto event messages
+   * ## List auto event messages  Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages ----------------------------
+   * @param apiToken  (required)
+   * @return SendBirdAutoEventMessageSettings
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public SendBirdAutoEventMessageSettings listAutoEventMessages(String apiToken) throws ApiException {
+    return listAutoEventMessagesWithHttpInfo(apiToken).getData();
+  }
+
+  /**
+   * List auto event messages
+   * ## List auto event messages  Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages ----------------------------
+   * @param apiToken  (required)
+   * @return ApiResponse&lt;SendBirdAutoEventMessageSettings&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<SendBirdAutoEventMessageSettings> listAutoEventMessagesWithHttpInfo(String apiToken) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'apiToken' is set
+    if (apiToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listAutoEventMessages");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/applications/settings/auto_event_message";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<SendBirdAutoEventMessageSettings> localVarReturnType = new GenericType<SendBirdAutoEventMessageSettings>() {};
+
+    return apiClient.invokeAPI("ApplicationApi.listAutoEventMessages", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

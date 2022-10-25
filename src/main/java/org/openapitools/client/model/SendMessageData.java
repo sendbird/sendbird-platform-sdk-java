@@ -51,10 +51,19 @@ import org.sendbird.client.JSON;
   SendMessageData.JSON_PROPERTY_DEDUP_ID,
   SendMessageData.JSON_PROPERTY_APNS_BUNDLE_ID,
   SendMessageData.JSON_PROPERTY_SOUND,
-  SendMessageData.JSON_PROPERTY_VOLUME
+  SendMessageData.JSON_PROPERTY_VOLUME,
+  SendMessageData.JSON_PROPERTY_URL,
+  SendMessageData.JSON_PROPERTY_FILE,
+  SendMessageData.JSON_PROPERTY_FILE_NAME,
+  SendMessageData.JSON_PROPERTY_FILE_SIZE,
+  SendMessageData.JSON_PROPERTY_FILE_TYPE,
+  SendMessageData.JSON_PROPERTY_THUMBNAILS,
+  SendMessageData.JSON_PROPERTY_THUMBNAIL1,
+  SendMessageData.JSON_PROPERTY_THUMBNAIL2,
+  SendMessageData.JSON_PROPERTY_THUMBNAIL3
 })
 @JsonTypeName("sendMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class SendMessageData {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -106,6 +115,33 @@ public class SendMessageData {
 
   public static final String JSON_PROPERTY_VOLUME = "volume";
   private BigDecimal volume;
+
+  public static final String JSON_PROPERTY_URL = "url";
+  private String url;
+
+  public static final String JSON_PROPERTY_FILE = "file";
+  private String _file;
+
+  public static final String JSON_PROPERTY_FILE_NAME = "file_name";
+  private String fileName;
+
+  public static final String JSON_PROPERTY_FILE_SIZE = "file_size";
+  private BigDecimal fileSize;
+
+  public static final String JSON_PROPERTY_FILE_TYPE = "file_type";
+  private String fileType;
+
+  public static final String JSON_PROPERTY_THUMBNAILS = "thumbnails";
+  private List<String> thumbnails = null;
+
+  public static final String JSON_PROPERTY_THUMBNAIL1 = "thumbnail1";
+  private String thumbnail1;
+
+  public static final String JSON_PROPERTY_THUMBNAIL2 = "thumbnail2";
+  private String thumbnail2;
+
+  public static final String JSON_PROPERTY_THUMBNAIL3 = "thumbnail3";
+  private String thumbnail3;
 
   public SendMessageData() { 
   }
@@ -560,6 +596,248 @@ public class SendMessageData {
   }
 
 
+  public SendMessageData url(String url) {
+    this.url = url;
+    return this;
+  }
+
+   /**
+   * Get url
+   * @return url
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getUrl() {
+    return url;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
+
+  public SendMessageData _file(String _file) {
+    this._file = _file;
+    return this;
+  }
+
+   /**
+   * Get _file
+   * @return _file
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getFile() {
+    return _file;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFile(String _file) {
+    this._file = _file;
+  }
+
+
+  public SendMessageData fileName(String fileName) {
+    this.fileName = fileName;
+    return this;
+  }
+
+   /**
+   * Get fileName
+   * @return fileName
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILE_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getFileName() {
+    return fileName;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FILE_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFileName(String fileName) {
+    this.fileName = fileName;
+  }
+
+
+  public SendMessageData fileSize(BigDecimal fileSize) {
+    this.fileSize = fileSize;
+    return this;
+  }
+
+   /**
+   * Get fileSize
+   * @return fileSize
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILE_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public BigDecimal getFileSize() {
+    return fileSize;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FILE_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFileSize(BigDecimal fileSize) {
+    this.fileSize = fileSize;
+  }
+
+
+  public SendMessageData fileType(String fileType) {
+    this.fileType = fileType;
+    return this;
+  }
+
+   /**
+   * Get fileType
+   * @return fileType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getFileType() {
+    return fileType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FILE_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFileType(String fileType) {
+    this.fileType = fileType;
+  }
+
+
+  public SendMessageData thumbnails(List<String> thumbnails) {
+    this.thumbnails = thumbnails;
+    return this;
+  }
+
+  public SendMessageData addThumbnailsItem(String thumbnailsItem) {
+    if (this.thumbnails == null) {
+      this.thumbnails = new ArrayList<>();
+    }
+    this.thumbnails.add(thumbnailsItem);
+    return this;
+  }
+
+   /**
+   * Get thumbnails
+   * @return thumbnails
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_THUMBNAILS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<String> getThumbnails() {
+    return thumbnails;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_THUMBNAILS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThumbnails(List<String> thumbnails) {
+    this.thumbnails = thumbnails;
+  }
+
+
+  public SendMessageData thumbnail1(String thumbnail1) {
+    this.thumbnail1 = thumbnail1;
+    return this;
+  }
+
+   /**
+   * Get thumbnail1
+   * @return thumbnail1
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_THUMBNAIL1)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getThumbnail1() {
+    return thumbnail1;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_THUMBNAIL1)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThumbnail1(String thumbnail1) {
+    this.thumbnail1 = thumbnail1;
+  }
+
+
+  public SendMessageData thumbnail2(String thumbnail2) {
+    this.thumbnail2 = thumbnail2;
+    return this;
+  }
+
+   /**
+   * Get thumbnail2
+   * @return thumbnail2
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_THUMBNAIL2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getThumbnail2() {
+    return thumbnail2;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_THUMBNAIL2)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThumbnail2(String thumbnail2) {
+    this.thumbnail2 = thumbnail2;
+  }
+
+
+  public SendMessageData thumbnail3(String thumbnail3) {
+    this.thumbnail3 = thumbnail3;
+    return this;
+  }
+
+   /**
+   * Get thumbnail3
+   * @return thumbnail3
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_THUMBNAIL3)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getThumbnail3() {
+    return thumbnail3;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_THUMBNAIL3)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThumbnail3(String thumbnail3) {
+    this.thumbnail3 = thumbnail3;
+  }
+
+
   /**
    * Return true if this sendMessageData object is equal to o.
    */
@@ -588,12 +866,21 @@ public class SendMessageData {
         Objects.equals(this.dedupId, sendMessageData.dedupId) &&
         Objects.equals(this.apnsBundleId, sendMessageData.apnsBundleId) &&
         Objects.equals(this.sound, sendMessageData.sound) &&
-        Objects.equals(this.volume, sendMessageData.volume);
+        Objects.equals(this.volume, sendMessageData.volume) &&
+        Objects.equals(this.url, sendMessageData.url) &&
+        Objects.equals(this._file, sendMessageData._file) &&
+        Objects.equals(this.fileName, sendMessageData.fileName) &&
+        Objects.equals(this.fileSize, sendMessageData.fileSize) &&
+        Objects.equals(this.fileType, sendMessageData.fileType) &&
+        Objects.equals(this.thumbnails, sendMessageData.thumbnails) &&
+        Objects.equals(this.thumbnail1, sendMessageData.thumbnail1) &&
+        Objects.equals(this.thumbnail2, sendMessageData.thumbnail2) &&
+        Objects.equals(this.thumbnail3, sendMessageData.thumbnail3);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, channelType, channelUrl, messageType, message, customType, data, sendPush, mentionType, mentionedUserIds, isSilent, sortedMetaarray, createdAt, dedupId, apnsBundleId, sound, volume);
+    return Objects.hash(userId, channelType, channelUrl, messageType, message, customType, data, sendPush, mentionType, mentionedUserIds, isSilent, sortedMetaarray, createdAt, dedupId, apnsBundleId, sound, volume, url, _file, fileName, fileSize, fileType, thumbnails, thumbnail1, thumbnail2, thumbnail3);
   }
 
   @Override
@@ -617,6 +904,15 @@ public class SendMessageData {
     sb.append("    apnsBundleId: ").append(toIndentedString(apnsBundleId)).append("\n");
     sb.append("    sound: ").append(toIndentedString(sound)).append("\n");
     sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    _file: ").append(toIndentedString(_file)).append("\n");
+    sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+    sb.append("    fileSize: ").append(toIndentedString(fileSize)).append("\n");
+    sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
+    sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
+    sb.append("    thumbnail1: ").append(toIndentedString(thumbnail1)).append("\n");
+    sb.append("    thumbnail2: ").append(toIndentedString(thumbnail2)).append("\n");
+    sb.append("    thumbnail3: ").append(toIndentedString(thumbnail3)).append("\n");
     sb.append("}");
     return sb.toString();
   }

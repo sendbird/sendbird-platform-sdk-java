@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   OcListBannedUsersResponseBannedListInner.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("ocListBannedUsersResponse_banned_list_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class OcListBannedUsersResponseBannedListInner {
   public static final String JSON_PROPERTY_USER = "user";
   private SendBirdUser user;

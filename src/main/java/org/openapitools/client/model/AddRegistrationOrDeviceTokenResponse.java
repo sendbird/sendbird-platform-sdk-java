@@ -24,8 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
@@ -35,19 +33,15 @@ import org.sendbird.client.JSON;
  * AddRegistrationOrDeviceTokenResponse
  */
 @JsonPropertyOrder({
-  AddRegistrationOrDeviceTokenResponse.JSON_PROPERTY_TOKENS,
   AddRegistrationOrDeviceTokenResponse.JSON_PROPERTY_TOKEN,
   AddRegistrationOrDeviceTokenResponse.JSON_PROPERTY_TYPE,
   AddRegistrationOrDeviceTokenResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("addRegistrationOrDeviceTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class AddRegistrationOrDeviceTokenResponse {
-  public static final String JSON_PROPERTY_TOKENS = "tokens";
-  private List<String> tokens = null;
-
   public static final String JSON_PROPERTY_TOKEN = "token";
-  private List<String> token = null;
+  private String token;
 
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -58,50 +52,8 @@ public class AddRegistrationOrDeviceTokenResponse {
   public AddRegistrationOrDeviceTokenResponse() { 
   }
 
-  public AddRegistrationOrDeviceTokenResponse tokens(List<String> tokens) {
-    this.tokens = tokens;
-    return this;
-  }
-
-  public AddRegistrationOrDeviceTokenResponse addTokensItem(String tokensItem) {
-    if (this.tokens == null) {
-      this.tokens = new ArrayList<>();
-    }
-    this.tokens.add(tokensItem);
-    return this;
-  }
-
-   /**
-   * Get tokens
-   * @return tokens
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_TOKENS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<String> getTokens() {
-    return tokens;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TOKENS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTokens(List<String> tokens) {
-    this.tokens = tokens;
-  }
-
-
-  public AddRegistrationOrDeviceTokenResponse token(List<String> token) {
+  public AddRegistrationOrDeviceTokenResponse token(String token) {
     this.token = token;
-    return this;
-  }
-
-  public AddRegistrationOrDeviceTokenResponse addTokenItem(String tokenItem) {
-    if (this.token == null) {
-      this.token = new ArrayList<>();
-    }
-    this.token.add(tokenItem);
     return this;
   }
 
@@ -114,14 +66,14 @@ public class AddRegistrationOrDeviceTokenResponse {
   @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<String> getToken() {
+  public String getToken() {
     return token;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setToken(List<String> token) {
+  public void setToken(String token) {
     this.token = token;
   }
 
@@ -190,22 +142,20 @@ public class AddRegistrationOrDeviceTokenResponse {
       return false;
     }
     AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceTokenResponse = (AddRegistrationOrDeviceTokenResponse) o;
-    return Objects.equals(this.tokens, addRegistrationOrDeviceTokenResponse.tokens) &&
-        Objects.equals(this.token, addRegistrationOrDeviceTokenResponse.token) &&
+    return Objects.equals(this.token, addRegistrationOrDeviceTokenResponse.token) &&
         Objects.equals(this.type, addRegistrationOrDeviceTokenResponse.type) &&
         Objects.equals(this.user, addRegistrationOrDeviceTokenResponse.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tokens, token, type, user);
+    return Objects.hash(token, type, user);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddRegistrationOrDeviceTokenResponse {\n");
-    sb.append("    tokens: ").append(toIndentedString(tokens)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

@@ -22,6 +22,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.ScheduleAnnouncementDataMessage;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -58,19 +59,19 @@ public class ScheduleAnnouncementDataTest {
     }
 
     /**
-     * Test the property 'messageUserId'
+     * Test the property 'userId'
      */
     @Test
-    public void messageUserIdTest() {
-        // TODO: test messageUserId
+    public void userIdTest() {
+        // TODO: test userId
     }
 
     /**
-     * Test the property 'messageContent'
+     * Test the property 'content'
      */
     @Test
-    public void messageContentTest() {
-        // TODO: test messageContent
+    public void contentTest() {
+        // TODO: test content
     }
 
     /**

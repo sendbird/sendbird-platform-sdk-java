@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   GcAcceptInvitationData.JSON_PROPERTY_ACCESS_CODE
 })
 @JsonTypeName("gcAcceptInvitationData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class GcAcceptInvitationData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;

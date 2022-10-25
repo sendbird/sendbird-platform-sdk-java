@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   UpdatePushNotificationContentTemplateResponse.JSON_PROPERTY_PUSH_MESSAGE_TEMPLATES
 })
 @JsonTypeName("updatePushNotificationContentTemplateResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class UpdatePushNotificationContentTemplateResponse {
   public static final String JSON_PROPERTY_PUSH_MESSAGE_TEMPLATES = "push_message_templates";
   private List<ViewPushNotificationContentTemplateResponsePushMessageTemplatesInner> pushMessageTemplates = null;

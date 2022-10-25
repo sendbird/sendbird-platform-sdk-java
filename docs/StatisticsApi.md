@@ -4,12 +4,172 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**getDetailedOpenRateOfAnnouncementById**](StatisticsApi.md#getDetailedOpenRateOfAnnouncementById) | **GET** /v3/announcement_open_rate/{unique_id} | Get detailed open rate of an announcement |
+| [**getDetailedOpenStatusOfAnnouncementById**](StatisticsApi.md#getDetailedOpenStatusOfAnnouncementById) | **GET** /v3/announcement_open_status/{unique_id} | Get detailed open status of an announcement |
 | [**retrieveAdvancedAnalyticsMetrics**](StatisticsApi.md#retrieveAdvancedAnalyticsMetrics) | **GET** /v3/statistics/metric | Retrieve Advanced analytics metrics |
 | [**viewNumberOfConcurrentConnections**](StatisticsApi.md#viewNumberOfConcurrentConnections) | **GET** /v3/applications/ccu | View number of concurrent connections |
 | [**viewNumberOfDailyActiveUsers**](StatisticsApi.md#viewNumberOfDailyActiveUsers) | **GET** /v3/applications/dau | View number of daily active users |
 | [**viewNumberOfMonthlyActiveUsers**](StatisticsApi.md#viewNumberOfMonthlyActiveUsers) | **GET** /v3/applications/mau | View number of monthly active users |
 | [**viewNumberOfPeakConnections**](StatisticsApi.md#viewNumberOfPeakConnections) | **GET** /v3/applications/peak_connections | View number of peak connections |
 
+
+
+## getDetailedOpenRateOfAnnouncementById
+
+> GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId)
+
+Get detailed open rate of an announcement
+
+## Get detailed open rate of an announcement
+
+Retrieves the detailed open rate information of an announcement.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement
+----------------------------
+
+ `unique_id`
+     Type: string
+     Description: Specifies the unique ID of the announcement to get its open rate.
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.StatisticsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        StatisticsApi apiInstance = new StatisticsApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String uniqueId = "uniqueId_example"; // String | 
+        try {
+            GetDetailedOpenRateOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling StatisticsApi#getDetailedOpenRateOfAnnouncementById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **uniqueId** | **String**|  | |
+
+### Return type
+
+[**GetDetailedOpenRateOfAnnouncementByIdResponse**](GetDetailedOpenRateOfAnnouncementByIdResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## getDetailedOpenStatusOfAnnouncementById
+
+> GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened)
+
+Get detailed open status of an announcement
+
+## Get detailed open status of an announcement
+
+Retrieves the detailed open status information of a specific announcement.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement
+----------------------------
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.StatisticsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        StatisticsApi apiInstance = new StatisticsApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String uniqueId = "uniqueId_example"; // String | 
+        Integer limit = 56; // Integer | 
+        String next = "next_example"; // String | 
+        List<String> uniqueIds = Arrays.asList(); // List<String> | 
+        List<String> channelUrls = Arrays.asList(); // List<String> | 
+        Boolean hasOpened = true; // Boolean | 
+        try {
+            GetDetailedOpenStatusOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling StatisticsApi#getDetailedOpenStatusOfAnnouncementById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **uniqueId** | **String**|  | |
+| **limit** | **Integer**|  | [optional] |
+| **next** | **String**|  | [optional] |
+| **uniqueIds** | **List&lt;String&gt;**|  | [optional] |
+| **channelUrls** | **List&lt;String&gt;**|  | [optional] |
+| **hasOpened** | **Boolean**|  | [optional] |
+
+### Return type
+
+[**GetDetailedOpenStatusOfAnnouncementByIdResponse**](GetDetailedOpenStatusOfAnnouncementByIdResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
 
 
 ## retrieveAdvancedAnalyticsMetrics

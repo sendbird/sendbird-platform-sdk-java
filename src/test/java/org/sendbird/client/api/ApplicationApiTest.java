@@ -24,6 +24,7 @@ import org.openapitools.client.model.AddHmsPushConfigurationResponse;
 import org.openapitools.client.model.AddIpToWhitelistData;
 import org.openapitools.client.model.AddIpToWhitelistResponse;
 import org.openapitools.client.model.BanUsersInChannelsWithCustomChannelTypeData;
+import org.openapitools.client.model.ConfigureAutoEventData;
 import org.openapitools.client.model.CustomTypeListBannedUsersResponse;
 import org.openapitools.client.model.DeleteAllowedIpsFromWhitelistResponse;
 import org.openapitools.client.model.DeleteApnsCertificateByIdResponse;
@@ -37,6 +38,7 @@ import org.openapitools.client.model.MuteUsersInChannelsWithCustomChannelTypeDat
 import org.openapitools.client.model.RemovePushConfigurationByIdResponse;
 import org.openapitools.client.model.RetrieveIpWhitelistResponse;
 import org.openapitools.client.model.RevokeSecondaryApiTokenByTokenResponse;
+import org.openapitools.client.model.SendBirdAutoEventMessageSettings;
 import org.openapitools.client.model.SendBirdChannelResponse;
 import org.openapitools.client.model.SetDomainFilterData;
 import org.openapitools.client.model.UpdateApnsPushConfigurationByIdData;
@@ -147,6 +149,21 @@ public class ApplicationApiTest {
     }
 
     /**
+     * Configure auto event message settings
+     *
+     * ## Configure auto event message settings  Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings ----------------------------
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void configureAutoEventMessagesTest() throws ApiException {
+        //String apiToken = null;
+        //ConfigureAutoEventData configureAutoEventData = null;
+        //SendBirdAutoEventMessageSettings response = api.configureAutoEventMessages(apiToken, configureAutoEventData);
+        // TODO: test validations
+    }
+
+    /**
      * Delete allowed IPs from a whitelist
      *
      * ## Delete allowed IPs from a whitelist  Deletes allowed IPs from the whitelist by specifying their IP addresses or ranges. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-allowed-ips-from-a-whitelist
@@ -188,6 +205,20 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //GenerateSecondaryApiTokenData generateSecondaryApiTokenData = null;
         //GenerateSecondaryApiTokenResponse response = api.generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData);
+        // TODO: test validations
+    }
+
+    /**
+     * List auto event messages
+     *
+     * ## List auto event messages  Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages ----------------------------
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listAutoEventMessagesTest() throws ApiException {
+        //String apiToken = null;
+        //SendBirdAutoEventMessageSettings response = api.listAutoEventMessages(apiToken);
         // TODO: test validations
     }
 

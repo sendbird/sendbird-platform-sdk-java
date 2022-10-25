@@ -8,6 +8,8 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
+import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementByIdResponse;
+import org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResponse;
 import org.openapitools.client.model.RetrieveAdvancedAnalyticsMetricsResponse;
 import org.openapitools.client.model.ViewNumberOfConcurrentConnectionsResponse;
 import org.openapitools.client.model.ViewNumberOfDailyActiveUsersResponse;
@@ -19,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class StatisticsApi {
   private ApiClient apiClient;
 
@@ -49,6 +51,175 @@ public class StatisticsApi {
     this.apiClient = apiClient;
   }
 
+  /**
+   * Get detailed open rate of an announcement
+   * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
+   * @param apiToken  (required)
+   * @param uniqueId  (required)
+   * @return GetDetailedOpenRateOfAnnouncementByIdResponse
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(String apiToken, String uniqueId) throws ApiException {
+    return getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId).getData();
+  }
+
+  /**
+   * Get detailed open rate of an announcement
+   * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
+   * @param apiToken  (required)
+   * @param uniqueId  (required)
+   * @return ApiResponse&lt;GetDetailedOpenRateOfAnnouncementByIdResponse&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'apiToken' is set
+    if (apiToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getDetailedOpenRateOfAnnouncementById");
+    }
+    
+    // verify the required parameter 'uniqueId' is set
+    if (uniqueId == null) {
+      throw new ApiException(400, "Missing the required parameter 'uniqueId' when calling getDetailedOpenRateOfAnnouncementById");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/announcement_open_rate/{unique_id}"
+      .replaceAll("\\{" + "unique_id" + "\\}", apiClient.escapeString(uniqueId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<GetDetailedOpenRateOfAnnouncementByIdResponse> localVarReturnType = new GenericType<GetDetailedOpenRateOfAnnouncementByIdResponse>() {};
+
+    return apiClient.invokeAPI("StatisticsApi.getDetailedOpenRateOfAnnouncementById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
+   * Get detailed open status of an announcement
+   * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
+   * @param apiToken  (required)
+   * @param uniqueId  (required)
+   * @param limit  (optional)
+   * @param next  (optional)
+   * @param uniqueIds  (optional)
+   * @param channelUrls  (optional)
+   * @param hasOpened  (optional)
+   * @return GetDetailedOpenStatusOfAnnouncementByIdResponse
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
+    return getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened).getData();
+  }
+
+  /**
+   * Get detailed open status of an announcement
+   * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
+   * @param apiToken  (required)
+   * @param uniqueId  (required)
+   * @param limit  (optional)
+   * @param next  (optional)
+   * @param uniqueIds  (optional)
+   * @param channelUrls  (optional)
+   * @param hasOpened  (optional)
+   * @return ApiResponse&lt;GetDetailedOpenStatusOfAnnouncementByIdResponse&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'apiToken' is set
+    if (apiToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getDetailedOpenStatusOfAnnouncementById");
+    }
+    
+    // verify the required parameter 'uniqueId' is set
+    if (uniqueId == null) {
+      throw new ApiException(400, "Missing the required parameter 'uniqueId' when calling getDetailedOpenStatusOfAnnouncementById");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/announcement_open_status/{unique_id}"
+      .replaceAll("\\{" + "unique_id" + "\\}", apiClient.escapeString(uniqueId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "next", next));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "unique_ids", uniqueIds));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "channel_urls", channelUrls));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "has_opened", hasOpened));
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<GetDetailedOpenStatusOfAnnouncementByIdResponse> localVarReturnType = new GenericType<GetDetailedOpenStatusOfAnnouncementByIdResponse>() {};
+
+    return apiClient.invokeAPI("StatisticsApi.getDetailedOpenStatusOfAnnouncementById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
   /**
    * Retrieve Advanced analytics metrics
    * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------

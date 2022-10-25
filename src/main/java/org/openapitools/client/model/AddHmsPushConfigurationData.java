@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   AddHmsPushConfigurationData.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("addHmsPushConfigurationData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class AddHmsPushConfigurationData {
   public static final String JSON_PROPERTY_HUAWEI_APP_ID = "huawei_app_id";
   private String huaweiAppId;

@@ -46,7 +46,7 @@ import org.sendbird.client.JSON;
   GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_OPEN_COUNT
 })
 @JsonTypeName("getStatisticsDailyResponse_statistics_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class GetStatisticsDailyResponseStatisticsInner {
   public static final String JSON_PROPERTY_DATE_RANGE = "date_range";
   private String dateRange;

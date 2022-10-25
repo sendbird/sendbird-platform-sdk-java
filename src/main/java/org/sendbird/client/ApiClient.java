@@ -66,7 +66,7 @@ import org.sendbird.client.auth.ApiKeyAuth;
 /**
  * <p>ApiClient class.</p>
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-10T12:34:59.419016+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
 public class ApiClient extends JavaTimeFormatter {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
   protected Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -127,7 +127,7 @@ public class ApiClient extends JavaTimeFormatter {
     this.dateFormat = new RFC3339DateFormat();
 
     // Set default User-Agent.
-    setUserAgent("OpenAPI-Generator/0.0.14/java");
+    setUserAgent("OpenAPI-Generator/0.0.15/java");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();

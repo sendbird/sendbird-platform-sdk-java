@@ -4,87 +4,15 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getDetailedOpenRateOfAnnouncementById**](AnnouncementApi.md#getDetailedOpenRateOfAnnouncementById) | **GET** /v3/announcement_open_rate/{unique_id} | Get detailed open rate of an announcement |
 | [**getDetailedOpenRateOfAnnouncementGroup**](AnnouncementApi.md#getDetailedOpenRateOfAnnouncementGroup) | **GET** /v3/announcement_open_rate_by_group/{announcement_group} | Get detailed open rate of an announcement group |
-| [**getDetailedOpenStatusOfAnnouncementById**](AnnouncementApi.md#getDetailedOpenStatusOfAnnouncementById) | **GET** /v3/announcement_open_status/{unique_id} | Get detailed open status of an announcement |
+| [**getStatistics**](AnnouncementApi.md#getStatistics) | **GET** /v3/announcement_stats/weekly | Get statistics - weekly |
+| [**getStatisticsDaily**](AnnouncementApi.md#getStatisticsDaily) | **GET** /v3/announcement_stats/daily | Get statistics - daily |
+| [**getStatisticsMonthly**](AnnouncementApi.md#getStatisticsMonthly) | **GET** /v3/announcement_stats/monthly | Get statistics - monthly |
+| [**listAnnouncementGroups**](AnnouncementApi.md#listAnnouncementGroups) | **GET** /v3/announcement_group | List announcement groups |
+| [**scheduleAnnouncement**](AnnouncementApi.md#scheduleAnnouncement) | **POST** /v3/announcements | Schedule an announcement |
+| [**updateAnnouncementById**](AnnouncementApi.md#updateAnnouncementById) | **PUT** /v3/announcements/{unique_id} | Update an announcement |
 | [**viewAnnouncementById**](AnnouncementApi.md#viewAnnouncementById) | **GET** /v3/announcements/{unique_id} | View an announcement |
 
-
-
-## getDetailedOpenRateOfAnnouncementById
-
-> GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId)
-
-Get detailed open rate of an announcement
-
-## Get detailed open rate of an announcement
-
-Retrieves the detailed open rate information of an announcement.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement
-----------------------------
-
- `unique_id`
-     Type: string
-     Description: Specifies the unique ID of the announcement to get its open rate.
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.AnnouncementApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        String uniqueId = "uniqueId_example"; // String | 
-        try {
-            GetDetailedOpenRateOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AnnouncementApi#getDetailedOpenRateOfAnnouncementById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
-| **uniqueId** | **String**|  | |
-
-### Return type
-
-[**GetDetailedOpenRateOfAnnouncementByIdResponse**](GetDetailedOpenRateOfAnnouncementByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
 
 
 ## getDetailedOpenRateOfAnnouncementGroup
@@ -159,17 +87,388 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## getDetailedOpenStatusOfAnnouncementById
+## getStatistics
 
-> GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened)
+> GetStatisticsResponse getStatistics(apiToken)
 
-Get detailed open status of an announcement
+Get statistics - weekly
 
-## Get detailed open status of an announcement
+## Get statistics
 
-Retrieves the detailed open status information of a specific announcement.
+Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement
+https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics
+----------------------------
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.AnnouncementApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        try {
+            GetStatisticsResponse result = apiInstance.getStatistics(apiToken);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AnnouncementApi#getStatistics");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+
+### Return type
+
+[**GetStatisticsResponse**](GetStatisticsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## getStatisticsDaily
+
+> GetStatisticsDailyResponse getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup)
+
+Get statistics - daily
+
+## Get statistics
+
+Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics
+----------------------------
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.AnnouncementApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String startDate = "startDate_example"; // String | 
+        String endDate = "endDate_example"; // String | 
+        String startWeek = "startWeek_example"; // String | 
+        String endWeek = "endWeek_example"; // String | 
+        String startMonth = "startMonth_example"; // String | 
+        String endMonth = "endMonth_example"; // String | 
+        String announcementGroup = "announcementGroup_example"; // String | 
+        try {
+            GetStatisticsDailyResponse result = apiInstance.getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AnnouncementApi#getStatisticsDaily");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **startDate** | **String**|  | |
+| **endDate** | **String**|  | |
+| **startWeek** | **String**|  | |
+| **endWeek** | **String**|  | |
+| **startMonth** | **String**|  | |
+| **endMonth** | **String**|  | |
+| **announcementGroup** | **String**|  | [optional] |
+
+### Return type
+
+[**GetStatisticsDailyResponse**](GetStatisticsDailyResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## getStatisticsMonthly
+
+> GetStatisticsMonthlyResponse getStatisticsMonthly(apiToken)
+
+Get statistics - monthly
+
+## Get statistics
+
+Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics
+----------------------------
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.AnnouncementApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        try {
+            GetStatisticsMonthlyResponse result = apiInstance.getStatisticsMonthly(apiToken);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AnnouncementApi#getStatisticsMonthly");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+
+### Return type
+
+[**GetStatisticsMonthlyResponse**](GetStatisticsMonthlyResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## listAnnouncementGroups
+
+> ListAnnouncementGroupsResponse listAnnouncementGroups(apiToken, token, limit)
+
+List announcement groups
+
+## List announcement groups
+
+Retrieves a list of announcement groups.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcement-groups
+----------------------------
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.AnnouncementApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        String token = "token_example"; // String | 
+        Integer limit = 56; // Integer | 
+        try {
+            ListAnnouncementGroupsResponse result = apiInstance.listAnnouncementGroups(apiToken, token, limit);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AnnouncementApi#listAnnouncementGroups");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+
+### Return type
+
+[**ListAnnouncementGroupsResponse**](ListAnnouncementGroupsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## scheduleAnnouncement
+
+> ScheduleAnnouncementResponse scheduleAnnouncement(apiToken, scheduleAnnouncementData)
+
+Schedule an announcement
+
+## Schedule an announcement
+
+Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.AnnouncementApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        ScheduleAnnouncementData scheduleAnnouncementData = new ScheduleAnnouncementData(); // ScheduleAnnouncementData | 
+        try {
+            ScheduleAnnouncementResponse result = apiInstance.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AnnouncementApi#scheduleAnnouncement");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiToken** | **String**|  | |
+| **scheduleAnnouncementData** | [**ScheduleAnnouncementData**](ScheduleAnnouncementData.md)|  | [optional] |
+
+### Return type
+
+[**ScheduleAnnouncementResponse**](ScheduleAnnouncementResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## updateAnnouncementById
+
+> UpdateAnnouncementByIdResponse updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData)
+
+Update an announcement
+
+## Update an announcement
+
+Updates information of a specific announcement before it starts or changes the status of a specific announcement after it starts. For the 2 different applications, refer to the request body below.
+
+>__Note__: Updating information of an announcement is possible only when the announcement status is scheduled, indicating it hasn't started yet.
+
+https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-update-an-announcement
 ----------------------------
 
 ### Example
@@ -190,16 +489,12 @@ public class Example {
         AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         String uniqueId = "uniqueId_example"; // String | 
-        Integer limit = 56; // Integer | 
-        String next = "next_example"; // String | 
-        List<String> uniqueIds = Arrays.asList(); // List<String> | 
-        List<String> channelUrls = Arrays.asList(); // List<String> | 
-        Boolean hasOpened = true; // Boolean | 
+        UpdateAnnouncementByIdData updateAnnouncementByIdData = new UpdateAnnouncementByIdData(); // UpdateAnnouncementByIdData | 
         try {
-            GetDetailedOpenStatusOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
+            UpdateAnnouncementByIdResponse result = apiInstance.updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AnnouncementApi#getDetailedOpenStatusOfAnnouncementById");
+            System.err.println("Exception when calling AnnouncementApi#updateAnnouncementById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -216,15 +511,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | |
 | **uniqueId** | **String**|  | |
-| **limit** | **Integer**|  | [optional] |
-| **next** | **String**|  | [optional] |
-| **uniqueIds** | **List&lt;String&gt;**|  | [optional] |
-| **channelUrls** | **List&lt;String&gt;**|  | [optional] |
-| **hasOpened** | **Boolean**|  | [optional] |
+| **updateAnnouncementByIdData** | [**UpdateAnnouncementByIdData**](UpdateAnnouncementByIdData.md)|  | [optional] |
 
 ### Return type
 
-[**GetDetailedOpenStatusOfAnnouncementByIdResponse**](GetDetailedOpenStatusOfAnnouncementByIdResponse.md)
+[**UpdateAnnouncementByIdResponse**](UpdateAnnouncementByIdResponse.md)
 
 ### Authorization
 
@@ -232,7 +523,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 ### HTTP response details
