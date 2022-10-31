@@ -12,7 +12,8 @@
         <module>Announcements</module>
         <module>authentication</module>
         <module>user-management</module>
-        <module>MessageCount</module>
+        <module>message-count</module>
+        <module>moderation</module>
         <module>send-messages</module>
     </modules>
 

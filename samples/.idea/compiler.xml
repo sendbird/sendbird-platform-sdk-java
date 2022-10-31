@@ -9,7 +9,9 @@
         <module name="send-messages" />
         <module name="Announcement" />
         <module name="user-management" />
+        <module name="MessageCount" />
         <module name="authentication" />
+        <module name="moderation" />
       </profile>
     </annotationProcessing>
   </component>

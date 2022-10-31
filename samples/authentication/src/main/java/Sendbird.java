@@ -21,7 +21,7 @@ class User {
     public SendBirdUser createUser(){
         CreateUserData createUserData = new CreateUserData(); // CreateUserData |
         createUserData.userId(UUID.randomUUID().toString());
-        createUserData.nickname("nickname");
+        createUserData.nickname("SB::test-user::Java::e2e::"+UUID.randomUUID().toString());
         try {
             SendBirdUser result = apiInstance.createUser(apiToken, createUserData);
             return result;
@@ -65,7 +65,7 @@ class User {
         return null;
     }
 
-    public ListUsersResponse listUsers(){
+    public ListUsersResponse listUsers(String nicknameStartswith){
 
         try {
             String token = null;
@@ -74,7 +74,7 @@ class User {
             Boolean showBot = true;
             String userIds = null;
             String nickname = null;
-            String nicknameStartswith = null;
+//            String nicknameStartswith = null;
             String metadatakey = null;
             String metadatavaluesIn = null;
             ListUsersResponse result = apiInstance.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
@@ -116,50 +116,6 @@ class User {
             return result;
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#addRegistrationOrDeviceToken");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-        return null;
-    }
-}
-
-class Announcement {
-    ApiClient defaultClient;
-    String apiToken;
-    AnnouncementApi apiInstance;
-
-    public Announcement(ApiClient defaultClient) {
-        System.out.println("constructor");
-        apiInstance = new AnnouncementApi(defaultClient);
-        apiToken = Config.apiToken;
-    }
-
-    public ScheduleAnnouncementResponse scheduleAnnouncement(String message, String type, String userId, String content, String targetAt, List<String> targetList, String channelType){
-        ScheduleAnnouncementData scheduleAnnouncementData = new ScheduleAnnouncementData();
-        ScheduleAnnouncementDataMessage scheduleAnnouncementDataMessage = new ScheduleAnnouncementDataMessage();
-
-        scheduleAnnouncementDataMessage.type(type);
-        scheduleAnnouncementDataMessage.userId(userId);
-        scheduleAnnouncementDataMessage.content(content);
-
-
-        scheduleAnnouncementData.message(scheduleAnnouncementDataMessage);
-        scheduleAnnouncementData.messageType(type);
-        scheduleAnnouncementData.userId(userId);
-        scheduleAnnouncementData.content(content);
-        scheduleAnnouncementData.targetAt(targetAt);
-        scheduleAnnouncementData.targetList(targetList);
-        scheduleAnnouncementData.targetChannelType(channelType);
-
-        System.out.println(scheduleAnnouncementData);
-
-        try {
-            ScheduleAnnouncementResponse result = apiInstance.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MessageApi#scheduleAnnouncement");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());

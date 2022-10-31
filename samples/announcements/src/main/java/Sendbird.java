@@ -38,15 +38,31 @@ class GroupChannel {
         return null;
     }
 
-    public GcListChannelsResponse listChannels(){
+    public OcDeleteChannelByUrl200Response deleteChannelByUrl(String channelUrl){
+
+        try {
+            OcDeleteChannelByUrl200Response result = apiInstance.gcDeleteChannelByUrl(apiToken, channelUrl);
+            return result;
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupChannelApi#gcViewChannelByUrl");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public GcListChannelsResponse listChannels(String nameStartswith){
         String token = null; // String |
         Integer limit = 10; // Integer |
-        String distinctMode = "distinct"; // String |
+        String distinctMode = "all"; // String |
         String publicMode = null; // String |
         String superMode = null; // String |
         Integer createdAfter = null; // Integer |
         Integer createdBefore = null; // Integer |
-        Boolean showEmpty = false; // Boolean |
+        Boolean showEmpty = true; // Boolean |
         Boolean showMember = true; // Boolean |
         Boolean showDeliveryReceipt = false; // Boolean |
         Boolean showReadReceipt = true; // Boolean |
@@ -58,8 +74,8 @@ class GroupChannel {
         String customTypeStartswith = null; // String |
         String channelUrls = null; // String |
         String name = null; // String |
+//        String nameStartswith = null; // String |
         String nameContains = null; // String |
-        String nameStartswith = null; // String |
         String membersExactlyIn = null; // String |
         String membersIncludeIn = null; // String |
         String queryType = null; // String |
@@ -97,8 +113,7 @@ class GroupChannel {
 
     public SendBirdGroupChannel createChannel(List userIds){
         GcCreateChannelData gcCreateChannelData = new GcCreateChannelData();
-        gcCreateChannelData.name("JAVA-SDK-GROUP");
-
+        gcCreateChannelData.name("SB::test-gc::Java::e2e::"+UUID.randomUUID().toString());
 
         gcCreateChannelData.userIds(userIds);
         gcCreateChannelData.isDistinct(false);
@@ -174,7 +189,7 @@ class User {
     public SendBirdUser createUser(){
         CreateUserData createUserData = new CreateUserData(); // CreateUserData |
         createUserData.userId(UUID.randomUUID().toString());
-        createUserData.nickname("nickname");
+        createUserData.nickname("SB::test-user::Java::e2e::"+UUID.randomUUID().toString());
         try {
             SendBirdUser result = apiInstance.createUser(apiToken, createUserData);
             return result;
@@ -218,7 +233,7 @@ class User {
         return null;
     }
 
-    public ListUsersResponse listUsers(){
+    public ListUsersResponse listUsers(String nicknameStartswith){
 
         try {
             String token = null;
@@ -227,7 +242,7 @@ class User {
             Boolean showBot = true;
             String userIds = null;
             String nickname = null;
-            String nicknameStartswith = null;
+//            String nicknameStartswith = nicknameStartswith;
             String metadatakey = null;
             String metadatavaluesIn = null;
             ListUsersResponse result = apiInstance.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);

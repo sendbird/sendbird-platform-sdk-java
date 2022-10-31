@@ -40,12 +40,12 @@ class GroupChannel {
     public GcListChannelsResponse listChannels(){
         String token = null; // String |
         Integer limit = 10; // Integer |
-        String distinctMode = "distinct"; // String |
+        String distinctMode = "all"; // String |
         String publicMode = null; // String |
         String superMode = null; // String |
         Integer createdAfter = null; // Integer |
         Integer createdBefore = null; // Integer |
-        Boolean showEmpty = false; // Boolean |
+        Boolean showEmpty = true; // Boolean |
         Boolean showMember = true; // Boolean |
         Boolean showDeliveryReceipt = false; // Boolean |
         Boolean showReadReceipt = true; // Boolean |

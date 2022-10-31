@@ -20,7 +20,7 @@ class User {
     public SendBirdUser createUser(){
         CreateUserData createUserData = new CreateUserData(); // CreateUserData |
         createUserData.userId(UUID.randomUUID().toString());
-        createUserData.nickname("nickname");
+        createUserData.nickname("SB::test-user::Java::e2e::"+UUID.randomUUID().toString());
         try {
             SendBirdUser result = apiInstance.createUser(apiToken, createUserData);
             return result;
@@ -64,7 +64,7 @@ class User {
         return null;
     }
 
-    public ListUsersResponse listUsers(){
+    public ListUsersResponse listUsers(String nicknameStartswith){
 
         try {
             String token = null;
@@ -73,7 +73,7 @@ class User {
             Boolean showBot = true;
             String userIds = null;
             String nickname = null;
-            String nicknameStartswith = null;
+//            String nicknameStartswith = null;
             String metadatakey = null;
             String metadatavaluesIn = null;
             ListUsersResponse result = apiInstance.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
