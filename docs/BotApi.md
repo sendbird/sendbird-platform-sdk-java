@@ -18,7 +18,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## createBot
 
-> CreateBotResponse createBot(apiToken, createBotData)
+> CreateBotResponse createBot().apiToken(apiToken).createBotData(createBotData).execute();
 
 Create a bot
 
@@ -49,7 +49,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         CreateBotData createBotData = new CreateBotData(); // CreateBotData | 
         try {
-            CreateBotResponse result = apiInstance.createBot(apiToken, createBotData);
+            CreateBotResponse result = api.createBot()
+                .apiToken(apiToken)
+                .createBotData(createBotData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BotApi#createBot");
@@ -91,7 +94,7 @@ No authorization required
 
 ## deleteBotById
 
-> Object deleteBotById(apiToken, botUserid)
+> Object deleteBotById(botUserid).apiToken(apiToken).execute();
 
 Delete a bot
 
@@ -121,7 +124,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String botUserid = "botUserid_example"; // String | 
         try {
-            Object result = apiInstance.deleteBotById(apiToken, botUserid);
+            Object result = api.deleteBotById(botUserid)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BotApi#deleteBotById");
@@ -163,7 +168,7 @@ No authorization required
 
 ## joinChannels
 
-> JoinChannelsResponse joinChannels(apiToken, botUserid, joinChannelsData)
+> JoinChannelsResponse joinChannels(botUserid).apiToken(apiToken).joinChannelsData(joinChannelsData).execute();
 
 Join channels
 
@@ -194,7 +199,10 @@ public class Example {
         String botUserid = "botUserid_example"; // String | 
         JoinChannelsData joinChannelsData = new JoinChannelsData(); // JoinChannelsData | 
         try {
-            JoinChannelsResponse result = apiInstance.joinChannels(apiToken, botUserid, joinChannelsData);
+            JoinChannelsResponse result = api.joinChannels(botUserid)
+                .apiToken(apiToken)
+                .joinChannelsData(joinChannelsData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BotApi#joinChannels");
@@ -237,7 +245,7 @@ No authorization required
 
 ## leaveChannels
 
-> leaveChannels(apiToken, botUserid, channelUrl)
+> leaveChannels(botUserid).apiToken(apiToken).channelUrl(channelUrl).execute();
 
 Leave channels - When leaving all channels
 
@@ -268,7 +276,10 @@ public class Example {
         String botUserid = "botUserid_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
-            apiInstance.leaveChannels(apiToken, botUserid, channelUrl);
+            api.leaveChannels(botUserid)
+                .apiToken(apiToken)
+                .channelUrl(channelUrl)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling BotApi#leaveChannels");
             System.err.println("Status code: " + e.getCode());
@@ -310,7 +321,7 @@ No authorization required
 
 ## leaveChannelsByUrl
 
-> Object leaveChannelsByUrl(apiToken, botUserid, channelUrl)
+> Object leaveChannelsByUrl(botUserid, channelUrl).apiToken(apiToken).execute();
 
 Leave channels - When leaving a channel by its channel URL
 
@@ -341,7 +352,9 @@ public class Example {
         String botUserid = "botUserid_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
-            Object result = apiInstance.leaveChannelsByUrl(apiToken, botUserid, channelUrl);
+            Object result = api.leaveChannelsByUrl(botUserid, channelUrl)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BotApi#leaveChannelsByUrl");
@@ -384,7 +397,7 @@ No authorization required
 
 ## listBots
 
-> ListBotsResponse listBots(apiToken, token, limit)
+> ListBotsResponse listBots().apiToken(apiToken).token(token).limit(limit).execute();
 
 List bots
 
@@ -415,7 +428,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListBotsResponse result = apiInstance.listBots(apiToken, token, limit);
+            ListBotsResponse result = api.listBots()
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BotApi#listBots");
@@ -458,7 +475,7 @@ No authorization required
 
 ## sendBotsMessage
 
-> SendBirdMessageResponse sendBotsMessage(apiToken, botUserid, sendBotSMessageData)
+> SendBirdMessageResponse sendBotsMessage(botUserid).apiToken(apiToken).sendBotSMessageData(sendBotSMessageData).execute();
 
 Send a bot&#39;s message
 
@@ -493,7 +510,10 @@ public class Example {
         String botUserid = "botUserid_example"; // String | 
         SendBotSMessageData sendBotSMessageData = new SendBotSMessageData(); // SendBotSMessageData | 
         try {
-            SendBirdMessageResponse result = apiInstance.sendBotsMessage(apiToken, botUserid, sendBotSMessageData);
+            SendBirdMessageResponse result = api.sendBotsMessage(botUserid)
+                .apiToken(apiToken)
+                .sendBotSMessageData(sendBotSMessageData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BotApi#sendBotsMessage");
@@ -536,7 +556,7 @@ No authorization required
 
 ## updateBotById
 
-> UpdateBotByIdResponse updateBotById(apiToken, botUserid, updateBotByIdData)
+> UpdateBotByIdResponse updateBotById(botUserid).apiToken(apiToken).updateBotByIdData(updateBotByIdData).execute();
 
 Update a bot
 
@@ -567,7 +587,10 @@ public class Example {
         String botUserid = "botUserid_example"; // String | 
         UpdateBotByIdData updateBotByIdData = new UpdateBotByIdData(); // UpdateBotByIdData | 
         try {
-            UpdateBotByIdResponse result = apiInstance.updateBotById(apiToken, botUserid, updateBotByIdData);
+            UpdateBotByIdResponse result = api.updateBotById(botUserid)
+                .apiToken(apiToken)
+                .updateBotByIdData(updateBotByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BotApi#updateBotById");
@@ -610,7 +633,7 @@ No authorization required
 
 ## viewBotById
 
-> ViewBotByIdResponse viewBotById(apiToken, botUserid)
+> ViewBotByIdResponse viewBotById(botUserid).apiToken(apiToken).execute();
 
 View a bot
 
@@ -640,7 +663,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String botUserid = "botUserid_example"; // String | 
         try {
-            ViewBotByIdResponse result = apiInstance.viewBotById(apiToken, botUserid);
+            ViewBotByIdResponse result = api.viewBotById(botUserid)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BotApi#viewBotById");

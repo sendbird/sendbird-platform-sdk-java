@@ -31,13 +31,15 @@ class MessageCountTest {
         GroupChannel groupChannel = new GroupChannel(defaultClient);
 
         ListUsersResponse users = user.listUsers("SB::test-user::Java::e2e::");
+
         for (int i = 0; i < users.getUsers().size(); i++) {
             String userIdToDelete = users.getUsers().get(i).getUserId();
+            System.out.println(userIdToDelete);
+
             user.deleteUserById(userIdToDelete);
         }
 
         GcListChannelsResponse groupChannelResponse = groupChannel.listChannels("SB::test-gc::Java::e2e::");
-        System.out.println(groupChannelResponse);
 
         for (int i = 0; i < groupChannelResponse.getChannels().size(); i++) {
             String channelUrlToDelete = groupChannelResponse.getChannels().get(i).getChannelUrl();

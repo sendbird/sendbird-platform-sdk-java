@@ -75,7 +75,10 @@ public class MessageApiTest {
     public void addEmojiCategoriesTest() throws ApiException {
         //String apiToken = null;
         //Object body = null;
-        //AddEmojiCategoriesResponse response = api.addEmojiCategories(apiToken, body);
+        //AddEmojiCategoriesResponse response = api.addEmojiCategories()
+        //        .apiToken(apiToken)
+        //        .body(body)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -90,7 +93,10 @@ public class MessageApiTest {
     public void addEmojisTest() throws ApiException {
         //String apiToken = null;
         //AddEmojisData addEmojisData = null;
-        //AddEmojisResponse response = api.addEmojis(apiToken, addEmojisData);
+        //AddEmojisResponse response = api.addEmojis()
+        //        .apiToken(apiToken)
+        //        .addEmojisData(addEmojisData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -108,7 +114,10 @@ public class MessageApiTest {
         //String channelUrl = null;
         //String messageId = null;
         //AddExtraDataToMessageData addExtraDataToMessageData = null;
-        //AddExtraDataToMessageResponse response = api.addExtraDataToMessage(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData);
+        //AddExtraDataToMessageResponse response = api.addExtraDataToMessage(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .addExtraDataToMessageData(addExtraDataToMessageData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -126,7 +135,10 @@ public class MessageApiTest {
         //String channelUrl = null;
         //String messageId = null;
         //AddReactionToAMessageData addReactionToAMessageData = null;
-        //AddReactionToAMessageResponse response = api.addReactionToAMessage(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData);
+        //AddReactionToAMessageResponse response = api.addReactionToAMessage(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .addReactionToAMessageData(addReactionToAMessageData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -141,7 +153,9 @@ public class MessageApiTest {
     public void deleteEmojiByKeyTest() throws ApiException {
         //String apiToken = null;
         //String emojiKey = null;
-        //api.deleteEmojiByKey(apiToken, emojiKey);
+        //api.deleteEmojiByKey(emojiKey)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -156,7 +170,9 @@ public class MessageApiTest {
     public void deleteEmojiCategoryByIdTest() throws ApiException {
         //String apiToken = null;
         //String emojiCategoryId = null;
-        //Object response = api.deleteEmojiCategoryById(apiToken, emojiCategoryId);
+        //Object response = api.deleteEmojiCategoryById(emojiCategoryId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -173,7 +189,9 @@ public class MessageApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //String messageId = null;
-        //Object response = api.deleteMessageById(apiToken, channelType, channelUrl, messageId);
+        //Object response = api.deleteMessageById(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -188,7 +206,10 @@ public class MessageApiTest {
     public void enableReactionsTest() throws ApiException {
         //String apiToken = null;
         //EnableReactionsData enableReactionsData = null;
-        //EnableReactionsResponse response = api.enableReactions(apiToken, enableReactionsData);
+        //EnableReactionsResponse response = api.enableReactions()
+        //        .apiToken(apiToken)
+        //        .enableReactionsData(enableReactionsData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -204,7 +225,10 @@ public class MessageApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData = null;
-        //GcMarkAllMessagesAsDeliveredResponse response = api.gcMarkAllMessagesAsDelivered(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData);
+        //GcMarkAllMessagesAsDeliveredResponse response = api.gcMarkAllMessagesAsDelivered(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcMarkAllMessagesAsDeliveredData(gcMarkAllMessagesAsDeliveredData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -220,7 +244,10 @@ public class MessageApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData = null;
-        //Object response = api.gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
+        //Object response = api.gcMarkAllMessagesAsRead(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcMarkAllMessagesAsReadData(gcMarkAllMessagesAsReadData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -236,7 +263,10 @@ public class MessageApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //String userIds = null;
-        //GcViewNumberOfEachMembersUnreadMessagesResponse response = api.gcViewNumberOfEachMembersUnreadMessages(apiToken, channelUrl, userIds);
+        //GcViewNumberOfEachMembersUnreadMessagesResponse response = api.gcViewNumberOfEachMembersUnreadMessages(channelUrl)
+        //        .apiToken(apiToken)
+        //        .userIds(userIds)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -251,7 +281,9 @@ public class MessageApiTest {
     public void getEmojiByKeyTest() throws ApiException {
         //String apiToken = null;
         //String emojiKey = null;
-        //SendBirdEmoji response = api.getEmojiByKey(apiToken, emojiKey);
+        //SendBirdEmoji response = api.getEmojiByKey(emojiKey)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -266,7 +298,9 @@ public class MessageApiTest {
     public void getEmojiCategoryByIdTest() throws ApiException {
         //String apiToken = null;
         //String emojiCategoryId = null;
-        //SendBirdEmojiCategory response = api.getEmojiCategoryById(apiToken, emojiCategoryId);
+        //SendBirdEmojiCategory response = api.getEmojiCategoryById(emojiCategoryId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -280,7 +314,9 @@ public class MessageApiTest {
     @Test
     public void listAllEmojisAndEmojiCategoriesTest() throws ApiException {
         //String apiToken = null;
-        //ListAllEmojisAndEmojiCategoriesResponse response = api.listAllEmojisAndEmojiCategories(apiToken);
+        //ListAllEmojisAndEmojiCategoriesResponse response = api.listAllEmojisAndEmojiCategories()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -299,7 +335,14 @@ public class MessageApiTest {
         //String order = null;
         //String status = null;
         //String announcementGroup = null;
-        //ListAnnouncementsResponse response = api.listAnnouncements(apiToken, token, limit, order, status, announcementGroup);
+        //ListAnnouncementsResponse response = api.listAnnouncements()
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .order(order)
+        //        .status(status)
+        //        .announcementGroup(announcementGroup)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -313,7 +356,9 @@ public class MessageApiTest {
     @Test
     public void listEmojisTest() throws ApiException {
         //String apiToken = null;
-        //ListEmojisResponse response = api.listEmojis(apiToken);
+        //ListEmojisResponse response = api.listEmojis()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -347,7 +392,27 @@ public class MessageApiTest {
         //String userId = null;
         //String customType = null;
         //Boolean withMetaArray = null;
-        //ListMessagesResponse response = api.listMessages(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+        //ListMessagesResponse response = api.listMessages(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .messageTs(messageTs)
+        //        .messageId(messageId)
+        //        .prevLimit(prevLimit)
+        //        .nextLimit(nextLimit)
+        //        .include(include)
+        //        .reverse(reverse)
+        //        .senderId(senderId)
+        //        .senderIds(senderIds)
+        //        .operatorFilter(operatorFilter)
+        //        .customTypes(customTypes)
+        //        .messageType(messageType)
+        //        .includingRemoved(includingRemoved)
+        //        .includeReactions(includeReactions)
+        //        .withSortedMetaArray(withSortedMetaArray)
+        //        .showSubchannelMessagesOnly(showSubchannelMessagesOnly)
+        //        .userId(userId)
+        //        .customType(customType)
+        //        .withMetaArray(withMetaArray)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -365,7 +430,10 @@ public class MessageApiTest {
         //String channelUrl = null;
         //String messageId = null;
         //Boolean listUsers = null;
-        //ListReactionsOfMessageResponse response = api.listReactionsOfMessage(apiToken, channelType, channelUrl, messageId, listUsers);
+        //ListReactionsOfMessageResponse response = api.listReactionsOfMessage(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .listUsers(listUsers)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -381,7 +449,10 @@ public class MessageApiTest {
         //String apiToken = null;
         //String targetChannelUrl = null;
         //Object body = null;
-        //api.migrateMessagesByUrl(apiToken, targetChannelUrl, body);
+        //api.migrateMessagesByUrl(targetChannelUrl)
+        //        .apiToken(apiToken)
+        //        .body(body)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -399,7 +470,10 @@ public class MessageApiTest {
         //String channelUrl = null;
         //String messageId = null;
         //List<String> keys = null;
-        //Object response = api.removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys);
+        //Object response = api.removeExtraDataFromMessage(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .keys(keys)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -418,7 +492,11 @@ public class MessageApiTest {
         //String messageId = null;
         //String userId = null;
         //String reaction = null;
-        //RemoveReactionFromAMessageResponse response = api.removeReactionFromAMessage(apiToken, channelType, channelUrl, messageId, userId, reaction);
+        //RemoveReactionFromAMessageResponse response = api.removeReactionFromAMessage(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .userId(userId)
+        //        .reaction(reaction)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -435,7 +513,10 @@ public class MessageApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //SendMessageData sendMessageData = null;
-        //SendBirdMessageResponse response = api.sendMessage(apiToken, channelType, channelUrl, sendMessageData);
+        //SendBirdMessageResponse response = api.sendMessage(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .sendMessageData(sendMessageData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -453,7 +534,10 @@ public class MessageApiTest {
         //String channelUrl = null;
         //String messageId = null;
         //TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData = null;
-        //SendBirdMessageResponse response = api.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
+        //SendBirdMessageResponse response = api.translateMessageIntoOtherLanguages(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .translateMessageIntoOtherLanguagesData(translateMessageIntoOtherLanguagesData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -469,7 +553,10 @@ public class MessageApiTest {
         //String apiToken = null;
         //String emojiCategoryId = null;
         //UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData = null;
-        //SendBirdEmojiCategory response = api.updateEmojiCategoryUrlById(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData);
+        //SendBirdEmojiCategory response = api.updateEmojiCategoryUrlById(emojiCategoryId)
+        //        .apiToken(apiToken)
+        //        .updateEmojiCategoryUrlByIdData(updateEmojiCategoryUrlByIdData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -485,7 +572,10 @@ public class MessageApiTest {
         //String apiToken = null;
         //String emojiKey = null;
         //UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData = null;
-        //SendBirdEmoji response = api.updateEmojiUrlByKey(apiToken, emojiKey, updateEmojiUrlByKeyData);
+        //SendBirdEmoji response = api.updateEmojiUrlByKey(emojiKey)
+        //        .apiToken(apiToken)
+        //        .updateEmojiUrlByKeyData(updateEmojiUrlByKeyData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -503,7 +593,10 @@ public class MessageApiTest {
         //String channelUrl = null;
         //String messageId = null;
         //UpdateExtraDataInMessageData updateExtraDataInMessageData = null;
-        //UpdateExtraDataInMessageResponse response = api.updateExtraDataInMessage(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData);
+        //UpdateExtraDataInMessageResponse response = api.updateExtraDataInMessage(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .updateExtraDataInMessageData(updateExtraDataInMessageData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -521,7 +614,10 @@ public class MessageApiTest {
         //String channelUrl = null;
         //String messageId = null;
         //UpdateMessageByIdData updateMessageByIdData = null;
-        //SendBirdMessageResponse response = api.updateMessageById(apiToken, channelType, channelUrl, messageId, updateMessageByIdData);
+        //SendBirdMessageResponse response = api.updateMessageById(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .updateMessageByIdData(updateMessageByIdData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -536,7 +632,10 @@ public class MessageApiTest {
     public void useDefaultEmojisTest() throws ApiException {
         //String apiToken = null;
         //UseDefaultEmojisData useDefaultEmojisData = null;
-        //UseDefaultEmojisResponse response = api.useDefaultEmojis(apiToken, useDefaultEmojisData);
+        //UseDefaultEmojisResponse response = api.useDefaultEmojis()
+        //        .apiToken(apiToken)
+        //        .useDefaultEmojisData(useDefaultEmojisData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -555,7 +654,11 @@ public class MessageApiTest {
         //String messageId = null;
         //Boolean withSortedMetaArray = null;
         //Boolean withMetaArray = null;
-        //SendBirdMessageResponse response = api.viewMessageById(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray);
+        //SendBirdMessageResponse response = api.viewMessageById(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .withSortedMetaArray(withSortedMetaArray)
+        //        .withMetaArray(withMetaArray)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -571,7 +674,9 @@ public class MessageApiTest {
         //String apiToken = null;
         //String channelType = null;
         //String channelUrl = null;
-        //ViewTotalNumberOfMessagesInChannelResponse response = api.viewTotalNumberOfMessagesInChannel(apiToken, channelType, channelUrl);
+        //ViewTotalNumberOfMessagesInChannelResponse response = api.viewTotalNumberOfMessagesInChannel(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 

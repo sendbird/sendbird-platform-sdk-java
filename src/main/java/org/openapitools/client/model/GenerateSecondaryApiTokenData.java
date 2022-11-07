@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   GenerateSecondaryApiTokenData.JSON_PROPERTY_H_T_T_P_A_P_I_T_O_K_E_N
 })
 @JsonTypeName("generateSecondaryApiTokenData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class GenerateSecondaryApiTokenData {
   public static final String JSON_PROPERTY_H_T_T_P_A_P_I_T_O_K_E_N = "HTTP_API_TOKEN";
   private String HTTP_API_TOKEN;

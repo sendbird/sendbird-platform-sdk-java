@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class StatisticsApi {
   private ApiClient apiClient;
 
@@ -51,37 +51,8 @@ public class StatisticsApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * Get detailed open rate of an announcement
-   * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
-   * @param apiToken  (required)
-   * @param uniqueId  (required)
-   * @return GetDetailedOpenRateOfAnnouncementByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(String apiToken, String uniqueId) throws ApiException {
-    return getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId).getData();
-  }
 
-  /**
-   * Get detailed open rate of an announcement
-   * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
-   * @param apiToken  (required)
-   * @param uniqueId  (required)
-   * @return ApiResponse&lt;GetDetailedOpenRateOfAnnouncementByIdResponse&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId) throws ApiException {
+private ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -128,47 +99,71 @@ public class StatisticsApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Get detailed open status of an announcement
-   * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
-   * @param apiToken  (required)
-   * @param uniqueId  (required)
-   * @param limit  (optional)
-   * @param next  (optional)
-   * @param uniqueIds  (optional)
-   * @param channelUrls  (optional)
-   * @param hasOpened  (optional)
-   * @return GetDetailedOpenStatusOfAnnouncementByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
-    return getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened).getData();
+
+  public class APIgetDetailedOpenRateOfAnnouncementByIdRequest {
+    private String apiToken;
+    private String uniqueId;
+
+    private APIgetDetailedOpenRateOfAnnouncementByIdRequest(String uniqueId) {
+      this.uniqueId = uniqueId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgetDetailedOpenRateOfAnnouncementByIdRequest
+     */
+    public APIgetDetailedOpenRateOfAnnouncementByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute getDetailedOpenRateOfAnnouncementById request
+     * @return GetDetailedOpenRateOfAnnouncementByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GetDetailedOpenRateOfAnnouncementByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getDetailedOpenRateOfAnnouncementById request with HTTP info returned
+     * @return ApiResponse&lt;GetDetailedOpenRateOfAnnouncementByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> executeWithHttpInfo() throws ApiException {
+      return getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId);
+    }
   }
 
   /**
-   * Get detailed open status of an announcement
-   * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
-   * @param apiToken  (required)
+   * Get detailed open rate of an announcement
+   * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
    * @param uniqueId  (required)
-   * @param limit  (optional)
-   * @param next  (optional)
-   * @param uniqueIds  (optional)
-   * @param channelUrls  (optional)
-   * @param hasOpened  (optional)
-   * @return ApiResponse&lt;GetDetailedOpenStatusOfAnnouncementByIdResponse&gt;
+   * @return getDetailedOpenRateOfAnnouncementByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
+  public APIgetDetailedOpenRateOfAnnouncementByIdRequest getDetailedOpenRateOfAnnouncementById(String uniqueId) throws ApiException {
+    return new APIgetDetailedOpenRateOfAnnouncementByIdRequest(uniqueId);
+  }
+
+private ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -220,35 +215,126 @@ public class StatisticsApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Retrieve Advanced analytics metrics
-   * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------
-   * @param apiToken  (required)
-   * @return RetrieveAdvancedAnalyticsMetricsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RetrieveAdvancedAnalyticsMetricsResponse retrieveAdvancedAnalyticsMetrics(String apiToken) throws ApiException {
-    return retrieveAdvancedAnalyticsMetricsWithHttpInfo(apiToken).getData();
+
+  public class APIgetDetailedOpenStatusOfAnnouncementByIdRequest {
+    private String apiToken;
+    private String uniqueId;
+    private Integer limit;
+    private String next;
+    private List<String> uniqueIds;
+    private List<String> channelUrls;
+    private Boolean hasOpened;
+
+    private APIgetDetailedOpenStatusOfAnnouncementByIdRequest(String uniqueId) {
+      this.uniqueId = uniqueId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgetDetailedOpenStatusOfAnnouncementByIdRequest
+     */
+    public APIgetDetailedOpenStatusOfAnnouncementByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIgetDetailedOpenStatusOfAnnouncementByIdRequest
+     */
+    public APIgetDetailedOpenStatusOfAnnouncementByIdRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Set next
+     * @param next  (optional)
+     * @return APIgetDetailedOpenStatusOfAnnouncementByIdRequest
+     */
+    public APIgetDetailedOpenStatusOfAnnouncementByIdRequest next(String next) {
+      this.next = next;
+      return this;
+    }
+
+    /**
+     * Set uniqueIds
+     * @param uniqueIds  (optional)
+     * @return APIgetDetailedOpenStatusOfAnnouncementByIdRequest
+     */
+    public APIgetDetailedOpenStatusOfAnnouncementByIdRequest uniqueIds(List<String> uniqueIds) {
+      this.uniqueIds = uniqueIds;
+      return this;
+    }
+
+    /**
+     * Set channelUrls
+     * @param channelUrls  (optional)
+     * @return APIgetDetailedOpenStatusOfAnnouncementByIdRequest
+     */
+    public APIgetDetailedOpenStatusOfAnnouncementByIdRequest channelUrls(List<String> channelUrls) {
+      this.channelUrls = channelUrls;
+      return this;
+    }
+
+    /**
+     * Set hasOpened
+     * @param hasOpened  (optional)
+     * @return APIgetDetailedOpenStatusOfAnnouncementByIdRequest
+     */
+    public APIgetDetailedOpenStatusOfAnnouncementByIdRequest hasOpened(Boolean hasOpened) {
+      this.hasOpened = hasOpened;
+      return this;
+    }
+
+    /**
+     * Execute getDetailedOpenStatusOfAnnouncementById request
+     * @return GetDetailedOpenStatusOfAnnouncementByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GetDetailedOpenStatusOfAnnouncementByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getDetailedOpenStatusOfAnnouncementById request with HTTP info returned
+     * @return ApiResponse&lt;GetDetailedOpenStatusOfAnnouncementByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> executeWithHttpInfo() throws ApiException {
+      return getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
+    }
   }
 
   /**
-   * Retrieve Advanced analytics metrics
-   * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;RetrieveAdvancedAnalyticsMetricsResponse&gt;
+   * Get detailed open status of an announcement
+   * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
+   * @param uniqueId  (required)
+   * @return getDetailedOpenStatusOfAnnouncementByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RetrieveAdvancedAnalyticsMetricsResponse> retrieveAdvancedAnalyticsMetricsWithHttpInfo(String apiToken) throws ApiException {
+  public APIgetDetailedOpenStatusOfAnnouncementByIdRequest getDetailedOpenStatusOfAnnouncementById(String uniqueId) throws ApiException {
+    return new APIgetDetailedOpenStatusOfAnnouncementByIdRequest(uniqueId);
+  }
+
+private ApiResponse<RetrieveAdvancedAnalyticsMetricsResponse> retrieveAdvancedAnalyticsMetricsWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -289,35 +375,68 @@ public class StatisticsApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View number of concurrent connections
-   * ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
-   * @param apiToken  (required)
-   * @return ViewNumberOfConcurrentConnectionsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewNumberOfConcurrentConnectionsResponse viewNumberOfConcurrentConnections(String apiToken) throws ApiException {
-    return viewNumberOfConcurrentConnectionsWithHttpInfo(apiToken).getData();
+
+  public class APIretrieveAdvancedAnalyticsMetricsRequest {
+    private String apiToken;
+
+    private APIretrieveAdvancedAnalyticsMetricsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIretrieveAdvancedAnalyticsMetricsRequest
+     */
+    public APIretrieveAdvancedAnalyticsMetricsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute retrieveAdvancedAnalyticsMetrics request
+     * @return RetrieveAdvancedAnalyticsMetricsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RetrieveAdvancedAnalyticsMetricsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute retrieveAdvancedAnalyticsMetrics request with HTTP info returned
+     * @return ApiResponse&lt;RetrieveAdvancedAnalyticsMetricsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RetrieveAdvancedAnalyticsMetricsResponse> executeWithHttpInfo() throws ApiException {
+      return retrieveAdvancedAnalyticsMetricsWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * View number of concurrent connections
-   * ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;ViewNumberOfConcurrentConnectionsResponse&gt;
+   * Retrieve Advanced analytics metrics
+   * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------
+   * @return retrieveAdvancedAnalyticsMetricsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewNumberOfConcurrentConnectionsResponse> viewNumberOfConcurrentConnectionsWithHttpInfo(String apiToken) throws ApiException {
+  public APIretrieveAdvancedAnalyticsMetricsRequest retrieveAdvancedAnalyticsMetrics() throws ApiException {
+    return new APIretrieveAdvancedAnalyticsMetricsRequest();
+  }
+
+private ApiResponse<ViewNumberOfConcurrentConnectionsResponse> viewNumberOfConcurrentConnectionsWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -358,37 +477,68 @@ public class StatisticsApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View number of daily active users
-   * ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
-   * @param apiToken  (required)
-   * @param date  (optional)
-   * @return ViewNumberOfDailyActiveUsersResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewNumberOfDailyActiveUsersResponse viewNumberOfDailyActiveUsers(String apiToken, String date) throws ApiException {
-    return viewNumberOfDailyActiveUsersWithHttpInfo(apiToken, date).getData();
+
+  public class APIviewNumberOfConcurrentConnectionsRequest {
+    private String apiToken;
+
+    private APIviewNumberOfConcurrentConnectionsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewNumberOfConcurrentConnectionsRequest
+     */
+    public APIviewNumberOfConcurrentConnectionsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewNumberOfConcurrentConnections request
+     * @return ViewNumberOfConcurrentConnectionsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewNumberOfConcurrentConnectionsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewNumberOfConcurrentConnections request with HTTP info returned
+     * @return ApiResponse&lt;ViewNumberOfConcurrentConnectionsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewNumberOfConcurrentConnectionsResponse> executeWithHttpInfo() throws ApiException {
+      return viewNumberOfConcurrentConnectionsWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * View number of daily active users
-   * ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
-   * @param apiToken  (required)
-   * @param date  (optional)
-   * @return ApiResponse&lt;ViewNumberOfDailyActiveUsersResponse&gt;
+   * View number of concurrent connections
+   * ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
+   * @return viewNumberOfConcurrentConnectionsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
+  public APIviewNumberOfConcurrentConnectionsRequest viewNumberOfConcurrentConnections() throws ApiException {
+    return new APIviewNumberOfConcurrentConnectionsRequest();
+  }
+
+private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -430,37 +580,79 @@ public class StatisticsApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View number of monthly active users
-   * ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
-   * @param apiToken  (required)
-   * @param date  (optional)
-   * @return ViewNumberOfMonthlyActiveUsersResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewNumberOfMonthlyActiveUsersResponse viewNumberOfMonthlyActiveUsers(String apiToken, String date) throws ApiException {
-    return viewNumberOfMonthlyActiveUsersWithHttpInfo(apiToken, date).getData();
+
+  public class APIviewNumberOfDailyActiveUsersRequest {
+    private String apiToken;
+    private String date;
+
+    private APIviewNumberOfDailyActiveUsersRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewNumberOfDailyActiveUsersRequest
+     */
+    public APIviewNumberOfDailyActiveUsersRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set date
+     * @param date  (optional)
+     * @return APIviewNumberOfDailyActiveUsersRequest
+     */
+    public APIviewNumberOfDailyActiveUsersRequest date(String date) {
+      this.date = date;
+      return this;
+    }
+
+    /**
+     * Execute viewNumberOfDailyActiveUsers request
+     * @return ViewNumberOfDailyActiveUsersResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewNumberOfDailyActiveUsersResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewNumberOfDailyActiveUsers request with HTTP info returned
+     * @return ApiResponse&lt;ViewNumberOfDailyActiveUsersResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewNumberOfDailyActiveUsersResponse> executeWithHttpInfo() throws ApiException {
+      return viewNumberOfDailyActiveUsersWithHttpInfo(apiToken, date);
+    }
   }
 
   /**
-   * View number of monthly active users
-   * ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
-   * @param apiToken  (required)
-   * @param date  (optional)
-   * @return ApiResponse&lt;ViewNumberOfMonthlyActiveUsersResponse&gt;
+   * View number of daily active users
+   * ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
+   * @return viewNumberOfDailyActiveUsersRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
+  public APIviewNumberOfDailyActiveUsersRequest viewNumberOfDailyActiveUsers() throws ApiException {
+    return new APIviewNumberOfDailyActiveUsersRequest();
+  }
+
+private ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -502,49 +694,79 @@ public class StatisticsApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View number of peak connections
-   * ## View number of peak connections  Retrieves the number of concurrently connected devices to Sendbird server during the requested time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-peak-connections ----------------------------
-   * @param apiToken  (required)
-   * @param timeDimension  (required)
-   * @param startYear  (required)
-   * @param startMonth  (required)
-   * @param endYear  (required)
-   * @param endMonth  (required)
-   * @param startDay  (optional)
-   * @param endDay  (optional)
-   * @return ViewNumberOfPeakConnectionsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay) throws ApiException {
-    return viewNumberOfPeakConnectionsWithHttpInfo(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay).getData();
+
+  public class APIviewNumberOfMonthlyActiveUsersRequest {
+    private String apiToken;
+    private String date;
+
+    private APIviewNumberOfMonthlyActiveUsersRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewNumberOfMonthlyActiveUsersRequest
+     */
+    public APIviewNumberOfMonthlyActiveUsersRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set date
+     * @param date  (optional)
+     * @return APIviewNumberOfMonthlyActiveUsersRequest
+     */
+    public APIviewNumberOfMonthlyActiveUsersRequest date(String date) {
+      this.date = date;
+      return this;
+    }
+
+    /**
+     * Execute viewNumberOfMonthlyActiveUsers request
+     * @return ViewNumberOfMonthlyActiveUsersResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewNumberOfMonthlyActiveUsersResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewNumberOfMonthlyActiveUsers request with HTTP info returned
+     * @return ApiResponse&lt;ViewNumberOfMonthlyActiveUsersResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> executeWithHttpInfo() throws ApiException {
+      return viewNumberOfMonthlyActiveUsersWithHttpInfo(apiToken, date);
+    }
   }
 
   /**
-   * View number of peak connections
-   * ## View number of peak connections  Retrieves the number of concurrently connected devices to Sendbird server during the requested time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-peak-connections ----------------------------
-   * @param apiToken  (required)
-   * @param timeDimension  (required)
-   * @param startYear  (required)
-   * @param startMonth  (required)
-   * @param endYear  (required)
-   * @param endMonth  (required)
-   * @param startDay  (optional)
-   * @param endDay  (optional)
-   * @return ApiResponse&lt;ViewNumberOfPeakConnectionsResponse&gt;
+   * View number of monthly active users
+   * ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
+   * @return viewNumberOfMonthlyActiveUsersRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewNumberOfPeakConnectionsResponse> viewNumberOfPeakConnectionsWithHttpInfo(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay) throws ApiException {
+  public APIviewNumberOfMonthlyActiveUsersRequest viewNumberOfMonthlyActiveUsers() throws ApiException {
+    return new APIviewNumberOfMonthlyActiveUsersRequest();
+  }
+
+private ApiResponse<ViewNumberOfPeakConnectionsResponse> viewNumberOfPeakConnectionsWithHttpInfo(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -616,5 +838,142 @@ public class StatisticsApi {
     return apiClient.invokeAPI("StatisticsApi.viewNumberOfPeakConnections", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewNumberOfPeakConnectionsRequest {
+    private String apiToken;
+    private String timeDimension;
+    private Integer startYear;
+    private Integer startMonth;
+    private Integer endYear;
+    private Integer endMonth;
+    private Integer startDay;
+    private Integer endDay;
+
+    private APIviewNumberOfPeakConnectionsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewNumberOfPeakConnectionsRequest
+     */
+    public APIviewNumberOfPeakConnectionsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set timeDimension
+     * @param timeDimension  (required)
+     * @return APIviewNumberOfPeakConnectionsRequest
+     */
+    public APIviewNumberOfPeakConnectionsRequest timeDimension(String timeDimension) {
+      this.timeDimension = timeDimension;
+      return this;
+    }
+
+    /**
+     * Set startYear
+     * @param startYear  (required)
+     * @return APIviewNumberOfPeakConnectionsRequest
+     */
+    public APIviewNumberOfPeakConnectionsRequest startYear(Integer startYear) {
+      this.startYear = startYear;
+      return this;
+    }
+
+    /**
+     * Set startMonth
+     * @param startMonth  (required)
+     * @return APIviewNumberOfPeakConnectionsRequest
+     */
+    public APIviewNumberOfPeakConnectionsRequest startMonth(Integer startMonth) {
+      this.startMonth = startMonth;
+      return this;
+    }
+
+    /**
+     * Set endYear
+     * @param endYear  (required)
+     * @return APIviewNumberOfPeakConnectionsRequest
+     */
+    public APIviewNumberOfPeakConnectionsRequest endYear(Integer endYear) {
+      this.endYear = endYear;
+      return this;
+    }
+
+    /**
+     * Set endMonth
+     * @param endMonth  (required)
+     * @return APIviewNumberOfPeakConnectionsRequest
+     */
+    public APIviewNumberOfPeakConnectionsRequest endMonth(Integer endMonth) {
+      this.endMonth = endMonth;
+      return this;
+    }
+
+    /**
+     * Set startDay
+     * @param startDay  (optional)
+     * @return APIviewNumberOfPeakConnectionsRequest
+     */
+    public APIviewNumberOfPeakConnectionsRequest startDay(Integer startDay) {
+      this.startDay = startDay;
+      return this;
+    }
+
+    /**
+     * Set endDay
+     * @param endDay  (optional)
+     * @return APIviewNumberOfPeakConnectionsRequest
+     */
+    public APIviewNumberOfPeakConnectionsRequest endDay(Integer endDay) {
+      this.endDay = endDay;
+      return this;
+    }
+
+    /**
+     * Execute viewNumberOfPeakConnections request
+     * @return ViewNumberOfPeakConnectionsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewNumberOfPeakConnectionsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewNumberOfPeakConnections request with HTTP info returned
+     * @return ApiResponse&lt;ViewNumberOfPeakConnectionsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewNumberOfPeakConnectionsResponse> executeWithHttpInfo() throws ApiException {
+      return viewNumberOfPeakConnectionsWithHttpInfo(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay);
+    }
+  }
+
+  /**
+   * View number of peak connections
+   * ## View number of peak connections  Retrieves the number of concurrently connected devices to Sendbird server during the requested time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-peak-connections ----------------------------
+   * @return viewNumberOfPeakConnectionsRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewNumberOfPeakConnectionsRequest viewNumberOfPeakConnections() throws ApiException {
+    return new APIviewNumberOfPeakConnectionsRequest();
   }
 }

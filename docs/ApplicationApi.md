@@ -40,7 +40,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## addApnsPushConfiguration
 
-> AddApnsPushConfigurationResponse addApnsPushConfiguration(apiToken, addApnsPushConfigurationData)
+> AddApnsPushConfigurationResponse addApnsPushConfiguration().apiToken(apiToken).addApnsPushConfigurationData(addApnsPushConfigurationData).execute();
 
 Add an APNs push configuration
 
@@ -71,7 +71,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         AddApnsPushConfigurationData addApnsPushConfigurationData = new AddApnsPushConfigurationData(); // AddApnsPushConfigurationData | 
         try {
-            AddApnsPushConfigurationResponse result = apiInstance.addApnsPushConfiguration(apiToken, addApnsPushConfigurationData);
+            AddApnsPushConfigurationResponse result = api.addApnsPushConfiguration()
+                .apiToken(apiToken)
+                .addApnsPushConfigurationData(addApnsPushConfigurationData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#addApnsPushConfiguration");
@@ -113,7 +116,7 @@ No authorization required
 
 ## addFcmPushConfiguration
 
-> AddFcmPushConfigurationResponse addFcmPushConfiguration(apiToken, addFcmPushConfigurationData)
+> AddFcmPushConfigurationResponse addFcmPushConfiguration().apiToken(apiToken).addFcmPushConfigurationData(addFcmPushConfigurationData).execute();
 
 Add a FCM push configuration
 
@@ -142,7 +145,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         AddFcmPushConfigurationData addFcmPushConfigurationData = new AddFcmPushConfigurationData(); // AddFcmPushConfigurationData | 
         try {
-            AddFcmPushConfigurationResponse result = apiInstance.addFcmPushConfiguration(apiToken, addFcmPushConfigurationData);
+            AddFcmPushConfigurationResponse result = api.addFcmPushConfiguration()
+                .apiToken(apiToken)
+                .addFcmPushConfigurationData(addFcmPushConfigurationData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#addFcmPushConfiguration");
@@ -184,7 +190,7 @@ No authorization required
 
 ## addHmsPushConfiguration
 
-> AddHmsPushConfigurationResponse addHmsPushConfiguration(apiToken, addHmsPushConfigurationData)
+> AddHmsPushConfigurationResponse addHmsPushConfiguration().apiToken(apiToken).addHmsPushConfigurationData(addHmsPushConfigurationData).execute();
 
 Add an HMS push configuration
 
@@ -213,7 +219,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         AddHmsPushConfigurationData addHmsPushConfigurationData = new AddHmsPushConfigurationData(); // AddHmsPushConfigurationData | 
         try {
-            AddHmsPushConfigurationResponse result = apiInstance.addHmsPushConfiguration(apiToken, addHmsPushConfigurationData);
+            AddHmsPushConfigurationResponse result = api.addHmsPushConfiguration()
+                .apiToken(apiToken)
+                .addHmsPushConfigurationData(addHmsPushConfigurationData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#addHmsPushConfiguration");
@@ -255,7 +264,7 @@ No authorization required
 
 ## addIpToWhitelist
 
-> AddIpToWhitelistResponse addIpToWhitelist(apiToken, addIpToWhitelistData)
+> AddIpToWhitelistResponse addIpToWhitelist().apiToken(apiToken).addIpToWhitelistData(addIpToWhitelistData).execute();
 
 Add an IP to a whitelist
 
@@ -284,7 +293,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         AddIpToWhitelistData addIpToWhitelistData = new AddIpToWhitelistData(); // AddIpToWhitelistData | 
         try {
-            AddIpToWhitelistResponse result = apiInstance.addIpToWhitelist(apiToken, addIpToWhitelistData);
+            AddIpToWhitelistResponse result = api.addIpToWhitelist()
+                .apiToken(apiToken)
+                .addIpToWhitelistData(addIpToWhitelistData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#addIpToWhitelist");
@@ -326,7 +338,7 @@ No authorization required
 
 ## banUsersInChannelsWithCustomChannelType
 
-> Object banUsersInChannelsWithCustomChannelType(apiToken, customType, banUsersInChannelsWithCustomChannelTypeData)
+> Object banUsersInChannelsWithCustomChannelType(customType).apiToken(apiToken).banUsersInChannelsWithCustomChannelTypeData(banUsersInChannelsWithCustomChannelTypeData).execute();
 
 Ban users in channels with a custom channel type
 
@@ -352,7 +364,10 @@ public class Example {
         String customType = "customType_example"; // String | 
         BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData = new BanUsersInChannelsWithCustomChannelTypeData(); // BanUsersInChannelsWithCustomChannelTypeData | 
         try {
-            Object result = apiInstance.banUsersInChannelsWithCustomChannelType(apiToken, customType, banUsersInChannelsWithCustomChannelTypeData);
+            Object result = api.banUsersInChannelsWithCustomChannelType(customType)
+                .apiToken(apiToken)
+                .banUsersInChannelsWithCustomChannelTypeData(banUsersInChannelsWithCustomChannelTypeData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#banUsersInChannelsWithCustomChannelType");
@@ -395,7 +410,7 @@ No authorization required
 
 ## configureAutoEventMessages
 
-> SendBirdAutoEventMessageSettings configureAutoEventMessages(apiToken, configureAutoEventData)
+> SendBirdAutoEventMessageSettings configureAutoEventMessages().apiToken(apiToken).configureAutoEventData(configureAutoEventData).execute();
 
 Configure auto event message settings
 
@@ -425,7 +440,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         ConfigureAutoEventData configureAutoEventData = new ConfigureAutoEventData(); // ConfigureAutoEventData | 
         try {
-            SendBirdAutoEventMessageSettings result = apiInstance.configureAutoEventMessages(apiToken, configureAutoEventData);
+            SendBirdAutoEventMessageSettings result = api.configureAutoEventMessages()
+                .apiToken(apiToken)
+                .configureAutoEventData(configureAutoEventData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#configureAutoEventMessages");
@@ -467,7 +485,7 @@ No authorization required
 
 ## deleteAllowedIpsFromWhitelist
 
-> DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist(apiToken, ipWhitelistAddresses)
+> DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist().apiToken(apiToken).ipWhitelistAddresses(ipWhitelistAddresses).execute();
 
 Delete allowed IPs from a whitelist
 
@@ -496,7 +514,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         List<String> ipWhitelistAddresses = Arrays.asList(); // List<String> | 
         try {
-            DeleteAllowedIpsFromWhitelistResponse result = apiInstance.deleteAllowedIpsFromWhitelist(apiToken, ipWhitelistAddresses);
+            DeleteAllowedIpsFromWhitelistResponse result = api.deleteAllowedIpsFromWhitelist()
+                .apiToken(apiToken)
+                .ipWhitelistAddresses(ipWhitelistAddresses)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#deleteAllowedIpsFromWhitelist");
@@ -538,7 +559,7 @@ No authorization required
 
 ## deleteApnsCertificateById
 
-> DeleteApnsCertificateByIdResponse deleteApnsCertificateById(apiToken, providerId)
+> DeleteApnsCertificateByIdResponse deleteApnsCertificateById(providerId).apiToken(apiToken).execute();
 
 Delete an APNs certificate
 
@@ -568,7 +589,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String providerId = "providerId_example"; // String | 
         try {
-            DeleteApnsCertificateByIdResponse result = apiInstance.deleteApnsCertificateById(apiToken, providerId);
+            DeleteApnsCertificateByIdResponse result = api.deleteApnsCertificateById(providerId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#deleteApnsCertificateById");
@@ -610,7 +633,7 @@ No authorization required
 
 ## generateSecondaryApiToken
 
-> GenerateSecondaryApiTokenResponse generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData)
+> GenerateSecondaryApiTokenResponse generateSecondaryApiToken().apiToken(apiToken).generateSecondaryApiTokenData(generateSecondaryApiTokenData).execute();
 
 Generate a secondary API token
 
@@ -639,7 +662,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         GenerateSecondaryApiTokenData generateSecondaryApiTokenData = new GenerateSecondaryApiTokenData(); // GenerateSecondaryApiTokenData | 
         try {
-            GenerateSecondaryApiTokenResponse result = apiInstance.generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData);
+            GenerateSecondaryApiTokenResponse result = api.generateSecondaryApiToken()
+                .apiToken(apiToken)
+                .generateSecondaryApiTokenData(generateSecondaryApiTokenData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#generateSecondaryApiToken");
@@ -681,7 +707,7 @@ No authorization required
 
 ## listAutoEventMessages
 
-> SendBirdAutoEventMessageSettings listAutoEventMessages(apiToken)
+> SendBirdAutoEventMessageSettings listAutoEventMessages().apiToken(apiToken).execute();
 
 List auto event messages
 
@@ -710,7 +736,9 @@ public class Example {
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdAutoEventMessageSettings result = apiInstance.listAutoEventMessages(apiToken);
+            SendBirdAutoEventMessageSettings result = api.listAutoEventMessages()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#listAutoEventMessages");
@@ -751,7 +779,7 @@ No authorization required
 
 ## listBannedUsersInChannelsWithCustomChannelType
 
-> CustomTypeListBannedUsersResponse listBannedUsersInChannelsWithCustomChannelType(apiToken, customType, token, limit)
+> CustomTypeListBannedUsersResponse listBannedUsersInChannelsWithCustomChannelType(customType).apiToken(apiToken).token(token).limit(limit).execute();
 
 List banned users in channels with a custom channel type
 
@@ -778,7 +806,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            CustomTypeListBannedUsersResponse result = apiInstance.listBannedUsersInChannelsWithCustomChannelType(apiToken, customType, token, limit);
+            CustomTypeListBannedUsersResponse result = api.listBannedUsersInChannelsWithCustomChannelType(customType)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#listBannedUsersInChannelsWithCustomChannelType");
@@ -822,7 +854,7 @@ No authorization required
 
 ## listMutedUsersInChannelsWithCustomChannelType
 
-> ListMutedUsersInChannelsWithCustomChannelType200Response listMutedUsersInChannelsWithCustomChannelType(apiToken, customType, token, limit)
+> ListMutedUsersInChannelsWithCustomChannelType200Response listMutedUsersInChannelsWithCustomChannelType(customType).apiToken(apiToken).token(token).limit(limit).execute();
 
 List muted users in channels with a custom channel type
 
@@ -849,7 +881,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListMutedUsersInChannelsWithCustomChannelType200Response result = apiInstance.listMutedUsersInChannelsWithCustomChannelType(apiToken, customType, token, limit);
+            ListMutedUsersInChannelsWithCustomChannelType200Response result = api.listMutedUsersInChannelsWithCustomChannelType(customType)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#listMutedUsersInChannelsWithCustomChannelType");
@@ -893,7 +929,7 @@ No authorization required
 
 ## listPushConfigurations
 
-> ListPushConfigurationsResponse listPushConfigurations(apiToken, pushType)
+> ListPushConfigurationsResponse listPushConfigurations(pushType).apiToken(apiToken).execute();
 
 List push configurations
 
@@ -923,7 +959,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String pushType = "pushType_example"; // String | 
         try {
-            ListPushConfigurationsResponse result = apiInstance.listPushConfigurations(apiToken, pushType);
+            ListPushConfigurationsResponse result = api.listPushConfigurations(pushType)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#listPushConfigurations");
@@ -965,7 +1003,7 @@ No authorization required
 
 ## listPushNotificationContentTemplates
 
-> ListPushNotificationContentTemplatesResponse listPushNotificationContentTemplates(apiToken)
+> ListPushNotificationContentTemplatesResponse listPushNotificationContentTemplates().apiToken(apiToken).execute();
 
 List push notification content templates
 
@@ -993,7 +1031,9 @@ public class Example {
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ListPushNotificationContentTemplatesResponse result = apiInstance.listPushNotificationContentTemplates(apiToken);
+            ListPushNotificationContentTemplatesResponse result = api.listPushNotificationContentTemplates()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#listPushNotificationContentTemplates");
@@ -1034,7 +1074,7 @@ No authorization required
 
 ## listSecondaryApiTokens
 
-> ListSecondaryApiTokensResponse listSecondaryApiTokens(apiToken)
+> ListSecondaryApiTokensResponse listSecondaryApiTokens().apiToken(apiToken).execute();
 
 List secondary API tokens
 
@@ -1062,7 +1102,9 @@ public class Example {
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ListSecondaryApiTokensResponse result = apiInstance.listSecondaryApiTokens(apiToken);
+            ListSecondaryApiTokensResponse result = api.listSecondaryApiTokens()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#listSecondaryApiTokens");
@@ -1103,7 +1145,7 @@ No authorization required
 
 ## muteUsersInChannelsWithCustomChannelType
 
-> Object muteUsersInChannelsWithCustomChannelType(apiToken, customType, muteUsersInChannelsWithCustomChannelTypeData)
+> Object muteUsersInChannelsWithCustomChannelType(customType).apiToken(apiToken).muteUsersInChannelsWithCustomChannelTypeData(muteUsersInChannelsWithCustomChannelTypeData).execute();
 
 Mute users in channels with a custom channel type
 
@@ -1129,7 +1171,10 @@ public class Example {
         String customType = "customType_example"; // String | 
         MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData = new MuteUsersInChannelsWithCustomChannelTypeData(); // MuteUsersInChannelsWithCustomChannelTypeData | 
         try {
-            Object result = apiInstance.muteUsersInChannelsWithCustomChannelType(apiToken, customType, muteUsersInChannelsWithCustomChannelTypeData);
+            Object result = api.muteUsersInChannelsWithCustomChannelType(customType)
+                .apiToken(apiToken)
+                .muteUsersInChannelsWithCustomChannelTypeData(muteUsersInChannelsWithCustomChannelTypeData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#muteUsersInChannelsWithCustomChannelType");
@@ -1172,7 +1217,7 @@ No authorization required
 
 ## removePushConfigurationById
 
-> RemovePushConfigurationByIdResponse removePushConfigurationById(apiToken, pushType, providerId)
+> RemovePushConfigurationByIdResponse removePushConfigurationById(pushType, providerId).apiToken(apiToken).execute();
 
 Remove a push configuration
 
@@ -1203,7 +1248,9 @@ public class Example {
         String pushType = "pushType_example"; // String | 
         String providerId = "providerId_example"; // String | 
         try {
-            RemovePushConfigurationByIdResponse result = apiInstance.removePushConfigurationById(apiToken, pushType, providerId);
+            RemovePushConfigurationByIdResponse result = api.removePushConfigurationById(pushType, providerId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#removePushConfigurationById");
@@ -1246,7 +1293,7 @@ No authorization required
 
 ## retrieveIpWhitelist
 
-> RetrieveIpWhitelistResponse retrieveIpWhitelist(apiToken)
+> RetrieveIpWhitelistResponse retrieveIpWhitelist().apiToken(apiToken).execute();
 
 Retrieve an IP whitelist
 
@@ -1276,7 +1323,9 @@ public class Example {
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            RetrieveIpWhitelistResponse result = apiInstance.retrieveIpWhitelist(apiToken);
+            RetrieveIpWhitelistResponse result = api.retrieveIpWhitelist()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#retrieveIpWhitelist");
@@ -1317,7 +1366,7 @@ No authorization required
 
 ## revokeSecondaryApiTokenByToken
 
-> RevokeSecondaryApiTokenByTokenResponse revokeSecondaryApiTokenByToken(apiToken, apiToken2)
+> RevokeSecondaryApiTokenByTokenResponse revokeSecondaryApiTokenByToken(apiToken2).apiToken(apiToken).execute();
 
 Revoke a secondary API token
 
@@ -1346,7 +1395,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String apiToken2 = "apiToken_example"; // String | 
         try {
-            RevokeSecondaryApiTokenByTokenResponse result = apiInstance.revokeSecondaryApiTokenByToken(apiToken, apiToken2);
+            RevokeSecondaryApiTokenByTokenResponse result = api.revokeSecondaryApiTokenByToken(apiToken2)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#revokeSecondaryApiTokenByToken");
@@ -1388,7 +1439,7 @@ No authorization required
 
 ## setDomainFilter
 
-> SendBirdChannelResponse setDomainFilter(apiToken, customType, setDomainFilterData)
+> SendBirdChannelResponse setDomainFilter(customType).apiToken(apiToken).setDomainFilterData(setDomainFilterData).execute();
 
 Message moderation
 
@@ -1414,7 +1465,10 @@ public class Example {
         String customType = "customType_example"; // String | 
         SetDomainFilterData setDomainFilterData = new SetDomainFilterData(); // SetDomainFilterData | 
         try {
-            SendBirdChannelResponse result = apiInstance.setDomainFilter(apiToken, customType, setDomainFilterData);
+            SendBirdChannelResponse result = api.setDomainFilter(customType)
+                .apiToken(apiToken)
+                .setDomainFilterData(setDomainFilterData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#setDomainFilter");
@@ -1457,7 +1511,7 @@ No authorization required
 
 ## unbanUsersInChannelsWithCustomChannelType
 
-> Object unbanUsersInChannelsWithCustomChannelType(apiToken, customType, userIds)
+> Object unbanUsersInChannelsWithCustomChannelType(customType).apiToken(apiToken).userIds(userIds).execute();
 
 Unban users in channels with a custom channel type
 
@@ -1483,7 +1537,10 @@ public class Example {
         String customType = "customType_example"; // String | 
         List<String> userIds = Arrays.asList(); // List<String> | 
         try {
-            Object result = apiInstance.unbanUsersInChannelsWithCustomChannelType(apiToken, customType, userIds);
+            Object result = api.unbanUsersInChannelsWithCustomChannelType(customType)
+                .apiToken(apiToken)
+                .userIds(userIds)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#unbanUsersInChannelsWithCustomChannelType");
@@ -1526,7 +1583,7 @@ No authorization required
 
 ## unmuteUsersInChannelsWithCustomChannelType
 
-> Object unmuteUsersInChannelsWithCustomChannelType(apiToken, customType, userIds)
+> Object unmuteUsersInChannelsWithCustomChannelType(customType).apiToken(apiToken).userIds(userIds).execute();
 
 Unmute users in channels with a custom channel type
 
@@ -1552,7 +1609,10 @@ public class Example {
         String customType = "customType_example"; // String | 
         List<String> userIds = Arrays.asList(); // List<String> | 
         try {
-            Object result = apiInstance.unmuteUsersInChannelsWithCustomChannelType(apiToken, customType, userIds);
+            Object result = api.unmuteUsersInChannelsWithCustomChannelType(customType)
+                .apiToken(apiToken)
+                .userIds(userIds)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#unmuteUsersInChannelsWithCustomChannelType");
@@ -1595,7 +1655,7 @@ No authorization required
 
 ## updateApnsPushConfigurationById
 
-> UpdateApnsPushConfigurationByIdResponse updateApnsPushConfigurationById(apiToken, providerId, updateApnsPushConfigurationByIdData)
+> UpdateApnsPushConfigurationByIdResponse updateApnsPushConfigurationById(providerId).apiToken(apiToken).updateApnsPushConfigurationByIdData(updateApnsPushConfigurationByIdData).execute();
 
 Update an APNs push configuration
 
@@ -1628,7 +1688,10 @@ public class Example {
         String providerId = "providerId_example"; // String | 
         UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData = new UpdateApnsPushConfigurationByIdData(); // UpdateApnsPushConfigurationByIdData | 
         try {
-            UpdateApnsPushConfigurationByIdResponse result = apiInstance.updateApnsPushConfigurationById(apiToken, providerId, updateApnsPushConfigurationByIdData);
+            UpdateApnsPushConfigurationByIdResponse result = api.updateApnsPushConfigurationById(providerId)
+                .apiToken(apiToken)
+                .updateApnsPushConfigurationByIdData(updateApnsPushConfigurationByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#updateApnsPushConfigurationById");
@@ -1671,7 +1734,7 @@ No authorization required
 
 ## updateDefaultChannelInvitationPreference
 
-> UpdateDefaultChannelInvitationPreferenceResponse updateDefaultChannelInvitationPreference(apiToken, updateDefaultChannelInvitationPreferenceData)
+> UpdateDefaultChannelInvitationPreferenceResponse updateDefaultChannelInvitationPreference().apiToken(apiToken).updateDefaultChannelInvitationPreferenceData(updateDefaultChannelInvitationPreferenceData).execute();
 
 Update default channel invitation preference
 
@@ -1702,7 +1765,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData = new UpdateDefaultChannelInvitationPreferenceData(); // UpdateDefaultChannelInvitationPreferenceData | 
         try {
-            UpdateDefaultChannelInvitationPreferenceResponse result = apiInstance.updateDefaultChannelInvitationPreference(apiToken, updateDefaultChannelInvitationPreferenceData);
+            UpdateDefaultChannelInvitationPreferenceResponse result = api.updateDefaultChannelInvitationPreference()
+                .apiToken(apiToken)
+                .updateDefaultChannelInvitationPreferenceData(updateDefaultChannelInvitationPreferenceData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#updateDefaultChannelInvitationPreference");
@@ -1744,7 +1810,7 @@ No authorization required
 
 ## updateFcmPushConfigurationById
 
-> UpdateFcmPushConfigurationByIdResponse updateFcmPushConfigurationById(apiToken, providerId, updateFcmPushConfigurationByIdData)
+> UpdateFcmPushConfigurationByIdResponse updateFcmPushConfigurationById(providerId).apiToken(apiToken).updateFcmPushConfigurationByIdData(updateFcmPushConfigurationByIdData).execute();
 
 Update a FCM push configuration
 
@@ -1775,7 +1841,10 @@ public class Example {
         String providerId = "providerId_example"; // String | 
         UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData = new UpdateFcmPushConfigurationByIdData(); // UpdateFcmPushConfigurationByIdData | 
         try {
-            UpdateFcmPushConfigurationByIdResponse result = apiInstance.updateFcmPushConfigurationById(apiToken, providerId, updateFcmPushConfigurationByIdData);
+            UpdateFcmPushConfigurationByIdResponse result = api.updateFcmPushConfigurationById(providerId)
+                .apiToken(apiToken)
+                .updateFcmPushConfigurationByIdData(updateFcmPushConfigurationByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#updateFcmPushConfigurationById");
@@ -1818,7 +1887,7 @@ No authorization required
 
 ## updateHmsPushConfigurationById
 
-> UpdateHmsPushConfigurationByIdResponse updateHmsPushConfigurationById(apiToken, providerId, updateHmsPushConfigurationByIdData)
+> UpdateHmsPushConfigurationByIdResponse updateHmsPushConfigurationById(providerId).apiToken(apiToken).updateHmsPushConfigurationByIdData(updateHmsPushConfigurationByIdData).execute();
 
 Update an HMS push configuration
 
@@ -1849,7 +1918,10 @@ public class Example {
         String providerId = "providerId_example"; // String | 
         UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData = new UpdateHmsPushConfigurationByIdData(); // UpdateHmsPushConfigurationByIdData | 
         try {
-            UpdateHmsPushConfigurationByIdResponse result = apiInstance.updateHmsPushConfigurationById(apiToken, providerId, updateHmsPushConfigurationByIdData);
+            UpdateHmsPushConfigurationByIdResponse result = api.updateHmsPushConfigurationById(providerId)
+                .apiToken(apiToken)
+                .updateHmsPushConfigurationByIdData(updateHmsPushConfigurationByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#updateHmsPushConfigurationById");
@@ -1892,7 +1964,7 @@ No authorization required
 
 ## updatePushNotificationContentTemplate
 
-> UpdatePushNotificationContentTemplateResponse updatePushNotificationContentTemplate(apiToken, templateName, updatePushNotificationContentTemplateData)
+> UpdatePushNotificationContentTemplateResponse updatePushNotificationContentTemplate(templateName).apiToken(apiToken).updatePushNotificationContentTemplateData(updatePushNotificationContentTemplateData).execute();
 
 Update a push notification content template
 
@@ -1923,7 +1995,10 @@ public class Example {
         String templateName = "templateName_example"; // String | 
         UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData = new UpdatePushNotificationContentTemplateData(); // UpdatePushNotificationContentTemplateData | 
         try {
-            UpdatePushNotificationContentTemplateResponse result = apiInstance.updatePushNotificationContentTemplate(apiToken, templateName, updatePushNotificationContentTemplateData);
+            UpdatePushNotificationContentTemplateResponse result = api.updatePushNotificationContentTemplate(templateName)
+                .apiToken(apiToken)
+                .updatePushNotificationContentTemplateData(updatePushNotificationContentTemplateData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#updatePushNotificationContentTemplate");
@@ -1966,7 +2041,7 @@ No authorization required
 
 ## viewDefaultChannelInvitationPreference
 
-> ViewDefaultChannelInvitationPreferenceResponse viewDefaultChannelInvitationPreference(apiToken)
+> ViewDefaultChannelInvitationPreferenceResponse viewDefaultChannelInvitationPreference().apiToken(apiToken).execute();
 
 View default channel invitation preference
 
@@ -1996,7 +2071,9 @@ public class Example {
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ViewDefaultChannelInvitationPreferenceResponse result = apiInstance.viewDefaultChannelInvitationPreference(apiToken);
+            ViewDefaultChannelInvitationPreferenceResponse result = api.viewDefaultChannelInvitationPreference()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#viewDefaultChannelInvitationPreference");
@@ -2037,7 +2114,7 @@ No authorization required
 
 ## viewPushConfigurationById
 
-> ViewPushConfigurationByIdResponse viewPushConfigurationById(apiToken, pushType, providerId)
+> ViewPushConfigurationByIdResponse viewPushConfigurationById(pushType, providerId).apiToken(apiToken).execute();
 
 View a push configuration
 
@@ -2068,7 +2145,9 @@ public class Example {
         String pushType = "pushType_example"; // String | 
         String providerId = "providerId_example"; // String | 
         try {
-            ViewPushConfigurationByIdResponse result = apiInstance.viewPushConfigurationById(apiToken, pushType, providerId);
+            ViewPushConfigurationByIdResponse result = api.viewPushConfigurationById(pushType, providerId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#viewPushConfigurationById");
@@ -2111,7 +2190,7 @@ No authorization required
 
 ## viewPushNotificationContentTemplate
 
-> ViewPushNotificationContentTemplateResponse viewPushNotificationContentTemplate(apiToken, templateName)
+> ViewPushNotificationContentTemplateResponse viewPushNotificationContentTemplate(templateName).apiToken(apiToken).execute();
 
 View a push notification content template
 
@@ -2141,7 +2220,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String templateName = "templateName_example"; // String | 
         try {
-            ViewPushNotificationContentTemplateResponse result = apiInstance.viewPushNotificationContentTemplate(apiToken, templateName);
+            ViewPushNotificationContentTemplateResponse result = api.viewPushNotificationContentTemplate(templateName)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#viewPushNotificationContentTemplate");
@@ -2183,7 +2264,7 @@ No authorization required
 
 ## viewSecondaryApiTokenByToken
 
-> ViewSecondaryApiTokenByTokenResponse viewSecondaryApiTokenByToken(apiToken, apiToken2)
+> ViewSecondaryApiTokenByTokenResponse viewSecondaryApiTokenByToken(apiToken2).apiToken(apiToken).execute();
 
 View a secondary API token
 
@@ -2212,7 +2293,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String apiToken2 = "apiToken_example"; // String | 
         try {
-            ViewSecondaryApiTokenByTokenResponse result = apiInstance.viewSecondaryApiTokenByToken(apiToken, apiToken2);
+            ViewSecondaryApiTokenByTokenResponse result = api.viewSecondaryApiTokenByToken(apiToken2)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApplicationApi#viewSecondaryApiTokenByToken");

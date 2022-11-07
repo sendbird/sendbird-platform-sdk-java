@@ -11,7 +11,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## chooseWhichEventsToSubscribeTo
 
-> ChooseWhichEventsToSubscribeToResponse chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData)
+> ChooseWhichEventsToSubscribeToResponse chooseWhichEventsToSubscribeTo().apiToken(apiToken).chooseWhichEventsToSubscribeToData(chooseWhichEventsToSubscribeToData).execute();
 
 Choose which events to subscribe to
 
@@ -40,7 +40,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData = new ChooseWhichEventsToSubscribeToData(); // ChooseWhichEventsToSubscribeToData | 
         try {
-            ChooseWhichEventsToSubscribeToResponse result = apiInstance.chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData);
+            ChooseWhichEventsToSubscribeToResponse result = api.chooseWhichEventsToSubscribeTo()
+                .apiToken(apiToken)
+                .chooseWhichEventsToSubscribeToData(chooseWhichEventsToSubscribeToData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WebhookApi#chooseWhichEventsToSubscribeTo");
@@ -82,7 +85,7 @@ No authorization required
 
 ## retrieveListOfSubscribedEvents
 
-> RetrieveListOfSubscribedEventsResponse retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories)
+> RetrieveListOfSubscribedEventsResponse retrieveListOfSubscribedEvents().apiToken(apiToken).displayAllWebhookCategories(displayAllWebhookCategories).execute();
 
 Retrieve a list of subscribed events
 
@@ -112,7 +115,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean displayAllWebhookCategories = true; // Boolean | 
         try {
-            RetrieveListOfSubscribedEventsResponse result = apiInstance.retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories);
+            RetrieveListOfSubscribedEventsResponse result = api.retrieveListOfSubscribedEvents()
+                .apiToken(apiToken)
+                .displayAllWebhookCategories(displayAllWebhookCategories)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WebhookApi#retrieveListOfSubscribedEvents");

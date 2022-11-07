@@ -20923,4 +20923,5 @@ components:
         created_at:
           type: number
       type: object
+x-group-parameters: true
 

@@ -39,7 +39,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## addEmojiCategories
 
-> AddEmojiCategoriesResponse addEmojiCategories(apiToken, body)
+> AddEmojiCategoriesResponse addEmojiCategories().apiToken(apiToken).body(body).execute();
 
 Add emoji categories
 
@@ -68,7 +68,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         Object body = null; // Object | 
         try {
-            AddEmojiCategoriesResponse result = apiInstance.addEmojiCategories(apiToken, body);
+            AddEmojiCategoriesResponse result = api.addEmojiCategories()
+                .apiToken(apiToken)
+                .body(body)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#addEmojiCategories");
@@ -110,7 +113,7 @@ No authorization required
 
 ## addEmojis
 
-> AddEmojisResponse addEmojis(apiToken, addEmojisData)
+> AddEmojisResponse addEmojis().apiToken(apiToken).addEmojisData(addEmojisData).execute();
 
 Add emojis
 
@@ -139,7 +142,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         AddEmojisData addEmojisData = new AddEmojisData(); // AddEmojisData | 
         try {
-            AddEmojisResponse result = apiInstance.addEmojis(apiToken, addEmojisData);
+            AddEmojisResponse result = api.addEmojis()
+                .apiToken(apiToken)
+                .addEmojisData(addEmojisData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#addEmojis");
@@ -181,7 +187,7 @@ No authorization required
 
 ## addExtraDataToMessage
 
-> AddExtraDataToMessageResponse addExtraDataToMessage(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData)
+> AddExtraDataToMessageResponse addExtraDataToMessage(channelType, channelUrl, messageId).apiToken(apiToken).addExtraDataToMessageData(addExtraDataToMessageData).execute();
 
 Add extra data to a message
 
@@ -214,7 +220,10 @@ public class Example {
         String messageId = "messageId_example"; // String | 
         AddExtraDataToMessageData addExtraDataToMessageData = new AddExtraDataToMessageData(); // AddExtraDataToMessageData | 
         try {
-            AddExtraDataToMessageResponse result = apiInstance.addExtraDataToMessage(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData);
+            AddExtraDataToMessageResponse result = api.addExtraDataToMessage(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .addExtraDataToMessageData(addExtraDataToMessageData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#addExtraDataToMessage");
@@ -259,7 +268,7 @@ No authorization required
 
 ## addReactionToAMessage
 
-> AddReactionToAMessageResponse addReactionToAMessage(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData)
+> AddReactionToAMessageResponse addReactionToAMessage(channelType, channelUrl, messageId).apiToken(apiToken).addReactionToAMessageData(addReactionToAMessageData).execute();
 
 Add a reaction to a message
 
@@ -294,7 +303,10 @@ public class Example {
         String messageId = "messageId_example"; // String | 
         AddReactionToAMessageData addReactionToAMessageData = new AddReactionToAMessageData(); // AddReactionToAMessageData | 
         try {
-            AddReactionToAMessageResponse result = apiInstance.addReactionToAMessage(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData);
+            AddReactionToAMessageResponse result = api.addReactionToAMessage(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .addReactionToAMessageData(addReactionToAMessageData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#addReactionToAMessage");
@@ -339,7 +351,7 @@ No authorization required
 
 ## deleteEmojiByKey
 
-> deleteEmojiByKey(apiToken, emojiKey)
+> deleteEmojiByKey(emojiKey).apiToken(apiToken).execute();
 
 Delete an emoji
 
@@ -369,7 +381,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiKey = "emojiKey_example"; // String | 
         try {
-            apiInstance.deleteEmojiByKey(apiToken, emojiKey);
+            api.deleteEmojiByKey(emojiKey)
+                .apiToken(apiToken)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#deleteEmojiByKey");
             System.err.println("Status code: " + e.getCode());
@@ -410,7 +424,7 @@ No authorization required
 
 ## deleteEmojiCategoryById
 
-> Object deleteEmojiCategoryById(apiToken, emojiCategoryId)
+> Object deleteEmojiCategoryById(emojiCategoryId).apiToken(apiToken).execute();
 
 Delete an emoji category
 
@@ -440,7 +454,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiCategoryId = "emojiCategoryId_example"; // String | 
         try {
-            Object result = apiInstance.deleteEmojiCategoryById(apiToken, emojiCategoryId);
+            Object result = api.deleteEmojiCategoryById(emojiCategoryId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#deleteEmojiCategoryById");
@@ -482,7 +498,7 @@ No authorization required
 
 ## deleteMessageById
 
-> Object deleteMessageById(apiToken, channelType, channelUrl, messageId)
+> Object deleteMessageById(channelType, channelUrl, messageId).apiToken(apiToken).execute();
 
 Delete a message
 
@@ -514,7 +530,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
         try {
-            Object result = apiInstance.deleteMessageById(apiToken, channelType, channelUrl, messageId);
+            Object result = api.deleteMessageById(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#deleteMessageById");
@@ -558,7 +576,7 @@ No authorization required
 
 ## enableReactions
 
-> EnableReactionsResponse enableReactions(apiToken, enableReactionsData)
+> EnableReactionsResponse enableReactions().apiToken(apiToken).enableReactionsData(enableReactionsData).execute();
 
 Enable reactions
 
@@ -589,7 +607,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         EnableReactionsData enableReactionsData = new EnableReactionsData(); // EnableReactionsData | 
         try {
-            EnableReactionsResponse result = apiInstance.enableReactions(apiToken, enableReactionsData);
+            EnableReactionsResponse result = api.enableReactions()
+                .apiToken(apiToken)
+                .enableReactionsData(enableReactionsData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#enableReactions");
@@ -631,7 +652,7 @@ No authorization required
 
 ## gcMarkAllMessagesAsDelivered
 
-> GcMarkAllMessagesAsDeliveredResponse gcMarkAllMessagesAsDelivered(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData)
+> GcMarkAllMessagesAsDeliveredResponse gcMarkAllMessagesAsDelivered(channelUrl).apiToken(apiToken).gcMarkAllMessagesAsDeliveredData(gcMarkAllMessagesAsDeliveredData).execute();
 
 Mark all messages as delivered
 
@@ -662,7 +683,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData = new GcMarkAllMessagesAsDeliveredData(); // GcMarkAllMessagesAsDeliveredData | 
         try {
-            GcMarkAllMessagesAsDeliveredResponse result = apiInstance.gcMarkAllMessagesAsDelivered(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData);
+            GcMarkAllMessagesAsDeliveredResponse result = api.gcMarkAllMessagesAsDelivered(channelUrl)
+                .apiToken(apiToken)
+                .gcMarkAllMessagesAsDeliveredData(gcMarkAllMessagesAsDeliveredData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#gcMarkAllMessagesAsDelivered");
@@ -705,7 +729,7 @@ No authorization required
 
 ## gcMarkAllMessagesAsRead
 
-> Object gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData)
+> Object gcMarkAllMessagesAsRead(channelUrl).apiToken(apiToken).gcMarkAllMessagesAsReadData(gcMarkAllMessagesAsReadData).execute();
 
 Mark all messages as read
 
@@ -736,7 +760,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData = new GcMarkAllMessagesAsReadData(); // GcMarkAllMessagesAsReadData | 
         try {
-            Object result = apiInstance.gcMarkAllMessagesAsRead(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
+            Object result = api.gcMarkAllMessagesAsRead(channelUrl)
+                .apiToken(apiToken)
+                .gcMarkAllMessagesAsReadData(gcMarkAllMessagesAsReadData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#gcMarkAllMessagesAsRead");
@@ -779,7 +806,7 @@ No authorization required
 
 ## gcViewNumberOfEachMembersUnreadMessages
 
-> GcViewNumberOfEachMembersUnreadMessagesResponse gcViewNumberOfEachMembersUnreadMessages(apiToken, channelUrl, userIds)
+> GcViewNumberOfEachMembersUnreadMessagesResponse gcViewNumberOfEachMembersUnreadMessages(channelUrl).apiToken(apiToken).userIds(userIds).execute();
 
 View number of each member&#39;s unread messages
 
@@ -810,7 +837,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String userIds = "userIds_example"; // String | 
         try {
-            GcViewNumberOfEachMembersUnreadMessagesResponse result = apiInstance.gcViewNumberOfEachMembersUnreadMessages(apiToken, channelUrl, userIds);
+            GcViewNumberOfEachMembersUnreadMessagesResponse result = api.gcViewNumberOfEachMembersUnreadMessages(channelUrl)
+                .apiToken(apiToken)
+                .userIds(userIds)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#gcViewNumberOfEachMembersUnreadMessages");
@@ -853,7 +883,7 @@ No authorization required
 
 ## getEmojiByKey
 
-> SendBirdEmoji getEmojiByKey(apiToken, emojiKey)
+> SendBirdEmoji getEmojiByKey(emojiKey).apiToken(apiToken).execute();
 
 Get an emoji
 
@@ -883,7 +913,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiKey = "emojiKey_example"; // String | 
         try {
-            SendBirdEmoji result = apiInstance.getEmojiByKey(apiToken, emojiKey);
+            SendBirdEmoji result = api.getEmojiByKey(emojiKey)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#getEmojiByKey");
@@ -925,7 +957,7 @@ No authorization required
 
 ## getEmojiCategoryById
 
-> SendBirdEmojiCategory getEmojiCategoryById(apiToken, emojiCategoryId)
+> SendBirdEmojiCategory getEmojiCategoryById(emojiCategoryId).apiToken(apiToken).execute();
 
 Get an emoji category
 
@@ -959,7 +991,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiCategoryId = "emojiCategoryId_example"; // String | 
         try {
-            SendBirdEmojiCategory result = apiInstance.getEmojiCategoryById(apiToken, emojiCategoryId);
+            SendBirdEmojiCategory result = api.getEmojiCategoryById(emojiCategoryId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#getEmojiCategoryById");
@@ -1001,7 +1035,7 @@ No authorization required
 
 ## listAllEmojisAndEmojiCategories
 
-> ListAllEmojisAndEmojiCategoriesResponse listAllEmojisAndEmojiCategories(apiToken)
+> ListAllEmojisAndEmojiCategoriesResponse listAllEmojisAndEmojiCategories().apiToken(apiToken).execute();
 
 List all emojis and emoji categories
 
@@ -1029,7 +1063,9 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ListAllEmojisAndEmojiCategoriesResponse result = apiInstance.listAllEmojisAndEmojiCategories(apiToken);
+            ListAllEmojisAndEmojiCategoriesResponse result = api.listAllEmojisAndEmojiCategories()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#listAllEmojisAndEmojiCategories");
@@ -1070,7 +1106,7 @@ No authorization required
 
 ## listAnnouncements
 
-> ListAnnouncementsResponse listAnnouncements(apiToken, token, limit, order, status, announcementGroup)
+> ListAnnouncementsResponse listAnnouncements().apiToken(apiToken).token(token).limit(limit).order(order).status(status).announcementGroup(announcementGroup).execute();
 
 List announcements
 
@@ -1104,7 +1140,14 @@ public class Example {
         String status = "status_example"; // String | 
         String announcementGroup = "announcementGroup_example"; // String | 
         try {
-            ListAnnouncementsResponse result = apiInstance.listAnnouncements(apiToken, token, limit, order, status, announcementGroup);
+            ListAnnouncementsResponse result = api.listAnnouncements()
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .order(order)
+                .status(status)
+                .announcementGroup(announcementGroup)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#listAnnouncements");
@@ -1150,7 +1193,7 @@ No authorization required
 
 ## listEmojis
 
-> ListEmojisResponse listEmojis(apiToken)
+> ListEmojisResponse listEmojis().apiToken(apiToken).execute();
 
 List emojis
 
@@ -1178,7 +1221,9 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ListEmojisResponse result = apiInstance.listEmojis(apiToken);
+            ListEmojisResponse result = api.listEmojis()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#listEmojis");
@@ -1219,7 +1264,7 @@ No authorization required
 
 ## listMessages
 
-> ListMessagesResponse listMessages(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray)
+> ListMessagesResponse listMessages(channelType, channelUrl).apiToken(apiToken).messageTs(messageTs).messageId(messageId).prevLimit(prevLimit).nextLimit(nextLimit).include(include).reverse(reverse).senderId(senderId).senderIds(senderIds).operatorFilter(operatorFilter).customTypes(customTypes).messageType(messageType).includingRemoved(includingRemoved).includeReactions(includeReactions).withSortedMetaArray(withSortedMetaArray).showSubchannelMessagesOnly(showSubchannelMessagesOnly).userId(userId).customType(customType).withMetaArray(withMetaArray).execute();
 
 List messages
 
@@ -1277,7 +1322,27 @@ public class Example {
         String customType = "customType_example"; // String | 
         Boolean withMetaArray = true; // Boolean | 
         try {
-            ListMessagesResponse result = apiInstance.listMessages(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+            ListMessagesResponse result = api.listMessages(channelType, channelUrl)
+                .apiToken(apiToken)
+                .messageTs(messageTs)
+                .messageId(messageId)
+                .prevLimit(prevLimit)
+                .nextLimit(nextLimit)
+                .include(include)
+                .reverse(reverse)
+                .senderId(senderId)
+                .senderIds(senderIds)
+                .operatorFilter(operatorFilter)
+                .customTypes(customTypes)
+                .messageType(messageType)
+                .includingRemoved(includingRemoved)
+                .includeReactions(includeReactions)
+                .withSortedMetaArray(withSortedMetaArray)
+                .showSubchannelMessagesOnly(showSubchannelMessagesOnly)
+                .userId(userId)
+                .customType(customType)
+                .withMetaArray(withMetaArray)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#listMessages");
@@ -1338,7 +1403,7 @@ No authorization required
 
 ## listReactionsOfMessage
 
-> ListReactionsOfMessageResponse listReactionsOfMessage(apiToken, channelType, channelUrl, messageId, listUsers)
+> ListReactionsOfMessageResponse listReactionsOfMessage(channelType, channelUrl, messageId).apiToken(apiToken).listUsers(listUsers).execute();
 
 List reactions of a message
 
@@ -1383,7 +1448,10 @@ public class Example {
         String messageId = "messageId_example"; // String | 
         Boolean listUsers = true; // Boolean | 
         try {
-            ListReactionsOfMessageResponse result = apiInstance.listReactionsOfMessage(apiToken, channelType, channelUrl, messageId, listUsers);
+            ListReactionsOfMessageResponse result = api.listReactionsOfMessage(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .listUsers(listUsers)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#listReactionsOfMessage");
@@ -1428,7 +1496,7 @@ No authorization required
 
 ## migrateMessagesByUrl
 
-> migrateMessagesByUrl(apiToken, targetChannelUrl, body)
+> migrateMessagesByUrl(targetChannelUrl).apiToken(apiToken).body(body).execute();
 
 Migrate messages
 
@@ -1467,7 +1535,10 @@ public class Example {
         String targetChannelUrl = "targetChannelUrl_example"; // String | 
         Object body = null; // Object | 
         try {
-            apiInstance.migrateMessagesByUrl(apiToken, targetChannelUrl, body);
+            api.migrateMessagesByUrl(targetChannelUrl)
+                .apiToken(apiToken)
+                .body(body)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#migrateMessagesByUrl");
             System.err.println("Status code: " + e.getCode());
@@ -1509,7 +1580,7 @@ No authorization required
 
 ## removeExtraDataFromMessage
 
-> Object removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys)
+> Object removeExtraDataFromMessage(channelType, channelUrl, messageId).apiToken(apiToken).keys(keys).execute();
 
 Remove extra data from a message
 
@@ -1542,7 +1613,10 @@ public class Example {
         String messageId = "messageId_example"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
-            Object result = apiInstance.removeExtraDataFromMessage(apiToken, channelType, channelUrl, messageId, keys);
+            Object result = api.removeExtraDataFromMessage(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .keys(keys)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#removeExtraDataFromMessage");
@@ -1587,7 +1661,7 @@ No authorization required
 
 ## removeReactionFromAMessage
 
-> RemoveReactionFromAMessageResponse removeReactionFromAMessage(apiToken, channelType, channelUrl, messageId, userId, reaction)
+> RemoveReactionFromAMessageResponse removeReactionFromAMessage(channelType, channelUrl, messageId).apiToken(apiToken).userId(userId).reaction(reaction).execute();
 
 Remove a reaction from a message
 
@@ -1623,7 +1697,11 @@ public class Example {
         String userId = "userId_example"; // String | 
         String reaction = "reaction_example"; // String | 
         try {
-            RemoveReactionFromAMessageResponse result = apiInstance.removeReactionFromAMessage(apiToken, channelType, channelUrl, messageId, userId, reaction);
+            RemoveReactionFromAMessageResponse result = api.removeReactionFromAMessage(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .userId(userId)
+                .reaction(reaction)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#removeReactionFromAMessage");
@@ -1669,7 +1747,7 @@ No authorization required
 
 ## sendMessage
 
-> SendBirdMessageResponse sendMessage(apiToken, channelType, channelUrl, sendMessageData)
+> SendBirdMessageResponse sendMessage(channelType, channelUrl).apiToken(apiToken).sendMessageData(sendMessageData).execute();
 
 Send a message
 
@@ -1703,7 +1781,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         SendMessageData sendMessageData = new SendMessageData(); // SendMessageData | 
         try {
-            SendBirdMessageResponse result = apiInstance.sendMessage(apiToken, channelType, channelUrl, sendMessageData);
+            SendBirdMessageResponse result = api.sendMessage(channelType, channelUrl)
+                .apiToken(apiToken)
+                .sendMessageData(sendMessageData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#sendMessage");
@@ -1747,7 +1828,7 @@ No authorization required
 
 ## translateMessageIntoOtherLanguages
 
-> SendBirdMessageResponse translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData)
+> SendBirdMessageResponse translateMessageIntoOtherLanguages(channelType, channelUrl, messageId).apiToken(apiToken).translateMessageIntoOtherLanguagesData(translateMessageIntoOtherLanguagesData).execute();
 
 Translate a message into other languages
 
@@ -1782,7 +1863,10 @@ public class Example {
         String messageId = "messageId_example"; // String | 
         TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData = new TranslateMessageIntoOtherLanguagesData(); // TranslateMessageIntoOtherLanguagesData | 
         try {
-            SendBirdMessageResponse result = apiInstance.translateMessageIntoOtherLanguages(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
+            SendBirdMessageResponse result = api.translateMessageIntoOtherLanguages(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .translateMessageIntoOtherLanguagesData(translateMessageIntoOtherLanguagesData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#translateMessageIntoOtherLanguages");
@@ -1827,7 +1911,7 @@ No authorization required
 
 ## updateEmojiCategoryUrlById
 
-> SendBirdEmojiCategory updateEmojiCategoryUrlById(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData)
+> SendBirdEmojiCategory updateEmojiCategoryUrlById(emojiCategoryId).apiToken(apiToken).updateEmojiCategoryUrlByIdData(updateEmojiCategoryUrlByIdData).execute();
 
 Update an emoji category URL
 
@@ -1858,7 +1942,10 @@ public class Example {
         String emojiCategoryId = "emojiCategoryId_example"; // String | 
         UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData = new UpdateEmojiCategoryUrlByIdData(); // UpdateEmojiCategoryUrlByIdData | 
         try {
-            SendBirdEmojiCategory result = apiInstance.updateEmojiCategoryUrlById(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData);
+            SendBirdEmojiCategory result = api.updateEmojiCategoryUrlById(emojiCategoryId)
+                .apiToken(apiToken)
+                .updateEmojiCategoryUrlByIdData(updateEmojiCategoryUrlByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#updateEmojiCategoryUrlById");
@@ -1901,7 +1988,7 @@ No authorization required
 
 ## updateEmojiUrlByKey
 
-> SendBirdEmoji updateEmojiUrlByKey(apiToken, emojiKey, updateEmojiUrlByKeyData)
+> SendBirdEmoji updateEmojiUrlByKey(emojiKey).apiToken(apiToken).updateEmojiUrlByKeyData(updateEmojiUrlByKeyData).execute();
 
 Update an emoji URL
 
@@ -1932,7 +2019,10 @@ public class Example {
         String emojiKey = "emojiKey_example"; // String | 
         UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData = new UpdateEmojiUrlByKeyData(); // UpdateEmojiUrlByKeyData | 
         try {
-            SendBirdEmoji result = apiInstance.updateEmojiUrlByKey(apiToken, emojiKey, updateEmojiUrlByKeyData);
+            SendBirdEmoji result = api.updateEmojiUrlByKey(emojiKey)
+                .apiToken(apiToken)
+                .updateEmojiUrlByKeyData(updateEmojiUrlByKeyData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#updateEmojiUrlByKey");
@@ -1975,7 +2065,7 @@ No authorization required
 
 ## updateExtraDataInMessage
 
-> UpdateExtraDataInMessageResponse updateExtraDataInMessage(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData)
+> UpdateExtraDataInMessageResponse updateExtraDataInMessage(channelType, channelUrl, messageId).apiToken(apiToken).updateExtraDataInMessageData(updateExtraDataInMessageData).execute();
 
 Update extra data in a message
 
@@ -2008,7 +2098,10 @@ public class Example {
         String messageId = "messageId_example"; // String | 
         UpdateExtraDataInMessageData updateExtraDataInMessageData = new UpdateExtraDataInMessageData(); // UpdateExtraDataInMessageData | 
         try {
-            UpdateExtraDataInMessageResponse result = apiInstance.updateExtraDataInMessage(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData);
+            UpdateExtraDataInMessageResponse result = api.updateExtraDataInMessage(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .updateExtraDataInMessageData(updateExtraDataInMessageData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#updateExtraDataInMessage");
@@ -2053,7 +2146,7 @@ No authorization required
 
 ## updateMessageById
 
-> SendBirdMessageResponse updateMessageById(apiToken, channelType, channelUrl, messageId, updateMessageByIdData)
+> SendBirdMessageResponse updateMessageById(channelType, channelUrl, messageId).apiToken(apiToken).updateMessageByIdData(updateMessageByIdData).execute();
 
 Update a message
 
@@ -2086,7 +2179,10 @@ public class Example {
         String messageId = "messageId_example"; // String | 
         UpdateMessageByIdData updateMessageByIdData = new UpdateMessageByIdData(); // UpdateMessageByIdData | 
         try {
-            SendBirdMessageResponse result = apiInstance.updateMessageById(apiToken, channelType, channelUrl, messageId, updateMessageByIdData);
+            SendBirdMessageResponse result = api.updateMessageById(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .updateMessageByIdData(updateMessageByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#updateMessageById");
@@ -2131,7 +2227,7 @@ No authorization required
 
 ## useDefaultEmojis
 
-> UseDefaultEmojisResponse useDefaultEmojis(apiToken, useDefaultEmojisData)
+> UseDefaultEmojisResponse useDefaultEmojis().apiToken(apiToken).useDefaultEmojisData(useDefaultEmojisData).execute();
 
 Use default emojis
 
@@ -2160,7 +2256,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         UseDefaultEmojisData useDefaultEmojisData = new UseDefaultEmojisData(); // UseDefaultEmojisData | 
         try {
-            UseDefaultEmojisResponse result = apiInstance.useDefaultEmojis(apiToken, useDefaultEmojisData);
+            UseDefaultEmojisResponse result = api.useDefaultEmojis()
+                .apiToken(apiToken)
+                .useDefaultEmojisData(useDefaultEmojisData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#useDefaultEmojis");
@@ -2202,7 +2301,7 @@ No authorization required
 
 ## viewMessageById
 
-> SendBirdMessageResponse viewMessageById(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray)
+> SendBirdMessageResponse viewMessageById(channelType, channelUrl, messageId).apiToken(apiToken).withSortedMetaArray(withSortedMetaArray).withMetaArray(withMetaArray).execute();
 
 View a message
 
@@ -2246,7 +2345,11 @@ public class Example {
         Boolean withSortedMetaArray = true; // Boolean | 
         Boolean withMetaArray = true; // Boolean | 
         try {
-            SendBirdMessageResponse result = apiInstance.viewMessageById(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray);
+            SendBirdMessageResponse result = api.viewMessageById(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .withSortedMetaArray(withSortedMetaArray)
+                .withMetaArray(withMetaArray)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#viewMessageById");
@@ -2292,7 +2395,7 @@ No authorization required
 
 ## viewTotalNumberOfMessagesInChannel
 
-> ViewTotalNumberOfMessagesInChannelResponse viewTotalNumberOfMessagesInChannel(apiToken, channelType, channelUrl)
+> ViewTotalNumberOfMessagesInChannelResponse viewTotalNumberOfMessagesInChannel(channelType, channelUrl).apiToken(apiToken).execute();
 
 View total number of messages in a channel
 
@@ -2323,7 +2426,9 @@ public class Example {
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
-            ViewTotalNumberOfMessagesInChannelResponse result = apiInstance.viewTotalNumberOfMessagesInChannel(apiToken, channelType, channelUrl);
+            ViewTotalNumberOfMessagesInChannelResponse result = api.viewTotalNumberOfMessagesInChannel(channelType, channelUrl)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#viewTotalNumberOfMessagesInChannel");

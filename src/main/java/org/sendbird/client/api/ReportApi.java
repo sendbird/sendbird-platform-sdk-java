@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class ReportApi {
   private ApiClient apiClient;
 
@@ -54,43 +54,8 @@ public class ReportApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * List reports
-   * ## List reports  Retrieves a list of reports within an application regardless of object types.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param startTs  (optional)
-   * @param endTs  (optional)
-   * @return ListReportsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListReportsResponse listReports(String apiToken, String token, Integer limit, Integer startTs, Integer endTs) throws ApiException {
-    return listReportsWithHttpInfo(apiToken, token, limit, startTs, endTs).getData();
-  }
 
-  /**
-   * List reports
-   * ## List reports  Retrieves a list of reports within an application regardless of object types.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param startTs  (optional)
-   * @param endTs  (optional)
-   * @return ApiResponse&lt;ListReportsResponse&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<ListReportsResponse> listReportsWithHttpInfo(String apiToken, String token, Integer limit, Integer startTs, Integer endTs) throws ApiException {
+private ApiResponse<ListReportsResponse> listReportsWithHttpInfo(String apiToken, String token, Integer limit, Integer startTs, Integer endTs) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -135,43 +100,112 @@ public class ReportApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List reports on a channel
-   * ## List reports on a channel  Retrieves a list of reports on a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-channel ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which is reported for offensive messages or inappropriate activities.
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListReportsOnChannelByUrlResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListReportsOnChannelByUrlResponse listReportsOnChannelByUrl(String apiToken, String channelType, String channelUrl, String token, Integer limit) throws ApiException {
-    return listReportsOnChannelByUrlWithHttpInfo(apiToken, channelType, channelUrl, token, limit).getData();
+
+  public class APIlistReportsRequest {
+    private String apiToken;
+    private String token;
+    private Integer limit;
+    private Integer startTs;
+    private Integer endTs;
+
+    private APIlistReportsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistReportsRequest
+     */
+    public APIlistReportsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistReportsRequest
+     */
+    public APIlistReportsRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistReportsRequest
+     */
+    public APIlistReportsRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Set startTs
+     * @param startTs  (optional)
+     * @return APIlistReportsRequest
+     */
+    public APIlistReportsRequest startTs(Integer startTs) {
+      this.startTs = startTs;
+      return this;
+    }
+
+    /**
+     * Set endTs
+     * @param endTs  (optional)
+     * @return APIlistReportsRequest
+     */
+    public APIlistReportsRequest endTs(Integer endTs) {
+      this.endTs = endTs;
+      return this;
+    }
+
+    /**
+     * Execute listReports request
+     * @return ListReportsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListReportsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listReports request with HTTP info returned
+     * @return ApiResponse&lt;ListReportsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListReportsResponse> executeWithHttpInfo() throws ApiException {
+      return listReportsWithHttpInfo(apiToken, token, limit, startTs, endTs);
+    }
   }
 
   /**
-   * List reports on a channel
-   * ## List reports on a channel  Retrieves a list of reports on a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-channel ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which is reported for offensive messages or inappropriate activities.
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListReportsOnChannelByUrlResponse&gt;
+   * List reports
+   * ## List reports  Retrieves a list of reports within an application regardless of object types.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports ----------------------------
+   * @return listReportsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrlWithHttpInfo(String apiToken, String channelType, String channelUrl, String token, Integer limit) throws ApiException {
+  public APIlistReportsRequest listReports() throws ApiException {
+    return new APIlistReportsRequest();
+  }
+
+private ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrlWithHttpInfo(String apiToken, String channelType, String channelUrl, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -226,45 +260,96 @@ public class ReportApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List reports on a message
-   * ## List reports on a message  Retrieves a list of reports on a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where the reported message is in.  &#x60;message_id&#x60;      Type: string      Description: Specifies the unique ID of the reported message.
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListReportsOnMessageByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListReportsOnMessageByIdResponse listReportsOnMessageById(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit) throws ApiException {
-    return listReportsOnMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, token, limit).getData();
+
+  public class APIlistReportsOnChannelByUrlRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String token;
+    private Integer limit;
+
+    private APIlistReportsOnChannelByUrlRequest(String channelType, String channelUrl) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistReportsOnChannelByUrlRequest
+     */
+    public APIlistReportsOnChannelByUrlRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistReportsOnChannelByUrlRequest
+     */
+    public APIlistReportsOnChannelByUrlRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistReportsOnChannelByUrlRequest
+     */
+    public APIlistReportsOnChannelByUrlRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listReportsOnChannelByUrl request
+     * @return ListReportsOnChannelByUrlResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListReportsOnChannelByUrlResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listReportsOnChannelByUrl request with HTTP info returned
+     * @return ApiResponse&lt;ListReportsOnChannelByUrlResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListReportsOnChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
+      return listReportsOnChannelByUrlWithHttpInfo(apiToken, channelType, channelUrl, token, limit);
+    }
   }
 
   /**
-   * List reports on a message
-   * ## List reports on a message  Retrieves a list of reports on a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where the reported message is in.  &#x60;message_id&#x60;      Type: string      Description: Specifies the unique ID of the reported message.
-   * @param apiToken  (required)
+   * List reports on a channel
+   * ## List reports on a channel  Retrieves a list of reports on a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-channel ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which is reported for offensive messages or inappropriate activities.
    * @param channelType  (required)
    * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListReportsOnMessageByIdResponse&gt;
+   * @return listReportsOnChannelByUrlRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit) throws ApiException {
+  public APIlistReportsOnChannelByUrlRequest listReportsOnChannelByUrl(String channelType, String channelUrl) throws ApiException {
+    return new APIlistReportsOnChannelByUrlRequest(channelType, channelUrl);
+  }
+
+private ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -325,41 +410,99 @@ public class ReportApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List reports on a user
-   * ## List reports on a user  Retrieves a list of reports on a user who sends an offensive message.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-user ----------------------------   &#x60;offending_user_id&#x60;      Type: string      Description: Specifies the unique ID of the user who has sent the message to report.
-   * @param apiToken  (required)
-   * @param offendingUserId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListReportsOnUserByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListReportsOnUserByIdResponse listReportsOnUserById(String apiToken, String offendingUserId, String token, Integer limit) throws ApiException {
-    return listReportsOnUserByIdWithHttpInfo(apiToken, offendingUserId, token, limit).getData();
+
+  public class APIlistReportsOnMessageByIdRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private String token;
+    private Integer limit;
+
+    private APIlistReportsOnMessageByIdRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistReportsOnMessageByIdRequest
+     */
+    public APIlistReportsOnMessageByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistReportsOnMessageByIdRequest
+     */
+    public APIlistReportsOnMessageByIdRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistReportsOnMessageByIdRequest
+     */
+    public APIlistReportsOnMessageByIdRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listReportsOnMessageById request
+     * @return ListReportsOnMessageByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListReportsOnMessageByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listReportsOnMessageById request with HTTP info returned
+     * @return ApiResponse&lt;ListReportsOnMessageByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListReportsOnMessageByIdResponse> executeWithHttpInfo() throws ApiException {
+      return listReportsOnMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, token, limit);
+    }
   }
 
   /**
-   * List reports on a user
-   * ## List reports on a user  Retrieves a list of reports on a user who sends an offensive message.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-user ----------------------------   &#x60;offending_user_id&#x60;      Type: string      Description: Specifies the unique ID of the user who has sent the message to report.
-   * @param apiToken  (required)
-   * @param offendingUserId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListReportsOnUserByIdResponse&gt;
+   * List reports on a message
+   * ## List reports on a message  Retrieves a list of reports on a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where the reported message is in.  &#x60;message_id&#x60;      Type: string      Description: Specifies the unique ID of the reported message.
+   * @param channelType  (required)
+   * @param channelUrl  (required)
+   * @param messageId  (required)
+   * @return listReportsOnMessageByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttpInfo(String apiToken, String offendingUserId, String token, Integer limit) throws ApiException {
+  public APIlistReportsOnMessageByIdRequest listReportsOnMessageById(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIlistReportsOnMessageByIdRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttpInfo(String apiToken, String offendingUserId, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -408,41 +551,93 @@ public class ReportApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Report a channel
-   * ## Report a channel  Reports a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-channel ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param reportChannelByUrlData  (optional)
-   * @return ReportChannelByUrlResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ReportChannelByUrlResponse reportChannelByUrl(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
-    return reportChannelByUrlWithHttpInfo(apiToken, channelType, channelUrl, reportChannelByUrlData).getData();
+
+  public class APIlistReportsOnUserByIdRequest {
+    private String apiToken;
+    private String offendingUserId;
+    private String token;
+    private Integer limit;
+
+    private APIlistReportsOnUserByIdRequest(String offendingUserId) {
+      this.offendingUserId = offendingUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistReportsOnUserByIdRequest
+     */
+    public APIlistReportsOnUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistReportsOnUserByIdRequest
+     */
+    public APIlistReportsOnUserByIdRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistReportsOnUserByIdRequest
+     */
+    public APIlistReportsOnUserByIdRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listReportsOnUserById request
+     * @return ListReportsOnUserByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListReportsOnUserByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listReportsOnUserById request with HTTP info returned
+     * @return ApiResponse&lt;ListReportsOnUserByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListReportsOnUserByIdResponse> executeWithHttpInfo() throws ApiException {
+      return listReportsOnUserByIdWithHttpInfo(apiToken, offendingUserId, token, limit);
+    }
   }
 
   /**
-   * Report a channel
-   * ## Report a channel  Reports a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-channel ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param reportChannelByUrlData  (optional)
-   * @return ApiResponse&lt;ReportChannelByUrlResponse&gt;
+   * List reports on a user
+   * ## List reports on a user  Retrieves a list of reports on a user who sends an offensive message.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-list-reports-on-a-user ----------------------------   &#x60;offending_user_id&#x60;      Type: string      Description: Specifies the unique ID of the user who has sent the message to report.
+   * @param offendingUserId  (required)
+   * @return listReportsOnUserByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
+  public APIlistReportsOnUserByIdRequest listReportsOnUserById(String offendingUserId) throws ApiException {
+    return new APIlistReportsOnUserByIdRequest(offendingUserId);
+  }
+
+private ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
     Object localVarPostBody = reportChannelByUrlData;
     
     // verify the required parameter 'apiToken' is set
@@ -495,43 +690,85 @@ public class ReportApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Report a message
-   * ## Report a message  Reports a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param reportMessageByIdData  (optional)
-   * @return ReportMessageByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ReportMessageByIdResponse reportMessageById(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData) throws ApiException {
-    return reportMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, reportMessageByIdData).getData();
+
+  public class APIreportChannelByUrlRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private ReportChannelByUrlData reportChannelByUrlData;
+
+    private APIreportChannelByUrlRequest(String channelType, String channelUrl) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIreportChannelByUrlRequest
+     */
+    public APIreportChannelByUrlRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set reportChannelByUrlData
+     * @param reportChannelByUrlData  (optional)
+     * @return APIreportChannelByUrlRequest
+     */
+    public APIreportChannelByUrlRequest reportChannelByUrlData(ReportChannelByUrlData reportChannelByUrlData) {
+      this.reportChannelByUrlData = reportChannelByUrlData;
+      return this;
+    }
+
+    /**
+     * Execute reportChannelByUrl request
+     * @return ReportChannelByUrlResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ReportChannelByUrlResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute reportChannelByUrl request with HTTP info returned
+     * @return ApiResponse&lt;ReportChannelByUrlResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ReportChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
+      return reportChannelByUrlWithHttpInfo(apiToken, channelType, channelUrl, reportChannelByUrlData);
+    }
   }
 
   /**
-   * Report a message
-   * ## Report a message  Reports a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-message ----------------------------
-   * @param apiToken  (required)
+   * Report a channel
+   * ## Report a channel  Reports a channel that has offensive messages or abusive activities.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-channel ----------------------------
    * @param channelType  (required)
    * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param reportMessageByIdData  (optional)
-   * @return ApiResponse&lt;ReportMessageByIdResponse&gt;
+   * @return reportChannelByUrlRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData) throws ApiException {
+  public APIreportChannelByUrlRequest reportChannelByUrl(String channelType, String channelUrl) throws ApiException {
+    return new APIreportChannelByUrlRequest(channelType, channelUrl);
+  }
+
+private ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData) throws ApiException {
     Object localVarPostBody = reportMessageByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -590,39 +827,88 @@ public class ReportApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Report a user
-   * ## Report a user  Reports a user who sends an offensive message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param offendingUserId  (required)
-   * @param reportUserByIdData  (optional)
-   * @return ReportUserByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ReportUserByIdResponse reportUserById(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData) throws ApiException {
-    return reportUserByIdWithHttpInfo(apiToken, offendingUserId, reportUserByIdData).getData();
+
+  public class APIreportMessageByIdRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private ReportMessageByIdData reportMessageByIdData;
+
+    private APIreportMessageByIdRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIreportMessageByIdRequest
+     */
+    public APIreportMessageByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set reportMessageByIdData
+     * @param reportMessageByIdData  (optional)
+     * @return APIreportMessageByIdRequest
+     */
+    public APIreportMessageByIdRequest reportMessageByIdData(ReportMessageByIdData reportMessageByIdData) {
+      this.reportMessageByIdData = reportMessageByIdData;
+      return this;
+    }
+
+    /**
+     * Execute reportMessageById request
+     * @return ReportMessageByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ReportMessageByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute reportMessageById request with HTTP info returned
+     * @return ApiResponse&lt;ReportMessageByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ReportMessageByIdResponse> executeWithHttpInfo() throws ApiException {
+      return reportMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, reportMessageByIdData);
+    }
   }
 
   /**
-   * Report a user
-   * ## Report a user  Reports a user who sends an offensive message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param offendingUserId  (required)
-   * @param reportUserByIdData  (optional)
-   * @return ApiResponse&lt;ReportUserByIdResponse&gt;
+   * Report a message
+   * ## Report a message  Reports a message which contains suspicious, harassing, or inappropriate content.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-message ----------------------------
+   * @param channelType  (required)
+   * @param channelUrl  (required)
+   * @param messageId  (required)
+   * @return reportMessageByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData) throws ApiException {
+  public APIreportMessageByIdRequest reportMessageById(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIreportMessageByIdRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData) throws ApiException {
     Object localVarPostBody = reportUserByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -669,41 +955,82 @@ public class ReportApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a moderated message
-   * ## View a moderated message  Retrieves information on a message that has been moderated by the [profanity filter](https://sendbird.com/docs/chat/v3/platform-api/guides/filter-and-moderation#2-profanity-filter).  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-view-a-moderated-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object viewModeratedMessageById(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
-    return viewModeratedMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId).getData();
+
+  public class APIreportUserByIdRequest {
+    private String apiToken;
+    private String offendingUserId;
+    private ReportUserByIdData reportUserByIdData;
+
+    private APIreportUserByIdRequest(String offendingUserId) {
+      this.offendingUserId = offendingUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIreportUserByIdRequest
+     */
+    public APIreportUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set reportUserByIdData
+     * @param reportUserByIdData  (optional)
+     * @return APIreportUserByIdRequest
+     */
+    public APIreportUserByIdRequest reportUserByIdData(ReportUserByIdData reportUserByIdData) {
+      this.reportUserByIdData = reportUserByIdData;
+      return this;
+    }
+
+    /**
+     * Execute reportUserById request
+     * @return ReportUserByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ReportUserByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute reportUserById request with HTTP info returned
+     * @return ApiResponse&lt;ReportUserByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ReportUserByIdResponse> executeWithHttpInfo() throws ApiException {
+      return reportUserByIdWithHttpInfo(apiToken, offendingUserId, reportUserByIdData);
+    }
   }
 
   /**
-   * View a moderated message
-   * ## View a moderated message  Retrieves information on a message that has been moderated by the [profanity filter](https://sendbird.com/docs/chat/v3/platform-api/guides/filter-and-moderation#2-profanity-filter).  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-view-a-moderated-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * Report a user
+   * ## Report a user  Reports a user who sends an offensive message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-report-a-user ----------------------------
+   * @param offendingUserId  (required)
+   * @return reportUserByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> viewModeratedMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+  public APIreportUserByIdRequest reportUserById(String offendingUserId) throws ApiException {
+    return new APIreportUserByIdRequest(offendingUserId);
+  }
+
+private ApiResponse<Object> viewModeratedMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -761,5 +1088,74 @@ public class ReportApi {
     return apiClient.invokeAPI("ReportApi.viewModeratedMessageById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewModeratedMessageByIdRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+
+    private APIviewModeratedMessageByIdRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewModeratedMessageByIdRequest
+     */
+    public APIviewModeratedMessageByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewModeratedMessageById request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewModeratedMessageById request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return viewModeratedMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
+    }
+  }
+
+  /**
+   * View a moderated message
+   * ## View a moderated message  Retrieves information on a message that has been moderated by the [profanity filter](https://sendbird.com/docs/chat/v3/platform-api/guides/filter-and-moderation#2-profanity-filter).  https://sendbird.com/docs/chat/v3/platform-api/guides/report-content-and-subject#2-view-a-moderated-message ----------------------------
+   * @param channelType  (required)
+   * @param channelUrl  (required)
+   * @param messageId  (required)
+   * @return viewModeratedMessageByIdRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewModeratedMessageByIdRequest viewModeratedMessageById(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIviewModeratedMessageByIdRequest(channelType, channelUrl, messageId);
   }
 }

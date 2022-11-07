@@ -47,7 +47,9 @@ public class PrivacyApiTest {
     public void cancelTheRegistrationOfGdprRequestByIdTest() throws ApiException {
         //String apiToken = null;
         //String requestId = null;
-        //api.cancelTheRegistrationOfGdprRequestById(apiToken, requestId);
+        //api.cancelTheRegistrationOfGdprRequestById(requestId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -63,7 +65,11 @@ public class PrivacyApiTest {
         //String apiToken = null;
         //String token = null;
         //Integer limit = null;
-        //ListGdprRequestsResponse response = api.listGdprRequests(apiToken, token, limit);
+        //ListGdprRequestsResponse response = api.listGdprRequests()
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -78,7 +84,10 @@ public class PrivacyApiTest {
     public void registerGdprRequestTest() throws ApiException {
         //String apiToken = null;
         //RegisterGdprRequestData registerGdprRequestData = null;
-        //RegisterGdprRequestResponse response = api.registerGdprRequest(apiToken, registerGdprRequestData);
+        //RegisterGdprRequestResponse response = api.registerGdprRequest()
+        //        .apiToken(apiToken)
+        //        .registerGdprRequestData(registerGdprRequestData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -93,7 +102,9 @@ public class PrivacyApiTest {
     public void viewGdprRequestByIdTest() throws ApiException {
         //String apiToken = null;
         //String requestId = null;
-        //ViewGdprRequestByIdResponse response = api.viewGdprRequestById(apiToken, requestId);
+        //ViewGdprRequestByIdResponse response = api.viewGdprRequestById(requestId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 

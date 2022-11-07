@@ -50,7 +50,9 @@ public class StatisticsApiTest {
     public void getDetailedOpenRateOfAnnouncementByIdTest() throws ApiException {
         //String apiToken = null;
         //String uniqueId = null;
-        //GetDetailedOpenRateOfAnnouncementByIdResponse response = api.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
+        //GetDetailedOpenRateOfAnnouncementByIdResponse response = api.getDetailedOpenRateOfAnnouncementById(uniqueId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -70,7 +72,14 @@ public class StatisticsApiTest {
         //List<String> uniqueIds = null;
         //List<String> channelUrls = null;
         //Boolean hasOpened = null;
-        //GetDetailedOpenStatusOfAnnouncementByIdResponse response = api.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
+        //GetDetailedOpenStatusOfAnnouncementByIdResponse response = api.getDetailedOpenStatusOfAnnouncementById(uniqueId)
+        //        .apiToken(apiToken)
+        //        .limit(limit)
+        //        .next(next)
+        //        .uniqueIds(uniqueIds)
+        //        .channelUrls(channelUrls)
+        //        .hasOpened(hasOpened)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -84,7 +93,9 @@ public class StatisticsApiTest {
     @Test
     public void retrieveAdvancedAnalyticsMetricsTest() throws ApiException {
         //String apiToken = null;
-        //RetrieveAdvancedAnalyticsMetricsResponse response = api.retrieveAdvancedAnalyticsMetrics(apiToken);
+        //RetrieveAdvancedAnalyticsMetricsResponse response = api.retrieveAdvancedAnalyticsMetrics()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -98,7 +109,9 @@ public class StatisticsApiTest {
     @Test
     public void viewNumberOfConcurrentConnectionsTest() throws ApiException {
         //String apiToken = null;
-        //ViewNumberOfConcurrentConnectionsResponse response = api.viewNumberOfConcurrentConnections(apiToken);
+        //ViewNumberOfConcurrentConnectionsResponse response = api.viewNumberOfConcurrentConnections()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -113,7 +126,10 @@ public class StatisticsApiTest {
     public void viewNumberOfDailyActiveUsersTest() throws ApiException {
         //String apiToken = null;
         //String date = null;
-        //ViewNumberOfDailyActiveUsersResponse response = api.viewNumberOfDailyActiveUsers(apiToken, date);
+        //ViewNumberOfDailyActiveUsersResponse response = api.viewNumberOfDailyActiveUsers()
+        //        .apiToken(apiToken)
+        //        .date(date)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -128,7 +144,10 @@ public class StatisticsApiTest {
     public void viewNumberOfMonthlyActiveUsersTest() throws ApiException {
         //String apiToken = null;
         //String date = null;
-        //ViewNumberOfMonthlyActiveUsersResponse response = api.viewNumberOfMonthlyActiveUsers(apiToken, date);
+        //ViewNumberOfMonthlyActiveUsersResponse response = api.viewNumberOfMonthlyActiveUsers()
+        //        .apiToken(apiToken)
+        //        .date(date)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -149,7 +168,16 @@ public class StatisticsApiTest {
         //Integer endMonth = null;
         //Integer startDay = null;
         //Integer endDay = null;
-        //ViewNumberOfPeakConnectionsResponse response = api.viewNumberOfPeakConnections(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay);
+        //ViewNumberOfPeakConnectionsResponse response = api.viewNumberOfPeakConnections()
+        //        .apiToken(apiToken)
+        //        .timeDimension(timeDimension)
+        //        .startYear(startYear)
+        //        .startMonth(startMonth)
+        //        .endYear(endYear)
+        //        .endMonth(endMonth)
+        //        .startDay(startDay)
+        //        .endDay(endDay)
+        //        .execute();
         // TODO: test validations
     }
 

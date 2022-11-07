@@ -56,7 +56,13 @@ public class ReportApiTest {
         //Integer limit = null;
         //Integer startTs = null;
         //Integer endTs = null;
-        //ListReportsResponse response = api.listReports(apiToken, token, limit, startTs, endTs);
+        //ListReportsResponse response = api.listReports()
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .startTs(startTs)
+        //        .endTs(endTs)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -74,7 +80,11 @@ public class ReportApiTest {
         //String channelUrl = null;
         //String token = null;
         //Integer limit = null;
-        //ListReportsOnChannelByUrlResponse response = api.listReportsOnChannelByUrl(apiToken, channelType, channelUrl, token, limit);
+        //ListReportsOnChannelByUrlResponse response = api.listReportsOnChannelByUrl(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -93,7 +103,11 @@ public class ReportApiTest {
         //String messageId = null;
         //String token = null;
         //Integer limit = null;
-        //ListReportsOnMessageByIdResponse response = api.listReportsOnMessageById(apiToken, channelType, channelUrl, messageId, token, limit);
+        //ListReportsOnMessageByIdResponse response = api.listReportsOnMessageById(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -110,7 +124,11 @@ public class ReportApiTest {
         //String offendingUserId = null;
         //String token = null;
         //Integer limit = null;
-        //ListReportsOnUserByIdResponse response = api.listReportsOnUserById(apiToken, offendingUserId, token, limit);
+        //ListReportsOnUserByIdResponse response = api.listReportsOnUserById(offendingUserId)
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -127,7 +145,10 @@ public class ReportApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //ReportChannelByUrlData reportChannelByUrlData = null;
-        //ReportChannelByUrlResponse response = api.reportChannelByUrl(apiToken, channelType, channelUrl, reportChannelByUrlData);
+        //ReportChannelByUrlResponse response = api.reportChannelByUrl(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .reportChannelByUrlData(reportChannelByUrlData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -145,7 +166,10 @@ public class ReportApiTest {
         //String channelUrl = null;
         //String messageId = null;
         //ReportMessageByIdData reportMessageByIdData = null;
-        //ReportMessageByIdResponse response = api.reportMessageById(apiToken, channelType, channelUrl, messageId, reportMessageByIdData);
+        //ReportMessageByIdResponse response = api.reportMessageById(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .reportMessageByIdData(reportMessageByIdData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -161,7 +185,10 @@ public class ReportApiTest {
         //String apiToken = null;
         //String offendingUserId = null;
         //ReportUserByIdData reportUserByIdData = null;
-        //ReportUserByIdResponse response = api.reportUserById(apiToken, offendingUserId, reportUserByIdData);
+        //ReportUserByIdResponse response = api.reportUserById(offendingUserId)
+        //        .apiToken(apiToken)
+        //        .reportUserByIdData(reportUserByIdData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -178,7 +205,9 @@ public class ReportApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //String messageId = null;
-        //Object response = api.viewModeratedMessageById(apiToken, channelType, channelUrl, messageId);
+        //Object response = api.viewModeratedMessageById(channelType, channelUrl, messageId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 

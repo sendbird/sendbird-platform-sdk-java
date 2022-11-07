@@ -30,7 +30,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## createChannelMetacounter
 
-> Object createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData)
+> Object createChannelMetacounter(channelType, channelUrl).apiToken(apiToken).createChannelMetacounterData(createChannelMetacounterData).execute();
 
 Create a channel metacounter
 
@@ -62,7 +62,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         CreateChannelMetacounterData createChannelMetacounterData = new CreateChannelMetacounterData(); // CreateChannelMetacounterData | 
         try {
-            Object result = apiInstance.createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData);
+            Object result = api.createChannelMetacounter(channelType, channelUrl)
+                .apiToken(apiToken)
+                .createChannelMetacounterData(createChannelMetacounterData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#createChannelMetacounter");
@@ -106,7 +109,7 @@ No authorization required
 
 ## createChannelMetadata
 
-> CreateChannelMetadataResponse createChannelMetadata(apiToken, channelType, channelUrl, createChannelMetadataData)
+> CreateChannelMetadataResponse createChannelMetadata(channelType, channelUrl).apiToken(apiToken).createChannelMetadataData(createChannelMetadataData).execute();
 
 Create a channel metadata
 
@@ -138,7 +141,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         CreateChannelMetadataData createChannelMetadataData = new CreateChannelMetadataData(); // CreateChannelMetadataData | 
         try {
-            CreateChannelMetadataResponse result = apiInstance.createChannelMetadata(apiToken, channelType, channelUrl, createChannelMetadataData);
+            CreateChannelMetadataResponse result = api.createChannelMetadata(channelType, channelUrl)
+                .apiToken(apiToken)
+                .createChannelMetadataData(createChannelMetadataData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#createChannelMetadata");
@@ -182,7 +188,7 @@ No authorization required
 
 ## createUserMetadata
 
-> CreateUserMetadataResponse createUserMetadata(apiToken, userId, createUserMetadataData)
+> CreateUserMetadataResponse createUserMetadata(userId).apiToken(apiToken).createUserMetadataData(createUserMetadataData).execute();
 
 Create a user metadata
 
@@ -213,7 +219,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         CreateUserMetadataData createUserMetadataData = new CreateUserMetadataData(); // CreateUserMetadataData | 
         try {
-            CreateUserMetadataResponse result = apiInstance.createUserMetadata(apiToken, userId, createUserMetadataData);
+            CreateUserMetadataResponse result = api.createUserMetadata(userId)
+                .apiToken(apiToken)
+                .createUserMetadataData(createUserMetadataData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#createUserMetadata");
@@ -256,7 +265,7 @@ No authorization required
 
 ## deleteChannelMetacounter
 
-> deleteChannelMetacounter(apiToken, channelType, channelUrl)
+> deleteChannelMetacounter(channelType, channelUrl).apiToken(apiToken).execute();
 
 Delete a channel metacounter - When deleting all items of a channel metacounter
 
@@ -294,7 +303,9 @@ public class Example {
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
-            apiInstance.deleteChannelMetacounter(apiToken, channelType, channelUrl);
+            api.deleteChannelMetacounter(channelType, channelUrl)
+                .apiToken(apiToken)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#deleteChannelMetacounter");
             System.err.println("Status code: " + e.getCode());
@@ -336,7 +347,7 @@ No authorization required
 
 ## deleteChannelMetacounterByKey
 
-> deleteChannelMetacounterByKey(apiToken, channelType, channelUrl, key)
+> deleteChannelMetacounterByKey(channelType, channelUrl, key).apiToken(apiToken).execute();
 
 Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
 
@@ -375,7 +386,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            apiInstance.deleteChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
+            api.deleteChannelMetacounterByKey(channelType, channelUrl, key)
+                .apiToken(apiToken)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#deleteChannelMetacounterByKey");
             System.err.println("Status code: " + e.getCode());
@@ -418,7 +431,7 @@ No authorization required
 
 ## deleteChannelMetadata
 
-> deleteChannelMetadata(apiToken, channelType, channelUrl, key)
+> deleteChannelMetadata(channelType, channelUrl).apiToken(apiToken).key(key).execute();
 
 Delete a channel metadata - When deleting all items of a channel metadata
 
@@ -457,7 +470,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            apiInstance.deleteChannelMetadata(apiToken, channelType, channelUrl, key);
+            api.deleteChannelMetadata(channelType, channelUrl)
+                .apiToken(apiToken)
+                .key(key)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#deleteChannelMetadata");
             System.err.println("Status code: " + e.getCode());
@@ -500,7 +516,7 @@ No authorization required
 
 ## deleteChannelMetadataByKey
 
-> deleteChannelMetadataByKey(apiToken, channelType, channelUrl, key)
+> deleteChannelMetadataByKey(channelType, channelUrl, key).apiToken(apiToken).execute();
 
 Delete a channel metadata - When deleting a specific item of a channel metadata by its key
 
@@ -539,7 +555,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            apiInstance.deleteChannelMetadataByKey(apiToken, channelType, channelUrl, key);
+            api.deleteChannelMetadataByKey(channelType, channelUrl, key)
+                .apiToken(apiToken)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#deleteChannelMetadataByKey");
             System.err.println("Status code: " + e.getCode());
@@ -582,7 +600,7 @@ No authorization required
 
 ## deleteUserMetadata
 
-> deleteUserMetadata(apiToken, userId, key)
+> deleteUserMetadata(userId).apiToken(apiToken).key(key).execute();
 
 Delete a user metadata - When deleting all items of a user metadata
 
@@ -617,7 +635,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            apiInstance.deleteUserMetadata(apiToken, userId, key);
+            api.deleteUserMetadata(userId)
+                .apiToken(apiToken)
+                .key(key)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#deleteUserMetadata");
             System.err.println("Status code: " + e.getCode());
@@ -659,7 +680,7 @@ No authorization required
 
 ## deleteUserMetadataByKey
 
-> deleteUserMetadataByKey(apiToken, userId, key)
+> deleteUserMetadataByKey(userId, key).apiToken(apiToken).execute();
 
 Delete a user metadata - When deleting a specific item of a user metadata by its key
 
@@ -694,7 +715,9 @@ public class Example {
         String userId = "userId_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            apiInstance.deleteUserMetadataByKey(apiToken, userId, key);
+            api.deleteUserMetadataByKey(userId, key)
+                .apiToken(apiToken)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#deleteUserMetadataByKey");
             System.err.println("Status code: " + e.getCode());
@@ -736,7 +759,7 @@ No authorization required
 
 ## updateChannelMetacounter
 
-> Object updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData)
+> Object updateChannelMetacounter(channelType, channelUrl).apiToken(apiToken).updateChannelMetacounterData(updateChannelMetacounterData).execute();
 
 Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
 
@@ -775,7 +798,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         UpdateChannelMetacounterData updateChannelMetacounterData = new UpdateChannelMetacounterData(); // UpdateChannelMetacounterData | 
         try {
-            Object result = apiInstance.updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData);
+            Object result = api.updateChannelMetacounter(channelType, channelUrl)
+                .apiToken(apiToken)
+                .updateChannelMetacounterData(updateChannelMetacounterData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateChannelMetacounter");
@@ -819,7 +845,7 @@ No authorization required
 
 ## updateChannelMetacounterByKey
 
-> Map&lt;String, String&gt; updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body)
+> Map&lt;String, String&gt; updateChannelMetacounterByKey(channelType, channelUrl, key).apiToken(apiToken).body(body).execute();
 
 Update a channel metacounter - When updating a specific item of a channel metacounter by its key
 
@@ -859,7 +885,10 @@ public class Example {
         String key = "key_example"; // String | 
         Object body = null; // Object | 
         try {
-            Map<String, String> result = apiInstance.updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body);
+            Map<String, String> result = api.updateChannelMetacounterByKey(channelType, channelUrl, key)
+                .apiToken(apiToken)
+                .body(body)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateChannelMetacounterByKey");
@@ -904,7 +933,7 @@ No authorization required
 
 ## updateChannelMetadata
 
-> Map&lt;String, String&gt; updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData)
+> Map&lt;String, String&gt; updateChannelMetadata(channelType, channelUrl).apiToken(apiToken).updateChannelMetadataData(updateChannelMetadataData).execute();
 
 Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
 
@@ -943,7 +972,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         UpdateChannelMetadataData updateChannelMetadataData = new UpdateChannelMetadataData(); // UpdateChannelMetadataData | 
         try {
-            Map<String, String> result = apiInstance.updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData);
+            Map<String, String> result = api.updateChannelMetadata(channelType, channelUrl)
+                .apiToken(apiToken)
+                .updateChannelMetadataData(updateChannelMetadataData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateChannelMetadata");
@@ -987,7 +1019,7 @@ No authorization required
 
 ## updateChannelMetadataByKey
 
-> Map&lt;String, String&gt; updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body)
+> Map&lt;String, String&gt; updateChannelMetadataByKey(channelType, channelUrl, key).apiToken(apiToken).body(body).execute();
 
 Update a channel metadata - When updating a specific item of a channel metadata by its key
 
@@ -1027,7 +1059,10 @@ public class Example {
         String key = "key_example"; // String | 
         Object body = null; // Object | 
         try {
-            Map<String, String> result = apiInstance.updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body);
+            Map<String, String> result = api.updateChannelMetadataByKey(channelType, channelUrl, key)
+                .apiToken(apiToken)
+                .body(body)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateChannelMetadataByKey");
@@ -1072,7 +1107,7 @@ No authorization required
 
 ## updateUserMetadata
 
-> UpdateUserMetadataResponse updateUserMetadata(apiToken, userId, updateUserMetadataData)
+> UpdateUserMetadataResponse updateUserMetadata(userId).apiToken(apiToken).updateUserMetadataData(updateUserMetadataData).execute();
 
 Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
 
@@ -1107,7 +1142,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         UpdateUserMetadataData updateUserMetadataData = new UpdateUserMetadataData(); // UpdateUserMetadataData | 
         try {
-            UpdateUserMetadataResponse result = apiInstance.updateUserMetadata(apiToken, userId, updateUserMetadataData);
+            UpdateUserMetadataResponse result = api.updateUserMetadata(userId)
+                .apiToken(apiToken)
+                .updateUserMetadataData(updateUserMetadataData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateUserMetadata");
@@ -1150,7 +1188,7 @@ No authorization required
 
 ## updateUserMetadataByKey
 
-> Map&lt;String, String&gt; updateUserMetadataByKey(apiToken, userId, key, body)
+> Map&lt;String, String&gt; updateUserMetadataByKey(userId, key).apiToken(apiToken).body(body).execute();
 
 Update a user metadata - When updating a specific item of a user metadata by its key
 
@@ -1186,7 +1224,10 @@ public class Example {
         String key = "key_example"; // String | 
         Object body = null; // Object | 
         try {
-            Map<String, String> result = apiInstance.updateUserMetadataByKey(apiToken, userId, key, body);
+            Map<String, String> result = api.updateUserMetadataByKey(userId, key)
+                .apiToken(apiToken)
+                .body(body)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#updateUserMetadataByKey");
@@ -1230,7 +1271,7 @@ No authorization required
 
 ## viewChannelMetacounter
 
-> Map&lt;String, String&gt; viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys)
+> Map&lt;String, String&gt; viewChannelMetacounter(channelType, channelUrl).apiToken(apiToken).key(key).keys(keys).execute();
 
 View a channel metacounter - When retrieving all items of a channel metacounter
 
@@ -1270,7 +1311,11 @@ public class Example {
         String key = "key_example"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
-            Map<String, String> result = apiInstance.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
+            Map<String, String> result = api.viewChannelMetacounter(channelType, channelUrl)
+                .apiToken(apiToken)
+                .key(key)
+                .keys(keys)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewChannelMetacounter");
@@ -1315,7 +1360,7 @@ No authorization required
 
 ## viewChannelMetacounterByKey
 
-> Object viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key)
+> Object viewChannelMetacounterByKey(channelType, channelUrl, key).apiToken(apiToken).execute();
 
 View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
 
@@ -1354,7 +1399,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            Object result = apiInstance.viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
+            Object result = api.viewChannelMetacounterByKey(channelType, channelUrl, key)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewChannelMetacounterByKey");
@@ -1398,7 +1445,7 @@ No authorization required
 
 ## viewChannelMetadata
 
-> Map&lt;String, String&gt; viewChannelMetadata(apiToken, channelType, channelUrl, key, keys)
+> Map&lt;String, String&gt; viewChannelMetadata(channelType, channelUrl).apiToken(apiToken).key(key).keys(keys).execute();
 
 View a channel metadata - When retrieving all items of a channel metadata
 
@@ -1438,7 +1485,11 @@ public class Example {
         String key = "key_example"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
-            Map<String, String> result = apiInstance.viewChannelMetadata(apiToken, channelType, channelUrl, key, keys);
+            Map<String, String> result = api.viewChannelMetadata(channelType, channelUrl)
+                .apiToken(apiToken)
+                .key(key)
+                .keys(keys)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewChannelMetadata");
@@ -1483,7 +1534,7 @@ No authorization required
 
 ## viewChannelMetadataByKey
 
-> Map&lt;String, String&gt; viewChannelMetadataByKey(apiToken, channelType, channelUrl, key)
+> Map&lt;String, String&gt; viewChannelMetadataByKey(channelType, channelUrl, key).apiToken(apiToken).execute();
 
 View a channel metadata - When retrieving a specific item of a channel metadata by its key
 
@@ -1522,7 +1573,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            Map<String, String> result = apiInstance.viewChannelMetadataByKey(apiToken, channelType, channelUrl, key);
+            Map<String, String> result = api.viewChannelMetadataByKey(channelType, channelUrl, key)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewChannelMetadataByKey");
@@ -1566,7 +1619,7 @@ No authorization required
 
 ## viewUserMetadata
 
-> ViewUserMetadataResponse viewUserMetadata(apiToken, userId, key, keys)
+> ViewUserMetadataResponse viewUserMetadata(userId).apiToken(apiToken).key(key).keys(keys).execute();
 
 View a user metadata - When retrieving all items of a user metadata
 
@@ -1602,7 +1655,11 @@ public class Example {
         String key = "key_example"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
-            ViewUserMetadataResponse result = apiInstance.viewUserMetadata(apiToken, userId, key, keys);
+            ViewUserMetadataResponse result = api.viewUserMetadata(userId)
+                .apiToken(apiToken)
+                .key(key)
+                .keys(keys)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewUserMetadata");
@@ -1646,7 +1703,7 @@ No authorization required
 
 ## viewUserMetadataByKey
 
-> Map&lt;String, String&gt; viewUserMetadataByKey(apiToken, userId, key)
+> Map&lt;String, String&gt; viewUserMetadataByKey(userId, key).apiToken(apiToken).execute();
 
 View a user metadata - When retrieving a specific item of a user metadata by its key
 
@@ -1681,7 +1738,9 @@ public class Example {
         String userId = "userId_example"; // String | 
         String key = "key_example"; // String | 
         try {
-            Map<String, String> result = apiInstance.viewUserMetadataByKey(apiToken, userId, key);
+            Map<String, String> result = api.viewUserMetadataByKey(userId, key)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MetadataApi#viewUserMetadataByKey");

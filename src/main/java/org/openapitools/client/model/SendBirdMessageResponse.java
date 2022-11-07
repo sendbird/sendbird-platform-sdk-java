@@ -66,7 +66,7 @@ import org.sendbird.client.JSON;
   SendBirdMessageResponse.JSON_PROPERTY_IS_REPLY_TO_CHANNEL
 })
 @JsonTypeName("SendBird.MessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class SendBirdMessageResponse {
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;

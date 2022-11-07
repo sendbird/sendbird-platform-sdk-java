@@ -54,7 +54,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class ApplicationApi {
   private ApiClient apiClient;
 
@@ -84,37 +84,8 @@ public class ApplicationApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * Add an APNs push configuration
-   * ## Add an APNs push configuration  Registers an APNs (Apple Push Notification service) push configuration for your client app. To send push notifications to iOS devices, your should first register the APNs push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  &gt; __Note__: To upload a [.p12](https://sendbird.com/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) certificate file to Sendbird server, you should send a [Multipart request](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api#2-headers-3-multipart-requests).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-apns-push-configuration
-   * @param apiToken  (required)
-   * @param addApnsPushConfigurationData  (optional)
-   * @return AddApnsPushConfigurationResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public AddApnsPushConfigurationResponse addApnsPushConfiguration(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData) throws ApiException {
-    return addApnsPushConfigurationWithHttpInfo(apiToken, addApnsPushConfigurationData).getData();
-  }
 
-  /**
-   * Add an APNs push configuration
-   * ## Add an APNs push configuration  Registers an APNs (Apple Push Notification service) push configuration for your client app. To send push notifications to iOS devices, your should first register the APNs push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  &gt; __Note__: To upload a [.p12](https://sendbird.com/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) certificate file to Sendbird server, you should send a [Multipart request](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api#2-headers-3-multipart-requests).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-apns-push-configuration
-   * @param apiToken  (required)
-   * @param addApnsPushConfigurationData  (optional)
-   * @return ApiResponse&lt;AddApnsPushConfigurationResponse&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<AddApnsPushConfigurationResponse> addApnsPushConfigurationWithHttpInfo(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData) throws ApiException {
+private ApiResponse<AddApnsPushConfigurationResponse> addApnsPushConfigurationWithHttpInfo(String apiToken, AddApnsPushConfigurationData addApnsPushConfigurationData) throws ApiException {
     Object localVarPostBody = addApnsPushConfigurationData;
     
     // verify the required parameter 'apiToken' is set
@@ -155,37 +126,79 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Add a FCM push configuration
-   * ## Add a FCM push configuration  Registers a FCM (Firebase Cloud Messaging) push configuration for your client app. To send push notifications to Android devices, you should first register the FCM push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-a-fcm-push-configuration
-   * @param apiToken  (required)
-   * @param addFcmPushConfigurationData  (optional)
-   * @return AddFcmPushConfigurationResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public AddFcmPushConfigurationResponse addFcmPushConfiguration(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData) throws ApiException {
-    return addFcmPushConfigurationWithHttpInfo(apiToken, addFcmPushConfigurationData).getData();
+
+  public class APIaddApnsPushConfigurationRequest {
+    private String apiToken;
+    private AddApnsPushConfigurationData addApnsPushConfigurationData;
+
+    private APIaddApnsPushConfigurationRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIaddApnsPushConfigurationRequest
+     */
+    public APIaddApnsPushConfigurationRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set addApnsPushConfigurationData
+     * @param addApnsPushConfigurationData  (optional)
+     * @return APIaddApnsPushConfigurationRequest
+     */
+    public APIaddApnsPushConfigurationRequest addApnsPushConfigurationData(AddApnsPushConfigurationData addApnsPushConfigurationData) {
+      this.addApnsPushConfigurationData = addApnsPushConfigurationData;
+      return this;
+    }
+
+    /**
+     * Execute addApnsPushConfiguration request
+     * @return AddApnsPushConfigurationResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public AddApnsPushConfigurationResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute addApnsPushConfiguration request with HTTP info returned
+     * @return ApiResponse&lt;AddApnsPushConfigurationResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<AddApnsPushConfigurationResponse> executeWithHttpInfo() throws ApiException {
+      return addApnsPushConfigurationWithHttpInfo(apiToken, addApnsPushConfigurationData);
+    }
   }
 
   /**
-   * Add a FCM push configuration
-   * ## Add a FCM push configuration  Registers a FCM (Firebase Cloud Messaging) push configuration for your client app. To send push notifications to Android devices, you should first register the FCM push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-a-fcm-push-configuration
-   * @param apiToken  (required)
-   * @param addFcmPushConfigurationData  (optional)
-   * @return ApiResponse&lt;AddFcmPushConfigurationResponse&gt;
+   * Add an APNs push configuration
+   * ## Add an APNs push configuration  Registers an APNs (Apple Push Notification service) push configuration for your client app. To send push notifications to iOS devices, your should first register the APNs push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  &gt; __Note__: To upload a [.p12](https://sendbird.com/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) certificate file to Sendbird server, you should send a [Multipart request](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api#2-headers-3-multipart-requests).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-apns-push-configuration
+   * @return addApnsPushConfigurationRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<AddFcmPushConfigurationResponse> addFcmPushConfigurationWithHttpInfo(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData) throws ApiException {
+  public APIaddApnsPushConfigurationRequest addApnsPushConfiguration() throws ApiException {
+    return new APIaddApnsPushConfigurationRequest();
+  }
+
+private ApiResponse<AddFcmPushConfigurationResponse> addFcmPushConfigurationWithHttpInfo(String apiToken, AddFcmPushConfigurationData addFcmPushConfigurationData) throws ApiException {
     Object localVarPostBody = addFcmPushConfigurationData;
     
     // verify the required parameter 'apiToken' is set
@@ -226,37 +239,79 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Add an HMS push configuration
-   * ## Add an HMS push configuration  Registers an HMS (Huawei Mobile Services) push configuration for your client app. To send push notifications to Android devices for HMS, you should first register the HMS push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-hms-push-configuration
-   * @param apiToken  (required)
-   * @param addHmsPushConfigurationData  (optional)
-   * @return AddHmsPushConfigurationResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public AddHmsPushConfigurationResponse addHmsPushConfiguration(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData) throws ApiException {
-    return addHmsPushConfigurationWithHttpInfo(apiToken, addHmsPushConfigurationData).getData();
+
+  public class APIaddFcmPushConfigurationRequest {
+    private String apiToken;
+    private AddFcmPushConfigurationData addFcmPushConfigurationData;
+
+    private APIaddFcmPushConfigurationRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIaddFcmPushConfigurationRequest
+     */
+    public APIaddFcmPushConfigurationRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set addFcmPushConfigurationData
+     * @param addFcmPushConfigurationData  (optional)
+     * @return APIaddFcmPushConfigurationRequest
+     */
+    public APIaddFcmPushConfigurationRequest addFcmPushConfigurationData(AddFcmPushConfigurationData addFcmPushConfigurationData) {
+      this.addFcmPushConfigurationData = addFcmPushConfigurationData;
+      return this;
+    }
+
+    /**
+     * Execute addFcmPushConfiguration request
+     * @return AddFcmPushConfigurationResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public AddFcmPushConfigurationResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute addFcmPushConfiguration request with HTTP info returned
+     * @return ApiResponse&lt;AddFcmPushConfigurationResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<AddFcmPushConfigurationResponse> executeWithHttpInfo() throws ApiException {
+      return addFcmPushConfigurationWithHttpInfo(apiToken, addFcmPushConfigurationData);
+    }
   }
 
   /**
-   * Add an HMS push configuration
-   * ## Add an HMS push configuration  Registers an HMS (Huawei Mobile Services) push configuration for your client app. To send push notifications to Android devices for HMS, you should first register the HMS push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-hms-push-configuration
-   * @param apiToken  (required)
-   * @param addHmsPushConfigurationData  (optional)
-   * @return ApiResponse&lt;AddHmsPushConfigurationResponse&gt;
+   * Add a FCM push configuration
+   * ## Add a FCM push configuration  Registers a FCM (Firebase Cloud Messaging) push configuration for your client app. To send push notifications to Android devices, you should first register the FCM push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-a-fcm-push-configuration
+   * @return addFcmPushConfigurationRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<AddHmsPushConfigurationResponse> addHmsPushConfigurationWithHttpInfo(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData) throws ApiException {
+  public APIaddFcmPushConfigurationRequest addFcmPushConfiguration() throws ApiException {
+    return new APIaddFcmPushConfigurationRequest();
+  }
+
+private ApiResponse<AddHmsPushConfigurationResponse> addHmsPushConfigurationWithHttpInfo(String apiToken, AddHmsPushConfigurationData addHmsPushConfigurationData) throws ApiException {
     Object localVarPostBody = addHmsPushConfigurationData;
     
     // verify the required parameter 'apiToken' is set
@@ -297,37 +352,79 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Add an IP to a whitelist
-   * ## Add an IP to a whitelist  Adds IP addresses and ranges to your Sendbird application settings. Both currently added and any previously added IPs are granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-ip-to-a-whitelist
-   * @param apiToken  (required)
-   * @param addIpToWhitelistData  (optional)
-   * @return AddIpToWhitelistResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public AddIpToWhitelistResponse addIpToWhitelist(String apiToken, AddIpToWhitelistData addIpToWhitelistData) throws ApiException {
-    return addIpToWhitelistWithHttpInfo(apiToken, addIpToWhitelistData).getData();
+
+  public class APIaddHmsPushConfigurationRequest {
+    private String apiToken;
+    private AddHmsPushConfigurationData addHmsPushConfigurationData;
+
+    private APIaddHmsPushConfigurationRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIaddHmsPushConfigurationRequest
+     */
+    public APIaddHmsPushConfigurationRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set addHmsPushConfigurationData
+     * @param addHmsPushConfigurationData  (optional)
+     * @return APIaddHmsPushConfigurationRequest
+     */
+    public APIaddHmsPushConfigurationRequest addHmsPushConfigurationData(AddHmsPushConfigurationData addHmsPushConfigurationData) {
+      this.addHmsPushConfigurationData = addHmsPushConfigurationData;
+      return this;
+    }
+
+    /**
+     * Execute addHmsPushConfiguration request
+     * @return AddHmsPushConfigurationResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public AddHmsPushConfigurationResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute addHmsPushConfiguration request with HTTP info returned
+     * @return ApiResponse&lt;AddHmsPushConfigurationResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<AddHmsPushConfigurationResponse> executeWithHttpInfo() throws ApiException {
+      return addHmsPushConfigurationWithHttpInfo(apiToken, addHmsPushConfigurationData);
+    }
   }
 
   /**
-   * Add an IP to a whitelist
-   * ## Add an IP to a whitelist  Adds IP addresses and ranges to your Sendbird application settings. Both currently added and any previously added IPs are granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-ip-to-a-whitelist
-   * @param apiToken  (required)
-   * @param addIpToWhitelistData  (optional)
-   * @return ApiResponse&lt;AddIpToWhitelistResponse&gt;
+   * Add an HMS push configuration
+   * ## Add an HMS push configuration  Registers an HMS (Huawei Mobile Services) push configuration for your client app. To send push notifications to Android devices for HMS, you should first register the HMS push configuration. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-hms-push-configuration
+   * @return addHmsPushConfigurationRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<AddIpToWhitelistResponse> addIpToWhitelistWithHttpInfo(String apiToken, AddIpToWhitelistData addIpToWhitelistData) throws ApiException {
+  public APIaddHmsPushConfigurationRequest addHmsPushConfiguration() throws ApiException {
+    return new APIaddHmsPushConfigurationRequest();
+  }
+
+private ApiResponse<AddIpToWhitelistResponse> addIpToWhitelistWithHttpInfo(String apiToken, AddIpToWhitelistData addIpToWhitelistData) throws ApiException {
     Object localVarPostBody = addIpToWhitelistData;
     
     // verify the required parameter 'apiToken' is set
@@ -368,39 +465,79 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Ban users in channels with a custom channel type
-   * ## Ban specified users in channels with a custom channel type at once.
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param banUsersInChannelsWithCustomChannelTypeData  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object banUsersInChannelsWithCustomChannelType(String apiToken, String customType, BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData) throws ApiException {
-    return banUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, banUsersInChannelsWithCustomChannelTypeData).getData();
+
+  public class APIaddIpToWhitelistRequest {
+    private String apiToken;
+    private AddIpToWhitelistData addIpToWhitelistData;
+
+    private APIaddIpToWhitelistRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIaddIpToWhitelistRequest
+     */
+    public APIaddIpToWhitelistRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set addIpToWhitelistData
+     * @param addIpToWhitelistData  (optional)
+     * @return APIaddIpToWhitelistRequest
+     */
+    public APIaddIpToWhitelistRequest addIpToWhitelistData(AddIpToWhitelistData addIpToWhitelistData) {
+      this.addIpToWhitelistData = addIpToWhitelistData;
+      return this;
+    }
+
+    /**
+     * Execute addIpToWhitelist request
+     * @return AddIpToWhitelistResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public AddIpToWhitelistResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute addIpToWhitelist request with HTTP info returned
+     * @return ApiResponse&lt;AddIpToWhitelistResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<AddIpToWhitelistResponse> executeWithHttpInfo() throws ApiException {
+      return addIpToWhitelistWithHttpInfo(apiToken, addIpToWhitelistData);
+    }
   }
 
   /**
-   * Ban users in channels with a custom channel type
-   * ## Ban specified users in channels with a custom channel type at once.
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param banUsersInChannelsWithCustomChannelTypeData  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * Add an IP to a whitelist
+   * ## Add an IP to a whitelist  Adds IP addresses and ranges to your Sendbird application settings. Both currently added and any previously added IPs are granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-add-an-ip-to-a-whitelist
+   * @return addIpToWhitelistRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> banUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData) throws ApiException {
+  public APIaddIpToWhitelistRequest addIpToWhitelist() throws ApiException {
+    return new APIaddIpToWhitelistRequest();
+  }
+
+private ApiResponse<Object> banUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData) throws ApiException {
     Object localVarPostBody = banUsersInChannelsWithCustomChannelTypeData;
     
     // verify the required parameter 'apiToken' is set
@@ -447,37 +584,82 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Configure auto event message settings
-   * ## Configure auto event message settings  Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings ----------------------------
-   * @param apiToken  (required)
-   * @param configureAutoEventData  (optional)
-   * @return SendBirdAutoEventMessageSettings
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdAutoEventMessageSettings configureAutoEventMessages(String apiToken, ConfigureAutoEventData configureAutoEventData) throws ApiException {
-    return configureAutoEventMessagesWithHttpInfo(apiToken, configureAutoEventData).getData();
+
+  public class APIbanUsersInChannelsWithCustomChannelTypeRequest {
+    private String apiToken;
+    private String customType;
+    private BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData;
+
+    private APIbanUsersInChannelsWithCustomChannelTypeRequest(String customType) {
+      this.customType = customType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIbanUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIbanUsersInChannelsWithCustomChannelTypeRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set banUsersInChannelsWithCustomChannelTypeData
+     * @param banUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @return APIbanUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIbanUsersInChannelsWithCustomChannelTypeRequest banUsersInChannelsWithCustomChannelTypeData(BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData) {
+      this.banUsersInChannelsWithCustomChannelTypeData = banUsersInChannelsWithCustomChannelTypeData;
+      return this;
+    }
+
+    /**
+     * Execute banUsersInChannelsWithCustomChannelType request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute banUsersInChannelsWithCustomChannelType request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return banUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, banUsersInChannelsWithCustomChannelTypeData);
+    }
   }
 
   /**
-   * Configure auto event message settings
-   * ## Configure auto event message settings  Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings ----------------------------
-   * @param apiToken  (required)
-   * @param configureAutoEventData  (optional)
-   * @return ApiResponse&lt;SendBirdAutoEventMessageSettings&gt;
+   * Ban users in channels with a custom channel type
+   * ## Ban specified users in channels with a custom channel type at once.
+   * @param customType  (required)
+   * @return banUsersInChannelsWithCustomChannelTypeRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdAutoEventMessageSettings> configureAutoEventMessagesWithHttpInfo(String apiToken, ConfigureAutoEventData configureAutoEventData) throws ApiException {
+  public APIbanUsersInChannelsWithCustomChannelTypeRequest banUsersInChannelsWithCustomChannelType(String customType) throws ApiException {
+    return new APIbanUsersInChannelsWithCustomChannelTypeRequest(customType);
+  }
+
+private ApiResponse<SendBirdAutoEventMessageSettings> configureAutoEventMessagesWithHttpInfo(String apiToken, ConfigureAutoEventData configureAutoEventData) throws ApiException {
     Object localVarPostBody = configureAutoEventData;
     
     // verify the required parameter 'apiToken' is set
@@ -518,37 +700,79 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Delete allowed IPs from a whitelist
-   * ## Delete allowed IPs from a whitelist  Deletes allowed IPs from the whitelist by specifying their IP addresses or ranges. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-allowed-ips-from-a-whitelist
-   * @param apiToken  (required)
-   * @param ipWhitelistAddresses  (required)
-   * @return DeleteAllowedIpsFromWhitelistResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist(String apiToken, List<String> ipWhitelistAddresses) throws ApiException {
-    return deleteAllowedIpsFromWhitelistWithHttpInfo(apiToken, ipWhitelistAddresses).getData();
+
+  public class APIconfigureAutoEventMessagesRequest {
+    private String apiToken;
+    private ConfigureAutoEventData configureAutoEventData;
+
+    private APIconfigureAutoEventMessagesRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIconfigureAutoEventMessagesRequest
+     */
+    public APIconfigureAutoEventMessagesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set configureAutoEventData
+     * @param configureAutoEventData  (optional)
+     * @return APIconfigureAutoEventMessagesRequest
+     */
+    public APIconfigureAutoEventMessagesRequest configureAutoEventData(ConfigureAutoEventData configureAutoEventData) {
+      this.configureAutoEventData = configureAutoEventData;
+      return this;
+    }
+
+    /**
+     * Execute configureAutoEventMessages request
+     * @return SendBirdAutoEventMessageSettings
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdAutoEventMessageSettings execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute configureAutoEventMessages request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdAutoEventMessageSettings&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdAutoEventMessageSettings> executeWithHttpInfo() throws ApiException {
+      return configureAutoEventMessagesWithHttpInfo(apiToken, configureAutoEventData);
+    }
   }
 
   /**
-   * Delete allowed IPs from a whitelist
-   * ## Delete allowed IPs from a whitelist  Deletes allowed IPs from the whitelist by specifying their IP addresses or ranges. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-allowed-ips-from-a-whitelist
-   * @param apiToken  (required)
-   * @param ipWhitelistAddresses  (required)
-   * @return ApiResponse&lt;DeleteAllowedIpsFromWhitelistResponse&gt;
+   * Configure auto event message settings
+   * ## Configure auto event message settings  Determines whether to automatically send event messages to group channels when events take place in an application. You can choose which auto event message to receive on the Sendbird Dashboard  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/configure-auto-event-message-settings ----------------------------
+   * @return configureAutoEventMessagesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<DeleteAllowedIpsFromWhitelistResponse> deleteAllowedIpsFromWhitelistWithHttpInfo(String apiToken, List<String> ipWhitelistAddresses) throws ApiException {
+  public APIconfigureAutoEventMessagesRequest configureAutoEventMessages() throws ApiException {
+    return new APIconfigureAutoEventMessagesRequest();
+  }
+
+private ApiResponse<DeleteAllowedIpsFromWhitelistResponse> deleteAllowedIpsFromWhitelistWithHttpInfo(String apiToken, List<String> ipWhitelistAddresses) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -595,37 +819,79 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Delete an APNs certificate
-   * ## Delete an APNs certificate  Deletes a specific APNs certificate.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-an-apns-certificate ----------------------------
-   * @param apiToken  (required)
-   * @param providerId  (required)
-   * @return DeleteApnsCertificateByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public DeleteApnsCertificateByIdResponse deleteApnsCertificateById(String apiToken, String providerId) throws ApiException {
-    return deleteApnsCertificateByIdWithHttpInfo(apiToken, providerId).getData();
+
+  public class APIdeleteAllowedIpsFromWhitelistRequest {
+    private String apiToken;
+    private List<String> ipWhitelistAddresses;
+
+    private APIdeleteAllowedIpsFromWhitelistRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIdeleteAllowedIpsFromWhitelistRequest
+     */
+    public APIdeleteAllowedIpsFromWhitelistRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set ipWhitelistAddresses
+     * @param ipWhitelistAddresses  (required)
+     * @return APIdeleteAllowedIpsFromWhitelistRequest
+     */
+    public APIdeleteAllowedIpsFromWhitelistRequest ipWhitelistAddresses(List<String> ipWhitelistAddresses) {
+      this.ipWhitelistAddresses = ipWhitelistAddresses;
+      return this;
+    }
+
+    /**
+     * Execute deleteAllowedIpsFromWhitelist request
+     * @return DeleteAllowedIpsFromWhitelistResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public DeleteAllowedIpsFromWhitelistResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteAllowedIpsFromWhitelist request with HTTP info returned
+     * @return ApiResponse&lt;DeleteAllowedIpsFromWhitelistResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<DeleteAllowedIpsFromWhitelistResponse> executeWithHttpInfo() throws ApiException {
+      return deleteAllowedIpsFromWhitelistWithHttpInfo(apiToken, ipWhitelistAddresses);
+    }
   }
 
   /**
-   * Delete an APNs certificate
-   * ## Delete an APNs certificate  Deletes a specific APNs certificate.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-an-apns-certificate ----------------------------
-   * @param apiToken  (required)
-   * @param providerId  (required)
-   * @return ApiResponse&lt;DeleteApnsCertificateByIdResponse&gt;
+   * Delete allowed IPs from a whitelist
+   * ## Delete allowed IPs from a whitelist  Deletes allowed IPs from the whitelist by specifying their IP addresses or ranges. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-allowed-ips-from-a-whitelist
+   * @return deleteAllowedIpsFromWhitelistRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<DeleteApnsCertificateByIdResponse> deleteApnsCertificateByIdWithHttpInfo(String apiToken, String providerId) throws ApiException {
+  public APIdeleteAllowedIpsFromWhitelistRequest deleteAllowedIpsFromWhitelist() throws ApiException {
+    return new APIdeleteAllowedIpsFromWhitelistRequest();
+  }
+
+private ApiResponse<DeleteApnsCertificateByIdResponse> deleteApnsCertificateByIdWithHttpInfo(String apiToken, String providerId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -672,37 +938,71 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Generate a secondary API token
-   * ## Generate a secondary API token  Generates a new secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-generate-a-secondary-api-token
-   * @param apiToken  (required)
-   * @param generateSecondaryApiTokenData  (optional)
-   * @return GenerateSecondaryApiTokenResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GenerateSecondaryApiTokenResponse generateSecondaryApiToken(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData) throws ApiException {
-    return generateSecondaryApiTokenWithHttpInfo(apiToken, generateSecondaryApiTokenData).getData();
+
+  public class APIdeleteApnsCertificateByIdRequest {
+    private String apiToken;
+    private String providerId;
+
+    private APIdeleteApnsCertificateByIdRequest(String providerId) {
+      this.providerId = providerId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIdeleteApnsCertificateByIdRequest
+     */
+    public APIdeleteApnsCertificateByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute deleteApnsCertificateById request
+     * @return DeleteApnsCertificateByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public DeleteApnsCertificateByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteApnsCertificateById request with HTTP info returned
+     * @return ApiResponse&lt;DeleteApnsCertificateByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<DeleteApnsCertificateByIdResponse> executeWithHttpInfo() throws ApiException {
+      return deleteApnsCertificateByIdWithHttpInfo(apiToken, providerId);
+    }
   }
 
   /**
-   * Generate a secondary API token
-   * ## Generate a secondary API token  Generates a new secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-generate-a-secondary-api-token
-   * @param apiToken  (required)
-   * @param generateSecondaryApiTokenData  (optional)
-   * @return ApiResponse&lt;GenerateSecondaryApiTokenResponse&gt;
+   * Delete an APNs certificate
+   * ## Delete an APNs certificate  Deletes a specific APNs certificate.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-delete-an-apns-certificate ----------------------------
+   * @param providerId  (required)
+   * @return deleteApnsCertificateByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GenerateSecondaryApiTokenResponse> generateSecondaryApiTokenWithHttpInfo(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData) throws ApiException {
+  public APIdeleteApnsCertificateByIdRequest deleteApnsCertificateById(String providerId) throws ApiException {
+    return new APIdeleteApnsCertificateByIdRequest(providerId);
+  }
+
+private ApiResponse<GenerateSecondaryApiTokenResponse> generateSecondaryApiTokenWithHttpInfo(String apiToken, GenerateSecondaryApiTokenData generateSecondaryApiTokenData) throws ApiException {
     Object localVarPostBody = generateSecondaryApiTokenData;
     
     // verify the required parameter 'apiToken' is set
@@ -743,35 +1043,79 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List auto event messages
-   * ## List auto event messages  Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages ----------------------------
-   * @param apiToken  (required)
-   * @return SendBirdAutoEventMessageSettings
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdAutoEventMessageSettings listAutoEventMessages(String apiToken) throws ApiException {
-    return listAutoEventMessagesWithHttpInfo(apiToken).getData();
+
+  public class APIgenerateSecondaryApiTokenRequest {
+    private String apiToken;
+    private GenerateSecondaryApiTokenData generateSecondaryApiTokenData;
+
+    private APIgenerateSecondaryApiTokenRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgenerateSecondaryApiTokenRequest
+     */
+    public APIgenerateSecondaryApiTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set generateSecondaryApiTokenData
+     * @param generateSecondaryApiTokenData  (optional)
+     * @return APIgenerateSecondaryApiTokenRequest
+     */
+    public APIgenerateSecondaryApiTokenRequest generateSecondaryApiTokenData(GenerateSecondaryApiTokenData generateSecondaryApiTokenData) {
+      this.generateSecondaryApiTokenData = generateSecondaryApiTokenData;
+      return this;
+    }
+
+    /**
+     * Execute generateSecondaryApiToken request
+     * @return GenerateSecondaryApiTokenResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GenerateSecondaryApiTokenResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute generateSecondaryApiToken request with HTTP info returned
+     * @return ApiResponse&lt;GenerateSecondaryApiTokenResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GenerateSecondaryApiTokenResponse> executeWithHttpInfo() throws ApiException {
+      return generateSecondaryApiTokenWithHttpInfo(apiToken, generateSecondaryApiTokenData);
+    }
   }
 
   /**
-   * List auto event messages
-   * ## List auto event messages  Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages ----------------------------
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;SendBirdAutoEventMessageSettings&gt;
+   * Generate a secondary API token
+   * ## Generate a secondary API token  Generates a new secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-generate-a-secondary-api-token
+   * @return generateSecondaryApiTokenRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdAutoEventMessageSettings> listAutoEventMessagesWithHttpInfo(String apiToken) throws ApiException {
+  public APIgenerateSecondaryApiTokenRequest generateSecondaryApiToken() throws ApiException {
+    return new APIgenerateSecondaryApiTokenRequest();
+  }
+
+private ApiResponse<SendBirdAutoEventMessageSettings> listAutoEventMessagesWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -812,41 +1156,68 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List banned users in channels with a custom channel type
-   * ## Retrieves a list of users banned from channels with the specified custom channel type.
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return CustomTypeListBannedUsersResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public CustomTypeListBannedUsersResponse listBannedUsersInChannelsWithCustomChannelType(String apiToken, String customType, String token, Integer limit) throws ApiException {
-    return listBannedUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, token, limit).getData();
+
+  public class APIlistAutoEventMessagesRequest {
+    private String apiToken;
+
+    private APIlistAutoEventMessagesRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistAutoEventMessagesRequest
+     */
+    public APIlistAutoEventMessagesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute listAutoEventMessages request
+     * @return SendBirdAutoEventMessageSettings
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdAutoEventMessageSettings execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listAutoEventMessages request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdAutoEventMessageSettings&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdAutoEventMessageSettings> executeWithHttpInfo() throws ApiException {
+      return listAutoEventMessagesWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * List banned users in channels with a custom channel type
-   * ## Retrieves a list of users banned from channels with the specified custom channel type.
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;CustomTypeListBannedUsersResponse&gt;
+   * List auto event messages
+   * ## List auto event messages  Retrieves a list of auto event messages that are sent in a specified application and indicates which ones are in use. Auto event messages are Admin messages that are automatically generated when a specific event occurs.  https://sendbird.com/docs/chat/v3/platform-api/application/managing-auto-event-messages/list-auto-event-messages ----------------------------
+   * @return listAutoEventMessagesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<CustomTypeListBannedUsersResponse> listBannedUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, String token, Integer limit) throws ApiException {
+  public APIlistAutoEventMessagesRequest listAutoEventMessages() throws ApiException {
+    return new APIlistAutoEventMessagesRequest();
+  }
+
+private ApiResponse<CustomTypeListBannedUsersResponse> listBannedUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -895,41 +1266,93 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List muted users in channels with a custom channel type
-   * ## Retrieves a list of the muted users in channels with a custom channel type.
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListMutedUsersInChannelsWithCustomChannelType200Response
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListMutedUsersInChannelsWithCustomChannelType200Response listMutedUsersInChannelsWithCustomChannelType(String apiToken, String customType, String token, Integer limit) throws ApiException {
-    return listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, token, limit).getData();
+
+  public class APIlistBannedUsersInChannelsWithCustomChannelTypeRequest {
+    private String apiToken;
+    private String customType;
+    private String token;
+    private Integer limit;
+
+    private APIlistBannedUsersInChannelsWithCustomChannelTypeRequest(String customType) {
+      this.customType = customType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistBannedUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIlistBannedUsersInChannelsWithCustomChannelTypeRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistBannedUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIlistBannedUsersInChannelsWithCustomChannelTypeRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistBannedUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIlistBannedUsersInChannelsWithCustomChannelTypeRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listBannedUsersInChannelsWithCustomChannelType request
+     * @return CustomTypeListBannedUsersResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public CustomTypeListBannedUsersResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listBannedUsersInChannelsWithCustomChannelType request with HTTP info returned
+     * @return ApiResponse&lt;CustomTypeListBannedUsersResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<CustomTypeListBannedUsersResponse> executeWithHttpInfo() throws ApiException {
+      return listBannedUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, token, limit);
+    }
   }
 
   /**
-   * List muted users in channels with a custom channel type
-   * ## Retrieves a list of the muted users in channels with a custom channel type.
-   * @param apiToken  (required)
+   * List banned users in channels with a custom channel type
+   * ## Retrieves a list of users banned from channels with the specified custom channel type.
    * @param customType  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListMutedUsersInChannelsWithCustomChannelType200Response&gt;
+   * @return listBannedUsersInChannelsWithCustomChannelTypeRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListMutedUsersInChannelsWithCustomChannelType200Response> listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, String token, Integer limit) throws ApiException {
+  public APIlistBannedUsersInChannelsWithCustomChannelTypeRequest listBannedUsersInChannelsWithCustomChannelType(String customType) throws ApiException {
+    return new APIlistBannedUsersInChannelsWithCustomChannelTypeRequest(customType);
+  }
+
+private ApiResponse<ListMutedUsersInChannelsWithCustomChannelType200Response> listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -978,37 +1401,93 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List push configurations
-   * ## List push configurations  Retrieves a list of an application&#39;s registered push configurations.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-configurations ----------------------------
-   * @param apiToken  (required)
-   * @param pushType  (required)
-   * @return ListPushConfigurationsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListPushConfigurationsResponse listPushConfigurations(String apiToken, String pushType) throws ApiException {
-    return listPushConfigurationsWithHttpInfo(apiToken, pushType).getData();
+
+  public class APIlistMutedUsersInChannelsWithCustomChannelTypeRequest {
+    private String apiToken;
+    private String customType;
+    private String token;
+    private Integer limit;
+
+    private APIlistMutedUsersInChannelsWithCustomChannelTypeRequest(String customType) {
+      this.customType = customType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistMutedUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIlistMutedUsersInChannelsWithCustomChannelTypeRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistMutedUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIlistMutedUsersInChannelsWithCustomChannelTypeRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistMutedUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIlistMutedUsersInChannelsWithCustomChannelTypeRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listMutedUsersInChannelsWithCustomChannelType request
+     * @return ListMutedUsersInChannelsWithCustomChannelType200Response
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListMutedUsersInChannelsWithCustomChannelType200Response execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listMutedUsersInChannelsWithCustomChannelType request with HTTP info returned
+     * @return ApiResponse&lt;ListMutedUsersInChannelsWithCustomChannelType200Response&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListMutedUsersInChannelsWithCustomChannelType200Response> executeWithHttpInfo() throws ApiException {
+      return listMutedUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, token, limit);
+    }
   }
 
   /**
-   * List push configurations
-   * ## List push configurations  Retrieves a list of an application&#39;s registered push configurations.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-configurations ----------------------------
-   * @param apiToken  (required)
-   * @param pushType  (required)
-   * @return ApiResponse&lt;ListPushConfigurationsResponse&gt;
+   * List muted users in channels with a custom channel type
+   * ## Retrieves a list of the muted users in channels with a custom channel type.
+   * @param customType  (required)
+   * @return listMutedUsersInChannelsWithCustomChannelTypeRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListPushConfigurationsResponse> listPushConfigurationsWithHttpInfo(String apiToken, String pushType) throws ApiException {
+  public APIlistMutedUsersInChannelsWithCustomChannelTypeRequest listMutedUsersInChannelsWithCustomChannelType(String customType) throws ApiException {
+    return new APIlistMutedUsersInChannelsWithCustomChannelTypeRequest(customType);
+  }
+
+private ApiResponse<ListPushConfigurationsResponse> listPushConfigurationsWithHttpInfo(String apiToken, String pushType) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1055,35 +1534,71 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List push notification content templates
-   * ## List push notification content templates  Retrieves a list of push notification content templates of an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-notification-content-templates
-   * @param apiToken  (required)
-   * @return ListPushNotificationContentTemplatesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListPushNotificationContentTemplatesResponse listPushNotificationContentTemplates(String apiToken) throws ApiException {
-    return listPushNotificationContentTemplatesWithHttpInfo(apiToken).getData();
+
+  public class APIlistPushConfigurationsRequest {
+    private String apiToken;
+    private String pushType;
+
+    private APIlistPushConfigurationsRequest(String pushType) {
+      this.pushType = pushType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistPushConfigurationsRequest
+     */
+    public APIlistPushConfigurationsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute listPushConfigurations request
+     * @return ListPushConfigurationsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListPushConfigurationsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listPushConfigurations request with HTTP info returned
+     * @return ApiResponse&lt;ListPushConfigurationsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListPushConfigurationsResponse> executeWithHttpInfo() throws ApiException {
+      return listPushConfigurationsWithHttpInfo(apiToken, pushType);
+    }
   }
 
   /**
-   * List push notification content templates
-   * ## List push notification content templates  Retrieves a list of push notification content templates of an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-notification-content-templates
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;ListPushNotificationContentTemplatesResponse&gt;
+   * List push configurations
+   * ## List push configurations  Retrieves a list of an application&#39;s registered push configurations.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-configurations ----------------------------
+   * @param pushType  (required)
+   * @return listPushConfigurationsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListPushNotificationContentTemplatesResponse> listPushNotificationContentTemplatesWithHttpInfo(String apiToken) throws ApiException {
+  public APIlistPushConfigurationsRequest listPushConfigurations(String pushType) throws ApiException {
+    return new APIlistPushConfigurationsRequest(pushType);
+  }
+
+private ApiResponse<ListPushNotificationContentTemplatesResponse> listPushNotificationContentTemplatesWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1124,35 +1639,68 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List secondary API tokens
-   * ## List secondary API tokens  Retrieves a list of secondary API tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-secondary-api-tokens
-   * @param apiToken  (required)
-   * @return ListSecondaryApiTokensResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListSecondaryApiTokensResponse listSecondaryApiTokens(String apiToken) throws ApiException {
-    return listSecondaryApiTokensWithHttpInfo(apiToken).getData();
+
+  public class APIlistPushNotificationContentTemplatesRequest {
+    private String apiToken;
+
+    private APIlistPushNotificationContentTemplatesRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistPushNotificationContentTemplatesRequest
+     */
+    public APIlistPushNotificationContentTemplatesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute listPushNotificationContentTemplates request
+     * @return ListPushNotificationContentTemplatesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListPushNotificationContentTemplatesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listPushNotificationContentTemplates request with HTTP info returned
+     * @return ApiResponse&lt;ListPushNotificationContentTemplatesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListPushNotificationContentTemplatesResponse> executeWithHttpInfo() throws ApiException {
+      return listPushNotificationContentTemplatesWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * List secondary API tokens
-   * ## List secondary API tokens  Retrieves a list of secondary API tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-secondary-api-tokens
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;ListSecondaryApiTokensResponse&gt;
+   * List push notification content templates
+   * ## List push notification content templates  Retrieves a list of push notification content templates of an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-push-notification-content-templates
+   * @return listPushNotificationContentTemplatesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListSecondaryApiTokensResponse> listSecondaryApiTokensWithHttpInfo(String apiToken) throws ApiException {
+  public APIlistPushNotificationContentTemplatesRequest listPushNotificationContentTemplates() throws ApiException {
+    return new APIlistPushNotificationContentTemplatesRequest();
+  }
+
+private ApiResponse<ListSecondaryApiTokensResponse> listSecondaryApiTokensWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1193,39 +1741,68 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Mute users in channels with a custom channel type
-   * ## Mutes specified users in channels with a custom channel type at once.
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param muteUsersInChannelsWithCustomChannelTypeData  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object muteUsersInChannelsWithCustomChannelType(String apiToken, String customType, MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData) throws ApiException {
-    return muteUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, muteUsersInChannelsWithCustomChannelTypeData).getData();
+
+  public class APIlistSecondaryApiTokensRequest {
+    private String apiToken;
+
+    private APIlistSecondaryApiTokensRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistSecondaryApiTokensRequest
+     */
+    public APIlistSecondaryApiTokensRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute listSecondaryApiTokens request
+     * @return ListSecondaryApiTokensResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListSecondaryApiTokensResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listSecondaryApiTokens request with HTTP info returned
+     * @return ApiResponse&lt;ListSecondaryApiTokensResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListSecondaryApiTokensResponse> executeWithHttpInfo() throws ApiException {
+      return listSecondaryApiTokensWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * Mute users in channels with a custom channel type
-   * ## Mutes specified users in channels with a custom channel type at once.
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param muteUsersInChannelsWithCustomChannelTypeData  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * List secondary API tokens
+   * ## List secondary API tokens  Retrieves a list of secondary API tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-list-secondary-api-tokens
+   * @return listSecondaryApiTokensRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> muteUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData) throws ApiException {
+  public APIlistSecondaryApiTokensRequest listSecondaryApiTokens() throws ApiException {
+    return new APIlistSecondaryApiTokensRequest();
+  }
+
+private ApiResponse<Object> muteUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData) throws ApiException {
     Object localVarPostBody = muteUsersInChannelsWithCustomChannelTypeData;
     
     // verify the required parameter 'apiToken' is set
@@ -1272,39 +1849,82 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Remove a push configuration
-   * ## Remove a push configuration  Removes a specific push configuration from an application. The type of a push configuration is either &#x60;fcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-remove-a-push-configuration ----------------------------
-   * @param apiToken  (required)
-   * @param pushType  (required)
-   * @param providerId  (required)
-   * @return RemovePushConfigurationByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RemovePushConfigurationByIdResponse removePushConfigurationById(String apiToken, String pushType, String providerId) throws ApiException {
-    return removePushConfigurationByIdWithHttpInfo(apiToken, pushType, providerId).getData();
+
+  public class APImuteUsersInChannelsWithCustomChannelTypeRequest {
+    private String apiToken;
+    private String customType;
+    private MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData;
+
+    private APImuteUsersInChannelsWithCustomChannelTypeRequest(String customType) {
+      this.customType = customType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APImuteUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APImuteUsersInChannelsWithCustomChannelTypeRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set muteUsersInChannelsWithCustomChannelTypeData
+     * @param muteUsersInChannelsWithCustomChannelTypeData  (optional)
+     * @return APImuteUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APImuteUsersInChannelsWithCustomChannelTypeRequest muteUsersInChannelsWithCustomChannelTypeData(MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData) {
+      this.muteUsersInChannelsWithCustomChannelTypeData = muteUsersInChannelsWithCustomChannelTypeData;
+      return this;
+    }
+
+    /**
+     * Execute muteUsersInChannelsWithCustomChannelType request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute muteUsersInChannelsWithCustomChannelType request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return muteUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, muteUsersInChannelsWithCustomChannelTypeData);
+    }
   }
 
   /**
-   * Remove a push configuration
-   * ## Remove a push configuration  Removes a specific push configuration from an application. The type of a push configuration is either &#x60;fcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-remove-a-push-configuration ----------------------------
-   * @param apiToken  (required)
-   * @param pushType  (required)
-   * @param providerId  (required)
-   * @return ApiResponse&lt;RemovePushConfigurationByIdResponse&gt;
+   * Mute users in channels with a custom channel type
+   * ## Mutes specified users in channels with a custom channel type at once.
+   * @param customType  (required)
+   * @return muteUsersInChannelsWithCustomChannelTypeRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RemovePushConfigurationByIdResponse> removePushConfigurationByIdWithHttpInfo(String apiToken, String pushType, String providerId) throws ApiException {
+  public APImuteUsersInChannelsWithCustomChannelTypeRequest muteUsersInChannelsWithCustomChannelType(String customType) throws ApiException {
+    return new APImuteUsersInChannelsWithCustomChannelTypeRequest(customType);
+  }
+
+private ApiResponse<RemovePushConfigurationByIdResponse> removePushConfigurationByIdWithHttpInfo(String apiToken, String pushType, String providerId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1357,35 +1977,74 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Retrieve an IP whitelist
-   * ## Retrieve an IP whitelist  Retrieves a list of all the IP ranges and addresses that have access to your Sendbird application. This list is called an IP whitelist and its addresses are granted API access when the IP whitelist API enables [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notations.  If you specify which IP addresses or ranges to include in the whitelist, any unlisted foreign IP addresses will be denied access. If you don&#39;t specify any IP address or range to include in the whitelist, all IP addresses will be granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-retrieve-an-ip-whitelist
-   * @param apiToken  (required)
-   * @return RetrieveIpWhitelistResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RetrieveIpWhitelistResponse retrieveIpWhitelist(String apiToken) throws ApiException {
-    return retrieveIpWhitelistWithHttpInfo(apiToken).getData();
+
+  public class APIremovePushConfigurationByIdRequest {
+    private String apiToken;
+    private String pushType;
+    private String providerId;
+
+    private APIremovePushConfigurationByIdRequest(String pushType, String providerId) {
+      this.pushType = pushType;
+      this.providerId = providerId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIremovePushConfigurationByIdRequest
+     */
+    public APIremovePushConfigurationByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute removePushConfigurationById request
+     * @return RemovePushConfigurationByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RemovePushConfigurationByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute removePushConfigurationById request with HTTP info returned
+     * @return ApiResponse&lt;RemovePushConfigurationByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RemovePushConfigurationByIdResponse> executeWithHttpInfo() throws ApiException {
+      return removePushConfigurationByIdWithHttpInfo(apiToken, pushType, providerId);
+    }
   }
 
   /**
-   * Retrieve an IP whitelist
-   * ## Retrieve an IP whitelist  Retrieves a list of all the IP ranges and addresses that have access to your Sendbird application. This list is called an IP whitelist and its addresses are granted API access when the IP whitelist API enables [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notations.  If you specify which IP addresses or ranges to include in the whitelist, any unlisted foreign IP addresses will be denied access. If you don&#39;t specify any IP address or range to include in the whitelist, all IP addresses will be granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-retrieve-an-ip-whitelist
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;RetrieveIpWhitelistResponse&gt;
+   * Remove a push configuration
+   * ## Remove a push configuration  Removes a specific push configuration from an application. The type of a push configuration is either &#x60;fcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-remove-a-push-configuration ----------------------------
+   * @param pushType  (required)
+   * @param providerId  (required)
+   * @return removePushConfigurationByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RetrieveIpWhitelistResponse> retrieveIpWhitelistWithHttpInfo(String apiToken) throws ApiException {
+  public APIremovePushConfigurationByIdRequest removePushConfigurationById(String pushType, String providerId) throws ApiException {
+    return new APIremovePushConfigurationByIdRequest(pushType, providerId);
+  }
+
+private ApiResponse<RetrieveIpWhitelistResponse> retrieveIpWhitelistWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1426,37 +2085,68 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Revoke a secondary API token
-   * ## Revoke a secondary API token  Revokes a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-revoke-a-secondary-api-token
-   * @param apiToken  (required)
-   * @param apiToken2  (required)
-   * @return RevokeSecondaryApiTokenByTokenResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RevokeSecondaryApiTokenByTokenResponse revokeSecondaryApiTokenByToken(String apiToken, String apiToken2) throws ApiException {
-    return revokeSecondaryApiTokenByTokenWithHttpInfo(apiToken, apiToken2).getData();
+
+  public class APIretrieveIpWhitelistRequest {
+    private String apiToken;
+
+    private APIretrieveIpWhitelistRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIretrieveIpWhitelistRequest
+     */
+    public APIretrieveIpWhitelistRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute retrieveIpWhitelist request
+     * @return RetrieveIpWhitelistResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RetrieveIpWhitelistResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute retrieveIpWhitelist request with HTTP info returned
+     * @return ApiResponse&lt;RetrieveIpWhitelistResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RetrieveIpWhitelistResponse> executeWithHttpInfo() throws ApiException {
+      return retrieveIpWhitelistWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * Revoke a secondary API token
-   * ## Revoke a secondary API token  Revokes a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-revoke-a-secondary-api-token
-   * @param apiToken  (required)
-   * @param apiToken2  (required)
-   * @return ApiResponse&lt;RevokeSecondaryApiTokenByTokenResponse&gt;
+   * Retrieve an IP whitelist
+   * ## Retrieve an IP whitelist  Retrieves a list of all the IP ranges and addresses that have access to your Sendbird application. This list is called an IP whitelist and its addresses are granted API access when the IP whitelist API enables [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notations.  If you specify which IP addresses or ranges to include in the whitelist, any unlisted foreign IP addresses will be denied access. If you don&#39;t specify any IP address or range to include in the whitelist, all IP addresses will be granted API access. You can configure the IP whitelist under Settings &gt; Security &gt; Allowed IPs in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-retrieve-an-ip-whitelist
+   * @return retrieveIpWhitelistRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RevokeSecondaryApiTokenByTokenResponse> revokeSecondaryApiTokenByTokenWithHttpInfo(String apiToken, String apiToken2) throws ApiException {
+  public APIretrieveIpWhitelistRequest retrieveIpWhitelist() throws ApiException {
+    return new APIretrieveIpWhitelistRequest();
+  }
+
+private ApiResponse<RevokeSecondaryApiTokenByTokenResponse> revokeSecondaryApiTokenByTokenWithHttpInfo(String apiToken, String apiToken2) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1503,39 +2193,71 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Message moderation
-   * ## 
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param setDomainFilterData  (optional)
-   * @return SendBirdChannelResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdChannelResponse setDomainFilter(String apiToken, String customType, SetDomainFilterData setDomainFilterData) throws ApiException {
-    return setDomainFilterWithHttpInfo(apiToken, customType, setDomainFilterData).getData();
+
+  public class APIrevokeSecondaryApiTokenByTokenRequest {
+    private String apiToken;
+    private String apiToken2;
+
+    private APIrevokeSecondaryApiTokenByTokenRequest(String apiToken2) {
+      this.apiToken2 = apiToken2;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIrevokeSecondaryApiTokenByTokenRequest
+     */
+    public APIrevokeSecondaryApiTokenByTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute revokeSecondaryApiTokenByToken request
+     * @return RevokeSecondaryApiTokenByTokenResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RevokeSecondaryApiTokenByTokenResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute revokeSecondaryApiTokenByToken request with HTTP info returned
+     * @return ApiResponse&lt;RevokeSecondaryApiTokenByTokenResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RevokeSecondaryApiTokenByTokenResponse> executeWithHttpInfo() throws ApiException {
+      return revokeSecondaryApiTokenByTokenWithHttpInfo(apiToken, apiToken2);
+    }
   }
 
   /**
-   * Message moderation
-   * ## 
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param setDomainFilterData  (optional)
-   * @return ApiResponse&lt;SendBirdChannelResponse&gt;
+   * Revoke a secondary API token
+   * ## Revoke a secondary API token  Revokes a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-revoke-a-secondary-api-token
+   * @param apiToken2  (required)
+   * @return revokeSecondaryApiTokenByTokenRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdChannelResponse> setDomainFilterWithHttpInfo(String apiToken, String customType, SetDomainFilterData setDomainFilterData) throws ApiException {
+  public APIrevokeSecondaryApiTokenByTokenRequest revokeSecondaryApiTokenByToken(String apiToken2) throws ApiException {
+    return new APIrevokeSecondaryApiTokenByTokenRequest(apiToken2);
+  }
+
+private ApiResponse<SendBirdChannelResponse> setDomainFilterWithHttpInfo(String apiToken, String customType, SetDomainFilterData setDomainFilterData) throws ApiException {
     Object localVarPostBody = setDomainFilterData;
     
     // verify the required parameter 'apiToken' is set
@@ -1582,39 +2304,82 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Unban users in channels with a custom channel type
-   * ## Unban specified users in channels with a custom channel type at once.
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param userIds  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object unbanUsersInChannelsWithCustomChannelType(String apiToken, String customType, List<String> userIds) throws ApiException {
-    return unbanUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, userIds).getData();
+
+  public class APIsetDomainFilterRequest {
+    private String apiToken;
+    private String customType;
+    private SetDomainFilterData setDomainFilterData;
+
+    private APIsetDomainFilterRequest(String customType) {
+      this.customType = customType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIsetDomainFilterRequest
+     */
+    public APIsetDomainFilterRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set setDomainFilterData
+     * @param setDomainFilterData  (optional)
+     * @return APIsetDomainFilterRequest
+     */
+    public APIsetDomainFilterRequest setDomainFilterData(SetDomainFilterData setDomainFilterData) {
+      this.setDomainFilterData = setDomainFilterData;
+      return this;
+    }
+
+    /**
+     * Execute setDomainFilter request
+     * @return SendBirdChannelResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdChannelResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute setDomainFilter request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdChannelResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdChannelResponse> executeWithHttpInfo() throws ApiException {
+      return setDomainFilterWithHttpInfo(apiToken, customType, setDomainFilterData);
+    }
   }
 
   /**
-   * Unban users in channels with a custom channel type
-   * ## Unban specified users in channels with a custom channel type at once.
-   * @param apiToken  (required)
+   * Message moderation
+   * ## 
    * @param customType  (required)
-   * @param userIds  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * @return setDomainFilterRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> unbanUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, List<String> userIds) throws ApiException {
+  public APIsetDomainFilterRequest setDomainFilter(String customType) throws ApiException {
+    return new APIsetDomainFilterRequest(customType);
+  }
+
+private ApiResponse<Object> unbanUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, List<String> userIds) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1667,39 +2432,82 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Unmute users in channels with a custom channel type
-   * ## Unmute specified users in channels with a custom channel type at once.
-   * @param apiToken  (required)
-   * @param customType  (required)
-   * @param userIds  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object unmuteUsersInChannelsWithCustomChannelType(String apiToken, String customType, List<String> userIds) throws ApiException {
-    return unmuteUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, userIds).getData();
+
+  public class APIunbanUsersInChannelsWithCustomChannelTypeRequest {
+    private String apiToken;
+    private String customType;
+    private List<String> userIds;
+
+    private APIunbanUsersInChannelsWithCustomChannelTypeRequest(String customType) {
+      this.customType = customType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIunbanUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIunbanUsersInChannelsWithCustomChannelTypeRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set userIds
+     * @param userIds  (required)
+     * @return APIunbanUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIunbanUsersInChannelsWithCustomChannelTypeRequest userIds(List<String> userIds) {
+      this.userIds = userIds;
+      return this;
+    }
+
+    /**
+     * Execute unbanUsersInChannelsWithCustomChannelType request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute unbanUsersInChannelsWithCustomChannelType request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return unbanUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, userIds);
+    }
   }
 
   /**
-   * Unmute users in channels with a custom channel type
-   * ## Unmute specified users in channels with a custom channel type at once.
-   * @param apiToken  (required)
+   * Unban users in channels with a custom channel type
+   * ## Unban specified users in channels with a custom channel type at once.
    * @param customType  (required)
-   * @param userIds  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * @return unbanUsersInChannelsWithCustomChannelTypeRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> unmuteUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, List<String> userIds) throws ApiException {
+  public APIunbanUsersInChannelsWithCustomChannelTypeRequest unbanUsersInChannelsWithCustomChannelType(String customType) throws ApiException {
+    return new APIunbanUsersInChannelsWithCustomChannelTypeRequest(customType);
+  }
+
+private ApiResponse<Object> unmuteUsersInChannelsWithCustomChannelTypeWithHttpInfo(String apiToken, String customType, List<String> userIds) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1752,39 +2560,82 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update an APNs push configuration
-   * ## Update an APNs push configuration  Updates a specific APNs (Apple Push Notification service) push configuration for your client app. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  &gt; __Note__: If your HTTP request body contains a [.p12](https://sendbird.com/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) certificate file to upload to Sendbird server, you should send a [Multipart request](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api#2-headers-3-multipart-requests) .  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-an-apns-push-configuration ----------------------------
-   * @param apiToken  (required)
-   * @param providerId  (required)
-   * @param updateApnsPushConfigurationByIdData  (optional)
-   * @return UpdateApnsPushConfigurationByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdateApnsPushConfigurationByIdResponse updateApnsPushConfigurationById(String apiToken, String providerId, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData) throws ApiException {
-    return updateApnsPushConfigurationByIdWithHttpInfo(apiToken, providerId, updateApnsPushConfigurationByIdData).getData();
+
+  public class APIunmuteUsersInChannelsWithCustomChannelTypeRequest {
+    private String apiToken;
+    private String customType;
+    private List<String> userIds;
+
+    private APIunmuteUsersInChannelsWithCustomChannelTypeRequest(String customType) {
+      this.customType = customType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIunmuteUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIunmuteUsersInChannelsWithCustomChannelTypeRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set userIds
+     * @param userIds  (required)
+     * @return APIunmuteUsersInChannelsWithCustomChannelTypeRequest
+     */
+    public APIunmuteUsersInChannelsWithCustomChannelTypeRequest userIds(List<String> userIds) {
+      this.userIds = userIds;
+      return this;
+    }
+
+    /**
+     * Execute unmuteUsersInChannelsWithCustomChannelType request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute unmuteUsersInChannelsWithCustomChannelType request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return unmuteUsersInChannelsWithCustomChannelTypeWithHttpInfo(apiToken, customType, userIds);
+    }
   }
 
   /**
-   * Update an APNs push configuration
-   * ## Update an APNs push configuration  Updates a specific APNs (Apple Push Notification service) push configuration for your client app. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  &gt; __Note__: If your HTTP request body contains a [.p12](https://sendbird.com/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) certificate file to upload to Sendbird server, you should send a [Multipart request](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api#2-headers-3-multipart-requests) .  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-an-apns-push-configuration ----------------------------
-   * @param apiToken  (required)
-   * @param providerId  (required)
-   * @param updateApnsPushConfigurationByIdData  (optional)
-   * @return ApiResponse&lt;UpdateApnsPushConfigurationByIdResponse&gt;
+   * Unmute users in channels with a custom channel type
+   * ## Unmute specified users in channels with a custom channel type at once.
+   * @param customType  (required)
+   * @return unmuteUsersInChannelsWithCustomChannelTypeRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdateApnsPushConfigurationByIdResponse> updateApnsPushConfigurationByIdWithHttpInfo(String apiToken, String providerId, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData) throws ApiException {
+  public APIunmuteUsersInChannelsWithCustomChannelTypeRequest unmuteUsersInChannelsWithCustomChannelType(String customType) throws ApiException {
+    return new APIunmuteUsersInChannelsWithCustomChannelTypeRequest(customType);
+  }
+
+private ApiResponse<UpdateApnsPushConfigurationByIdResponse> updateApnsPushConfigurationByIdWithHttpInfo(String apiToken, String providerId, UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData) throws ApiException {
     Object localVarPostBody = updateApnsPushConfigurationByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -1831,37 +2682,82 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update default channel invitation preference
-   * ## Update default channel invitation preference  Updates the default channel invitation preference of an application.  &gt; __Note__: Using the [update channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action, you can update the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference
-   * @param apiToken  (required)
-   * @param updateDefaultChannelInvitationPreferenceData  (optional)
-   * @return UpdateDefaultChannelInvitationPreferenceResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdateDefaultChannelInvitationPreferenceResponse updateDefaultChannelInvitationPreference(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData) throws ApiException {
-    return updateDefaultChannelInvitationPreferenceWithHttpInfo(apiToken, updateDefaultChannelInvitationPreferenceData).getData();
+
+  public class APIupdateApnsPushConfigurationByIdRequest {
+    private String apiToken;
+    private String providerId;
+    private UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData;
+
+    private APIupdateApnsPushConfigurationByIdRequest(String providerId) {
+      this.providerId = providerId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateApnsPushConfigurationByIdRequest
+     */
+    public APIupdateApnsPushConfigurationByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateApnsPushConfigurationByIdData
+     * @param updateApnsPushConfigurationByIdData  (optional)
+     * @return APIupdateApnsPushConfigurationByIdRequest
+     */
+    public APIupdateApnsPushConfigurationByIdRequest updateApnsPushConfigurationByIdData(UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData) {
+      this.updateApnsPushConfigurationByIdData = updateApnsPushConfigurationByIdData;
+      return this;
+    }
+
+    /**
+     * Execute updateApnsPushConfigurationById request
+     * @return UpdateApnsPushConfigurationByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateApnsPushConfigurationByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateApnsPushConfigurationById request with HTTP info returned
+     * @return ApiResponse&lt;UpdateApnsPushConfigurationByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateApnsPushConfigurationByIdResponse> executeWithHttpInfo() throws ApiException {
+      return updateApnsPushConfigurationByIdWithHttpInfo(apiToken, providerId, updateApnsPushConfigurationByIdData);
+    }
   }
 
   /**
-   * Update default channel invitation preference
-   * ## Update default channel invitation preference  Updates the default channel invitation preference of an application.  &gt; __Note__: Using the [update channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action, you can update the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference
-   * @param apiToken  (required)
-   * @param updateDefaultChannelInvitationPreferenceData  (optional)
-   * @return ApiResponse&lt;UpdateDefaultChannelInvitationPreferenceResponse&gt;
+   * Update an APNs push configuration
+   * ## Update an APNs push configuration  Updates a specific APNs (Apple Push Notification service) push configuration for your client app. You can also register the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  &gt; __Note__: If your HTTP request body contains a [.p12](https://sendbird.com/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) certificate file to upload to Sendbird server, you should send a [Multipart request](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api#2-headers-3-multipart-requests) .  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-an-apns-push-configuration ----------------------------
+   * @param providerId  (required)
+   * @return updateApnsPushConfigurationByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdateDefaultChannelInvitationPreferenceResponse> updateDefaultChannelInvitationPreferenceWithHttpInfo(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData) throws ApiException {
+  public APIupdateApnsPushConfigurationByIdRequest updateApnsPushConfigurationById(String providerId) throws ApiException {
+    return new APIupdateApnsPushConfigurationByIdRequest(providerId);
+  }
+
+private ApiResponse<UpdateDefaultChannelInvitationPreferenceResponse> updateDefaultChannelInvitationPreferenceWithHttpInfo(String apiToken, UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData) throws ApiException {
     Object localVarPostBody = updateDefaultChannelInvitationPreferenceData;
     
     // verify the required parameter 'apiToken' is set
@@ -1902,39 +2798,79 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update a FCM push configuration
-   * ## Update a FCM push configuration  Updates a specific FCM (Firebase Cloud Messaging) push configuration for your client app. You can also update the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-a-fcm-push-configuration ----------------------------
-   * @param apiToken  (required)
-   * @param providerId  (required)
-   * @param updateFcmPushConfigurationByIdData  (optional)
-   * @return UpdateFcmPushConfigurationByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdateFcmPushConfigurationByIdResponse updateFcmPushConfigurationById(String apiToken, String providerId, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData) throws ApiException {
-    return updateFcmPushConfigurationByIdWithHttpInfo(apiToken, providerId, updateFcmPushConfigurationByIdData).getData();
+
+  public class APIupdateDefaultChannelInvitationPreferenceRequest {
+    private String apiToken;
+    private UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData;
+
+    private APIupdateDefaultChannelInvitationPreferenceRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateDefaultChannelInvitationPreferenceRequest
+     */
+    public APIupdateDefaultChannelInvitationPreferenceRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateDefaultChannelInvitationPreferenceData
+     * @param updateDefaultChannelInvitationPreferenceData  (optional)
+     * @return APIupdateDefaultChannelInvitationPreferenceRequest
+     */
+    public APIupdateDefaultChannelInvitationPreferenceRequest updateDefaultChannelInvitationPreferenceData(UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData) {
+      this.updateDefaultChannelInvitationPreferenceData = updateDefaultChannelInvitationPreferenceData;
+      return this;
+    }
+
+    /**
+     * Execute updateDefaultChannelInvitationPreference request
+     * @return UpdateDefaultChannelInvitationPreferenceResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateDefaultChannelInvitationPreferenceResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateDefaultChannelInvitationPreference request with HTTP info returned
+     * @return ApiResponse&lt;UpdateDefaultChannelInvitationPreferenceResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateDefaultChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
+      return updateDefaultChannelInvitationPreferenceWithHttpInfo(apiToken, updateDefaultChannelInvitationPreferenceData);
+    }
   }
 
   /**
-   * Update a FCM push configuration
-   * ## Update a FCM push configuration  Updates a specific FCM (Firebase Cloud Messaging) push configuration for your client app. You can also update the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-a-fcm-push-configuration ----------------------------
-   * @param apiToken  (required)
-   * @param providerId  (required)
-   * @param updateFcmPushConfigurationByIdData  (optional)
-   * @return ApiResponse&lt;UpdateFcmPushConfigurationByIdResponse&gt;
+   * Update default channel invitation preference
+   * ## Update default channel invitation preference  Updates the default channel invitation preference of an application.  &gt; __Note__: Using the [update channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action, you can update the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference
+   * @return updateDefaultChannelInvitationPreferenceRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdateFcmPushConfigurationByIdResponse> updateFcmPushConfigurationByIdWithHttpInfo(String apiToken, String providerId, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData) throws ApiException {
+  public APIupdateDefaultChannelInvitationPreferenceRequest updateDefaultChannelInvitationPreference() throws ApiException {
+    return new APIupdateDefaultChannelInvitationPreferenceRequest();
+  }
+
+private ApiResponse<UpdateFcmPushConfigurationByIdResponse> updateFcmPushConfigurationByIdWithHttpInfo(String apiToken, String providerId, UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData) throws ApiException {
     Object localVarPostBody = updateFcmPushConfigurationByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -1981,39 +2917,82 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update an HMS push configuration
-   * ## Update an HMS push configuration  Updates a specific HMS (Huawei Mobile Services) push configuration for your client app. You can also update the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-an-hms-push-configuration ----------------------------
-   * @param apiToken  (required)
-   * @param providerId  (required)
-   * @param updateHmsPushConfigurationByIdData  (optional)
-   * @return UpdateHmsPushConfigurationByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdateHmsPushConfigurationByIdResponse updateHmsPushConfigurationById(String apiToken, String providerId, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData) throws ApiException {
-    return updateHmsPushConfigurationByIdWithHttpInfo(apiToken, providerId, updateHmsPushConfigurationByIdData).getData();
+
+  public class APIupdateFcmPushConfigurationByIdRequest {
+    private String apiToken;
+    private String providerId;
+    private UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData;
+
+    private APIupdateFcmPushConfigurationByIdRequest(String providerId) {
+      this.providerId = providerId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateFcmPushConfigurationByIdRequest
+     */
+    public APIupdateFcmPushConfigurationByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateFcmPushConfigurationByIdData
+     * @param updateFcmPushConfigurationByIdData  (optional)
+     * @return APIupdateFcmPushConfigurationByIdRequest
+     */
+    public APIupdateFcmPushConfigurationByIdRequest updateFcmPushConfigurationByIdData(UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData) {
+      this.updateFcmPushConfigurationByIdData = updateFcmPushConfigurationByIdData;
+      return this;
+    }
+
+    /**
+     * Execute updateFcmPushConfigurationById request
+     * @return UpdateFcmPushConfigurationByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateFcmPushConfigurationByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateFcmPushConfigurationById request with HTTP info returned
+     * @return ApiResponse&lt;UpdateFcmPushConfigurationByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateFcmPushConfigurationByIdResponse> executeWithHttpInfo() throws ApiException {
+      return updateFcmPushConfigurationByIdWithHttpInfo(apiToken, providerId, updateFcmPushConfigurationByIdData);
+    }
   }
 
   /**
-   * Update an HMS push configuration
-   * ## Update an HMS push configuration  Updates a specific HMS (Huawei Mobile Services) push configuration for your client app. You can also update the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-an-hms-push-configuration ----------------------------
-   * @param apiToken  (required)
+   * Update a FCM push configuration
+   * ## Update a FCM push configuration  Updates a specific FCM (Firebase Cloud Messaging) push configuration for your client app. You can also update the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-a-fcm-push-configuration ----------------------------
    * @param providerId  (required)
-   * @param updateHmsPushConfigurationByIdData  (optional)
-   * @return ApiResponse&lt;UpdateHmsPushConfigurationByIdResponse&gt;
+   * @return updateFcmPushConfigurationByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdateHmsPushConfigurationByIdResponse> updateHmsPushConfigurationByIdWithHttpInfo(String apiToken, String providerId, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData) throws ApiException {
+  public APIupdateFcmPushConfigurationByIdRequest updateFcmPushConfigurationById(String providerId) throws ApiException {
+    return new APIupdateFcmPushConfigurationByIdRequest(providerId);
+  }
+
+private ApiResponse<UpdateHmsPushConfigurationByIdResponse> updateHmsPushConfigurationByIdWithHttpInfo(String apiToken, String providerId, UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData) throws ApiException {
     Object localVarPostBody = updateHmsPushConfigurationByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -2060,39 +3039,82 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update a push notification content template
-   * ## Update a push notification content template  Updates a specific push notification content template of an application. The name of a content template is either &#x60;default&#x60; or &#x60;alternative&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-a-push-notification-content-template ----------------------------
-   * @param apiToken  (required)
-   * @param templateName  (required)
-   * @param updatePushNotificationContentTemplateData  (optional)
-   * @return UpdatePushNotificationContentTemplateResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdatePushNotificationContentTemplateResponse updatePushNotificationContentTemplate(String apiToken, String templateName, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData) throws ApiException {
-    return updatePushNotificationContentTemplateWithHttpInfo(apiToken, templateName, updatePushNotificationContentTemplateData).getData();
+
+  public class APIupdateHmsPushConfigurationByIdRequest {
+    private String apiToken;
+    private String providerId;
+    private UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData;
+
+    private APIupdateHmsPushConfigurationByIdRequest(String providerId) {
+      this.providerId = providerId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateHmsPushConfigurationByIdRequest
+     */
+    public APIupdateHmsPushConfigurationByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateHmsPushConfigurationByIdData
+     * @param updateHmsPushConfigurationByIdData  (optional)
+     * @return APIupdateHmsPushConfigurationByIdRequest
+     */
+    public APIupdateHmsPushConfigurationByIdRequest updateHmsPushConfigurationByIdData(UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData) {
+      this.updateHmsPushConfigurationByIdData = updateHmsPushConfigurationByIdData;
+      return this;
+    }
+
+    /**
+     * Execute updateHmsPushConfigurationById request
+     * @return UpdateHmsPushConfigurationByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateHmsPushConfigurationByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateHmsPushConfigurationById request with HTTP info returned
+     * @return ApiResponse&lt;UpdateHmsPushConfigurationByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateHmsPushConfigurationByIdResponse> executeWithHttpInfo() throws ApiException {
+      return updateHmsPushConfigurationByIdWithHttpInfo(apiToken, providerId, updateHmsPushConfigurationByIdData);
+    }
   }
 
   /**
-   * Update a push notification content template
-   * ## Update a push notification content template  Updates a specific push notification content template of an application. The name of a content template is either &#x60;default&#x60; or &#x60;alternative&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-a-push-notification-content-template ----------------------------
-   * @param apiToken  (required)
-   * @param templateName  (required)
-   * @param updatePushNotificationContentTemplateData  (optional)
-   * @return ApiResponse&lt;UpdatePushNotificationContentTemplateResponse&gt;
+   * Update an HMS push configuration
+   * ## Update an HMS push configuration  Updates a specific HMS (Huawei Mobile Services) push configuration for your client app. You can also update the configurations in your [dashboard](https://dashboard.sendbird.com) under Settings &gt; Application &gt; Notifications.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-an-hms-push-configuration ----------------------------
+   * @param providerId  (required)
+   * @return updateHmsPushConfigurationByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdatePushNotificationContentTemplateResponse> updatePushNotificationContentTemplateWithHttpInfo(String apiToken, String templateName, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData) throws ApiException {
+  public APIupdateHmsPushConfigurationByIdRequest updateHmsPushConfigurationById(String providerId) throws ApiException {
+    return new APIupdateHmsPushConfigurationByIdRequest(providerId);
+  }
+
+private ApiResponse<UpdatePushNotificationContentTemplateResponse> updatePushNotificationContentTemplateWithHttpInfo(String apiToken, String templateName, UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData) throws ApiException {
     Object localVarPostBody = updatePushNotificationContentTemplateData;
     
     // verify the required parameter 'apiToken' is set
@@ -2139,35 +3161,82 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View default channel invitation preference
-   * ## View default channel invitation preference  Retrieves the default channel invitation preference of an application.  &gt; __Note__: Using the [view channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference) action, you can retrieve the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference
-   * @param apiToken  (required)
-   * @return ViewDefaultChannelInvitationPreferenceResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewDefaultChannelInvitationPreferenceResponse viewDefaultChannelInvitationPreference(String apiToken) throws ApiException {
-    return viewDefaultChannelInvitationPreferenceWithHttpInfo(apiToken).getData();
+
+  public class APIupdatePushNotificationContentTemplateRequest {
+    private String apiToken;
+    private String templateName;
+    private UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData;
+
+    private APIupdatePushNotificationContentTemplateRequest(String templateName) {
+      this.templateName = templateName;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdatePushNotificationContentTemplateRequest
+     */
+    public APIupdatePushNotificationContentTemplateRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updatePushNotificationContentTemplateData
+     * @param updatePushNotificationContentTemplateData  (optional)
+     * @return APIupdatePushNotificationContentTemplateRequest
+     */
+    public APIupdatePushNotificationContentTemplateRequest updatePushNotificationContentTemplateData(UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData) {
+      this.updatePushNotificationContentTemplateData = updatePushNotificationContentTemplateData;
+      return this;
+    }
+
+    /**
+     * Execute updatePushNotificationContentTemplate request
+     * @return UpdatePushNotificationContentTemplateResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdatePushNotificationContentTemplateResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updatePushNotificationContentTemplate request with HTTP info returned
+     * @return ApiResponse&lt;UpdatePushNotificationContentTemplateResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdatePushNotificationContentTemplateResponse> executeWithHttpInfo() throws ApiException {
+      return updatePushNotificationContentTemplateWithHttpInfo(apiToken, templateName, updatePushNotificationContentTemplateData);
+    }
   }
 
   /**
-   * View default channel invitation preference
-   * ## View default channel invitation preference  Retrieves the default channel invitation preference of an application.  &gt; __Note__: Using the [view channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference) action, you can retrieve the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;ViewDefaultChannelInvitationPreferenceResponse&gt;
+   * Update a push notification content template
+   * ## Update a push notification content template  Updates a specific push notification content template of an application. The name of a content template is either &#x60;default&#x60; or &#x60;alternative&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-a-push-notification-content-template ----------------------------
+   * @param templateName  (required)
+   * @return updatePushNotificationContentTemplateRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewDefaultChannelInvitationPreferenceResponse> viewDefaultChannelInvitationPreferenceWithHttpInfo(String apiToken) throws ApiException {
+  public APIupdatePushNotificationContentTemplateRequest updatePushNotificationContentTemplate(String templateName) throws ApiException {
+    return new APIupdatePushNotificationContentTemplateRequest(templateName);
+  }
+
+private ApiResponse<ViewDefaultChannelInvitationPreferenceResponse> viewDefaultChannelInvitationPreferenceWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2208,39 +3277,68 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a push configuration
-   * ## View a push configuration  Retrieves a specific push configuration of an application. The type of a push configuration is either &#x60;fcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-configuration ----------------------------
-   * @param apiToken  (required)
-   * @param pushType  (required)
-   * @param providerId  (required)
-   * @return ViewPushConfigurationByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewPushConfigurationByIdResponse viewPushConfigurationById(String apiToken, String pushType, String providerId) throws ApiException {
-    return viewPushConfigurationByIdWithHttpInfo(apiToken, pushType, providerId).getData();
+
+  public class APIviewDefaultChannelInvitationPreferenceRequest {
+    private String apiToken;
+
+    private APIviewDefaultChannelInvitationPreferenceRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewDefaultChannelInvitationPreferenceRequest
+     */
+    public APIviewDefaultChannelInvitationPreferenceRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewDefaultChannelInvitationPreference request
+     * @return ViewDefaultChannelInvitationPreferenceResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewDefaultChannelInvitationPreferenceResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewDefaultChannelInvitationPreference request with HTTP info returned
+     * @return ApiResponse&lt;ViewDefaultChannelInvitationPreferenceResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewDefaultChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
+      return viewDefaultChannelInvitationPreferenceWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * View a push configuration
-   * ## View a push configuration  Retrieves a specific push configuration of an application. The type of a push configuration is either &#x60;fcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-configuration ----------------------------
-   * @param apiToken  (required)
-   * @param pushType  (required)
-   * @param providerId  (required)
-   * @return ApiResponse&lt;ViewPushConfigurationByIdResponse&gt;
+   * View default channel invitation preference
+   * ## View default channel invitation preference  Retrieves the default channel invitation preference of an application.  &gt; __Note__: Using the [view channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference) action, you can retrieve the value of a specific user&#39;s channel invitation preference, which can be set individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference
+   * @return viewDefaultChannelInvitationPreferenceRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewPushConfigurationByIdResponse> viewPushConfigurationByIdWithHttpInfo(String apiToken, String pushType, String providerId) throws ApiException {
+  public APIviewDefaultChannelInvitationPreferenceRequest viewDefaultChannelInvitationPreference() throws ApiException {
+    return new APIviewDefaultChannelInvitationPreferenceRequest();
+  }
+
+private ApiResponse<ViewPushConfigurationByIdResponse> viewPushConfigurationByIdWithHttpInfo(String apiToken, String pushType, String providerId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2293,37 +3391,74 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a push notification content template
-   * ## View a push notification content template  Retrieves information on a specific push notification content templates of an application. The name of a content template is either &#x60;default&#x60; or &#x60;alternative&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-notification-content-template ----------------------------
-   * @param apiToken  (required)
-   * @param templateName  (required)
-   * @return ViewPushNotificationContentTemplateResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewPushNotificationContentTemplateResponse viewPushNotificationContentTemplate(String apiToken, String templateName) throws ApiException {
-    return viewPushNotificationContentTemplateWithHttpInfo(apiToken, templateName).getData();
+
+  public class APIviewPushConfigurationByIdRequest {
+    private String apiToken;
+    private String pushType;
+    private String providerId;
+
+    private APIviewPushConfigurationByIdRequest(String pushType, String providerId) {
+      this.pushType = pushType;
+      this.providerId = providerId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewPushConfigurationByIdRequest
+     */
+    public APIviewPushConfigurationByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewPushConfigurationById request
+     * @return ViewPushConfigurationByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewPushConfigurationByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewPushConfigurationById request with HTTP info returned
+     * @return ApiResponse&lt;ViewPushConfigurationByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewPushConfigurationByIdResponse> executeWithHttpInfo() throws ApiException {
+      return viewPushConfigurationByIdWithHttpInfo(apiToken, pushType, providerId);
+    }
   }
 
   /**
-   * View a push notification content template
-   * ## View a push notification content template  Retrieves information on a specific push notification content templates of an application. The name of a content template is either &#x60;default&#x60; or &#x60;alternative&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-notification-content-template ----------------------------
-   * @param apiToken  (required)
-   * @param templateName  (required)
-   * @return ApiResponse&lt;ViewPushNotificationContentTemplateResponse&gt;
+   * View a push configuration
+   * ## View a push configuration  Retrieves a specific push configuration of an application. The type of a push configuration is either &#x60;fcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-configuration ----------------------------
+   * @param pushType  (required)
+   * @param providerId  (required)
+   * @return viewPushConfigurationByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewPushNotificationContentTemplateResponse> viewPushNotificationContentTemplateWithHttpInfo(String apiToken, String templateName) throws ApiException {
+  public APIviewPushConfigurationByIdRequest viewPushConfigurationById(String pushType, String providerId) throws ApiException {
+    return new APIviewPushConfigurationByIdRequest(pushType, providerId);
+  }
+
+private ApiResponse<ViewPushNotificationContentTemplateResponse> viewPushNotificationContentTemplateWithHttpInfo(String apiToken, String templateName) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2370,37 +3505,71 @@ public class ApplicationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a secondary API token
-   * ## View a secondary API token  Retrieves the information on a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-secondary-api-token
-   * @param apiToken  (required)
-   * @param apiToken2  (required)
-   * @return ViewSecondaryApiTokenByTokenResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewSecondaryApiTokenByTokenResponse viewSecondaryApiTokenByToken(String apiToken, String apiToken2) throws ApiException {
-    return viewSecondaryApiTokenByTokenWithHttpInfo(apiToken, apiToken2).getData();
+
+  public class APIviewPushNotificationContentTemplateRequest {
+    private String apiToken;
+    private String templateName;
+
+    private APIviewPushNotificationContentTemplateRequest(String templateName) {
+      this.templateName = templateName;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewPushNotificationContentTemplateRequest
+     */
+    public APIviewPushNotificationContentTemplateRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewPushNotificationContentTemplate request
+     * @return ViewPushNotificationContentTemplateResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewPushNotificationContentTemplateResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewPushNotificationContentTemplate request with HTTP info returned
+     * @return ApiResponse&lt;ViewPushNotificationContentTemplateResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewPushNotificationContentTemplateResponse> executeWithHttpInfo() throws ApiException {
+      return viewPushNotificationContentTemplateWithHttpInfo(apiToken, templateName);
+    }
   }
 
   /**
-   * View a secondary API token
-   * ## View a secondary API token  Retrieves the information on a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-secondary-api-token
-   * @param apiToken  (required)
-   * @param apiToken2  (required)
-   * @return ApiResponse&lt;ViewSecondaryApiTokenByTokenResponse&gt;
+   * View a push notification content template
+   * ## View a push notification content template  Retrieves information on a specific push notification content templates of an application. The name of a content template is either &#x60;default&#x60; or &#x60;alternative&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-push-notification-content-template ----------------------------
+   * @param templateName  (required)
+   * @return viewPushNotificationContentTemplateRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewSecondaryApiTokenByTokenResponse> viewSecondaryApiTokenByTokenWithHttpInfo(String apiToken, String apiToken2) throws ApiException {
+  public APIviewPushNotificationContentTemplateRequest viewPushNotificationContentTemplate(String templateName) throws ApiException {
+    return new APIviewPushNotificationContentTemplateRequest(templateName);
+  }
+
+private ApiResponse<ViewSecondaryApiTokenByTokenResponse> viewSecondaryApiTokenByTokenWithHttpInfo(String apiToken, String apiToken2) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2446,5 +3615,68 @@ public class ApplicationApi {
     return apiClient.invokeAPI("ApplicationApi.viewSecondaryApiTokenByToken", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewSecondaryApiTokenByTokenRequest {
+    private String apiToken;
+    private String apiToken2;
+
+    private APIviewSecondaryApiTokenByTokenRequest(String apiToken2) {
+      this.apiToken2 = apiToken2;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewSecondaryApiTokenByTokenRequest
+     */
+    public APIviewSecondaryApiTokenByTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewSecondaryApiTokenByToken request
+     * @return ViewSecondaryApiTokenByTokenResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewSecondaryApiTokenByTokenResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewSecondaryApiTokenByToken request with HTTP info returned
+     * @return ApiResponse&lt;ViewSecondaryApiTokenByTokenResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewSecondaryApiTokenByTokenResponse> executeWithHttpInfo() throws ApiException {
+      return viewSecondaryApiTokenByTokenWithHttpInfo(apiToken, apiToken2);
+    }
+  }
+
+  /**
+   * View a secondary API token
+   * ## View a secondary API token  Retrieves the information on a secondary API token.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-a-secondary-api-token
+   * @param apiToken2  (required)
+   * @return viewSecondaryApiTokenByTokenRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewSecondaryApiTokenByTokenRequest viewSecondaryApiTokenByToken(String apiToken2) throws ApiException {
+    return new APIviewSecondaryApiTokenByTokenRequest(apiToken2);
   }
 }

@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class PrivacyApi {
   private ApiClient apiClient;
 
@@ -48,36 +48,8 @@ public class PrivacyApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * Cancel the registration of a GDPR request
-   * ## Cancel the registration of a GDPR request  Cancels the registration of a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-cancel-the-registration-of-a-gdpr-request ----------------------------
-   * @param apiToken  (required)
-   * @param requestId  (required)
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public void cancelTheRegistrationOfGdprRequestById(String apiToken, String requestId) throws ApiException {
-    cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(apiToken, requestId);
-  }
 
-  /**
-   * Cancel the registration of a GDPR request
-   * ## Cancel the registration of a GDPR request  Cancels the registration of a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-cancel-the-registration-of-a-gdpr-request ----------------------------
-   * @param apiToken  (required)
-   * @param requestId  (required)
-   * @return ApiResponse&lt;Void&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(String apiToken, String requestId) throws ApiException {
+private ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(String apiToken, String requestId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -122,39 +94,71 @@ public class PrivacyApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, null, false);
   }
-  /**
-   * List GDPR requests
-   * ## List GDPR requests  Retrieves a list of GDPR requests of all types.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-list-gdpr-requests ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListGdprRequestsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListGdprRequestsResponse listGdprRequests(String apiToken, String token, Integer limit) throws ApiException {
-    return listGdprRequestsWithHttpInfo(apiToken, token, limit).getData();
+
+  public class APIcancelTheRegistrationOfGdprRequestByIdRequest {
+    private String apiToken;
+    private String requestId;
+
+    private APIcancelTheRegistrationOfGdprRequestByIdRequest(String requestId) {
+      this.requestId = requestId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIcancelTheRegistrationOfGdprRequestByIdRequest
+     */
+    public APIcancelTheRegistrationOfGdprRequestByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute cancelTheRegistrationOfGdprRequestById request
+     
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public void execute() throws ApiException {
+      this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute cancelTheRegistrationOfGdprRequestById request with HTTP info returned
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+      return cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(apiToken, requestId);
+    }
   }
 
   /**
-   * List GDPR requests
-   * ## List GDPR requests  Retrieves a list of GDPR requests of all types.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-list-gdpr-requests ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListGdprRequestsResponse&gt;
+   * Cancel the registration of a GDPR request
+   * ## Cancel the registration of a GDPR request  Cancels the registration of a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-cancel-the-registration-of-a-gdpr-request ----------------------------
+   * @param requestId  (required)
+   * @return cancelTheRegistrationOfGdprRequestByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListGdprRequestsResponse> listGdprRequestsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
+  public APIcancelTheRegistrationOfGdprRequestByIdRequest cancelTheRegistrationOfGdprRequestById(String requestId) throws ApiException {
+    return new APIcancelTheRegistrationOfGdprRequestByIdRequest(requestId);
+  }
+
+private ApiResponse<ListGdprRequestsResponse> listGdprRequestsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -197,37 +201,90 @@ public class PrivacyApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Register a GDPR request
-   * ## Register a GDPR request  Registers a specific type of GDPR request to meet the GDPR&#39;s requirements.  &gt; __Note__: Currently, only delete and access of the user data are supported. The features for the [right to restriction of processing](https://gdpr-info.eu/art-18-gdpr/) and [right to object](https://gdpr-info.eu/art-21-gdpr/) will be available soon.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-register-a-gdpr-request
-   * @param apiToken  (required)
-   * @param registerGdprRequestData  (optional)
-   * @return RegisterGdprRequestResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RegisterGdprRequestResponse registerGdprRequest(String apiToken, RegisterGdprRequestData registerGdprRequestData) throws ApiException {
-    return registerGdprRequestWithHttpInfo(apiToken, registerGdprRequestData).getData();
+
+  public class APIlistGdprRequestsRequest {
+    private String apiToken;
+    private String token;
+    private Integer limit;
+
+    private APIlistGdprRequestsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistGdprRequestsRequest
+     */
+    public APIlistGdprRequestsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistGdprRequestsRequest
+     */
+    public APIlistGdprRequestsRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistGdprRequestsRequest
+     */
+    public APIlistGdprRequestsRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listGdprRequests request
+     * @return ListGdprRequestsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListGdprRequestsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listGdprRequests request with HTTP info returned
+     * @return ApiResponse&lt;ListGdprRequestsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListGdprRequestsResponse> executeWithHttpInfo() throws ApiException {
+      return listGdprRequestsWithHttpInfo(apiToken, token, limit);
+    }
   }
 
   /**
-   * Register a GDPR request
-   * ## Register a GDPR request  Registers a specific type of GDPR request to meet the GDPR&#39;s requirements.  &gt; __Note__: Currently, only delete and access of the user data are supported. The features for the [right to restriction of processing](https://gdpr-info.eu/art-18-gdpr/) and [right to object](https://gdpr-info.eu/art-21-gdpr/) will be available soon.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-register-a-gdpr-request
-   * @param apiToken  (required)
-   * @param registerGdprRequestData  (optional)
-   * @return ApiResponse&lt;RegisterGdprRequestResponse&gt;
+   * List GDPR requests
+   * ## List GDPR requests  Retrieves a list of GDPR requests of all types.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-list-gdpr-requests ----------------------------
+   * @return listGdprRequestsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RegisterGdprRequestResponse> registerGdprRequestWithHttpInfo(String apiToken, RegisterGdprRequestData registerGdprRequestData) throws ApiException {
+  public APIlistGdprRequestsRequest listGdprRequests() throws ApiException {
+    return new APIlistGdprRequestsRequest();
+  }
+
+private ApiResponse<RegisterGdprRequestResponse> registerGdprRequestWithHttpInfo(String apiToken, RegisterGdprRequestData registerGdprRequestData) throws ApiException {
     Object localVarPostBody = registerGdprRequestData;
     
     // verify the required parameter 'apiToken' is set
@@ -268,37 +325,79 @@ public class PrivacyApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a GDPR request
-   * ## View a GDPR request  Retrieves a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-view-a-gdpr-request ----------------------------
-   * @param apiToken  (required)
-   * @param requestId  (required)
-   * @return ViewGdprRequestByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewGdprRequestByIdResponse viewGdprRequestById(String apiToken, String requestId) throws ApiException {
-    return viewGdprRequestByIdWithHttpInfo(apiToken, requestId).getData();
+
+  public class APIregisterGdprRequestRequest {
+    private String apiToken;
+    private RegisterGdprRequestData registerGdprRequestData;
+
+    private APIregisterGdprRequestRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIregisterGdprRequestRequest
+     */
+    public APIregisterGdprRequestRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set registerGdprRequestData
+     * @param registerGdprRequestData  (optional)
+     * @return APIregisterGdprRequestRequest
+     */
+    public APIregisterGdprRequestRequest registerGdprRequestData(RegisterGdprRequestData registerGdprRequestData) {
+      this.registerGdprRequestData = registerGdprRequestData;
+      return this;
+    }
+
+    /**
+     * Execute registerGdprRequest request
+     * @return RegisterGdprRequestResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RegisterGdprRequestResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute registerGdprRequest request with HTTP info returned
+     * @return ApiResponse&lt;RegisterGdprRequestResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RegisterGdprRequestResponse> executeWithHttpInfo() throws ApiException {
+      return registerGdprRequestWithHttpInfo(apiToken, registerGdprRequestData);
+    }
   }
 
   /**
-   * View a GDPR request
-   * ## View a GDPR request  Retrieves a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-view-a-gdpr-request ----------------------------
-   * @param apiToken  (required)
-   * @param requestId  (required)
-   * @return ApiResponse&lt;ViewGdprRequestByIdResponse&gt;
+   * Register a GDPR request
+   * ## Register a GDPR request  Registers a specific type of GDPR request to meet the GDPR&#39;s requirements.  &gt; __Note__: Currently, only delete and access of the user data are supported. The features for the [right to restriction of processing](https://gdpr-info.eu/art-18-gdpr/) and [right to object](https://gdpr-info.eu/art-21-gdpr/) will be available soon.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-register-a-gdpr-request
+   * @return registerGdprRequestRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo(String apiToken, String requestId) throws ApiException {
+  public APIregisterGdprRequestRequest registerGdprRequest() throws ApiException {
+    return new APIregisterGdprRequestRequest();
+  }
+
+private ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo(String apiToken, String requestId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -344,5 +443,68 @@ public class PrivacyApi {
     return apiClient.invokeAPI("PrivacyApi.viewGdprRequestById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewGdprRequestByIdRequest {
+    private String apiToken;
+    private String requestId;
+
+    private APIviewGdprRequestByIdRequest(String requestId) {
+      this.requestId = requestId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewGdprRequestByIdRequest
+     */
+    public APIviewGdprRequestByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewGdprRequestById request
+     * @return ViewGdprRequestByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewGdprRequestByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewGdprRequestById request with HTTP info returned
+     * @return ApiResponse&lt;ViewGdprRequestByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewGdprRequestByIdResponse> executeWithHttpInfo() throws ApiException {
+      return viewGdprRequestByIdWithHttpInfo(apiToken, requestId);
+    }
+  }
+
+  /**
+   * View a GDPR request
+   * ## View a GDPR request  Retrieves a specific GDPR request.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-privacy#2-view-a-gdpr-request ----------------------------
+   * @param requestId  (required)
+   * @return viewGdprRequestByIdRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewGdprRequestByIdRequest viewGdprRequestById(String requestId) throws ApiException {
+    return new APIviewGdprRequestByIdRequest(requestId);
   }
 }

@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class BotApi {
   private ApiClient apiClient;
 
@@ -54,37 +54,8 @@ public class BotApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * Create a bot
-   * ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  &gt; __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
-   * @param apiToken  (required)
-   * @param createBotData  (optional)
-   * @return CreateBotResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public CreateBotResponse createBot(String apiToken, CreateBotData createBotData) throws ApiException {
-    return createBotWithHttpInfo(apiToken, createBotData).getData();
-  }
 
-  /**
-   * Create a bot
-   * ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  &gt; __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
-   * @param apiToken  (required)
-   * @param createBotData  (optional)
-   * @return ApiResponse&lt;CreateBotResponse&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<CreateBotResponse> createBotWithHttpInfo(String apiToken, CreateBotData createBotData) throws ApiException {
+private ApiResponse<CreateBotResponse> createBotWithHttpInfo(String apiToken, CreateBotData createBotData) throws ApiException {
     Object localVarPostBody = createBotData;
     
     // verify the required parameter 'apiToken' is set
@@ -125,37 +96,79 @@ public class BotApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Delete a bot
-   * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
-   * @param apiToken  (required)
-   * @param botUserid  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object deleteBotById(String apiToken, String botUserid) throws ApiException {
-    return deleteBotByIdWithHttpInfo(apiToken, botUserid).getData();
+
+  public class APIcreateBotRequest {
+    private String apiToken;
+    private CreateBotData createBotData;
+
+    private APIcreateBotRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIcreateBotRequest
+     */
+    public APIcreateBotRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set createBotData
+     * @param createBotData  (optional)
+     * @return APIcreateBotRequest
+     */
+    public APIcreateBotRequest createBotData(CreateBotData createBotData) {
+      this.createBotData = createBotData;
+      return this;
+    }
+
+    /**
+     * Execute createBot request
+     * @return CreateBotResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public CreateBotResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute createBot request with HTTP info returned
+     * @return ApiResponse&lt;CreateBotResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<CreateBotResponse> executeWithHttpInfo() throws ApiException {
+      return createBotWithHttpInfo(apiToken, createBotData);
+    }
   }
 
   /**
-   * Delete a bot
-   * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
-   * @param apiToken  (required)
-   * @param botUserid  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * Create a bot
+   * ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  &gt; __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
+   * @return createBotRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> deleteBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
+  public APIcreateBotRequest createBot() throws ApiException {
+    return new APIcreateBotRequest();
+  }
+
+private ApiResponse<Object> deleteBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -202,39 +215,71 @@ public class BotApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Join channels
-   * ## Join channels  Makes a bot join one or more channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels ----------------------------
-   * @param apiToken  (required)
-   * @param botUserid  (required)
-   * @param joinChannelsData  (optional)
-   * @return JoinChannelsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public JoinChannelsResponse joinChannels(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
-    return joinChannelsWithHttpInfo(apiToken, botUserid, joinChannelsData).getData();
+
+  public class APIdeleteBotByIdRequest {
+    private String apiToken;
+    private String botUserid;
+
+    private APIdeleteBotByIdRequest(String botUserid) {
+      this.botUserid = botUserid;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIdeleteBotByIdRequest
+     */
+    public APIdeleteBotByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute deleteBotById request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteBotById request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return deleteBotByIdWithHttpInfo(apiToken, botUserid);
+    }
   }
 
   /**
-   * Join channels
-   * ## Join channels  Makes a bot join one or more channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels ----------------------------
-   * @param apiToken  (required)
+   * Delete a bot
+   * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
    * @param botUserid  (required)
-   * @param joinChannelsData  (optional)
-   * @return ApiResponse&lt;JoinChannelsResponse&gt;
+   * @return deleteBotByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<JoinChannelsResponse> joinChannelsWithHttpInfo(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
+  public APIdeleteBotByIdRequest deleteBotById(String botUserid) throws ApiException {
+    return new APIdeleteBotByIdRequest(botUserid);
+  }
+
+private ApiResponse<JoinChannelsResponse> joinChannelsWithHttpInfo(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
     Object localVarPostBody = joinChannelsData;
     
     // verify the required parameter 'apiToken' is set
@@ -281,38 +326,82 @@ public class BotApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Leave channels - When leaving all channels
-   * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
-   * @param apiToken  (required)
-   * @param botUserid  (required)
-   * @param channelUrl  (optional)
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public void leaveChannels(String apiToken, String botUserid, String channelUrl) throws ApiException {
-    leaveChannelsWithHttpInfo(apiToken, botUserid, channelUrl);
+
+  public class APIjoinChannelsRequest {
+    private String apiToken;
+    private String botUserid;
+    private JoinChannelsData joinChannelsData;
+
+    private APIjoinChannelsRequest(String botUserid) {
+      this.botUserid = botUserid;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIjoinChannelsRequest
+     */
+    public APIjoinChannelsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set joinChannelsData
+     * @param joinChannelsData  (optional)
+     * @return APIjoinChannelsRequest
+     */
+    public APIjoinChannelsRequest joinChannelsData(JoinChannelsData joinChannelsData) {
+      this.joinChannelsData = joinChannelsData;
+      return this;
+    }
+
+    /**
+     * Execute joinChannels request
+     * @return JoinChannelsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public JoinChannelsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute joinChannels request with HTTP info returned
+     * @return ApiResponse&lt;JoinChannelsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<JoinChannelsResponse> executeWithHttpInfo() throws ApiException {
+      return joinChannelsWithHttpInfo(apiToken, botUserid, joinChannelsData);
+    }
   }
 
   /**
-   * Leave channels - When leaving all channels
-   * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
-   * @param apiToken  (required)
+   * Join channels
+   * ## Join channels  Makes a bot join one or more channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels ----------------------------
    * @param botUserid  (required)
-   * @param channelUrl  (optional)
-   * @return ApiResponse&lt;Void&gt;
+   * @return joinChannelsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Void> leaveChannelsWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
+  public APIjoinChannelsRequest joinChannels(String botUserid) throws ApiException {
+    return new APIjoinChannelsRequest(botUserid);
+  }
+
+private ApiResponse<Void> leaveChannelsWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -358,39 +447,82 @@ public class BotApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, null, false);
   }
-  /**
-   * Leave channels - When leaving a channel by its channel URL
-   * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
-   * @param apiToken  (required)
-   * @param botUserid  (required)
-   * @param channelUrl  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object leaveChannelsByUrl(String apiToken, String botUserid, String channelUrl) throws ApiException {
-    return leaveChannelsByUrlWithHttpInfo(apiToken, botUserid, channelUrl).getData();
+
+  public class APIleaveChannelsRequest {
+    private String apiToken;
+    private String botUserid;
+    private String channelUrl;
+
+    private APIleaveChannelsRequest(String botUserid) {
+      this.botUserid = botUserid;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIleaveChannelsRequest
+     */
+    public APIleaveChannelsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set channelUrl
+     * @param channelUrl  (optional)
+     * @return APIleaveChannelsRequest
+     */
+    public APIleaveChannelsRequest channelUrl(String channelUrl) {
+      this.channelUrl = channelUrl;
+      return this;
+    }
+
+    /**
+     * Execute leaveChannels request
+     
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public void execute() throws ApiException {
+      this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute leaveChannels request with HTTP info returned
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+      return leaveChannelsWithHttpInfo(apiToken, botUserid, channelUrl);
+    }
   }
 
   /**
-   * Leave channels - When leaving a channel by its channel URL
+   * Leave channels - When leaving all channels
    * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
-   * @param apiToken  (required)
    * @param botUserid  (required)
-   * @param channelUrl  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * @return leaveChannelsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> leaveChannelsByUrlWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
+  public APIleaveChannelsRequest leaveChannels(String botUserid) throws ApiException {
+    return new APIleaveChannelsRequest(botUserid);
+  }
+
+private ApiResponse<Object> leaveChannelsByUrlWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -443,39 +575,74 @@ public class BotApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List bots
-   * ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListBotsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListBotsResponse listBots(String apiToken, String token, Integer limit) throws ApiException {
-    return listBotsWithHttpInfo(apiToken, token, limit).getData();
+
+  public class APIleaveChannelsByUrlRequest {
+    private String apiToken;
+    private String botUserid;
+    private String channelUrl;
+
+    private APIleaveChannelsByUrlRequest(String botUserid, String channelUrl) {
+      this.botUserid = botUserid;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIleaveChannelsByUrlRequest
+     */
+    public APIleaveChannelsByUrlRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute leaveChannelsByUrl request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute leaveChannelsByUrl request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return leaveChannelsByUrlWithHttpInfo(apiToken, botUserid, channelUrl);
+    }
   }
 
   /**
-   * List bots
-   * ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListBotsResponse&gt;
+   * Leave channels - When leaving a channel by its channel URL
+   * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+   * @param botUserid  (required)
+   * @param channelUrl  (required)
+   * @return leaveChannelsByUrlRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListBotsResponse> listBotsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
+  public APIleaveChannelsByUrlRequest leaveChannelsByUrl(String botUserid, String channelUrl) throws ApiException {
+    return new APIleaveChannelsByUrlRequest(botUserid, channelUrl);
+  }
+
+private ApiResponse<ListBotsResponse> listBotsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -518,39 +685,90 @@ public class BotApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Send a bot&#39;s message
-   * ## Send a bot&#39;s message  Sends a bot&#39;s message to a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message ----------------------------   &#x60;bot_userid&#x60;      Type: string      Description: Specifies the ID of the bot to send a message.
-   * @param apiToken  (required)
-   * @param botUserid  (required)
-   * @param sendBotSMessageData  (optional)
-   * @return SendBirdMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdMessageResponse sendBotsMessage(String apiToken, String botUserid, SendBotSMessageData sendBotSMessageData) throws ApiException {
-    return sendBotsMessageWithHttpInfo(apiToken, botUserid, sendBotSMessageData).getData();
+
+  public class APIlistBotsRequest {
+    private String apiToken;
+    private String token;
+    private Integer limit;
+
+    private APIlistBotsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistBotsRequest
+     */
+    public APIlistBotsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistBotsRequest
+     */
+    public APIlistBotsRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistBotsRequest
+     */
+    public APIlistBotsRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listBots request
+     * @return ListBotsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListBotsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listBots request with HTTP info returned
+     * @return ApiResponse&lt;ListBotsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListBotsResponse> executeWithHttpInfo() throws ApiException {
+      return listBotsWithHttpInfo(apiToken, token, limit);
+    }
   }
 
   /**
-   * Send a bot&#39;s message
-   * ## Send a bot&#39;s message  Sends a bot&#39;s message to a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message ----------------------------   &#x60;bot_userid&#x60;      Type: string      Description: Specifies the ID of the bot to send a message.
-   * @param apiToken  (required)
-   * @param botUserid  (required)
-   * @param sendBotSMessageData  (optional)
-   * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+   * List bots
+   * ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots ----------------------------
+   * @return listBotsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String apiToken, String botUserid, SendBotSMessageData sendBotSMessageData) throws ApiException {
+  public APIlistBotsRequest listBots() throws ApiException {
+    return new APIlistBotsRequest();
+  }
+
+private ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String apiToken, String botUserid, SendBotSMessageData sendBotSMessageData) throws ApiException {
     Object localVarPostBody = sendBotSMessageData;
     
     // verify the required parameter 'apiToken' is set
@@ -597,39 +815,82 @@ public class BotApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update a bot
-   * ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
-   * @param apiToken  (required)
-   * @param botUserid  (required)
-   * @param updateBotByIdData  (optional)
-   * @return UpdateBotByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdateBotByIdResponse updateBotById(String apiToken, String botUserid, UpdateBotByIdData updateBotByIdData) throws ApiException {
-    return updateBotByIdWithHttpInfo(apiToken, botUserid, updateBotByIdData).getData();
+
+  public class APIsendBotsMessageRequest {
+    private String apiToken;
+    private String botUserid;
+    private SendBotSMessageData sendBotSMessageData;
+
+    private APIsendBotsMessageRequest(String botUserid) {
+      this.botUserid = botUserid;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIsendBotsMessageRequest
+     */
+    public APIsendBotsMessageRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set sendBotSMessageData
+     * @param sendBotSMessageData  (optional)
+     * @return APIsendBotsMessageRequest
+     */
+    public APIsendBotsMessageRequest sendBotSMessageData(SendBotSMessageData sendBotSMessageData) {
+      this.sendBotSMessageData = sendBotSMessageData;
+      return this;
+    }
+
+    /**
+     * Execute sendBotsMessage request
+     * @return SendBirdMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute sendBotsMessage request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
+      return sendBotsMessageWithHttpInfo(apiToken, botUserid, sendBotSMessageData);
+    }
   }
 
   /**
-   * Update a bot
-   * ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
-   * @param apiToken  (required)
+   * Send a bot&#39;s message
+   * ## Send a bot&#39;s message  Sends a bot&#39;s message to a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message ----------------------------   &#x60;bot_userid&#x60;      Type: string      Description: Specifies the ID of the bot to send a message.
    * @param botUserid  (required)
-   * @param updateBotByIdData  (optional)
-   * @return ApiResponse&lt;UpdateBotByIdResponse&gt;
+   * @return sendBotsMessageRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String apiToken, String botUserid, UpdateBotByIdData updateBotByIdData) throws ApiException {
+  public APIsendBotsMessageRequest sendBotsMessage(String botUserid) throws ApiException {
+    return new APIsendBotsMessageRequest(botUserid);
+  }
+
+private ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String apiToken, String botUserid, UpdateBotByIdData updateBotByIdData) throws ApiException {
     Object localVarPostBody = updateBotByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -676,37 +937,82 @@ public class BotApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a bot
-   * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
-   * @param apiToken  (required)
-   * @param botUserid  (required)
-   * @return ViewBotByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewBotByIdResponse viewBotById(String apiToken, String botUserid) throws ApiException {
-    return viewBotByIdWithHttpInfo(apiToken, botUserid).getData();
+
+  public class APIupdateBotByIdRequest {
+    private String apiToken;
+    private String botUserid;
+    private UpdateBotByIdData updateBotByIdData;
+
+    private APIupdateBotByIdRequest(String botUserid) {
+      this.botUserid = botUserid;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateBotByIdRequest
+     */
+    public APIupdateBotByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateBotByIdData
+     * @param updateBotByIdData  (optional)
+     * @return APIupdateBotByIdRequest
+     */
+    public APIupdateBotByIdRequest updateBotByIdData(UpdateBotByIdData updateBotByIdData) {
+      this.updateBotByIdData = updateBotByIdData;
+      return this;
+    }
+
+    /**
+     * Execute updateBotById request
+     * @return UpdateBotByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateBotByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateBotById request with HTTP info returned
+     * @return ApiResponse&lt;UpdateBotByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateBotByIdResponse> executeWithHttpInfo() throws ApiException {
+      return updateBotByIdWithHttpInfo(apiToken, botUserid, updateBotByIdData);
+    }
   }
 
   /**
-   * View a bot
-   * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
-   * @param apiToken  (required)
+   * Update a bot
+   * ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
    * @param botUserid  (required)
-   * @return ApiResponse&lt;ViewBotByIdResponse&gt;
+   * @return updateBotByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
+  public APIupdateBotByIdRequest updateBotById(String botUserid) throws ApiException {
+    return new APIupdateBotByIdRequest(botUserid);
+  }
+
+private ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -752,5 +1058,68 @@ public class BotApi {
     return apiClient.invokeAPI("BotApi.viewBotById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewBotByIdRequest {
+    private String apiToken;
+    private String botUserid;
+
+    private APIviewBotByIdRequest(String botUserid) {
+      this.botUserid = botUserid;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewBotByIdRequest
+     */
+    public APIviewBotByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewBotById request
+     * @return ViewBotByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewBotByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewBotById request with HTTP info returned
+     * @return ApiResponse&lt;ViewBotByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewBotByIdResponse> executeWithHttpInfo() throws ApiException {
+      return viewBotByIdWithHttpInfo(apiToken, botUserid);
+    }
+  }
+
+  /**
+   * View a bot
+   * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
+   * @param botUserid  (required)
+   * @return viewBotByIdRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewBotByIdRequest viewBotById(String botUserid) throws ApiException {
+    return new APIviewBotByIdRequest(botUserid);
   }
 }

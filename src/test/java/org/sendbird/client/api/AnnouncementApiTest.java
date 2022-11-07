@@ -53,7 +53,9 @@ public class AnnouncementApiTest {
     public void getDetailedOpenRateOfAnnouncementGroupTest() throws ApiException {
         //String apiToken = null;
         //String announcementGroup = null;
-        //GetDetailedOpenRateOfAnnouncementGroupResponse response = api.getDetailedOpenRateOfAnnouncementGroup(apiToken, announcementGroup);
+        //GetDetailedOpenRateOfAnnouncementGroupResponse response = api.getDetailedOpenRateOfAnnouncementGroup(announcementGroup)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -67,7 +69,9 @@ public class AnnouncementApiTest {
     @Test
     public void getStatisticsTest() throws ApiException {
         //String apiToken = null;
-        //GetStatisticsResponse response = api.getStatistics(apiToken);
+        //GetStatisticsResponse response = api.getStatistics()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -88,7 +92,16 @@ public class AnnouncementApiTest {
         //String startMonth = null;
         //String endMonth = null;
         //String announcementGroup = null;
-        //GetStatisticsDailyResponse response = api.getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
+        //GetStatisticsDailyResponse response = api.getStatisticsDaily()
+        //        .apiToken(apiToken)
+        //        .startDate(startDate)
+        //        .endDate(endDate)
+        //        .startWeek(startWeek)
+        //        .endWeek(endWeek)
+        //        .startMonth(startMonth)
+        //        .endMonth(endMonth)
+        //        .announcementGroup(announcementGroup)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -102,7 +115,9 @@ public class AnnouncementApiTest {
     @Test
     public void getStatisticsMonthlyTest() throws ApiException {
         //String apiToken = null;
-        //GetStatisticsMonthlyResponse response = api.getStatisticsMonthly(apiToken);
+        //GetStatisticsMonthlyResponse response = api.getStatisticsMonthly()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -118,7 +133,11 @@ public class AnnouncementApiTest {
         //String apiToken = null;
         //String token = null;
         //Integer limit = null;
-        //ListAnnouncementGroupsResponse response = api.listAnnouncementGroups(apiToken, token, limit);
+        //ListAnnouncementGroupsResponse response = api.listAnnouncementGroups()
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -133,7 +152,10 @@ public class AnnouncementApiTest {
     public void scheduleAnnouncementTest() throws ApiException {
         //String apiToken = null;
         //ScheduleAnnouncementData scheduleAnnouncementData = null;
-        //ScheduleAnnouncementResponse response = api.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
+        //ScheduleAnnouncementResponse response = api.scheduleAnnouncement()
+        //        .apiToken(apiToken)
+        //        .scheduleAnnouncementData(scheduleAnnouncementData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -149,7 +171,10 @@ public class AnnouncementApiTest {
         //String apiToken = null;
         //String uniqueId = null;
         //UpdateAnnouncementByIdData updateAnnouncementByIdData = null;
-        //UpdateAnnouncementByIdResponse response = api.updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData);
+        //UpdateAnnouncementByIdResponse response = api.updateAnnouncementById(uniqueId)
+        //        .apiToken(apiToken)
+        //        .updateAnnouncementByIdData(updateAnnouncementByIdData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -164,7 +189,9 @@ public class AnnouncementApiTest {
     public void viewAnnouncementByIdTest() throws ApiException {
         //String apiToken = null;
         //String uniqueId = null;
-        //ViewAnnouncementByIdResponse response = api.viewAnnouncementById(apiToken, uniqueId);
+        //ViewAnnouncementByIdResponse response = api.viewAnnouncementById(uniqueId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 

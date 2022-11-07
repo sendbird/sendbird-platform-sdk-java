@@ -17,7 +17,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## getDetailedOpenRateOfAnnouncementGroup
 
-> GetDetailedOpenRateOfAnnouncementGroupResponse getDetailedOpenRateOfAnnouncementGroup(apiToken, announcementGroup)
+> GetDetailedOpenRateOfAnnouncementGroupResponse getDetailedOpenRateOfAnnouncementGroup(announcementGroup).apiToken(apiToken).execute();
 
 Get detailed open rate of an announcement group
 
@@ -47,7 +47,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String announcementGroup = "announcementGroup_example"; // String | 
         try {
-            GetDetailedOpenRateOfAnnouncementGroupResponse result = apiInstance.getDetailedOpenRateOfAnnouncementGroup(apiToken, announcementGroup);
+            GetDetailedOpenRateOfAnnouncementGroupResponse result = api.getDetailedOpenRateOfAnnouncementGroup(announcementGroup)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnouncementApi#getDetailedOpenRateOfAnnouncementGroup");
@@ -89,7 +91,7 @@ No authorization required
 
 ## getStatistics
 
-> GetStatisticsResponse getStatistics(apiToken)
+> GetStatisticsResponse getStatistics().apiToken(apiToken).execute();
 
 Get statistics - weekly
 
@@ -118,7 +120,9 @@ public class Example {
         AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            GetStatisticsResponse result = apiInstance.getStatistics(apiToken);
+            GetStatisticsResponse result = api.getStatistics()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnouncementApi#getStatistics");
@@ -159,7 +163,7 @@ No authorization required
 
 ## getStatisticsDaily
 
-> GetStatisticsDailyResponse getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup)
+> GetStatisticsDailyResponse getStatisticsDaily().apiToken(apiToken).startDate(startDate).endDate(endDate).startWeek(startWeek).endWeek(endWeek).startMonth(startMonth).endMonth(endMonth).announcementGroup(announcementGroup).execute();
 
 Get statistics - daily
 
@@ -195,7 +199,16 @@ public class Example {
         String endMonth = "endMonth_example"; // String | 
         String announcementGroup = "announcementGroup_example"; // String | 
         try {
-            GetStatisticsDailyResponse result = apiInstance.getStatisticsDaily(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
+            GetStatisticsDailyResponse result = api.getStatisticsDaily()
+                .apiToken(apiToken)
+                .startDate(startDate)
+                .endDate(endDate)
+                .startWeek(startWeek)
+                .endWeek(endWeek)
+                .startMonth(startMonth)
+                .endMonth(endMonth)
+                .announcementGroup(announcementGroup)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnouncementApi#getStatisticsDaily");
@@ -243,7 +256,7 @@ No authorization required
 
 ## getStatisticsMonthly
 
-> GetStatisticsMonthlyResponse getStatisticsMonthly(apiToken)
+> GetStatisticsMonthlyResponse getStatisticsMonthly().apiToken(apiToken).execute();
 
 Get statistics - monthly
 
@@ -272,7 +285,9 @@ public class Example {
         AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            GetStatisticsMonthlyResponse result = apiInstance.getStatisticsMonthly(apiToken);
+            GetStatisticsMonthlyResponse result = api.getStatisticsMonthly()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnouncementApi#getStatisticsMonthly");
@@ -313,7 +328,7 @@ No authorization required
 
 ## listAnnouncementGroups
 
-> ListAnnouncementGroupsResponse listAnnouncementGroups(apiToken, token, limit)
+> ListAnnouncementGroupsResponse listAnnouncementGroups().apiToken(apiToken).token(token).limit(limit).execute();
 
 List announcement groups
 
@@ -344,7 +359,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListAnnouncementGroupsResponse result = apiInstance.listAnnouncementGroups(apiToken, token, limit);
+            ListAnnouncementGroupsResponse result = api.listAnnouncementGroups()
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnouncementApi#listAnnouncementGroups");
@@ -387,7 +406,7 @@ No authorization required
 
 ## scheduleAnnouncement
 
-> ScheduleAnnouncementResponse scheduleAnnouncement(apiToken, scheduleAnnouncementData)
+> ScheduleAnnouncementResponse scheduleAnnouncement().apiToken(apiToken).scheduleAnnouncementData(scheduleAnnouncementData).execute();
 
 Schedule an announcement
 
@@ -416,7 +435,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         ScheduleAnnouncementData scheduleAnnouncementData = new ScheduleAnnouncementData(); // ScheduleAnnouncementData | 
         try {
-            ScheduleAnnouncementResponse result = apiInstance.scheduleAnnouncement(apiToken, scheduleAnnouncementData);
+            ScheduleAnnouncementResponse result = api.scheduleAnnouncement()
+                .apiToken(apiToken)
+                .scheduleAnnouncementData(scheduleAnnouncementData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnouncementApi#scheduleAnnouncement");
@@ -458,7 +480,7 @@ No authorization required
 
 ## updateAnnouncementById
 
-> UpdateAnnouncementByIdResponse updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData)
+> UpdateAnnouncementByIdResponse updateAnnouncementById(uniqueId).apiToken(apiToken).updateAnnouncementByIdData(updateAnnouncementByIdData).execute();
 
 Update an announcement
 
@@ -491,7 +513,10 @@ public class Example {
         String uniqueId = "uniqueId_example"; // String | 
         UpdateAnnouncementByIdData updateAnnouncementByIdData = new UpdateAnnouncementByIdData(); // UpdateAnnouncementByIdData | 
         try {
-            UpdateAnnouncementByIdResponse result = apiInstance.updateAnnouncementById(apiToken, uniqueId, updateAnnouncementByIdData);
+            UpdateAnnouncementByIdResponse result = api.updateAnnouncementById(uniqueId)
+                .apiToken(apiToken)
+                .updateAnnouncementByIdData(updateAnnouncementByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnouncementApi#updateAnnouncementById");
@@ -534,7 +559,7 @@ No authorization required
 
 ## viewAnnouncementById
 
-> ViewAnnouncementByIdResponse viewAnnouncementById(apiToken, uniqueId)
+> ViewAnnouncementByIdResponse viewAnnouncementById(uniqueId).apiToken(apiToken).execute();
 
 View an announcement
 
@@ -564,7 +589,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String uniqueId = "uniqueId_example"; // String | 
         try {
-            ViewAnnouncementByIdResponse result = apiInstance.viewAnnouncementById(apiToken, uniqueId);
+            ViewAnnouncementByIdResponse result = api.viewAnnouncementById(uniqueId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnouncementApi#viewAnnouncementById");

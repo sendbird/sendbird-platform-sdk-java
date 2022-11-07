@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class DataExportApi {
   private ApiClient apiClient;
 
@@ -48,41 +48,8 @@ public class DataExportApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * List data exports by message, channel, or user
-   * ## List data exports by message, channel, or user  Retrieves a list of message, channel or user data exports  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-list-data-exports-by-message,-channel,-or-user ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a data export to retrieve. Acceptable values are messages, channels, users, and failed_webhooks.
-   * @param apiToken  (required)
-   * @param dataType  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListDataExportsByMessageChannelOrUserResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListDataExportsByMessageChannelOrUserResponse listDataExportsByMessageChannelOrUser(String apiToken, String dataType, String token, Integer limit) throws ApiException {
-    return listDataExportsByMessageChannelOrUserWithHttpInfo(apiToken, dataType, token, limit).getData();
-  }
 
-  /**
-   * List data exports by message, channel, or user
-   * ## List data exports by message, channel, or user  Retrieves a list of message, channel or user data exports  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-list-data-exports-by-message,-channel,-or-user ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a data export to retrieve. Acceptable values are messages, channels, users, and failed_webhooks.
-   * @param apiToken  (required)
-   * @param dataType  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListDataExportsByMessageChannelOrUserResponse&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExportsByMessageChannelOrUserWithHttpInfo(String apiToken, String dataType, String token, Integer limit) throws ApiException {
+private ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExportsByMessageChannelOrUserWithHttpInfo(String apiToken, String dataType, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -131,39 +98,93 @@ public class DataExportApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Register and schedule a data export
-   * ## Register and schedule a data export  Registers and schedules a message, channel, or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-register-and-schedule-a-data-export ----------------------------
-   * @param apiToken  (required)
-   * @param dataType  (required)
-   * @param registerAndScheduleDataExportData  (optional)
-   * @return RegisterAndScheduleDataExportResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RegisterAndScheduleDataExportResponse registerAndScheduleDataExport(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
-    return registerAndScheduleDataExportWithHttpInfo(apiToken, dataType, registerAndScheduleDataExportData).getData();
+
+  public class APIlistDataExportsByMessageChannelOrUserRequest {
+    private String apiToken;
+    private String dataType;
+    private String token;
+    private Integer limit;
+
+    private APIlistDataExportsByMessageChannelOrUserRequest(String dataType) {
+      this.dataType = dataType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistDataExportsByMessageChannelOrUserRequest
+     */
+    public APIlistDataExportsByMessageChannelOrUserRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistDataExportsByMessageChannelOrUserRequest
+     */
+    public APIlistDataExportsByMessageChannelOrUserRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistDataExportsByMessageChannelOrUserRequest
+     */
+    public APIlistDataExportsByMessageChannelOrUserRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listDataExportsByMessageChannelOrUser request
+     * @return ListDataExportsByMessageChannelOrUserResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListDataExportsByMessageChannelOrUserResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listDataExportsByMessageChannelOrUser request with HTTP info returned
+     * @return ApiResponse&lt;ListDataExportsByMessageChannelOrUserResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListDataExportsByMessageChannelOrUserResponse> executeWithHttpInfo() throws ApiException {
+      return listDataExportsByMessageChannelOrUserWithHttpInfo(apiToken, dataType, token, limit);
+    }
   }
 
   /**
-   * Register and schedule a data export
-   * ## Register and schedule a data export  Registers and schedules a message, channel, or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-register-and-schedule-a-data-export ----------------------------
-   * @param apiToken  (required)
+   * List data exports by message, channel, or user
+   * ## List data exports by message, channel, or user  Retrieves a list of message, channel or user data exports  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-list-data-exports-by-message,-channel,-or-user ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a data export to retrieve. Acceptable values are messages, channels, users, and failed_webhooks.
    * @param dataType  (required)
-   * @param registerAndScheduleDataExportData  (optional)
-   * @return ApiResponse&lt;RegisterAndScheduleDataExportResponse&gt;
+   * @return listDataExportsByMessageChannelOrUserRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDataExportWithHttpInfo(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
+  public APIlistDataExportsByMessageChannelOrUserRequest listDataExportsByMessageChannelOrUser(String dataType) throws ApiException {
+    return new APIlistDataExportsByMessageChannelOrUserRequest(dataType);
+  }
+
+private ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDataExportWithHttpInfo(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
     Object localVarPostBody = registerAndScheduleDataExportData;
     
     // verify the required parameter 'apiToken' is set
@@ -210,39 +231,82 @@ public class DataExportApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a data export
-   * ## View a data export  Retrieves information on a message, channel or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-view-a-data-export ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a targeted data export. Acceptable values are messages, channels,  users, and failed_webhooks.  &#x60;request_id&#x60;      Type: string      Description: Specifies the unique ID of a data export to retrieve.
-   * @param apiToken  (required)
-   * @param dataType  (required)
-   * @param requestId  (required)
-   * @return ViewDataExportByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewDataExportByIdResponse viewDataExportById(String apiToken, String dataType, String requestId) throws ApiException {
-    return viewDataExportByIdWithHttpInfo(apiToken, dataType, requestId).getData();
+
+  public class APIregisterAndScheduleDataExportRequest {
+    private String apiToken;
+    private String dataType;
+    private RegisterAndScheduleDataExportData registerAndScheduleDataExportData;
+
+    private APIregisterAndScheduleDataExportRequest(String dataType) {
+      this.dataType = dataType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIregisterAndScheduleDataExportRequest
+     */
+    public APIregisterAndScheduleDataExportRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set registerAndScheduleDataExportData
+     * @param registerAndScheduleDataExportData  (optional)
+     * @return APIregisterAndScheduleDataExportRequest
+     */
+    public APIregisterAndScheduleDataExportRequest registerAndScheduleDataExportData(RegisterAndScheduleDataExportData registerAndScheduleDataExportData) {
+      this.registerAndScheduleDataExportData = registerAndScheduleDataExportData;
+      return this;
+    }
+
+    /**
+     * Execute registerAndScheduleDataExport request
+     * @return RegisterAndScheduleDataExportResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RegisterAndScheduleDataExportResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute registerAndScheduleDataExport request with HTTP info returned
+     * @return ApiResponse&lt;RegisterAndScheduleDataExportResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RegisterAndScheduleDataExportResponse> executeWithHttpInfo() throws ApiException {
+      return registerAndScheduleDataExportWithHttpInfo(apiToken, dataType, registerAndScheduleDataExportData);
+    }
   }
 
   /**
-   * View a data export
-   * ## View a data export  Retrieves information on a message, channel or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-view-a-data-export ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a targeted data export. Acceptable values are messages, channels,  users, and failed_webhooks.  &#x60;request_id&#x60;      Type: string      Description: Specifies the unique ID of a data export to retrieve.
-   * @param apiToken  (required)
+   * Register and schedule a data export
+   * ## Register and schedule a data export  Registers and schedules a message, channel, or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-register-and-schedule-a-data-export ----------------------------
    * @param dataType  (required)
-   * @param requestId  (required)
-   * @return ApiResponse&lt;ViewDataExportByIdResponse&gt;
+   * @return registerAndScheduleDataExportRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(String apiToken, String dataType, String requestId) throws ApiException {
+  public APIregisterAndScheduleDataExportRequest registerAndScheduleDataExport(String dataType) throws ApiException {
+    return new APIregisterAndScheduleDataExportRequest(dataType);
+  }
+
+private ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(String apiToken, String dataType, String requestId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -294,5 +358,71 @@ public class DataExportApi {
     return apiClient.invokeAPI("DataExportApi.viewDataExportById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewDataExportByIdRequest {
+    private String apiToken;
+    private String dataType;
+    private String requestId;
+
+    private APIviewDataExportByIdRequest(String dataType, String requestId) {
+      this.dataType = dataType;
+      this.requestId = requestId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewDataExportByIdRequest
+     */
+    public APIviewDataExportByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewDataExportById request
+     * @return ViewDataExportByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewDataExportByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewDataExportById request with HTTP info returned
+     * @return ApiResponse&lt;ViewDataExportByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewDataExportByIdResponse> executeWithHttpInfo() throws ApiException {
+      return viewDataExportByIdWithHttpInfo(apiToken, dataType, requestId);
+    }
+  }
+
+  /**
+   * View a data export
+   * ## View a data export  Retrieves information on a message, channel or user data export.  https://sendbird.com/docs/chat/v3/platform-api/guides/data-export#2-view-a-data-export ----------------------------   &#x60;data_type&#x60;      Type: string      Description: Specifies the type of a targeted data export. Acceptable values are messages, channels,  users, and failed_webhooks.  &#x60;request_id&#x60;      Type: string      Description: Specifies the unique ID of a data export to retrieve.
+   * @param dataType  (required)
+   * @param requestId  (required)
+   * @return viewDataExportByIdRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewDataExportByIdRequest viewDataExportById(String dataType, String requestId) throws ApiException {
+    return new APIviewDataExportByIdRequest(dataType, requestId);
   }
 }

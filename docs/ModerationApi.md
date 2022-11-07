@@ -36,7 +36,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## banFromChannelsWithCustomChannelTypes
 
-> Object banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData)
+> Object banFromChannelsWithCustomChannelTypes(userId).apiToken(apiToken).banFromChannelsWithCustomChannelTypesData(banFromChannelsWithCustomChannelTypesData).execute();
 
 Ban from channels with custom channel types
 
@@ -67,7 +67,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData = new BanFromChannelsWithCustomChannelTypesData(); // BanFromChannelsWithCustomChannelTypesData | 
         try {
-            Object result = apiInstance.banFromChannelsWithCustomChannelTypes(apiToken, userId, banFromChannelsWithCustomChannelTypesData);
+            Object result = api.banFromChannelsWithCustomChannelTypes(userId)
+                .apiToken(apiToken)
+                .banFromChannelsWithCustomChannelTypesData(banFromChannelsWithCustomChannelTypesData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#banFromChannelsWithCustomChannelTypes");
@@ -110,7 +113,7 @@ No authorization required
 
 ## blockUser
 
-> BlockUserResponse blockUser(apiToken, userId, blockUserData)
+> BlockUserResponse blockUser(userId).apiToken(apiToken).blockUserData(blockUserData).execute();
 
 Block a user
 
@@ -141,7 +144,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         BlockUserData blockUserData = new BlockUserData(); // BlockUserData | 
         try {
-            BlockUserResponse result = apiInstance.blockUser(apiToken, userId, blockUserData);
+            BlockUserResponse result = api.blockUser(userId)
+                .apiToken(apiToken)
+                .blockUserData(blockUserData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#blockUser");
@@ -184,7 +190,7 @@ No authorization required
 
 ## gcBanUser
 
-> GcBanUserResponse gcBanUser(apiToken, channelUrl, gcBanUserData)
+> GcBanUserResponse gcBanUser(channelUrl).apiToken(apiToken).gcBanUserData(gcBanUserData).execute();
 
 Ban a user
 
@@ -215,7 +221,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcBanUserData gcBanUserData = new GcBanUserData(); // GcBanUserData | 
         try {
-            GcBanUserResponse result = apiInstance.gcBanUser(apiToken, channelUrl, gcBanUserData);
+            GcBanUserResponse result = api.gcBanUser(channelUrl)
+                .apiToken(apiToken)
+                .gcBanUserData(gcBanUserData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcBanUser");
@@ -258,7 +267,7 @@ No authorization required
 
 ## gcFreezeChannel
 
-> SendBirdGroupChannel gcFreezeChannel(apiToken, channelUrl, gcFreezeChannelData)
+> SendBirdGroupChannel gcFreezeChannel(channelUrl).apiToken(apiToken).gcFreezeChannelData(gcFreezeChannelData).execute();
 
 Freeze a channel
 
@@ -291,7 +300,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcFreezeChannelData gcFreezeChannelData = new GcFreezeChannelData(); // GcFreezeChannelData | 
         try {
-            SendBirdGroupChannel result = apiInstance.gcFreezeChannel(apiToken, channelUrl, gcFreezeChannelData);
+            SendBirdGroupChannel result = api.gcFreezeChannel(channelUrl)
+                .apiToken(apiToken)
+                .gcFreezeChannelData(gcFreezeChannelData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcFreezeChannel");
@@ -334,7 +346,7 @@ No authorization required
 
 ## gcListBannedUsers
 
-> GcListBannedUsersResponse gcListBannedUsers(apiToken, channelUrl, token, limit)
+> GcListBannedUsersResponse gcListBannedUsers(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
 
 List banned users
 
@@ -370,7 +382,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            GcListBannedUsersResponse result = apiInstance.gcListBannedUsers(apiToken, channelUrl, token, limit);
+            GcListBannedUsersResponse result = api.gcListBannedUsers(channelUrl)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcListBannedUsers");
@@ -414,7 +430,7 @@ No authorization required
 
 ## gcListMutedUsers
 
-> GcListMutedUsersResponse gcListMutedUsers(apiToken, channelUrl, token, limit)
+> GcListMutedUsersResponse gcListMutedUsers(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
 
 List muted users
 
@@ -450,7 +466,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            GcListMutedUsersResponse result = apiInstance.gcListMutedUsers(apiToken, channelUrl, token, limit);
+            GcListMutedUsersResponse result = api.gcListMutedUsers(channelUrl)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcListMutedUsers");
@@ -494,7 +514,7 @@ No authorization required
 
 ## gcMuteUser
 
-> SendBirdGroupChannel gcMuteUser(apiToken, channelUrl, gcMuteUserData)
+> SendBirdGroupChannel gcMuteUser(channelUrl).apiToken(apiToken).gcMuteUserData(gcMuteUserData).execute();
 
 Mute a user
 
@@ -525,7 +545,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcMuteUserData gcMuteUserData = new GcMuteUserData(); // GcMuteUserData | 
         try {
-            SendBirdGroupChannel result = apiInstance.gcMuteUser(apiToken, channelUrl, gcMuteUserData);
+            SendBirdGroupChannel result = api.gcMuteUser(channelUrl)
+                .apiToken(apiToken)
+                .gcMuteUserData(gcMuteUserData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcMuteUser");
@@ -568,7 +591,7 @@ No authorization required
 
 ## gcUnbanUserById
 
-> OcDeleteChannelByUrl200Response gcUnbanUserById(apiToken, channelUrl, bannedUserId)
+> OcDeleteChannelByUrl200Response gcUnbanUserById(channelUrl, bannedUserId).apiToken(apiToken).execute();
 
 Unban a user
 
@@ -599,7 +622,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.gcUnbanUserById(apiToken, channelUrl, bannedUserId);
+            OcDeleteChannelByUrl200Response result = api.gcUnbanUserById(channelUrl, bannedUserId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcUnbanUserById");
@@ -642,7 +667,7 @@ No authorization required
 
 ## gcUnmuteUserById
 
-> OcDeleteChannelByUrl200Response gcUnmuteUserById(apiToken, channelUrl, mutedUserId)
+> OcDeleteChannelByUrl200Response gcUnmuteUserById(channelUrl, mutedUserId).apiToken(apiToken).execute();
 
 Unmute a user
 
@@ -673,7 +698,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String mutedUserId = "mutedUserId_example"; // String | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.gcUnmuteUserById(apiToken, channelUrl, mutedUserId);
+            OcDeleteChannelByUrl200Response result = api.gcUnmuteUserById(channelUrl, mutedUserId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcUnmuteUserById");
@@ -716,7 +743,7 @@ No authorization required
 
 ## gcUpdateBanById
 
-> GcUpdateBanByIdResponse gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData)
+> GcUpdateBanByIdResponse gcUpdateBanById(channelUrl, bannedUserId).apiToken(apiToken).gcUpdateBanByIdData(gcUpdateBanByIdData).execute();
 
 Update a ban
 
@@ -748,7 +775,10 @@ public class Example {
         String bannedUserId = "bannedUserId_example"; // String | 
         GcUpdateBanByIdData gcUpdateBanByIdData = new GcUpdateBanByIdData(); // GcUpdateBanByIdData | 
         try {
-            GcUpdateBanByIdResponse result = apiInstance.gcUpdateBanById(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData);
+            GcUpdateBanByIdResponse result = api.gcUpdateBanById(channelUrl, bannedUserId)
+                .apiToken(apiToken)
+                .gcUpdateBanByIdData(gcUpdateBanByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcUpdateBanById");
@@ -792,7 +822,7 @@ No authorization required
 
 ## gcViewBanById
 
-> GcViewBanByIdResponse gcViewBanById(apiToken, channelUrl, bannedUserId)
+> GcViewBanByIdResponse gcViewBanById(channelUrl, bannedUserId).apiToken(apiToken).execute();
 
 View a ban
 
@@ -823,7 +853,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
         try {
-            GcViewBanByIdResponse result = apiInstance.gcViewBanById(apiToken, channelUrl, bannedUserId);
+            GcViewBanByIdResponse result = api.gcViewBanById(channelUrl, bannedUserId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcViewBanById");
@@ -866,7 +898,7 @@ No authorization required
 
 ## gcViewMuteById
 
-> GcViewMuteByIdResponse gcViewMuteById(apiToken, channelUrl, mutedUserId)
+> GcViewMuteByIdResponse gcViewMuteById(channelUrl, mutedUserId).apiToken(apiToken).execute();
 
 View a mute
 
@@ -897,7 +929,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String mutedUserId = "mutedUserId_example"; // String | 
         try {
-            GcViewMuteByIdResponse result = apiInstance.gcViewMuteById(apiToken, channelUrl, mutedUserId);
+            GcViewMuteByIdResponse result = api.gcViewMuteById(channelUrl, mutedUserId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#gcViewMuteById");
@@ -940,7 +974,7 @@ No authorization required
 
 ## listBannedChannels
 
-> ListBannedChannelsResponse listBannedChannels(apiToken, userId, token, limit)
+> ListBannedChannelsResponse listBannedChannels(userId).apiToken(apiToken).token(token).limit(limit).execute();
 
 List banned channels
 
@@ -976,7 +1010,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListBannedChannelsResponse result = apiInstance.listBannedChannels(apiToken, userId, token, limit);
+            ListBannedChannelsResponse result = api.listBannedChannels(userId)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#listBannedChannels");
@@ -1020,7 +1058,7 @@ No authorization required
 
 ## listBlockedUsers
 
-> ListBlockedUsersResponse listBlockedUsers(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn)
+> ListBlockedUsersResponse listBlockedUsers(userId).apiToken(apiToken).token(token).limit(limit).userIds(userIds).metadatakey(metadatakey).metadatavaluesIn(metadatavaluesIn).execute();
 
 List blocked users
 
@@ -1059,7 +1097,14 @@ public class Example {
         String metadatakey = "metadatakey_example"; // String | 
         String metadatavaluesIn = "metadatavaluesIn_example"; // String | 
         try {
-            ListBlockedUsersResponse result = apiInstance.listBlockedUsers(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn);
+            ListBlockedUsersResponse result = api.listBlockedUsers(userId)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .userIds(userIds)
+                .metadatakey(metadatakey)
+                .metadatavaluesIn(metadatavaluesIn)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#listBlockedUsers");
@@ -1106,7 +1151,7 @@ No authorization required
 
 ## listMutedChannels
 
-> ListMutedChannelsResponse listMutedChannels(apiToken, userId, token, limit)
+> ListMutedChannelsResponse listMutedChannels(userId).apiToken(apiToken).token(token).limit(limit).execute();
 
 List muted channels
 
@@ -1142,7 +1187,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListMutedChannelsResponse result = apiInstance.listMutedChannels(apiToken, userId, token, limit);
+            ListMutedChannelsResponse result = api.listMutedChannels(userId)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#listMutedChannels");
@@ -1186,7 +1235,7 @@ No authorization required
 
 ## muteInChannelsWithCustomChannelTypes
 
-> Object muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData)
+> Object muteInChannelsWithCustomChannelTypes(userId).apiToken(apiToken).muteInChannelsWithCustomChannelTypesData(muteInChannelsWithCustomChannelTypesData).execute();
 
 Mute in channels with custom channel types
 
@@ -1217,7 +1266,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData = new MuteInChannelsWithCustomChannelTypesData(); // MuteInChannelsWithCustomChannelTypesData | 
         try {
-            Object result = apiInstance.muteInChannelsWithCustomChannelTypes(apiToken, userId, muteInChannelsWithCustomChannelTypesData);
+            Object result = api.muteInChannelsWithCustomChannelTypes(userId)
+                .apiToken(apiToken)
+                .muteInChannelsWithCustomChannelTypesData(muteInChannelsWithCustomChannelTypesData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#muteInChannelsWithCustomChannelTypes");
@@ -1260,7 +1312,7 @@ No authorization required
 
 ## ocBanUser
 
-> OcBanUserResponse ocBanUser(apiToken, channelUrl, ocBanUserData)
+> OcBanUserResponse ocBanUser(channelUrl).apiToken(apiToken).ocBanUserData(ocBanUserData).execute();
 
 Ban a user
 
@@ -1291,7 +1343,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         OcBanUserData ocBanUserData = new OcBanUserData(); // OcBanUserData | 
         try {
-            OcBanUserResponse result = apiInstance.ocBanUser(apiToken, channelUrl, ocBanUserData);
+            OcBanUserResponse result = api.ocBanUser(channelUrl)
+                .apiToken(apiToken)
+                .ocBanUserData(ocBanUserData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocBanUser");
@@ -1334,7 +1389,7 @@ No authorization required
 
 ## ocFreezeChannel
 
-> SendBirdOpenChannel ocFreezeChannel(apiToken, channelUrl, ocFreezeChannelData)
+> SendBirdOpenChannel ocFreezeChannel(channelUrl).apiToken(apiToken).ocFreezeChannelData(ocFreezeChannelData).execute();
 
 Freeze a channel
 
@@ -1367,7 +1422,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         OcFreezeChannelData ocFreezeChannelData = new OcFreezeChannelData(); // OcFreezeChannelData | 
         try {
-            SendBirdOpenChannel result = apiInstance.ocFreezeChannel(apiToken, channelUrl, ocFreezeChannelData);
+            SendBirdOpenChannel result = api.ocFreezeChannel(channelUrl)
+                .apiToken(apiToken)
+                .ocFreezeChannelData(ocFreezeChannelData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocFreezeChannel");
@@ -1410,7 +1468,7 @@ No authorization required
 
 ## ocListBannedUsers
 
-> OcListBannedUsersResponse ocListBannedUsers(apiToken, channelUrl, token, limit)
+> OcListBannedUsersResponse ocListBannedUsers(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
 
 List banned users
 
@@ -1446,7 +1504,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            OcListBannedUsersResponse result = apiInstance.ocListBannedUsers(apiToken, channelUrl, token, limit);
+            OcListBannedUsersResponse result = api.ocListBannedUsers(channelUrl)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocListBannedUsers");
@@ -1490,7 +1552,7 @@ No authorization required
 
 ## ocListMutedUsers
 
-> OcListMutedUsersResponse ocListMutedUsers(apiToken, channelUrl, token, limit)
+> OcListMutedUsersResponse ocListMutedUsers(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
 
 List muted users
 
@@ -1526,7 +1588,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            OcListMutedUsersResponse result = apiInstance.ocListMutedUsers(apiToken, channelUrl, token, limit);
+            OcListMutedUsersResponse result = api.ocListMutedUsers(channelUrl)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocListMutedUsers");
@@ -1570,7 +1636,7 @@ No authorization required
 
 ## ocMuteUser
 
-> SendBirdOpenChannel ocMuteUser(apiToken, channelUrl, ocMuteUserData)
+> SendBirdOpenChannel ocMuteUser(channelUrl).apiToken(apiToken).ocMuteUserData(ocMuteUserData).execute();
 
 Mute a user
 
@@ -1600,7 +1666,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         OcMuteUserData ocMuteUserData = new OcMuteUserData(); // OcMuteUserData | 
         try {
-            SendBirdOpenChannel result = apiInstance.ocMuteUser(apiToken, channelUrl, ocMuteUserData);
+            SendBirdOpenChannel result = api.ocMuteUser(channelUrl)
+                .apiToken(apiToken)
+                .ocMuteUserData(ocMuteUserData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocMuteUser");
@@ -1643,7 +1712,7 @@ No authorization required
 
 ## ocUnbanUserById
 
-> OcDeleteChannelByUrl200Response ocUnbanUserById(apiToken, channelUrl, bannedUserId)
+> OcDeleteChannelByUrl200Response ocUnbanUserById(channelUrl, bannedUserId).apiToken(apiToken).execute();
 
 Unban a user
 
@@ -1674,7 +1743,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.ocUnbanUserById(apiToken, channelUrl, bannedUserId);
+            OcDeleteChannelByUrl200Response result = api.ocUnbanUserById(channelUrl, bannedUserId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocUnbanUserById");
@@ -1717,7 +1788,7 @@ No authorization required
 
 ## ocUnmuteUserById
 
-> OcDeleteChannelByUrl200Response ocUnmuteUserById(apiToken, channelUrl, mutedUserId)
+> OcDeleteChannelByUrl200Response ocUnmuteUserById(channelUrl, mutedUserId).apiToken(apiToken).execute();
 
 Unmute a user
 
@@ -1748,7 +1819,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String mutedUserId = "mutedUserId_example"; // String | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.ocUnmuteUserById(apiToken, channelUrl, mutedUserId);
+            OcDeleteChannelByUrl200Response result = api.ocUnmuteUserById(channelUrl, mutedUserId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocUnmuteUserById");
@@ -1791,7 +1864,7 @@ No authorization required
 
 ## ocUpdateBanById
 
-> OcUpdateBanByIdResponse ocUpdateBanById(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData)
+> OcUpdateBanByIdResponse ocUpdateBanById(channelUrl, bannedUserId).apiToken(apiToken).ocUpdateBanByIdData(ocUpdateBanByIdData).execute();
 
 Update a ban
 
@@ -1823,7 +1896,10 @@ public class Example {
         String bannedUserId = "bannedUserId_example"; // String | 
         OcUpdateBanByIdData ocUpdateBanByIdData = new OcUpdateBanByIdData(); // OcUpdateBanByIdData | 
         try {
-            OcUpdateBanByIdResponse result = apiInstance.ocUpdateBanById(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
+            OcUpdateBanByIdResponse result = api.ocUpdateBanById(channelUrl, bannedUserId)
+                .apiToken(apiToken)
+                .ocUpdateBanByIdData(ocUpdateBanByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocUpdateBanById");
@@ -1867,7 +1943,7 @@ No authorization required
 
 ## ocViewBanById
 
-> OcViewBanByIdResponse ocViewBanById(apiToken, channelUrl, bannedUserId)
+> OcViewBanByIdResponse ocViewBanById(channelUrl, bannedUserId).apiToken(apiToken).execute();
 
 View a ban
 
@@ -1898,7 +1974,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
         try {
-            OcViewBanByIdResponse result = apiInstance.ocViewBanById(apiToken, channelUrl, bannedUserId);
+            OcViewBanByIdResponse result = api.ocViewBanById(channelUrl, bannedUserId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocViewBanById");
@@ -1941,7 +2019,7 @@ No authorization required
 
 ## ocViewMuteById
 
-> OcViewMuteByIdResponse ocViewMuteById(apiToken, channelUrl, mutedUserId)
+> OcViewMuteByIdResponse ocViewMuteById(channelUrl, mutedUserId).apiToken(apiToken).execute();
 
 View a mute
 
@@ -1972,7 +2050,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String mutedUserId = "mutedUserId_example"; // String | 
         try {
-            OcViewMuteByIdResponse result = apiInstance.ocViewMuteById(apiToken, channelUrl, mutedUserId);
+            OcViewMuteByIdResponse result = api.ocViewMuteById(channelUrl, mutedUserId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#ocViewMuteById");
@@ -2015,7 +2095,7 @@ No authorization required
 
 ## unblockUserById
 
-> Object unblockUserById(apiToken, userId, targetId)
+> Object unblockUserById(userId, targetId).apiToken(apiToken).execute();
 
 Unblock a user
 
@@ -2046,7 +2126,9 @@ public class Example {
         String userId = "userId_example"; // String | 
         String targetId = "targetId_example"; // String | 
         try {
-            Object result = apiInstance.unblockUserById(apiToken, userId, targetId);
+            Object result = api.unblockUserById(userId, targetId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ModerationApi#unblockUserById");

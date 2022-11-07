@@ -46,7 +46,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class MessageApi {
   private ApiClient apiClient;
 
@@ -76,37 +76,8 @@ public class MessageApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * Add emoji categories
-   * ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories
-   * @param apiToken  (required)
-   * @param body  (optional)
-   * @return AddEmojiCategoriesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public AddEmojiCategoriesResponse addEmojiCategories(String apiToken, Object body) throws ApiException {
-    return addEmojiCategoriesWithHttpInfo(apiToken, body).getData();
-  }
 
-  /**
-   * Add emoji categories
-   * ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories
-   * @param apiToken  (required)
-   * @param body  (optional)
-   * @return ApiResponse&lt;AddEmojiCategoriesResponse&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<AddEmojiCategoriesResponse> addEmojiCategoriesWithHttpInfo(String apiToken, Object body) throws ApiException {
+private ApiResponse<AddEmojiCategoriesResponse> addEmojiCategoriesWithHttpInfo(String apiToken, Object body) throws ApiException {
     Object localVarPostBody = body;
     
     // verify the required parameter 'apiToken' is set
@@ -147,37 +118,79 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Add emojis
-   * ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis
-   * @param apiToken  (required)
-   * @param addEmojisData  (optional)
-   * @return AddEmojisResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public AddEmojisResponse addEmojis(String apiToken, AddEmojisData addEmojisData) throws ApiException {
-    return addEmojisWithHttpInfo(apiToken, addEmojisData).getData();
+
+  public class APIaddEmojiCategoriesRequest {
+    private String apiToken;
+    private Object body;
+
+    private APIaddEmojiCategoriesRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIaddEmojiCategoriesRequest
+     */
+    public APIaddEmojiCategoriesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set body
+     * @param body  (optional)
+     * @return APIaddEmojiCategoriesRequest
+     */
+    public APIaddEmojiCategoriesRequest body(Object body) {
+      this.body = body;
+      return this;
+    }
+
+    /**
+     * Execute addEmojiCategories request
+     * @return AddEmojiCategoriesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public AddEmojiCategoriesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute addEmojiCategories request with HTTP info returned
+     * @return ApiResponse&lt;AddEmojiCategoriesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<AddEmojiCategoriesResponse> executeWithHttpInfo() throws ApiException {
+      return addEmojiCategoriesWithHttpInfo(apiToken, body);
+    }
   }
 
   /**
-   * Add emojis
-   * ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis
-   * @param apiToken  (required)
-   * @param addEmojisData  (optional)
-   * @return ApiResponse&lt;AddEmojisResponse&gt;
+   * Add emoji categories
+   * ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories
+   * @return addEmojiCategoriesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<AddEmojisResponse> addEmojisWithHttpInfo(String apiToken, AddEmojisData addEmojisData) throws ApiException {
+  public APIaddEmojiCategoriesRequest addEmojiCategories() throws ApiException {
+    return new APIaddEmojiCategoriesRequest();
+  }
+
+private ApiResponse<AddEmojisResponse> addEmojisWithHttpInfo(String apiToken, AddEmojisData addEmojisData) throws ApiException {
     Object localVarPostBody = addEmojisData;
     
     // verify the required parameter 'apiToken' is set
@@ -218,43 +231,79 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Add extra data to a message
-   * ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-extra-data-to-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param addExtraDataToMessageData  (optional)
-   * @return AddExtraDataToMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public AddExtraDataToMessageResponse addExtraDataToMessage(String apiToken, String channelType, String channelUrl, String messageId, AddExtraDataToMessageData addExtraDataToMessageData) throws ApiException {
-    return addExtraDataToMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData).getData();
+
+  public class APIaddEmojisRequest {
+    private String apiToken;
+    private AddEmojisData addEmojisData;
+
+    private APIaddEmojisRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIaddEmojisRequest
+     */
+    public APIaddEmojisRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set addEmojisData
+     * @param addEmojisData  (optional)
+     * @return APIaddEmojisRequest
+     */
+    public APIaddEmojisRequest addEmojisData(AddEmojisData addEmojisData) {
+      this.addEmojisData = addEmojisData;
+      return this;
+    }
+
+    /**
+     * Execute addEmojis request
+     * @return AddEmojisResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public AddEmojisResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute addEmojis request with HTTP info returned
+     * @return ApiResponse&lt;AddEmojisResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<AddEmojisResponse> executeWithHttpInfo() throws ApiException {
+      return addEmojisWithHttpInfo(apiToken, addEmojisData);
+    }
   }
 
   /**
-   * Add extra data to a message
-   * ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-extra-data-to-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param addExtraDataToMessageData  (optional)
-   * @return ApiResponse&lt;AddExtraDataToMessageResponse&gt;
+   * Add emojis
+   * ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis
+   * @return addEmojisRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, AddExtraDataToMessageData addExtraDataToMessageData) throws ApiException {
+  public APIaddEmojisRequest addEmojis() throws ApiException {
+    return new APIaddEmojisRequest();
+  }
+
+private ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, AddExtraDataToMessageData addExtraDataToMessageData) throws ApiException {
     Object localVarPostBody = addExtraDataToMessageData;
     
     // verify the required parameter 'apiToken' is set
@@ -313,43 +362,88 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Add a reaction to a message
-   * ## Add a reaction to a message  Adds a specific reaction to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-a-reaction-to-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param addReactionToAMessageData  (optional)
-   * @return AddReactionToAMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public AddReactionToAMessageResponse addReactionToAMessage(String apiToken, String channelType, String channelUrl, String messageId, AddReactionToAMessageData addReactionToAMessageData) throws ApiException {
-    return addReactionToAMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData).getData();
+
+  public class APIaddExtraDataToMessageRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private AddExtraDataToMessageData addExtraDataToMessageData;
+
+    private APIaddExtraDataToMessageRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIaddExtraDataToMessageRequest
+     */
+    public APIaddExtraDataToMessageRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set addExtraDataToMessageData
+     * @param addExtraDataToMessageData  (optional)
+     * @return APIaddExtraDataToMessageRequest
+     */
+    public APIaddExtraDataToMessageRequest addExtraDataToMessageData(AddExtraDataToMessageData addExtraDataToMessageData) {
+      this.addExtraDataToMessageData = addExtraDataToMessageData;
+      return this;
+    }
+
+    /**
+     * Execute addExtraDataToMessage request
+     * @return AddExtraDataToMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public AddExtraDataToMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute addExtraDataToMessage request with HTTP info returned
+     * @return ApiResponse&lt;AddExtraDataToMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<AddExtraDataToMessageResponse> executeWithHttpInfo() throws ApiException {
+      return addExtraDataToMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData);
+    }
   }
 
   /**
-   * Add a reaction to a message
-   * ## Add a reaction to a message  Adds a specific reaction to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-a-reaction-to-a-message ----------------------------
-   * @param apiToken  (required)
+   * Add extra data to a message
+   * ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-extra-data-to-a-message ----------------------------
    * @param channelType  (required)
    * @param channelUrl  (required)
    * @param messageId  (required)
-   * @param addReactionToAMessageData  (optional)
-   * @return ApiResponse&lt;AddReactionToAMessageResponse&gt;
+   * @return addExtraDataToMessageRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, AddReactionToAMessageData addReactionToAMessageData) throws ApiException {
+  public APIaddExtraDataToMessageRequest addExtraDataToMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIaddExtraDataToMessageRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, AddReactionToAMessageData addReactionToAMessageData) throws ApiException {
     Object localVarPostBody = addReactionToAMessageData;
     
     // verify the required parameter 'apiToken' is set
@@ -408,36 +502,88 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Delete an emoji
-   * ## Delete an emoji  Deletes an emoji from the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji ----------------------------
-   * @param apiToken  (required)
-   * @param emojiKey  (required)
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public void deleteEmojiByKey(String apiToken, String emojiKey) throws ApiException {
-    deleteEmojiByKeyWithHttpInfo(apiToken, emojiKey);
+
+  public class APIaddReactionToAMessageRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private AddReactionToAMessageData addReactionToAMessageData;
+
+    private APIaddReactionToAMessageRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIaddReactionToAMessageRequest
+     */
+    public APIaddReactionToAMessageRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set addReactionToAMessageData
+     * @param addReactionToAMessageData  (optional)
+     * @return APIaddReactionToAMessageRequest
+     */
+    public APIaddReactionToAMessageRequest addReactionToAMessageData(AddReactionToAMessageData addReactionToAMessageData) {
+      this.addReactionToAMessageData = addReactionToAMessageData;
+      return this;
+    }
+
+    /**
+     * Execute addReactionToAMessage request
+     * @return AddReactionToAMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public AddReactionToAMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute addReactionToAMessage request with HTTP info returned
+     * @return ApiResponse&lt;AddReactionToAMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<AddReactionToAMessageResponse> executeWithHttpInfo() throws ApiException {
+      return addReactionToAMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData);
+    }
   }
 
   /**
-   * Delete an emoji
-   * ## Delete an emoji  Deletes an emoji from the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji ----------------------------
-   * @param apiToken  (required)
-   * @param emojiKey  (required)
-   * @return ApiResponse&lt;Void&gt;
+   * Add a reaction to a message
+   * ## Add a reaction to a message  Adds a specific reaction to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-a-reaction-to-a-message ----------------------------
+   * @param channelType  (required)
+   * @param channelUrl  (required)
+   * @param messageId  (required)
+   * @return addReactionToAMessageRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String apiToken, String emojiKey) throws ApiException {
+  public APIaddReactionToAMessageRequest addReactionToAMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIaddReactionToAMessageRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String apiToken, String emojiKey) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -482,37 +628,71 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, null, false);
   }
-  /**
-   * Delete an emoji category
-   * ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------
-   * @param apiToken  (required)
-   * @param emojiCategoryId  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object deleteEmojiCategoryById(String apiToken, String emojiCategoryId) throws ApiException {
-    return deleteEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId).getData();
+
+  public class APIdeleteEmojiByKeyRequest {
+    private String apiToken;
+    private String emojiKey;
+
+    private APIdeleteEmojiByKeyRequest(String emojiKey) {
+      this.emojiKey = emojiKey;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIdeleteEmojiByKeyRequest
+     */
+    public APIdeleteEmojiByKeyRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute deleteEmojiByKey request
+     
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public void execute() throws ApiException {
+      this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteEmojiByKey request with HTTP info returned
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+      return deleteEmojiByKeyWithHttpInfo(apiToken, emojiKey);
+    }
   }
 
   /**
-   * Delete an emoji category
-   * ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------
-   * @param apiToken  (required)
-   * @param emojiCategoryId  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * Delete an emoji
+   * ## Delete an emoji  Deletes an emoji from the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji ----------------------------
+   * @param emojiKey  (required)
+   * @return deleteEmojiByKeyRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> deleteEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
+  public APIdeleteEmojiByKeyRequest deleteEmojiByKey(String emojiKey) throws ApiException {
+    return new APIdeleteEmojiByKeyRequest(emojiKey);
+  }
+
+private ApiResponse<Object> deleteEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -559,41 +739,71 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Delete a message
-   * ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-delete-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object deleteMessageById(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
-    return deleteMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId).getData();
+
+  public class APIdeleteEmojiCategoryByIdRequest {
+    private String apiToken;
+    private String emojiCategoryId;
+
+    private APIdeleteEmojiCategoryByIdRequest(String emojiCategoryId) {
+      this.emojiCategoryId = emojiCategoryId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIdeleteEmojiCategoryByIdRequest
+     */
+    public APIdeleteEmojiCategoryByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute deleteEmojiCategoryById request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteEmojiCategoryById request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return deleteEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId);
+    }
   }
 
   /**
-   * Delete a message
-   * ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-delete-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * Delete an emoji category
+   * ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------
+   * @param emojiCategoryId  (required)
+   * @return deleteEmojiCategoryByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> deleteMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+  public APIdeleteEmojiCategoryByIdRequest deleteEmojiCategoryById(String emojiCategoryId) throws ApiException {
+    return new APIdeleteEmojiCategoryByIdRequest(emojiCategoryId);
+  }
+
+private ApiResponse<Object> deleteMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -652,37 +862,77 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Enable reactions
-   * ## Enable reactions  Turn on or off reactions in a Sendbird application.  &gt; __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions
-   * @param apiToken  (required)
-   * @param enableReactionsData  (optional)
-   * @return EnableReactionsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public EnableReactionsResponse enableReactions(String apiToken, EnableReactionsData enableReactionsData) throws ApiException {
-    return enableReactionsWithHttpInfo(apiToken, enableReactionsData).getData();
+
+  public class APIdeleteMessageByIdRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+
+    private APIdeleteMessageByIdRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIdeleteMessageByIdRequest
+     */
+    public APIdeleteMessageByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute deleteMessageById request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteMessageById request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return deleteMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
+    }
   }
 
   /**
-   * Enable reactions
-   * ## Enable reactions  Turn on or off reactions in a Sendbird application.  &gt; __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions
-   * @param apiToken  (required)
-   * @param enableReactionsData  (optional)
-   * @return ApiResponse&lt;EnableReactionsResponse&gt;
+   * Delete a message
+   * ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-delete-a-message ----------------------------
+   * @param channelType  (required)
+   * @param channelUrl  (required)
+   * @param messageId  (required)
+   * @return deleteMessageByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<EnableReactionsResponse> enableReactionsWithHttpInfo(String apiToken, EnableReactionsData enableReactionsData) throws ApiException {
+  public APIdeleteMessageByIdRequest deleteMessageById(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIdeleteMessageByIdRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<EnableReactionsResponse> enableReactionsWithHttpInfo(String apiToken, EnableReactionsData enableReactionsData) throws ApiException {
     Object localVarPostBody = enableReactionsData;
     
     // verify the required parameter 'apiToken' is set
@@ -723,39 +973,79 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Mark all messages as delivered
-   * ## Mark all messages as delivered  Marks all messages in a group channel as delivered for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-delivered ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param gcMarkAllMessagesAsDeliveredData  (optional)
-   * @return GcMarkAllMessagesAsDeliveredResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GcMarkAllMessagesAsDeliveredResponse gcMarkAllMessagesAsDelivered(String apiToken, String channelUrl, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) throws ApiException {
-    return gcMarkAllMessagesAsDeliveredWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData).getData();
+
+  public class APIenableReactionsRequest {
+    private String apiToken;
+    private EnableReactionsData enableReactionsData;
+
+    private APIenableReactionsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIenableReactionsRequest
+     */
+    public APIenableReactionsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set enableReactionsData
+     * @param enableReactionsData  (optional)
+     * @return APIenableReactionsRequest
+     */
+    public APIenableReactionsRequest enableReactionsData(EnableReactionsData enableReactionsData) {
+      this.enableReactionsData = enableReactionsData;
+      return this;
+    }
+
+    /**
+     * Execute enableReactions request
+     * @return EnableReactionsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public EnableReactionsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute enableReactions request with HTTP info returned
+     * @return ApiResponse&lt;EnableReactionsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<EnableReactionsResponse> executeWithHttpInfo() throws ApiException {
+      return enableReactionsWithHttpInfo(apiToken, enableReactionsData);
+    }
   }
 
   /**
-   * Mark all messages as delivered
-   * ## Mark all messages as delivered  Marks all messages in a group channel as delivered for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-delivered ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param gcMarkAllMessagesAsDeliveredData  (optional)
-   * @return ApiResponse&lt;GcMarkAllMessagesAsDeliveredResponse&gt;
+   * Enable reactions
+   * ## Enable reactions  Turn on or off reactions in a Sendbird application.  &gt; __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions
+   * @return enableReactionsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDeliveredWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) throws ApiException {
+  public APIenableReactionsRequest enableReactions() throws ApiException {
+    return new APIenableReactionsRequest();
+  }
+
+private ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDeliveredWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) throws ApiException {
     Object localVarPostBody = gcMarkAllMessagesAsDeliveredData;
     
     // verify the required parameter 'apiToken' is set
@@ -802,39 +1092,82 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Mark all messages as read
-   * ## Mark all messages as read  Marks all messages in a group channel as read for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-read ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param gcMarkAllMessagesAsReadData  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object gcMarkAllMessagesAsRead(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
-    return gcMarkAllMessagesAsReadWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsReadData).getData();
+
+  public class APIgcMarkAllMessagesAsDeliveredRequest {
+    private String apiToken;
+    private String channelUrl;
+    private GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData;
+
+    private APIgcMarkAllMessagesAsDeliveredRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcMarkAllMessagesAsDeliveredRequest
+     */
+    public APIgcMarkAllMessagesAsDeliveredRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set gcMarkAllMessagesAsDeliveredData
+     * @param gcMarkAllMessagesAsDeliveredData  (optional)
+     * @return APIgcMarkAllMessagesAsDeliveredRequest
+     */
+    public APIgcMarkAllMessagesAsDeliveredRequest gcMarkAllMessagesAsDeliveredData(GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) {
+      this.gcMarkAllMessagesAsDeliveredData = gcMarkAllMessagesAsDeliveredData;
+      return this;
+    }
+
+    /**
+     * Execute gcMarkAllMessagesAsDelivered request
+     * @return GcMarkAllMessagesAsDeliveredResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GcMarkAllMessagesAsDeliveredResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcMarkAllMessagesAsDelivered request with HTTP info returned
+     * @return ApiResponse&lt;GcMarkAllMessagesAsDeliveredResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GcMarkAllMessagesAsDeliveredResponse> executeWithHttpInfo() throws ApiException {
+      return gcMarkAllMessagesAsDeliveredWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData);
+    }
   }
 
   /**
-   * Mark all messages as read
-   * ## Mark all messages as read  Marks all messages in a group channel as read for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-read ----------------------------
-   * @param apiToken  (required)
+   * Mark all messages as delivered
+   * ## Mark all messages as delivered  Marks all messages in a group channel as delivered for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-delivered ----------------------------
    * @param channelUrl  (required)
-   * @param gcMarkAllMessagesAsReadData  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return gcMarkAllMessagesAsDeliveredRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
+  public APIgcMarkAllMessagesAsDeliveredRequest gcMarkAllMessagesAsDelivered(String channelUrl) throws ApiException {
+    return new APIgcMarkAllMessagesAsDeliveredRequest(channelUrl);
+  }
+
+private ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
     Object localVarPostBody = gcMarkAllMessagesAsReadData;
     
     // verify the required parameter 'apiToken' is set
@@ -881,39 +1214,82 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View number of each member&#39;s unread messages
-   * ## View number of each member&#39;s unread messages  Retrieves the total number of each member&#39;s unread messages in a group channel. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-number-of-each-member-s-unread-messages ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param userIds  (optional)
-   * @return GcViewNumberOfEachMembersUnreadMessagesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GcViewNumberOfEachMembersUnreadMessagesResponse gcViewNumberOfEachMembersUnreadMessages(String apiToken, String channelUrl, String userIds) throws ApiException {
-    return gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(apiToken, channelUrl, userIds).getData();
+
+  public class APIgcMarkAllMessagesAsReadRequest {
+    private String apiToken;
+    private String channelUrl;
+    private GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData;
+
+    private APIgcMarkAllMessagesAsReadRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcMarkAllMessagesAsReadRequest
+     */
+    public APIgcMarkAllMessagesAsReadRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set gcMarkAllMessagesAsReadData
+     * @param gcMarkAllMessagesAsReadData  (optional)
+     * @return APIgcMarkAllMessagesAsReadRequest
+     */
+    public APIgcMarkAllMessagesAsReadRequest gcMarkAllMessagesAsReadData(GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) {
+      this.gcMarkAllMessagesAsReadData = gcMarkAllMessagesAsReadData;
+      return this;
+    }
+
+    /**
+     * Execute gcMarkAllMessagesAsRead request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcMarkAllMessagesAsRead request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return gcMarkAllMessagesAsReadWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
+    }
   }
 
   /**
-   * View number of each member&#39;s unread messages
-   * ## View number of each member&#39;s unread messages  Retrieves the total number of each member&#39;s unread messages in a group channel. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-number-of-each-member-s-unread-messages ----------------------------
-   * @param apiToken  (required)
+   * Mark all messages as read
+   * ## Mark all messages as read  Marks all messages in a group channel as read for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-read ----------------------------
    * @param channelUrl  (required)
-   * @param userIds  (optional)
-   * @return ApiResponse&lt;GcViewNumberOfEachMembersUnreadMessagesResponse&gt;
+   * @return gcMarkAllMessagesAsReadRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(String apiToken, String channelUrl, String userIds) throws ApiException {
+  public APIgcMarkAllMessagesAsReadRequest gcMarkAllMessagesAsRead(String channelUrl) throws ApiException {
+    return new APIgcMarkAllMessagesAsReadRequest(channelUrl);
+  }
+
+private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(String apiToken, String channelUrl, String userIds) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -961,37 +1337,82 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Get an emoji
-   * ## Get an emoji  Retrieves an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji ----------------------------
-   * @param apiToken  (required)
-   * @param emojiKey  (required)
-   * @return SendBirdEmoji
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdEmoji getEmojiByKey(String apiToken, String emojiKey) throws ApiException {
-    return getEmojiByKeyWithHttpInfo(apiToken, emojiKey).getData();
+
+  public class APIgcViewNumberOfEachMembersUnreadMessagesRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String userIds;
+
+    private APIgcViewNumberOfEachMembersUnreadMessagesRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcViewNumberOfEachMembersUnreadMessagesRequest
+     */
+    public APIgcViewNumberOfEachMembersUnreadMessagesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set userIds
+     * @param userIds  (optional)
+     * @return APIgcViewNumberOfEachMembersUnreadMessagesRequest
+     */
+    public APIgcViewNumberOfEachMembersUnreadMessagesRequest userIds(String userIds) {
+      this.userIds = userIds;
+      return this;
+    }
+
+    /**
+     * Execute gcViewNumberOfEachMembersUnreadMessages request
+     * @return GcViewNumberOfEachMembersUnreadMessagesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GcViewNumberOfEachMembersUnreadMessagesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcViewNumberOfEachMembersUnreadMessages request with HTTP info returned
+     * @return ApiResponse&lt;GcViewNumberOfEachMembersUnreadMessagesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
+      return gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(apiToken, channelUrl, userIds);
+    }
   }
 
   /**
-   * Get an emoji
-   * ## Get an emoji  Retrieves an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji ----------------------------
-   * @param apiToken  (required)
-   * @param emojiKey  (required)
-   * @return ApiResponse&lt;SendBirdEmoji&gt;
+   * View number of each member&#39;s unread messages
+   * ## View number of each member&#39;s unread messages  Retrieves the total number of each member&#39;s unread messages in a group channel. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-number-of-each-member-s-unread-messages ----------------------------
+   * @param channelUrl  (required)
+   * @return gcViewNumberOfEachMembersUnreadMessagesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String apiToken, String emojiKey) throws ApiException {
+  public APIgcViewNumberOfEachMembersUnreadMessagesRequest gcViewNumberOfEachMembersUnreadMessages(String channelUrl) throws ApiException {
+    return new APIgcViewNumberOfEachMembersUnreadMessagesRequest(channelUrl);
+  }
+
+private ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String apiToken, String emojiKey) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1038,37 +1459,71 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Get an emoji category
-   * ## Get an emoji category  Retrieves an emoji category with the specified ID, including its emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji-category ----------------------------   &#x60;emoji_category_id&#x60;      Type: int      Description: Specifies the unique ID of the emoji category to retrieve.
-   * @param apiToken  (required)
-   * @param emojiCategoryId  (required)
-   * @return SendBirdEmojiCategory
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdEmojiCategory getEmojiCategoryById(String apiToken, String emojiCategoryId) throws ApiException {
-    return getEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId).getData();
+
+  public class APIgetEmojiByKeyRequest {
+    private String apiToken;
+    private String emojiKey;
+
+    private APIgetEmojiByKeyRequest(String emojiKey) {
+      this.emojiKey = emojiKey;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgetEmojiByKeyRequest
+     */
+    public APIgetEmojiByKeyRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute getEmojiByKey request
+     * @return SendBirdEmoji
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdEmoji execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getEmojiByKey request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdEmoji&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdEmoji> executeWithHttpInfo() throws ApiException {
+      return getEmojiByKeyWithHttpInfo(apiToken, emojiKey);
+    }
   }
 
   /**
-   * Get an emoji category
-   * ## Get an emoji category  Retrieves an emoji category with the specified ID, including its emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji-category ----------------------------   &#x60;emoji_category_id&#x60;      Type: int      Description: Specifies the unique ID of the emoji category to retrieve.
-   * @param apiToken  (required)
-   * @param emojiCategoryId  (required)
-   * @return ApiResponse&lt;SendBirdEmojiCategory&gt;
+   * Get an emoji
+   * ## Get an emoji  Retrieves an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji ----------------------------
+   * @param emojiKey  (required)
+   * @return getEmojiByKeyRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
+  public APIgetEmojiByKeyRequest getEmojiByKey(String emojiKey) throws ApiException {
+    return new APIgetEmojiByKeyRequest(emojiKey);
+  }
+
+private ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1115,35 +1570,71 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List all emojis and emoji categories
-   * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
-   * @param apiToken  (required)
-   * @return ListAllEmojisAndEmojiCategoriesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListAllEmojisAndEmojiCategoriesResponse listAllEmojisAndEmojiCategories(String apiToken) throws ApiException {
-    return listAllEmojisAndEmojiCategoriesWithHttpInfo(apiToken).getData();
+
+  public class APIgetEmojiCategoryByIdRequest {
+    private String apiToken;
+    private String emojiCategoryId;
+
+    private APIgetEmojiCategoryByIdRequest(String emojiCategoryId) {
+      this.emojiCategoryId = emojiCategoryId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgetEmojiCategoryByIdRequest
+     */
+    public APIgetEmojiCategoryByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute getEmojiCategoryById request
+     * @return SendBirdEmojiCategory
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdEmojiCategory execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getEmojiCategoryById request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdEmojiCategory&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdEmojiCategory> executeWithHttpInfo() throws ApiException {
+      return getEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId);
+    }
   }
 
   /**
-   * List all emojis and emoji categories
-   * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;ListAllEmojisAndEmojiCategoriesResponse&gt;
+   * Get an emoji category
+   * ## Get an emoji category  Retrieves an emoji category with the specified ID, including its emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji-category ----------------------------   &#x60;emoji_category_id&#x60;      Type: int      Description: Specifies the unique ID of the emoji category to retrieve.
+   * @param emojiCategoryId  (required)
+   * @return getEmojiCategoryByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListAllEmojisAndEmojiCategoriesResponse> listAllEmojisAndEmojiCategoriesWithHttpInfo(String apiToken) throws ApiException {
+  public APIgetEmojiCategoryByIdRequest getEmojiCategoryById(String emojiCategoryId) throws ApiException {
+    return new APIgetEmojiCategoryByIdRequest(emojiCategoryId);
+  }
+
+private ApiResponse<ListAllEmojisAndEmojiCategoriesResponse> listAllEmojisAndEmojiCategoriesWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1184,45 +1675,68 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List announcements
-   * ## List announcements  Retrieves a list of announcements.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcements ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param order  (optional)
-   * @param status  (optional)
-   * @param announcementGroup  (optional)
-   * @return ListAnnouncementsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListAnnouncementsResponse listAnnouncements(String apiToken, String token, Integer limit, String order, String status, String announcementGroup) throws ApiException {
-    return listAnnouncementsWithHttpInfo(apiToken, token, limit, order, status, announcementGroup).getData();
+
+  public class APIlistAllEmojisAndEmojiCategoriesRequest {
+    private String apiToken;
+
+    private APIlistAllEmojisAndEmojiCategoriesRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistAllEmojisAndEmojiCategoriesRequest
+     */
+    public APIlistAllEmojisAndEmojiCategoriesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute listAllEmojisAndEmojiCategories request
+     * @return ListAllEmojisAndEmojiCategoriesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListAllEmojisAndEmojiCategoriesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listAllEmojisAndEmojiCategories request with HTTP info returned
+     * @return ApiResponse&lt;ListAllEmojisAndEmojiCategoriesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListAllEmojisAndEmojiCategoriesResponse> executeWithHttpInfo() throws ApiException {
+      return listAllEmojisAndEmojiCategoriesWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * List announcements
-   * ## List announcements  Retrieves a list of announcements.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcements ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param order  (optional)
-   * @param status  (optional)
-   * @param announcementGroup  (optional)
-   * @return ApiResponse&lt;ListAnnouncementsResponse&gt;
+   * List all emojis and emoji categories
+   * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
+   * @return listAllEmojisAndEmojiCategoriesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListAnnouncementsResponse> listAnnouncementsWithHttpInfo(String apiToken, String token, Integer limit, String order, String status, String announcementGroup) throws ApiException {
+  public APIlistAllEmojisAndEmojiCategoriesRequest listAllEmojisAndEmojiCategories() throws ApiException {
+    return new APIlistAllEmojisAndEmojiCategoriesRequest();
+  }
+
+private ApiResponse<ListAnnouncementsResponse> listAnnouncementsWithHttpInfo(String apiToken, String token, Integer limit, String order, String status, String announcementGroup) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1268,35 +1782,123 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List emojis
-   * ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis
-   * @param apiToken  (required)
-   * @return ListEmojisResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListEmojisResponse listEmojis(String apiToken) throws ApiException {
-    return listEmojisWithHttpInfo(apiToken).getData();
+
+  public class APIlistAnnouncementsRequest {
+    private String apiToken;
+    private String token;
+    private Integer limit;
+    private String order;
+    private String status;
+    private String announcementGroup;
+
+    private APIlistAnnouncementsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistAnnouncementsRequest
+     */
+    public APIlistAnnouncementsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistAnnouncementsRequest
+     */
+    public APIlistAnnouncementsRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistAnnouncementsRequest
+     */
+    public APIlistAnnouncementsRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Set order
+     * @param order  (optional)
+     * @return APIlistAnnouncementsRequest
+     */
+    public APIlistAnnouncementsRequest order(String order) {
+      this.order = order;
+      return this;
+    }
+
+    /**
+     * Set status
+     * @param status  (optional)
+     * @return APIlistAnnouncementsRequest
+     */
+    public APIlistAnnouncementsRequest status(String status) {
+      this.status = status;
+      return this;
+    }
+
+    /**
+     * Set announcementGroup
+     * @param announcementGroup  (optional)
+     * @return APIlistAnnouncementsRequest
+     */
+    public APIlistAnnouncementsRequest announcementGroup(String announcementGroup) {
+      this.announcementGroup = announcementGroup;
+      return this;
+    }
+
+    /**
+     * Execute listAnnouncements request
+     * @return ListAnnouncementsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListAnnouncementsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listAnnouncements request with HTTP info returned
+     * @return ApiResponse&lt;ListAnnouncementsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListAnnouncementsResponse> executeWithHttpInfo() throws ApiException {
+      return listAnnouncementsWithHttpInfo(apiToken, token, limit, order, status, announcementGroup);
+    }
   }
 
   /**
-   * List emojis
-   * ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;ListEmojisResponse&gt;
+   * List announcements
+   * ## List announcements  Retrieves a list of announcements.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcements ----------------------------
+   * @return listAnnouncementsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListEmojisResponse> listEmojisWithHttpInfo(String apiToken) throws ApiException {
+  public APIlistAnnouncementsRequest listAnnouncements() throws ApiException {
+    return new APIlistAnnouncementsRequest();
+  }
+
+private ApiResponse<ListEmojisResponse> listEmojisWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1337,75 +1939,68 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List messages
-   * ## List messages  Retrieves a list of past messages of a channel.  &gt; This message retrieval is one of Sendbird&#39;s [premium features](https://sendbird.com/docs/chat/v3/platform-api/guides/application#-3-sendbird-s-premium-features). Contact our [sales team](https://get.sendbird.com/talk-to-sales.html) for further assistance.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-messages ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of past messages.
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageTs  (optional)
-   * @param messageId  (optional)
-   * @param prevLimit  (optional)
-   * @param nextLimit  (optional)
-   * @param include  (optional)
-   * @param reverse  (optional)
-   * @param senderId  (optional)
-   * @param senderIds  (optional)
-   * @param operatorFilter  (optional)
-   * @param customTypes  (optional)
-   * @param messageType  (optional)
-   * @param includingRemoved  (optional)
-   * @param includeReactions  (optional)
-   * @param withSortedMetaArray  (optional)
-   * @param showSubchannelMessagesOnly  (optional)
-   * @param userId  (optional)
-   * @param customType  (optional)
-   * @param withMetaArray  (optional)
-   * @return ListMessagesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListMessagesResponse listMessages(String apiToken, String channelType, String channelUrl, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
-    return listMessagesWithHttpInfo(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray).getData();
+
+  public class APIlistEmojisRequest {
+    private String apiToken;
+
+    private APIlistEmojisRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistEmojisRequest
+     */
+    public APIlistEmojisRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute listEmojis request
+     * @return ListEmojisResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListEmojisResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listEmojis request with HTTP info returned
+     * @return ApiResponse&lt;ListEmojisResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListEmojisResponse> executeWithHttpInfo() throws ApiException {
+      return listEmojisWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * List messages
-   * ## List messages  Retrieves a list of past messages of a channel.  &gt; This message retrieval is one of Sendbird&#39;s [premium features](https://sendbird.com/docs/chat/v3/platform-api/guides/application#-3-sendbird-s-premium-features). Contact our [sales team](https://get.sendbird.com/talk-to-sales.html) for further assistance.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-messages ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of past messages.
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageTs  (optional)
-   * @param messageId  (optional)
-   * @param prevLimit  (optional)
-   * @param nextLimit  (optional)
-   * @param include  (optional)
-   * @param reverse  (optional)
-   * @param senderId  (optional)
-   * @param senderIds  (optional)
-   * @param operatorFilter  (optional)
-   * @param customTypes  (optional)
-   * @param messageType  (optional)
-   * @param includingRemoved  (optional)
-   * @param includeReactions  (optional)
-   * @param withSortedMetaArray  (optional)
-   * @param showSubchannelMessagesOnly  (optional)
-   * @param userId  (optional)
-   * @param customType  (optional)
-   * @param withMetaArray  (optional)
-   * @return ApiResponse&lt;ListMessagesResponse&gt;
+   * List emojis
+   * ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis
+   * @return listEmojisRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
+  public APIlistEmojisRequest listEmojis() throws ApiException {
+    return new APIlistEmojisRequest();
+  }
+
+private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1476,43 +2071,272 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List reactions of a message
-   * ## List reactions of a message  Retrieves a list of reactions made to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-reactions-of-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to add a reaction to.
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param listUsers  (optional)
-   * @return ListReactionsOfMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListReactionsOfMessageResponse listReactionsOfMessage(String apiToken, String channelType, String channelUrl, String messageId, Boolean listUsers) throws ApiException {
-    return listReactionsOfMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, listUsers).getData();
+
+  public class APIlistMessagesRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageTs;
+    private Integer messageId;
+    private Integer prevLimit;
+    private Integer nextLimit;
+    private Boolean include;
+    private Boolean reverse;
+    private String senderId;
+    private String senderIds;
+    private String operatorFilter;
+    private String customTypes;
+    private String messageType;
+    private Boolean includingRemoved;
+    private Boolean includeReactions;
+    private Boolean withSortedMetaArray;
+    private Boolean showSubchannelMessagesOnly;
+    private String userId;
+    private String customType;
+    private Boolean withMetaArray;
+
+    private APIlistMessagesRequest(String channelType, String channelUrl) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set messageTs
+     * @param messageTs  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest messageTs(String messageTs) {
+      this.messageTs = messageTs;
+      return this;
+    }
+
+    /**
+     * Set messageId
+     * @param messageId  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest messageId(Integer messageId) {
+      this.messageId = messageId;
+      return this;
+    }
+
+    /**
+     * Set prevLimit
+     * @param prevLimit  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest prevLimit(Integer prevLimit) {
+      this.prevLimit = prevLimit;
+      return this;
+    }
+
+    /**
+     * Set nextLimit
+     * @param nextLimit  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest nextLimit(Integer nextLimit) {
+      this.nextLimit = nextLimit;
+      return this;
+    }
+
+    /**
+     * Set include
+     * @param include  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest include(Boolean include) {
+      this.include = include;
+      return this;
+    }
+
+    /**
+     * Set reverse
+     * @param reverse  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest reverse(Boolean reverse) {
+      this.reverse = reverse;
+      return this;
+    }
+
+    /**
+     * Set senderId
+     * @param senderId  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest senderId(String senderId) {
+      this.senderId = senderId;
+      return this;
+    }
+
+    /**
+     * Set senderIds
+     * @param senderIds  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest senderIds(String senderIds) {
+      this.senderIds = senderIds;
+      return this;
+    }
+
+    /**
+     * Set operatorFilter
+     * @param operatorFilter  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest operatorFilter(String operatorFilter) {
+      this.operatorFilter = operatorFilter;
+      return this;
+    }
+
+    /**
+     * Set customTypes
+     * @param customTypes  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest customTypes(String customTypes) {
+      this.customTypes = customTypes;
+      return this;
+    }
+
+    /**
+     * Set messageType
+     * @param messageType  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest messageType(String messageType) {
+      this.messageType = messageType;
+      return this;
+    }
+
+    /**
+     * Set includingRemoved
+     * @param includingRemoved  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest includingRemoved(Boolean includingRemoved) {
+      this.includingRemoved = includingRemoved;
+      return this;
+    }
+
+    /**
+     * Set includeReactions
+     * @param includeReactions  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest includeReactions(Boolean includeReactions) {
+      this.includeReactions = includeReactions;
+      return this;
+    }
+
+    /**
+     * Set withSortedMetaArray
+     * @param withSortedMetaArray  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest withSortedMetaArray(Boolean withSortedMetaArray) {
+      this.withSortedMetaArray = withSortedMetaArray;
+      return this;
+    }
+
+    /**
+     * Set showSubchannelMessagesOnly
+     * @param showSubchannelMessagesOnly  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest showSubchannelMessagesOnly(Boolean showSubchannelMessagesOnly) {
+      this.showSubchannelMessagesOnly = showSubchannelMessagesOnly;
+      return this;
+    }
+
+    /**
+     * Set userId
+     * @param userId  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest userId(String userId) {
+      this.userId = userId;
+      return this;
+    }
+
+    /**
+     * Set customType
+     * @param customType  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest customType(String customType) {
+      this.customType = customType;
+      return this;
+    }
+
+    /**
+     * Set withMetaArray
+     * @param withMetaArray  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest withMetaArray(Boolean withMetaArray) {
+      this.withMetaArray = withMetaArray;
+      return this;
+    }
+
+    /**
+     * Execute listMessages request
+     * @return ListMessagesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListMessagesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listMessages request with HTTP info returned
+     * @return ApiResponse&lt;ListMessagesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListMessagesResponse> executeWithHttpInfo() throws ApiException {
+      return listMessagesWithHttpInfo(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+    }
   }
 
   /**
-   * List reactions of a message
-   * ## List reactions of a message  Retrieves a list of reactions made to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-reactions-of-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to add a reaction to.
-   * @param apiToken  (required)
+   * List messages
+   * ## List messages  Retrieves a list of past messages of a channel.  &gt; This message retrieval is one of Sendbird&#39;s [premium features](https://sendbird.com/docs/chat/v3/platform-api/guides/application#-3-sendbird-s-premium-features). Contact our [sales team](https://get.sendbird.com/talk-to-sales.html) for further assistance.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-messages ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of past messages.
    * @param channelType  (required)
    * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param listUsers  (optional)
-   * @return ApiResponse&lt;ListReactionsOfMessageResponse&gt;
+   * @return listMessagesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Boolean listUsers) throws ApiException {
+  public APIlistMessagesRequest listMessages(String channelType, String channelUrl) throws ApiException {
+    return new APIlistMessagesRequest(channelType, channelUrl);
+  }
+
+private ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Boolean listUsers) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1572,38 +2396,88 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Migrate messages
-   * ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system&#39;s [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  &gt; To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).  There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user). 2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn&#39;t create a channel for your migration automatically. 3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.  https://sendbird.com/docs/chat/v3/platform-api/guides/migration#2-migrate-messages ----------------------------
-   * @param apiToken  (required)
-   * @param targetChannelUrl  (required)
-   * @param body  (optional)
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public void migrateMessagesByUrl(String apiToken, String targetChannelUrl, Object body) throws ApiException {
-    migrateMessagesByUrlWithHttpInfo(apiToken, targetChannelUrl, body);
+
+  public class APIlistReactionsOfMessageRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private Boolean listUsers;
+
+    private APIlistReactionsOfMessageRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistReactionsOfMessageRequest
+     */
+    public APIlistReactionsOfMessageRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set listUsers
+     * @param listUsers  (optional)
+     * @return APIlistReactionsOfMessageRequest
+     */
+    public APIlistReactionsOfMessageRequest listUsers(Boolean listUsers) {
+      this.listUsers = listUsers;
+      return this;
+    }
+
+    /**
+     * Execute listReactionsOfMessage request
+     * @return ListReactionsOfMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListReactionsOfMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listReactionsOfMessage request with HTTP info returned
+     * @return ApiResponse&lt;ListReactionsOfMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListReactionsOfMessageResponse> executeWithHttpInfo() throws ApiException {
+      return listReactionsOfMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, listUsers);
+    }
   }
 
   /**
-   * Migrate messages
-   * ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system&#39;s [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  &gt; To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).  There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user). 2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn&#39;t create a channel for your migration automatically. 3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.  https://sendbird.com/docs/chat/v3/platform-api/guides/migration#2-migrate-messages ----------------------------
-   * @param apiToken  (required)
-   * @param targetChannelUrl  (required)
-   * @param body  (optional)
-   * @return ApiResponse&lt;Void&gt;
+   * List reactions of a message
+   * ## List reactions of a message  Retrieves a list of reactions made to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-reactions-of-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to add a reaction to.
+   * @param channelType  (required)
+   * @param channelUrl  (required)
+   * @param messageId  (required)
+   * @return listReactionsOfMessageRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String apiToken, String targetChannelUrl, Object body) throws ApiException {
+  public APIlistReactionsOfMessageRequest listReactionsOfMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIlistReactionsOfMessageRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String apiToken, String targetChannelUrl, Object body) throws ApiException {
     Object localVarPostBody = body;
     
     // verify the required parameter 'apiToken' is set
@@ -1648,43 +2522,82 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, null, false);
   }
-  /**
-   * Remove extra data from a message
-   * ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-extra-data-from-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param keys  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object removeExtraDataFromMessage(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
-    return removeExtraDataFromMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, keys).getData();
+
+  public class APImigrateMessagesByUrlRequest {
+    private String apiToken;
+    private String targetChannelUrl;
+    private Object body;
+
+    private APImigrateMessagesByUrlRequest(String targetChannelUrl) {
+      this.targetChannelUrl = targetChannelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APImigrateMessagesByUrlRequest
+     */
+    public APImigrateMessagesByUrlRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set body
+     * @param body  (optional)
+     * @return APImigrateMessagesByUrlRequest
+     */
+    public APImigrateMessagesByUrlRequest body(Object body) {
+      this.body = body;
+      return this;
+    }
+
+    /**
+     * Execute migrateMessagesByUrl request
+     
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public void execute() throws ApiException {
+      this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute migrateMessagesByUrl request with HTTP info returned
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
+      return migrateMessagesByUrlWithHttpInfo(apiToken, targetChannelUrl, body);
+    }
   }
 
   /**
-   * Remove extra data from a message
-   * ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-extra-data-from-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param keys  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * Migrate messages
+   * ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system&#39;s [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  &gt; To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).  There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user). 2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn&#39;t create a channel for your migration automatically. 3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.  https://sendbird.com/docs/chat/v3/platform-api/guides/migration#2-migrate-messages ----------------------------
+   * @param targetChannelUrl  (required)
+   * @return migrateMessagesByUrlRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> removeExtraDataFromMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
+  public APImigrateMessagesByUrlRequest migrateMessagesByUrl(String targetChannelUrl) throws ApiException {
+    return new APImigrateMessagesByUrlRequest(targetChannelUrl);
+  }
+
+private ApiResponse<Object> removeExtraDataFromMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1744,45 +2657,88 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Remove a reaction from a message
-   * ## Remove a reaction from a message  Removes a specific reaction from a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-a-reaction-from-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param userId  (optional)
-   * @param reaction  (optional)
-   * @return RemoveReactionFromAMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RemoveReactionFromAMessageResponse removeReactionFromAMessage(String apiToken, String channelType, String channelUrl, String messageId, String userId, String reaction) throws ApiException {
-    return removeReactionFromAMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, userId, reaction).getData();
+
+  public class APIremoveExtraDataFromMessageRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private List<String> keys;
+
+    private APIremoveExtraDataFromMessageRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIremoveExtraDataFromMessageRequest
+     */
+    public APIremoveExtraDataFromMessageRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set keys
+     * @param keys  (optional)
+     * @return APIremoveExtraDataFromMessageRequest
+     */
+    public APIremoveExtraDataFromMessageRequest keys(List<String> keys) {
+      this.keys = keys;
+      return this;
+    }
+
+    /**
+     * Execute removeExtraDataFromMessage request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute removeExtraDataFromMessage request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return removeExtraDataFromMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, keys);
+    }
   }
 
   /**
-   * Remove a reaction from a message
-   * ## Remove a reaction from a message  Removes a specific reaction from a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-a-reaction-from-a-message ----------------------------
-   * @param apiToken  (required)
+   * Remove extra data from a message
+   * ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-extra-data-from-a-message ----------------------------
    * @param channelType  (required)
    * @param channelUrl  (required)
    * @param messageId  (required)
-   * @param userId  (optional)
-   * @param reaction  (optional)
-   * @return ApiResponse&lt;RemoveReactionFromAMessageResponse&gt;
+   * @return removeExtraDataFromMessageRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, String userId, String reaction) throws ApiException {
+  public APIremoveExtraDataFromMessageRequest removeExtraDataFromMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIremoveExtraDataFromMessageRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, String userId, String reaction) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1843,41 +2799,99 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Send a message
-   * ## Send a message  Sends a message to a channel. You can send a text message, a file message, and an admin message.  &gt;__Note__: With Sendbird Chat SDKs and the platform API, any type of files in messages can be uploaded to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-send-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param sendMessageData  (optional)
-   * @return SendBirdMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdMessageResponse sendMessage(String apiToken, String channelType, String channelUrl, SendMessageData sendMessageData) throws ApiException {
-    return sendMessageWithHttpInfo(apiToken, channelType, channelUrl, sendMessageData).getData();
+
+  public class APIremoveReactionFromAMessageRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private String userId;
+    private String reaction;
+
+    private APIremoveReactionFromAMessageRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIremoveReactionFromAMessageRequest
+     */
+    public APIremoveReactionFromAMessageRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set userId
+     * @param userId  (optional)
+     * @return APIremoveReactionFromAMessageRequest
+     */
+    public APIremoveReactionFromAMessageRequest userId(String userId) {
+      this.userId = userId;
+      return this;
+    }
+
+    /**
+     * Set reaction
+     * @param reaction  (optional)
+     * @return APIremoveReactionFromAMessageRequest
+     */
+    public APIremoveReactionFromAMessageRequest reaction(String reaction) {
+      this.reaction = reaction;
+      return this;
+    }
+
+    /**
+     * Execute removeReactionFromAMessage request
+     * @return RemoveReactionFromAMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RemoveReactionFromAMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute removeReactionFromAMessage request with HTTP info returned
+     * @return ApiResponse&lt;RemoveReactionFromAMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RemoveReactionFromAMessageResponse> executeWithHttpInfo() throws ApiException {
+      return removeReactionFromAMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, userId, reaction);
+    }
   }
 
   /**
-   * Send a message
-   * ## Send a message  Sends a message to a channel. You can send a text message, a file message, and an admin message.  &gt;__Note__: With Sendbird Chat SDKs and the platform API, any type of files in messages can be uploaded to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-send-a-message ----------------------------
-   * @param apiToken  (required)
+   * Remove a reaction from a message
+   * ## Remove a reaction from a message  Removes a specific reaction from a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-a-reaction-from-a-message ----------------------------
    * @param channelType  (required)
    * @param channelUrl  (required)
-   * @param sendMessageData  (optional)
-   * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+   * @param messageId  (required)
+   * @return removeReactionFromAMessageRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, SendMessageData sendMessageData) throws ApiException {
+  public APIremoveReactionFromAMessageRequest removeReactionFromAMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIremoveReactionFromAMessageRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, SendMessageData sendMessageData) throws ApiException {
     Object localVarPostBody = sendMessageData;
     
     // verify the required parameter 'apiToken' is set
@@ -1930,43 +2944,85 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Translate a message into other languages
-   * ## Translate a message into other languages  Translates a message into specific languages. Only text messages of which type is MESG can be translated into other languages.  &gt; __Note__: Message translation is powered by [Google Cloud Translation API recognition engine](https://cloud.google.com/translate/). Find language codes supported by the engine in the [Miscellaneous](https://sendbird.com/docs/chat/v3/platform-api/guides/Miscellaneous) page or visit the [Language Support](https://cloud.google.com/translate/docs/languages) for Google Cloud Translation.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-translate-a-message-into-other-languages ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param translateMessageIntoOtherLanguagesData  (optional)
-   * @return SendBirdMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdMessageResponse translateMessageIntoOtherLanguages(String apiToken, String channelType, String channelUrl, String messageId, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData) throws ApiException {
-    return translateMessageIntoOtherLanguagesWithHttpInfo(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData).getData();
+
+  public class APIsendMessageRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private SendMessageData sendMessageData;
+
+    private APIsendMessageRequest(String channelType, String channelUrl) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIsendMessageRequest
+     */
+    public APIsendMessageRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set sendMessageData
+     * @param sendMessageData  (optional)
+     * @return APIsendMessageRequest
+     */
+    public APIsendMessageRequest sendMessageData(SendMessageData sendMessageData) {
+      this.sendMessageData = sendMessageData;
+      return this;
+    }
+
+    /**
+     * Execute sendMessage request
+     * @return SendBirdMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute sendMessage request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
+      return sendMessageWithHttpInfo(apiToken, channelType, channelUrl, sendMessageData);
+    }
   }
 
   /**
-   * Translate a message into other languages
-   * ## Translate a message into other languages  Translates a message into specific languages. Only text messages of which type is MESG can be translated into other languages.  &gt; __Note__: Message translation is powered by [Google Cloud Translation API recognition engine](https://cloud.google.com/translate/). Find language codes supported by the engine in the [Miscellaneous](https://sendbird.com/docs/chat/v3/platform-api/guides/Miscellaneous) page or visit the [Language Support](https://cloud.google.com/translate/docs/languages) for Google Cloud Translation.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-translate-a-message-into-other-languages ----------------------------
-   * @param apiToken  (required)
+   * Send a message
+   * ## Send a message  Sends a message to a channel. You can send a text message, a file message, and an admin message.  &gt;__Note__: With Sendbird Chat SDKs and the platform API, any type of files in messages can be uploaded to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-send-a-message ----------------------------
    * @param channelType  (required)
    * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param translateMessageIntoOtherLanguagesData  (optional)
-   * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+   * @return sendMessageRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData) throws ApiException {
+  public APIsendMessageRequest sendMessage(String channelType, String channelUrl) throws ApiException {
+    return new APIsendMessageRequest(channelType, channelUrl);
+  }
+
+private ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData) throws ApiException {
     Object localVarPostBody = translateMessageIntoOtherLanguagesData;
     
     // verify the required parameter 'apiToken' is set
@@ -2025,39 +3081,88 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update an emoji category URL
-   * ## Update an emoji category URL  Updates the URL of an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-category-url ----------------------------
-   * @param apiToken  (required)
-   * @param emojiCategoryId  (required)
-   * @param updateEmojiCategoryUrlByIdData  (optional)
-   * @return SendBirdEmojiCategory
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdEmojiCategory updateEmojiCategoryUrlById(String apiToken, String emojiCategoryId, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) throws ApiException {
-    return updateEmojiCategoryUrlByIdWithHttpInfo(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData).getData();
+
+  public class APItranslateMessageIntoOtherLanguagesRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData;
+
+    private APItranslateMessageIntoOtherLanguagesRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APItranslateMessageIntoOtherLanguagesRequest
+     */
+    public APItranslateMessageIntoOtherLanguagesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set translateMessageIntoOtherLanguagesData
+     * @param translateMessageIntoOtherLanguagesData  (optional)
+     * @return APItranslateMessageIntoOtherLanguagesRequest
+     */
+    public APItranslateMessageIntoOtherLanguagesRequest translateMessageIntoOtherLanguagesData(TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData) {
+      this.translateMessageIntoOtherLanguagesData = translateMessageIntoOtherLanguagesData;
+      return this;
+    }
+
+    /**
+     * Execute translateMessageIntoOtherLanguages request
+     * @return SendBirdMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute translateMessageIntoOtherLanguages request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
+      return translateMessageIntoOtherLanguagesWithHttpInfo(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
+    }
   }
 
   /**
-   * Update an emoji category URL
-   * ## Update an emoji category URL  Updates the URL of an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-category-url ----------------------------
-   * @param apiToken  (required)
-   * @param emojiCategoryId  (required)
-   * @param updateEmojiCategoryUrlByIdData  (optional)
-   * @return ApiResponse&lt;SendBirdEmojiCategory&gt;
+   * Translate a message into other languages
+   * ## Translate a message into other languages  Translates a message into specific languages. Only text messages of which type is MESG can be translated into other languages.  &gt; __Note__: Message translation is powered by [Google Cloud Translation API recognition engine](https://cloud.google.com/translate/). Find language codes supported by the engine in the [Miscellaneous](https://sendbird.com/docs/chat/v3/platform-api/guides/Miscellaneous) page or visit the [Language Support](https://cloud.google.com/translate/docs/languages) for Google Cloud Translation.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-translate-a-message-into-other-languages ----------------------------
+   * @param channelType  (required)
+   * @param channelUrl  (required)
+   * @param messageId  (required)
+   * @return translateMessageIntoOtherLanguagesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInfo(String apiToken, String emojiCategoryId, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) throws ApiException {
+  public APItranslateMessageIntoOtherLanguagesRequest translateMessageIntoOtherLanguages(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APItranslateMessageIntoOtherLanguagesRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInfo(String apiToken, String emojiCategoryId, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) throws ApiException {
     Object localVarPostBody = updateEmojiCategoryUrlByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -2104,39 +3209,82 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update an emoji URL
-   * ## Update an emoji URL  Updates the image URL of an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-url ----------------------------
-   * @param apiToken  (required)
-   * @param emojiKey  (required)
-   * @param updateEmojiUrlByKeyData  (optional)
-   * @return SendBirdEmoji
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdEmoji updateEmojiUrlByKey(String apiToken, String emojiKey, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) throws ApiException {
-    return updateEmojiUrlByKeyWithHttpInfo(apiToken, emojiKey, updateEmojiUrlByKeyData).getData();
+
+  public class APIupdateEmojiCategoryUrlByIdRequest {
+    private String apiToken;
+    private String emojiCategoryId;
+    private UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData;
+
+    private APIupdateEmojiCategoryUrlByIdRequest(String emojiCategoryId) {
+      this.emojiCategoryId = emojiCategoryId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateEmojiCategoryUrlByIdRequest
+     */
+    public APIupdateEmojiCategoryUrlByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateEmojiCategoryUrlByIdData
+     * @param updateEmojiCategoryUrlByIdData  (optional)
+     * @return APIupdateEmojiCategoryUrlByIdRequest
+     */
+    public APIupdateEmojiCategoryUrlByIdRequest updateEmojiCategoryUrlByIdData(UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) {
+      this.updateEmojiCategoryUrlByIdData = updateEmojiCategoryUrlByIdData;
+      return this;
+    }
+
+    /**
+     * Execute updateEmojiCategoryUrlById request
+     * @return SendBirdEmojiCategory
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdEmojiCategory execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateEmojiCategoryUrlById request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdEmojiCategory&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdEmojiCategory> executeWithHttpInfo() throws ApiException {
+      return updateEmojiCategoryUrlByIdWithHttpInfo(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData);
+    }
   }
 
   /**
-   * Update an emoji URL
-   * ## Update an emoji URL  Updates the image URL of an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-url ----------------------------
-   * @param apiToken  (required)
-   * @param emojiKey  (required)
-   * @param updateEmojiUrlByKeyData  (optional)
-   * @return ApiResponse&lt;SendBirdEmoji&gt;
+   * Update an emoji category URL
+   * ## Update an emoji category URL  Updates the URL of an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-category-url ----------------------------
+   * @param emojiCategoryId  (required)
+   * @return updateEmojiCategoryUrlByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String apiToken, String emojiKey, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) throws ApiException {
+  public APIupdateEmojiCategoryUrlByIdRequest updateEmojiCategoryUrlById(String emojiCategoryId) throws ApiException {
+    return new APIupdateEmojiCategoryUrlByIdRequest(emojiCategoryId);
+  }
+
+private ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String apiToken, String emojiKey, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) throws ApiException {
     Object localVarPostBody = updateEmojiUrlByKeyData;
     
     // verify the required parameter 'apiToken' is set
@@ -2183,43 +3331,82 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update extra data in a message
-   * ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-extra-data-in-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param updateExtraDataInMessageData  (optional)
-   * @return UpdateExtraDataInMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdateExtraDataInMessageResponse updateExtraDataInMessage(String apiToken, String channelType, String channelUrl, String messageId, UpdateExtraDataInMessageData updateExtraDataInMessageData) throws ApiException {
-    return updateExtraDataInMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData).getData();
+
+  public class APIupdateEmojiUrlByKeyRequest {
+    private String apiToken;
+    private String emojiKey;
+    private UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData;
+
+    private APIupdateEmojiUrlByKeyRequest(String emojiKey) {
+      this.emojiKey = emojiKey;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateEmojiUrlByKeyRequest
+     */
+    public APIupdateEmojiUrlByKeyRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateEmojiUrlByKeyData
+     * @param updateEmojiUrlByKeyData  (optional)
+     * @return APIupdateEmojiUrlByKeyRequest
+     */
+    public APIupdateEmojiUrlByKeyRequest updateEmojiUrlByKeyData(UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) {
+      this.updateEmojiUrlByKeyData = updateEmojiUrlByKeyData;
+      return this;
+    }
+
+    /**
+     * Execute updateEmojiUrlByKey request
+     * @return SendBirdEmoji
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdEmoji execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateEmojiUrlByKey request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdEmoji&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdEmoji> executeWithHttpInfo() throws ApiException {
+      return updateEmojiUrlByKeyWithHttpInfo(apiToken, emojiKey, updateEmojiUrlByKeyData);
+    }
   }
 
   /**
-   * Update extra data in a message
-   * ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-extra-data-in-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param updateExtraDataInMessageData  (optional)
-   * @return ApiResponse&lt;UpdateExtraDataInMessageResponse&gt;
+   * Update an emoji URL
+   * ## Update an emoji URL  Updates the image URL of an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-url ----------------------------
+   * @param emojiKey  (required)
+   * @return updateEmojiUrlByKeyRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, UpdateExtraDataInMessageData updateExtraDataInMessageData) throws ApiException {
+  public APIupdateEmojiUrlByKeyRequest updateEmojiUrlByKey(String emojiKey) throws ApiException {
+    return new APIupdateEmojiUrlByKeyRequest(emojiKey);
+  }
+
+private ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, UpdateExtraDataInMessageData updateExtraDataInMessageData) throws ApiException {
     Object localVarPostBody = updateExtraDataInMessageData;
     
     // verify the required parameter 'apiToken' is set
@@ -2278,43 +3465,88 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update a message
-   * ## Update a message  Updates information on a message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-a-message ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param updateMessageByIdData  (optional)
-   * @return SendBirdMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdMessageResponse updateMessageById(String apiToken, String channelType, String channelUrl, String messageId, UpdateMessageByIdData updateMessageByIdData) throws ApiException {
-    return updateMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, updateMessageByIdData).getData();
+
+  public class APIupdateExtraDataInMessageRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private UpdateExtraDataInMessageData updateExtraDataInMessageData;
+
+    private APIupdateExtraDataInMessageRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateExtraDataInMessageRequest
+     */
+    public APIupdateExtraDataInMessageRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateExtraDataInMessageData
+     * @param updateExtraDataInMessageData  (optional)
+     * @return APIupdateExtraDataInMessageRequest
+     */
+    public APIupdateExtraDataInMessageRequest updateExtraDataInMessageData(UpdateExtraDataInMessageData updateExtraDataInMessageData) {
+      this.updateExtraDataInMessageData = updateExtraDataInMessageData;
+      return this;
+    }
+
+    /**
+     * Execute updateExtraDataInMessage request
+     * @return UpdateExtraDataInMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateExtraDataInMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateExtraDataInMessage request with HTTP info returned
+     * @return ApiResponse&lt;UpdateExtraDataInMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateExtraDataInMessageResponse> executeWithHttpInfo() throws ApiException {
+      return updateExtraDataInMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData);
+    }
   }
 
   /**
-   * Update a message
-   * ## Update a message  Updates information on a message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-a-message ----------------------------
-   * @param apiToken  (required)
+   * Update extra data in a message
+   * ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-extra-data-in-a-message ----------------------------
    * @param channelType  (required)
    * @param channelUrl  (required)
    * @param messageId  (required)
-   * @param updateMessageByIdData  (optional)
-   * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+   * @return updateExtraDataInMessageRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, UpdateMessageByIdData updateMessageByIdData) throws ApiException {
+  public APIupdateExtraDataInMessageRequest updateExtraDataInMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIupdateExtraDataInMessageRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, UpdateMessageByIdData updateMessageByIdData) throws ApiException {
     Object localVarPostBody = updateMessageByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -2373,37 +3605,88 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Use default emojis
-   * ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis
-   * @param apiToken  (required)
-   * @param useDefaultEmojisData  (optional)
-   * @return UseDefaultEmojisResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UseDefaultEmojisResponse useDefaultEmojis(String apiToken, UseDefaultEmojisData useDefaultEmojisData) throws ApiException {
-    return useDefaultEmojisWithHttpInfo(apiToken, useDefaultEmojisData).getData();
+
+  public class APIupdateMessageByIdRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private UpdateMessageByIdData updateMessageByIdData;
+
+    private APIupdateMessageByIdRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateMessageByIdRequest
+     */
+    public APIupdateMessageByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateMessageByIdData
+     * @param updateMessageByIdData  (optional)
+     * @return APIupdateMessageByIdRequest
+     */
+    public APIupdateMessageByIdRequest updateMessageByIdData(UpdateMessageByIdData updateMessageByIdData) {
+      this.updateMessageByIdData = updateMessageByIdData;
+      return this;
+    }
+
+    /**
+     * Execute updateMessageById request
+     * @return SendBirdMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateMessageById request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
+      return updateMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, updateMessageByIdData);
+    }
   }
 
   /**
-   * Use default emojis
-   * ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis
-   * @param apiToken  (required)
-   * @param useDefaultEmojisData  (optional)
-   * @return ApiResponse&lt;UseDefaultEmojisResponse&gt;
+   * Update a message
+   * ## Update a message  Updates information on a message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-a-message ----------------------------
+   * @param channelType  (required)
+   * @param channelUrl  (required)
+   * @param messageId  (required)
+   * @return updateMessageByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UseDefaultEmojisResponse> useDefaultEmojisWithHttpInfo(String apiToken, UseDefaultEmojisData useDefaultEmojisData) throws ApiException {
+  public APIupdateMessageByIdRequest updateMessageById(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIupdateMessageByIdRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<UseDefaultEmojisResponse> useDefaultEmojisWithHttpInfo(String apiToken, UseDefaultEmojisData useDefaultEmojisData) throws ApiException {
     Object localVarPostBody = useDefaultEmojisData;
     
     // verify the required parameter 'apiToken' is set
@@ -2444,45 +3727,79 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a message
-   * ## View a message  Retrieves information on a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to retrieve.
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param withSortedMetaArray  (optional)
-   * @param withMetaArray  (optional)
-   * @return SendBirdMessageResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdMessageResponse viewMessageById(String apiToken, String channelType, String channelUrl, String messageId, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
-    return viewMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray).getData();
+
+  public class APIuseDefaultEmojisRequest {
+    private String apiToken;
+    private UseDefaultEmojisData useDefaultEmojisData;
+
+    private APIuseDefaultEmojisRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIuseDefaultEmojisRequest
+     */
+    public APIuseDefaultEmojisRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set useDefaultEmojisData
+     * @param useDefaultEmojisData  (optional)
+     * @return APIuseDefaultEmojisRequest
+     */
+    public APIuseDefaultEmojisRequest useDefaultEmojisData(UseDefaultEmojisData useDefaultEmojisData) {
+      this.useDefaultEmojisData = useDefaultEmojisData;
+      return this;
+    }
+
+    /**
+     * Execute useDefaultEmojis request
+     * @return UseDefaultEmojisResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UseDefaultEmojisResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute useDefaultEmojis request with HTTP info returned
+     * @return ApiResponse&lt;UseDefaultEmojisResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UseDefaultEmojisResponse> executeWithHttpInfo() throws ApiException {
+      return useDefaultEmojisWithHttpInfo(apiToken, useDefaultEmojisData);
+    }
   }
 
   /**
-   * View a message
-   * ## View a message  Retrieves information on a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to retrieve.
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param messageId  (required)
-   * @param withSortedMetaArray  (optional)
-   * @param withMetaArray  (optional)
-   * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+   * Use default emojis
+   * ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis
+   * @return useDefaultEmojisRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
+  public APIuseDefaultEmojisRequest useDefaultEmojis() throws ApiException {
+    return new APIuseDefaultEmojisRequest();
+  }
+
+private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2543,39 +3860,99 @@ public class MessageApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View total number of messages in a channel
-   * ## View total number of messages in a channel  Retrieves the total number of messages in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-total-number-of-messages-in-a-channel ----------------------------
-   * @param apiToken  (required)
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @return ViewTotalNumberOfMessagesInChannelResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewTotalNumberOfMessagesInChannelResponse viewTotalNumberOfMessagesInChannel(String apiToken, String channelType, String channelUrl) throws ApiException {
-    return viewTotalNumberOfMessagesInChannelWithHttpInfo(apiToken, channelType, channelUrl).getData();
+
+  public class APIviewMessageByIdRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+    private String messageId;
+    private Boolean withSortedMetaArray;
+    private Boolean withMetaArray;
+
+    private APIviewMessageByIdRequest(String channelType, String channelUrl, String messageId) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+      this.messageId = messageId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewMessageByIdRequest
+     */
+    public APIviewMessageByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set withSortedMetaArray
+     * @param withSortedMetaArray  (optional)
+     * @return APIviewMessageByIdRequest
+     */
+    public APIviewMessageByIdRequest withSortedMetaArray(Boolean withSortedMetaArray) {
+      this.withSortedMetaArray = withSortedMetaArray;
+      return this;
+    }
+
+    /**
+     * Set withMetaArray
+     * @param withMetaArray  (optional)
+     * @return APIviewMessageByIdRequest
+     */
+    public APIviewMessageByIdRequest withMetaArray(Boolean withMetaArray) {
+      this.withMetaArray = withMetaArray;
+      return this;
+    }
+
+    /**
+     * Execute viewMessageById request
+     * @return SendBirdMessageResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdMessageResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewMessageById request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
+      return viewMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray);
+    }
   }
 
   /**
-   * View total number of messages in a channel
-   * ## View total number of messages in a channel  Retrieves the total number of messages in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-total-number-of-messages-in-a-channel ----------------------------
-   * @param apiToken  (required)
+   * View a message
+   * ## View a message  Retrieves information on a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to retrieve.
    * @param channelType  (required)
    * @param channelUrl  (required)
-   * @return ApiResponse&lt;ViewTotalNumberOfMessagesInChannelResponse&gt;
+   * @param messageId  (required)
+   * @return viewMessageByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> viewTotalNumberOfMessagesInChannelWithHttpInfo(String apiToken, String channelType, String channelUrl) throws ApiException {
+  public APIviewMessageByIdRequest viewMessageById(String channelType, String channelUrl, String messageId) throws ApiException {
+    return new APIviewMessageByIdRequest(channelType, channelUrl, messageId);
+  }
+
+private ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> viewTotalNumberOfMessagesInChannelWithHttpInfo(String apiToken, String channelType, String channelUrl) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2627,5 +4004,71 @@ public class MessageApi {
     return apiClient.invokeAPI("MessageApi.viewTotalNumberOfMessagesInChannel", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewTotalNumberOfMessagesInChannelRequest {
+    private String apiToken;
+    private String channelType;
+    private String channelUrl;
+
+    private APIviewTotalNumberOfMessagesInChannelRequest(String channelType, String channelUrl) {
+      this.channelType = channelType;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewTotalNumberOfMessagesInChannelRequest
+     */
+    public APIviewTotalNumberOfMessagesInChannelRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewTotalNumberOfMessagesInChannel request
+     * @return ViewTotalNumberOfMessagesInChannelResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewTotalNumberOfMessagesInChannelResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewTotalNumberOfMessagesInChannel request with HTTP info returned
+     * @return ApiResponse&lt;ViewTotalNumberOfMessagesInChannelResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> executeWithHttpInfo() throws ApiException {
+      return viewTotalNumberOfMessagesInChannelWithHttpInfo(apiToken, channelType, channelUrl);
+    }
+  }
+
+  /**
+   * View total number of messages in a channel
+   * ## View total number of messages in a channel  Retrieves the total number of messages in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-total-number-of-messages-in-a-channel ----------------------------
+   * @param channelType  (required)
+   * @param channelUrl  (required)
+   * @return viewTotalNumberOfMessagesInChannelRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewTotalNumberOfMessagesInChannelRequest viewTotalNumberOfMessagesInChannel(String channelType, String channelUrl) throws ApiException {
+    return new APIviewTotalNumberOfMessagesInChannelRequest(channelType, channelUrl);
   }
 }

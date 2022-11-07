@@ -55,7 +55,10 @@ public class MetadataApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //CreateChannelMetacounterData createChannelMetacounterData = null;
-        //Object response = api.createChannelMetacounter(apiToken, channelType, channelUrl, createChannelMetacounterData);
+        //Object response = api.createChannelMetacounter(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .createChannelMetacounterData(createChannelMetacounterData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -72,7 +75,10 @@ public class MetadataApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //CreateChannelMetadataData createChannelMetadataData = null;
-        //CreateChannelMetadataResponse response = api.createChannelMetadata(apiToken, channelType, channelUrl, createChannelMetadataData);
+        //CreateChannelMetadataResponse response = api.createChannelMetadata(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .createChannelMetadataData(createChannelMetadataData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -88,7 +94,10 @@ public class MetadataApiTest {
         //String apiToken = null;
         //String userId = null;
         //CreateUserMetadataData createUserMetadataData = null;
-        //CreateUserMetadataResponse response = api.createUserMetadata(apiToken, userId, createUserMetadataData);
+        //CreateUserMetadataResponse response = api.createUserMetadata(userId)
+        //        .apiToken(apiToken)
+        //        .createUserMetadataData(createUserMetadataData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -104,7 +113,9 @@ public class MetadataApiTest {
         //String apiToken = null;
         //String channelType = null;
         //String channelUrl = null;
-        //api.deleteChannelMetacounter(apiToken, channelType, channelUrl);
+        //api.deleteChannelMetacounter(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -121,7 +132,9 @@ public class MetadataApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //String key = null;
-        //api.deleteChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
+        //api.deleteChannelMetacounterByKey(channelType, channelUrl, key)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -138,7 +151,10 @@ public class MetadataApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //String key = null;
-        //api.deleteChannelMetadata(apiToken, channelType, channelUrl, key);
+        //api.deleteChannelMetadata(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .key(key)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -155,7 +171,9 @@ public class MetadataApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //String key = null;
-        //api.deleteChannelMetadataByKey(apiToken, channelType, channelUrl, key);
+        //api.deleteChannelMetadataByKey(channelType, channelUrl, key)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -171,7 +189,10 @@ public class MetadataApiTest {
         //String apiToken = null;
         //String userId = null;
         //String key = null;
-        //api.deleteUserMetadata(apiToken, userId, key);
+        //api.deleteUserMetadata(userId)
+        //        .apiToken(apiToken)
+        //        .key(key)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -187,7 +208,9 @@ public class MetadataApiTest {
         //String apiToken = null;
         //String userId = null;
         //String key = null;
-        //api.deleteUserMetadataByKey(apiToken, userId, key);
+        //api.deleteUserMetadataByKey(userId, key)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -204,7 +227,10 @@ public class MetadataApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //UpdateChannelMetacounterData updateChannelMetacounterData = null;
-        //Object response = api.updateChannelMetacounter(apiToken, channelType, channelUrl, updateChannelMetacounterData);
+        //Object response = api.updateChannelMetacounter(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .updateChannelMetacounterData(updateChannelMetacounterData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -222,7 +248,10 @@ public class MetadataApiTest {
         //String channelUrl = null;
         //String key = null;
         //Object body = null;
-        //Map<String, String> response = api.updateChannelMetacounterByKey(apiToken, channelType, channelUrl, key, body);
+        //Map<String, String> response = api.updateChannelMetacounterByKey(channelType, channelUrl, key)
+        //        .apiToken(apiToken)
+        //        .body(body)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -239,7 +268,10 @@ public class MetadataApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //UpdateChannelMetadataData updateChannelMetadataData = null;
-        //Map<String, String> response = api.updateChannelMetadata(apiToken, channelType, channelUrl, updateChannelMetadataData);
+        //Map<String, String> response = api.updateChannelMetadata(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .updateChannelMetadataData(updateChannelMetadataData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -257,7 +289,10 @@ public class MetadataApiTest {
         //String channelUrl = null;
         //String key = null;
         //Object body = null;
-        //Map<String, String> response = api.updateChannelMetadataByKey(apiToken, channelType, channelUrl, key, body);
+        //Map<String, String> response = api.updateChannelMetadataByKey(channelType, channelUrl, key)
+        //        .apiToken(apiToken)
+        //        .body(body)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -273,7 +308,10 @@ public class MetadataApiTest {
         //String apiToken = null;
         //String userId = null;
         //UpdateUserMetadataData updateUserMetadataData = null;
-        //UpdateUserMetadataResponse response = api.updateUserMetadata(apiToken, userId, updateUserMetadataData);
+        //UpdateUserMetadataResponse response = api.updateUserMetadata(userId)
+        //        .apiToken(apiToken)
+        //        .updateUserMetadataData(updateUserMetadataData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -290,7 +328,10 @@ public class MetadataApiTest {
         //String userId = null;
         //String key = null;
         //Object body = null;
-        //Map<String, String> response = api.updateUserMetadataByKey(apiToken, userId, key, body);
+        //Map<String, String> response = api.updateUserMetadataByKey(userId, key)
+        //        .apiToken(apiToken)
+        //        .body(body)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -308,7 +349,11 @@ public class MetadataApiTest {
         //String channelUrl = null;
         //String key = null;
         //List<String> keys = null;
-        //Map<String, String> response = api.viewChannelMetacounter(apiToken, channelType, channelUrl, key, keys);
+        //Map<String, String> response = api.viewChannelMetacounter(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .key(key)
+        //        .keys(keys)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -325,7 +370,9 @@ public class MetadataApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //String key = null;
-        //Object response = api.viewChannelMetacounterByKey(apiToken, channelType, channelUrl, key);
+        //Object response = api.viewChannelMetacounterByKey(channelType, channelUrl, key)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -343,7 +390,11 @@ public class MetadataApiTest {
         //String channelUrl = null;
         //String key = null;
         //List<String> keys = null;
-        //Map<String, String> response = api.viewChannelMetadata(apiToken, channelType, channelUrl, key, keys);
+        //Map<String, String> response = api.viewChannelMetadata(channelType, channelUrl)
+        //        .apiToken(apiToken)
+        //        .key(key)
+        //        .keys(keys)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -360,7 +411,9 @@ public class MetadataApiTest {
         //String channelType = null;
         //String channelUrl = null;
         //String key = null;
-        //Map<String, String> response = api.viewChannelMetadataByKey(apiToken, channelType, channelUrl, key);
+        //Map<String, String> response = api.viewChannelMetadataByKey(channelType, channelUrl, key)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -377,7 +430,11 @@ public class MetadataApiTest {
         //String userId = null;
         //String key = null;
         //List<String> keys = null;
-        //ViewUserMetadataResponse response = api.viewUserMetadata(apiToken, userId, key, keys);
+        //ViewUserMetadataResponse response = api.viewUserMetadata(userId)
+        //        .apiToken(apiToken)
+        //        .key(key)
+        //        .keys(keys)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -393,7 +450,9 @@ public class MetadataApiTest {
         //String apiToken = null;
         //String userId = null;
         //String key = null;
-        //Map<String, String> response = api.viewUserMetadataByKey(apiToken, userId, key);
+        //Map<String, String> response = api.viewUserMetadataByKey(userId, key)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 

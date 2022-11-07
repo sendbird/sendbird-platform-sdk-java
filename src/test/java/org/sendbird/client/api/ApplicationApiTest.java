@@ -83,7 +83,10 @@ public class ApplicationApiTest {
     public void addApnsPushConfigurationTest() throws ApiException {
         //String apiToken = null;
         //AddApnsPushConfigurationData addApnsPushConfigurationData = null;
-        //AddApnsPushConfigurationResponse response = api.addApnsPushConfiguration(apiToken, addApnsPushConfigurationData);
+        //AddApnsPushConfigurationResponse response = api.addApnsPushConfiguration()
+        //        .apiToken(apiToken)
+        //        .addApnsPushConfigurationData(addApnsPushConfigurationData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -98,7 +101,10 @@ public class ApplicationApiTest {
     public void addFcmPushConfigurationTest() throws ApiException {
         //String apiToken = null;
         //AddFcmPushConfigurationData addFcmPushConfigurationData = null;
-        //AddFcmPushConfigurationResponse response = api.addFcmPushConfiguration(apiToken, addFcmPushConfigurationData);
+        //AddFcmPushConfigurationResponse response = api.addFcmPushConfiguration()
+        //        .apiToken(apiToken)
+        //        .addFcmPushConfigurationData(addFcmPushConfigurationData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -113,7 +119,10 @@ public class ApplicationApiTest {
     public void addHmsPushConfigurationTest() throws ApiException {
         //String apiToken = null;
         //AddHmsPushConfigurationData addHmsPushConfigurationData = null;
-        //AddHmsPushConfigurationResponse response = api.addHmsPushConfiguration(apiToken, addHmsPushConfigurationData);
+        //AddHmsPushConfigurationResponse response = api.addHmsPushConfiguration()
+        //        .apiToken(apiToken)
+        //        .addHmsPushConfigurationData(addHmsPushConfigurationData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -128,7 +137,10 @@ public class ApplicationApiTest {
     public void addIpToWhitelistTest() throws ApiException {
         //String apiToken = null;
         //AddIpToWhitelistData addIpToWhitelistData = null;
-        //AddIpToWhitelistResponse response = api.addIpToWhitelist(apiToken, addIpToWhitelistData);
+        //AddIpToWhitelistResponse response = api.addIpToWhitelist()
+        //        .apiToken(apiToken)
+        //        .addIpToWhitelistData(addIpToWhitelistData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -144,7 +156,10 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String customType = null;
         //BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData = null;
-        //Object response = api.banUsersInChannelsWithCustomChannelType(apiToken, customType, banUsersInChannelsWithCustomChannelTypeData);
+        //Object response = api.banUsersInChannelsWithCustomChannelType(customType)
+        //        .apiToken(apiToken)
+        //        .banUsersInChannelsWithCustomChannelTypeData(banUsersInChannelsWithCustomChannelTypeData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -159,7 +174,10 @@ public class ApplicationApiTest {
     public void configureAutoEventMessagesTest() throws ApiException {
         //String apiToken = null;
         //ConfigureAutoEventData configureAutoEventData = null;
-        //SendBirdAutoEventMessageSettings response = api.configureAutoEventMessages(apiToken, configureAutoEventData);
+        //SendBirdAutoEventMessageSettings response = api.configureAutoEventMessages()
+        //        .apiToken(apiToken)
+        //        .configureAutoEventData(configureAutoEventData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -174,7 +192,10 @@ public class ApplicationApiTest {
     public void deleteAllowedIpsFromWhitelistTest() throws ApiException {
         //String apiToken = null;
         //List<String> ipWhitelistAddresses = null;
-        //DeleteAllowedIpsFromWhitelistResponse response = api.deleteAllowedIpsFromWhitelist(apiToken, ipWhitelistAddresses);
+        //DeleteAllowedIpsFromWhitelistResponse response = api.deleteAllowedIpsFromWhitelist()
+        //        .apiToken(apiToken)
+        //        .ipWhitelistAddresses(ipWhitelistAddresses)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -189,7 +210,9 @@ public class ApplicationApiTest {
     public void deleteApnsCertificateByIdTest() throws ApiException {
         //String apiToken = null;
         //String providerId = null;
-        //DeleteApnsCertificateByIdResponse response = api.deleteApnsCertificateById(apiToken, providerId);
+        //DeleteApnsCertificateByIdResponse response = api.deleteApnsCertificateById(providerId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -204,7 +227,10 @@ public class ApplicationApiTest {
     public void generateSecondaryApiTokenTest() throws ApiException {
         //String apiToken = null;
         //GenerateSecondaryApiTokenData generateSecondaryApiTokenData = null;
-        //GenerateSecondaryApiTokenResponse response = api.generateSecondaryApiToken(apiToken, generateSecondaryApiTokenData);
+        //GenerateSecondaryApiTokenResponse response = api.generateSecondaryApiToken()
+        //        .apiToken(apiToken)
+        //        .generateSecondaryApiTokenData(generateSecondaryApiTokenData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -218,7 +244,9 @@ public class ApplicationApiTest {
     @Test
     public void listAutoEventMessagesTest() throws ApiException {
         //String apiToken = null;
-        //SendBirdAutoEventMessageSettings response = api.listAutoEventMessages(apiToken);
+        //SendBirdAutoEventMessageSettings response = api.listAutoEventMessages()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -235,7 +263,11 @@ public class ApplicationApiTest {
         //String customType = null;
         //String token = null;
         //Integer limit = null;
-        //CustomTypeListBannedUsersResponse response = api.listBannedUsersInChannelsWithCustomChannelType(apiToken, customType, token, limit);
+        //CustomTypeListBannedUsersResponse response = api.listBannedUsersInChannelsWithCustomChannelType(customType)
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -252,7 +284,11 @@ public class ApplicationApiTest {
         //String customType = null;
         //String token = null;
         //Integer limit = null;
-        //ListMutedUsersInChannelsWithCustomChannelType200Response response = api.listMutedUsersInChannelsWithCustomChannelType(apiToken, customType, token, limit);
+        //ListMutedUsersInChannelsWithCustomChannelType200Response response = api.listMutedUsersInChannelsWithCustomChannelType(customType)
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -267,7 +303,9 @@ public class ApplicationApiTest {
     public void listPushConfigurationsTest() throws ApiException {
         //String apiToken = null;
         //String pushType = null;
-        //ListPushConfigurationsResponse response = api.listPushConfigurations(apiToken, pushType);
+        //ListPushConfigurationsResponse response = api.listPushConfigurations(pushType)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -281,7 +319,9 @@ public class ApplicationApiTest {
     @Test
     public void listPushNotificationContentTemplatesTest() throws ApiException {
         //String apiToken = null;
-        //ListPushNotificationContentTemplatesResponse response = api.listPushNotificationContentTemplates(apiToken);
+        //ListPushNotificationContentTemplatesResponse response = api.listPushNotificationContentTemplates()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -295,7 +335,9 @@ public class ApplicationApiTest {
     @Test
     public void listSecondaryApiTokensTest() throws ApiException {
         //String apiToken = null;
-        //ListSecondaryApiTokensResponse response = api.listSecondaryApiTokens(apiToken);
+        //ListSecondaryApiTokensResponse response = api.listSecondaryApiTokens()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -311,7 +353,10 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String customType = null;
         //MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData = null;
-        //Object response = api.muteUsersInChannelsWithCustomChannelType(apiToken, customType, muteUsersInChannelsWithCustomChannelTypeData);
+        //Object response = api.muteUsersInChannelsWithCustomChannelType(customType)
+        //        .apiToken(apiToken)
+        //        .muteUsersInChannelsWithCustomChannelTypeData(muteUsersInChannelsWithCustomChannelTypeData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -327,7 +372,9 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String pushType = null;
         //String providerId = null;
-        //RemovePushConfigurationByIdResponse response = api.removePushConfigurationById(apiToken, pushType, providerId);
+        //RemovePushConfigurationByIdResponse response = api.removePushConfigurationById(pushType, providerId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -341,7 +388,9 @@ public class ApplicationApiTest {
     @Test
     public void retrieveIpWhitelistTest() throws ApiException {
         //String apiToken = null;
-        //RetrieveIpWhitelistResponse response = api.retrieveIpWhitelist(apiToken);
+        //RetrieveIpWhitelistResponse response = api.retrieveIpWhitelist()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -356,7 +405,9 @@ public class ApplicationApiTest {
     public void revokeSecondaryApiTokenByTokenTest() throws ApiException {
         //String apiToken = null;
         //String apiToken2 = null;
-        //RevokeSecondaryApiTokenByTokenResponse response = api.revokeSecondaryApiTokenByToken(apiToken, apiToken2);
+        //RevokeSecondaryApiTokenByTokenResponse response = api.revokeSecondaryApiTokenByToken(apiToken2)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -372,7 +423,10 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String customType = null;
         //SetDomainFilterData setDomainFilterData = null;
-        //SendBirdChannelResponse response = api.setDomainFilter(apiToken, customType, setDomainFilterData);
+        //SendBirdChannelResponse response = api.setDomainFilter(customType)
+        //        .apiToken(apiToken)
+        //        .setDomainFilterData(setDomainFilterData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -388,7 +442,10 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String customType = null;
         //List<String> userIds = null;
-        //Object response = api.unbanUsersInChannelsWithCustomChannelType(apiToken, customType, userIds);
+        //Object response = api.unbanUsersInChannelsWithCustomChannelType(customType)
+        //        .apiToken(apiToken)
+        //        .userIds(userIds)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -404,7 +461,10 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String customType = null;
         //List<String> userIds = null;
-        //Object response = api.unmuteUsersInChannelsWithCustomChannelType(apiToken, customType, userIds);
+        //Object response = api.unmuteUsersInChannelsWithCustomChannelType(customType)
+        //        .apiToken(apiToken)
+        //        .userIds(userIds)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -420,7 +480,10 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String providerId = null;
         //UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData = null;
-        //UpdateApnsPushConfigurationByIdResponse response = api.updateApnsPushConfigurationById(apiToken, providerId, updateApnsPushConfigurationByIdData);
+        //UpdateApnsPushConfigurationByIdResponse response = api.updateApnsPushConfigurationById(providerId)
+        //        .apiToken(apiToken)
+        //        .updateApnsPushConfigurationByIdData(updateApnsPushConfigurationByIdData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -435,7 +498,10 @@ public class ApplicationApiTest {
     public void updateDefaultChannelInvitationPreferenceTest() throws ApiException {
         //String apiToken = null;
         //UpdateDefaultChannelInvitationPreferenceData updateDefaultChannelInvitationPreferenceData = null;
-        //UpdateDefaultChannelInvitationPreferenceResponse response = api.updateDefaultChannelInvitationPreference(apiToken, updateDefaultChannelInvitationPreferenceData);
+        //UpdateDefaultChannelInvitationPreferenceResponse response = api.updateDefaultChannelInvitationPreference()
+        //        .apiToken(apiToken)
+        //        .updateDefaultChannelInvitationPreferenceData(updateDefaultChannelInvitationPreferenceData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -451,7 +517,10 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String providerId = null;
         //UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData = null;
-        //UpdateFcmPushConfigurationByIdResponse response = api.updateFcmPushConfigurationById(apiToken, providerId, updateFcmPushConfigurationByIdData);
+        //UpdateFcmPushConfigurationByIdResponse response = api.updateFcmPushConfigurationById(providerId)
+        //        .apiToken(apiToken)
+        //        .updateFcmPushConfigurationByIdData(updateFcmPushConfigurationByIdData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -467,7 +536,10 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String providerId = null;
         //UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData = null;
-        //UpdateHmsPushConfigurationByIdResponse response = api.updateHmsPushConfigurationById(apiToken, providerId, updateHmsPushConfigurationByIdData);
+        //UpdateHmsPushConfigurationByIdResponse response = api.updateHmsPushConfigurationById(providerId)
+        //        .apiToken(apiToken)
+        //        .updateHmsPushConfigurationByIdData(updateHmsPushConfigurationByIdData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -483,7 +555,10 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String templateName = null;
         //UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData = null;
-        //UpdatePushNotificationContentTemplateResponse response = api.updatePushNotificationContentTemplate(apiToken, templateName, updatePushNotificationContentTemplateData);
+        //UpdatePushNotificationContentTemplateResponse response = api.updatePushNotificationContentTemplate(templateName)
+        //        .apiToken(apiToken)
+        //        .updatePushNotificationContentTemplateData(updatePushNotificationContentTemplateData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -497,7 +572,9 @@ public class ApplicationApiTest {
     @Test
     public void viewDefaultChannelInvitationPreferenceTest() throws ApiException {
         //String apiToken = null;
-        //ViewDefaultChannelInvitationPreferenceResponse response = api.viewDefaultChannelInvitationPreference(apiToken);
+        //ViewDefaultChannelInvitationPreferenceResponse response = api.viewDefaultChannelInvitationPreference()
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -513,7 +590,9 @@ public class ApplicationApiTest {
         //String apiToken = null;
         //String pushType = null;
         //String providerId = null;
-        //ViewPushConfigurationByIdResponse response = api.viewPushConfigurationById(apiToken, pushType, providerId);
+        //ViewPushConfigurationByIdResponse response = api.viewPushConfigurationById(pushType, providerId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -528,7 +607,9 @@ public class ApplicationApiTest {
     public void viewPushNotificationContentTemplateTest() throws ApiException {
         //String apiToken = null;
         //String templateName = null;
-        //ViewPushNotificationContentTemplateResponse response = api.viewPushNotificationContentTemplate(apiToken, templateName);
+        //ViewPushNotificationContentTemplateResponse response = api.viewPushNotificationContentTemplate(templateName)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -543,7 +624,9 @@ public class ApplicationApiTest {
     public void viewSecondaryApiTokenByTokenTest() throws ApiException {
         //String apiToken = null;
         //String apiToken2 = null;
-        //ViewSecondaryApiTokenByTokenResponse response = api.viewSecondaryApiTokenByToken(apiToken, apiToken2);
+        //ViewSecondaryApiTokenByTokenResponse response = api.viewSecondaryApiTokenByToken(apiToken2)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 

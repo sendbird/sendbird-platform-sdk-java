@@ -49,7 +49,11 @@ public class DataExportApiTest {
         //String dataType = null;
         //String token = null;
         //Integer limit = null;
-        //ListDataExportsByMessageChannelOrUserResponse response = api.listDataExportsByMessageChannelOrUser(apiToken, dataType, token, limit);
+        //ListDataExportsByMessageChannelOrUserResponse response = api.listDataExportsByMessageChannelOrUser(dataType)
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -65,7 +69,10 @@ public class DataExportApiTest {
         //String apiToken = null;
         //String dataType = null;
         //RegisterAndScheduleDataExportData registerAndScheduleDataExportData = null;
-        //RegisterAndScheduleDataExportResponse response = api.registerAndScheduleDataExport(apiToken, dataType, registerAndScheduleDataExportData);
+        //RegisterAndScheduleDataExportResponse response = api.registerAndScheduleDataExport(dataType)
+        //        .apiToken(apiToken)
+        //        .registerAndScheduleDataExportData(registerAndScheduleDataExportData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -81,7 +88,9 @@ public class DataExportApiTest {
         //String apiToken = null;
         //String dataType = null;
         //String requestId = null;
-        //ViewDataExportByIdResponse response = api.viewDataExportById(apiToken, dataType, requestId);
+        //ViewDataExportByIdResponse response = api.viewDataExportById(dataType, requestId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 

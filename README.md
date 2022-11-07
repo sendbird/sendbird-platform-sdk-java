@@ -29,16 +29,10 @@ class User {
     public void listUsers(){
 
         try {
-            String token = null;
             Integer limit = 56;
             String activeMode = "activated";
             Boolean showBot = true;
-            String userIds = null;
-            String nickname = null;
-            String nicknameStartswith = null;
-            String metadatakey = null;
-            String metadatavaluesIn = null;
-            ListUsersResponse result = apiInstance.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
+            ListUsersResponse result = apiInstance.listUsers().limit(limit).activeMode(activeMode).execute();
             System.out.println(result);
 
         } catch (ApiException e) {

@@ -27,7 +27,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## gcAcceptInvitation
 
-> SendBirdGroupChannel gcAcceptInvitation(apiToken, channelUrl, gcAcceptInvitationData)
+> SendBirdGroupChannel gcAcceptInvitation(channelUrl).apiToken(apiToken).gcAcceptInvitationData(gcAcceptInvitationData).execute();
 
 Accept an invitation
 
@@ -60,7 +60,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcAcceptInvitationData gcAcceptInvitationData = new GcAcceptInvitationData(); // GcAcceptInvitationData | 
         try {
-            SendBirdGroupChannel result = apiInstance.gcAcceptInvitation(apiToken, channelUrl, gcAcceptInvitationData);
+            SendBirdGroupChannel result = api.gcAcceptInvitation(channelUrl)
+                .apiToken(apiToken)
+                .gcAcceptInvitationData(gcAcceptInvitationData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcAcceptInvitation");
@@ -103,7 +106,7 @@ No authorization required
 
 ## gcCancelTheRegistrationOfOperators
 
-> OcDeleteChannelByUrl200Response gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll)
+> OcDeleteChannelByUrl200Response gcCancelTheRegistrationOfOperators(channelUrl).apiToken(apiToken).operatorIds(operatorIds).deleteAll(deleteAll).execute();
 
 Cancel the registration of operators
 
@@ -139,7 +142,11 @@ public class Example {
         List<String> operatorIds = Arrays.asList(); // List<String> | 
         Boolean deleteAll = true; // Boolean | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
+            OcDeleteChannelByUrl200Response result = api.gcCancelTheRegistrationOfOperators(channelUrl)
+                .apiToken(apiToken)
+                .operatorIds(operatorIds)
+                .deleteAll(deleteAll)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcCancelTheRegistrationOfOperators");
@@ -183,7 +190,7 @@ No authorization required
 
 ## gcCheckIfMemberById
 
-> GcCheckIfMemberByIdResponse gcCheckIfMemberById(apiToken, channelUrl, userId)
+> GcCheckIfMemberByIdResponse gcCheckIfMemberById(channelUrl, userId).apiToken(apiToken).execute();
 
 Check if member
 
@@ -214,7 +221,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String userId = "userId_example"; // String | 
         try {
-            GcCheckIfMemberByIdResponse result = apiInstance.gcCheckIfMemberById(apiToken, channelUrl, userId);
+            GcCheckIfMemberByIdResponse result = api.gcCheckIfMemberById(channelUrl, userId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcCheckIfMemberById");
@@ -257,7 +266,7 @@ No authorization required
 
 ## gcCreateChannel
 
-> SendBirdGroupChannel gcCreateChannel(apiToken, gcCreateChannelData)
+> SendBirdGroupChannel gcCreateChannel().apiToken(apiToken).gcCreateChannelData(gcCreateChannelData).execute();
 
 Create a channel
 
@@ -288,7 +297,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         GcCreateChannelData gcCreateChannelData = new GcCreateChannelData(); // GcCreateChannelData | 
         try {
-            SendBirdGroupChannel result = apiInstance.gcCreateChannel(apiToken, gcCreateChannelData);
+            SendBirdGroupChannel result = api.gcCreateChannel()
+                .apiToken(apiToken)
+                .gcCreateChannelData(gcCreateChannelData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcCreateChannel");
@@ -330,7 +342,7 @@ No authorization required
 
 ## gcDeclineInvitation
 
-> OcDeleteChannelByUrl200Response gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData)
+> OcDeleteChannelByUrl200Response gcDeclineInvitation(channelUrl).apiToken(apiToken).gcDeclineInvitationData(gcDeclineInvitationData).execute();
 
 Decline an invitation
 
@@ -363,7 +375,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcDeclineInvitationData gcDeclineInvitationData = new GcDeclineInvitationData(); // GcDeclineInvitationData | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData);
+            OcDeleteChannelByUrl200Response result = api.gcDeclineInvitation(channelUrl)
+                .apiToken(apiToken)
+                .gcDeclineInvitationData(gcDeclineInvitationData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcDeclineInvitation");
@@ -406,7 +421,7 @@ No authorization required
 
 ## gcDeleteChannelByUrl
 
-> OcDeleteChannelByUrl200Response gcDeleteChannelByUrl(apiToken, channelUrl)
+> OcDeleteChannelByUrl200Response gcDeleteChannelByUrl(channelUrl).apiToken(apiToken).execute();
 
 Delete a channel
 
@@ -436,7 +451,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.gcDeleteChannelByUrl(apiToken, channelUrl);
+            OcDeleteChannelByUrl200Response result = api.gcDeleteChannelByUrl(channelUrl)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcDeleteChannelByUrl");
@@ -478,7 +495,7 @@ No authorization required
 
 ## gcHideOrArchiveChannel
 
-> OcDeleteChannelByUrl200Response gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData)
+> OcDeleteChannelByUrl200Response gcHideOrArchiveChannel(channelUrl).apiToken(apiToken).gcHideOrArchiveChannelData(gcHideOrArchiveChannelData).execute();
 
 Hide or archive a channel
 
@@ -511,7 +528,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcHideOrArchiveChannelData gcHideOrArchiveChannelData = new GcHideOrArchiveChannelData(); // GcHideOrArchiveChannelData | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData);
+            OcDeleteChannelByUrl200Response result = api.gcHideOrArchiveChannel(channelUrl)
+                .apiToken(apiToken)
+                .gcHideOrArchiveChannelData(gcHideOrArchiveChannelData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcHideOrArchiveChannel");
@@ -554,7 +574,7 @@ No authorization required
 
 ## gcInviteAsMembers
 
-> SendBirdGroupChannel gcInviteAsMembers(apiToken, channelUrl, gcInviteAsMembersData)
+> SendBirdGroupChannel gcInviteAsMembers(channelUrl).apiToken(apiToken).gcInviteAsMembersData(gcInviteAsMembersData).execute();
 
 Invite as members
 
@@ -587,7 +607,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcInviteAsMembersData gcInviteAsMembersData = new GcInviteAsMembersData(); // GcInviteAsMembersData | 
         try {
-            SendBirdGroupChannel result = apiInstance.gcInviteAsMembers(apiToken, channelUrl, gcInviteAsMembersData);
+            SendBirdGroupChannel result = api.gcInviteAsMembers(channelUrl)
+                .apiToken(apiToken)
+                .gcInviteAsMembersData(gcInviteAsMembersData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcInviteAsMembers");
@@ -630,7 +653,7 @@ No authorization required
 
 ## gcJoinChannel
 
-> gcJoinChannel(apiToken, channelUrl, gcJoinChannelData)
+> gcJoinChannel(channelUrl).apiToken(apiToken).gcJoinChannelData(gcJoinChannelData).execute();
 
 Join a channel
 
@@ -663,7 +686,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcJoinChannelData gcJoinChannelData = new GcJoinChannelData(); // GcJoinChannelData | 
         try {
-            apiInstance.gcJoinChannel(apiToken, channelUrl, gcJoinChannelData);
+            api.gcJoinChannel(channelUrl)
+                .apiToken(apiToken)
+                .gcJoinChannelData(gcJoinChannelData)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcJoinChannel");
             System.err.println("Status code: " + e.getCode());
@@ -705,7 +731,7 @@ No authorization required
 
 ## gcLeaveChannel
 
-> OcDeleteChannelByUrl200Response gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData)
+> OcDeleteChannelByUrl200Response gcLeaveChannel(channelUrl).apiToken(apiToken).gcLeaveChannelData(gcLeaveChannelData).execute();
 
 Leave a channel
 
@@ -736,7 +762,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcLeaveChannelData gcLeaveChannelData = new GcLeaveChannelData(); // GcLeaveChannelData | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData);
+            OcDeleteChannelByUrl200Response result = api.gcLeaveChannel(channelUrl)
+                .apiToken(apiToken)
+                .gcLeaveChannelData(gcLeaveChannelData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcLeaveChannel");
@@ -779,7 +808,7 @@ No authorization required
 
 ## gcListChannels
 
-> GcListChannelsResponse gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId)
+> GcListChannelsResponse gcListChannels().apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMetadata(showMetadata).showFrozen(showFrozen).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage).customType(customType).readReceipt(readReceipt).member(member).isDistinct(isDistinct).membersIn(membersIn).userId(userId).execute();
 
 List channels
 
@@ -852,7 +881,51 @@ public class Example {
         String membersIn = "membersIn_example"; // String | 
         String userId = "userId_example"; // String | 
         try {
-            GcListChannelsResponse result = apiInstance.gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
+            GcListChannelsResponse result = api.gcListChannels()
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .distinctMode(distinctMode)
+                .publicMode(publicMode)
+                .superMode(superMode)
+                .createdAfter(createdAfter)
+                .createdBefore(createdBefore)
+                .showEmpty(showEmpty)
+                .showMember(showMember)
+                .showDeliveryReceipt(showDeliveryReceipt)
+                .showReadReceipt(showReadReceipt)
+                .showMetadata(showMetadata)
+                .showFrozen(showFrozen)
+                .order(order)
+                .metadataOrderKey(metadataOrderKey)
+                .customTypes(customTypes)
+                .customTypeStartswith(customTypeStartswith)
+                .channelUrls(channelUrls)
+                .name(name)
+                .nameContains(nameContains)
+                .nameStartswith(nameStartswith)
+                .membersExactlyIn(membersExactlyIn)
+                .membersIncludeIn(membersIncludeIn)
+                .queryType(queryType)
+                .membersNickname(membersNickname)
+                .membersNicknameContains(membersNicknameContains)
+                .metadataKey(metadataKey)
+                .metadataValues(metadataValues)
+                .metadataValueStartswith(metadataValueStartswith)
+                .metacounterKey(metacounterKey)
+                .metacounterValues(metacounterValues)
+                .metacounterValueGt(metacounterValueGt)
+                .metacounterValueGte(metacounterValueGte)
+                .metacounterValueLt(metacounterValueLt)
+                .metacounterValueLte(metacounterValueLte)
+                .includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage)
+                .customType(customType)
+                .readReceipt(readReceipt)
+                .member(member)
+                .isDistinct(isDistinct)
+                .membersIn(membersIn)
+                .userId(userId)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcListChannels");
@@ -935,7 +1008,7 @@ No authorization required
 
 ## gcListMembers
 
-> GcListMembersResponse gcListMembers(apiToken, channelUrl, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith)
+> GcListMembersResponse gcListMembers(channelUrl).apiToken(apiToken).token(token).limit(limit).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).order(order).operatorFilter(operatorFilter).memberStateFilter(memberStateFilter).mutedMemberFilter(mutedMemberFilter).nicknameStartswith(nicknameStartswith).execute();
 
 List members
 
@@ -978,7 +1051,18 @@ public class Example {
         String mutedMemberFilter = "mutedMemberFilter_example"; // String | 
         String nicknameStartswith = "nicknameStartswith_example"; // String | 
         try {
-            GcListMembersResponse result = apiInstance.gcListMembers(apiToken, channelUrl, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
+            GcListMembersResponse result = api.gcListMembers(channelUrl)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .showDeliveryReceipt(showDeliveryReceipt)
+                .showReadReceipt(showReadReceipt)
+                .order(order)
+                .operatorFilter(operatorFilter)
+                .memberStateFilter(memberStateFilter)
+                .mutedMemberFilter(mutedMemberFilter)
+                .nicknameStartswith(nicknameStartswith)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcListMembers");
@@ -1029,7 +1113,7 @@ No authorization required
 
 ## gcListOperators
 
-> GcListOperatorsResponse gcListOperators(apiToken, channelUrl, token, limit)
+> GcListOperatorsResponse gcListOperators(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
 
 List operators
 
@@ -1065,7 +1149,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            GcListOperatorsResponse result = apiInstance.gcListOperators(apiToken, channelUrl, token, limit);
+            GcListOperatorsResponse result = api.gcListOperators(channelUrl)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcListOperators");
@@ -1109,7 +1197,7 @@ No authorization required
 
 ## gcRegisterOperators
 
-> GcRegisterOperatorsResponse gcRegisterOperators(apiToken, channelUrl, gcRegisterOperatorsData)
+> GcRegisterOperatorsResponse gcRegisterOperators(channelUrl).apiToken(apiToken).gcRegisterOperatorsData(gcRegisterOperatorsData).execute();
 
 Register operators
 
@@ -1140,7 +1228,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcRegisterOperatorsData gcRegisterOperatorsData = new GcRegisterOperatorsData(); // GcRegisterOperatorsData | 
         try {
-            GcRegisterOperatorsResponse result = apiInstance.gcRegisterOperators(apiToken, channelUrl, gcRegisterOperatorsData);
+            GcRegisterOperatorsResponse result = api.gcRegisterOperators(channelUrl)
+                .apiToken(apiToken)
+                .gcRegisterOperatorsData(gcRegisterOperatorsData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcRegisterOperators");
@@ -1183,7 +1274,7 @@ No authorization required
 
 ## gcResetChatHistory
 
-> GcResetChatHistoryResponse gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData)
+> GcResetChatHistoryResponse gcResetChatHistory(channelUrl).apiToken(apiToken).gcResetChatHistoryData(gcResetChatHistoryData).execute();
 
 Reset chat history
 
@@ -1218,7 +1309,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcResetChatHistoryData gcResetChatHistoryData = new GcResetChatHistoryData(); // GcResetChatHistoryData | 
         try {
-            GcResetChatHistoryResponse result = apiInstance.gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData);
+            GcResetChatHistoryResponse result = api.gcResetChatHistory(channelUrl)
+                .apiToken(apiToken)
+                .gcResetChatHistoryData(gcResetChatHistoryData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcResetChatHistory");
@@ -1261,7 +1355,7 @@ No authorization required
 
 ## gcUnhideOrUnarchiveChannel
 
-> OcDeleteChannelByUrl200Response gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll)
+> OcDeleteChannelByUrl200Response gcUnhideOrUnarchiveChannel(channelUrl).apiToken(apiToken).userId(userId).shouldUnhideAll(shouldUnhideAll).execute();
 
 Unhide or unarchive a channel
 
@@ -1297,7 +1391,11 @@ public class Example {
         String userId = "userId_example"; // String | 
         Boolean shouldUnhideAll = true; // Boolean | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll);
+            OcDeleteChannelByUrl200Response result = api.gcUnhideOrUnarchiveChannel(channelUrl)
+                .apiToken(apiToken)
+                .userId(userId)
+                .shouldUnhideAll(shouldUnhideAll)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcUnhideOrUnarchiveChannel");
@@ -1341,7 +1439,7 @@ No authorization required
 
 ## gcUpdateChannelByUrl
 
-> SendBirdGroupChannel gcUpdateChannelByUrl(apiToken, channelUrl, gcUpdateChannelByUrlData)
+> SendBirdGroupChannel gcUpdateChannelByUrl(channelUrl).apiToken(apiToken).gcUpdateChannelByUrlData(gcUpdateChannelByUrlData).execute();
 
 Update a channel
 
@@ -1374,7 +1472,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         GcUpdateChannelByUrlData gcUpdateChannelByUrlData = new GcUpdateChannelByUrlData(); // GcUpdateChannelByUrlData | 
         try {
-            SendBirdGroupChannel result = apiInstance.gcUpdateChannelByUrl(apiToken, channelUrl, gcUpdateChannelByUrlData);
+            SendBirdGroupChannel result = api.gcUpdateChannelByUrl(channelUrl)
+                .apiToken(apiToken)
+                .gcUpdateChannelByUrlData(gcUpdateChannelByUrlData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcUpdateChannelByUrl");
@@ -1417,7 +1518,7 @@ No authorization required
 
 ## gcViewChannelByUrl
 
-> SendBirdGroupChannel gcViewChannelByUrl(apiToken, channelUrl, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member)
+> SendBirdGroupChannel gcViewChannelByUrl(channelUrl).apiToken(apiToken).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMember(showMember).readReceipt(readReceipt).member(member).execute();
 
 View a channel
 
@@ -1456,7 +1557,14 @@ public class Example {
         Boolean readReceipt = true; // Boolean | 
         Boolean member = true; // Boolean | 
         try {
-            SendBirdGroupChannel result = apiInstance.gcViewChannelByUrl(apiToken, channelUrl, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member);
+            SendBirdGroupChannel result = api.gcViewChannelByUrl(channelUrl)
+                .apiToken(apiToken)
+                .showDeliveryReceipt(showDeliveryReceipt)
+                .showReadReceipt(showReadReceipt)
+                .showMember(showMember)
+                .readReceipt(readReceipt)
+                .member(member)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GroupChannelApi#gcViewChannelByUrl");

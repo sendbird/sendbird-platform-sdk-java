@@ -44,7 +44,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class ModerationApi {
   private ApiClient apiClient;
 
@@ -74,39 +74,8 @@ public class ModerationApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * Ban from channels with custom channel types
-   * ## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param banFromChannelsWithCustomChannelTypesData  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object banFromChannelsWithCustomChannelTypes(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) throws ApiException {
-    return banFromChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, banFromChannelsWithCustomChannelTypesData).getData();
-  }
 
-  /**
-   * Ban from channels with custom channel types
-   * ## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param banFromChannelsWithCustomChannelTypesData  (optional)
-   * @return ApiResponse&lt;Object&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<Object> banFromChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) throws ApiException {
+private ApiResponse<Object> banFromChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) throws ApiException {
     Object localVarPostBody = banFromChannelsWithCustomChannelTypesData;
     
     // verify the required parameter 'apiToken' is set
@@ -153,39 +122,82 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Block a user
-   * ## Block a user  Allows a user to block another user. A user doesn&#39;t receive messages from someone they have blocked anymore. Also, blocking someone doesn&#39;t alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can&#39;t receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param blockUserData  (optional)
-   * @return BlockUserResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public BlockUserResponse blockUser(String apiToken, String userId, BlockUserData blockUserData) throws ApiException {
-    return blockUserWithHttpInfo(apiToken, userId, blockUserData).getData();
+
+  public class APIbanFromChannelsWithCustomChannelTypesRequest {
+    private String apiToken;
+    private String userId;
+    private BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData;
+
+    private APIbanFromChannelsWithCustomChannelTypesRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIbanFromChannelsWithCustomChannelTypesRequest
+     */
+    public APIbanFromChannelsWithCustomChannelTypesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set banFromChannelsWithCustomChannelTypesData
+     * @param banFromChannelsWithCustomChannelTypesData  (optional)
+     * @return APIbanFromChannelsWithCustomChannelTypesRequest
+     */
+    public APIbanFromChannelsWithCustomChannelTypesRequest banFromChannelsWithCustomChannelTypesData(BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) {
+      this.banFromChannelsWithCustomChannelTypesData = banFromChannelsWithCustomChannelTypesData;
+      return this;
+    }
+
+    /**
+     * Execute banFromChannelsWithCustomChannelTypes request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute banFromChannelsWithCustomChannelTypes request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return banFromChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, banFromChannelsWithCustomChannelTypesData);
+    }
   }
 
   /**
-   * Block a user
-   * ## Block a user  Allows a user to block another user. A user doesn&#39;t receive messages from someone they have blocked anymore. Also, blocking someone doesn&#39;t alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can&#39;t receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------
-   * @param apiToken  (required)
+   * Ban from channels with custom channel types
+   * ## Ban from channels with custom channel types  Bans a user from channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types ----------------------------
    * @param userId  (required)
-   * @param blockUserData  (optional)
-   * @return ApiResponse&lt;BlockUserResponse&gt;
+   * @return banFromChannelsWithCustomChannelTypesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<BlockUserResponse> blockUserWithHttpInfo(String apiToken, String userId, BlockUserData blockUserData) throws ApiException {
+  public APIbanFromChannelsWithCustomChannelTypesRequest banFromChannelsWithCustomChannelTypes(String userId) throws ApiException {
+    return new APIbanFromChannelsWithCustomChannelTypesRequest(userId);
+  }
+
+private ApiResponse<BlockUserResponse> blockUserWithHttpInfo(String apiToken, String userId, BlockUserData blockUserData) throws ApiException {
     Object localVarPostBody = blockUserData;
     
     // verify the required parameter 'apiToken' is set
@@ -232,39 +244,82 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Ban a user
-   * ## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param gcBanUserData  (optional)
-   * @return GcBanUserResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GcBanUserResponse gcBanUser(String apiToken, String channelUrl, GcBanUserData gcBanUserData) throws ApiException {
-    return gcBanUserWithHttpInfo(apiToken, channelUrl, gcBanUserData).getData();
+
+  public class APIblockUserRequest {
+    private String apiToken;
+    private String userId;
+    private BlockUserData blockUserData;
+
+    private APIblockUserRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIblockUserRequest
+     */
+    public APIblockUserRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set blockUserData
+     * @param blockUserData  (optional)
+     * @return APIblockUserRequest
+     */
+    public APIblockUserRequest blockUserData(BlockUserData blockUserData) {
+      this.blockUserData = blockUserData;
+      return this;
+    }
+
+    /**
+     * Execute blockUser request
+     * @return BlockUserResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public BlockUserResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute blockUser request with HTTP info returned
+     * @return ApiResponse&lt;BlockUserResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<BlockUserResponse> executeWithHttpInfo() throws ApiException {
+      return blockUserWithHttpInfo(apiToken, userId, blockUserData);
+    }
   }
 
   /**
-   * Ban a user
-   * ## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param gcBanUserData  (optional)
-   * @return ApiResponse&lt;GcBanUserResponse&gt;
+   * Block a user
+   * ## Block a user  Allows a user to block another user. A user doesn&#39;t receive messages from someone they have blocked anymore. Also, blocking someone doesn&#39;t alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can&#39;t receive any messages from the users who have blocked them.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user ----------------------------
+   * @param userId  (required)
+   * @return blockUserRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String apiToken, String channelUrl, GcBanUserData gcBanUserData) throws ApiException {
+  public APIblockUserRequest blockUser(String userId) throws ApiException {
+    return new APIblockUserRequest(userId);
+  }
+
+private ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String apiToken, String channelUrl, GcBanUserData gcBanUserData) throws ApiException {
     Object localVarPostBody = gcBanUserData;
     
     // verify the required parameter 'apiToken' is set
@@ -311,39 +366,82 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Freeze a channel
-   * ## Freeze a channel  Freezes or unfreezes a group channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param gcFreezeChannelData  (optional)
-   * @return SendBirdGroupChannel
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdGroupChannel gcFreezeChannel(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData) throws ApiException {
-    return gcFreezeChannelWithHttpInfo(apiToken, channelUrl, gcFreezeChannelData).getData();
+
+  public class APIgcBanUserRequest {
+    private String apiToken;
+    private String channelUrl;
+    private GcBanUserData gcBanUserData;
+
+    private APIgcBanUserRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcBanUserRequest
+     */
+    public APIgcBanUserRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set gcBanUserData
+     * @param gcBanUserData  (optional)
+     * @return APIgcBanUserRequest
+     */
+    public APIgcBanUserRequest gcBanUserData(GcBanUserData gcBanUserData) {
+      this.gcBanUserData = gcBanUserData;
+      return this;
+    }
+
+    /**
+     * Execute gcBanUser request
+     * @return GcBanUserResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GcBanUserResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcBanUser request with HTTP info returned
+     * @return ApiResponse&lt;GcBanUserResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GcBanUserResponse> executeWithHttpInfo() throws ApiException {
+      return gcBanUserWithHttpInfo(apiToken, channelUrl, gcBanUserData);
+    }
   }
 
   /**
-   * Freeze a channel
-   * ## Freeze a channel  Freezes or unfreezes a group channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------
-   * @param apiToken  (required)
+   * Ban a user
+   * ## Ban a user  Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user ----------------------------
    * @param channelUrl  (required)
-   * @param gcFreezeChannelData  (optional)
-   * @return ApiResponse&lt;SendBirdGroupChannel&gt;
+   * @return gcBanUserRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdGroupChannel> gcFreezeChannelWithHttpInfo(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData) throws ApiException {
+  public APIgcBanUserRequest gcBanUser(String channelUrl) throws ApiException {
+    return new APIgcBanUserRequest(channelUrl);
+  }
+
+private ApiResponse<SendBirdGroupChannel> gcFreezeChannelWithHttpInfo(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData) throws ApiException {
     Object localVarPostBody = gcFreezeChannelData;
     
     // verify the required parameter 'apiToken' is set
@@ -390,41 +488,82 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List banned users
-   * ## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return GcListBannedUsersResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GcListBannedUsersResponse gcListBannedUsers(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
-    return gcListBannedUsersWithHttpInfo(apiToken, channelUrl, token, limit).getData();
+
+  public class APIgcFreezeChannelRequest {
+    private String apiToken;
+    private String channelUrl;
+    private GcFreezeChannelData gcFreezeChannelData;
+
+    private APIgcFreezeChannelRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcFreezeChannelRequest
+     */
+    public APIgcFreezeChannelRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set gcFreezeChannelData
+     * @param gcFreezeChannelData  (optional)
+     * @return APIgcFreezeChannelRequest
+     */
+    public APIgcFreezeChannelRequest gcFreezeChannelData(GcFreezeChannelData gcFreezeChannelData) {
+      this.gcFreezeChannelData = gcFreezeChannelData;
+      return this;
+    }
+
+    /**
+     * Execute gcFreezeChannel request
+     * @return SendBirdGroupChannel
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdGroupChannel execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcFreezeChannel request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdGroupChannel&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdGroupChannel> executeWithHttpInfo() throws ApiException {
+      return gcFreezeChannelWithHttpInfo(apiToken, channelUrl, gcFreezeChannelData);
+    }
   }
 
   /**
-   * List banned users
-   * ## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
-   * @param apiToken  (required)
+   * Freeze a channel
+   * ## Freeze a channel  Freezes or unfreezes a group channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel ----------------------------
    * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;GcListBannedUsersResponse&gt;
+   * @return gcFreezeChannelRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+  public APIgcFreezeChannelRequest gcFreezeChannel(String channelUrl) throws ApiException {
+    return new APIgcFreezeChannelRequest(channelUrl);
+  }
+
+private ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -473,41 +612,93 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List muted users
-   * ## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return GcListMutedUsersResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GcListMutedUsersResponse gcListMutedUsers(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
-    return gcListMutedUsersWithHttpInfo(apiToken, channelUrl, token, limit).getData();
+
+  public class APIgcListBannedUsersRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String token;
+    private Integer limit;
+
+    private APIgcListBannedUsersRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcListBannedUsersRequest
+     */
+    public APIgcListBannedUsersRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIgcListBannedUsersRequest
+     */
+    public APIgcListBannedUsersRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIgcListBannedUsersRequest
+     */
+    public APIgcListBannedUsersRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute gcListBannedUsers request
+     * @return GcListBannedUsersResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GcListBannedUsersResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcListBannedUsers request with HTTP info returned
+     * @return ApiResponse&lt;GcListBannedUsersResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GcListBannedUsersResponse> executeWithHttpInfo() throws ApiException {
+      return gcListBannedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
+    }
   }
 
   /**
-   * List muted users
-   * ## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-   * @param apiToken  (required)
+   * List banned users
+   * ## List banned users  Retrieves a list of the banned users from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
    * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;GcListMutedUsersResponse&gt;
+   * @return gcListBannedUsersRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+  public APIgcListBannedUsersRequest gcListBannedUsers(String channelUrl) throws ApiException {
+    return new APIgcListBannedUsersRequest(channelUrl);
+  }
+
+private ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -556,39 +747,93 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Mute a user
-   * ## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param gcMuteUserData  (optional)
-   * @return SendBirdGroupChannel
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdGroupChannel gcMuteUser(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData) throws ApiException {
-    return gcMuteUserWithHttpInfo(apiToken, channelUrl, gcMuteUserData).getData();
+
+  public class APIgcListMutedUsersRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String token;
+    private Integer limit;
+
+    private APIgcListMutedUsersRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcListMutedUsersRequest
+     */
+    public APIgcListMutedUsersRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIgcListMutedUsersRequest
+     */
+    public APIgcListMutedUsersRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIgcListMutedUsersRequest
+     */
+    public APIgcListMutedUsersRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute gcListMutedUsers request
+     * @return GcListMutedUsersResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GcListMutedUsersResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcListMutedUsers request with HTTP info returned
+     * @return ApiResponse&lt;GcListMutedUsersResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GcListMutedUsersResponse> executeWithHttpInfo() throws ApiException {
+      return gcListMutedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
+    }
   }
 
   /**
-   * Mute a user
-   * ## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------
-   * @param apiToken  (required)
+   * List muted users
+   * ## List muted users  Retrieves a list of the muted users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
    * @param channelUrl  (required)
-   * @param gcMuteUserData  (optional)
-   * @return ApiResponse&lt;SendBirdGroupChannel&gt;
+   * @return gcListMutedUsersRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdGroupChannel> gcMuteUserWithHttpInfo(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData) throws ApiException {
+  public APIgcListMutedUsersRequest gcListMutedUsers(String channelUrl) throws ApiException {
+    return new APIgcListMutedUsersRequest(channelUrl);
+  }
+
+private ApiResponse<SendBirdGroupChannel> gcMuteUserWithHttpInfo(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData) throws ApiException {
     Object localVarPostBody = gcMuteUserData;
     
     // verify the required parameter 'apiToken' is set
@@ -635,39 +880,82 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Unban a user
-   * ## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @return OcDeleteChannelByUrl200Response
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcDeleteChannelByUrl200Response gcUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-    return gcUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId).getData();
+
+  public class APIgcMuteUserRequest {
+    private String apiToken;
+    private String channelUrl;
+    private GcMuteUserData gcMuteUserData;
+
+    private APIgcMuteUserRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcMuteUserRequest
+     */
+    public APIgcMuteUserRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set gcMuteUserData
+     * @param gcMuteUserData  (optional)
+     * @return APIgcMuteUserRequest
+     */
+    public APIgcMuteUserRequest gcMuteUserData(GcMuteUserData gcMuteUserData) {
+      this.gcMuteUserData = gcMuteUserData;
+      return this;
+    }
+
+    /**
+     * Execute gcMuteUser request
+     * @return SendBirdGroupChannel
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdGroupChannel execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcMuteUser request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdGroupChannel&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdGroupChannel> executeWithHttpInfo() throws ApiException {
+      return gcMuteUserWithHttpInfo(apiToken, channelUrl, gcMuteUserData);
+    }
   }
 
   /**
-   * Unban a user
-   * ## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------
-   * @param apiToken  (required)
+   * Mute a user
+   * ## Mute a user  Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user ----------------------------
    * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+   * @return gcMuteUserRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcDeleteChannelByUrl200Response> gcUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+  public APIgcMuteUserRequest gcMuteUser(String channelUrl) throws ApiException {
+    return new APIgcMuteUserRequest(channelUrl);
+  }
+
+private ApiResponse<OcDeleteChannelByUrl200Response> gcUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -720,39 +1008,74 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Unmute a user
-   * ## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param mutedUserId  (required)
-   * @return OcDeleteChannelByUrl200Response
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcDeleteChannelByUrl200Response gcUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-    return gcUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId).getData();
+
+  public class APIgcUnbanUserByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String bannedUserId;
+
+    private APIgcUnbanUserByIdRequest(String channelUrl, String bannedUserId) {
+      this.channelUrl = channelUrl;
+      this.bannedUserId = bannedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcUnbanUserByIdRequest
+     */
+    public APIgcUnbanUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute gcUnbanUserById request
+     * @return OcDeleteChannelByUrl200Response
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcDeleteChannelByUrl200Response execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcUnbanUserById request with HTTP info returned
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
+      return gcUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+    }
   }
 
   /**
-   * Unmute a user
-   * ## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------
-   * @param apiToken  (required)
+   * Unban a user
+   * ## Unban a user  Unbans a user from a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user ----------------------------
    * @param channelUrl  (required)
-   * @param mutedUserId  (required)
-   * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+   * @param bannedUserId  (required)
+   * @return gcUnbanUserByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcDeleteChannelByUrl200Response> gcUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+  public APIgcUnbanUserByIdRequest gcUnbanUserById(String channelUrl, String bannedUserId) throws ApiException {
+    return new APIgcUnbanUserByIdRequest(channelUrl, bannedUserId);
+  }
+
+private ApiResponse<OcDeleteChannelByUrl200Response> gcUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -805,41 +1128,74 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update a ban
-   * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @param gcUpdateBanByIdData  (optional)
-   * @return GcUpdateBanByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GcUpdateBanByIdResponse gcUpdateBanById(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData) throws ApiException {
-    return gcUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData).getData();
+
+  public class APIgcUnmuteUserByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String mutedUserId;
+
+    private APIgcUnmuteUserByIdRequest(String channelUrl, String mutedUserId) {
+      this.channelUrl = channelUrl;
+      this.mutedUserId = mutedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcUnmuteUserByIdRequest
+     */
+    public APIgcUnmuteUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute gcUnmuteUserById request
+     * @return OcDeleteChannelByUrl200Response
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcDeleteChannelByUrl200Response execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcUnmuteUserById request with HTTP info returned
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
+      return gcUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+    }
   }
 
   /**
-   * Update a ban
-   * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------
-   * @param apiToken  (required)
+   * Unmute a user
+   * ## Unmute a user  Unmutes a user within a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user ----------------------------
    * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @param gcUpdateBanByIdData  (optional)
-   * @return ApiResponse&lt;GcUpdateBanByIdResponse&gt;
+   * @param mutedUserId  (required)
+   * @return gcUnmuteUserByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GcUpdateBanByIdResponse> gcUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData) throws ApiException {
+  public APIgcUnmuteUserByIdRequest gcUnmuteUserById(String channelUrl, String mutedUserId) throws ApiException {
+    return new APIgcUnmuteUserByIdRequest(channelUrl, mutedUserId);
+  }
+
+private ApiResponse<GcUpdateBanByIdResponse> gcUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData) throws ApiException {
     Object localVarPostBody = gcUpdateBanByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -892,39 +1248,85 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a ban
-   * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @return GcViewBanByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GcViewBanByIdResponse gcViewBanById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-    return gcViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId).getData();
+
+  public class APIgcUpdateBanByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String bannedUserId;
+    private GcUpdateBanByIdData gcUpdateBanByIdData;
+
+    private APIgcUpdateBanByIdRequest(String channelUrl, String bannedUserId) {
+      this.channelUrl = channelUrl;
+      this.bannedUserId = bannedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcUpdateBanByIdRequest
+     */
+    public APIgcUpdateBanByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set gcUpdateBanByIdData
+     * @param gcUpdateBanByIdData  (optional)
+     * @return APIgcUpdateBanByIdRequest
+     */
+    public APIgcUpdateBanByIdRequest gcUpdateBanByIdData(GcUpdateBanByIdData gcUpdateBanByIdData) {
+      this.gcUpdateBanByIdData = gcUpdateBanByIdData;
+      return this;
+    }
+
+    /**
+     * Execute gcUpdateBanById request
+     * @return GcUpdateBanByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GcUpdateBanByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcUpdateBanById request with HTTP info returned
+     * @return ApiResponse&lt;GcUpdateBanByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GcUpdateBanByIdResponse> executeWithHttpInfo() throws ApiException {
+      return gcUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData);
+    }
   }
 
   /**
-   * View a ban
-   * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------
-   * @param apiToken  (required)
+   * Update a ban
+   * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban ----------------------------
    * @param channelUrl  (required)
    * @param bannedUserId  (required)
-   * @return ApiResponse&lt;GcViewBanByIdResponse&gt;
+   * @return gcUpdateBanByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GcViewBanByIdResponse> gcViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+  public APIgcUpdateBanByIdRequest gcUpdateBanById(String channelUrl, String bannedUserId) throws ApiException {
+    return new APIgcUpdateBanByIdRequest(channelUrl, bannedUserId);
+  }
+
+private ApiResponse<GcViewBanByIdResponse> gcViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -977,39 +1379,74 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a mute
-   * ## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param mutedUserId  (required)
-   * @return GcViewMuteByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GcViewMuteByIdResponse gcViewMuteById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-    return gcViewMuteByIdWithHttpInfo(apiToken, channelUrl, mutedUserId).getData();
+
+  public class APIgcViewBanByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String bannedUserId;
+
+    private APIgcViewBanByIdRequest(String channelUrl, String bannedUserId) {
+      this.channelUrl = channelUrl;
+      this.bannedUserId = bannedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcViewBanByIdRequest
+     */
+    public APIgcViewBanByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute gcViewBanById request
+     * @return GcViewBanByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GcViewBanByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcViewBanById request with HTTP info returned
+     * @return ApiResponse&lt;GcViewBanByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GcViewBanByIdResponse> executeWithHttpInfo() throws ApiException {
+      return gcViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+    }
   }
 
   /**
-   * View a mute
-   * ## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------
-   * @param apiToken  (required)
+   * View a ban
+   * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban ----------------------------
    * @param channelUrl  (required)
-   * @param mutedUserId  (required)
-   * @return ApiResponse&lt;GcViewMuteByIdResponse&gt;
+   * @param bannedUserId  (required)
+   * @return gcViewBanByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+  public APIgcViewBanByIdRequest gcViewBanById(String channelUrl, String bannedUserId) throws ApiException {
+    return new APIgcViewBanByIdRequest(channelUrl, bannedUserId);
+  }
+
+private ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1062,41 +1499,74 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List banned channels
-   * ## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListBannedChannelsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListBannedChannelsResponse listBannedChannels(String apiToken, String userId, String token, Integer limit) throws ApiException {
-    return listBannedChannelsWithHttpInfo(apiToken, userId, token, limit).getData();
+
+  public class APIgcViewMuteByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String mutedUserId;
+
+    private APIgcViewMuteByIdRequest(String channelUrl, String mutedUserId) {
+      this.channelUrl = channelUrl;
+      this.mutedUserId = mutedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgcViewMuteByIdRequest
+     */
+    public APIgcViewMuteByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute gcViewMuteById request
+     * @return GcViewMuteByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GcViewMuteByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcViewMuteById request with HTTP info returned
+     * @return ApiResponse&lt;GcViewMuteByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GcViewMuteByIdResponse> executeWithHttpInfo() throws ApiException {
+      return gcViewMuteByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+    }
   }
 
   /**
-   * List banned channels
-   * ## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListBannedChannelsResponse&gt;
+   * View a mute
+   * ## View a mute  Checks if a user is muted in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute ----------------------------
+   * @param channelUrl  (required)
+   * @param mutedUserId  (required)
+   * @return gcViewMuteByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit) throws ApiException {
+  public APIgcViewMuteByIdRequest gcViewMuteById(String channelUrl, String mutedUserId) throws ApiException {
+    return new APIgcViewMuteByIdRequest(channelUrl, mutedUserId);
+  }
+
+private ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1145,47 +1615,93 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List blocked users
-   * ## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param userIds  (optional)
-   * @param metadatakey  (optional)
-   * @param metadatavaluesIn  (optional)
-   * @return ListBlockedUsersResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListBlockedUsersResponse listBlockedUsers(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
-    return listBlockedUsersWithHttpInfo(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn).getData();
+
+  public class APIlistBannedChannelsRequest {
+    private String apiToken;
+    private String userId;
+    private String token;
+    private Integer limit;
+
+    private APIlistBannedChannelsRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistBannedChannelsRequest
+     */
+    public APIlistBannedChannelsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistBannedChannelsRequest
+     */
+    public APIlistBannedChannelsRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistBannedChannelsRequest
+     */
+    public APIlistBannedChannelsRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listBannedChannels request
+     * @return ListBannedChannelsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListBannedChannelsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listBannedChannels request with HTTP info returned
+     * @return ApiResponse&lt;ListBannedChannelsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListBannedChannelsResponse> executeWithHttpInfo() throws ApiException {
+      return listBannedChannelsWithHttpInfo(apiToken, userId, token, limit);
+    }
   }
 
   /**
-   * List blocked users
-   * ## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
-   * @param apiToken  (required)
+   * List banned channels
+   * ## List banned channels  Retrieves a list of open and group channels with additional information where a user is banned.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
    * @param userId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param userIds  (optional)
-   * @param metadatakey  (optional)
-   * @param metadatavaluesIn  (optional)
-   * @return ApiResponse&lt;ListBlockedUsersResponse&gt;
+   * @return listBannedChannelsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
+  public APIlistBannedChannelsRequest listBannedChannels(String userId) throws ApiException {
+    return new APIlistBannedChannelsRequest(userId);
+  }
+
+private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1237,41 +1753,126 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List muted channels
-   * ## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListMutedChannelsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListMutedChannelsResponse listMutedChannels(String apiToken, String userId, String token, Integer limit) throws ApiException {
-    return listMutedChannelsWithHttpInfo(apiToken, userId, token, limit).getData();
+
+  public class APIlistBlockedUsersRequest {
+    private String apiToken;
+    private String userId;
+    private String token;
+    private Integer limit;
+    private String userIds;
+    private String metadatakey;
+    private String metadatavaluesIn;
+
+    private APIlistBlockedUsersRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistBlockedUsersRequest
+     */
+    public APIlistBlockedUsersRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistBlockedUsersRequest
+     */
+    public APIlistBlockedUsersRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistBlockedUsersRequest
+     */
+    public APIlistBlockedUsersRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Set userIds
+     * @param userIds  (optional)
+     * @return APIlistBlockedUsersRequest
+     */
+    public APIlistBlockedUsersRequest userIds(String userIds) {
+      this.userIds = userIds;
+      return this;
+    }
+
+    /**
+     * Set metadatakey
+     * @param metadatakey  (optional)
+     * @return APIlistBlockedUsersRequest
+     */
+    public APIlistBlockedUsersRequest metadatakey(String metadatakey) {
+      this.metadatakey = metadatakey;
+      return this;
+    }
+
+    /**
+     * Set metadatavaluesIn
+     * @param metadatavaluesIn  (optional)
+     * @return APIlistBlockedUsersRequest
+     */
+    public APIlistBlockedUsersRequest metadatavaluesIn(String metadatavaluesIn) {
+      this.metadatavaluesIn = metadatavaluesIn;
+      return this;
+    }
+
+    /**
+     * Execute listBlockedUsers request
+     * @return ListBlockedUsersResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListBlockedUsersResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listBlockedUsers request with HTTP info returned
+     * @return ApiResponse&lt;ListBlockedUsersResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListBlockedUsersResponse> executeWithHttpInfo() throws ApiException {
+      return listBlockedUsersWithHttpInfo(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn);
+    }
   }
 
   /**
-   * List muted channels
-   * ## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
-   * @param apiToken  (required)
+   * List blocked users
+   * ## List blocked users  Retrieves a list of other users that a user has blocked.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
    * @param userId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListMutedChannelsResponse&gt;
+   * @return listBlockedUsersRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit) throws ApiException {
+  public APIlistBlockedUsersRequest listBlockedUsers(String userId) throws ApiException {
+    return new APIlistBlockedUsersRequest(userId);
+  }
+
+private ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1320,39 +1921,93 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Mute in channels with custom channel types
-   * ## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param muteInChannelsWithCustomChannelTypesData  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object muteInChannelsWithCustomChannelTypes(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) throws ApiException {
-    return muteInChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, muteInChannelsWithCustomChannelTypesData).getData();
+
+  public class APIlistMutedChannelsRequest {
+    private String apiToken;
+    private String userId;
+    private String token;
+    private Integer limit;
+
+    private APIlistMutedChannelsRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistMutedChannelsRequest
+     */
+    public APIlistMutedChannelsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistMutedChannelsRequest
+     */
+    public APIlistMutedChannelsRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistMutedChannelsRequest
+     */
+    public APIlistMutedChannelsRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listMutedChannels request
+     * @return ListMutedChannelsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListMutedChannelsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listMutedChannels request with HTTP info returned
+     * @return ApiResponse&lt;ListMutedChannelsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListMutedChannelsResponse> executeWithHttpInfo() throws ApiException {
+      return listMutedChannelsWithHttpInfo(apiToken, userId, token, limit);
+    }
   }
 
   /**
-   * Mute in channels with custom channel types
-   * ## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------
-   * @param apiToken  (required)
+   * List muted channels
+   * ## List muted channels  Retrieves a list of open and group channels with additional information where a user is muted.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
    * @param userId  (required)
-   * @param muteInChannelsWithCustomChannelTypesData  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return listMutedChannelsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> muteInChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) throws ApiException {
+  public APIlistMutedChannelsRequest listMutedChannels(String userId) throws ApiException {
+    return new APIlistMutedChannelsRequest(userId);
+  }
+
+private ApiResponse<Object> muteInChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) throws ApiException {
     Object localVarPostBody = muteInChannelsWithCustomChannelTypesData;
     
     // verify the required parameter 'apiToken' is set
@@ -1399,39 +2054,82 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Ban a user
-   * ## Ban a user  Bans a user from an open channel. A banned user is immediately expelled from a channel and allowed to participate in the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-ban-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param ocBanUserData  (optional)
-   * @return OcBanUserResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcBanUserResponse ocBanUser(String apiToken, String channelUrl, OcBanUserData ocBanUserData) throws ApiException {
-    return ocBanUserWithHttpInfo(apiToken, channelUrl, ocBanUserData).getData();
+
+  public class APImuteInChannelsWithCustomChannelTypesRequest {
+    private String apiToken;
+    private String userId;
+    private MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData;
+
+    private APImuteInChannelsWithCustomChannelTypesRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APImuteInChannelsWithCustomChannelTypesRequest
+     */
+    public APImuteInChannelsWithCustomChannelTypesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set muteInChannelsWithCustomChannelTypesData
+     * @param muteInChannelsWithCustomChannelTypesData  (optional)
+     * @return APImuteInChannelsWithCustomChannelTypesRequest
+     */
+    public APImuteInChannelsWithCustomChannelTypesRequest muteInChannelsWithCustomChannelTypesData(MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) {
+      this.muteInChannelsWithCustomChannelTypesData = muteInChannelsWithCustomChannelTypesData;
+      return this;
+    }
+
+    /**
+     * Execute muteInChannelsWithCustomChannelTypes request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute muteInChannelsWithCustomChannelTypes request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return muteInChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, muteInChannelsWithCustomChannelTypesData);
+    }
   }
 
   /**
-   * Ban a user
-   * ## Ban a user  Bans a user from an open channel. A banned user is immediately expelled from a channel and allowed to participate in the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-ban-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param ocBanUserData  (optional)
-   * @return ApiResponse&lt;OcBanUserResponse&gt;
+   * Mute in channels with custom channel types
+   * ## Mute in channels with custom channel types  Mutes a user in channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types ----------------------------
+   * @param userId  (required)
+   * @return muteInChannelsWithCustomChannelTypesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String apiToken, String channelUrl, OcBanUserData ocBanUserData) throws ApiException {
+  public APImuteInChannelsWithCustomChannelTypesRequest muteInChannelsWithCustomChannelTypes(String userId) throws ApiException {
+    return new APImuteInChannelsWithCustomChannelTypesRequest(userId);
+  }
+
+private ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String apiToken, String channelUrl, OcBanUserData ocBanUserData) throws ApiException {
     Object localVarPostBody = ocBanUserData;
     
     // verify the required parameter 'apiToken' is set
@@ -1478,39 +2176,82 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Freeze a channel
-   * ## Freeze a channel  Freezes or unfreezes an open channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-freeze-a-channel ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param ocFreezeChannelData  (optional)
-   * @return SendBirdOpenChannel
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdOpenChannel ocFreezeChannel(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData) throws ApiException {
-    return ocFreezeChannelWithHttpInfo(apiToken, channelUrl, ocFreezeChannelData).getData();
+
+  public class APIocBanUserRequest {
+    private String apiToken;
+    private String channelUrl;
+    private OcBanUserData ocBanUserData;
+
+    private APIocBanUserRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocBanUserRequest
+     */
+    public APIocBanUserRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set ocBanUserData
+     * @param ocBanUserData  (optional)
+     * @return APIocBanUserRequest
+     */
+    public APIocBanUserRequest ocBanUserData(OcBanUserData ocBanUserData) {
+      this.ocBanUserData = ocBanUserData;
+      return this;
+    }
+
+    /**
+     * Execute ocBanUser request
+     * @return OcBanUserResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcBanUserResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocBanUser request with HTTP info returned
+     * @return ApiResponse&lt;OcBanUserResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcBanUserResponse> executeWithHttpInfo() throws ApiException {
+      return ocBanUserWithHttpInfo(apiToken, channelUrl, ocBanUserData);
+    }
   }
 
   /**
-   * Freeze a channel
-   * ## Freeze a channel  Freezes or unfreezes an open channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-freeze-a-channel ----------------------------
-   * @param apiToken  (required)
+   * Ban a user
+   * ## Ban a user  Bans a user from an open channel. A banned user is immediately expelled from a channel and allowed to participate in the channel again after a set time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-ban-a-user ----------------------------
    * @param channelUrl  (required)
-   * @param ocFreezeChannelData  (optional)
-   * @return ApiResponse&lt;SendBirdOpenChannel&gt;
+   * @return ocBanUserRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData) throws ApiException {
+  public APIocBanUserRequest ocBanUser(String channelUrl) throws ApiException {
+    return new APIocBanUserRequest(channelUrl);
+  }
+
+private ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData) throws ApiException {
     Object localVarPostBody = ocFreezeChannelData;
     
     // verify the required parameter 'apiToken' is set
@@ -1557,41 +2298,82 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List banned users
-   * ## List banned users  Retrieves a list of banned users from a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return OcListBannedUsersResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcListBannedUsersResponse ocListBannedUsers(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
-    return ocListBannedUsersWithHttpInfo(apiToken, channelUrl, token, limit).getData();
+
+  public class APIocFreezeChannelRequest {
+    private String apiToken;
+    private String channelUrl;
+    private OcFreezeChannelData ocFreezeChannelData;
+
+    private APIocFreezeChannelRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocFreezeChannelRequest
+     */
+    public APIocFreezeChannelRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set ocFreezeChannelData
+     * @param ocFreezeChannelData  (optional)
+     * @return APIocFreezeChannelRequest
+     */
+    public APIocFreezeChannelRequest ocFreezeChannelData(OcFreezeChannelData ocFreezeChannelData) {
+      this.ocFreezeChannelData = ocFreezeChannelData;
+      return this;
+    }
+
+    /**
+     * Execute ocFreezeChannel request
+     * @return SendBirdOpenChannel
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdOpenChannel execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocFreezeChannel request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdOpenChannel&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
+      return ocFreezeChannelWithHttpInfo(apiToken, channelUrl, ocFreezeChannelData);
+    }
   }
 
   /**
-   * List banned users
-   * ## List banned users  Retrieves a list of banned users from a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
-   * @param apiToken  (required)
+   * Freeze a channel
+   * ## Freeze a channel  Freezes or unfreezes an open channel.  &gt; __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-freeze-a-channel ----------------------------
    * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;OcListBannedUsersResponse&gt;
+   * @return ocFreezeChannelRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+  public APIocFreezeChannelRequest ocFreezeChannel(String channelUrl) throws ApiException {
+    return new APIocFreezeChannelRequest(channelUrl);
+  }
+
+private ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1640,41 +2422,93 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List muted users
-   * ## List muted users  Retrieves a list of muted users in the channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return OcListMutedUsersResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcListMutedUsersResponse ocListMutedUsers(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
-    return ocListMutedUsersWithHttpInfo(apiToken, channelUrl, token, limit).getData();
+
+  public class APIocListBannedUsersRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String token;
+    private Integer limit;
+
+    private APIocListBannedUsersRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocListBannedUsersRequest
+     */
+    public APIocListBannedUsersRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIocListBannedUsersRequest
+     */
+    public APIocListBannedUsersRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIocListBannedUsersRequest
+     */
+    public APIocListBannedUsersRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute ocListBannedUsers request
+     * @return OcListBannedUsersResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcListBannedUsersResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocListBannedUsers request with HTTP info returned
+     * @return ApiResponse&lt;OcListBannedUsersResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcListBannedUsersResponse> executeWithHttpInfo() throws ApiException {
+      return ocListBannedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
+    }
   }
 
   /**
-   * List muted users
-   * ## List muted users  Retrieves a list of muted users in the channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
-   * @param apiToken  (required)
+   * List banned users
+   * ## List banned users  Retrieves a list of banned users from a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-banned-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel where to retrieve a list of banned users.
    * @param channelUrl  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;OcListMutedUsersResponse&gt;
+   * @return ocListBannedUsersRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+  public APIocListBannedUsersRequest ocListBannedUsers(String channelUrl) throws ApiException {
+    return new APIocListBannedUsersRequest(channelUrl);
+  }
+
+private ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1723,39 +2557,93 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Mute a user
-   * ## Mute a user  Mutes a user in the channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-mute-a-user
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param ocMuteUserData  (optional)
-   * @return SendBirdOpenChannel
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdOpenChannel ocMuteUser(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData) throws ApiException {
-    return ocMuteUserWithHttpInfo(apiToken, channelUrl, ocMuteUserData).getData();
+
+  public class APIocListMutedUsersRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String token;
+    private Integer limit;
+
+    private APIocListMutedUsersRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocListMutedUsersRequest
+     */
+    public APIocListMutedUsersRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIocListMutedUsersRequest
+     */
+    public APIocListMutedUsersRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIocListMutedUsersRequest
+     */
+    public APIocListMutedUsersRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute ocListMutedUsers request
+     * @return OcListMutedUsersResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcListMutedUsersResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocListMutedUsers request with HTTP info returned
+     * @return ApiResponse&lt;OcListMutedUsersResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcListMutedUsersResponse> executeWithHttpInfo() throws ApiException {
+      return ocListMutedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
+    }
   }
 
   /**
-   * Mute a user
-   * ## Mute a user  Mutes a user in the channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-mute-a-user
-   * @param apiToken  (required)
+   * List muted users
+   * ## List muted users  Retrieves a list of muted users in the channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-muted-users ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of muted users.
    * @param channelUrl  (required)
-   * @param ocMuteUserData  (optional)
-   * @return ApiResponse&lt;SendBirdOpenChannel&gt;
+   * @return ocListMutedUsersRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData) throws ApiException {
+  public APIocListMutedUsersRequest ocListMutedUsers(String channelUrl) throws ApiException {
+    return new APIocListMutedUsersRequest(channelUrl);
+  }
+
+private ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData) throws ApiException {
     Object localVarPostBody = ocMuteUserData;
     
     // verify the required parameter 'apiToken' is set
@@ -1802,39 +2690,82 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Unban a user
-   * ## Unban a user  Unbans a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unban-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @return OcDeleteChannelByUrl200Response
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcDeleteChannelByUrl200Response ocUnbanUserById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-    return ocUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId).getData();
+
+  public class APIocMuteUserRequest {
+    private String apiToken;
+    private String channelUrl;
+    private OcMuteUserData ocMuteUserData;
+
+    private APIocMuteUserRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocMuteUserRequest
+     */
+    public APIocMuteUserRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set ocMuteUserData
+     * @param ocMuteUserData  (optional)
+     * @return APIocMuteUserRequest
+     */
+    public APIocMuteUserRequest ocMuteUserData(OcMuteUserData ocMuteUserData) {
+      this.ocMuteUserData = ocMuteUserData;
+      return this;
+    }
+
+    /**
+     * Execute ocMuteUser request
+     * @return SendBirdOpenChannel
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdOpenChannel execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocMuteUser request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdOpenChannel&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
+      return ocMuteUserWithHttpInfo(apiToken, channelUrl, ocMuteUserData);
+    }
   }
 
   /**
-   * Unban a user
-   * ## Unban a user  Unbans a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unban-a-user ----------------------------
-   * @param apiToken  (required)
+   * Mute a user
+   * ## Mute a user  Mutes a user in the channel. A muted user remains in the channel and is allowed to view the messages, but can&#39;t send any messages until unmuted.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-mute-a-user
    * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+   * @return ocMuteUserRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcDeleteChannelByUrl200Response> ocUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+  public APIocMuteUserRequest ocMuteUser(String channelUrl) throws ApiException {
+    return new APIocMuteUserRequest(channelUrl);
+  }
+
+private ApiResponse<OcDeleteChannelByUrl200Response> ocUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1887,39 +2818,74 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Unmute a user
-   * ## Unmute a user  Unmutes a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unmute-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param mutedUserId  (required)
-   * @return OcDeleteChannelByUrl200Response
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcDeleteChannelByUrl200Response ocUnmuteUserById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-    return ocUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId).getData();
+
+  public class APIocUnbanUserByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String bannedUserId;
+
+    private APIocUnbanUserByIdRequest(String channelUrl, String bannedUserId) {
+      this.channelUrl = channelUrl;
+      this.bannedUserId = bannedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocUnbanUserByIdRequest
+     */
+    public APIocUnbanUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute ocUnbanUserById request
+     * @return OcDeleteChannelByUrl200Response
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcDeleteChannelByUrl200Response execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocUnbanUserById request with HTTP info returned
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
+      return ocUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+    }
   }
 
   /**
-   * Unmute a user
-   * ## Unmute a user  Unmutes a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unmute-a-user ----------------------------
-   * @param apiToken  (required)
+   * Unban a user
+   * ## Unban a user  Unbans a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unban-a-user ----------------------------
    * @param channelUrl  (required)
-   * @param mutedUserId  (required)
-   * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+   * @param bannedUserId  (required)
+   * @return ocUnbanUserByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcDeleteChannelByUrl200Response> ocUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+  public APIocUnbanUserByIdRequest ocUnbanUserById(String channelUrl, String bannedUserId) throws ApiException {
+    return new APIocUnbanUserByIdRequest(channelUrl, bannedUserId);
+  }
+
+private ApiResponse<OcDeleteChannelByUrl200Response> ocUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1972,41 +2938,74 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update a ban
-   * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of a ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-ban ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @param ocUpdateBanByIdData  (optional)
-   * @return OcUpdateBanByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcUpdateBanByIdResponse ocUpdateBanById(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
-    return ocUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData).getData();
+
+  public class APIocUnmuteUserByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String mutedUserId;
+
+    private APIocUnmuteUserByIdRequest(String channelUrl, String mutedUserId) {
+      this.channelUrl = channelUrl;
+      this.mutedUserId = mutedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocUnmuteUserByIdRequest
+     */
+    public APIocUnmuteUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute ocUnmuteUserById request
+     * @return OcDeleteChannelByUrl200Response
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcDeleteChannelByUrl200Response execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocUnmuteUserById request with HTTP info returned
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
+      return ocUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+    }
   }
 
   /**
-   * Update a ban
-   * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of a ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-ban ----------------------------
-   * @param apiToken  (required)
+   * Unmute a user
+   * ## Unmute a user  Unmutes a user from an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unmute-a-user ----------------------------
    * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @param ocUpdateBanByIdData  (optional)
-   * @return ApiResponse&lt;OcUpdateBanByIdResponse&gt;
+   * @param mutedUserId  (required)
+   * @return ocUnmuteUserByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcUpdateBanByIdResponse> ocUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
+  public APIocUnmuteUserByIdRequest ocUnmuteUserById(String channelUrl, String mutedUserId) throws ApiException {
+    return new APIocUnmuteUserByIdRequest(channelUrl, mutedUserId);
+  }
+
+private ApiResponse<OcUpdateBanByIdResponse> ocUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
     Object localVarPostBody = ocUpdateBanByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -2059,39 +3058,85 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a ban
-   * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-ban ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param bannedUserId  (required)
-   * @return OcViewBanByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcViewBanByIdResponse ocViewBanById(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
-    return ocViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId).getData();
+
+  public class APIocUpdateBanByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String bannedUserId;
+    private OcUpdateBanByIdData ocUpdateBanByIdData;
+
+    private APIocUpdateBanByIdRequest(String channelUrl, String bannedUserId) {
+      this.channelUrl = channelUrl;
+      this.bannedUserId = bannedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocUpdateBanByIdRequest
+     */
+    public APIocUpdateBanByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set ocUpdateBanByIdData
+     * @param ocUpdateBanByIdData  (optional)
+     * @return APIocUpdateBanByIdRequest
+     */
+    public APIocUpdateBanByIdRequest ocUpdateBanByIdData(OcUpdateBanByIdData ocUpdateBanByIdData) {
+      this.ocUpdateBanByIdData = ocUpdateBanByIdData;
+      return this;
+    }
+
+    /**
+     * Execute ocUpdateBanById request
+     * @return OcUpdateBanByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcUpdateBanByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocUpdateBanById request with HTTP info returned
+     * @return ApiResponse&lt;OcUpdateBanByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcUpdateBanByIdResponse> executeWithHttpInfo() throws ApiException {
+      return ocUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
+    }
   }
 
   /**
-   * View a ban
-   * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-ban ----------------------------
-   * @param apiToken  (required)
+   * Update a ban
+   * ## Update a ban  Updates details of a ban imposed on a user. You can change the length of a ban with this action, and also provide an updated description.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-ban ----------------------------
    * @param channelUrl  (required)
    * @param bannedUserId  (required)
-   * @return ApiResponse&lt;OcViewBanByIdResponse&gt;
+   * @return ocUpdateBanByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcViewBanByIdResponse> ocViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+  public APIocUpdateBanByIdRequest ocUpdateBanById(String channelUrl, String bannedUserId) throws ApiException {
+    return new APIocUpdateBanByIdRequest(channelUrl, bannedUserId);
+  }
+
+private ApiResponse<OcViewBanByIdResponse> ocViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2144,39 +3189,74 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a mute
-   * ## View a mute  Checks if a user is muted in an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-mute ----------------------------
-   * @param apiToken  (required)
-   * @param channelUrl  (required)
-   * @param mutedUserId  (required)
-   * @return OcViewMuteByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public OcViewMuteByIdResponse ocViewMuteById(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
-    return ocViewMuteByIdWithHttpInfo(apiToken, channelUrl, mutedUserId).getData();
+
+  public class APIocViewBanByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String bannedUserId;
+
+    private APIocViewBanByIdRequest(String channelUrl, String bannedUserId) {
+      this.channelUrl = channelUrl;
+      this.bannedUserId = bannedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocViewBanByIdRequest
+     */
+    public APIocViewBanByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute ocViewBanById request
+     * @return OcViewBanByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcViewBanByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocViewBanById request with HTTP info returned
+     * @return ApiResponse&lt;OcViewBanByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcViewBanByIdResponse> executeWithHttpInfo() throws ApiException {
+      return ocViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+    }
   }
 
   /**
-   * View a mute
-   * ## View a mute  Checks if a user is muted in an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-mute ----------------------------
-   * @param apiToken  (required)
+   * View a ban
+   * ## View a ban  Retrieves details of a ban imposed on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-ban ----------------------------
    * @param channelUrl  (required)
-   * @param mutedUserId  (required)
-   * @return ApiResponse&lt;OcViewMuteByIdResponse&gt;
+   * @param bannedUserId  (required)
+   * @return ocViewBanByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+  public APIocViewBanByIdRequest ocViewBanById(String channelUrl, String bannedUserId) throws ApiException {
+    return new APIocViewBanByIdRequest(channelUrl, bannedUserId);
+  }
+
+private ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2229,39 +3309,74 @@ public class ModerationApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Unblock a user
-   * ## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param targetId  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object unblockUserById(String apiToken, String userId, String targetId) throws ApiException {
-    return unblockUserByIdWithHttpInfo(apiToken, userId, targetId).getData();
+
+  public class APIocViewMuteByIdRequest {
+    private String apiToken;
+    private String channelUrl;
+    private String mutedUserId;
+
+    private APIocViewMuteByIdRequest(String channelUrl, String mutedUserId) {
+      this.channelUrl = channelUrl;
+      this.mutedUserId = mutedUserId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIocViewMuteByIdRequest
+     */
+    public APIocViewMuteByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute ocViewMuteById request
+     * @return OcViewMuteByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcViewMuteByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute ocViewMuteById request with HTTP info returned
+     * @return ApiResponse&lt;OcViewMuteByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcViewMuteByIdResponse> executeWithHttpInfo() throws ApiException {
+      return ocViewMuteByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+    }
   }
 
   /**
-   * Unblock a user
-   * ## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param targetId  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * View a mute
+   * ## View a mute  Checks if a user is muted in an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-mute ----------------------------
+   * @param channelUrl  (required)
+   * @param mutedUserId  (required)
+   * @return ocViewMuteByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> unblockUserByIdWithHttpInfo(String apiToken, String userId, String targetId) throws ApiException {
+  public APIocViewMuteByIdRequest ocViewMuteById(String channelUrl, String mutedUserId) throws ApiException {
+    return new APIocViewMuteByIdRequest(channelUrl, mutedUserId);
+  }
+
+private ApiResponse<Object> unblockUserByIdWithHttpInfo(String apiToken, String userId, String targetId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2313,5 +3428,71 @@ public class ModerationApi {
     return apiClient.invokeAPI("ModerationApi.unblockUserById", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIunblockUserByIdRequest {
+    private String apiToken;
+    private String userId;
+    private String targetId;
+
+    private APIunblockUserByIdRequest(String userId, String targetId) {
+      this.userId = userId;
+      this.targetId = targetId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIunblockUserByIdRequest
+     */
+    public APIunblockUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute unblockUserById request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute unblockUserById request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return unblockUserByIdWithHttpInfo(apiToken, userId, targetId);
+    }
+  }
+
+  /**
+   * Unblock a user
+   * ## Unblock a user  Unblocks the user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user ----------------------------
+   * @param userId  (required)
+   * @param targetId  (required)
+   * @return unblockUserByIdRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIunblockUserByIdRequest unblockUserById(String userId, String targetId) throws ApiException {
+    return new APIunblockUserByIdRequest(userId, targetId);
   }
 }

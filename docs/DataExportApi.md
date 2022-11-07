@@ -12,7 +12,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## listDataExportsByMessageChannelOrUser
 
-> ListDataExportsByMessageChannelOrUserResponse listDataExportsByMessageChannelOrUser(apiToken, dataType, token, limit)
+> ListDataExportsByMessageChannelOrUserResponse listDataExportsByMessageChannelOrUser(dataType).apiToken(apiToken).token(token).limit(limit).execute();
 
 List data exports by message, channel, or user
 
@@ -48,7 +48,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListDataExportsByMessageChannelOrUserResponse result = apiInstance.listDataExportsByMessageChannelOrUser(apiToken, dataType, token, limit);
+            ListDataExportsByMessageChannelOrUserResponse result = api.listDataExportsByMessageChannelOrUser(dataType)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DataExportApi#listDataExportsByMessageChannelOrUser");
@@ -92,7 +96,7 @@ No authorization required
 
 ## registerAndScheduleDataExport
 
-> RegisterAndScheduleDataExportResponse registerAndScheduleDataExport(apiToken, dataType, registerAndScheduleDataExportData)
+> RegisterAndScheduleDataExportResponse registerAndScheduleDataExport(dataType).apiToken(apiToken).registerAndScheduleDataExportData(registerAndScheduleDataExportData).execute();
 
 Register and schedule a data export
 
@@ -123,7 +127,10 @@ public class Example {
         String dataType = "dataType_example"; // String | 
         RegisterAndScheduleDataExportData registerAndScheduleDataExportData = new RegisterAndScheduleDataExportData(); // RegisterAndScheduleDataExportData | 
         try {
-            RegisterAndScheduleDataExportResponse result = apiInstance.registerAndScheduleDataExport(apiToken, dataType, registerAndScheduleDataExportData);
+            RegisterAndScheduleDataExportResponse result = api.registerAndScheduleDataExport(dataType)
+                .apiToken(apiToken)
+                .registerAndScheduleDataExportData(registerAndScheduleDataExportData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DataExportApi#registerAndScheduleDataExport");
@@ -166,7 +173,7 @@ No authorization required
 
 ## viewDataExportById
 
-> ViewDataExportByIdResponse viewDataExportById(apiToken, dataType, requestId)
+> ViewDataExportByIdResponse viewDataExportById(dataType, requestId).apiToken(apiToken).execute();
 
 View a data export
 
@@ -204,7 +211,9 @@ public class Example {
         String dataType = "dataType_example"; // String | 
         String requestId = "requestId_example"; // String | 
         try {
-            ViewDataExportByIdResponse result = apiInstance.viewDataExportById(apiToken, dataType, requestId);
+            ViewDataExportByIdResponse result = api.viewDataExportById(dataType, requestId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DataExportApi#viewDataExportById");

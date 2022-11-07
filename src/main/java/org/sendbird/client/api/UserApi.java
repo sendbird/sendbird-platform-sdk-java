@@ -49,7 +49,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class UserApi {
   private ApiClient apiClient;
 
@@ -79,41 +79,8 @@ public class UserApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * Add a registration or device token
-   * ## Add a registration or device token  &gt; __Note__: A user can have up to 20 FCM registration tokens, 20 HMS device tokens, and 20 APNs device tokens each. The oldest token will be deleted before a new token is added for a user who already has 20 registration or device tokens. Only the 20 newest tokens will be maintained for users who already have more than 20 of each token type.  To send notification requests to push notification services on behalf of your server, adds a specific user&#39;s FCM registration token, HMS device token, or APNs device token to Sendbird server. Depending on which push service you are using, you can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  A FCM registration token and an APNs device token allow identification of each client app instance on each device, and are generated and registered by Android and iOS apps through the corresponding SDKs. Use this method if you need to register a token via your own server.  &gt; __Note__: For more information on the registration token and device token, visit the Google&#39;s [FCM](https://firebase.google.com/docs/auth/admin/verify-id-tokens) page, Huawei&#39;s [Push kit](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050040060) and Apple&#39;s [APNs](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) page.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-add-a-registration-or-device-token ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param tokenType  (required)
-   * @param addRegistrationOrDeviceTokenData  (optional)
-   * @return AddRegistrationOrDeviceTokenResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceToken(String apiToken, String userId, String tokenType, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
-    return addRegistrationOrDeviceTokenWithHttpInfo(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData).getData();
-  }
 
-  /**
-   * Add a registration or device token
-   * ## Add a registration or device token  &gt; __Note__: A user can have up to 20 FCM registration tokens, 20 HMS device tokens, and 20 APNs device tokens each. The oldest token will be deleted before a new token is added for a user who already has 20 registration or device tokens. Only the 20 newest tokens will be maintained for users who already have more than 20 of each token type.  To send notification requests to push notification services on behalf of your server, adds a specific user&#39;s FCM registration token, HMS device token, or APNs device token to Sendbird server. Depending on which push service you are using, you can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  A FCM registration token and an APNs device token allow identification of each client app instance on each device, and are generated and registered by Android and iOS apps through the corresponding SDKs. Use this method if you need to register a token via your own server.  &gt; __Note__: For more information on the registration token and device token, visit the Google&#39;s [FCM](https://firebase.google.com/docs/auth/admin/verify-id-tokens) page, Huawei&#39;s [Push kit](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050040060) and Apple&#39;s [APNs](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) page.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-add-a-registration-or-device-token ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param tokenType  (required)
-   * @param addRegistrationOrDeviceTokenData  (optional)
-   * @return ApiResponse&lt;AddRegistrationOrDeviceTokenResponse&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDeviceTokenWithHttpInfo(String apiToken, String userId, String tokenType, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
+private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDeviceTokenWithHttpInfo(String apiToken, String userId, String tokenType, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
     Object localVarPostBody = addRegistrationOrDeviceTokenData;
     
     // verify the required parameter 'apiToken' is set
@@ -166,39 +133,85 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Choose a push notification content template
-   * ## Choose a push notification content template  Chooses a push notification content template of a user&#39;s own. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-choose-a-push-notification-content-template ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param body  (optional)
-   * @return ChoosePushNotificationContentTemplateResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ChoosePushNotificationContentTemplateResponse choosePushNotificationContentTemplate(String apiToken, String userId, Object body) throws ApiException {
-    return choosePushNotificationContentTemplateWithHttpInfo(apiToken, userId, body).getData();
+
+  public class APIaddRegistrationOrDeviceTokenRequest {
+    private String apiToken;
+    private String userId;
+    private String tokenType;
+    private AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData;
+
+    private APIaddRegistrationOrDeviceTokenRequest(String userId, String tokenType) {
+      this.userId = userId;
+      this.tokenType = tokenType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIaddRegistrationOrDeviceTokenRequest
+     */
+    public APIaddRegistrationOrDeviceTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set addRegistrationOrDeviceTokenData
+     * @param addRegistrationOrDeviceTokenData  (optional)
+     * @return APIaddRegistrationOrDeviceTokenRequest
+     */
+    public APIaddRegistrationOrDeviceTokenRequest addRegistrationOrDeviceTokenData(AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) {
+      this.addRegistrationOrDeviceTokenData = addRegistrationOrDeviceTokenData;
+      return this;
+    }
+
+    /**
+     * Execute addRegistrationOrDeviceToken request
+     * @return AddRegistrationOrDeviceTokenResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public AddRegistrationOrDeviceTokenResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute addRegistrationOrDeviceToken request with HTTP info returned
+     * @return ApiResponse&lt;AddRegistrationOrDeviceTokenResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<AddRegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
+      return addRegistrationOrDeviceTokenWithHttpInfo(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData);
+    }
   }
 
   /**
-   * Choose a push notification content template
-   * ## Choose a push notification content template  Chooses a push notification content template of a user&#39;s own. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-choose-a-push-notification-content-template ----------------------------
-   * @param apiToken  (required)
+   * Add a registration or device token
+   * ## Add a registration or device token  &gt; __Note__: A user can have up to 20 FCM registration tokens, 20 HMS device tokens, and 20 APNs device tokens each. The oldest token will be deleted before a new token is added for a user who already has 20 registration or device tokens. Only the 20 newest tokens will be maintained for users who already have more than 20 of each token type.  To send notification requests to push notification services on behalf of your server, adds a specific user&#39;s FCM registration token, HMS device token, or APNs device token to Sendbird server. Depending on which push service you are using, you can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  A FCM registration token and an APNs device token allow identification of each client app instance on each device, and are generated and registered by Android and iOS apps through the corresponding SDKs. Use this method if you need to register a token via your own server.  &gt; __Note__: For more information on the registration token and device token, visit the Google&#39;s [FCM](https://firebase.google.com/docs/auth/admin/verify-id-tokens) page, Huawei&#39;s [Push kit](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050040060) and Apple&#39;s [APNs](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) page.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-add-a-registration-or-device-token ----------------------------
    * @param userId  (required)
-   * @param body  (optional)
-   * @return ApiResponse&lt;ChoosePushNotificationContentTemplateResponse&gt;
+   * @param tokenType  (required)
+   * @return addRegistrationOrDeviceTokenRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNotificationContentTemplateWithHttpInfo(String apiToken, String userId, Object body) throws ApiException {
+  public APIaddRegistrationOrDeviceTokenRequest addRegistrationOrDeviceToken(String userId, String tokenType) throws ApiException {
+    return new APIaddRegistrationOrDeviceTokenRequest(userId, tokenType);
+  }
+
+private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNotificationContentTemplateWithHttpInfo(String apiToken, String userId, Object body) throws ApiException {
     Object localVarPostBody = body;
     
     // verify the required parameter 'apiToken' is set
@@ -245,37 +258,82 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Create a user
-   * ## Create a user  Creates a new user in the application. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user
-   * @param apiToken  (required)
-   * @param createUserData  (optional)
-   * @return SendBirdUser
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdUser createUser(String apiToken, CreateUserData createUserData) throws ApiException {
-    return createUserWithHttpInfo(apiToken, createUserData).getData();
+
+  public class APIchoosePushNotificationContentTemplateRequest {
+    private String apiToken;
+    private String userId;
+    private Object body;
+
+    private APIchoosePushNotificationContentTemplateRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIchoosePushNotificationContentTemplateRequest
+     */
+    public APIchoosePushNotificationContentTemplateRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set body
+     * @param body  (optional)
+     * @return APIchoosePushNotificationContentTemplateRequest
+     */
+    public APIchoosePushNotificationContentTemplateRequest body(Object body) {
+      this.body = body;
+      return this;
+    }
+
+    /**
+     * Execute choosePushNotificationContentTemplate request
+     * @return ChoosePushNotificationContentTemplateResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ChoosePushNotificationContentTemplateResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute choosePushNotificationContentTemplate request with HTTP info returned
+     * @return ApiResponse&lt;ChoosePushNotificationContentTemplateResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ChoosePushNotificationContentTemplateResponse> executeWithHttpInfo() throws ApiException {
+      return choosePushNotificationContentTemplateWithHttpInfo(apiToken, userId, body);
+    }
   }
 
   /**
-   * Create a user
-   * ## Create a user  Creates a new user in the application. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user
-   * @param apiToken  (required)
-   * @param createUserData  (optional)
-   * @return ApiResponse&lt;SendBirdUser&gt;
+   * Choose a push notification content template
+   * ## Choose a push notification content template  Chooses a push notification content template of a user&#39;s own. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-choose-a-push-notification-content-template ----------------------------
+   * @param userId  (required)
+   * @return choosePushNotificationContentTemplateRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, CreateUserData createUserData) throws ApiException {
+  public APIchoosePushNotificationContentTemplateRequest choosePushNotificationContentTemplate(String userId) throws ApiException {
+    return new APIchoosePushNotificationContentTemplateRequest(userId);
+  }
+
+private ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, CreateUserData createUserData) throws ApiException {
     Object localVarPostBody = createUserData;
     
     // verify the required parameter 'apiToken' is set
@@ -316,39 +374,79 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Create user token
-   * ## Create user token
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param createUserTokenData  (optional)
-   * @return CreateUserTokenResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public CreateUserTokenResponse createUserToken(String apiToken, String userId, CreateUserTokenData createUserTokenData) throws ApiException {
-    return createUserTokenWithHttpInfo(apiToken, userId, createUserTokenData).getData();
+
+  public class APIcreateUserRequest {
+    private String apiToken;
+    private CreateUserData createUserData;
+
+    private APIcreateUserRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIcreateUserRequest
+     */
+    public APIcreateUserRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set createUserData
+     * @param createUserData  (optional)
+     * @return APIcreateUserRequest
+     */
+    public APIcreateUserRequest createUserData(CreateUserData createUserData) {
+      this.createUserData = createUserData;
+      return this;
+    }
+
+    /**
+     * Execute createUser request
+     * @return SendBirdUser
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdUser execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute createUser request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdUser&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
+      return createUserWithHttpInfo(apiToken, createUserData);
+    }
   }
 
   /**
-   * Create user token
-   * ## Create user token
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param createUserTokenData  (optional)
-   * @return ApiResponse&lt;CreateUserTokenResponse&gt;
+   * Create a user
+   * ## Create a user  Creates a new user in the application. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user
+   * @return createUserRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String apiToken, String userId, CreateUserTokenData createUserTokenData) throws ApiException {
+  public APIcreateUserRequest createUser() throws ApiException {
+    return new APIcreateUserRequest();
+  }
+
+private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String apiToken, String userId, CreateUserTokenData createUserTokenData) throws ApiException {
     Object localVarPostBody = createUserTokenData;
     
     // verify the required parameter 'apiToken' is set
@@ -395,37 +493,82 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Delete a user
-   * ## Delete a user  Deletes a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-delete-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object deleteUserById(String apiToken, String userId) throws ApiException {
-    return deleteUserByIdWithHttpInfo(apiToken, userId).getData();
+
+  public class APIcreateUserTokenRequest {
+    private String apiToken;
+    private String userId;
+    private CreateUserTokenData createUserTokenData;
+
+    private APIcreateUserTokenRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIcreateUserTokenRequest
+     */
+    public APIcreateUserTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set createUserTokenData
+     * @param createUserTokenData  (optional)
+     * @return APIcreateUserTokenRequest
+     */
+    public APIcreateUserTokenRequest createUserTokenData(CreateUserTokenData createUserTokenData) {
+      this.createUserTokenData = createUserTokenData;
+      return this;
+    }
+
+    /**
+     * Execute createUserToken request
+     * @return CreateUserTokenResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public CreateUserTokenResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute createUserToken request with HTTP info returned
+     * @return ApiResponse&lt;CreateUserTokenResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<CreateUserTokenResponse> executeWithHttpInfo() throws ApiException {
+      return createUserTokenWithHttpInfo(apiToken, userId, createUserTokenData);
+    }
   }
 
   /**
-   * Delete a user
-   * ## Delete a user  Deletes a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-delete-a-user ----------------------------
-   * @param apiToken  (required)
+   * Create user token
+   * ## Create user token
    * @param userId  (required)
-   * @return ApiResponse&lt;Object&gt;
+   * @return createUserTokenRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> deleteUserByIdWithHttpInfo(String apiToken, String userId) throws ApiException {
+  public APIcreateUserTokenRequest createUserToken(String userId) throws ApiException {
+    return new APIcreateUserTokenRequest(userId);
+  }
+
+private ApiResponse<Object> deleteUserByIdWithHttpInfo(String apiToken, String userId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -472,39 +615,71 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Leave my group channels
-   * ## Leave my group channels  Makes a user leave all joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-leave-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to leave all joined group channels.
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param leaveMyGroupChannelsData  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object leaveMyGroupChannels(String apiToken, String userId, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
-    return leaveMyGroupChannelsWithHttpInfo(apiToken, userId, leaveMyGroupChannelsData).getData();
+
+  public class APIdeleteUserByIdRequest {
+    private String apiToken;
+    private String userId;
+
+    private APIdeleteUserByIdRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIdeleteUserByIdRequest
+     */
+    public APIdeleteUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute deleteUserById request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteUserById request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return deleteUserByIdWithHttpInfo(apiToken, userId);
+    }
   }
 
   /**
-   * Leave my group channels
-   * ## Leave my group channels  Makes a user leave all joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-leave-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to leave all joined group channels.
-   * @param apiToken  (required)
+   * Delete a user
+   * ## Delete a user  Deletes a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-delete-a-user ----------------------------
    * @param userId  (required)
-   * @param leaveMyGroupChannelsData  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return deleteUserByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String apiToken, String userId, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
+  public APIdeleteUserByIdRequest deleteUserById(String userId) throws ApiException {
+    return new APIdeleteUserByIdRequest(userId);
+  }
+
+private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String apiToken, String userId, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
     Object localVarPostBody = leaveMyGroupChannelsData;
     
     // verify the required parameter 'apiToken' is set
@@ -551,117 +726,82 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List my group channels
-   * ## List my group channels  Retrieves all group channels that the user has joined. You can create a request based on various query parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param distinctMode  (optional)
-   * @param publicMode  (optional)
-   * @param superMode  (optional)
-   * @param hiddenMode  (optional)
-   * @param memberStateFilter  (optional)
-   * @param unreadFilter  (optional)
-   * @param createdAfter  (optional)
-   * @param createdBefore  (optional)
-   * @param showEmpty  (optional)
-   * @param showFrozen  (optional)
-   * @param showMember  (optional)
-   * @param showDeliveryReceipt  (optional)
-   * @param showReadReceipt  (optional)
-   * @param order  (optional)
-   * @param metadataOrderKey  (optional)
-   * @param customTypes  (optional)
-   * @param customTypeStartswith  (optional)
-   * @param channelUrls  (optional)
-   * @param name  (optional)
-   * @param nameContains  (optional)
-   * @param nameStartswith  (optional)
-   * @param membersExactlyIn  (optional)
-   * @param membersIncludeIn  (optional)
-   * @param queryType  (optional)
-   * @param membersNickname  (optional)
-   * @param membersNicknameContains  (optional)
-   * @param searchQuery  (optional)
-   * @param searchFields  (optional)
-   * @param metadataKey  (optional)
-   * @param metadataValues  (optional)
-   * @param metadataValueStartswith  (optional)
-   * @param metacounterKey  (optional)
-   * @param metacounterValues  (optional)
-   * @param metacounterValueGt  (optional)
-   * @param metacounterValueGte  (optional)
-   * @param metacounterValueLt  (optional)
-   * @param metacounterValueLte  (optional)
-   * @param customType  (optional)
-   * @return ListMyGroupChannelsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListMyGroupChannelsResponse listMyGroupChannels(String apiToken, String userId, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
-    return listMyGroupChannelsWithHttpInfo(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType).getData();
+
+  public class APIleaveMyGroupChannelsRequest {
+    private String apiToken;
+    private String userId;
+    private LeaveMyGroupChannelsData leaveMyGroupChannelsData;
+
+    private APIleaveMyGroupChannelsRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIleaveMyGroupChannelsRequest
+     */
+    public APIleaveMyGroupChannelsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set leaveMyGroupChannelsData
+     * @param leaveMyGroupChannelsData  (optional)
+     * @return APIleaveMyGroupChannelsRequest
+     */
+    public APIleaveMyGroupChannelsRequest leaveMyGroupChannelsData(LeaveMyGroupChannelsData leaveMyGroupChannelsData) {
+      this.leaveMyGroupChannelsData = leaveMyGroupChannelsData;
+      return this;
+    }
+
+    /**
+     * Execute leaveMyGroupChannels request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute leaveMyGroupChannels request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return leaveMyGroupChannelsWithHttpInfo(apiToken, userId, leaveMyGroupChannelsData);
+    }
   }
 
   /**
-   * List my group channels
-   * ## List my group channels  Retrieves all group channels that the user has joined. You can create a request based on various query parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
-   * @param apiToken  (required)
+   * Leave my group channels
+   * ## Leave my group channels  Makes a user leave all joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-leave-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to leave all joined group channels.
    * @param userId  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param distinctMode  (optional)
-   * @param publicMode  (optional)
-   * @param superMode  (optional)
-   * @param hiddenMode  (optional)
-   * @param memberStateFilter  (optional)
-   * @param unreadFilter  (optional)
-   * @param createdAfter  (optional)
-   * @param createdBefore  (optional)
-   * @param showEmpty  (optional)
-   * @param showFrozen  (optional)
-   * @param showMember  (optional)
-   * @param showDeliveryReceipt  (optional)
-   * @param showReadReceipt  (optional)
-   * @param order  (optional)
-   * @param metadataOrderKey  (optional)
-   * @param customTypes  (optional)
-   * @param customTypeStartswith  (optional)
-   * @param channelUrls  (optional)
-   * @param name  (optional)
-   * @param nameContains  (optional)
-   * @param nameStartswith  (optional)
-   * @param membersExactlyIn  (optional)
-   * @param membersIncludeIn  (optional)
-   * @param queryType  (optional)
-   * @param membersNickname  (optional)
-   * @param membersNicknameContains  (optional)
-   * @param searchQuery  (optional)
-   * @param searchFields  (optional)
-   * @param metadataKey  (optional)
-   * @param metadataValues  (optional)
-   * @param metadataValueStartswith  (optional)
-   * @param metacounterKey  (optional)
-   * @param metacounterValues  (optional)
-   * @param metacounterValueGt  (optional)
-   * @param metacounterValueGte  (optional)
-   * @param metacounterValueLt  (optional)
-   * @param metacounterValueLte  (optional)
-   * @param customType  (optional)
-   * @return ApiResponse&lt;ListMyGroupChannelsResponse&gt;
+   * @return leaveMyGroupChannelsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
+  public APIleaveMyGroupChannelsRequest leaveMyGroupChannels(String userId) throws ApiException {
+    return new APIleaveMyGroupChannelsRequest(userId);
+  }
+
+private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -748,39 +888,511 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List registration or device tokens
-   * ## List registration or device tokens  Retrieves a list of a specific user&#39;s FCM registration tokens, HMS device tokens, or APNs device tokens. You can specify either &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; in the &#x60;token_type&#x60; parameter, depending on which push notification service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-registration-or-device-tokens ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param tokenType  (required)
-   * @return ListRegistrationOrDeviceTokensResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(String apiToken, String userId, String tokenType) throws ApiException {
-    return listRegistrationOrDeviceTokensWithHttpInfo(apiToken, userId, tokenType).getData();
+
+  public class APIlistMyGroupChannelsRequest {
+    private String apiToken;
+    private String userId;
+    private String token;
+    private Integer limit;
+    private String distinctMode;
+    private String publicMode;
+    private String superMode;
+    private String hiddenMode;
+    private String memberStateFilter;
+    private String unreadFilter;
+    private Integer createdAfter;
+    private Integer createdBefore;
+    private Boolean showEmpty;
+    private Boolean showFrozen;
+    private Boolean showMember;
+    private Boolean showDeliveryReceipt;
+    private Boolean showReadReceipt;
+    private String order;
+    private String metadataOrderKey;
+    private String customTypes;
+    private String customTypeStartswith;
+    private String channelUrls;
+    private String name;
+    private String nameContains;
+    private String nameStartswith;
+    private String membersExactlyIn;
+    private String membersIncludeIn;
+    private String queryType;
+    private String membersNickname;
+    private String membersNicknameContains;
+    private String searchQuery;
+    private String searchFields;
+    private String metadataKey;
+    private String metadataValues;
+    private String metadataValueStartswith;
+    private String metacounterKey;
+    private String metacounterValues;
+    private String metacounterValueGt;
+    private String metacounterValueGte;
+    private String metacounterValueLt;
+    private String metacounterValueLte;
+    private String customType;
+
+    private APIlistMyGroupChannelsRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Set distinctMode
+     * @param distinctMode  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest distinctMode(String distinctMode) {
+      this.distinctMode = distinctMode;
+      return this;
+    }
+
+    /**
+     * Set publicMode
+     * @param publicMode  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest publicMode(String publicMode) {
+      this.publicMode = publicMode;
+      return this;
+    }
+
+    /**
+     * Set superMode
+     * @param superMode  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest superMode(String superMode) {
+      this.superMode = superMode;
+      return this;
+    }
+
+    /**
+     * Set hiddenMode
+     * @param hiddenMode  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest hiddenMode(String hiddenMode) {
+      this.hiddenMode = hiddenMode;
+      return this;
+    }
+
+    /**
+     * Set memberStateFilter
+     * @param memberStateFilter  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest memberStateFilter(String memberStateFilter) {
+      this.memberStateFilter = memberStateFilter;
+      return this;
+    }
+
+    /**
+     * Set unreadFilter
+     * @param unreadFilter  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest unreadFilter(String unreadFilter) {
+      this.unreadFilter = unreadFilter;
+      return this;
+    }
+
+    /**
+     * Set createdAfter
+     * @param createdAfter  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest createdAfter(Integer createdAfter) {
+      this.createdAfter = createdAfter;
+      return this;
+    }
+
+    /**
+     * Set createdBefore
+     * @param createdBefore  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest createdBefore(Integer createdBefore) {
+      this.createdBefore = createdBefore;
+      return this;
+    }
+
+    /**
+     * Set showEmpty
+     * @param showEmpty  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest showEmpty(Boolean showEmpty) {
+      this.showEmpty = showEmpty;
+      return this;
+    }
+
+    /**
+     * Set showFrozen
+     * @param showFrozen  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest showFrozen(Boolean showFrozen) {
+      this.showFrozen = showFrozen;
+      return this;
+    }
+
+    /**
+     * Set showMember
+     * @param showMember  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest showMember(Boolean showMember) {
+      this.showMember = showMember;
+      return this;
+    }
+
+    /**
+     * Set showDeliveryReceipt
+     * @param showDeliveryReceipt  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest showDeliveryReceipt(Boolean showDeliveryReceipt) {
+      this.showDeliveryReceipt = showDeliveryReceipt;
+      return this;
+    }
+
+    /**
+     * Set showReadReceipt
+     * @param showReadReceipt  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest showReadReceipt(Boolean showReadReceipt) {
+      this.showReadReceipt = showReadReceipt;
+      return this;
+    }
+
+    /**
+     * Set order
+     * @param order  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest order(String order) {
+      this.order = order;
+      return this;
+    }
+
+    /**
+     * Set metadataOrderKey
+     * @param metadataOrderKey  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metadataOrderKey(String metadataOrderKey) {
+      this.metadataOrderKey = metadataOrderKey;
+      return this;
+    }
+
+    /**
+     * Set customTypes
+     * @param customTypes  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest customTypes(String customTypes) {
+      this.customTypes = customTypes;
+      return this;
+    }
+
+    /**
+     * Set customTypeStartswith
+     * @param customTypeStartswith  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest customTypeStartswith(String customTypeStartswith) {
+      this.customTypeStartswith = customTypeStartswith;
+      return this;
+    }
+
+    /**
+     * Set channelUrls
+     * @param channelUrls  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest channelUrls(String channelUrls) {
+      this.channelUrls = channelUrls;
+      return this;
+    }
+
+    /**
+     * Set name
+     * @param name  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest name(String name) {
+      this.name = name;
+      return this;
+    }
+
+    /**
+     * Set nameContains
+     * @param nameContains  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest nameContains(String nameContains) {
+      this.nameContains = nameContains;
+      return this;
+    }
+
+    /**
+     * Set nameStartswith
+     * @param nameStartswith  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest nameStartswith(String nameStartswith) {
+      this.nameStartswith = nameStartswith;
+      return this;
+    }
+
+    /**
+     * Set membersExactlyIn
+     * @param membersExactlyIn  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest membersExactlyIn(String membersExactlyIn) {
+      this.membersExactlyIn = membersExactlyIn;
+      return this;
+    }
+
+    /**
+     * Set membersIncludeIn
+     * @param membersIncludeIn  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest membersIncludeIn(String membersIncludeIn) {
+      this.membersIncludeIn = membersIncludeIn;
+      return this;
+    }
+
+    /**
+     * Set queryType
+     * @param queryType  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest queryType(String queryType) {
+      this.queryType = queryType;
+      return this;
+    }
+
+    /**
+     * Set membersNickname
+     * @param membersNickname  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest membersNickname(String membersNickname) {
+      this.membersNickname = membersNickname;
+      return this;
+    }
+
+    /**
+     * Set membersNicknameContains
+     * @param membersNicknameContains  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest membersNicknameContains(String membersNicknameContains) {
+      this.membersNicknameContains = membersNicknameContains;
+      return this;
+    }
+
+    /**
+     * Set searchQuery
+     * @param searchQuery  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest searchQuery(String searchQuery) {
+      this.searchQuery = searchQuery;
+      return this;
+    }
+
+    /**
+     * Set searchFields
+     * @param searchFields  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest searchFields(String searchFields) {
+      this.searchFields = searchFields;
+      return this;
+    }
+
+    /**
+     * Set metadataKey
+     * @param metadataKey  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metadataKey(String metadataKey) {
+      this.metadataKey = metadataKey;
+      return this;
+    }
+
+    /**
+     * Set metadataValues
+     * @param metadataValues  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metadataValues(String metadataValues) {
+      this.metadataValues = metadataValues;
+      return this;
+    }
+
+    /**
+     * Set metadataValueStartswith
+     * @param metadataValueStartswith  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metadataValueStartswith(String metadataValueStartswith) {
+      this.metadataValueStartswith = metadataValueStartswith;
+      return this;
+    }
+
+    /**
+     * Set metacounterKey
+     * @param metacounterKey  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metacounterKey(String metacounterKey) {
+      this.metacounterKey = metacounterKey;
+      return this;
+    }
+
+    /**
+     * Set metacounterValues
+     * @param metacounterValues  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metacounterValues(String metacounterValues) {
+      this.metacounterValues = metacounterValues;
+      return this;
+    }
+
+    /**
+     * Set metacounterValueGt
+     * @param metacounterValueGt  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metacounterValueGt(String metacounterValueGt) {
+      this.metacounterValueGt = metacounterValueGt;
+      return this;
+    }
+
+    /**
+     * Set metacounterValueGte
+     * @param metacounterValueGte  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metacounterValueGte(String metacounterValueGte) {
+      this.metacounterValueGte = metacounterValueGte;
+      return this;
+    }
+
+    /**
+     * Set metacounterValueLt
+     * @param metacounterValueLt  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metacounterValueLt(String metacounterValueLt) {
+      this.metacounterValueLt = metacounterValueLt;
+      return this;
+    }
+
+    /**
+     * Set metacounterValueLte
+     * @param metacounterValueLte  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest metacounterValueLte(String metacounterValueLte) {
+      this.metacounterValueLte = metacounterValueLte;
+      return this;
+    }
+
+    /**
+     * Set customType
+     * @param customType  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest customType(String customType) {
+      this.customType = customType;
+      return this;
+    }
+
+    /**
+     * Execute listMyGroupChannels request
+     * @return ListMyGroupChannelsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListMyGroupChannelsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listMyGroupChannels request with HTTP info returned
+     * @return ApiResponse&lt;ListMyGroupChannelsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListMyGroupChannelsResponse> executeWithHttpInfo() throws ApiException {
+      return listMyGroupChannelsWithHttpInfo(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+    }
   }
 
   /**
-   * List registration or device tokens
-   * ## List registration or device tokens  Retrieves a list of a specific user&#39;s FCM registration tokens, HMS device tokens, or APNs device tokens. You can specify either &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; in the &#x60;token_type&#x60; parameter, depending on which push notification service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-registration-or-device-tokens ----------------------------
-   * @param apiToken  (required)
+   * List my group channels
+   * ## List my group channels  Retrieves all group channels that the user has joined. You can create a request based on various query parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
    * @param userId  (required)
-   * @param tokenType  (required)
-   * @return ApiResponse&lt;ListRegistrationOrDeviceTokensResponse&gt;
+   * @return listMyGroupChannelsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDeviceTokensWithHttpInfo(String apiToken, String userId, String tokenType) throws ApiException {
+  public APIlistMyGroupChannelsRequest listMyGroupChannels(String userId) throws ApiException {
+    return new APIlistMyGroupChannelsRequest(userId);
+  }
+
+private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDeviceTokensWithHttpInfo(String apiToken, String userId, String tokenType) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -833,53 +1445,74 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List users
-   * ## List users  Retrieves a list of users in your application. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-users ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param activeMode  (optional)
-   * @param showBot  (optional)
-   * @param userIds  (optional)
-   * @param nickname  (optional)
-   * @param nicknameStartswith  (optional)
-   * @param metadatakey  (optional)
-   * @param metadatavaluesIn  (optional)
-   * @return ListUsersResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListUsersResponse listUsers(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn) throws ApiException {
-    return listUsersWithHttpInfo(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn).getData();
+
+  public class APIlistRegistrationOrDeviceTokensRequest {
+    private String apiToken;
+    private String userId;
+    private String tokenType;
+
+    private APIlistRegistrationOrDeviceTokensRequest(String userId, String tokenType) {
+      this.userId = userId;
+      this.tokenType = tokenType;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistRegistrationOrDeviceTokensRequest
+     */
+    public APIlistRegistrationOrDeviceTokensRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute listRegistrationOrDeviceTokens request
+     * @return ListRegistrationOrDeviceTokensResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListRegistrationOrDeviceTokensResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listRegistrationOrDeviceTokens request with HTTP info returned
+     * @return ApiResponse&lt;ListRegistrationOrDeviceTokensResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListRegistrationOrDeviceTokensResponse> executeWithHttpInfo() throws ApiException {
+      return listRegistrationOrDeviceTokensWithHttpInfo(apiToken, userId, tokenType);
+    }
   }
 
   /**
-   * List users
-   * ## List users  Retrieves a list of users in your application. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-users ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @param activeMode  (optional)
-   * @param showBot  (optional)
-   * @param userIds  (optional)
-   * @param nickname  (optional)
-   * @param nicknameStartswith  (optional)
-   * @param metadatakey  (optional)
-   * @param metadatavaluesIn  (optional)
-   * @return ApiResponse&lt;ListUsersResponse&gt;
+   * List registration or device tokens
+   * ## List registration or device tokens  Retrieves a list of a specific user&#39;s FCM registration tokens, HMS device tokens, or APNs device tokens. You can specify either &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; in the &#x60;token_type&#x60; parameter, depending on which push notification service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-registration-or-device-tokens ----------------------------
+   * @param userId  (required)
+   * @param tokenType  (required)
+   * @return listRegistrationOrDeviceTokensRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn) throws ApiException {
+  public APIlistRegistrationOrDeviceTokensRequest listRegistrationOrDeviceTokens(String userId, String tokenType) throws ApiException {
+    return new APIlistRegistrationOrDeviceTokensRequest(userId, tokenType);
+  }
+
+private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -929,39 +1562,167 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Mark all messages as read
-   * ## Mark all messages as read  Marks all of a user&#39;s unread messages as read in the joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mark-all-messages-as-read ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param markAllMessagesAsReadData  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object markAllMessagesAsRead(String apiToken, String userId, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
-    return markAllMessagesAsReadWithHttpInfo(apiToken, userId, markAllMessagesAsReadData).getData();
+
+  public class APIlistUsersRequest {
+    private String apiToken;
+    private String token;
+    private Integer limit;
+    private String activeMode;
+    private Boolean showBot;
+    private String userIds;
+    private String nickname;
+    private String nicknameStartswith;
+    private String metadatakey;
+    private String metadatavaluesIn;
+
+    private APIlistUsersRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Set activeMode
+     * @param activeMode  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest activeMode(String activeMode) {
+      this.activeMode = activeMode;
+      return this;
+    }
+
+    /**
+     * Set showBot
+     * @param showBot  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest showBot(Boolean showBot) {
+      this.showBot = showBot;
+      return this;
+    }
+
+    /**
+     * Set userIds
+     * @param userIds  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest userIds(String userIds) {
+      this.userIds = userIds;
+      return this;
+    }
+
+    /**
+     * Set nickname
+     * @param nickname  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest nickname(String nickname) {
+      this.nickname = nickname;
+      return this;
+    }
+
+    /**
+     * Set nicknameStartswith
+     * @param nicknameStartswith  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest nicknameStartswith(String nicknameStartswith) {
+      this.nicknameStartswith = nicknameStartswith;
+      return this;
+    }
+
+    /**
+     * Set metadatakey
+     * @param metadatakey  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest metadatakey(String metadatakey) {
+      this.metadatakey = metadatakey;
+      return this;
+    }
+
+    /**
+     * Set metadatavaluesIn
+     * @param metadatavaluesIn  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest metadatavaluesIn(String metadatavaluesIn) {
+      this.metadatavaluesIn = metadatavaluesIn;
+      return this;
+    }
+
+    /**
+     * Execute listUsers request
+     * @return ListUsersResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListUsersResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listUsers request with HTTP info returned
+     * @return ApiResponse&lt;ListUsersResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListUsersResponse> executeWithHttpInfo() throws ApiException {
+      return listUsersWithHttpInfo(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
+    }
   }
 
   /**
-   * Mark all messages as read
-   * ## Mark all messages as read  Marks all of a user&#39;s unread messages as read in the joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mark-all-messages-as-read ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param markAllMessagesAsReadData  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * List users
+   * ## List users  Retrieves a list of users in your application. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-users ----------------------------
+   * @return listUsersRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String apiToken, String userId, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
+  public APIlistUsersRequest listUsers() throws ApiException {
+    return new APIlistUsersRequest();
+  }
+
+private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String apiToken, String userId, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
     Object localVarPostBody = markAllMessagesAsReadData;
     
     // verify the required parameter 'apiToken' is set
@@ -1008,39 +1769,82 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Register as an operator to channels with custom channel types
-   * ## Register as an operator to channels with custom channel types  Registers a user as an operator to channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-register-as-an-operator-to-channels-with-custom-channel-types ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param registerAsOperatorToChannelsWithCustomChannelTypesData  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public Object registerAsOperatorToChannelsWithCustomChannelTypes(String apiToken, String userId, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
-    return registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData).getData();
+
+  public class APImarkAllMessagesAsReadRequest {
+    private String apiToken;
+    private String userId;
+    private MarkAllMessagesAsReadData markAllMessagesAsReadData;
+
+    private APImarkAllMessagesAsReadRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APImarkAllMessagesAsReadRequest
+     */
+    public APImarkAllMessagesAsReadRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set markAllMessagesAsReadData
+     * @param markAllMessagesAsReadData  (optional)
+     * @return APImarkAllMessagesAsReadRequest
+     */
+    public APImarkAllMessagesAsReadRequest markAllMessagesAsReadData(MarkAllMessagesAsReadData markAllMessagesAsReadData) {
+      this.markAllMessagesAsReadData = markAllMessagesAsReadData;
+      return this;
+    }
+
+    /**
+     * Execute markAllMessagesAsRead request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute markAllMessagesAsRead request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return markAllMessagesAsReadWithHttpInfo(apiToken, userId, markAllMessagesAsReadData);
+    }
   }
 
   /**
-   * Register as an operator to channels with custom channel types
-   * ## Register as an operator to channels with custom channel types  Registers a user as an operator to channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-register-as-an-operator-to-channels-with-custom-channel-types ----------------------------
-   * @param apiToken  (required)
+   * Mark all messages as read
+   * ## Mark all messages as read  Marks all of a user&#39;s unread messages as read in the joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mark-all-messages-as-read ----------------------------
    * @param userId  (required)
-   * @param registerAsOperatorToChannelsWithCustomChannelTypesData  (optional)
-   * @return ApiResponse&lt;Object&gt;
+   * @return markAllMessagesAsReadRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<Object> registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
+  public APImarkAllMessagesAsReadRequest markAllMessagesAsRead(String userId) throws ApiException {
+    return new APImarkAllMessagesAsReadRequest(userId);
+  }
+
+private ApiResponse<Object> registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
     Object localVarPostBody = registerAsOperatorToChannelsWithCustomChannelTypesData;
     
     // verify the required parameter 'apiToken' is set
@@ -1087,37 +1891,82 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Remove a registration or device token - When unregistering all device tokens
-   * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @return RemoveRegistrationOrDeviceTokenResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceToken(String apiToken, String userId) throws ApiException {
-    return removeRegistrationOrDeviceTokenWithHttpInfo(apiToken, userId).getData();
+
+  public class APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest {
+    private String apiToken;
+    private String userId;
+    private RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData;
+
+    private APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest
+     */
+    public APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set registerAsOperatorToChannelsWithCustomChannelTypesData
+     * @param registerAsOperatorToChannelsWithCustomChannelTypesData  (optional)
+     * @return APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest
+     */
+    public APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest registerAsOperatorToChannelsWithCustomChannelTypesData(RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) {
+      this.registerAsOperatorToChannelsWithCustomChannelTypesData = registerAsOperatorToChannelsWithCustomChannelTypesData;
+      return this;
+    }
+
+    /**
+     * Execute registerAsOperatorToChannelsWithCustomChannelTypes request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute registerAsOperatorToChannelsWithCustomChannelTypes request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData);
+    }
   }
 
   /**
-   * Remove a registration or device token - When unregistering all device tokens
-   * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
-   * @param apiToken  (required)
+   * Register as an operator to channels with custom channel types
+   * ## Register as an operator to channels with custom channel types  Registers a user as an operator to channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-register-as-an-operator-to-channels-with-custom-channel-types ----------------------------
    * @param userId  (required)
-   * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenResponse&gt;
+   * @return registerAsOperatorToChannelsWithCustomChannelTypesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationOrDeviceTokenWithHttpInfo(String apiToken, String userId) throws ApiException {
+  public APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest registerAsOperatorToChannelsWithCustomChannelTypes(String userId) throws ApiException {
+    return new APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest(userId);
+  }
+
+private ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationOrDeviceTokenWithHttpInfo(String apiToken, String userId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1164,41 +2013,71 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Remove a registration or device token - When unregistering a specific token
-   * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param tokenType  (required)
-   * @param token  (required)
-   * @return RemoveRegistrationOrDeviceTokenByTokenResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RemoveRegistrationOrDeviceTokenByTokenResponse removeRegistrationOrDeviceTokenByToken(String apiToken, String userId, String tokenType, String token) throws ApiException {
-    return removeRegistrationOrDeviceTokenByTokenWithHttpInfo(apiToken, userId, tokenType, token).getData();
+
+  public class APIremoveRegistrationOrDeviceTokenRequest {
+    private String apiToken;
+    private String userId;
+
+    private APIremoveRegistrationOrDeviceTokenRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIremoveRegistrationOrDeviceTokenRequest
+     */
+    public APIremoveRegistrationOrDeviceTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute removeRegistrationOrDeviceToken request
+     * @return RemoveRegistrationOrDeviceTokenResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RemoveRegistrationOrDeviceTokenResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute removeRegistrationOrDeviceToken request with HTTP info returned
+     * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RemoveRegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
+      return removeRegistrationOrDeviceTokenWithHttpInfo(apiToken, userId);
+    }
   }
 
   /**
-   * Remove a registration or device token - When unregistering a specific token
+   * Remove a registration or device token - When unregistering all device tokens
    * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
-   * @param apiToken  (required)
    * @param userId  (required)
-   * @param tokenType  (required)
-   * @param token  (required)
-   * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenByTokenResponse&gt;
+   * @return removeRegistrationOrDeviceTokenRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegistrationOrDeviceTokenByTokenWithHttpInfo(String apiToken, String userId, String tokenType, String token) throws ApiException {
+  public APIremoveRegistrationOrDeviceTokenRequest removeRegistrationOrDeviceToken(String userId) throws ApiException {
+    return new APIremoveRegistrationOrDeviceTokenRequest(userId);
+  }
+
+private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegistrationOrDeviceTokenByTokenWithHttpInfo(String apiToken, String userId, String tokenType, String token) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1257,39 +2136,77 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Remove a registration or device token from an owner
-   * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who owns it. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token-from-an-owner ----------------------------
-   * @param apiToken  (required)
-   * @param tokenType  (required)
-   * @param token  (required)
-   * @return RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse removeRegistrationOrDeviceTokenFromOwnerByToken(String apiToken, String tokenType, String token) throws ApiException {
-    return removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(apiToken, tokenType, token).getData();
+
+  public class APIremoveRegistrationOrDeviceTokenByTokenRequest {
+    private String apiToken;
+    private String userId;
+    private String tokenType;
+    private String token;
+
+    private APIremoveRegistrationOrDeviceTokenByTokenRequest(String userId, String tokenType, String token) {
+      this.userId = userId;
+      this.tokenType = tokenType;
+      this.token = token;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIremoveRegistrationOrDeviceTokenByTokenRequest
+     */
+    public APIremoveRegistrationOrDeviceTokenByTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute removeRegistrationOrDeviceTokenByToken request
+     * @return RemoveRegistrationOrDeviceTokenByTokenResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RemoveRegistrationOrDeviceTokenByTokenResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute removeRegistrationOrDeviceTokenByToken request with HTTP info returned
+     * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenByTokenResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> executeWithHttpInfo() throws ApiException {
+      return removeRegistrationOrDeviceTokenByTokenWithHttpInfo(apiToken, userId, tokenType, token);
+    }
   }
 
   /**
-   * Remove a registration or device token from an owner
-   * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who owns it. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token-from-an-owner ----------------------------
-   * @param apiToken  (required)
+   * Remove a registration or device token - When unregistering a specific token
+   * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
+   * @param userId  (required)
    * @param tokenType  (required)
    * @param token  (required)
-   * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse&gt;
+   * @return removeRegistrationOrDeviceTokenByTokenRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(String apiToken, String tokenType, String token) throws ApiException {
+  public APIremoveRegistrationOrDeviceTokenByTokenRequest removeRegistrationOrDeviceTokenByToken(String userId, String tokenType, String token) throws ApiException {
+    return new APIremoveRegistrationOrDeviceTokenByTokenRequest(userId, tokenType, token);
+  }
+
+private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(String apiToken, String tokenType, String token) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1342,37 +2259,74 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Reset push preferences
-   * ## Reset push preferences  Resets a user&#39;s push preferences. After performing this action,   &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; are set to false.  The values of the parameters associated with the time frame are all set to 0.  &#x60;timezone&#x60; is reset to &#x60;UTC&#x60;.  &#x60;push_sound&#x60; is reset to &#x60;default&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-reset-push-preferences ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @return ResetPushPreferencesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ResetPushPreferencesResponse resetPushPreferences(String apiToken, String userId) throws ApiException {
-    return resetPushPreferencesWithHttpInfo(apiToken, userId).getData();
+
+  public class APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest {
+    private String apiToken;
+    private String tokenType;
+    private String token;
+
+    private APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest(String tokenType, String token) {
+      this.tokenType = tokenType;
+      this.token = token;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest
+     */
+    public APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute removeRegistrationOrDeviceTokenFromOwnerByToken request
+     * @return RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute removeRegistrationOrDeviceTokenFromOwnerByToken request with HTTP info returned
+     * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> executeWithHttpInfo() throws ApiException {
+      return removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(apiToken, tokenType, token);
+    }
   }
 
   /**
-   * Reset push preferences
-   * ## Reset push preferences  Resets a user&#39;s push preferences. After performing this action,   &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; are set to false.  The values of the parameters associated with the time frame are all set to 0.  &#x60;timezone&#x60; is reset to &#x60;UTC&#x60;.  &#x60;push_sound&#x60; is reset to &#x60;default&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-reset-push-preferences ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @return ApiResponse&lt;ResetPushPreferencesResponse&gt;
+   * Remove a registration or device token from an owner
+   * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who owns it. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token-from-an-owner ----------------------------
+   * @param tokenType  (required)
+   * @param token  (required)
+   * @return removeRegistrationOrDeviceTokenFromOwnerByTokenRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpInfo(String apiToken, String userId) throws ApiException {
+  public APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest removeRegistrationOrDeviceTokenFromOwnerByToken(String tokenType, String token) throws ApiException {
+    return new APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest(tokenType, token);
+  }
+
+private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpInfo(String apiToken, String userId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1419,39 +2373,71 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update channel invitation preference
-   * ## Update channel invitation preference  Updates the channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, you can update the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param updateChannelInvitationPreferenceData  (optional)
-   * @return UpdateChannelInvitationPreferenceResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(String apiToken, String userId, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
-    return updateChannelInvitationPreferenceWithHttpInfo(apiToken, userId, updateChannelInvitationPreferenceData).getData();
+
+  public class APIresetPushPreferencesRequest {
+    private String apiToken;
+    private String userId;
+
+    private APIresetPushPreferencesRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIresetPushPreferencesRequest
+     */
+    public APIresetPushPreferencesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute resetPushPreferences request
+     * @return ResetPushPreferencesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ResetPushPreferencesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute resetPushPreferences request with HTTP info returned
+     * @return ApiResponse&lt;ResetPushPreferencesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ResetPushPreferencesResponse> executeWithHttpInfo() throws ApiException {
+      return resetPushPreferencesWithHttpInfo(apiToken, userId);
+    }
   }
 
   /**
-   * Update channel invitation preference
-   * ## Update channel invitation preference  Updates the channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, you can update the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference
-   * @param apiToken  (required)
+   * Reset push preferences
+   * ## Reset push preferences  Resets a user&#39;s push preferences. After performing this action,   &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; are set to false.  The values of the parameters associated with the time frame are all set to 0.  &#x60;timezone&#x60; is reset to &#x60;UTC&#x60;.  &#x60;push_sound&#x60; is reset to &#x60;default&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-reset-push-preferences ----------------------------
    * @param userId  (required)
-   * @param updateChannelInvitationPreferenceData  (optional)
-   * @return ApiResponse&lt;UpdateChannelInvitationPreferenceResponse&gt;
+   * @return resetPushPreferencesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String apiToken, String userId, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
+  public APIresetPushPreferencesRequest resetPushPreferences(String userId) throws ApiException {
+    return new APIresetPushPreferencesRequest(userId);
+  }
+
+private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String apiToken, String userId, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
     Object localVarPostBody = updateChannelInvitationPreferenceData;
     
     // verify the required parameter 'apiToken' is set
@@ -1498,41 +2484,82 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update count preference of a channel
-   * ## Update count preference of a channel  Updates count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-count-preference-of-a-channel ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param channelUrl  (required)
-   * @param updateCountPreferenceOfChannelByUrlData  (optional)
-   * @return UpdateCountPreferenceOfChannelByUrlResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfChannelByUrl(String apiToken, String userId, String channelUrl, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
-    return updateCountPreferenceOfChannelByUrlWithHttpInfo(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData).getData();
+
+  public class APIupdateChannelInvitationPreferenceRequest {
+    private String apiToken;
+    private String userId;
+    private UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData;
+
+    private APIupdateChannelInvitationPreferenceRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateChannelInvitationPreferenceRequest
+     */
+    public APIupdateChannelInvitationPreferenceRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateChannelInvitationPreferenceData
+     * @param updateChannelInvitationPreferenceData  (optional)
+     * @return APIupdateChannelInvitationPreferenceRequest
+     */
+    public APIupdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceData(UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) {
+      this.updateChannelInvitationPreferenceData = updateChannelInvitationPreferenceData;
+      return this;
+    }
+
+    /**
+     * Execute updateChannelInvitationPreference request
+     * @return UpdateChannelInvitationPreferenceResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateChannelInvitationPreferenceResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateChannelInvitationPreference request with HTTP info returned
+     * @return ApiResponse&lt;UpdateChannelInvitationPreferenceResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
+      return updateChannelInvitationPreferenceWithHttpInfo(apiToken, userId, updateChannelInvitationPreferenceData);
+    }
   }
 
   /**
-   * Update count preference of a channel
-   * ## Update count preference of a channel  Updates count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-count-preference-of-a-channel ----------------------------
-   * @param apiToken  (required)
+   * Update channel invitation preference
+   * ## Update channel invitation preference  Updates the channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, you can update the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference
    * @param userId  (required)
-   * @param channelUrl  (required)
-   * @param updateCountPreferenceOfChannelByUrlData  (optional)
-   * @return ApiResponse&lt;UpdateCountPreferenceOfChannelByUrlResponse&gt;
+   * @return updateChannelInvitationPreferenceRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
+  public APIupdateChannelInvitationPreferenceRequest updateChannelInvitationPreference(String userId) throws ApiException {
+    return new APIupdateChannelInvitationPreferenceRequest(userId);
+  }
+
+private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
     Object localVarPostBody = updateCountPreferenceOfChannelByUrlData;
     
     // verify the required parameter 'apiToken' is set
@@ -1585,39 +2612,85 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update push preferences
-   * ## Update push preferences  Updates a user&#39;s push preferences. Through this action, you can set &#x60;do_not_disturb&#x60; for a user, and update the time frame in which the setting applies.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param updatePushPreferencesData  (optional)
-   * @return UpdatePushPreferencesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdatePushPreferencesResponse updatePushPreferences(String apiToken, String userId, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
-    return updatePushPreferencesWithHttpInfo(apiToken, userId, updatePushPreferencesData).getData();
+
+  public class APIupdateCountPreferenceOfChannelByUrlRequest {
+    private String apiToken;
+    private String userId;
+    private String channelUrl;
+    private UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData;
+
+    private APIupdateCountPreferenceOfChannelByUrlRequest(String userId, String channelUrl) {
+      this.userId = userId;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateCountPreferenceOfChannelByUrlRequest
+     */
+    public APIupdateCountPreferenceOfChannelByUrlRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateCountPreferenceOfChannelByUrlData
+     * @param updateCountPreferenceOfChannelByUrlData  (optional)
+     * @return APIupdateCountPreferenceOfChannelByUrlRequest
+     */
+    public APIupdateCountPreferenceOfChannelByUrlRequest updateCountPreferenceOfChannelByUrlData(UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) {
+      this.updateCountPreferenceOfChannelByUrlData = updateCountPreferenceOfChannelByUrlData;
+      return this;
+    }
+
+    /**
+     * Execute updateCountPreferenceOfChannelByUrl request
+     * @return UpdateCountPreferenceOfChannelByUrlResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateCountPreferenceOfChannelByUrlResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateCountPreferenceOfChannelByUrl request with HTTP info returned
+     * @return ApiResponse&lt;UpdateCountPreferenceOfChannelByUrlResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
+      return updateCountPreferenceOfChannelByUrlWithHttpInfo(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData);
+    }
   }
 
   /**
-   * Update push preferences
-   * ## Update push preferences  Updates a user&#39;s push preferences. Through this action, you can set &#x60;do_not_disturb&#x60; for a user, and update the time frame in which the setting applies.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences ----------------------------
-   * @param apiToken  (required)
+   * Update count preference of a channel
+   * ## Update count preference of a channel  Updates count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-count-preference-of-a-channel ----------------------------
    * @param userId  (required)
-   * @param updatePushPreferencesData  (optional)
-   * @return ApiResponse&lt;UpdatePushPreferencesResponse&gt;
+   * @param channelUrl  (required)
+   * @return updateCountPreferenceOfChannelByUrlRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String apiToken, String userId, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
+  public APIupdateCountPreferenceOfChannelByUrlRequest updateCountPreferenceOfChannelByUrl(String userId, String channelUrl) throws ApiException {
+    return new APIupdateCountPreferenceOfChannelByUrlRequest(userId, channelUrl);
+  }
+
+private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String apiToken, String userId, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
     Object localVarPostBody = updatePushPreferencesData;
     
     // verify the required parameter 'apiToken' is set
@@ -1664,41 +2737,82 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update push preferences for a channel
-   * ## Update push preferences for a channel  Updates push preferences for a user&#39;s specific group channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences-for-a-channel ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param channelUrl  (required)
-   * @param updatePushPreferencesForChannelByUrlData  (optional)
-   * @return UpdatePushPreferencesForChannelByUrlResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdatePushPreferencesForChannelByUrlResponse updatePushPreferencesForChannelByUrl(String apiToken, String userId, String channelUrl, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
-    return updatePushPreferencesForChannelByUrlWithHttpInfo(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData).getData();
+
+  public class APIupdatePushPreferencesRequest {
+    private String apiToken;
+    private String userId;
+    private UpdatePushPreferencesData updatePushPreferencesData;
+
+    private APIupdatePushPreferencesRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdatePushPreferencesRequest
+     */
+    public APIupdatePushPreferencesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updatePushPreferencesData
+     * @param updatePushPreferencesData  (optional)
+     * @return APIupdatePushPreferencesRequest
+     */
+    public APIupdatePushPreferencesRequest updatePushPreferencesData(UpdatePushPreferencesData updatePushPreferencesData) {
+      this.updatePushPreferencesData = updatePushPreferencesData;
+      return this;
+    }
+
+    /**
+     * Execute updatePushPreferences request
+     * @return UpdatePushPreferencesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdatePushPreferencesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updatePushPreferences request with HTTP info returned
+     * @return ApiResponse&lt;UpdatePushPreferencesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdatePushPreferencesResponse> executeWithHttpInfo() throws ApiException {
+      return updatePushPreferencesWithHttpInfo(apiToken, userId, updatePushPreferencesData);
+    }
   }
 
   /**
-   * Update push preferences for a channel
-   * ## Update push preferences for a channel  Updates push preferences for a user&#39;s specific group channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences-for-a-channel ----------------------------
-   * @param apiToken  (required)
+   * Update push preferences
+   * ## Update push preferences  Updates a user&#39;s push preferences. Through this action, you can set &#x60;do_not_disturb&#x60; for a user, and update the time frame in which the setting applies.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences ----------------------------
    * @param userId  (required)
-   * @param channelUrl  (required)
-   * @param updatePushPreferencesForChannelByUrlData  (optional)
-   * @return ApiResponse&lt;UpdatePushPreferencesForChannelByUrlResponse&gt;
+   * @return updatePushPreferencesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPreferencesForChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
+  public APIupdatePushPreferencesRequest updatePushPreferences(String userId) throws ApiException {
+    return new APIupdatePushPreferencesRequest(userId);
+  }
+
+private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPreferencesForChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
     Object localVarPostBody = updatePushPreferencesForChannelByUrlData;
     
     // verify the required parameter 'apiToken' is set
@@ -1751,39 +2865,85 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update a user
-   * ## Update a user  Updates information on a user. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user. If the &#x60;leave_all_when_deactivated&#x60; is true (which it is by default), a user leaves all joined group channels when deactivated.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-a-user ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param updateUserByIdData  (optional)
-   * @return SendBirdUser
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdUser updateUserById(String apiToken, String userId, UpdateUserByIdData updateUserByIdData) throws ApiException {
-    return updateUserByIdWithHttpInfo(apiToken, userId, updateUserByIdData).getData();
+
+  public class APIupdatePushPreferencesForChannelByUrlRequest {
+    private String apiToken;
+    private String userId;
+    private String channelUrl;
+    private UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData;
+
+    private APIupdatePushPreferencesForChannelByUrlRequest(String userId, String channelUrl) {
+      this.userId = userId;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdatePushPreferencesForChannelByUrlRequest
+     */
+    public APIupdatePushPreferencesForChannelByUrlRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updatePushPreferencesForChannelByUrlData
+     * @param updatePushPreferencesForChannelByUrlData  (optional)
+     * @return APIupdatePushPreferencesForChannelByUrlRequest
+     */
+    public APIupdatePushPreferencesForChannelByUrlRequest updatePushPreferencesForChannelByUrlData(UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) {
+      this.updatePushPreferencesForChannelByUrlData = updatePushPreferencesForChannelByUrlData;
+      return this;
+    }
+
+    /**
+     * Execute updatePushPreferencesForChannelByUrl request
+     * @return UpdatePushPreferencesForChannelByUrlResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdatePushPreferencesForChannelByUrlResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updatePushPreferencesForChannelByUrl request with HTTP info returned
+     * @return ApiResponse&lt;UpdatePushPreferencesForChannelByUrlResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
+      return updatePushPreferencesForChannelByUrlWithHttpInfo(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData);
+    }
   }
 
   /**
-   * Update a user
-   * ## Update a user  Updates information on a user. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user. If the &#x60;leave_all_when_deactivated&#x60; is true (which it is by default), a user leaves all joined group channels when deactivated.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-a-user ----------------------------
-   * @param apiToken  (required)
+   * Update push preferences for a channel
+   * ## Update push preferences for a channel  Updates push preferences for a user&#39;s specific group channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences-for-a-channel ----------------------------
    * @param userId  (required)
-   * @param updateUserByIdData  (optional)
-   * @return ApiResponse&lt;SendBirdUser&gt;
+   * @param channelUrl  (required)
+   * @return updatePushPreferencesForChannelByUrlRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String apiToken, String userId, UpdateUserByIdData updateUserByIdData) throws ApiException {
+  public APIupdatePushPreferencesForChannelByUrlRequest updatePushPreferencesForChannelByUrl(String userId, String channelUrl) throws ApiException {
+    return new APIupdatePushPreferencesForChannelByUrlRequest(userId, channelUrl);
+  }
+
+private ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String apiToken, String userId, UpdateUserByIdData updateUserByIdData) throws ApiException {
     Object localVarPostBody = updateUserByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -1830,37 +2990,82 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View channel invitation preference
-   * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @return ViewChannelInvitationPreferenceResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewChannelInvitationPreferenceResponse viewChannelInvitationPreference(String apiToken, String userId) throws ApiException {
-    return viewChannelInvitationPreferenceWithHttpInfo(apiToken, userId).getData();
+
+  public class APIupdateUserByIdRequest {
+    private String apiToken;
+    private String userId;
+    private UpdateUserByIdData updateUserByIdData;
+
+    private APIupdateUserByIdRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateUserByIdRequest
+     */
+    public APIupdateUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateUserByIdData
+     * @param updateUserByIdData  (optional)
+     * @return APIupdateUserByIdRequest
+     */
+    public APIupdateUserByIdRequest updateUserByIdData(UpdateUserByIdData updateUserByIdData) {
+      this.updateUserByIdData = updateUserByIdData;
+      return this;
+    }
+
+    /**
+     * Execute updateUserById request
+     * @return SendBirdUser
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdUser execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateUserById request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdUser&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
+      return updateUserByIdWithHttpInfo(apiToken, userId, updateUserByIdData);
+    }
   }
 
   /**
-   * View channel invitation preference
-   * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
-   * @param apiToken  (required)
+   * Update a user
+   * ## Update a user  Updates information on a user. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user. If the &#x60;leave_all_when_deactivated&#x60; is true (which it is by default), a user leaves all joined group channels when deactivated.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-a-user ----------------------------
    * @param userId  (required)
-   * @return ApiResponse&lt;ViewChannelInvitationPreferenceResponse&gt;
+   * @return updateUserByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitationPreferenceWithHttpInfo(String apiToken, String userId) throws ApiException {
+  public APIupdateUserByIdRequest updateUserById(String userId) throws ApiException {
+    return new APIupdateUserByIdRequest(userId);
+  }
+
+private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitationPreferenceWithHttpInfo(String apiToken, String userId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1907,39 +3112,71 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View count preference of a channel
-   * ## View count preference of a channel  Retrieves count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-count-preference-of-a-channel ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param channelUrl  (required)
-   * @return ViewCountPreferenceOfChannelByUrlResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewCountPreferenceOfChannelByUrlResponse viewCountPreferenceOfChannelByUrl(String apiToken, String userId, String channelUrl) throws ApiException {
-    return viewCountPreferenceOfChannelByUrlWithHttpInfo(apiToken, userId, channelUrl).getData();
+
+  public class APIviewChannelInvitationPreferenceRequest {
+    private String apiToken;
+    private String userId;
+
+    private APIviewChannelInvitationPreferenceRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewChannelInvitationPreferenceRequest
+     */
+    public APIviewChannelInvitationPreferenceRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewChannelInvitationPreference request
+     * @return ViewChannelInvitationPreferenceResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewChannelInvitationPreferenceResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewChannelInvitationPreference request with HTTP info returned
+     * @return ApiResponse&lt;ViewChannelInvitationPreferenceResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
+      return viewChannelInvitationPreferenceWithHttpInfo(apiToken, userId);
+    }
   }
 
   /**
-   * View count preference of a channel
-   * ## View count preference of a channel  Retrieves count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-count-preference-of-a-channel ----------------------------
-   * @param apiToken  (required)
+   * View channel invitation preference
+   * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
    * @param userId  (required)
-   * @param channelUrl  (required)
-   * @return ApiResponse&lt;ViewCountPreferenceOfChannelByUrlResponse&gt;
+   * @return viewChannelInvitationPreferenceRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferenceOfChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl) throws ApiException {
+  public APIviewChannelInvitationPreferenceRequest viewChannelInvitationPreference(String userId) throws ApiException {
+    return new APIviewChannelInvitationPreferenceRequest(userId);
+  }
+
+private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferenceOfChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1992,39 +3229,74 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View number of channels by join status
-   * ## View number of channels by join status  Retrieves the number of a user&#39;s group channels by their join status.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-by-join-status ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param state  (optional)
-   * @return ViewNumberOfChannelsByJoinStatusResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewNumberOfChannelsByJoinStatusResponse viewNumberOfChannelsByJoinStatus(String apiToken, String userId, String state) throws ApiException {
-    return viewNumberOfChannelsByJoinStatusWithHttpInfo(apiToken, userId, state).getData();
+
+  public class APIviewCountPreferenceOfChannelByUrlRequest {
+    private String apiToken;
+    private String userId;
+    private String channelUrl;
+
+    private APIviewCountPreferenceOfChannelByUrlRequest(String userId, String channelUrl) {
+      this.userId = userId;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewCountPreferenceOfChannelByUrlRequest
+     */
+    public APIviewCountPreferenceOfChannelByUrlRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewCountPreferenceOfChannelByUrl request
+     * @return ViewCountPreferenceOfChannelByUrlResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewCountPreferenceOfChannelByUrlResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewCountPreferenceOfChannelByUrl request with HTTP info returned
+     * @return ApiResponse&lt;ViewCountPreferenceOfChannelByUrlResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
+      return viewCountPreferenceOfChannelByUrlWithHttpInfo(apiToken, userId, channelUrl);
+    }
   }
 
   /**
-   * View number of channels by join status
-   * ## View number of channels by join status  Retrieves the number of a user&#39;s group channels by their join status.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-by-join-status ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
-   * @param apiToken  (required)
+   * View count preference of a channel
+   * ## View count preference of a channel  Retrieves count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-count-preference-of-a-channel ----------------------------
    * @param userId  (required)
-   * @param state  (optional)
-   * @return ApiResponse&lt;ViewNumberOfChannelsByJoinStatusResponse&gt;
+   * @param channelUrl  (required)
+   * @return viewCountPreferenceOfChannelByUrlRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChannelsByJoinStatusWithHttpInfo(String apiToken, String userId, String state) throws ApiException {
+  public APIviewCountPreferenceOfChannelByUrlRequest viewCountPreferenceOfChannelByUrl(String userId, String channelUrl) throws ApiException {
+    return new APIviewCountPreferenceOfChannelByUrlRequest(userId, channelUrl);
+  }
+
+private ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChannelsByJoinStatusWithHttpInfo(String apiToken, String userId, String state) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2072,41 +3344,82 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View number of channels with unread messages
-   * ## View number of channels with unread messages  Retrieves the total number of a user&#39;s group channels with unread messages.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-with-unread-messages ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param customTypes  (optional)
-   * @param superMode  (optional)
-   * @return ViewNumberOfChannelsWithUnreadMessagesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(String apiToken, String userId, List<String> customTypes, String superMode) throws ApiException {
-    return viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(apiToken, userId, customTypes, superMode).getData();
+
+  public class APIviewNumberOfChannelsByJoinStatusRequest {
+    private String apiToken;
+    private String userId;
+    private String state;
+
+    private APIviewNumberOfChannelsByJoinStatusRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewNumberOfChannelsByJoinStatusRequest
+     */
+    public APIviewNumberOfChannelsByJoinStatusRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set state
+     * @param state  (optional)
+     * @return APIviewNumberOfChannelsByJoinStatusRequest
+     */
+    public APIviewNumberOfChannelsByJoinStatusRequest state(String state) {
+      this.state = state;
+      return this;
+    }
+
+    /**
+     * Execute viewNumberOfChannelsByJoinStatus request
+     * @return ViewNumberOfChannelsByJoinStatusResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewNumberOfChannelsByJoinStatusResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewNumberOfChannelsByJoinStatus request with HTTP info returned
+     * @return ApiResponse&lt;ViewNumberOfChannelsByJoinStatusResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> executeWithHttpInfo() throws ApiException {
+      return viewNumberOfChannelsByJoinStatusWithHttpInfo(apiToken, userId, state);
+    }
   }
 
   /**
-   * View number of channels with unread messages
-   * ## View number of channels with unread messages  Retrieves the total number of a user&#39;s group channels with unread messages.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-with-unread-messages ----------------------------
-   * @param apiToken  (required)
+   * View number of channels by join status
+   * ## View number of channels by join status  Retrieves the number of a user&#39;s group channels by their join status.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-by-join-status ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
    * @param userId  (required)
-   * @param customTypes  (optional)
-   * @param superMode  (optional)
-   * @return ApiResponse&lt;ViewNumberOfChannelsWithUnreadMessagesResponse&gt;
+   * @return viewNumberOfChannelsByJoinStatusRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String apiToken, String userId, List<String> customTypes, String superMode) throws ApiException {
+  public APIviewNumberOfChannelsByJoinStatusRequest viewNumberOfChannelsByJoinStatus(String userId) throws ApiException {
+    return new APIviewNumberOfChannelsByJoinStatusRequest(userId);
+  }
+
+private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String apiToken, String userId, List<String> customTypes, String superMode) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2155,41 +3468,93 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View number of unread items
-   * ## View number of unread items  Retrieves a set of total numbers of a user&#39;s unread messages, unread mentioned messages, or received invitations in either super or non-super group channels. This action is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-items ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param customType  (optional)
-   * @param itemKeys  (optional)
-   * @return ViewNumberOfUnreadItemsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewNumberOfUnreadItemsResponse viewNumberOfUnreadItems(String apiToken, String userId, String customType, String itemKeys) throws ApiException {
-    return viewNumberOfUnreadItemsWithHttpInfo(apiToken, userId, customType, itemKeys).getData();
+
+  public class APIviewNumberOfChannelsWithUnreadMessagesRequest {
+    private String apiToken;
+    private String userId;
+    private List<String> customTypes;
+    private String superMode;
+
+    private APIviewNumberOfChannelsWithUnreadMessagesRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewNumberOfChannelsWithUnreadMessagesRequest
+     */
+    public APIviewNumberOfChannelsWithUnreadMessagesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set customTypes
+     * @param customTypes  (optional)
+     * @return APIviewNumberOfChannelsWithUnreadMessagesRequest
+     */
+    public APIviewNumberOfChannelsWithUnreadMessagesRequest customTypes(List<String> customTypes) {
+      this.customTypes = customTypes;
+      return this;
+    }
+
+    /**
+     * Set superMode
+     * @param superMode  (optional)
+     * @return APIviewNumberOfChannelsWithUnreadMessagesRequest
+     */
+    public APIviewNumberOfChannelsWithUnreadMessagesRequest superMode(String superMode) {
+      this.superMode = superMode;
+      return this;
+    }
+
+    /**
+     * Execute viewNumberOfChannelsWithUnreadMessages request
+     * @return ViewNumberOfChannelsWithUnreadMessagesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewNumberOfChannelsWithUnreadMessagesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewNumberOfChannelsWithUnreadMessages request with HTTP info returned
+     * @return ApiResponse&lt;ViewNumberOfChannelsWithUnreadMessagesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
+      return viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(apiToken, userId, customTypes, superMode);
+    }
   }
 
   /**
-   * View number of unread items
-   * ## View number of unread items  Retrieves a set of total numbers of a user&#39;s unread messages, unread mentioned messages, or received invitations in either super or non-super group channels. This action is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-items ----------------------------
-   * @param apiToken  (required)
+   * View number of channels with unread messages
+   * ## View number of channels with unread messages  Retrieves the total number of a user&#39;s group channels with unread messages.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-with-unread-messages ----------------------------
    * @param userId  (required)
-   * @param customType  (optional)
-   * @param itemKeys  (optional)
-   * @return ApiResponse&lt;ViewNumberOfUnreadItemsResponse&gt;
+   * @return viewNumberOfChannelsWithUnreadMessagesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWithHttpInfo(String apiToken, String userId, String customType, String itemKeys) throws ApiException {
+  public APIviewNumberOfChannelsWithUnreadMessagesRequest viewNumberOfChannelsWithUnreadMessages(String userId) throws ApiException {
+    return new APIviewNumberOfChannelsWithUnreadMessagesRequest(userId);
+  }
+
+private ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWithHttpInfo(String apiToken, String userId, String customType, String itemKeys) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2238,41 +3603,93 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View number of unread messages
-   * ## View number of unread messages  Retrieves the total number of a user&#39;s currently unread messages in the group channels. The unread counts feature is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-messages ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param customTypes  (optional)
-   * @param superMode  (optional)
-   * @return ViewNumberOfUnreadMessagesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(String apiToken, String userId, String customTypes, String superMode) throws ApiException {
-    return viewNumberOfUnreadMessagesWithHttpInfo(apiToken, userId, customTypes, superMode).getData();
+
+  public class APIviewNumberOfUnreadItemsRequest {
+    private String apiToken;
+    private String userId;
+    private String customType;
+    private String itemKeys;
+
+    private APIviewNumberOfUnreadItemsRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewNumberOfUnreadItemsRequest
+     */
+    public APIviewNumberOfUnreadItemsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set customType
+     * @param customType  (optional)
+     * @return APIviewNumberOfUnreadItemsRequest
+     */
+    public APIviewNumberOfUnreadItemsRequest customType(String customType) {
+      this.customType = customType;
+      return this;
+    }
+
+    /**
+     * Set itemKeys
+     * @param itemKeys  (optional)
+     * @return APIviewNumberOfUnreadItemsRequest
+     */
+    public APIviewNumberOfUnreadItemsRequest itemKeys(String itemKeys) {
+      this.itemKeys = itemKeys;
+      return this;
+    }
+
+    /**
+     * Execute viewNumberOfUnreadItems request
+     * @return ViewNumberOfUnreadItemsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewNumberOfUnreadItemsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewNumberOfUnreadItems request with HTTP info returned
+     * @return ApiResponse&lt;ViewNumberOfUnreadItemsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewNumberOfUnreadItemsResponse> executeWithHttpInfo() throws ApiException {
+      return viewNumberOfUnreadItemsWithHttpInfo(apiToken, userId, customType, itemKeys);
+    }
   }
 
   /**
-   * View number of unread messages
-   * ## View number of unread messages  Retrieves the total number of a user&#39;s currently unread messages in the group channels. The unread counts feature is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-messages ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
-   * @param apiToken  (required)
+   * View number of unread items
+   * ## View number of unread items  Retrieves a set of total numbers of a user&#39;s unread messages, unread mentioned messages, or received invitations in either super or non-super group channels. This action is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-items ----------------------------
    * @param userId  (required)
-   * @param customTypes  (optional)
-   * @param superMode  (optional)
-   * @return ApiResponse&lt;ViewNumberOfUnreadMessagesResponse&gt;
+   * @return viewNumberOfUnreadItemsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String apiToken, String userId, String customTypes, String superMode) throws ApiException {
+  public APIviewNumberOfUnreadItemsRequest viewNumberOfUnreadItems(String userId) throws ApiException {
+    return new APIviewNumberOfUnreadItemsRequest(userId);
+  }
+
+private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String apiToken, String userId, String customTypes, String superMode) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2321,37 +3738,93 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View push preferences
-   * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @return ViewPushPreferencesResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewPushPreferencesResponse viewPushPreferences(String apiToken, String userId) throws ApiException {
-    return viewPushPreferencesWithHttpInfo(apiToken, userId).getData();
+
+  public class APIviewNumberOfUnreadMessagesRequest {
+    private String apiToken;
+    private String userId;
+    private String customTypes;
+    private String superMode;
+
+    private APIviewNumberOfUnreadMessagesRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewNumberOfUnreadMessagesRequest
+     */
+    public APIviewNumberOfUnreadMessagesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set customTypes
+     * @param customTypes  (optional)
+     * @return APIviewNumberOfUnreadMessagesRequest
+     */
+    public APIviewNumberOfUnreadMessagesRequest customTypes(String customTypes) {
+      this.customTypes = customTypes;
+      return this;
+    }
+
+    /**
+     * Set superMode
+     * @param superMode  (optional)
+     * @return APIviewNumberOfUnreadMessagesRequest
+     */
+    public APIviewNumberOfUnreadMessagesRequest superMode(String superMode) {
+      this.superMode = superMode;
+      return this;
+    }
+
+    /**
+     * Execute viewNumberOfUnreadMessages request
+     * @return ViewNumberOfUnreadMessagesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewNumberOfUnreadMessagesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewNumberOfUnreadMessages request with HTTP info returned
+     * @return ApiResponse&lt;ViewNumberOfUnreadMessagesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewNumberOfUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
+      return viewNumberOfUnreadMessagesWithHttpInfo(apiToken, userId, customTypes, superMode);
+    }
   }
 
   /**
-   * View push preferences
-   * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
-   * @param apiToken  (required)
+   * View number of unread messages
+   * ## View number of unread messages  Retrieves the total number of a user&#39;s currently unread messages in the group channels. The unread counts feature is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-messages ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
    * @param userId  (required)
-   * @return ApiResponse&lt;ViewPushPreferencesResponse&gt;
+   * @return viewNumberOfUnreadMessagesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo(String apiToken, String userId) throws ApiException {
+  public APIviewNumberOfUnreadMessagesRequest viewNumberOfUnreadMessages(String userId) throws ApiException {
+    return new APIviewNumberOfUnreadMessagesRequest(userId);
+  }
+
+private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo(String apiToken, String userId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2398,39 +3871,71 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View push preferences for a channel
-   * ## View push preferences for a channel  Retrieves whether a user has turned on notification messages for a specific channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences-for-a-channel ----------------------------
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param channelUrl  (required)
-   * @return ViewPushPreferencesForChannelByUrlResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewPushPreferencesForChannelByUrlResponse viewPushPreferencesForChannelByUrl(String apiToken, String userId, String channelUrl) throws ApiException {
-    return viewPushPreferencesForChannelByUrlWithHttpInfo(apiToken, userId, channelUrl).getData();
+
+  public class APIviewPushPreferencesRequest {
+    private String apiToken;
+    private String userId;
+
+    private APIviewPushPreferencesRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewPushPreferencesRequest
+     */
+    public APIviewPushPreferencesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewPushPreferences request
+     * @return ViewPushPreferencesResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewPushPreferencesResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewPushPreferences request with HTTP info returned
+     * @return ApiResponse&lt;ViewPushPreferencesResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewPushPreferencesResponse> executeWithHttpInfo() throws ApiException {
+      return viewPushPreferencesWithHttpInfo(apiToken, userId);
+    }
   }
 
   /**
-   * View push preferences for a channel
-   * ## View push preferences for a channel  Retrieves whether a user has turned on notification messages for a specific channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences-for-a-channel ----------------------------
-   * @param apiToken  (required)
+   * View push preferences
+   * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
    * @param userId  (required)
-   * @param channelUrl  (required)
-   * @return ApiResponse&lt;ViewPushPreferencesForChannelByUrlResponse&gt;
+   * @return viewPushPreferencesRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferencesForChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl) throws ApiException {
+  public APIviewPushPreferencesRequest viewPushPreferences(String userId) throws ApiException {
+    return new APIviewPushPreferencesRequest(userId);
+  }
+
+private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferencesForChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2483,43 +3988,74 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View a user
-   * ## View a user  Retrieves information on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-a-user ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve.
-   * @param apiToken  (required)
-   * @param userId  (required)
-   * @param includeUnreadCount  (optional)
-   * @param customTypes  (optional)
-   * @param superMode  (optional)
-   * @return SendBirdUser
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public SendBirdUser viewUserById(String apiToken, String userId, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
-    return viewUserByIdWithHttpInfo(apiToken, userId, includeUnreadCount, customTypes, superMode).getData();
+
+  public class APIviewPushPreferencesForChannelByUrlRequest {
+    private String apiToken;
+    private String userId;
+    private String channelUrl;
+
+    private APIviewPushPreferencesForChannelByUrlRequest(String userId, String channelUrl) {
+      this.userId = userId;
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewPushPreferencesForChannelByUrlRequest
+     */
+    public APIviewPushPreferencesForChannelByUrlRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewPushPreferencesForChannelByUrl request
+     * @return ViewPushPreferencesForChannelByUrlResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewPushPreferencesForChannelByUrlResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewPushPreferencesForChannelByUrl request with HTTP info returned
+     * @return ApiResponse&lt;ViewPushPreferencesForChannelByUrlResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewPushPreferencesForChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
+      return viewPushPreferencesForChannelByUrlWithHttpInfo(apiToken, userId, channelUrl);
+    }
   }
 
   /**
-   * View a user
-   * ## View a user  Retrieves information on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-a-user ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve.
-   * @param apiToken  (required)
+   * View push preferences for a channel
+   * ## View push preferences for a channel  Retrieves whether a user has turned on notification messages for a specific channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences-for-a-channel ----------------------------
    * @param userId  (required)
-   * @param includeUnreadCount  (optional)
-   * @param customTypes  (optional)
-   * @param superMode  (optional)
-   * @return ApiResponse&lt;SendBirdUser&gt;
+   * @param channelUrl  (required)
+   * @return viewPushPreferencesForChannelByUrlRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String apiToken, String userId, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
+  public APIviewPushPreferencesForChannelByUrlRequest viewPushPreferencesForChannelByUrl(String userId, String channelUrl) throws ApiException {
+    return new APIviewPushPreferencesForChannelByUrlRequest(userId, channelUrl);
+  }
+
+private ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String apiToken, String userId, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2569,39 +4105,104 @@ public class UserApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View who owns a registration or device token
-   * ## View who owns a registration or device token  Retrieves a user who owns a FCM registration token, HMS device token, or APNs device token. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-who-owns-a-registration-or-device-token ----------------------------
-   * @param apiToken  (required)
-   * @param tokenType  (required)
-   * @param token  (required)
-   * @return List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> viewWhoOwnsRegistrationOrDeviceTokenByToken(String apiToken, String tokenType, String token) throws ApiException {
-    return viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(apiToken, tokenType, token).getData();
+
+  public class APIviewUserByIdRequest {
+    private String apiToken;
+    private String userId;
+    private Boolean includeUnreadCount;
+    private String customTypes;
+    private String superMode;
+
+    private APIviewUserByIdRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewUserByIdRequest
+     */
+    public APIviewUserByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set includeUnreadCount
+     * @param includeUnreadCount  (optional)
+     * @return APIviewUserByIdRequest
+     */
+    public APIviewUserByIdRequest includeUnreadCount(Boolean includeUnreadCount) {
+      this.includeUnreadCount = includeUnreadCount;
+      return this;
+    }
+
+    /**
+     * Set customTypes
+     * @param customTypes  (optional)
+     * @return APIviewUserByIdRequest
+     */
+    public APIviewUserByIdRequest customTypes(String customTypes) {
+      this.customTypes = customTypes;
+      return this;
+    }
+
+    /**
+     * Set superMode
+     * @param superMode  (optional)
+     * @return APIviewUserByIdRequest
+     */
+    public APIviewUserByIdRequest superMode(String superMode) {
+      this.superMode = superMode;
+      return this;
+    }
+
+    /**
+     * Execute viewUserById request
+     * @return SendBirdUser
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendBirdUser execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewUserById request with HTTP info returned
+     * @return ApiResponse&lt;SendBirdUser&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
+      return viewUserByIdWithHttpInfo(apiToken, userId, includeUnreadCount, customTypes, superMode);
+    }
   }
 
   /**
-   * View who owns a registration or device token
-   * ## View who owns a registration or device token  Retrieves a user who owns a FCM registration token, HMS device token, or APNs device token. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-who-owns-a-registration-or-device-token ----------------------------
-   * @param apiToken  (required)
-   * @param tokenType  (required)
-   * @param token  (required)
-   * @return ApiResponse&lt;List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt;&gt;
+   * View a user
+   * ## View a user  Retrieves information on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-a-user ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve.
+   * @param userId  (required)
+   * @return viewUserByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>> viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(String apiToken, String tokenType, String token) throws ApiException {
+  public APIviewUserByIdRequest viewUserById(String userId) throws ApiException {
+    return new APIviewUserByIdRequest(userId);
+  }
+
+private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>> viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(String apiToken, String tokenType, String token) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -2653,5 +4254,71 @@ public class UserApi {
     return apiClient.invokeAPI("UserApi.viewWhoOwnsRegistrationOrDeviceTokenByToken", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest {
+    private String apiToken;
+    private String tokenType;
+    private String token;
+
+    private APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest(String tokenType, String token) {
+      this.tokenType = tokenType;
+      this.token = token;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest
+     */
+    public APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewWhoOwnsRegistrationOrDeviceTokenByToken request
+     * @return List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewWhoOwnsRegistrationOrDeviceTokenByToken request with HTTP info returned
+     * @return ApiResponse&lt;List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt;&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>> executeWithHttpInfo() throws ApiException {
+      return viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(apiToken, tokenType, token);
+    }
+  }
+
+  /**
+   * View who owns a registration or device token
+   * ## View who owns a registration or device token  Retrieves a user who owns a FCM registration token, HMS device token, or APNs device token. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-who-owns-a-registration-or-device-token ----------------------------
+   * @param tokenType  (required)
+   * @param token  (required)
+   * @return viewWhoOwnsRegistrationOrDeviceTokenByTokenRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest viewWhoOwnsRegistrationOrDeviceTokenByToken(String tokenType, String token) throws ApiException {
+    return new APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest(tokenType, token);
   }
 }

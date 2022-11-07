@@ -13,7 +13,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## cancelTheRegistrationOfGdprRequestById
 
-> cancelTheRegistrationOfGdprRequestById(apiToken, requestId)
+> cancelTheRegistrationOfGdprRequestById(requestId).apiToken(apiToken).execute();
 
 Cancel the registration of a GDPR request
 
@@ -43,7 +43,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String requestId = "requestId_example"; // String | 
         try {
-            apiInstance.cancelTheRegistrationOfGdprRequestById(apiToken, requestId);
+            api.cancelTheRegistrationOfGdprRequestById(requestId)
+                .apiToken(apiToken)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling PrivacyApi#cancelTheRegistrationOfGdprRequestById");
             System.err.println("Status code: " + e.getCode());
@@ -84,7 +86,7 @@ No authorization required
 
 ## listGdprRequests
 
-> ListGdprRequestsResponse listGdprRequests(apiToken, token, limit)
+> ListGdprRequestsResponse listGdprRequests().apiToken(apiToken).token(token).limit(limit).execute();
 
 List GDPR requests
 
@@ -115,7 +117,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListGdprRequestsResponse result = apiInstance.listGdprRequests(apiToken, token, limit);
+            ListGdprRequestsResponse result = api.listGdprRequests()
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PrivacyApi#listGdprRequests");
@@ -158,7 +164,7 @@ No authorization required
 
 ## registerGdprRequest
 
-> RegisterGdprRequestResponse registerGdprRequest(apiToken, registerGdprRequestData)
+> RegisterGdprRequestResponse registerGdprRequest().apiToken(apiToken).registerGdprRequestData(registerGdprRequestData).execute();
 
 Register a GDPR request
 
@@ -189,7 +195,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         RegisterGdprRequestData registerGdprRequestData = new RegisterGdprRequestData(); // RegisterGdprRequestData | 
         try {
-            RegisterGdprRequestResponse result = apiInstance.registerGdprRequest(apiToken, registerGdprRequestData);
+            RegisterGdprRequestResponse result = api.registerGdprRequest()
+                .apiToken(apiToken)
+                .registerGdprRequestData(registerGdprRequestData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PrivacyApi#registerGdprRequest");
@@ -231,7 +240,7 @@ No authorization required
 
 ## viewGdprRequestById
 
-> ViewGdprRequestByIdResponse viewGdprRequestById(apiToken, requestId)
+> ViewGdprRequestByIdResponse viewGdprRequestById(requestId).apiToken(apiToken).execute();
 
 View a GDPR request
 
@@ -261,7 +270,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String requestId = "requestId_example"; // String | 
         try {
-            ViewGdprRequestByIdResponse result = apiInstance.viewGdprRequestById(apiToken, requestId);
+            ViewGdprRequestByIdResponse result = api.viewGdprRequestById(requestId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PrivacyApi#viewGdprRequestById");

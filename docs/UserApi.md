@@ -39,7 +39,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## addRegistrationOrDeviceToken
 
-> AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceToken(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData)
+> AddRegistrationOrDeviceTokenResponse addRegistrationOrDeviceToken(userId, tokenType).apiToken(apiToken).addRegistrationOrDeviceTokenData(addRegistrationOrDeviceTokenData).execute();
 
 Add a registration or device token
 
@@ -77,7 +77,10 @@ public class Example {
         String tokenType = "tokenType_example"; // String | 
         AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData = new AddRegistrationOrDeviceTokenData(); // AddRegistrationOrDeviceTokenData | 
         try {
-            AddRegistrationOrDeviceTokenResponse result = apiInstance.addRegistrationOrDeviceToken(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData);
+            AddRegistrationOrDeviceTokenResponse result = api.addRegistrationOrDeviceToken(userId, tokenType)
+                .apiToken(apiToken)
+                .addRegistrationOrDeviceTokenData(addRegistrationOrDeviceTokenData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#addRegistrationOrDeviceToken");
@@ -121,7 +124,7 @@ No authorization required
 
 ## choosePushNotificationContentTemplate
 
-> ChoosePushNotificationContentTemplateResponse choosePushNotificationContentTemplate(apiToken, userId, body)
+> ChoosePushNotificationContentTemplateResponse choosePushNotificationContentTemplate(userId).apiToken(apiToken).body(body).execute();
 
 Choose a push notification content template
 
@@ -152,7 +155,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         Object body = null; // Object | 
         try {
-            ChoosePushNotificationContentTemplateResponse result = apiInstance.choosePushNotificationContentTemplate(apiToken, userId, body);
+            ChoosePushNotificationContentTemplateResponse result = api.choosePushNotificationContentTemplate(userId)
+                .apiToken(apiToken)
+                .body(body)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#choosePushNotificationContentTemplate");
@@ -195,7 +201,7 @@ No authorization required
 
 ## createUser
 
-> SendBirdUser createUser(apiToken, createUserData)
+> SendBirdUser createUser().apiToken(apiToken).createUserData(createUserData).execute();
 
 Create a user
 
@@ -224,7 +230,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         CreateUserData createUserData = new CreateUserData(); // CreateUserData | 
         try {
-            SendBirdUser result = apiInstance.createUser(apiToken, createUserData);
+            SendBirdUser result = api.createUser()
+                .apiToken(apiToken)
+                .createUserData(createUserData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#createUser");
@@ -266,7 +275,7 @@ No authorization required
 
 ## createUserToken
 
-> CreateUserTokenResponse createUserToken(apiToken, userId, createUserTokenData)
+> CreateUserTokenResponse createUserToken(userId).apiToken(apiToken).createUserTokenData(createUserTokenData).execute();
 
 Create user token
 
@@ -292,7 +301,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         CreateUserTokenData createUserTokenData = new CreateUserTokenData(); // CreateUserTokenData | 
         try {
-            CreateUserTokenResponse result = apiInstance.createUserToken(apiToken, userId, createUserTokenData);
+            CreateUserTokenResponse result = api.createUserToken(userId)
+                .apiToken(apiToken)
+                .createUserTokenData(createUserTokenData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#createUserToken");
@@ -335,7 +347,7 @@ No authorization required
 
 ## deleteUserById
 
-> Object deleteUserById(apiToken, userId)
+> Object deleteUserById(userId).apiToken(apiToken).execute();
 
 Delete a user
 
@@ -365,7 +377,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         try {
-            Object result = apiInstance.deleteUserById(apiToken, userId);
+            Object result = api.deleteUserById(userId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#deleteUserById");
@@ -407,7 +421,7 @@ No authorization required
 
 ## leaveMyGroupChannels
 
-> Object leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData)
+> Object leaveMyGroupChannels(userId).apiToken(apiToken).leaveMyGroupChannelsData(leaveMyGroupChannelsData).execute();
 
 Leave my group channels
 
@@ -442,7 +456,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         LeaveMyGroupChannelsData leaveMyGroupChannelsData = new LeaveMyGroupChannelsData(); // LeaveMyGroupChannelsData | 
         try {
-            Object result = apiInstance.leaveMyGroupChannels(apiToken, userId, leaveMyGroupChannelsData);
+            Object result = api.leaveMyGroupChannels(userId)
+                .apiToken(apiToken)
+                .leaveMyGroupChannelsData(leaveMyGroupChannelsData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#leaveMyGroupChannels");
@@ -485,7 +502,7 @@ No authorization required
 
 ## listMyGroupChannels
 
-> ListMyGroupChannelsResponse listMyGroupChannels(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType)
+> ListMyGroupChannelsResponse listMyGroupChannels(userId).apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).hiddenMode(hiddenMode).memberStateFilter(memberStateFilter).unreadFilter(unreadFilter).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showFrozen(showFrozen).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).searchQuery(searchQuery).searchFields(searchFields).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).customType(customType).execute();
 
 List my group channels
 
@@ -559,7 +576,49 @@ public class Example {
         String metacounterValueLte = "metacounterValueLte_example"; // String | 
         String customType = "customType_example"; // String | 
         try {
-            ListMyGroupChannelsResponse result = apiInstance.listMyGroupChannels(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+            ListMyGroupChannelsResponse result = api.listMyGroupChannels(userId)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .distinctMode(distinctMode)
+                .publicMode(publicMode)
+                .superMode(superMode)
+                .hiddenMode(hiddenMode)
+                .memberStateFilter(memberStateFilter)
+                .unreadFilter(unreadFilter)
+                .createdAfter(createdAfter)
+                .createdBefore(createdBefore)
+                .showEmpty(showEmpty)
+                .showFrozen(showFrozen)
+                .showMember(showMember)
+                .showDeliveryReceipt(showDeliveryReceipt)
+                .showReadReceipt(showReadReceipt)
+                .order(order)
+                .metadataOrderKey(metadataOrderKey)
+                .customTypes(customTypes)
+                .customTypeStartswith(customTypeStartswith)
+                .channelUrls(channelUrls)
+                .name(name)
+                .nameContains(nameContains)
+                .nameStartswith(nameStartswith)
+                .membersExactlyIn(membersExactlyIn)
+                .membersIncludeIn(membersIncludeIn)
+                .queryType(queryType)
+                .membersNickname(membersNickname)
+                .membersNicknameContains(membersNicknameContains)
+                .searchQuery(searchQuery)
+                .searchFields(searchFields)
+                .metadataKey(metadataKey)
+                .metadataValues(metadataValues)
+                .metadataValueStartswith(metadataValueStartswith)
+                .metacounterKey(metacounterKey)
+                .metacounterValues(metacounterValues)
+                .metacounterValueGt(metacounterValueGt)
+                .metacounterValueGte(metacounterValueGte)
+                .metacounterValueLt(metacounterValueLt)
+                .metacounterValueLte(metacounterValueLte)
+                .customType(customType)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#listMyGroupChannels");
@@ -641,7 +700,7 @@ No authorization required
 
 ## listRegistrationOrDeviceTokens
 
-> ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(apiToken, userId, tokenType)
+> ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(userId, tokenType).apiToken(apiToken).execute();
 
 List registration or device tokens
 
@@ -672,7 +731,9 @@ public class Example {
         String userId = "userId_example"; // String | 
         String tokenType = "tokenType_example"; // String | 
         try {
-            ListRegistrationOrDeviceTokensResponse result = apiInstance.listRegistrationOrDeviceTokens(apiToken, userId, tokenType);
+            ListRegistrationOrDeviceTokensResponse result = api.listRegistrationOrDeviceTokens(userId, tokenType)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#listRegistrationOrDeviceTokens");
@@ -715,7 +776,7 @@ No authorization required
 
 ## listUsers
 
-> ListUsersResponse listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn)
+> ListUsersResponse listUsers().apiToken(apiToken).token(token).limit(limit).activeMode(activeMode).showBot(showBot).userIds(userIds).nickname(nickname).nicknameStartswith(nicknameStartswith).metadatakey(metadatakey).metadatavaluesIn(metadatavaluesIn).execute();
 
 List users
 
@@ -753,7 +814,18 @@ public class Example {
         String metadatakey = "metadatakey_example"; // String | 
         String metadatavaluesIn = "metadatavaluesIn_example"; // String | 
         try {
-            ListUsersResponse result = apiInstance.listUsers(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
+            ListUsersResponse result = api.listUsers()
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .activeMode(activeMode)
+                .showBot(showBot)
+                .userIds(userIds)
+                .nickname(nickname)
+                .nicknameStartswith(nicknameStartswith)
+                .metadatakey(metadatakey)
+                .metadatavaluesIn(metadatavaluesIn)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#listUsers");
@@ -803,7 +875,7 @@ No authorization required
 
 ## markAllMessagesAsRead
 
-> Object markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData)
+> Object markAllMessagesAsRead(userId).apiToken(apiToken).markAllMessagesAsReadData(markAllMessagesAsReadData).execute();
 
 Mark all messages as read
 
@@ -834,7 +906,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         MarkAllMessagesAsReadData markAllMessagesAsReadData = new MarkAllMessagesAsReadData(); // MarkAllMessagesAsReadData | 
         try {
-            Object result = apiInstance.markAllMessagesAsRead(apiToken, userId, markAllMessagesAsReadData);
+            Object result = api.markAllMessagesAsRead(userId)
+                .apiToken(apiToken)
+                .markAllMessagesAsReadData(markAllMessagesAsReadData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#markAllMessagesAsRead");
@@ -877,7 +952,7 @@ No authorization required
 
 ## registerAsOperatorToChannelsWithCustomChannelTypes
 
-> Object registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData)
+> Object registerAsOperatorToChannelsWithCustomChannelTypes(userId).apiToken(apiToken).registerAsOperatorToChannelsWithCustomChannelTypesData(registerAsOperatorToChannelsWithCustomChannelTypesData).execute();
 
 Register as an operator to channels with custom channel types
 
@@ -908,7 +983,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData = new RegisterAsOperatorToChannelsWithCustomChannelTypesData(); // RegisterAsOperatorToChannelsWithCustomChannelTypesData | 
         try {
-            Object result = apiInstance.registerAsOperatorToChannelsWithCustomChannelTypes(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData);
+            Object result = api.registerAsOperatorToChannelsWithCustomChannelTypes(userId)
+                .apiToken(apiToken)
+                .registerAsOperatorToChannelsWithCustomChannelTypesData(registerAsOperatorToChannelsWithCustomChannelTypesData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#registerAsOperatorToChannelsWithCustomChannelTypes");
@@ -951,7 +1029,7 @@ No authorization required
 
 ## removeRegistrationOrDeviceToken
 
-> RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceToken(apiToken, userId)
+> RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceToken(userId).apiToken(apiToken).execute();
 
 Remove a registration or device token - When unregistering all device tokens
 
@@ -981,7 +1059,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         try {
-            RemoveRegistrationOrDeviceTokenResponse result = apiInstance.removeRegistrationOrDeviceToken(apiToken, userId);
+            RemoveRegistrationOrDeviceTokenResponse result = api.removeRegistrationOrDeviceToken(userId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#removeRegistrationOrDeviceToken");
@@ -1023,7 +1103,7 @@ No authorization required
 
 ## removeRegistrationOrDeviceTokenByToken
 
-> RemoveRegistrationOrDeviceTokenByTokenResponse removeRegistrationOrDeviceTokenByToken(apiToken, userId, tokenType, token)
+> RemoveRegistrationOrDeviceTokenByTokenResponse removeRegistrationOrDeviceTokenByToken(userId, tokenType, token).apiToken(apiToken).execute();
 
 Remove a registration or device token - When unregistering a specific token
 
@@ -1055,7 +1135,9 @@ public class Example {
         String tokenType = "tokenType_example"; // String | 
         String token = "token_example"; // String | 
         try {
-            RemoveRegistrationOrDeviceTokenByTokenResponse result = apiInstance.removeRegistrationOrDeviceTokenByToken(apiToken, userId, tokenType, token);
+            RemoveRegistrationOrDeviceTokenByTokenResponse result = api.removeRegistrationOrDeviceTokenByToken(userId, tokenType, token)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#removeRegistrationOrDeviceTokenByToken");
@@ -1099,7 +1181,7 @@ No authorization required
 
 ## removeRegistrationOrDeviceTokenFromOwnerByToken
 
-> RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse removeRegistrationOrDeviceTokenFromOwnerByToken(apiToken, tokenType, token)
+> RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token).apiToken(apiToken).execute();
 
 Remove a registration or device token from an owner
 
@@ -1130,7 +1212,9 @@ public class Example {
         String tokenType = "tokenType_example"; // String | 
         String token = "token_example"; // String | 
         try {
-            RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse result = apiInstance.removeRegistrationOrDeviceTokenFromOwnerByToken(apiToken, tokenType, token);
+            RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse result = api.removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#removeRegistrationOrDeviceTokenFromOwnerByToken");
@@ -1173,7 +1257,7 @@ No authorization required
 
 ## resetPushPreferences
 
-> ResetPushPreferencesResponse resetPushPreferences(apiToken, userId)
+> ResetPushPreferencesResponse resetPushPreferences(userId).apiToken(apiToken).execute();
 
 Reset push preferences
 
@@ -1208,7 +1292,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         try {
-            ResetPushPreferencesResponse result = apiInstance.resetPushPreferences(apiToken, userId);
+            ResetPushPreferencesResponse result = api.resetPushPreferences(userId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#resetPushPreferences");
@@ -1250,7 +1336,7 @@ No authorization required
 
 ## updateChannelInvitationPreference
 
-> UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(apiToken, userId, updateChannelInvitationPreferenceData)
+> UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(userId).apiToken(apiToken).updateChannelInvitationPreferenceData(updateChannelInvitationPreferenceData).execute();
 
 Update channel invitation preference
 
@@ -1282,7 +1368,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData = new UpdateChannelInvitationPreferenceData(); // UpdateChannelInvitationPreferenceData | 
         try {
-            UpdateChannelInvitationPreferenceResponse result = apiInstance.updateChannelInvitationPreference(apiToken, userId, updateChannelInvitationPreferenceData);
+            UpdateChannelInvitationPreferenceResponse result = api.updateChannelInvitationPreference(userId)
+                .apiToken(apiToken)
+                .updateChannelInvitationPreferenceData(updateChannelInvitationPreferenceData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#updateChannelInvitationPreference");
@@ -1325,7 +1414,7 @@ No authorization required
 
 ## updateCountPreferenceOfChannelByUrl
 
-> UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData)
+> UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfChannelByUrl(userId, channelUrl).apiToken(apiToken).updateCountPreferenceOfChannelByUrlData(updateCountPreferenceOfChannelByUrlData).execute();
 
 Update count preference of a channel
 
@@ -1357,7 +1446,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData = new UpdateCountPreferenceOfChannelByUrlData(); // UpdateCountPreferenceOfChannelByUrlData | 
         try {
-            UpdateCountPreferenceOfChannelByUrlResponse result = apiInstance.updateCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData);
+            UpdateCountPreferenceOfChannelByUrlResponse result = api.updateCountPreferenceOfChannelByUrl(userId, channelUrl)
+                .apiToken(apiToken)
+                .updateCountPreferenceOfChannelByUrlData(updateCountPreferenceOfChannelByUrlData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#updateCountPreferenceOfChannelByUrl");
@@ -1401,7 +1493,7 @@ No authorization required
 
 ## updatePushPreferences
 
-> UpdatePushPreferencesResponse updatePushPreferences(apiToken, userId, updatePushPreferencesData)
+> UpdatePushPreferencesResponse updatePushPreferences(userId).apiToken(apiToken).updatePushPreferencesData(updatePushPreferencesData).execute();
 
 Update push preferences
 
@@ -1432,7 +1524,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         UpdatePushPreferencesData updatePushPreferencesData = new UpdatePushPreferencesData(); // UpdatePushPreferencesData | 
         try {
-            UpdatePushPreferencesResponse result = apiInstance.updatePushPreferences(apiToken, userId, updatePushPreferencesData);
+            UpdatePushPreferencesResponse result = api.updatePushPreferences(userId)
+                .apiToken(apiToken)
+                .updatePushPreferencesData(updatePushPreferencesData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#updatePushPreferences");
@@ -1475,7 +1570,7 @@ No authorization required
 
 ## updatePushPreferencesForChannelByUrl
 
-> UpdatePushPreferencesForChannelByUrlResponse updatePushPreferencesForChannelByUrl(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData)
+> UpdatePushPreferencesForChannelByUrlResponse updatePushPreferencesForChannelByUrl(userId, channelUrl).apiToken(apiToken).updatePushPreferencesForChannelByUrlData(updatePushPreferencesForChannelByUrlData).execute();
 
 Update push preferences for a channel
 
@@ -1507,7 +1602,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData = new UpdatePushPreferencesForChannelByUrlData(); // UpdatePushPreferencesForChannelByUrlData | 
         try {
-            UpdatePushPreferencesForChannelByUrlResponse result = apiInstance.updatePushPreferencesForChannelByUrl(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData);
+            UpdatePushPreferencesForChannelByUrlResponse result = api.updatePushPreferencesForChannelByUrl(userId, channelUrl)
+                .apiToken(apiToken)
+                .updatePushPreferencesForChannelByUrlData(updatePushPreferencesForChannelByUrlData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#updatePushPreferencesForChannelByUrl");
@@ -1551,7 +1649,7 @@ No authorization required
 
 ## updateUserById
 
-> SendBirdUser updateUserById(apiToken, userId, updateUserByIdData)
+> SendBirdUser updateUserById(userId).apiToken(apiToken).updateUserByIdData(updateUserByIdData).execute();
 
 Update a user
 
@@ -1584,7 +1682,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         UpdateUserByIdData updateUserByIdData = new UpdateUserByIdData(); // UpdateUserByIdData | 
         try {
-            SendBirdUser result = apiInstance.updateUserById(apiToken, userId, updateUserByIdData);
+            SendBirdUser result = api.updateUserById(userId)
+                .apiToken(apiToken)
+                .updateUserByIdData(updateUserByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#updateUserById");
@@ -1627,7 +1728,7 @@ No authorization required
 
 ## viewChannelInvitationPreference
 
-> ViewChannelInvitationPreferenceResponse viewChannelInvitationPreference(apiToken, userId)
+> ViewChannelInvitationPreferenceResponse viewChannelInvitationPreference(userId).apiToken(apiToken).execute();
 
 View channel invitation preference
 
@@ -1658,7 +1759,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         try {
-            ViewChannelInvitationPreferenceResponse result = apiInstance.viewChannelInvitationPreference(apiToken, userId);
+            ViewChannelInvitationPreferenceResponse result = api.viewChannelInvitationPreference(userId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewChannelInvitationPreference");
@@ -1700,7 +1803,7 @@ No authorization required
 
 ## viewCountPreferenceOfChannelByUrl
 
-> ViewCountPreferenceOfChannelByUrlResponse viewCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl)
+> ViewCountPreferenceOfChannelByUrlResponse viewCountPreferenceOfChannelByUrl(userId, channelUrl).apiToken(apiToken).execute();
 
 View count preference of a channel
 
@@ -1731,7 +1834,9 @@ public class Example {
         String userId = "userId_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
-            ViewCountPreferenceOfChannelByUrlResponse result = apiInstance.viewCountPreferenceOfChannelByUrl(apiToken, userId, channelUrl);
+            ViewCountPreferenceOfChannelByUrlResponse result = api.viewCountPreferenceOfChannelByUrl(userId, channelUrl)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewCountPreferenceOfChannelByUrl");
@@ -1774,7 +1879,7 @@ No authorization required
 
 ## viewNumberOfChannelsByJoinStatus
 
-> ViewNumberOfChannelsByJoinStatusResponse viewNumberOfChannelsByJoinStatus(apiToken, userId, state)
+> ViewNumberOfChannelsByJoinStatusResponse viewNumberOfChannelsByJoinStatus(userId).apiToken(apiToken).state(state).execute();
 
 View number of channels by join status
 
@@ -1809,7 +1914,10 @@ public class Example {
         String userId = "userId_example"; // String | 
         String state = "state_example"; // String | 
         try {
-            ViewNumberOfChannelsByJoinStatusResponse result = apiInstance.viewNumberOfChannelsByJoinStatus(apiToken, userId, state);
+            ViewNumberOfChannelsByJoinStatusResponse result = api.viewNumberOfChannelsByJoinStatus(userId)
+                .apiToken(apiToken)
+                .state(state)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewNumberOfChannelsByJoinStatus");
@@ -1852,7 +1960,7 @@ No authorization required
 
 ## viewNumberOfChannelsWithUnreadMessages
 
-> ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(apiToken, userId, customTypes, superMode)
+> ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(userId).apiToken(apiToken).customTypes(customTypes).superMode(superMode).execute();
 
 View number of channels with unread messages
 
@@ -1884,7 +1992,11 @@ public class Example {
         List<String> customTypes = Arrays.asList(); // List<String> | 
         String superMode = "superMode_example"; // String | 
         try {
-            ViewNumberOfChannelsWithUnreadMessagesResponse result = apiInstance.viewNumberOfChannelsWithUnreadMessages(apiToken, userId, customTypes, superMode);
+            ViewNumberOfChannelsWithUnreadMessagesResponse result = api.viewNumberOfChannelsWithUnreadMessages(userId)
+                .apiToken(apiToken)
+                .customTypes(customTypes)
+                .superMode(superMode)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewNumberOfChannelsWithUnreadMessages");
@@ -1928,7 +2040,7 @@ No authorization required
 
 ## viewNumberOfUnreadItems
 
-> ViewNumberOfUnreadItemsResponse viewNumberOfUnreadItems(apiToken, userId, customType, itemKeys)
+> ViewNumberOfUnreadItemsResponse viewNumberOfUnreadItems(userId).apiToken(apiToken).customType(customType).itemKeys(itemKeys).execute();
 
 View number of unread items
 
@@ -1960,7 +2072,11 @@ public class Example {
         String customType = "customType_example"; // String | 
         String itemKeys = "itemKeys_example"; // String | 
         try {
-            ViewNumberOfUnreadItemsResponse result = apiInstance.viewNumberOfUnreadItems(apiToken, userId, customType, itemKeys);
+            ViewNumberOfUnreadItemsResponse result = api.viewNumberOfUnreadItems(userId)
+                .apiToken(apiToken)
+                .customType(customType)
+                .itemKeys(itemKeys)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewNumberOfUnreadItems");
@@ -2004,7 +2120,7 @@ No authorization required
 
 ## viewNumberOfUnreadMessages
 
-> ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(apiToken, userId, customTypes, superMode)
+> ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(userId).apiToken(apiToken).customTypes(customTypes).superMode(superMode).execute();
 
 View number of unread messages
 
@@ -2040,7 +2156,11 @@ public class Example {
         String customTypes = "customTypes_example"; // String | 
         String superMode = "superMode_example"; // String | 
         try {
-            ViewNumberOfUnreadMessagesResponse result = apiInstance.viewNumberOfUnreadMessages(apiToken, userId, customTypes, superMode);
+            ViewNumberOfUnreadMessagesResponse result = api.viewNumberOfUnreadMessages(userId)
+                .apiToken(apiToken)
+                .customTypes(customTypes)
+                .superMode(superMode)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewNumberOfUnreadMessages");
@@ -2084,7 +2204,7 @@ No authorization required
 
 ## viewPushPreferences
 
-> ViewPushPreferencesResponse viewPushPreferences(apiToken, userId)
+> ViewPushPreferencesResponse viewPushPreferences(userId).apiToken(apiToken).execute();
 
 View push preferences
 
@@ -2114,7 +2234,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         try {
-            ViewPushPreferencesResponse result = apiInstance.viewPushPreferences(apiToken, userId);
+            ViewPushPreferencesResponse result = api.viewPushPreferences(userId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewPushPreferences");
@@ -2156,7 +2278,7 @@ No authorization required
 
 ## viewPushPreferencesForChannelByUrl
 
-> ViewPushPreferencesForChannelByUrlResponse viewPushPreferencesForChannelByUrl(apiToken, userId, channelUrl)
+> ViewPushPreferencesForChannelByUrlResponse viewPushPreferencesForChannelByUrl(userId, channelUrl).apiToken(apiToken).execute();
 
 View push preferences for a channel
 
@@ -2187,7 +2309,9 @@ public class Example {
         String userId = "userId_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
-            ViewPushPreferencesForChannelByUrlResponse result = apiInstance.viewPushPreferencesForChannelByUrl(apiToken, userId, channelUrl);
+            ViewPushPreferencesForChannelByUrlResponse result = api.viewPushPreferencesForChannelByUrl(userId, channelUrl)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewPushPreferencesForChannelByUrl");
@@ -2230,7 +2354,7 @@ No authorization required
 
 ## viewUserById
 
-> SendBirdUser viewUserById(apiToken, userId, includeUnreadCount, customTypes, superMode)
+> SendBirdUser viewUserById(userId).apiToken(apiToken).includeUnreadCount(includeUnreadCount).customTypes(customTypes).superMode(superMode).execute();
 
 View a user
 
@@ -2267,7 +2391,12 @@ public class Example {
         String customTypes = "customTypes_example"; // String | 
         String superMode = "superMode_example"; // String | 
         try {
-            SendBirdUser result = apiInstance.viewUserById(apiToken, userId, includeUnreadCount, customTypes, superMode);
+            SendBirdUser result = api.viewUserById(userId)
+                .apiToken(apiToken)
+                .includeUnreadCount(includeUnreadCount)
+                .customTypes(customTypes)
+                .superMode(superMode)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewUserById");
@@ -2312,7 +2441,7 @@ No authorization required
 
 ## viewWhoOwnsRegistrationOrDeviceTokenByToken
 
-> List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt; viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token)
+> List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt; viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token).apiToken(apiToken).execute();
 
 View who owns a registration or device token
 
@@ -2343,7 +2472,9 @@ public class Example {
         String tokenType = "tokenType_example"; // String | 
         String token = "token_example"; // String | 
         try {
-            List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> result = apiInstance.viewWhoOwnsRegistrationOrDeviceTokenByToken(apiToken, tokenType, token);
+            List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> result = api.viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#viewWhoOwnsRegistrationOrDeviceTokenByToken");

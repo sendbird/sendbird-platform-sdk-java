@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class AnnouncementApi {
   private ApiClient apiClient;
 
@@ -54,37 +54,8 @@ public class AnnouncementApi {
     this.apiClient = apiClient;
   }
 
-  /**
-   * Get detailed open rate of an announcement group
-   * ## Get detailed open rate of an announcement group  Retrieves the detailed open rate information of an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement-group ----------------------------
-   * @param apiToken  (required)
-   * @param announcementGroup  (required)
-   * @return GetDetailedOpenRateOfAnnouncementGroupResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GetDetailedOpenRateOfAnnouncementGroupResponse getDetailedOpenRateOfAnnouncementGroup(String apiToken, String announcementGroup) throws ApiException {
-    return getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(apiToken, announcementGroup).getData();
-  }
 
-  /**
-   * Get detailed open rate of an announcement group
-   * ## Get detailed open rate of an announcement group  Retrieves the detailed open rate information of an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement-group ----------------------------
-   * @param apiToken  (required)
-   * @param announcementGroup  (required)
-   * @return ApiResponse&lt;GetDetailedOpenRateOfAnnouncementGroupResponse&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(String apiToken, String announcementGroup) throws ApiException {
+private ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(String apiToken, String announcementGroup) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -131,35 +102,71 @@ public class AnnouncementApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Get statistics - weekly
-   * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-   * @param apiToken  (required)
-   * @return GetStatisticsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GetStatisticsResponse getStatistics(String apiToken) throws ApiException {
-    return getStatisticsWithHttpInfo(apiToken).getData();
+
+  public class APIgetDetailedOpenRateOfAnnouncementGroupRequest {
+    private String apiToken;
+    private String announcementGroup;
+
+    private APIgetDetailedOpenRateOfAnnouncementGroupRequest(String announcementGroup) {
+      this.announcementGroup = announcementGroup;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgetDetailedOpenRateOfAnnouncementGroupRequest
+     */
+    public APIgetDetailedOpenRateOfAnnouncementGroupRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute getDetailedOpenRateOfAnnouncementGroup request
+     * @return GetDetailedOpenRateOfAnnouncementGroupResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GetDetailedOpenRateOfAnnouncementGroupResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getDetailedOpenRateOfAnnouncementGroup request with HTTP info returned
+     * @return ApiResponse&lt;GetDetailedOpenRateOfAnnouncementGroupResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> executeWithHttpInfo() throws ApiException {
+      return getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(apiToken, announcementGroup);
+    }
   }
 
   /**
-   * Get statistics - weekly
-   * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;GetStatisticsResponse&gt;
+   * Get detailed open rate of an announcement group
+   * ## Get detailed open rate of an announcement group  Retrieves the detailed open rate information of an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement-group ----------------------------
+   * @param announcementGroup  (required)
+   * @return getDetailedOpenRateOfAnnouncementGroupRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GetStatisticsResponse> getStatisticsWithHttpInfo(String apiToken) throws ApiException {
+  public APIgetDetailedOpenRateOfAnnouncementGroupRequest getDetailedOpenRateOfAnnouncementGroup(String announcementGroup) throws ApiException {
+    return new APIgetDetailedOpenRateOfAnnouncementGroupRequest(announcementGroup);
+  }
+
+private ApiResponse<GetStatisticsResponse> getStatisticsWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -200,49 +207,68 @@ public class AnnouncementApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Get statistics - daily
-   * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-   * @param apiToken  (required)
-   * @param startDate  (required)
-   * @param endDate  (required)
-   * @param startWeek  (required)
-   * @param endWeek  (required)
-   * @param startMonth  (required)
-   * @param endMonth  (required)
-   * @param announcementGroup  (optional)
-   * @return GetStatisticsDailyResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GetStatisticsDailyResponse getStatisticsDaily(String apiToken, String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String announcementGroup) throws ApiException {
-    return getStatisticsDailyWithHttpInfo(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup).getData();
+
+  public class APIgetStatisticsRequest {
+    private String apiToken;
+
+    private APIgetStatisticsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgetStatisticsRequest
+     */
+    public APIgetStatisticsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute getStatistics request
+     * @return GetStatisticsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GetStatisticsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getStatistics request with HTTP info returned
+     * @return ApiResponse&lt;GetStatisticsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GetStatisticsResponse> executeWithHttpInfo() throws ApiException {
+      return getStatisticsWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * Get statistics - daily
+   * Get statistics - weekly
    * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-   * @param apiToken  (required)
-   * @param startDate  (required)
-   * @param endDate  (required)
-   * @param startWeek  (required)
-   * @param endWeek  (required)
-   * @param startMonth  (required)
-   * @param endMonth  (required)
-   * @param announcementGroup  (optional)
-   * @return ApiResponse&lt;GetStatisticsDailyResponse&gt;
+   * @return getStatisticsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(String apiToken, String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String announcementGroup) throws ApiException {
+  public APIgetStatisticsRequest getStatistics() throws ApiException {
+    return new APIgetStatisticsRequest();
+  }
+
+private ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(String apiToken, String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String announcementGroup) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -320,35 +346,145 @@ public class AnnouncementApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Get statistics - monthly
-   * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-   * @param apiToken  (required)
-   * @return GetStatisticsMonthlyResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public GetStatisticsMonthlyResponse getStatisticsMonthly(String apiToken) throws ApiException {
-    return getStatisticsMonthlyWithHttpInfo(apiToken).getData();
+
+  public class APIgetStatisticsDailyRequest {
+    private String apiToken;
+    private String startDate;
+    private String endDate;
+    private String startWeek;
+    private String endWeek;
+    private String startMonth;
+    private String endMonth;
+    private String announcementGroup;
+
+    private APIgetStatisticsDailyRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgetStatisticsDailyRequest
+     */
+    public APIgetStatisticsDailyRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set startDate
+     * @param startDate  (required)
+     * @return APIgetStatisticsDailyRequest
+     */
+    public APIgetStatisticsDailyRequest startDate(String startDate) {
+      this.startDate = startDate;
+      return this;
+    }
+
+    /**
+     * Set endDate
+     * @param endDate  (required)
+     * @return APIgetStatisticsDailyRequest
+     */
+    public APIgetStatisticsDailyRequest endDate(String endDate) {
+      this.endDate = endDate;
+      return this;
+    }
+
+    /**
+     * Set startWeek
+     * @param startWeek  (required)
+     * @return APIgetStatisticsDailyRequest
+     */
+    public APIgetStatisticsDailyRequest startWeek(String startWeek) {
+      this.startWeek = startWeek;
+      return this;
+    }
+
+    /**
+     * Set endWeek
+     * @param endWeek  (required)
+     * @return APIgetStatisticsDailyRequest
+     */
+    public APIgetStatisticsDailyRequest endWeek(String endWeek) {
+      this.endWeek = endWeek;
+      return this;
+    }
+
+    /**
+     * Set startMonth
+     * @param startMonth  (required)
+     * @return APIgetStatisticsDailyRequest
+     */
+    public APIgetStatisticsDailyRequest startMonth(String startMonth) {
+      this.startMonth = startMonth;
+      return this;
+    }
+
+    /**
+     * Set endMonth
+     * @param endMonth  (required)
+     * @return APIgetStatisticsDailyRequest
+     */
+    public APIgetStatisticsDailyRequest endMonth(String endMonth) {
+      this.endMonth = endMonth;
+      return this;
+    }
+
+    /**
+     * Set announcementGroup
+     * @param announcementGroup  (optional)
+     * @return APIgetStatisticsDailyRequest
+     */
+    public APIgetStatisticsDailyRequest announcementGroup(String announcementGroup) {
+      this.announcementGroup = announcementGroup;
+      return this;
+    }
+
+    /**
+     * Execute getStatisticsDaily request
+     * @return GetStatisticsDailyResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GetStatisticsDailyResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getStatisticsDaily request with HTTP info returned
+     * @return ApiResponse&lt;GetStatisticsDailyResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GetStatisticsDailyResponse> executeWithHttpInfo() throws ApiException {
+      return getStatisticsDailyWithHttpInfo(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
+    }
   }
 
   /**
-   * Get statistics - monthly
+   * Get statistics - daily
    * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
-   * @param apiToken  (required)
-   * @return ApiResponse&lt;GetStatisticsMonthlyResponse&gt;
+   * @return getStatisticsDailyRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<GetStatisticsMonthlyResponse> getStatisticsMonthlyWithHttpInfo(String apiToken) throws ApiException {
+  public APIgetStatisticsDailyRequest getStatisticsDaily() throws ApiException {
+    return new APIgetStatisticsDailyRequest();
+  }
+
+private ApiResponse<GetStatisticsMonthlyResponse> getStatisticsMonthlyWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -389,39 +525,68 @@ public class AnnouncementApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * List announcement groups
-   * ## List announcement groups  Retrieves a list of announcement groups.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcement-groups ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ListAnnouncementGroupsResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ListAnnouncementGroupsResponse listAnnouncementGroups(String apiToken, String token, Integer limit) throws ApiException {
-    return listAnnouncementGroupsWithHttpInfo(apiToken, token, limit).getData();
+
+  public class APIgetStatisticsMonthlyRequest {
+    private String apiToken;
+
+    private APIgetStatisticsMonthlyRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIgetStatisticsMonthlyRequest
+     */
+    public APIgetStatisticsMonthlyRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute getStatisticsMonthly request
+     * @return GetStatisticsMonthlyResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GetStatisticsMonthlyResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getStatisticsMonthly request with HTTP info returned
+     * @return ApiResponse&lt;GetStatisticsMonthlyResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GetStatisticsMonthlyResponse> executeWithHttpInfo() throws ApiException {
+      return getStatisticsMonthlyWithHttpInfo(apiToken);
+    }
   }
 
   /**
-   * List announcement groups
-   * ## List announcement groups  Retrieves a list of announcement groups.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcement-groups ----------------------------
-   * @param apiToken  (required)
-   * @param token  (optional)
-   * @param limit  (optional)
-   * @return ApiResponse&lt;ListAnnouncementGroupsResponse&gt;
+   * Get statistics - monthly
+   * ## Get statistics  Retrieves the daily, weekly or monthly statistics of an announcement or an announcement group.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-statistics ----------------------------
+   * @return getStatisticsMonthlyRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ListAnnouncementGroupsResponse> listAnnouncementGroupsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
+  public APIgetStatisticsMonthlyRequest getStatisticsMonthly() throws ApiException {
+    return new APIgetStatisticsMonthlyRequest();
+  }
+
+private ApiResponse<ListAnnouncementGroupsResponse> listAnnouncementGroupsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -464,37 +629,90 @@ public class AnnouncementApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Schedule an announcement
-   * ## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
-   * @param apiToken  (required)
-   * @param scheduleAnnouncementData  (optional)
-   * @return ScheduleAnnouncementResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ScheduleAnnouncementResponse scheduleAnnouncement(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData) throws ApiException {
-    return scheduleAnnouncementWithHttpInfo(apiToken, scheduleAnnouncementData).getData();
+
+  public class APIlistAnnouncementGroupsRequest {
+    private String apiToken;
+    private String token;
+    private Integer limit;
+
+    private APIlistAnnouncementGroupsRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIlistAnnouncementGroupsRequest
+     */
+    public APIlistAnnouncementGroupsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistAnnouncementGroupsRequest
+     */
+    public APIlistAnnouncementGroupsRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistAnnouncementGroupsRequest
+     */
+    public APIlistAnnouncementGroupsRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Execute listAnnouncementGroups request
+     * @return ListAnnouncementGroupsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListAnnouncementGroupsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listAnnouncementGroups request with HTTP info returned
+     * @return ApiResponse&lt;ListAnnouncementGroupsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListAnnouncementGroupsResponse> executeWithHttpInfo() throws ApiException {
+      return listAnnouncementGroupsWithHttpInfo(apiToken, token, limit);
+    }
   }
 
   /**
-   * Schedule an announcement
-   * ## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
-   * @param apiToken  (required)
-   * @param scheduleAnnouncementData  (optional)
-   * @return ApiResponse&lt;ScheduleAnnouncementResponse&gt;
+   * List announcement groups
+   * ## List announcement groups  Retrieves a list of announcement groups.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcement-groups ----------------------------
+   * @return listAnnouncementGroupsRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ScheduleAnnouncementResponse> scheduleAnnouncementWithHttpInfo(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData) throws ApiException {
+  public APIlistAnnouncementGroupsRequest listAnnouncementGroups() throws ApiException {
+    return new APIlistAnnouncementGroupsRequest();
+  }
+
+private ApiResponse<ScheduleAnnouncementResponse> scheduleAnnouncementWithHttpInfo(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData) throws ApiException {
     Object localVarPostBody = scheduleAnnouncementData;
     
     // verify the required parameter 'apiToken' is set
@@ -535,39 +753,79 @@ public class AnnouncementApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * Update an announcement
-   * ## Update an announcement  Updates information of a specific announcement before it starts or changes the status of a specific announcement after it starts. For the 2 different applications, refer to the request body below.  &gt;__Note__: Updating information of an announcement is possible only when the announcement status is scheduled, indicating it hasn&#39;t started yet.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-update-an-announcement ----------------------------
-   * @param apiToken  (required)
-   * @param uniqueId  (required)
-   * @param updateAnnouncementByIdData  (optional)
-   * @return UpdateAnnouncementByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public UpdateAnnouncementByIdResponse updateAnnouncementById(String apiToken, String uniqueId, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
-    return updateAnnouncementByIdWithHttpInfo(apiToken, uniqueId, updateAnnouncementByIdData).getData();
+
+  public class APIscheduleAnnouncementRequest {
+    private String apiToken;
+    private ScheduleAnnouncementData scheduleAnnouncementData;
+
+    private APIscheduleAnnouncementRequest() {
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIscheduleAnnouncementRequest
+     */
+    public APIscheduleAnnouncementRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set scheduleAnnouncementData
+     * @param scheduleAnnouncementData  (optional)
+     * @return APIscheduleAnnouncementRequest
+     */
+    public APIscheduleAnnouncementRequest scheduleAnnouncementData(ScheduleAnnouncementData scheduleAnnouncementData) {
+      this.scheduleAnnouncementData = scheduleAnnouncementData;
+      return this;
+    }
+
+    /**
+     * Execute scheduleAnnouncement request
+     * @return ScheduleAnnouncementResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ScheduleAnnouncementResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute scheduleAnnouncement request with HTTP info returned
+     * @return ApiResponse&lt;ScheduleAnnouncementResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ScheduleAnnouncementResponse> executeWithHttpInfo() throws ApiException {
+      return scheduleAnnouncementWithHttpInfo(apiToken, scheduleAnnouncementData);
+    }
   }
 
   /**
-   * Update an announcement
-   * ## Update an announcement  Updates information of a specific announcement before it starts or changes the status of a specific announcement after it starts. For the 2 different applications, refer to the request body below.  &gt;__Note__: Updating information of an announcement is possible only when the announcement status is scheduled, indicating it hasn&#39;t started yet.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-update-an-announcement ----------------------------
-   * @param apiToken  (required)
-   * @param uniqueId  (required)
-   * @param updateAnnouncementByIdData  (optional)
-   * @return ApiResponse&lt;UpdateAnnouncementByIdResponse&gt;
+   * Schedule an announcement
+   * ## Schedule an announcement  Schedules a new announcement. You can also schedule an announcement in the [Sendbird Dashboard](https://dashboard.sendbird.com).  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-schedule-an-announcement
+   * @return scheduleAnnouncementRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
+  public APIscheduleAnnouncementRequest scheduleAnnouncement() throws ApiException {
+    return new APIscheduleAnnouncementRequest();
+  }
+
+private ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
     Object localVarPostBody = updateAnnouncementByIdData;
     
     // verify the required parameter 'apiToken' is set
@@ -614,37 +872,82 @@ public class AnnouncementApi {
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
-  /**
-   * View an announcement
-   * ## View an announcement  Retrieves information on a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-view-an-announcement ----------------------------
-   * @param apiToken  (required)
-   * @param uniqueId  (required)
-   * @return ViewAnnouncementByIdResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-   */
-  public ViewAnnouncementByIdResponse viewAnnouncementById(String apiToken, String uniqueId) throws ApiException {
-    return viewAnnouncementByIdWithHttpInfo(apiToken, uniqueId).getData();
+
+  public class APIupdateAnnouncementByIdRequest {
+    private String apiToken;
+    private String uniqueId;
+    private UpdateAnnouncementByIdData updateAnnouncementByIdData;
+
+    private APIupdateAnnouncementByIdRequest(String uniqueId) {
+      this.uniqueId = uniqueId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIupdateAnnouncementByIdRequest
+     */
+    public APIupdateAnnouncementByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateAnnouncementByIdData
+     * @param updateAnnouncementByIdData  (optional)
+     * @return APIupdateAnnouncementByIdRequest
+     */
+    public APIupdateAnnouncementByIdRequest updateAnnouncementByIdData(UpdateAnnouncementByIdData updateAnnouncementByIdData) {
+      this.updateAnnouncementByIdData = updateAnnouncementByIdData;
+      return this;
+    }
+
+    /**
+     * Execute updateAnnouncementById request
+     * @return UpdateAnnouncementByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateAnnouncementByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateAnnouncementById request with HTTP info returned
+     * @return ApiResponse&lt;UpdateAnnouncementByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateAnnouncementByIdResponse> executeWithHttpInfo() throws ApiException {
+      return updateAnnouncementByIdWithHttpInfo(apiToken, uniqueId, updateAnnouncementByIdData);
+    }
   }
 
   /**
-   * View an announcement
-   * ## View an announcement  Retrieves information on a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-view-an-announcement ----------------------------
-   * @param apiToken  (required)
+   * Update an announcement
+   * ## Update an announcement  Updates information of a specific announcement before it starts or changes the status of a specific announcement after it starts. For the 2 different applications, refer to the request body below.  &gt;__Note__: Updating information of an announcement is possible only when the announcement status is scheduled, indicating it hasn&#39;t started yet.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-update-an-announcement ----------------------------
    * @param uniqueId  (required)
-   * @return ApiResponse&lt;ViewAnnouncementByIdResponse&gt;
+   * @return updateAnnouncementByIdRequest
    * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table summary="Response Details" border="1">
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
+   
+   
    */
-  public ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId) throws ApiException {
+  public APIupdateAnnouncementByIdRequest updateAnnouncementById(String uniqueId) throws ApiException {
+    return new APIupdateAnnouncementByIdRequest(uniqueId);
+  }
+
+private ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -690,5 +993,68 @@ public class AnnouncementApi {
     return apiClient.invokeAPI("AnnouncementApi.viewAnnouncementById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewAnnouncementByIdRequest {
+    private String apiToken;
+    private String uniqueId;
+
+    private APIviewAnnouncementByIdRequest(String uniqueId) {
+      this.uniqueId = uniqueId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (required)
+     * @return APIviewAnnouncementByIdRequest
+     */
+    public APIviewAnnouncementByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewAnnouncementById request
+     * @return ViewAnnouncementByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewAnnouncementByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewAnnouncementById request with HTTP info returned
+     * @return ApiResponse&lt;ViewAnnouncementByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewAnnouncementByIdResponse> executeWithHttpInfo() throws ApiException {
+      return viewAnnouncementByIdWithHttpInfo(apiToken, uniqueId);
+    }
+  }
+
+  /**
+   * View an announcement
+   * ## View an announcement  Retrieves information on a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-view-an-announcement ----------------------------
+   * @param uniqueId  (required)
+   * @return viewAnnouncementByIdRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewAnnouncementByIdRequest viewAnnouncementById(String uniqueId) throws ApiException {
+    return new APIviewAnnouncementByIdRequest(uniqueId);
   }
 }

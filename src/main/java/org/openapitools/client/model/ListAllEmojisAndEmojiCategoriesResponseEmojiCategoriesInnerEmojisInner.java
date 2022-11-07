@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInnerEmojisInner.JSON_PROPERTY_URL
 })
 @JsonTypeName("listAllEmojisAndEmojiCategoriesResponse_emoji_categories_inner_emojis_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInnerEmojisInner {
   public static final String JSON_PROPERTY_ID = "id";
   private BigDecimal id;

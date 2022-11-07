@@ -53,7 +53,10 @@ public class BotApiTest {
     public void createBotTest() throws ApiException {
         //String apiToken = null;
         //CreateBotData createBotData = null;
-        //CreateBotResponse response = api.createBot(apiToken, createBotData);
+        //CreateBotResponse response = api.createBot()
+        //        .apiToken(apiToken)
+        //        .createBotData(createBotData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -68,7 +71,9 @@ public class BotApiTest {
     public void deleteBotByIdTest() throws ApiException {
         //String apiToken = null;
         //String botUserid = null;
-        //Object response = api.deleteBotById(apiToken, botUserid);
+        //Object response = api.deleteBotById(botUserid)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -84,7 +89,10 @@ public class BotApiTest {
         //String apiToken = null;
         //String botUserid = null;
         //JoinChannelsData joinChannelsData = null;
-        //JoinChannelsResponse response = api.joinChannels(apiToken, botUserid, joinChannelsData);
+        //JoinChannelsResponse response = api.joinChannels(botUserid)
+        //        .apiToken(apiToken)
+        //        .joinChannelsData(joinChannelsData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -100,7 +108,10 @@ public class BotApiTest {
         //String apiToken = null;
         //String botUserid = null;
         //String channelUrl = null;
-        //api.leaveChannels(apiToken, botUserid, channelUrl);
+        //api.leaveChannels(botUserid)
+        //        .apiToken(apiToken)
+        //        .channelUrl(channelUrl)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -116,7 +127,9 @@ public class BotApiTest {
         //String apiToken = null;
         //String botUserid = null;
         //String channelUrl = null;
-        //Object response = api.leaveChannelsByUrl(apiToken, botUserid, channelUrl);
+        //Object response = api.leaveChannelsByUrl(botUserid, channelUrl)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -132,7 +145,11 @@ public class BotApiTest {
         //String apiToken = null;
         //String token = null;
         //Integer limit = null;
-        //ListBotsResponse response = api.listBots(apiToken, token, limit);
+        //ListBotsResponse response = api.listBots()
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -148,7 +165,10 @@ public class BotApiTest {
         //String apiToken = null;
         //String botUserid = null;
         //SendBotSMessageData sendBotSMessageData = null;
-        //SendBirdMessageResponse response = api.sendBotsMessage(apiToken, botUserid, sendBotSMessageData);
+        //SendBirdMessageResponse response = api.sendBotsMessage(botUserid)
+        //        .apiToken(apiToken)
+        //        .sendBotSMessageData(sendBotSMessageData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -164,7 +184,10 @@ public class BotApiTest {
         //String apiToken = null;
         //String botUserid = null;
         //UpdateBotByIdData updateBotByIdData = null;
-        //UpdateBotByIdResponse response = api.updateBotById(apiToken, botUserid, updateBotByIdData);
+        //UpdateBotByIdResponse response = api.updateBotById(botUserid)
+        //        .apiToken(apiToken)
+        //        .updateBotByIdData(updateBotByIdData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -179,7 +202,9 @@ public class BotApiTest {
     public void viewBotByIdTest() throws ApiException {
         //String apiToken = null;
         //String botUserid = null;
-        //ViewBotByIdResponse response = api.viewBotById(apiToken, botUserid);
+        //ViewBotByIdResponse response = api.viewBotById(botUserid)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 

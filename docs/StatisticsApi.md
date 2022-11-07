@@ -16,7 +16,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## getDetailedOpenRateOfAnnouncementById
 
-> GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId)
+> GetDetailedOpenRateOfAnnouncementByIdResponse getDetailedOpenRateOfAnnouncementById(uniqueId).apiToken(apiToken).execute();
 
 Get detailed open rate of an announcement
 
@@ -50,7 +50,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String uniqueId = "uniqueId_example"; // String | 
         try {
-            GetDetailedOpenRateOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenRateOfAnnouncementById(apiToken, uniqueId);
+            GetDetailedOpenRateOfAnnouncementByIdResponse result = api.getDetailedOpenRateOfAnnouncementById(uniqueId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StatisticsApi#getDetailedOpenRateOfAnnouncementById");
@@ -92,7 +94,7 @@ No authorization required
 
 ## getDetailedOpenStatusOfAnnouncementById
 
-> GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened)
+> GetDetailedOpenStatusOfAnnouncementByIdResponse getDetailedOpenStatusOfAnnouncementById(uniqueId).apiToken(apiToken).limit(limit).next(next).uniqueIds(uniqueIds).channelUrls(channelUrls).hasOpened(hasOpened).execute();
 
 Get detailed open status of an announcement
 
@@ -127,7 +129,14 @@ public class Example {
         List<String> channelUrls = Arrays.asList(); // List<String> | 
         Boolean hasOpened = true; // Boolean | 
         try {
-            GetDetailedOpenStatusOfAnnouncementByIdResponse result = apiInstance.getDetailedOpenStatusOfAnnouncementById(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
+            GetDetailedOpenStatusOfAnnouncementByIdResponse result = api.getDetailedOpenStatusOfAnnouncementById(uniqueId)
+                .apiToken(apiToken)
+                .limit(limit)
+                .next(next)
+                .uniqueIds(uniqueIds)
+                .channelUrls(channelUrls)
+                .hasOpened(hasOpened)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StatisticsApi#getDetailedOpenStatusOfAnnouncementById");
@@ -174,7 +183,7 @@ No authorization required
 
 ## retrieveAdvancedAnalyticsMetrics
 
-> RetrieveAdvancedAnalyticsMetricsResponse retrieveAdvancedAnalyticsMetrics(apiToken)
+> RetrieveAdvancedAnalyticsMetricsResponse retrieveAdvancedAnalyticsMetrics().apiToken(apiToken).execute();
 
 Retrieve Advanced analytics metrics
 
@@ -205,7 +214,9 @@ public class Example {
         StatisticsApi apiInstance = new StatisticsApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            RetrieveAdvancedAnalyticsMetricsResponse result = apiInstance.retrieveAdvancedAnalyticsMetrics(apiToken);
+            RetrieveAdvancedAnalyticsMetricsResponse result = api.retrieveAdvancedAnalyticsMetrics()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StatisticsApi#retrieveAdvancedAnalyticsMetrics");
@@ -246,7 +257,7 @@ No authorization required
 
 ## viewNumberOfConcurrentConnections
 
-> ViewNumberOfConcurrentConnectionsResponse viewNumberOfConcurrentConnections(apiToken)
+> ViewNumberOfConcurrentConnectionsResponse viewNumberOfConcurrentConnections().apiToken(apiToken).execute();
 
 View number of concurrent connections
 
@@ -274,7 +285,9 @@ public class Example {
         StatisticsApi apiInstance = new StatisticsApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ViewNumberOfConcurrentConnectionsResponse result = apiInstance.viewNumberOfConcurrentConnections(apiToken);
+            ViewNumberOfConcurrentConnectionsResponse result = api.viewNumberOfConcurrentConnections()
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StatisticsApi#viewNumberOfConcurrentConnections");
@@ -315,7 +328,7 @@ No authorization required
 
 ## viewNumberOfDailyActiveUsers
 
-> ViewNumberOfDailyActiveUsersResponse viewNumberOfDailyActiveUsers(apiToken, date)
+> ViewNumberOfDailyActiveUsersResponse viewNumberOfDailyActiveUsers().apiToken(apiToken).date(date).execute();
 
 View number of daily active users
 
@@ -345,7 +358,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String date = "date_example"; // String | 
         try {
-            ViewNumberOfDailyActiveUsersResponse result = apiInstance.viewNumberOfDailyActiveUsers(apiToken, date);
+            ViewNumberOfDailyActiveUsersResponse result = api.viewNumberOfDailyActiveUsers()
+                .apiToken(apiToken)
+                .date(date)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StatisticsApi#viewNumberOfDailyActiveUsers");
@@ -387,7 +403,7 @@ No authorization required
 
 ## viewNumberOfMonthlyActiveUsers
 
-> ViewNumberOfMonthlyActiveUsersResponse viewNumberOfMonthlyActiveUsers(apiToken, date)
+> ViewNumberOfMonthlyActiveUsersResponse viewNumberOfMonthlyActiveUsers().apiToken(apiToken).date(date).execute();
 
 View number of monthly active users
 
@@ -417,7 +433,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String date = "date_example"; // String | 
         try {
-            ViewNumberOfMonthlyActiveUsersResponse result = apiInstance.viewNumberOfMonthlyActiveUsers(apiToken, date);
+            ViewNumberOfMonthlyActiveUsersResponse result = api.viewNumberOfMonthlyActiveUsers()
+                .apiToken(apiToken)
+                .date(date)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StatisticsApi#viewNumberOfMonthlyActiveUsers");
@@ -459,7 +478,7 @@ No authorization required
 
 ## viewNumberOfPeakConnections
 
-> ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay)
+> ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections().apiToken(apiToken).timeDimension(timeDimension).startYear(startYear).startMonth(startMonth).endYear(endYear).endMonth(endMonth).startDay(startDay).endDay(endDay).execute();
 
 View number of peak connections
 
@@ -495,7 +514,16 @@ public class Example {
         Integer startDay = 56; // Integer | 
         Integer endDay = 56; // Integer | 
         try {
-            ViewNumberOfPeakConnectionsResponse result = apiInstance.viewNumberOfPeakConnections(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay);
+            ViewNumberOfPeakConnectionsResponse result = api.viewNumberOfPeakConnections()
+                .apiToken(apiToken)
+                .timeDimension(timeDimension)
+                .startYear(startYear)
+                .startMonth(startMonth)
+                .endYear(endYear)
+                .endMonth(endMonth)
+                .startDay(startDay)
+                .endDay(endDay)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StatisticsApi#viewNumberOfPeakConnections");

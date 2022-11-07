@@ -62,7 +62,10 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcAcceptInvitationData gcAcceptInvitationData = null;
-        //SendBirdGroupChannel response = api.gcAcceptInvitation(apiToken, channelUrl, gcAcceptInvitationData);
+        //SendBirdGroupChannel response = api.gcAcceptInvitation(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcAcceptInvitationData(gcAcceptInvitationData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -79,7 +82,11 @@ public class GroupChannelApiTest {
         //String channelUrl = null;
         //List<String> operatorIds = null;
         //Boolean deleteAll = null;
-        //OcDeleteChannelByUrl200Response response = api.gcCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
+        //OcDeleteChannelByUrl200Response response = api.gcCancelTheRegistrationOfOperators(channelUrl)
+        //        .apiToken(apiToken)
+        //        .operatorIds(operatorIds)
+        //        .deleteAll(deleteAll)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -95,7 +102,9 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //String userId = null;
-        //GcCheckIfMemberByIdResponse response = api.gcCheckIfMemberById(apiToken, channelUrl, userId);
+        //GcCheckIfMemberByIdResponse response = api.gcCheckIfMemberById(channelUrl, userId)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -110,7 +119,10 @@ public class GroupChannelApiTest {
     public void gcCreateChannelTest() throws ApiException {
         //String apiToken = null;
         //GcCreateChannelData gcCreateChannelData = null;
-        //SendBirdGroupChannel response = api.gcCreateChannel(apiToken, gcCreateChannelData);
+        //SendBirdGroupChannel response = api.gcCreateChannel()
+        //        .apiToken(apiToken)
+        //        .gcCreateChannelData(gcCreateChannelData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -126,7 +138,10 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcDeclineInvitationData gcDeclineInvitationData = null;
-        //OcDeleteChannelByUrl200Response response = api.gcDeclineInvitation(apiToken, channelUrl, gcDeclineInvitationData);
+        //OcDeleteChannelByUrl200Response response = api.gcDeclineInvitation(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcDeclineInvitationData(gcDeclineInvitationData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -141,7 +156,9 @@ public class GroupChannelApiTest {
     public void gcDeleteChannelByUrlTest() throws ApiException {
         //String apiToken = null;
         //String channelUrl = null;
-        //OcDeleteChannelByUrl200Response response = api.gcDeleteChannelByUrl(apiToken, channelUrl);
+        //OcDeleteChannelByUrl200Response response = api.gcDeleteChannelByUrl(channelUrl)
+        //        .apiToken(apiToken)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -157,7 +174,10 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcHideOrArchiveChannelData gcHideOrArchiveChannelData = null;
-        //OcDeleteChannelByUrl200Response response = api.gcHideOrArchiveChannel(apiToken, channelUrl, gcHideOrArchiveChannelData);
+        //OcDeleteChannelByUrl200Response response = api.gcHideOrArchiveChannel(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcHideOrArchiveChannelData(gcHideOrArchiveChannelData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -173,7 +193,10 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcInviteAsMembersData gcInviteAsMembersData = null;
-        //SendBirdGroupChannel response = api.gcInviteAsMembers(apiToken, channelUrl, gcInviteAsMembersData);
+        //SendBirdGroupChannel response = api.gcInviteAsMembers(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcInviteAsMembersData(gcInviteAsMembersData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -189,7 +212,10 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcJoinChannelData gcJoinChannelData = null;
-        //api.gcJoinChannel(apiToken, channelUrl, gcJoinChannelData);
+        //api.gcJoinChannel(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcJoinChannelData(gcJoinChannelData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -205,7 +231,10 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcLeaveChannelData gcLeaveChannelData = null;
-        //OcDeleteChannelByUrl200Response response = api.gcLeaveChannel(apiToken, channelUrl, gcLeaveChannelData);
+        //OcDeleteChannelByUrl200Response response = api.gcLeaveChannel(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcLeaveChannelData(gcLeaveChannelData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -261,7 +290,51 @@ public class GroupChannelApiTest {
         //Boolean isDistinct = null;
         //String membersIn = null;
         //String userId = null;
-        //GcListChannelsResponse response = api.gcListChannels(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
+        //GcListChannelsResponse response = api.gcListChannels()
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .distinctMode(distinctMode)
+        //        .publicMode(publicMode)
+        //        .superMode(superMode)
+        //        .createdAfter(createdAfter)
+        //        .createdBefore(createdBefore)
+        //        .showEmpty(showEmpty)
+        //        .showMember(showMember)
+        //        .showDeliveryReceipt(showDeliveryReceipt)
+        //        .showReadReceipt(showReadReceipt)
+        //        .showMetadata(showMetadata)
+        //        .showFrozen(showFrozen)
+        //        .order(order)
+        //        .metadataOrderKey(metadataOrderKey)
+        //        .customTypes(customTypes)
+        //        .customTypeStartswith(customTypeStartswith)
+        //        .channelUrls(channelUrls)
+        //        .name(name)
+        //        .nameContains(nameContains)
+        //        .nameStartswith(nameStartswith)
+        //        .membersExactlyIn(membersExactlyIn)
+        //        .membersIncludeIn(membersIncludeIn)
+        //        .queryType(queryType)
+        //        .membersNickname(membersNickname)
+        //        .membersNicknameContains(membersNicknameContains)
+        //        .metadataKey(metadataKey)
+        //        .metadataValues(metadataValues)
+        //        .metadataValueStartswith(metadataValueStartswith)
+        //        .metacounterKey(metacounterKey)
+        //        .metacounterValues(metacounterValues)
+        //        .metacounterValueGt(metacounterValueGt)
+        //        .metacounterValueGte(metacounterValueGte)
+        //        .metacounterValueLt(metacounterValueLt)
+        //        .metacounterValueLte(metacounterValueLte)
+        //        .includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage)
+        //        .customType(customType)
+        //        .readReceipt(readReceipt)
+        //        .member(member)
+        //        .isDistinct(isDistinct)
+        //        .membersIn(membersIn)
+        //        .userId(userId)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -285,7 +358,18 @@ public class GroupChannelApiTest {
         //String memberStateFilter = null;
         //String mutedMemberFilter = null;
         //String nicknameStartswith = null;
-        //GcListMembersResponse response = api.gcListMembers(apiToken, channelUrl, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
+        //GcListMembersResponse response = api.gcListMembers(channelUrl)
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .showDeliveryReceipt(showDeliveryReceipt)
+        //        .showReadReceipt(showReadReceipt)
+        //        .order(order)
+        //        .operatorFilter(operatorFilter)
+        //        .memberStateFilter(memberStateFilter)
+        //        .mutedMemberFilter(mutedMemberFilter)
+        //        .nicknameStartswith(nicknameStartswith)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -302,7 +386,11 @@ public class GroupChannelApiTest {
         //String channelUrl = null;
         //String token = null;
         //Integer limit = null;
-        //GcListOperatorsResponse response = api.gcListOperators(apiToken, channelUrl, token, limit);
+        //GcListOperatorsResponse response = api.gcListOperators(channelUrl)
+        //        .apiToken(apiToken)
+        //        .token(token)
+        //        .limit(limit)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -318,7 +406,10 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcRegisterOperatorsData gcRegisterOperatorsData = null;
-        //GcRegisterOperatorsResponse response = api.gcRegisterOperators(apiToken, channelUrl, gcRegisterOperatorsData);
+        //GcRegisterOperatorsResponse response = api.gcRegisterOperators(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcRegisterOperatorsData(gcRegisterOperatorsData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -334,7 +425,10 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcResetChatHistoryData gcResetChatHistoryData = null;
-        //GcResetChatHistoryResponse response = api.gcResetChatHistory(apiToken, channelUrl, gcResetChatHistoryData);
+        //GcResetChatHistoryResponse response = api.gcResetChatHistory(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcResetChatHistoryData(gcResetChatHistoryData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -351,7 +445,11 @@ public class GroupChannelApiTest {
         //String channelUrl = null;
         //String userId = null;
         //Boolean shouldUnhideAll = null;
-        //OcDeleteChannelByUrl200Response response = api.gcUnhideOrUnarchiveChannel(apiToken, channelUrl, userId, shouldUnhideAll);
+        //OcDeleteChannelByUrl200Response response = api.gcUnhideOrUnarchiveChannel(channelUrl)
+        //        .apiToken(apiToken)
+        //        .userId(userId)
+        //        .shouldUnhideAll(shouldUnhideAll)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -367,7 +465,10 @@ public class GroupChannelApiTest {
         //String apiToken = null;
         //String channelUrl = null;
         //GcUpdateChannelByUrlData gcUpdateChannelByUrlData = null;
-        //SendBirdGroupChannel response = api.gcUpdateChannelByUrl(apiToken, channelUrl, gcUpdateChannelByUrlData);
+        //SendBirdGroupChannel response = api.gcUpdateChannelByUrl(channelUrl)
+        //        .apiToken(apiToken)
+        //        .gcUpdateChannelByUrlData(gcUpdateChannelByUrlData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -387,7 +488,14 @@ public class GroupChannelApiTest {
         //Boolean showMember = null;
         //Boolean readReceipt = null;
         //Boolean member = null;
-        //SendBirdGroupChannel response = api.gcViewChannelByUrl(apiToken, channelUrl, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member);
+        //SendBirdGroupChannel response = api.gcViewChannelByUrl(channelUrl)
+        //        .apiToken(apiToken)
+        //        .showDeliveryReceipt(showDeliveryReceipt)
+        //        .showReadReceipt(showReadReceipt)
+        //        .showMember(showMember)
+        //        .readReceipt(readReceipt)
+        //        .member(member)
+        //        .execute();
         // TODO: test validations
     }
 

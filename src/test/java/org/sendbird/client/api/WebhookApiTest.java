@@ -46,7 +46,10 @@ public class WebhookApiTest {
     public void chooseWhichEventsToSubscribeToTest() throws ApiException {
         //String apiToken = null;
         //ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData = null;
-        //ChooseWhichEventsToSubscribeToResponse response = api.chooseWhichEventsToSubscribeTo(apiToken, chooseWhichEventsToSubscribeToData);
+        //ChooseWhichEventsToSubscribeToResponse response = api.chooseWhichEventsToSubscribeTo()
+        //        .apiToken(apiToken)
+        //        .chooseWhichEventsToSubscribeToData(chooseWhichEventsToSubscribeToData)
+        //        .execute();
         // TODO: test validations
     }
 
@@ -61,7 +64,10 @@ public class WebhookApiTest {
     public void retrieveListOfSubscribedEventsTest() throws ApiException {
         //String apiToken = null;
         //Boolean displayAllWebhookCategories = null;
-        //RetrieveListOfSubscribedEventsResponse response = api.retrieveListOfSubscribedEvents(apiToken, displayAllWebhookCategories);
+        //RetrieveListOfSubscribedEventsResponse response = api.retrieveListOfSubscribedEvents()
+        //        .apiToken(apiToken)
+        //        .displayAllWebhookCategories(displayAllWebhookCategories)
+        //        .execute();
         // TODO: test validations
     }
 

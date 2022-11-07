@@ -18,7 +18,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## ocCancelTheRegistrationOfOperators
 
-> ocCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll)
+> ocCancelTheRegistrationOfOperators(channelUrl).apiToken(apiToken).operatorIds(operatorIds).deleteAll(deleteAll).execute();
 
 Cancel the registration of operators
 
@@ -54,7 +54,11 @@ public class Example {
         List<String> operatorIds = Arrays.asList(); // List<String> | 
         Boolean deleteAll = true; // Boolean | 
         try {
-            apiInstance.ocCancelTheRegistrationOfOperators(apiToken, channelUrl, operatorIds, deleteAll);
+            api.ocCancelTheRegistrationOfOperators(channelUrl)
+                .apiToken(apiToken)
+                .operatorIds(operatorIds)
+                .deleteAll(deleteAll)
+                .execute();
         } catch (ApiException e) {
             System.err.println("Exception when calling OpenChannelApi#ocCancelTheRegistrationOfOperators");
             System.err.println("Status code: " + e.getCode());
@@ -97,7 +101,7 @@ No authorization required
 
 ## ocCreateChannel
 
-> SendBirdOpenChannel ocCreateChannel(apiToken, ocCreateChannelData)
+> SendBirdOpenChannel ocCreateChannel().apiToken(apiToken).ocCreateChannelData(ocCreateChannelData).execute();
 
 Create a channel
 
@@ -128,7 +132,10 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         OcCreateChannelData ocCreateChannelData = new OcCreateChannelData(); // OcCreateChannelData | 
         try {
-            SendBirdOpenChannel result = apiInstance.ocCreateChannel(apiToken, ocCreateChannelData);
+            SendBirdOpenChannel result = api.ocCreateChannel()
+                .apiToken(apiToken)
+                .ocCreateChannelData(ocCreateChannelData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OpenChannelApi#ocCreateChannel");
@@ -170,7 +177,7 @@ No authorization required
 
 ## ocDeleteChannelByUrl
 
-> OcDeleteChannelByUrl200Response ocDeleteChannelByUrl(apiToken, channelUrl)
+> OcDeleteChannelByUrl200Response ocDeleteChannelByUrl(channelUrl).apiToken(apiToken).execute();
 
 Delete a channel
 
@@ -200,7 +207,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.ocDeleteChannelByUrl(apiToken, channelUrl);
+            OcDeleteChannelByUrl200Response result = api.ocDeleteChannelByUrl(channelUrl)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OpenChannelApi#ocDeleteChannelByUrl");
@@ -242,7 +251,7 @@ No authorization required
 
 ## ocListChannels
 
-> OcListChannelsResponse ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType)
+> OcListChannelsResponse ocListChannels().apiToken(apiToken).token(token).limit(limit).customTypes(customTypes).nameContains(nameContains).urlContains(urlContains).showFrozen(showFrozen).showMetadata(showMetadata).customType(customType).execute();
 
 List channels
 
@@ -279,7 +288,17 @@ public class Example {
         Boolean showMetadata = true; // Boolean | 
         String customType = "customType_example"; // String | 
         try {
-            OcListChannelsResponse result = apiInstance.ocListChannels(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType);
+            OcListChannelsResponse result = api.ocListChannels()
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .customTypes(customTypes)
+                .nameContains(nameContains)
+                .urlContains(urlContains)
+                .showFrozen(showFrozen)
+                .showMetadata(showMetadata)
+                .customType(customType)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OpenChannelApi#ocListChannels");
@@ -328,7 +347,7 @@ No authorization required
 
 ## ocListOperators
 
-> OcListOperatorsResponse ocListOperators(apiToken, channelUrl, token, limit)
+> OcListOperatorsResponse ocListOperators(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
 
 List operators
 
@@ -364,7 +383,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            OcListOperatorsResponse result = apiInstance.ocListOperators(apiToken, channelUrl, token, limit);
+            OcListOperatorsResponse result = api.ocListOperators(channelUrl)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OpenChannelApi#ocListOperators");
@@ -408,7 +431,7 @@ No authorization required
 
 ## ocListParticipants
 
-> OcListParticipantsResponse ocListParticipants(apiToken, channelUrl, token, limit)
+> OcListParticipantsResponse ocListParticipants(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
 
 List participants
 
@@ -444,7 +467,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            OcListParticipantsResponse result = apiInstance.ocListParticipants(apiToken, channelUrl, token, limit);
+            OcListParticipantsResponse result = api.ocListParticipants(channelUrl)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OpenChannelApi#ocListParticipants");
@@ -488,7 +515,7 @@ No authorization required
 
 ## ocRegisterOperators
 
-> OcDeleteChannelByUrl200Response ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData)
+> OcDeleteChannelByUrl200Response ocRegisterOperators(channelUrl).apiToken(apiToken).ocRegisterOperatorsData(ocRegisterOperatorsData).execute();
 
 Register operators
 
@@ -519,7 +546,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         OcRegisterOperatorsData ocRegisterOperatorsData = new OcRegisterOperatorsData(); // OcRegisterOperatorsData | 
         try {
-            OcDeleteChannelByUrl200Response result = apiInstance.ocRegisterOperators(apiToken, channelUrl, ocRegisterOperatorsData);
+            OcDeleteChannelByUrl200Response result = api.ocRegisterOperators(channelUrl)
+                .apiToken(apiToken)
+                .ocRegisterOperatorsData(ocRegisterOperatorsData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OpenChannelApi#ocRegisterOperators");
@@ -562,7 +592,7 @@ No authorization required
 
 ## ocUpdateChannelByUrl
 
-> SendBirdOpenChannel ocUpdateChannelByUrl(apiToken, channelUrl, ocUpdateChannelByUrlData)
+> SendBirdOpenChannel ocUpdateChannelByUrl(channelUrl).apiToken(apiToken).ocUpdateChannelByUrlData(ocUpdateChannelByUrlData).execute();
 
 Update a channel
 
@@ -593,7 +623,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         OcUpdateChannelByUrlData ocUpdateChannelByUrlData = new OcUpdateChannelByUrlData(); // OcUpdateChannelByUrlData | 
         try {
-            SendBirdOpenChannel result = apiInstance.ocUpdateChannelByUrl(apiToken, channelUrl, ocUpdateChannelByUrlData);
+            SendBirdOpenChannel result = api.ocUpdateChannelByUrl(channelUrl)
+                .apiToken(apiToken)
+                .ocUpdateChannelByUrlData(ocUpdateChannelByUrlData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OpenChannelApi#ocUpdateChannelByUrl");
@@ -636,7 +669,7 @@ No authorization required
 
 ## ocViewChannelByUrl
 
-> SendBirdOpenChannel ocViewChannelByUrl(apiToken, channelUrl)
+> SendBirdOpenChannel ocViewChannelByUrl(channelUrl).apiToken(apiToken).execute();
 
 View a channel
 
@@ -666,7 +699,9 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
-            SendBirdOpenChannel result = apiInstance.ocViewChannelByUrl(apiToken, channelUrl);
+            SendBirdOpenChannel result = api.ocViewChannelByUrl(channelUrl)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OpenChannelApi#ocViewChannelByUrl");

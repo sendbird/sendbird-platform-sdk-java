@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "org.sendbird",
     name := "sendbird-platform-sdk",
-    version := "0.0.15",
+    version := "0.0.16",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     Compile / javacOptions ++= Seq("-Xlint:deprecation"),

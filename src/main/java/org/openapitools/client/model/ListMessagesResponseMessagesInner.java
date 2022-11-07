@@ -63,7 +63,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInner.JSON_PROPERTY_OG_TAG
 })
 @JsonTypeName("listMessagesResponse_messages_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class ListMessagesResponseMessagesInner {
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private BigDecimal messageSurvivalSeconds;

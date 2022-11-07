@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   UpdateEmojiCategoryUrlByIdData.JSON_PROPERTY_URL
 })
 @JsonTypeName("updateEmojiCategoryUrlByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-10-25T12:02:53.103168+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
 public class UpdateEmojiCategoryUrlByIdData {
   public static final String JSON_PROPERTY_EMOJI_CATEGORY_ID = "emoji_category_id";
   private Integer emojiCategoryId;

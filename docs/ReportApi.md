@@ -17,7 +17,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## listReports
 
-> ListReportsResponse listReports(apiToken, token, limit, startTs, endTs)
+> ListReportsResponse listReports().apiToken(apiToken).token(token).limit(limit).startTs(startTs).endTs(endTs).execute();
 
 List reports
 
@@ -50,7 +50,13 @@ public class Example {
         Integer startTs = 56; // Integer | 
         Integer endTs = 56; // Integer | 
         try {
-            ListReportsResponse result = apiInstance.listReports(apiToken, token, limit, startTs, endTs);
+            ListReportsResponse result = api.listReports()
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .startTs(startTs)
+                .endTs(endTs)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReportApi#listReports");
@@ -95,7 +101,7 @@ No authorization required
 
 ## listReportsOnChannelByUrl
 
-> ListReportsOnChannelByUrlResponse listReportsOnChannelByUrl(apiToken, channelType, channelUrl, token, limit)
+> ListReportsOnChannelByUrlResponse listReportsOnChannelByUrl(channelType, channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
 
 List reports on a channel
 
@@ -135,7 +141,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListReportsOnChannelByUrlResponse result = apiInstance.listReportsOnChannelByUrl(apiToken, channelType, channelUrl, token, limit);
+            ListReportsOnChannelByUrlResponse result = api.listReportsOnChannelByUrl(channelType, channelUrl)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReportApi#listReportsOnChannelByUrl");
@@ -180,7 +190,7 @@ No authorization required
 
 ## listReportsOnMessageById
 
-> ListReportsOnMessageByIdResponse listReportsOnMessageById(apiToken, channelType, channelUrl, messageId, token, limit)
+> ListReportsOnMessageByIdResponse listReportsOnMessageById(channelType, channelUrl, messageId).apiToken(apiToken).token(token).limit(limit).execute();
 
 List reports on a message
 
@@ -224,7 +234,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListReportsOnMessageByIdResponse result = apiInstance.listReportsOnMessageById(apiToken, channelType, channelUrl, messageId, token, limit);
+            ListReportsOnMessageByIdResponse result = api.listReportsOnMessageById(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReportApi#listReportsOnMessageById");
@@ -270,7 +284,7 @@ No authorization required
 
 ## listReportsOnUserById
 
-> ListReportsOnUserByIdResponse listReportsOnUserById(apiToken, offendingUserId, token, limit)
+> ListReportsOnUserByIdResponse listReportsOnUserById(offendingUserId).apiToken(apiToken).token(token).limit(limit).execute();
 
 List reports on a user
 
@@ -306,7 +320,11 @@ public class Example {
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
-            ListReportsOnUserByIdResponse result = apiInstance.listReportsOnUserById(apiToken, offendingUserId, token, limit);
+            ListReportsOnUserByIdResponse result = api.listReportsOnUserById(offendingUserId)
+                .apiToken(apiToken)
+                .token(token)
+                .limit(limit)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReportApi#listReportsOnUserById");
@@ -350,7 +368,7 @@ No authorization required
 
 ## reportChannelByUrl
 
-> ReportChannelByUrlResponse reportChannelByUrl(apiToken, channelType, channelUrl, reportChannelByUrlData)
+> ReportChannelByUrlResponse reportChannelByUrl(channelType, channelUrl).apiToken(apiToken).reportChannelByUrlData(reportChannelByUrlData).execute();
 
 Report a channel
 
@@ -382,7 +400,10 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         ReportChannelByUrlData reportChannelByUrlData = new ReportChannelByUrlData(); // ReportChannelByUrlData | 
         try {
-            ReportChannelByUrlResponse result = apiInstance.reportChannelByUrl(apiToken, channelType, channelUrl, reportChannelByUrlData);
+            ReportChannelByUrlResponse result = api.reportChannelByUrl(channelType, channelUrl)
+                .apiToken(apiToken)
+                .reportChannelByUrlData(reportChannelByUrlData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReportApi#reportChannelByUrl");
@@ -426,7 +447,7 @@ No authorization required
 
 ## reportMessageById
 
-> ReportMessageByIdResponse reportMessageById(apiToken, channelType, channelUrl, messageId, reportMessageByIdData)
+> ReportMessageByIdResponse reportMessageById(channelType, channelUrl, messageId).apiToken(apiToken).reportMessageByIdData(reportMessageByIdData).execute();
 
 Report a message
 
@@ -459,7 +480,10 @@ public class Example {
         String messageId = "messageId_example"; // String | 
         ReportMessageByIdData reportMessageByIdData = new ReportMessageByIdData(); // ReportMessageByIdData | 
         try {
-            ReportMessageByIdResponse result = apiInstance.reportMessageById(apiToken, channelType, channelUrl, messageId, reportMessageByIdData);
+            ReportMessageByIdResponse result = api.reportMessageById(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .reportMessageByIdData(reportMessageByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReportApi#reportMessageById");
@@ -504,7 +528,7 @@ No authorization required
 
 ## reportUserById
 
-> ReportUserByIdResponse reportUserById(apiToken, offendingUserId, reportUserByIdData)
+> ReportUserByIdResponse reportUserById(offendingUserId).apiToken(apiToken).reportUserByIdData(reportUserByIdData).execute();
 
 Report a user
 
@@ -535,7 +559,10 @@ public class Example {
         String offendingUserId = "offendingUserId_example"; // String | 
         ReportUserByIdData reportUserByIdData = new ReportUserByIdData(); // ReportUserByIdData | 
         try {
-            ReportUserByIdResponse result = apiInstance.reportUserById(apiToken, offendingUserId, reportUserByIdData);
+            ReportUserByIdResponse result = api.reportUserById(offendingUserId)
+                .apiToken(apiToken)
+                .reportUserByIdData(reportUserByIdData)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReportApi#reportUserById");
@@ -578,7 +605,7 @@ No authorization required
 
 ## viewModeratedMessageById
 
-> Object viewModeratedMessageById(apiToken, channelType, channelUrl, messageId)
+> Object viewModeratedMessageById(channelType, channelUrl, messageId).apiToken(apiToken).execute();
 
 View a moderated message
 
@@ -610,7 +637,9 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
         try {
-            Object result = apiInstance.viewModeratedMessageById(apiToken, channelType, channelUrl, messageId);
+            Object result = api.viewModeratedMessageById(channelType, channelUrl, messageId)
+                .apiToken(apiToken)
+                .execute();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReportApi#viewModeratedMessageById");
