@@ -58,7 +58,7 @@ public class SendMessages {
         // active premium in Sendbird dashboard
         SendBirdMessageResponse result = message.sendFileMessage("group_channels",createChannelResult.getChannelUrl(),createUserResultA.getUserId(), "yo", "FILE");
 
-        System.out.println("send announcment");
+        "send announcment");
 
     }
 }
@@ -107,7 +107,7 @@ class User {
     String apiToken;
     UserApi apiInstance;
     public User(ApiClient defaultClient){
-        System.out.println("constructor");
+
         apiInstance = new UserApi(defaultClient);
         apiToken = Config.apiToken;
 
@@ -137,7 +137,7 @@ class Message {
     String apiToken;
     MessageApi apiInstance;
     public Message(ApiClient defaultClient){
-        System.out.println("constructor");
+
         apiInstance = new MessageApi(defaultClient);
         apiToken = Config.apiToken;
 
@@ -151,11 +151,11 @@ class Message {
         sendMessageData.userId(userId);
         sendMessageData.message(message);
         sendMessageData.messageType(messageType);
-        System.out.println(sendMessageData);
+        sendMessageData);
 
         try {
             SendBirdMessageResponse result = apiInstance.sendMessage(channelType, channelUrl).apiToken(apiToken).sendMessageData(sendMessageData).execute();
-            System.out.println(result);
+            result);
             return  result;
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#sendMessage");
@@ -180,7 +180,7 @@ class Message {
 
         try {
             SendBirdMessageResponse result = apiInstance.sendMessage(channelType, channelUrl).apiToken(apiToken).sendMessageData(sendMessageData).execute();
-            System.out.println(result);
+            result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#sendMessage");
             System.err.println("Status code: " + e.getCode());

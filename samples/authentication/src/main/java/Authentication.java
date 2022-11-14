@@ -14,7 +14,7 @@ public class Authentication {
 
         SendBirdUser createUserResultA = user.createUser();
         CreateUserTokenResponse result = user.createSessionToken(createUserResultA.getUserId());
-        System.out.println(result);
+        result);
     }
 }
 
@@ -23,7 +23,7 @@ class User {
     String apiToken;
     UserApi apiInstance;
     public User(ApiClient defaultClient){
-        System.out.println("constructor");
+
         apiInstance = new UserApi(defaultClient);
         apiToken = Config.apiToken;
 

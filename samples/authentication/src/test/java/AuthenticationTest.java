@@ -20,7 +20,7 @@ class AuthenticationTest {
 
     @AfterAll
     public static void tearDown() {
-        System.out.println("AbstractBaseTest.tearDown");
+        "AbstractBaseTest.tearDown");
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api-"+Config.appId+".sendbird.com");
         User user = new User(defaultClient);

@@ -130,7 +130,7 @@ class   User {
     String apiToken;
     UserApi apiInstance;
     public User(ApiClient defaultClient){
-        System.out.println("constructor");
+
         apiInstance = new UserApi(defaultClient);
         apiToken = Config.apiToken;
 
@@ -193,7 +193,7 @@ class Message {
     String apiToken;
     MessageApi apiInstance;
     public Message(ApiClient defaultClient){
-        System.out.println("constructor");
+
         apiInstance = new MessageApi(defaultClient);
         apiToken = Config.apiToken;
 
@@ -210,7 +210,7 @@ class Message {
 
         try {
             SendBirdMessageResponse result = apiInstance.sendMessage(channelType, channelUrl).apiToken(apiToken).sendMessageData(sendMessageData).execute();
-            System.out.println(result);
+            result);
             return  result;
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#sendMessage");
@@ -230,7 +230,7 @@ class Moderation {
     String apiToken;
     ModerationApi apiInstance;
     public Moderation(ApiClient defaultClient){
-        System.out.println("constructor");
+
         apiInstance = new ModerationApi(defaultClient);
         apiToken = Config.apiToken;
 
@@ -258,7 +258,7 @@ class Report {
     String apiToken;
     ReportApi apiInstance;
     public Report(ApiClient defaultClient){
-        System.out.println("constructor");
+
         apiInstance = new ReportApi(defaultClient);
         apiToken = Config.apiToken;
 

@@ -25,7 +25,7 @@ class ModerationTest {
 
     @AfterAll
     public static void tearDown() {
-        System.out.println("AbstractBaseTest.tearDown");
+        "AbstractBaseTest.tearDown");
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api-"+Config.appId+".sendbird.com");
         User user = new User(defaultClient);
@@ -38,7 +38,7 @@ class ModerationTest {
         }
 
         GcListChannelsResponse groupChannelResponse = groupChannel.listChannels("SB::test-gc::Java::e2e::");
-        System.out.println(groupChannelResponse);
+        groupChannelResponse);
 
         for (int i = 0; i < groupChannelResponse.getChannels().size(); i++) {
             String channelUrlToDelete = groupChannelResponse.getChannels().get(i).getChannelUrl();

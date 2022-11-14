@@ -109,7 +109,7 @@ class User {
     String apiToken;
     UserApi apiInstance;
     public User(ApiClient defaultClient){
-        System.out.println("constructor");
+
         apiInstance = new UserApi(defaultClient);
         apiToken = Config.apiToken;
 
@@ -170,7 +170,7 @@ class Announcement {
     AnnouncementApi apiInstance;
 
     public Announcement(ApiClient defaultClient) {
-        System.out.println("constructor");
+
         apiInstance = new AnnouncementApi(defaultClient);
         apiToken = Config.apiToken;
     }
@@ -192,11 +192,11 @@ class Announcement {
         scheduleAnnouncementData.targetList(targetList);
         scheduleAnnouncementData.targetChannelType(channelType);
 
-        System.out.println(scheduleAnnouncementData);
+        scheduleAnnouncementData);
 
         try {
             ScheduleAnnouncementResponse result = apiInstance.scheduleAnnouncement().apiToken(apiToken).scheduleAnnouncementData(scheduleAnnouncementData).execute();
-            System.out.println(result);
+            result);
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#scheduleAnnouncement");
             System.err.println("Status code: " + e.getCode());

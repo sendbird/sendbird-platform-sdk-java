@@ -19,7 +19,7 @@ class UserManagementTest {
         UserManagement users = new UserManagement();
         SendBirdUser user = users.manageUser();
 
-        System.out.println(user);
+        user);
         assertEquals(user.getNickname(), "updated-nickname");
     }
 

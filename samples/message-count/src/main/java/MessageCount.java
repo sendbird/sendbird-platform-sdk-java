@@ -30,7 +30,7 @@ public class MessageCount {
         SendBirdMessageResponse result = message.sendMessage("group_channels",createChannelResult.getChannelUrl(), createUserResultB.getUserId(), "yo", "MESG");
         GcViewNumberOfEachMembersUnreadMessagesResponse unreadMessages = message.membersUnreadMessageCount(createChannelResult.getChannelUrl(), createUserResultA.getUserId());
 
-        System.out.println(unreadMessages);
+        unreadMessages);
         return  unreadMessages.getUnread().get(createUserResultA.getUserId());
     }
 }
@@ -111,7 +111,7 @@ class User {
     String apiToken;
     UserApi apiInstance;
     public User(ApiClient defaultClient){
-        System.out.println("constructor");
+
         apiInstance = new UserApi(defaultClient);
         apiToken = Config.apiToken;
 
@@ -188,7 +188,7 @@ class Message {
 
         try {
             SendBirdMessageResponse result = apiInstance.sendMessage(channelType, channelUrl).apiToken(apiToken).sendMessageData(sendMessageData).execute();
-            System.out.println(result);
+            result);
             return  result;
         } catch (ApiException e) {
             System.err.println("Exception when calling MessageApi#sendMessage");

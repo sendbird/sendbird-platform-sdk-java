@@ -17,14 +17,14 @@ class MessageCountTest {
     void testCountUnreadMessages() {
         MessageCount messageCount = new MessageCount();
         BigDecimal unreadCount = messageCount.countUnreadMessages();
-        System.out.println(unreadCount);
+        unreadCount);
         assertEquals(unreadCount, BigDecimal.ONE);
 
     }
 
     @AfterAll
     public static void tearDown() {
-        System.out.println("AbstractBaseTest.tearDown");
+        "AbstractBaseTest.tearDown");
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api-"+Config.appId+".sendbird.com");
         User user = new User(defaultClient);
@@ -34,7 +34,7 @@ class MessageCountTest {
 
         for (int i = 0; i < users.getUsers().size(); i++) {
             String userIdToDelete = users.getUsers().get(i).getUserId();
-            System.out.println(userIdToDelete);
+            userIdToDelete);
 
             user.deleteUserById(userIdToDelete);
         }
