@@ -30,7 +30,6 @@ public class MessageCount {
         SendBirdMessageResponse result = message.sendMessage("group_channels",createChannelResult.getChannelUrl(), createUserResultB.getUserId(), "yo", "MESG");
         GcViewNumberOfEachMembersUnreadMessagesResponse unreadMessages = message.membersUnreadMessageCount(createChannelResult.getChannelUrl(), createUserResultA.getUserId());
 
-        unreadMessages);
         return  unreadMessages.getUnread().get(createUserResultA.getUserId());
     }
 }

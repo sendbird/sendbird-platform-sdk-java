@@ -58,8 +58,6 @@ public class SendMessages {
         // active premium in Sendbird dashboard
         SendBirdMessageResponse result = message.sendFileMessage("group_channels",createChannelResult.getChannelUrl(),createUserResultA.getUserId(), "yo", "FILE");
 
-        "send announcment");
-
     }
 }
 

@@ -14,7 +14,6 @@ public class Authentication {
 
         SendBirdUser createUserResultA = user.createUser();
         CreateUserTokenResponse result = user.createSessionToken(createUserResultA.getUserId());
-        result);
     }
 }
 
