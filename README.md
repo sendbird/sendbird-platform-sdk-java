@@ -19,12 +19,10 @@ import org.openapitools.client.model.ListUsersResponse;
 
 class User {
     ApiClient defaultClient;
-    String apiToken;
+    String apiToken = "YOUR_API_KEY_FROM_DASHBOARD";
     UserApi apiInstance;
     public User(ApiClient defaultClient){
         apiInstance = new UserApi(defaultClient);
-        apiToken = "YOUR_API_KEY_FROM_DASHBOARD";
-
     }
     public void listUsers(){
 
@@ -32,7 +30,7 @@ class User {
             Integer limit = 56;
             String activeMode = "activated";
             Boolean showBot = true;
-            ListUsersResponse result = apiInstance.listUsers().limit(limit).activeMode(activeMode).execute();
+            ListUsersResponse result = apiInstance.listUsers().apiToken(apiToken).limit(limit).activeMode(activeMode).execute();
             System.out.println(result);
 
         } catch (ApiException e) {
