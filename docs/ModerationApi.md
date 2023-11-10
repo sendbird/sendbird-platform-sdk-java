@@ -63,8 +63,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData = new BanFromChannelsWithCustomChannelTypesData(); // BanFromChannelsWithCustomChannelTypesData | 
         try {
             Object result = api.banFromChannelsWithCustomChannelTypes(userId)
@@ -88,8 +88,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **banFromChannelsWithCustomChannelTypesData** | [**BanFromChannelsWithCustomChannelTypesData**](BanFromChannelsWithCustomChannelTypesData.md)|  | [optional] |
 
 ### Return type
@@ -140,8 +140,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         BlockUserData blockUserData = new BlockUserData(); // BlockUserData | 
         try {
             BlockUserResponse result = api.blockUser(userId)
@@ -165,8 +165,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **blockUserData** | [**BlockUserData**](BlockUserData.md)|  | [optional] |
 
 ### Return type
@@ -217,8 +217,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcBanUserData gcBanUserData = new GcBanUserData(); // GcBanUserData | 
         try {
             GcBanUserResponse result = api.gcBanUser(channelUrl)
@@ -242,8 +242,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcBanUserData** | [**GcBanUserData**](GcBanUserData.md)|  | [optional] |
 
 ### Return type
@@ -296,8 +296,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcFreezeChannelData gcFreezeChannelData = new GcFreezeChannelData(); // GcFreezeChannelData | 
         try {
             SendBirdGroupChannel result = api.gcFreezeChannel(channelUrl)
@@ -321,8 +321,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcFreezeChannelData** | [**GcFreezeChannelData**](GcFreezeChannelData.md)|  | [optional] |
 
 ### Return type
@@ -377,8 +377,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -404,8 +404,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -461,8 +461,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -488,8 +488,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -541,8 +541,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcMuteUserData gcMuteUserData = new GcMuteUserData(); // GcMuteUserData | 
         try {
             SendBirdGroupChannel result = api.gcMuteUser(channelUrl)
@@ -566,8 +566,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcMuteUserData** | [**GcMuteUserData**](GcMuteUserData.md)|  | [optional] |
 
 ### Return type
@@ -618,9 +618,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             OcDeleteChannelByUrl200Response result = api.gcUnbanUserById(channelUrl, bannedUserId)
                 .apiToken(apiToken)
@@ -642,9 +642,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **bannedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -694,9 +694,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String mutedUserId = "mutedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             OcDeleteChannelByUrl200Response result = api.gcUnmuteUserById(channelUrl, mutedUserId)
                 .apiToken(apiToken)
@@ -718,9 +718,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **mutedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -770,9 +770,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcUpdateBanByIdData gcUpdateBanByIdData = new GcUpdateBanByIdData(); // GcUpdateBanByIdData | 
         try {
             GcUpdateBanByIdResponse result = api.gcUpdateBanById(channelUrl, bannedUserId)
@@ -796,9 +796,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **bannedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcUpdateBanByIdData** | [**GcUpdateBanByIdData**](GcUpdateBanByIdData.md)|  | [optional] |
 
 ### Return type
@@ -849,9 +849,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             GcViewBanByIdResponse result = api.gcViewBanById(channelUrl, bannedUserId)
                 .apiToken(apiToken)
@@ -873,9 +873,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **bannedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -925,9 +925,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String mutedUserId = "mutedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             GcViewMuteByIdResponse result = api.gcViewMuteById(channelUrl, mutedUserId)
                 .apiToken(apiToken)
@@ -949,9 +949,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **mutedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1005,8 +1005,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -1032,8 +1032,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -1089,8 +1089,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         String userIds = "userIds_example"; // String | 
@@ -1122,8 +1122,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 | **userIds** | **String**|  | [optional] |
@@ -1182,8 +1182,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -1209,8 +1209,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -1262,8 +1262,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData = new MuteInChannelsWithCustomChannelTypesData(); // MuteInChannelsWithCustomChannelTypesData | 
         try {
             Object result = api.muteInChannelsWithCustomChannelTypes(userId)
@@ -1287,8 +1287,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **muteInChannelsWithCustomChannelTypesData** | [**MuteInChannelsWithCustomChannelTypesData**](MuteInChannelsWithCustomChannelTypesData.md)|  | [optional] |
 
 ### Return type
@@ -1339,8 +1339,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         OcBanUserData ocBanUserData = new OcBanUserData(); // OcBanUserData | 
         try {
             OcBanUserResponse result = api.ocBanUser(channelUrl)
@@ -1364,8 +1364,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **ocBanUserData** | [**OcBanUserData**](OcBanUserData.md)|  | [optional] |
 
 ### Return type
@@ -1418,8 +1418,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         OcFreezeChannelData ocFreezeChannelData = new OcFreezeChannelData(); // OcFreezeChannelData | 
         try {
             SendBirdOpenChannel result = api.ocFreezeChannel(channelUrl)
@@ -1443,8 +1443,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **ocFreezeChannelData** | [**OcFreezeChannelData**](OcFreezeChannelData.md)|  | [optional] |
 
 ### Return type
@@ -1499,8 +1499,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -1526,8 +1526,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -1583,8 +1583,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -1610,8 +1610,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -1662,8 +1662,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         OcMuteUserData ocMuteUserData = new OcMuteUserData(); // OcMuteUserData | 
         try {
             SendBirdOpenChannel result = api.ocMuteUser(channelUrl)
@@ -1687,8 +1687,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **ocMuteUserData** | [**OcMuteUserData**](OcMuteUserData.md)|  | [optional] |
 
 ### Return type
@@ -1739,9 +1739,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             OcDeleteChannelByUrl200Response result = api.ocUnbanUserById(channelUrl, bannedUserId)
                 .apiToken(apiToken)
@@ -1763,9 +1763,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **bannedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1815,9 +1815,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String mutedUserId = "mutedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             OcDeleteChannelByUrl200Response result = api.ocUnmuteUserById(channelUrl, mutedUserId)
                 .apiToken(apiToken)
@@ -1839,9 +1839,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **mutedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1891,9 +1891,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         OcUpdateBanByIdData ocUpdateBanByIdData = new OcUpdateBanByIdData(); // OcUpdateBanByIdData | 
         try {
             OcUpdateBanByIdResponse result = api.ocUpdateBanById(channelUrl, bannedUserId)
@@ -1917,9 +1917,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **bannedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **ocUpdateBanByIdData** | [**OcUpdateBanByIdData**](OcUpdateBanByIdData.md)|  | [optional] |
 
 ### Return type
@@ -1970,9 +1970,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String bannedUserId = "bannedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             OcViewBanByIdResponse result = api.ocViewBanById(channelUrl, bannedUserId)
                 .apiToken(apiToken)
@@ -1994,9 +1994,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **bannedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2046,9 +2046,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String mutedUserId = "mutedUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             OcViewMuteByIdResponse result = api.ocViewMuteById(channelUrl, mutedUserId)
                 .apiToken(apiToken)
@@ -2070,9 +2070,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **mutedUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2122,9 +2122,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String targetId = "targetId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.unblockUserById(userId, targetId)
                 .apiToken(apiToken)
@@ -2146,9 +2146,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **targetId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

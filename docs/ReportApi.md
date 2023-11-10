@@ -74,7 +74,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 | **startTs** | **Integer**|  | [optional] |
@@ -135,9 +135,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ReportApi apiInstance = new ReportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -163,9 +163,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -227,10 +227,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ReportApi apiInstance = new ReportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -256,10 +256,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -315,8 +315,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ReportApi apiInstance = new ReportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String offendingUserId = "offendingUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -342,8 +342,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **offendingUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -395,9 +395,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ReportApi apiInstance = new ReportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         ReportChannelByUrlData reportChannelByUrlData = new ReportChannelByUrlData(); // ReportChannelByUrlData | 
         try {
             ReportChannelByUrlResponse result = api.reportChannelByUrl(channelType, channelUrl)
@@ -421,9 +421,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **reportChannelByUrlData** | [**ReportChannelByUrlData**](ReportChannelByUrlData.md)|  | [optional] |
 
 ### Return type
@@ -474,10 +474,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ReportApi apiInstance = new ReportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         ReportMessageByIdData reportMessageByIdData = new ReportMessageByIdData(); // ReportMessageByIdData | 
         try {
             ReportMessageByIdResponse result = api.reportMessageById(channelType, channelUrl, messageId)
@@ -501,10 +501,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **reportMessageByIdData** | [**ReportMessageByIdData**](ReportMessageByIdData.md)|  | [optional] |
 
 ### Return type
@@ -555,8 +555,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ReportApi apiInstance = new ReportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String offendingUserId = "offendingUserId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         ReportUserByIdData reportUserByIdData = new ReportUserByIdData(); // ReportUserByIdData | 
         try {
             ReportUserByIdResponse result = api.reportUserById(offendingUserId)
@@ -580,8 +580,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **offendingUserId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **reportUserByIdData** | [**ReportUserByIdData**](ReportUserByIdData.md)|  | [optional] |
 
 ### Return type
@@ -632,10 +632,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ReportApi apiInstance = new ReportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.viewModeratedMessageById(channelType, channelUrl, messageId)
                 .apiToken(apiToken)
@@ -657,10 +657,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

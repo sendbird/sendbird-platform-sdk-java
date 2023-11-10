@@ -31,10 +31,9 @@ import org.openapitools.client.model.SendBirdGroupChannel;
 import org.openapitools.client.model.SendBirdGroupChannelChannel;
 import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
 import org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage;
-import org.openapitools.client.model.SendBirdGroupChannelInviter;
-import org.openapitools.client.model.SendBirdGroupChannelLastMessage;
 import org.openapitools.client.model.SendBirdGroupChannelSmsFallback;
 import org.openapitools.client.model.SendBirdMember;
+import org.openapitools.client.model.SendBirdMessageResponse;
 import org.openapitools.client.model.SendBirdOpenChannel;
 import org.openapitools.client.model.SendBirdUser;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -68,7 +67,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import org.sendbird.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 @JsonDeserialize(using=SendBirdChannelResponse.SendBirdChannelResponseDeserializer.class)
 @JsonSerialize(using = SendBirdChannelResponse.SendBirdChannelResponseSerializer.class)
 public class SendBirdChannelResponse extends AbstractOpenApiSchema {

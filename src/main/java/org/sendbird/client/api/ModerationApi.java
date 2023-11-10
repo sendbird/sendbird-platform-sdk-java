@@ -44,7 +44,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class ModerationApi {
   private ApiClient apiClient;
 
@@ -75,13 +75,8 @@ public class ModerationApi {
   }
 
 
-private ApiResponse<Object> banFromChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) throws ApiException {
+private ApiResponse<Object> banFromChannelsWithCustomChannelTypesWithHttpInfo(String userId, String apiToken, BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData) throws ApiException {
     Object localVarPostBody = banFromChannelsWithCustomChannelTypesData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling banFromChannelsWithCustomChannelTypes");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -124,8 +119,8 @@ private ApiResponse<Object> banFromChannelsWithCustomChannelTypesWithHttpInfo(St
   }
 
   public class APIbanFromChannelsWithCustomChannelTypesRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData;
 
     private APIbanFromChannelsWithCustomChannelTypesRequest(String userId) {
@@ -134,7 +129,7 @@ private ApiResponse<Object> banFromChannelsWithCustomChannelTypesWithHttpInfo(St
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIbanFromChannelsWithCustomChannelTypesRequest
      */
     public APIbanFromChannelsWithCustomChannelTypesRequest apiToken(String apiToken) {
@@ -180,7 +175,7 @@ private ApiResponse<Object> banFromChannelsWithCustomChannelTypesWithHttpInfo(St
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return banFromChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, banFromChannelsWithCustomChannelTypesData);
+      return banFromChannelsWithCustomChannelTypesWithHttpInfo(userId, apiToken, banFromChannelsWithCustomChannelTypesData);
     }
   }
 
@@ -197,13 +192,8 @@ private ApiResponse<Object> banFromChannelsWithCustomChannelTypesWithHttpInfo(St
     return new APIbanFromChannelsWithCustomChannelTypesRequest(userId);
   }
 
-private ApiResponse<BlockUserResponse> blockUserWithHttpInfo(String apiToken, String userId, BlockUserData blockUserData) throws ApiException {
+private ApiResponse<BlockUserResponse> blockUserWithHttpInfo(String userId, String apiToken, BlockUserData blockUserData) throws ApiException {
     Object localVarPostBody = blockUserData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling blockUser");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -246,8 +236,8 @@ private ApiResponse<BlockUserResponse> blockUserWithHttpInfo(String apiToken, St
   }
 
   public class APIblockUserRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private BlockUserData blockUserData;
 
     private APIblockUserRequest(String userId) {
@@ -256,7 +246,7 @@ private ApiResponse<BlockUserResponse> blockUserWithHttpInfo(String apiToken, St
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIblockUserRequest
      */
     public APIblockUserRequest apiToken(String apiToken) {
@@ -302,7 +292,7 @@ private ApiResponse<BlockUserResponse> blockUserWithHttpInfo(String apiToken, St
 
      */
     public ApiResponse<BlockUserResponse> executeWithHttpInfo() throws ApiException {
-      return blockUserWithHttpInfo(apiToken, userId, blockUserData);
+      return blockUserWithHttpInfo(userId, apiToken, blockUserData);
     }
   }
 
@@ -319,13 +309,8 @@ private ApiResponse<BlockUserResponse> blockUserWithHttpInfo(String apiToken, St
     return new APIblockUserRequest(userId);
   }
 
-private ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String apiToken, String channelUrl, GcBanUserData gcBanUserData) throws ApiException {
+private ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String channelUrl, String apiToken, GcBanUserData gcBanUserData) throws ApiException {
     Object localVarPostBody = gcBanUserData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcBanUser");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -368,8 +353,8 @@ private ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String apiToken, St
   }
 
   public class APIgcBanUserRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcBanUserData gcBanUserData;
 
     private APIgcBanUserRequest(String channelUrl) {
@@ -378,7 +363,7 @@ private ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String apiToken, St
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcBanUserRequest
      */
     public APIgcBanUserRequest apiToken(String apiToken) {
@@ -424,7 +409,7 @@ private ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String apiToken, St
 
      */
     public ApiResponse<GcBanUserResponse> executeWithHttpInfo() throws ApiException {
-      return gcBanUserWithHttpInfo(apiToken, channelUrl, gcBanUserData);
+      return gcBanUserWithHttpInfo(channelUrl, apiToken, gcBanUserData);
     }
   }
 
@@ -441,13 +426,8 @@ private ApiResponse<GcBanUserResponse> gcBanUserWithHttpInfo(String apiToken, St
     return new APIgcBanUserRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdGroupChannel> gcFreezeChannelWithHttpInfo(String apiToken, String channelUrl, GcFreezeChannelData gcFreezeChannelData) throws ApiException {
+private ApiResponse<SendBirdGroupChannel> gcFreezeChannelWithHttpInfo(String channelUrl, String apiToken, GcFreezeChannelData gcFreezeChannelData) throws ApiException {
     Object localVarPostBody = gcFreezeChannelData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcFreezeChannel");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -490,8 +470,8 @@ private ApiResponse<SendBirdGroupChannel> gcFreezeChannelWithHttpInfo(String api
   }
 
   public class APIgcFreezeChannelRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcFreezeChannelData gcFreezeChannelData;
 
     private APIgcFreezeChannelRequest(String channelUrl) {
@@ -500,7 +480,7 @@ private ApiResponse<SendBirdGroupChannel> gcFreezeChannelWithHttpInfo(String api
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcFreezeChannelRequest
      */
     public APIgcFreezeChannelRequest apiToken(String apiToken) {
@@ -546,7 +526,7 @@ private ApiResponse<SendBirdGroupChannel> gcFreezeChannelWithHttpInfo(String api
 
      */
     public ApiResponse<SendBirdGroupChannel> executeWithHttpInfo() throws ApiException {
-      return gcFreezeChannelWithHttpInfo(apiToken, channelUrl, gcFreezeChannelData);
+      return gcFreezeChannelWithHttpInfo(channelUrl, apiToken, gcFreezeChannelData);
     }
   }
 
@@ -563,13 +543,8 @@ private ApiResponse<SendBirdGroupChannel> gcFreezeChannelWithHttpInfo(String api
     return new APIgcFreezeChannelRequest(channelUrl);
   }
 
-private ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+private ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcListBannedUsers");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -614,8 +589,8 @@ private ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(Str
   }
 
   public class APIgcListBannedUsersRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -625,7 +600,7 @@ private ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(Str
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcListBannedUsersRequest
      */
     public APIgcListBannedUsersRequest apiToken(String apiToken) {
@@ -681,7 +656,7 @@ private ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(Str
 
      */
     public ApiResponse<GcListBannedUsersResponse> executeWithHttpInfo() throws ApiException {
-      return gcListBannedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
+      return gcListBannedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
     }
   }
 
@@ -698,13 +673,8 @@ private ApiResponse<GcListBannedUsersResponse> gcListBannedUsersWithHttpInfo(Str
     return new APIgcListBannedUsersRequest(channelUrl);
   }
 
-private ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+private ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcListMutedUsers");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -749,8 +719,8 @@ private ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(Strin
   }
 
   public class APIgcListMutedUsersRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -760,7 +730,7 @@ private ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcListMutedUsersRequest
      */
     public APIgcListMutedUsersRequest apiToken(String apiToken) {
@@ -816,7 +786,7 @@ private ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(Strin
 
      */
     public ApiResponse<GcListMutedUsersResponse> executeWithHttpInfo() throws ApiException {
-      return gcListMutedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
+      return gcListMutedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
     }
   }
 
@@ -833,13 +803,8 @@ private ApiResponse<GcListMutedUsersResponse> gcListMutedUsersWithHttpInfo(Strin
     return new APIgcListMutedUsersRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdGroupChannel> gcMuteUserWithHttpInfo(String apiToken, String channelUrl, GcMuteUserData gcMuteUserData) throws ApiException {
+private ApiResponse<SendBirdGroupChannel> gcMuteUserWithHttpInfo(String channelUrl, String apiToken, GcMuteUserData gcMuteUserData) throws ApiException {
     Object localVarPostBody = gcMuteUserData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcMuteUser");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -882,8 +847,8 @@ private ApiResponse<SendBirdGroupChannel> gcMuteUserWithHttpInfo(String apiToken
   }
 
   public class APIgcMuteUserRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcMuteUserData gcMuteUserData;
 
     private APIgcMuteUserRequest(String channelUrl) {
@@ -892,7 +857,7 @@ private ApiResponse<SendBirdGroupChannel> gcMuteUserWithHttpInfo(String apiToken
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcMuteUserRequest
      */
     public APIgcMuteUserRequest apiToken(String apiToken) {
@@ -938,7 +903,7 @@ private ApiResponse<SendBirdGroupChannel> gcMuteUserWithHttpInfo(String apiToken
 
      */
     public ApiResponse<SendBirdGroupChannel> executeWithHttpInfo() throws ApiException {
-      return gcMuteUserWithHttpInfo(apiToken, channelUrl, gcMuteUserData);
+      return gcMuteUserWithHttpInfo(channelUrl, apiToken, gcMuteUserData);
     }
   }
 
@@ -955,13 +920,8 @@ private ApiResponse<SendBirdGroupChannel> gcMuteUserWithHttpInfo(String apiToken
     return new APIgcMuteUserRequest(channelUrl);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> gcUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> gcUnbanUserByIdWithHttpInfo(String channelUrl, String bannedUserId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcUnbanUserById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1010,9 +970,9 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnbanUserByIdWithHttpInfo
   }
 
   public class APIgcUnbanUserByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String bannedUserId;
+    private String apiToken;
 
     private APIgcUnbanUserByIdRequest(String channelUrl, String bannedUserId) {
       this.channelUrl = channelUrl;
@@ -1021,7 +981,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnbanUserByIdWithHttpInfo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcUnbanUserByIdRequest
      */
     public APIgcUnbanUserByIdRequest apiToken(String apiToken) {
@@ -1057,7 +1017,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnbanUserByIdWithHttpInfo
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return gcUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+      return gcUnbanUserByIdWithHttpInfo(channelUrl, bannedUserId, apiToken);
     }
   }
 
@@ -1075,13 +1035,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnbanUserByIdWithHttpInfo
     return new APIgcUnbanUserByIdRequest(channelUrl, bannedUserId);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> gcUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> gcUnmuteUserByIdWithHttpInfo(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcUnmuteUserById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1130,9 +1085,9 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnmuteUserByIdWithHttpInf
   }
 
   public class APIgcUnmuteUserByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String mutedUserId;
+    private String apiToken;
 
     private APIgcUnmuteUserByIdRequest(String channelUrl, String mutedUserId) {
       this.channelUrl = channelUrl;
@@ -1141,7 +1096,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnmuteUserByIdWithHttpInf
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcUnmuteUserByIdRequest
      */
     public APIgcUnmuteUserByIdRequest apiToken(String apiToken) {
@@ -1177,7 +1132,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnmuteUserByIdWithHttpInf
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return gcUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+      return gcUnmuteUserByIdWithHttpInfo(channelUrl, mutedUserId, apiToken);
     }
   }
 
@@ -1195,13 +1150,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnmuteUserByIdWithHttpInf
     return new APIgcUnmuteUserByIdRequest(channelUrl, mutedUserId);
   }
 
-private ApiResponse<GcUpdateBanByIdResponse> gcUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, GcUpdateBanByIdData gcUpdateBanByIdData) throws ApiException {
+private ApiResponse<GcUpdateBanByIdResponse> gcUpdateBanByIdWithHttpInfo(String channelUrl, String bannedUserId, String apiToken, GcUpdateBanByIdData gcUpdateBanByIdData) throws ApiException {
     Object localVarPostBody = gcUpdateBanByIdData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcUpdateBanById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1250,9 +1200,9 @@ private ApiResponse<GcUpdateBanByIdResponse> gcUpdateBanByIdWithHttpInfo(String 
   }
 
   public class APIgcUpdateBanByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String bannedUserId;
+    private String apiToken;
     private GcUpdateBanByIdData gcUpdateBanByIdData;
 
     private APIgcUpdateBanByIdRequest(String channelUrl, String bannedUserId) {
@@ -1262,7 +1212,7 @@ private ApiResponse<GcUpdateBanByIdResponse> gcUpdateBanByIdWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcUpdateBanByIdRequest
      */
     public APIgcUpdateBanByIdRequest apiToken(String apiToken) {
@@ -1308,7 +1258,7 @@ private ApiResponse<GcUpdateBanByIdResponse> gcUpdateBanByIdWithHttpInfo(String 
 
      */
     public ApiResponse<GcUpdateBanByIdResponse> executeWithHttpInfo() throws ApiException {
-      return gcUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, gcUpdateBanByIdData);
+      return gcUpdateBanByIdWithHttpInfo(channelUrl, bannedUserId, apiToken, gcUpdateBanByIdData);
     }
   }
 
@@ -1326,13 +1276,8 @@ private ApiResponse<GcUpdateBanByIdResponse> gcUpdateBanByIdWithHttpInfo(String 
     return new APIgcUpdateBanByIdRequest(channelUrl, bannedUserId);
   }
 
-private ApiResponse<GcViewBanByIdResponse> gcViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+private ApiResponse<GcViewBanByIdResponse> gcViewBanByIdWithHttpInfo(String channelUrl, String bannedUserId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcViewBanById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1381,9 +1326,9 @@ private ApiResponse<GcViewBanByIdResponse> gcViewBanByIdWithHttpInfo(String apiT
   }
 
   public class APIgcViewBanByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String bannedUserId;
+    private String apiToken;
 
     private APIgcViewBanByIdRequest(String channelUrl, String bannedUserId) {
       this.channelUrl = channelUrl;
@@ -1392,7 +1337,7 @@ private ApiResponse<GcViewBanByIdResponse> gcViewBanByIdWithHttpInfo(String apiT
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcViewBanByIdRequest
      */
     public APIgcViewBanByIdRequest apiToken(String apiToken) {
@@ -1428,7 +1373,7 @@ private ApiResponse<GcViewBanByIdResponse> gcViewBanByIdWithHttpInfo(String apiT
 
      */
     public ApiResponse<GcViewBanByIdResponse> executeWithHttpInfo() throws ApiException {
-      return gcViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+      return gcViewBanByIdWithHttpInfo(channelUrl, bannedUserId, apiToken);
     }
   }
 
@@ -1446,13 +1391,8 @@ private ApiResponse<GcViewBanByIdResponse> gcViewBanByIdWithHttpInfo(String apiT
     return new APIgcViewBanByIdRequest(channelUrl, bannedUserId);
   }
 
-private ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+private ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcViewMuteById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1501,9 +1441,9 @@ private ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String ap
   }
 
   public class APIgcViewMuteByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String mutedUserId;
+    private String apiToken;
 
     private APIgcViewMuteByIdRequest(String channelUrl, String mutedUserId) {
       this.channelUrl = channelUrl;
@@ -1512,7 +1452,7 @@ private ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String ap
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcViewMuteByIdRequest
      */
     public APIgcViewMuteByIdRequest apiToken(String apiToken) {
@@ -1548,7 +1488,7 @@ private ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String ap
 
      */
     public ApiResponse<GcViewMuteByIdResponse> executeWithHttpInfo() throws ApiException {
-      return gcViewMuteByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+      return gcViewMuteByIdWithHttpInfo(channelUrl, mutedUserId, apiToken);
     }
   }
 
@@ -1566,13 +1506,8 @@ private ApiResponse<GcViewMuteByIdResponse> gcViewMuteByIdWithHttpInfo(String ap
     return new APIgcViewMuteByIdRequest(channelUrl, mutedUserId);
   }
 
-private ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit) throws ApiException {
+private ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listBannedChannels");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1617,8 +1552,8 @@ private ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(S
   }
 
   public class APIlistBannedChannelsRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -1628,7 +1563,7 @@ private ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistBannedChannelsRequest
      */
     public APIlistBannedChannelsRequest apiToken(String apiToken) {
@@ -1684,7 +1619,7 @@ private ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(S
 
      */
     public ApiResponse<ListBannedChannelsResponse> executeWithHttpInfo() throws ApiException {
-      return listBannedChannelsWithHttpInfo(apiToken, userId, token, limit);
+      return listBannedChannelsWithHttpInfo(userId, apiToken, token, limit);
     }
   }
 
@@ -1701,13 +1636,8 @@ private ApiResponse<ListBannedChannelsResponse> listBannedChannelsWithHttpInfo(S
     return new APIlistBannedChannelsRequest(userId);
   }
 
-private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(String apiToken, String userId, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
+private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(String userId, String apiToken, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listBlockedUsers");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1755,8 +1685,8 @@ private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(Strin
   }
 
   public class APIlistBlockedUsersRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private String token;
     private Integer limit;
     private String userIds;
@@ -1769,7 +1699,7 @@ private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistBlockedUsersRequest
      */
     public APIlistBlockedUsersRequest apiToken(String apiToken) {
@@ -1855,7 +1785,7 @@ private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(Strin
 
      */
     public ApiResponse<ListBlockedUsersResponse> executeWithHttpInfo() throws ApiException {
-      return listBlockedUsersWithHttpInfo(apiToken, userId, token, limit, userIds, metadatakey, metadatavaluesIn);
+      return listBlockedUsersWithHttpInfo(userId, apiToken, token, limit, userIds, metadatakey, metadatavaluesIn);
     }
   }
 
@@ -1872,13 +1802,8 @@ private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(Strin
     return new APIlistBlockedUsersRequest(userId);
   }
 
-private ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit) throws ApiException {
+private ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listMutedChannels");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1923,8 +1848,8 @@ private ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(Str
   }
 
   public class APIlistMutedChannelsRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -1934,7 +1859,7 @@ private ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(Str
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistMutedChannelsRequest
      */
     public APIlistMutedChannelsRequest apiToken(String apiToken) {
@@ -1990,7 +1915,7 @@ private ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(Str
 
      */
     public ApiResponse<ListMutedChannelsResponse> executeWithHttpInfo() throws ApiException {
-      return listMutedChannelsWithHttpInfo(apiToken, userId, token, limit);
+      return listMutedChannelsWithHttpInfo(userId, apiToken, token, limit);
     }
   }
 
@@ -2007,13 +1932,8 @@ private ApiResponse<ListMutedChannelsResponse> listMutedChannelsWithHttpInfo(Str
     return new APIlistMutedChannelsRequest(userId);
   }
 
-private ApiResponse<Object> muteInChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) throws ApiException {
+private ApiResponse<Object> muteInChannelsWithCustomChannelTypesWithHttpInfo(String userId, String apiToken, MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData) throws ApiException {
     Object localVarPostBody = muteInChannelsWithCustomChannelTypesData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling muteInChannelsWithCustomChannelTypes");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2056,8 +1976,8 @@ private ApiResponse<Object> muteInChannelsWithCustomChannelTypesWithHttpInfo(Str
   }
 
   public class APImuteInChannelsWithCustomChannelTypesRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData;
 
     private APImuteInChannelsWithCustomChannelTypesRequest(String userId) {
@@ -2066,7 +1986,7 @@ private ApiResponse<Object> muteInChannelsWithCustomChannelTypesWithHttpInfo(Str
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APImuteInChannelsWithCustomChannelTypesRequest
      */
     public APImuteInChannelsWithCustomChannelTypesRequest apiToken(String apiToken) {
@@ -2112,7 +2032,7 @@ private ApiResponse<Object> muteInChannelsWithCustomChannelTypesWithHttpInfo(Str
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return muteInChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, muteInChannelsWithCustomChannelTypesData);
+      return muteInChannelsWithCustomChannelTypesWithHttpInfo(userId, apiToken, muteInChannelsWithCustomChannelTypesData);
     }
   }
 
@@ -2129,13 +2049,8 @@ private ApiResponse<Object> muteInChannelsWithCustomChannelTypesWithHttpInfo(Str
     return new APImuteInChannelsWithCustomChannelTypesRequest(userId);
   }
 
-private ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String apiToken, String channelUrl, OcBanUserData ocBanUserData) throws ApiException {
+private ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String channelUrl, String apiToken, OcBanUserData ocBanUserData) throws ApiException {
     Object localVarPostBody = ocBanUserData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocBanUser");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2178,8 +2093,8 @@ private ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String apiToken, St
   }
 
   public class APIocBanUserRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private OcBanUserData ocBanUserData;
 
     private APIocBanUserRequest(String channelUrl) {
@@ -2188,7 +2103,7 @@ private ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String apiToken, St
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocBanUserRequest
      */
     public APIocBanUserRequest apiToken(String apiToken) {
@@ -2234,7 +2149,7 @@ private ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String apiToken, St
 
      */
     public ApiResponse<OcBanUserResponse> executeWithHttpInfo() throws ApiException {
-      return ocBanUserWithHttpInfo(apiToken, channelUrl, ocBanUserData);
+      return ocBanUserWithHttpInfo(channelUrl, apiToken, ocBanUserData);
     }
   }
 
@@ -2251,13 +2166,8 @@ private ApiResponse<OcBanUserResponse> ocBanUserWithHttpInfo(String apiToken, St
     return new APIocBanUserRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String apiToken, String channelUrl, OcFreezeChannelData ocFreezeChannelData) throws ApiException {
+private ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String channelUrl, String apiToken, OcFreezeChannelData ocFreezeChannelData) throws ApiException {
     Object localVarPostBody = ocFreezeChannelData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocFreezeChannel");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2300,8 +2210,8 @@ private ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String apiT
   }
 
   public class APIocFreezeChannelRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private OcFreezeChannelData ocFreezeChannelData;
 
     private APIocFreezeChannelRequest(String channelUrl) {
@@ -2310,7 +2220,7 @@ private ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String apiT
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocFreezeChannelRequest
      */
     public APIocFreezeChannelRequest apiToken(String apiToken) {
@@ -2356,7 +2266,7 @@ private ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String apiT
 
      */
     public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return ocFreezeChannelWithHttpInfo(apiToken, channelUrl, ocFreezeChannelData);
+      return ocFreezeChannelWithHttpInfo(channelUrl, apiToken, ocFreezeChannelData);
     }
   }
 
@@ -2373,13 +2283,8 @@ private ApiResponse<SendBirdOpenChannel> ocFreezeChannelWithHttpInfo(String apiT
     return new APIocFreezeChannelRequest(channelUrl);
   }
 
-private ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+private ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocListBannedUsers");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2424,8 +2329,8 @@ private ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(Str
   }
 
   public class APIocListBannedUsersRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -2435,7 +2340,7 @@ private ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(Str
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocListBannedUsersRequest
      */
     public APIocListBannedUsersRequest apiToken(String apiToken) {
@@ -2491,7 +2396,7 @@ private ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(Str
 
      */
     public ApiResponse<OcListBannedUsersResponse> executeWithHttpInfo() throws ApiException {
-      return ocListBannedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
+      return ocListBannedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
     }
   }
 
@@ -2508,13 +2413,8 @@ private ApiResponse<OcListBannedUsersResponse> ocListBannedUsersWithHttpInfo(Str
     return new APIocListBannedUsersRequest(channelUrl);
   }
 
-private ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+private ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocListMutedUsers");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2559,8 +2459,8 @@ private ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(Strin
   }
 
   public class APIocListMutedUsersRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -2570,7 +2470,7 @@ private ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocListMutedUsersRequest
      */
     public APIocListMutedUsersRequest apiToken(String apiToken) {
@@ -2626,7 +2526,7 @@ private ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(Strin
 
      */
     public ApiResponse<OcListMutedUsersResponse> executeWithHttpInfo() throws ApiException {
-      return ocListMutedUsersWithHttpInfo(apiToken, channelUrl, token, limit);
+      return ocListMutedUsersWithHttpInfo(channelUrl, apiToken, token, limit);
     }
   }
 
@@ -2643,13 +2543,8 @@ private ApiResponse<OcListMutedUsersResponse> ocListMutedUsersWithHttpInfo(Strin
     return new APIocListMutedUsersRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String apiToken, String channelUrl, OcMuteUserData ocMuteUserData) throws ApiException {
+private ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String channelUrl, String apiToken, OcMuteUserData ocMuteUserData) throws ApiException {
     Object localVarPostBody = ocMuteUserData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocMuteUser");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2692,8 +2587,8 @@ private ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String apiToken,
   }
 
   public class APIocMuteUserRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private OcMuteUserData ocMuteUserData;
 
     private APIocMuteUserRequest(String channelUrl) {
@@ -2702,7 +2597,7 @@ private ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String apiToken,
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocMuteUserRequest
      */
     public APIocMuteUserRequest apiToken(String apiToken) {
@@ -2748,7 +2643,7 @@ private ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String apiToken,
 
      */
     public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return ocMuteUserWithHttpInfo(apiToken, channelUrl, ocMuteUserData);
+      return ocMuteUserWithHttpInfo(channelUrl, apiToken, ocMuteUserData);
     }
   }
 
@@ -2765,13 +2660,8 @@ private ApiResponse<SendBirdOpenChannel> ocMuteUserWithHttpInfo(String apiToken,
     return new APIocMuteUserRequest(channelUrl);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> ocUnbanUserByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> ocUnbanUserByIdWithHttpInfo(String channelUrl, String bannedUserId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocUnbanUserById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2820,9 +2710,9 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocUnbanUserByIdWithHttpInfo
   }
 
   public class APIocUnbanUserByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String bannedUserId;
+    private String apiToken;
 
     private APIocUnbanUserByIdRequest(String channelUrl, String bannedUserId) {
       this.channelUrl = channelUrl;
@@ -2831,7 +2721,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocUnbanUserByIdWithHttpInfo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocUnbanUserByIdRequest
      */
     public APIocUnbanUserByIdRequest apiToken(String apiToken) {
@@ -2867,7 +2757,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocUnbanUserByIdWithHttpInfo
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return ocUnbanUserByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+      return ocUnbanUserByIdWithHttpInfo(channelUrl, bannedUserId, apiToken);
     }
   }
 
@@ -2885,13 +2775,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocUnbanUserByIdWithHttpInfo
     return new APIocUnbanUserByIdRequest(channelUrl, bannedUserId);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> ocUnmuteUserByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> ocUnmuteUserByIdWithHttpInfo(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocUnmuteUserById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2940,9 +2825,9 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocUnmuteUserByIdWithHttpInf
   }
 
   public class APIocUnmuteUserByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String mutedUserId;
+    private String apiToken;
 
     private APIocUnmuteUserByIdRequest(String channelUrl, String mutedUserId) {
       this.channelUrl = channelUrl;
@@ -2951,7 +2836,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocUnmuteUserByIdWithHttpInf
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocUnmuteUserByIdRequest
      */
     public APIocUnmuteUserByIdRequest apiToken(String apiToken) {
@@ -2987,7 +2872,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocUnmuteUserByIdWithHttpInf
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return ocUnmuteUserByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+      return ocUnmuteUserByIdWithHttpInfo(channelUrl, mutedUserId, apiToken);
     }
   }
 
@@ -3005,13 +2890,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocUnmuteUserByIdWithHttpInf
     return new APIocUnmuteUserByIdRequest(channelUrl, mutedUserId);
   }
 
-private ApiResponse<OcUpdateBanByIdResponse> ocUpdateBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
+private ApiResponse<OcUpdateBanByIdResponse> ocUpdateBanByIdWithHttpInfo(String channelUrl, String bannedUserId, String apiToken, OcUpdateBanByIdData ocUpdateBanByIdData) throws ApiException {
     Object localVarPostBody = ocUpdateBanByIdData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocUpdateBanById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -3060,9 +2940,9 @@ private ApiResponse<OcUpdateBanByIdResponse> ocUpdateBanByIdWithHttpInfo(String 
   }
 
   public class APIocUpdateBanByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String bannedUserId;
+    private String apiToken;
     private OcUpdateBanByIdData ocUpdateBanByIdData;
 
     private APIocUpdateBanByIdRequest(String channelUrl, String bannedUserId) {
@@ -3072,7 +2952,7 @@ private ApiResponse<OcUpdateBanByIdResponse> ocUpdateBanByIdWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocUpdateBanByIdRequest
      */
     public APIocUpdateBanByIdRequest apiToken(String apiToken) {
@@ -3118,7 +2998,7 @@ private ApiResponse<OcUpdateBanByIdResponse> ocUpdateBanByIdWithHttpInfo(String 
 
      */
     public ApiResponse<OcUpdateBanByIdResponse> executeWithHttpInfo() throws ApiException {
-      return ocUpdateBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId, ocUpdateBanByIdData);
+      return ocUpdateBanByIdWithHttpInfo(channelUrl, bannedUserId, apiToken, ocUpdateBanByIdData);
     }
   }
 
@@ -3136,13 +3016,8 @@ private ApiResponse<OcUpdateBanByIdResponse> ocUpdateBanByIdWithHttpInfo(String 
     return new APIocUpdateBanByIdRequest(channelUrl, bannedUserId);
   }
 
-private ApiResponse<OcViewBanByIdResponse> ocViewBanByIdWithHttpInfo(String apiToken, String channelUrl, String bannedUserId) throws ApiException {
+private ApiResponse<OcViewBanByIdResponse> ocViewBanByIdWithHttpInfo(String channelUrl, String bannedUserId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocViewBanById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -3191,9 +3066,9 @@ private ApiResponse<OcViewBanByIdResponse> ocViewBanByIdWithHttpInfo(String apiT
   }
 
   public class APIocViewBanByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String bannedUserId;
+    private String apiToken;
 
     private APIocViewBanByIdRequest(String channelUrl, String bannedUserId) {
       this.channelUrl = channelUrl;
@@ -3202,7 +3077,7 @@ private ApiResponse<OcViewBanByIdResponse> ocViewBanByIdWithHttpInfo(String apiT
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocViewBanByIdRequest
      */
     public APIocViewBanByIdRequest apiToken(String apiToken) {
@@ -3238,7 +3113,7 @@ private ApiResponse<OcViewBanByIdResponse> ocViewBanByIdWithHttpInfo(String apiT
 
      */
     public ApiResponse<OcViewBanByIdResponse> executeWithHttpInfo() throws ApiException {
-      return ocViewBanByIdWithHttpInfo(apiToken, channelUrl, bannedUserId);
+      return ocViewBanByIdWithHttpInfo(channelUrl, bannedUserId, apiToken);
     }
   }
 
@@ -3256,13 +3131,8 @@ private ApiResponse<OcViewBanByIdResponse> ocViewBanByIdWithHttpInfo(String apiT
     return new APIocViewBanByIdRequest(channelUrl, bannedUserId);
   }
 
-private ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String apiToken, String channelUrl, String mutedUserId) throws ApiException {
+private ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String channelUrl, String mutedUserId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocViewMuteById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -3311,9 +3181,9 @@ private ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String ap
   }
 
   public class APIocViewMuteByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String mutedUserId;
+    private String apiToken;
 
     private APIocViewMuteByIdRequest(String channelUrl, String mutedUserId) {
       this.channelUrl = channelUrl;
@@ -3322,7 +3192,7 @@ private ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String ap
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocViewMuteByIdRequest
      */
     public APIocViewMuteByIdRequest apiToken(String apiToken) {
@@ -3358,7 +3228,7 @@ private ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String ap
 
      */
     public ApiResponse<OcViewMuteByIdResponse> executeWithHttpInfo() throws ApiException {
-      return ocViewMuteByIdWithHttpInfo(apiToken, channelUrl, mutedUserId);
+      return ocViewMuteByIdWithHttpInfo(channelUrl, mutedUserId, apiToken);
     }
   }
 
@@ -3376,13 +3246,8 @@ private ApiResponse<OcViewMuteByIdResponse> ocViewMuteByIdWithHttpInfo(String ap
     return new APIocViewMuteByIdRequest(channelUrl, mutedUserId);
   }
 
-private ApiResponse<Object> unblockUserByIdWithHttpInfo(String apiToken, String userId, String targetId) throws ApiException {
+private ApiResponse<Object> unblockUserByIdWithHttpInfo(String userId, String targetId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling unblockUserById");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -3431,9 +3296,9 @@ private ApiResponse<Object> unblockUserByIdWithHttpInfo(String apiToken, String 
   }
 
   public class APIunblockUserByIdRequest {
-    private String apiToken;
     private String userId;
     private String targetId;
+    private String apiToken;
 
     private APIunblockUserByIdRequest(String userId, String targetId) {
       this.userId = userId;
@@ -3442,7 +3307,7 @@ private ApiResponse<Object> unblockUserByIdWithHttpInfo(String apiToken, String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIunblockUserByIdRequest
      */
     public APIunblockUserByIdRequest apiToken(String apiToken) {
@@ -3478,7 +3343,7 @@ private ApiResponse<Object> unblockUserByIdWithHttpInfo(String apiToken, String 
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return unblockUserByIdWithHttpInfo(apiToken, userId, targetId);
+      return unblockUserByIdWithHttpInfo(userId, targetId, apiToken);
     }
   }
 

@@ -56,8 +56,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcAcceptInvitationData gcAcceptInvitationData = new GcAcceptInvitationData(); // GcAcceptInvitationData | 
         try {
             SendBirdGroupChannel result = api.gcAcceptInvitation(channelUrl)
@@ -81,8 +81,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcAcceptInvitationData** | [**GcAcceptInvitationData**](GcAcceptInvitationData.md)|  | [optional] |
 
 ### Return type
@@ -106,7 +106,7 @@ No authorization required
 
 ## gcCancelTheRegistrationOfOperators
 
-> OcDeleteChannelByUrl200Response gcCancelTheRegistrationOfOperators(channelUrl).apiToken(apiToken).operatorIds(operatorIds).deleteAll(deleteAll).execute();
+> OcDeleteChannelByUrl200Response gcCancelTheRegistrationOfOperators(channelUrl).operatorIds(operatorIds).apiToken(apiToken).deleteAll(deleteAll).execute();
 
 Cancel the registration of operators
 
@@ -137,14 +137,14 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         List<String> operatorIds = Arrays.asList(); // List<String> | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean deleteAll = true; // Boolean | 
         try {
             OcDeleteChannelByUrl200Response result = api.gcCancelTheRegistrationOfOperators(channelUrl)
-                .apiToken(apiToken)
                 .operatorIds(operatorIds)
+                .apiToken(apiToken)
                 .deleteAll(deleteAll)
                 .execute();
             System.out.println(result);
@@ -164,9 +164,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **operatorIds** | **List&lt;String&gt;**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **deleteAll** | **Boolean**|  | [optional] |
 
 ### Return type
@@ -217,9 +217,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             GcCheckIfMemberByIdResponse result = api.gcCheckIfMemberById(channelUrl, userId)
                 .apiToken(apiToken)
@@ -241,9 +241,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -318,7 +318,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcCreateChannelData** | [**GcCreateChannelData**](GcCreateChannelData.md)|  | [optional] |
 
 ### Return type
@@ -371,8 +371,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcDeclineInvitationData gcDeclineInvitationData = new GcDeclineInvitationData(); // GcDeclineInvitationData | 
         try {
             OcDeleteChannelByUrl200Response result = api.gcDeclineInvitation(channelUrl)
@@ -396,8 +396,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcDeclineInvitationData** | [**GcDeclineInvitationData**](GcDeclineInvitationData.md)|  | [optional] |
 
 ### Return type
@@ -448,8 +448,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             OcDeleteChannelByUrl200Response result = api.gcDeleteChannelByUrl(channelUrl)
                 .apiToken(apiToken)
@@ -471,8 +471,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -524,8 +524,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcHideOrArchiveChannelData gcHideOrArchiveChannelData = new GcHideOrArchiveChannelData(); // GcHideOrArchiveChannelData | 
         try {
             OcDeleteChannelByUrl200Response result = api.gcHideOrArchiveChannel(channelUrl)
@@ -549,8 +549,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcHideOrArchiveChannelData** | [**GcHideOrArchiveChannelData**](GcHideOrArchiveChannelData.md)|  | [optional] |
 
 ### Return type
@@ -603,8 +603,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcInviteAsMembersData gcInviteAsMembersData = new GcInviteAsMembersData(); // GcInviteAsMembersData | 
         try {
             SendBirdGroupChannel result = api.gcInviteAsMembers(channelUrl)
@@ -628,8 +628,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcInviteAsMembersData** | [**GcInviteAsMembersData**](GcInviteAsMembersData.md)|  | [optional] |
 
 ### Return type
@@ -682,8 +682,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcJoinChannelData gcJoinChannelData = new GcJoinChannelData(); // GcJoinChannelData | 
         try {
             api.gcJoinChannel(channelUrl)
@@ -706,8 +706,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcJoinChannelData** | [**GcJoinChannelData**](GcJoinChannelData.md)|  | [optional] |
 
 ### Return type
@@ -758,8 +758,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcLeaveChannelData gcLeaveChannelData = new GcLeaveChannelData(); // GcLeaveChannelData | 
         try {
             OcDeleteChannelByUrl200Response result = api.gcLeaveChannel(channelUrl)
@@ -783,8 +783,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcLeaveChannelData** | [**GcLeaveChannelData**](GcLeaveChannelData.md)|  | [optional] |
 
 ### Return type
@@ -943,7 +943,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 | **distinctMode** | **String**|  | [optional] |
@@ -1039,8 +1039,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         Boolean showDeliveryReceipt = true; // Boolean | 
@@ -1080,8 +1080,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 | **showDeliveryReceipt** | **Boolean**|  | [optional] |
@@ -1144,8 +1144,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -1171,8 +1171,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -1224,8 +1224,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcRegisterOperatorsData gcRegisterOperatorsData = new GcRegisterOperatorsData(); // GcRegisterOperatorsData | 
         try {
             GcRegisterOperatorsResponse result = api.gcRegisterOperators(channelUrl)
@@ -1249,8 +1249,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcRegisterOperatorsData** | [**GcRegisterOperatorsData**](GcRegisterOperatorsData.md)|  | [optional] |
 
 ### Return type
@@ -1305,8 +1305,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcResetChatHistoryData gcResetChatHistoryData = new GcResetChatHistoryData(); // GcResetChatHistoryData | 
         try {
             GcResetChatHistoryResponse result = api.gcResetChatHistory(channelUrl)
@@ -1330,8 +1330,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcResetChatHistoryData** | [**GcResetChatHistoryData**](GcResetChatHistoryData.md)|  | [optional] |
 
 ### Return type
@@ -1355,7 +1355,7 @@ No authorization required
 
 ## gcUnhideOrUnarchiveChannel
 
-> OcDeleteChannelByUrl200Response gcUnhideOrUnarchiveChannel(channelUrl).apiToken(apiToken).userId(userId).shouldUnhideAll(shouldUnhideAll).execute();
+> OcDeleteChannelByUrl200Response gcUnhideOrUnarchiveChannel(channelUrl).userId(userId).apiToken(apiToken).shouldUnhideAll(shouldUnhideAll).execute();
 
 Unhide or unarchive a channel
 
@@ -1386,14 +1386,14 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean shouldUnhideAll = true; // Boolean | 
         try {
             OcDeleteChannelByUrl200Response result = api.gcUnhideOrUnarchiveChannel(channelUrl)
-                .apiToken(apiToken)
                 .userId(userId)
+                .apiToken(apiToken)
                 .shouldUnhideAll(shouldUnhideAll)
                 .execute();
             System.out.println(result);
@@ -1413,9 +1413,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **shouldUnhideAll** | **Boolean**|  | [optional] |
 
 ### Return type
@@ -1468,8 +1468,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcUpdateChannelByUrlData gcUpdateChannelByUrlData = new GcUpdateChannelByUrlData(); // GcUpdateChannelByUrlData | 
         try {
             SendBirdGroupChannel result = api.gcUpdateChannelByUrl(channelUrl)
@@ -1493,8 +1493,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcUpdateChannelByUrlData** | [**GcUpdateChannelByUrlData**](GcUpdateChannelByUrlData.md)|  | [optional] |
 
 ### Return type
@@ -1549,8 +1549,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean showDeliveryReceipt = true; // Boolean | 
         Boolean showReadReceipt = true; // Boolean | 
         Boolean showMember = true; // Boolean | 
@@ -1582,8 +1582,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **showDeliveryReceipt** | **Boolean**|  | [optional] |
 | **showReadReceipt** | **Boolean**|  | [optional] |
 | **showMember** | **Boolean**|  | [optional] |

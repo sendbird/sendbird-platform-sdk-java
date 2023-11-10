@@ -47,8 +47,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         StatisticsApi apiInstance = new StatisticsApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String uniqueId = "uniqueId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             GetDetailedOpenRateOfAnnouncementByIdResponse result = api.getDetailedOpenRateOfAnnouncementById(uniqueId)
                 .apiToken(apiToken)
@@ -70,8 +70,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **uniqueId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -121,8 +121,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         StatisticsApi apiInstance = new StatisticsApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String uniqueId = "uniqueId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Integer limit = 56; // Integer | 
         String next = "next_example"; // String | 
         List<String> uniqueIds = Arrays.asList(); // List<String> | 
@@ -154,8 +154,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **uniqueId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 | **next** | **String**|  | [optional] |
 | **uniqueIds** | **List&lt;String&gt;**|  | [optional] |
@@ -234,7 +234,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -305,7 +305,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -379,7 +379,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **date** | **String**|  | [optional] |
 
 ### Return type
@@ -454,7 +454,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **date** | **String**|  | [optional] |
 
 ### Return type
@@ -478,7 +478,7 @@ No authorization required
 
 ## viewNumberOfPeakConnections
 
-> ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections().apiToken(apiToken).timeDimension(timeDimension).startYear(startYear).startMonth(startMonth).endYear(endYear).endMonth(endMonth).startDay(startDay).endDay(endDay).execute();
+> ViewNumberOfPeakConnectionsResponse viewNumberOfPeakConnections().timeDimension(timeDimension).startYear(startYear).startMonth(startMonth).endYear(endYear).endMonth(endMonth).apiToken(apiToken).startDay(startDay).endDay(endDay).execute();
 
 View number of peak connections
 
@@ -505,22 +505,22 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         StatisticsApi apiInstance = new StatisticsApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String timeDimension = "timeDimension_example"; // String | 
         Integer startYear = 56; // Integer | 
         Integer startMonth = 56; // Integer | 
         Integer endYear = 56; // Integer | 
         Integer endMonth = 56; // Integer | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Integer startDay = 56; // Integer | 
         Integer endDay = 56; // Integer | 
         try {
             ViewNumberOfPeakConnectionsResponse result = api.viewNumberOfPeakConnections()
-                .apiToken(apiToken)
                 .timeDimension(timeDimension)
                 .startYear(startYear)
                 .startMonth(startMonth)
                 .endYear(endYear)
                 .endMonth(endMonth)
+                .apiToken(apiToken)
                 .startDay(startDay)
                 .endDay(endDay)
                 .execute();
@@ -541,12 +541,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **timeDimension** | **String**|  | |
 | **startYear** | **Integer**|  | |
 | **startMonth** | **Integer**|  | |
 | **endYear** | **Integer**|  | |
 | **endMonth** | **Integer**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **startDay** | **Integer**|  | [optional] |
 | **endDay** | **Integer**|  | [optional] |
 

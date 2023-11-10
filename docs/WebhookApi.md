@@ -61,7 +61,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **chooseWhichEventsToSubscribeToData** | [**ChooseWhichEventsToSubscribeToData**](ChooseWhichEventsToSubscribeToData.md)|  | [optional] |
 
 ### Return type
@@ -136,7 +136,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **displayAllWebhookCategories** | **Boolean**|  | [optional] |
 
 ### Return type

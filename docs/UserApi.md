@@ -72,9 +72,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String tokenType = "tokenType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData = new AddRegistrationOrDeviceTokenData(); // AddRegistrationOrDeviceTokenData | 
         try {
             AddRegistrationOrDeviceTokenResponse result = api.addRegistrationOrDeviceToken(userId, tokenType)
@@ -98,9 +98,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **tokenType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **addRegistrationOrDeviceTokenData** | [**AddRegistrationOrDeviceTokenData**](AddRegistrationOrDeviceTokenData.md)|  | [optional] |
 
 ### Return type
@@ -151,8 +151,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Object body = null; // Object | 
         try {
             ChoosePushNotificationContentTemplateResponse result = api.choosePushNotificationContentTemplate(userId)
@@ -176,8 +176,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **body** | **Object**|  | [optional] |
 
 ### Return type
@@ -251,7 +251,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **createUserData** | [**CreateUserData**](CreateUserData.md)|  | [optional] |
 
 ### Return type
@@ -297,8 +297,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         CreateUserTokenData createUserTokenData = new CreateUserTokenData(); // CreateUserTokenData | 
         try {
             CreateUserTokenResponse result = api.createUserToken(userId)
@@ -322,8 +322,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **createUserTokenData** | [**CreateUserTokenData**](CreateUserTokenData.md)|  | [optional] |
 
 ### Return type
@@ -374,8 +374,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.deleteUserById(userId)
                 .apiToken(apiToken)
@@ -397,8 +397,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -452,8 +452,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         LeaveMyGroupChannelsData leaveMyGroupChannelsData = new LeaveMyGroupChannelsData(); // LeaveMyGroupChannelsData | 
         try {
             Object result = api.leaveMyGroupChannels(userId)
@@ -477,8 +477,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **leaveMyGroupChannelsData** | [**LeaveMyGroupChannelsData**](LeaveMyGroupChannelsData.md)|  | [optional] |
 
 ### Return type
@@ -533,8 +533,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         String distinctMode = "distinctMode_example"; // String | 
@@ -636,8 +636,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 | **distinctMode** | **String**|  | [optional] |
@@ -727,9 +727,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String tokenType = "tokenType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ListRegistrationOrDeviceTokensResponse result = api.listRegistrationOrDeviceTokens(userId, tokenType)
                 .apiToken(apiToken)
@@ -751,9 +751,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **tokenType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -843,7 +843,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 | **activeMode** | **String**|  | [optional] |
@@ -902,8 +902,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         MarkAllMessagesAsReadData markAllMessagesAsReadData = new MarkAllMessagesAsReadData(); // MarkAllMessagesAsReadData | 
         try {
             Object result = api.markAllMessagesAsRead(userId)
@@ -927,8 +927,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **markAllMessagesAsReadData** | [**MarkAllMessagesAsReadData**](MarkAllMessagesAsReadData.md)|  | [optional] |
 
 ### Return type
@@ -979,8 +979,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData = new RegisterAsOperatorToChannelsWithCustomChannelTypesData(); // RegisterAsOperatorToChannelsWithCustomChannelTypesData | 
         try {
             Object result = api.registerAsOperatorToChannelsWithCustomChannelTypes(userId)
@@ -1004,8 +1004,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **registerAsOperatorToChannelsWithCustomChannelTypesData** | [**RegisterAsOperatorToChannelsWithCustomChannelTypesData**](RegisterAsOperatorToChannelsWithCustomChannelTypesData.md)|  | [optional] |
 
 ### Return type
@@ -1056,8 +1056,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             RemoveRegistrationOrDeviceTokenResponse result = api.removeRegistrationOrDeviceToken(userId)
                 .apiToken(apiToken)
@@ -1079,8 +1079,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1130,10 +1130,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String tokenType = "tokenType_example"; // String | 
         String token = "token_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             RemoveRegistrationOrDeviceTokenByTokenResponse result = api.removeRegistrationOrDeviceTokenByToken(userId, tokenType, token)
                 .apiToken(apiToken)
@@ -1155,10 +1155,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **tokenType** | **String**|  | |
 | **token** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1208,9 +1208,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String tokenType = "tokenType_example"; // String | 
         String token = "token_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse result = api.removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token)
                 .apiToken(apiToken)
@@ -1232,9 +1232,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **tokenType** | **String**|  | |
 | **token** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1289,8 +1289,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ResetPushPreferencesResponse result = api.resetPushPreferences(userId)
                 .apiToken(apiToken)
@@ -1312,8 +1312,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1364,8 +1364,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData = new UpdateChannelInvitationPreferenceData(); // UpdateChannelInvitationPreferenceData | 
         try {
             UpdateChannelInvitationPreferenceResponse result = api.updateChannelInvitationPreference(userId)
@@ -1389,8 +1389,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateChannelInvitationPreferenceData** | [**UpdateChannelInvitationPreferenceData**](UpdateChannelInvitationPreferenceData.md)|  | [optional] |
 
 ### Return type
@@ -1441,9 +1441,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData = new UpdateCountPreferenceOfChannelByUrlData(); // UpdateCountPreferenceOfChannelByUrlData | 
         try {
             UpdateCountPreferenceOfChannelByUrlResponse result = api.updateCountPreferenceOfChannelByUrl(userId, channelUrl)
@@ -1467,9 +1467,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateCountPreferenceOfChannelByUrlData** | [**UpdateCountPreferenceOfChannelByUrlData**](UpdateCountPreferenceOfChannelByUrlData.md)|  | [optional] |
 
 ### Return type
@@ -1520,8 +1520,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdatePushPreferencesData updatePushPreferencesData = new UpdatePushPreferencesData(); // UpdatePushPreferencesData | 
         try {
             UpdatePushPreferencesResponse result = api.updatePushPreferences(userId)
@@ -1545,8 +1545,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updatePushPreferencesData** | [**UpdatePushPreferencesData**](UpdatePushPreferencesData.md)|  | [optional] |
 
 ### Return type
@@ -1597,9 +1597,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData = new UpdatePushPreferencesForChannelByUrlData(); // UpdatePushPreferencesForChannelByUrlData | 
         try {
             UpdatePushPreferencesForChannelByUrlResponse result = api.updatePushPreferencesForChannelByUrl(userId, channelUrl)
@@ -1623,9 +1623,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updatePushPreferencesForChannelByUrlData** | [**UpdatePushPreferencesForChannelByUrlData**](UpdatePushPreferencesForChannelByUrlData.md)|  | [optional] |
 
 ### Return type
@@ -1678,8 +1678,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateUserByIdData updateUserByIdData = new UpdateUserByIdData(); // UpdateUserByIdData | 
         try {
             SendBirdUser result = api.updateUserById(userId)
@@ -1703,8 +1703,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateUserByIdData** | [**UpdateUserByIdData**](UpdateUserByIdData.md)|  | [optional] |
 
 ### Return type
@@ -1756,8 +1756,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewChannelInvitationPreferenceResponse result = api.viewChannelInvitationPreference(userId)
                 .apiToken(apiToken)
@@ -1779,8 +1779,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1830,9 +1830,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewCountPreferenceOfChannelByUrlResponse result = api.viewCountPreferenceOfChannelByUrl(userId, channelUrl)
                 .apiToken(apiToken)
@@ -1854,9 +1854,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1910,8 +1910,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String state = "state_example"; // String | 
         try {
             ViewNumberOfChannelsByJoinStatusResponse result = api.viewNumberOfChannelsByJoinStatus(userId)
@@ -1935,8 +1935,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **state** | **String**|  | [optional] |
 
 ### Return type
@@ -1987,8 +1987,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         List<String> customTypes = Arrays.asList(); // List<String> | 
         String superMode = "superMode_example"; // String | 
         try {
@@ -2014,8 +2014,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **customTypes** | **List&lt;String&gt;**|  | [optional] |
 | **superMode** | **String**|  | [optional] |
 
@@ -2067,8 +2067,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String customType = "customType_example"; // String | 
         String itemKeys = "itemKeys_example"; // String | 
         try {
@@ -2094,8 +2094,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **customType** | **String**|  | [optional] |
 | **itemKeys** | **String**|  | [optional] |
 
@@ -2151,8 +2151,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String customTypes = "customTypes_example"; // String | 
         String superMode = "superMode_example"; // String | 
         try {
@@ -2178,8 +2178,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **customTypes** | **String**|  | [optional] |
 | **superMode** | **String**|  | [optional] |
 
@@ -2231,8 +2231,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewPushPreferencesResponse result = api.viewPushPreferences(userId)
                 .apiToken(apiToken)
@@ -2254,8 +2254,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2305,9 +2305,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewPushPreferencesForChannelByUrlResponse result = api.viewPushPreferencesForChannelByUrl(userId, channelUrl)
                 .apiToken(apiToken)
@@ -2329,9 +2329,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2385,8 +2385,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean includeUnreadCount = true; // Boolean | 
         String customTypes = "customTypes_example"; // String | 
         String superMode = "superMode_example"; // String | 
@@ -2414,8 +2414,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **includeUnreadCount** | **Boolean**|  | [optional] |
 | **customTypes** | **String**|  | [optional] |
 | **superMode** | **String**|  | [optional] |
@@ -2468,9 +2468,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         UserApi apiInstance = new UserApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String tokenType = "tokenType_example"; // String | 
         String token = "token_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> result = api.viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token)
                 .apiToken(apiToken)
@@ -2492,9 +2492,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **tokenType** | **String**|  | |
 | **token** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

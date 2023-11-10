@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class OpenChannelApi {
   private ApiClient apiClient;
 
@@ -53,13 +53,8 @@ public class OpenChannelApi {
   }
 
 
-private ApiResponse<Void> ocCancelTheRegistrationOfOperatorsWithHttpInfo(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
+private ApiResponse<Void> ocCancelTheRegistrationOfOperatorsWithHttpInfo(String channelUrl, List<String> operatorIds, String apiToken, Boolean deleteAll) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocCancelTheRegistrationOfOperators");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -107,23 +102,13 @@ private ApiResponse<Void> ocCancelTheRegistrationOfOperatorsWithHttpInfo(String 
   }
 
   public class APIocCancelTheRegistrationOfOperatorsRequest {
-    private String apiToken;
     private String channelUrl;
     private List<String> operatorIds;
+    private String apiToken;
     private Boolean deleteAll;
 
     private APIocCancelTheRegistrationOfOperatorsRequest(String channelUrl) {
       this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (required)
-     * @return APIocCancelTheRegistrationOfOperatorsRequest
-     */
-    public APIocCancelTheRegistrationOfOperatorsRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
     }
 
     /**
@@ -133,6 +118,16 @@ private ApiResponse<Void> ocCancelTheRegistrationOfOperatorsWithHttpInfo(String 
      */
     public APIocCancelTheRegistrationOfOperatorsRequest operatorIds(List<String> operatorIds) {
       this.operatorIds = operatorIds;
+      return this;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIocCancelTheRegistrationOfOperatorsRequest
+     */
+    public APIocCancelTheRegistrationOfOperatorsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
       return this;
     }
 
@@ -174,7 +169,7 @@ private ApiResponse<Void> ocCancelTheRegistrationOfOperatorsWithHttpInfo(String 
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return ocCancelTheRegistrationOfOperatorsWithHttpInfo(apiToken, channelUrl, operatorIds, deleteAll);
+      return ocCancelTheRegistrationOfOperatorsWithHttpInfo(channelUrl, operatorIds, apiToken, deleteAll);
     }
   }
 
@@ -193,11 +188,6 @@ private ApiResponse<Void> ocCancelTheRegistrationOfOperatorsWithHttpInfo(String 
 
 private ApiResponse<SendBirdOpenChannel> ocCreateChannelWithHttpInfo(String apiToken, OcCreateChannelData ocCreateChannelData) throws ApiException {
     Object localVarPostBody = ocCreateChannelData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocCreateChannel");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/open_channels";
@@ -242,7 +232,7 @@ private ApiResponse<SendBirdOpenChannel> ocCreateChannelWithHttpInfo(String apiT
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocCreateChannelRequest
      */
     public APIocCreateChannelRequest apiToken(String apiToken) {
@@ -304,13 +294,8 @@ private ApiResponse<SendBirdOpenChannel> ocCreateChannelWithHttpInfo(String apiT
     return new APIocCreateChannelRequest();
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHttpInfo(String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocDeleteChannelByUrl");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -353,8 +338,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHtt
   }
 
   public class APIocDeleteChannelByUrlRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
 
     private APIocDeleteChannelByUrlRequest(String channelUrl) {
       this.channelUrl = channelUrl;
@@ -362,7 +347,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHtt
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocDeleteChannelByUrlRequest
      */
     public APIocDeleteChannelByUrlRequest apiToken(String apiToken) {
@@ -398,7 +383,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHtt
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return ocDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
+      return ocDeleteChannelByUrlWithHttpInfo(channelUrl, apiToken);
     }
   }
 
@@ -417,11 +402,6 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHtt
 
 private ApiResponse<OcListChannelsResponse> ocListChannelsWithHttpInfo(String apiToken, String token, Integer limit, String customTypes, String nameContains, String urlContains, Boolean showFrozen, Boolean showMetadata, String customType) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocListChannels");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/open_channels";
@@ -481,7 +461,7 @@ private ApiResponse<OcListChannelsResponse> ocListChannelsWithHttpInfo(String ap
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocListChannelsRequest
      */
     public APIocListChannelsRequest apiToken(String apiToken) {
@@ -613,13 +593,8 @@ private ApiResponse<OcListChannelsResponse> ocListChannelsWithHttpInfo(String ap
     return new APIocListChannelsRequest();
   }
 
-private ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+private ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocListOperators");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -664,8 +639,8 @@ private ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String 
   }
 
   public class APIocListOperatorsRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -675,7 +650,7 @@ private ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocListOperatorsRequest
      */
     public APIocListOperatorsRequest apiToken(String apiToken) {
@@ -731,7 +706,7 @@ private ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String 
 
      */
     public ApiResponse<OcListOperatorsResponse> executeWithHttpInfo() throws ApiException {
-      return ocListOperatorsWithHttpInfo(apiToken, channelUrl, token, limit);
+      return ocListOperatorsWithHttpInfo(channelUrl, apiToken, token, limit);
     }
   }
 
@@ -748,13 +723,8 @@ private ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String 
     return new APIocListOperatorsRequest(channelUrl);
   }
 
-private ApiResponse<OcListParticipantsResponse> ocListParticipantsWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+private ApiResponse<OcListParticipantsResponse> ocListParticipantsWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocListParticipants");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -799,8 +769,8 @@ private ApiResponse<OcListParticipantsResponse> ocListParticipantsWithHttpInfo(S
   }
 
   public class APIocListParticipantsRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -810,7 +780,7 @@ private ApiResponse<OcListParticipantsResponse> ocListParticipantsWithHttpInfo(S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocListParticipantsRequest
      */
     public APIocListParticipantsRequest apiToken(String apiToken) {
@@ -866,7 +836,7 @@ private ApiResponse<OcListParticipantsResponse> ocListParticipantsWithHttpInfo(S
 
      */
     public ApiResponse<OcListParticipantsResponse> executeWithHttpInfo() throws ApiException {
-      return ocListParticipantsWithHttpInfo(apiToken, channelUrl, token, limit);
+      return ocListParticipantsWithHttpInfo(channelUrl, apiToken, token, limit);
     }
   }
 
@@ -883,13 +853,8 @@ private ApiResponse<OcListParticipantsResponse> ocListParticipantsWithHttpInfo(S
     return new APIocListParticipantsRequest(channelUrl);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttpInfo(String apiToken, String channelUrl, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttpInfo(String channelUrl, String apiToken, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
     Object localVarPostBody = ocRegisterOperatorsData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocRegisterOperators");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -932,8 +897,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttp
   }
 
   public class APIocRegisterOperatorsRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private OcRegisterOperatorsData ocRegisterOperatorsData;
 
     private APIocRegisterOperatorsRequest(String channelUrl) {
@@ -942,7 +907,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttp
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocRegisterOperatorsRequest
      */
     public APIocRegisterOperatorsRequest apiToken(String apiToken) {
@@ -988,7 +953,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttp
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return ocRegisterOperatorsWithHttpInfo(apiToken, channelUrl, ocRegisterOperatorsData);
+      return ocRegisterOperatorsWithHttpInfo(channelUrl, apiToken, ocRegisterOperatorsData);
     }
   }
 
@@ -1005,13 +970,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttp
     return new APIocRegisterOperatorsRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdOpenChannel> ocUpdateChannelByUrlWithHttpInfo(String apiToken, String channelUrl, OcUpdateChannelByUrlData ocUpdateChannelByUrlData) throws ApiException {
+private ApiResponse<SendBirdOpenChannel> ocUpdateChannelByUrlWithHttpInfo(String channelUrl, String apiToken, OcUpdateChannelByUrlData ocUpdateChannelByUrlData) throws ApiException {
     Object localVarPostBody = ocUpdateChannelByUrlData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocUpdateChannelByUrl");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1054,8 +1014,8 @@ private ApiResponse<SendBirdOpenChannel> ocUpdateChannelByUrlWithHttpInfo(String
   }
 
   public class APIocUpdateChannelByUrlRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private OcUpdateChannelByUrlData ocUpdateChannelByUrlData;
 
     private APIocUpdateChannelByUrlRequest(String channelUrl) {
@@ -1064,7 +1024,7 @@ private ApiResponse<SendBirdOpenChannel> ocUpdateChannelByUrlWithHttpInfo(String
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocUpdateChannelByUrlRequest
      */
     public APIocUpdateChannelByUrlRequest apiToken(String apiToken) {
@@ -1110,7 +1070,7 @@ private ApiResponse<SendBirdOpenChannel> ocUpdateChannelByUrlWithHttpInfo(String
 
      */
     public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return ocUpdateChannelByUrlWithHttpInfo(apiToken, channelUrl, ocUpdateChannelByUrlData);
+      return ocUpdateChannelByUrlWithHttpInfo(channelUrl, apiToken, ocUpdateChannelByUrlData);
     }
   }
 
@@ -1127,13 +1087,8 @@ private ApiResponse<SendBirdOpenChannel> ocUpdateChannelByUrlWithHttpInfo(String
     return new APIocUpdateChannelByUrlRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
+private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling ocViewChannelByUrl");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1176,8 +1131,8 @@ private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String a
   }
 
   public class APIocViewChannelByUrlRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
 
     private APIocViewChannelByUrlRequest(String channelUrl) {
       this.channelUrl = channelUrl;
@@ -1185,7 +1140,7 @@ private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String a
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIocViewChannelByUrlRequest
      */
     public APIocViewChannelByUrlRequest apiToken(String apiToken) {
@@ -1221,7 +1176,7 @@ private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String a
 
      */
     public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return ocViewChannelByUrlWithHttpInfo(apiToken, channelUrl);
+      return ocViewChannelByUrlWithHttpInfo(channelUrl, apiToken);
     }
   }
 

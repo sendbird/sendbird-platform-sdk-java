@@ -70,7 +70,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **createBotData** | [**CreateBotData**](CreateBotData.md)|  | [optional] |
 
 ### Return type
@@ -121,8 +121,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String botUserid = "botUserid_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.deleteBotById(botUserid)
                 .apiToken(apiToken)
@@ -144,8 +144,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **botUserid** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -195,8 +195,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String botUserid = "botUserid_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         JoinChannelsData joinChannelsData = new JoinChannelsData(); // JoinChannelsData | 
         try {
             JoinChannelsResponse result = api.joinChannels(botUserid)
@@ -220,8 +220,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **botUserid** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **joinChannelsData** | [**JoinChannelsData**](JoinChannelsData.md)|  | [optional] |
 
 ### Return type
@@ -272,8 +272,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String botUserid = "botUserid_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         try {
             api.leaveChannels(botUserid)
@@ -296,8 +296,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **botUserid** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **channelUrl** | **String**|  | [optional] |
 
 ### Return type
@@ -348,9 +348,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String botUserid = "botUserid_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.leaveChannelsByUrl(botUserid, channelUrl)
                 .apiToken(apiToken)
@@ -372,9 +372,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **botUserid** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -450,7 +450,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -475,7 +475,7 @@ No authorization required
 
 ## sendBotsMessage
 
-> SendBirdMessageResponse sendBotsMessage(botUserid).apiToken(apiToken).sendBotSMessageData(sendBotSMessageData).execute();
+> SendBirdBotsMessageResponse sendBotsMessage(botUserid).apiToken(apiToken).sendBotSMessageData(sendBotSMessageData).execute();
 
 Send a bot&#39;s message
 
@@ -506,11 +506,11 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String botUserid = "botUserid_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         SendBotSMessageData sendBotSMessageData = new SendBotSMessageData(); // SendBotSMessageData | 
         try {
-            SendBirdMessageResponse result = api.sendBotsMessage(botUserid)
+            SendBirdBotsMessageResponse result = api.sendBotsMessage(botUserid)
                 .apiToken(apiToken)
                 .sendBotSMessageData(sendBotSMessageData)
                 .execute();
@@ -531,13 +531,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **botUserid** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **sendBotSMessageData** | [**SendBotSMessageData**](SendBotSMessageData.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdMessageResponse**](SendBirdMessageResponse.md)
+[**SendBirdBotsMessageResponse**](SendBirdBotsMessageResponse.md)
 
 ### Authorization
 
@@ -583,8 +583,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String botUserid = "botUserid_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateBotByIdData updateBotByIdData = new UpdateBotByIdData(); // UpdateBotByIdData | 
         try {
             UpdateBotByIdResponse result = api.updateBotById(botUserid)
@@ -608,8 +608,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **botUserid** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateBotByIdData** | [**UpdateBotByIdData**](UpdateBotByIdData.md)|  | [optional] |
 
 ### Return type
@@ -660,8 +660,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String botUserid = "botUserid_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewBotByIdResponse result = api.viewBotById(botUserid)
                 .apiToken(apiToken)
@@ -683,8 +683,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **botUserid** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

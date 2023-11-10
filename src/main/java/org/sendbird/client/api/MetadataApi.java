@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class MetadataApi {
   private ApiClient apiClient;
 
@@ -55,13 +55,8 @@ public class MetadataApi {
   }
 
 
-private ApiResponse<Object> createChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, CreateChannelMetacounterData createChannelMetacounterData) throws ApiException {
+private ApiResponse<Object> createChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateChannelMetacounterData createChannelMetacounterData) throws ApiException {
     Object localVarPostBody = createChannelMetacounterData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling createChannelMetacounter");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -110,9 +105,9 @@ private ApiResponse<Object> createChannelMetacounterWithHttpInfo(String apiToken
   }
 
   public class APIcreateChannelMetacounterRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private CreateChannelMetacounterData createChannelMetacounterData;
 
     private APIcreateChannelMetacounterRequest(String channelType, String channelUrl) {
@@ -122,7 +117,7 @@ private ApiResponse<Object> createChannelMetacounterWithHttpInfo(String apiToken
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIcreateChannelMetacounterRequest
      */
     public APIcreateChannelMetacounterRequest apiToken(String apiToken) {
@@ -168,7 +163,7 @@ private ApiResponse<Object> createChannelMetacounterWithHttpInfo(String apiToken
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return createChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl, createChannelMetacounterData);
+      return createChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken, createChannelMetacounterData);
     }
   }
 
@@ -186,13 +181,8 @@ private ApiResponse<Object> createChannelMetacounterWithHttpInfo(String apiToken
     return new APIcreateChannelMetacounterRequest(channelType, channelUrl);
   }
 
-private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
+private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
     Object localVarPostBody = createChannelMetadataData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling createChannelMetadata");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -241,9 +231,9 @@ private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttp
   }
 
   public class APIcreateChannelMetadataRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private CreateChannelMetadataData createChannelMetadataData;
 
     private APIcreateChannelMetadataRequest(String channelType, String channelUrl) {
@@ -253,7 +243,7 @@ private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttp
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIcreateChannelMetadataRequest
      */
     public APIcreateChannelMetadataRequest apiToken(String apiToken) {
@@ -299,7 +289,7 @@ private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttp
 
      */
     public ApiResponse<CreateChannelMetadataResponse> executeWithHttpInfo() throws ApiException {
-      return createChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, createChannelMetadataData);
+      return createChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, createChannelMetadataData);
     }
   }
 
@@ -317,13 +307,8 @@ private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttp
     return new APIcreateChannelMetadataRequest(channelType, channelUrl);
   }
 
-private ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(String apiToken, String userId, CreateUserMetadataData createUserMetadataData) throws ApiException {
+private ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(String userId, String apiToken, CreateUserMetadataData createUserMetadataData) throws ApiException {
     Object localVarPostBody = createUserMetadataData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling createUserMetadata");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -366,8 +351,8 @@ private ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(S
   }
 
   public class APIcreateUserMetadataRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private CreateUserMetadataData createUserMetadataData;
 
     private APIcreateUserMetadataRequest(String userId) {
@@ -376,7 +361,7 @@ private ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIcreateUserMetadataRequest
      */
     public APIcreateUserMetadataRequest apiToken(String apiToken) {
@@ -422,7 +407,7 @@ private ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(S
 
      */
     public ApiResponse<CreateUserMetadataResponse> executeWithHttpInfo() throws ApiException {
-      return createUserMetadataWithHttpInfo(apiToken, userId, createUserMetadataData);
+      return createUserMetadataWithHttpInfo(userId, apiToken, createUserMetadataData);
     }
   }
 
@@ -439,13 +424,8 @@ private ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(S
     return new APIcreateUserMetadataRequest(userId);
   }
 
-private ApiResponse<Void> deleteChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl) throws ApiException {
+private ApiResponse<Void> deleteChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteChannelMetacounter");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -492,9 +472,9 @@ private ApiResponse<Void> deleteChannelMetacounterWithHttpInfo(String apiToken, 
   }
 
   public class APIdeleteChannelMetacounterRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
 
     private APIdeleteChannelMetacounterRequest(String channelType, String channelUrl) {
       this.channelType = channelType;
@@ -503,7 +483,7 @@ private ApiResponse<Void> deleteChannelMetacounterWithHttpInfo(String apiToken, 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteChannelMetacounterRequest
      */
     public APIdeleteChannelMetacounterRequest apiToken(String apiToken) {
@@ -539,7 +519,7 @@ private ApiResponse<Void> deleteChannelMetacounterWithHttpInfo(String apiToken, 
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl);
+      return deleteChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken);
     }
   }
 
@@ -557,13 +537,8 @@ private ApiResponse<Void> deleteChannelMetacounterWithHttpInfo(String apiToken, 
     return new APIdeleteChannelMetacounterRequest(channelType, channelUrl);
   }
 
-private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteChannelMetacounterByKey");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -616,10 +591,10 @@ private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String apiTo
   }
 
   public class APIdeleteChannelMetacounterByKeyRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String key;
+    private String apiToken;
 
     private APIdeleteChannelMetacounterByKeyRequest(String channelType, String channelUrl, String key) {
       this.channelType = channelType;
@@ -629,7 +604,7 @@ private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String apiTo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteChannelMetacounterByKeyRequest
      */
     public APIdeleteChannelMetacounterByKeyRequest apiToken(String apiToken) {
@@ -665,7 +640,7 @@ private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String apiTo
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteChannelMetacounterByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
+      return deleteChannelMetacounterByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
     }
   }
 
@@ -684,13 +659,8 @@ private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String apiTo
     return new APIdeleteChannelMetacounterByKeyRequest(channelType, channelUrl, key);
   }
 
-private ApiResponse<Void> deleteChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+private ApiResponse<Void> deleteChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, String key) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteChannelMetadata");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -738,9 +708,9 @@ private ApiResponse<Void> deleteChannelMetadataWithHttpInfo(String apiToken, Str
   }
 
   public class APIdeleteChannelMetadataRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private String key;
 
     private APIdeleteChannelMetadataRequest(String channelType, String channelUrl) {
@@ -750,7 +720,7 @@ private ApiResponse<Void> deleteChannelMetadataWithHttpInfo(String apiToken, Str
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteChannelMetadataRequest
      */
     public APIdeleteChannelMetadataRequest apiToken(String apiToken) {
@@ -796,7 +766,7 @@ private ApiResponse<Void> deleteChannelMetadataWithHttpInfo(String apiToken, Str
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, key);
+      return deleteChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, key);
     }
   }
 
@@ -814,13 +784,8 @@ private ApiResponse<Void> deleteChannelMetadataWithHttpInfo(String apiToken, Str
     return new APIdeleteChannelMetadataRequest(channelType, channelUrl);
   }
 
-private ApiResponse<Void> deleteChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+private ApiResponse<Void> deleteChannelMetadataByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteChannelMetadataByKey");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -873,10 +838,10 @@ private ApiResponse<Void> deleteChannelMetadataByKeyWithHttpInfo(String apiToken
   }
 
   public class APIdeleteChannelMetadataByKeyRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String key;
+    private String apiToken;
 
     private APIdeleteChannelMetadataByKeyRequest(String channelType, String channelUrl, String key) {
       this.channelType = channelType;
@@ -886,7 +851,7 @@ private ApiResponse<Void> deleteChannelMetadataByKeyWithHttpInfo(String apiToken
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteChannelMetadataByKeyRequest
      */
     public APIdeleteChannelMetadataByKeyRequest apiToken(String apiToken) {
@@ -922,7 +887,7 @@ private ApiResponse<Void> deleteChannelMetadataByKeyWithHttpInfo(String apiToken
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteChannelMetadataByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
+      return deleteChannelMetadataByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
     }
   }
 
@@ -941,13 +906,8 @@ private ApiResponse<Void> deleteChannelMetadataByKeyWithHttpInfo(String apiToken
     return new APIdeleteChannelMetadataByKeyRequest(channelType, channelUrl, key);
   }
 
-private ApiResponse<Void> deleteUserMetadataWithHttpInfo(String apiToken, String userId, String key) throws ApiException {
+private ApiResponse<Void> deleteUserMetadataWithHttpInfo(String userId, String apiToken, String key) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteUserMetadata");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -989,8 +949,8 @@ private ApiResponse<Void> deleteUserMetadataWithHttpInfo(String apiToken, String
   }
 
   public class APIdeleteUserMetadataRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private String key;
 
     private APIdeleteUserMetadataRequest(String userId) {
@@ -999,7 +959,7 @@ private ApiResponse<Void> deleteUserMetadataWithHttpInfo(String apiToken, String
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteUserMetadataRequest
      */
     public APIdeleteUserMetadataRequest apiToken(String apiToken) {
@@ -1045,7 +1005,7 @@ private ApiResponse<Void> deleteUserMetadataWithHttpInfo(String apiToken, String
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteUserMetadataWithHttpInfo(apiToken, userId, key);
+      return deleteUserMetadataWithHttpInfo(userId, apiToken, key);
     }
   }
 
@@ -1062,13 +1022,8 @@ private ApiResponse<Void> deleteUserMetadataWithHttpInfo(String apiToken, String
     return new APIdeleteUserMetadataRequest(userId);
   }
 
-private ApiResponse<Void> deleteUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key) throws ApiException {
+private ApiResponse<Void> deleteUserMetadataByKeyWithHttpInfo(String userId, String key, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteUserMetadataByKey");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1115,9 +1070,9 @@ private ApiResponse<Void> deleteUserMetadataByKeyWithHttpInfo(String apiToken, S
   }
 
   public class APIdeleteUserMetadataByKeyRequest {
-    private String apiToken;
     private String userId;
     private String key;
+    private String apiToken;
 
     private APIdeleteUserMetadataByKeyRequest(String userId, String key) {
       this.userId = userId;
@@ -1126,7 +1081,7 @@ private ApiResponse<Void> deleteUserMetadataByKeyWithHttpInfo(String apiToken, S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteUserMetadataByKeyRequest
      */
     public APIdeleteUserMetadataByKeyRequest apiToken(String apiToken) {
@@ -1162,7 +1117,7 @@ private ApiResponse<Void> deleteUserMetadataByKeyWithHttpInfo(String apiToken, S
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteUserMetadataByKeyWithHttpInfo(apiToken, userId, key);
+      return deleteUserMetadataByKeyWithHttpInfo(userId, key, apiToken);
     }
   }
 
@@ -1180,13 +1135,8 @@ private ApiResponse<Void> deleteUserMetadataByKeyWithHttpInfo(String apiToken, S
     return new APIdeleteUserMetadataByKeyRequest(userId, key);
   }
 
-private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, UpdateChannelMetacounterData updateChannelMetacounterData) throws ApiException {
+private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken, UpdateChannelMetacounterData updateChannelMetacounterData) throws ApiException {
     Object localVarPostBody = updateChannelMetacounterData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateChannelMetacounter");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -1235,9 +1185,9 @@ private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String apiToken
   }
 
   public class APIupdateChannelMetacounterRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private UpdateChannelMetacounterData updateChannelMetacounterData;
 
     private APIupdateChannelMetacounterRequest(String channelType, String channelUrl) {
@@ -1247,7 +1197,7 @@ private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String apiToken
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateChannelMetacounterRequest
      */
     public APIupdateChannelMetacounterRequest apiToken(String apiToken) {
@@ -1293,7 +1243,7 @@ private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String apiToken
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return updateChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl, updateChannelMetacounterData);
+      return updateChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken, updateChannelMetacounterData);
     }
   }
 
@@ -1311,13 +1261,8 @@ private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String apiToken
     return new APIupdateChannelMetacounterRequest(channelType, channelUrl);
   }
 
-private ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+private ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken, Object body) throws ApiException {
     Object localVarPostBody = body;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateChannelMetacounterByKey");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -1372,10 +1317,10 @@ private ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpIn
   }
 
   public class APIupdateChannelMetacounterByKeyRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String key;
+    private String apiToken;
     private Object body;
 
     private APIupdateChannelMetacounterByKeyRequest(String channelType, String channelUrl, String key) {
@@ -1386,7 +1331,7 @@ private ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpIn
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateChannelMetacounterByKeyRequest
      */
     public APIupdateChannelMetacounterByKeyRequest apiToken(String apiToken) {
@@ -1432,7 +1377,7 @@ private ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpIn
 
      */
     public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return updateChannelMetacounterByKeyWithHttpInfo(apiToken, channelType, channelUrl, key, body);
+      return updateChannelMetacounterByKeyWithHttpInfo(channelType, channelUrl, key, apiToken, body);
     }
   }
 
@@ -1451,13 +1396,8 @@ private ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpIn
     return new APIupdateChannelMetacounterByKeyRequest(channelType, channelUrl, key);
   }
 
-private ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
+private ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
     Object localVarPostBody = updateChannelMetadataData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateChannelMetadata");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -1506,9 +1446,9 @@ private ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(Strin
   }
 
   public class APIupdateChannelMetadataRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private UpdateChannelMetadataData updateChannelMetadataData;
 
     private APIupdateChannelMetadataRequest(String channelType, String channelUrl) {
@@ -1518,7 +1458,7 @@ private ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateChannelMetadataRequest
      */
     public APIupdateChannelMetadataRequest apiToken(String apiToken) {
@@ -1564,7 +1504,7 @@ private ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(Strin
 
      */
     public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return updateChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, updateChannelMetadataData);
+      return updateChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, updateChannelMetadataData);
     }
   }
 
@@ -1582,13 +1522,8 @@ private ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(Strin
     return new APIupdateChannelMetadataRequest(channelType, channelUrl);
   }
 
-private ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, Object body) throws ApiException {
+private ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken, Object body) throws ApiException {
     Object localVarPostBody = body;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateChannelMetadataByKey");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -1643,10 +1578,10 @@ private ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(
   }
 
   public class APIupdateChannelMetadataByKeyRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String key;
+    private String apiToken;
     private Object body;
 
     private APIupdateChannelMetadataByKeyRequest(String channelType, String channelUrl, String key) {
@@ -1657,7 +1592,7 @@ private ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateChannelMetadataByKeyRequest
      */
     public APIupdateChannelMetadataByKeyRequest apiToken(String apiToken) {
@@ -1703,7 +1638,7 @@ private ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(
 
      */
     public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return updateChannelMetadataByKeyWithHttpInfo(apiToken, channelType, channelUrl, key, body);
+      return updateChannelMetadataByKeyWithHttpInfo(channelType, channelUrl, key, apiToken, body);
     }
   }
 
@@ -1722,13 +1657,8 @@ private ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(
     return new APIupdateChannelMetadataByKeyRequest(channelType, channelUrl, key);
   }
 
-private ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(String apiToken, String userId, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
+private ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
     Object localVarPostBody = updateUserMetadataData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateUserMetadata");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1771,8 +1701,8 @@ private ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(S
   }
 
   public class APIupdateUserMetadataRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private UpdateUserMetadataData updateUserMetadataData;
 
     private APIupdateUserMetadataRequest(String userId) {
@@ -1781,7 +1711,7 @@ private ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateUserMetadataRequest
      */
     public APIupdateUserMetadataRequest apiToken(String apiToken) {
@@ -1827,7 +1757,7 @@ private ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(S
 
      */
     public ApiResponse<UpdateUserMetadataResponse> executeWithHttpInfo() throws ApiException {
-      return updateUserMetadataWithHttpInfo(apiToken, userId, updateUserMetadataData);
+      return updateUserMetadataWithHttpInfo(userId, apiToken, updateUserMetadataData);
     }
   }
 
@@ -1844,13 +1774,8 @@ private ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(S
     return new APIupdateUserMetadataRequest(userId);
   }
 
-private ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key, Object body) throws ApiException {
+private ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(String userId, String key, String apiToken, Object body) throws ApiException {
     Object localVarPostBody = body;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateUserMetadataByKey");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1899,9 +1824,9 @@ private ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(Str
   }
 
   public class APIupdateUserMetadataByKeyRequest {
-    private String apiToken;
     private String userId;
     private String key;
+    private String apiToken;
     private Object body;
 
     private APIupdateUserMetadataByKeyRequest(String userId, String key) {
@@ -1911,7 +1836,7 @@ private ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(Str
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateUserMetadataByKeyRequest
      */
     public APIupdateUserMetadataByKeyRequest apiToken(String apiToken) {
@@ -1957,7 +1882,7 @@ private ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(Str
 
      */
     public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return updateUserMetadataByKeyWithHttpInfo(apiToken, userId, key, body);
+      return updateUserMetadataByKeyWithHttpInfo(userId, key, apiToken, body);
     }
   }
 
@@ -1975,13 +1900,8 @@ private ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(Str
     return new APIupdateUserMetadataByKeyRequest(userId, key);
   }
 
-private ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+private ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken, String key, List<String> keys) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewChannelMetacounter");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -2032,9 +1952,9 @@ private ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(Stri
   }
 
   public class APIviewChannelMetacounterRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private String key;
     private List<String> keys;
 
@@ -2045,7 +1965,7 @@ private ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(Stri
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewChannelMetacounterRequest
      */
     public APIviewChannelMetacounterRequest apiToken(String apiToken) {
@@ -2101,7 +2021,7 @@ private ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(Stri
 
      */
     public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return viewChannelMetacounterWithHttpInfo(apiToken, channelType, channelUrl, key, keys);
+      return viewChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken, key, keys);
     }
   }
 
@@ -2119,13 +2039,8 @@ private ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(Stri
     return new APIviewChannelMetacounterRequest(channelType, channelUrl);
   }
 
-private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewChannelMetacounterByKey");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -2180,10 +2095,10 @@ private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String apiTo
   }
 
   public class APIviewChannelMetacounterByKeyRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String key;
+    private String apiToken;
 
     private APIviewChannelMetacounterByKeyRequest(String channelType, String channelUrl, String key) {
       this.channelType = channelType;
@@ -2193,7 +2108,7 @@ private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String apiTo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewChannelMetacounterByKeyRequest
      */
     public APIviewChannelMetacounterByKeyRequest apiToken(String apiToken) {
@@ -2229,7 +2144,7 @@ private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String apiTo
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return viewChannelMetacounterByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
+      return viewChannelMetacounterByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
     }
   }
 
@@ -2248,13 +2163,8 @@ private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String apiTo
     return new APIviewChannelMetacounterByKeyRequest(channelType, channelUrl, key);
   }
 
-private ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String apiToken, String channelType, String channelUrl, String key, List<String> keys) throws ApiException {
+private ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, String key, List<String> keys) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewChannelMetadata");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -2305,9 +2215,9 @@ private ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String 
   }
 
   public class APIviewChannelMetadataRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private String key;
     private List<String> keys;
 
@@ -2318,7 +2228,7 @@ private ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewChannelMetadataRequest
      */
     public APIviewChannelMetadataRequest apiToken(String apiToken) {
@@ -2374,7 +2284,7 @@ private ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String 
 
      */
     public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return viewChannelMetadataWithHttpInfo(apiToken, channelType, channelUrl, key, keys);
+      return viewChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, key, keys);
     }
   }
 
@@ -2392,13 +2302,8 @@ private ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String 
     return new APIviewChannelMetadataRequest(channelType, channelUrl);
   }
 
-private ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(String apiToken, String channelType, String channelUrl, String key) throws ApiException {
+private ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewChannelMetadataByKey");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -2453,10 +2358,10 @@ private ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(St
   }
 
   public class APIviewChannelMetadataByKeyRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String key;
+    private String apiToken;
 
     private APIviewChannelMetadataByKeyRequest(String channelType, String channelUrl, String key) {
       this.channelType = channelType;
@@ -2466,7 +2371,7 @@ private ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(St
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewChannelMetadataByKeyRequest
      */
     public APIviewChannelMetadataByKeyRequest apiToken(String apiToken) {
@@ -2502,7 +2407,7 @@ private ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(St
 
      */
     public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return viewChannelMetadataByKeyWithHttpInfo(apiToken, channelType, channelUrl, key);
+      return viewChannelMetadataByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
     }
   }
 
@@ -2521,13 +2426,8 @@ private ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(St
     return new APIviewChannelMetadataByKeyRequest(channelType, channelUrl, key);
   }
 
-private ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(String apiToken, String userId, String key, List<String> keys) throws ApiException {
+private ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(String userId, String apiToken, String key, List<String> keys) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewUserMetadata");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2572,8 +2472,8 @@ private ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(Strin
   }
 
   public class APIviewUserMetadataRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private String key;
     private List<String> keys;
 
@@ -2583,7 +2483,7 @@ private ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewUserMetadataRequest
      */
     public APIviewUserMetadataRequest apiToken(String apiToken) {
@@ -2639,7 +2539,7 @@ private ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(Strin
 
      */
     public ApiResponse<ViewUserMetadataResponse> executeWithHttpInfo() throws ApiException {
-      return viewUserMetadataWithHttpInfo(apiToken, userId, key, keys);
+      return viewUserMetadataWithHttpInfo(userId, apiToken, key, keys);
     }
   }
 
@@ -2656,13 +2556,8 @@ private ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(Strin
     return new APIviewUserMetadataRequest(userId);
   }
 
-private ApiResponse<Map<String, String>> viewUserMetadataByKeyWithHttpInfo(String apiToken, String userId, String key) throws ApiException {
+private ApiResponse<Map<String, String>> viewUserMetadataByKeyWithHttpInfo(String userId, String key, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewUserMetadataByKey");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2711,9 +2606,9 @@ private ApiResponse<Map<String, String>> viewUserMetadataByKeyWithHttpInfo(Strin
   }
 
   public class APIviewUserMetadataByKeyRequest {
-    private String apiToken;
     private String userId;
     private String key;
+    private String apiToken;
 
     private APIviewUserMetadataByKeyRequest(String userId, String key) {
       this.userId = userId;
@@ -2722,7 +2617,7 @@ private ApiResponse<Map<String, String>> viewUserMetadataByKeyWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewUserMetadataByKeyRequest
      */
     public APIviewUserMetadataByKeyRequest apiToken(String apiToken) {
@@ -2758,7 +2653,7 @@ private ApiResponse<Map<String, String>> viewUserMetadataByKeyWithHttpInfo(Strin
 
      */
     public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return viewUserMetadataByKeyWithHttpInfo(apiToken, userId, key);
+      return viewUserMetadataByKeyWithHttpInfo(userId, key, apiToken);
     }
   }
 

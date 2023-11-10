@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate.JSON_PROPERTY_A_D_M_M
 })
 @JsonTypeName("listPushNotificationContentTemplatesResponse_push_message_templates_inner_template")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class ListPushNotificationContentTemplatesResponsePushMessageTemplatesInnerTemplate {
   public static final String JSON_PROPERTY_M_E_S_G = "MESG";
   private String MESG;

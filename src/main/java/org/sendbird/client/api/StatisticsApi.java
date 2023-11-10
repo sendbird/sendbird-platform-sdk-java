@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class StatisticsApi {
   private ApiClient apiClient;
 
@@ -52,13 +52,8 @@ public class StatisticsApi {
   }
 
 
-private ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId) throws ApiException {
+private ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getDetailedOpenRateOfAnnouncementById");
-    }
     
     // verify the required parameter 'uniqueId' is set
     if (uniqueId == null) {
@@ -101,8 +96,8 @@ private ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOp
   }
 
   public class APIgetDetailedOpenRateOfAnnouncementByIdRequest {
-    private String apiToken;
     private String uniqueId;
+    private String apiToken;
 
     private APIgetDetailedOpenRateOfAnnouncementByIdRequest(String uniqueId) {
       this.uniqueId = uniqueId;
@@ -110,7 +105,7 @@ private ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOp
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgetDetailedOpenRateOfAnnouncementByIdRequest
      */
     public APIgetDetailedOpenRateOfAnnouncementByIdRequest apiToken(String apiToken) {
@@ -146,7 +141,7 @@ private ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOp
 
      */
     public ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> executeWithHttpInfo() throws ApiException {
-      return getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId);
+      return getDetailedOpenRateOfAnnouncementByIdWithHttpInfo(uniqueId, apiToken);
     }
   }
 
@@ -163,13 +158,8 @@ private ApiResponse<GetDetailedOpenRateOfAnnouncementByIdResponse> getDetailedOp
     return new APIgetDetailedOpenRateOfAnnouncementByIdRequest(uniqueId);
   }
 
-private ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
+private ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken, Integer limit, String next, List<String> uniqueIds, List<String> channelUrls, Boolean hasOpened) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getDetailedOpenStatusOfAnnouncementById");
-    }
     
     // verify the required parameter 'uniqueId' is set
     if (uniqueId == null) {
@@ -217,8 +207,8 @@ private ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailed
   }
 
   public class APIgetDetailedOpenStatusOfAnnouncementByIdRequest {
-    private String apiToken;
     private String uniqueId;
+    private String apiToken;
     private Integer limit;
     private String next;
     private List<String> uniqueIds;
@@ -231,7 +221,7 @@ private ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailed
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgetDetailedOpenStatusOfAnnouncementByIdRequest
      */
     public APIgetDetailedOpenStatusOfAnnouncementByIdRequest apiToken(String apiToken) {
@@ -317,7 +307,7 @@ private ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailed
 
      */
     public ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> executeWithHttpInfo() throws ApiException {
-      return getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(apiToken, uniqueId, limit, next, uniqueIds, channelUrls, hasOpened);
+      return getDetailedOpenStatusOfAnnouncementByIdWithHttpInfo(uniqueId, apiToken, limit, next, uniqueIds, channelUrls, hasOpened);
     }
   }
 
@@ -336,11 +326,6 @@ private ApiResponse<GetDetailedOpenStatusOfAnnouncementByIdResponse> getDetailed
 
 private ApiResponse<RetrieveAdvancedAnalyticsMetricsResponse> retrieveAdvancedAnalyticsMetricsWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling retrieveAdvancedAnalyticsMetrics");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/statistics/metric";
@@ -384,7 +369,7 @@ private ApiResponse<RetrieveAdvancedAnalyticsMetricsResponse> retrieveAdvancedAn
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIretrieveAdvancedAnalyticsMetricsRequest
      */
     public APIretrieveAdvancedAnalyticsMetricsRequest apiToken(String apiToken) {
@@ -439,11 +424,6 @@ private ApiResponse<RetrieveAdvancedAnalyticsMetricsResponse> retrieveAdvancedAn
 private ApiResponse<ViewNumberOfConcurrentConnectionsResponse> viewNumberOfConcurrentConnectionsWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewNumberOfConcurrentConnections");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/applications/ccu";
 
@@ -486,7 +466,7 @@ private ApiResponse<ViewNumberOfConcurrentConnectionsResponse> viewNumberOfConcu
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewNumberOfConcurrentConnectionsRequest
      */
     public APIviewNumberOfConcurrentConnectionsRequest apiToken(String apiToken) {
@@ -541,11 +521,6 @@ private ApiResponse<ViewNumberOfConcurrentConnectionsResponse> viewNumberOfConcu
 private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewNumberOfDailyActiveUsers");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/applications/dau";
 
@@ -590,7 +565,7 @@ private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiv
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewNumberOfDailyActiveUsersRequest
      */
     public APIviewNumberOfDailyActiveUsersRequest apiToken(String apiToken) {
@@ -655,11 +630,6 @@ private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiv
 private ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyActiveUsersWithHttpInfo(String apiToken, String date) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewNumberOfMonthlyActiveUsers");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/applications/mau";
 
@@ -704,7 +674,7 @@ private ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyA
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewNumberOfMonthlyActiveUsersRequest
      */
     public APIviewNumberOfMonthlyActiveUsersRequest apiToken(String apiToken) {
@@ -766,13 +736,8 @@ private ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyA
     return new APIviewNumberOfMonthlyActiveUsersRequest();
   }
 
-private ApiResponse<ViewNumberOfPeakConnectionsResponse> viewNumberOfPeakConnectionsWithHttpInfo(String apiToken, String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, Integer startDay, Integer endDay) throws ApiException {
+private ApiResponse<ViewNumberOfPeakConnectionsResponse> viewNumberOfPeakConnectionsWithHttpInfo(String timeDimension, Integer startYear, Integer startMonth, Integer endYear, Integer endMonth, String apiToken, Integer startDay, Integer endDay) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewNumberOfPeakConnections");
-    }
     
     // verify the required parameter 'timeDimension' is set
     if (timeDimension == null) {
@@ -841,26 +806,16 @@ private ApiResponse<ViewNumberOfPeakConnectionsResponse> viewNumberOfPeakConnect
   }
 
   public class APIviewNumberOfPeakConnectionsRequest {
-    private String apiToken;
     private String timeDimension;
     private Integer startYear;
     private Integer startMonth;
     private Integer endYear;
     private Integer endMonth;
+    private String apiToken;
     private Integer startDay;
     private Integer endDay;
 
     private APIviewNumberOfPeakConnectionsRequest() {
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (required)
-     * @return APIviewNumberOfPeakConnectionsRequest
-     */
-    public APIviewNumberOfPeakConnectionsRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
     }
 
     /**
@@ -914,6 +869,16 @@ private ApiResponse<ViewNumberOfPeakConnectionsResponse> viewNumberOfPeakConnect
     }
 
     /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIviewNumberOfPeakConnectionsRequest
+     */
+    public APIviewNumberOfPeakConnectionsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
      * Set startDay
      * @param startDay  (optional)
      * @return APIviewNumberOfPeakConnectionsRequest
@@ -961,7 +926,7 @@ private ApiResponse<ViewNumberOfPeakConnectionsResponse> viewNumberOfPeakConnect
 
      */
     public ApiResponse<ViewNumberOfPeakConnectionsResponse> executeWithHttpInfo() throws ApiException {
-      return viewNumberOfPeakConnectionsWithHttpInfo(apiToken, timeDimension, startYear, startMonth, endYear, endMonth, startDay, endDay);
+      return viewNumberOfPeakConnectionsWithHttpInfo(timeDimension, startYear, startMonth, endYear, endMonth, apiToken, startDay, endDay);
     }
   }
 

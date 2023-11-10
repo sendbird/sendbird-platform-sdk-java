@@ -57,9 +57,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         CreateChannelMetacounterData createChannelMetacounterData = new CreateChannelMetacounterData(); // CreateChannelMetacounterData | 
         try {
             Object result = api.createChannelMetacounter(channelType, channelUrl)
@@ -83,9 +83,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **createChannelMetacounterData** | [**CreateChannelMetacounterData**](CreateChannelMetacounterData.md)|  | [optional] |
 
 ### Return type
@@ -136,9 +136,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         CreateChannelMetadataData createChannelMetadataData = new CreateChannelMetadataData(); // CreateChannelMetadataData | 
         try {
             CreateChannelMetadataResponse result = api.createChannelMetadata(channelType, channelUrl)
@@ -162,9 +162,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **createChannelMetadataData** | [**CreateChannelMetadataData**](CreateChannelMetadataData.md)|  | [optional] |
 
 ### Return type
@@ -215,8 +215,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         CreateUserMetadataData createUserMetadataData = new CreateUserMetadataData(); // CreateUserMetadataData | 
         try {
             CreateUserMetadataResponse result = api.createUserMetadata(userId)
@@ -240,8 +240,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **createUserMetadataData** | [**CreateUserMetadataData**](CreateUserMetadataData.md)|  | [optional] |
 
 ### Return type
@@ -299,9 +299,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             api.deleteChannelMetacounter(channelType, channelUrl)
                 .apiToken(apiToken)
@@ -322,9 +322,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -381,10 +381,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             api.deleteChannelMetacounterByKey(channelType, channelUrl, key)
                 .apiToken(apiToken)
@@ -405,10 +405,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -465,9 +465,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String key = "key_example"; // String | 
         try {
             api.deleteChannelMetadata(channelType, channelUrl)
@@ -490,9 +490,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **key** | **String**|  | [optional] |
 
 ### Return type
@@ -550,10 +550,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             api.deleteChannelMetadataByKey(channelType, channelUrl, key)
                 .apiToken(apiToken)
@@ -574,10 +574,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -631,8 +631,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String key = "key_example"; // String | 
         try {
             api.deleteUserMetadata(userId)
@@ -655,8 +655,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **key** | **String**|  | [optional] |
 
 ### Return type
@@ -711,9 +711,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             api.deleteUserMetadataByKey(userId, key)
                 .apiToken(apiToken)
@@ -734,9 +734,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -793,9 +793,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateChannelMetacounterData updateChannelMetacounterData = new UpdateChannelMetacounterData(); // UpdateChannelMetacounterData | 
         try {
             Object result = api.updateChannelMetacounter(channelType, channelUrl)
@@ -819,9 +819,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateChannelMetacounterData** | [**UpdateChannelMetacounterData**](UpdateChannelMetacounterData.md)|  | [optional] |
 
 ### Return type
@@ -879,10 +879,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Object body = null; // Object | 
         try {
             Map<String, String> result = api.updateChannelMetacounterByKey(channelType, channelUrl, key)
@@ -906,10 +906,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **body** | **Object**|  | [optional] |
 
 ### Return type
@@ -967,9 +967,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateChannelMetadataData updateChannelMetadataData = new UpdateChannelMetadataData(); // UpdateChannelMetadataData | 
         try {
             Map<String, String> result = api.updateChannelMetadata(channelType, channelUrl)
@@ -993,9 +993,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateChannelMetadataData** | [**UpdateChannelMetadataData**](UpdateChannelMetadataData.md)|  | [optional] |
 
 ### Return type
@@ -1053,10 +1053,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Object body = null; // Object | 
         try {
             Map<String, String> result = api.updateChannelMetadataByKey(channelType, channelUrl, key)
@@ -1080,10 +1080,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **body** | **Object**|  | [optional] |
 
 ### Return type
@@ -1138,8 +1138,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateUserMetadataData updateUserMetadataData = new UpdateUserMetadataData(); // UpdateUserMetadataData | 
         try {
             UpdateUserMetadataResponse result = api.updateUserMetadata(userId)
@@ -1163,8 +1163,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateUserMetadataData** | [**UpdateUserMetadataData**](UpdateUserMetadataData.md)|  | [optional] |
 
 ### Return type
@@ -1219,9 +1219,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Object body = null; // Object | 
         try {
             Map<String, String> result = api.updateUserMetadataByKey(userId, key)
@@ -1245,9 +1245,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **body** | **Object**|  | [optional] |
 
 ### Return type
@@ -1305,9 +1305,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String key = "key_example"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
@@ -1333,9 +1333,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **key** | **String**|  | [optional] |
 | **keys** | **List&lt;String&gt;**|  | [optional] |
 
@@ -1394,10 +1394,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.viewChannelMetacounterByKey(channelType, channelUrl, key)
                 .apiToken(apiToken)
@@ -1419,10 +1419,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1479,9 +1479,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String key = "key_example"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
@@ -1507,9 +1507,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **key** | **String**|  | [optional] |
 | **keys** | **List&lt;String&gt;**|  | [optional] |
 
@@ -1568,10 +1568,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Map<String, String> result = api.viewChannelMetadataByKey(channelType, channelUrl, key)
                 .apiToken(apiToken)
@@ -1593,10 +1593,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1650,8 +1650,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String key = "key_example"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
@@ -1677,8 +1677,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **key** | **String**|  | [optional] |
 | **keys** | **List&lt;String&gt;**|  | [optional] |
 
@@ -1734,9 +1734,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MetadataApi apiInstance = new MetadataApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String key = "key_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Map<String, String> result = api.viewUserMetadataByKey(userId, key)
                 .apiToken(apiToken)
@@ -1758,9 +1758,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **userId** | **String**|  | |
 | **key** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

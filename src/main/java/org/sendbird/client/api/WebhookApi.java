@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class WebhookApi {
   private ApiClient apiClient;
 
@@ -50,11 +50,6 @@ public class WebhookApi {
 
 private ApiResponse<ChooseWhichEventsToSubscribeToResponse> chooseWhichEventsToSubscribeToWithHttpInfo(String apiToken, ChooseWhichEventsToSubscribeToData chooseWhichEventsToSubscribeToData) throws ApiException {
     Object localVarPostBody = chooseWhichEventsToSubscribeToData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling chooseWhichEventsToSubscribeTo");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/applications/settings/webhook";
@@ -99,7 +94,7 @@ private ApiResponse<ChooseWhichEventsToSubscribeToResponse> chooseWhichEventsToS
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIchooseWhichEventsToSubscribeToRequest
      */
     public APIchooseWhichEventsToSubscribeToRequest apiToken(String apiToken) {
@@ -164,11 +159,6 @@ private ApiResponse<ChooseWhichEventsToSubscribeToResponse> chooseWhichEventsToS
 private ApiResponse<RetrieveListOfSubscribedEventsResponse> retrieveListOfSubscribedEventsWithHttpInfo(String apiToken, Boolean displayAllWebhookCategories) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling retrieveListOfSubscribedEvents");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/applications/settings/webhook";
 
@@ -213,7 +203,7 @@ private ApiResponse<RetrieveListOfSubscribedEventsResponse> retrieveListOfSubscr
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIretrieveListOfSubscribedEventsRequest
      */
     public APIretrieveListOfSubscribedEventsRequest apiToken(String apiToken) {

@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class DataExportApi {
   private ApiClient apiClient;
 
@@ -49,13 +49,8 @@ public class DataExportApi {
   }
 
 
-private ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExportsByMessageChannelOrUserWithHttpInfo(String apiToken, String dataType, String token, Integer limit) throws ApiException {
+private ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExportsByMessageChannelOrUserWithHttpInfo(String dataType, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listDataExportsByMessageChannelOrUser");
-    }
     
     // verify the required parameter 'dataType' is set
     if (dataType == null) {
@@ -100,8 +95,8 @@ private ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExpor
   }
 
   public class APIlistDataExportsByMessageChannelOrUserRequest {
-    private String apiToken;
     private String dataType;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -111,7 +106,7 @@ private ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExpor
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistDataExportsByMessageChannelOrUserRequest
      */
     public APIlistDataExportsByMessageChannelOrUserRequest apiToken(String apiToken) {
@@ -167,7 +162,7 @@ private ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExpor
 
      */
     public ApiResponse<ListDataExportsByMessageChannelOrUserResponse> executeWithHttpInfo() throws ApiException {
-      return listDataExportsByMessageChannelOrUserWithHttpInfo(apiToken, dataType, token, limit);
+      return listDataExportsByMessageChannelOrUserWithHttpInfo(dataType, apiToken, token, limit);
     }
   }
 
@@ -184,13 +179,8 @@ private ApiResponse<ListDataExportsByMessageChannelOrUserResponse> listDataExpor
     return new APIlistDataExportsByMessageChannelOrUserRequest(dataType);
   }
 
-private ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDataExportWithHttpInfo(String apiToken, String dataType, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
+private ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDataExportWithHttpInfo(String dataType, String apiToken, RegisterAndScheduleDataExportData registerAndScheduleDataExportData) throws ApiException {
     Object localVarPostBody = registerAndScheduleDataExportData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling registerAndScheduleDataExport");
-    }
     
     // verify the required parameter 'dataType' is set
     if (dataType == null) {
@@ -233,8 +223,8 @@ private ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDa
   }
 
   public class APIregisterAndScheduleDataExportRequest {
-    private String apiToken;
     private String dataType;
+    private String apiToken;
     private RegisterAndScheduleDataExportData registerAndScheduleDataExportData;
 
     private APIregisterAndScheduleDataExportRequest(String dataType) {
@@ -243,7 +233,7 @@ private ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDa
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIregisterAndScheduleDataExportRequest
      */
     public APIregisterAndScheduleDataExportRequest apiToken(String apiToken) {
@@ -289,7 +279,7 @@ private ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDa
 
      */
     public ApiResponse<RegisterAndScheduleDataExportResponse> executeWithHttpInfo() throws ApiException {
-      return registerAndScheduleDataExportWithHttpInfo(apiToken, dataType, registerAndScheduleDataExportData);
+      return registerAndScheduleDataExportWithHttpInfo(dataType, apiToken, registerAndScheduleDataExportData);
     }
   }
 
@@ -306,13 +296,8 @@ private ApiResponse<RegisterAndScheduleDataExportResponse> registerAndScheduleDa
     return new APIregisterAndScheduleDataExportRequest(dataType);
   }
 
-private ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(String apiToken, String dataType, String requestId) throws ApiException {
+private ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(String dataType, String requestId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewDataExportById");
-    }
     
     // verify the required parameter 'dataType' is set
     if (dataType == null) {
@@ -361,9 +346,9 @@ private ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(S
   }
 
   public class APIviewDataExportByIdRequest {
-    private String apiToken;
     private String dataType;
     private String requestId;
+    private String apiToken;
 
     private APIviewDataExportByIdRequest(String dataType, String requestId) {
       this.dataType = dataType;
@@ -372,7 +357,7 @@ private ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewDataExportByIdRequest
      */
     public APIviewDataExportByIdRequest apiToken(String apiToken) {
@@ -408,7 +393,7 @@ private ApiResponse<ViewDataExportByIdResponse> viewDataExportByIdWithHttpInfo(S
 
      */
     public ApiResponse<ViewDataExportByIdResponse> executeWithHttpInfo() throws ApiException {
-      return viewDataExportByIdWithHttpInfo(apiToken, dataType, requestId);
+      return viewDataExportByIdWithHttpInfo(dataType, requestId, apiToken);
     }
   }
 

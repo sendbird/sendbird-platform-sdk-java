@@ -41,7 +41,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -81,7 +81,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -126,7 +126,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -164,7 +164,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -204,7 +204,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -249,7 +249,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -286,7 +286,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -328,7 +328,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -356,7 +356,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -390,7 +390,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -427,7 +427,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -462,7 +462,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -490,7 +490,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -517,7 +517,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -550,7 +550,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -591,7 +591,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -618,7 +618,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -653,7 +653,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -688,7 +688,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -724,7 +724,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -752,7 +752,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -788,7 +788,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -867,7 +867,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -904,7 +904,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -941,7 +941,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -975,7 +975,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1015,7 +1015,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1057,7 +1057,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1098,7 +1098,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1143,7 +1143,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1186,7 +1186,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1211,7 +1211,7 @@ paths:
   /v3/applications/push/message_templates/{template_name}:
     get:
       description: |-
-        ## View a push notification content template
+        ## Get a push notification content template
 
         Retrieves information on a specific push notification content templates of an application. The name of a content template is either `default` or `alternative`.
 
@@ -1223,7 +1223,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1241,7 +1241,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/viewPushNotificationContentTemplateResponse'
           description: Successful response
-      summary: View a push notification content template
+      summary: Get a push notification content template
       tags:
       - Application
       x-accepts: application/json
@@ -1259,7 +1259,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1302,7 +1302,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1331,7 +1331,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1367,7 +1367,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1455,7 +1455,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1485,7 +1485,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1527,7 +1527,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1562,7 +1562,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1605,7 +1605,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1637,7 +1637,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1694,7 +1694,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -1735,7 +1735,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2049,7 +2049,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2090,7 +2090,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2139,7 +2139,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2190,7 +2190,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2240,7 +2240,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2284,7 +2284,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2327,7 +2327,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2377,7 +2377,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2420,7 +2420,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2460,7 +2460,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2511,7 +2511,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2551,7 +2551,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2602,7 +2602,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2642,7 +2642,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2712,7 +2712,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2755,7 +2755,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2798,7 +2798,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2853,7 +2853,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2900,7 +2900,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2949,7 +2949,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -2985,7 +2985,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3026,7 +3026,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3069,7 +3069,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3103,7 +3103,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3136,7 +3136,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3179,7 +3179,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3222,7 +3222,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3272,7 +3272,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3317,7 +3317,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3400,7 +3400,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3433,7 +3433,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3479,7 +3479,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3522,7 +3522,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3558,7 +3558,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3594,7 +3594,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3635,7 +3635,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3683,7 +3683,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3723,7 +3723,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3773,7 +3773,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3813,7 +3813,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3858,7 +3858,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3908,7 +3908,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3951,7 +3951,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -3994,7 +3994,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4034,7 +4034,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4084,7 +4084,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4127,7 +4127,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4169,7 +4169,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4493,7 +4493,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4529,7 +4529,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4562,7 +4562,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4630,7 +4630,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4670,7 +4670,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4770,7 +4770,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4817,7 +4817,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4863,7 +4863,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4907,7 +4907,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4949,7 +4949,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -4988,7 +4988,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5029,7 +5029,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5082,7 +5082,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5130,7 +5130,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5170,7 +5170,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5210,7 +5210,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5259,7 +5259,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5309,7 +5309,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5349,7 +5349,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5399,7 +5399,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5442,7 +5442,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5485,7 +5485,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5525,7 +5525,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5572,7 +5572,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5619,7 +5619,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5662,7 +5662,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5705,7 +5705,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5749,7 +5749,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5809,7 +5809,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5845,7 +5845,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5881,7 +5881,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5921,7 +5921,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -5958,7 +5958,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6030,7 +6030,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6105,7 +6105,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6131,7 +6131,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6161,7 +6161,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6205,7 +6205,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6243,7 +6243,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6410,7 +6410,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6460,7 +6460,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6509,7 +6509,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6573,7 +6573,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6630,7 +6630,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6674,7 +6674,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6718,7 +6718,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6761,7 +6761,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6800,7 +6800,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6833,7 +6833,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6898,7 +6898,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -6952,7 +6952,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7009,7 +7009,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7068,7 +7068,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7124,7 +7124,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7182,7 +7182,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7238,7 +7238,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7270,7 +7270,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7298,7 +7298,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7335,7 +7335,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7363,7 +7363,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7399,7 +7399,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7432,7 +7432,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7468,7 +7468,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7511,7 +7511,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7543,7 +7543,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7579,7 +7579,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7619,7 +7619,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7655,7 +7655,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7707,7 +7707,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7746,7 +7746,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7787,7 +7787,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7824,7 +7824,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7865,7 +7865,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7917,7 +7917,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -7962,7 +7962,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8021,7 +8021,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8069,7 +8069,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8119,7 +8119,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8165,7 +8165,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8215,7 +8215,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8274,7 +8274,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8313,7 +8313,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8373,7 +8373,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8422,7 +8422,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8472,7 +8472,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8518,7 +8518,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8569,7 +8569,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8638,7 +8638,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8679,7 +8679,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8707,7 +8707,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8753,7 +8753,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8795,7 +8795,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8839,7 +8839,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8881,7 +8881,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8917,7 +8917,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8953,7 +8953,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -8989,7 +8989,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9032,7 +9032,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9071,7 +9071,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9111,7 +9111,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9154,7 +9154,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9198,7 +9198,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9231,7 +9231,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9267,7 +9267,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9309,7 +9309,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9345,7 +9345,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9377,7 +9377,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9414,7 +9414,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9473,7 +9473,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9533,7 +9533,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9588,7 +9588,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9638,7 +9638,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9680,7 +9680,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9737,7 +9737,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9784,7 +9784,7 @@ paths:
         explode: false
         in: header
         name: Api-Token
-        required: true
+        required: false
         schema:
           type: string
         style: simple
@@ -9820,6 +9820,976 @@ paths:
       tags:
       - Report
       x-accepts: application/json
+  /v3/polls:
+    get:
+      description: "## List polls\nThis action retrieves a paginated list of both\
+        \ open and closed polls in an application or a specific channel. To retrieve\
+        \ polls in a specific channel, the channel_url must be specified. https://sendbird.com/docs/chat/v3/platform-api/message/polls/list-polls\
+        \ \n-----------------------------"
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: limit
+        required: false
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.Poll'
+          description: Successful response
+      summary: List polls
+      tags:
+      - Poll
+      x-accepts: application/json
+    post:
+      description: "## Create a poll\nThis action creates a poll with at least one\
+        \ option.You can configure various settings for your poll, including when\
+        \ the poll will close and whether to allow voting for multiple options. After\
+        \ creating a poll, to share the poll with other users in a channel, the poll\
+        \ must be sent as a message. https://sendbird.com/docs/chat/v3/platform-api/message/polls/create-a-poll\n\
+        -----------------------------"
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: title
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: options
+        required: true
+        schema:
+          items:
+            type: string
+          type: array
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_polls_get_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.Poll'
+          description: Successful response
+      summary: Create a poll
+      tags:
+      - Poll
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/polls/{poll_id}:
+    delete:
+      description: "## Delete a poll\nThis action deletes a poll. Once a poll is deleted,\
+        \ you can't retrieve its data. https://sendbird.com/docs/chat/v3/platform-api/message/polls/delete-a-poll\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successful response
+      summary: Delete a poll
+      tags:
+      - Poll
+      x-accepts: application/json
+    get:
+      description: |-
+        ## Get a poll
+        This action retrieves information on a specific poll.
+        https://sendbird.com/docs/chat/v3/platform-api/message/polls/get-a-poll
+        -----------------------------
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_polls__poll_id__delete_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.Poll'
+          description: Successful response
+      summary: Get a poll
+      tags:
+      - Poll
+      x-content-type: application/json
+      x-accepts: application/json
+    put:
+      description: "## Update a poll\nThis action updates information of a poll. To\
+        \ change the content of a poll option, see the update a poll option page.\
+        \ https://sendbird.com/docs/chat/v3/platform-api/message/polls/update-a-poll\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_polls__poll_id__delete_request_1'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.Poll'
+          description: Successful response
+      summary: Update a poll
+      tags:
+      - Poll
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/polls/{poll_id}/close:
+    put:
+      description: "## Close a poll\nThis action closes a poll and prevents users\
+        \ from voting any further. https://sendbird.com/docs/chat/v3/platform-api/message/polls/close-a-poll\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.Poll'
+          description: Successful response
+      summary: Close a poll
+      tags:
+      - Poll
+      x-accepts: application/json
+  /v3/polls/{poll_id}/options/{option_id}:
+    delete:
+      description: "## Delete a poll option\nThis action deletes an option from a\
+        \ poll. https://sendbird.com/docs/chat/v3/platform-api/message/polls/delete-a-poll-option\
+        \ ----------------------------- "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: option_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successful response
+      summary: Delete a poll option
+      tags:
+      - Poll
+      x-accepts: application/json
+    get:
+      description: "## Get a poll option\nThis action retrieves a poll option. https://sendbird.com/docs/chat/v3/platform-api/message/polls/get-a-poll-option\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: option_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.PollOption'
+          description: Successful response
+      summary: Get a poll option
+      tags:
+      - Poll
+      x-accepts: application/json
+    put:
+      description: "## Update a poll option\nThis action updates the content of a\
+        \ poll option. Voting for an option doesn't update the option. https://sendbird.com/docs/chat/v3/platform-api/message/polls/update-a-poll-option\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: option_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_polls__poll_id__options__option_id__delete_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.Poll'
+          description: Successful response
+      summary: Update a poll option
+      tags:
+      - Poll
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/polls/{poll_id}/options:
+    post:
+      description: "## Add a poll option\nThis action adds a new option to a poll.\
+        \ https://sendbird.com/docs/chat/v3/platform-api/message/polls/add-a-poll-option\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_polls__poll_id__options__option_id__delete_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.Poll'
+          description: Successful response
+      summary: Add a poll option
+      tags:
+      - Poll
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/polls/{poll_id}/vote:
+    put:
+      description: "## Cast or cancel a vote\nThis action adds or removes a vote from\
+        \ a poll option, changing the number of votes given to each option. Use this\
+        \ action to override a previous vote and update the user's final choice of\
+        \ poll options. https://sendbird.com/docs/chat/v3/platform-api/message/polls/cast-or-cancel-a-vote\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_polls__poll_id__vote_put_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.Poll'
+          description: Successful response
+      summary: Cast or cancel a vote
+      tags:
+      - Poll
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/polls/{poll_id}/options/{option_id}/voters:
+    get:
+      description: "## List voters of a poll option\nThis action retrieves a list\
+        \ of users who voted for a poll option. https://sendbird.com/docs/chat/v3/platform-api/message/polls/list-voters-of-a-poll-option\
+        \ \n-----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: poll_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: option_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_polls__poll_id__options__option_id__voters_get_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_v3_polls__poll_id__options__option_id__voters_get_200_response'
+          description: Successful response
+      summary: List voters of a poll option
+      tags:
+      - Poll
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/scheduled_messages:
+    get:
+      description: "## List scheduled messages\nThis action retrieves a list of scheduled\
+        \ messages. A user can only see the list of their own scheduled messages.\n\
+        https://sendbird.com/docs/chat/v3/platform-api/message/scheduled-messages/list-scheduled-messages\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: sender_id
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: limit
+        required: false
+        schema:
+          type: int
+        style: simple
+      - explode: false
+        in: path
+        name: order
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: reverse
+        required: false
+        schema:
+          type: boolean
+        style: simple
+      - explode: false
+        in: path
+        name: "status[]"
+        required: false
+        schema:
+          items:
+            type: object
+          type: array
+        style: simple
+      - explode: false
+        in: path
+        name: message_type
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_v3_scheduled_messages_get_200_response'
+          description: Successful response
+      summary: List scheduled messages
+      tags:
+      - Scheduled Message
+      x-accepts: application/json
+  /v3/group_channels/{channel_url}/scheduled_messages/{scheduled_message_id}:
+    delete:
+      description: "## Cancel a scheduled message\nThis action cancels a message that\
+        \ a user has scheduled to send at a later time.\nhttps://sendbird.com/docs/chat/v3/platform-api/message/scheduled-messages/cancel-a-scheduled-message\n\
+        -----------------------------                      "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: scheduled_message_id
+        required: true
+        schema:
+          type: long
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_v3_scheduled_messages_get_200_response'
+          description: Successful response
+      summary: Cancel a scheduled message
+      tags:
+      - Scheduled Message
+      x-accepts: application/json
+    get:
+      description: "## View a scheduled message\nThis action retrieves information\
+        \ on a specific scheduled message.\nhttps://sendbird.com/docs/chat/v3/platform-api/message/scheduled-messages/view-a-scheduled-message\n\
+        -----------------------------                      "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: scheduled_message_id
+        required: true
+        schema:
+          type: long
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_v3_scheduled_messages_get_200_response'
+          description: Successful response
+      summary: View a scheduled message
+      tags:
+      - Scheduled Message
+      x-accepts: application/json
+    post:
+      description: "## Update a scheduled message\nThis action updates information\
+        \ on a specific scheduled message. You can’t change the message type. Update\
+        \ operation should be done at least 5 minutes prior to the original scheduled\
+        \ time.\nhttps://sendbird.com/docs/chat/v3/platform-api/message/scheduled-messages/update-a-scheduled-message\n\
+        -----------------------------      "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: scheduled_message_id
+        required: true
+        schema:
+          type: long
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_group_channels__channel_url__scheduled_messages__scheduled_message_id__delete_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_v3_scheduled_messages_get_200_response'
+          description: Successful response
+      summary: Update a scheduled message
+      tags:
+      - Scheduled Message
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/{channel_type}/{channel_url}/scheduled_messages/{scheduled_message_id}/send_now:
+    post:
+      description: "## Send a scheduled message immediately\nThis action sends a scheduled\
+        \ message immediately. A user can only send their own scheduled messages immediately.\n\
+        https://sendbird.com/docs/chat/v3/platform-api/message/scheduled-messages/send-a-scheduled-message-immediately\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: scheduled_message_id
+        required: true
+        schema:
+          type: long
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successful response
+      summary: Send a scheduled message immediately
+      tags:
+      - Scheduled Message
+      x-accepts: application/json
+  /v3/scheduled_messages/count:
+    get:
+      description: "## View number of scheduled messages\nThis action retrieves the\
+        \ total number of scheduled messages that a user has.\nhttps://sendbird.com/docs/chat/v3/platform-api/message/scheduled-messages/view-number-of-scheduled-messages\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: sender_id
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: "status[]"
+        required: false
+        schema:
+          items:
+            type: object
+          type: array
+        style: simple
+      - explode: false
+        in: path
+        name: message_type
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_v3_scheduled_messages_count_get_200_response'
+          description: Successful response
+      summary: View number of scheduled messages
+      tags:
+      - Scheduled Message
+      x-accepts: application/json
+  /v3/group_channels/{channel_url}/scheduled_messages:
+    post:
+      description: "## Create a scheduled message\nThis action creates a new scheduled\
+        \ message. If a user leaves the channel before the scheduled time for the\
+        \ message to be sent, the scheduled message will be removed.\nhttps://sendbird.com/docs/chat/v3/platform-api/message/scheduled-messages/create-a-scheduled-message\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_group_channels__channel_url__scheduled_messages__scheduled_message_id__delete_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_v3_scheduled_messages_get_200_response'
+          description: Successful response
+      summary: Create a scheduled message
+      tags:
+      - Scheduled Message
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/applications/push/settings:
+    get:
+      description: "## Check push notifications\nShows whether the push notifications\
+        \ feature is turned on for an application.\nhttps://sendbird.com/docs/chat/v3/platform-api/application/managing-notifications/check-push-notifications\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_v3_applications_push_settings_get_200_response'
+          description: Successful response
+      summary: Check push notifications
+      tags:
+      - Push notifications
+      x-accepts: application/json
+    put:
+      description: "## Turn on push notifications\nDetermines whether to turn on the\
+        \ push notifications feature for an application.\nhttps://sendbird.com/docs/chat/v3/platform-api/application/managing-notifications/turn-on-push-notifications\n\
+        -----------------------------  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_v3_applications_push_settings_get_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/listPushConfigurationsResponse'
+          description: Successful response
+      summary: Turn on push notifications
+      tags:
+      - Push notifications
+      x-content-type: application/json
+      x-accepts: application/json
+  /v3/{channel_type}/{channel_url}/messages/{message_id}/pin:
+    delete:
+      description: "## Delete a pin\nUnpin a message from its channel.\n-----------------------------\
+        \  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: message_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.ChannelResponse'
+          description: Successful response
+      summary: Delete a pin
+      tags:
+      - Delete a pin
+      x-accepts: application/json
+    post:
+      description: "## Add a new pin\nPin a message to its channel.\n-----------------------------\
+        \  "
+      parameters:
+      - explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_type
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: message_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendBird.ChannelResponse'
+          description: Successful response
+      summary: Add a new pin
+      tags:
+      - Pin a message
+      x-accepts: application/json
 components:
   schemas:
     SendBird.MessageResponse:
@@ -9827,12 +10797,12 @@ components:
         data: data
         custom_type: custom_type
         is_reply_to_channel: true
-        created_at: 5.962133916683182
+        created_at: 3.616076749251911
         is_removed: true
         type: type
         req_id: req_id
         file: "{}"
-        updated_at: 6.027456183070403
+        updated_at: 7.061401241503109
         translations: "{}"
         thread_info: "{}"
         mentioned_users:
@@ -9847,12 +10817,12 @@ components:
           profile_url: profile_url
           nickname: nickname
         channel_type: channel_type
-        message_survival_seconds: 0.8008281904610115
+        message_survival_seconds: 2.3021358869347655
         silent: true
-        parent_message_id: 7.061401241503109
+        parent_message_id: 7.386281948385884
         parent_message_info: "{}"
         require_auth: true
-        message_id: 5.637376656633329
+        message_id: 2.027123023002322
         sorted_metaarray:
         - "{}"
         - "{}"
@@ -9860,8 +10830,8 @@ components:
         message: message
         channel_url: channel_url
         is_op_msg: true
-        message_retention_hour: 1.4658129805029452
-        size: 2.3021358869347655
+        message_retention_hour: 9.301444243932576
+        size: 4.145608029883936
         user:
           metadata:
             anyOf: anyOf
@@ -9932,6 +10902,55 @@ components:
         is_reply_to_channel:
           type: boolean
       type: object
+    SendBird.BotsMessageResponse:
+      example:
+        message:
+          silent: true
+          data: data
+          message_events:
+            update_last_message: true
+            update_mention_count: true
+            send_push_notification: send_push_notification
+            update_unread_count: true
+          custom_type: custom_type
+          created_at: 5.962133916683182
+          is_removed: true
+          message_id: 5.637376656633329
+          mention_type: mention_type
+          message: message
+          type: type
+          channel_url: channel_url
+          is_op_msg: true
+          file: "{}"
+          message_retention_hour: 1.4658129805029452
+          updated_at: 6.027456183070403
+          translations: "{}"
+          mentioned_users:
+          - metadata:
+              anyOf: anyOf
+            user_id: user_id
+            profile_url: profile_url
+            nickname: nickname
+          - metadata:
+              anyOf: anyOf
+            user_id: user_id
+            profile_url: profile_url
+            nickname: nickname
+          channel_type: channel_type
+          user:
+            metadata:
+              anyOf: anyOf
+            require_auth_for_profile_image: true
+            is_active: true
+            role: role
+            user_id: user_id
+            profile_url: profile_url
+            nickname: nickname
+          message_survival_seconds: 0.8008281904610115
+      nullable: true
+      properties:
+        message:
+          $ref: '#/components/schemas/SendBird_BotsMessageResponse_message'
     SendBird.ChannelResponse:
       anyOf:
       - $ref: '#/components/schemas/SendBird.GroupChannel'
@@ -10217,7 +11236,7 @@ components:
       type: object
     SendBird.GroupChannel:
       example:
-        message_offset_timestamp: 4.145608029883936
+        message_offset_timestamp: 1.1730742509559433
         my_muted_state: muted
         data: data
         custom_type: custom_type
@@ -10231,13 +11250,60 @@ components:
           data: data
           custom_type: custom_type
           name: name
-          max_length_message: 1.1730742509559433
-          created_at: 7.457744773683766
-          member_count: 4.965218492984954
+          max_length_message: 9.018348186070783
+          created_at: 8.762042012749001
+          member_count: 6.438423552598547
           channel_url: channel_url
         created_at: 0.8008281904610115
         is_super: true
-        last_message: null
+        last_message:
+          data: data
+          custom_type: custom_type
+          is_reply_to_channel: true
+          created_at: 3.616076749251911
+          is_removed: true
+          type: type
+          req_id: req_id
+          file: "{}"
+          updated_at: 7.061401241503109
+          translations: "{}"
+          thread_info: "{}"
+          mentioned_users:
+          - metadata:
+              anyOf: anyOf
+            user_id: user_id
+            profile_url: profile_url
+            nickname: nickname
+          - metadata:
+              anyOf: anyOf
+            user_id: user_id
+            profile_url: profile_url
+            nickname: nickname
+          channel_type: channel_type
+          message_survival_seconds: 2.3021358869347655
+          silent: true
+          parent_message_id: 7.386281948385884
+          parent_message_info: "{}"
+          require_auth: true
+          message_id: 2.027123023002322
+          sorted_metaarray:
+          - "{}"
+          - "{}"
+          mention_type: mention_type
+          message: message
+          channel_url: channel_url
+          is_op_msg: true
+          message_retention_hour: 9.301444243932576
+          size: 4.145608029883936
+          user:
+            metadata:
+              anyOf: anyOf
+            require_auth_for_profile_image: true
+            is_active: true
+            role: role
+            user_id: user_id
+            profile_url: profile_url
+            nickname: nickname
         my_push_trigger_option: all
         is_discoverable: true
         joined_member_count: 5.637376656633329
@@ -10256,11 +11322,11 @@ components:
           role: ""
           profile_url: profile_url
           connection_status: connection_status
-          muted_end_at: 3.616076749251911
+          muted_end_at: 6.84685269835264
           require_auth: true
           restriction_info:
             restriction_type: banned
-            end_at: 2.027123023002322
+            end_at: 7.457744773683766
             description: description
           is_muted: true
           plain_profile_url: plain_profile_url
@@ -10271,7 +11337,7 @@ components:
           nickname: nickname
           is_online: true
           state: ""
-          last_seen_at: 9
+          last_seen_at: 1
         - metadata: "{}"
           is_active: true
           preferred_languages:
@@ -10281,11 +11347,11 @@ components:
           role: ""
           profile_url: profile_url
           connection_status: connection_status
-          muted_end_at: 3.616076749251911
+          muted_end_at: 6.84685269835264
           require_auth: true
           restriction_info:
             restriction_type: banned
-            end_at: 2.027123023002322
+            end_at: 7.457744773683766
             description: description
           is_muted: true
           plain_profile_url: plain_profile_url
@@ -10296,12 +11362,41 @@ components:
           nickname: nickname
           is_online: true
           state: ""
-          last_seen_at: 9
-        max_length_message: 2.3021358869347655
+          last_seen_at: 1
+        max_length_message: 1.2315135367772556
         my_role: ""
-        inviter: null
-        member_count: 7.061401241503109
-        message_survival_seconds: 7.386281948385884
+        inviter:
+          end_at: 1.4658129805029452
+          metadata: "{}"
+          require_auth_for_profile_image: true
+          is_active: true
+          preferred_languages:
+          - preferred_languages
+          - preferred_languages
+          discovery_keys:
+          - discovery_keys
+          - discovery_keys
+          profile_url: profile_url
+          is_created: true
+          created_at: 6
+          description: description
+          has_ever_logged_in: true
+          locale: locale
+          start_at: 5.962133916683182
+          local: local
+          access_token: access_token
+          is_shadow_blocked: true
+          user_id: user_id
+          nickname: nickname
+          session_tokens:
+          - "{}"
+          - "{}"
+          phone_number: phone_number
+          is_online: true
+          last_seen_at: 0
+          is_hide_me_from_friends: true
+        member_count: 1.0246457001441578
+        message_survival_seconds: 4.965218492984954
         cover_url: cover_url
         creator:
           end_at: 1.4658129805029452
@@ -10338,17 +11433,17 @@ components:
         my_count_preference: my_count_preference
         my_member_state: invited
         is_created: true
-        unread_mention_count: 1.4894159098541704
+        unread_mention_count: 9.369310271410669
         created_by:
           require_auth_for_profile_image: true
           user_id: user_id
           profile_url: profile_url
           nickname: nickname
-        unread_message_count: 6.84685269835264
+        unread_message_count: 6.683562403749608
         channel_url: channel_url
         is_broadcast: true
         joined_at: 5.962133916683182
-        my_last_read: 1.2315135367772556
+        my_last_read: 5.025004791520295
         hidden_state: hidden_allow_auto_unhide
         is_push_enabled: true
         is_public: true
@@ -10357,7 +11452,7 @@ components:
           exclude_user_ids:
           - exclude_user_ids
           - exclude_user_ids
-          wait_seconds: 1.0246457001441578
+          wait_seconds: 9.965781217890562
         ignore_profanity_filter: true
         is_access_code_required: true
       properties:
@@ -10390,7 +11485,7 @@ components:
         invited_at:
           type: number
         inviter:
-          $ref: '#/components/schemas/SendBird_GroupChannel_inviter'
+          $ref: '#/components/schemas/SendBird.User'
         is_access_code_required:
           type: boolean
         is_broadcast:
@@ -10418,7 +11513,7 @@ components:
         joined_member_count:
           type: number
         last_message:
-          $ref: '#/components/schemas/SendBird_GroupChannel_last_message'
+          $ref: '#/components/schemas/SendBird.MessageResponse'
         max_length_message:
           type: number
         member_count:
@@ -10494,11 +11589,11 @@ components:
         role: ""
         profile_url: profile_url
         connection_status: connection_status
-        muted_end_at: 3.616076749251911
+        muted_end_at: 6.84685269835264
         require_auth: true
         restriction_info:
           restriction_type: banned
-          end_at: 2.027123023002322
+          end_at: 7.457744773683766
           description: description
         is_muted: true
         plain_profile_url: plain_profile_url
@@ -10509,7 +11604,7 @@ components:
         nickname: nickname
         is_online: true
         state: ""
-        last_seen_at: 9
+        last_seen_at: 1
       properties:
         connection_status:
           type: string
@@ -10747,6 +11842,152 @@ components:
           type: string
       type: object
     SendBird.Poll:
+      example:
+        details:
+          updated_at: 9.301444243932576
+          is_anonymous: true
+          allow_multiple_votes: true
+          options:
+          - poll_id: 5.637376656633329
+            updated_at: 2.3021358869347655
+            created_at: 1.4658129805029452
+            id: 5.962133916683182
+            text: text
+            created_by: created_by
+            partial_voters:
+            - end_at: 1.4658129805029452
+              metadata: "{}"
+              require_auth_for_profile_image: true
+              is_active: true
+              preferred_languages:
+              - preferred_languages
+              - preferred_languages
+              discovery_keys:
+              - discovery_keys
+              - discovery_keys
+              profile_url: profile_url
+              is_created: true
+              created_at: 6
+              description: description
+              has_ever_logged_in: true
+              locale: locale
+              start_at: 5.962133916683182
+              local: local
+              access_token: access_token
+              is_shadow_blocked: true
+              user_id: user_id
+              nickname: nickname
+              session_tokens:
+              - "{}"
+              - "{}"
+              phone_number: phone_number
+              is_online: true
+              last_seen_at: 0
+              is_hide_me_from_friends: true
+            - end_at: 1.4658129805029452
+              metadata: "{}"
+              require_auth_for_profile_image: true
+              is_active: true
+              preferred_languages:
+              - preferred_languages
+              - preferred_languages
+              discovery_keys:
+              - discovery_keys
+              - discovery_keys
+              profile_url: profile_url
+              is_created: true
+              created_at: 6
+              description: description
+              has_ever_logged_in: true
+              locale: locale
+              start_at: 5.962133916683182
+              local: local
+              access_token: access_token
+              is_shadow_blocked: true
+              user_id: user_id
+              nickname: nickname
+              session_tokens:
+              - "{}"
+              - "{}"
+              phone_number: phone_number
+              is_online: true
+              last_seen_at: 0
+              is_hide_me_from_friends: true
+            vote_count: 7.061401241503109
+          - poll_id: 5.637376656633329
+            updated_at: 2.3021358869347655
+            created_at: 1.4658129805029452
+            id: 5.962133916683182
+            text: text
+            created_by: created_by
+            partial_voters:
+            - end_at: 1.4658129805029452
+              metadata: "{}"
+              require_auth_for_profile_image: true
+              is_active: true
+              preferred_languages:
+              - preferred_languages
+              - preferred_languages
+              discovery_keys:
+              - discovery_keys
+              - discovery_keys
+              profile_url: profile_url
+              is_created: true
+              created_at: 6
+              description: description
+              has_ever_logged_in: true
+              locale: locale
+              start_at: 5.962133916683182
+              local: local
+              access_token: access_token
+              is_shadow_blocked: true
+              user_id: user_id
+              nickname: nickname
+              session_tokens:
+              - "{}"
+              - "{}"
+              phone_number: phone_number
+              is_online: true
+              last_seen_at: 0
+              is_hide_me_from_friends: true
+            - end_at: 1.4658129805029452
+              metadata: "{}"
+              require_auth_for_profile_image: true
+              is_active: true
+              preferred_languages:
+              - preferred_languages
+              - preferred_languages
+              discovery_keys:
+              - discovery_keys
+              - discovery_keys
+              profile_url: profile_url
+              is_created: true
+              created_at: 6
+              description: description
+              has_ever_logged_in: true
+              locale: locale
+              start_at: 5.962133916683182
+              local: local
+              access_token: access_token
+              is_shadow_blocked: true
+              user_id: user_id
+              nickname: nickname
+              session_tokens:
+              - "{}"
+              - "{}"
+              phone_number: phone_number
+              is_online: true
+              last_seen_at: 0
+              is_hide_me_from_friends: true
+            vote_count: 7.061401241503109
+          close_at: 0.8008281904610115
+          created_at: 6.027456183070403
+          created_by: created_by
+          voter_count: 3.616076749251911
+          allow_user_suggestion: true
+          status: closed
+        id: 2.027123023002322
+        title: title
       properties:
         details:
           $ref: '#/components/schemas/SendBird.PollDetails'
@@ -10756,6 +11997,149 @@ components:
           type: string
       type: object
     SendBird.PollDetails:
+      example:
+        updated_at: 9.301444243932576
+        is_anonymous: true
+        allow_multiple_votes: true
+        options:
+        - poll_id: 5.637376656633329
+          updated_at: 2.3021358869347655
+          created_at: 1.4658129805029452
+          id: 5.962133916683182
+          text: text
+          created_by: created_by
+          partial_voters:
+          - end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          - end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          vote_count: 7.061401241503109
+        - poll_id: 5.637376656633329
+          updated_at: 2.3021358869347655
+          created_at: 1.4658129805029452
+          id: 5.962133916683182
+          text: text
+          created_by: created_by
+          partial_voters:
+          - end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          - end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          vote_count: 7.061401241503109
+        close_at: 0.8008281904610115
+        created_at: 6.027456183070403
+        created_by: created_by
+        voter_count: 3.616076749251911
+        allow_user_suggestion: true
+        status: closed
       properties:
         allow_multiple_votes:
           type: boolean
@@ -10785,6 +12169,73 @@ components:
           type: number
       type: object
     SendBird.PollOption:
+      example:
+        poll_id: 5.637376656633329
+        updated_at: 2.3021358869347655
+        created_at: 1.4658129805029452
+        id: 5.962133916683182
+        text: text
+        created_by: created_by
+        partial_voters:
+        - end_at: 1.4658129805029452
+          metadata: "{}"
+          require_auth_for_profile_image: true
+          is_active: true
+          preferred_languages:
+          - preferred_languages
+          - preferred_languages
+          discovery_keys:
+          - discovery_keys
+          - discovery_keys
+          profile_url: profile_url
+          is_created: true
+          created_at: 6
+          description: description
+          has_ever_logged_in: true
+          locale: locale
+          start_at: 5.962133916683182
+          local: local
+          access_token: access_token
+          is_shadow_blocked: true
+          user_id: user_id
+          nickname: nickname
+          session_tokens:
+          - "{}"
+          - "{}"
+          phone_number: phone_number
+          is_online: true
+          last_seen_at: 0
+          is_hide_me_from_friends: true
+        - end_at: 1.4658129805029452
+          metadata: "{}"
+          require_auth_for_profile_image: true
+          is_active: true
+          preferred_languages:
+          - preferred_languages
+          - preferred_languages
+          discovery_keys:
+          - discovery_keys
+          - discovery_keys
+          profile_url: profile_url
+          is_created: true
+          created_at: 6
+          description: description
+          has_ever_logged_in: true
+          locale: locale
+          start_at: 5.962133916683182
+          local: local
+          access_token: access_token
+          is_shadow_blocked: true
+          user_id: user_id
+          nickname: nickname
+          session_tokens:
+          - "{}"
+          - "{}"
+          phone_number: phone_number
+          is_online: true
+          last_seen_at: 0
+          is_hide_me_from_friends: true
+        vote_count: 7.061401241503109
       properties:
         created_at:
           type: number
@@ -10812,6 +12263,18 @@ components:
         vote_count:
           type: number
       type: object
+    SendBird.ScheduledMessage:
+      example:
+        scheduled_message_id: 0.8008281904610115
+        message_type: message_type
+        message: message
+      properties:
+        scheduled_message_id:
+          type: number
+        message_type:
+          type: string
+        message:
+          type: string
     SendBird.Reaction:
       properties:
         key:
@@ -10826,7 +12289,7 @@ components:
     SendBird.RestrictionInfo:
       example:
         restriction_type: banned
-        end_at: 2.027123023002322
+        end_at: 7.457744773683766
         description: description
       properties:
         description:
@@ -11494,7 +12957,7 @@ components:
       example:
         next: next
         channels:
-        - message_offset_timestamp: 4.145608029883936
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -11508,13 +12971,60 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 1.1730742509559433
-            created_at: 7.457744773683766
-            member_count: 4.965218492984954
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message: null
+          last_message:
+            data: data
+            custom_type: custom_type
+            is_reply_to_channel: true
+            created_at: 3.616076749251911
+            is_removed: true
+            type: type
+            req_id: req_id
+            file: "{}"
+            updated_at: 7.061401241503109
+            translations: "{}"
+            thread_info: "{}"
+            mentioned_users:
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            channel_type: channel_type
+            message_survival_seconds: 2.3021358869347655
+            silent: true
+            parent_message_id: 7.386281948385884
+            parent_message_info: "{}"
+            require_auth: true
+            message_id: 2.027123023002322
+            sorted_metaarray:
+            - "{}"
+            - "{}"
+            mention_type: mention_type
+            message: message
+            channel_url: channel_url
+            is_op_msg: true
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
+            user:
+              metadata:
+                anyOf: anyOf
+              require_auth_for_profile_image: true
+              is_active: true
+              role: role
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
@@ -11533,11 +13043,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -11548,7 +13058,7 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
+            last_seen_at: 1
           - metadata: "{}"
             is_active: true
             preferred_languages:
@@ -11558,11 +13068,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -11573,12 +13083,41 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
-          max_length_message: 2.3021358869347655
+            last_seen_at: 1
+          max_length_message: 1.2315135367772556
           my_role: ""
-          inviter: null
-          member_count: 7.061401241503109
-          message_survival_seconds: 7.386281948385884
+          inviter:
+            end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          member_count: 1.0246457001441578
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 1.4658129805029452
@@ -11615,17 +13154,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 1.4894159098541704
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.84685269835264
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 1.2315135367772556
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -11634,10 +13173,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 1.0246457001441578
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
-        - message_offset_timestamp: 4.145608029883936
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -11651,13 +13190,60 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 1.1730742509559433
-            created_at: 7.457744773683766
-            member_count: 4.965218492984954
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message: null
+          last_message:
+            data: data
+            custom_type: custom_type
+            is_reply_to_channel: true
+            created_at: 3.616076749251911
+            is_removed: true
+            type: type
+            req_id: req_id
+            file: "{}"
+            updated_at: 7.061401241503109
+            translations: "{}"
+            thread_info: "{}"
+            mentioned_users:
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            channel_type: channel_type
+            message_survival_seconds: 2.3021358869347655
+            silent: true
+            parent_message_id: 7.386281948385884
+            parent_message_info: "{}"
+            require_auth: true
+            message_id: 2.027123023002322
+            sorted_metaarray:
+            - "{}"
+            - "{}"
+            mention_type: mention_type
+            message: message
+            channel_url: channel_url
+            is_op_msg: true
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
+            user:
+              metadata:
+                anyOf: anyOf
+              require_auth_for_profile_image: true
+              is_active: true
+              role: role
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
@@ -11676,11 +13262,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -11691,7 +13277,7 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
+            last_seen_at: 1
           - metadata: "{}"
             is_active: true
             preferred_languages:
@@ -11701,11 +13287,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -11716,12 +13302,41 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
-          max_length_message: 2.3021358869347655
+            last_seen_at: 1
+          max_length_message: 1.2315135367772556
           my_role: ""
-          inviter: null
-          member_count: 7.061401241503109
-          message_survival_seconds: 7.386281948385884
+          inviter:
+            end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          member_count: 1.0246457001441578
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 1.4658129805029452
@@ -11758,17 +13373,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 1.4894159098541704
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.84685269835264
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 1.2315135367772556
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -11777,10 +13392,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 1.0246457001441578
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
-        ts: 5.025004791520295
+        ts: 3.5571952270680973
       properties:
         channels:
           items:
@@ -13182,7 +14797,7 @@ components:
       example:
         next: next
         channels:
-        - message_offset_timestamp: 4.145608029883936
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -13196,13 +14811,60 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 1.1730742509559433
-            created_at: 7.457744773683766
-            member_count: 4.965218492984954
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message: null
+          last_message:
+            data: data
+            custom_type: custom_type
+            is_reply_to_channel: true
+            created_at: 3.616076749251911
+            is_removed: true
+            type: type
+            req_id: req_id
+            file: "{}"
+            updated_at: 7.061401241503109
+            translations: "{}"
+            thread_info: "{}"
+            mentioned_users:
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            channel_type: channel_type
+            message_survival_seconds: 2.3021358869347655
+            silent: true
+            parent_message_id: 7.386281948385884
+            parent_message_info: "{}"
+            require_auth: true
+            message_id: 2.027123023002322
+            sorted_metaarray:
+            - "{}"
+            - "{}"
+            mention_type: mention_type
+            message: message
+            channel_url: channel_url
+            is_op_msg: true
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
+            user:
+              metadata:
+                anyOf: anyOf
+              require_auth_for_profile_image: true
+              is_active: true
+              role: role
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
@@ -13221,11 +14883,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -13236,7 +14898,7 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
+            last_seen_at: 1
           - metadata: "{}"
             is_active: true
             preferred_languages:
@@ -13246,11 +14908,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -13261,12 +14923,41 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
-          max_length_message: 2.3021358869347655
+            last_seen_at: 1
+          max_length_message: 1.2315135367772556
           my_role: ""
-          inviter: null
-          member_count: 7.061401241503109
-          message_survival_seconds: 7.386281948385884
+          inviter:
+            end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          member_count: 1.0246457001441578
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 1.4658129805029452
@@ -13303,17 +14994,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 1.4894159098541704
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.84685269835264
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 1.2315135367772556
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -13322,10 +15013,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 1.0246457001441578
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
-        - message_offset_timestamp: 4.145608029883936
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -13339,13 +15030,60 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 1.1730742509559433
-            created_at: 7.457744773683766
-            member_count: 4.965218492984954
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message: null
+          last_message:
+            data: data
+            custom_type: custom_type
+            is_reply_to_channel: true
+            created_at: 3.616076749251911
+            is_removed: true
+            type: type
+            req_id: req_id
+            file: "{}"
+            updated_at: 7.061401241503109
+            translations: "{}"
+            thread_info: "{}"
+            mentioned_users:
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            channel_type: channel_type
+            message_survival_seconds: 2.3021358869347655
+            silent: true
+            parent_message_id: 7.386281948385884
+            parent_message_info: "{}"
+            require_auth: true
+            message_id: 2.027123023002322
+            sorted_metaarray:
+            - "{}"
+            - "{}"
+            mention_type: mention_type
+            message: message
+            channel_url: channel_url
+            is_op_msg: true
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
+            user:
+              metadata:
+                anyOf: anyOf
+              require_auth_for_profile_image: true
+              is_active: true
+              role: role
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
@@ -13364,11 +15102,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -13379,7 +15117,7 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
+            last_seen_at: 1
           - metadata: "{}"
             is_active: true
             preferred_languages:
@@ -13389,11 +15127,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -13404,12 +15142,41 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
-          max_length_message: 2.3021358869347655
+            last_seen_at: 1
+          max_length_message: 1.2315135367772556
           my_role: ""
-          inviter: null
-          member_count: 7.061401241503109
-          message_survival_seconds: 7.386281948385884
+          inviter:
+            end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          member_count: 1.0246457001441578
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 1.4658129805029452
@@ -13446,17 +15213,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 1.4894159098541704
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.84685269835264
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 1.2315135367772556
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -13465,7 +15232,7 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 1.0246457001441578
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
         ts: 0.8008281904610115
@@ -15201,7 +16968,7 @@ components:
     joinChannelsResponse:
       example:
         channels:
-        - message_offset_timestamp: 4.145608029883936
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -15215,13 +16982,60 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 1.1730742509559433
-            created_at: 7.457744773683766
-            member_count: 4.965218492984954
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message: null
+          last_message:
+            data: data
+            custom_type: custom_type
+            is_reply_to_channel: true
+            created_at: 3.616076749251911
+            is_removed: true
+            type: type
+            req_id: req_id
+            file: "{}"
+            updated_at: 7.061401241503109
+            translations: "{}"
+            thread_info: "{}"
+            mentioned_users:
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            channel_type: channel_type
+            message_survival_seconds: 2.3021358869347655
+            silent: true
+            parent_message_id: 7.386281948385884
+            parent_message_info: "{}"
+            require_auth: true
+            message_id: 2.027123023002322
+            sorted_metaarray:
+            - "{}"
+            - "{}"
+            mention_type: mention_type
+            message: message
+            channel_url: channel_url
+            is_op_msg: true
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
+            user:
+              metadata:
+                anyOf: anyOf
+              require_auth_for_profile_image: true
+              is_active: true
+              role: role
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
@@ -15240,11 +17054,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -15255,7 +17069,7 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
+            last_seen_at: 1
           - metadata: "{}"
             is_active: true
             preferred_languages:
@@ -15265,11 +17079,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -15280,12 +17094,41 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
-          max_length_message: 2.3021358869347655
+            last_seen_at: 1
+          max_length_message: 1.2315135367772556
           my_role: ""
-          inviter: null
-          member_count: 7.061401241503109
-          message_survival_seconds: 7.386281948385884
+          inviter:
+            end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          member_count: 1.0246457001441578
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 1.4658129805029452
@@ -15322,17 +17165,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 1.4894159098541704
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.84685269835264
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 1.2315135367772556
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -15341,10 +17184,10 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 1.0246457001441578
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
-        - message_offset_timestamp: 4.145608029883936
+        - message_offset_timestamp: 1.1730742509559433
           my_muted_state: muted
           data: data
           custom_type: custom_type
@@ -15358,13 +17201,60 @@ components:
             data: data
             custom_type: custom_type
             name: name
-            max_length_message: 1.1730742509559433
-            created_at: 7.457744773683766
-            member_count: 4.965218492984954
+            max_length_message: 9.018348186070783
+            created_at: 8.762042012749001
+            member_count: 6.438423552598547
             channel_url: channel_url
           created_at: 0.8008281904610115
           is_super: true
-          last_message: null
+          last_message:
+            data: data
+            custom_type: custom_type
+            is_reply_to_channel: true
+            created_at: 3.616076749251911
+            is_removed: true
+            type: type
+            req_id: req_id
+            file: "{}"
+            updated_at: 7.061401241503109
+            translations: "{}"
+            thread_info: "{}"
+            mentioned_users:
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            - metadata:
+                anyOf: anyOf
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
+            channel_type: channel_type
+            message_survival_seconds: 2.3021358869347655
+            silent: true
+            parent_message_id: 7.386281948385884
+            parent_message_info: "{}"
+            require_auth: true
+            message_id: 2.027123023002322
+            sorted_metaarray:
+            - "{}"
+            - "{}"
+            mention_type: mention_type
+            message: message
+            channel_url: channel_url
+            is_op_msg: true
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
+            user:
+              metadata:
+                anyOf: anyOf
+              require_auth_for_profile_image: true
+              is_active: true
+              role: role
+              user_id: user_id
+              profile_url: profile_url
+              nickname: nickname
           my_push_trigger_option: all
           is_discoverable: true
           joined_member_count: 5.637376656633329
@@ -15383,11 +17273,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -15398,7 +17288,7 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
+            last_seen_at: 1
           - metadata: "{}"
             is_active: true
             preferred_languages:
@@ -15408,11 +17298,11 @@ components:
             role: ""
             profile_url: profile_url
             connection_status: connection_status
-            muted_end_at: 3.616076749251911
+            muted_end_at: 6.84685269835264
             require_auth: true
             restriction_info:
               restriction_type: banned
-              end_at: 2.027123023002322
+              end_at: 7.457744773683766
               description: description
             is_muted: true
             plain_profile_url: plain_profile_url
@@ -15423,12 +17313,41 @@ components:
             nickname: nickname
             is_online: true
             state: ""
-            last_seen_at: 9
-          max_length_message: 2.3021358869347655
+            last_seen_at: 1
+          max_length_message: 1.2315135367772556
           my_role: ""
-          inviter: null
-          member_count: 7.061401241503109
-          message_survival_seconds: 7.386281948385884
+          inviter:
+            end_at: 1.4658129805029452
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            preferred_languages:
+            - preferred_languages
+            - preferred_languages
+            discovery_keys:
+            - discovery_keys
+            - discovery_keys
+            profile_url: profile_url
+            is_created: true
+            created_at: 6
+            description: description
+            has_ever_logged_in: true
+            locale: locale
+            start_at: 5.962133916683182
+            local: local
+            access_token: access_token
+            is_shadow_blocked: true
+            user_id: user_id
+            nickname: nickname
+            session_tokens:
+            - "{}"
+            - "{}"
+            phone_number: phone_number
+            is_online: true
+            last_seen_at: 0
+            is_hide_me_from_friends: true
+          member_count: 1.0246457001441578
+          message_survival_seconds: 4.965218492984954
           cover_url: cover_url
           creator:
             end_at: 1.4658129805029452
@@ -15465,17 +17384,17 @@ components:
           my_count_preference: my_count_preference
           my_member_state: invited
           is_created: true
-          unread_mention_count: 1.4894159098541704
+          unread_mention_count: 9.369310271410669
           created_by:
             require_auth_for_profile_image: true
             user_id: user_id
             profile_url: profile_url
             nickname: nickname
-          unread_message_count: 6.84685269835264
+          unread_message_count: 6.683562403749608
           channel_url: channel_url
           is_broadcast: true
           joined_at: 5.962133916683182
-          my_last_read: 1.2315135367772556
+          my_last_read: 5.025004791520295
           hidden_state: hidden_allow_auto_unhide
           is_push_enabled: true
           is_public: true
@@ -15484,7 +17403,7 @@ components:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 1.0246457001441578
+            wait_seconds: 9.965781217890562
           ignore_profanity_filter: true
           is_access_code_required: true
       properties:
@@ -15494,7 +17413,7 @@ components:
           type: array
       type: object
     sendBotsMessageResponse:
-      $ref: '#/components/schemas/SendBird.MessageResponse'
+      $ref: '#/components/schemas/SendBird.BotsMessageResponse'
     chooseWhichEventsToSubscribeToResponse:
       example:
         webhook:
@@ -15632,12 +17551,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 5.962133916683182
+            created_at: 3.616076749251911
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 6.027456183070403
+            updated_at: 7.061401241503109
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -15652,12 +17571,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 0.8008281904610115
+            message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.061401241503109
+            parent_message_id: 7.386281948385884
             parent_message_info: "{}"
             require_auth: true
-            message_id: 5.637376656633329
+            message_id: 2.027123023002322
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -15665,8 +17584,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 1.4658129805029452
-            size: 2.3021358869347655
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
             user:
               metadata:
                 anyOf: anyOf
@@ -15745,12 +17664,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 5.962133916683182
+            created_at: 3.616076749251911
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 6.027456183070403
+            updated_at: 7.061401241503109
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -15765,12 +17684,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 0.8008281904610115
+            message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.061401241503109
+            parent_message_id: 7.386281948385884
             parent_message_info: "{}"
             require_auth: true
-            message_id: 5.637376656633329
+            message_id: 2.027123023002322
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -15778,8 +17697,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 1.4658129805029452
-            size: 2.3021358869347655
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
             user:
               metadata:
                 anyOf: anyOf
@@ -15870,12 +17789,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 5.962133916683182
+            created_at: 3.616076749251911
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 6.027456183070403
+            updated_at: 7.061401241503109
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -15890,12 +17809,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 0.8008281904610115
+            message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.061401241503109
+            parent_message_id: 7.386281948385884
             parent_message_info: "{}"
             require_auth: true
-            message_id: 5.637376656633329
+            message_id: 2.027123023002322
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -15903,8 +17822,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 1.4658129805029452
-            size: 2.3021358869347655
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
             user:
               metadata:
                 anyOf: anyOf
@@ -15983,12 +17902,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 5.962133916683182
+            created_at: 3.616076749251911
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 6.027456183070403
+            updated_at: 7.061401241503109
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -16003,12 +17922,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 0.8008281904610115
+            message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.061401241503109
+            parent_message_id: 7.386281948385884
             parent_message_info: "{}"
             require_auth: true
-            message_id: 5.637376656633329
+            message_id: 2.027123023002322
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -16016,8 +17935,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 1.4658129805029452
-            size: 2.3021358869347655
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
             user:
               metadata:
                 anyOf: anyOf
@@ -16107,12 +18026,12 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 5.962133916683182
+          created_at: 3.616076749251911
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 6.027456183070403
+          updated_at: 7.061401241503109
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -16127,12 +18046,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 0.8008281904610115
+          message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.061401241503109
+          parent_message_id: 7.386281948385884
           parent_message_info: "{}"
           require_auth: true
-          message_id: 5.637376656633329
+          message_id: 2.027123023002322
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -16140,8 +18059,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 1.4658129805029452
-          size: 2.3021358869347655
+          message_retention_hour: 9.301444243932576
+          size: 4.145608029883936
           user:
             metadata:
               anyOf: anyOf
@@ -16241,12 +18160,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 5.962133916683182
+            created_at: 3.616076749251911
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 6.027456183070403
+            updated_at: 7.061401241503109
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -16261,12 +18180,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 0.8008281904610115
+            message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.061401241503109
+            parent_message_id: 7.386281948385884
             parent_message_info: "{}"
             require_auth: true
-            message_id: 5.637376656633329
+            message_id: 2.027123023002322
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -16274,8 +18193,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 1.4658129805029452
-            size: 2.3021358869347655
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
             user:
               metadata:
                 anyOf: anyOf
@@ -16354,12 +18273,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 5.962133916683182
+            created_at: 3.616076749251911
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 6.027456183070403
+            updated_at: 7.061401241503109
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -16374,12 +18293,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 0.8008281904610115
+            message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.061401241503109
+            parent_message_id: 7.386281948385884
             parent_message_info: "{}"
             require_auth: true
-            message_id: 5.637376656633329
+            message_id: 2.027123023002322
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -16387,8 +18306,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 1.4658129805029452
-            size: 2.3021358869347655
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
             user:
               metadata:
                 anyOf: anyOf
@@ -16478,12 +18397,12 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 5.962133916683182
+          created_at: 3.616076749251911
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 6.027456183070403
+          updated_at: 7.061401241503109
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -16498,12 +18417,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 0.8008281904610115
+          message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.061401241503109
+          parent_message_id: 7.386281948385884
           parent_message_info: "{}"
           require_auth: true
-          message_id: 5.637376656633329
+          message_id: 2.027123023002322
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -16511,8 +18430,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 1.4658129805029452
-          size: 2.3021358869347655
+          message_retention_hour: 9.301444243932576
+          size: 4.145608029883936
           user:
             metadata:
               anyOf: anyOf
@@ -16612,12 +18531,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 5.962133916683182
+            created_at: 3.616076749251911
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 6.027456183070403
+            updated_at: 7.061401241503109
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -16632,12 +18551,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 0.8008281904610115
+            message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.061401241503109
+            parent_message_id: 7.386281948385884
             parent_message_info: "{}"
             require_auth: true
-            message_id: 5.637376656633329
+            message_id: 2.027123023002322
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -16645,8 +18564,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 1.4658129805029452
-            size: 2.3021358869347655
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
             user:
               metadata:
                 anyOf: anyOf
@@ -16725,12 +18644,12 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 5.962133916683182
+            created_at: 3.616076749251911
             is_removed: true
             type: type
             req_id: req_id
             file: "{}"
-            updated_at: 6.027456183070403
+            updated_at: 7.061401241503109
             translations: "{}"
             thread_info: "{}"
             mentioned_users:
@@ -16745,12 +18664,12 @@ components:
               profile_url: profile_url
               nickname: nickname
             channel_type: channel_type
-            message_survival_seconds: 0.8008281904610115
+            message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.061401241503109
+            parent_message_id: 7.386281948385884
             parent_message_info: "{}"
             require_auth: true
-            message_id: 5.637376656633329
+            message_id: 2.027123023002322
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -16758,8 +18677,8 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 1.4658129805029452
-            size: 2.3021358869347655
+            message_retention_hour: 9.301444243932576
+            size: 4.145608029883936
             user:
               metadata:
                 anyOf: anyOf
@@ -16849,12 +18768,12 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 5.962133916683182
+          created_at: 3.616076749251911
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 6.027456183070403
+          updated_at: 7.061401241503109
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -16869,12 +18788,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 0.8008281904610115
+          message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.061401241503109
+          parent_message_id: 7.386281948385884
           parent_message_info: "{}"
           require_auth: true
-          message_id: 5.637376656633329
+          message_id: 2.027123023002322
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -16882,8 +18801,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 1.4658129805029452
-          size: 2.3021358869347655
+          message_retention_hour: 9.301444243932576
+          size: 4.145608029883936
           user:
             metadata:
               anyOf: anyOf
@@ -19667,6 +21586,306 @@ components:
       - report_category
       title: reportChannelByUrlData
       type: object
+    _v3_polls_get_request:
+      properties:
+        title:
+          description: "Specifies the title of a poll. The length is limited to 2,048\
+            \ characters."
+          type: string
+        options:
+          description: "Specifies an array of poll options that a user can vote for.\
+            \ At least one option should be provided, and the length of each option\
+            \ is limited to 2,000 characters."
+          items:
+            type: string
+          type: array
+        allow_user_suggestion:
+          description: Determines whether to allow users other than the creator of
+            the poll to add new options to the poll. (Default is false)
+          type: boolean
+        allow_multiple_votes:
+          description: Determines whether to allow users to vote for multiple options.
+            (Default is false)
+          type: boolean
+        close_at:
+          description: "Specifies when the poll closes and no longer accepts votes\
+            \ in Unix seconds. If the value of this property is -1, the poll is open\
+            \ indefinitely."
+          type: long
+        created_by:
+          description: Specifies the unique ID of the user who creates the poll.
+          type: string
+        data:
+          description: Specifies a JSON object of one or more key-value items to store
+            additional poll information.
+          type: object
+      type: object
+    _v3_polls__poll_id__delete_request:
+      properties:
+        channel_url:
+          description: "Specifies the URL of the channel. If channel_type is specified,\
+            \ channel_url must be specified as well."
+          type: string
+        channel_type:
+          description: Specifies the type of the channel. Either open_channels or
+            group_channels.
+          type: string
+        show_partial_voter_list:
+          description: "Determines whether to show a partial list of voters for each\
+            \ option. If set to true, the option resources inside the response include\
+            \ the partial_voter_list property which shows up to ten voters."
+          type: boolean
+      type: object
+    _v3_polls__poll_id__delete_request_1:
+      properties:
+        title:
+          description: "Specifies the title of a poll. The length is limited to 2,000\
+            \ characters."
+          type: string
+        allow_user_suggestion:
+          description: Determines whether to allow users other than the creator of
+            the poll to add new options to the poll. (Default is false)
+          type: boolean
+        allow_multiple_votes:
+          description: Determines whether to allow users to vote for multiple options.
+            (Default is false)
+          type: boolean
+        close_at:
+          description: "Specifies when the poll closes and no longer accepts votes\
+            \ in Unix seconds. If the value of this property is -1, the poll is open\
+            \ indefinitely."
+          type: long
+        allocreated_byw_multiple_votes:
+          description: Specifies the unique ID of the user who creates the poll.
+          type: string
+        data:
+          description: Specifies a JSON object of one or more key-value items to store
+            additional poll information.
+          type: object
+      type: object
+    _v3_polls__poll_id__options__option_id__delete_request:
+      properties:
+        text:
+          description: "Specifies the description of a new option. The maximum length\
+            \ is 2,000 characters."
+          type: string
+        created_by:
+          description: Specifies the unique ID of the user who creates the option.
+          type: string
+      type: object
+    _v3_polls__poll_id__vote_put_request:
+      properties:
+        user_id:
+          description: Specifies the unique ID of a user who casts or cancels a vote.
+          type: string
+        option_ids:
+          description: "Specifies the array of option IDs to cast or cancel votes.\
+            \ For example, if a user had voted for both Option 1 and Option 2 in a\
+            \ poll, you can specify this property's value as [1,2]. If the user wants\
+            \ to cancel the vote for Option 2 but keep the vote for Option 1, the\
+            \ value should be specified as [1]. If the user wants to cancel the votes\
+            \ for both poll options, the value should be specified as []."
+          items:
+            type: integer
+          type: array
+      type: object
+    _v3_polls__poll_id__options__option_id__voters_get_request:
+      properties:
+        token:
+          description: Specifies the token to get the next page of voters. You can
+            get this value from the next property of the previous API response.
+          type: string
+        limit:
+          description: "Specifies the number of voters to return per page. Acceptable\
+            \ values are 1 to 100, inclusive. (Default is 100)"
+          type: integer
+      type: object
+    _v3_polls__poll_id__options__option_id__voters_get_200_response_voters_inner:
+      example:
+        metadata: "{}"
+        profile_url: profile_url
+        user_id: user_id
+        nickname: nickname
+      properties:
+        nickname:
+          type: string
+        metadata:
+          type: object
+        profile_url:
+          type: string
+        user_id:
+          type: string
+      type: object
+    _v3_polls__poll_id__options__option_id__voters_get_200_response:
+      example:
+        next: next
+        voters:
+        - metadata: "{}"
+          profile_url: profile_url
+          user_id: user_id
+          nickname: nickname
+        - metadata: "{}"
+          profile_url: profile_url
+          user_id: user_id
+          nickname: nickname
+        vote_count: 0
+      properties:
+        vote_count:
+          type: integer
+        voters:
+          items:
+            $ref: '#/components/schemas/_v3_polls__poll_id__options__option_id__voters_get_200_response_voters_inner'
+          type: array
+        next:
+          type: string
+      type: object
+    _v3_scheduled_messages_get_200_response:
+      example:
+        next: next
+        scheduled_messages:
+        - scheduled_message_id: 0.8008281904610115
+          message_type: message_type
+          message: message
+        - scheduled_message_id: 0.8008281904610115
+          message_type: message_type
+          message: message
+      properties:
+        scheduled_messages:
+          items:
+            $ref: '#/components/schemas/SendBird.ScheduledMessage'
+          type: array
+        next:
+          type: string
+      type: object
+    _v3_group_channels__channel_url__scheduled_messages__scheduled_message_id__delete_request:
+      properties:
+        message_type:
+          description: Specifies the type of the message. The value of MESG represents
+            a text message.
+          type: string
+        user_id:
+          description: Specifies the user ID of the sender.
+          type: string
+        message:
+          description: Specifies the content of the message.
+          type: string
+        file:
+          description: "Depending on the file upload method, this specifies the data\
+            \ of the file to upload to the Sendbird server either in raw binary format\
+            \ or by the file's location. When sending a request containing a file,\
+            \ you must change the value of the content-type header to multipart/form-data;\
+            \ boundary={your_unique_boundary_string} in the request. The code examples\
+            \ of HTTP multipart request and cURL are provided below the tables for\
+            \ your reference. If this file property is specified, the url property\
+            \ is not required. This doesn't allow a converted base64-encoded string\
+            \ from a file as its value."
+          type: string
+        url:
+          description: "Specifies the URL of the file hosted on the server of your\
+            \ own or other third-party companies. If this url property is specified,\
+            \ the file property is not required."
+          type: string
+        scheduled_at:
+          description: "The specified time that indicates when to send the message,\
+            \ in Unix milliseconds format. Since messages are scheduled in minutes,\
+            \ values less than seconds are discarded. The specified time can be between\
+            \ 5 minutes and 43,200 minutes (30 days) from the current time."
+          type: number
+        custom_type:
+          description: "Specifies a custom message type used for message grouping.\
+            \ The length is limited to 128 characters. * Custom types are also used\
+            \ to segment metrics within Sendbird's Advanced analytics, which enables\
+            \ the sub-classification of data views."
+          type: string
+        data:
+          description: "Specifies additional message information such as custom font\
+            \ size, font type, or JSON formatted string."
+          type: string
+        send_push:
+          description: Determines whether to send a push notification of the message
+            to the channel members. This property only applies to group channels.
+            (Default is true)
+          type: boolean
+        mention_type:
+          description: "Specifies the mentioning method that indicates which user\
+            \ receives a notification of the message. Acceptable values are users\
+            \ and channels. If set to users, only the users specified in the mentioned_user_ids\
+            \ property below are notified. If set to channels, all users in the channel\
+            \ are notified. (Default = users)"
+          type: string
+        mentioned_user_ids[]:
+          description: Specifies an array of one or more IDs of the users who will
+            receive a notification of the message.
+          items:
+            type: string
+          type: array
+        is_silent:
+          description: "Determines whether to send a message without updating some\
+            \ of the following channel properties. If set to true, the channel's last_message\
+            \ is updated only for the sender while its unread_message_count remains\
+            \ unchanged for all channel members. Also, a push notification isn't sent\
+            \ to the users receiving the message. If the message is sent to a hidden\
+            \ channel, the channel remains hidden. (Default is false)"
+          type: boolean
+        mark_as_read:
+          description: "Determines whether to mark the message as read for the sender.\
+            \ If set to false, then the sender's unread_count and read_receipt remain\
+            \ unchanged after the message is sent. (Default is true)"
+          type: boolean
+        sorted_metaarray:
+          description: Specifies an array of one or more JSON objects consisting of
+            key-values items that store additional message information. Items are
+            saved and returned in the exact order they've been specified.
+          items:
+            type: object
+          type: array
+        dedup_id:
+          description: "Specifies a unique ID for the message created by another system.\
+            \ In general, this property is used to prevent the same message data from\
+            \ getting inserted when migrating messages from another system to the\
+            \ Sendbird server. If specified, the server performs a duplicate check\
+            \ using the property value."
+          type: string
+        apns_bundle_id:
+          description: Specifies the bundle ID of the client app in order to send
+            a push notification to iOS devices. You can find this in Settings > Chat
+            > Notifications > Push notification services on Sendbird Dashboard.
+          type: string
+        apple_critical_alert_options:
+          description: Specifies options that support Apple's critical alerts and
+            checks whether the message is a critical alert.
+          type: object
+        sound:
+          description: Specifies the name of a sound file that is used for critical
+            alerts.
+          type: string
+        volume:
+          description: "Specifies the volume of the critical alert sound. The volume\
+            \ ranges from 0.0to 1.0, which indicates silent and full volume, respectively.\
+            \ (Default = 1.0)"
+          type: float
+      type: object
+    _v3_scheduled_messages_count_get_200_response:
+      example:
+        count: 0.8008281904610115
+      properties:
+        count:
+          type: number
+      type: object
+    _v3_applications_push_settings_get_200_response:
+      example:
+        push_enabled: true
+      properties:
+        push_enabled:
+          type: boolean
+      type: object
+    _v3_applications_push_settings_get_request:
+      properties:
+        push_enabled:
+          description: Determines whether to turn on the push notifications feature
+            for an application.
+          type: boolean
+      type: object
     SendBird_MessageResponse_mentioned_users_inner:
       example:
         metadata:
@@ -19710,6 +21929,110 @@ components:
         metadata:
           $ref: '#/components/schemas/ocDeleteChannelByUrl_200_response'
       type: object
+    SendBird_BotsMessageResponse_message_message_events:
+      example:
+        update_last_message: true
+        update_mention_count: true
+        send_push_notification: send_push_notification
+        update_unread_count: true
+      properties:
+        send_push_notification:
+          type: string
+        update_unread_count:
+          type: boolean
+        update_mention_count:
+          type: boolean
+        update_last_message:
+          type: boolean
+      type: object
+    SendBird_BotsMessageResponse_message:
+      example:
+        silent: true
+        data: data
+        message_events:
+          update_last_message: true
+          update_mention_count: true
+          send_push_notification: send_push_notification
+          update_unread_count: true
+        custom_type: custom_type
+        created_at: 5.962133916683182
+        is_removed: true
+        message_id: 5.637376656633329
+        mention_type: mention_type
+        message: message
+        type: type
+        channel_url: channel_url
+        is_op_msg: true
+        file: "{}"
+        message_retention_hour: 1.4658129805029452
+        updated_at: 6.027456183070403
+        translations: "{}"
+        mentioned_users:
+        - metadata:
+            anyOf: anyOf
+          user_id: user_id
+          profile_url: profile_url
+          nickname: nickname
+        - metadata:
+            anyOf: anyOf
+          user_id: user_id
+          profile_url: profile_url
+          nickname: nickname
+        channel_type: channel_type
+        user:
+          metadata:
+            anyOf: anyOf
+          require_auth_for_profile_image: true
+          is_active: true
+          role: role
+          user_id: user_id
+          profile_url: profile_url
+          nickname: nickname
+        message_survival_seconds: 0.8008281904610115
+      properties:
+        message_survival_seconds:
+          type: number
+        custom_type:
+          type: string
+        mentioned_users:
+          items:
+            $ref: '#/components/schemas/SendBird_MessageResponse_mentioned_users_inner'
+          type: array
+        translations:
+          type: object
+        updated_at:
+          type: number
+        is_op_msg:
+          type: boolean
+        is_removed:
+          type: boolean
+        user:
+          $ref: '#/components/schemas/SendBird_MessageResponse_user'
+        file:
+          type: object
+        message:
+          type: string
+        data:
+          type: string
+        message_retention_hour:
+          type: number
+        silent:
+          type: boolean
+        type:
+          type: string
+        created_at:
+          type: number
+        channel_type:
+          type: string
+        mention_type:
+          type: string
+        channel_url:
+          type: string
+        message_id:
+          type: number
+        message_events:
+          $ref: '#/components/schemas/SendBird_BotsMessageResponse_message_message_events'
+      type: object
     SendBird_GroupChannel_created_by:
       example:
         require_auth_for_profile_image: true
@@ -19737,20 +22060,12 @@ components:
         is_triggered_by_message_read:
           type: boolean
       type: object
-    SendBird_GroupChannel_inviter:
-      anyOf:
-      - $ref: '#/components/schemas/SendBird.User'
-      - type: "null"
-    SendBird_GroupChannel_last_message:
-      anyOf:
-      - $ref: '#/components/schemas/SendBird.MessageResponse'
-      - type: "null"
     SendBird_GroupChannel_sms_fallback:
       example:
         exclude_user_ids:
         - exclude_user_ids
         - exclude_user_ids
-        wait_seconds: 1.0246457001441578
+        wait_seconds: 9.965781217890562
       properties:
         wait_seconds:
           type: number
@@ -19765,9 +22080,9 @@ components:
         data: data
         custom_type: custom_type
         name: name
-        max_length_message: 1.1730742509559433
-        created_at: 7.457744773683766
-        member_count: 4.965218492984954
+        max_length_message: 9.018348186070783
+        created_at: 8.762042012749001
+        member_count: 6.438423552598547
         channel_url: channel_url
       properties:
         channel_url:
@@ -20663,12 +22978,12 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 5.962133916683182
+          created_at: 3.616076749251911
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 6.027456183070403
+          updated_at: 7.061401241503109
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -20683,12 +22998,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 0.8008281904610115
+          message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.061401241503109
+          parent_message_id: 7.386281948385884
           parent_message_info: "{}"
           require_auth: true
-          message_id: 5.637376656633329
+          message_id: 2.027123023002322
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -20696,8 +23011,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 1.4658129805029452
-          size: 2.3021358869347655
+          message_retention_hour: 9.301444243932576
+          size: 4.145608029883936
           user:
             metadata:
               anyOf: anyOf
@@ -20796,12 +23111,12 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 5.962133916683182
+          created_at: 3.616076749251911
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 6.027456183070403
+          updated_at: 7.061401241503109
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -20816,12 +23131,12 @@ components:
             profile_url: profile_url
             nickname: nickname
           channel_type: channel_type
-          message_survival_seconds: 0.8008281904610115
+          message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.061401241503109
+          parent_message_id: 7.386281948385884
           parent_message_info: "{}"
           require_auth: true
-          message_id: 5.637376656633329
+          message_id: 2.027123023002322
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -20829,8 +23144,8 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 1.4658129805029452
-          size: 2.3021358869347655
+          message_retention_hour: 9.301444243932576
+          size: 4.145608029883936
           user:
             metadata:
               anyOf: anyOf

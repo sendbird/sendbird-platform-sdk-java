@@ -43,8 +43,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         DataExportApi apiInstance = new DataExportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String dataType = "dataType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -70,8 +70,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **dataType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -123,8 +123,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         DataExportApi apiInstance = new DataExportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String dataType = "dataType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         RegisterAndScheduleDataExportData registerAndScheduleDataExportData = new RegisterAndScheduleDataExportData(); // RegisterAndScheduleDataExportData | 
         try {
             RegisterAndScheduleDataExportResponse result = api.registerAndScheduleDataExport(dataType)
@@ -148,8 +148,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **dataType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **registerAndScheduleDataExportData** | [**RegisterAndScheduleDataExportData**](RegisterAndScheduleDataExportData.md)|  | [optional] |
 
 ### Return type
@@ -207,9 +207,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         DataExportApi apiInstance = new DataExportApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String dataType = "dataType_example"; // String | 
         String requestId = "requestId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewDataExportByIdResponse result = api.viewDataExportById(dataType, requestId)
                 .apiToken(apiToken)
@@ -231,9 +231,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **dataType** | **String**|  | |
 | **requestId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

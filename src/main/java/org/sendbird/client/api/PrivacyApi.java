@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class PrivacyApi {
   private ApiClient apiClient;
 
@@ -49,13 +49,8 @@ public class PrivacyApi {
   }
 
 
-private ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(String apiToken, String requestId) throws ApiException {
+private ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(String requestId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling cancelTheRegistrationOfGdprRequestById");
-    }
     
     // verify the required parameter 'requestId' is set
     if (requestId == null) {
@@ -96,8 +91,8 @@ private ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(Str
   }
 
   public class APIcancelTheRegistrationOfGdprRequestByIdRequest {
-    private String apiToken;
     private String requestId;
+    private String apiToken;
 
     private APIcancelTheRegistrationOfGdprRequestByIdRequest(String requestId) {
       this.requestId = requestId;
@@ -105,7 +100,7 @@ private ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(Str
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIcancelTheRegistrationOfGdprRequestByIdRequest
      */
     public APIcancelTheRegistrationOfGdprRequestByIdRequest apiToken(String apiToken) {
@@ -141,7 +136,7 @@ private ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(Str
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(apiToken, requestId);
+      return cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(requestId, apiToken);
     }
   }
 
@@ -160,11 +155,6 @@ private ApiResponse<Void> cancelTheRegistrationOfGdprRequestByIdWithHttpInfo(Str
 
 private ApiResponse<ListGdprRequestsResponse> listGdprRequestsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listGdprRequests");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/privacy/gdpr";
@@ -212,7 +202,7 @@ private ApiResponse<ListGdprRequestsResponse> listGdprRequestsWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistGdprRequestsRequest
      */
     public APIlistGdprRequestsRequest apiToken(String apiToken) {
@@ -287,11 +277,6 @@ private ApiResponse<ListGdprRequestsResponse> listGdprRequestsWithHttpInfo(Strin
 private ApiResponse<RegisterGdprRequestResponse> registerGdprRequestWithHttpInfo(String apiToken, RegisterGdprRequestData registerGdprRequestData) throws ApiException {
     Object localVarPostBody = registerGdprRequestData;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling registerGdprRequest");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/privacy/gdpr";
 
@@ -335,7 +320,7 @@ private ApiResponse<RegisterGdprRequestResponse> registerGdprRequestWithHttpInfo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIregisterGdprRequestRequest
      */
     public APIregisterGdprRequestRequest apiToken(String apiToken) {
@@ -397,13 +382,8 @@ private ApiResponse<RegisterGdprRequestResponse> registerGdprRequestWithHttpInfo
     return new APIregisterGdprRequestRequest();
   }
 
-private ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo(String apiToken, String requestId) throws ApiException {
+private ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo(String requestId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewGdprRequestById");
-    }
     
     // verify the required parameter 'requestId' is set
     if (requestId == null) {
@@ -446,8 +426,8 @@ private ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo
   }
 
   public class APIviewGdprRequestByIdRequest {
-    private String apiToken;
     private String requestId;
+    private String apiToken;
 
     private APIviewGdprRequestByIdRequest(String requestId) {
       this.requestId = requestId;
@@ -455,7 +435,7 @@ private ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewGdprRequestByIdRequest
      */
     public APIviewGdprRequestByIdRequest apiToken(String apiToken) {
@@ -491,7 +471,7 @@ private ApiResponse<ViewGdprRequestByIdResponse> viewGdprRequestByIdWithHttpInfo
 
      */
     public ApiResponse<ViewGdprRequestByIdResponse> executeWithHttpInfo() throws ApiException {
-      return viewGdprRequestByIdWithHttpInfo(apiToken, requestId);
+      return viewGdprRequestByIdWithHttpInfo(requestId, apiToken);
     }
   }
 
