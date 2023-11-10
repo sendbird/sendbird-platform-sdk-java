@@ -13,7 +13,7 @@ import org.openapitools.client.model.CreateBotResponse;
 import org.openapitools.client.model.JoinChannelsData;
 import org.openapitools.client.model.JoinChannelsResponse;
 import org.openapitools.client.model.ListBotsResponse;
-import org.openapitools.client.model.SendBirdMessageResponse;
+import org.openapitools.client.model.SendBirdBotsMessageResponse;
 import org.openapitools.client.model.SendBotSMessageData;
 import org.openapitools.client.model.UpdateBotByIdData;
 import org.openapitools.client.model.UpdateBotByIdResponse;
@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class BotApi {
   private ApiClient apiClient;
 
@@ -57,11 +57,6 @@ public class BotApi {
 
 private ApiResponse<CreateBotResponse> createBotWithHttpInfo(String apiToken, CreateBotData createBotData) throws ApiException {
     Object localVarPostBody = createBotData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling createBot");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/bots";
@@ -106,7 +101,7 @@ private ApiResponse<CreateBotResponse> createBotWithHttpInfo(String apiToken, Cr
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIcreateBotRequest
      */
     public APIcreateBotRequest apiToken(String apiToken) {
@@ -168,13 +163,8 @@ private ApiResponse<CreateBotResponse> createBotWithHttpInfo(String apiToken, Cr
     return new APIcreateBotRequest();
   }
 
-private ApiResponse<Object> deleteBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
+private ApiResponse<Object> deleteBotByIdWithHttpInfo(String botUserid, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteBotById");
-    }
     
     // verify the required parameter 'botUserid' is set
     if (botUserid == null) {
@@ -217,8 +207,8 @@ private ApiResponse<Object> deleteBotByIdWithHttpInfo(String apiToken, String bo
   }
 
   public class APIdeleteBotByIdRequest {
-    private String apiToken;
     private String botUserid;
+    private String apiToken;
 
     private APIdeleteBotByIdRequest(String botUserid) {
       this.botUserid = botUserid;
@@ -226,7 +216,7 @@ private ApiResponse<Object> deleteBotByIdWithHttpInfo(String apiToken, String bo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteBotByIdRequest
      */
     public APIdeleteBotByIdRequest apiToken(String apiToken) {
@@ -262,7 +252,7 @@ private ApiResponse<Object> deleteBotByIdWithHttpInfo(String apiToken, String bo
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return deleteBotByIdWithHttpInfo(apiToken, botUserid);
+      return deleteBotByIdWithHttpInfo(botUserid, apiToken);
     }
   }
 
@@ -279,13 +269,8 @@ private ApiResponse<Object> deleteBotByIdWithHttpInfo(String apiToken, String bo
     return new APIdeleteBotByIdRequest(botUserid);
   }
 
-private ApiResponse<JoinChannelsResponse> joinChannelsWithHttpInfo(String apiToken, String botUserid, JoinChannelsData joinChannelsData) throws ApiException {
+private ApiResponse<JoinChannelsResponse> joinChannelsWithHttpInfo(String botUserid, String apiToken, JoinChannelsData joinChannelsData) throws ApiException {
     Object localVarPostBody = joinChannelsData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling joinChannels");
-    }
     
     // verify the required parameter 'botUserid' is set
     if (botUserid == null) {
@@ -328,8 +313,8 @@ private ApiResponse<JoinChannelsResponse> joinChannelsWithHttpInfo(String apiTok
   }
 
   public class APIjoinChannelsRequest {
-    private String apiToken;
     private String botUserid;
+    private String apiToken;
     private JoinChannelsData joinChannelsData;
 
     private APIjoinChannelsRequest(String botUserid) {
@@ -338,7 +323,7 @@ private ApiResponse<JoinChannelsResponse> joinChannelsWithHttpInfo(String apiTok
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIjoinChannelsRequest
      */
     public APIjoinChannelsRequest apiToken(String apiToken) {
@@ -384,7 +369,7 @@ private ApiResponse<JoinChannelsResponse> joinChannelsWithHttpInfo(String apiTok
 
      */
     public ApiResponse<JoinChannelsResponse> executeWithHttpInfo() throws ApiException {
-      return joinChannelsWithHttpInfo(apiToken, botUserid, joinChannelsData);
+      return joinChannelsWithHttpInfo(botUserid, apiToken, joinChannelsData);
     }
   }
 
@@ -401,13 +386,8 @@ private ApiResponse<JoinChannelsResponse> joinChannelsWithHttpInfo(String apiTok
     return new APIjoinChannelsRequest(botUserid);
   }
 
-private ApiResponse<Void> leaveChannelsWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
+private ApiResponse<Void> leaveChannelsWithHttpInfo(String botUserid, String apiToken, String channelUrl) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling leaveChannels");
-    }
     
     // verify the required parameter 'botUserid' is set
     if (botUserid == null) {
@@ -449,8 +429,8 @@ private ApiResponse<Void> leaveChannelsWithHttpInfo(String apiToken, String botU
   }
 
   public class APIleaveChannelsRequest {
-    private String apiToken;
     private String botUserid;
+    private String apiToken;
     private String channelUrl;
 
     private APIleaveChannelsRequest(String botUserid) {
@@ -459,7 +439,7 @@ private ApiResponse<Void> leaveChannelsWithHttpInfo(String apiToken, String botU
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIleaveChannelsRequest
      */
     public APIleaveChannelsRequest apiToken(String apiToken) {
@@ -505,7 +485,7 @@ private ApiResponse<Void> leaveChannelsWithHttpInfo(String apiToken, String botU
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return leaveChannelsWithHttpInfo(apiToken, botUserid, channelUrl);
+      return leaveChannelsWithHttpInfo(botUserid, apiToken, channelUrl);
     }
   }
 
@@ -522,13 +502,8 @@ private ApiResponse<Void> leaveChannelsWithHttpInfo(String apiToken, String botU
     return new APIleaveChannelsRequest(botUserid);
   }
 
-private ApiResponse<Object> leaveChannelsByUrlWithHttpInfo(String apiToken, String botUserid, String channelUrl) throws ApiException {
+private ApiResponse<Object> leaveChannelsByUrlWithHttpInfo(String botUserid, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling leaveChannelsByUrl");
-    }
     
     // verify the required parameter 'botUserid' is set
     if (botUserid == null) {
@@ -577,9 +552,9 @@ private ApiResponse<Object> leaveChannelsByUrlWithHttpInfo(String apiToken, Stri
   }
 
   public class APIleaveChannelsByUrlRequest {
-    private String apiToken;
     private String botUserid;
     private String channelUrl;
+    private String apiToken;
 
     private APIleaveChannelsByUrlRequest(String botUserid, String channelUrl) {
       this.botUserid = botUserid;
@@ -588,7 +563,7 @@ private ApiResponse<Object> leaveChannelsByUrlWithHttpInfo(String apiToken, Stri
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIleaveChannelsByUrlRequest
      */
     public APIleaveChannelsByUrlRequest apiToken(String apiToken) {
@@ -624,7 +599,7 @@ private ApiResponse<Object> leaveChannelsByUrlWithHttpInfo(String apiToken, Stri
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return leaveChannelsByUrlWithHttpInfo(apiToken, botUserid, channelUrl);
+      return leaveChannelsByUrlWithHttpInfo(botUserid, channelUrl, apiToken);
     }
   }
 
@@ -644,11 +619,6 @@ private ApiResponse<Object> leaveChannelsByUrlWithHttpInfo(String apiToken, Stri
 
 private ApiResponse<ListBotsResponse> listBotsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listBots");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/bots";
@@ -696,7 +666,7 @@ private ApiResponse<ListBotsResponse> listBotsWithHttpInfo(String apiToken, Stri
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistBotsRequest
      */
     public APIlistBotsRequest apiToken(String apiToken) {
@@ -768,13 +738,8 @@ private ApiResponse<ListBotsResponse> listBotsWithHttpInfo(String apiToken, Stri
     return new APIlistBotsRequest();
   }
 
-private ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String apiToken, String botUserid, SendBotSMessageData sendBotSMessageData) throws ApiException {
+private ApiResponse<SendBirdBotsMessageResponse> sendBotsMessageWithHttpInfo(String botUserid, String apiToken, SendBotSMessageData sendBotSMessageData) throws ApiException {
     Object localVarPostBody = sendBotSMessageData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling sendBotsMessage");
-    }
     
     // verify the required parameter 'botUserid' is set
     if (botUserid == null) {
@@ -809,7 +774,7 @@ private ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String 
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdMessageResponse> localVarReturnType = new GenericType<SendBirdMessageResponse>() {};
+    GenericType<SendBirdBotsMessageResponse> localVarReturnType = new GenericType<SendBirdBotsMessageResponse>() {};
 
     return apiClient.invokeAPI("BotApi.sendBotsMessage", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -817,8 +782,8 @@ private ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String 
   }
 
   public class APIsendBotsMessageRequest {
-    private String apiToken;
     private String botUserid;
+    private String apiToken;
     private SendBotSMessageData sendBotSMessageData;
 
     private APIsendBotsMessageRequest(String botUserid) {
@@ -827,7 +792,7 @@ private ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIsendBotsMessageRequest
      */
     public APIsendBotsMessageRequest apiToken(String apiToken) {
@@ -847,7 +812,7 @@ private ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String 
 
     /**
      * Execute sendBotsMessage request
-     * @return SendBirdMessageResponse
+     * @return SendBirdBotsMessageResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -857,13 +822,13 @@ private ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String 
      
      */
     
-    public SendBirdMessageResponse execute() throws ApiException {
+    public SendBirdBotsMessageResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute sendBotsMessage request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdMessageResponse&gt;
+     * @return ApiResponse&lt;SendBirdBotsMessageResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -872,8 +837,8 @@ private ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String 
        </table>
 
      */
-    public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
-      return sendBotsMessageWithHttpInfo(apiToken, botUserid, sendBotSMessageData);
+    public ApiResponse<SendBirdBotsMessageResponse> executeWithHttpInfo() throws ApiException {
+      return sendBotsMessageWithHttpInfo(botUserid, apiToken, sendBotSMessageData);
     }
   }
 
@@ -890,13 +855,8 @@ private ApiResponse<SendBirdMessageResponse> sendBotsMessageWithHttpInfo(String 
     return new APIsendBotsMessageRequest(botUserid);
   }
 
-private ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String apiToken, String botUserid, UpdateBotByIdData updateBotByIdData) throws ApiException {
+private ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData) throws ApiException {
     Object localVarPostBody = updateBotByIdData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateBotById");
-    }
     
     // verify the required parameter 'botUserid' is set
     if (botUserid == null) {
@@ -939,8 +899,8 @@ private ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String apiT
   }
 
   public class APIupdateBotByIdRequest {
-    private String apiToken;
     private String botUserid;
+    private String apiToken;
     private UpdateBotByIdData updateBotByIdData;
 
     private APIupdateBotByIdRequest(String botUserid) {
@@ -949,7 +909,7 @@ private ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String apiT
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateBotByIdRequest
      */
     public APIupdateBotByIdRequest apiToken(String apiToken) {
@@ -995,7 +955,7 @@ private ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String apiT
 
      */
     public ApiResponse<UpdateBotByIdResponse> executeWithHttpInfo() throws ApiException {
-      return updateBotByIdWithHttpInfo(apiToken, botUserid, updateBotByIdData);
+      return updateBotByIdWithHttpInfo(botUserid, apiToken, updateBotByIdData);
     }
   }
 
@@ -1012,13 +972,8 @@ private ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String apiT
     return new APIupdateBotByIdRequest(botUserid);
   }
 
-private ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String apiToken, String botUserid) throws ApiException {
+private ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String botUserid, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewBotById");
-    }
     
     // verify the required parameter 'botUserid' is set
     if (botUserid == null) {
@@ -1061,8 +1016,8 @@ private ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String apiToken
   }
 
   public class APIviewBotByIdRequest {
-    private String apiToken;
     private String botUserid;
+    private String apiToken;
 
     private APIviewBotByIdRequest(String botUserid) {
       this.botUserid = botUserid;
@@ -1070,7 +1025,7 @@ private ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String apiToken
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewBotByIdRequest
      */
     public APIviewBotByIdRequest apiToken(String apiToken) {
@@ -1106,7 +1061,7 @@ private ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String apiToken
 
      */
     public ApiResponse<ViewBotByIdResponse> executeWithHttpInfo() throws ApiException {
-      return viewBotByIdWithHttpInfo(apiToken, botUserid);
+      return viewBotByIdWithHttpInfo(botUserid, apiToken);
     }
   }
 

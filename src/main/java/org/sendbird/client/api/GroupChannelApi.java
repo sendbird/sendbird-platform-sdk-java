@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class GroupChannelApi {
   private ApiClient apiClient;
 
@@ -63,13 +63,8 @@ public class GroupChannelApi {
   }
 
 
-private ApiResponse<SendBirdGroupChannel> gcAcceptInvitationWithHttpInfo(String apiToken, String channelUrl, GcAcceptInvitationData gcAcceptInvitationData) throws ApiException {
+private ApiResponse<SendBirdGroupChannel> gcAcceptInvitationWithHttpInfo(String channelUrl, String apiToken, GcAcceptInvitationData gcAcceptInvitationData) throws ApiException {
     Object localVarPostBody = gcAcceptInvitationData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcAcceptInvitation");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -112,8 +107,8 @@ private ApiResponse<SendBirdGroupChannel> gcAcceptInvitationWithHttpInfo(String 
   }
 
   public class APIgcAcceptInvitationRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcAcceptInvitationData gcAcceptInvitationData;
 
     private APIgcAcceptInvitationRequest(String channelUrl) {
@@ -122,7 +117,7 @@ private ApiResponse<SendBirdGroupChannel> gcAcceptInvitationWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcAcceptInvitationRequest
      */
     public APIgcAcceptInvitationRequest apiToken(String apiToken) {
@@ -168,7 +163,7 @@ private ApiResponse<SendBirdGroupChannel> gcAcceptInvitationWithHttpInfo(String 
 
      */
     public ApiResponse<SendBirdGroupChannel> executeWithHttpInfo() throws ApiException {
-      return gcAcceptInvitationWithHttpInfo(apiToken, channelUrl, gcAcceptInvitationData);
+      return gcAcceptInvitationWithHttpInfo(channelUrl, apiToken, gcAcceptInvitationData);
     }
   }
 
@@ -185,13 +180,8 @@ private ApiResponse<SendBirdGroupChannel> gcAcceptInvitationWithHttpInfo(String 
     return new APIgcAcceptInvitationRequest(channelUrl);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> gcCancelTheRegistrationOfOperatorsWithHttpInfo(String apiToken, String channelUrl, List<String> operatorIds, Boolean deleteAll) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> gcCancelTheRegistrationOfOperatorsWithHttpInfo(String channelUrl, List<String> operatorIds, String apiToken, Boolean deleteAll) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcCancelTheRegistrationOfOperators");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -241,23 +231,13 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcCancelTheRegistrationOfOp
   }
 
   public class APIgcCancelTheRegistrationOfOperatorsRequest {
-    private String apiToken;
     private String channelUrl;
     private List<String> operatorIds;
+    private String apiToken;
     private Boolean deleteAll;
 
     private APIgcCancelTheRegistrationOfOperatorsRequest(String channelUrl) {
       this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (required)
-     * @return APIgcCancelTheRegistrationOfOperatorsRequest
-     */
-    public APIgcCancelTheRegistrationOfOperatorsRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
     }
 
     /**
@@ -267,6 +247,16 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcCancelTheRegistrationOfOp
      */
     public APIgcCancelTheRegistrationOfOperatorsRequest operatorIds(List<String> operatorIds) {
       this.operatorIds = operatorIds;
+      return this;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIgcCancelTheRegistrationOfOperatorsRequest
+     */
+    public APIgcCancelTheRegistrationOfOperatorsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
       return this;
     }
 
@@ -308,7 +298,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcCancelTheRegistrationOfOp
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return gcCancelTheRegistrationOfOperatorsWithHttpInfo(apiToken, channelUrl, operatorIds, deleteAll);
+      return gcCancelTheRegistrationOfOperatorsWithHttpInfo(channelUrl, operatorIds, apiToken, deleteAll);
     }
   }
 
@@ -325,13 +315,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcCancelTheRegistrationOfOp
     return new APIgcCancelTheRegistrationOfOperatorsRequest(channelUrl);
   }
 
-private ApiResponse<GcCheckIfMemberByIdResponse> gcCheckIfMemberByIdWithHttpInfo(String apiToken, String channelUrl, String userId) throws ApiException {
+private ApiResponse<GcCheckIfMemberByIdResponse> gcCheckIfMemberByIdWithHttpInfo(String channelUrl, String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcCheckIfMemberById");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -380,9 +365,9 @@ private ApiResponse<GcCheckIfMemberByIdResponse> gcCheckIfMemberByIdWithHttpInfo
   }
 
   public class APIgcCheckIfMemberByIdRequest {
-    private String apiToken;
     private String channelUrl;
     private String userId;
+    private String apiToken;
 
     private APIgcCheckIfMemberByIdRequest(String channelUrl, String userId) {
       this.channelUrl = channelUrl;
@@ -391,7 +376,7 @@ private ApiResponse<GcCheckIfMemberByIdResponse> gcCheckIfMemberByIdWithHttpInfo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcCheckIfMemberByIdRequest
      */
     public APIgcCheckIfMemberByIdRequest apiToken(String apiToken) {
@@ -427,7 +412,7 @@ private ApiResponse<GcCheckIfMemberByIdResponse> gcCheckIfMemberByIdWithHttpInfo
 
      */
     public ApiResponse<GcCheckIfMemberByIdResponse> executeWithHttpInfo() throws ApiException {
-      return gcCheckIfMemberByIdWithHttpInfo(apiToken, channelUrl, userId);
+      return gcCheckIfMemberByIdWithHttpInfo(channelUrl, userId, apiToken);
     }
   }
 
@@ -447,11 +432,6 @@ private ApiResponse<GcCheckIfMemberByIdResponse> gcCheckIfMemberByIdWithHttpInfo
 
 private ApiResponse<SendBirdGroupChannel> gcCreateChannelWithHttpInfo(String apiToken, GcCreateChannelData gcCreateChannelData) throws ApiException {
     Object localVarPostBody = gcCreateChannelData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcCreateChannel");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/group_channels";
@@ -496,7 +476,7 @@ private ApiResponse<SendBirdGroupChannel> gcCreateChannelWithHttpInfo(String api
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcCreateChannelRequest
      */
     public APIgcCreateChannelRequest apiToken(String apiToken) {
@@ -558,13 +538,8 @@ private ApiResponse<SendBirdGroupChannel> gcCreateChannelWithHttpInfo(String api
     return new APIgcCreateChannelRequest();
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> gcDeclineInvitationWithHttpInfo(String apiToken, String channelUrl, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> gcDeclineInvitationWithHttpInfo(String channelUrl, String apiToken, GcDeclineInvitationData gcDeclineInvitationData) throws ApiException {
     Object localVarPostBody = gcDeclineInvitationData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcDeclineInvitation");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -607,8 +582,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcDeclineInvitationWithHttp
   }
 
   public class APIgcDeclineInvitationRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcDeclineInvitationData gcDeclineInvitationData;
 
     private APIgcDeclineInvitationRequest(String channelUrl) {
@@ -617,7 +592,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcDeclineInvitationWithHttp
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcDeclineInvitationRequest
      */
     public APIgcDeclineInvitationRequest apiToken(String apiToken) {
@@ -663,7 +638,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcDeclineInvitationWithHttp
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return gcDeclineInvitationWithHttpInfo(apiToken, channelUrl, gcDeclineInvitationData);
+      return gcDeclineInvitationWithHttpInfo(channelUrl, apiToken, gcDeclineInvitationData);
     }
   }
 
@@ -680,13 +655,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcDeclineInvitationWithHttp
     return new APIgcDeclineInvitationRequest(channelUrl);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> gcDeleteChannelByUrlWithHttpInfo(String apiToken, String channelUrl) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> gcDeleteChannelByUrlWithHttpInfo(String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcDeleteChannelByUrl");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -729,8 +699,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcDeleteChannelByUrlWithHtt
   }
 
   public class APIgcDeleteChannelByUrlRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
 
     private APIgcDeleteChannelByUrlRequest(String channelUrl) {
       this.channelUrl = channelUrl;
@@ -738,7 +708,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcDeleteChannelByUrlWithHtt
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcDeleteChannelByUrlRequest
      */
     public APIgcDeleteChannelByUrlRequest apiToken(String apiToken) {
@@ -774,7 +744,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcDeleteChannelByUrlWithHtt
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return gcDeleteChannelByUrlWithHttpInfo(apiToken, channelUrl);
+      return gcDeleteChannelByUrlWithHttpInfo(channelUrl, apiToken);
     }
   }
 
@@ -791,13 +761,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcDeleteChannelByUrlWithHtt
     return new APIgcDeleteChannelByUrlRequest(channelUrl);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> gcHideOrArchiveChannelWithHttpInfo(String apiToken, String channelUrl, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> gcHideOrArchiveChannelWithHttpInfo(String channelUrl, String apiToken, GcHideOrArchiveChannelData gcHideOrArchiveChannelData) throws ApiException {
     Object localVarPostBody = gcHideOrArchiveChannelData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcHideOrArchiveChannel");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -840,8 +805,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcHideOrArchiveChannelWithH
   }
 
   public class APIgcHideOrArchiveChannelRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcHideOrArchiveChannelData gcHideOrArchiveChannelData;
 
     private APIgcHideOrArchiveChannelRequest(String channelUrl) {
@@ -850,7 +815,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcHideOrArchiveChannelWithH
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcHideOrArchiveChannelRequest
      */
     public APIgcHideOrArchiveChannelRequest apiToken(String apiToken) {
@@ -896,7 +861,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcHideOrArchiveChannelWithH
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return gcHideOrArchiveChannelWithHttpInfo(apiToken, channelUrl, gcHideOrArchiveChannelData);
+      return gcHideOrArchiveChannelWithHttpInfo(channelUrl, apiToken, gcHideOrArchiveChannelData);
     }
   }
 
@@ -913,13 +878,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcHideOrArchiveChannelWithH
     return new APIgcHideOrArchiveChannelRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdGroupChannel> gcInviteAsMembersWithHttpInfo(String apiToken, String channelUrl, GcInviteAsMembersData gcInviteAsMembersData) throws ApiException {
+private ApiResponse<SendBirdGroupChannel> gcInviteAsMembersWithHttpInfo(String channelUrl, String apiToken, GcInviteAsMembersData gcInviteAsMembersData) throws ApiException {
     Object localVarPostBody = gcInviteAsMembersData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcInviteAsMembers");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -962,8 +922,8 @@ private ApiResponse<SendBirdGroupChannel> gcInviteAsMembersWithHttpInfo(String a
   }
 
   public class APIgcInviteAsMembersRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcInviteAsMembersData gcInviteAsMembersData;
 
     private APIgcInviteAsMembersRequest(String channelUrl) {
@@ -972,7 +932,7 @@ private ApiResponse<SendBirdGroupChannel> gcInviteAsMembersWithHttpInfo(String a
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcInviteAsMembersRequest
      */
     public APIgcInviteAsMembersRequest apiToken(String apiToken) {
@@ -1018,7 +978,7 @@ private ApiResponse<SendBirdGroupChannel> gcInviteAsMembersWithHttpInfo(String a
 
      */
     public ApiResponse<SendBirdGroupChannel> executeWithHttpInfo() throws ApiException {
-      return gcInviteAsMembersWithHttpInfo(apiToken, channelUrl, gcInviteAsMembersData);
+      return gcInviteAsMembersWithHttpInfo(channelUrl, apiToken, gcInviteAsMembersData);
     }
   }
 
@@ -1035,13 +995,8 @@ private ApiResponse<SendBirdGroupChannel> gcInviteAsMembersWithHttpInfo(String a
     return new APIgcInviteAsMembersRequest(channelUrl);
   }
 
-private ApiResponse<Void> gcJoinChannelWithHttpInfo(String apiToken, String channelUrl, GcJoinChannelData gcJoinChannelData) throws ApiException {
+private ApiResponse<Void> gcJoinChannelWithHttpInfo(String channelUrl, String apiToken, GcJoinChannelData gcJoinChannelData) throws ApiException {
     Object localVarPostBody = gcJoinChannelData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcJoinChannel");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1082,8 +1037,8 @@ private ApiResponse<Void> gcJoinChannelWithHttpInfo(String apiToken, String chan
   }
 
   public class APIgcJoinChannelRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcJoinChannelData gcJoinChannelData;
 
     private APIgcJoinChannelRequest(String channelUrl) {
@@ -1092,7 +1047,7 @@ private ApiResponse<Void> gcJoinChannelWithHttpInfo(String apiToken, String chan
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcJoinChannelRequest
      */
     public APIgcJoinChannelRequest apiToken(String apiToken) {
@@ -1138,7 +1093,7 @@ private ApiResponse<Void> gcJoinChannelWithHttpInfo(String apiToken, String chan
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return gcJoinChannelWithHttpInfo(apiToken, channelUrl, gcJoinChannelData);
+      return gcJoinChannelWithHttpInfo(channelUrl, apiToken, gcJoinChannelData);
     }
   }
 
@@ -1155,13 +1110,8 @@ private ApiResponse<Void> gcJoinChannelWithHttpInfo(String apiToken, String chan
     return new APIgcJoinChannelRequest(channelUrl);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> gcLeaveChannelWithHttpInfo(String apiToken, String channelUrl, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> gcLeaveChannelWithHttpInfo(String channelUrl, String apiToken, GcLeaveChannelData gcLeaveChannelData) throws ApiException {
     Object localVarPostBody = gcLeaveChannelData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcLeaveChannel");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1204,8 +1154,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcLeaveChannelWithHttpInfo(
   }
 
   public class APIgcLeaveChannelRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcLeaveChannelData gcLeaveChannelData;
 
     private APIgcLeaveChannelRequest(String channelUrl) {
@@ -1214,7 +1164,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcLeaveChannelWithHttpInfo(
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcLeaveChannelRequest
      */
     public APIgcLeaveChannelRequest apiToken(String apiToken) {
@@ -1260,7 +1210,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcLeaveChannelWithHttpInfo(
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return gcLeaveChannelWithHttpInfo(apiToken, channelUrl, gcLeaveChannelData);
+      return gcLeaveChannelWithHttpInfo(channelUrl, apiToken, gcLeaveChannelData);
     }
   }
 
@@ -1279,11 +1229,6 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcLeaveChannelWithHttpInfo(
 
 private ApiResponse<GcListChannelsResponse> gcListChannelsWithHttpInfo(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcListChannels");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/group_channels";
@@ -1411,7 +1356,7 @@ private ApiResponse<GcListChannelsResponse> gcListChannelsWithHttpInfo(String ap
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcListChannelsRequest
      */
     public APIgcListChannelsRequest apiToken(String apiToken) {
@@ -1883,13 +1828,8 @@ private ApiResponse<GcListChannelsResponse> gcListChannelsWithHttpInfo(String ap
     return new APIgcListChannelsRequest();
   }
 
-private ApiResponse<GcListMembersResponse> gcListMembersWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String operatorFilter, String memberStateFilter, String mutedMemberFilter, String nicknameStartswith) throws ApiException {
+private ApiResponse<GcListMembersResponse> gcListMembersWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String operatorFilter, String memberStateFilter, String mutedMemberFilter, String nicknameStartswith) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcListMembers");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1941,8 +1881,8 @@ private ApiResponse<GcListMembersResponse> gcListMembersWithHttpInfo(String apiT
   }
 
   public class APIgcListMembersRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private String token;
     private Integer limit;
     private Boolean showDeliveryReceipt;
@@ -1959,7 +1899,7 @@ private ApiResponse<GcListMembersResponse> gcListMembersWithHttpInfo(String apiT
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcListMembersRequest
      */
     public APIgcListMembersRequest apiToken(String apiToken) {
@@ -2085,7 +2025,7 @@ private ApiResponse<GcListMembersResponse> gcListMembersWithHttpInfo(String apiT
 
      */
     public ApiResponse<GcListMembersResponse> executeWithHttpInfo() throws ApiException {
-      return gcListMembersWithHttpInfo(apiToken, channelUrl, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
+      return gcListMembersWithHttpInfo(channelUrl, apiToken, token, limit, showDeliveryReceipt, showReadReceipt, order, operatorFilter, memberStateFilter, mutedMemberFilter, nicknameStartswith);
     }
   }
 
@@ -2102,13 +2042,8 @@ private ApiResponse<GcListMembersResponse> gcListMembersWithHttpInfo(String apiT
     return new APIgcListMembersRequest(channelUrl);
   }
 
-private ApiResponse<GcListOperatorsResponse> gcListOperatorsWithHttpInfo(String apiToken, String channelUrl, String token, Integer limit) throws ApiException {
+private ApiResponse<GcListOperatorsResponse> gcListOperatorsWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcListOperators");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2153,8 +2088,8 @@ private ApiResponse<GcListOperatorsResponse> gcListOperatorsWithHttpInfo(String 
   }
 
   public class APIgcListOperatorsRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -2164,7 +2099,7 @@ private ApiResponse<GcListOperatorsResponse> gcListOperatorsWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcListOperatorsRequest
      */
     public APIgcListOperatorsRequest apiToken(String apiToken) {
@@ -2220,7 +2155,7 @@ private ApiResponse<GcListOperatorsResponse> gcListOperatorsWithHttpInfo(String 
 
      */
     public ApiResponse<GcListOperatorsResponse> executeWithHttpInfo() throws ApiException {
-      return gcListOperatorsWithHttpInfo(apiToken, channelUrl, token, limit);
+      return gcListOperatorsWithHttpInfo(channelUrl, apiToken, token, limit);
     }
   }
 
@@ -2237,13 +2172,8 @@ private ApiResponse<GcListOperatorsResponse> gcListOperatorsWithHttpInfo(String 
     return new APIgcListOperatorsRequest(channelUrl);
   }
 
-private ApiResponse<GcRegisterOperatorsResponse> gcRegisterOperatorsWithHttpInfo(String apiToken, String channelUrl, GcRegisterOperatorsData gcRegisterOperatorsData) throws ApiException {
+private ApiResponse<GcRegisterOperatorsResponse> gcRegisterOperatorsWithHttpInfo(String channelUrl, String apiToken, GcRegisterOperatorsData gcRegisterOperatorsData) throws ApiException {
     Object localVarPostBody = gcRegisterOperatorsData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcRegisterOperators");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2286,8 +2216,8 @@ private ApiResponse<GcRegisterOperatorsResponse> gcRegisterOperatorsWithHttpInfo
   }
 
   public class APIgcRegisterOperatorsRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcRegisterOperatorsData gcRegisterOperatorsData;
 
     private APIgcRegisterOperatorsRequest(String channelUrl) {
@@ -2296,7 +2226,7 @@ private ApiResponse<GcRegisterOperatorsResponse> gcRegisterOperatorsWithHttpInfo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcRegisterOperatorsRequest
      */
     public APIgcRegisterOperatorsRequest apiToken(String apiToken) {
@@ -2342,7 +2272,7 @@ private ApiResponse<GcRegisterOperatorsResponse> gcRegisterOperatorsWithHttpInfo
 
      */
     public ApiResponse<GcRegisterOperatorsResponse> executeWithHttpInfo() throws ApiException {
-      return gcRegisterOperatorsWithHttpInfo(apiToken, channelUrl, gcRegisterOperatorsData);
+      return gcRegisterOperatorsWithHttpInfo(channelUrl, apiToken, gcRegisterOperatorsData);
     }
   }
 
@@ -2359,13 +2289,8 @@ private ApiResponse<GcRegisterOperatorsResponse> gcRegisterOperatorsWithHttpInfo
     return new APIgcRegisterOperatorsRequest(channelUrl);
   }
 
-private ApiResponse<GcResetChatHistoryResponse> gcResetChatHistoryWithHttpInfo(String apiToken, String channelUrl, GcResetChatHistoryData gcResetChatHistoryData) throws ApiException {
+private ApiResponse<GcResetChatHistoryResponse> gcResetChatHistoryWithHttpInfo(String channelUrl, String apiToken, GcResetChatHistoryData gcResetChatHistoryData) throws ApiException {
     Object localVarPostBody = gcResetChatHistoryData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcResetChatHistory");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2408,8 +2333,8 @@ private ApiResponse<GcResetChatHistoryResponse> gcResetChatHistoryWithHttpInfo(S
   }
 
   public class APIgcResetChatHistoryRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcResetChatHistoryData gcResetChatHistoryData;
 
     private APIgcResetChatHistoryRequest(String channelUrl) {
@@ -2418,7 +2343,7 @@ private ApiResponse<GcResetChatHistoryResponse> gcResetChatHistoryWithHttpInfo(S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcResetChatHistoryRequest
      */
     public APIgcResetChatHistoryRequest apiToken(String apiToken) {
@@ -2464,7 +2389,7 @@ private ApiResponse<GcResetChatHistoryResponse> gcResetChatHistoryWithHttpInfo(S
 
      */
     public ApiResponse<GcResetChatHistoryResponse> executeWithHttpInfo() throws ApiException {
-      return gcResetChatHistoryWithHttpInfo(apiToken, channelUrl, gcResetChatHistoryData);
+      return gcResetChatHistoryWithHttpInfo(channelUrl, apiToken, gcResetChatHistoryData);
     }
   }
 
@@ -2481,13 +2406,8 @@ private ApiResponse<GcResetChatHistoryResponse> gcResetChatHistoryWithHttpInfo(S
     return new APIgcResetChatHistoryRequest(channelUrl);
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> gcUnhideOrUnarchiveChannelWithHttpInfo(String apiToken, String channelUrl, String userId, Boolean shouldUnhideAll) throws ApiException {
+private ApiResponse<OcDeleteChannelByUrl200Response> gcUnhideOrUnarchiveChannelWithHttpInfo(String channelUrl, String userId, String apiToken, Boolean shouldUnhideAll) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcUnhideOrUnarchiveChannel");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2537,23 +2457,13 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnhideOrUnarchiveChannelW
   }
 
   public class APIgcUnhideOrUnarchiveChannelRequest {
-    private String apiToken;
     private String channelUrl;
     private String userId;
+    private String apiToken;
     private Boolean shouldUnhideAll;
 
     private APIgcUnhideOrUnarchiveChannelRequest(String channelUrl) {
       this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (required)
-     * @return APIgcUnhideOrUnarchiveChannelRequest
-     */
-    public APIgcUnhideOrUnarchiveChannelRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
     }
 
     /**
@@ -2563,6 +2473,16 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnhideOrUnarchiveChannelW
      */
     public APIgcUnhideOrUnarchiveChannelRequest userId(String userId) {
       this.userId = userId;
+      return this;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIgcUnhideOrUnarchiveChannelRequest
+     */
+    public APIgcUnhideOrUnarchiveChannelRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
       return this;
     }
 
@@ -2604,7 +2524,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnhideOrUnarchiveChannelW
 
      */
     public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return gcUnhideOrUnarchiveChannelWithHttpInfo(apiToken, channelUrl, userId, shouldUnhideAll);
+      return gcUnhideOrUnarchiveChannelWithHttpInfo(channelUrl, userId, apiToken, shouldUnhideAll);
     }
   }
 
@@ -2621,13 +2541,8 @@ private ApiResponse<OcDeleteChannelByUrl200Response> gcUnhideOrUnarchiveChannelW
     return new APIgcUnhideOrUnarchiveChannelRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdGroupChannel> gcUpdateChannelByUrlWithHttpInfo(String apiToken, String channelUrl, GcUpdateChannelByUrlData gcUpdateChannelByUrlData) throws ApiException {
+private ApiResponse<SendBirdGroupChannel> gcUpdateChannelByUrlWithHttpInfo(String channelUrl, String apiToken, GcUpdateChannelByUrlData gcUpdateChannelByUrlData) throws ApiException {
     Object localVarPostBody = gcUpdateChannelByUrlData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcUpdateChannelByUrl");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2670,8 +2585,8 @@ private ApiResponse<SendBirdGroupChannel> gcUpdateChannelByUrlWithHttpInfo(Strin
   }
 
   public class APIgcUpdateChannelByUrlRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcUpdateChannelByUrlData gcUpdateChannelByUrlData;
 
     private APIgcUpdateChannelByUrlRequest(String channelUrl) {
@@ -2680,7 +2595,7 @@ private ApiResponse<SendBirdGroupChannel> gcUpdateChannelByUrlWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcUpdateChannelByUrlRequest
      */
     public APIgcUpdateChannelByUrlRequest apiToken(String apiToken) {
@@ -2726,7 +2641,7 @@ private ApiResponse<SendBirdGroupChannel> gcUpdateChannelByUrlWithHttpInfo(Strin
 
      */
     public ApiResponse<SendBirdGroupChannel> executeWithHttpInfo() throws ApiException {
-      return gcUpdateChannelByUrlWithHttpInfo(apiToken, channelUrl, gcUpdateChannelByUrlData);
+      return gcUpdateChannelByUrlWithHttpInfo(channelUrl, apiToken, gcUpdateChannelByUrlData);
     }
   }
 
@@ -2743,13 +2658,8 @@ private ApiResponse<SendBirdGroupChannel> gcUpdateChannelByUrlWithHttpInfo(Strin
     return new APIgcUpdateChannelByUrlRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdGroupChannel> gcViewChannelByUrlWithHttpInfo(String apiToken, String channelUrl, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMember, Boolean readReceipt, Boolean member) throws ApiException {
+private ApiResponse<SendBirdGroupChannel> gcViewChannelByUrlWithHttpInfo(String channelUrl, String apiToken, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMember, Boolean readReceipt, Boolean member) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcViewChannelByUrl");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -2797,8 +2707,8 @@ private ApiResponse<SendBirdGroupChannel> gcViewChannelByUrlWithHttpInfo(String 
   }
 
   public class APIgcViewChannelByUrlRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private Boolean showDeliveryReceipt;
     private Boolean showReadReceipt;
     private Boolean showMember;
@@ -2811,7 +2721,7 @@ private ApiResponse<SendBirdGroupChannel> gcViewChannelByUrlWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcViewChannelByUrlRequest
      */
     public APIgcViewChannelByUrlRequest apiToken(String apiToken) {
@@ -2897,7 +2807,7 @@ private ApiResponse<SendBirdGroupChannel> gcViewChannelByUrlWithHttpInfo(String 
 
      */
     public ApiResponse<SendBirdGroupChannel> executeWithHttpInfo() throws ApiException {
-      return gcViewChannelByUrlWithHttpInfo(apiToken, channelUrl, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member);
+      return gcViewChannelByUrlWithHttpInfo(channelUrl, apiToken, showDeliveryReceipt, showReadReceipt, showMember, readReceipt, member);
     }
   }
 

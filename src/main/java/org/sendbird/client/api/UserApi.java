@@ -49,7 +49,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class UserApi {
   private ApiClient apiClient;
 
@@ -80,13 +80,8 @@ public class UserApi {
   }
 
 
-private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDeviceTokenWithHttpInfo(String apiToken, String userId, String tokenType, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
+private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
     Object localVarPostBody = addRegistrationOrDeviceTokenData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling addRegistrationOrDeviceToken");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -135,9 +130,9 @@ private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDevic
   }
 
   public class APIaddRegistrationOrDeviceTokenRequest {
-    private String apiToken;
     private String userId;
     private String tokenType;
+    private String apiToken;
     private AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData;
 
     private APIaddRegistrationOrDeviceTokenRequest(String userId, String tokenType) {
@@ -147,7 +142,7 @@ private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDevic
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIaddRegistrationOrDeviceTokenRequest
      */
     public APIaddRegistrationOrDeviceTokenRequest apiToken(String apiToken) {
@@ -193,7 +188,7 @@ private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDevic
 
      */
     public ApiResponse<AddRegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
-      return addRegistrationOrDeviceTokenWithHttpInfo(apiToken, userId, tokenType, addRegistrationOrDeviceTokenData);
+      return addRegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
     }
   }
 
@@ -211,13 +206,8 @@ private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDevic
     return new APIaddRegistrationOrDeviceTokenRequest(userId, tokenType);
   }
 
-private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNotificationContentTemplateWithHttpInfo(String apiToken, String userId, Object body) throws ApiException {
+private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNotificationContentTemplateWithHttpInfo(String userId, String apiToken, Object body) throws ApiException {
     Object localVarPostBody = body;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling choosePushNotificationContentTemplate");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -260,8 +250,8 @@ private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNot
   }
 
   public class APIchoosePushNotificationContentTemplateRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private Object body;
 
     private APIchoosePushNotificationContentTemplateRequest(String userId) {
@@ -270,7 +260,7 @@ private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNot
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIchoosePushNotificationContentTemplateRequest
      */
     public APIchoosePushNotificationContentTemplateRequest apiToken(String apiToken) {
@@ -316,7 +306,7 @@ private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNot
 
      */
     public ApiResponse<ChoosePushNotificationContentTemplateResponse> executeWithHttpInfo() throws ApiException {
-      return choosePushNotificationContentTemplateWithHttpInfo(apiToken, userId, body);
+      return choosePushNotificationContentTemplateWithHttpInfo(userId, apiToken, body);
     }
   }
 
@@ -335,11 +325,6 @@ private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNot
 
 private ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, CreateUserData createUserData) throws ApiException {
     Object localVarPostBody = createUserData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling createUser");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/users";
@@ -384,7 +369,7 @@ private ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, Create
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIcreateUserRequest
      */
     public APIcreateUserRequest apiToken(String apiToken) {
@@ -446,13 +431,8 @@ private ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, Create
     return new APIcreateUserRequest();
   }
 
-private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String apiToken, String userId, CreateUserTokenData createUserTokenData) throws ApiException {
+private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String userId, String apiToken, CreateUserTokenData createUserTokenData) throws ApiException {
     Object localVarPostBody = createUserTokenData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling createUserToken");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -495,8 +475,8 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
   }
 
   public class APIcreateUserTokenRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private CreateUserTokenData createUserTokenData;
 
     private APIcreateUserTokenRequest(String userId) {
@@ -505,7 +485,7 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIcreateUserTokenRequest
      */
     public APIcreateUserTokenRequest apiToken(String apiToken) {
@@ -551,7 +531,7 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
 
      */
     public ApiResponse<CreateUserTokenResponse> executeWithHttpInfo() throws ApiException {
-      return createUserTokenWithHttpInfo(apiToken, userId, createUserTokenData);
+      return createUserTokenWithHttpInfo(userId, apiToken, createUserTokenData);
     }
   }
 
@@ -568,13 +548,8 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
     return new APIcreateUserTokenRequest(userId);
   }
 
-private ApiResponse<Object> deleteUserByIdWithHttpInfo(String apiToken, String userId) throws ApiException {
+private ApiResponse<Object> deleteUserByIdWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteUserById");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -617,8 +592,8 @@ private ApiResponse<Object> deleteUserByIdWithHttpInfo(String apiToken, String u
   }
 
   public class APIdeleteUserByIdRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
 
     private APIdeleteUserByIdRequest(String userId) {
       this.userId = userId;
@@ -626,7 +601,7 @@ private ApiResponse<Object> deleteUserByIdWithHttpInfo(String apiToken, String u
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteUserByIdRequest
      */
     public APIdeleteUserByIdRequest apiToken(String apiToken) {
@@ -662,7 +637,7 @@ private ApiResponse<Object> deleteUserByIdWithHttpInfo(String apiToken, String u
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return deleteUserByIdWithHttpInfo(apiToken, userId);
+      return deleteUserByIdWithHttpInfo(userId, apiToken);
     }
   }
 
@@ -679,13 +654,8 @@ private ApiResponse<Object> deleteUserByIdWithHttpInfo(String apiToken, String u
     return new APIdeleteUserByIdRequest(userId);
   }
 
-private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String apiToken, String userId, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
+private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, String apiToken, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
     Object localVarPostBody = leaveMyGroupChannelsData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling leaveMyGroupChannels");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -728,8 +698,8 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String apiToken, St
   }
 
   public class APIleaveMyGroupChannelsRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private LeaveMyGroupChannelsData leaveMyGroupChannelsData;
 
     private APIleaveMyGroupChannelsRequest(String userId) {
@@ -738,7 +708,7 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String apiToken, St
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIleaveMyGroupChannelsRequest
      */
     public APIleaveMyGroupChannelsRequest apiToken(String apiToken) {
@@ -784,7 +754,7 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String apiToken, St
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return leaveMyGroupChannelsWithHttpInfo(apiToken, userId, leaveMyGroupChannelsData);
+      return leaveMyGroupChannelsWithHttpInfo(userId, apiToken, leaveMyGroupChannelsData);
     }
   }
 
@@ -801,13 +771,8 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String apiToken, St
     return new APIleaveMyGroupChannelsRequest(userId);
   }
 
-private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String apiToken, String userId, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
+private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listMyGroupChannels");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -890,8 +855,8 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
   }
 
   public class APIlistMyGroupChannelsRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private String token;
     private Integer limit;
     private String distinctMode;
@@ -939,7 +904,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest apiToken(String apiToken) {
@@ -1375,7 +1340,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
      */
     public ApiResponse<ListMyGroupChannelsResponse> executeWithHttpInfo() throws ApiException {
-      return listMyGroupChannelsWithHttpInfo(apiToken, userId, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+      return listMyGroupChannelsWithHttpInfo(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
     }
   }
 
@@ -1392,13 +1357,8 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     return new APIlistMyGroupChannelsRequest(userId);
   }
 
-private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDeviceTokensWithHttpInfo(String apiToken, String userId, String tokenType) throws ApiException {
+private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDeviceTokensWithHttpInfo(String userId, String tokenType, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listRegistrationOrDeviceTokens");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1447,9 +1407,9 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
   }
 
   public class APIlistRegistrationOrDeviceTokensRequest {
-    private String apiToken;
     private String userId;
     private String tokenType;
+    private String apiToken;
 
     private APIlistRegistrationOrDeviceTokensRequest(String userId, String tokenType) {
       this.userId = userId;
@@ -1458,7 +1418,7 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistRegistrationOrDeviceTokensRequest
      */
     public APIlistRegistrationOrDeviceTokensRequest apiToken(String apiToken) {
@@ -1494,7 +1454,7 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
 
      */
     public ApiResponse<ListRegistrationOrDeviceTokensResponse> executeWithHttpInfo() throws ApiException {
-      return listRegistrationOrDeviceTokensWithHttpInfo(apiToken, userId, tokenType);
+      return listRegistrationOrDeviceTokensWithHttpInfo(userId, tokenType, apiToken);
     }
   }
 
@@ -1514,11 +1474,6 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
 
 private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listUsers");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/users";
@@ -1580,7 +1535,7 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistUsersRequest
      */
     public APIlistUsersRequest apiToken(String apiToken) {
@@ -1722,13 +1677,8 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
     return new APIlistUsersRequest();
   }
 
-private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String apiToken, String userId, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
+private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, String apiToken, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
     Object localVarPostBody = markAllMessagesAsReadData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling markAllMessagesAsRead");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1771,8 +1721,8 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String apiToken, S
   }
 
   public class APImarkAllMessagesAsReadRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private MarkAllMessagesAsReadData markAllMessagesAsReadData;
 
     private APImarkAllMessagesAsReadRequest(String userId) {
@@ -1781,7 +1731,7 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String apiToken, S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APImarkAllMessagesAsReadRequest
      */
     public APImarkAllMessagesAsReadRequest apiToken(String apiToken) {
@@ -1827,7 +1777,7 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String apiToken, S
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return markAllMessagesAsReadWithHttpInfo(apiToken, userId, markAllMessagesAsReadData);
+      return markAllMessagesAsReadWithHttpInfo(userId, apiToken, markAllMessagesAsReadData);
     }
   }
 
@@ -1844,13 +1794,8 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String apiToken, S
     return new APImarkAllMessagesAsReadRequest(userId);
   }
 
-private ApiResponse<Object> registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(String apiToken, String userId, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
+private ApiResponse<Object> registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(String userId, String apiToken, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
     Object localVarPostBody = registerAsOperatorToChannelsWithCustomChannelTypesData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling registerAsOperatorToChannelsWithCustomChannelTypes");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1893,8 +1838,8 @@ private ApiResponse<Object> registerAsOperatorToChannelsWithCustomChannelTypesWi
   }
 
   public class APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData;
 
     private APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest(String userId) {
@@ -1903,7 +1848,7 @@ private ApiResponse<Object> registerAsOperatorToChannelsWithCustomChannelTypesWi
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest
      */
     public APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest apiToken(String apiToken) {
@@ -1949,7 +1894,7 @@ private ApiResponse<Object> registerAsOperatorToChannelsWithCustomChannelTypesWi
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(apiToken, userId, registerAsOperatorToChannelsWithCustomChannelTypesData);
+      return registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(userId, apiToken, registerAsOperatorToChannelsWithCustomChannelTypesData);
     }
   }
 
@@ -1966,13 +1911,8 @@ private ApiResponse<Object> registerAsOperatorToChannelsWithCustomChannelTypesWi
     return new APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest(userId);
   }
 
-private ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationOrDeviceTokenWithHttpInfo(String apiToken, String userId) throws ApiException {
+private ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationOrDeviceTokenWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling removeRegistrationOrDeviceToken");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2015,8 +1955,8 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationO
   }
 
   public class APIremoveRegistrationOrDeviceTokenRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
 
     private APIremoveRegistrationOrDeviceTokenRequest(String userId) {
       this.userId = userId;
@@ -2024,7 +1964,7 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationO
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIremoveRegistrationOrDeviceTokenRequest
      */
     public APIremoveRegistrationOrDeviceTokenRequest apiToken(String apiToken) {
@@ -2060,7 +2000,7 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationO
 
      */
     public ApiResponse<RemoveRegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
-      return removeRegistrationOrDeviceTokenWithHttpInfo(apiToken, userId);
+      return removeRegistrationOrDeviceTokenWithHttpInfo(userId, apiToken);
     }
   }
 
@@ -2077,13 +2017,8 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationO
     return new APIremoveRegistrationOrDeviceTokenRequest(userId);
   }
 
-private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegistrationOrDeviceTokenByTokenWithHttpInfo(String apiToken, String userId, String tokenType, String token) throws ApiException {
+private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegistrationOrDeviceTokenByTokenWithHttpInfo(String userId, String tokenType, String token, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling removeRegistrationOrDeviceTokenByToken");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2138,10 +2073,10 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegist
   }
 
   public class APIremoveRegistrationOrDeviceTokenByTokenRequest {
-    private String apiToken;
     private String userId;
     private String tokenType;
     private String token;
+    private String apiToken;
 
     private APIremoveRegistrationOrDeviceTokenByTokenRequest(String userId, String tokenType, String token) {
       this.userId = userId;
@@ -2151,7 +2086,7 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegist
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIremoveRegistrationOrDeviceTokenByTokenRequest
      */
     public APIremoveRegistrationOrDeviceTokenByTokenRequest apiToken(String apiToken) {
@@ -2187,7 +2122,7 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegist
 
      */
     public ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> executeWithHttpInfo() throws ApiException {
-      return removeRegistrationOrDeviceTokenByTokenWithHttpInfo(apiToken, userId, tokenType, token);
+      return removeRegistrationOrDeviceTokenByTokenWithHttpInfo(userId, tokenType, token, apiToken);
     }
   }
 
@@ -2206,13 +2141,8 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegist
     return new APIremoveRegistrationOrDeviceTokenByTokenRequest(userId, tokenType, token);
   }
 
-private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(String apiToken, String tokenType, String token) throws ApiException {
+private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling removeRegistrationOrDeviceTokenFromOwnerByToken");
-    }
     
     // verify the required parameter 'tokenType' is set
     if (tokenType == null) {
@@ -2261,9 +2191,9 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> rem
   }
 
   public class APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest {
-    private String apiToken;
     private String tokenType;
     private String token;
+    private String apiToken;
 
     private APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest(String tokenType, String token) {
       this.tokenType = tokenType;
@@ -2272,7 +2202,7 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> rem
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest
      */
     public APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest apiToken(String apiToken) {
@@ -2308,7 +2238,7 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> rem
 
      */
     public ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> executeWithHttpInfo() throws ApiException {
-      return removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(apiToken, tokenType, token);
+      return removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(tokenType, token, apiToken);
     }
   }
 
@@ -2326,13 +2256,8 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> rem
     return new APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest(tokenType, token);
   }
 
-private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpInfo(String apiToken, String userId) throws ApiException {
+private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling resetPushPreferences");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2375,8 +2300,8 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
   }
 
   public class APIresetPushPreferencesRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
 
     private APIresetPushPreferencesRequest(String userId) {
       this.userId = userId;
@@ -2384,7 +2309,7 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIresetPushPreferencesRequest
      */
     public APIresetPushPreferencesRequest apiToken(String apiToken) {
@@ -2420,7 +2345,7 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
 
      */
     public ApiResponse<ResetPushPreferencesResponse> executeWithHttpInfo() throws ApiException {
-      return resetPushPreferencesWithHttpInfo(apiToken, userId);
+      return resetPushPreferencesWithHttpInfo(userId, apiToken);
     }
   }
 
@@ -2437,13 +2362,8 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
     return new APIresetPushPreferencesRequest(userId);
   }
 
-private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String apiToken, String userId, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
+private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
     Object localVarPostBody = updateChannelInvitationPreferenceData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateChannelInvitationPreference");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2486,8 +2406,8 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
   }
 
   public class APIupdateChannelInvitationPreferenceRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData;
 
     private APIupdateChannelInvitationPreferenceRequest(String userId) {
@@ -2496,7 +2416,7 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateChannelInvitationPreferenceRequest
      */
     public APIupdateChannelInvitationPreferenceRequest apiToken(String apiToken) {
@@ -2542,7 +2462,7 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
 
      */
     public ApiResponse<UpdateChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
-      return updateChannelInvitationPreferenceWithHttpInfo(apiToken, userId, updateChannelInvitationPreferenceData);
+      return updateChannelInvitationPreferenceWithHttpInfo(userId, apiToken, updateChannelInvitationPreferenceData);
     }
   }
 
@@ -2559,13 +2479,8 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
     return new APIupdateChannelInvitationPreferenceRequest(userId);
   }
 
-private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
+private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
     Object localVarPostBody = updateCountPreferenceOfChannelByUrlData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateCountPreferenceOfChannelByUrl");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2614,9 +2529,9 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
   }
 
   public class APIupdateCountPreferenceOfChannelByUrlRequest {
-    private String apiToken;
     private String userId;
     private String channelUrl;
+    private String apiToken;
     private UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData;
 
     private APIupdateCountPreferenceOfChannelByUrlRequest(String userId, String channelUrl) {
@@ -2626,7 +2541,7 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateCountPreferenceOfChannelByUrlRequest
      */
     public APIupdateCountPreferenceOfChannelByUrlRequest apiToken(String apiToken) {
@@ -2672,7 +2587,7 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
 
      */
     public ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return updateCountPreferenceOfChannelByUrlWithHttpInfo(apiToken, userId, channelUrl, updateCountPreferenceOfChannelByUrlData);
+      return updateCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
     }
   }
 
@@ -2690,13 +2605,8 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
     return new APIupdateCountPreferenceOfChannelByUrlRequest(userId, channelUrl);
   }
 
-private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String apiToken, String userId, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
+private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
     Object localVarPostBody = updatePushPreferencesData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updatePushPreferences");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2739,8 +2649,8 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
   }
 
   public class APIupdatePushPreferencesRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private UpdatePushPreferencesData updatePushPreferencesData;
 
     private APIupdatePushPreferencesRequest(String userId) {
@@ -2749,7 +2659,7 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdatePushPreferencesRequest
      */
     public APIupdatePushPreferencesRequest apiToken(String apiToken) {
@@ -2795,7 +2705,7 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
 
      */
     public ApiResponse<UpdatePushPreferencesResponse> executeWithHttpInfo() throws ApiException {
-      return updatePushPreferencesWithHttpInfo(apiToken, userId, updatePushPreferencesData);
+      return updatePushPreferencesWithHttpInfo(userId, apiToken, updatePushPreferencesData);
     }
   }
 
@@ -2812,13 +2722,8 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
     return new APIupdatePushPreferencesRequest(userId);
   }
 
-private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPreferencesForChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
+private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
     Object localVarPostBody = updatePushPreferencesForChannelByUrlData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updatePushPreferencesForChannelByUrl");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2867,9 +2772,9 @@ private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPref
   }
 
   public class APIupdatePushPreferencesForChannelByUrlRequest {
-    private String apiToken;
     private String userId;
     private String channelUrl;
+    private String apiToken;
     private UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData;
 
     private APIupdatePushPreferencesForChannelByUrlRequest(String userId, String channelUrl) {
@@ -2879,7 +2784,7 @@ private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPref
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdatePushPreferencesForChannelByUrlRequest
      */
     public APIupdatePushPreferencesForChannelByUrlRequest apiToken(String apiToken) {
@@ -2925,7 +2830,7 @@ private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPref
 
      */
     public ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return updatePushPreferencesForChannelByUrlWithHttpInfo(apiToken, userId, channelUrl, updatePushPreferencesForChannelByUrlData);
+      return updatePushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
     }
   }
 
@@ -2943,13 +2848,8 @@ private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPref
     return new APIupdatePushPreferencesForChannelByUrlRequest(userId, channelUrl);
   }
 
-private ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String apiToken, String userId, UpdateUserByIdData updateUserByIdData) throws ApiException {
+private ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String userId, String apiToken, UpdateUserByIdData updateUserByIdData) throws ApiException {
     Object localVarPostBody = updateUserByIdData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateUserById");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2992,8 +2892,8 @@ private ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String apiToken, St
   }
 
   public class APIupdateUserByIdRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private UpdateUserByIdData updateUserByIdData;
 
     private APIupdateUserByIdRequest(String userId) {
@@ -3002,7 +2902,7 @@ private ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String apiToken, St
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateUserByIdRequest
      */
     public APIupdateUserByIdRequest apiToken(String apiToken) {
@@ -3048,7 +2948,7 @@ private ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String apiToken, St
 
      */
     public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
-      return updateUserByIdWithHttpInfo(apiToken, userId, updateUserByIdData);
+      return updateUserByIdWithHttpInfo(userId, apiToken, updateUserByIdData);
     }
   }
 
@@ -3065,13 +2965,8 @@ private ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String apiToken, St
     return new APIupdateUserByIdRequest(userId);
   }
 
-private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitationPreferenceWithHttpInfo(String apiToken, String userId) throws ApiException {
+private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewChannelInvitationPreference");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -3114,8 +3009,8 @@ private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitati
   }
 
   public class APIviewChannelInvitationPreferenceRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
 
     private APIviewChannelInvitationPreferenceRequest(String userId) {
       this.userId = userId;
@@ -3123,7 +3018,7 @@ private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitati
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewChannelInvitationPreferenceRequest
      */
     public APIviewChannelInvitationPreferenceRequest apiToken(String apiToken) {
@@ -3159,7 +3054,7 @@ private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitati
 
      */
     public ApiResponse<ViewChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
-      return viewChannelInvitationPreferenceWithHttpInfo(apiToken, userId);
+      return viewChannelInvitationPreferenceWithHttpInfo(userId, apiToken);
     }
   }
 
@@ -3176,13 +3071,8 @@ private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitati
     return new APIviewChannelInvitationPreferenceRequest(userId);
   }
 
-private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferenceOfChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl) throws ApiException {
+private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewCountPreferenceOfChannelByUrl");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -3231,9 +3121,9 @@ private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferen
   }
 
   public class APIviewCountPreferenceOfChannelByUrlRequest {
-    private String apiToken;
     private String userId;
     private String channelUrl;
+    private String apiToken;
 
     private APIviewCountPreferenceOfChannelByUrlRequest(String userId, String channelUrl) {
       this.userId = userId;
@@ -3242,7 +3132,7 @@ private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferen
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewCountPreferenceOfChannelByUrlRequest
      */
     public APIviewCountPreferenceOfChannelByUrlRequest apiToken(String apiToken) {
@@ -3278,7 +3168,7 @@ private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferen
 
      */
     public ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return viewCountPreferenceOfChannelByUrlWithHttpInfo(apiToken, userId, channelUrl);
+      return viewCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
     }
   }
 
@@ -3296,13 +3186,8 @@ private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferen
     return new APIviewCountPreferenceOfChannelByUrlRequest(userId, channelUrl);
   }
 
-private ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChannelsByJoinStatusWithHttpInfo(String apiToken, String userId, String state) throws ApiException {
+private ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChannelsByJoinStatusWithHttpInfo(String userId, String apiToken, String state) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewNumberOfChannelsByJoinStatus");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -3346,8 +3231,8 @@ private ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChanne
   }
 
   public class APIviewNumberOfChannelsByJoinStatusRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private String state;
 
     private APIviewNumberOfChannelsByJoinStatusRequest(String userId) {
@@ -3356,7 +3241,7 @@ private ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChanne
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewNumberOfChannelsByJoinStatusRequest
      */
     public APIviewNumberOfChannelsByJoinStatusRequest apiToken(String apiToken) {
@@ -3402,7 +3287,7 @@ private ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChanne
 
      */
     public ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> executeWithHttpInfo() throws ApiException {
-      return viewNumberOfChannelsByJoinStatusWithHttpInfo(apiToken, userId, state);
+      return viewNumberOfChannelsByJoinStatusWithHttpInfo(userId, apiToken, state);
     }
   }
 
@@ -3419,13 +3304,8 @@ private ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChanne
     return new APIviewNumberOfChannelsByJoinStatusRequest(userId);
   }
 
-private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String apiToken, String userId, List<String> customTypes, String superMode) throws ApiException {
+private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String userId, String apiToken, List<String> customTypes, String superMode) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewNumberOfChannelsWithUnreadMessages");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -3470,8 +3350,8 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
   }
 
   public class APIviewNumberOfChannelsWithUnreadMessagesRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private List<String> customTypes;
     private String superMode;
 
@@ -3481,7 +3361,7 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewNumberOfChannelsWithUnreadMessagesRequest
      */
     public APIviewNumberOfChannelsWithUnreadMessagesRequest apiToken(String apiToken) {
@@ -3537,7 +3417,7 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
 
      */
     public ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
-      return viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(apiToken, userId, customTypes, superMode);
+      return viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
     }
   }
 
@@ -3554,13 +3434,8 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
     return new APIviewNumberOfChannelsWithUnreadMessagesRequest(userId);
   }
 
-private ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWithHttpInfo(String apiToken, String userId, String customType, String itemKeys) throws ApiException {
+private ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWithHttpInfo(String userId, String apiToken, String customType, String itemKeys) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewNumberOfUnreadItems");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -3605,8 +3480,8 @@ private ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWith
   }
 
   public class APIviewNumberOfUnreadItemsRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private String customType;
     private String itemKeys;
 
@@ -3616,7 +3491,7 @@ private ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWith
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewNumberOfUnreadItemsRequest
      */
     public APIviewNumberOfUnreadItemsRequest apiToken(String apiToken) {
@@ -3672,7 +3547,7 @@ private ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWith
 
      */
     public ApiResponse<ViewNumberOfUnreadItemsResponse> executeWithHttpInfo() throws ApiException {
-      return viewNumberOfUnreadItemsWithHttpInfo(apiToken, userId, customType, itemKeys);
+      return viewNumberOfUnreadItemsWithHttpInfo(userId, apiToken, customType, itemKeys);
     }
   }
 
@@ -3689,13 +3564,8 @@ private ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWith
     return new APIviewNumberOfUnreadItemsRequest(userId);
   }
 
-private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String apiToken, String userId, String customTypes, String superMode) throws ApiException {
+private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String userId, String apiToken, String customTypes, String superMode) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewNumberOfUnreadMessages");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -3740,8 +3610,8 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
   }
 
   public class APIviewNumberOfUnreadMessagesRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private String customTypes;
     private String superMode;
 
@@ -3751,7 +3621,7 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewNumberOfUnreadMessagesRequest
      */
     public APIviewNumberOfUnreadMessagesRequest apiToken(String apiToken) {
@@ -3807,7 +3677,7 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
 
      */
     public ApiResponse<ViewNumberOfUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
-      return viewNumberOfUnreadMessagesWithHttpInfo(apiToken, userId, customTypes, superMode);
+      return viewNumberOfUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
     }
   }
 
@@ -3824,13 +3694,8 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
     return new APIviewNumberOfUnreadMessagesRequest(userId);
   }
 
-private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo(String apiToken, String userId) throws ApiException {
+private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewPushPreferences");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -3873,8 +3738,8 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
   }
 
   public class APIviewPushPreferencesRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
 
     private APIviewPushPreferencesRequest(String userId) {
       this.userId = userId;
@@ -3882,7 +3747,7 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewPushPreferencesRequest
      */
     public APIviewPushPreferencesRequest apiToken(String apiToken) {
@@ -3918,7 +3783,7 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
 
      */
     public ApiResponse<ViewPushPreferencesResponse> executeWithHttpInfo() throws ApiException {
-      return viewPushPreferencesWithHttpInfo(apiToken, userId);
+      return viewPushPreferencesWithHttpInfo(userId, apiToken);
     }
   }
 
@@ -3935,13 +3800,8 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
     return new APIviewPushPreferencesRequest(userId);
   }
 
-private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferencesForChannelByUrlWithHttpInfo(String apiToken, String userId, String channelUrl) throws ApiException {
+private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewPushPreferencesForChannelByUrl");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -3990,9 +3850,9 @@ private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferen
   }
 
   public class APIviewPushPreferencesForChannelByUrlRequest {
-    private String apiToken;
     private String userId;
     private String channelUrl;
+    private String apiToken;
 
     private APIviewPushPreferencesForChannelByUrlRequest(String userId, String channelUrl) {
       this.userId = userId;
@@ -4001,7 +3861,7 @@ private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferen
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewPushPreferencesForChannelByUrlRequest
      */
     public APIviewPushPreferencesForChannelByUrlRequest apiToken(String apiToken) {
@@ -4037,7 +3897,7 @@ private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferen
 
      */
     public ApiResponse<ViewPushPreferencesForChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return viewPushPreferencesForChannelByUrlWithHttpInfo(apiToken, userId, channelUrl);
+      return viewPushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
     }
   }
 
@@ -4055,13 +3915,8 @@ private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferen
     return new APIviewPushPreferencesForChannelByUrlRequest(userId, channelUrl);
   }
 
-private ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String apiToken, String userId, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
+private ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String userId, String apiToken, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewUserById");
-    }
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -4107,8 +3962,8 @@ private ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String apiToken, Stri
   }
 
   public class APIviewUserByIdRequest {
-    private String apiToken;
     private String userId;
+    private String apiToken;
     private Boolean includeUnreadCount;
     private String customTypes;
     private String superMode;
@@ -4119,7 +3974,7 @@ private ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String apiToken, Stri
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewUserByIdRequest
      */
     public APIviewUserByIdRequest apiToken(String apiToken) {
@@ -4185,7 +4040,7 @@ private ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String apiToken, Stri
 
      */
     public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
-      return viewUserByIdWithHttpInfo(apiToken, userId, includeUnreadCount, customTypes, superMode);
+      return viewUserByIdWithHttpInfo(userId, apiToken, includeUnreadCount, customTypes, superMode);
     }
   }
 
@@ -4202,13 +4057,8 @@ private ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String apiToken, Stri
     return new APIviewUserByIdRequest(userId);
   }
 
-private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>> viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(String apiToken, String tokenType, String token) throws ApiException {
+private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>> viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewWhoOwnsRegistrationOrDeviceTokenByToken");
-    }
     
     // verify the required parameter 'tokenType' is set
     if (tokenType == null) {
@@ -4257,9 +4107,9 @@ private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInne
   }
 
   public class APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest {
-    private String apiToken;
     private String tokenType;
     private String token;
+    private String apiToken;
 
     private APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest(String tokenType, String token) {
       this.tokenType = tokenType;
@@ -4268,7 +4118,7 @@ private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInne
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest
      */
     public APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest apiToken(String apiToken) {
@@ -4304,7 +4154,7 @@ private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInne
 
      */
     public ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>> executeWithHttpInfo() throws ApiException {
-      return viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(apiToken, tokenType, token);
+      return viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(tokenType, token, apiToken);
     }
   }
 

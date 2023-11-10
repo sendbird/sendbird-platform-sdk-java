@@ -89,7 +89,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **body** | **Object**|  | [optional] |
 
 ### Return type
@@ -163,7 +163,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **addEmojisData** | [**AddEmojisData**](AddEmojisData.md)|  | [optional] |
 
 ### Return type
@@ -214,10 +214,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         AddExtraDataToMessageData addExtraDataToMessageData = new AddExtraDataToMessageData(); // AddExtraDataToMessageData | 
         try {
             AddExtraDataToMessageResponse result = api.addExtraDataToMessage(channelType, channelUrl, messageId)
@@ -241,10 +241,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **addExtraDataToMessageData** | [**AddExtraDataToMessageData**](AddExtraDataToMessageData.md)|  | [optional] |
 
 ### Return type
@@ -297,10 +297,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         AddReactionToAMessageData addReactionToAMessageData = new AddReactionToAMessageData(); // AddReactionToAMessageData | 
         try {
             AddReactionToAMessageResponse result = api.addReactionToAMessage(channelType, channelUrl, messageId)
@@ -324,10 +324,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **addReactionToAMessageData** | [**AddReactionToAMessageData**](AddReactionToAMessageData.md)|  | [optional] |
 
 ### Return type
@@ -378,8 +378,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiKey = "emojiKey_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             api.deleteEmojiByKey(emojiKey)
                 .apiToken(apiToken)
@@ -400,8 +400,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **emojiKey** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -451,8 +451,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiCategoryId = "emojiCategoryId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.deleteEmojiCategoryById(emojiCategoryId)
                 .apiToken(apiToken)
@@ -474,8 +474,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **emojiCategoryId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -525,10 +525,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.deleteMessageById(channelType, channelUrl, messageId)
                 .apiToken(apiToken)
@@ -550,10 +550,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -628,7 +628,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **enableReactionsData** | [**EnableReactionsData**](EnableReactionsData.md)|  | [optional] |
 
 ### Return type
@@ -679,8 +679,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData = new GcMarkAllMessagesAsDeliveredData(); // GcMarkAllMessagesAsDeliveredData | 
         try {
             GcMarkAllMessagesAsDeliveredResponse result = api.gcMarkAllMessagesAsDelivered(channelUrl)
@@ -704,8 +704,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcMarkAllMessagesAsDeliveredData** | [**GcMarkAllMessagesAsDeliveredData**](GcMarkAllMessagesAsDeliveredData.md)|  | [optional] |
 
 ### Return type
@@ -756,8 +756,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData = new GcMarkAllMessagesAsReadData(); // GcMarkAllMessagesAsReadData | 
         try {
             Object result = api.gcMarkAllMessagesAsRead(channelUrl)
@@ -781,8 +781,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **gcMarkAllMessagesAsReadData** | [**GcMarkAllMessagesAsReadData**](GcMarkAllMessagesAsReadData.md)|  | [optional] |
 
 ### Return type
@@ -833,8 +833,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String userIds = "userIds_example"; // String | 
         try {
             GcViewNumberOfEachMembersUnreadMessagesResponse result = api.gcViewNumberOfEachMembersUnreadMessages(channelUrl)
@@ -858,8 +858,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **userIds** | **String**|  | [optional] |
 
 ### Return type
@@ -910,8 +910,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiKey = "emojiKey_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             SendBirdEmoji result = api.getEmojiByKey(emojiKey)
                 .apiToken(apiToken)
@@ -933,8 +933,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **emojiKey** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -988,8 +988,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiCategoryId = "emojiCategoryId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             SendBirdEmojiCategory result = api.getEmojiCategoryById(emojiCategoryId)
                 .apiToken(apiToken)
@@ -1011,8 +1011,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **emojiCategoryId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1083,7 +1083,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1165,7 +1165,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 | **order** | **String**|  | [optional] |
@@ -1241,7 +1241,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1300,9 +1300,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String messageTs = "messageTs_example"; // String | 
         Integer messageId = 56; // Integer | 
         Integer prevLimit = 56; // Integer | 
@@ -1360,9 +1360,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **messageTs** | **String**|  | [optional] |
 | **messageId** | **Integer**|  | [optional] |
 | **prevLimit** | **Integer**|  | [optional] |
@@ -1442,10 +1442,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean listUsers = true; // Boolean | 
         try {
             ListReactionsOfMessageResponse result = api.listReactionsOfMessage(channelType, channelUrl, messageId)
@@ -1469,10 +1469,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **listUsers** | **Boolean**|  | [optional] |
 
 ### Return type
@@ -1531,8 +1531,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String targetChannelUrl = "targetChannelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Object body = null; // Object | 
         try {
             api.migrateMessagesByUrl(targetChannelUrl)
@@ -1555,8 +1555,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **targetChannelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **body** | **Object**|  | [optional] |
 
 ### Return type
@@ -1607,10 +1607,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         List<String> keys = Arrays.asList(); // List<String> | 
         try {
             Object result = api.removeExtraDataFromMessage(channelType, channelUrl, messageId)
@@ -1634,10 +1634,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **keys** | **List&lt;String&gt;**|  | [optional] |
 
 ### Return type
@@ -1690,10 +1690,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String userId = "userId_example"; // String | 
         String reaction = "reaction_example"; // String | 
         try {
@@ -1719,10 +1719,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **userId** | **String**|  | [optional] |
 | **reaction** | **String**|  | [optional] |
 
@@ -1776,9 +1776,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         SendMessageData sendMessageData = new SendMessageData(); // SendMessageData | 
         try {
             SendBirdMessageResponse result = api.sendMessage(channelType, channelUrl)
@@ -1802,9 +1802,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **sendMessageData** | [**SendMessageData**](SendMessageData.md)|  | [optional] |
 
 ### Return type
@@ -1857,10 +1857,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData = new TranslateMessageIntoOtherLanguagesData(); // TranslateMessageIntoOtherLanguagesData | 
         try {
             SendBirdMessageResponse result = api.translateMessageIntoOtherLanguages(channelType, channelUrl, messageId)
@@ -1884,10 +1884,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **translateMessageIntoOtherLanguagesData** | [**TranslateMessageIntoOtherLanguagesData**](TranslateMessageIntoOtherLanguagesData.md)|  | [optional] |
 
 ### Return type
@@ -1938,8 +1938,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiCategoryId = "emojiCategoryId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData = new UpdateEmojiCategoryUrlByIdData(); // UpdateEmojiCategoryUrlByIdData | 
         try {
             SendBirdEmojiCategory result = api.updateEmojiCategoryUrlById(emojiCategoryId)
@@ -1963,8 +1963,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **emojiCategoryId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateEmojiCategoryUrlByIdData** | [**UpdateEmojiCategoryUrlByIdData**](UpdateEmojiCategoryUrlByIdData.md)|  | [optional] |
 
 ### Return type
@@ -2015,8 +2015,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String emojiKey = "emojiKey_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData = new UpdateEmojiUrlByKeyData(); // UpdateEmojiUrlByKeyData | 
         try {
             SendBirdEmoji result = api.updateEmojiUrlByKey(emojiKey)
@@ -2040,8 +2040,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **emojiKey** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateEmojiUrlByKeyData** | [**UpdateEmojiUrlByKeyData**](UpdateEmojiUrlByKeyData.md)|  | [optional] |
 
 ### Return type
@@ -2092,10 +2092,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateExtraDataInMessageData updateExtraDataInMessageData = new UpdateExtraDataInMessageData(); // UpdateExtraDataInMessageData | 
         try {
             UpdateExtraDataInMessageResponse result = api.updateExtraDataInMessage(channelType, channelUrl, messageId)
@@ -2119,10 +2119,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateExtraDataInMessageData** | [**UpdateExtraDataInMessageData**](UpdateExtraDataInMessageData.md)|  | [optional] |
 
 ### Return type
@@ -2173,10 +2173,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateMessageByIdData updateMessageByIdData = new UpdateMessageByIdData(); // UpdateMessageByIdData | 
         try {
             SendBirdMessageResponse result = api.updateMessageById(channelType, channelUrl, messageId)
@@ -2200,10 +2200,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateMessageByIdData** | [**UpdateMessageByIdData**](UpdateMessageByIdData.md)|  | [optional] |
 
 ### Return type
@@ -2277,7 +2277,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **useDefaultEmojisData** | [**UseDefaultEmojisData**](UseDefaultEmojisData.md)|  | [optional] |
 
 ### Return type
@@ -2338,10 +2338,10 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         String messageId = "messageId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean withSortedMetaArray = true; // Boolean | 
         Boolean withMetaArray = true; // Boolean | 
         try {
@@ -2367,10 +2367,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **messageId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **withSortedMetaArray** | **Boolean**|  | [optional] |
 | **withMetaArray** | **Boolean**|  | [optional] |
 
@@ -2422,9 +2422,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         MessageApi apiInstance = new MessageApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelType = "channelType_example"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewTotalNumberOfMessagesInChannelResponse result = api.viewTotalNumberOfMessagesInChannel(channelType, channelUrl)
                 .apiToken(apiToken)
@@ -2446,9 +2446,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelType** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

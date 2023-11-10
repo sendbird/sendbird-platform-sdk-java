@@ -40,8 +40,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         PrivacyApi apiInstance = new PrivacyApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String requestId = "requestId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             api.cancelTheRegistrationOfGdprRequestById(requestId)
                 .apiToken(apiToken)
@@ -62,8 +62,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **requestId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -139,7 +139,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -216,7 +216,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **registerGdprRequestData** | [**RegisterGdprRequestData**](RegisterGdprRequestData.md)|  | [optional] |
 
 ### Return type
@@ -267,8 +267,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         PrivacyApi apiInstance = new PrivacyApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String requestId = "requestId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewGdprRequestByIdResponse result = api.viewGdprRequestById(requestId)
                 .apiToken(apiToken)
@@ -290,8 +290,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **requestId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

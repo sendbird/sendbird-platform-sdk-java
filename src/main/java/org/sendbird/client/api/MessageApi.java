@@ -46,7 +46,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class MessageApi {
   private ApiClient apiClient;
 
@@ -79,11 +79,6 @@ public class MessageApi {
 
 private ApiResponse<AddEmojiCategoriesResponse> addEmojiCategoriesWithHttpInfo(String apiToken, Object body) throws ApiException {
     Object localVarPostBody = body;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling addEmojiCategories");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/emoji_categories";
@@ -128,7 +123,7 @@ private ApiResponse<AddEmojiCategoriesResponse> addEmojiCategoriesWithHttpInfo(S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIaddEmojiCategoriesRequest
      */
     public APIaddEmojiCategoriesRequest apiToken(String apiToken) {
@@ -193,11 +188,6 @@ private ApiResponse<AddEmojiCategoriesResponse> addEmojiCategoriesWithHttpInfo(S
 private ApiResponse<AddEmojisResponse> addEmojisWithHttpInfo(String apiToken, AddEmojisData addEmojisData) throws ApiException {
     Object localVarPostBody = addEmojisData;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling addEmojis");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/emojis";
 
@@ -241,7 +231,7 @@ private ApiResponse<AddEmojisResponse> addEmojisWithHttpInfo(String apiToken, Ad
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIaddEmojisRequest
      */
     public APIaddEmojisRequest apiToken(String apiToken) {
@@ -303,13 +293,8 @@ private ApiResponse<AddEmojisResponse> addEmojisWithHttpInfo(String apiToken, Ad
     return new APIaddEmojisRequest();
   }
 
-private ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, AddExtraDataToMessageData addExtraDataToMessageData) throws ApiException {
+private ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, AddExtraDataToMessageData addExtraDataToMessageData) throws ApiException {
     Object localVarPostBody = addExtraDataToMessageData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling addExtraDataToMessage");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -364,10 +349,10 @@ private ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttp
   }
 
   public class APIaddExtraDataToMessageRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private AddExtraDataToMessageData addExtraDataToMessageData;
 
     private APIaddExtraDataToMessageRequest(String channelType, String channelUrl, String messageId) {
@@ -378,7 +363,7 @@ private ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttp
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIaddExtraDataToMessageRequest
      */
     public APIaddExtraDataToMessageRequest apiToken(String apiToken) {
@@ -424,7 +409,7 @@ private ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttp
 
      */
     public ApiResponse<AddExtraDataToMessageResponse> executeWithHttpInfo() throws ApiException {
-      return addExtraDataToMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, addExtraDataToMessageData);
+      return addExtraDataToMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, addExtraDataToMessageData);
     }
   }
 
@@ -443,13 +428,8 @@ private ApiResponse<AddExtraDataToMessageResponse> addExtraDataToMessageWithHttp
     return new APIaddExtraDataToMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, AddReactionToAMessageData addReactionToAMessageData) throws ApiException {
+private ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, AddReactionToAMessageData addReactionToAMessageData) throws ApiException {
     Object localVarPostBody = addReactionToAMessageData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling addReactionToAMessage");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -504,10 +484,10 @@ private ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttp
   }
 
   public class APIaddReactionToAMessageRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private AddReactionToAMessageData addReactionToAMessageData;
 
     private APIaddReactionToAMessageRequest(String channelType, String channelUrl, String messageId) {
@@ -518,7 +498,7 @@ private ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttp
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIaddReactionToAMessageRequest
      */
     public APIaddReactionToAMessageRequest apiToken(String apiToken) {
@@ -564,7 +544,7 @@ private ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttp
 
      */
     public ApiResponse<AddReactionToAMessageResponse> executeWithHttpInfo() throws ApiException {
-      return addReactionToAMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, addReactionToAMessageData);
+      return addReactionToAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, addReactionToAMessageData);
     }
   }
 
@@ -583,13 +563,8 @@ private ApiResponse<AddReactionToAMessageResponse> addReactionToAMessageWithHttp
     return new APIaddReactionToAMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String apiToken, String emojiKey) throws ApiException {
+private ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String emojiKey, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteEmojiByKey");
-    }
     
     // verify the required parameter 'emojiKey' is set
     if (emojiKey == null) {
@@ -630,8 +605,8 @@ private ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String apiToken, String e
   }
 
   public class APIdeleteEmojiByKeyRequest {
-    private String apiToken;
     private String emojiKey;
+    private String apiToken;
 
     private APIdeleteEmojiByKeyRequest(String emojiKey) {
       this.emojiKey = emojiKey;
@@ -639,7 +614,7 @@ private ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String apiToken, String e
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteEmojiByKeyRequest
      */
     public APIdeleteEmojiByKeyRequest apiToken(String apiToken) {
@@ -675,7 +650,7 @@ private ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String apiToken, String e
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteEmojiByKeyWithHttpInfo(apiToken, emojiKey);
+      return deleteEmojiByKeyWithHttpInfo(emojiKey, apiToken);
     }
   }
 
@@ -692,13 +667,8 @@ private ApiResponse<Void> deleteEmojiByKeyWithHttpInfo(String apiToken, String e
     return new APIdeleteEmojiByKeyRequest(emojiKey);
   }
 
-private ApiResponse<Object> deleteEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
+private ApiResponse<Object> deleteEmojiCategoryByIdWithHttpInfo(String emojiCategoryId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteEmojiCategoryById");
-    }
     
     // verify the required parameter 'emojiCategoryId' is set
     if (emojiCategoryId == null) {
@@ -741,8 +711,8 @@ private ApiResponse<Object> deleteEmojiCategoryByIdWithHttpInfo(String apiToken,
   }
 
   public class APIdeleteEmojiCategoryByIdRequest {
-    private String apiToken;
     private String emojiCategoryId;
+    private String apiToken;
 
     private APIdeleteEmojiCategoryByIdRequest(String emojiCategoryId) {
       this.emojiCategoryId = emojiCategoryId;
@@ -750,7 +720,7 @@ private ApiResponse<Object> deleteEmojiCategoryByIdWithHttpInfo(String apiToken,
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteEmojiCategoryByIdRequest
      */
     public APIdeleteEmojiCategoryByIdRequest apiToken(String apiToken) {
@@ -786,7 +756,7 @@ private ApiResponse<Object> deleteEmojiCategoryByIdWithHttpInfo(String apiToken,
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return deleteEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId);
+      return deleteEmojiCategoryByIdWithHttpInfo(emojiCategoryId, apiToken);
     }
   }
 
@@ -803,13 +773,8 @@ private ApiResponse<Object> deleteEmojiCategoryByIdWithHttpInfo(String apiToken,
     return new APIdeleteEmojiCategoryByIdRequest(emojiCategoryId);
   }
 
-private ApiResponse<Object> deleteMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+private ApiResponse<Object> deleteMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling deleteMessageById");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -864,10 +829,10 @@ private ApiResponse<Object> deleteMessageByIdWithHttpInfo(String apiToken, Strin
   }
 
   public class APIdeleteMessageByIdRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
 
     private APIdeleteMessageByIdRequest(String channelType, String channelUrl, String messageId) {
       this.channelType = channelType;
@@ -877,7 +842,7 @@ private ApiResponse<Object> deleteMessageByIdWithHttpInfo(String apiToken, Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIdeleteMessageByIdRequest
      */
     public APIdeleteMessageByIdRequest apiToken(String apiToken) {
@@ -913,7 +878,7 @@ private ApiResponse<Object> deleteMessageByIdWithHttpInfo(String apiToken, Strin
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return deleteMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
+      return deleteMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken);
     }
   }
 
@@ -934,11 +899,6 @@ private ApiResponse<Object> deleteMessageByIdWithHttpInfo(String apiToken, Strin
 
 private ApiResponse<EnableReactionsResponse> enableReactionsWithHttpInfo(String apiToken, EnableReactionsData enableReactionsData) throws ApiException {
     Object localVarPostBody = enableReactionsData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling enableReactions");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/applications/settings/reactions";
@@ -983,7 +943,7 @@ private ApiResponse<EnableReactionsResponse> enableReactionsWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIenableReactionsRequest
      */
     public APIenableReactionsRequest apiToken(String apiToken) {
@@ -1045,13 +1005,8 @@ private ApiResponse<EnableReactionsResponse> enableReactionsWithHttpInfo(String 
     return new APIenableReactionsRequest();
   }
 
-private ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDeliveredWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) throws ApiException {
+private ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDeliveredWithHttpInfo(String channelUrl, String apiToken, GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData) throws ApiException {
     Object localVarPostBody = gcMarkAllMessagesAsDeliveredData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcMarkAllMessagesAsDelivered");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1094,8 +1049,8 @@ private ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDel
   }
 
   public class APIgcMarkAllMessagesAsDeliveredRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData;
 
     private APIgcMarkAllMessagesAsDeliveredRequest(String channelUrl) {
@@ -1104,7 +1059,7 @@ private ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDel
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcMarkAllMessagesAsDeliveredRequest
      */
     public APIgcMarkAllMessagesAsDeliveredRequest apiToken(String apiToken) {
@@ -1150,7 +1105,7 @@ private ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDel
 
      */
     public ApiResponse<GcMarkAllMessagesAsDeliveredResponse> executeWithHttpInfo() throws ApiException {
-      return gcMarkAllMessagesAsDeliveredWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsDeliveredData);
+      return gcMarkAllMessagesAsDeliveredWithHttpInfo(channelUrl, apiToken, gcMarkAllMessagesAsDeliveredData);
     }
   }
 
@@ -1167,13 +1122,8 @@ private ApiResponse<GcMarkAllMessagesAsDeliveredResponse> gcMarkAllMessagesAsDel
     return new APIgcMarkAllMessagesAsDeliveredRequest(channelUrl);
   }
 
-private ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken, String channelUrl, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
+private ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String channelUrl, String apiToken, GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData) throws ApiException {
     Object localVarPostBody = gcMarkAllMessagesAsReadData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcMarkAllMessagesAsRead");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1216,8 +1166,8 @@ private ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken,
   }
 
   public class APIgcMarkAllMessagesAsReadRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData;
 
     private APIgcMarkAllMessagesAsReadRequest(String channelUrl) {
@@ -1226,7 +1176,7 @@ private ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken,
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcMarkAllMessagesAsReadRequest
      */
     public APIgcMarkAllMessagesAsReadRequest apiToken(String apiToken) {
@@ -1272,7 +1222,7 @@ private ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken,
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return gcMarkAllMessagesAsReadWithHttpInfo(apiToken, channelUrl, gcMarkAllMessagesAsReadData);
+      return gcMarkAllMessagesAsReadWithHttpInfo(channelUrl, apiToken, gcMarkAllMessagesAsReadData);
     }
   }
 
@@ -1289,13 +1239,8 @@ private ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String apiToken,
     return new APIgcMarkAllMessagesAsReadRequest(channelUrl);
   }
 
-private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(String apiToken, String channelUrl, String userIds) throws ApiException {
+private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(String channelUrl, String apiToken, String userIds) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling gcViewNumberOfEachMembersUnreadMessages");
-    }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1339,8 +1284,8 @@ private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumbe
   }
 
   public class APIgcViewNumberOfEachMembersUnreadMessagesRequest {
-    private String apiToken;
     private String channelUrl;
+    private String apiToken;
     private String userIds;
 
     private APIgcViewNumberOfEachMembersUnreadMessagesRequest(String channelUrl) {
@@ -1349,7 +1294,7 @@ private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumbe
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgcViewNumberOfEachMembersUnreadMessagesRequest
      */
     public APIgcViewNumberOfEachMembersUnreadMessagesRequest apiToken(String apiToken) {
@@ -1395,7 +1340,7 @@ private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumbe
 
      */
     public ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
-      return gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(apiToken, channelUrl, userIds);
+      return gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(channelUrl, apiToken, userIds);
     }
   }
 
@@ -1412,13 +1357,8 @@ private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumbe
     return new APIgcViewNumberOfEachMembersUnreadMessagesRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String apiToken, String emojiKey) throws ApiException {
+private ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String emojiKey, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getEmojiByKey");
-    }
     
     // verify the required parameter 'emojiKey' is set
     if (emojiKey == null) {
@@ -1461,8 +1401,8 @@ private ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String apiToken, St
   }
 
   public class APIgetEmojiByKeyRequest {
-    private String apiToken;
     private String emojiKey;
+    private String apiToken;
 
     private APIgetEmojiByKeyRequest(String emojiKey) {
       this.emojiKey = emojiKey;
@@ -1470,7 +1410,7 @@ private ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String apiToken, St
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgetEmojiByKeyRequest
      */
     public APIgetEmojiByKeyRequest apiToken(String apiToken) {
@@ -1506,7 +1446,7 @@ private ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String apiToken, St
 
      */
     public ApiResponse<SendBirdEmoji> executeWithHttpInfo() throws ApiException {
-      return getEmojiByKeyWithHttpInfo(apiToken, emojiKey);
+      return getEmojiByKeyWithHttpInfo(emojiKey, apiToken);
     }
   }
 
@@ -1523,13 +1463,8 @@ private ApiResponse<SendBirdEmoji> getEmojiByKeyWithHttpInfo(String apiToken, St
     return new APIgetEmojiByKeyRequest(emojiKey);
   }
 
-private ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(String apiToken, String emojiCategoryId) throws ApiException {
+private ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(String emojiCategoryId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getEmojiCategoryById");
-    }
     
     // verify the required parameter 'emojiCategoryId' is set
     if (emojiCategoryId == null) {
@@ -1572,8 +1507,8 @@ private ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(Stri
   }
 
   public class APIgetEmojiCategoryByIdRequest {
-    private String apiToken;
     private String emojiCategoryId;
+    private String apiToken;
 
     private APIgetEmojiCategoryByIdRequest(String emojiCategoryId) {
       this.emojiCategoryId = emojiCategoryId;
@@ -1581,7 +1516,7 @@ private ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(Stri
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgetEmojiCategoryByIdRequest
      */
     public APIgetEmojiCategoryByIdRequest apiToken(String apiToken) {
@@ -1617,7 +1552,7 @@ private ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(Stri
 
      */
     public ApiResponse<SendBirdEmojiCategory> executeWithHttpInfo() throws ApiException {
-      return getEmojiCategoryByIdWithHttpInfo(apiToken, emojiCategoryId);
+      return getEmojiCategoryByIdWithHttpInfo(emojiCategoryId, apiToken);
     }
   }
 
@@ -1636,11 +1571,6 @@ private ApiResponse<SendBirdEmojiCategory> getEmojiCategoryByIdWithHttpInfo(Stri
 
 private ApiResponse<ListAllEmojisAndEmojiCategoriesResponse> listAllEmojisAndEmojiCategoriesWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listAllEmojisAndEmojiCategories");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/emoji_categories";
@@ -1684,7 +1614,7 @@ private ApiResponse<ListAllEmojisAndEmojiCategoriesResponse> listAllEmojisAndEmo
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistAllEmojisAndEmojiCategoriesRequest
      */
     public APIlistAllEmojisAndEmojiCategoriesRequest apiToken(String apiToken) {
@@ -1739,11 +1669,6 @@ private ApiResponse<ListAllEmojisAndEmojiCategoriesResponse> listAllEmojisAndEmo
 private ApiResponse<ListAnnouncementsResponse> listAnnouncementsWithHttpInfo(String apiToken, String token, Integer limit, String order, String status, String announcementGroup) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listAnnouncements");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/announcements";
 
@@ -1796,7 +1721,7 @@ private ApiResponse<ListAnnouncementsResponse> listAnnouncementsWithHttpInfo(Str
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistAnnouncementsRequest
      */
     public APIlistAnnouncementsRequest apiToken(String apiToken) {
@@ -1901,11 +1826,6 @@ private ApiResponse<ListAnnouncementsResponse> listAnnouncementsWithHttpInfo(Str
 private ApiResponse<ListEmojisResponse> listEmojisWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listEmojis");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/emojis";
 
@@ -1948,7 +1868,7 @@ private ApiResponse<ListEmojisResponse> listEmojisWithHttpInfo(String apiToken) 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistEmojisRequest
      */
     public APIlistEmojisRequest apiToken(String apiToken) {
@@ -2000,13 +1920,8 @@ private ApiResponse<ListEmojisResponse> listEmojisWithHttpInfo(String apiToken) 
     return new APIlistEmojisRequest();
   }
 
-private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
+private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String channelType, String channelUrl, String apiToken, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listMessages");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -2073,9 +1988,9 @@ private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiTok
   }
 
   public class APIlistMessagesRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private String messageTs;
     private Integer messageId;
     private Integer prevLimit;
@@ -2102,7 +2017,7 @@ private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiTok
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistMessagesRequest
      */
     public APIlistMessagesRequest apiToken(String apiToken) {
@@ -2318,7 +2233,7 @@ private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiTok
 
      */
     public ApiResponse<ListMessagesResponse> executeWithHttpInfo() throws ApiException {
-      return listMessagesWithHttpInfo(apiToken, channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+      return listMessagesWithHttpInfo(channelType, channelUrl, apiToken, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
     }
   }
 
@@ -2336,13 +2251,8 @@ private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String apiTok
     return new APIlistMessagesRequest(channelType, channelUrl);
   }
 
-private ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Boolean listUsers) throws ApiException {
+private ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, Boolean listUsers) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listReactionsOfMessage");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -2398,10 +2308,10 @@ private ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHt
   }
 
   public class APIlistReactionsOfMessageRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private Boolean listUsers;
 
     private APIlistReactionsOfMessageRequest(String channelType, String channelUrl, String messageId) {
@@ -2412,7 +2322,7 @@ private ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHt
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistReactionsOfMessageRequest
      */
     public APIlistReactionsOfMessageRequest apiToken(String apiToken) {
@@ -2458,7 +2368,7 @@ private ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHt
 
      */
     public ApiResponse<ListReactionsOfMessageResponse> executeWithHttpInfo() throws ApiException {
-      return listReactionsOfMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, listUsers);
+      return listReactionsOfMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, listUsers);
     }
   }
 
@@ -2477,13 +2387,8 @@ private ApiResponse<ListReactionsOfMessageResponse> listReactionsOfMessageWithHt
     return new APIlistReactionsOfMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String apiToken, String targetChannelUrl, Object body) throws ApiException {
+private ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String targetChannelUrl, String apiToken, Object body) throws ApiException {
     Object localVarPostBody = body;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling migrateMessagesByUrl");
-    }
     
     // verify the required parameter 'targetChannelUrl' is set
     if (targetChannelUrl == null) {
@@ -2524,8 +2429,8 @@ private ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String apiToken, Stri
   }
 
   public class APImigrateMessagesByUrlRequest {
-    private String apiToken;
     private String targetChannelUrl;
+    private String apiToken;
     private Object body;
 
     private APImigrateMessagesByUrlRequest(String targetChannelUrl) {
@@ -2534,7 +2439,7 @@ private ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String apiToken, Stri
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APImigrateMessagesByUrlRequest
      */
     public APImigrateMessagesByUrlRequest apiToken(String apiToken) {
@@ -2580,7 +2485,7 @@ private ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String apiToken, Stri
 
      */
     public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return migrateMessagesByUrlWithHttpInfo(apiToken, targetChannelUrl, body);
+      return migrateMessagesByUrlWithHttpInfo(targetChannelUrl, apiToken, body);
     }
   }
 
@@ -2597,13 +2502,8 @@ private ApiResponse<Void> migrateMessagesByUrlWithHttpInfo(String apiToken, Stri
     return new APImigrateMessagesByUrlRequest(targetChannelUrl);
   }
 
-private ApiResponse<Object> removeExtraDataFromMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, List<String> keys) throws ApiException {
+private ApiResponse<Object> removeExtraDataFromMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, List<String> keys) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling removeExtraDataFromMessage");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -2659,10 +2559,10 @@ private ApiResponse<Object> removeExtraDataFromMessageWithHttpInfo(String apiTok
   }
 
   public class APIremoveExtraDataFromMessageRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private List<String> keys;
 
     private APIremoveExtraDataFromMessageRequest(String channelType, String channelUrl, String messageId) {
@@ -2673,7 +2573,7 @@ private ApiResponse<Object> removeExtraDataFromMessageWithHttpInfo(String apiTok
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIremoveExtraDataFromMessageRequest
      */
     public APIremoveExtraDataFromMessageRequest apiToken(String apiToken) {
@@ -2719,7 +2619,7 @@ private ApiResponse<Object> removeExtraDataFromMessageWithHttpInfo(String apiTok
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return removeExtraDataFromMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, keys);
+      return removeExtraDataFromMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, keys);
     }
   }
 
@@ -2738,13 +2638,8 @@ private ApiResponse<Object> removeExtraDataFromMessageWithHttpInfo(String apiTok
     return new APIremoveExtraDataFromMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, String userId, String reaction) throws ApiException {
+private ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, String userId, String reaction) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling removeReactionFromAMessage");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -2801,10 +2696,10 @@ private ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessa
   }
 
   public class APIremoveReactionFromAMessageRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private String userId;
     private String reaction;
 
@@ -2816,7 +2711,7 @@ private ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessa
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIremoveReactionFromAMessageRequest
      */
     public APIremoveReactionFromAMessageRequest apiToken(String apiToken) {
@@ -2872,7 +2767,7 @@ private ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessa
 
      */
     public ApiResponse<RemoveReactionFromAMessageResponse> executeWithHttpInfo() throws ApiException {
-      return removeReactionFromAMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, userId, reaction);
+      return removeReactionFromAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, userId, reaction);
     }
   }
 
@@ -2891,13 +2786,8 @@ private ApiResponse<RemoveReactionFromAMessageResponse> removeReactionFromAMessa
     return new APIremoveReactionFromAMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, SendMessageData sendMessageData) throws ApiException {
+private ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String channelType, String channelUrl, String apiToken, SendMessageData sendMessageData) throws ApiException {
     Object localVarPostBody = sendMessageData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling sendMessage");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -2946,9 +2836,9 @@ private ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String apiT
   }
 
   public class APIsendMessageRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private SendMessageData sendMessageData;
 
     private APIsendMessageRequest(String channelType, String channelUrl) {
@@ -2958,7 +2848,7 @@ private ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String apiT
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIsendMessageRequest
      */
     public APIsendMessageRequest apiToken(String apiToken) {
@@ -3004,7 +2894,7 @@ private ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String apiT
 
      */
     public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
-      return sendMessageWithHttpInfo(apiToken, channelType, channelUrl, sendMessageData);
+      return sendMessageWithHttpInfo(channelType, channelUrl, apiToken, sendMessageData);
     }
   }
 
@@ -3022,13 +2912,8 @@ private ApiResponse<SendBirdMessageResponse> sendMessageWithHttpInfo(String apiT
     return new APIsendMessageRequest(channelType, channelUrl);
   }
 
-private ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData) throws ApiException {
+private ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData) throws ApiException {
     Object localVarPostBody = translateMessageIntoOtherLanguagesData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling translateMessageIntoOtherLanguages");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -3083,10 +2968,10 @@ private ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesW
   }
 
   public class APItranslateMessageIntoOtherLanguagesRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData;
 
     private APItranslateMessageIntoOtherLanguagesRequest(String channelType, String channelUrl, String messageId) {
@@ -3097,7 +2982,7 @@ private ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesW
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APItranslateMessageIntoOtherLanguagesRequest
      */
     public APItranslateMessageIntoOtherLanguagesRequest apiToken(String apiToken) {
@@ -3143,7 +3028,7 @@ private ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesW
 
      */
     public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
-      return translateMessageIntoOtherLanguagesWithHttpInfo(apiToken, channelType, channelUrl, messageId, translateMessageIntoOtherLanguagesData);
+      return translateMessageIntoOtherLanguagesWithHttpInfo(channelType, channelUrl, messageId, apiToken, translateMessageIntoOtherLanguagesData);
     }
   }
 
@@ -3162,13 +3047,8 @@ private ApiResponse<SendBirdMessageResponse> translateMessageIntoOtherLanguagesW
     return new APItranslateMessageIntoOtherLanguagesRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInfo(String apiToken, String emojiCategoryId, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) throws ApiException {
+private ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInfo(String emojiCategoryId, String apiToken, UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData) throws ApiException {
     Object localVarPostBody = updateEmojiCategoryUrlByIdData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateEmojiCategoryUrlById");
-    }
     
     // verify the required parameter 'emojiCategoryId' is set
     if (emojiCategoryId == null) {
@@ -3211,8 +3091,8 @@ private ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInf
   }
 
   public class APIupdateEmojiCategoryUrlByIdRequest {
-    private String apiToken;
     private String emojiCategoryId;
+    private String apiToken;
     private UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData;
 
     private APIupdateEmojiCategoryUrlByIdRequest(String emojiCategoryId) {
@@ -3221,7 +3101,7 @@ private ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInf
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateEmojiCategoryUrlByIdRequest
      */
     public APIupdateEmojiCategoryUrlByIdRequest apiToken(String apiToken) {
@@ -3267,7 +3147,7 @@ private ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInf
 
      */
     public ApiResponse<SendBirdEmojiCategory> executeWithHttpInfo() throws ApiException {
-      return updateEmojiCategoryUrlByIdWithHttpInfo(apiToken, emojiCategoryId, updateEmojiCategoryUrlByIdData);
+      return updateEmojiCategoryUrlByIdWithHttpInfo(emojiCategoryId, apiToken, updateEmojiCategoryUrlByIdData);
     }
   }
 
@@ -3284,13 +3164,8 @@ private ApiResponse<SendBirdEmojiCategory> updateEmojiCategoryUrlByIdWithHttpInf
     return new APIupdateEmojiCategoryUrlByIdRequest(emojiCategoryId);
   }
 
-private ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String apiToken, String emojiKey, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) throws ApiException {
+private ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String emojiKey, String apiToken, UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData) throws ApiException {
     Object localVarPostBody = updateEmojiUrlByKeyData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateEmojiUrlByKey");
-    }
     
     // verify the required parameter 'emojiKey' is set
     if (emojiKey == null) {
@@ -3333,8 +3208,8 @@ private ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String apiTok
   }
 
   public class APIupdateEmojiUrlByKeyRequest {
-    private String apiToken;
     private String emojiKey;
+    private String apiToken;
     private UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData;
 
     private APIupdateEmojiUrlByKeyRequest(String emojiKey) {
@@ -3343,7 +3218,7 @@ private ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String apiTok
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateEmojiUrlByKeyRequest
      */
     public APIupdateEmojiUrlByKeyRequest apiToken(String apiToken) {
@@ -3389,7 +3264,7 @@ private ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String apiTok
 
      */
     public ApiResponse<SendBirdEmoji> executeWithHttpInfo() throws ApiException {
-      return updateEmojiUrlByKeyWithHttpInfo(apiToken, emojiKey, updateEmojiUrlByKeyData);
+      return updateEmojiUrlByKeyWithHttpInfo(emojiKey, apiToken, updateEmojiUrlByKeyData);
     }
   }
 
@@ -3406,13 +3281,8 @@ private ApiResponse<SendBirdEmoji> updateEmojiUrlByKeyWithHttpInfo(String apiTok
     return new APIupdateEmojiUrlByKeyRequest(emojiKey);
   }
 
-private ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, UpdateExtraDataInMessageData updateExtraDataInMessageData) throws ApiException {
+private ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, UpdateExtraDataInMessageData updateExtraDataInMessageData) throws ApiException {
     Object localVarPostBody = updateExtraDataInMessageData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateExtraDataInMessage");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -3467,10 +3337,10 @@ private ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWi
   }
 
   public class APIupdateExtraDataInMessageRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private UpdateExtraDataInMessageData updateExtraDataInMessageData;
 
     private APIupdateExtraDataInMessageRequest(String channelType, String channelUrl, String messageId) {
@@ -3481,7 +3351,7 @@ private ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWi
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateExtraDataInMessageRequest
      */
     public APIupdateExtraDataInMessageRequest apiToken(String apiToken) {
@@ -3527,7 +3397,7 @@ private ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWi
 
      */
     public ApiResponse<UpdateExtraDataInMessageResponse> executeWithHttpInfo() throws ApiException {
-      return updateExtraDataInMessageWithHttpInfo(apiToken, channelType, channelUrl, messageId, updateExtraDataInMessageData);
+      return updateExtraDataInMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, updateExtraDataInMessageData);
     }
   }
 
@@ -3546,13 +3416,8 @@ private ApiResponse<UpdateExtraDataInMessageResponse> updateExtraDataInMessageWi
     return new APIupdateExtraDataInMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, UpdateMessageByIdData updateMessageByIdData) throws ApiException {
+private ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, UpdateMessageByIdData updateMessageByIdData) throws ApiException {
     Object localVarPostBody = updateMessageByIdData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateMessageById");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -3607,10 +3472,10 @@ private ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(Strin
   }
 
   public class APIupdateMessageByIdRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private UpdateMessageByIdData updateMessageByIdData;
 
     private APIupdateMessageByIdRequest(String channelType, String channelUrl, String messageId) {
@@ -3621,7 +3486,7 @@ private ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateMessageByIdRequest
      */
     public APIupdateMessageByIdRequest apiToken(String apiToken) {
@@ -3667,7 +3532,7 @@ private ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(Strin
 
      */
     public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
-      return updateMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, updateMessageByIdData);
+      return updateMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, updateMessageByIdData);
     }
   }
 
@@ -3688,11 +3553,6 @@ private ApiResponse<SendBirdMessageResponse> updateMessageByIdWithHttpInfo(Strin
 
 private ApiResponse<UseDefaultEmojisResponse> useDefaultEmojisWithHttpInfo(String apiToken, UseDefaultEmojisData useDefaultEmojisData) throws ApiException {
     Object localVarPostBody = useDefaultEmojisData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling useDefaultEmojis");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/applications/settings/use_default_emoji";
@@ -3737,7 +3597,7 @@ private ApiResponse<UseDefaultEmojisResponse> useDefaultEmojisWithHttpInfo(Strin
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIuseDefaultEmojisRequest
      */
     public APIuseDefaultEmojisRequest apiToken(String apiToken) {
@@ -3799,13 +3659,8 @@ private ApiResponse<UseDefaultEmojisResponse> useDefaultEmojisWithHttpInfo(Strin
     return new APIuseDefaultEmojisRequest();
   }
 
-private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
+private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewMessageById");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -3862,10 +3717,10 @@ private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String 
   }
 
   public class APIviewMessageByIdRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private Boolean withSortedMetaArray;
     private Boolean withMetaArray;
 
@@ -3877,7 +3732,7 @@ private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String 
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewMessageByIdRequest
      */
     public APIviewMessageByIdRequest apiToken(String apiToken) {
@@ -3933,7 +3788,7 @@ private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String 
 
      */
     public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
-      return viewMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, withSortedMetaArray, withMetaArray);
+      return viewMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, withSortedMetaArray, withMetaArray);
     }
   }
 
@@ -3952,13 +3807,8 @@ private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String 
     return new APIviewMessageByIdRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> viewTotalNumberOfMessagesInChannelWithHttpInfo(String apiToken, String channelType, String channelUrl) throws ApiException {
+private ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> viewTotalNumberOfMessagesInChannelWithHttpInfo(String channelType, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewTotalNumberOfMessagesInChannel");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -4007,9 +3857,9 @@ private ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> viewTotalNumberO
   }
 
   public class APIviewTotalNumberOfMessagesInChannelRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
 
     private APIviewTotalNumberOfMessagesInChannelRequest(String channelType, String channelUrl) {
       this.channelType = channelType;
@@ -4018,7 +3868,7 @@ private ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> viewTotalNumberO
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewTotalNumberOfMessagesInChannelRequest
      */
     public APIviewTotalNumberOfMessagesInChannelRequest apiToken(String apiToken) {
@@ -4054,7 +3904,7 @@ private ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> viewTotalNumberO
 
      */
     public ApiResponse<ViewTotalNumberOfMessagesInChannelResponse> executeWithHttpInfo() throws ApiException {
-      return viewTotalNumberOfMessagesInChannelWithHttpInfo(apiToken, channelType, channelUrl);
+      return viewTotalNumberOfMessagesInChannelWithHttpInfo(channelType, channelUrl, apiToken);
     }
   }
 

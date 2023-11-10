@@ -33,7 +33,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 | [**updatePushNotificationContentTemplate**](ApplicationApi.md#updatePushNotificationContentTemplate) | **PUT** /v3/applications/push/message_templates/{template_name} | Update a push notification content template |
 | [**viewDefaultChannelInvitationPreference**](ApplicationApi.md#viewDefaultChannelInvitationPreference) | **GET** /v3/applications/default_channel_invitation_preference | View default channel invitation preference |
 | [**viewPushConfigurationById**](ApplicationApi.md#viewPushConfigurationById) | **GET** /v3/applications/push/{push_type}/{provider_id} | View a push configuration |
-| [**viewPushNotificationContentTemplate**](ApplicationApi.md#viewPushNotificationContentTemplate) | **GET** /v3/applications/push/message_templates/{template_name} | View a push notification content template |
+| [**viewPushNotificationContentTemplate**](ApplicationApi.md#viewPushNotificationContentTemplate) | **GET** /v3/applications/push/message_templates/{template_name} | Get a push notification content template |
 | [**viewSecondaryApiTokenByToken**](ApplicationApi.md#viewSecondaryApiTokenByToken) | **GET** /v3/applications/api_tokens/{api_token} | View a secondary API token |
 
 
@@ -92,7 +92,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **addApnsPushConfigurationData** | [**AddApnsPushConfigurationData**](AddApnsPushConfigurationData.md)|  | [optional] |
 
 ### Return type
@@ -166,7 +166,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **addFcmPushConfigurationData** | [**AddFcmPushConfigurationData**](AddFcmPushConfigurationData.md)|  | [optional] |
 
 ### Return type
@@ -240,7 +240,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **addHmsPushConfigurationData** | [**AddHmsPushConfigurationData**](AddHmsPushConfigurationData.md)|  | [optional] |
 
 ### Return type
@@ -314,7 +314,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **addIpToWhitelistData** | [**AddIpToWhitelistData**](AddIpToWhitelistData.md)|  | [optional] |
 
 ### Return type
@@ -360,8 +360,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String customType = "customType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         BanUsersInChannelsWithCustomChannelTypeData banUsersInChannelsWithCustomChannelTypeData = new BanUsersInChannelsWithCustomChannelTypeData(); // BanUsersInChannelsWithCustomChannelTypeData | 
         try {
             Object result = api.banUsersInChannelsWithCustomChannelType(customType)
@@ -385,8 +385,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **customType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **banUsersInChannelsWithCustomChannelTypeData** | [**BanUsersInChannelsWithCustomChannelTypeData**](BanUsersInChannelsWithCustomChannelTypeData.md)|  | [optional] |
 
 ### Return type
@@ -461,7 +461,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **configureAutoEventData** | [**ConfigureAutoEventData**](ConfigureAutoEventData.md)|  | [optional] |
 
 ### Return type
@@ -485,7 +485,7 @@ No authorization required
 
 ## deleteAllowedIpsFromWhitelist
 
-> DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist().apiToken(apiToken).ipWhitelistAddresses(ipWhitelistAddresses).execute();
+> DeleteAllowedIpsFromWhitelistResponse deleteAllowedIpsFromWhitelist().ipWhitelistAddresses(ipWhitelistAddresses).apiToken(apiToken).execute();
 
 Delete allowed IPs from a whitelist
 
@@ -511,12 +511,12 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         List<String> ipWhitelistAddresses = Arrays.asList(); // List<String> | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             DeleteAllowedIpsFromWhitelistResponse result = api.deleteAllowedIpsFromWhitelist()
-                .apiToken(apiToken)
                 .ipWhitelistAddresses(ipWhitelistAddresses)
+                .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -535,8 +535,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **ipWhitelistAddresses** | **List&lt;String&gt;**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -586,8 +586,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String providerId = "providerId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             DeleteApnsCertificateByIdResponse result = api.deleteApnsCertificateById(providerId)
                 .apiToken(apiToken)
@@ -609,8 +609,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **providerId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -683,7 +683,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **generateSecondaryApiTokenData** | [**GenerateSecondaryApiTokenData**](GenerateSecondaryApiTokenData.md)|  | [optional] |
 
 ### Return type
@@ -756,7 +756,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -801,8 +801,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String customType = "customType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -828,8 +828,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **customType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -876,8 +876,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String customType = "customType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -903,8 +903,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **customType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -956,8 +956,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String pushType = "pushType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ListPushConfigurationsResponse result = api.listPushConfigurations(pushType)
                 .apiToken(apiToken)
@@ -979,8 +979,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **pushType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1051,7 +1051,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1122,7 +1122,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1167,8 +1167,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String customType = "customType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         MuteUsersInChannelsWithCustomChannelTypeData muteUsersInChannelsWithCustomChannelTypeData = new MuteUsersInChannelsWithCustomChannelTypeData(); // MuteUsersInChannelsWithCustomChannelTypeData | 
         try {
             Object result = api.muteUsersInChannelsWithCustomChannelType(customType)
@@ -1192,8 +1192,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **customType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **muteUsersInChannelsWithCustomChannelTypeData** | [**MuteUsersInChannelsWithCustomChannelTypeData**](MuteUsersInChannelsWithCustomChannelTypeData.md)|  | [optional] |
 
 ### Return type
@@ -1244,9 +1244,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String pushType = "pushType_example"; // String | 
         String providerId = "providerId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             RemovePushConfigurationByIdResponse result = api.removePushConfigurationById(pushType, providerId)
                 .apiToken(apiToken)
@@ -1268,9 +1268,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **pushType** | **String**|  | |
 | **providerId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1343,7 +1343,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1392,8 +1392,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String apiToken2 = "apiToken_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             RevokeSecondaryApiTokenByTokenResponse result = api.revokeSecondaryApiTokenByToken(apiToken2)
                 .apiToken(apiToken)
@@ -1415,8 +1415,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **apiToken2** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1461,8 +1461,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String customType = "customType_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         SetDomainFilterData setDomainFilterData = new SetDomainFilterData(); // SetDomainFilterData | 
         try {
             SendBirdChannelResponse result = api.setDomainFilter(customType)
@@ -1486,8 +1486,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **customType** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **setDomainFilterData** | [**SetDomainFilterData**](SetDomainFilterData.md)|  | [optional] |
 
 ### Return type
@@ -1511,7 +1511,7 @@ No authorization required
 
 ## unbanUsersInChannelsWithCustomChannelType
 
-> Object unbanUsersInChannelsWithCustomChannelType(customType).apiToken(apiToken).userIds(userIds).execute();
+> Object unbanUsersInChannelsWithCustomChannelType(customType).userIds(userIds).apiToken(apiToken).execute();
 
 Unban users in channels with a custom channel type
 
@@ -1533,13 +1533,13 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String customType = "customType_example"; // String | 
         List<String> userIds = Arrays.asList(); // List<String> | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.unbanUsersInChannelsWithCustomChannelType(customType)
-                .apiToken(apiToken)
                 .userIds(userIds)
+                .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1558,9 +1558,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **customType** | **String**|  | |
 | **userIds** | **List&lt;String&gt;**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1583,7 +1583,7 @@ No authorization required
 
 ## unmuteUsersInChannelsWithCustomChannelType
 
-> Object unmuteUsersInChannelsWithCustomChannelType(customType).apiToken(apiToken).userIds(userIds).execute();
+> Object unmuteUsersInChannelsWithCustomChannelType(customType).userIds(userIds).apiToken(apiToken).execute();
 
 Unmute users in channels with a custom channel type
 
@@ -1605,13 +1605,13 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String customType = "customType_example"; // String | 
         List<String> userIds = Arrays.asList(); // List<String> | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.unmuteUsersInChannelsWithCustomChannelType(customType)
-                .apiToken(apiToken)
                 .userIds(userIds)
+                .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1630,9 +1630,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **customType** | **String**|  | |
 | **userIds** | **List&lt;String&gt;**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1684,8 +1684,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String providerId = "providerId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateApnsPushConfigurationByIdData updateApnsPushConfigurationByIdData = new UpdateApnsPushConfigurationByIdData(); // UpdateApnsPushConfigurationByIdData | 
         try {
             UpdateApnsPushConfigurationByIdResponse result = api.updateApnsPushConfigurationById(providerId)
@@ -1709,8 +1709,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **providerId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateApnsPushConfigurationByIdData** | [**UpdateApnsPushConfigurationByIdData**](UpdateApnsPushConfigurationByIdData.md)|  | [optional] |
 
 ### Return type
@@ -1786,7 +1786,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateDefaultChannelInvitationPreferenceData** | [**UpdateDefaultChannelInvitationPreferenceData**](UpdateDefaultChannelInvitationPreferenceData.md)|  | [optional] |
 
 ### Return type
@@ -1837,8 +1837,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String providerId = "providerId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateFcmPushConfigurationByIdData updateFcmPushConfigurationByIdData = new UpdateFcmPushConfigurationByIdData(); // UpdateFcmPushConfigurationByIdData | 
         try {
             UpdateFcmPushConfigurationByIdResponse result = api.updateFcmPushConfigurationById(providerId)
@@ -1862,8 +1862,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **providerId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateFcmPushConfigurationByIdData** | [**UpdateFcmPushConfigurationByIdData**](UpdateFcmPushConfigurationByIdData.md)|  | [optional] |
 
 ### Return type
@@ -1914,8 +1914,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String providerId = "providerId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateHmsPushConfigurationByIdData updateHmsPushConfigurationByIdData = new UpdateHmsPushConfigurationByIdData(); // UpdateHmsPushConfigurationByIdData | 
         try {
             UpdateHmsPushConfigurationByIdResponse result = api.updateHmsPushConfigurationById(providerId)
@@ -1939,8 +1939,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **providerId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateHmsPushConfigurationByIdData** | [**UpdateHmsPushConfigurationByIdData**](UpdateHmsPushConfigurationByIdData.md)|  | [optional] |
 
 ### Return type
@@ -1991,8 +1991,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String templateName = "templateName_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdatePushNotificationContentTemplateData updatePushNotificationContentTemplateData = new UpdatePushNotificationContentTemplateData(); // UpdatePushNotificationContentTemplateData | 
         try {
             UpdatePushNotificationContentTemplateResponse result = api.updatePushNotificationContentTemplate(templateName)
@@ -2016,8 +2016,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **templateName** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updatePushNotificationContentTemplateData** | [**UpdatePushNotificationContentTemplateData**](UpdatePushNotificationContentTemplateData.md)|  | [optional] |
 
 ### Return type
@@ -2091,7 +2091,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2141,9 +2141,9 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String pushType = "pushType_example"; // String | 
         String providerId = "providerId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewPushConfigurationByIdResponse result = api.viewPushConfigurationById(pushType, providerId)
                 .apiToken(apiToken)
@@ -2165,9 +2165,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **pushType** | **String**|  | |
 | **providerId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2192,9 +2192,9 @@ No authorization required
 
 > ViewPushNotificationContentTemplateResponse viewPushNotificationContentTemplate(templateName).apiToken(apiToken).execute();
 
-View a push notification content template
+Get a push notification content template
 
-## View a push notification content template
+## Get a push notification content template
 
 Retrieves information on a specific push notification content templates of an application. The name of a content template is either `default` or `alternative`.
 
@@ -2217,8 +2217,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String templateName = "templateName_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewPushNotificationContentTemplateResponse result = api.viewPushNotificationContentTemplate(templateName)
                 .apiToken(apiToken)
@@ -2240,8 +2240,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **templateName** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -2290,8 +2290,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ApplicationApi apiInstance = new ApplicationApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String apiToken2 = "apiToken_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewSecondaryApiTokenByTokenResponse result = api.viewSecondaryApiTokenByToken(apiToken2)
                 .apiToken(apiToken)
@@ -2313,8 +2313,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **apiToken2** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

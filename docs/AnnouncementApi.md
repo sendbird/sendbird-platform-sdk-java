@@ -44,8 +44,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String announcementGroup = "announcementGroup_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             GetDetailedOpenRateOfAnnouncementGroupResponse result = api.getDetailedOpenRateOfAnnouncementGroup(announcementGroup)
                 .apiToken(apiToken)
@@ -67,8 +67,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **announcementGroup** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -140,7 +140,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -163,7 +163,7 @@ No authorization required
 
 ## getStatisticsDaily
 
-> GetStatisticsDailyResponse getStatisticsDaily().apiToken(apiToken).startDate(startDate).endDate(endDate).startWeek(startWeek).endWeek(endWeek).startMonth(startMonth).endMonth(endMonth).announcementGroup(announcementGroup).execute();
+> GetStatisticsDailyResponse getStatisticsDaily().startDate(startDate).endDate(endDate).startWeek(startWeek).endWeek(endWeek).startMonth(startMonth).endMonth(endMonth).apiToken(apiToken).announcementGroup(announcementGroup).execute();
 
 Get statistics - daily
 
@@ -190,23 +190,23 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String startDate = "startDate_example"; // String | 
         String endDate = "endDate_example"; // String | 
         String startWeek = "startWeek_example"; // String | 
         String endWeek = "endWeek_example"; // String | 
         String startMonth = "startMonth_example"; // String | 
         String endMonth = "endMonth_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String announcementGroup = "announcementGroup_example"; // String | 
         try {
             GetStatisticsDailyResponse result = api.getStatisticsDaily()
-                .apiToken(apiToken)
                 .startDate(startDate)
                 .endDate(endDate)
                 .startWeek(startWeek)
                 .endWeek(endWeek)
                 .startMonth(startMonth)
                 .endMonth(endMonth)
+                .apiToken(apiToken)
                 .announcementGroup(announcementGroup)
                 .execute();
             System.out.println(result);
@@ -226,13 +226,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **startDate** | **String**|  | |
 | **endDate** | **String**|  | |
 | **startWeek** | **String**|  | |
 | **endWeek** | **String**|  | |
 | **startMonth** | **String**|  | |
 | **endMonth** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **announcementGroup** | **String**|  | [optional] |
 
 ### Return type
@@ -305,7 +305,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -381,7 +381,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -456,7 +456,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **scheduleAnnouncementData** | [**ScheduleAnnouncementData**](ScheduleAnnouncementData.md)|  | [optional] |
 
 ### Return type
@@ -509,8 +509,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String uniqueId = "uniqueId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateAnnouncementByIdData updateAnnouncementByIdData = new UpdateAnnouncementByIdData(); // UpdateAnnouncementByIdData | 
         try {
             UpdateAnnouncementByIdResponse result = api.updateAnnouncementById(uniqueId)
@@ -534,8 +534,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **uniqueId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **updateAnnouncementByIdData** | [**UpdateAnnouncementByIdData**](UpdateAnnouncementByIdData.md)|  | [optional] |
 
 ### Return type
@@ -586,8 +586,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String uniqueId = "uniqueId_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ViewAnnouncementByIdResponse result = api.viewAnnouncementById(uniqueId)
                 .apiToken(apiToken)
@@ -609,8 +609,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **uniqueId** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

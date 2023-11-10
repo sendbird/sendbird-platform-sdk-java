@@ -17,36 +17,37 @@ import org.sendbird.client.Configuration;
 import org.sendbird.client.api.UserApi;
 import org.openapitools.client.model.ListUsersResponse;
 
-class User {
-    ApiClient defaultClient;
-    String apiToken = "YOUR_API_KEY_FROM_DASHBOARD";
-    UserApi apiInstance;
-    public User(ApiClient defaultClient){
-        apiInstance = new UserApi(defaultClient);
-    }
-    public void listUsers(){
 
-        try {
-            Integer limit = 56;
-            String activeMode = "activated";
-            Boolean showBot = true;
-            ListUsersResponse result = apiInstance.listUsers().apiToken(apiToken).limit(limit).activeMode(activeMode).execute();
-            System.out.println(result);
+class AppTest {
+    static class User {
+        UserApi apiInstance;
+        public User(ApiClient defaultClient){
+            apiInstance = new UserApi(defaultClient);
+        }
+        public void listUsers(){
 
-        } catch (ApiException e) {
-            System.err.println("Exception when calling listUsers");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
+            try {
+                Integer limit = 56;
+                String activeMode = "activated";
+                Boolean showBot = true;
+                ListUsersResponse result = apiInstance.listUsers().limit(limit).activeMode(activeMode).execute();
+                System.out.println(result);
+
+            } catch (ApiException e) {
+                System.err.println("Exception when calling listUsers");
+                System.err.println("Status code: " + e.getCode());
+                System.err.println("Reason: " + e.getResponseBody());
+                System.err.println("Response headers: " + e.getResponseHeaders());
+                e.printStackTrace();
+            }
         }
     }
-}
 
-class App {
     public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-YOUR_APP_ID_FROM_DASHBOARD.sendbird.com");
+        String apiToken = "YOUR_API_TOKEN";
+        String applicationId = "YOUR_APP_ID_FROM_DASHBOARD";
+        ApiClient defaultClient = Configuration.getDefaultApiClient().addDefaultHeader("Api-Token", apiToken);
+        defaultClient.setBasePath("https://api-" + applicationId + ".sendbird.com");
         User user = new User(defaultClient);
         user.listUsers();
     }

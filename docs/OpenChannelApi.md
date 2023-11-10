@@ -18,7 +18,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## ocCancelTheRegistrationOfOperators
 
-> ocCancelTheRegistrationOfOperators(channelUrl).apiToken(apiToken).operatorIds(operatorIds).deleteAll(deleteAll).execute();
+> ocCancelTheRegistrationOfOperators(channelUrl).operatorIds(operatorIds).apiToken(apiToken).deleteAll(deleteAll).execute();
 
 Cancel the registration of operators
 
@@ -49,14 +49,14 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
         List<String> operatorIds = Arrays.asList(); // List<String> | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean deleteAll = true; // Boolean | 
         try {
             api.ocCancelTheRegistrationOfOperators(channelUrl)
-                .apiToken(apiToken)
                 .operatorIds(operatorIds)
+                .apiToken(apiToken)
                 .deleteAll(deleteAll)
                 .execute();
         } catch (ApiException e) {
@@ -75,9 +75,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
 | **operatorIds** | **List&lt;String&gt;**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **deleteAll** | **Boolean**|  | [optional] |
 
 ### Return type
@@ -153,7 +153,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **ocCreateChannelData** | [**OcCreateChannelData**](OcCreateChannelData.md)|  | [optional] |
 
 ### Return type
@@ -204,8 +204,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             OcDeleteChannelByUrl200Response result = api.ocDeleteChannelByUrl(channelUrl)
                 .apiToken(apiToken)
@@ -227,8 +227,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -316,7 +316,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 | **customTypes** | **String**|  | [optional] |
@@ -378,8 +378,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -405,8 +405,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -462,8 +462,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
         try {
@@ -489,8 +489,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
 
@@ -542,8 +542,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         OcRegisterOperatorsData ocRegisterOperatorsData = new OcRegisterOperatorsData(); // OcRegisterOperatorsData | 
         try {
             OcDeleteChannelByUrl200Response result = api.ocRegisterOperators(channelUrl)
@@ -567,8 +567,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **ocRegisterOperatorsData** | [**OcRegisterOperatorsData**](OcRegisterOperatorsData.md)|  | [optional] |
 
 ### Return type
@@ -619,8 +619,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         OcUpdateChannelByUrlData ocUpdateChannelByUrlData = new OcUpdateChannelByUrlData(); // OcUpdateChannelByUrlData | 
         try {
             SendBirdOpenChannel result = api.ocUpdateChannelByUrl(channelUrl)
@@ -644,8 +644,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 | **ocUpdateChannelByUrlData** | [**OcUpdateChannelByUrlData**](OcUpdateChannelByUrlData.md)|  | [optional] |
 
 ### Return type
@@ -696,8 +696,8 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             SendBirdOpenChannel result = api.ocViewChannelByUrl(channelUrl)
                 .apiToken(apiToken)
@@ -719,8 +719,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | |
 | **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 

@@ -51,7 +51,7 @@ import org.sendbird.client.JSON;
   ResetPushPreferencesResponse.JSON_PROPERTY_PUSH_TRIGGER_OPTION
 })
 @JsonTypeName("resetPushPreferencesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class ResetPushPreferencesResponse {
   public static final String JSON_PROPERTY_SNOOZE_START_TS = "snooze_start_ts";
   private String snoozeStartTs;

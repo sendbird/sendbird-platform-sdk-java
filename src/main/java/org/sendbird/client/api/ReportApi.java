@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class ReportApi {
   private ApiClient apiClient;
 
@@ -57,11 +57,6 @@ public class ReportApi {
 
 private ApiResponse<ListReportsResponse> listReportsWithHttpInfo(String apiToken, String token, Integer limit, Integer startTs, Integer endTs) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listReports");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/report";
@@ -113,7 +108,7 @@ private ApiResponse<ListReportsResponse> listReportsWithHttpInfo(String apiToken
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistReportsRequest
      */
     public APIlistReportsRequest apiToken(String apiToken) {
@@ -205,13 +200,8 @@ private ApiResponse<ListReportsResponse> listReportsWithHttpInfo(String apiToken
     return new APIlistReportsRequest();
   }
 
-private ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrlWithHttpInfo(String apiToken, String channelType, String channelUrl, String token, Integer limit) throws ApiException {
+private ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrlWithHttpInfo(String channelType, String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listReportsOnChannelByUrl");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -262,9 +252,9 @@ private ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrl
   }
 
   public class APIlistReportsOnChannelByUrlRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -275,7 +265,7 @@ private ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrl
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistReportsOnChannelByUrlRequest
      */
     public APIlistReportsOnChannelByUrlRequest apiToken(String apiToken) {
@@ -331,7 +321,7 @@ private ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrl
 
      */
     public ApiResponse<ListReportsOnChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return listReportsOnChannelByUrlWithHttpInfo(apiToken, channelType, channelUrl, token, limit);
+      return listReportsOnChannelByUrlWithHttpInfo(channelType, channelUrl, apiToken, token, limit);
     }
   }
 
@@ -349,13 +339,8 @@ private ApiResponse<ListReportsOnChannelByUrlResponse> listReportsOnChannelByUrl
     return new APIlistReportsOnChannelByUrlRequest(channelType, channelUrl);
   }
 
-private ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, String token, Integer limit) throws ApiException {
+private ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listReportsOnMessageById");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -412,10 +397,10 @@ private ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWi
   }
 
   public class APIlistReportsOnMessageByIdRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -427,7 +412,7 @@ private ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWi
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistReportsOnMessageByIdRequest
      */
     public APIlistReportsOnMessageByIdRequest apiToken(String apiToken) {
@@ -483,7 +468,7 @@ private ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWi
 
      */
     public ApiResponse<ListReportsOnMessageByIdResponse> executeWithHttpInfo() throws ApiException {
-      return listReportsOnMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, token, limit);
+      return listReportsOnMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, token, limit);
     }
   }
 
@@ -502,13 +487,8 @@ private ApiResponse<ListReportsOnMessageByIdResponse> listReportsOnMessageByIdWi
     return new APIlistReportsOnMessageByIdRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttpInfo(String apiToken, String offendingUserId, String token, Integer limit) throws ApiException {
+private ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttpInfo(String offendingUserId, String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listReportsOnUserById");
-    }
     
     // verify the required parameter 'offendingUserId' is set
     if (offendingUserId == null) {
@@ -553,8 +533,8 @@ private ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttp
   }
 
   public class APIlistReportsOnUserByIdRequest {
-    private String apiToken;
     private String offendingUserId;
+    private String apiToken;
     private String token;
     private Integer limit;
 
@@ -564,7 +544,7 @@ private ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttp
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistReportsOnUserByIdRequest
      */
     public APIlistReportsOnUserByIdRequest apiToken(String apiToken) {
@@ -620,7 +600,7 @@ private ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttp
 
      */
     public ApiResponse<ListReportsOnUserByIdResponse> executeWithHttpInfo() throws ApiException {
-      return listReportsOnUserByIdWithHttpInfo(apiToken, offendingUserId, token, limit);
+      return listReportsOnUserByIdWithHttpInfo(offendingUserId, apiToken, token, limit);
     }
   }
 
@@ -637,13 +617,8 @@ private ApiResponse<ListReportsOnUserByIdResponse> listReportsOnUserByIdWithHttp
     return new APIlistReportsOnUserByIdRequest(offendingUserId);
   }
 
-private ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(String apiToken, String channelType, String channelUrl, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
+private ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(String channelType, String channelUrl, String apiToken, ReportChannelByUrlData reportChannelByUrlData) throws ApiException {
     Object localVarPostBody = reportChannelByUrlData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling reportChannelByUrl");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -692,9 +667,9 @@ private ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(S
   }
 
   public class APIreportChannelByUrlRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
+    private String apiToken;
     private ReportChannelByUrlData reportChannelByUrlData;
 
     private APIreportChannelByUrlRequest(String channelType, String channelUrl) {
@@ -704,7 +679,7 @@ private ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(S
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIreportChannelByUrlRequest
      */
     public APIreportChannelByUrlRequest apiToken(String apiToken) {
@@ -750,7 +725,7 @@ private ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(S
 
      */
     public ApiResponse<ReportChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return reportChannelByUrlWithHttpInfo(apiToken, channelType, channelUrl, reportChannelByUrlData);
+      return reportChannelByUrlWithHttpInfo(channelType, channelUrl, apiToken, reportChannelByUrlData);
     }
   }
 
@@ -768,13 +743,8 @@ private ApiResponse<ReportChannelByUrlResponse> reportChannelByUrlWithHttpInfo(S
     return new APIreportChannelByUrlRequest(channelType, channelUrl);
   }
 
-private ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId, ReportMessageByIdData reportMessageByIdData) throws ApiException {
+private ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, ReportMessageByIdData reportMessageByIdData) throws ApiException {
     Object localVarPostBody = reportMessageByIdData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling reportMessageById");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -829,10 +799,10 @@ private ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(Str
   }
 
   public class APIreportMessageByIdRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
     private ReportMessageByIdData reportMessageByIdData;
 
     private APIreportMessageByIdRequest(String channelType, String channelUrl, String messageId) {
@@ -843,7 +813,7 @@ private ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(Str
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIreportMessageByIdRequest
      */
     public APIreportMessageByIdRequest apiToken(String apiToken) {
@@ -889,7 +859,7 @@ private ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(Str
 
      */
     public ApiResponse<ReportMessageByIdResponse> executeWithHttpInfo() throws ApiException {
-      return reportMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId, reportMessageByIdData);
+      return reportMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, reportMessageByIdData);
     }
   }
 
@@ -908,13 +878,8 @@ private ApiResponse<ReportMessageByIdResponse> reportMessageByIdWithHttpInfo(Str
     return new APIreportMessageByIdRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String apiToken, String offendingUserId, ReportUserByIdData reportUserByIdData) throws ApiException {
+private ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String offendingUserId, String apiToken, ReportUserByIdData reportUserByIdData) throws ApiException {
     Object localVarPostBody = reportUserByIdData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling reportUserById");
-    }
     
     // verify the required parameter 'offendingUserId' is set
     if (offendingUserId == null) {
@@ -957,8 +922,8 @@ private ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String ap
   }
 
   public class APIreportUserByIdRequest {
-    private String apiToken;
     private String offendingUserId;
+    private String apiToken;
     private ReportUserByIdData reportUserByIdData;
 
     private APIreportUserByIdRequest(String offendingUserId) {
@@ -967,7 +932,7 @@ private ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String ap
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIreportUserByIdRequest
      */
     public APIreportUserByIdRequest apiToken(String apiToken) {
@@ -1013,7 +978,7 @@ private ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String ap
 
      */
     public ApiResponse<ReportUserByIdResponse> executeWithHttpInfo() throws ApiException {
-      return reportUserByIdWithHttpInfo(apiToken, offendingUserId, reportUserByIdData);
+      return reportUserByIdWithHttpInfo(offendingUserId, apiToken, reportUserByIdData);
     }
   }
 
@@ -1030,13 +995,8 @@ private ApiResponse<ReportUserByIdResponse> reportUserByIdWithHttpInfo(String ap
     return new APIreportUserByIdRequest(offendingUserId);
   }
 
-private ApiResponse<Object> viewModeratedMessageByIdWithHttpInfo(String apiToken, String channelType, String channelUrl, String messageId) throws ApiException {
+private ApiResponse<Object> viewModeratedMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewModeratedMessageById");
-    }
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -1091,10 +1051,10 @@ private ApiResponse<Object> viewModeratedMessageByIdWithHttpInfo(String apiToken
   }
 
   public class APIviewModeratedMessageByIdRequest {
-    private String apiToken;
     private String channelType;
     private String channelUrl;
     private String messageId;
+    private String apiToken;
 
     private APIviewModeratedMessageByIdRequest(String channelType, String channelUrl, String messageId) {
       this.channelType = channelType;
@@ -1104,7 +1064,7 @@ private ApiResponse<Object> viewModeratedMessageByIdWithHttpInfo(String apiToken
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewModeratedMessageByIdRequest
      */
     public APIviewModeratedMessageByIdRequest apiToken(String apiToken) {
@@ -1140,7 +1100,7 @@ private ApiResponse<Object> viewModeratedMessageByIdWithHttpInfo(String apiToken
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return viewModeratedMessageByIdWithHttpInfo(apiToken, channelType, channelUrl, messageId);
+      return viewModeratedMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken);
     }
   }
 

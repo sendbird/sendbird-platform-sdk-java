@@ -19,7 +19,7 @@
 |**ignoreProfanityFilter** | **Boolean** |  |  [optional] |
 |**hiddenState** | [**HiddenStateEnum**](#HiddenStateEnum) |  |  [optional] |
 |**invitedAt** | **BigDecimal** |  |  [optional] |
-|**inviter** | [**SendBirdGroupChannelInviter**](SendBirdGroupChannelInviter.md) |  |  [optional] |
+|**inviter** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
 |**isAccessCodeRequired** | **Boolean** |  |  [optional] |
 |**isBroadcast** | **Boolean** |  |  [optional] |
 |**isCreated** | **Boolean** |  |  [optional] |
@@ -33,7 +33,7 @@
 |**isSuper** | **Boolean** |  |  [optional] |
 |**joinedAt** | **BigDecimal** |  |  [optional] |
 |**joinedMemberCount** | **BigDecimal** |  |  [optional] |
-|**lastMessage** | [**SendBirdGroupChannelLastMessage**](SendBirdGroupChannelLastMessage.md) |  |  [optional] |
+|**lastMessage** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  |  [optional] |
 |**maxLengthMessage** | **BigDecimal** |  |  [optional] |
 |**memberCount** | **BigDecimal** |  |  [optional] |
 |**members** | [**List&lt;SendBirdMember&gt;**](SendBirdMember.md) |  |  [optional] |

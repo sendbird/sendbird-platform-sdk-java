@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
 public class AnnouncementApi {
   private ApiClient apiClient;
 
@@ -55,13 +55,8 @@ public class AnnouncementApi {
   }
 
 
-private ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(String apiToken, String announcementGroup) throws ApiException {
+private ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(String announcementGroup, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getDetailedOpenRateOfAnnouncementGroup");
-    }
     
     // verify the required parameter 'announcementGroup' is set
     if (announcementGroup == null) {
@@ -104,8 +99,8 @@ private ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedO
   }
 
   public class APIgetDetailedOpenRateOfAnnouncementGroupRequest {
-    private String apiToken;
     private String announcementGroup;
+    private String apiToken;
 
     private APIgetDetailedOpenRateOfAnnouncementGroupRequest(String announcementGroup) {
       this.announcementGroup = announcementGroup;
@@ -113,7 +108,7 @@ private ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedO
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgetDetailedOpenRateOfAnnouncementGroupRequest
      */
     public APIgetDetailedOpenRateOfAnnouncementGroupRequest apiToken(String apiToken) {
@@ -149,7 +144,7 @@ private ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedO
 
      */
     public ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> executeWithHttpInfo() throws ApiException {
-      return getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(apiToken, announcementGroup);
+      return getDetailedOpenRateOfAnnouncementGroupWithHttpInfo(announcementGroup, apiToken);
     }
   }
 
@@ -168,11 +163,6 @@ private ApiResponse<GetDetailedOpenRateOfAnnouncementGroupResponse> getDetailedO
 
 private ApiResponse<GetStatisticsResponse> getStatisticsWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getStatistics");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/announcement_stats/weekly";
@@ -216,7 +206,7 @@ private ApiResponse<GetStatisticsResponse> getStatisticsWithHttpInfo(String apiT
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgetStatisticsRequest
      */
     public APIgetStatisticsRequest apiToken(String apiToken) {
@@ -268,13 +258,8 @@ private ApiResponse<GetStatisticsResponse> getStatisticsWithHttpInfo(String apiT
     return new APIgetStatisticsRequest();
   }
 
-private ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(String apiToken, String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String announcementGroup) throws ApiException {
+private ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(String startDate, String endDate, String startWeek, String endWeek, String startMonth, String endMonth, String apiToken, String announcementGroup) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getStatisticsDaily");
-    }
     
     // verify the required parameter 'startDate' is set
     if (startDate == null) {
@@ -348,26 +333,16 @@ private ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(S
   }
 
   public class APIgetStatisticsDailyRequest {
-    private String apiToken;
     private String startDate;
     private String endDate;
     private String startWeek;
     private String endWeek;
     private String startMonth;
     private String endMonth;
+    private String apiToken;
     private String announcementGroup;
 
     private APIgetStatisticsDailyRequest() {
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (required)
-     * @return APIgetStatisticsDailyRequest
-     */
-    public APIgetStatisticsDailyRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
     }
 
     /**
@@ -431,6 +406,16 @@ private ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(S
     }
 
     /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIgetStatisticsDailyRequest
+     */
+    public APIgetStatisticsDailyRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
      * Set announcementGroup
      * @param announcementGroup  (optional)
      * @return APIgetStatisticsDailyRequest
@@ -468,7 +453,7 @@ private ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(S
 
      */
     public ApiResponse<GetStatisticsDailyResponse> executeWithHttpInfo() throws ApiException {
-      return getStatisticsDailyWithHttpInfo(apiToken, startDate, endDate, startWeek, endWeek, startMonth, endMonth, announcementGroup);
+      return getStatisticsDailyWithHttpInfo(startDate, endDate, startWeek, endWeek, startMonth, endMonth, apiToken, announcementGroup);
     }
   }
 
@@ -486,11 +471,6 @@ private ApiResponse<GetStatisticsDailyResponse> getStatisticsDailyWithHttpInfo(S
 
 private ApiResponse<GetStatisticsMonthlyResponse> getStatisticsMonthlyWithHttpInfo(String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling getStatisticsMonthly");
-    }
     
     // create path and map variables
     String localVarPath = "/v3/announcement_stats/monthly";
@@ -534,7 +514,7 @@ private ApiResponse<GetStatisticsMonthlyResponse> getStatisticsMonthlyWithHttpIn
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIgetStatisticsMonthlyRequest
      */
     public APIgetStatisticsMonthlyRequest apiToken(String apiToken) {
@@ -589,11 +569,6 @@ private ApiResponse<GetStatisticsMonthlyResponse> getStatisticsMonthlyWithHttpIn
 private ApiResponse<ListAnnouncementGroupsResponse> listAnnouncementGroupsWithHttpInfo(String apiToken, String token, Integer limit) throws ApiException {
     Object localVarPostBody = null;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listAnnouncementGroups");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/announcement_group";
 
@@ -640,7 +615,7 @@ private ApiResponse<ListAnnouncementGroupsResponse> listAnnouncementGroupsWithHt
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIlistAnnouncementGroupsRequest
      */
     public APIlistAnnouncementGroupsRequest apiToken(String apiToken) {
@@ -715,11 +690,6 @@ private ApiResponse<ListAnnouncementGroupsResponse> listAnnouncementGroupsWithHt
 private ApiResponse<ScheduleAnnouncementResponse> scheduleAnnouncementWithHttpInfo(String apiToken, ScheduleAnnouncementData scheduleAnnouncementData) throws ApiException {
     Object localVarPostBody = scheduleAnnouncementData;
     
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling scheduleAnnouncement");
-    }
-    
     // create path and map variables
     String localVarPath = "/v3/announcements";
 
@@ -763,7 +733,7 @@ private ApiResponse<ScheduleAnnouncementResponse> scheduleAnnouncementWithHttpIn
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIscheduleAnnouncementRequest
      */
     public APIscheduleAnnouncementRequest apiToken(String apiToken) {
@@ -825,13 +795,8 @@ private ApiResponse<ScheduleAnnouncementResponse> scheduleAnnouncementWithHttpIn
     return new APIscheduleAnnouncementRequest();
   }
 
-private ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
+private ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken, UpdateAnnouncementByIdData updateAnnouncementByIdData) throws ApiException {
     Object localVarPostBody = updateAnnouncementByIdData;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling updateAnnouncementById");
-    }
     
     // verify the required parameter 'uniqueId' is set
     if (uniqueId == null) {
@@ -874,8 +839,8 @@ private ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHt
   }
 
   public class APIupdateAnnouncementByIdRequest {
-    private String apiToken;
     private String uniqueId;
+    private String apiToken;
     private UpdateAnnouncementByIdData updateAnnouncementByIdData;
 
     private APIupdateAnnouncementByIdRequest(String uniqueId) {
@@ -884,7 +849,7 @@ private ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHt
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIupdateAnnouncementByIdRequest
      */
     public APIupdateAnnouncementByIdRequest apiToken(String apiToken) {
@@ -930,7 +895,7 @@ private ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHt
 
      */
     public ApiResponse<UpdateAnnouncementByIdResponse> executeWithHttpInfo() throws ApiException {
-      return updateAnnouncementByIdWithHttpInfo(apiToken, uniqueId, updateAnnouncementByIdData);
+      return updateAnnouncementByIdWithHttpInfo(uniqueId, apiToken, updateAnnouncementByIdData);
     }
   }
 
@@ -947,13 +912,8 @@ private ApiResponse<UpdateAnnouncementByIdResponse> updateAnnouncementByIdWithHt
     return new APIupdateAnnouncementByIdRequest(uniqueId);
   }
 
-private ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpInfo(String apiToken, String uniqueId) throws ApiException {
+private ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpInfo(String uniqueId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
-    
-    // verify the required parameter 'apiToken' is set
-    if (apiToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling viewAnnouncementById");
-    }
     
     // verify the required parameter 'uniqueId' is set
     if (uniqueId == null) {
@@ -996,8 +956,8 @@ private ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpIn
   }
 
   public class APIviewAnnouncementByIdRequest {
-    private String apiToken;
     private String uniqueId;
+    private String apiToken;
 
     private APIviewAnnouncementByIdRequest(String uniqueId) {
       this.uniqueId = uniqueId;
@@ -1005,7 +965,7 @@ private ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpIn
 
     /**
      * Set apiToken
-     * @param apiToken  (required)
+     * @param apiToken  (optional)
      * @return APIviewAnnouncementByIdRequest
      */
     public APIviewAnnouncementByIdRequest apiToken(String apiToken) {
@@ -1041,7 +1001,7 @@ private ApiResponse<ViewAnnouncementByIdResponse> viewAnnouncementByIdWithHttpIn
 
      */
     public ApiResponse<ViewAnnouncementByIdResponse> executeWithHttpInfo() throws ApiException {
-      return viewAnnouncementByIdWithHttpInfo(apiToken, uniqueId);
+      return viewAnnouncementByIdWithHttpInfo(uniqueId, apiToken);
     }
   }
 
