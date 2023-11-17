@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   SendBirdBotsMessageResponseMessageMessageEvents.JSON_PROPERTY_UPDATE_LAST_MESSAGE
 })
 @JsonTypeName("SendBird_BotsMessageResponse_message_message_events")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class SendBirdBotsMessageResponseMessageMessageEvents {
   public static final String JSON_PROPERTY_SEND_PUSH_NOTIFICATION = "send_push_notification";
   private String sendPushNotification;

@@ -52,7 +52,7 @@ import org.sendbird.client.JSON;
   RegisterAndScheduleDataExportResponse.JSON_PROPERTY_USER_IDS
 })
 @JsonTypeName("registerAndScheduleDataExportResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class RegisterAndScheduleDataExportResponse {
   public static final String JSON_PROPERTY_CHANNEL_CUSTOM_TYPES = "channel_custom_types";
   private List<String> channelCustomTypes = null;

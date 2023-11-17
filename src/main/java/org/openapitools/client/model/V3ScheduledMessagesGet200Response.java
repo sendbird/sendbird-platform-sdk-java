@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   V3ScheduledMessagesGet200Response.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("_v3_scheduled_messages_get_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class V3ScheduledMessagesGet200Response {
   public static final String JSON_PROPERTY_SCHEDULED_MESSAGES = "scheduled_messages";
   private List<SendBirdScheduledMessage> scheduledMessages = null;

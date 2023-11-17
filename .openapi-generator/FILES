@@ -212,6 +212,7 @@ docs/SendBirdBaseChannel.md
 docs/SendBirdBaseMessageInstance.md
 docs/SendBirdBotsMessageResponse.md
 docs/SendBirdBotsMessageResponseMessage.md
+docs/SendBirdBotsMessageResponseMessageExtendedMessagePayload.md
 docs/SendBirdBotsMessageResponseMessageMessageEvents.md
 docs/SendBirdChannelResponse.md
 docs/SendBirdEmoji.md
@@ -246,6 +247,7 @@ docs/SendBirdThumbnailSize.md
 docs/SendBirdUser.md
 docs/SendBirdUserMessageParams.md
 docs/SendBotSMessageData.md
+docs/SendBotSMessageDataExtendedMessagePayload.md
 docs/SendMessageData.md
 docs/SetDomainFilterData.md
 docs/SetDomainFilterDataDomainFilter.md
@@ -533,6 +535,7 @@ src/main/java/org/openapitools/client/model/SendBirdBaseChannel.java
 src/main/java/org/openapitools/client/model/SendBirdBaseMessageInstance.java
 src/main/java/org/openapitools/client/model/SendBirdBotsMessageResponse.java
 src/main/java/org/openapitools/client/model/SendBirdBotsMessageResponseMessage.java
+src/main/java/org/openapitools/client/model/SendBirdBotsMessageResponseMessageExtendedMessagePayload.java
 src/main/java/org/openapitools/client/model/SendBirdBotsMessageResponseMessageMessageEvents.java
 src/main/java/org/openapitools/client/model/SendBirdChannelResponse.java
 src/main/java/org/openapitools/client/model/SendBirdEmoji.java
@@ -567,6 +570,7 @@ src/main/java/org/openapitools/client/model/SendBirdThumbnailSize.java
 src/main/java/org/openapitools/client/model/SendBirdUser.java
 src/main/java/org/openapitools/client/model/SendBirdUserMessageParams.java
 src/main/java/org/openapitools/client/model/SendBotSMessageData.java
+src/main/java/org/openapitools/client/model/SendBotSMessageDataExtendedMessagePayload.java
 src/main/java/org/openapitools/client/model/SendMessageData.java
 src/main/java/org/openapitools/client/model/SetDomainFilterData.java
 src/main/java/org/openapitools/client/model/SetDomainFilterDataDomainFilter.java

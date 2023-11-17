@@ -26,6 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.SendBotSMessageDataExtendedMessagePayload;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -42,10 +43,11 @@ import org.sendbird.client.JSON;
   SendBotSMessageData.JSON_PROPERTY_MENTIONED,
   SendBotSMessageData.JSON_PROPERTY_MARK_AS_READ,
   SendBotSMessageData.JSON_PROPERTY_DEDUP_ID,
-  SendBotSMessageData.JSON_PROPERTY_CREATED_AT
+  SendBotSMessageData.JSON_PROPERTY_CREATED_AT,
+  SendBotSMessageData.JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD
 })
 @JsonTypeName("sendBot_sMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class SendBotSMessageData {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
@@ -73,6 +75,9 @@ public class SendBotSMessageData {
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Integer createdAt;
+
+  public static final String JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD = "extended_message_payload";
+  private SendBotSMessageDataExtendedMessagePayload extendedMessagePayload;
 
   public SendBotSMessageData() { 
   }
@@ -319,6 +324,32 @@ public class SendBotSMessageData {
   }
 
 
+  public SendBotSMessageData extendedMessagePayload(SendBotSMessageDataExtendedMessagePayload extendedMessagePayload) {
+    this.extendedMessagePayload = extendedMessagePayload;
+    return this;
+  }
+
+   /**
+   * Get extendedMessagePayload
+   * @return extendedMessagePayload
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public SendBotSMessageDataExtendedMessagePayload getExtendedMessagePayload() {
+    return extendedMessagePayload;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExtendedMessagePayload(SendBotSMessageDataExtendedMessagePayload extendedMessagePayload) {
+    this.extendedMessagePayload = extendedMessagePayload;
+  }
+
+
   /**
    * Return true if this sendBot_sMessageData object is equal to o.
    */
@@ -339,12 +370,13 @@ public class SendBotSMessageData {
         Objects.equals(this.mentioned, sendBotSMessageData.mentioned) &&
         Objects.equals(this.markAsRead, sendBotSMessageData.markAsRead) &&
         Objects.equals(this.dedupId, sendBotSMessageData.dedupId) &&
-        Objects.equals(this.createdAt, sendBotSMessageData.createdAt);
+        Objects.equals(this.createdAt, sendBotSMessageData.createdAt) &&
+        Objects.equals(this.extendedMessagePayload, sendBotSMessageData.extendedMessagePayload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, channelUrl, customType, data, sendPush, mentioned, markAsRead, dedupId, createdAt);
+    return Objects.hash(message, channelUrl, customType, data, sendPush, mentioned, markAsRead, dedupId, createdAt, extendedMessagePayload);
   }
 
   @Override
@@ -360,6 +392,7 @@ public class SendBotSMessageData {
     sb.append("    markAsRead: ").append(toIndentedString(markAsRead)).append("\n");
     sb.append("    dedupId: ").append(toIndentedString(dedupId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    extendedMessagePayload: ").append(toIndentedString(extendedMessagePayload)).append("\n");
     sb.append("}");
     return sb.toString();
   }

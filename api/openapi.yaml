@@ -10925,6 +10925,11 @@ components:
           message_retention_hour: 1.4658129805029452
           updated_at: 6.027456183070403
           translations: "{}"
+          extended_message_payload:
+            suggested_replies:
+            - suggested_replies
+            - suggested_replies
+            custom_view: "{}"
           mentioned_users:
           - metadata:
               anyOf: anyOf
@@ -21386,6 +21391,21 @@ components:
       - channel_urls
       title: joinChannelsData
       type: object
+    sendBot_sMessageData_extended_message_payload:
+      description: Specifies the extended message payload which is used to send a
+        message with a custom message type.
+      properties:
+        suggested_replies:
+          description: Specifies an array of suggested replies to be sent with the
+            message.
+          items:
+            type: string
+          type: array
+        custom_view:
+          description: "JSON format you want to embed in message, eq : {\"title\"\
+            : \"title\", \"image\": \"https://link.to/image.jpg\"}"
+          type: object
+      type: object
     sendBot_sMessageData:
       properties:
         message:
@@ -21426,6 +21446,8 @@ components:
           description: "Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps)\
             \ format."
           type: integer
+        extended_message_payload:
+          $ref: '#/components/schemas/sendBot_sMessageData_extended_message_payload'
       required:
       - channel_url
       - message
@@ -21945,6 +21967,20 @@ components:
         update_last_message:
           type: boolean
       type: object
+    SendBird_BotsMessageResponse_message_extended_message_payload:
+      example:
+        suggested_replies:
+        - suggested_replies
+        - suggested_replies
+        custom_view: "{}"
+      properties:
+        suggested_replies:
+          items:
+            type: string
+          type: array
+        custom_view:
+          type: object
+      type: object
     SendBird_BotsMessageResponse_message:
       example:
         silent: true
@@ -21967,6 +22003,11 @@ components:
         message_retention_hour: 1.4658129805029452
         updated_at: 6.027456183070403
         translations: "{}"
+        extended_message_payload:
+          suggested_replies:
+          - suggested_replies
+          - suggested_replies
+          custom_view: "{}"
         mentioned_users:
         - metadata:
             anyOf: anyOf
@@ -22032,6 +22073,8 @@ components:
           type: number
         message_events:
           $ref: '#/components/schemas/SendBird_BotsMessageResponse_message_message_events'
+        extended_message_payload:
+          $ref: '#/components/schemas/SendBird_BotsMessageResponse_message_extended_message_payload'
       type: object
     SendBird_GroupChannel_created_by:
       example:

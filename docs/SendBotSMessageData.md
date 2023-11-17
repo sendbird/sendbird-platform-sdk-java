@@ -16,6 +16,7 @@
 |**markAsRead** | **Boolean** | Determines whether to mark the message as read for the bot. If set to false, the bot&#39;s unread_count and read_receipt remain unchanged after the message is sent. (Default: true) |  [optional] |
 |**dedupId** | **String** | Specifies the unique ID for the message to prevent the same message data from getting sent to the channel. |  [optional] |
 |**createdAt** | **Integer** | Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. |  [optional] |
+|**extendedMessagePayload** | [**SendBotSMessageDataExtendedMessagePayload**](SendBotSMessageDataExtendedMessagePayload.md) |  |  [optional] |
 
 
 

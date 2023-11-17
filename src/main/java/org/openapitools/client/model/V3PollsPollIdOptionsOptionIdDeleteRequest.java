@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   V3PollsPollIdOptionsOptionIdDeleteRequest.JSON_PROPERTY_CREATED_BY
 })
 @JsonTypeName("_v3_polls__poll_id__options__option_id__delete_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class V3PollsPollIdOptionsOptionIdDeleteRequest {
   public static final String JSON_PROPERTY_TEXT = "text";
   private String text;

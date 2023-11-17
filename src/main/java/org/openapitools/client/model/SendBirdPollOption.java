@@ -46,7 +46,7 @@ import org.sendbird.client.JSON;
   SendBirdPollOption.JSON_PROPERTY_VOTE_COUNT
 })
 @JsonTypeName("SendBird.PollOption")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class SendBirdPollOption {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private BigDecimal createdAt;

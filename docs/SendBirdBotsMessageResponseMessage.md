@@ -27,6 +27,7 @@
 |**channelUrl** | **String** |  |  [optional] |
 |**messageId** | **BigDecimal** |  |  [optional] |
 |**messageEvents** | [**SendBirdBotsMessageResponseMessageMessageEvents**](SendBirdBotsMessageResponseMessageMessageEvents.md) |  |  [optional] |
+|**extendedMessagePayload** | [**SendBirdBotsMessageResponseMessageExtendedMessagePayload**](SendBirdBotsMessageResponseMessageExtendedMessagePayload.md) |  |  [optional] |
 
 
 
