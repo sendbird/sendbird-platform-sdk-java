@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   SendBirdMessageMetaArray.JSON_PROPERTY_VALUE
 })
 @JsonTypeName("SendBird.MessageMetaArray")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class SendBirdMessageMetaArray {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;

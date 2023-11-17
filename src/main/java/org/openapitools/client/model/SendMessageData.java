@@ -63,7 +63,7 @@ import org.sendbird.client.JSON;
   SendMessageData.JSON_PROPERTY_THUMBNAIL3
 })
 @JsonTypeName("sendMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class SendMessageData {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;

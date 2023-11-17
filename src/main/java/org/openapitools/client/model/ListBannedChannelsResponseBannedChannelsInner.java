@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   ListBannedChannelsResponseBannedChannelsInner.JSON_PROPERTY_END_AT
 })
 @JsonTypeName("listBannedChannelsResponse_banned_channels_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class ListBannedChannelsResponseBannedChannelsInner {
   public static final String JSON_PROPERTY_START_AT = "start_at";
   private BigDecimal startAt;

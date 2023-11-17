@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListReportsOnUserByIdResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("listReportsOnUserByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class ListReportsOnUserByIdResponse {
   public static final String JSON_PROPERTY_REPORT_LOGS = "report_logs";
   private List<ListReportsOnMessageByIdResponseReportLogsInner> reportLogs = null;

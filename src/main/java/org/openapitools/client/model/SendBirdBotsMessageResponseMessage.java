@@ -27,6 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.SendBirdBotsMessageResponseMessageExtendedMessagePayload;
 import org.openapitools.client.model.SendBirdBotsMessageResponseMessageMessageEvents;
 import org.openapitools.client.model.SendBirdMessageResponseMentionedUsersInner;
 import org.openapitools.client.model.SendBirdMessageResponseUser;
@@ -57,10 +58,11 @@ import org.sendbird.client.JSON;
   SendBirdBotsMessageResponseMessage.JSON_PROPERTY_MENTION_TYPE,
   SendBirdBotsMessageResponseMessage.JSON_PROPERTY_CHANNEL_URL,
   SendBirdBotsMessageResponseMessage.JSON_PROPERTY_MESSAGE_ID,
-  SendBirdBotsMessageResponseMessage.JSON_PROPERTY_MESSAGE_EVENTS
+  SendBirdBotsMessageResponseMessage.JSON_PROPERTY_MESSAGE_EVENTS,
+  SendBirdBotsMessageResponseMessage.JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD
 })
 @JsonTypeName("SendBird_BotsMessageResponse_message")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class SendBirdBotsMessageResponseMessage {
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private BigDecimal messageSurvivalSeconds;
@@ -121,6 +123,9 @@ public class SendBirdBotsMessageResponseMessage {
 
   public static final String JSON_PROPERTY_MESSAGE_EVENTS = "message_events";
   private SendBirdBotsMessageResponseMessageMessageEvents messageEvents;
+
+  public static final String JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD = "extended_message_payload";
+  private SendBirdBotsMessageResponseMessageExtendedMessagePayload extendedMessagePayload;
 
   public SendBirdBotsMessageResponseMessage() { 
   }
@@ -653,6 +658,32 @@ public class SendBirdBotsMessageResponseMessage {
   }
 
 
+  public SendBirdBotsMessageResponseMessage extendedMessagePayload(SendBirdBotsMessageResponseMessageExtendedMessagePayload extendedMessagePayload) {
+    this.extendedMessagePayload = extendedMessagePayload;
+    return this;
+  }
+
+   /**
+   * Get extendedMessagePayload
+   * @return extendedMessagePayload
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public SendBirdBotsMessageResponseMessageExtendedMessagePayload getExtendedMessagePayload() {
+    return extendedMessagePayload;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExtendedMessagePayload(SendBirdBotsMessageResponseMessageExtendedMessagePayload extendedMessagePayload) {
+    this.extendedMessagePayload = extendedMessagePayload;
+  }
+
+
   /**
    * Return true if this SendBird_BotsMessageResponse_message object is equal to o.
    */
@@ -684,12 +715,13 @@ public class SendBirdBotsMessageResponseMessage {
         Objects.equals(this.mentionType, sendBirdBotsMessageResponseMessage.mentionType) &&
         Objects.equals(this.channelUrl, sendBirdBotsMessageResponseMessage.channelUrl) &&
         Objects.equals(this.messageId, sendBirdBotsMessageResponseMessage.messageId) &&
-        Objects.equals(this.messageEvents, sendBirdBotsMessageResponseMessage.messageEvents);
+        Objects.equals(this.messageEvents, sendBirdBotsMessageResponseMessage.messageEvents) &&
+        Objects.equals(this.extendedMessagePayload, sendBirdBotsMessageResponseMessage.extendedMessagePayload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, _file, message, data, messageRetentionHour, silent, type, createdAt, channelType, mentionType, channelUrl, messageId, messageEvents);
+    return Objects.hash(messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, _file, message, data, messageRetentionHour, silent, type, createdAt, channelType, mentionType, channelUrl, messageId, messageEvents, extendedMessagePayload);
   }
 
   @Override
@@ -716,6 +748,7 @@ public class SendBirdBotsMessageResponseMessage {
     sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    messageEvents: ").append(toIndentedString(messageEvents)).append("\n");
+    sb.append("    extendedMessagePayload: ").append(toIndentedString(extendedMessagePayload)).append("\n");
     sb.append("}");
     return sb.toString();
   }

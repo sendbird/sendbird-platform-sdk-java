@@ -5,7 +5,7 @@
     <artifactId>sendbird-platform-sdk</artifactId>
     <packaging>jar</packaging>
     <name>sendbird-platform-sdk</name>
-    <version>1.0.17</version>
+    <version>1.0.18</version>
     <url>https://github.com/sendbird/sendbird-platform-sdk-java</url>
     <description>Sendbird Platform API SDK</description>
     <scm>

@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   AddFcmPushConfigurationData.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("addFcmPushConfigurationData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-10T16:14:48.686+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
 public class AddFcmPushConfigurationData {
   public static final String JSON_PROPERTY_API_KEY = "api_key";
   private String apiKey;
