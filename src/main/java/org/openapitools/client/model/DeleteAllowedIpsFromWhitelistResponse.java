@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   DeleteAllowedIpsFromWhitelistResponse.JSON_PROPERTY_IP_WHITELIST_ADDRESSES
 })
 @JsonTypeName("deleteAllowedIpsFromWhitelistResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
 public class DeleteAllowedIpsFromWhitelistResponse {
   public static final String JSON_PROPERTY_IP_WHITELIST_ADDRESSES = "ip_whitelist_addresses";
   private List<String> ipWhitelistAddresses = null;
