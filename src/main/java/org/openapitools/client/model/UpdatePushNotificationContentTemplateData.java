@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   UpdatePushNotificationContentTemplateData.JSON_PROPERTY_TEMPLATE_A_D_M_N
 })
 @JsonTypeName("updatePushNotificationContentTemplateData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
 public class UpdatePushNotificationContentTemplateData {
   public static final String JSON_PROPERTY_TEMPLATE_NAME = "template_name";
   private String templateName;

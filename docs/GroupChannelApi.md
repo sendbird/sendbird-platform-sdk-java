@@ -19,6 +19,8 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 | [**gcListOperators**](GroupChannelApi.md#gcListOperators) | **GET** /v3/group_channels/{channel_url}/operators | List operators |
 | [**gcRegisterOperators**](GroupChannelApi.md#gcRegisterOperators) | **POST** /v3/group_channels/{channel_url}/operators | Register operators |
 | [**gcResetChatHistory**](GroupChannelApi.md#gcResetChatHistory) | **PUT** /v3/group_channels/{channel_url}/reset_user_history | Reset chat history |
+| [**gcStartTypingIndicators**](GroupChannelApi.md#gcStartTypingIndicators) | **POST** /v3/group_channels/{channel_url}/typing | Start typing indicators |
+| [**gcStopTypingIndicators**](GroupChannelApi.md#gcStopTypingIndicators) | **DELETE** /v3/group_channels/{channel_url}/typing | Stop typing indicators |
 | [**gcUnhideOrUnarchiveChannel**](GroupChannelApi.md#gcUnhideOrUnarchiveChannel) | **DELETE** /v3/group_channels/{channel_url}/hide | Unhide or unarchive a channel |
 | [**gcUpdateChannelByUrl**](GroupChannelApi.md#gcUpdateChannelByUrl) | **PUT** /v3/group_channels/{channel_url} | Update a channel |
 | [**gcViewChannelByUrl**](GroupChannelApi.md#gcViewChannelByUrl) | **GET** /v3/group_channels/{channel_url} | View a channel |
@@ -1337,6 +1339,168 @@ public class Example {
 ### Return type
 
 [**GcResetChatHistoryResponse**](GcResetChatHistoryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## gcStartTypingIndicators
+
+> OcDeleteChannelByUrl200Response gcStartTypingIndicators(channelUrl).apiToken(apiToken).gcTypingIndicatorsData(gcTypingIndicatorsData).execute();
+
+Start typing indicators
+
+## Start typing indicators
+
+You can start showing a typing indicator using this API. Seeing whether other users are typing can help a more interactive conversation environment by showing real-time engagement of other users.
+
+https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/start-typing-indicators
+----------------------------
+
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the channel to set typing indicators.
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.GroupChannelApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+        String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        GcTypingIndicatorsData gcTypingIndicatorsData = new GcTypingIndicatorsData(); // GcTypingIndicatorsData | 
+        try {
+            OcDeleteChannelByUrl200Response result = api.gcStartTypingIndicators(channelUrl)
+                .apiToken(apiToken)
+                .gcTypingIndicatorsData(gcTypingIndicatorsData)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupChannelApi#gcStartTypingIndicators");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
+| **gcTypingIndicatorsData** | [**GcTypingIndicatorsData**](GcTypingIndicatorsData.md)|  | [optional] |
+
+### Return type
+
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## gcStopTypingIndicators
+
+> OcDeleteChannelByUrl200Response gcStopTypingIndicators(channelUrl).apiToken(apiToken).gcTypingIndicatorsData(gcTypingIndicatorsData).execute();
+
+Stop typing indicators
+
+## Stop typing indicators
+
+You can stop showing a typing indicator using this API. To signal that a user is no longer typing, you can let the indicator disappear when the user sends a message or completely deletes the message text.
+
+https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/stop-typing-indicators
+----------------------------
+
+ `channel_url`
+     Type: string
+     Description: Specifies the URL of the channel to set typing indicators.
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.GroupChannelApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
+        String channelUrl = "channelUrl_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        GcTypingIndicatorsData gcTypingIndicatorsData = new GcTypingIndicatorsData(); // GcTypingIndicatorsData | 
+        try {
+            OcDeleteChannelByUrl200Response result = api.gcStopTypingIndicators(channelUrl)
+                .apiToken(apiToken)
+                .gcTypingIndicatorsData(gcTypingIndicatorsData)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GroupChannelApi#gcStopTypingIndicators");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **channelUrl** | **String**|  | |
+| **apiToken** | **String**|  | [optional] |
+| **gcTypingIndicatorsData** | [**GcTypingIndicatorsData**](GcTypingIndicatorsData.md)|  | [optional] |
+
+### Return type
+
+[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
 
 ### Authorization
 

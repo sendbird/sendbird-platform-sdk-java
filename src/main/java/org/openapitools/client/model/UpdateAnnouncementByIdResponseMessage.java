@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_OPEN_RATE
 })
 @JsonTypeName("updateAnnouncementByIdResponse_message")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
 public class UpdateAnnouncementByIdResponseMessage {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;

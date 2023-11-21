@@ -23,6 +23,7 @@ import org.openapitools.client.model.GcRegisterOperatorsData;
 import org.openapitools.client.model.GcRegisterOperatorsResponse;
 import org.openapitools.client.model.GcResetChatHistoryData;
 import org.openapitools.client.model.GcResetChatHistoryResponse;
+import org.openapitools.client.model.GcTypingIndicatorsData;
 import org.openapitools.client.model.GcUpdateChannelByUrlData;
 import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.SendBirdGroupChannel;
@@ -32,7 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
 public class GroupChannelApi {
   private ApiClient apiClient;
 
@@ -2404,6 +2405,240 @@ private ApiResponse<GcResetChatHistoryResponse> gcResetChatHistoryWithHttpInfo(S
    */
   public APIgcResetChatHistoryRequest gcResetChatHistory(String channelUrl) throws ApiException {
     return new APIgcResetChatHistoryRequest(channelUrl);
+  }
+
+private ApiResponse<OcDeleteChannelByUrl200Response> gcStartTypingIndicatorsWithHttpInfo(String channelUrl, String apiToken, GcTypingIndicatorsData gcTypingIndicatorsData) throws ApiException {
+    Object localVarPostBody = gcTypingIndicatorsData;
+    
+    // verify the required parameter 'channelUrl' is set
+    if (channelUrl == null) {
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling gcStartTypingIndicators");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/group_channels/{channel_url}/typing"
+      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<OcDeleteChannelByUrl200Response> localVarReturnType = new GenericType<OcDeleteChannelByUrl200Response>() {};
+
+    return apiClient.invokeAPI("GroupChannelApi.gcStartTypingIndicators", localVarPath, "POST", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIgcStartTypingIndicatorsRequest {
+    private String channelUrl;
+    private String apiToken;
+    private GcTypingIndicatorsData gcTypingIndicatorsData;
+
+    private APIgcStartTypingIndicatorsRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIgcStartTypingIndicatorsRequest
+     */
+    public APIgcStartTypingIndicatorsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set gcTypingIndicatorsData
+     * @param gcTypingIndicatorsData  (optional)
+     * @return APIgcStartTypingIndicatorsRequest
+     */
+    public APIgcStartTypingIndicatorsRequest gcTypingIndicatorsData(GcTypingIndicatorsData gcTypingIndicatorsData) {
+      this.gcTypingIndicatorsData = gcTypingIndicatorsData;
+      return this;
+    }
+
+    /**
+     * Execute gcStartTypingIndicators request
+     * @return OcDeleteChannelByUrl200Response
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcDeleteChannelByUrl200Response execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcStartTypingIndicators request with HTTP info returned
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
+      return gcStartTypingIndicatorsWithHttpInfo(channelUrl, apiToken, gcTypingIndicatorsData);
+    }
+  }
+
+  /**
+   * Start typing indicators
+   * ## Start typing indicators  You can start showing a typing indicator using this API. Seeing whether other users are typing can help a more interactive conversation environment by showing real-time engagement of other users.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/start-typing-indicators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to set typing indicators.
+   * @param channelUrl  (required)
+   * @return gcStartTypingIndicatorsRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIgcStartTypingIndicatorsRequest gcStartTypingIndicators(String channelUrl) throws ApiException {
+    return new APIgcStartTypingIndicatorsRequest(channelUrl);
+  }
+
+private ApiResponse<OcDeleteChannelByUrl200Response> gcStopTypingIndicatorsWithHttpInfo(String channelUrl, String apiToken, GcTypingIndicatorsData gcTypingIndicatorsData) throws ApiException {
+    Object localVarPostBody = gcTypingIndicatorsData;
+    
+    // verify the required parameter 'channelUrl' is set
+    if (channelUrl == null) {
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling gcStopTypingIndicators");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/group_channels/{channel_url}/typing"
+      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<OcDeleteChannelByUrl200Response> localVarReturnType = new GenericType<OcDeleteChannelByUrl200Response>() {};
+
+    return apiClient.invokeAPI("GroupChannelApi.gcStopTypingIndicators", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIgcStopTypingIndicatorsRequest {
+    private String channelUrl;
+    private String apiToken;
+    private GcTypingIndicatorsData gcTypingIndicatorsData;
+
+    private APIgcStopTypingIndicatorsRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIgcStopTypingIndicatorsRequest
+     */
+    public APIgcStopTypingIndicatorsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set gcTypingIndicatorsData
+     * @param gcTypingIndicatorsData  (optional)
+     * @return APIgcStopTypingIndicatorsRequest
+     */
+    public APIgcStopTypingIndicatorsRequest gcTypingIndicatorsData(GcTypingIndicatorsData gcTypingIndicatorsData) {
+      this.gcTypingIndicatorsData = gcTypingIndicatorsData;
+      return this;
+    }
+
+    /**
+     * Execute gcStopTypingIndicators request
+     * @return OcDeleteChannelByUrl200Response
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public OcDeleteChannelByUrl200Response execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute gcStopTypingIndicators request with HTTP info returned
+     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
+      return gcStopTypingIndicatorsWithHttpInfo(channelUrl, apiToken, gcTypingIndicatorsData);
+    }
+  }
+
+  /**
+   * Stop typing indicators
+   * ## Stop typing indicators  You can stop showing a typing indicator using this API. To signal that a user is no longer typing, you can let the indicator disappear when the user sends a message or completely deletes the message text.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/stop-typing-indicators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to set typing indicators.
+   * @param channelUrl  (required)
+   * @return gcStopTypingIndicatorsRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIgcStopTypingIndicatorsRequest gcStopTypingIndicators(String channelUrl) throws ApiException {
+    return new APIgcStopTypingIndicatorsRequest(channelUrl);
   }
 
 private ApiResponse<OcDeleteChannelByUrl200Response> gcUnhideOrUnarchiveChannelWithHttpInfo(String channelUrl, String userId, String apiToken, Boolean shouldUnhideAll) throws ApiException {

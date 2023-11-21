@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   ViewPushNotificationContentTemplateResponsePushMessageTemplatesInner.JSON_PROPERTY_PUSH_MESSAGE_PREVIEW
 })
 @JsonTypeName("viewPushNotificationContentTemplateResponse_push_message_templates_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
 public class ViewPushNotificationContentTemplateResponsePushMessageTemplatesInner {
   public static final String JSON_PROPERTY_TEMPLATE_NAME = "template_name";
   private String templateName;

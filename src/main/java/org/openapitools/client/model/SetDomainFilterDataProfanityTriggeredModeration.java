@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterDataProfanityTriggeredModeration.JSON_PROPERTY_ACTION
 })
 @JsonTypeName("setDomainFilterData_profanity_triggered_moderation")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
 public class SetDomainFilterDataProfanityTriggeredModeration {
   public static final String JSON_PROPERTY_COUNT = "count";
   private Integer count;

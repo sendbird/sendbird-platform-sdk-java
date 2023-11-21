@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   GcListChannelsResponse.JSON_PROPERTY_TS
 })
 @JsonTypeName("gcListChannelsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
 public class GcListChannelsResponse {
   public static final String JSON_PROPERTY_CHANNELS = "channels";
   private List<SendBirdGroupChannel> channels = null;
