@@ -5337,6 +5337,89 @@ paths:
       - Group channel
       x-content-type: application/json
       x-accepts: application/json
+  /v3/group_channels/{channel_url}/typing:
+    delete:
+      description: "## Stop typing indicators\n\nYou can stop showing a typing indicator\
+        \ using this API. To signal that a user is no longer typing, you can let the\
+        \ indicator disappear when the user sends a message or completely deletes\
+        \ the message text.\n\nhttps://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/stop-typing-indicators\n\
+        ----------------------------\n\n `channel_url`\n     Type: string\n     Description:\
+        \ Specifies the URL of the channel to set typing indicators."
+      operationId: gcStopTypingIndicators
+      parameters:
+      - example: "{{API_TOKEN}}"
+        explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/gcTypingIndicatorsData'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ocDeleteChannelByUrl_200_response'
+          description: Successful response
+      summary: Stop typing indicators
+      tags:
+      - Group channel
+      x-content-type: application/json
+      x-accepts: application/json
+    post:
+      description: "## Start typing indicators\n\nYou can start showing a typing indicator\
+        \ using this API. Seeing whether other users are typing can help a more interactive\
+        \ conversation environment by showing real-time engagement of other users.\n\
+        \nhttps://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/start-typing-indicators\n\
+        ----------------------------\n\n `channel_url`\n     Type: string\n     Description:\
+        \ Specifies the URL of the channel to set typing indicators."
+      operationId: gcStartTypingIndicators
+      parameters:
+      - example: "{{API_TOKEN}}"
+        explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: channel_url
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/gcTypingIndicatorsData'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ocDeleteChannelByUrl_200_response'
+          description: Successful response
+      summary: Start typing indicators
+      tags:
+      - Group channel
+      x-content-type: application/json
+      x-accepts: application/json
   /v3/group_channels/{channel_url}/ban:
     get:
       description: "## List banned users\n\nRetrieves a list of the banned users from\
@@ -20412,6 +20495,18 @@ components:
       - channel_url
       - operator_ids
       title: gcRegisterOperatorsData
+      type: object
+    gcTypingIndicatorsData:
+      properties:
+        user_ids:
+          description: Specifies an array of IDs of users who are to stop using the
+            typing indicator. You can list up to ten user IDs.
+          items:
+            type: string
+          type: array
+      required:
+      - user_ids
+      title: gcTypingIndicatorsData
       type: object
     gcBanUserData:
       properties:

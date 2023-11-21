@@ -84,6 +84,7 @@ docs/GcRegisterOperatorsData.md
 docs/GcRegisterOperatorsResponse.md
 docs/GcResetChatHistoryData.md
 docs/GcResetChatHistoryResponse.md
+docs/GcTypingIndicatorsData.md
 docs/GcUpdateBanByIdData.md
 docs/GcUpdateBanByIdResponse.md
 docs/GcUpdateChannelByUrlData.md
@@ -418,6 +419,7 @@ src/main/java/org/openapitools/client/model/GcRegisterOperatorsData.java
 src/main/java/org/openapitools/client/model/GcRegisterOperatorsResponse.java
 src/main/java/org/openapitools/client/model/GcResetChatHistoryData.java
 src/main/java/org/openapitools/client/model/GcResetChatHistoryResponse.java
+src/main/java/org/openapitools/client/model/GcTypingIndicatorsData.java
 src/main/java/org/openapitools/client/model/GcUpdateBanByIdData.java
 src/main/java/org/openapitools/client/model/GcUpdateBanByIdResponse.java
 src/main/java/org/openapitools/client/model/GcUpdateChannelByUrlData.java

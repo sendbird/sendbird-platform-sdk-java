@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   SendBirdEmoji.JSON_PROPERTY_URL
 })
 @JsonTypeName("SendBird.Emoji")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
 public class SendBirdEmoji {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;

@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   GcListBannedUsersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("gcListBannedUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
 public class GcListBannedUsersResponse {
   public static final String JSON_PROPERTY_BANNED_LIST = "banned_list";
   private List<OcListBannedUsersResponseBannedListInner> bannedList = null;

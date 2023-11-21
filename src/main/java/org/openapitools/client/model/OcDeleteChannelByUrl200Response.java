@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   OcDeleteChannelByUrl200Response.JSON_PROPERTY_ANY_OF
 })
 @JsonTypeName("ocDeleteChannelByUrl_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T12:28:02.899+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
 public class OcDeleteChannelByUrl200Response {
   public static final String JSON_PROPERTY_ANY_OF = "anyOf";
   private String anyOf;
