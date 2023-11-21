@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   ModelFile.JSON_PROPERTY_WEBKIT_RELATIVE_PATH
 })
 @JsonTypeName("File")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
 public class ModelFile {
   public static final String JSON_PROPERTY_LAST_MODIFIED = "last_modified";
   private BigDecimal lastModified;

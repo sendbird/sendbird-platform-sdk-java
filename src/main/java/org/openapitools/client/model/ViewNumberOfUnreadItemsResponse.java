@@ -44,7 +44,7 @@ import org.sendbird.client.JSON;
   ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT
 })
 @JsonTypeName("viewNumberOfUnreadItemsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
 public class ViewNumberOfUnreadItemsResponse {
   public static final String JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "non_super_group_channel_unread_message_count";
   private BigDecimal nonSuperGroupChannelUnreadMessageCount;

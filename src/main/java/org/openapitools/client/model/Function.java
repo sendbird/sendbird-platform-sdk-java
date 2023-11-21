@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   Function.JSON_PROPERTY_LENGTH,
   Function.JSON_PROPERTY_PROTOTYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T11:44:36.129327+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
 public class Function {
   public static final String JSON_PROPERTY_ARGUMENTS = "arguments";
   private JsonNullable<Object> arguments = JsonNullable.<Object>of(null);
