@@ -67,7 +67,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import org.sendbird.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
 @JsonDeserialize(using=SendBirdChannelResponse.SendBirdChannelResponseDeserializer.class)
 @JsonSerialize(using = SendBirdChannelResponse.SendBirdChannelResponseSerializer.class)
 public class SendBirdChannelResponse extends AbstractOpenApiSchema {

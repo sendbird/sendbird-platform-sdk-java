@@ -72,7 +72,7 @@ import org.sendbird.client.JSON;
   SendBirdBaseMessageInstance.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("SendBird.BaseMessageInstance")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
 public class SendBirdBaseMessageInstance {
   public static final String JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   private SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions;

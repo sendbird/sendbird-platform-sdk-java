@@ -21543,6 +21543,10 @@ components:
           type: integer
         extended_message_payload:
           $ref: '#/components/schemas/sendBot_sMessageData_extended_message_payload'
+        target_message_id:
+          description: Specifies the ID of the user's message which bot's message
+            replies to
+          type: number
       required:
       - channel_url
       - message

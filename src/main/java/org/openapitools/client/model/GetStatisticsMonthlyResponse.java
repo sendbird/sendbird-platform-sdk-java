@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   GetStatisticsMonthlyResponse.JSON_PROPERTY_WEEK
 })
 @JsonTypeName("getStatisticsMonthlyResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
 public class GetStatisticsMonthlyResponse {
   public static final String JSON_PROPERTY_STATISTICS = "statistics";
   private List<GetStatisticsDailyResponseStatisticsInner> statistics = null;

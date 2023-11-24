@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'com.diffplug.spotless'
 
 group = 'org.sendbird'
-version = '1.0.19'
+version = '1.0.20'
 
 buildscript {
     repositories {

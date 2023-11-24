@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   UpdatePushPreferencesForChannelByUrlData.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("updatePushPreferencesForChannelByUrlData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
 public class UpdatePushPreferencesForChannelByUrlData {
   public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
   private String pushTriggerOption;

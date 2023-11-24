@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   MuteUsersInChannelsWithCustomChannelTypeData.JSON_PROPERTY_ON_DEMAND_UPSERT
 })
 @JsonTypeName("muteUsersInChannelsWithCustomChannelTypeData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
 public class MuteUsersInChannelsWithCustomChannelTypeData {
   public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = new ArrayList<>();

@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("viewWhoOwnsRegistrationOrDeviceTokenByTokenResponse_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
 public class ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
