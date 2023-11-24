@@ -47,7 +47,7 @@ import org.sendbird.client.JSON;
   GcUpdateChannelByUrlData.JSON_PROPERTY_OPERATOR_IDS
 })
 @JsonTypeName("gcUpdateChannelByUrlData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcUpdateChannelByUrlData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;

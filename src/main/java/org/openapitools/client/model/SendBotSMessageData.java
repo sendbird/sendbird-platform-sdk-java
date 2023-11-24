@@ -44,10 +44,11 @@ import org.sendbird.client.JSON;
   SendBotSMessageData.JSON_PROPERTY_MARK_AS_READ,
   SendBotSMessageData.JSON_PROPERTY_DEDUP_ID,
   SendBotSMessageData.JSON_PROPERTY_CREATED_AT,
-  SendBotSMessageData.JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD
+  SendBotSMessageData.JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD,
+  SendBotSMessageData.JSON_PROPERTY_TARGET_MESSAGE_ID
 })
 @JsonTypeName("sendBot_sMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBotSMessageData {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
@@ -78,6 +79,9 @@ public class SendBotSMessageData {
 
   public static final String JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD = "extended_message_payload";
   private SendBotSMessageDataExtendedMessagePayload extendedMessagePayload;
+
+  public static final String JSON_PROPERTY_TARGET_MESSAGE_ID = "target_message_id";
+  private Long targetMessageId;
 
   public SendBotSMessageData() { 
   }
@@ -350,6 +354,32 @@ public class SendBotSMessageData {
   }
 
 
+  public SendBotSMessageData targetMessageId(Long targetMessageId) {
+    this.targetMessageId = targetMessageId;
+    return this;
+  }
+
+   /**
+   * Specifies the ID of the user&#39;s message which bot&#39;s message replies to
+   * @return targetMessageId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the ID of the user's message which bot's message replies to")
+  @JsonProperty(JSON_PROPERTY_TARGET_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getTargetMessageId() {
+    return targetMessageId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TARGET_MESSAGE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTargetMessageId(Long targetMessageId) {
+    this.targetMessageId = targetMessageId;
+  }
+
+
   /**
    * Return true if this sendBot_sMessageData object is equal to o.
    */
@@ -371,12 +401,13 @@ public class SendBotSMessageData {
         Objects.equals(this.markAsRead, sendBotSMessageData.markAsRead) &&
         Objects.equals(this.dedupId, sendBotSMessageData.dedupId) &&
         Objects.equals(this.createdAt, sendBotSMessageData.createdAt) &&
-        Objects.equals(this.extendedMessagePayload, sendBotSMessageData.extendedMessagePayload);
+        Objects.equals(this.extendedMessagePayload, sendBotSMessageData.extendedMessagePayload) &&
+        Objects.equals(this.targetMessageId, sendBotSMessageData.targetMessageId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, channelUrl, customType, data, sendPush, mentioned, markAsRead, dedupId, createdAt, extendedMessagePayload);
+    return Objects.hash(message, channelUrl, customType, data, sendPush, mentioned, markAsRead, dedupId, createdAt, extendedMessagePayload, targetMessageId);
   }
 
   @Override
@@ -393,6 +424,7 @@ public class SendBotSMessageData {
     sb.append("    dedupId: ").append(toIndentedString(dedupId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    extendedMessagePayload: ").append(toIndentedString(extendedMessagePayload)).append("\n");
+    sb.append("    targetMessageId: ").append(toIndentedString(targetMessageId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

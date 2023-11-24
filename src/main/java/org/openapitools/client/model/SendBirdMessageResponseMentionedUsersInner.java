@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SendBirdMessageResponseMentionedUsersInner.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("SendBird_MessageResponse_mentioned_users_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdMessageResponseMentionedUsersInner {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;

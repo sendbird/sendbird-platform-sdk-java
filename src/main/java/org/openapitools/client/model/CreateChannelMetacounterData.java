@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   CreateChannelMetacounterData.JSON_PROPERTY_METACOUNTER
 })
 @JsonTypeName("createChannelMetacounterData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-21T13:07:19.585435+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class CreateChannelMetacounterData {
   public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
