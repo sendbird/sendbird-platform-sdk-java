@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterData.JSON_PROPERTY_IMAGE_MODERATION
 })
 @JsonTypeName("setDomainFilterData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SetDomainFilterData {
   public static final String JSON_PROPERTY_DOMAIN_FILTER = "domain_filter";
   private SetDomainFilterDataDomainFilter domainFilter;

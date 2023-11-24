@@ -21546,7 +21546,8 @@ components:
         target_message_id:
           description: Specifies the ID of the user's message which bot's message
             replies to
-          type: number
+          format: int64
+          type: integer
       required:
       - channel_url
       - message

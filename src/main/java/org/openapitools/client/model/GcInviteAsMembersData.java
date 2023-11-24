@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   GcInviteAsMembersData.JSON_PROPERTY_HIDDEN_STATUS
 })
 @JsonTypeName("gcInviteAsMembersData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcInviteAsMembersData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;

@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   OcViewBanByIdResponse.JSON_PROPERTY_START_AT
 })
 @JsonTypeName("ocViewBanByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class OcViewBanByIdResponse {
   public static final String JSON_PROPERTY_USER = "user";
   private SendBirdUser user;

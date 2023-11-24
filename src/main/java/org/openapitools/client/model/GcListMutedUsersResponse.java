@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   GcListMutedUsersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("gcListMutedUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcListMutedUsersResponse {
   public static final String JSON_PROPERTY_MUTED_LIST = "muted_list";
   private List<SendBirdUser> mutedList = null;

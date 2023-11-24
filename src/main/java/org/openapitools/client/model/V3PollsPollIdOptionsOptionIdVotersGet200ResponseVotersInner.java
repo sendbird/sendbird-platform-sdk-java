@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   V3PollsPollIdOptionsOptionIdVotersGet200ResponseVotersInner.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("_v3_polls__poll_id__options__option_id__voters_get_200_response_voters_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class V3PollsPollIdOptionsOptionIdVotersGet200ResponseVotersInner {
   public static final String JSON_PROPERTY_NICKNAME = "nickname";
   private String nickname;

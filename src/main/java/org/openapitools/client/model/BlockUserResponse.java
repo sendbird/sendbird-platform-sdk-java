@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   BlockUserResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("blockUserResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class BlockUserResponse {
   public static final String JSON_PROPERTY_USERS = "users";
   private List<String> users = null;

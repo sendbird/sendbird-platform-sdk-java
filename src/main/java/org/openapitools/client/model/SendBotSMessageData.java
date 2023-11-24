@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBotSMessageDataExtendedMessagePayload;
@@ -49,7 +48,7 @@ import org.sendbird.client.JSON;
   SendBotSMessageData.JSON_PROPERTY_TARGET_MESSAGE_ID
 })
 @JsonTypeName("sendBot_sMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBotSMessageData {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
@@ -82,7 +81,7 @@ public class SendBotSMessageData {
   private SendBotSMessageDataExtendedMessagePayload extendedMessagePayload;
 
   public static final String JSON_PROPERTY_TARGET_MESSAGE_ID = "target_message_id";
-  private BigDecimal targetMessageId;
+  private Long targetMessageId;
 
   public SendBotSMessageData() { 
   }
@@ -355,7 +354,7 @@ public class SendBotSMessageData {
   }
 
 
-  public SendBotSMessageData targetMessageId(BigDecimal targetMessageId) {
+  public SendBotSMessageData targetMessageId(Long targetMessageId) {
     this.targetMessageId = targetMessageId;
     return this;
   }
@@ -369,14 +368,14 @@ public class SendBotSMessageData {
   @JsonProperty(JSON_PROPERTY_TARGET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTargetMessageId() {
+  public Long getTargetMessageId() {
     return targetMessageId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TARGET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargetMessageId(BigDecimal targetMessageId) {
+  public void setTargetMessageId(Long targetMessageId) {
     this.targetMessageId = targetMessageId;
   }
 

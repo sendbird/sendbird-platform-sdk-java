@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   ViewNumberOfPeakConnectionsResponsePeakConnectionsInner.JSON_PROPERTY_PEAK_CONNECTIONS
 })
 @JsonTypeName("viewNumberOfPeakConnectionsResponse_peak_connections_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ViewNumberOfPeakConnectionsResponsePeakConnectionsInner {
   public static final String JSON_PROPERTY_DATE = "date";
   private String date;

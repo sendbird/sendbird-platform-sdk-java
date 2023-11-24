@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ScheduleAnnouncementResponseMessage.JSON_PROPERTY_DATA
 })
 @JsonTypeName("scheduleAnnouncementResponse_message")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ScheduleAnnouncementResponseMessage {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;

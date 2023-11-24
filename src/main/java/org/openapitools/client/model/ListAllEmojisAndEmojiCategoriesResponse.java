@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListAllEmojisAndEmojiCategoriesResponse.JSON_PROPERTY_EMOJI_CATEGORIES
 })
 @JsonTypeName("listAllEmojisAndEmojiCategoriesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListAllEmojisAndEmojiCategoriesResponse {
   public static final String JSON_PROPERTY_EMOJI_HASH = "emoji_hash";
   private String emojiHash;

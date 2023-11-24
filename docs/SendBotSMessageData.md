@@ -17,7 +17,7 @@
 |**dedupId** | **String** | Specifies the unique ID for the message to prevent the same message data from getting sent to the channel. |  [optional] |
 |**createdAt** | **Integer** | Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. |  [optional] |
 |**extendedMessagePayload** | [**SendBotSMessageDataExtendedMessagePayload**](SendBotSMessageDataExtendedMessagePayload.md) |  |  [optional] |
-|**targetMessageId** | **BigDecimal** | Specifies the ID of the user&#39;s message which bot&#39;s message replies to |  [optional] |
+|**targetMessageId** | **Long** | Specifies the ID of the user&#39;s message which bot&#39;s message replies to |  [optional] |
 
 
 

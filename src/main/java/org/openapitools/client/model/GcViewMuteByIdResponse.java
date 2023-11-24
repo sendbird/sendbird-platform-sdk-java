@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   GcViewMuteByIdResponse.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("gcViewMuteByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcViewMuteByIdResponse {
   public static final String JSON_PROPERTY_IS_MUTED = "is_muted";
   private Boolean isMuted;

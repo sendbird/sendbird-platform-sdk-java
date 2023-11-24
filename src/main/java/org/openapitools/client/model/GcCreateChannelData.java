@@ -57,7 +57,7 @@ import org.sendbird.client.JSON;
   GcCreateChannelData.JSON_PROPERTY_BLOCK_SDK_USER_CHANNEL_JOIN
 })
 @JsonTypeName("gcCreateChannelData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T14:44:31.188701+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcCreateChannelData {
   public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = new ArrayList<>();
