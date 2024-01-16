@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   ChooseWhichEventsToSubscribeToResponseWebhook.JSON_PROPERTY_INCLUDE_UNREAD_COUNT
 })
 @JsonTypeName("chooseWhichEventsToSubscribeToResponse_webhook")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ChooseWhichEventsToSubscribeToResponseWebhook {
   public static final String JSON_PROPERTY_ENABLED = "enabled";
   private Boolean enabled;
@@ -70,7 +70,7 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
    * Get enabled
    * @return enabled
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -96,7 +96,7 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
    * Get url
    * @return url
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -122,7 +122,7 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
    * Get includeMembers
    * @return includeMembers
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INCLUDE_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -156,7 +156,7 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
    * Get enabledEvents
    * @return enabledEvents
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENABLED_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -182,7 +182,7 @@ public class ChooseWhichEventsToSubscribeToResponseWebhook {
    * Get includeUnreadCount
    * @return includeUnreadCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INCLUDE_UNREAD_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

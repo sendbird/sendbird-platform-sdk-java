@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   ViewCountPreferenceOfChannelByUrlResponse.JSON_PROPERTY_COUNT_PREFERENCE
 })
 @JsonTypeName("viewCountPreferenceOfChannelByUrlResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ViewCountPreferenceOfChannelByUrlResponse {
   public static final String JSON_PROPERTY_COUNT_PREFERENCE = "count_preference";
   private String countPreference;
@@ -52,7 +52,7 @@ public class ViewCountPreferenceOfChannelByUrlResponse {
    * Get countPreference
    * @return countPreference
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COUNT_PREFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

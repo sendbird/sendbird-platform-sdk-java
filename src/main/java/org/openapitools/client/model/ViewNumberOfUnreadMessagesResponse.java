@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   ViewNumberOfUnreadMessagesResponse.JSON_PROPERTY_UNREAD_COUNT
 })
 @JsonTypeName("viewNumberOfUnreadMessagesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ViewNumberOfUnreadMessagesResponse {
   public static final String JSON_PROPERTY_UNREAD_COUNT = "unread_count";
   private BigDecimal unreadCount;
@@ -53,7 +53,7 @@ public class ViewNumberOfUnreadMessagesResponse {
    * Get unreadCount
    * @return unreadCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UNREAD_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   UpdateDefaultChannelInvitationPreferenceData.JSON_PROPERTY_AUTO_ACCEPT
 })
 @JsonTypeName("updateDefaultChannelInvitationPreferenceData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateDefaultChannelInvitationPreferenceData {
   public static final String JSON_PROPERTY_AUTO_ACCEPT = "auto_accept";
   private Boolean autoAccept;
@@ -52,7 +52,7 @@ public class UpdateDefaultChannelInvitationPreferenceData {
    * Determines for users within an application whether or not to automatically join a [private](/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channel promptly from an invitation without having to accept it. (Default: true)
    * @return autoAccept
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines for users within an application whether or not to automatically join a [private](/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channel promptly from an invitation without having to accept it. (Default: true)")
   @JsonProperty(JSON_PROPERTY_AUTO_ACCEPT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

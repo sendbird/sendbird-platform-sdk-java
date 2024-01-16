@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   OcBanUserData.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("ocBanUserData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class OcBanUserData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -68,7 +68,7 @@ public class OcBanUserData {
    * Specifies the URL of the channel where to ban the specified user.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the channel where to ban the specified user.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -94,7 +94,7 @@ public class OcBanUserData {
    * Specifies the ID of the user to ban.
    * @return userId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the user to ban.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -120,7 +120,7 @@ public class OcBanUserData {
    * Specifies the ID of the operator (agent) who bans the user.
    * @return agentId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the operator (agent) who bans the user.")
   @JsonProperty(JSON_PROPERTY_AGENT_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -146,7 +146,7 @@ public class OcBanUserData {
    * Specifies the ban duration. If set to -1, the user will be banned permanently (10 years, technically). (Default: -1)
    * @return seconds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ban duration. If set to -1, the user will be banned permanently (10 years, technically). (Default: -1)")
   @JsonProperty(JSON_PROPERTY_SECONDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -172,7 +172,7 @@ public class OcBanUserData {
    * Specifies a reason for the banning. The length is limited to 250 characters.
    * @return description
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a reason for the banning. The length is limited to 250 characters.")
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

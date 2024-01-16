@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   UpdateCountPreferenceOfChannelByUrlData.JSON_PROPERTY_COUNT_PREFERENCE
 })
 @JsonTypeName("updateCountPreferenceOfChannelByUrlData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateCountPreferenceOfChannelByUrlData {
   public static final String JSON_PROPERTY_COUNT_PREFERENCE = "count_preference";
   private String countPreference;
@@ -52,7 +52,7 @@ public class UpdateCountPreferenceOfChannelByUrlData {
    * Determines whether to only count the number of unread messages or the number of unread mentioned messages in the specified group channel. Only the one that is chosen to be preferenced will be counted and added to the total number count after the action. A value of off indicates that both read statuses will not be counted, while all indicates that both read statuses will be counted by the system. A value of unread_message_count_only indicates that only the user&#39;s unread messages will be counted in the channel while unread_mentioned_count_only indicates that only the user&#39;s unread mentioned messages will be counted. (Default: all)
    * @return countPreference
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to only count the number of unread messages or the number of unread mentioned messages in the specified group channel. Only the one that is chosen to be preferenced will be counted and added to the total number count after the action. A value of off indicates that both read statuses will not be counted, while all indicates that both read statuses will be counted by the system. A value of unread_message_count_only indicates that only the user's unread messages will be counted in the channel while unread_mentioned_count_only indicates that only the user's unread mentioned messages will be counted. (Default: all)")
   @JsonProperty(JSON_PROPERTY_COUNT_PREFERENCE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

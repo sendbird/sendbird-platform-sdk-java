@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   UpdateFcmPushConfigurationByIdData.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("updateFcmPushConfigurationByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateFcmPushConfigurationByIdData {
   public static final String JSON_PROPERTY_PROVIDER_ID = "provider_id";
   private String providerId;
@@ -60,7 +60,7 @@ public class UpdateFcmPushConfigurationByIdData {
    * Specifies the provider ID of the push configuration to update.
    * @return providerId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the provider ID of the push configuration to update.")
   @JsonProperty(JSON_PROPERTY_PROVIDER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -86,7 +86,7 @@ public class UpdateFcmPushConfigurationByIdData {
    * Specifies the FCM server key to update.
    * @return apiKey
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the FCM server key to update.")
   @JsonProperty(JSON_PROPERTY_API_KEY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -112,7 +112,7 @@ public class UpdateFcmPushConfigurationByIdData {
    * Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file should be located in the &#x60;/res/raw&#x60; folder.
    * @return pushSound
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file should be located in the `/res/raw` folder.")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

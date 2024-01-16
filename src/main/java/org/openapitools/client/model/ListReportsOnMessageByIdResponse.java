@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListReportsOnMessageByIdResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("listReportsOnMessageByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListReportsOnMessageByIdResponse {
   public static final String JSON_PROPERTY_REPORT_LOGS = "report_logs";
   private List<ListReportsOnMessageByIdResponseReportLogsInner> reportLogs = null;
@@ -67,7 +67,7 @@ public class ListReportsOnMessageByIdResponse {
    * Get reportLogs
    * @return reportLogs
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REPORT_LOGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -93,7 +93,7 @@ public class ListReportsOnMessageByIdResponse {
    * Get next
    * @return next
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

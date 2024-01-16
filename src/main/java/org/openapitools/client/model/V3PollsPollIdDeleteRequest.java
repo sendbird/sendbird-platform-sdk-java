@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   V3PollsPollIdDeleteRequest.JSON_PROPERTY_SHOW_PARTIAL_VOTER_LIST
 })
 @JsonTypeName("_v3_polls__poll_id__delete_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class V3PollsPollIdDeleteRequest {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -60,7 +60,7 @@ public class V3PollsPollIdDeleteRequest {
    * Specifies the URL of the channel. If channel_type is specified, channel_url must be specified as well.
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the channel. If channel_type is specified, channel_url must be specified as well.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -86,7 +86,7 @@ public class V3PollsPollIdDeleteRequest {
    * Specifies the type of the channel. Either open_channels or group_channels.
    * @return channelType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the type of the channel. Either open_channels or group_channels.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -112,7 +112,7 @@ public class V3PollsPollIdDeleteRequest {
    * Determines whether to show a partial list of voters for each option. If set to true, the option resources inside the response include the partial_voter_list property which shows up to ten voters.
    * @return showPartialVoterList
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to show a partial list of voters for each option. If set to true, the option resources inside the response include the partial_voter_list property which shows up to ten voters.")
   @JsonProperty(JSON_PROPERTY_SHOW_PARTIAL_VOTER_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

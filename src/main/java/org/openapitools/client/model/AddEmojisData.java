@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   AddEmojisData.JSON_PROPERTY_EMOJIS
 })
 @JsonTypeName("addEmojisData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddEmojisData {
   public static final String JSON_PROPERTY_EMOJI_CATEGORY_ID = "emoji_category_id";
   private Integer emojiCategoryId;
@@ -58,7 +58,7 @@ public class AddEmojisData {
    * Specifies the unique ID of the emoji category that a list of new emojis belong to.
    * @return emojiCategoryId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the emoji category that a list of new emojis belong to.")
   @JsonProperty(JSON_PROPERTY_EMOJI_CATEGORY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -89,7 +89,7 @@ public class AddEmojisData {
    * Specifies a list of one or more new emojis to register.
    * @return emojis
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a list of one or more new emojis to register.")
   @JsonProperty(JSON_PROPERTY_EMOJIS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   V3ApplicationsPushSettingsGetRequest.JSON_PROPERTY_PUSH_ENABLED
 })
 @JsonTypeName("_v3_applications_push_settings_get_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class V3ApplicationsPushSettingsGetRequest {
   public static final String JSON_PROPERTY_PUSH_ENABLED = "push_enabled";
   private Boolean pushEnabled;
@@ -52,7 +52,7 @@ public class V3ApplicationsPushSettingsGetRequest {
    * Determines whether to turn on the push notifications feature for an application.
    * @return pushEnabled
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to turn on the push notifications feature for an application.")
   @JsonProperty(JSON_PROPERTY_PUSH_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

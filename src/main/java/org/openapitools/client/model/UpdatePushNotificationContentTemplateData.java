@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   UpdatePushNotificationContentTemplateData.JSON_PROPERTY_TEMPLATE_A_D_M_N
 })
 @JsonTypeName("updatePushNotificationContentTemplateData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdatePushNotificationContentTemplateData {
   public static final String JSON_PROPERTY_TEMPLATE_NAME = "template_name";
   private String templateName;
@@ -68,7 +68,7 @@ public class UpdatePushNotificationContentTemplateData {
    * Specifies the name of a push notification content template to update. Acceptable values are default and alternative.
    * @return templateName
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a push notification content template to update. Acceptable values are default and alternative.")
   @JsonProperty(JSON_PROPERTY_TEMPLATE_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -94,7 +94,7 @@ public class UpdatePushNotificationContentTemplateData {
    * The push notification content template of which content types to be updated and their detailed format.
    * @return template
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The push notification content template of which content types to be updated and their detailed format.")
   @JsonProperty(JSON_PROPERTY_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -120,7 +120,7 @@ public class UpdatePushNotificationContentTemplateData {
    * Specifies a format for text messages. We support customization of two fields, which are the sender_name and message. These fields will be replaced with actual corresponding values when sending notification requests to FCM, HMS, or APNs.
    * @return templateMESG
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a format for text messages. We support customization of two fields, which are the sender_name and message. These fields will be replaced with actual corresponding values when sending notification requests to FCM, HMS, or APNs.")
   @JsonProperty(JSON_PROPERTY_TEMPLATE_M_E_S_G)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -146,7 +146,7 @@ public class UpdatePushNotificationContentTemplateData {
    * Specifies a format for file messages. We support customization with variables including filename and file_type_friendly. When sending notification requests to FCM, HMS, or APNs, the filename will be replaced with the corresponding string value while the file_type_friendly will indicate the type of the file sent, such as &#x60;Audio&#x60;, &#x60;Image&#x60;, and &#x60;Video&#x60;.
    * @return templateFILE
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a format for file messages. We support customization with variables including filename and file_type_friendly. When sending notification requests to FCM, HMS, or APNs, the filename will be replaced with the corresponding string value while the file_type_friendly will indicate the type of the file sent, such as `Audio`, `Image`, and `Video`.")
   @JsonProperty(JSON_PROPERTY_TEMPLATE_F_I_L_E)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -172,7 +172,7 @@ public class UpdatePushNotificationContentTemplateData {
    * Specifies a format for admin messages. We support customization of one field, which is the message. This field will be replaced with actual corresponding values when sending notification requests to FCM, HMS, or APNs.
    * @return templateADMN
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a format for admin messages. We support customization of one field, which is the message. This field will be replaced with actual corresponding values when sending notification requests to FCM, HMS, or APNs.")
   @JsonProperty(JSON_PROPERTY_TEMPLATE_A_D_M_N)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

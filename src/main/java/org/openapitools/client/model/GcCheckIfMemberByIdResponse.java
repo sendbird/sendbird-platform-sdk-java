@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   GcCheckIfMemberByIdResponse.JSON_PROPERTY_STATE
 })
 @JsonTypeName("gcCheckIfMemberByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcCheckIfMemberByIdResponse {
   public static final String JSON_PROPERTY_IS_MEMBER = "is_member";
   private Boolean isMember;
@@ -56,7 +56,7 @@ public class GcCheckIfMemberByIdResponse {
    * Get isMember
    * @return isMember
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_MEMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -82,7 +82,7 @@ public class GcCheckIfMemberByIdResponse {
    * Get state
    * @return state
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

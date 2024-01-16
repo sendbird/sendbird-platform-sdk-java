@@ -6,7 +6,7 @@ import org.sendbird.client.ApiResponse;
 import org.sendbird.client.Configuration;
 import org.sendbird.client.Pair;
 
-import javax.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.GenericType;
 
 import org.openapitools.client.model.CreateBotData;
 import org.openapitools.client.model.CreateBotResponse;
@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class BotApi {
   private ApiClient apiClient;
 

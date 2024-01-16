@@ -48,7 +48,7 @@ import org.sendbird.client.JSON;
   SendBotSMessageData.JSON_PROPERTY_TARGET_MESSAGE_ID
 })
 @JsonTypeName("sendBot_sMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBotSMessageData {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
@@ -95,7 +95,7 @@ public class SendBotSMessageData {
    * Specifies the content of the message sent by the bot.
    * @return message
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the content of the message sent by the bot.")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -121,7 +121,7 @@ public class SendBotSMessageData {
    * Specifies the URL of the channel where the message is sent to.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the channel where the message is sent to.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -147,7 +147,7 @@ public class SendBotSMessageData {
    * Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.
    * @return customType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -173,7 +173,7 @@ public class SendBotSMessageData {
    * Specifies additional message information such as custom font size, font type or &#x60;JSON&#x60; formatted string.
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional message information such as custom font size, font type or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -199,7 +199,7 @@ public class SendBotSMessageData {
    * Determines whether to send a push notification for the message to the members of the channel (Default: true)
    * @return sendPush
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to send a push notification for the message to the members of the channel (Default: true)")
   @JsonProperty(JSON_PROPERTY_SEND_PUSH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -233,7 +233,7 @@ public class SendBotSMessageData {
    * Specifies an array of one or more IDs of the users who get a notification for the message.
    * @return mentioned
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of the users who get a notification for the message.")
   @JsonProperty(JSON_PROPERTY_MENTIONED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -259,7 +259,7 @@ public class SendBotSMessageData {
    * Determines whether to mark the message as read for the bot. If set to false, the bot&#39;s unread_count and read_receipt remain unchanged after the message is sent. (Default: true)
    * @return markAsRead
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to mark the message as read for the bot. If set to false, the bot's unread_count and read_receipt remain unchanged after the message is sent. (Default: true)")
   @JsonProperty(JSON_PROPERTY_MARK_AS_READ)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -285,7 +285,7 @@ public class SendBotSMessageData {
    * Specifies the unique ID for the message to prevent the same message data from getting sent to the channel.
    * @return dedupId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID for the message to prevent the same message data from getting sent to the channel.")
   @JsonProperty(JSON_PROPERTY_DEDUP_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -311,7 +311,7 @@ public class SendBotSMessageData {
    * Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format.")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -337,7 +337,7 @@ public class SendBotSMessageData {
    * Get extendedMessagePayload
    * @return extendedMessagePayload
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -363,7 +363,7 @@ public class SendBotSMessageData {
    * Specifies the ID of the user&#39;s message which bot&#39;s message replies to
    * @return targetMessageId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the ID of the user's message which bot's message replies to")
   @JsonProperty(JSON_PROPERTY_TARGET_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

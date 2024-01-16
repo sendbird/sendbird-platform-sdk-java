@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   UseDefaultEmojisData.JSON_PROPERTY_USE_DEFAULT_EMOJI
 })
 @JsonTypeName("useDefaultEmojisData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UseDefaultEmojisData {
   public static final String JSON_PROPERTY_USE_DEFAULT_EMOJI = "use_default_emoji";
   private Boolean useDefaultEmoji;
@@ -52,7 +52,7 @@ public class UseDefaultEmojisData {
    * Determines whether to use the 7 default emojis initially provided.
    * @return useDefaultEmoji
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to use the 7 default emojis initially provided.")
   @JsonProperty(JSON_PROPERTY_USE_DEFAULT_EMOJI)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

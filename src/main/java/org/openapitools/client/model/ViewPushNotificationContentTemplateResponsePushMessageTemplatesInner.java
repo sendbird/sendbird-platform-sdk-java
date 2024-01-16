@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   ViewPushNotificationContentTemplateResponsePushMessageTemplatesInner.JSON_PROPERTY_PUSH_MESSAGE_PREVIEW
 })
 @JsonTypeName("viewPushNotificationContentTemplateResponse_push_message_templates_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ViewPushNotificationContentTemplateResponsePushMessageTemplatesInner {
   public static final String JSON_PROPERTY_TEMPLATE_NAME = "template_name";
   private String templateName;
@@ -61,7 +61,7 @@ public class ViewPushNotificationContentTemplateResponsePushMessageTemplatesInne
    * Get templateName
    * @return templateName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TEMPLATE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -87,7 +87,7 @@ public class ViewPushNotificationContentTemplateResponsePushMessageTemplatesInne
    * Get template
    * @return template
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -113,7 +113,7 @@ public class ViewPushNotificationContentTemplateResponsePushMessageTemplatesInne
    * Get pushMessagePreview
    * @return pushMessagePreview
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_MESSAGE_PREVIEW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

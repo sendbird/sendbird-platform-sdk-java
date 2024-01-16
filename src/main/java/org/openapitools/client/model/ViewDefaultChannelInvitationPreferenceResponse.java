@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   ViewDefaultChannelInvitationPreferenceResponse.JSON_PROPERTY_AUTO_ACCEPT
 })
 @JsonTypeName("viewDefaultChannelInvitationPreferenceResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ViewDefaultChannelInvitationPreferenceResponse {
   public static final String JSON_PROPERTY_AUTO_ACCEPT = "auto_accept";
   private Boolean autoAccept;
@@ -52,7 +52,7 @@ public class ViewDefaultChannelInvitationPreferenceResponse {
    * Get autoAccept
    * @return autoAccept
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_AUTO_ACCEPT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   EnableReactionsData.JSON_PROPERTY_ENABLED
 })
 @JsonTypeName("enableReactionsData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class EnableReactionsData {
   public static final String JSON_PROPERTY_ENABLED = "enabled";
   private Boolean enabled;
@@ -52,7 +52,7 @@ public class EnableReactionsData {
    * Determines whether to turn on the message reaction feature. (Default: false)
    * @return enabled
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to turn on the message reaction feature. (Default: false)")
   @JsonProperty(JSON_PROPERTY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

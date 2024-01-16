@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   AddFcmPushConfigurationResponse.JSON_PROPERTY_PUSH_CONFIGURATIONS
 })
 @JsonTypeName("addFcmPushConfigurationResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddFcmPushConfigurationResponse {
   public static final String JSON_PROPERTY_PUSH_CONFIGURATIONS = "push_configurations";
   private List<AddFcmPushConfigurationResponsePushConfigurationsInner> pushConfigurations = null;
@@ -63,7 +63,7 @@ public class AddFcmPushConfigurationResponse {
    * Get pushConfigurations
    * @return pushConfigurations
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_CONFIGURATIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

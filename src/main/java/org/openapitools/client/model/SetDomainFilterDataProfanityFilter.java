@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterDataProfanityFilter.JSON_PROPERTY_SHOULD_CHECK_GLOBAL
 })
 @JsonTypeName("setDomainFilterData_profanity_filter")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SetDomainFilterDataProfanityFilter {
   public static final String JSON_PROPERTY_KEYWORDS = "keywords";
   private List<String> keywords = null;
@@ -75,7 +75,7 @@ public class SetDomainFilterDataProfanityFilter {
    * Get keywords
    * @return keywords
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_KEYWORDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -109,7 +109,7 @@ public class SetDomainFilterDataProfanityFilter {
    * Get regexFilters
    * @return regexFilters
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REGEX_FILTERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -135,7 +135,7 @@ public class SetDomainFilterDataProfanityFilter {
    * Get type
    * @return type
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -161,7 +161,7 @@ public class SetDomainFilterDataProfanityFilter {
    * Get shouldCheckGlobal
    * @return shouldCheckGlobal
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SHOULD_CHECK_GLOBAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   ConfigureAutoEventDataAutoEventMessage.JSON_PROPERTY_CHANNEL_CHANGE
 })
 @JsonTypeName("configureAutoEventData_auto_event_message")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ConfigureAutoEventDataAutoEventMessage {
   public static final String JSON_PROPERTY_USER_LEAVE = "user_leave";
   private Object userLeave;
@@ -64,7 +64,7 @@ public class ConfigureAutoEventDataAutoEventMessage {
    * Get userLeave
    * @return userLeave
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_LEAVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -90,7 +90,7 @@ public class ConfigureAutoEventDataAutoEventMessage {
    * Get userJoin
    * @return userJoin
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_JOIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -116,7 +116,7 @@ public class ConfigureAutoEventDataAutoEventMessage {
    * Get channelCreate
    * @return channelCreate
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_CREATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -142,7 +142,7 @@ public class ConfigureAutoEventDataAutoEventMessage {
    * Get channelChange
    * @return channelChange
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_CHANGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   AddEmojiCategoriesResponseEmojiCategoriesInner.JSON_PROPERTY_URL
 })
 @JsonTypeName("addEmojiCategoriesResponse_emoji_categories_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddEmojiCategoriesResponseEmojiCategoriesInner {
   public static final String JSON_PROPERTY_ID = "id";
   private BigDecimal id;
@@ -61,7 +61,7 @@ public class AddEmojiCategoriesResponseEmojiCategoriesInner {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -87,7 +87,7 @@ public class AddEmojiCategoriesResponseEmojiCategoriesInner {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -113,7 +113,7 @@ public class AddEmojiCategoriesResponseEmojiCategoriesInner {
    * Get url
    * @return url
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

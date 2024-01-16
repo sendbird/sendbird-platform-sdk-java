@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   AddExtraDataToMessageData.JSON_PROPERTY_SORTED_METAARRAY
 })
 @JsonTypeName("addExtraDataToMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddExtraDataToMessageData {
   public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
@@ -64,7 +64,7 @@ public class AddExtraDataToMessageData {
    * Specifies the type of the channel. Either open_channels or group_channels.
    * @return channelType
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the type of the channel. Either open_channels or group_channels.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -90,7 +90,7 @@ public class AddExtraDataToMessageData {
    * Specifies the URL of the target channel.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the target channel.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -116,7 +116,7 @@ public class AddExtraDataToMessageData {
    * Specifies the unique ID of the message to add key-values items for additional information.
    * @return messageId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the message to add key-values items for additional information.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -142,7 +142,7 @@ public class AddExtraDataToMessageData {
    * Specifies a &#x60;JSON&#x60; object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they&#39;ve been specified.
    * @return sortedMetaarray
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a `JSON` object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they've been specified.")
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

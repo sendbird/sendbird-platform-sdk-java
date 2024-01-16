@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   ViewNumberOfConcurrentConnectionsResponse.JSON_PROPERTY_CCU
 })
 @JsonTypeName("viewNumberOfConcurrentConnectionsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ViewNumberOfConcurrentConnectionsResponse {
   public static final String JSON_PROPERTY_CCU = "ccu";
   private BigDecimal ccu;
@@ -53,7 +53,7 @@ public class ViewNumberOfConcurrentConnectionsResponse {
    * Get ccu
    * @return ccu
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CCU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

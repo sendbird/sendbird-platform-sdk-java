@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   ListPushNotificationContentTemplatesResponse.JSON_PROPERTY_PUSH_MESSAGE_TEMPLATES
 })
 @JsonTypeName("listPushNotificationContentTemplatesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListPushNotificationContentTemplatesResponse {
   public static final String JSON_PROPERTY_PUSH_MESSAGE_TEMPLATES = "push_message_templates";
   private List<ListPushNotificationContentTemplatesResponsePushMessageTemplatesInner> pushMessageTemplates = null;
@@ -63,7 +63,7 @@ public class ListPushNotificationContentTemplatesResponse {
    * Get pushMessageTemplates
    * @return pushMessageTemplates
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_MESSAGE_TEMPLATES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

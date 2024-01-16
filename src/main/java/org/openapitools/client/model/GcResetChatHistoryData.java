@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   GcResetChatHistoryData.JSON_PROPERTY_RESET_ALL
 })
 @JsonTypeName("gcResetChatHistoryData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcResetChatHistoryData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -60,7 +60,7 @@ public class GcResetChatHistoryData {
    * Specifies the URL of the target channel to reset chat history.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the target channel to reset chat history.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -86,7 +86,7 @@ public class GcResetChatHistoryData {
    * Specifies the unique ID of the user whose chat history to reset in the channel. If this user_id property is specified, the reset_all property is not required.
    * @return userId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the user whose chat history to reset in the channel. If this user_id property is specified, the reset_all property is not required.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -112,7 +112,7 @@ public class GcResetChatHistoryData {
    * Determines whether to reset all users&#39; chat history in the channel. If this reset_all property is specified, the user_id property is not required.
    * @return resetAll
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to reset all users' chat history in the channel. If this reset_all property is specified, the user_id property is not required.")
   @JsonProperty(JSON_PROPERTY_RESET_ALL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

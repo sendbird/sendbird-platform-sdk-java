@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   GetDetailedOpenRateOfAnnouncementByIdResponse.JSON_PROPERTY_CUMULATIVE_OPEN_RATES
 })
 @JsonTypeName("getDetailedOpenRateOfAnnouncementByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GetDetailedOpenRateOfAnnouncementByIdResponse {
   public static final String JSON_PROPERTY_UNIQUE_ID = "unique_id";
   private String uniqueId;
@@ -71,7 +71,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
    * Get uniqueId
    * @return uniqueId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -105,7 +105,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
    * Get openCounts
    * @return openCounts
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPEN_COUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -139,7 +139,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
    * Get openRates
    * @return openRates
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPEN_RATES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -173,7 +173,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
    * Get cumulativeOpenCounts
    * @return cumulativeOpenCounts
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUMULATIVE_OPEN_COUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -207,7 +207,7 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
    * Get cumulativeOpenRates
    * @return cumulativeOpenRates
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUMULATIVE_OPEN_RATES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

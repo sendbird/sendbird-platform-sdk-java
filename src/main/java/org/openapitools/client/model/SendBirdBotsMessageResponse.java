@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   SendBirdBotsMessageResponse.JSON_PROPERTY_MESSAGE
 })
 @JsonTypeName("SendBird.BotsMessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdBotsMessageResponse {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private SendBirdBotsMessageResponseMessage message;
@@ -53,7 +53,7 @@ public class SendBirdBotsMessageResponse {
    * Get message
    * @return message
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

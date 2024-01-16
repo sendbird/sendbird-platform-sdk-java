@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListGdprRequestsResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("listGdprRequestsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListGdprRequestsResponse {
   public static final String JSON_PROPERTY_REQUESTS = "requests";
   private List<ListGdprRequestsResponseRequestsInner> requests = null;
@@ -67,7 +67,7 @@ public class ListGdprRequestsResponse {
    * Get requests
    * @return requests
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REQUESTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -93,7 +93,7 @@ public class ListGdprRequestsResponse {
    * Get next
    * @return next
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -46,7 +46,7 @@ import org.sendbird.client.JSON;
   GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_OPEN_COUNT
 })
 @JsonTypeName("getStatisticsDailyResponse_statistics_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GetStatisticsDailyResponseStatisticsInner {
   public static final String JSON_PROPERTY_DATE_RANGE = "date_range";
   private String dateRange;
@@ -93,7 +93,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get dateRange
    * @return dateRange
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DATE_RANGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -119,7 +119,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get canceledAnnouncementCount
    * @return canceledAnnouncementCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CANCELED_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -145,7 +145,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get stoppedAnnouncementCount
    * @return stoppedAnnouncementCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STOPPED_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -171,7 +171,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get completedAnnouncementCount
    * @return completedAnnouncementCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COMPLETED_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -197,7 +197,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get totalAnnouncementCount
    * @return totalAnnouncementCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -223,7 +223,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get targetChannelCount
    * @return targetChannelCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -249,7 +249,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get targetUserCount
    * @return targetUserCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -275,7 +275,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get sentChannelCount
    * @return sentChannelCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SENT_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -301,7 +301,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get sentUserCount
    * @return sentUserCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -327,7 +327,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get openRate
    * @return openRate
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPEN_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -353,7 +353,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
    * Get openCount
    * @return openCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

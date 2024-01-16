@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInnerOgTagOgImage.JSON_PROPERTY_HEIGHT
 })
 @JsonTypeName("listMessagesResponse_messages_inner_og_tag_og_image")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListMessagesResponseMessagesInnerOgTagOgImage {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -65,7 +65,7 @@ public class ListMessagesResponseMessagesInnerOgTagOgImage {
    * Get url
    * @return url
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -91,7 +91,7 @@ public class ListMessagesResponseMessagesInnerOgTagOgImage {
    * Get secureUrl
    * @return secureUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SECURE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -117,7 +117,7 @@ public class ListMessagesResponseMessagesInnerOgTagOgImage {
    * Get width
    * @return width
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_WIDTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -143,7 +143,7 @@ public class ListMessagesResponseMessagesInnerOgTagOgImage {
    * Get height
    * @return height
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_HEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

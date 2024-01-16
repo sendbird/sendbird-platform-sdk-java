@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   UpdateEmojiCategoryUrlByIdData.JSON_PROPERTY_URL
 })
 @JsonTypeName("updateEmojiCategoryUrlByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateEmojiCategoryUrlByIdData {
   public static final String JSON_PROPERTY_EMOJI_CATEGORY_ID = "emoji_category_id";
   private Integer emojiCategoryId;
@@ -56,7 +56,7 @@ public class UpdateEmojiCategoryUrlByIdData {
    * Specifies the unique ID of the emoji category to update.
    * @return emojiCategoryId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the emoji category to update.")
   @JsonProperty(JSON_PROPERTY_EMOJI_CATEGORY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -82,7 +82,7 @@ public class UpdateEmojiCategoryUrlByIdData {
    * Specifies the new URL of the emoji category.
    * @return url
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the new URL of the emoji category.")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

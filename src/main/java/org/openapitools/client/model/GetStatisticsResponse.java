@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   GetStatisticsResponse.JSON_PROPERTY_WEEK
 })
 @JsonTypeName("getStatisticsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GetStatisticsResponse {
   public static final String JSON_PROPERTY_STATISTICS = "statistics";
   private List<GetStatisticsDailyResponseStatisticsInner> statistics = null;
@@ -68,7 +68,7 @@ public class GetStatisticsResponse {
    * Get statistics
    * @return statistics
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATISTICS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -94,7 +94,7 @@ public class GetStatisticsResponse {
    * Get week
    * @return week
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_WEEK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   MuteUsersInChannelsWithCustomChannelTypeData.JSON_PROPERTY_ON_DEMAND_UPSERT
 })
 @JsonTypeName("muteUsersInChannelsWithCustomChannelTypeData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class MuteUsersInChannelsWithCustomChannelTypeData {
   public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = new ArrayList<>();
@@ -72,7 +72,7 @@ public class MuteUsersInChannelsWithCustomChannelTypeData {
    * Get userIds
    * @return userIds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -98,7 +98,7 @@ public class MuteUsersInChannelsWithCustomChannelTypeData {
    * Get seconds
    * @return seconds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,7 +124,7 @@ public class MuteUsersInChannelsWithCustomChannelTypeData {
    * Get description
    * @return description
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -150,7 +150,7 @@ public class MuteUsersInChannelsWithCustomChannelTypeData {
    * Get onDemandUpsert
    * @return onDemandUpsert
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ON_DEMAND_UPSERT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

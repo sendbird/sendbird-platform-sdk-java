@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   SendBirdAutoEventMessageSettings.JSON_PROPERTY_AUTO_EVENT_MESSAGE
 })
 @JsonTypeName("SendBird.AutoEventMessageSettings")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdAutoEventMessageSettings {
   public static final String JSON_PROPERTY_AUTO_EVENT_MESSAGE = "auto_event_message";
   private ConfigureAutoEventDataAutoEventMessage autoEventMessage;
@@ -53,7 +53,7 @@ public class SendBirdAutoEventMessageSettings {
    * Get autoEventMessage
    * @return autoEventMessage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_AUTO_EVENT_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

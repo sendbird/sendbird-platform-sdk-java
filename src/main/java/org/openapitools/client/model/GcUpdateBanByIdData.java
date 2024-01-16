@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   GcUpdateBanByIdData.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("gcUpdateBanByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcUpdateBanByIdData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -64,7 +64,7 @@ public class GcUpdateBanByIdData {
    * Specifies the URL of the target channel.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the target channel.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -90,7 +90,7 @@ public class GcUpdateBanByIdData {
    * Specifies the ID of the banned user to update.
    * @return bannedUserId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the banned user to update.")
   @JsonProperty(JSON_PROPERTY_BANNED_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -116,7 +116,7 @@ public class GcUpdateBanByIdData {
    * Specifies a new ban duration to update. If set to -1, the user will be banned permanently (10 years, technically).
    * @return seconds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a new ban duration to update. If set to -1, the user will be banned permanently (10 years, technically).")
   @JsonProperty(JSON_PROPERTY_SECONDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -142,7 +142,7 @@ public class GcUpdateBanByIdData {
    * Specifies a new reason for the banning to update. The length is limited to 250 characters.
    * @return description
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a new reason for the banning to update. The length is limited to 250 characters.")
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

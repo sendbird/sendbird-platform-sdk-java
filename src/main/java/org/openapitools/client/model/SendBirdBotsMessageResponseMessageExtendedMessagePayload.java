@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   SendBirdBotsMessageResponseMessageExtendedMessagePayload.JSON_PROPERTY_CUSTOM_VIEW
 })
 @JsonTypeName("SendBird_BotsMessageResponse_message_extended_message_payload")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdBotsMessageResponseMessageExtendedMessagePayload {
   public static final String JSON_PROPERTY_SUGGESTED_REPLIES = "suggested_replies";
   private List<String> suggestedReplies = null;
@@ -66,7 +66,7 @@ public class SendBirdBotsMessageResponseMessageExtendedMessagePayload {
    * Get suggestedReplies
    * @return suggestedReplies
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SUGGESTED_REPLIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -92,7 +92,7 @@ public class SendBirdBotsMessageResponseMessageExtendedMessagePayload {
    * Get customView
    * @return customView
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUSTOM_VIEW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

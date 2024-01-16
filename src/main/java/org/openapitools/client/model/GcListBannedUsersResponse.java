@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   GcListBannedUsersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("gcListBannedUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcListBannedUsersResponse {
   public static final String JSON_PROPERTY_BANNED_LIST = "banned_list";
   private List<OcListBannedUsersResponseBannedListInner> bannedList = null;
@@ -72,7 +72,7 @@ public class GcListBannedUsersResponse {
    * Get bannedList
    * @return bannedList
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_BANNED_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,7 +98,7 @@ public class GcListBannedUsersResponse {
    * Get totalBanCount
    * @return totalBanCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_BAN_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,7 +124,7 @@ public class GcListBannedUsersResponse {
    * Get next
    * @return next
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

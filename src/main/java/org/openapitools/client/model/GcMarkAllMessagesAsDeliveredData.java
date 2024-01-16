@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   GcMarkAllMessagesAsDeliveredData.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("gcMarkAllMessagesAsDeliveredData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcMarkAllMessagesAsDeliveredData {
   public static final String JSON_PROPERTY_APPLICATION_ID = "application_id";
   private String applicationId;
@@ -60,7 +60,7 @@ public class GcMarkAllMessagesAsDeliveredData {
    * Specifies the unique ID of your application.
    * @return applicationId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of your application.")
   @JsonProperty(JSON_PROPERTY_APPLICATION_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -86,7 +86,7 @@ public class GcMarkAllMessagesAsDeliveredData {
    * Specifies the URL of the target channel.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the target channel.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -112,7 +112,7 @@ public class GcMarkAllMessagesAsDeliveredData {
    * Specifies the ID of the recipient to mark messages as delivered.
    * @return userId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the recipient to mark messages as delivered.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

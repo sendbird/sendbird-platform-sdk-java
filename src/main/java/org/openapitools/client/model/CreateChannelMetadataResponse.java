@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   CreateChannelMetadataResponse.JSON_PROPERTY_INCLUDE_TS
 })
 @JsonTypeName("createChannelMetadataResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class CreateChannelMetadataResponse {
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, String> metadata = null;
@@ -68,7 +68,7 @@ public class CreateChannelMetadataResponse {
    * Get metadata
    * @return metadata
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -94,7 +94,7 @@ public class CreateChannelMetadataResponse {
    * Get includeTs
    * @return includeTs
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INCLUDE_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

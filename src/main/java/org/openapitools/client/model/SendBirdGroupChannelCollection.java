@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannelCollection.JSON_PROPERTY_HAS_MORE
 })
 @JsonTypeName("SendBird.GroupChannelCollection")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdGroupChannelCollection {
   public static final String JSON_PROPERTY_CHANNEL_LIST = "channel_list";
   private List<SendBirdGroupChannel> channelList = null;
@@ -67,7 +67,7 @@ public class SendBirdGroupChannelCollection {
    * Get channelList
    * @return channelList
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -93,7 +93,7 @@ public class SendBirdGroupChannelCollection {
    * Get hasMore
    * @return hasMore
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_HAS_MORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

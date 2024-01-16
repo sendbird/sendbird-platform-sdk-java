@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   LeaveMyGroupChannelsData.JSON_PROPERTY_CUSTOM_TYPE
 })
 @JsonTypeName("leaveMyGroupChannelsData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class LeaveMyGroupChannelsData {
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -52,7 +52,7 @@ public class LeaveMyGroupChannelsData {
    * Specifies the custom channel type to make the user leave joined group channels with the corresponding type.
    * @return customType
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the custom channel type to make the user leave joined group channels with the corresponding type.")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

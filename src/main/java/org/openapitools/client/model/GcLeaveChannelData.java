@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   GcLeaveChannelData.JSON_PROPERTY_SHOULD_LEAVE_ALL
 })
 @JsonTypeName("gcLeaveChannelData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcLeaveChannelData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -62,7 +62,7 @@ public class GcLeaveChannelData {
    * Specifies the URL of the channel to leave.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the channel to leave.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -93,7 +93,7 @@ public class GcLeaveChannelData {
    * Specifies an array of one or more IDs of the users to leave the channel.
    * @return userIds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of the users to leave the channel.")
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -119,7 +119,7 @@ public class GcLeaveChannelData {
    * Determines whether to make all members leave the channel. (Default: false)
    * @return shouldLeaveAll
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to make all members leave the channel. (Default: false)")
   @JsonProperty(JSON_PROPERTY_SHOULD_LEAVE_ALL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   V3PollsPollIdVotePutRequest.JSON_PROPERTY_OPTION_IDS
 })
 @JsonTypeName("_v3_polls__poll_id__vote_put_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class V3PollsPollIdVotePutRequest {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -58,7 +58,7 @@ public class V3PollsPollIdVotePutRequest {
    * Specifies the unique ID of a user who casts or cancels a vote.
    * @return userId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID of a user who casts or cancels a vote.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -92,7 +92,7 @@ public class V3PollsPollIdVotePutRequest {
    * Specifies the array of option IDs to cast or cancel votes. For example, if a user had voted for both Option 1 and Option 2 in a poll, you can specify this property&#39;s value as [1,2]. If the user wants to cancel the vote for Option 2 but keep the vote for Option 1, the value should be specified as [1]. If the user wants to cancel the votes for both poll options, the value should be specified as [].
    * @return optionIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the array of option IDs to cast or cancel votes. For example, if a user had voted for both Option 1 and Option 2 in a poll, you can specify this property's value as [1,2]. If the user wants to cancel the vote for Option 2 but keep the vote for Option 1, the value should be specified as [1]. If the user wants to cancel the votes for both poll options, the value should be specified as [].")
   @JsonProperty(JSON_PROPERTY_OPTION_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

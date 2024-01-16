@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   JoinChannelsData.JSON_PROPERTY_CHANNEL_URLS
 })
 @JsonTypeName("joinChannelsData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class JoinChannelsData {
   public static final String JSON_PROPERTY_BOT_USERID = "bot_userid";
   private String botUserid;
@@ -58,7 +58,7 @@ public class JoinChannelsData {
    * Specifies the ID of the bot to join the channels.
    * @return botUserid
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the bot to join the channels.")
   @JsonProperty(JSON_PROPERTY_BOT_USERID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -89,7 +89,7 @@ public class JoinChannelsData {
    * Specifies an array of one or more URLs of the channels to join.
    * @return channelUrls
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more URLs of the channels to join.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URLS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

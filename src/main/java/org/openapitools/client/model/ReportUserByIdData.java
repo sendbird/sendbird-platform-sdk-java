@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   ReportUserByIdData.JSON_PROPERTY_REPORT_DESCRIPTION
 })
 @JsonTypeName("reportUserByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ReportUserByIdData {
   public static final String JSON_PROPERTY_OFFENDING_USER_ID = "offending_user_id";
   private String offendingUserId;
@@ -72,7 +72,7 @@ public class ReportUserByIdData {
    * Specifies the unique ID of the user to report for using offensive or abusive language such as sending explicit messages or inappropriate comments.
    * @return offendingUserId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the user to report for using offensive or abusive language such as sending explicit messages or inappropriate comments.")
   @JsonProperty(JSON_PROPERTY_OFFENDING_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -98,7 +98,7 @@ public class ReportUserByIdData {
    * Specifies the type of the channel. Either open_channels or group_channels.
    * @return channelType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the type of the channel. Either open_channels or group_channels.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,7 +124,7 @@ public class ReportUserByIdData {
    * Specifies the URL of the channel where the user to report is in.
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the channel where the user to report is in.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -150,7 +150,7 @@ public class ReportUserByIdData {
    * Specifies the category which indicates the reason for reporting. Acceptable values are suspicious, harassing, inappropriate, and spam.
    * @return reportCategory
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the category which indicates the reason for reporting. Acceptable values are suspicious, harassing, inappropriate, and spam.")
   @JsonProperty(JSON_PROPERTY_REPORT_CATEGORY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -176,7 +176,7 @@ public class ReportUserByIdData {
    * Specifies the unique ID of the user who reports the offending user.
    * @return reportingUserId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID of the user who reports the offending user.")
   @JsonProperty(JSON_PROPERTY_REPORTING_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -202,7 +202,7 @@ public class ReportUserByIdData {
    * Specifies additional information to be included in the report.
    * @return reportDescription
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional information to be included in the report.")
   @JsonProperty(JSON_PROPERTY_REPORT_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

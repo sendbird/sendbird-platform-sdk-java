@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   OcRegisterOperatorsData.JSON_PROPERTY_OPERATOR_IDS
 })
 @JsonTypeName("ocRegisterOperatorsData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class OcRegisterOperatorsData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -58,7 +58,7 @@ public class OcRegisterOperatorsData {
    * Specifies the URL of the channel to register operators to.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the channel to register operators to.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -89,7 +89,7 @@ public class OcRegisterOperatorsData {
    * Specifies an array of one or more IDs of users to register as operators of the channel. The maximum allowed number of operators per channel is 100.
    * @return operatorIds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of users to register as operators of the channel. The maximum allowed number of operators per channel is 100.")
   @JsonProperty(JSON_PROPERTY_OPERATOR_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

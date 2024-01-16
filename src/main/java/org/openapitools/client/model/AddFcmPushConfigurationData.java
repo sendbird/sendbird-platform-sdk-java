@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   AddFcmPushConfigurationData.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("addFcmPushConfigurationData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddFcmPushConfigurationData {
   public static final String JSON_PROPERTY_API_KEY = "api_key";
   private String apiKey;
@@ -56,7 +56,7 @@ public class AddFcmPushConfigurationData {
    * Specifies the FCM server key to register.
    * @return apiKey
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the FCM server key to register.")
   @JsonProperty(JSON_PROPERTY_API_KEY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -82,7 +82,7 @@ public class AddFcmPushConfigurationData {
    * Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file should be located in the &#x60;/res/raw&#x60; folder.
    * @return pushSound
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file should be located in the `/res/raw` folder.")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

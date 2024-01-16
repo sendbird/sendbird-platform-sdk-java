@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   GcRegisterOperatorsResponse.JSON_PROPERTY_OPERATOR_IDS
 })
 @JsonTypeName("gcRegisterOperatorsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcRegisterOperatorsResponse {
   public static final String JSON_PROPERTY_OPERATOR_IDS = "operator_ids";
   private List<String> operatorIds = null;
@@ -62,7 +62,7 @@ public class GcRegisterOperatorsResponse {
    * Get operatorIds
    * @return operatorIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPERATOR_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

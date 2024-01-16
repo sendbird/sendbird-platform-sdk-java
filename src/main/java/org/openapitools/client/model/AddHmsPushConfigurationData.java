@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   AddHmsPushConfigurationData.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("addHmsPushConfigurationData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddHmsPushConfigurationData {
   public static final String JSON_PROPERTY_HUAWEI_APP_ID = "huawei_app_id";
   private String huaweiAppId;
@@ -60,7 +60,7 @@ public class AddHmsPushConfigurationData {
    * Specifies the unique ID of application registered to the HMS server.
    * @return huaweiAppId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of application registered to the HMS server.")
   @JsonProperty(JSON_PROPERTY_HUAWEI_APP_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -86,7 +86,7 @@ public class AddHmsPushConfigurationData {
    * Specifies the secret key allocated to the application.
    * @return huaweiAppSecret
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the secret key allocated to the application.")
   @JsonProperty(JSON_PROPERTY_HUAWEI_APP_SECRET)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -112,7 +112,7 @@ public class AddHmsPushConfigurationData {
    * Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file should be located in the &#x60;/res/raw&#x60; folder.
    * @return pushSound
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file should be located in the `/res/raw` folder.")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
