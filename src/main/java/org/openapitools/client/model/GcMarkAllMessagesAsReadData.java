@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   GcMarkAllMessagesAsReadData.JSON_PROPERTY_TIMESTAMP
 })
 @JsonTypeName("gcMarkAllMessagesAsReadData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcMarkAllMessagesAsReadData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -60,7 +60,7 @@ public class GcMarkAllMessagesAsReadData {
    * Specifies the URL of the target channel.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the target channel.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -86,7 +86,7 @@ public class GcMarkAllMessagesAsReadData {
    * Specifies the ID of the user to mark all messages as read.
    * @return userId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the user to mark all messages as read.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -112,7 +112,7 @@ public class GcMarkAllMessagesAsReadData {
    * Specifies the timestamp to be the reference point of marking as read. If specified, the messages received before the specified time are marked as read.
    * @return timestamp
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the timestamp to be the reference point of marking as read. If specified, the messages received before the specified time are marked as read.")
   @JsonProperty(JSON_PROPERTY_TIMESTAMP)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

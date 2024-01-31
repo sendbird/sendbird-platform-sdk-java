@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   CreateChannelMetacounterData.JSON_PROPERTY_METACOUNTER
 })
 @JsonTypeName("createChannelMetacounterData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class CreateChannelMetacounterData {
   public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
@@ -60,7 +60,7 @@ public class CreateChannelMetacounterData {
    * Specifies the type of the channel. Either open_channels or group_channels.
    * @return channelType
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the type of the channel. Either open_channels or group_channels.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -86,7 +86,7 @@ public class CreateChannelMetacounterData {
    * Specifies the URL of the channel to store the metacounter in.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the channel to store the metacounter in.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -112,7 +112,7 @@ public class CreateChannelMetacounterData {
    * Specifies a &#x60;JSON&#x60; object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be an integer. This property can have up to 5 items.
    * @return metacounter
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a `JSON` object that stores key-value items. The key must not have a comma (,) and its length is limited to 128 characters. The value must be an integer. This property can have up to 5 items.")
   @JsonProperty(JSON_PROPERTY_METACOUNTER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

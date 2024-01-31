@@ -57,7 +57,7 @@ import org.sendbird.client.JSON;
   GcCreateChannelData.JSON_PROPERTY_BLOCK_SDK_USER_CHANNEL_JOIN
 })
 @JsonTypeName("gcCreateChannelData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcCreateChannelData {
   public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = new ArrayList<>();
@@ -133,7 +133,7 @@ public class GcCreateChannelData {
    * Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The users below and this property can be used interchangeably.
    * @return userIds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The users below and this property can be used interchangeably.")
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -167,7 +167,7 @@ public class GcCreateChannelData {
    * Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.
    * @return users
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of users to invite to the channel. The maximum number of users to be invited at once is 100. The user_ids above and this property can be used interchangeably.")
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -193,7 +193,7 @@ public class GcCreateChannelData {
    * Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel)
    * @return name
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the name of the channel, or the channel topic. The length is limited to 191 characters. (Default: group channel)")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -219,7 +219,7 @@ public class GcCreateChannelData {
    * Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the channel. Only numbers, characters, and underscores are allowed. The length is 4 to 100 characters, inclusive. If not specified, a URL is automatically generated.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -245,7 +245,7 @@ public class GcCreateChannelData {
    * Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters.
    * @return coverUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the cover image for the channel. The length is limited to 2,048 characters.")
   @JsonProperty(JSON_PROPERTY_COVER_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -271,7 +271,7 @@ public class GcCreateChannelData {
    * Uploads the cover image file for the channel.
    * @return coverFile
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Uploads the cover image file for the channel.")
   @JsonProperty(JSON_PROPERTY_COVER_FILE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -297,7 +297,7 @@ public class GcCreateChannelData {
    * Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.&lt;br /&gt;&lt;br /&gt; Custom types are also used within Sendbird&#39;s [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
    * @return customType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -323,7 +323,7 @@ public class GcCreateChannelData {
    * Specifies additional channel information such as a long description of the channel or &#x60;JSON&#x60; formatted string.
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -349,7 +349,7 @@ public class GcCreateChannelData {
    * Determines whether to reuse an existing channel or create a new channel. If set to true, returns a channel with the same users in the user_ids or users property or creates a new channel if no match is found. Sendbird server can also use the custom channel type in the custom_type property if specified along with the users to return the corresponding channel. If set to false, Sendbird server always creates a new channel with a combination of the users as well as the channel custom type if specified. (Default: false)&lt;br /&gt;&lt;br /&gt; Under this property, Sendbird server does not distinguish channels based on other properties such as channel URL or channel name.
    * @return isDistinct
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to reuse an existing channel or create a new channel. If set to true, returns a channel with the same users in the user_ids or users property or creates a new channel if no match is found. Sendbird server can also use the custom channel type in the custom_type property if specified along with the users to return the corresponding channel. If set to false, Sendbird server always creates a new channel with a combination of the users as well as the channel custom type if specified. (Default: false)<br /><br /> Under this property, Sendbird server does not distinguish channels based on other properties such as channel URL or channel name.")
   @JsonProperty(JSON_PROPERTY_IS_DISTINCT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -375,7 +375,7 @@ public class GcCreateChannelData {
    * Determines whether to allow a user to join the channel without an invitation. (Default: false)
    * @return isPublic
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to allow a user to join the channel without an invitation. (Default: false)")
   @JsonProperty(JSON_PROPERTY_IS_PUBLIC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -401,7 +401,7 @@ public class GcCreateChannelData {
    * Determines whether to allow the channel to accommodate more than 2,000 members. (Default: false) &lt;br/&gt;&lt;br/&gt; Supergroup channels are not supported with the is_distinct property and the property is false by default.
    * @return isSuper
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to allow the channel to accommodate more than 2,000 members. (Default: false) <br/><br/> Supergroup channels are not supported with the is_distinct property and the property is false by default.")
   @JsonProperty(JSON_PROPERTY_IS_SUPER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -427,7 +427,7 @@ public class GcCreateChannelData {
    * Determines whether to preserve the messages in the channel for the purpose of retrieving chat history. (Default: false)
    * @return isEphemeral
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to preserve the messages in the channel for the purpose of retrieving chat history. (Default: false)")
   @JsonProperty(JSON_PROPERTY_IS_EPHEMERAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -453,7 +453,7 @@ public class GcCreateChannelData {
    * This parameter can only be used when the channel operator creates a public group channel. They can set an access code for the corresponding type of channel. The channel then requires the specified access code to a user who attempts to join. If specified, the is_access_code_required property of the channel resource is set to true.
    * @return accessCode
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "This parameter can only be used when the channel operator creates a public group channel. They can set an access code for the corresponding type of channel. The channel then requires the specified access code to a user who attempts to join. If specified, the is_access_code_required property of the channel resource is set to true.")
   @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -479,7 +479,7 @@ public class GcCreateChannelData {
    * Specifies the ID of the user who has invited other users as members of the channel. The inviter is not automatically registered to the channel as a member, so you should specify the ID of the inviter in the user_ids property below if needed.
    * @return inviterId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the ID of the user who has invited other users as members of the channel. The inviter is not automatically registered to the channel as a member, so you should specify the ID of the inviter in the user_ids property below if needed.")
   @JsonProperty(JSON_PROPERTY_INVITER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -505,7 +505,7 @@ public class GcCreateChannelData {
    * Determines whether to receive a &#x60;400111&#x60; error and cease channel creation when there is at least one non-existing user in the specified user_ids or users property above. If set to false, the channel will be created excluding the non-existing users without receiving the mentioned error. (Default: false)
    * @return strict
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to receive a `400111` error and cease channel creation when there is at least one non-existing user in the specified user_ids or users property above. If set to false, the channel will be created excluding the non-existing users without receiving the mentioned error. (Default: false)")
   @JsonProperty(JSON_PROPERTY_STRICT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -531,7 +531,7 @@ public class GcCreateChannelData {
    * Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)
    * @return invitationStatus
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies one or more key-value pair items which set the invitation status of each user invited to the channel. The key should be a user_id and the value should be their joining status. Acceptable values are joined, invited_by_friend, and invited_by_non_friend. (Default: joined)")
   @JsonProperty(JSON_PROPERTY_INVITATION_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -557,7 +557,7 @@ public class GcCreateChannelData {
    * Specifies one or more key-value pair items which set the channel&#39;s hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:&lt;br /&gt;- unhidden (default): the channel is included in when retrieving a list of group channels.&lt;br /&gt;- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.&lt;br /&gt;- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.
    * @return hiddenStatus
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies one or more key-value pair items which set the channel's hidden status for each user. The key should be a user_id and the value should be their hidden status. Acceptable values are limited to the following:<br />- unhidden (default): the channel is included in when retrieving a list of group channels.<br />- hidden_allow_auto_unhide: the channel automatically gets unhidden when receiving a new message.<br />- hidden_prevent_auto_unhide: the channel keeps hidden though receiving a new message.")
   @JsonProperty(JSON_PROPERTY_HIDDEN_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -591,7 +591,7 @@ public class GcCreateChannelData {
    * Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.
    * @return operatorIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of users to register as operators of the channel. You should also include these IDs in the user_ids property to invite them to the channel as members. They can delete any messages in the channel, and also view all messages without any filtering or throttling. The maximum allowed number of operators per channel is 100.")
   @JsonProperty(JSON_PROPERTY_OPERATOR_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -617,7 +617,7 @@ public class GcCreateChannelData {
    * Determines whether to block users from joining the channel through the Chat SDK. This parameter can be used in order to restrict the ways for users to join the channel, and only using the [join a channel](#2-join-a-channel) action can add a user to the channel. (Default: false)
    * @return blockSdkUserChannelJoin
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to block users from joining the channel through the Chat SDK. This parameter can be used in order to restrict the ways for users to join the channel, and only using the [join a channel](#2-join-a-channel) action can add a user to the channel. (Default: false)")
   @JsonProperty(JSON_PROPERTY_BLOCK_SDK_USER_CHANNEL_JOIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -45,7 +45,7 @@ import org.sendbird.client.JSON;
   AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("addApnsPushConfigurationResponse_push_configurations_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -89,7 +89,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -115,7 +115,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get pushType
    * @return pushType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -141,7 +141,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -167,7 +167,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get apnsCerEnvType
    * @return apnsCerEnvType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_APNS_CER_ENV_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -193,7 +193,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get apnsExpiration
    * @return apnsExpiration
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_APNS_EXPIRATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -219,7 +219,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get apnsName
    * @return apnsName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_APNS_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -245,7 +245,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get hasUnreadCountBadge
    * @return hasUnreadCountBadge
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -271,7 +271,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get contentAvailable
    * @return contentAvailable
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CONTENT_AVAILABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -297,7 +297,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get mutableContent
    * @return mutableContent
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MUTABLE_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -323,7 +323,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
    * Get pushSound
    * @return pushSound
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

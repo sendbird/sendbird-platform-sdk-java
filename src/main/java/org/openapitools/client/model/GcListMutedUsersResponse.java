@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   GcListMutedUsersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("gcListMutedUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcListMutedUsersResponse {
   public static final String JSON_PROPERTY_MUTED_LIST = "muted_list";
   private List<SendBirdUser> mutedList = null;
@@ -72,7 +72,7 @@ public class GcListMutedUsersResponse {
    * Get mutedList
    * @return mutedList
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MUTED_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,7 +98,7 @@ public class GcListMutedUsersResponse {
    * Get totalMuteCount
    * @return totalMuteCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_MUTE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,7 +124,7 @@ public class GcListMutedUsersResponse {
    * Get next
    * @return next
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   AddHmsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("addHmsPushConfigurationResponse_push_configurations_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddHmsPushConfigurationResponsePushConfigurationsInner {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -68,7 +68,7 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -94,7 +94,7 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
    * Get pushType
    * @return pushType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -120,7 +120,7 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
    * Get huaweiAppId
    * @return huaweiAppId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_HUAWEI_APP_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -146,7 +146,7 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
    * Get huaweiAppSecret
    * @return huaweiAppSecret
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_HUAWEI_APP_SECRET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -172,7 +172,7 @@ public class AddHmsPushConfigurationResponsePushConfigurationsInner {
    * Get pushSound
    * @return pushSound
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

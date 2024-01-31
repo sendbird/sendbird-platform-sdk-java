@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   ListAnnouncementGroupsResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("listAnnouncementGroupsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListAnnouncementGroupsResponse {
   public static final String JSON_PROPERTY_ANNOUNCEMENT_GROUPS = "announcement_groups";
   private List<String> announcementGroups = null;
@@ -66,7 +66,7 @@ public class ListAnnouncementGroupsResponse {
    * Get announcementGroups
    * @return announcementGroups
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUPS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -92,7 +92,7 @@ public class ListAnnouncementGroupsResponse {
    * Get next
    * @return next
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

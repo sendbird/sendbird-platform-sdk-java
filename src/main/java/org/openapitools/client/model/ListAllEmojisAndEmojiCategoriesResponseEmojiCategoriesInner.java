@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner.JSON_PROPERTY_EMOJIS
 })
 @JsonTypeName("listAllEmojisAndEmojiCategoriesResponse_emoji_categories_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner {
   public static final String JSON_PROPERTY_ID = "id";
   private BigDecimal id;
@@ -68,7 +68,7 @@ public class ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -94,7 +94,7 @@ public class ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -120,7 +120,7 @@ public class ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner {
    * Get url
    * @return url
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -154,7 +154,7 @@ public class ListAllEmojisAndEmojiCategoriesResponseEmojiCategoriesInner {
    * Get emojis
    * @return emojis
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EMOJIS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

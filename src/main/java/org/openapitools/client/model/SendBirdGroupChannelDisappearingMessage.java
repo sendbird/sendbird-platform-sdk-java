@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannelDisappearingMessage.JSON_PROPERTY_IS_TRIGGERED_BY_MESSAGE_READ
 })
 @JsonTypeName("SendBird_GroupChannel_disappearing_message")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdGroupChannelDisappearingMessage {
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private BigDecimal messageSurvivalSeconds;
@@ -57,7 +57,7 @@ public class SendBirdGroupChannelDisappearingMessage {
    * Get messageSurvivalSeconds
    * @return messageSurvivalSeconds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -83,7 +83,7 @@ public class SendBirdGroupChannelDisappearingMessage {
    * Get isTriggeredByMessageRead
    * @return isTriggeredByMessageRead
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_TRIGGERED_BY_MESSAGE_READ)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

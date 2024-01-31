@@ -51,7 +51,7 @@ import org.sendbird.client.JSON;
   UpdateAnnouncementByIdData.JSON_PROPERTY_RESUME_AT
 })
 @JsonTypeName("updateAnnouncementByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateAnnouncementByIdData {
   public static final String JSON_PROPERTY_UNIQUE_ID = "unique_id";
   private String uniqueId;
@@ -116,7 +116,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the unique ID of the announcement to update.
    * @return uniqueId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the announcement to update.")
   @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -142,7 +142,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies an action to take on the announcement. If this property is updated, other specified properties in the request are not effective. Acceptable values are limited to remove, pause, resume, and cancel. The [Announcement actions](#2-update-an-announcement-3-how-to-change-announcement-status) table explains each action in detail.
    * @return action
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies an action to take on the announcement. If this property is updated, other specified properties in the request are not effective. Acceptable values are limited to remove, pause, resume, and cancel. The [Announcement actions](#2-update-an-announcement-3-how-to-change-announcement-status) table explains each action in detail.")
   @JsonProperty(JSON_PROPERTY_ACTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -168,7 +168,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the name of an announcement group to retrieve. If not specified, all announcements are returned, regardless of their group.
    * @return announcementGroup
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the name of an announcement group to retrieve. If not specified, all announcements are returned, regardless of their group.")
   @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -194,7 +194,7 @@ public class UpdateAnnouncementByIdData {
    * Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list.
    * @return createChannel
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list.")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -220,7 +220,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the name of the channel. (Default: Group Channel)
    * @return createChannelOptionsName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the name of the channel. (Default: Group Channel)")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -246,7 +246,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the URL of the cover image.
    * @return createChannelOptionsCoverUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the cover image.")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_COVER_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -272,7 +272,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the custom channel type.
    * @return createChannelOptionsCustomType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the custom channel type.")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -298,7 +298,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies additional channel information such as a long description of the channel or &#x60;JSON&#x60; formatted string.
    * @return createChannelOptionsData
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -324,7 +324,7 @@ public class UpdateAnnouncementByIdData {
    * Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true)
    * @return createChannelOptionsDistinct
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true)")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DISTINCT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -350,7 +350,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the unique ID of the announcement sender.
    * @return messageUserId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID of the announcement sender.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -376,7 +376,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the content of the message.
    * @return messageContent
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the content of the message.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -402,7 +402,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies additional message information such as custom font size, font type or &#x60;JSON&#x60; formatted string.
    * @return messageData
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional message information such as custom font size, font type or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -428,7 +428,7 @@ public class UpdateAnnouncementByIdData {
    * Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for announcements.
    * @return enablePush
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for announcements.")
   @JsonProperty(JSON_PROPERTY_ENABLE_PUSH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -454,7 +454,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. (Default: current timestamp)
    * @return scheduledAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. (Default: current timestamp)")
   @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -480,7 +480,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format, even if the announcement is not sent to all its targets.
    * @return endAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format, even if the announcement is not sent to all its targets.")
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -506,7 +506,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the resume_at below.
    * @return ceaseAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the resume_at below.")
   @JsonProperty(JSON_PROPERTY_CEASE_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -532,7 +532,7 @@ public class UpdateAnnouncementByIdData {
    * Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the cease_at above.
    * @return resumeAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This property should be specified in conjunction with the cease_at above.")
   @JsonProperty(JSON_PROPERTY_RESUME_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

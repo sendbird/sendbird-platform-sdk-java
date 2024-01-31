@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   ChoosePushNotificationContentTemplateResponse.JSON_PROPERTY_NAME
 })
 @JsonTypeName("choosePushNotificationContentTemplateResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ChoosePushNotificationContentTemplateResponse {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -52,7 +52,7 @@ public class ChoosePushNotificationContentTemplateResponse {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

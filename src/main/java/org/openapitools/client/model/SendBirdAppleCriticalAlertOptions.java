@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   SendBirdAppleCriticalAlertOptions.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("SendBird.AppleCriticalAlertOptions")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdAppleCriticalAlertOptions {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -57,7 +57,7 @@ public class SendBirdAppleCriticalAlertOptions {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -83,7 +83,7 @@ public class SendBirdAppleCriticalAlertOptions {
    * Get volume
    * @return volume
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_VOLUME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   SendBirdPollUpdatedVoteCount.JSON_PROPERTY_VOTE_COUNT
 })
 @JsonTypeName("SendBird.PollUpdatedVoteCount")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdPollUpdatedVoteCount {
   public static final String JSON_PROPERTY_OPTION_ID = "option_id";
   private BigDecimal optionId;
@@ -57,7 +57,7 @@ public class SendBirdPollUpdatedVoteCount {
    * Get optionId
    * @return optionId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPTION_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -83,7 +83,7 @@ public class SendBirdPollUpdatedVoteCount {
    * Get voteCount
    * @return voteCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_VOTE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   SendBirdThreadInfo.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("SendBird.ThreadInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdThreadInfo {
   public static final String JSON_PROPERTY_LAST_REPLIED_AT = "last_replied_at";
   private BigDecimal lastRepliedAt;
@@ -68,7 +68,7 @@ public class SendBirdThreadInfo {
    * Get lastRepliedAt
    * @return lastRepliedAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_LAST_REPLIED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -102,7 +102,7 @@ public class SendBirdThreadInfo {
    * Get mostRepliedUsers
    * @return mostRepliedUsers
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MOST_REPLIED_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -128,7 +128,7 @@ public class SendBirdThreadInfo {
    * Get replyCount
    * @return replyCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REPLY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -154,7 +154,7 @@ public class SendBirdThreadInfo {
    * Get updatedAt
    * @return updatedAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

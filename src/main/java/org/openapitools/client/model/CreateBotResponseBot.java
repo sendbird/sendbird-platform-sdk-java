@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   CreateBotResponseBot.JSON_PROPERTY_BOT_METADATA
 })
 @JsonTypeName("createBotResponse_bot")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class CreateBotResponseBot {
   public static final String JSON_PROPERTY_BOT_TOKEN = "bot_token";
   private String botToken;
@@ -72,7 +72,7 @@ public class CreateBotResponseBot {
    * Get botToken
    * @return botToken
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_BOT_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,7 +98,7 @@ public class CreateBotResponseBot {
    * Get botProfileUrl
    * @return botProfileUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_BOT_PROFILE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,7 +124,7 @@ public class CreateBotResponseBot {
    * Get botUserid
    * @return botUserid
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_BOT_USERID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -150,7 +150,7 @@ public class CreateBotResponseBot {
    * Get botNickname
    * @return botNickname
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_BOT_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -176,7 +176,7 @@ public class CreateBotResponseBot {
    * Get botType
    * @return botType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_BOT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -202,7 +202,7 @@ public class CreateBotResponseBot {
    * Get botMetadata
    * @return botMetadata
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_BOT_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

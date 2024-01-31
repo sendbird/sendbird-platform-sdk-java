@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   GcTypingIndicatorsData.JSON_PROPERTY_USER_IDS
 })
 @JsonTypeName("gcTypingIndicatorsData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcTypingIndicatorsData {
   public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = new ArrayList<>();
@@ -59,7 +59,7 @@ public class GcTypingIndicatorsData {
    * Specifies an array of IDs of users who are to stop using the typing indicator. You can list up to ten user IDs.
    * @return userIds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of IDs of users who are to stop using the typing indicator. You can list up to ten user IDs.")
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

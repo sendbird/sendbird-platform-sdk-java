@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   GcListMembersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("gcListMembersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcListMembersResponse {
   public static final String JSON_PROPERTY_MEMBERS = "members";
   private List<SendBirdUser> members = null;
@@ -67,7 +67,7 @@ public class GcListMembersResponse {
    * Get members
    * @return members
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -93,7 +93,7 @@ public class GcListMembersResponse {
    * Get next
    * @return next
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

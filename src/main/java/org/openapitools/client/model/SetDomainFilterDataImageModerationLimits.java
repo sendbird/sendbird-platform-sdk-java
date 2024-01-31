@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterDataImageModerationLimits.JSON_PROPERTY_RACY
 })
 @JsonTypeName("setDomainFilterData_image_moderation_limits")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SetDomainFilterDataImageModerationLimits {
   public static final String JSON_PROPERTY_ADULT = "adult";
   private Integer adult;
@@ -68,7 +68,7 @@ public class SetDomainFilterDataImageModerationLimits {
    * Get adult
    * @return adult
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ADULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -94,7 +94,7 @@ public class SetDomainFilterDataImageModerationLimits {
    * Get spoof
    * @return spoof
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SPOOF)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -120,7 +120,7 @@ public class SetDomainFilterDataImageModerationLimits {
    * Get medical
    * @return medical
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MEDICAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -146,7 +146,7 @@ public class SetDomainFilterDataImageModerationLimits {
    * Get violence
    * @return violence
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_VIOLENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -172,7 +172,7 @@ public class SetDomainFilterDataImageModerationLimits {
    * Get racy
    * @return racy
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_RACY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

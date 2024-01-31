@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SendBirdPoll.JSON_PROPERTY_TITLE
 })
 @JsonTypeName("SendBird.Poll")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdPoll {
   public static final String JSON_PROPERTY_DETAILS = "details";
   private SendBirdPollDetails details;
@@ -62,7 +62,7 @@ public class SendBirdPoll {
    * Get details
    * @return details
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DETAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -88,7 +88,7 @@ public class SendBirdPoll {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -114,7 +114,7 @@ public class SendBirdPoll {
    * Get title
    * @return title
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

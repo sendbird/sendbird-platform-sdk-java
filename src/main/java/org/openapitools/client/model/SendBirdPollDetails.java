@@ -48,7 +48,7 @@ import org.sendbird.client.JSON;
   SendBirdPollDetails.JSON_PROPERTY_VOTER_COUNT
 })
 @JsonTypeName("SendBird.PollDetails")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdPollDetails {
   public static final String JSON_PROPERTY_ALLOW_MULTIPLE_VOTES = "allow_multiple_votes";
   private Boolean allowMultipleVotes;
@@ -129,7 +129,7 @@ public class SendBirdPollDetails {
    * Get allowMultipleVotes
    * @return allowMultipleVotes
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ALLOW_MULTIPLE_VOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -155,7 +155,7 @@ public class SendBirdPollDetails {
    * Get allowUserSuggestion
    * @return allowUserSuggestion
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ALLOW_USER_SUGGESTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -181,7 +181,7 @@ public class SendBirdPollDetails {
    * Get closeAt
    * @return closeAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CLOSE_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -207,7 +207,7 @@ public class SendBirdPollDetails {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -233,7 +233,7 @@ public class SendBirdPollDetails {
    * Get createdBy
    * @return createdBy
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -259,7 +259,7 @@ public class SendBirdPollDetails {
    * Get isAnonymous
    * @return isAnonymous
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_ANONYMOUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -293,7 +293,7 @@ public class SendBirdPollDetails {
    * Get options
    * @return options
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -319,7 +319,7 @@ public class SendBirdPollDetails {
    * Get status
    * @return status
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -345,7 +345,7 @@ public class SendBirdPollDetails {
    * Get updatedAt
    * @return updatedAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -371,7 +371,7 @@ public class SendBirdPollDetails {
    * Get voterCount
    * @return voterCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_VOTER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

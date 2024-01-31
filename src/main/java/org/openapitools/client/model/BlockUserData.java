@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   BlockUserData.JSON_PROPERTY_USERS
 })
 @JsonTypeName("blockUserData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class BlockUserData {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -66,7 +66,7 @@ public class BlockUserData {
    * Specifies the unique ID of the user to block.
    * @return userId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the user to block.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -92,7 +92,7 @@ public class BlockUserData {
    * Specifies the ID of the user to be blocked.
    * @return targetId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the user to be blocked.")
   @JsonProperty(JSON_PROPERTY_TARGET_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -123,7 +123,7 @@ public class BlockUserData {
    * Specifies an array of the IDs of the users to be blocked at a time. (for bulk mode)
    * @return userIds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of the IDs of the users to be blocked at a time. (for bulk mode)")
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -154,7 +154,7 @@ public class BlockUserData {
    * Specifies an array of the IDs of the users to be blocked at a time. The user_ids above and this property can be used interchangeably. (for bulk mode)
    * @return users
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of the IDs of the users to be blocked at a time. The user_ids above and this property can be used interchangeably. (for bulk mode)")
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

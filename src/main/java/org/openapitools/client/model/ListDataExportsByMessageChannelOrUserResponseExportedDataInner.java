@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   ListDataExportsByMessageChannelOrUserResponseExportedDataInner.JSON_PROPERTY_USER_IDS
 })
 @JsonTypeName("listDataExportsByMessageChannelOrUserResponse_exported_data_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   public static final String JSON_PROPERTY_REQUEST_ID = "request_id";
   private String requestId;
@@ -100,7 +100,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get requestId
    * @return requestId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REQUEST_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -126,7 +126,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get status
    * @return status
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -152,7 +152,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get format
    * @return format
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FORMAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -178,7 +178,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get csvDelimiter
    * @return csvDelimiter
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CSV_DELIMITER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -204,7 +204,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get timezone
    * @return timezone
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -230,7 +230,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -256,7 +256,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get startTs
    * @return startTs
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -282,7 +282,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get endTs
    * @return endTs
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -316,7 +316,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get channelUrls
    * @return channelUrls
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URLS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -350,7 +350,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get senderIds
    * @return senderIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SENDER_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -376,7 +376,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get _file
    * @return _file
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -410,7 +410,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
    * Get userIds
    * @return userIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

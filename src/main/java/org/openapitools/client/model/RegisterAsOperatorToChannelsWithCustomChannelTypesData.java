@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   RegisterAsOperatorToChannelsWithCustomChannelTypesData.JSON_PROPERTY_CHANNEL_CUSTOM_TYPES
 })
 @JsonTypeName("registerAsOperatorToChannelsWithCustomChannelTypesData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class RegisterAsOperatorToChannelsWithCustomChannelTypesData {
   public static final String JSON_PROPERTY_CHANNEL_CUSTOM_TYPES = "channel_custom_types";
   private List<String> channelCustomTypes = new ArrayList<>();
@@ -59,7 +59,7 @@ public class RegisterAsOperatorToChannelsWithCustomChannelTypesData {
    * Specifies an array of one or more custom channel types, in order to register the user as an operator to channels with the channel types.
    * @return channelCustomTypes
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more custom channel types, in order to register the user as an operator to channels with the channel types.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_CUSTOM_TYPES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

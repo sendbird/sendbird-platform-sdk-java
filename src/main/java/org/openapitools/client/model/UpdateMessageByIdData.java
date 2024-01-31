@@ -45,7 +45,7 @@ import org.sendbird.client.JSON;
   UpdateMessageByIdData.JSON_PROPERTY_MENTIONED_USER_IDS
 })
 @JsonTypeName("updateMessageByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateMessageByIdData {
   public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
@@ -86,7 +86,7 @@ public class UpdateMessageByIdData {
    * Specifies the type of the channel. Either open_channels or group_channels.
    * @return channelType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the type of the channel. Either open_channels or group_channels.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -112,7 +112,7 @@ public class UpdateMessageByIdData {
    * Specifies the URL of the target channel.
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the target channel.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -138,7 +138,7 @@ public class UpdateMessageByIdData {
    * Specifies the unique ID of the message to update.
    * @return messageId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the message to update.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -164,7 +164,7 @@ public class UpdateMessageByIdData {
    * Specifies the type of the message as ADMM.
    * @return messageType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the type of the message as ADMM.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -190,7 +190,7 @@ public class UpdateMessageByIdData {
    * Specifies the content of the message.
    * @return message
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the content of the message.")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -216,7 +216,7 @@ public class UpdateMessageByIdData {
    * Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.&lt;br /&gt;&lt;br /&gt; Custom types are also used within Sendbird&#39;s [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
    * @return customType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -242,7 +242,7 @@ public class UpdateMessageByIdData {
    * Specifies additional message information such as custom font size, font type or &#x60;JSON&#x60; formatted string.
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional message information such as custom font size, font type or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -268,7 +268,7 @@ public class UpdateMessageByIdData {
    * Specifies the mentioning method which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users)
    * @return mentionType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the mentioning method which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users)")
   @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -302,7 +302,7 @@ public class UpdateMessageByIdData {
    * Specifies an array of one or more IDs of the users who will get a notification for the message.
    * @return mentionedUserIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of the users who will get a notification for the message.")
   @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

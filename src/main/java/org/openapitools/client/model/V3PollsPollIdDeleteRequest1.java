@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   V3PollsPollIdDeleteRequest1.JSON_PROPERTY_DATA
 })
 @JsonTypeName("_v3_polls__poll_id__delete_request_1")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class V3PollsPollIdDeleteRequest1 {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
@@ -72,7 +72,7 @@ public class V3PollsPollIdDeleteRequest1 {
    * Specifies the title of a poll. The length is limited to 2,000 characters.
    * @return title
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the title of a poll. The length is limited to 2,000 characters.")
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,7 +98,7 @@ public class V3PollsPollIdDeleteRequest1 {
    * Determines whether to allow users other than the creator of the poll to add new options to the poll. (Default is false)
    * @return allowUserSuggestion
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to allow users other than the creator of the poll to add new options to the poll. (Default is false)")
   @JsonProperty(JSON_PROPERTY_ALLOW_USER_SUGGESTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,7 +124,7 @@ public class V3PollsPollIdDeleteRequest1 {
    * Determines whether to allow users to vote for multiple options. (Default is false)
    * @return allowMultipleVotes
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to allow users to vote for multiple options. (Default is false)")
   @JsonProperty(JSON_PROPERTY_ALLOW_MULTIPLE_VOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -150,7 +150,7 @@ public class V3PollsPollIdDeleteRequest1 {
    * Specifies when the poll closes and no longer accepts votes in Unix seconds. If the value of this property is -1, the poll is open indefinitely.
    * @return closeAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies when the poll closes and no longer accepts votes in Unix seconds. If the value of this property is -1, the poll is open indefinitely.")
   @JsonProperty(JSON_PROPERTY_CLOSE_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -176,7 +176,7 @@ public class V3PollsPollIdDeleteRequest1 {
    * Specifies the unique ID of the user who creates the poll.
    * @return allocreatedBywMultipleVotes
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID of the user who creates the poll.")
   @JsonProperty(JSON_PROPERTY_ALLOCREATED_BYW_MULTIPLE_VOTES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -202,7 +202,7 @@ public class V3PollsPollIdDeleteRequest1 {
    * Specifies a JSON object of one or more key-value items to store additional poll information.
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies a JSON object of one or more key-value items to store additional poll information.")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   UpdateBotByIdData.JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE
 })
 @JsonTypeName("updateBotByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateBotByIdData {
   public static final String JSON_PROPERTY_BOT_USERID = "bot_userid";
   private String botUserid;
@@ -80,7 +80,7 @@ public class UpdateBotByIdData {
    * Specifies the ID of the bot to update.
    * @return botUserid
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the bot to update.")
   @JsonProperty(JSON_PROPERTY_BOT_USERID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -106,7 +106,7 @@ public class UpdateBotByIdData {
    * Specifies the bot&#39;s nickname. The length is limited to 80 characters.
    * @return botNickname
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the bot's nickname. The length is limited to 80 characters.")
   @JsonProperty(JSON_PROPERTY_BOT_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -132,7 +132,7 @@ public class UpdateBotByIdData {
    * Specifies the URL of the bot&#39;s profile image. The size is limited to 2,048 characters.
    * @return botProfileUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the bot's profile image. The size is limited to 2,048 characters.")
   @JsonProperty(JSON_PROPERTY_BOT_PROFILE_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -158,7 +158,7 @@ public class UpdateBotByIdData {
    * Specifies the server URL where bot is located to receive all events, requests, and data forwarded from an application. For security reasons, it is highly recommended that you use an SSL server. The length is limited to 1,024 characters.
    * @return botCallbackUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the server URL where bot is located to receive all events, requests, and data forwarded from an application. For security reasons, it is highly recommended that you use an SSL server. The length is limited to 1,024 characters.")
   @JsonProperty(JSON_PROPERTY_BOT_CALLBACK_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -184,7 +184,7 @@ public class UpdateBotByIdData {
    * In the channels of where the bot is a member, determines whether to only forward the messages with the specific conditions to the bot or forword all messages to the bot, for privacy concerns. If set to true, only messages that start with a &#39;/&#39; or mention the bot_userid are forwarded to the bot. If set to false, all messages are forwarded.
    * @return isPrivacyMode
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "In the channels of where the bot is a member, determines whether to only forward the messages with the specific conditions to the bot or forword all messages to the bot, for privacy concerns. If set to true, only messages that start with a '/' or mention the bot_userid are forwarded to the bot. If set to false, all messages are forwarded.")
   @JsonProperty(JSON_PROPERTY_IS_PRIVACY_MODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -210,7 +210,7 @@ public class UpdateBotByIdData {
    * Determines whether to mark the bot&#39;s message as read upon sending it. (Default: true)
    * @return enableMarkAsRead
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to mark the bot's message as read upon sending it. (Default: true)")
   @JsonProperty(JSON_PROPERTY_ENABLE_MARK_AS_READ)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -236,7 +236,7 @@ public class UpdateBotByIdData {
    * Determines whether to include information about the members of each channel in a callback response. (Default: false)
    * @return showMember
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to include information about the members of each channel in a callback response. (Default: false)")
   @JsonProperty(JSON_PROPERTY_SHOW_MEMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -262,7 +262,7 @@ public class UpdateBotByIdData {
    * Determines whether the bot automatically joins the channel when invited or joins the channel after manually accepting an invitation using the API. If set to 0, it automatically joins the channel. If set to 1, the latter takes place. (Default: 0)
    * @return channelInvitationPreference
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether the bot automatically joins the channel when invited or joins the channel after manually accepting an invitation using the API. If set to 0, it automatically joins the channel. If set to 1, the latter takes place. (Default: 0)")
   @JsonProperty(JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

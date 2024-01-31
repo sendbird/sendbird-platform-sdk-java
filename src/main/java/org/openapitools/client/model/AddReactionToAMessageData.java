@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   AddReactionToAMessageData.JSON_PROPERTY_REACTION
 })
 @JsonTypeName("addReactionToAMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddReactionToAMessageData {
   public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
@@ -68,7 +68,7 @@ public class AddReactionToAMessageData {
    * Specifies the type of the channel. Currently, a value of group_channels is only available for the parameter.
    * @return channelType
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the type of the channel. Currently, a value of group_channels is only available for the parameter.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -94,7 +94,7 @@ public class AddReactionToAMessageData {
    * Specifies the URL of the target channel.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the target channel.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -120,7 +120,7 @@ public class AddReactionToAMessageData {
    * Specifies the unique ID of the message to add a reaction to.
    * @return messageId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the message to add a reaction to.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -146,7 +146,7 @@ public class AddReactionToAMessageData {
    * Specifies the ID of the user who reacts to the message.
    * @return userId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the ID of the user who reacts to the message.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -172,7 +172,7 @@ public class AddReactionToAMessageData {
    * Specifies the unique key of the reaction to be added to the message. The length is limited to 192 charaters.
    * @return reaction
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique key of the reaction to be added to the message. The length is limited to 192 charaters.")
   @JsonProperty(JSON_PROPERTY_REACTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

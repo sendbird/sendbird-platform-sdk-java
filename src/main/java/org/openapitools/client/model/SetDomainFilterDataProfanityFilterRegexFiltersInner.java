@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterDataProfanityFilterRegexFiltersInner.JSON_PROPERTY_REGEX
 })
 @JsonTypeName("setDomainFilterData_profanity_filter_regex_filters_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SetDomainFilterDataProfanityFilterRegexFiltersInner {
   public static final String JSON_PROPERTY_REGEX = "regex";
   private String regex;
@@ -52,7 +52,7 @@ public class SetDomainFilterDataProfanityFilterRegexFiltersInner {
    * Get regex
    * @return regex
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REGEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

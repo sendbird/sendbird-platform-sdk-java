@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   GcMarkAllMessagesAsDeliveredResponse.JSON_PROPERTY_TS
 })
 @JsonTypeName("gcMarkAllMessagesAsDeliveredResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcMarkAllMessagesAsDeliveredResponse {
   public static final String JSON_PROPERTY_TS = "ts";
   private BigDecimal ts;
@@ -53,7 +53,7 @@ public class GcMarkAllMessagesAsDeliveredResponse {
    * Get ts
    * @return ts
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   ViewNumberOfMonthlyActiveUsersResponse.JSON_PROPERTY_MAU
 })
 @JsonTypeName("viewNumberOfMonthlyActiveUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ViewNumberOfMonthlyActiveUsersResponse {
   public static final String JSON_PROPERTY_MAU = "mau";
   private BigDecimal mau;
@@ -53,7 +53,7 @@ public class ViewNumberOfMonthlyActiveUsersResponse {
    * Get mau
    * @return mau
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

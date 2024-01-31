@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   GcJoinChannelData.JSON_PROPERTY_ACCESS_CODE
 })
 @JsonTypeName("gcJoinChannelData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcJoinChannelData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -60,7 +60,7 @@ public class GcJoinChannelData {
    * Specifies the URL of the channel to join.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the channel to join.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -86,7 +86,7 @@ public class GcJoinChannelData {
    * Specifies the unique ID of the user to join the public group channel.
    * @return userId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the unique ID of the user to join the public group channel.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -112,7 +112,7 @@ public class GcJoinChannelData {
    * This property should be specified if the public group channel to join requires an access code to users, which means that the is_access_code_required property of the channel resource is true.
    * @return accessCode
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "This property should be specified if the public group channel to join requires an access code to users, which means that the is_access_code_required property of the channel resource is true.")
   @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

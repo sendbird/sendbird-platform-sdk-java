@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.JSON_PROPERTY_OPEN_AT
 })
 @JsonTypeName("getDetailedOpenStatusOfAnnouncementByIdResponse_open_status_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -69,7 +69,7 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
    * Get userId
    * @return userId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -95,7 +95,7 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
    * Get channelUrl
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -121,7 +121,7 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
    * Get hasOpened
    * @return hasOpened
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_HAS_OPENED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -147,7 +147,7 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
    * Get sentAt
    * @return sentAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SENT_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -173,7 +173,7 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
    * Get openAt
    * @return openAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPEN_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

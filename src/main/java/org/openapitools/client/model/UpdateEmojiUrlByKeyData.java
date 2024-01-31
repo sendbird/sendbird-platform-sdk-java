@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   UpdateEmojiUrlByKeyData.JSON_PROPERTY_URL
 })
 @JsonTypeName("updateEmojiUrlByKeyData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateEmojiUrlByKeyData {
   public static final String JSON_PROPERTY_EMOJI_KEY = "emoji_key";
   private String emojiKey;
@@ -56,7 +56,7 @@ public class UpdateEmojiUrlByKeyData {
    * Specifies the key of the emoji to update.
    * @return emojiKey
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the key of the emoji to update.")
   @JsonProperty(JSON_PROPERTY_EMOJI_KEY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -82,7 +82,7 @@ public class UpdateEmojiUrlByKeyData {
    * Specifies the new image URL of the emoji.
    * @return url
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the new image URL of the emoji.")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

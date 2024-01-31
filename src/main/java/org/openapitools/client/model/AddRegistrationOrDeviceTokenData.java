@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   AddRegistrationOrDeviceTokenData.JSON_PROPERTY_APNS_DEVICE_TOKEN
 })
 @JsonTypeName("addRegistrationOrDeviceTokenData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class AddRegistrationOrDeviceTokenData {
   public static final String JSON_PROPERTY_GCM_REG_TOKEN = "gcm_reg_token";
   private String gcmRegToken;
@@ -60,7 +60,7 @@ public class AddRegistrationOrDeviceTokenData {
    * Specifies a registration token for Firebase Cloud Messaging (formerly [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)).
    * @return gcmRegToken
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a registration token for Firebase Cloud Messaging (formerly [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)).")
   @JsonProperty(JSON_PROPERTY_GCM_REG_TOKEN)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -86,7 +86,7 @@ public class AddRegistrationOrDeviceTokenData {
    * Specifies a device token for Huawei Mobile Services.
    * @return huaweiDeviceToken
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a device token for Huawei Mobile Services.")
   @JsonProperty(JSON_PROPERTY_HUAWEI_DEVICE_TOKEN)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -112,7 +112,7 @@ public class AddRegistrationOrDeviceTokenData {
    * Specifies a device token for Apple Push Notification Service.
    * @return apnsDeviceToken
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies a device token for Apple Push Notification Service.")
   @JsonProperty(JSON_PROPERTY_APNS_DEVICE_TOKEN)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

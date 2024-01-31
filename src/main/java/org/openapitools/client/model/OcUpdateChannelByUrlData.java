@@ -45,7 +45,7 @@ import org.sendbird.client.JSON;
   OcUpdateChannelByUrlData.JSON_PROPERTY_OPERATORS
 })
 @JsonTypeName("ocUpdateChannelByUrlData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class OcUpdateChannelByUrlData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -83,7 +83,7 @@ public class OcUpdateChannelByUrlData {
    * Specifies the URL of the channel to update.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the channel to update.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -109,7 +109,7 @@ public class OcUpdateChannelByUrlData {
    * Specifies the channel topic, or the name of the channel. The length is limited to 191 characters.
    * @return name
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the channel topic, or the name of the channel. The length is limited to 191 characters.")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -135,7 +135,7 @@ public class OcUpdateChannelByUrlData {
    * Specifies the URL of the cover image. The length is limited to 2,048 characters.
    * @return coverUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the cover image. The length is limited to 2,048 characters.")
   @JsonProperty(JSON_PROPERTY_COVER_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -161,7 +161,7 @@ public class OcUpdateChannelByUrlData {
    * Uploads the file for the channel cover image.
    * @return coverFile
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Uploads the file for the channel cover image.")
   @JsonProperty(JSON_PROPERTY_COVER_FILE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -187,7 +187,7 @@ public class OcUpdateChannelByUrlData {
    * Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.&lt;br /&gt;&lt;br /&gt; Custom types are also used within Sendbird&#39;s [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
    * @return customType
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -213,7 +213,7 @@ public class OcUpdateChannelByUrlData {
    * Specifies additional channel information such as a long description of the channel or &#x60;JSON&#x60; formatted string.
    * @return data
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -244,7 +244,7 @@ public class OcUpdateChannelByUrlData {
    * Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.&lt;br/&gt;&lt;br/&gt;  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.
    * @return operatorIds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.")
   @JsonProperty(JSON_PROPERTY_OPERATOR_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -275,7 +275,7 @@ public class OcUpdateChannelByUrlData {
    * (Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.
    * @return operators
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "(Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.")
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

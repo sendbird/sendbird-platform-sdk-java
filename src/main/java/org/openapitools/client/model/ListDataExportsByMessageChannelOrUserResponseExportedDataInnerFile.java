@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("listDataExportsByMessageChannelOrUserResponse_exported_data_inner_file")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -57,7 +57,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile 
    * Get url
    * @return url
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -83,7 +83,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile 
    * Get expiresAt
    * @return expiresAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

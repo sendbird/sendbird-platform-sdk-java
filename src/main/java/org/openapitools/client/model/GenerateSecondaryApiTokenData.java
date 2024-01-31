@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   GenerateSecondaryApiTokenData.JSON_PROPERTY_H_T_T_P_A_P_I_T_O_K_E_N
 })
 @JsonTypeName("generateSecondaryApiTokenData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GenerateSecondaryApiTokenData {
   public static final String JSON_PROPERTY_H_T_T_P_A_P_I_T_O_K_E_N = "HTTP_API_TOKEN";
   private String HTTP_API_TOKEN;
@@ -52,7 +52,7 @@ public class GenerateSecondaryApiTokenData {
    * Specifies the master API token of the application.
    * @return HTTP_API_TOKEN
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the master API token of the application.")
   @JsonProperty(JSON_PROPERTY_H_T_T_P_A_P_I_T_O_K_E_N)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

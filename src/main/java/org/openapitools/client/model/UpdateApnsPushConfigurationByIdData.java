@@ -44,7 +44,7 @@ import org.sendbird.client.JSON;
   UpdateApnsPushConfigurationByIdData.JSON_PROPERTY_APNS_TYPE
 })
 @JsonTypeName("updateApnsPushConfigurationByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateApnsPushConfigurationByIdData {
   public static final String JSON_PROPERTY_PROVIDER_ID = "provider_id";
   private String providerId;
@@ -85,7 +85,7 @@ public class UpdateApnsPushConfigurationByIdData {
    * Specifies the provider ID of the push configuration to update.
    * @return providerId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the provider ID of the push configuration to update.")
   @JsonProperty(JSON_PROPERTY_PROVIDER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -111,7 +111,7 @@ public class UpdateApnsPushConfigurationByIdData {
    * In a form of the &#x60;multipart/form-data&#x60; content type, specifies a [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) file of which type is either development or production. Sendbird server scans the content of the file, finds out the certificate type, and then registers the file as the corresponding type. If you upload a wrong file, you will receive an error. You should specify either this property or the apns_type below to inform the server of which certificate type to update.
    * @return apnsCert
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "In a form of the `multipart/form-data` content type, specifies a [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) file of which type is either development or production. Sendbird server scans the content of the file, finds out the certificate type, and then registers the file as the corresponding type. If you upload a wrong file, you will receive an error. You should specify either this property or the apns_type below to inform the server of which certificate type to update.")
   @JsonProperty(JSON_PROPERTY_APNS_CERT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -137,7 +137,7 @@ public class UpdateApnsPushConfigurationByIdData {
    * Specifies the certificate type of the [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) file. Acceptable values are development and production. You should specify either this property or the apns_cert above to inform the server of which certificate type to update.
    * @return apnsCertEnvType
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the certificate type of the [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) file. Acceptable values are development and production. You should specify either this property or the apns_cert above to inform the server of which certificate type to update.")
   @JsonProperty(JSON_PROPERTY_APNS_CERT_ENV_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -163,7 +163,7 @@ public class UpdateApnsPushConfigurationByIdData {
    * Specifies the password of the cerfificate file which has been set during the [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) export.
    * @return apnsCertPassword
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the password of the cerfificate file which has been set during the [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) export.")
   @JsonProperty(JSON_PROPERTY_APNS_CERT_PASSWORD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -189,7 +189,7 @@ public class UpdateApnsPushConfigurationByIdData {
    * Determines whether to badge your client app&#39;s icon with the number of a user&#39;s unread messages. (Default: true)
    * @return hasUnreadCountBadge
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to badge your client app's icon with the number of a user's unread messages. (Default: true)")
   @JsonProperty(JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -215,7 +215,7 @@ public class UpdateApnsPushConfigurationByIdData {
    * Determines for your client app whether to perform a silent background update on a user&#39;s device. For more information, see the Apple Developer Documentation&#39;s [Pushing Updates to Your App Silently](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently). (Default: false)
    * @return contentAvailable
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines for your client app whether to perform a silent background update on a user's device. For more information, see the Apple Developer Documentation's [Pushing Updates to Your App Silently](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently). (Default: false)")
   @JsonProperty(JSON_PROPERTY_CONTENT_AVAILABLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -241,7 +241,7 @@ public class UpdateApnsPushConfigurationByIdData {
    * Determines for your client app whether or not to modify the payload of a push notification before it is displayed on a user&#39;s device. For more information, see the Apple Developer Documentation&#39;s [Modifying Content in Newly Delivered Notifications](https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications). (Default: false)
    * @return mutableContent
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines for your client app whether or not to modify the payload of a push notification before it is displayed on a user's device. For more information, see the Apple Developer Documentation's [Modifying Content in Newly Delivered Notifications](https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications). (Default: false)")
   @JsonProperty(JSON_PROPERTY_MUTABLE_CONTENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -267,7 +267,7 @@ public class UpdateApnsPushConfigurationByIdData {
    * Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file can be in the app&#39;s main bundle or in the &#x60;Library/Sounds&#x60; folder of the app&#39;s data container.
    * @return pushSound
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a sound file to be played when a push notification is delivered to your client app. The file can be in the app's main bundle or in the `Library/Sounds` folder of the app's data container.")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -293,7 +293,7 @@ public class UpdateApnsPushConfigurationByIdData {
    * (Deprecated)  Specifies the certificate type of the [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) file. Acceptable values are development and production. You should specify either this property or the apns_cert above to inform the server of which certificate type to update.
    * @return apnsType
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "(Deprecated)  Specifies the certificate type of the [.p12](/docs/chat/v3/ios/guides/push-notifications#2-step-3-export-a-p12-file-and-upload-to-sendbird-dashboard) file. Acceptable values are development and production. You should specify either this property or the apns_cert above to inform the server of which certificate type to update.")
   @JsonProperty(JSON_PROPERTY_APNS_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
 @JsonPropertyOrder({
   SBObject.JSON_PROPERTY_CONSTRUCTOR
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SBObject {
   public static final String JSON_PROPERTY_CONSTRUCTOR = "constructor";
   private Function constructor;
@@ -52,7 +52,7 @@ public class SBObject {
    * Get constructor
    * @return constructor
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CONSTRUCTOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

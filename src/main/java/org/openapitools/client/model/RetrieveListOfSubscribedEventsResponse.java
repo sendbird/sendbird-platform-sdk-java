@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   RetrieveListOfSubscribedEventsResponse.JSON_PROPERTY_WEBHOOK
 })
 @JsonTypeName("retrieveListOfSubscribedEventsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class RetrieveListOfSubscribedEventsResponse {
   public static final String JSON_PROPERTY_WEBHOOK = "webhook";
   private RetrieveListOfSubscribedEventsResponseWebhook webhook;
@@ -53,7 +53,7 @@ public class RetrieveListOfSubscribedEventsResponse {
    * Get webhook
    * @return webhook
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_WEBHOOK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

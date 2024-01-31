@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   OcFreezeChannelData.JSON_PROPERTY_FREEZE
 })
 @JsonTypeName("ocFreezeChannelData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class OcFreezeChannelData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -56,7 +56,7 @@ public class OcFreezeChannelData {
    * Specifies the URL of the channel to freeze.
    * @return channelUrl
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of the channel to freeze.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -82,7 +82,7 @@ public class OcFreezeChannelData {
    * Determines whether to freeze the channel. (Default: false)
    * @return freeze
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to freeze the channel. (Default: false)")
   @JsonProperty(JSON_PROPERTY_FREEZE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

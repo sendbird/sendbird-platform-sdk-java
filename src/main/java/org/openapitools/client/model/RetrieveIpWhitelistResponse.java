@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   RetrieveIpWhitelistResponse.JSON_PROPERTY_IP_WHITELIST_ADDRESSES
 })
 @JsonTypeName("retrieveIpWhitelistResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class RetrieveIpWhitelistResponse {
   public static final String JSON_PROPERTY_IP_WHITELIST_ADDRESSES = "ip_whitelist_addresses";
   private List<String> ipWhitelistAddresses = null;
@@ -62,7 +62,7 @@ public class RetrieveIpWhitelistResponse {
    * Get ipWhitelistAddresses
    * @return ipWhitelistAddresses
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IP_WHITELIST_ADDRESSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   V3PollsPollIdOptionsOptionIdDeleteRequest.JSON_PROPERTY_CREATED_BY
 })
 @JsonTypeName("_v3_polls__poll_id__options__option_id__delete_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class V3PollsPollIdOptionsOptionIdDeleteRequest {
   public static final String JSON_PROPERTY_TEXT = "text";
   private String text;
@@ -56,7 +56,7 @@ public class V3PollsPollIdOptionsOptionIdDeleteRequest {
    * Specifies the description of a new option. The maximum length is 2,000 characters.
    * @return text
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the description of a new option. The maximum length is 2,000 characters.")
   @JsonProperty(JSON_PROPERTY_TEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -82,7 +82,7 @@ public class V3PollsPollIdOptionsOptionIdDeleteRequest {
    * Specifies the unique ID of the user who creates the option.
    * @return createdBy
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID of the user who creates the option.")
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

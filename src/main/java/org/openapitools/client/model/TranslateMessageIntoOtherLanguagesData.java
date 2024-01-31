@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   TranslateMessageIntoOtherLanguagesData.JSON_PROPERTY_TARGET_LANGS
 })
 @JsonTypeName("translateMessageIntoOtherLanguagesData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class TranslateMessageIntoOtherLanguagesData {
   public static final String JSON_PROPERTY_TARGET_LANGS = "target_langs";
   private List<String> targetLangs = null;
@@ -62,7 +62,7 @@ public class TranslateMessageIntoOtherLanguagesData {
    * Specifies an array of one or more codes of [translation](/docs/chat/v3/platform-api/message/translations/translation-engine) to translate the message.
    * @return targetLangs
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more codes of [translation](/docs/chat/v3/platform-api/message/translations/translation-engine) to translate the message.")
   @JsonProperty(JSON_PROPERTY_TARGET_LANGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

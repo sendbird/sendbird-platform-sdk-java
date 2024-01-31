@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   MuteInChannelsWithCustomChannelTypesData.JSON_PROPERTY_CHANNEL_CUSTOM_TYPES
 })
 @JsonTypeName("muteInChannelsWithCustomChannelTypesData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class MuteInChannelsWithCustomChannelTypesData {
   public static final String JSON_PROPERTY_CHANNEL_CUSTOM_TYPES = "channel_custom_types";
   private List<String> channelCustomTypes = new ArrayList<>();
@@ -59,7 +59,7 @@ public class MuteInChannelsWithCustomChannelTypesData {
    * Specifies an array of one or more custom channel types, in order to mute the user in channels with the channel types. The user is permanently muted unless unmuted (10 years, technically).
    * @return channelCustomTypes
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more custom channel types, in order to mute the user in channels with the channel types. The user is permanently muted unless unmuted (10 years, technically).")
   @JsonProperty(JSON_PROPERTY_CHANNEL_CUSTOM_TYPES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

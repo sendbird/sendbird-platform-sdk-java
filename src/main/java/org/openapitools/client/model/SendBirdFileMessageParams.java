@@ -59,7 +59,7 @@ import org.sendbird.client.JSON;
   SendBirdFileMessageParams.JSON_PROPERTY_THUMBNAIL_SIZES
 })
 @JsonTypeName("SendBird.FileMessageParams")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdFileMessageParams {
   public static final String JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   private SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions;
@@ -194,7 +194,7 @@ public class SendBirdFileMessageParams {
    * Get appleCriticalAlertOptions
    * @return appleCriticalAlertOptions
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -220,7 +220,7 @@ public class SendBirdFileMessageParams {
    * Get customType
    * @return customType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -246,7 +246,7 @@ public class SendBirdFileMessageParams {
    * Get data
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -272,7 +272,7 @@ public class SendBirdFileMessageParams {
    * Get _file
    * @return _file
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -298,7 +298,7 @@ public class SendBirdFileMessageParams {
    * Get fileName
    * @return fileName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -324,7 +324,7 @@ public class SendBirdFileMessageParams {
    * Get fileSize
    * @return fileSize
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -350,7 +350,7 @@ public class SendBirdFileMessageParams {
    * Get fileUrl
    * @return fileUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -376,7 +376,7 @@ public class SendBirdFileMessageParams {
    * Get isReplyToChannel
    * @return isReplyToChannel
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_REPLY_TO_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -402,7 +402,7 @@ public class SendBirdFileMessageParams {
    * Get mentionType
    * @return mentionType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -436,7 +436,7 @@ public class SendBirdFileMessageParams {
    * Get mentionedUserIds
    * @return mentionedUserIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -470,7 +470,7 @@ public class SendBirdFileMessageParams {
    * Get mentionedUsers
    * @return mentionedUsers
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -504,7 +504,7 @@ public class SendBirdFileMessageParams {
    * Get metaArrayKeys
    * @return metaArrayKeys
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_META_ARRAY_KEYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -538,7 +538,7 @@ public class SendBirdFileMessageParams {
    * Get metaArrays
    * @return metaArrays
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_META_ARRAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -564,7 +564,7 @@ public class SendBirdFileMessageParams {
    * Get mimeType
    * @return mimeType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MIME_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -590,7 +590,7 @@ public class SendBirdFileMessageParams {
    * Get parentMessageId
    * @return parentMessageId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -616,7 +616,7 @@ public class SendBirdFileMessageParams {
    * Get pushNotificationDeliveryOption
    * @return pushNotificationDeliveryOption
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_NOTIFICATION_DELIVERY_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -650,7 +650,7 @@ public class SendBirdFileMessageParams {
    * Get thumbnailSizes
    * @return thumbnailSizes
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_THUMBNAIL_SIZES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

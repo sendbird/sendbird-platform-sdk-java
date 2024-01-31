@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
   UpdatePushPreferencesData.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("updatePushPreferencesData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdatePushPreferencesData {
   public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
   private String pushTriggerOption;
@@ -102,7 +102,7 @@ public class UpdatePushPreferencesData {
    * Determines the type of push notification trigger to apply to the user&#39;s joined group channels. Valid values are the following:&lt;br /&gt;- all (default): when disconnected from Sendbird server, the user receives notifications for all new messages including mentioned messages the user has been mentioned in.&lt;br /&gt;- mention_only: when disconnected from Sendbird server, the user only receives notifications for messages the user has been mentioned in.&lt;br /&gt;- off: the user doesn&#39;t receive any notifications.
    * @return pushTriggerOption
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines the type of push notification trigger to apply to the user's joined group channels. Valid values are the following:<br />- all (default): when disconnected from Sendbird server, the user receives notifications for all new messages including mentioned messages the user has been mentioned in.<br />- mention_only: when disconnected from Sendbird server, the user only receives notifications for messages the user has been mentioned in.<br />- off: the user doesn't receive any notifications.")
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -128,7 +128,7 @@ public class UpdatePushPreferencesData {
    * Determines whether to pause notification messages for the user during a specific time of day. (Default: false)
    * @return doNotDisturb
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to pause notification messages for the user during a specific time of day. (Default: false)")
   @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -154,7 +154,7 @@ public class UpdatePushPreferencesData {
    * Specifies the hour to start pausing the notifications for Do Not Disturb of the user.
    * @return startHour
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the hour to start pausing the notifications for Do Not Disturb of the user.")
   @JsonProperty(JSON_PROPERTY_START_HOUR)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -180,7 +180,7 @@ public class UpdatePushPreferencesData {
    * Specifies the minute of the hour to start pausing the notifications for Do Not Disturb of the user.
    * @return startMin
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the minute of the hour to start pausing the notifications for Do Not Disturb of the user.")
   @JsonProperty(JSON_PROPERTY_START_MIN)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -206,7 +206,7 @@ public class UpdatePushPreferencesData {
    * Specifies the hour to stop pausing the notifications for Do Not Disturb of the user.
    * @return endHour
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the hour to stop pausing the notifications for Do Not Disturb of the user.")
   @JsonProperty(JSON_PROPERTY_END_HOUR)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -232,7 +232,7 @@ public class UpdatePushPreferencesData {
    * Specifies the minute of the hour to stop pausing the notifications for Do Not Disturb of the user.
    * @return endMin
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the minute of the hour to stop pausing the notifications for Do Not Disturb of the user.")
   @JsonProperty(JSON_PROPERTY_END_MIN)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -258,7 +258,7 @@ public class UpdatePushPreferencesData {
    * Determines whether to snooze notification messages for the user during a specific period of time. (Default: false)
    * @return snoozeEnabled
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to snooze notification messages for the user during a specific period of time. (Default: false)")
   @JsonProperty(JSON_PROPERTY_SNOOZE_ENABLED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -284,7 +284,7 @@ public class UpdatePushPreferencesData {
    * Specifies the timestamp of when to start snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).
    * @return snoozeStartTs
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the timestamp of when to start snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).")
   @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -310,7 +310,7 @@ public class UpdatePushPreferencesData {
    * Specifies the timestamp of when to end snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).
    * @return snoozeEndTs
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the timestamp of when to end snoozing the notifications, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps).")
   @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -336,7 +336,7 @@ public class UpdatePushPreferencesData {
    * Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false)
    * @return blockPushFromBots
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false)")
   @JsonProperty(JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -367,7 +367,7 @@ public class UpdatePushPreferencesData {
    * Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.
    * @return pushBlockedBotIds
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.")
   @JsonProperty(JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -393,7 +393,7 @@ public class UpdatePushPreferencesData {
    * Specifies the timezone to be applied to push preferences with a value such as UTC, Asia/Seoul, Europe/London, etc.
    * @return timezone
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the timezone to be applied to push preferences with a value such as UTC, Asia/Seoul, Europe/London, etc.")
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -419,7 +419,7 @@ public class UpdatePushPreferencesData {
    * Specifies the name of a sound file to be played when a push notification is delivered to your client app.
    * @return pushSound
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the name of a sound file to be played when a push notification is delivered to your client app.")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

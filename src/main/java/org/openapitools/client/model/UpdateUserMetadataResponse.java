@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   UpdateUserMetadataResponse.JSON_PROPERTY_UPSERT
 })
 @JsonTypeName("updateUserMetadataResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateUserMetadataResponse {
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, String> metadata = null;
@@ -67,7 +67,7 @@ public class UpdateUserMetadataResponse {
    * Get metadata
    * @return metadata
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -93,7 +93,7 @@ public class UpdateUserMetadataResponse {
    * Get upsert
    * @return upsert
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UPSERT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

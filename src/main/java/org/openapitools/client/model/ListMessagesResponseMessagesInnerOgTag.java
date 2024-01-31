@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInnerOgTag.JSON_PROPERTY_OG_COLON_IMAGE
 })
 @JsonTypeName("listMessagesResponse_messages_inner_og_tag")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListMessagesResponseMessagesInnerOgTag {
   public static final String JSON_PROPERTY_OG_COLON_URL = "og:url";
   private String ogColonUrl;
@@ -65,7 +65,7 @@ public class ListMessagesResponseMessagesInnerOgTag {
    * Get ogColonUrl
    * @return ogColonUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OG_COLON_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -91,7 +91,7 @@ public class ListMessagesResponseMessagesInnerOgTag {
    * Get ogColonTitle
    * @return ogColonTitle
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OG_COLON_TITLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -117,7 +117,7 @@ public class ListMessagesResponseMessagesInnerOgTag {
    * Get ogColonDescription
    * @return ogColonDescription
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OG_COLON_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -143,7 +143,7 @@ public class ListMessagesResponseMessagesInnerOgTag {
    * Get ogColonImage
    * @return ogColonImage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OG_COLON_IMAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

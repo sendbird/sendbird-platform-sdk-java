@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   BanUsersInChannelsWithCustomChannelTypeDataBannedListInner.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("banUsersInChannelsWithCustomChannelTypeData_banned_list_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -61,7 +61,7 @@ public class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner {
    * Get userId
    * @return userId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -87,7 +87,7 @@ public class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner {
    * Get seconds
    * @return seconds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -113,7 +113,7 @@ public class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner {
    * Get description
    * @return description
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -52,7 +52,7 @@ import org.sendbird.client.JSON;
   SendBirdOpenChannel.JSON_PROPERTY_FREEZE
 })
 @JsonTypeName("SendBird.OpenChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdOpenChannel {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -108,7 +108,7 @@ public class SendBirdOpenChannel {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -134,7 +134,7 @@ public class SendBirdOpenChannel {
    * Get customType
    * @return customType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -160,7 +160,7 @@ public class SendBirdOpenChannel {
    * Get channelUrl
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -186,7 +186,7 @@ public class SendBirdOpenChannel {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -212,7 +212,7 @@ public class SendBirdOpenChannel {
    * Get coverUrl
    * @return coverUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COVER_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -238,7 +238,7 @@ public class SendBirdOpenChannel {
    * Get creator
    * @return creator
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -264,7 +264,7 @@ public class SendBirdOpenChannel {
    * Get data
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -290,7 +290,7 @@ public class SendBirdOpenChannel {
    * Get isDynamicPartitioned
    * @return isDynamicPartitioned
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_DYNAMIC_PARTITIONED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -316,7 +316,7 @@ public class SendBirdOpenChannel {
    * Get isEphemeral
    * @return isEphemeral
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_EPHEMERAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -342,7 +342,7 @@ public class SendBirdOpenChannel {
    * Get isFrozen
    * @return isFrozen
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_FROZEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -368,7 +368,7 @@ public class SendBirdOpenChannel {
    * Get maxLengthMessage
    * @return maxLengthMessage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -402,7 +402,7 @@ public class SendBirdOpenChannel {
    * Get operators
    * @return operators
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -428,7 +428,7 @@ public class SendBirdOpenChannel {
    * Get participantCount
    * @return participantCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PARTICIPANT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -454,7 +454,7 @@ public class SendBirdOpenChannel {
    * Get freeze
    * @return freeze
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FREEZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   OcViewMuteByIdResponse.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("ocViewMuteByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class OcViewMuteByIdResponse {
   public static final String JSON_PROPERTY_IS_MUTED = "is_muted";
   private Boolean isMuted;
@@ -69,7 +69,7 @@ public class OcViewMuteByIdResponse {
    * Get isMuted
    * @return isMuted
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_MUTED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -95,7 +95,7 @@ public class OcViewMuteByIdResponse {
    * Get remainingDuration
    * @return remainingDuration
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REMAINING_DURATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -121,7 +121,7 @@ public class OcViewMuteByIdResponse {
    * Get startAt
    * @return startAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -147,7 +147,7 @@ public class OcViewMuteByIdResponse {
    * Get endAt
    * @return endAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -173,7 +173,7 @@ public class OcViewMuteByIdResponse {
    * Get description
    * @return description
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

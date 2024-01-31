@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   ListReportsResponseReportLogsInner.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("listReportsResponse_report_logs_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListReportsResponseReportLogsInner {
   public static final String JSON_PROPERTY_REPORTING_USER = "reporting_user";
   private SendBirdUser reportingUser;
@@ -88,7 +88,7 @@ public class ListReportsResponseReportLogsInner {
    * Get reportingUser
    * @return reportingUser
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REPORTING_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -114,7 +114,7 @@ public class ListReportsResponseReportLogsInner {
    * Get reportType
    * @return reportType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REPORT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -140,7 +140,7 @@ public class ListReportsResponseReportLogsInner {
    * Get reportCategory
    * @return reportCategory
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REPORT_CATEGORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -166,7 +166,7 @@ public class ListReportsResponseReportLogsInner {
    * Get offendingUser
    * @return offendingUser
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OFFENDING_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -192,7 +192,7 @@ public class ListReportsResponseReportLogsInner {
    * Get reportedMessage
    * @return reportedMessage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonIgnore
 
@@ -226,7 +226,7 @@ public class ListReportsResponseReportLogsInner {
    * Get channel
    * @return channel
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -252,7 +252,7 @@ public class ListReportsResponseReportLogsInner {
    * Get reportDescription
    * @return reportDescription
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REPORT_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -278,7 +278,7 @@ public class ListReportsResponseReportLogsInner {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

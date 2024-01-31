@@ -72,7 +72,7 @@ import org.sendbird.client.JSON;
   SendBirdBaseMessageInstance.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("SendBird.BaseMessageInstance")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdBaseMessageInstance {
   public static final String JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   private SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions;
@@ -232,7 +232,7 @@ public class SendBirdBaseMessageInstance {
    * Get appleCriticalAlertOptions
    * @return appleCriticalAlertOptions
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -258,7 +258,7 @@ public class SendBirdBaseMessageInstance {
    * Get channelType
    * @return channelType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -284,7 +284,7 @@ public class SendBirdBaseMessageInstance {
    * Get channelUrl
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -310,7 +310,7 @@ public class SendBirdBaseMessageInstance {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -336,7 +336,7 @@ public class SendBirdBaseMessageInstance {
    * Get customType
    * @return customType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -362,7 +362,7 @@ public class SendBirdBaseMessageInstance {
    * Get data
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -388,7 +388,7 @@ public class SendBirdBaseMessageInstance {
    * Get isReplyToChannel
    * @return isReplyToChannel
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_REPLY_TO_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -414,7 +414,7 @@ public class SendBirdBaseMessageInstance {
    * Get mentionType
    * @return mentionType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -448,7 +448,7 @@ public class SendBirdBaseMessageInstance {
    * Get mentionedUsers
    * @return mentionedUsers
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -474,7 +474,7 @@ public class SendBirdBaseMessageInstance {
    * Get messageId
    * @return messageId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -500,7 +500,7 @@ public class SendBirdBaseMessageInstance {
    * Get messageType
    * @return messageType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -526,7 +526,7 @@ public class SendBirdBaseMessageInstance {
    * Get metaArray
    * @return metaArray
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_META_ARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -560,7 +560,7 @@ public class SendBirdBaseMessageInstance {
    * Get metaArrays
    * @return metaArrays
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_META_ARRAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -586,7 +586,7 @@ public class SendBirdBaseMessageInstance {
    * Get ogMetaData
    * @return ogMetaData
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OG_META_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -612,7 +612,7 @@ public class SendBirdBaseMessageInstance {
    * Get parentMessage
    * @return parentMessage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonIgnore
 
@@ -646,7 +646,7 @@ public class SendBirdBaseMessageInstance {
    * Get parentMessageId
    * @return parentMessageId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -672,7 +672,7 @@ public class SendBirdBaseMessageInstance {
    * Get parentMessageText
    * @return parentMessageText
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_TEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -706,7 +706,7 @@ public class SendBirdBaseMessageInstance {
    * Get reactions
    * @return reactions
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REACTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -732,7 +732,7 @@ public class SendBirdBaseMessageInstance {
    * Get sendingStatus
    * @return sendingStatus
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SENDING_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -758,7 +758,7 @@ public class SendBirdBaseMessageInstance {
    * Get silent
    * @return silent
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SILENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -784,7 +784,7 @@ public class SendBirdBaseMessageInstance {
    * Get threadInfo
    * @return threadInfo
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_THREAD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -810,7 +810,7 @@ public class SendBirdBaseMessageInstance {
    * Get updatedAt
    * @return updatedAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

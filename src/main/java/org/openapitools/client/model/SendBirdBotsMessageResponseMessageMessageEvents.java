@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   SendBirdBotsMessageResponseMessageMessageEvents.JSON_PROPERTY_UPDATE_LAST_MESSAGE
 })
 @JsonTypeName("SendBird_BotsMessageResponse_message_message_events")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdBotsMessageResponseMessageMessageEvents {
   public static final String JSON_PROPERTY_SEND_PUSH_NOTIFICATION = "send_push_notification";
   private String sendPushNotification;
@@ -64,7 +64,7 @@ public class SendBirdBotsMessageResponseMessageMessageEvents {
    * Get sendPushNotification
    * @return sendPushNotification
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SEND_PUSH_NOTIFICATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -90,7 +90,7 @@ public class SendBirdBotsMessageResponseMessageMessageEvents {
    * Get updateUnreadCount
    * @return updateUnreadCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UPDATE_UNREAD_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -116,7 +116,7 @@ public class SendBirdBotsMessageResponseMessageMessageEvents {
    * Get updateMentionCount
    * @return updateMentionCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UPDATE_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -142,7 +142,7 @@ public class SendBirdBotsMessageResponseMessageMessageEvents {
    * Get updateLastMessage
    * @return updateLastMessage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UPDATE_LAST_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

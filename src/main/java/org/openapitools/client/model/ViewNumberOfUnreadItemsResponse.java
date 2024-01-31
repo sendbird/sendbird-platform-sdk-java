@@ -44,7 +44,7 @@ import org.sendbird.client.JSON;
   ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT
 })
 @JsonTypeName("viewNumberOfUnreadItemsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ViewNumberOfUnreadItemsResponse {
   public static final String JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "non_super_group_channel_unread_message_count";
   private BigDecimal nonSuperGroupChannelUnreadMessageCount;
@@ -85,7 +85,7 @@ public class ViewNumberOfUnreadItemsResponse {
    * Get nonSuperGroupChannelUnreadMessageCount
    * @return nonSuperGroupChannelUnreadMessageCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -111,7 +111,7 @@ public class ViewNumberOfUnreadItemsResponse {
    * Get superGroupChannelUnreadMessageCount
    * @return superGroupChannelUnreadMessageCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -137,7 +137,7 @@ public class ViewNumberOfUnreadItemsResponse {
    * Get groupChannelUnreadMessageCount
    * @return groupChannelUnreadMessageCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -163,7 +163,7 @@ public class ViewNumberOfUnreadItemsResponse {
    * Get superGroupChannelInvitationCount
    * @return superGroupChannelInvitationCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -189,7 +189,7 @@ public class ViewNumberOfUnreadItemsResponse {
    * Get groupChannelInvitationCount
    * @return groupChannelInvitationCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_INVITATION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -215,7 +215,7 @@ public class ViewNumberOfUnreadItemsResponse {
    * Get superGroupChannelUnreadMentionCount
    * @return superGroupChannelUnreadMentionCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -241,7 +241,7 @@ public class ViewNumberOfUnreadItemsResponse {
    * Get groupChannelUnreadMentionCount
    * @return groupChannelUnreadMentionCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -267,7 +267,7 @@ public class ViewNumberOfUnreadItemsResponse {
    * Get nonSuperGroupChannelUnreadMentionCount
    * @return nonSuperGroupChannelUnreadMentionCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -293,7 +293,7 @@ public class ViewNumberOfUnreadItemsResponse {
    * Get nonSuperGroupChannelInvitationCount
    * @return nonSuperGroupChannelInvitationCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   SendBirdReaction.JSON_PROPERTY_USER_IDS
 })
 @JsonTypeName("SendBird.Reaction")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdReaction {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;
@@ -63,7 +63,7 @@ public class SendBirdReaction {
    * Get key
    * @return key
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_KEY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -89,7 +89,7 @@ public class SendBirdReaction {
    * Get updatedAt
    * @return updatedAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -123,7 +123,7 @@ public class SendBirdReaction {
    * Get userIds
    * @return userIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

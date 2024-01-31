@@ -59,7 +59,7 @@ import org.sendbird.client.JSON;
   ListAnnouncementsResponseAnnouncementsInner.JSON_PROPERTY_TARGET_CUSTOM_TYPE
 })
 @JsonTypeName("listAnnouncementsResponse_announcements_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListAnnouncementsResponseAnnouncementsInner {
   public static final String JSON_PROPERTY_UNIQUE_ID = "unique_id";
   private String uniqueId;
@@ -139,7 +139,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get uniqueId
    * @return uniqueId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -165,7 +165,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get announcementGroup
    * @return announcementGroup
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -191,7 +191,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get message
    * @return message
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -217,7 +217,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get enablePush
    * @return enablePush
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENABLE_PUSH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -243,7 +243,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get targetAt
    * @return targetAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARGET_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -269,7 +269,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get targetUserCount
    * @return targetUserCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -295,7 +295,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get targetChannelCount
    * @return targetChannelCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -321,7 +321,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get status
    * @return status
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -347,7 +347,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get scheduledAt
    * @return scheduledAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -373,7 +373,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get ceaseAt
    * @return ceaseAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CEASE_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -399,7 +399,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get resumeAt
    * @return resumeAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_RESUME_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -425,7 +425,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get completedAt
    * @return completedAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COMPLETED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -451,7 +451,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get sentUserCount
    * @return sentUserCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -477,7 +477,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get openCount
    * @return openCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -503,7 +503,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get openRate
    * @return openRate
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPEN_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -529,7 +529,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get createChannel
    * @return createChannel
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -555,7 +555,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get createChannelOptions
    * @return createChannelOptions
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -581,7 +581,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get endAt
    * @return endAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -607,7 +607,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get markAsRead
    * @return markAsRead
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MARK_AS_READ)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -633,7 +633,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get sentChannelCount
    * @return sentChannelCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SENT_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -659,7 +659,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get targetChannelType
    * @return targetChannelType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -685,7 +685,7 @@ public class ListAnnouncementsResponseAnnouncementsInner {
    * Get targetCustomType
    * @return targetCustomType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARGET_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -61,7 +61,7 @@ import org.sendbird.client.JSON;
   ScheduleAnnouncementData.JSON_PROPERTY_ASSIGN_SENDER_AS_CHANNEL_INVITER
 })
 @JsonTypeName("scheduleAnnouncementData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ScheduleAnnouncementData {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private ScheduleAnnouncementDataMessage message;
@@ -147,7 +147,7 @@ public class ScheduleAnnouncementData {
    * Get message
    * @return message
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -173,7 +173,7 @@ public class ScheduleAnnouncementData {
    * Specifies the type of the message, which can be either MESG for a text message and ADMM for an admin message.
    * @return messageType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the type of the message, which can be either MESG for a text message and ADMM for an admin message.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -199,7 +199,7 @@ public class ScheduleAnnouncementData {
    * Specifies the unique ID of the sender when the message.type is MESG. When the message.type value is ADMM, this property is not effective.
    * @return userId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID of the sender when the message.type is MESG. When the message.type value is ADMM, this property is not effective.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -225,7 +225,7 @@ public class ScheduleAnnouncementData {
    * Specifies the content of the message.
    * @return content
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the content of the message.")
   @JsonProperty(JSON_PROPERTY_CONTENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -251,7 +251,7 @@ public class ScheduleAnnouncementData {
    * Specifies the target channels to send the announcement to. Acceptable values are the following: &lt;br/&gt; - sender_all_channels (Default): sends the announcement to all of the sender&#39;s group channels.&lt;br /&gt;- target_channels: sends the announcement to all target group channels. When the &#x60;message.type&#x60; of the announcement is ADMM, this is the only valid option. &lt;br /&gt; - target_users_included_channels: sends the announcement to group channels consisting of the sender, target users, and other members. &lt;br/&gt; - target_users_only_channels: sends the announcement to group channels consisting of the sender and target users only.
    * @return targetAt
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the target channels to send the announcement to. Acceptable values are the following: <br/> - sender_all_channels (Default): sends the announcement to all of the sender's group channels.<br />- target_channels: sends the announcement to all target group channels. When the `message.type` of the announcement is ADMM, this is the only valid option. <br /> - target_users_included_channels: sends the announcement to group channels consisting of the sender, target users, and other members. <br/> - target_users_only_channels: sends the announcement to group channels consisting of the sender and target users only.")
   @JsonProperty(JSON_PROPERTY_TARGET_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -282,7 +282,7 @@ public class ScheduleAnnouncementData {
    * Specifies an array of one or more target user IDs or target channel URLs to send the announcement to when the target_at is  target_channels, target_users_only_channels, or target_users_included_channels.&lt;br /&gt;&lt;br /&gt;  When the target_at value is sender_all_channels, this property is not effective.
    * @return targetList
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more target user IDs or target channel URLs to send the announcement to when the target_at is  target_channels, target_users_only_channels, or target_users_included_channels.<br /><br />  When the target_at value is sender_all_channels, this property is not effective.")
   @JsonProperty(JSON_PROPERTY_TARGET_LIST)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -308,7 +308,7 @@ public class ScheduleAnnouncementData {
    * Determines which type of group channel to send the announcement to, based on the target_at and target_list. This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels and the target_list is specified. Acceptable values are limited to the following:&lt;br/&gt;- all: send the announcement to all channels that have all target users and the sender in them, regardless of channel type.&lt;br/&gt;- distinct (default): sends this announcement to the distinct channels. Distinct channels continue to use the same existing channels whenever someone attempts to create a new channel with the same members.&lt;br/&gt;- non-distinct: sends this announcement to the non-distinct channels. Non-distinct channels always create a new channel even if there is an existing channel with the same members.&lt;br/&gt;&lt;br/&gt; The distinct and non-distinct channels are a subtype of group channels, determined by the [is_distinct](/docs/chat/v3/platform-api/guides/group-channel#2-types-of-a-channel-3-resource-representation) property.
    * @return targetChannelType
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines which type of group channel to send the announcement to, based on the target_at and target_list. This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels and the target_list is specified. Acceptable values are limited to the following:<br/>- all: send the announcement to all channels that have all target users and the sender in them, regardless of channel type.<br/>- distinct (default): sends this announcement to the distinct channels. Distinct channels continue to use the same existing channels whenever someone attempts to create a new channel with the same members.<br/>- non-distinct: sends this announcement to the non-distinct channels. Non-distinct channels always create a new channel even if there is an existing channel with the same members.<br/><br/> The distinct and non-distinct channels are a subtype of group channels, determined by the [is_distinct](/docs/chat/v3/platform-api/guides/group-channel#2-types-of-a-channel-3-resource-representation) property.")
   @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -334,7 +334,7 @@ public class ScheduleAnnouncementData {
    * Specifies the unique ID of the new announcement. The unique_id will be automatically created unless specified.
    * @return uniqueId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique ID of the new announcement. The unique_id will be automatically created unless specified.")
   @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -360,7 +360,7 @@ public class ScheduleAnnouncementData {
    * Specifies the custom message type of the message of the new announcement.
    * @return messageCustomType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the custom message type of the message of the new announcement.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -386,7 +386,7 @@ public class ScheduleAnnouncementData {
    * Specifies additional message information such as custom font size, font type or &#x60;JSON&#x60; formatted string.
    * @return messageData
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional message information such as custom font size, font type or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_MESSAGE_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -412,7 +412,7 @@ public class ScheduleAnnouncementData {
    * Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list. By specifying the create_channel_options, you can configure the properties of newly created channels. (Default: false)
    * @return createChannel
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to create a new channel if there is no existing channel that matches with the target options including target_at and target_list. By specifying the create_channel_options, you can configure the properties of newly created channels. (Default: false)")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -438,7 +438,7 @@ public class ScheduleAnnouncementData {
    * Specifies the announcement group that the new announcement belongs to.&lt;br/&gt; &lt;br/&gt; This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels.
    * @return announcementGroup
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the announcement group that the new announcement belongs to.<br/> <br/> This property is effective only when the target_at is either target_users_only_channels or target_users_included_channels.")
   @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -464,7 +464,7 @@ public class ScheduleAnnouncementData {
    * A newly created channel configuration.
    * @return createChannelOptions
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "A newly created channel configuration.")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -490,7 +490,7 @@ public class ScheduleAnnouncementData {
    * Specifies the name of channels to be created. (Default: Group Channel)
    * @return createChannelOptionsName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the name of channels to be created. (Default: Group Channel)")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -516,7 +516,7 @@ public class ScheduleAnnouncementData {
    * Specifies the URL of the cover image for the new channels.
    * @return createChannelOptionsCoverUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the cover image for the new channels.")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_COVER_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -542,7 +542,7 @@ public class ScheduleAnnouncementData {
    * Specifies the custom channel type of the new channels.
    * @return createChannelOptionsCustomType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the custom channel type of the new channels.")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -568,7 +568,7 @@ public class ScheduleAnnouncementData {
    * Specifies additional channel information such as a long description of the channel or &#x60;JSON&#x60; formatted string.
    * @return createChannelOptionsData
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -594,7 +594,7 @@ public class ScheduleAnnouncementData {
    * Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true)
    * @return createChannelOptionsDistinct
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to create a [distinct](/docs/chat/v3/platform-api/guides/channel-types#2-group-channel) channel. (Default: true)")
   @JsonProperty(JSON_PROPERTY_CREATE_CHANNEL_OPTIONS_DISTINCT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -620,7 +620,7 @@ public class ScheduleAnnouncementData {
    * Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. If not specified, the default is the timestamp of when the request was delivered to Sendbird server. (Default: current timestamp)
    * @return scheduledAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to start the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. If not specified, the default is the timestamp of when the request was delivered to Sendbird server. (Default: current timestamp)")
   @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -646,7 +646,7 @@ public class ScheduleAnnouncementData {
    * Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This should be specified in conjunction with the resume_at property.&lt;br/&gt;&lt;br/&gt; If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.
    * @return ceaseAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to temporarily put the announcement on hold in UTC. The string is represented in HHMM format. This should be specified in conjunction with the resume_at property.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.")
   @JsonProperty(JSON_PROPERTY_CEASE_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -672,7 +672,7 @@ public class ScheduleAnnouncementData {
    * Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This should be specified in conjunction with the cease_at property above.&lt;br/&gt;&lt;br/&gt; If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.
    * @return resumeAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to automatically resume the on-hold announcement in UTC. The string is represented in HHMM format. This should be specified in conjunction with the cease_at property above.<br/><br/> If both the cease_at and resume_at are not specified, Sendbird server starts to send the announcement at the time of the scheduled_at above.")
   @JsonProperty(JSON_PROPERTY_RESUME_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -698,7 +698,7 @@ public class ScheduleAnnouncementData {
    * Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous##2-timestamps) format. If this property is specified, the announcement ends even when the announcement is not sent to all its targets. &lt;br/&gt;&lt;br/&gt; For the announcement to run safely, the end_at time should be set at least 10 minutes later than the scheduled_at time.
    * @return endAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time to permanently end the announcement, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous##2-timestamps) format. If this property is specified, the announcement ends even when the announcement is not sent to all its targets. <br/><br/> For the announcement to run safely, the end_at time should be set at least 10 minutes later than the scheduled_at time.")
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -724,7 +724,7 @@ public class ScheduleAnnouncementData {
    * Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for the announcement. (Default: true)
    * @return enablePush
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to turn on push notification for the announcement. If set to true, push notifications will be sent for the announcement. (Default: true)")
   @JsonProperty(JSON_PROPERTY_ENABLE_PUSH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -750,7 +750,7 @@ public class ScheduleAnnouncementData {
    * Determines whether to assign an announcement sender as an inviter of the newly created channels. (Default: false)
    * @return assignSenderAsChannelInviter
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to assign an announcement sender as an inviter of the newly created channels. (Default: false)")
   @JsonProperty(JSON_PROPERTY_ASSIGN_SENDER_AS_CHANNEL_INVITER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   V3PollsPollIdOptionsOptionIdVotersGetRequest.JSON_PROPERTY_LIMIT
 })
 @JsonTypeName("_v3_polls__poll_id__options__option_id__voters_get_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class V3PollsPollIdOptionsOptionIdVotersGetRequest {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private String token;
@@ -56,7 +56,7 @@ public class V3PollsPollIdOptionsOptionIdVotersGetRequest {
    * Specifies the token to get the next page of voters. You can get this value from the next property of the previous API response.
    * @return token
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the token to get the next page of voters. You can get this value from the next property of the previous API response.")
   @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -82,7 +82,7 @@ public class V3PollsPollIdOptionsOptionIdVotersGetRequest {
    * Specifies the number of voters to return per page. Acceptable values are 1 to 100, inclusive. (Default is 100)
    * @return limit
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the number of voters to return per page. Acceptable values are 1 to 100, inclusive. (Default is 100)")
   @JsonProperty(JSON_PROPERTY_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

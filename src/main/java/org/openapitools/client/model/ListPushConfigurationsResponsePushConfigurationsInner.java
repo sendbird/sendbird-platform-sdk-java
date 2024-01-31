@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   ListPushConfigurationsResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("listPushConfigurationsResponse_push_configurations_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListPushConfigurationsResponsePushConfigurationsInner {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -73,7 +73,7 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -99,7 +99,7 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
    * Get pushType
    * @return pushType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -125,7 +125,7 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -151,7 +151,7 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
    * Get apiKey
    * @return apiKey
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_API_KEY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -177,7 +177,7 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
    * Get senderId
    * @return senderId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SENDER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -203,7 +203,7 @@ public class ListPushConfigurationsResponsePushConfigurationsInner {
    * Get pushSound
    * @return pushSound
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

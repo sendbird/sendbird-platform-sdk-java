@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterDataDomainFilter.JSON_PROPERTY_SHOULD_CHECK_GLOBAL
 })
 @JsonTypeName("setDomainFilterData_domain_filter")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SetDomainFilterDataDomainFilter {
   public static final String JSON_PROPERTY_DOMAINS = "domains";
   private List<String> domains = null;
@@ -70,7 +70,7 @@ public class SetDomainFilterDataDomainFilter {
    * Get domains
    * @return domains
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DOMAINS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -96,7 +96,7 @@ public class SetDomainFilterDataDomainFilter {
    * Get type
    * @return type
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -122,7 +122,7 @@ public class SetDomainFilterDataDomainFilter {
    * Get shouldCheckGlobal
    * @return shouldCheckGlobal
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SHOULD_CHECK_GLOBAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

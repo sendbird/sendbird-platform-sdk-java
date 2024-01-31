@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListMutedUsersInChannelsWithCustomChannelType200Response.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("listMutedUsersInChannelsWithCustomChannelType_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListMutedUsersInChannelsWithCustomChannelType200Response {
   public static final String JSON_PROPERTY_MUTED_LIST = "muted_list";
   private List<SendBirdUser> mutedList = null;
@@ -67,7 +67,7 @@ public class ListMutedUsersInChannelsWithCustomChannelType200Response {
    * Get mutedList
    * @return mutedList
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MUTED_LIST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -93,7 +93,7 @@ public class ListMutedUsersInChannelsWithCustomChannelType200Response {
    * Get next
    * @return next
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

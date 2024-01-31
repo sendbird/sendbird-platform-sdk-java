@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   V3PollsPollIdOptionsOptionIdVotersGet200ResponseVotersInner.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("_v3_polls__poll_id__options__option_id__voters_get_200_response_voters_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class V3PollsPollIdOptionsOptionIdVotersGet200ResponseVotersInner {
   public static final String JSON_PROPERTY_NICKNAME = "nickname";
   private String nickname;
@@ -64,7 +64,7 @@ public class V3PollsPollIdOptionsOptionIdVotersGet200ResponseVotersInner {
    * Get nickname
    * @return nickname
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -90,7 +90,7 @@ public class V3PollsPollIdOptionsOptionIdVotersGet200ResponseVotersInner {
    * Get metadata
    * @return metadata
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -116,7 +116,7 @@ public class V3PollsPollIdOptionsOptionIdVotersGet200ResponseVotersInner {
    * Get profileUrl
    * @return profileUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PROFILE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -142,7 +142,7 @@ public class V3PollsPollIdOptionsOptionIdVotersGet200ResponseVotersInner {
    * Get userId
    * @return userId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

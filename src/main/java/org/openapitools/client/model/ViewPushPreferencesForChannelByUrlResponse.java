@@ -47,7 +47,7 @@ import org.sendbird.client.JSON;
   ViewPushPreferencesForChannelByUrlResponse.JSON_PROPERTY_ENABLE
 })
 @JsonTypeName("viewPushPreferencesForChannelByUrlResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ViewPushPreferencesForChannelByUrlResponse {
   public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
   private String pushTriggerOption;
@@ -97,7 +97,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get pushTriggerOption
    * @return pushTriggerOption
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -123,7 +123,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get doNotDisturb
    * @return doNotDisturb
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -149,7 +149,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get startHour
    * @return startHour
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -175,7 +175,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get startMin
    * @return startMin
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -201,7 +201,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get endHour
    * @return endHour
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -227,7 +227,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get endMin
    * @return endMin
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -253,7 +253,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get snoozeEnabled
    * @return snoozeEnabled
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SNOOZE_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -279,7 +279,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get snoozeStartTs
    * @return snoozeStartTs
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -305,7 +305,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get snoozeEndTs
    * @return snoozeEndTs
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -331,7 +331,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get timezone
    * @return timezone
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -357,7 +357,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get pushSound
    * @return pushSound
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -383,7 +383,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
    * Get enable
    * @return enable
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

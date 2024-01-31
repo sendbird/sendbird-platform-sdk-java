@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   CreateUserTokenData.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("createUserTokenData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class CreateUserTokenData {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private BigDecimal expiresAt;
@@ -53,7 +53,7 @@ public class CreateUserTokenData {
    * Specifies the expiration time of the new session token in Unix milliseconds format. By default, the expiration time of a session token is seven days from the timestamp when the token was issued.
    * @return expiresAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the expiration time of the new session token in Unix milliseconds format. By default, the expiration time of a session token is seven days from the timestamp when the token was issued.")
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

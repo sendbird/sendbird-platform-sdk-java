@@ -63,7 +63,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInner.JSON_PROPERTY_OG_TAG
 })
 @JsonTypeName("listMessagesResponse_messages_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListMessagesResponseMessagesInner {
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private BigDecimal messageSurvivalSeconds;
@@ -143,7 +143,7 @@ public class ListMessagesResponseMessagesInner {
    * Get messageSurvivalSeconds
    * @return messageSurvivalSeconds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -169,7 +169,7 @@ public class ListMessagesResponseMessagesInner {
    * Get customType
    * @return customType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -203,7 +203,7 @@ public class ListMessagesResponseMessagesInner {
    * Get mentionedUsers
    * @return mentionedUsers
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -229,7 +229,7 @@ public class ListMessagesResponseMessagesInner {
    * Get translations
    * @return translations
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TRANSLATIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -255,7 +255,7 @@ public class ListMessagesResponseMessagesInner {
    * Get updatedAt
    * @return updatedAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -281,7 +281,7 @@ public class ListMessagesResponseMessagesInner {
    * Get isOpMsg
    * @return isOpMsg
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_OP_MSG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -307,7 +307,7 @@ public class ListMessagesResponseMessagesInner {
    * Get isRemoved
    * @return isRemoved
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_REMOVED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -333,7 +333,7 @@ public class ListMessagesResponseMessagesInner {
    * Get user
    * @return user
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -359,7 +359,7 @@ public class ListMessagesResponseMessagesInner {
    * Get _file
    * @return _file
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -385,7 +385,7 @@ public class ListMessagesResponseMessagesInner {
    * Get message
    * @return message
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -411,7 +411,7 @@ public class ListMessagesResponseMessagesInner {
    * Get data
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -437,7 +437,7 @@ public class ListMessagesResponseMessagesInner {
    * Get messageRetentionHour
    * @return messageRetentionHour
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE_RETENTION_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -463,7 +463,7 @@ public class ListMessagesResponseMessagesInner {
    * Get silent
    * @return silent
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SILENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -489,7 +489,7 @@ public class ListMessagesResponseMessagesInner {
    * Get type
    * @return type
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -515,7 +515,7 @@ public class ListMessagesResponseMessagesInner {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -541,7 +541,7 @@ public class ListMessagesResponseMessagesInner {
    * Get channelType
    * @return channelType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -567,7 +567,7 @@ public class ListMessagesResponseMessagesInner {
    * Get reqId
    * @return reqId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REQ_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -593,7 +593,7 @@ public class ListMessagesResponseMessagesInner {
    * Get mentionType
    * @return mentionType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -619,7 +619,7 @@ public class ListMessagesResponseMessagesInner {
    * Get channelUrl
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -645,7 +645,7 @@ public class ListMessagesResponseMessagesInner {
    * Get messageId
    * @return messageId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -679,7 +679,7 @@ public class ListMessagesResponseMessagesInner {
    * Get sortedMetaarray
    * @return sortedMetaarray
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -705,7 +705,7 @@ public class ListMessagesResponseMessagesInner {
    * Get ogTag
    * @return ogTag
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OG_TAG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

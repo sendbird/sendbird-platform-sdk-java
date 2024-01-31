@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   SendBirdRestrictionInfo.JSON_PROPERTY_RESTRICTION_TYPE
 })
 @JsonTypeName("SendBird.RestrictionInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdRestrictionInfo {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -96,7 +96,7 @@ public class SendBirdRestrictionInfo {
    * Get description
    * @return description
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -122,7 +122,7 @@ public class SendBirdRestrictionInfo {
    * Get endAt
    * @return endAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -148,7 +148,7 @@ public class SendBirdRestrictionInfo {
    * Get restrictionType
    * @return restrictionType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_RESTRICTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

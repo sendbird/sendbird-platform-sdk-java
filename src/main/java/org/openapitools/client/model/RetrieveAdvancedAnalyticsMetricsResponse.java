@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   RetrieveAdvancedAnalyticsMetricsResponse.JSON_PROPERTY_CUSTOM_MESSAGE_TYPE
 })
 @JsonTypeName("retrieveAdvancedAnalyticsMetricsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class RetrieveAdvancedAnalyticsMetricsResponse {
   public static final String JSON_PROPERTY_SEGMENTS = "segments";
   private String segments;
@@ -73,7 +73,7 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
    * Get segments
    * @return segments
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SEGMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -99,7 +99,7 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
    * Get date
    * @return date
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -125,7 +125,7 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
    * Get value
    * @return value
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -151,7 +151,7 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
    * Get channelType
    * @return channelType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -177,7 +177,7 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
    * Get customChannelType
    * @return customChannelType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUSTOM_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -203,7 +203,7 @@ public class RetrieveAdvancedAnalyticsMetricsResponse {
    * Get customMessageType
    * @return customMessageType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUSTOM_MESSAGE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

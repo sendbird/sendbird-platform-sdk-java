@@ -44,8 +44,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
 
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -67,7 +67,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import org.sendbird.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 @JsonDeserialize(using=SendBirdChannelResponse.SendBirdChannelResponseDeserializer.class)
 @JsonSerialize(using = SendBirdChannelResponse.SendBirdChannelResponseSerializer.class)
 public class SendBirdChannelResponse extends AbstractOpenApiSchema {

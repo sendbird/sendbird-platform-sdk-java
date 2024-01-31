@@ -92,7 +92,7 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannel.JSON_PROPERTY_CHANNEL
 })
 @JsonTypeName("SendBird.GroupChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -423,7 +423,7 @@ public class SendBirdGroupChannel {
    * Get channelUrl
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -449,7 +449,7 @@ public class SendBirdGroupChannel {
    * Get coverUrl
    * @return coverUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COVER_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -475,7 +475,7 @@ public class SendBirdGroupChannel {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -501,7 +501,7 @@ public class SendBirdGroupChannel {
    * Get createdBy
    * @return createdBy
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonIgnore
 
@@ -535,7 +535,7 @@ public class SendBirdGroupChannel {
    * Get creator
    * @return creator
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -561,7 +561,7 @@ public class SendBirdGroupChannel {
    * Get customType
    * @return customType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -587,7 +587,7 @@ public class SendBirdGroupChannel {
    * Get data
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -613,7 +613,7 @@ public class SendBirdGroupChannel {
    * Get disappearingMessage
    * @return disappearingMessage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DISAPPEARING_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -639,7 +639,7 @@ public class SendBirdGroupChannel {
    * Get freeze
    * @return freeze
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FREEZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -665,7 +665,7 @@ public class SendBirdGroupChannel {
    * Get ignoreProfanityFilter
    * @return ignoreProfanityFilter
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IGNORE_PROFANITY_FILTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -691,7 +691,7 @@ public class SendBirdGroupChannel {
    * Get hiddenState
    * @return hiddenState
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_HIDDEN_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -717,7 +717,7 @@ public class SendBirdGroupChannel {
    * Get invitedAt
    * @return invitedAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INVITED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -743,7 +743,7 @@ public class SendBirdGroupChannel {
    * Get inviter
    * @return inviter
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INVITER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -769,7 +769,7 @@ public class SendBirdGroupChannel {
    * Get isAccessCodeRequired
    * @return isAccessCodeRequired
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -795,7 +795,7 @@ public class SendBirdGroupChannel {
    * Get isBroadcast
    * @return isBroadcast
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_BROADCAST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -821,7 +821,7 @@ public class SendBirdGroupChannel {
    * Get isCreated
    * @return isCreated
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_CREATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -847,7 +847,7 @@ public class SendBirdGroupChannel {
    * Get isDiscoverable
    * @return isDiscoverable
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_DISCOVERABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -873,7 +873,7 @@ public class SendBirdGroupChannel {
    * Get isDistinct
    * @return isDistinct
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_DISTINCT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -899,7 +899,7 @@ public class SendBirdGroupChannel {
    * Get isEphemeral
    * @return isEphemeral
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_EPHEMERAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -925,7 +925,7 @@ public class SendBirdGroupChannel {
    * Get isFrozen
    * @return isFrozen
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_FROZEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -951,7 +951,7 @@ public class SendBirdGroupChannel {
    * Get isHidden
    * @return isHidden
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_HIDDEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -977,7 +977,7 @@ public class SendBirdGroupChannel {
    * Get isPublic
    * @return isPublic
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_PUBLIC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1003,7 +1003,7 @@ public class SendBirdGroupChannel {
    * Get isPushEnabled
    * @return isPushEnabled
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_PUSH_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1029,7 +1029,7 @@ public class SendBirdGroupChannel {
    * Get isSuper
    * @return isSuper
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_SUPER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1055,7 +1055,7 @@ public class SendBirdGroupChannel {
    * Get joinedAt
    * @return joinedAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_JOINED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1081,7 +1081,7 @@ public class SendBirdGroupChannel {
    * Get joinedMemberCount
    * @return joinedMemberCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_JOINED_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1107,7 +1107,7 @@ public class SendBirdGroupChannel {
    * Get lastMessage
    * @return lastMessage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonIgnore
 
@@ -1141,7 +1141,7 @@ public class SendBirdGroupChannel {
    * Get maxLengthMessage
    * @return maxLengthMessage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1167,7 +1167,7 @@ public class SendBirdGroupChannel {
    * Get memberCount
    * @return memberCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1201,7 +1201,7 @@ public class SendBirdGroupChannel {
    * Get members
    * @return members
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1227,7 +1227,7 @@ public class SendBirdGroupChannel {
    * Get messageOffsetTimestamp
    * @return messageOffsetTimestamp
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1253,7 +1253,7 @@ public class SendBirdGroupChannel {
    * Get messageSurvivalSeconds
    * @return messageSurvivalSeconds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1279,7 +1279,7 @@ public class SendBirdGroupChannel {
    * Get myCountPreference
    * @return myCountPreference
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MY_COUNT_PREFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1305,7 +1305,7 @@ public class SendBirdGroupChannel {
    * Get myLastRead
    * @return myLastRead
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MY_LAST_READ)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1331,7 +1331,7 @@ public class SendBirdGroupChannel {
    * Get myMemberState
    * @return myMemberState
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MY_MEMBER_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1357,7 +1357,7 @@ public class SendBirdGroupChannel {
    * Get myMutedState
    * @return myMutedState
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MY_MUTED_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1383,7 +1383,7 @@ public class SendBirdGroupChannel {
    * Get myPushTriggerOption
    * @return myPushTriggerOption
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1409,7 +1409,7 @@ public class SendBirdGroupChannel {
    * Get myRole
    * @return myRole
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MY_ROLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1435,7 +1435,7 @@ public class SendBirdGroupChannel {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1469,7 +1469,7 @@ public class SendBirdGroupChannel {
    * Get operators
    * @return operators
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1495,7 +1495,7 @@ public class SendBirdGroupChannel {
    * Get smsFallback
    * @return smsFallback
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1521,7 +1521,7 @@ public class SendBirdGroupChannel {
    * Get unreadMentionCount
    * @return unreadMentionCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1547,7 +1547,7 @@ public class SendBirdGroupChannel {
    * Get unreadMessageCount
    * @return unreadMessageCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -1573,7 +1573,7 @@ public class SendBirdGroupChannel {
    * Get channel
    * @return channel
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

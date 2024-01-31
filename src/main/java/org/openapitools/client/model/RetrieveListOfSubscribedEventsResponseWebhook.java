@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   RetrieveListOfSubscribedEventsResponseWebhook.JSON_PROPERTY_INCLUDE_UNREAD_COUNT
 })
 @JsonTypeName("retrieveListOfSubscribedEventsResponse_webhook")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class RetrieveListOfSubscribedEventsResponseWebhook {
   public static final String JSON_PROPERTY_ENABLED = "enabled";
   private Boolean enabled;
@@ -74,7 +74,7 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
    * Get enabled
    * @return enabled
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -100,7 +100,7 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
    * Get url
    * @return url
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -126,7 +126,7 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
    * Get includeMembers
    * @return includeMembers
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INCLUDE_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -160,7 +160,7 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
    * Get enabledEvents
    * @return enabledEvents
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENABLED_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -194,7 +194,7 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
    * Get allWebhookCategories
    * @return allWebhookCategories
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ALL_WEBHOOK_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -220,7 +220,7 @@ public class RetrieveListOfSubscribedEventsResponseWebhook {
    * Get includeUnreadCount
    * @return includeUnreadCount
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INCLUDE_UNREAD_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

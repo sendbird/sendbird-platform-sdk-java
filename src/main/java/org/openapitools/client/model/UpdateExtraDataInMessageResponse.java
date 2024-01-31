@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   UpdateExtraDataInMessageResponse.JSON_PROPERTY_SORTED_METAARRAY
 })
 @JsonTypeName("updateExtraDataInMessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateExtraDataInMessageResponse {
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
   private List<UpdateExtraDataInMessageResponseSortedMetaarrayInner> sortedMetaarray = null;
@@ -63,7 +63,7 @@ public class UpdateExtraDataInMessageResponse {
    * Get sortedMetaarray
    * @return sortedMetaarray
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

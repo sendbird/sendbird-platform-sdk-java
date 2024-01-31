@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterDataProfanityTriggeredModeration.JSON_PROPERTY_ACTION
 })
 @JsonTypeName("setDomainFilterData_profanity_triggered_moderation")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SetDomainFilterDataProfanityTriggeredModeration {
   public static final String JSON_PROPERTY_COUNT = "count";
   private Integer count;
@@ -60,7 +60,7 @@ public class SetDomainFilterDataProfanityTriggeredModeration {
    * Get count
    * @return count
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -86,7 +86,7 @@ public class SetDomainFilterDataProfanityTriggeredModeration {
    * Get duration
    * @return duration
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DURATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -112,7 +112,7 @@ public class SetDomainFilterDataProfanityTriggeredModeration {
    * Get action
    * @return action
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ACTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
   SendBirdSender.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("SendBird.Sender")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdSender {
   public static final String JSON_PROPERTY_CONNECTION_STATUS = "connection_status";
   private String connectionStatus;
@@ -102,7 +102,7 @@ public class SendBirdSender {
    * Get connectionStatus
    * @return connectionStatus
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CONNECTION_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -128,7 +128,7 @@ public class SendBirdSender {
    * Get friendDiscoveryKey
    * @return friendDiscoveryKey
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FRIEND_DISCOVERY_KEY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -154,7 +154,7 @@ public class SendBirdSender {
    * Get friendName
    * @return friendName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FRIEND_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -180,7 +180,7 @@ public class SendBirdSender {
    * Get isActive
    * @return isActive
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -206,7 +206,7 @@ public class SendBirdSender {
    * Get isBlockedByMe
    * @return isBlockedByMe
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_BLOCKED_BY_ME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -232,7 +232,7 @@ public class SendBirdSender {
    * Get lastSeenAt
    * @return lastSeenAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -258,7 +258,7 @@ public class SendBirdSender {
    * Get metadata
    * @return metadata
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -284,7 +284,7 @@ public class SendBirdSender {
    * Get nickname
    * @return nickname
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -310,7 +310,7 @@ public class SendBirdSender {
    * Get plainProfileUrl
    * @return plainProfileUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PLAIN_PROFILE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -344,7 +344,7 @@ public class SendBirdSender {
    * Get preferredLanguages
    * @return preferredLanguages
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -370,7 +370,7 @@ public class SendBirdSender {
    * Get profileUrl
    * @return profileUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PROFILE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -396,7 +396,7 @@ public class SendBirdSender {
    * Get requireAuth
    * @return requireAuth
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -422,7 +422,7 @@ public class SendBirdSender {
    * Get userId
    * @return userId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

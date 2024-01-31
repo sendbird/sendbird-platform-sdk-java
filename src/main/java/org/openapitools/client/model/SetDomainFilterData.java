@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterData.JSON_PROPERTY_IMAGE_MODERATION
 })
 @JsonTypeName("setDomainFilterData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SetDomainFilterData {
   public static final String JSON_PROPERTY_DOMAIN_FILTER = "domain_filter";
   private SetDomainFilterDataDomainFilter domainFilter;
@@ -68,7 +68,7 @@ public class SetDomainFilterData {
    * Get domainFilter
    * @return domainFilter
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DOMAIN_FILTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -94,7 +94,7 @@ public class SetDomainFilterData {
    * Get profanityFilter
    * @return profanityFilter
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PROFANITY_FILTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -120,7 +120,7 @@ public class SetDomainFilterData {
    * Get profanityTriggeredModeration
    * @return profanityTriggeredModeration
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PROFANITY_TRIGGERED_MODERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -146,7 +146,7 @@ public class SetDomainFilterData {
    * Get imageModeration
    * @return imageModeration
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IMAGE_MODERATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

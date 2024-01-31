@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   RemoveRegistrationOrDeviceTokenByTokenResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("removeRegistrationOrDeviceTokenByTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class RemoveRegistrationOrDeviceTokenByTokenResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private List<String> token = null;
@@ -67,7 +67,7 @@ public class RemoveRegistrationOrDeviceTokenByTokenResponse {
    * Get token
    * @return token
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -93,7 +93,7 @@ public class RemoveRegistrationOrDeviceTokenByTokenResponse {
    * Get user
    * @return user
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

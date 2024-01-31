@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   V3ScheduledMessagesCountGet200Response.JSON_PROPERTY_COUNT
 })
 @JsonTypeName("_v3_scheduled_messages_count_get_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class V3ScheduledMessagesCountGet200Response {
   public static final String JSON_PROPERTY_COUNT = "count";
   private BigDecimal count;
@@ -53,7 +53,7 @@ public class V3ScheduledMessagesCountGet200Response {
    * Get count
    * @return count
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

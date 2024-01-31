@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   SendBirdScheduledMessage.JSON_PROPERTY_MESSAGE
 })
 @JsonTypeName("SendBird.ScheduledMessage")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendBirdScheduledMessage {
   public static final String JSON_PROPERTY_SCHEDULED_MESSAGE_ID = "scheduled_message_id";
   private BigDecimal scheduledMessageId;
@@ -61,7 +61,7 @@ public class SendBirdScheduledMessage {
    * Get scheduledMessageId
    * @return scheduledMessageId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SCHEDULED_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -87,7 +87,7 @@ public class SendBirdScheduledMessage {
    * Get messageType
    * @return messageType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -113,7 +113,7 @@ public class SendBirdScheduledMessage {
    * Get message
    * @return message
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

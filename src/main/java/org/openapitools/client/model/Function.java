@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   Function.JSON_PROPERTY_LENGTH,
   Function.JSON_PROPERTY_PROTOTYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class Function {
   public static final String JSON_PROPERTY_ARGUMENTS = "arguments";
   private JsonNullable<Object> arguments = JsonNullable.<Object>of(null);
@@ -68,7 +68,7 @@ public class Function {
    * Get arguments
    * @return arguments
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonIgnore
 
@@ -102,7 +102,7 @@ public class Function {
    * Get caller
    * @return caller
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CALLER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -128,7 +128,7 @@ public class Function {
    * Get length
    * @return length
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_LENGTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -154,7 +154,7 @@ public class Function {
    * Get prototype
    * @return prototype
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonIgnore
 

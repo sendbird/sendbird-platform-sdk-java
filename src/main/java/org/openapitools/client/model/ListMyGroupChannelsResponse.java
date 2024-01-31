@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   ListMyGroupChannelsResponse.JSON_PROPERTY_TS
 })
 @JsonTypeName("listMyGroupChannelsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ListMyGroupChannelsResponse {
   public static final String JSON_PROPERTY_CHANNELS = "channels";
   private List<SendBirdGroupChannel> channels = null;
@@ -72,7 +72,7 @@ public class ListMyGroupChannelsResponse {
    * Get channels
    * @return channels
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,7 +98,7 @@ public class ListMyGroupChannelsResponse {
    * Get next
    * @return next
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,7 +124,7 @@ public class ListMyGroupChannelsResponse {
    * Get ts
    * @return ts
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

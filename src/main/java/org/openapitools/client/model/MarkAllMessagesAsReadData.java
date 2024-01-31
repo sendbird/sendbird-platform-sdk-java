@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   MarkAllMessagesAsReadData.JSON_PROPERTY_CHANNEL_URLS
 })
 @JsonTypeName("markAllMessagesAsReadData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class MarkAllMessagesAsReadData {
   public static final String JSON_PROPERTY_CHANNEL_URLS = "channel_urls";
   private List<String> channelUrls = new ArrayList<>();
@@ -59,7 +59,7 @@ public class MarkAllMessagesAsReadData {
    * Specifies an array of one or more group channel URLs to mark all of the unread messages in as read. If not specified, all of the unread messages in the joined group channels are marked as read.
    * @return channelUrls
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies an array of one or more group channel URLs to mark all of the unread messages in as read. If not specified, all of the unread messages in the joined group channels are marked as read.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URLS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

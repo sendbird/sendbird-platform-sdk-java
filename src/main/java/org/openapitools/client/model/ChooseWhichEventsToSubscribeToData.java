@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   ChooseWhichEventsToSubscribeToData.JSON_PROPERTY_ENABLED_EVENTS
 })
 @JsonTypeName("chooseWhichEventsToSubscribeToData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class ChooseWhichEventsToSubscribeToData {
   public static final String JSON_PROPERTY_ENABLED = "enabled";
   private Boolean enabled;
@@ -66,7 +66,7 @@ public class ChooseWhichEventsToSubscribeToData {
    * Determines whether webhooks are turned on in your Sendbird application or not. (Default: false)
    * @return enabled
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Determines whether webhooks are turned on in your Sendbird application or not. (Default: false)")
   @JsonProperty(JSON_PROPERTY_ENABLED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -92,7 +92,7 @@ public class ChooseWhichEventsToSubscribeToData {
    * Specifies the URL of your webhook server to receive payloads for events.
    * @return url
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the URL of your webhook server to receive payloads for events.")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -118,7 +118,7 @@ public class ChooseWhichEventsToSubscribeToData {
    * Determines whether to include the information on the members of group channels in payloads. (Default: false)
    * @return includeMembers
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to include the information on the members of group channels in payloads. (Default: false)")
   @JsonProperty(JSON_PROPERTY_INCLUDE_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -152,7 +152,7 @@ public class ChooseWhichEventsToSubscribeToData {
    * Specifies an array of one or more [events](#2-webhook-events) for your webhook server to subscribe to. If set to an asterisk () only, the server will subscribe to all supported events. If set to an empty array, the server will unsubscribe from all (which indicates turning off webhooks).
    * @return enabledEvents
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more [events](#2-webhook-events) for your webhook server to subscribe to. If set to an asterisk () only, the server will subscribe to all supported events. If set to an empty array, the server will unsubscribe from all (which indicates turning off webhooks).")
   @JsonProperty(JSON_PROPERTY_ENABLED_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

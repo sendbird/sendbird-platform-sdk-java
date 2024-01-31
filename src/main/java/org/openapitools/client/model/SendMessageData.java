@@ -63,7 +63,7 @@ import org.sendbird.client.JSON;
   SendMessageData.JSON_PROPERTY_THUMBNAIL3
 })
 @JsonTypeName("sendMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SendMessageData {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -155,7 +155,7 @@ public class SendMessageData {
    * Specifies the user ID of the sender.
    * @return userId
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the user ID of the sender.")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -181,7 +181,7 @@ public class SendMessageData {
    * Specifies the type of the channel. Either open_channels or group_channels.
    * @return channelType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the type of the channel. Either open_channels or group_channels.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -207,7 +207,7 @@ public class SendMessageData {
    * Specifies the URL of the channel to send a message to.
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the URL of the channel to send a message to.")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -233,7 +233,7 @@ public class SendMessageData {
    * Specifies the type of the message as MESG, FILE or ADMM
    * @return messageType
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the type of the message as MESG, FILE or ADMM")
   @JsonProperty(JSON_PROPERTY_MESSAGE_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -259,7 +259,7 @@ public class SendMessageData {
    * Specifies the content of the message.
    * @return message
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Specifies the content of the message.")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -285,7 +285,7 @@ public class SendMessageData {
    * Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.&lt;br /&gt;&lt;br /&gt; Custom types are also used within Sendbird&#39;s [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
    * @return customType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies a custom message type which is used for message grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -311,7 +311,7 @@ public class SendMessageData {
    * Specifies additional message information such as custom font size, font type or &#x60;JSON&#x60; formatted string.
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies additional message information such as custom font size, font type or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -337,7 +337,7 @@ public class SendMessageData {
    * Determines whether to send a push notification for the message to the members of the channel (applicable to group channels only). Unlike text and file messages, a push notification for an admin message is not sent by default. (Default: true)
    * @return sendPush
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to send a push notification for the message to the members of the channel (applicable to group channels only). Unlike text and file messages, a push notification for an admin message is not sent by default. (Default: true)")
   @JsonProperty(JSON_PROPERTY_SEND_PUSH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -363,7 +363,7 @@ public class SendMessageData {
    * Specifies the mentioning type which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users)
    * @return mentionType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the mentioning type which indicates the user scope who will get a notification for the message. Acceptable values are users and channel. If set to users, only the specified users with the mentioned_users property below will get notified. If set to channel, all users in the channel will get notified. (Default: users)")
   @JsonProperty(JSON_PROPERTY_MENTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -397,7 +397,7 @@ public class SendMessageData {
    * Specifies an array of one or more IDs of the users who will get a notification for the message.
    * @return mentionedUserIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies an array of one or more IDs of the users who will get a notification for the message.")
   @JsonProperty(JSON_PROPERTY_MENTIONED_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -423,7 +423,7 @@ public class SendMessageData {
    * Determines whether to send a message without updating some of the channel properties. If a message is sent in a channel, with this property set to true, the channel&#39;s last_message is updated only for the sender while its unread_message_count remains unchanged for all channel members. Also, the message doesn&#39;t send a push notification to message receivers. If the message is sent to a hidden channel, the channel still remains hidden. (Default: false)&lt;/br&gt;&lt;/br&gt;  Once the value of this property is set, it can&#39;t be reverted.
    * @return isSilent
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Determines whether to send a message without updating some of the channel properties. If a message is sent in a channel, with this property set to true, the channel's last_message is updated only for the sender while its unread_message_count remains unchanged for all channel members. Also, the message doesn't send a push notification to message receivers. If the message is sent to a hidden channel, the channel still remains hidden. (Default: false)</br></br>  Once the value of this property is set, it can't be reverted.")
   @JsonProperty(JSON_PROPERTY_IS_SILENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -449,7 +449,7 @@ public class SendMessageData {
    * Specifies a &#x60;JSON&#x60; object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they&#39;ve been specified.
    * @return sortedMetaarray
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies a `JSON` object of one or more key-values items which store additional message information. Each item consists of a key and the values in an array. Items are saved and will be returned in the exact order they've been specified.")
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -475,7 +475,7 @@ public class SendMessageData {
    * Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. This property can be used when migrating the messages of other system to Sendbird server. If specified, the server sets the message&#39;s creation time as the property value.
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the time that the message was sent, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps) format. This property can be used when migrating the messages of other system to Sendbird server. If specified, the server sets the message's creation time as the property value.")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -501,7 +501,7 @@ public class SendMessageData {
    * Specifies the unique message ID created by other system. In general, this property is used to prevent the same message data from getting inserted when migrating the messages of the other system to Sendbird server. If specified, the server performs a duplicate check using the property value.
    * @return dedupId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the unique message ID created by other system. In general, this property is used to prevent the same message data from getting inserted when migrating the messages of the other system to Sendbird server. If specified, the server performs a duplicate check using the property value.")
   @JsonProperty(JSON_PROPERTY_DEDUP_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -527,7 +527,7 @@ public class SendMessageData {
    * Specifies the bundle ID of the client app in order to send a push notification to iOS devices. You can find this in Settings &gt; Chat &gt; Notifications &gt; Push notification services
    * @return apnsBundleId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the bundle ID of the client app in order to send a push notification to iOS devices. You can find this in Settings > Chat > Notifications > Push notification services")
   @JsonProperty(JSON_PROPERTY_APNS_BUNDLE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -553,7 +553,7 @@ public class SendMessageData {
    * Specifies the name of the file that sounds for critical alerts.
    * @return sound
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the name of the file that sounds for critical alerts.")
   @JsonProperty(JSON_PROPERTY_SOUND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -579,7 +579,7 @@ public class SendMessageData {
    * Specifies the volume of the critical alert sound. The volume ranges from 0.0 to 1.0, which indicates silent and full volume, respectively. (Default 1.0)
    * @return volume
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "Specifies the volume of the critical alert sound. The volume ranges from 0.0 to 1.0, which indicates silent and full volume, respectively. (Default 1.0)")
   @JsonProperty(JSON_PROPERTY_VOLUME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -605,7 +605,7 @@ public class SendMessageData {
    * Get url
    * @return url
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -631,7 +631,7 @@ public class SendMessageData {
    * Get _file
    * @return _file
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -657,7 +657,7 @@ public class SendMessageData {
    * Get fileName
    * @return fileName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -683,7 +683,7 @@ public class SendMessageData {
    * Get fileSize
    * @return fileSize
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -709,7 +709,7 @@ public class SendMessageData {
    * Get fileType
    * @return fileType
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FILE_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -743,7 +743,7 @@ public class SendMessageData {
    * Get thumbnails
    * @return thumbnails
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_THUMBNAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -769,7 +769,7 @@ public class SendMessageData {
    * Get thumbnail1
    * @return thumbnail1
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_THUMBNAIL1)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -795,7 +795,7 @@ public class SendMessageData {
    * Get thumbnail2
    * @return thumbnail2
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_THUMBNAIL2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -821,7 +821,7 @@ public class SendMessageData {
    * Get thumbnail3
    * @return thumbnail3
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_THUMBNAIL3)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

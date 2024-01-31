@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterDataImageModeration.JSON_PROPERTY_CHECK_URLS
 })
 @JsonTypeName("setDomainFilterData_image_moderation")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class SetDomainFilterDataImageModeration {
   public static final String JSON_PROPERTY_TYPE = "type";
   private Integer type;
@@ -65,7 +65,7 @@ public class SetDomainFilterDataImageModeration {
    * Get type
    * @return type
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -91,7 +91,7 @@ public class SetDomainFilterDataImageModeration {
    * Get softBlock
    * @return softBlock
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SOFT_BLOCK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -117,7 +117,7 @@ public class SetDomainFilterDataImageModeration {
    * Get limits
    * @return limits
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_LIMITS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -143,7 +143,7 @@ public class SetDomainFilterDataImageModeration {
    * Get checkUrls
    * @return checkUrls
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHECK_URLS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

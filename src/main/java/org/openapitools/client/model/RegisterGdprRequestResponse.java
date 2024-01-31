@@ -44,7 +44,7 @@ import org.sendbird.client.JSON;
   RegisterGdprRequestResponse.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("registerGdprRequestResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class RegisterGdprRequestResponse {
   public static final String JSON_PROPERTY_REQUEST_ID = "request_id";
   private String requestId;
@@ -79,7 +79,7 @@ public class RegisterGdprRequestResponse {
    * Get requestId
    * @return requestId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REQUEST_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -105,7 +105,7 @@ public class RegisterGdprRequestResponse {
    * Get action
    * @return action
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ACTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -131,7 +131,7 @@ public class RegisterGdprRequestResponse {
    * Get status
    * @return status
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -157,7 +157,7 @@ public class RegisterGdprRequestResponse {
    * Get userId
    * @return userId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -191,7 +191,7 @@ public class RegisterGdprRequestResponse {
    * Get userIds
    * @return userIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -217,7 +217,7 @@ public class RegisterGdprRequestResponse {
    * Get channelDeleteOption
    * @return channelDeleteOption
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_DELETE_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -243,7 +243,7 @@ public class RegisterGdprRequestResponse {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

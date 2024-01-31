@@ -47,7 +47,7 @@ import org.sendbird.client.JSON;
   GcBanUserResponse.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("gcBanUserResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class GcBanUserResponse {
   public static final String JSON_PROPERTY_USER = "user";
   private SendBirdUser user;
@@ -91,7 +91,7 @@ public class GcBanUserResponse {
    * Get user
    * @return user
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -117,7 +117,7 @@ public class GcBanUserResponse {
    * Get startAt
    * @return startAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -143,7 +143,7 @@ public class GcBanUserResponse {
    * Get endAt
    * @return endAt
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -169,7 +169,7 @@ public class GcBanUserResponse {
    * Get description
    * @return description
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -195,7 +195,7 @@ public class GcBanUserResponse {
    * Get metadata
    * @return metadata
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -221,7 +221,7 @@ public class GcBanUserResponse {
    * Get nextUrl
    * @return nextUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -247,7 +247,7 @@ public class GcBanUserResponse {
    * Get nickname
    * @return nickname
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -273,7 +273,7 @@ public class GcBanUserResponse {
    * Get profileUrl
    * @return profileUrl
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PROFILE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -299,7 +299,7 @@ public class GcBanUserResponse {
    * Get requireAuthForProfileImage
    * @return requireAuthForProfileImage
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -325,7 +325,7 @@ public class GcBanUserResponse {
    * Get userId
    * @return userId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

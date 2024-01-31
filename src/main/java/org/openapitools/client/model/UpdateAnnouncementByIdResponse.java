@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   UpdateAnnouncementByIdResponse.JSON_PROPERTY_MESSAGE
 })
 @JsonTypeName("updateAnnouncementByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdateAnnouncementByIdResponse {
   public static final String JSON_PROPERTY_UNIQUE_ID = "unique_id";
   private String uniqueId;
@@ -61,7 +61,7 @@ public class UpdateAnnouncementByIdResponse {
    * Get uniqueId
    * @return uniqueId
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UNIQUE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -87,7 +87,7 @@ public class UpdateAnnouncementByIdResponse {
    * Get announcementGroup
    * @return announcementGroup
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ANNOUNCEMENT_GROUP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -113,7 +113,7 @@ public class UpdateAnnouncementByIdResponse {
    * Get message
    * @return message
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

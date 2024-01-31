@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   BlockUserResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("blockUserResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class BlockUserResponse {
   public static final String JSON_PROPERTY_USERS = "users";
   private List<String> users = null;
@@ -66,7 +66,7 @@ public class BlockUserResponse {
    * Get users
    * @return users
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -92,7 +92,7 @@ public class BlockUserResponse {
    * Get next
    * @return next
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

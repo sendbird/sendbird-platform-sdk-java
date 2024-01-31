@@ -51,7 +51,7 @@ import org.sendbird.client.JSON;
   UpdatePushPreferencesResponse.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("updatePushPreferencesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
 public class UpdatePushPreferencesResponse {
   public static final String JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
   private Boolean blockPushFromBots;
@@ -107,7 +107,7 @@ public class UpdatePushPreferencesResponse {
    * Get blockPushFromBots
    * @return blockPushFromBots
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -133,7 +133,7 @@ public class UpdatePushPreferencesResponse {
    * Get enablePushForReplies
    * @return enablePushForReplies
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENABLE_PUSH_FOR_REPLIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -167,7 +167,7 @@ public class UpdatePushPreferencesResponse {
    * Get pushBlockedBotIds
    * @return pushBlockedBotIds
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -193,7 +193,7 @@ public class UpdatePushPreferencesResponse {
    * Get pushTriggerOption
    * @return pushTriggerOption
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -219,7 +219,7 @@ public class UpdatePushPreferencesResponse {
    * Get doNotDisturb
    * @return doNotDisturb
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -245,7 +245,7 @@ public class UpdatePushPreferencesResponse {
    * Get startHour
    * @return startHour
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -271,7 +271,7 @@ public class UpdatePushPreferencesResponse {
    * Get startMin
    * @return startMin
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -297,7 +297,7 @@ public class UpdatePushPreferencesResponse {
    * Get endHour
    * @return endHour
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -323,7 +323,7 @@ public class UpdatePushPreferencesResponse {
    * Get endMin
    * @return endMin
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -349,7 +349,7 @@ public class UpdatePushPreferencesResponse {
    * Get snoozeEnabled
    * @return snoozeEnabled
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SNOOZE_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -375,7 +375,7 @@ public class UpdatePushPreferencesResponse {
    * Get snoozeStartTs
    * @return snoozeStartTs
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -401,7 +401,7 @@ public class UpdatePushPreferencesResponse {
    * Get snoozeEndTs
    * @return snoozeEndTs
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -427,7 +427,7 @@ public class UpdatePushPreferencesResponse {
    * Get timezone
    * @return timezone
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TIMEZONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -453,7 +453,7 @@ public class UpdatePushPreferencesResponse {
    * Get pushSound
    * @return pushSound
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
