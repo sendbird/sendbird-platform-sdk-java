@@ -87,6 +87,13 @@ Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) f
 Add these dependency to your project's POM:
 
 ```xml
+<repositories>
+    <repository>
+        <id>sendbird</id>
+        <url>https://repo.sendbird.com/public/maven</url>
+    </repository>
+</repositories>
+
 <dependencies>
     <dependency>
         <groupId>org.sendbird</groupId>
