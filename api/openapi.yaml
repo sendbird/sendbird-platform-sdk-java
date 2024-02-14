@@ -19799,7 +19799,7 @@ components:
             are blocked. This property is effective only when the block_push_from_bots
             is set to true.
           items:
-            type: integer
+            type: string
           type: array
         timezone:
           description: "Specifies the timezone to be applied to push preferences with\
@@ -19810,11 +19810,9 @@ components:
             notification is delivered to your client app.
           type: string
       required:
-      - block_push_from_bots
       - do_not_disturb
       - end_hour
       - end_min
-      - push_blocked_bot_ids
       - push_sound
       - push_trigger_option
       - snooze_enabled

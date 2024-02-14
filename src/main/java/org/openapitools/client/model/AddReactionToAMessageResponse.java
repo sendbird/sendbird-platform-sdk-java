@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   AddReactionToAMessageResponse.JSON_PROPERTY_MSG_ID
 })
 @JsonTypeName("addReactionToAMessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
 public class AddReactionToAMessageResponse {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
