@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   SendBirdThreadInfo.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("SendBird.ThreadInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
 public class SendBirdThreadInfo {
   public static final String JSON_PROPERTY_LAST_REPLIED_AT = "last_replied_at";
   private BigDecimal lastRepliedAt;

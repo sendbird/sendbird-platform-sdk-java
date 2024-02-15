@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
   UpdatePushPreferencesData.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("updatePushPreferencesData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-24T21:22:01.103596+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
 public class UpdatePushPreferencesData {
   public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
   private String pushTriggerOption;
@@ -82,7 +82,7 @@ public class UpdatePushPreferencesData {
   private Boolean blockPushFromBots;
 
   public static final String JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS = "push_blocked_bot_ids";
-  private List<Integer> pushBlockedBotIds = new ArrayList<>();
+  private List<String> pushBlockedBotIds = null;
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;
@@ -336,10 +336,10 @@ public class UpdatePushPreferencesData {
    * Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false)
    * @return blockPushFromBots
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Determines whether to block push notifications from [all bots](/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots) within the application. If the push_blocked_bot_ids is specified, notifications only from the bots in the property are blocked. (Default: false)")
   @JsonProperty(JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getBlockPushFromBots() {
     return blockPushFromBots;
@@ -347,18 +347,21 @@ public class UpdatePushPreferencesData {
 
 
   @JsonProperty(JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBlockPushFromBots(Boolean blockPushFromBots) {
     this.blockPushFromBots = blockPushFromBots;
   }
 
 
-  public UpdatePushPreferencesData pushBlockedBotIds(List<Integer> pushBlockedBotIds) {
+  public UpdatePushPreferencesData pushBlockedBotIds(List<String> pushBlockedBotIds) {
     this.pushBlockedBotIds = pushBlockedBotIds;
     return this;
   }
 
-  public UpdatePushPreferencesData addPushBlockedBotIdsItem(Integer pushBlockedBotIdsItem) {
+  public UpdatePushPreferencesData addPushBlockedBotIdsItem(String pushBlockedBotIdsItem) {
+    if (this.pushBlockedBotIds == null) {
+      this.pushBlockedBotIds = new ArrayList<>();
+    }
     this.pushBlockedBotIds.add(pushBlockedBotIdsItem);
     return this;
   }
@@ -367,19 +370,19 @@ public class UpdatePushPreferencesData {
    * Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.
    * @return pushBlockedBotIds
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies an array of one or more IDs of bots whose push notifications are blocked. This property is effective only when the block_push_from_bots is set to true.")
   @JsonProperty(JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<Integer> getPushBlockedBotIds() {
+  public List<String> getPushBlockedBotIds() {
     return pushBlockedBotIds;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPushBlockedBotIds(List<Integer> pushBlockedBotIds) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPushBlockedBotIds(List<String> pushBlockedBotIds) {
     this.pushBlockedBotIds = pushBlockedBotIds;
   }
 
