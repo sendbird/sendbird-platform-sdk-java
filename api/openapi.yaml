@@ -11714,6 +11714,7 @@ components:
         is_muted:
           type: boolean
         last_seen_at:
+          format: int64
           type: integer
         nickname:
           type: string
@@ -12410,6 +12411,7 @@ components:
         is_blocked_by_me:
           type: boolean
         last_seen_at:
+          format: int64
           type: integer
         metadata:
           type: object
@@ -12509,6 +12511,7 @@ components:
         is_active:
           type: boolean
         last_seen_at:
+          format: int64
           type: integer
         nickname:
           type: string
@@ -19608,6 +19611,7 @@ components:
           description: "Specifies the time when the user goes offline, to indicate\
             \ when they were last online, in [Unix milliseconds](/docs/chat/v3/platform-api/guides/miscellaneous#2-timestamps)\
             \ format."
+          format: int64
           type: integer
         discovery_keys:
           description: "Specifies an array of unique keys of the user which is provided\

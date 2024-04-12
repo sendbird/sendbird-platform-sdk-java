@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
   UpdateUserByIdData.JSON_PROPERTY_LEAVE_ALL_WHEN_DEACTIVATED
 })
 @JsonTypeName("updateUserByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T17:36:06.761039+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
 public class UpdateUserByIdData {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -76,7 +76,7 @@ public class UpdateUserByIdData {
   private Boolean isActive;
 
   public static final String JSON_PROPERTY_LAST_SEEN_AT = "last_seen_at";
-  private Integer lastSeenAt;
+  private Long lastSeenAt;
 
   public static final String JSON_PROPERTY_DISCOVERY_KEYS = "discovery_keys";
   private List<String> discoveryKeys = null;
@@ -298,7 +298,7 @@ public class UpdateUserByIdData {
   }
 
 
-  public UpdateUserByIdData lastSeenAt(Integer lastSeenAt) {
+  public UpdateUserByIdData lastSeenAt(Long lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
     return this;
   }
@@ -312,14 +312,14 @@ public class UpdateUserByIdData {
   @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getLastSeenAt() {
+  public Long getLastSeenAt() {
     return lastSeenAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastSeenAt(Integer lastSeenAt) {
+  public void setLastSeenAt(Long lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
   }
 

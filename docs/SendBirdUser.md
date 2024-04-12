@@ -14,7 +14,7 @@ User
 |**accessToken** | **String** |  |  [optional] |
 |**hasEverLoggedIn** | **Boolean** |  |  [optional] |
 |**isActive** | **Boolean** |  |  [optional] |
-|**lastSeenAt** | **Integer** |  |  [optional] |
+|**lastSeenAt** | **Long** |  |  [optional] |
 |**nickname** | **String** |  |  [optional] |
 |**discoveryKeys** | **List&lt;String&gt;** |  |  [optional] |
 |**sessionTokens** | **List&lt;Object&gt;** |  |  [optional] |
