@@ -26,7 +26,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.client.model.SendBirdGroupChannelChannel;
 import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
 import org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage;
@@ -89,10 +91,11 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannel.JSON_PROPERTY_SMS_FALLBACK,
   SendBirdGroupChannel.JSON_PROPERTY_UNREAD_MENTION_COUNT,
   SendBirdGroupChannel.JSON_PROPERTY_UNREAD_MESSAGE_COUNT,
-  SendBirdGroupChannel.JSON_PROPERTY_CHANNEL
+  SendBirdGroupChannel.JSON_PROPERTY_CHANNEL,
+  SendBirdGroupChannel.JSON_PROPERTY_READ_RECEIPT
 })
 @JsonTypeName("SendBird.GroupChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T17:36:06.761039+09:00[Asia/Seoul]")
 public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -410,6 +413,9 @@ public class SendBirdGroupChannel {
 
   public static final String JSON_PROPERTY_CHANNEL = "channel";
   private SendBirdGroupChannelChannel channel;
+
+  public static final String JSON_PROPERTY_READ_RECEIPT = "read_receipt";
+  private Map<String, Long> readReceipt = null;
 
   public SendBirdGroupChannel() { 
   }
@@ -1590,6 +1596,40 @@ public class SendBirdGroupChannel {
   }
 
 
+  public SendBirdGroupChannel readReceipt(Map<String, Long> readReceipt) {
+    this.readReceipt = readReceipt;
+    return this;
+  }
+
+  public SendBirdGroupChannel putReadReceiptItem(String key, Long readReceiptItem) {
+    if (this.readReceipt == null) {
+      this.readReceipt = new HashMap<>();
+    }
+    this.readReceipt.put(key, readReceiptItem);
+    return this;
+  }
+
+   /**
+   * Get readReceipt
+   * @return readReceipt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_READ_RECEIPT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Map<String, Long> getReadReceipt() {
+    return readReceipt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_READ_RECEIPT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReadReceipt(Map<String, Long> readReceipt) {
+    this.readReceipt = readReceipt;
+  }
+
+
   /**
    * Return true if this SendBird.GroupChannel object is equal to o.
    */
@@ -1645,7 +1685,8 @@ public class SendBirdGroupChannel {
         Objects.equals(this.smsFallback, sendBirdGroupChannel.smsFallback) &&
         Objects.equals(this.unreadMentionCount, sendBirdGroupChannel.unreadMentionCount) &&
         Objects.equals(this.unreadMessageCount, sendBirdGroupChannel.unreadMessageCount) &&
-        Objects.equals(this.channel, sendBirdGroupChannel.channel);
+        Objects.equals(this.channel, sendBirdGroupChannel.channel) &&
+        Objects.equals(this.readReceipt, sendBirdGroupChannel.readReceipt);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1654,7 +1695,7 @@ public class SendBirdGroupChannel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelUrl, coverUrl, createdAt, hashCodeNullable(createdBy), creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel);
+    return Objects.hash(channelUrl, coverUrl, createdAt, hashCodeNullable(createdBy), creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel, readReceipt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1712,6 +1753,7 @@ public class SendBirdGroupChannel {
     sb.append("    unreadMentionCount: ").append(toIndentedString(unreadMentionCount)).append("\n");
     sb.append("    unreadMessageCount: ").append(toIndentedString(unreadMessageCount)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    sb.append("    readReceipt: ").append(toIndentedString(readReceipt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

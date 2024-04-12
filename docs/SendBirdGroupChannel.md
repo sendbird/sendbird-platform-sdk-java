@@ -51,6 +51,7 @@
 |**unreadMentionCount** | **BigDecimal** |  |  [optional] |
 |**unreadMessageCount** | **BigDecimal** |  |  [optional] |
 |**channel** | [**SendBirdGroupChannelChannel**](SendBirdGroupChannelChannel.md) |  |  [optional] |
+|**readReceipt** | **Map&lt;String, Long&gt;** |  |  [optional] |
 
 
 

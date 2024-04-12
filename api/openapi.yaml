@@ -11541,6 +11541,8 @@ components:
           - exclude_user_ids
           - exclude_user_ids
           wait_seconds: 9.965781217890562
+        read_receipt:
+          key: 3
         ignore_profanity_filter: true
         is_access_code_required: true
       properties:
@@ -11656,6 +11658,11 @@ components:
           type: number
         channel:
           $ref: '#/components/schemas/SendBird_GroupChannel_channel'
+        read_receipt:
+          additionalProperties:
+            format: int64
+            type: integer
+          type: object
       type: object
     SendBird.GroupChannelCollection:
       properties:
@@ -13262,6 +13269,8 @@ components:
             - exclude_user_ids
             - exclude_user_ids
             wait_seconds: 9.965781217890562
+          read_receipt:
+            key: 3
           ignore_profanity_filter: true
           is_access_code_required: true
         - message_offset_timestamp: 1.1730742509559433
@@ -13481,9 +13490,11 @@ components:
             - exclude_user_ids
             - exclude_user_ids
             wait_seconds: 9.965781217890562
+          read_receipt:
+            key: 3
           ignore_profanity_filter: true
           is_access_code_required: true
-        ts: 3.5571952270680973
+        ts: 6.965117697638846
       properties:
         channels:
           items:
@@ -15102,6 +15113,8 @@ components:
             - exclude_user_ids
             - exclude_user_ids
             wait_seconds: 9.965781217890562
+          read_receipt:
+            key: 3
           ignore_profanity_filter: true
           is_access_code_required: true
         - message_offset_timestamp: 1.1730742509559433
@@ -15321,6 +15334,8 @@ components:
             - exclude_user_ids
             - exclude_user_ids
             wait_seconds: 9.965781217890562
+          read_receipt:
+            key: 3
           ignore_profanity_filter: true
           is_access_code_required: true
         ts: 0.8008281904610115
@@ -17273,6 +17288,8 @@ components:
             - exclude_user_ids
             - exclude_user_ids
             wait_seconds: 9.965781217890562
+          read_receipt:
+            key: 3
           ignore_profanity_filter: true
           is_access_code_required: true
         - message_offset_timestamp: 1.1730742509559433
@@ -17492,6 +17509,8 @@ components:
             - exclude_user_ids
             - exclude_user_ids
             wait_seconds: 9.965781217890562
+          read_receipt:
+            key: 3
           ignore_profanity_filter: true
           is_access_code_required: true
       properties:
@@ -20312,10 +20331,7 @@ components:
           type: object
       required:
       - channel_url
-      - hidden_status
-      - invitation_status
       - user_ids
-      - users
       title: gcInviteAsMembersData
       type: object
     gcAcceptInvitationData:

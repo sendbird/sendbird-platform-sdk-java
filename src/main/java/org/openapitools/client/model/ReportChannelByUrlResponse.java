@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   ReportChannelByUrlResponse.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("reportChannelByUrlResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T17:36:06.761039+09:00[Asia/Seoul]")
 public class ReportChannelByUrlResponse {
   public static final String JSON_PROPERTY_REPORT_TYPE = "report_type";
   private String reportType;
