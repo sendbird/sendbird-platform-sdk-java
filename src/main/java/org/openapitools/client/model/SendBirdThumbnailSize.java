@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   SendBirdThumbnailSize.JSON_PROPERTY_MAX_WIDTH
 })
 @JsonTypeName("SendBird.ThumbnailSize")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T17:36:06.761039+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
 public class SendBirdThumbnailSize {
   public static final String JSON_PROPERTY_MAX_HEIGHT = "max_height";
   private BigDecimal maxHeight;

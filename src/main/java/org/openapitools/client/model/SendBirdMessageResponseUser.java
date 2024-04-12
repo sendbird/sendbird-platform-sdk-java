@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   SendBirdMessageResponseUser.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("SendBird_MessageResponse_user")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T17:36:06.761039+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
 public class SendBirdMessageResponseUser {
   public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;

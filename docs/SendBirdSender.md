@@ -12,7 +12,7 @@
 |**friendName** | **String** |  |  [optional] |
 |**isActive** | **Boolean** |  |  [optional] |
 |**isBlockedByMe** | **Boolean** |  |  [optional] |
-|**lastSeenAt** | **Integer** |  |  [optional] |
+|**lastSeenAt** | **Long** |  |  [optional] |
 |**metadata** | **Object** |  |  [optional] |
 |**nickname** | **String** |  |  [optional] |
 |**plainProfileUrl** | **String** |  |  [optional] |
