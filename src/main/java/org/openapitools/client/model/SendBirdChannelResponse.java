@@ -26,7 +26,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.client.model.SendBirdGroupChannel;
 import org.openapitools.client.model.SendBirdGroupChannelChannel;
 import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
@@ -67,7 +69,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import org.sendbird.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T17:36:06.761039+09:00[Asia/Seoul]")
 @JsonDeserialize(using=SendBirdChannelResponse.SendBirdChannelResponseDeserializer.class)
 @JsonSerialize(using = SendBirdChannelResponse.SendBirdChannelResponseSerializer.class)
 public class SendBirdChannelResponse extends AbstractOpenApiSchema {
