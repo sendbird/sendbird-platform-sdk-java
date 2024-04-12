@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ScheduleAnnouncementResponseCreateChannelOptions.JSON_PROPERTY_CUSTOM_TYPE
 })
 @JsonTypeName("scheduleAnnouncementResponse_create_channel_options")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T18:55:03.914006+09:00[Asia/Seoul]")
 public class ScheduleAnnouncementResponseCreateChannelOptions {
   public static final String JSON_PROPERTY_DISTINCT = "distinct";
   private Boolean distinct;

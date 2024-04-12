@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   ListAnnouncementGroupsResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("listAnnouncementGroupsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T18:55:03.914006+09:00[Asia/Seoul]")
 public class ListAnnouncementGroupsResponse {
   public static final String JSON_PROPERTY_ANNOUNCEMENT_GROUPS = "announcement_groups";
   private List<String> announcementGroups = null;

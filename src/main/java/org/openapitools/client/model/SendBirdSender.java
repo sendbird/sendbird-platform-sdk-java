@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
   SendBirdSender.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("SendBird.Sender")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T18:55:03.914006+09:00[Asia/Seoul]")
 public class SendBirdSender {
   public static final String JSON_PROPERTY_CONNECTION_STATUS = "connection_status";
   private String connectionStatus;
@@ -67,7 +67,7 @@ public class SendBirdSender {
   private Boolean isBlockedByMe;
 
   public static final String JSON_PROPERTY_LAST_SEEN_AT = "last_seen_at";
-  private Integer lastSeenAt;
+  private Long lastSeenAt;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Object metadata;
@@ -223,7 +223,7 @@ public class SendBirdSender {
   }
 
 
-  public SendBirdSender lastSeenAt(Integer lastSeenAt) {
+  public SendBirdSender lastSeenAt(Long lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
     return this;
   }
@@ -237,14 +237,14 @@ public class SendBirdSender {
   @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getLastSeenAt() {
+  public Long getLastSeenAt() {
     return lastSeenAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LAST_SEEN_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastSeenAt(Integer lastSeenAt) {
+  public void setLastSeenAt(Long lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
   }
 

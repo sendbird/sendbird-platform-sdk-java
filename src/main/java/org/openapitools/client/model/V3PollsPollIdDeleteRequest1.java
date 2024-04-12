@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   V3PollsPollIdDeleteRequest1.JSON_PROPERTY_DATA
 })
 @JsonTypeName("_v3_polls__poll_id__delete_request_1")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T18:55:03.914006+09:00[Asia/Seoul]")
 public class V3PollsPollIdDeleteRequest1 {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;

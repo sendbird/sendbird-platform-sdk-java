@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInnerOgTagOgImage.JSON_PROPERTY_HEIGHT
 })
 @JsonTypeName("listMessagesResponse_messages_inner_og_tag_og_image")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-14T21:00:42.844610+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T18:55:03.914006+09:00[Asia/Seoul]")
 public class ListMessagesResponseMessagesInnerOgTagOgImage {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
