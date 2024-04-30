@@ -218,6 +218,7 @@ docs/SendBirdBotsMessageResponseMessageMessageEvents.md
 docs/SendBirdChannelResponse.md
 docs/SendBirdEmoji.md
 docs/SendBirdEmojiCategory.md
+docs/SendBirdFile.md
 docs/SendBirdFileMessageParams.md
 docs/SendBirdGroupChannel.md
 docs/SendBirdGroupChannelChannel.md
@@ -233,6 +234,7 @@ docs/SendBirdMessageResponseUser.md
 docs/SendBirdOGImage.md
 docs/SendBirdOGMetaData.md
 docs/SendBirdOpenChannel.md
+docs/SendBirdParentMessageInfo.md
 docs/SendBirdPlugin.md
 docs/SendBirdPoll.md
 docs/SendBirdPollDetails.md
@@ -542,6 +544,7 @@ src/main/java/org/openapitools/client/model/SendBirdBotsMessageResponseMessageMe
 src/main/java/org/openapitools/client/model/SendBirdChannelResponse.java
 src/main/java/org/openapitools/client/model/SendBirdEmoji.java
 src/main/java/org/openapitools/client/model/SendBirdEmojiCategory.java
+src/main/java/org/openapitools/client/model/SendBirdFile.java
 src/main/java/org/openapitools/client/model/SendBirdFileMessageParams.java
 src/main/java/org/openapitools/client/model/SendBirdGroupChannel.java
 src/main/java/org/openapitools/client/model/SendBirdGroupChannelChannel.java
@@ -557,6 +560,7 @@ src/main/java/org/openapitools/client/model/SendBirdMessageResponseUser.java
 src/main/java/org/openapitools/client/model/SendBirdOGImage.java
 src/main/java/org/openapitools/client/model/SendBirdOGMetaData.java
 src/main/java/org/openapitools/client/model/SendBirdOpenChannel.java
+src/main/java/org/openapitools/client/model/SendBirdParentMessageInfo.java
 src/main/java/org/openapitools/client/model/SendBirdPlugin.java
 src/main/java/org/openapitools/client/model/SendBirdPoll.java
 src/main/java/org/openapitools/client/model/SendBirdPollDetails.java

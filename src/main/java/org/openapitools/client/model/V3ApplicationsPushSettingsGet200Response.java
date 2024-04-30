@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   V3ApplicationsPushSettingsGet200Response.JSON_PROPERTY_PUSH_ENABLED
 })
 @JsonTypeName("_v3_applications_push_settings_get_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
 public class V3ApplicationsPushSettingsGet200Response {
   public static final String JSON_PROPERTY_PUSH_ENABLED = "push_enabled";
   private Boolean pushEnabled;

@@ -31,6 +31,7 @@ import org.openapitools.client.model.ListMessagesResponseMessagesInnerOgTag;
 import org.openapitools.client.model.ListMessagesResponseMessagesInnerSortedMetaarrayInner;
 import org.openapitools.client.model.SendBirdMessageResponseMentionedUsersInner;
 import org.openapitools.client.model.SendBirdMessageResponseUser;
+import org.openapitools.client.model.SendBirdParentMessageInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -60,10 +61,11 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInner.JSON_PROPERTY_CHANNEL_URL,
   ListMessagesResponseMessagesInner.JSON_PROPERTY_MESSAGE_ID,
   ListMessagesResponseMessagesInner.JSON_PROPERTY_SORTED_METAARRAY,
-  ListMessagesResponseMessagesInner.JSON_PROPERTY_OG_TAG
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_OG_TAG,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_PARENT_MESSAGE_INFO
 })
 @JsonTypeName("listMessagesResponse_messages_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
 public class ListMessagesResponseMessagesInner {
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private BigDecimal messageSurvivalSeconds;
@@ -130,6 +132,9 @@ public class ListMessagesResponseMessagesInner {
 
   public static final String JSON_PROPERTY_OG_TAG = "og_tag";
   private ListMessagesResponseMessagesInnerOgTag ogTag;
+
+  public static final String JSON_PROPERTY_PARENT_MESSAGE_INFO = "parent_message_info";
+  private SendBirdParentMessageInfo parentMessageInfo;
 
   public ListMessagesResponseMessagesInner() { 
   }
@@ -722,6 +727,32 @@ public class ListMessagesResponseMessagesInner {
   }
 
 
+  public ListMessagesResponseMessagesInner parentMessageInfo(SendBirdParentMessageInfo parentMessageInfo) {
+    this.parentMessageInfo = parentMessageInfo;
+    return this;
+  }
+
+   /**
+   * Get parentMessageInfo
+   * @return parentMessageInfo
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_INFO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public SendBirdParentMessageInfo getParentMessageInfo() {
+    return parentMessageInfo;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_INFO)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setParentMessageInfo(SendBirdParentMessageInfo parentMessageInfo) {
+    this.parentMessageInfo = parentMessageInfo;
+  }
+
+
   /**
    * Return true if this listMessagesResponse_messages_inner object is equal to o.
    */
@@ -755,12 +786,13 @@ public class ListMessagesResponseMessagesInner {
         Objects.equals(this.channelUrl, listMessagesResponseMessagesInner.channelUrl) &&
         Objects.equals(this.messageId, listMessagesResponseMessagesInner.messageId) &&
         Objects.equals(this.sortedMetaarray, listMessagesResponseMessagesInner.sortedMetaarray) &&
-        Objects.equals(this.ogTag, listMessagesResponseMessagesInner.ogTag);
+        Objects.equals(this.ogTag, listMessagesResponseMessagesInner.ogTag) &&
+        Objects.equals(this.parentMessageInfo, listMessagesResponseMessagesInner.parentMessageInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, _file, message, data, messageRetentionHour, silent, type, createdAt, channelType, reqId, mentionType, channelUrl, messageId, sortedMetaarray, ogTag);
+    return Objects.hash(messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, _file, message, data, messageRetentionHour, silent, type, createdAt, channelType, reqId, mentionType, channelUrl, messageId, sortedMetaarray, ogTag, parentMessageInfo);
   }
 
   @Override
@@ -789,6 +821,7 @@ public class ListMessagesResponseMessagesInner {
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    sortedMetaarray: ").append(toIndentedString(sortedMetaarray)).append("\n");
     sb.append("    ogTag: ").append(toIndentedString(ogTag)).append("\n");
+    sb.append("    parentMessageInfo: ").append(toIndentedString(parentMessageInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

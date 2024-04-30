@@ -61,7 +61,7 @@ import org.sendbird.client.JSON;
   SendBirdUser.JSON_PROPERTY_START_AT
 })
 @JsonTypeName("SendBird.User")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
 public class SendBirdUser {
   public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;

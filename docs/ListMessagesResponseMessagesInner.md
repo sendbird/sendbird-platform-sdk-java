@@ -29,6 +29,7 @@
 |**messageId** | **BigDecimal** |  |  [optional] |
 |**sortedMetaarray** | [**List&lt;ListMessagesResponseMessagesInnerSortedMetaarrayInner&gt;**](ListMessagesResponseMessagesInnerSortedMetaarrayInner.md) |  |  [optional] |
 |**ogTag** | [**ListMessagesResponseMessagesInnerOgTag**](ListMessagesResponseMessagesInnerOgTag.md) |  |  [optional] |
+|**parentMessageInfo** | [**SendBirdParentMessageInfo**](SendBirdParentMessageInfo.md) |  |  [optional] |
 
 
 

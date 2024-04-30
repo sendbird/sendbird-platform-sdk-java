@@ -1264,7 +1264,7 @@ No authorization required
 
 ## listMessages
 
-> ListMessagesResponse listMessages(channelType, channelUrl).apiToken(apiToken).messageTs(messageTs).messageId(messageId).prevLimit(prevLimit).nextLimit(nextLimit).include(include).reverse(reverse).senderId(senderId).senderIds(senderIds).operatorFilter(operatorFilter).customTypes(customTypes).messageType(messageType).includingRemoved(includingRemoved).includeReactions(includeReactions).withSortedMetaArray(withSortedMetaArray).showSubchannelMessagesOnly(showSubchannelMessagesOnly).userId(userId).customType(customType).withMetaArray(withMetaArray).execute();
+> ListMessagesResponse listMessages(channelType, channelUrl).apiToken(apiToken).messageTs(messageTs).messageId(messageId).prevLimit(prevLimit).nextLimit(nextLimit).include(include).reverse(reverse).senderId(senderId).senderIds(senderIds).operatorFilter(operatorFilter).customTypes(customTypes).messageType(messageType).includingRemoved(includingRemoved).includeReactions(includeReactions).includeReplyType(includeReplyType).includeParentMessageInfo(includeParentMessageInfo).withSortedMetaArray(withSortedMetaArray).showSubchannelMessagesOnly(showSubchannelMessagesOnly).userId(userId).customType(customType).withMetaArray(withMetaArray).execute();
 
 List messages
 
@@ -1316,6 +1316,8 @@ public class Example {
         String messageType = "messageType_example"; // String | 
         Boolean includingRemoved = true; // Boolean | 
         Boolean includeReactions = true; // Boolean | 
+        String includeReplyType = "NONE"; // String | One of following values: NONE, ALL, ONLY_REPLY_TO_CHANNEL
+        Boolean includeParentMessageInfo = true; // Boolean | 
         Boolean withSortedMetaArray = true; // Boolean | 
         Boolean showSubchannelMessagesOnly = true; // Boolean | 
         String userId = "userId_example"; // String | 
@@ -1337,6 +1339,8 @@ public class Example {
                 .messageType(messageType)
                 .includingRemoved(includingRemoved)
                 .includeReactions(includeReactions)
+                .includeReplyType(includeReplyType)
+                .includeParentMessageInfo(includeParentMessageInfo)
                 .withSortedMetaArray(withSortedMetaArray)
                 .showSubchannelMessagesOnly(showSubchannelMessagesOnly)
                 .userId(userId)
@@ -1376,6 +1380,8 @@ public class Example {
 | **messageType** | **String**|  | [optional] |
 | **includingRemoved** | **Boolean**|  | [optional] |
 | **includeReactions** | **Boolean**|  | [optional] |
+| **includeReplyType** | **String**| One of following values: NONE, ALL, ONLY_REPLY_TO_CHANNEL | [optional] [enum: NONE, ALL, ONLY_REPLY_TO_CHANNEL] |
+| **includeParentMessageInfo** | **Boolean**|  | [optional] |
 | **withSortedMetaArray** | **Boolean**|  | [optional] |
 | **showSubchannelMessagesOnly** | **Boolean**|  | [optional] |
 | **userId** | **String**|  | [optional] |
@@ -2301,7 +2307,7 @@ No authorization required
 
 ## viewMessageById
 
-> SendBirdMessageResponse viewMessageById(channelType, channelUrl, messageId).apiToken(apiToken).withSortedMetaArray(withSortedMetaArray).withMetaArray(withMetaArray).execute();
+> SendBirdMessageResponse viewMessageById(channelType, channelUrl, messageId).apiToken(apiToken).withSortedMetaArray(withSortedMetaArray).withMetaArray(withMetaArray).includeParentMessageInfo(includeParentMessageInfo).execute();
 
 View a message
 
@@ -2344,11 +2350,13 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean withSortedMetaArray = true; // Boolean | 
         Boolean withMetaArray = true; // Boolean | 
+        Boolean includeParentMessageInfo = true; // Boolean | 
         try {
             SendBirdMessageResponse result = api.viewMessageById(channelType, channelUrl, messageId)
                 .apiToken(apiToken)
                 .withSortedMetaArray(withSortedMetaArray)
                 .withMetaArray(withMetaArray)
+                .includeParentMessageInfo(includeParentMessageInfo)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -2373,6 +2381,7 @@ public class Example {
 | **apiToken** | **String**|  | [optional] |
 | **withSortedMetaArray** | **Boolean**|  | [optional] |
 | **withMetaArray** | **Boolean**|  | [optional] |
+| **includeParentMessageInfo** | **Boolean**|  | [optional] |
 
 ### Return type
 
