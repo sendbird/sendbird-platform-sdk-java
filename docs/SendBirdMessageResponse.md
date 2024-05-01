@@ -32,7 +32,7 @@
 |**sortedMetaarray** | **List&lt;Object&gt;** |  |  [optional] |
 |**threadInfo** | **Object** |  |  [optional] |
 |**parentMessageId** | **BigDecimal** |  |  [optional] |
-|**parentMessageInfo** | **Object** |  |  [optional] |
+|**parentMessageInfo** | [**SendBirdParentMessageInfo**](SendBirdParentMessageInfo.md) |  |  [optional] |
 |**isReplyToChannel** | **Boolean** |  |  [optional] |
 
 

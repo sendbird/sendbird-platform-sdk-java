@@ -98,7 +98,7 @@ Add these dependency to your project's POM:
     <dependency>
         <groupId>org.sendbird</groupId>
         <artifactId>sendbird-platform-sdk</artifactId>
-        <version>1.0.22</version>
+        <version>1.0.23</version>
     </dependency>
 </dependencies>
 ```
@@ -110,7 +110,7 @@ Add this dependency to your project's build file:
 ```groovy
 
 dependencies {
-    implementation "org.sendbird:sendbird-platform-sdk:1.0.22"
+    implementation "org.sendbird:sendbird-platform-sdk:1.0.23"
 }
 
 allprojects {

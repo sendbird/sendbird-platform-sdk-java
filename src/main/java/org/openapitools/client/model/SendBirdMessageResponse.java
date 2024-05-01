@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdMessageResponseMentionedUsersInner;
 import org.openapitools.client.model.SendBirdMessageResponseUser;
+import org.openapitools.client.model.SendBirdParentMessageInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -66,7 +67,7 @@ import org.sendbird.client.JSON;
   SendBirdMessageResponse.JSON_PROPERTY_IS_REPLY_TO_CHANNEL
 })
 @JsonTypeName("SendBird.MessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
 public class SendBirdMessageResponse {
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;
@@ -144,7 +145,7 @@ public class SendBirdMessageResponse {
   private BigDecimal parentMessageId;
 
   public static final String JSON_PROPERTY_PARENT_MESSAGE_INFO = "parent_message_info";
-  private Object parentMessageInfo;
+  private SendBirdParentMessageInfo parentMessageInfo;
 
   public static final String JSON_PROPERTY_IS_REPLY_TO_CHANNEL = "is_reply_to_channel";
   private Boolean isReplyToChannel;
@@ -818,7 +819,7 @@ public class SendBirdMessageResponse {
   }
 
 
-  public SendBirdMessageResponse parentMessageInfo(Object parentMessageInfo) {
+  public SendBirdMessageResponse parentMessageInfo(SendBirdParentMessageInfo parentMessageInfo) {
     this.parentMessageInfo = parentMessageInfo;
     return this;
   }
@@ -832,14 +833,14 @@ public class SendBirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Object getParentMessageInfo() {
+  public SendBirdParentMessageInfo getParentMessageInfo() {
     return parentMessageInfo;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentMessageInfo(Object parentMessageInfo) {
+  public void setParentMessageInfo(SendBirdParentMessageInfo parentMessageInfo) {
     this.parentMessageInfo = parentMessageInfo;
   }
 

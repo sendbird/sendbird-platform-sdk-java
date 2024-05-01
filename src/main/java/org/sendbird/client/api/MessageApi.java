@@ -46,7 +46,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
 public class MessageApi {
   private ApiClient apiClient;
 
@@ -1920,7 +1920,7 @@ private ApiResponse<ListEmojisResponse> listEmojisWithHttpInfo(String apiToken) 
     return new APIlistEmojisRequest();
   }
 
-private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String channelType, String channelUrl, String apiToken, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
+private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String channelType, String channelUrl, String apiToken, String messageTs, Integer messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, String includeReplyType, Boolean includeParentMessageInfo, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String customType, Boolean withMetaArray) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
@@ -1957,6 +1957,8 @@ private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String channe
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "message_type", messageType));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "including_removed", includingRemoved));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_reactions", includeReactions));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_reply_type", includeReplyType));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_parent_message_info", includeParentMessageInfo));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "with_sorted_meta_array", withSortedMetaArray));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_subchannel_messages_only", showSubchannelMessagesOnly));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "user_id", userId));
@@ -2004,6 +2006,8 @@ private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String channe
     private String messageType;
     private Boolean includingRemoved;
     private Boolean includeReactions;
+    private String includeReplyType;
+    private Boolean includeParentMessageInfo;
     private Boolean withSortedMetaArray;
     private Boolean showSubchannelMessagesOnly;
     private String userId;
@@ -2156,6 +2160,26 @@ private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String channe
     }
 
     /**
+     * Set includeReplyType
+     * @param includeReplyType One of following values: NONE, ALL, ONLY_REPLY_TO_CHANNEL (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest includeReplyType(String includeReplyType) {
+      this.includeReplyType = includeReplyType;
+      return this;
+    }
+
+    /**
+     * Set includeParentMessageInfo
+     * @param includeParentMessageInfo  (optional)
+     * @return APIlistMessagesRequest
+     */
+    public APIlistMessagesRequest includeParentMessageInfo(Boolean includeParentMessageInfo) {
+      this.includeParentMessageInfo = includeParentMessageInfo;
+      return this;
+    }
+
+    /**
      * Set withSortedMetaArray
      * @param withSortedMetaArray  (optional)
      * @return APIlistMessagesRequest
@@ -2233,7 +2257,7 @@ private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String channe
 
      */
     public ApiResponse<ListMessagesResponse> executeWithHttpInfo() throws ApiException {
-      return listMessagesWithHttpInfo(channelType, channelUrl, apiToken, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
+      return listMessagesWithHttpInfo(channelType, channelUrl, apiToken, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, includeReplyType, includeParentMessageInfo, withSortedMetaArray, showSubchannelMessagesOnly, userId, customType, withMetaArray);
     }
   }
 
@@ -3659,7 +3683,7 @@ private ApiResponse<UseDefaultEmojisResponse> useDefaultEmojisWithHttpInfo(Strin
     return new APIuseDefaultEmojisRequest();
   }
 
-private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, Boolean withSortedMetaArray, Boolean withMetaArray) throws ApiException {
+private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, Boolean withSortedMetaArray, Boolean withMetaArray, Boolean includeParentMessageInfo) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
@@ -3691,6 +3715,7 @@ private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String 
 
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "with_sorted_meta_array", withSortedMetaArray));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "with_meta_array", withMetaArray));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_parent_message_info", includeParentMessageInfo));
 
     if (apiToken != null)
       localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
@@ -3723,6 +3748,7 @@ private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String 
     private String apiToken;
     private Boolean withSortedMetaArray;
     private Boolean withMetaArray;
+    private Boolean includeParentMessageInfo;
 
     private APIviewMessageByIdRequest(String channelType, String channelUrl, String messageId) {
       this.channelType = channelType;
@@ -3761,6 +3787,16 @@ private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String 
     }
 
     /**
+     * Set includeParentMessageInfo
+     * @param includeParentMessageInfo  (optional)
+     * @return APIviewMessageByIdRequest
+     */
+    public APIviewMessageByIdRequest includeParentMessageInfo(Boolean includeParentMessageInfo) {
+      this.includeParentMessageInfo = includeParentMessageInfo;
+      return this;
+    }
+
+    /**
      * Execute viewMessageById request
      * @return SendBirdMessageResponse
      * @throws ApiException if fails to make API call
@@ -3788,7 +3824,7 @@ private ApiResponse<SendBirdMessageResponse> viewMessageByIdWithHttpInfo(String 
 
      */
     public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
-      return viewMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, withSortedMetaArray, withMetaArray);
+      return viewMessageByIdWithHttpInfo(channelType, channelUrl, messageId, apiToken, withSortedMetaArray, withMetaArray, includeParentMessageInfo);
     }
   }
 

@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   ReportUserByIdData.JSON_PROPERTY_REPORT_DESCRIPTION
 })
 @JsonTypeName("reportUserByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
 public class ReportUserByIdData {
   public static final String JSON_PROPERTY_OFFENDING_USER_ID = "offending_user_id";
   private String offendingUserId;

@@ -62,7 +62,7 @@ import org.sendbird.client.JSON;
   SendBirdMember.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("SendBird.Member")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-12T19:00:24.771175+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
 public class SendBirdMember {
   public static final String JSON_PROPERTY_CONNECTION_STATUS = "connection_status";
   private String connectionStatus;
