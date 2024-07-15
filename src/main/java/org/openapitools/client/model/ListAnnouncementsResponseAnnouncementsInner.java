@@ -59,7 +59,7 @@ import org.sendbird.client.JSON;
   ListAnnouncementsResponseAnnouncementsInner.JSON_PROPERTY_TARGET_CUSTOM_TYPE
 })
 @JsonTypeName("listAnnouncementsResponse_announcements_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class ListAnnouncementsResponseAnnouncementsInner {
   public static final String JSON_PROPERTY_UNIQUE_ID = "unique_id";
   private String uniqueId;

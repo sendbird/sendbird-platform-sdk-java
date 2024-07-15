@@ -8,8 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**userId** | **String** | Specifies the unique ID of the user to update. |  |
-|**nickname** | **String** | Specifies the user&#39;s nickname. The length is limited to 80 characters. |  |
-|**profileUrl** | **String** | Specifies the URL of the user&#39;s profile image. The length is limited to 2,048 characters.&lt;br /&gt;&lt;br /&gt; The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter&#39;s domain set. |  |
+|**nickname** | **String** | Specifies the user&#39;s nickname. The length is limited to 80 characters. |  [optional] |
+|**profileUrl** | **String** | Specifies the URL of the user&#39;s profile image. The length is limited to 2,048 characters.&lt;br /&gt;&lt;br /&gt; The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter&#39;s domain set. |  [optional] |
 |**profileFile** | **File** | Uploads the file of the user&#39;s profile image. An acceptable image is limited to &#x60;JPG&#x60; (.jpg), &#x60;JPEG&#x60; (.jpeg), or &#x60;PNG&#x60; (.png) file of up to 25 MB. |  [optional] |
 |**issueAccessToken** | **Boolean** | Determines whether to revoke the existing access token and create a new one for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, an access token is not required when the user logs in. (Default: false) |  [optional] |
 |**issueSessionToken** | **Boolean** | Determines whether to add a new session token for the user. If true, an opaque string token is issued and provided upon creation, which should be passed whenever the user logs in. If false, a session token is not required when the user logs in. (Default: false) |  [optional] |

@@ -65,7 +65,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInner.JSON_PROPERTY_PARENT_MESSAGE_INFO
 })
 @JsonTypeName("listMessagesResponse_messages_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class ListMessagesResponseMessagesInner {
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private BigDecimal messageSurvivalSeconds;

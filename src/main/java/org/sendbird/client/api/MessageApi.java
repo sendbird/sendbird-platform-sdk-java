@@ -46,7 +46,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class MessageApi {
   private ApiClient apiClient;
 
@@ -1239,7 +1239,7 @@ private ApiResponse<Object> gcMarkAllMessagesAsReadWithHttpInfo(String channelUr
     return new APIgcMarkAllMessagesAsReadRequest(channelUrl);
   }
 
-private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(String channelUrl, String apiToken, String userIds) throws ApiException {
+private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumberOfEachMembersUnreadMessagesWithHttpInfo(String channelUrl, String apiToken, List<String> userIds) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelUrl' is set
@@ -1257,7 +1257,7 @@ private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumbe
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "user_ids", userIds));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "user_ids", userIds));
 
     if (apiToken != null)
       localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
@@ -1286,7 +1286,7 @@ private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumbe
   public class APIgcViewNumberOfEachMembersUnreadMessagesRequest {
     private String channelUrl;
     private String apiToken;
-    private String userIds;
+    private List<String> userIds;
 
     private APIgcViewNumberOfEachMembersUnreadMessagesRequest(String channelUrl) {
       this.channelUrl = channelUrl;
@@ -1307,7 +1307,7 @@ private ApiResponse<GcViewNumberOfEachMembersUnreadMessagesResponse> gcViewNumbe
      * @param userIds  (optional)
      * @return APIgcViewNumberOfEachMembersUnreadMessagesRequest
      */
-    public APIgcViewNumberOfEachMembersUnreadMessagesRequest userIds(String userIds) {
+    public APIgcViewNumberOfEachMembersUnreadMessagesRequest userIds(List<String> userIds) {
       this.userIds = userIds;
       return this;
     }

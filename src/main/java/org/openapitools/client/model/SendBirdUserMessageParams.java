@@ -55,7 +55,7 @@ import org.sendbird.client.JSON;
   SendBirdUserMessageParams.JSON_PROPERTY_TRANSLATION_TARGET_LANGUAGES
 })
 @JsonTypeName("SendBird.UserMessageParams")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class SendBirdUserMessageParams {
   public static final String JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   private SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions;

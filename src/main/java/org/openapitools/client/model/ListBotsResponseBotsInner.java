@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   ListBotsResponseBotsInner.JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE
 })
 @JsonTypeName("listBotsResponse_bots_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class ListBotsResponseBotsInner {
   public static final String JSON_PROPERTY_BOT = "bot";
   private CreateBotResponseBot bot;

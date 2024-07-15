@@ -26,7 +26,6 @@
 |**isDiscoverable** | **Boolean** |  |  [optional] |
 |**isDistinct** | **Boolean** |  |  [optional] |
 |**isEphemeral** | **Boolean** |  |  [optional] |
-|**isFrozen** | **Boolean** |  |  [optional] |
 |**isHidden** | **Boolean** |  |  [optional] |
 |**isPublic** | **Boolean** |  |  [optional] |
 |**isPushEnabled** | **Boolean** |  |  [optional] |

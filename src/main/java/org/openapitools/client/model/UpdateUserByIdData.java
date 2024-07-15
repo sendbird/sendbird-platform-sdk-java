@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
   UpdateUserByIdData.JSON_PROPERTY_LEAVE_ALL_WHEN_DEACTIVATED
 })
 @JsonTypeName("updateUserByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class UpdateUserByIdData {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -125,10 +125,10 @@ public class UpdateUserByIdData {
    * Specifies the user&#39;s nickname. The length is limited to 80 characters.
    * @return nickname
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the user's nickname. The length is limited to 80 characters.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the user's nickname. The length is limited to 80 characters.")
   @JsonProperty(JSON_PROPERTY_NICKNAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNickname() {
     return nickname;
@@ -136,7 +136,7 @@ public class UpdateUserByIdData {
 
 
   @JsonProperty(JSON_PROPERTY_NICKNAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setNickname(String nickname) {
     this.nickname = nickname;
   }
@@ -151,10 +151,10 @@ public class UpdateUserByIdData {
    * Specifies the URL of the user&#39;s profile image. The length is limited to 2,048 characters.&lt;br /&gt;&lt;br /&gt; The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter&#39;s domain set.
    * @return profileUrl
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the URL of the user's profile image. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the URL of the user's profile image. The length is limited to 2,048 characters.<br /><br /> The [domain filter](/docs/chat/v3/platform-api/guides/filter-and-moderation#2-domain-filter) filters out the request if the value of this property matches the filter's domain set.")
   @JsonProperty(JSON_PROPERTY_PROFILE_URL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getProfileUrl() {
     return profileUrl;
@@ -162,7 +162,7 @@ public class UpdateUserByIdData {
 
 
   @JsonProperty(JSON_PROPERTY_PROFILE_URL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
   }

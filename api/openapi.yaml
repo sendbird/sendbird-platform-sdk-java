@@ -6799,7 +6799,9 @@ paths:
         name: user_ids
         required: false
         schema:
-          type: string
+          items:
+            type: string
+          type: array
         style: form
       responses:
         "200":
@@ -11281,8 +11283,6 @@ components:
           type: string
         is_ephemeral:
           type: boolean
-        is_frozen:
-          type: boolean
         name:
           type: string
         url:
@@ -11722,7 +11722,6 @@ components:
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        is_frozen: true
         is_ephemeral: true
         my_count_preference: my_count_preference
         my_member_state: invited
@@ -11793,8 +11792,6 @@ components:
         is_distinct:
           type: boolean
         is_ephemeral:
-          type: boolean
-        is_frozen:
           type: boolean
         is_hidden:
           type: boolean
@@ -11973,6 +11970,13 @@ components:
           type: array
       type: object
     SendBird.OGImage:
+      example:
+        alt: alt
+        secure_url: secure_url
+        width: 7.061401241503109
+        type: type
+        url: url
+        height: 2.3021358869347655
       properties:
         alt:
           type: string
@@ -12032,7 +12036,6 @@ components:
           last_seen_at: 0
           is_hide_me_from_friends: true
         data: data
-        is_frozen: true
         custom_type: custom_type
         is_ephemeral: true
         created_at: 0.8008281904610115
@@ -12119,8 +12122,6 @@ components:
         is_dynamic_partitioned:
           type: boolean
         is_ephemeral:
-          type: boolean
-        is_frozen:
           type: boolean
         max_length_message:
           type: number
@@ -13696,7 +13697,6 @@ components:
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          is_frozen: true
           is_ephemeral: true
           my_count_preference: my_count_preference
           my_member_state: invited
@@ -14007,7 +14007,6 @@ components:
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          is_frozen: true
           is_ephemeral: true
           my_count_preference: my_count_preference
           my_member_state: invited
@@ -14358,14 +14357,10 @@ components:
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        token:
-        - token
-        - token
+        token: token
       properties:
         token:
-          items:
-            type: string
-          type: array
+          type: string
         user:
           $ref: '#/components/schemas/SendBird.User'
       type: object
@@ -14698,7 +14693,6 @@ components:
             last_seen_at: 0
             is_hide_me_from_friends: true
           data: data
-          is_frozen: true
           custom_type: custom_type
           is_ephemeral: true
           created_at: 0.8008281904610115
@@ -14799,7 +14793,6 @@ components:
             last_seen_at: 0
             is_hide_me_from_friends: true
           data: data
-          is_frozen: true
           custom_type: custom_type
           is_ephemeral: true
           created_at: 0.8008281904610115
@@ -15720,7 +15713,6 @@ components:
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          is_frozen: true
           is_ephemeral: true
           my_count_preference: my_count_preference
           my_member_state: invited
@@ -16031,7 +16023,6 @@ components:
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          is_frozen: true
           is_ephemeral: true
           my_count_preference: my_count_preference
           my_member_state: invited
@@ -17158,10 +17149,12 @@ components:
           is_op_msg: true
           og_tag:
             og:image:
+              alt: alt
               secure_url: secure_url
-              width: 2.3021358869347655
+              width: 7.061401241503109
+              type: type
               url: url
-              height: 7.061401241503109
+              height: 2.3021358869347655
             og:title: og:title
             og:url: og:url
             og:description: og:description
@@ -17305,10 +17298,12 @@ components:
           is_op_msg: true
           og_tag:
             og:image:
+              alt: alt
               secure_url: secure_url
-              width: 2.3021358869347655
+              width: 7.061401241503109
+              type: type
               url: url
-              height: 7.061401241503109
+              height: 2.3021358869347655
             og:title: og:title
             og:url: og:url
             og:description: og:description
@@ -18257,7 +18252,6 @@ components:
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          is_frozen: true
           is_ephemeral: true
           my_count_preference: my_count_preference
           my_member_state: invited
@@ -18568,7 +18562,6 @@ components:
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          is_frozen: true
           is_ephemeral: true
           my_count_preference: my_count_preference
           my_member_state: invited
@@ -21709,8 +21702,6 @@ components:
             with the is_active property above.
           type: boolean
       required:
-      - nickname
-      - profile_url
       - user_id
       title: updateUserByIdData
       type: object
@@ -22073,13 +22064,6 @@ components:
           type: array
       required:
       - channel_url
-      - cover_file
-      - cover_url
-      - custom_type
-      - data
-      - name
-      - operator_ids
-      - operators
       title: ocUpdateChannelByUrlData
       type: object
     ocDeleteChannelByUrl_200_response:
@@ -24795,29 +24779,15 @@ components:
             type: string
           type: array
       type: object
-    listMessagesResponse_messages_inner_og_tag_og_image:
-      example:
-        secure_url: secure_url
-        width: 2.3021358869347655
-        url: url
-        height: 7.061401241503109
-      properties:
-        url:
-          type: string
-        secure_url:
-          type: string
-        width:
-          type: number
-        height:
-          type: number
-      type: object
     listMessagesResponse_messages_inner_og_tag:
       example:
         og:image:
+          alt: alt
           secure_url: secure_url
-          width: 2.3021358869347655
+          width: 7.061401241503109
+          type: type
           url: url
-          height: 7.061401241503109
+          height: 2.3021358869347655
         og:title: og:title
         og:url: og:url
         og:description: og:description
@@ -24829,7 +24799,7 @@ components:
         og:description:
           type: string
         og:image:
-          $ref: '#/components/schemas/listMessagesResponse_messages_inner_og_tag_og_image'
+          $ref: '#/components/schemas/SendBird.OGImage'
       type: object
     listMessagesResponse_messages_inner:
       example:
@@ -24947,10 +24917,12 @@ components:
         is_op_msg: true
         og_tag:
           og:image:
+            alt: alt
             secure_url: secure_url
-            width: 2.3021358869347655
+            width: 7.061401241503109
+            type: type
             url: url
-            height: 7.061401241503109
+            height: 2.3021358869347655
           og:title: og:title
           og:url: og:url
           og:description: og:description

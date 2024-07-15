@@ -16,7 +16,6 @@
 |**data** | **String** |  |  [optional] |
 |**isDynamicPartitioned** | **Boolean** |  |  [optional] |
 |**isEphemeral** | **Boolean** |  |  [optional] |
-|**isFrozen** | **Boolean** |  |  [optional] |
 |**maxLengthMessage** | **BigDecimal** |  |  [optional] |
 |**operators** | [**List&lt;SendBirdUser&gt;**](SendBirdUser.md) |  |  [optional] |
 |**participantCount** | **BigDecimal** |  |  [optional] |

@@ -40,12 +40,11 @@ import org.sendbird.client.JSON;
   SendBirdBaseChannel.JSON_PROPERTY_CUSTOM_TYPE,
   SendBirdBaseChannel.JSON_PROPERTY_DATA,
   SendBirdBaseChannel.JSON_PROPERTY_IS_EPHEMERAL,
-  SendBirdBaseChannel.JSON_PROPERTY_IS_FROZEN,
   SendBirdBaseChannel.JSON_PROPERTY_NAME,
   SendBirdBaseChannel.JSON_PROPERTY_URL
 })
 @JsonTypeName("SendBird.BaseChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class SendBirdBaseChannel {
   public static final String JSON_PROPERTY_COVER_URL = "cover_url";
   private String coverUrl;
@@ -64,9 +63,6 @@ public class SendBirdBaseChannel {
 
   public static final String JSON_PROPERTY_IS_EPHEMERAL = "is_ephemeral";
   private Boolean isEphemeral;
-
-  public static final String JSON_PROPERTY_IS_FROZEN = "is_frozen";
-  private Boolean isFrozen;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -233,32 +229,6 @@ public class SendBirdBaseChannel {
   }
 
 
-  public SendBirdBaseChannel isFrozen(Boolean isFrozen) {
-    this.isFrozen = isFrozen;
-    return this;
-  }
-
-   /**
-   * Get isFrozen
-   * @return isFrozen
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getIsFrozen() {
-    return isFrozen;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsFrozen(Boolean isFrozen) {
-    this.isFrozen = isFrozen;
-  }
-
-
   public SendBirdBaseChannel name(String name) {
     this.name = name;
     return this;
@@ -329,14 +299,13 @@ public class SendBirdBaseChannel {
         Objects.equals(this.customType, sendBirdBaseChannel.customType) &&
         Objects.equals(this.data, sendBirdBaseChannel.data) &&
         Objects.equals(this.isEphemeral, sendBirdBaseChannel.isEphemeral) &&
-        Objects.equals(this.isFrozen, sendBirdBaseChannel.isFrozen) &&
         Objects.equals(this.name, sendBirdBaseChannel.name) &&
         Objects.equals(this.url, sendBirdBaseChannel.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(coverUrl, createdAt, creator, customType, data, isEphemeral, isFrozen, name, url);
+    return Objects.hash(coverUrl, createdAt, creator, customType, data, isEphemeral, name, url);
   }
 
   @Override
@@ -349,7 +318,6 @@ public class SendBirdBaseChannel {
     sb.append("    customType: ").append(toIndentedString(customType)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    isEphemeral: ").append(toIndentedString(isEphemeral)).append("\n");
-    sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");

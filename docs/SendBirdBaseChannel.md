@@ -13,7 +13,6 @@
 |**customType** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |
 |**isEphemeral** | **Boolean** |  |  [optional] |
-|**isFrozen** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**url** | **String** |  |  [optional] |
 
