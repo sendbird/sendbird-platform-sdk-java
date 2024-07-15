@@ -835,7 +835,7 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        String userIds = "userIds_example"; // String | 
+        List<String> userIds = Arrays.asList(); // List<String> | 
         try {
             GcViewNumberOfEachMembersUnreadMessagesResponse result = api.gcViewNumberOfEachMembersUnreadMessages(channelUrl)
                 .apiToken(apiToken)
@@ -860,7 +860,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**|  | |
 | **apiToken** | **String**|  | [optional] |
-| **userIds** | **String**|  | [optional] |
+| **userIds** | **List&lt;String&gt;**|  | [optional] |
 
 ### Return type
 

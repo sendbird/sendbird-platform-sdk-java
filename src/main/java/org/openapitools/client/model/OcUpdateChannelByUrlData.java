@@ -45,7 +45,7 @@ import org.sendbird.client.JSON;
   OcUpdateChannelByUrlData.JSON_PROPERTY_OPERATORS
 })
 @JsonTypeName("ocUpdateChannelByUrlData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class OcUpdateChannelByUrlData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -66,10 +66,10 @@ public class OcUpdateChannelByUrlData {
   private String data;
 
   public static final String JSON_PROPERTY_OPERATOR_IDS = "operator_ids";
-  private List<String> operatorIds = new ArrayList<>();
+  private List<String> operatorIds = null;
 
   public static final String JSON_PROPERTY_OPERATORS = "operators";
-  private List<String> operators = new ArrayList<>();
+  private List<String> operators = null;
 
   public OcUpdateChannelByUrlData() { 
   }
@@ -109,10 +109,10 @@ public class OcUpdateChannelByUrlData {
    * Specifies the channel topic, or the name of the channel. The length is limited to 191 characters.
    * @return name
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the channel topic, or the name of the channel. The length is limited to 191 characters.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the channel topic, or the name of the channel. The length is limited to 191 characters.")
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -120,7 +120,7 @@ public class OcUpdateChannelByUrlData {
 
 
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(String name) {
     this.name = name;
   }
@@ -135,10 +135,10 @@ public class OcUpdateChannelByUrlData {
    * Specifies the URL of the cover image. The length is limited to 2,048 characters.
    * @return coverUrl
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the URL of the cover image. The length is limited to 2,048 characters.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the URL of the cover image. The length is limited to 2,048 characters.")
   @JsonProperty(JSON_PROPERTY_COVER_URL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCoverUrl() {
     return coverUrl;
@@ -146,7 +146,7 @@ public class OcUpdateChannelByUrlData {
 
 
   @JsonProperty(JSON_PROPERTY_COVER_URL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCoverUrl(String coverUrl) {
     this.coverUrl = coverUrl;
   }
@@ -161,10 +161,10 @@ public class OcUpdateChannelByUrlData {
    * Uploads the file for the channel cover image.
    * @return coverFile
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Uploads the file for the channel cover image.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Uploads the file for the channel cover image.")
   @JsonProperty(JSON_PROPERTY_COVER_FILE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public File getCoverFile() {
     return coverFile;
@@ -172,7 +172,7 @@ public class OcUpdateChannelByUrlData {
 
 
   @JsonProperty(JSON_PROPERTY_COVER_FILE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCoverFile(File coverFile) {
     this.coverFile = coverFile;
   }
@@ -187,10 +187,10 @@ public class OcUpdateChannelByUrlData {
    * Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.&lt;br /&gt;&lt;br /&gt; Custom types are also used within Sendbird&#39;s [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.
    * @return customType
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies the custom channel type which is used for channel grouping. The length is limited to 128 characters.<br /><br /> Custom types are also used within Sendbird's [Advanced analytics](/docs/chat/v3/platform-api/guides/advanced-analytics) to segment metrics, which enables the sub-classification of data views.")
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomType() {
     return customType;
@@ -198,7 +198,7 @@ public class OcUpdateChannelByUrlData {
 
 
   @JsonProperty(JSON_PROPERTY_CUSTOM_TYPE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomType(String customType) {
     this.customType = customType;
   }
@@ -213,10 +213,10 @@ public class OcUpdateChannelByUrlData {
    * Specifies additional channel information such as a long description of the channel or &#x60;JSON&#x60; formatted string.
    * @return data
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies additional channel information such as a long description of the channel or `JSON` formatted string.")
   @JsonProperty(JSON_PROPERTY_DATA)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getData() {
     return data;
@@ -224,7 +224,7 @@ public class OcUpdateChannelByUrlData {
 
 
   @JsonProperty(JSON_PROPERTY_DATA)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(String data) {
     this.data = data;
   }
@@ -236,6 +236,9 @@ public class OcUpdateChannelByUrlData {
   }
 
   public OcUpdateChannelByUrlData addOperatorIdsItem(String operatorIdsItem) {
+    if (this.operatorIds == null) {
+      this.operatorIds = new ArrayList<>();
+    }
     this.operatorIds.add(operatorIdsItem);
     return this;
   }
@@ -244,10 +247,10 @@ public class OcUpdateChannelByUrlData {
    * Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.&lt;br/&gt;&lt;br/&gt;  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.
    * @return operatorIds
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Specifies an array of one or more user IDs to register as operators of the channel. The maximum allowed number of operators per channel is 100. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.<br/><br/>  Operators cannot view messages that have been [moderated by](/docs/chat/v3/platform-api/guides/filter-and-moderation) the domain filter or profanity filter. Only the sender will be notified that the message has been blocked.")
   @JsonProperty(JSON_PROPERTY_OPERATOR_IDS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getOperatorIds() {
     return operatorIds;
@@ -255,7 +258,7 @@ public class OcUpdateChannelByUrlData {
 
 
   @JsonProperty(JSON_PROPERTY_OPERATOR_IDS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOperatorIds(List<String> operatorIds) {
     this.operatorIds = operatorIds;
   }
@@ -267,6 +270,9 @@ public class OcUpdateChannelByUrlData {
   }
 
   public OcUpdateChannelByUrlData addOperatorsItem(String operatorsItem) {
+    if (this.operators == null) {
+      this.operators = new ArrayList<>();
+    }
     this.operators.add(operatorsItem);
     return this;
   }
@@ -275,10 +281,10 @@ public class OcUpdateChannelByUrlData {
    * (Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.
    * @return operators
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "(Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "(Deprecated) Specifies the string IDs of the users registered as channel operators. Operators can delete any messages in the channel, and can also receive all messages that have been throttled.")
   @JsonProperty(JSON_PROPERTY_OPERATORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getOperators() {
     return operators;
@@ -286,7 +292,7 @@ public class OcUpdateChannelByUrlData {
 
 
   @JsonProperty(JSON_PROPERTY_OPERATORS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setOperators(List<String> operators) {
     this.operators = operators;
   }

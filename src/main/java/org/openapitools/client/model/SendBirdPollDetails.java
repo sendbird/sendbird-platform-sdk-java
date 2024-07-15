@@ -48,7 +48,7 @@ import org.sendbird.client.JSON;
   SendBirdPollDetails.JSON_PROPERTY_VOTER_COUNT
 })
 @JsonTypeName("SendBird.PollDetails")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class SendBirdPollDetails {
   public static final String JSON_PROPERTY_ALLOW_MULTIPLE_VOTES = "allow_multiple_votes";
   private Boolean allowMultipleVotes;

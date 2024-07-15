@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   AddEmojisData.JSON_PROPERTY_EMOJIS
 })
 @JsonTypeName("addEmojisData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class AddEmojisData {
   public static final String JSON_PROPERTY_EMOJI_CATEGORY_ID = "emoji_category_id";
   private Integer emojiCategoryId;

@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterDataImageModerationLimits.JSON_PROPERTY_RACY
 })
 @JsonTypeName("setDomainFilterData_image_moderation_limits")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class SetDomainFilterDataImageModerationLimits {
   public static final String JSON_PROPERTY_ADULT = "adult";
   private Integer adult;

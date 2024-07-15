@@ -10,7 +10,7 @@
 |**ogColonUrl** | **String** |  |  [optional] |
 |**ogColonTitle** | **String** |  |  [optional] |
 |**ogColonDescription** | **String** |  |  [optional] |
-|**ogColonImage** | [**ListMessagesResponseMessagesInnerOgTagOgImage**](ListMessagesResponseMessagesInnerOgTagOgImage.md) |  |  [optional] |
+|**ogColonImage** | [**SendBirdOGImage**](SendBirdOGImage.md) |  |  [optional] |
 
 
 

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**token** | **List&lt;String&gt;** |  |  [optional] |
+|**token** | **String** |  |  [optional] |
 |**user** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
 
 

@@ -45,14 +45,13 @@ import org.sendbird.client.JSON;
   SendBirdOpenChannel.JSON_PROPERTY_DATA,
   SendBirdOpenChannel.JSON_PROPERTY_IS_DYNAMIC_PARTITIONED,
   SendBirdOpenChannel.JSON_PROPERTY_IS_EPHEMERAL,
-  SendBirdOpenChannel.JSON_PROPERTY_IS_FROZEN,
   SendBirdOpenChannel.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
   SendBirdOpenChannel.JSON_PROPERTY_OPERATORS,
   SendBirdOpenChannel.JSON_PROPERTY_PARTICIPANT_COUNT,
   SendBirdOpenChannel.JSON_PROPERTY_FREEZE
 })
 @JsonTypeName("SendBird.OpenChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class SendBirdOpenChannel {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -80,9 +79,6 @@ public class SendBirdOpenChannel {
 
   public static final String JSON_PROPERTY_IS_EPHEMERAL = "is_ephemeral";
   private Boolean isEphemeral;
-
-  public static final String JSON_PROPERTY_IS_FROZEN = "is_frozen";
-  private Boolean isFrozen;
 
   public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
   private BigDecimal maxLengthMessage;
@@ -333,32 +329,6 @@ public class SendBirdOpenChannel {
   }
 
 
-  public SendBirdOpenChannel isFrozen(Boolean isFrozen) {
-    this.isFrozen = isFrozen;
-    return this;
-  }
-
-   /**
-   * Get isFrozen
-   * @return isFrozen
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getIsFrozen() {
-    return isFrozen;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsFrozen(Boolean isFrozen) {
-    this.isFrozen = isFrozen;
-  }
-
-
   public SendBirdOpenChannel maxLengthMessage(BigDecimal maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
     return this;
@@ -492,7 +462,6 @@ public class SendBirdOpenChannel {
         Objects.equals(this.data, sendBirdOpenChannel.data) &&
         Objects.equals(this.isDynamicPartitioned, sendBirdOpenChannel.isDynamicPartitioned) &&
         Objects.equals(this.isEphemeral, sendBirdOpenChannel.isEphemeral) &&
-        Objects.equals(this.isFrozen, sendBirdOpenChannel.isFrozen) &&
         Objects.equals(this.maxLengthMessage, sendBirdOpenChannel.maxLengthMessage) &&
         Objects.equals(this.operators, sendBirdOpenChannel.operators) &&
         Objects.equals(this.participantCount, sendBirdOpenChannel.participantCount) &&
@@ -501,7 +470,7 @@ public class SendBirdOpenChannel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, customType, channelUrl, createdAt, coverUrl, creator, data, isDynamicPartitioned, isEphemeral, isFrozen, maxLengthMessage, operators, participantCount, freeze);
+    return Objects.hash(name, customType, channelUrl, createdAt, coverUrl, creator, data, isDynamicPartitioned, isEphemeral, maxLengthMessage, operators, participantCount, freeze);
   }
 
   @Override
@@ -517,7 +486,6 @@ public class SendBirdOpenChannel {
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    isDynamicPartitioned: ").append(toIndentedString(isDynamicPartitioned)).append("\n");
     sb.append("    isEphemeral: ").append(toIndentedString(isEphemeral)).append("\n");
-    sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
     sb.append("    maxLengthMessage: ").append(toIndentedString(maxLengthMessage)).append("\n");
     sb.append("    operators: ").append(toIndentedString(operators)).append("\n");
     sb.append("    participantCount: ").append(toIndentedString(participantCount)).append("\n");

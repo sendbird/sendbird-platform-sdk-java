@@ -67,7 +67,6 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannel.JSON_PROPERTY_IS_DISCOVERABLE,
   SendBirdGroupChannel.JSON_PROPERTY_IS_DISTINCT,
   SendBirdGroupChannel.JSON_PROPERTY_IS_EPHEMERAL,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_FROZEN,
   SendBirdGroupChannel.JSON_PROPERTY_IS_HIDDEN,
   SendBirdGroupChannel.JSON_PROPERTY_IS_PUBLIC,
   SendBirdGroupChannel.JSON_PROPERTY_IS_PUSH_ENABLED,
@@ -95,7 +94,7 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannel.JSON_PROPERTY_READ_RECEIPT
 })
 @JsonTypeName("SendBird.GroupChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -190,9 +189,6 @@ public class SendBirdGroupChannel {
 
   public static final String JSON_PROPERTY_IS_EPHEMERAL = "is_ephemeral";
   private Boolean isEphemeral;
-
-  public static final String JSON_PROPERTY_IS_FROZEN = "is_frozen";
-  private Boolean isFrozen;
 
   public static final String JSON_PROPERTY_IS_HIDDEN = "is_hidden";
   private Boolean isHidden;
@@ -922,32 +918,6 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel isFrozen(Boolean isFrozen) {
-    this.isFrozen = isFrozen;
-    return this;
-  }
-
-   /**
-   * Get isFrozen
-   * @return isFrozen
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getIsFrozen() {
-    return isFrozen;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_IS_FROZEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsFrozen(Boolean isFrozen) {
-    this.isFrozen = isFrozen;
-  }
-
-
   public SendBirdGroupChannel isHidden(Boolean isHidden) {
     this.isHidden = isHidden;
     return this;
@@ -1661,7 +1631,6 @@ public class SendBirdGroupChannel {
         Objects.equals(this.isDiscoverable, sendBirdGroupChannel.isDiscoverable) &&
         Objects.equals(this.isDistinct, sendBirdGroupChannel.isDistinct) &&
         Objects.equals(this.isEphemeral, sendBirdGroupChannel.isEphemeral) &&
-        Objects.equals(this.isFrozen, sendBirdGroupChannel.isFrozen) &&
         Objects.equals(this.isHidden, sendBirdGroupChannel.isHidden) &&
         Objects.equals(this.isPublic, sendBirdGroupChannel.isPublic) &&
         Objects.equals(this.isPushEnabled, sendBirdGroupChannel.isPushEnabled) &&
@@ -1695,7 +1664,7 @@ public class SendBirdGroupChannel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelUrl, coverUrl, createdAt, hashCodeNullable(createdBy), creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isFrozen, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel, readReceipt);
+    return Objects.hash(channelUrl, coverUrl, createdAt, hashCodeNullable(createdBy), creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel, readReceipt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1728,7 +1697,6 @@ public class SendBirdGroupChannel {
     sb.append("    isDiscoverable: ").append(toIndentedString(isDiscoverable)).append("\n");
     sb.append("    isDistinct: ").append(toIndentedString(isDistinct)).append("\n");
     sb.append("    isEphemeral: ").append(toIndentedString(isEphemeral)).append("\n");
-    sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
     sb.append("    isHidden: ").append(toIndentedString(isHidden)).append("\n");
     sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
     sb.append("    isPushEnabled: ").append(toIndentedString(isPushEnabled)).append("\n");

@@ -46,7 +46,7 @@ import org.sendbird.client.JSON;
   ViewGdprRequestByIdResponse.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("viewGdprRequestByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class ViewGdprRequestByIdResponse {
   public static final String JSON_PROPERTY_REQUEST_ID = "request_id";
   private String requestId;

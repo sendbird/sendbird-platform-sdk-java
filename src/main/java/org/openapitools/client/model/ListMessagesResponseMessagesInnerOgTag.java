@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.client.model.ListMessagesResponseMessagesInnerOgTagOgImage;
+import org.openapitools.client.model.SendBirdOGImage;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInnerOgTag.JSON_PROPERTY_OG_COLON_IMAGE
 })
 @JsonTypeName("listMessagesResponse_messages_inner_og_tag")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class ListMessagesResponseMessagesInnerOgTag {
   public static final String JSON_PROPERTY_OG_COLON_URL = "og:url";
   private String ogColonUrl;
@@ -51,7 +51,7 @@ public class ListMessagesResponseMessagesInnerOgTag {
   private String ogColonDescription;
 
   public static final String JSON_PROPERTY_OG_COLON_IMAGE = "og:image";
-  private ListMessagesResponseMessagesInnerOgTagOgImage ogColonImage;
+  private SendBirdOGImage ogColonImage;
 
   public ListMessagesResponseMessagesInnerOgTag() { 
   }
@@ -134,7 +134,7 @@ public class ListMessagesResponseMessagesInnerOgTag {
   }
 
 
-  public ListMessagesResponseMessagesInnerOgTag ogColonImage(ListMessagesResponseMessagesInnerOgTagOgImage ogColonImage) {
+  public ListMessagesResponseMessagesInnerOgTag ogColonImage(SendBirdOGImage ogColonImage) {
     this.ogColonImage = ogColonImage;
     return this;
   }
@@ -148,14 +148,14 @@ public class ListMessagesResponseMessagesInnerOgTag {
   @JsonProperty(JSON_PROPERTY_OG_COLON_IMAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public ListMessagesResponseMessagesInnerOgTagOgImage getOgColonImage() {
+  public SendBirdOGImage getOgColonImage() {
     return ogColonImage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OG_COLON_IMAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOgColonImage(ListMessagesResponseMessagesInnerOgTagOgImage ogColonImage) {
+  public void setOgColonImage(SendBirdOGImage ogColonImage) {
     this.ogColonImage = ogColonImage;
   }
 

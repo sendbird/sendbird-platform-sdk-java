@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   GcMarkAllMessagesAsDeliveredData.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("gcMarkAllMessagesAsDeliveredData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class GcMarkAllMessagesAsDeliveredData {
   public static final String JSON_PROPERTY_APPLICATION_ID = "application_id";
   private String applicationId;

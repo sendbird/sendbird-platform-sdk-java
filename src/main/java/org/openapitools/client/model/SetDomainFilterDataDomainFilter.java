@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SetDomainFilterDataDomainFilter.JSON_PROPERTY_SHOULD_CHECK_GLOBAL
 })
 @JsonTypeName("setDomainFilterData_domain_filter")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class SetDomainFilterDataDomainFilter {
   public static final String JSON_PROPERTY_DOMAINS = "domains";
   private List<String> domains = null;

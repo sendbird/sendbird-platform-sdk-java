@@ -125,7 +125,6 @@ docs/ListGdprRequestsResponseRequestsInner.md
 docs/ListMessagesResponse.md
 docs/ListMessagesResponseMessagesInner.md
 docs/ListMessagesResponseMessagesInnerOgTag.md
-docs/ListMessagesResponseMessagesInnerOgTagOgImage.md
 docs/ListMessagesResponseMessagesInnerSortedMetaarrayInner.md
 docs/ListMutedChannelsResponse.md
 docs/ListMutedUsersInChannelsWithCustomChannelType200Response.md
@@ -461,7 +460,6 @@ src/main/java/org/openapitools/client/model/ListGdprRequestsResponseRequestsInne
 src/main/java/org/openapitools/client/model/ListMessagesResponse.java
 src/main/java/org/openapitools/client/model/ListMessagesResponseMessagesInner.java
 src/main/java/org/openapitools/client/model/ListMessagesResponseMessagesInnerOgTag.java
-src/main/java/org/openapitools/client/model/ListMessagesResponseMessagesInnerOgTagOgImage.java
 src/main/java/org/openapitools/client/model/ListMessagesResponseMessagesInnerSortedMetaarrayInner.java
 src/main/java/org/openapitools/client/model/ListMutedChannelsResponse.java
 src/main/java/org/openapitools/client/model/ListMutedUsersInChannelsWithCustomChannelType200Response.java

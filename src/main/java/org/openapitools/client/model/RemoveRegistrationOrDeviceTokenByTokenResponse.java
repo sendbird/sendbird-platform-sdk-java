@@ -24,8 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
@@ -39,10 +37,10 @@ import org.sendbird.client.JSON;
   RemoveRegistrationOrDeviceTokenByTokenResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("removeRegistrationOrDeviceTokenByTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class RemoveRegistrationOrDeviceTokenByTokenResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
-  private List<String> token = null;
+  private String token;
 
   public static final String JSON_PROPERTY_USER = "user";
   private SendBirdUser user;
@@ -50,16 +48,8 @@ public class RemoveRegistrationOrDeviceTokenByTokenResponse {
   public RemoveRegistrationOrDeviceTokenByTokenResponse() { 
   }
 
-  public RemoveRegistrationOrDeviceTokenByTokenResponse token(List<String> token) {
+  public RemoveRegistrationOrDeviceTokenByTokenResponse token(String token) {
     this.token = token;
-    return this;
-  }
-
-  public RemoveRegistrationOrDeviceTokenByTokenResponse addTokenItem(String tokenItem) {
-    if (this.token == null) {
-      this.token = new ArrayList<>();
-    }
-    this.token.add(tokenItem);
     return this;
   }
 
@@ -72,14 +62,14 @@ public class RemoveRegistrationOrDeviceTokenByTokenResponse {
   @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<String> getToken() {
+  public String getToken() {
     return token;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setToken(List<String> token) {
+  public void setToken(String token) {
     this.token = token;
   }
 

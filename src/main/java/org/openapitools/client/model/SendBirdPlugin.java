@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   SendBirdPlugin.JSON_PROPERTY_VENDOR
 })
 @JsonTypeName("SendBird.Plugin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-30T22:30:42.640512+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
 public class SendBirdPlugin {
   public static final String JSON_PROPERTY_DETAIL = "detail";
   private Object detail;
