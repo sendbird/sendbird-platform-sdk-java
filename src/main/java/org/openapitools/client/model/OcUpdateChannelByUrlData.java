@@ -45,7 +45,7 @@ import org.sendbird.client.JSON;
   OcUpdateChannelByUrlData.JSON_PROPERTY_OPERATORS
 })
 @JsonTypeName("ocUpdateChannelByUrlData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class OcUpdateChannelByUrlData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;

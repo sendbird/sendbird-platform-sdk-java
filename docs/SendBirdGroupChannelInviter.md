@@ -2,7 +2,7 @@
 
 # SendBirdGroupChannelInviter
 
-## anyOf schemas
+## oneOf schemas
 * [SendBirdUser](SendBirdUser.md)
 
 NOTE: this class is nullable.

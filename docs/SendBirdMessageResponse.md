@@ -17,6 +17,7 @@
 |**isRemoved** | **Boolean** |  |  [optional] |
 |**user** | [**SendBirdMessageResponseUser**](SendBirdMessageResponseUser.md) |  |  [optional] |
 |**_file** | **Object** |  |  [optional] |
+|**files** | [**List&lt;SendBirdFile&gt;**](SendBirdFile.md) |  |  [optional] |
 |**message** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |
 |**messageRetentionHour** | **BigDecimal** |  |  [optional] |

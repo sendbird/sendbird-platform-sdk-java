@@ -27,6 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.SendBirdFile;
 import org.openapitools.client.model.SendBirdMessageResponseMentionedUsersInner;
 import org.openapitools.client.model.SendBirdMessageResponseUser;
 import org.openapitools.client.model.SendBirdParentMessageInfo;
@@ -48,6 +49,7 @@ import org.sendbird.client.JSON;
   SendBirdMessageResponse.JSON_PROPERTY_IS_REMOVED,
   SendBirdMessageResponse.JSON_PROPERTY_USER,
   SendBirdMessageResponse.JSON_PROPERTY_FILE,
+  SendBirdMessageResponse.JSON_PROPERTY_FILES,
   SendBirdMessageResponse.JSON_PROPERTY_MESSAGE,
   SendBirdMessageResponse.JSON_PROPERTY_DATA,
   SendBirdMessageResponse.JSON_PROPERTY_MESSAGE_RETENTION_HOUR,
@@ -67,7 +69,7 @@ import org.sendbird.client.JSON;
   SendBirdMessageResponse.JSON_PROPERTY_IS_REPLY_TO_CHANNEL
 })
 @JsonTypeName("SendBird.MessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class SendBirdMessageResponse {
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;
@@ -98,6 +100,9 @@ public class SendBirdMessageResponse {
 
   public static final String JSON_PROPERTY_FILE = "file";
   private Object _file;
+
+  public static final String JSON_PROPERTY_FILES = "files";
+  private List<SendBirdFile> files = null;
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
@@ -418,6 +423,40 @@ public class SendBirdMessageResponse {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFile(Object _file) {
     this._file = _file;
+  }
+
+
+  public SendBirdMessageResponse files(List<SendBirdFile> files) {
+    this.files = files;
+    return this;
+  }
+
+  public SendBirdMessageResponse addFilesItem(SendBirdFile filesItem) {
+    if (this.files == null) {
+      this.files = new ArrayList<>();
+    }
+    this.files.add(filesItem);
+    return this;
+  }
+
+   /**
+   * Get files
+   * @return files
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<SendBirdFile> getFiles() {
+    return files;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FILES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFiles(List<SendBirdFile> files) {
+    this.files = files;
   }
 
 
@@ -893,6 +932,7 @@ public class SendBirdMessageResponse {
         Objects.equals(this.isRemoved, sendBirdMessageResponse.isRemoved) &&
         Objects.equals(this.user, sendBirdMessageResponse.user) &&
         Objects.equals(this._file, sendBirdMessageResponse._file) &&
+        Objects.equals(this.files, sendBirdMessageResponse.files) &&
         Objects.equals(this.message, sendBirdMessageResponse.message) &&
         Objects.equals(this.data, sendBirdMessageResponse.data) &&
         Objects.equals(this.messageRetentionHour, sendBirdMessageResponse.messageRetentionHour) &&
@@ -914,7 +954,7 @@ public class SendBirdMessageResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(requireAuth, messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, _file, message, data, messageRetentionHour, silent, type, createdAt, channelType, reqId, mentionType, channelUrl, messageId, size, sortedMetaarray, threadInfo, parentMessageId, parentMessageInfo, isReplyToChannel);
+    return Objects.hash(requireAuth, messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, _file, files, message, data, messageRetentionHour, silent, type, createdAt, channelType, reqId, mentionType, channelUrl, messageId, size, sortedMetaarray, threadInfo, parentMessageId, parentMessageInfo, isReplyToChannel);
   }
 
   @Override
@@ -931,6 +971,7 @@ public class SendBirdMessageResponse {
     sb.append("    isRemoved: ").append(toIndentedString(isRemoved)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    _file: ").append(toIndentedString(_file)).append("\n");
+    sb.append("    files: ").append(toIndentedString(files)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    messageRetentionHour: ").append(toIndentedString(messageRetentionHour)).append("\n");

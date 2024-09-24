@@ -27,6 +27,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,13 +43,13 @@ import org.sendbird.client.JSON;
   RemoveRegistrationOrDeviceTokenResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("removeRegistrationOrDeviceTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class RemoveRegistrationOrDeviceTokenResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private List<String> token = null;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private SendBirdUser user;
+  private JsonNullable<SendBirdUser> user = JsonNullable.<SendBirdUser>undefined();
 
   public RemoveRegistrationOrDeviceTokenResponse() { 
   }
@@ -85,7 +89,7 @@ public class RemoveRegistrationOrDeviceTokenResponse {
 
 
   public RemoveRegistrationOrDeviceTokenResponse user(SendBirdUser user) {
-    this.user = user;
+    this.user = JsonNullable.<SendBirdUser>of(user);
     return this;
   }
 
@@ -95,18 +99,26 @@ public class RemoveRegistrationOrDeviceTokenResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_USER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getUser() {
-    return user;
+        return user.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendBirdUser user) {
+
+  public JsonNullable<SendBirdUser> getUser_JsonNullable() {
+    return user;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_USER)
+  public void setUser_JsonNullable(JsonNullable<SendBirdUser> user) {
     this.user = user;
+  }
+
+  public void setUser(SendBirdUser user) {
+    this.user = JsonNullable.<SendBirdUser>of(user);
   }
 
 
@@ -123,12 +135,23 @@ public class RemoveRegistrationOrDeviceTokenResponse {
     }
     RemoveRegistrationOrDeviceTokenResponse removeRegistrationOrDeviceTokenResponse = (RemoveRegistrationOrDeviceTokenResponse) o;
     return Objects.equals(this.token, removeRegistrationOrDeviceTokenResponse.token) &&
-        Objects.equals(this.user, removeRegistrationOrDeviceTokenResponse.user);
+        equalsNullable(this.user, removeRegistrationOrDeviceTokenResponse.user);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(token, user);
+    return Objects.hash(token, hashCodeNullable(user));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

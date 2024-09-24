@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   UpdateHmsPushConfigurationByIdResponse.JSON_PROPERTY_PUSH_CONFIGURATIONS
 })
 @JsonTypeName("updateHmsPushConfigurationByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class UpdateHmsPushConfigurationByIdResponse {
   public static final String JSON_PROPERTY_PUSH_CONFIGURATIONS = "push_configurations";
   private String pushConfigurations;

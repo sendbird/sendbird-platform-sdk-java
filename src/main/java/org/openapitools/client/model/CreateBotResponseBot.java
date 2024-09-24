@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   CreateBotResponseBot.JSON_PROPERTY_BOT_METADATA
 })
 @JsonTypeName("createBotResponse_bot")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class CreateBotResponseBot {
   public static final String JSON_PROPERTY_BOT_TOKEN = "bot_token";
   private String botToken;

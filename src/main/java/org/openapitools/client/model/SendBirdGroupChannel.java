@@ -94,7 +94,7 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannel.JSON_PROPERTY_READ_RECEIPT
 })
 @JsonTypeName("SendBird.GroupChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -109,7 +109,7 @@ public class SendBirdGroupChannel {
   private JsonNullable<SendBirdGroupChannelCreatedBy> createdBy = JsonNullable.<SendBirdGroupChannelCreatedBy>undefined();
 
   public static final String JSON_PROPERTY_CREATOR = "creator";
-  private SendBirdUser creator;
+  private JsonNullable<SendBirdUser> creator = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -170,7 +170,7 @@ public class SendBirdGroupChannel {
   private BigDecimal invitedAt;
 
   public static final String JSON_PROPERTY_INVITER = "inviter";
-  private SendBirdUser inviter;
+  private JsonNullable<SendBirdUser> inviter = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED = "is_access_code_required";
   private Boolean isAccessCodeRequired;
@@ -529,7 +529,7 @@ public class SendBirdGroupChannel {
 
 
   public SendBirdGroupChannel creator(SendBirdUser creator) {
-    this.creator = creator;
+    this.creator = JsonNullable.<SendBirdUser>of(creator);
     return this;
   }
 
@@ -539,18 +539,26 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getCreator() {
-    return creator;
+        return creator.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_CREATOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreator(SendBirdUser creator) {
+
+  public JsonNullable<SendBirdUser> getCreator_JsonNullable() {
+    return creator;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CREATOR)
+  public void setCreator_JsonNullable(JsonNullable<SendBirdUser> creator) {
     this.creator = creator;
+  }
+
+  public void setCreator(SendBirdUser creator) {
+    this.creator = JsonNullable.<SendBirdUser>of(creator);
   }
 
 
@@ -737,7 +745,7 @@ public class SendBirdGroupChannel {
 
 
   public SendBirdGroupChannel inviter(SendBirdUser inviter) {
-    this.inviter = inviter;
+    this.inviter = JsonNullable.<SendBirdUser>of(inviter);
     return this;
   }
 
@@ -747,18 +755,26 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_INVITER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getInviter() {
-    return inviter;
+        return inviter.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_INVITER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInviter(SendBirdUser inviter) {
+
+  public JsonNullable<SendBirdUser> getInviter_JsonNullable() {
+    return inviter;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_INVITER)
+  public void setInviter_JsonNullable(JsonNullable<SendBirdUser> inviter) {
     this.inviter = inviter;
+  }
+
+  public void setInviter(SendBirdUser inviter) {
+    this.inviter = JsonNullable.<SendBirdUser>of(inviter);
   }
 
 
@@ -1616,7 +1632,7 @@ public class SendBirdGroupChannel {
         Objects.equals(this.coverUrl, sendBirdGroupChannel.coverUrl) &&
         Objects.equals(this.createdAt, sendBirdGroupChannel.createdAt) &&
         equalsNullable(this.createdBy, sendBirdGroupChannel.createdBy) &&
-        Objects.equals(this.creator, sendBirdGroupChannel.creator) &&
+        equalsNullable(this.creator, sendBirdGroupChannel.creator) &&
         Objects.equals(this.customType, sendBirdGroupChannel.customType) &&
         Objects.equals(this.data, sendBirdGroupChannel.data) &&
         Objects.equals(this.disappearingMessage, sendBirdGroupChannel.disappearingMessage) &&
@@ -1624,7 +1640,7 @@ public class SendBirdGroupChannel {
         Objects.equals(this.ignoreProfanityFilter, sendBirdGroupChannel.ignoreProfanityFilter) &&
         Objects.equals(this.hiddenState, sendBirdGroupChannel.hiddenState) &&
         Objects.equals(this.invitedAt, sendBirdGroupChannel.invitedAt) &&
-        Objects.equals(this.inviter, sendBirdGroupChannel.inviter) &&
+        equalsNullable(this.inviter, sendBirdGroupChannel.inviter) &&
         Objects.equals(this.isAccessCodeRequired, sendBirdGroupChannel.isAccessCodeRequired) &&
         Objects.equals(this.isBroadcast, sendBirdGroupChannel.isBroadcast) &&
         Objects.equals(this.isCreated, sendBirdGroupChannel.isCreated) &&
@@ -1664,7 +1680,7 @@ public class SendBirdGroupChannel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelUrl, coverUrl, createdAt, hashCodeNullable(createdBy), creator, customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel, readReceipt);
+    return Objects.hash(channelUrl, coverUrl, createdAt, hashCodeNullable(createdBy), hashCodeNullable(creator), customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, hashCodeNullable(inviter), isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel, readReceipt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

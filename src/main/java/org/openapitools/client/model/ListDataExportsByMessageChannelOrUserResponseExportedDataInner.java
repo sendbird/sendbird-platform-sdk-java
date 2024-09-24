@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   ListDataExportsByMessageChannelOrUserResponseExportedDataInner.JSON_PROPERTY_USER_IDS
 })
 @JsonTypeName("listDataExportsByMessageChannelOrUserResponse_exported_data_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   public static final String JSON_PROPERTY_REQUEST_ID = "request_id";
   private String requestId;

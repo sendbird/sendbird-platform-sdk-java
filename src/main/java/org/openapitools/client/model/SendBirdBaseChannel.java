@@ -26,6 +26,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -44,7 +48,7 @@ import org.sendbird.client.JSON;
   SendBirdBaseChannel.JSON_PROPERTY_URL
 })
 @JsonTypeName("SendBird.BaseChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class SendBirdBaseChannel {
   public static final String JSON_PROPERTY_COVER_URL = "cover_url";
   private String coverUrl;
@@ -53,7 +57,7 @@ public class SendBirdBaseChannel {
   private BigDecimal createdAt;
 
   public static final String JSON_PROPERTY_CREATOR = "creator";
-  private SendBirdUser creator;
+  private JsonNullable<SendBirdUser> creator = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -126,7 +130,7 @@ public class SendBirdBaseChannel {
 
 
   public SendBirdBaseChannel creator(SendBirdUser creator) {
-    this.creator = creator;
+    this.creator = JsonNullable.<SendBirdUser>of(creator);
     return this;
   }
 
@@ -136,18 +140,26 @@ public class SendBirdBaseChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getCreator() {
-    return creator;
+        return creator.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_CREATOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreator(SendBirdUser creator) {
+
+  public JsonNullable<SendBirdUser> getCreator_JsonNullable() {
+    return creator;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CREATOR)
+  public void setCreator_JsonNullable(JsonNullable<SendBirdUser> creator) {
     this.creator = creator;
+  }
+
+  public void setCreator(SendBirdUser creator) {
+    this.creator = JsonNullable.<SendBirdUser>of(creator);
   }
 
 
@@ -295,7 +307,7 @@ public class SendBirdBaseChannel {
     SendBirdBaseChannel sendBirdBaseChannel = (SendBirdBaseChannel) o;
     return Objects.equals(this.coverUrl, sendBirdBaseChannel.coverUrl) &&
         Objects.equals(this.createdAt, sendBirdBaseChannel.createdAt) &&
-        Objects.equals(this.creator, sendBirdBaseChannel.creator) &&
+        equalsNullable(this.creator, sendBirdBaseChannel.creator) &&
         Objects.equals(this.customType, sendBirdBaseChannel.customType) &&
         Objects.equals(this.data, sendBirdBaseChannel.data) &&
         Objects.equals(this.isEphemeral, sendBirdBaseChannel.isEphemeral) &&
@@ -303,9 +315,20 @@ public class SendBirdBaseChannel {
         Objects.equals(this.url, sendBirdBaseChannel.url);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(coverUrl, createdAt, creator, customType, data, isEphemeral, name, url);
+    return Objects.hash(coverUrl, createdAt, hashCodeNullable(creator), customType, data, isEphemeral, name, url);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

@@ -10908,7 +10908,7 @@ components:
         data: data
         custom_type: custom_type
         is_reply_to_channel: true
-        created_at: 3.616076749251911
+        created_at: 1.0246457001441578
         is_removed: true
         type: type
         req_id: req_id
@@ -10930,65 +10930,65 @@ components:
         channel_type: channel_type
         message_survival_seconds: 2.3021358869347655
         silent: true
-        parent_message_id: 7.386281948385884
+        parent_message_id: 7.457744773683766
         parent_message_info:
           file:
             file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
+              height: 3.616076749251911
             url: url
-            file_size: 1.0246457001441578
+            file_size: 9.301444243932576
           custom_type: custom_type
           files:
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
+              height: 3.616076749251911
             url: url
-            file_size: 1.0246457001441578
+            file_size: 9.301444243932576
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
+              height: 3.616076749251911
             url: url
-            file_size: 1.0246457001441578
+            file_size: 9.301444243932576
           message: message
           type: type
           user:
@@ -11021,9 +11021,9 @@ components:
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          ts: 1.2315135367772556
+          ts: 1.1730742509559433
         require_auth: true
-        message_id: 2.027123023002322
+        message_id: 1.4894159098541704
         sorted_metaarray:
         - "{}"
         - "{}"
@@ -11031,8 +11031,45 @@ components:
         message: message
         channel_url: channel_url
         is_op_msg: true
-        message_retention_hour: 9.301444243932576
-        size: 4.145608029883936
+        message_retention_hour: 1.2315135367772556
+        size: 6.84685269835264
+        files:
+        - file_name: file_name
+          file_type: file_type
+          require_auth: true
+          thumbnails:
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
+            plain_url: plain_url
+            real_height: 2.027123023002322
+            url: url
+            height: 3.616076749251911
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
+            plain_url: plain_url
+            real_height: 2.027123023002322
+            url: url
+            height: 3.616076749251911
+          url: url
+          file_size: 9.301444243932576
+        - file_name: file_name
+          file_type: file_type
+          require_auth: true
+          thumbnails:
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
+            plain_url: plain_url
+            real_height: 2.027123023002322
+            url: url
+            height: 3.616076749251911
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
+            plain_url: plain_url
+            real_height: 2.027123023002322
+            url: url
+            height: 3.616076749251911
+          url: url
+          file_size: 9.301444243932576
         user:
           metadata:
             anyOf: anyOf
@@ -11066,6 +11103,10 @@ components:
           $ref: '#/components/schemas/SendBird_MessageResponse_user'
         file:
           type: object
+        files:
+          items:
+            $ref: '#/components/schemas/SendBird.File'
+          type: array
         message:
           type: string
         data:
@@ -11464,7 +11505,7 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 1.0246457001441578
           is_removed: true
           type: type
           req_id: req_id
@@ -11486,65 +11527,65 @@ components:
           channel_type: channel_type
           message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.457744773683766
           parent_message_info:
             file:
               file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             message: message
             type: type
             user:
@@ -11577,9 +11618,9 @@ components:
               is_online: true
               last_seen_at: 0
               is_hide_me_from_friends: true
-            ts: 1.2315135367772556
+            ts: 1.1730742509559433
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 1.4894159098541704
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -11587,8 +11628,45 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.2315135367772556
+          size: 6.84685269835264
+          files:
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
           user:
             metadata:
               anyOf: anyOf
@@ -12652,12 +12730,12 @@ components:
       type: object
     SendBird.ThumbnailSBObject:
       example:
-        real_width: 7.457744773683766
-        width: 1.1730742509559433
+        real_width: 4.145608029883936
+        width: 7.386281948385884
         plain_url: plain_url
-        real_height: 6.84685269835264
+        real_height: 2.027123023002322
         url: url
-        height: 1.4894159098541704
+        height: 3.616076749251911
       properties:
         height:
           type: number
@@ -12711,6 +12789,7 @@ components:
         is_online: true
         last_seen_at: 0
         is_hide_me_from_friends: true
+      nullable: true
       properties:
         require_auth_for_profile_image:
           type: boolean
@@ -12823,20 +12902,20 @@ components:
         file_type: file_type
         require_auth: true
         thumbnails:
-        - real_width: 7.457744773683766
-          width: 1.1730742509559433
+        - real_width: 4.145608029883936
+          width: 7.386281948385884
           plain_url: plain_url
-          real_height: 6.84685269835264
+          real_height: 2.027123023002322
           url: url
-          height: 1.4894159098541704
-        - real_width: 7.457744773683766
-          width: 1.1730742509559433
+          height: 3.616076749251911
+        - real_width: 4.145608029883936
+          width: 7.386281948385884
           plain_url: plain_url
-          real_height: 6.84685269835264
+          real_height: 2.027123023002322
           url: url
-          height: 1.4894159098541704
+          height: 3.616076749251911
         url: url
-        file_size: 1.0246457001441578
+        file_size: 9.301444243932576
       properties:
         url:
           type: string
@@ -12860,58 +12939,58 @@ components:
           file_type: file_type
           require_auth: true
           thumbnails:
-          - real_width: 7.457744773683766
-            width: 1.1730742509559433
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
             plain_url: plain_url
-            real_height: 6.84685269835264
+            real_height: 2.027123023002322
             url: url
-            height: 1.4894159098541704
-          - real_width: 7.457744773683766
-            width: 1.1730742509559433
+            height: 3.616076749251911
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
             plain_url: plain_url
-            real_height: 6.84685269835264
+            real_height: 2.027123023002322
             url: url
-            height: 1.4894159098541704
+            height: 3.616076749251911
           url: url
-          file_size: 1.0246457001441578
+          file_size: 9.301444243932576
         custom_type: custom_type
         files:
         - file_name: file_name
           file_type: file_type
           require_auth: true
           thumbnails:
-          - real_width: 7.457744773683766
-            width: 1.1730742509559433
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
             plain_url: plain_url
-            real_height: 6.84685269835264
+            real_height: 2.027123023002322
             url: url
-            height: 1.4894159098541704
-          - real_width: 7.457744773683766
-            width: 1.1730742509559433
+            height: 3.616076749251911
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
             plain_url: plain_url
-            real_height: 6.84685269835264
+            real_height: 2.027123023002322
             url: url
-            height: 1.4894159098541704
+            height: 3.616076749251911
           url: url
-          file_size: 1.0246457001441578
+          file_size: 9.301444243932576
         - file_name: file_name
           file_type: file_type
           require_auth: true
           thumbnails:
-          - real_width: 7.457744773683766
-            width: 1.1730742509559433
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
             plain_url: plain_url
-            real_height: 6.84685269835264
+            real_height: 2.027123023002322
             url: url
-            height: 1.4894159098541704
-          - real_width: 7.457744773683766
-            width: 1.1730742509559433
+            height: 3.616076749251911
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
             plain_url: plain_url
-            real_height: 6.84685269835264
+            real_height: 2.027123023002322
             url: url
-            height: 1.4894159098541704
+            height: 3.616076749251911
           url: url
-          file_size: 1.0246457001441578
+          file_size: 9.301444243932576
         message: message
         type: type
         user:
@@ -12944,7 +13023,7 @@ components:
           is_online: true
           last_seen_at: 0
           is_hide_me_from_friends: true
-        ts: 1.2315135367772556
+        ts: 1.1730742509559433
       properties:
         custom_type:
           type: string
@@ -13439,7 +13518,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -13461,65 +13540,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -13552,9 +13631,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -13562,8 +13641,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -13749,7 +13865,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -13771,65 +13887,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -13862,9 +13978,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -13872,8 +13988,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -15455,7 +15608,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -15477,65 +15630,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -15568,9 +15721,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -15578,8 +15731,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -15765,7 +15955,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -15787,65 +15977,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -15878,9 +16068,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -15888,8 +16078,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -17044,58 +17271,58 @@ components:
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             message: message
             type: type
             user:
@@ -17128,7 +17355,7 @@ components:
               is_online: true
               last_seen_at: 0
               is_hide_me_from_friends: true
-            ts: 1.2315135367772556
+            ts: 1.1730742509559433
           created_at: 5.962133916683182
           is_removed: true
           message_id: 5.637376656633329
@@ -17162,6 +17389,43 @@ components:
           message_retention_hour: 1.4658129805029452
           updated_at: 6.027456183070403
           translations: "{}"
+          files:
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
           mentioned_users:
           - metadata:
               anyOf: anyOf
@@ -17193,58 +17457,58 @@ components:
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             message: message
             type: type
             user:
@@ -17277,7 +17541,7 @@ components:
               is_online: true
               last_seen_at: 0
               is_hide_me_from_friends: true
-            ts: 1.2315135367772556
+            ts: 1.1730742509559433
           created_at: 5.962133916683182
           is_removed: true
           message_id: 5.637376656633329
@@ -17311,6 +17575,43 @@ components:
           message_retention_hour: 1.4658129805029452
           updated_at: 6.027456183070403
           translations: "{}"
+          files:
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
           mentioned_users:
           - metadata:
               anyOf: anyOf
@@ -17994,7 +18295,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -18016,65 +18317,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -18107,9 +18408,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -18117,8 +18418,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -18304,7 +18642,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -18326,65 +18664,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -18417,9 +18755,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -18427,8 +18765,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -18735,7 +19110,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -18757,65 +19132,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -18848,9 +19223,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -18858,8 +19233,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -18938,7 +19350,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -18960,65 +19372,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -19051,9 +19463,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -19061,8 +19473,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -19153,7 +19602,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -19175,65 +19624,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -19266,9 +19715,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -19276,8 +19725,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -19356,7 +19842,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -19378,65 +19864,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -19469,9 +19955,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -19479,8 +19965,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -19570,7 +20093,7 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 1.0246457001441578
           is_removed: true
           type: type
           req_id: req_id
@@ -19592,65 +20115,65 @@ components:
           channel_type: channel_type
           message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.457744773683766
           parent_message_info:
             file:
               file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             message: message
             type: type
             user:
@@ -19683,9 +20206,9 @@ components:
               is_online: true
               last_seen_at: 0
               is_hide_me_from_friends: true
-            ts: 1.2315135367772556
+            ts: 1.1730742509559433
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 1.4894159098541704
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -19693,8 +20216,45 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.2315135367772556
+          size: 6.84685269835264
+          files:
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
           user:
             metadata:
               anyOf: anyOf
@@ -19794,7 +20354,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -19816,65 +20376,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -19907,9 +20467,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -19917,8 +20477,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -19997,7 +20594,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -20019,65 +20616,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -20110,9 +20707,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -20120,8 +20717,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -20211,7 +20845,7 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 1.0246457001441578
           is_removed: true
           type: type
           req_id: req_id
@@ -20233,65 +20867,65 @@ components:
           channel_type: channel_type
           message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.457744773683766
           parent_message_info:
             file:
               file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             message: message
             type: type
             user:
@@ -20324,9 +20958,9 @@ components:
               is_online: true
               last_seen_at: 0
               is_hide_me_from_friends: true
-            ts: 1.2315135367772556
+            ts: 1.1730742509559433
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 1.4894159098541704
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -20334,8 +20968,45 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.2315135367772556
+          size: 6.84685269835264
+          files:
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
           user:
             metadata:
               anyOf: anyOf
@@ -20435,7 +21106,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -20457,65 +21128,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -20548,9 +21219,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -20558,8 +21229,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -20638,7 +21346,7 @@ components:
             data: data
             custom_type: custom_type
             is_reply_to_channel: true
-            created_at: 3.616076749251911
+            created_at: 1.0246457001441578
             is_removed: true
             type: type
             req_id: req_id
@@ -20660,65 +21368,65 @@ components:
             channel_type: channel_type
             message_survival_seconds: 2.3021358869347655
             silent: true
-            parent_message_id: 7.386281948385884
+            parent_message_id: 7.457744773683766
             parent_message_info:
               file:
                 file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               custom_type: custom_type
               files:
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               - file_name: file_name
                 file_type: file_type
                 require_auth: true
                 thumbnails:
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
-                - real_width: 7.457744773683766
-                  width: 1.1730742509559433
+                  height: 3.616076749251911
+                - real_width: 4.145608029883936
+                  width: 7.386281948385884
                   plain_url: plain_url
-                  real_height: 6.84685269835264
+                  real_height: 2.027123023002322
                   url: url
-                  height: 1.4894159098541704
+                  height: 3.616076749251911
                 url: url
-                file_size: 1.0246457001441578
+                file_size: 9.301444243932576
               message: message
               type: type
               user:
@@ -20751,9 +21459,9 @@ components:
                 is_online: true
                 last_seen_at: 0
                 is_hide_me_from_friends: true
-              ts: 1.2315135367772556
+              ts: 1.1730742509559433
             require_auth: true
-            message_id: 2.027123023002322
+            message_id: 1.4894159098541704
             sorted_metaarray:
             - "{}"
             - "{}"
@@ -20761,8 +21469,45 @@ components:
             message: message
             channel_url: channel_url
             is_op_msg: true
-            message_retention_hour: 9.301444243932576
-            size: 4.145608029883936
+            message_retention_hour: 1.2315135367772556
+            size: 6.84685269835264
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
+                plain_url: plain_url
+                real_height: 2.027123023002322
+                url: url
+                height: 3.616076749251911
+              url: url
+              file_size: 9.301444243932576
             user:
               metadata:
                 anyOf: anyOf
@@ -20852,7 +21597,7 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 1.0246457001441578
           is_removed: true
           type: type
           req_id: req_id
@@ -20874,65 +21619,65 @@ components:
           channel_type: channel_type
           message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.457744773683766
           parent_message_info:
             file:
               file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             message: message
             type: type
             user:
@@ -20965,9 +21710,9 @@ components:
               is_online: true
               last_seen_at: 0
               is_hide_me_from_friends: true
-            ts: 1.2315135367772556
+            ts: 1.1730742509559433
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 1.4894159098541704
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -20975,8 +21720,45 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.2315135367772556
+          size: 6.84685269835264
+          files:
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
           user:
             metadata:
               anyOf: anyOf
@@ -22340,16 +23122,7 @@ components:
             type: string
           type: array
       required:
-      - access_code
       - channel_url
-      - cover_file
-      - cover_url
-      - custom_type
-      - data
-      - is_distinct
-      - is_public
-      - name
-      - operator_ids
       title: gcUpdateChannelByUrlData
       type: object
     gcInviteAsMembersData:
@@ -24812,58 +25585,58 @@ components:
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
+              height: 3.616076749251911
             url: url
-            file_size: 1.0246457001441578
+            file_size: 9.301444243932576
           custom_type: custom_type
           files:
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
+              height: 3.616076749251911
             url: url
-            file_size: 1.0246457001441578
+            file_size: 9.301444243932576
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
-            - real_width: 7.457744773683766
-              width: 1.1730742509559433
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
               plain_url: plain_url
-              real_height: 6.84685269835264
+              real_height: 2.027123023002322
               url: url
-              height: 1.4894159098541704
+              height: 3.616076749251911
             url: url
-            file_size: 1.0246457001441578
+            file_size: 9.301444243932576
           message: message
           type: type
           user:
@@ -24896,7 +25669,7 @@ components:
             is_online: true
             last_seen_at: 0
             is_hide_me_from_friends: true
-          ts: 1.2315135367772556
+          ts: 1.1730742509559433
         created_at: 5.962133916683182
         is_removed: true
         message_id: 5.637376656633329
@@ -24930,6 +25703,43 @@ components:
         message_retention_hour: 1.4658129805029452
         updated_at: 6.027456183070403
         translations: "{}"
+        files:
+        - file_name: file_name
+          file_type: file_type
+          require_auth: true
+          thumbnails:
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
+            plain_url: plain_url
+            real_height: 2.027123023002322
+            url: url
+            height: 3.616076749251911
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
+            plain_url: plain_url
+            real_height: 2.027123023002322
+            url: url
+            height: 3.616076749251911
+          url: url
+          file_size: 9.301444243932576
+        - file_name: file_name
+          file_type: file_type
+          require_auth: true
+          thumbnails:
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
+            plain_url: plain_url
+            real_height: 2.027123023002322
+            url: url
+            height: 3.616076749251911
+          - real_width: 4.145608029883936
+            width: 7.386281948385884
+            plain_url: plain_url
+            real_height: 2.027123023002322
+            url: url
+            height: 3.616076749251911
+          url: url
+          file_size: 9.301444243932576
         mentioned_users:
         - metadata:
             anyOf: anyOf
@@ -24973,6 +25783,10 @@ components:
           $ref: '#/components/schemas/SendBird_MessageResponse_user'
         file:
           type: object
+        files:
+          items:
+            $ref: '#/components/schemas/SendBird.File'
+          type: array
         message:
           type: string
         data:
@@ -25275,7 +26089,7 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 1.0246457001441578
           is_removed: true
           type: type
           req_id: req_id
@@ -25297,65 +26111,65 @@ components:
           channel_type: channel_type
           message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.457744773683766
           parent_message_info:
             file:
               file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             message: message
             type: type
             user:
@@ -25388,9 +26202,9 @@ components:
               is_online: true
               last_seen_at: 0
               is_hide_me_from_friends: true
-            ts: 1.2315135367772556
+            ts: 1.1730742509559433
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 1.4894159098541704
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -25398,8 +26212,45 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.2315135367772556
+          size: 6.84685269835264
+          files:
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
           user:
             metadata:
               anyOf: anyOf
@@ -25498,7 +26349,7 @@ components:
           data: data
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 3.616076749251911
+          created_at: 1.0246457001441578
           is_removed: true
           type: type
           req_id: req_id
@@ -25520,65 +26371,65 @@ components:
           channel_type: channel_type
           message_survival_seconds: 2.3021358869347655
           silent: true
-          parent_message_id: 7.386281948385884
+          parent_message_id: 7.457744773683766
           parent_message_info:
             file:
               file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
-              - real_width: 7.457744773683766
-                width: 1.1730742509559433
+                height: 3.616076749251911
+              - real_width: 4.145608029883936
+                width: 7.386281948385884
                 plain_url: plain_url
-                real_height: 6.84685269835264
+                real_height: 2.027123023002322
                 url: url
-                height: 1.4894159098541704
+                height: 3.616076749251911
               url: url
-              file_size: 1.0246457001441578
+              file_size: 9.301444243932576
             message: message
             type: type
             user:
@@ -25611,9 +26462,9 @@ components:
               is_online: true
               last_seen_at: 0
               is_hide_me_from_friends: true
-            ts: 1.2315135367772556
+            ts: 1.1730742509559433
           require_auth: true
-          message_id: 2.027123023002322
+          message_id: 1.4894159098541704
           sorted_metaarray:
           - "{}"
           - "{}"
@@ -25621,8 +26472,45 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 9.301444243932576
-          size: 4.145608029883936
+          message_retention_hour: 1.2315135367772556
+          size: 6.84685269835264
+          files:
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            - real_width: 4.145608029883936
+              width: 7.386281948385884
+              plain_url: plain_url
+              real_height: 2.027123023002322
+              url: url
+              height: 3.616076749251911
+            url: url
+            file_size: 9.301444243932576
           user:
             metadata:
               anyOf: anyOf

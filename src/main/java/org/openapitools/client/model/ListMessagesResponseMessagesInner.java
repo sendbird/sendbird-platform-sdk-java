@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListMessagesResponseMessagesInnerOgTag;
 import org.openapitools.client.model.ListMessagesResponseMessagesInnerSortedMetaarrayInner;
+import org.openapitools.client.model.SendBirdFile;
 import org.openapitools.client.model.SendBirdMessageResponseMentionedUsersInner;
 import org.openapitools.client.model.SendBirdMessageResponseUser;
 import org.openapitools.client.model.SendBirdParentMessageInfo;
@@ -49,6 +50,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInner.JSON_PROPERTY_IS_REMOVED,
   ListMessagesResponseMessagesInner.JSON_PROPERTY_USER,
   ListMessagesResponseMessagesInner.JSON_PROPERTY_FILE,
+  ListMessagesResponseMessagesInner.JSON_PROPERTY_FILES,
   ListMessagesResponseMessagesInner.JSON_PROPERTY_MESSAGE,
   ListMessagesResponseMessagesInner.JSON_PROPERTY_DATA,
   ListMessagesResponseMessagesInner.JSON_PROPERTY_MESSAGE_RETENTION_HOUR,
@@ -65,7 +67,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInner.JSON_PROPERTY_PARENT_MESSAGE_INFO
 })
 @JsonTypeName("listMessagesResponse_messages_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class ListMessagesResponseMessagesInner {
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private BigDecimal messageSurvivalSeconds;
@@ -93,6 +95,9 @@ public class ListMessagesResponseMessagesInner {
 
   public static final String JSON_PROPERTY_FILE = "file";
   private Object _file;
+
+  public static final String JSON_PROPERTY_FILES = "files";
+  private List<SendBirdFile> files = null;
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
@@ -378,6 +383,40 @@ public class ListMessagesResponseMessagesInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFile(Object _file) {
     this._file = _file;
+  }
+
+
+  public ListMessagesResponseMessagesInner files(List<SendBirdFile> files) {
+    this.files = files;
+    return this;
+  }
+
+  public ListMessagesResponseMessagesInner addFilesItem(SendBirdFile filesItem) {
+    if (this.files == null) {
+      this.files = new ArrayList<>();
+    }
+    this.files.add(filesItem);
+    return this;
+  }
+
+   /**
+   * Get files
+   * @return files
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FILES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<SendBirdFile> getFiles() {
+    return files;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FILES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFiles(List<SendBirdFile> files) {
+    this.files = files;
   }
 
 
@@ -774,6 +813,7 @@ public class ListMessagesResponseMessagesInner {
         Objects.equals(this.isRemoved, listMessagesResponseMessagesInner.isRemoved) &&
         Objects.equals(this.user, listMessagesResponseMessagesInner.user) &&
         Objects.equals(this._file, listMessagesResponseMessagesInner._file) &&
+        Objects.equals(this.files, listMessagesResponseMessagesInner.files) &&
         Objects.equals(this.message, listMessagesResponseMessagesInner.message) &&
         Objects.equals(this.data, listMessagesResponseMessagesInner.data) &&
         Objects.equals(this.messageRetentionHour, listMessagesResponseMessagesInner.messageRetentionHour) &&
@@ -792,7 +832,7 @@ public class ListMessagesResponseMessagesInner {
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, _file, message, data, messageRetentionHour, silent, type, createdAt, channelType, reqId, mentionType, channelUrl, messageId, sortedMetaarray, ogTag, parentMessageInfo);
+    return Objects.hash(messageSurvivalSeconds, customType, mentionedUsers, translations, updatedAt, isOpMsg, isRemoved, user, _file, files, message, data, messageRetentionHour, silent, type, createdAt, channelType, reqId, mentionType, channelUrl, messageId, sortedMetaarray, ogTag, parentMessageInfo);
   }
 
   @Override
@@ -808,6 +848,7 @@ public class ListMessagesResponseMessagesInner {
     sb.append("    isRemoved: ").append(toIndentedString(isRemoved)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    _file: ").append(toIndentedString(_file)).append("\n");
+    sb.append("    files: ").append(toIndentedString(files)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    messageRetentionHour: ").append(toIndentedString(messageRetentionHour)).append("\n");
