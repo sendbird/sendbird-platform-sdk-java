@@ -27,6 +27,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -47,7 +51,7 @@ import org.sendbird.client.JSON;
   OcBanUserResponse.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("ocBanUserResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class OcBanUserResponse {
   public static final String JSON_PROPERTY_START_AT = "start_at";
   private BigDecimal startAt;
@@ -62,7 +66,7 @@ public class OcBanUserResponse {
   private String userId;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private SendBirdUser user;
+  private JsonNullable<SendBirdUser> user = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_NEXT_URL = "next_url";
   private String nextUrl;
@@ -187,7 +191,7 @@ public class OcBanUserResponse {
 
 
   public OcBanUserResponse user(SendBirdUser user) {
-    this.user = user;
+    this.user = JsonNullable.<SendBirdUser>of(user);
     return this;
   }
 
@@ -197,18 +201,26 @@ public class OcBanUserResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_USER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getUser() {
-    return user;
+        return user.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendBirdUser user) {
+
+  public JsonNullable<SendBirdUser> getUser_JsonNullable() {
+    return user;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_USER)
+  public void setUser_JsonNullable(JsonNullable<SendBirdUser> user) {
     this.user = user;
+  }
+
+  public void setUser(SendBirdUser user) {
+    this.user = JsonNullable.<SendBirdUser>of(user);
   }
 
 
@@ -358,7 +370,7 @@ public class OcBanUserResponse {
         Objects.equals(this.endAt, ocBanUserResponse.endAt) &&
         Objects.equals(this.description, ocBanUserResponse.description) &&
         Objects.equals(this.userId, ocBanUserResponse.userId) &&
-        Objects.equals(this.user, ocBanUserResponse.user) &&
+        equalsNullable(this.user, ocBanUserResponse.user) &&
         Objects.equals(this.nextUrl, ocBanUserResponse.nextUrl) &&
         Objects.equals(this.requireAuthForProfileImage, ocBanUserResponse.requireAuthForProfileImage) &&
         Objects.equals(this.nickname, ocBanUserResponse.nickname) &&
@@ -366,9 +378,20 @@ public class OcBanUserResponse {
         Objects.equals(this.metadata, ocBanUserResponse.metadata);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(startAt, endAt, description, userId, user, nextUrl, requireAuthForProfileImage, nickname, profileUrl, metadata);
+    return Objects.hash(startAt, endAt, description, userId, hashCodeNullable(user), nextUrl, requireAuthForProfileImage, nickname, profileUrl, metadata);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

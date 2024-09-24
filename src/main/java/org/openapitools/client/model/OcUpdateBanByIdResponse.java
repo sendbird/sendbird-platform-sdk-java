@@ -26,6 +26,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -40,10 +44,10 @@ import org.sendbird.client.JSON;
   OcUpdateBanByIdResponse.JSON_PROPERTY_START_AT
 })
 @JsonTypeName("ocUpdateBanByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class OcUpdateBanByIdResponse {
   public static final String JSON_PROPERTY_USER = "user";
-  private SendBirdUser user;
+  private JsonNullable<SendBirdUser> user = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -58,7 +62,7 @@ public class OcUpdateBanByIdResponse {
   }
 
   public OcUpdateBanByIdResponse user(SendBirdUser user) {
-    this.user = user;
+    this.user = JsonNullable.<SendBirdUser>of(user);
     return this;
   }
 
@@ -68,18 +72,26 @@ public class OcUpdateBanByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_USER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getUser() {
-    return user;
+        return user.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendBirdUser user) {
+
+  public JsonNullable<SendBirdUser> getUser_JsonNullable() {
+    return user;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_USER)
+  public void setUser_JsonNullable(JsonNullable<SendBirdUser> user) {
     this.user = user;
+  }
+
+  public void setUser(SendBirdUser user) {
+    this.user = JsonNullable.<SendBirdUser>of(user);
   }
 
 
@@ -173,15 +185,26 @@ public class OcUpdateBanByIdResponse {
       return false;
     }
     OcUpdateBanByIdResponse ocUpdateBanByIdResponse = (OcUpdateBanByIdResponse) o;
-    return Objects.equals(this.user, ocUpdateBanByIdResponse.user) &&
+    return equalsNullable(this.user, ocUpdateBanByIdResponse.user) &&
         Objects.equals(this.description, ocUpdateBanByIdResponse.description) &&
         Objects.equals(this.endAt, ocUpdateBanByIdResponse.endAt) &&
         Objects.equals(this.startAt, ocUpdateBanByIdResponse.startAt);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(user, description, endAt, startAt);
+    return Objects.hash(hashCodeNullable(user), description, endAt, startAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

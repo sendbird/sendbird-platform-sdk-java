@@ -31,6 +31,7 @@ import org.openapitools.client.model.SendBirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
@@ -44,10 +45,12 @@ import java.util.HashSet;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -55,8 +58,8 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import org.sendbird.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-11-07T15:23:06.856887Z[Europe/London]")
-@JsonDeserialize(using=SendBirdGroupChannelInviter.SendBirdGroupChannelInviterDeserializer.class)
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T14:15:52.235753+09:00[Asia/Seoul]")
+@JsonDeserialize(using = SendBirdGroupChannelInviter.SendBirdGroupChannelInviterDeserializer.class)
 @JsonSerialize(using = SendBirdGroupChannelInviter.SendBirdGroupChannelInviterSerializer.class)
 public class SendBirdGroupChannelInviter extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SendBirdGroupChannelInviter.class.getName());
@@ -88,20 +91,43 @@ public class SendBirdGroupChannelInviter extends AbstractOpenApiSchema {
         @Override
         public SendBirdGroupChannelInviter deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
             JsonNode tree = jp.readValueAsTree();
-
             Object deserialized = null;
+            boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
+            int match = 0;
+            JsonToken token = tree.traverse(jp.getCodec()).nextToken();
             // deserialize SendBirdUser
             try {
-                deserialized = tree.traverse(jp.getCodec()).readValueAs(SendBirdUser.class);
+                boolean attemptParsing = true;
+                // ensure that we respect type coercion as set on the client ObjectMapper
+                if (SendBirdUser.class.equals(Integer.class) || SendBirdUser.class.equals(Long.class) || SendBirdUser.class.equals(Float.class) || SendBirdUser.class.equals(Double.class) || SendBirdUser.class.equals(Boolean.class) || SendBirdUser.class.equals(String.class)) {
+                    attemptParsing = typeCoercion;
+                    if (!attemptParsing) {
+                        attemptParsing |= ((SendBirdUser.class.equals(Integer.class) || SendBirdUser.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
+                        attemptParsing |= ((SendBirdUser.class.equals(Float.class) || SendBirdUser.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
+                        attemptParsing |= (SendBirdUser.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
+                        attemptParsing |= (SendBirdUser.class.equals(String.class) && token == JsonToken.VALUE_STRING);
+                        attemptParsing |= (token == JsonToken.VALUE_NULL);
+                    }
+                }
+                if (attemptParsing) {
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(SendBirdUser.class);
+                    // TODO: there is no validation against JSON schema constraints
+                    // (min, max, enum, pattern...), this does not perform a strict JSON
+                    // validation, which means the 'match' count may be higher than it should be.
+                    match++;
+                    log.log(Level.FINER, "Input data matches schema 'SendBirdUser'");
+                }
+            } catch (Exception e) {
+                // deserialization failed, continue
+                log.log(Level.FINER, "Input data does not match schema 'SendBirdUser'", e);
+            }
+
+            if (match == 1) {
                 SendBirdGroupChannelInviter ret = new SendBirdGroupChannelInviter();
                 ret.setActualInstance(deserialized);
                 return ret;
-            } catch (Exception e) {
-                // deserialization failed, continue, log to help debugging
-                log.log(Level.FINER, "Input data does not match 'SendBirdGroupChannelInviter'", e);
             }
-
-            throw new IOException(String.format("Failed deserialization for SendBirdGroupChannelInviter: no match found"));
+            throw new IOException(String.format("Failed deserialization for SendBirdGroupChannelInviter: %d classes match result, expected 1", match));
         }
 
         /**
@@ -113,15 +139,15 @@ public class SendBirdGroupChannelInviter extends AbstractOpenApiSchema {
         }
     }
 
-    // store a list of schema names defined in anyOf
+    // store a list of schema names defined in oneOf
     public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
     public SendBirdGroupChannelInviter() {
-        super("anyOf", Boolean.TRUE);
+        super("oneOf", Boolean.TRUE);
     }
 
     public SendBirdGroupChannelInviter(SendBirdUser o) {
-        super("anyOf", Boolean.TRUE);
+        super("oneOf", Boolean.TRUE);
         setActualInstance(o);
     }
 
@@ -137,12 +163,12 @@ public class SendBirdGroupChannelInviter extends AbstractOpenApiSchema {
     }
 
     /**
-     * Set the instance that matches the anyOf child schema, check
-     * the instance parameter is valid against the anyOf child schemas:
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
      * SendBirdUser
      *
-     * It could be an instance of the 'anyOf' schemas.
-     * The anyOf child schemas may themselves be a composed schema (allOf, anyOf, anyOf).
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {

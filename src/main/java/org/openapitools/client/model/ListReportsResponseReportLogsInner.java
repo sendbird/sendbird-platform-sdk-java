@@ -50,10 +50,10 @@ import org.sendbird.client.JSON;
   ListReportsResponseReportLogsInner.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("listReportsResponse_report_logs_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class ListReportsResponseReportLogsInner {
   public static final String JSON_PROPERTY_REPORTING_USER = "reporting_user";
-  private SendBirdUser reportingUser;
+  private JsonNullable<SendBirdUser> reportingUser = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_REPORT_TYPE = "report_type";
   private String reportType;
@@ -62,7 +62,7 @@ public class ListReportsResponseReportLogsInner {
   private String reportCategory;
 
   public static final String JSON_PROPERTY_OFFENDING_USER = "offending_user";
-  private SendBirdUser offendingUser;
+  private JsonNullable<SendBirdUser> offendingUser = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_REPORTED_MESSAGE = "reported_message";
   private JsonNullable<SendBirdMessageResponse> reportedMessage = JsonNullable.<SendBirdMessageResponse>undefined();
@@ -80,7 +80,7 @@ public class ListReportsResponseReportLogsInner {
   }
 
   public ListReportsResponseReportLogsInner reportingUser(SendBirdUser reportingUser) {
-    this.reportingUser = reportingUser;
+    this.reportingUser = JsonNullable.<SendBirdUser>of(reportingUser);
     return this;
   }
 
@@ -90,18 +90,26 @@ public class ListReportsResponseReportLogsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REPORTING_USER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getReportingUser() {
-    return reportingUser;
+        return reportingUser.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_REPORTING_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReportingUser(SendBirdUser reportingUser) {
+
+  public JsonNullable<SendBirdUser> getReportingUser_JsonNullable() {
+    return reportingUser;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REPORTING_USER)
+  public void setReportingUser_JsonNullable(JsonNullable<SendBirdUser> reportingUser) {
     this.reportingUser = reportingUser;
+  }
+
+  public void setReportingUser(SendBirdUser reportingUser) {
+    this.reportingUser = JsonNullable.<SendBirdUser>of(reportingUser);
   }
 
 
@@ -158,7 +166,7 @@ public class ListReportsResponseReportLogsInner {
 
 
   public ListReportsResponseReportLogsInner offendingUser(SendBirdUser offendingUser) {
-    this.offendingUser = offendingUser;
+    this.offendingUser = JsonNullable.<SendBirdUser>of(offendingUser);
     return this;
   }
 
@@ -168,18 +176,26 @@ public class ListReportsResponseReportLogsInner {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_OFFENDING_USER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getOffendingUser() {
-    return offendingUser;
+        return offendingUser.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_OFFENDING_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOffendingUser(SendBirdUser offendingUser) {
+
+  public JsonNullable<SendBirdUser> getOffendingUser_JsonNullable() {
+    return offendingUser;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OFFENDING_USER)
+  public void setOffendingUser_JsonNullable(JsonNullable<SendBirdUser> offendingUser) {
     this.offendingUser = offendingUser;
+  }
+
+  public void setOffendingUser(SendBirdUser offendingUser) {
+    this.offendingUser = JsonNullable.<SendBirdUser>of(offendingUser);
   }
 
 
@@ -307,10 +323,10 @@ public class ListReportsResponseReportLogsInner {
       return false;
     }
     ListReportsResponseReportLogsInner listReportsResponseReportLogsInner = (ListReportsResponseReportLogsInner) o;
-    return Objects.equals(this.reportingUser, listReportsResponseReportLogsInner.reportingUser) &&
+    return equalsNullable(this.reportingUser, listReportsResponseReportLogsInner.reportingUser) &&
         Objects.equals(this.reportType, listReportsResponseReportLogsInner.reportType) &&
         Objects.equals(this.reportCategory, listReportsResponseReportLogsInner.reportCategory) &&
-        Objects.equals(this.offendingUser, listReportsResponseReportLogsInner.offendingUser) &&
+        equalsNullable(this.offendingUser, listReportsResponseReportLogsInner.offendingUser) &&
         equalsNullable(this.reportedMessage, listReportsResponseReportLogsInner.reportedMessage) &&
         Objects.equals(this.channel, listReportsResponseReportLogsInner.channel) &&
         Objects.equals(this.reportDescription, listReportsResponseReportLogsInner.reportDescription) &&
@@ -323,7 +339,7 @@ public class ListReportsResponseReportLogsInner {
 
   @Override
   public int hashCode() {
-    return Objects.hash(reportingUser, reportType, reportCategory, offendingUser, hashCodeNullable(reportedMessage), channel, reportDescription, createdAt);
+    return Objects.hash(hashCodeNullable(reportingUser), reportType, reportCategory, hashCodeNullable(offendingUser), hashCodeNullable(reportedMessage), channel, reportDescription, createdAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

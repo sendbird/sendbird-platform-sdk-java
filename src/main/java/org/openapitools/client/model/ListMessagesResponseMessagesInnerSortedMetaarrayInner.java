@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   ListMessagesResponseMessagesInnerSortedMetaarrayInner.JSON_PROPERTY_VALUE
 })
 @JsonTypeName("listMessagesResponse_messages_inner_sorted_metaarray_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class ListMessagesResponseMessagesInnerSortedMetaarrayInner {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;

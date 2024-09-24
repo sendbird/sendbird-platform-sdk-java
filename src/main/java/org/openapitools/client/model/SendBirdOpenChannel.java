@@ -28,6 +28,10 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -51,7 +55,7 @@ import org.sendbird.client.JSON;
   SendBirdOpenChannel.JSON_PROPERTY_FREEZE
 })
 @JsonTypeName("SendBird.OpenChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class SendBirdOpenChannel {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -69,7 +73,7 @@ public class SendBirdOpenChannel {
   private String coverUrl;
 
   public static final String JSON_PROPERTY_CREATOR = "creator";
-  private SendBirdUser creator;
+  private JsonNullable<SendBirdUser> creator = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_DATA = "data";
   private String data;
@@ -226,7 +230,7 @@ public class SendBirdOpenChannel {
 
 
   public SendBirdOpenChannel creator(SendBirdUser creator) {
-    this.creator = creator;
+    this.creator = JsonNullable.<SendBirdUser>of(creator);
     return this;
   }
 
@@ -236,18 +240,26 @@ public class SendBirdOpenChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CREATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getCreator() {
-    return creator;
+        return creator.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_CREATOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreator(SendBirdUser creator) {
+
+  public JsonNullable<SendBirdUser> getCreator_JsonNullable() {
+    return creator;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_CREATOR)
+  public void setCreator_JsonNullable(JsonNullable<SendBirdUser> creator) {
     this.creator = creator;
+  }
+
+  public void setCreator(SendBirdUser creator) {
+    this.creator = JsonNullable.<SendBirdUser>of(creator);
   }
 
 
@@ -458,7 +470,7 @@ public class SendBirdOpenChannel {
         Objects.equals(this.channelUrl, sendBirdOpenChannel.channelUrl) &&
         Objects.equals(this.createdAt, sendBirdOpenChannel.createdAt) &&
         Objects.equals(this.coverUrl, sendBirdOpenChannel.coverUrl) &&
-        Objects.equals(this.creator, sendBirdOpenChannel.creator) &&
+        equalsNullable(this.creator, sendBirdOpenChannel.creator) &&
         Objects.equals(this.data, sendBirdOpenChannel.data) &&
         Objects.equals(this.isDynamicPartitioned, sendBirdOpenChannel.isDynamicPartitioned) &&
         Objects.equals(this.isEphemeral, sendBirdOpenChannel.isEphemeral) &&
@@ -468,9 +480,20 @@ public class SendBirdOpenChannel {
         Objects.equals(this.freeze, sendBirdOpenChannel.freeze);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(name, customType, channelUrl, createdAt, coverUrl, creator, data, isDynamicPartitioned, isEphemeral, maxLengthMessage, operators, participantCount, freeze);
+    return Objects.hash(name, customType, channelUrl, createdAt, coverUrl, hashCodeNullable(creator), data, isDynamicPartitioned, isEphemeral, maxLengthMessage, operators, participantCount, freeze);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   GcHideOrArchiveChannelData.JSON_PROPERTY_HIDE_PREVIOUS_MESSAGES
 })
 @JsonTypeName("gcHideOrArchiveChannelData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class GcHideOrArchiveChannelData {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;

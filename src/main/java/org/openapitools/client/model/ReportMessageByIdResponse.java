@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   ReportMessageByIdResponse.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("reportMessageByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class ReportMessageByIdResponse {
   public static final String JSON_PROPERTY_REPORT_TYPE = "report_type";
   private String reportType;
@@ -59,10 +59,10 @@ public class ReportMessageByIdResponse {
   private String reportCategory;
 
   public static final String JSON_PROPERTY_REPORTING_USER = "reporting_user";
-  private SendBirdUser reportingUser;
+  private JsonNullable<SendBirdUser> reportingUser = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_OFFENDING_USER = "offending_user";
-  private SendBirdUser offendingUser;
+  private JsonNullable<SendBirdUser> offendingUser = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_REPORTED_MESSAGE = "reported_message";
   private JsonNullable<SendBirdMessageResponse> reportedMessage = JsonNullable.<SendBirdMessageResponse>undefined();
@@ -132,7 +132,7 @@ public class ReportMessageByIdResponse {
 
 
   public ReportMessageByIdResponse reportingUser(SendBirdUser reportingUser) {
-    this.reportingUser = reportingUser;
+    this.reportingUser = JsonNullable.<SendBirdUser>of(reportingUser);
     return this;
   }
 
@@ -142,23 +142,31 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_REPORTING_USER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getReportingUser() {
-    return reportingUser;
+        return reportingUser.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_REPORTING_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReportingUser(SendBirdUser reportingUser) {
+
+  public JsonNullable<SendBirdUser> getReportingUser_JsonNullable() {
+    return reportingUser;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_REPORTING_USER)
+  public void setReportingUser_JsonNullable(JsonNullable<SendBirdUser> reportingUser) {
     this.reportingUser = reportingUser;
+  }
+
+  public void setReportingUser(SendBirdUser reportingUser) {
+    this.reportingUser = JsonNullable.<SendBirdUser>of(reportingUser);
   }
 
 
   public ReportMessageByIdResponse offendingUser(SendBirdUser offendingUser) {
-    this.offendingUser = offendingUser;
+    this.offendingUser = JsonNullable.<SendBirdUser>of(offendingUser);
     return this;
   }
 
@@ -168,18 +176,26 @@ public class ReportMessageByIdResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_OFFENDING_USER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public SendBirdUser getOffendingUser() {
-    return offendingUser;
+        return offendingUser.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_OFFENDING_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOffendingUser(SendBirdUser offendingUser) {
+
+  public JsonNullable<SendBirdUser> getOffendingUser_JsonNullable() {
+    return offendingUser;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_OFFENDING_USER)
+  public void setOffendingUser_JsonNullable(JsonNullable<SendBirdUser> offendingUser) {
     this.offendingUser = offendingUser;
+  }
+
+  public void setOffendingUser(SendBirdUser offendingUser) {
+    this.offendingUser = JsonNullable.<SendBirdUser>of(offendingUser);
   }
 
 
@@ -309,8 +325,8 @@ public class ReportMessageByIdResponse {
     ReportMessageByIdResponse reportMessageByIdResponse = (ReportMessageByIdResponse) o;
     return Objects.equals(this.reportType, reportMessageByIdResponse.reportType) &&
         Objects.equals(this.reportCategory, reportMessageByIdResponse.reportCategory) &&
-        Objects.equals(this.reportingUser, reportMessageByIdResponse.reportingUser) &&
-        Objects.equals(this.offendingUser, reportMessageByIdResponse.offendingUser) &&
+        equalsNullable(this.reportingUser, reportMessageByIdResponse.reportingUser) &&
+        equalsNullable(this.offendingUser, reportMessageByIdResponse.offendingUser) &&
         equalsNullable(this.reportedMessage, reportMessageByIdResponse.reportedMessage) &&
         Objects.equals(this.channel, reportMessageByIdResponse.channel) &&
         Objects.equals(this.reportDescription, reportMessageByIdResponse.reportDescription) &&
@@ -323,7 +339,7 @@ public class ReportMessageByIdResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(reportType, reportCategory, reportingUser, offendingUser, hashCodeNullable(reportedMessage), channel, reportDescription, createdAt);
+    return Objects.hash(reportType, reportCategory, hashCodeNullable(reportingUser), hashCodeNullable(offendingUser), hashCodeNullable(reportedMessage), channel, reportDescription, createdAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

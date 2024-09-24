@@ -56,7 +56,7 @@ import org.sendbird.client.JSON;
   V3GroupChannelsChannelUrlScheduledMessagesScheduledMessageIdDeleteRequest.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("_v3_group_channels__channel_url__scheduled_messages__scheduled_message_id__delete_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class V3GroupChannelsChannelUrlScheduledMessagesScheduledMessageIdDeleteRequest {
   public static final String JSON_PROPERTY_MESSAGE_TYPE = "message_type";
   private String messageType;

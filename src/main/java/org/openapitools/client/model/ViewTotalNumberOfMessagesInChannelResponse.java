@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   ViewTotalNumberOfMessagesInChannelResponse.JSON_PROPERTY_TOTAL
 })
 @JsonTypeName("viewTotalNumberOfMessagesInChannelResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-15T20:36:02.608219+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
 public class ViewTotalNumberOfMessagesInChannelResponse {
   public static final String JSON_PROPERTY_TOTAL = "total";
   private BigDecimal total;
