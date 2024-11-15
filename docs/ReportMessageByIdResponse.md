@@ -14,7 +14,7 @@
 |**reportedMessage** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  |  [optional] |
 |**channel** | [**SendBirdChannelResponse**](SendBirdChannelResponse.md) |  |  [optional] |
 |**reportDescription** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 
 
 

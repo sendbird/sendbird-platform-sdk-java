@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**lastRepliedAt** | **BigDecimal** |  |  [optional] |
+|**lastRepliedAt** | **Long** |  |  [optional] |
 |**mostRepliedUsers** | [**List&lt;SendBirdUser&gt;**](SendBirdUser.md) |  |  [optional] |
-|**replyCount** | **BigDecimal** |  |  [optional] |
-|**updatedAt** | **BigDecimal** |  |  [optional] |
+|**replyCount** | **Long** |  |  [optional] |
+|**updatedAt** | **Long** |  |  [optional] |
 
 
 

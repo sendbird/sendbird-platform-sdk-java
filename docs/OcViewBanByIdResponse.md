@@ -9,8 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**user** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**endAt** | **BigDecimal** |  |  [optional] |
-|**startAt** | **BigDecimal** |  |  [optional] |
+|**endAt** | **Long** |  |  [optional] |
+|**startAt** | **Long** |  |  [optional] |
 
 
 

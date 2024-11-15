@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**channelUrl** | **String** |  |  [optional] |
 |**coverUrl** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 |**createdBy** | [**SendBirdGroupChannelCreatedBy**](SendBirdGroupChannelCreatedBy.md) |  |  [optional] |
 |**creator** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
 |**customType** | **String** |  |  [optional] |
@@ -18,7 +18,7 @@
 |**freeze** | **Boolean** |  |  [optional] |
 |**ignoreProfanityFilter** | **Boolean** |  |  [optional] |
 |**hiddenState** | [**HiddenStateEnum**](#HiddenStateEnum) |  |  [optional] |
-|**invitedAt** | **BigDecimal** |  |  [optional] |
+|**invitedAt** | **Long** |  |  [optional] |
 |**inviter** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
 |**isAccessCodeRequired** | **Boolean** |  |  [optional] |
 |**isBroadcast** | **Boolean** |  |  [optional] |
@@ -30,16 +30,16 @@
 |**isPublic** | **Boolean** |  |  [optional] |
 |**isPushEnabled** | **Boolean** |  |  [optional] |
 |**isSuper** | **Boolean** |  |  [optional] |
-|**joinedAt** | **BigDecimal** |  |  [optional] |
-|**joinedMemberCount** | **BigDecimal** |  |  [optional] |
+|**joinedAt** | **Long** |  |  [optional] |
+|**joinedMemberCount** | **Long** |  |  [optional] |
 |**lastMessage** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  |  [optional] |
-|**maxLengthMessage** | **BigDecimal** |  |  [optional] |
-|**memberCount** | **BigDecimal** |  |  [optional] |
+|**maxLengthMessage** | **Long** |  |  [optional] |
+|**memberCount** | **Long** |  |  [optional] |
 |**members** | [**List&lt;SendBirdMember&gt;**](SendBirdMember.md) |  |  [optional] |
-|**messageOffsetTimestamp** | **BigDecimal** |  |  [optional] |
-|**messageSurvivalSeconds** | **BigDecimal** |  |  [optional] |
+|**messageOffsetTimestamp** | **Long** |  |  [optional] |
+|**messageSurvivalSeconds** | **Long** |  |  [optional] |
 |**myCountPreference** | **String** |  |  [optional] |
-|**myLastRead** | **BigDecimal** |  |  [optional] |
+|**myLastRead** | **Long** |  |  [optional] |
 |**myMemberState** | [**MyMemberStateEnum**](#MyMemberStateEnum) |  |  [optional] |
 |**myMutedState** | [**MyMutedStateEnum**](#MyMutedStateEnum) |  |  [optional] |
 |**myPushTriggerOption** | [**MyPushTriggerOptionEnum**](#MyPushTriggerOptionEnum) |  |  [optional] |
@@ -47,8 +47,8 @@
 |**name** | **String** |  |  [optional] |
 |**operators** | **List&lt;Object&gt;** |  |  [optional] |
 |**smsFallback** | [**SendBirdGroupChannelSmsFallback**](SendBirdGroupChannelSmsFallback.md) |  |  [optional] |
-|**unreadMentionCount** | **BigDecimal** |  |  [optional] |
-|**unreadMessageCount** | **BigDecimal** |  |  [optional] |
+|**unreadMentionCount** | **Long** |  |  [optional] |
+|**unreadMessageCount** | **Long** |  |  [optional] |
 |**channel** | [**SendBirdGroupChannelChannel**](SendBirdGroupChannelChannel.md) |  |  [optional] |
 |**readReceipt** | **Map&lt;String, Long&gt;** |  |  [optional] |
 

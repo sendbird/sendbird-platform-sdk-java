@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdFile;
@@ -69,13 +68,13 @@ import org.sendbird.client.JSON;
   SendBirdMessageResponse.JSON_PROPERTY_IS_REPLY_TO_CHANNEL
 })
 @JsonTypeName("SendBird.MessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdMessageResponse {
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;
 
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
-  private BigDecimal messageSurvivalSeconds;
+  private Long messageSurvivalSeconds;
 
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -87,7 +86,7 @@ public class SendBirdMessageResponse {
   private Object translations;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
-  private BigDecimal updatedAt;
+  private Long updatedAt;
 
   public static final String JSON_PROPERTY_IS_OP_MSG = "is_op_msg";
   private Boolean isOpMsg;
@@ -111,7 +110,7 @@ public class SendBirdMessageResponse {
   private String data;
 
   public static final String JSON_PROPERTY_MESSAGE_RETENTION_HOUR = "message_retention_hour";
-  private BigDecimal messageRetentionHour;
+  private Long messageRetentionHour;
 
   public static final String JSON_PROPERTY_SILENT = "silent";
   private Boolean silent;
@@ -120,7 +119,7 @@ public class SendBirdMessageResponse {
   private String type;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private BigDecimal createdAt;
+  private Long createdAt;
 
   public static final String JSON_PROPERTY_CHANNEL_TYPE = "channel_type";
   private String channelType;
@@ -135,10 +134,10 @@ public class SendBirdMessageResponse {
   private String channelUrl;
 
   public static final String JSON_PROPERTY_MESSAGE_ID = "message_id";
-  private BigDecimal messageId;
+  private Long messageId;
 
   public static final String JSON_PROPERTY_SIZE = "size";
-  private BigDecimal size;
+  private Long size;
 
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
   private List<Object> sortedMetaarray = null;
@@ -147,7 +146,7 @@ public class SendBirdMessageResponse {
   private Object threadInfo;
 
   public static final String JSON_PROPERTY_PARENT_MESSAGE_ID = "parent_message_id";
-  private BigDecimal parentMessageId;
+  private Long parentMessageId;
 
   public static final String JSON_PROPERTY_PARENT_MESSAGE_INFO = "parent_message_info";
   private SendBirdParentMessageInfo parentMessageInfo;
@@ -184,7 +183,7 @@ public class SendBirdMessageResponse {
   }
 
 
-  public SendBirdMessageResponse messageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
+  public SendBirdMessageResponse messageSurvivalSeconds(Long messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
     return this;
   }
@@ -198,14 +197,14 @@ public class SendBirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMessageSurvivalSeconds() {
+  public Long getMessageSurvivalSeconds() {
     return messageSurvivalSeconds;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
+  public void setMessageSurvivalSeconds(Long messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
   }
 
@@ -296,7 +295,7 @@ public class SendBirdMessageResponse {
   }
 
 
-  public SendBirdMessageResponse updatedAt(BigDecimal updatedAt) {
+  public SendBirdMessageResponse updatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -310,14 +309,14 @@ public class SendBirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getUpdatedAt() {
+  public Long getUpdatedAt() {
     return updatedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpdatedAt(BigDecimal updatedAt) {
+  public void setUpdatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 
@@ -512,7 +511,7 @@ public class SendBirdMessageResponse {
   }
 
 
-  public SendBirdMessageResponse messageRetentionHour(BigDecimal messageRetentionHour) {
+  public SendBirdMessageResponse messageRetentionHour(Long messageRetentionHour) {
     this.messageRetentionHour = messageRetentionHour;
     return this;
   }
@@ -526,14 +525,14 @@ public class SendBirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_MESSAGE_RETENTION_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMessageRetentionHour() {
+  public Long getMessageRetentionHour() {
     return messageRetentionHour;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_RETENTION_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageRetentionHour(BigDecimal messageRetentionHour) {
+  public void setMessageRetentionHour(Long messageRetentionHour) {
     this.messageRetentionHour = messageRetentionHour;
   }
 
@@ -590,7 +589,7 @@ public class SendBirdMessageResponse {
   }
 
 
-  public SendBirdMessageResponse createdAt(BigDecimal createdAt) {
+  public SendBirdMessageResponse createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -604,14 +603,14 @@ public class SendBirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCreatedAt() {
+  public Long getCreatedAt() {
     return createdAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(BigDecimal createdAt) {
+  public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -720,7 +719,7 @@ public class SendBirdMessageResponse {
   }
 
 
-  public SendBirdMessageResponse messageId(BigDecimal messageId) {
+  public SendBirdMessageResponse messageId(Long messageId) {
     this.messageId = messageId;
     return this;
   }
@@ -734,19 +733,19 @@ public class SendBirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMessageId() {
+  public Long getMessageId() {
     return messageId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageId(BigDecimal messageId) {
+  public void setMessageId(Long messageId) {
     this.messageId = messageId;
   }
 
 
-  public SendBirdMessageResponse size(BigDecimal size) {
+  public SendBirdMessageResponse size(Long size) {
     this.size = size;
     return this;
   }
@@ -760,14 +759,14 @@ public class SendBirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSize() {
+  public Long getSize() {
     return size;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSize(BigDecimal size) {
+  public void setSize(Long size) {
     this.size = size;
   }
 
@@ -832,7 +831,7 @@ public class SendBirdMessageResponse {
   }
 
 
-  public SendBirdMessageResponse parentMessageId(BigDecimal parentMessageId) {
+  public SendBirdMessageResponse parentMessageId(Long parentMessageId) {
     this.parentMessageId = parentMessageId;
     return this;
   }
@@ -846,14 +845,14 @@ public class SendBirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getParentMessageId() {
+  public Long getParentMessageId() {
     return parentMessageId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentMessageId(BigDecimal parentMessageId) {
+  public void setParentMessageId(Long parentMessageId) {
     this.parentMessageId = parentMessageId;
   }
 

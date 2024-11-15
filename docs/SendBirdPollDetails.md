@@ -9,14 +9,14 @@
 |------------ | ------------- | ------------- | -------------|
 |**allowMultipleVotes** | **Boolean** |  |  [optional] |
 |**allowUserSuggestion** | **Boolean** |  |  [optional] |
-|**closeAt** | **BigDecimal** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**closeAt** | **Long** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 |**createdBy** | **String** |  |  [optional] |
 |**isAnonymous** | **Boolean** |  |  [optional] |
 |**options** | [**List&lt;SendBirdPollOption&gt;**](SendBirdPollOption.md) |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-|**updatedAt** | **BigDecimal** |  |  [optional] |
-|**voterCount** | **BigDecimal** |  |  [optional] |
+|**updatedAt** | **Long** |  |  [optional] |
+|**voterCount** | **Long** |  |  [optional] |
 
 
 

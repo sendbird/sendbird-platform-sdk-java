@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**channels** | [**List&lt;SendBirdOpenChannel&gt;**](SendBirdOpenChannel.md) |  |  [optional] |
 |**next** | **String** |  |  [optional] |
-|**ts** | **BigDecimal** |  |  [optional] |
+|**ts** | **Long** |  |  [optional] |
 
 
 

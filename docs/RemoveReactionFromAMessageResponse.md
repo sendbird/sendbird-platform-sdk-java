@@ -8,10 +8,10 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**reaction** | **String** |  |  [optional] |
-|**userId** | **BigDecimal** |  |  [optional] |
+|**userId** | **Long** |  |  [optional] |
 |**success** | **Boolean** |  |  [optional] |
-|**msgId** | **BigDecimal** |  |  [optional] |
-|**updatedAt** | **BigDecimal** |  |  [optional] |
+|**msgId** | **Long** |  |  [optional] |
+|**updatedAt** | **Long** |  |  [optional] |
 |**operation** | **String** |  |  [optional] |
 
 

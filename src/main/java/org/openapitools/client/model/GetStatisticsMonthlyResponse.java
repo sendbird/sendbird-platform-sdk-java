@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetStatisticsDailyResponseStatisticsInner;
@@ -37,16 +36,16 @@ import org.sendbird.client.JSON;
  */
 @JsonPropertyOrder({
   GetStatisticsMonthlyResponse.JSON_PROPERTY_STATISTICS,
-  GetStatisticsMonthlyResponse.JSON_PROPERTY_WEEK
+  GetStatisticsMonthlyResponse.JSON_PROPERTY_WEEKS
 })
 @JsonTypeName("getStatisticsMonthlyResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class GetStatisticsMonthlyResponse {
   public static final String JSON_PROPERTY_STATISTICS = "statistics";
   private List<GetStatisticsDailyResponseStatisticsInner> statistics = null;
 
-  public static final String JSON_PROPERTY_WEEK = "week";
-  private BigDecimal week;
+  public static final String JSON_PROPERTY_WEEKS = "weeks";
+  private Long weeks;
 
   public GetStatisticsMonthlyResponse() { 
   }
@@ -85,29 +84,29 @@ public class GetStatisticsMonthlyResponse {
   }
 
 
-  public GetStatisticsMonthlyResponse week(BigDecimal week) {
-    this.week = week;
+  public GetStatisticsMonthlyResponse weeks(Long weeks) {
+    this.weeks = weeks;
     return this;
   }
 
    /**
-   * Get week
-   * @return week
+   * Get weeks
+   * @return weeks
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_WEEK)
+  @JsonProperty(JSON_PROPERTY_WEEKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getWeek() {
-    return week;
+  public Long getWeeks() {
+    return weeks;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_WEEK)
+  @JsonProperty(JSON_PROPERTY_WEEKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWeek(BigDecimal week) {
-    this.week = week;
+  public void setWeeks(Long weeks) {
+    this.weeks = weeks;
   }
 
 
@@ -124,12 +123,12 @@ public class GetStatisticsMonthlyResponse {
     }
     GetStatisticsMonthlyResponse getStatisticsMonthlyResponse = (GetStatisticsMonthlyResponse) o;
     return Objects.equals(this.statistics, getStatisticsMonthlyResponse.statistics) &&
-        Objects.equals(this.week, getStatisticsMonthlyResponse.week);
+        Objects.equals(this.weeks, getStatisticsMonthlyResponse.weeks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(statistics, week);
+    return Objects.hash(statistics, weeks);
   }
 
   @Override
@@ -137,7 +136,7 @@ public class GetStatisticsMonthlyResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetStatisticsMonthlyResponse {\n");
     sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");
-    sb.append("    week: ").append(toIndentedString(week)).append("\n");
+    sb.append("    weeks: ").append(toIndentedString(weeks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

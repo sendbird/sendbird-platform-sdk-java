@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdUser;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -44,16 +43,16 @@ import org.sendbird.client.JSON;
   GcUpdateBanByIdResponse.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("gcUpdateBanByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class GcUpdateBanByIdResponse {
   public static final String JSON_PROPERTY_USER = "user";
   private JsonNullable<SendBirdUser> user = JsonNullable.<SendBirdUser>undefined();
 
   public static final String JSON_PROPERTY_START_AT = "start_at";
-  private BigDecimal startAt;
+  private Long startAt;
 
   public static final String JSON_PROPERTY_END_AT = "end_at";
-  private BigDecimal endAt;
+  private Long endAt;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -95,7 +94,7 @@ public class GcUpdateBanByIdResponse {
   }
 
 
-  public GcUpdateBanByIdResponse startAt(BigDecimal startAt) {
+  public GcUpdateBanByIdResponse startAt(Long startAt) {
     this.startAt = startAt;
     return this;
   }
@@ -109,19 +108,19 @@ public class GcUpdateBanByIdResponse {
   @JsonProperty(JSON_PROPERTY_START_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getStartAt() {
+  public Long getStartAt() {
     return startAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_START_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartAt(BigDecimal startAt) {
+  public void setStartAt(Long startAt) {
     this.startAt = startAt;
   }
 
 
-  public GcUpdateBanByIdResponse endAt(BigDecimal endAt) {
+  public GcUpdateBanByIdResponse endAt(Long endAt) {
     this.endAt = endAt;
     return this;
   }
@@ -135,14 +134,14 @@ public class GcUpdateBanByIdResponse {
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getEndAt() {
+  public Long getEndAt() {
     return endAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndAt(BigDecimal endAt) {
+  public void setEndAt(Long endAt) {
     this.endAt = endAt;
   }
 

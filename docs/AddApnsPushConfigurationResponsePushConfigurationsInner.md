@@ -9,11 +9,11 @@
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** |  |  [optional] |
 |**pushType** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 |**apnsCerEnvType** | **String** |  |  [optional] |
-|**apnsExpiration** | **BigDecimal** |  |  [optional] |
+|**apnsExpiration** | **Long** |  |  [optional] |
 |**apnsName** | **String** |  |  [optional] |
-|**hasUnreadCountBadge** | **BigDecimal** |  |  [optional] |
+|**hasUnreadCountBadge** | **Long** |  |  [optional] |
 |**contentAvailable** | **Boolean** |  |  [optional] |
 |**mutableContent** | **Boolean** |  |  [optional] |
 |**pushSound** | **String** |  |  [optional] |

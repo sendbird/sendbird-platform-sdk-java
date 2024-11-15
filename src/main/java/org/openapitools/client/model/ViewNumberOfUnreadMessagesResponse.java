@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +35,15 @@ import org.sendbird.client.JSON;
   ViewNumberOfUnreadMessagesResponse.JSON_PROPERTY_UNREAD_COUNT
 })
 @JsonTypeName("viewNumberOfUnreadMessagesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ViewNumberOfUnreadMessagesResponse {
   public static final String JSON_PROPERTY_UNREAD_COUNT = "unread_count";
-  private BigDecimal unreadCount;
+  private Long unreadCount;
 
   public ViewNumberOfUnreadMessagesResponse() { 
   }
 
-  public ViewNumberOfUnreadMessagesResponse unreadCount(BigDecimal unreadCount) {
+  public ViewNumberOfUnreadMessagesResponse unreadCount(Long unreadCount) {
     this.unreadCount = unreadCount;
     return this;
   }
@@ -58,14 +57,14 @@ public class ViewNumberOfUnreadMessagesResponse {
   @JsonProperty(JSON_PROPERTY_UNREAD_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getUnreadCount() {
+  public Long getUnreadCount() {
     return unreadCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UNREAD_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUnreadCount(BigDecimal unreadCount) {
+  public void setUnreadCount(Long unreadCount) {
     this.unreadCount = unreadCount;
   }
 

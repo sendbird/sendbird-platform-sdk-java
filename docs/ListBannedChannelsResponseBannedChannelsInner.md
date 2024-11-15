@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**startAt** | **BigDecimal** |  |  [optional] |
+|**startAt** | **Long** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**channel** | [**SendBirdChannelResponse**](SendBirdChannelResponse.md) |  |  [optional] |
-|**endAt** | **BigDecimal** |  |  [optional] |
+|**endAt** | **Long** |  |  [optional] |
 
 
 

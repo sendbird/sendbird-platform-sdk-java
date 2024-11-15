@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -42,7 +41,7 @@ import org.sendbird.client.JSON;
   Function.JSON_PROPERTY_LENGTH,
   Function.JSON_PROPERTY_PROTOTYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class Function {
   public static final String JSON_PROPERTY_ARGUMENTS = "arguments";
   private JsonNullable<Object> arguments = JsonNullable.<Object>of(null);
@@ -51,7 +50,7 @@ public class Function {
   private Function caller;
 
   public static final String JSON_PROPERTY_LENGTH = "length";
-  private BigDecimal length;
+  private Long length;
 
   public static final String JSON_PROPERTY_PROTOTYPE = "prototype";
   private JsonNullable<Object> prototype = JsonNullable.<Object>of(null);
@@ -119,7 +118,7 @@ public class Function {
   }
 
 
-  public Function length(BigDecimal length) {
+  public Function length(Long length) {
     this.length = length;
     return this;
   }
@@ -133,14 +132,14 @@ public class Function {
   @JsonProperty(JSON_PROPERTY_LENGTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getLength() {
+  public Long getLength() {
     return length;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LENGTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLength(BigDecimal length) {
+  public void setLength(Long length) {
     this.length = length;
   }
 

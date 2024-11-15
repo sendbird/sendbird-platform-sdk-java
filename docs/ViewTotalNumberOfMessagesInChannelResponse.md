@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**total** | **BigDecimal** |  |  [optional] |
+|**total** | **Long** |  |  [optional] |
 
 
 

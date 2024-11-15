@@ -63,7 +63,7 @@ import org.sendbird.client.JSON;
   SendMessageData.JSON_PROPERTY_THUMBNAIL3
 })
 @JsonTypeName("sendMessageData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendMessageData {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -126,7 +126,7 @@ public class SendMessageData {
   private String fileName;
 
   public static final String JSON_PROPERTY_FILE_SIZE = "file_size";
-  private BigDecimal fileSize;
+  private Long fileSize;
 
   public static final String JSON_PROPERTY_FILE_TYPE = "file_type";
   private String fileType;
@@ -674,7 +674,7 @@ public class SendMessageData {
   }
 
 
-  public SendMessageData fileSize(BigDecimal fileSize) {
+  public SendMessageData fileSize(Long fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -688,14 +688,14 @@ public class SendMessageData {
   @JsonProperty(JSON_PROPERTY_FILE_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getFileSize() {
+  public Long getFileSize() {
     return fileSize;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FILE_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFileSize(BigDecimal fileSize) {
+  public void setFileSize(Long fileSize) {
     this.fileSize = fileSize;
   }
 

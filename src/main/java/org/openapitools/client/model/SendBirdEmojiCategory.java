@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdEmoji;
@@ -42,13 +41,13 @@ import org.sendbird.client.JSON;
   SendBirdEmojiCategory.JSON_PROPERTY_URL
 })
 @JsonTypeName("SendBird.EmojiCategory")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdEmojiCategory {
   public static final String JSON_PROPERTY_EMOJIS = "emojis";
   private List<SendBirdEmoji> emojis = null;
 
   public static final String JSON_PROPERTY_ID = "id";
-  private BigDecimal id;
+  private Long id;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -93,7 +92,7 @@ public class SendBirdEmojiCategory {
   }
 
 
-  public SendBirdEmojiCategory id(BigDecimal id) {
+  public SendBirdEmojiCategory id(Long id) {
     this.id = id;
     return this;
   }
@@ -107,14 +106,14 @@ public class SendBirdEmojiCategory {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getId() {
+  public Long getId() {
     return id;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(BigDecimal id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

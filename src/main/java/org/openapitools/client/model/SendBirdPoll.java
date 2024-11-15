@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdPollDetails;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
@@ -39,13 +38,13 @@ import org.sendbird.client.JSON;
   SendBirdPoll.JSON_PROPERTY_TITLE
 })
 @JsonTypeName("SendBird.Poll")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdPoll {
   public static final String JSON_PROPERTY_DETAILS = "details";
   private SendBirdPollDetails details;
 
   public static final String JSON_PROPERTY_ID = "id";
-  private BigDecimal id;
+  private Long id;
 
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
@@ -79,7 +78,7 @@ public class SendBirdPoll {
   }
 
 
-  public SendBirdPoll id(BigDecimal id) {
+  public SendBirdPoll id(Long id) {
     this.id = id;
     return this;
   }
@@ -93,14 +92,14 @@ public class SendBirdPoll {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getId() {
+  public Long getId() {
     return id;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(BigDecimal id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

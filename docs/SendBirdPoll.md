@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**details** | [**SendBirdPollDetails**](SendBirdPollDetails.md) |  |  [optional] |
-|**id** | **BigDecimal** |  |  [optional] |
+|**id** | **Long** |  |  [optional] |
 |**title** | **String** |  |  [optional] |
 
 

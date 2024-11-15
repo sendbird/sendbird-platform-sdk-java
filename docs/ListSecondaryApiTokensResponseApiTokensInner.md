@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**token** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 
 
 

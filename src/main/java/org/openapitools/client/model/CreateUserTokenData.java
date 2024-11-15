@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +35,15 @@ import org.sendbird.client.JSON;
   CreateUserTokenData.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("createUserTokenData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class CreateUserTokenData {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
-  private BigDecimal expiresAt;
+  private Long expiresAt;
 
   public CreateUserTokenData() { 
   }
 
-  public CreateUserTokenData expiresAt(BigDecimal expiresAt) {
+  public CreateUserTokenData expiresAt(Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -58,14 +57,14 @@ public class CreateUserTokenData {
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getExpiresAt() {
+  public Long getExpiresAt() {
     return expiresAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(BigDecimal expiresAt) {
+  public void setExpiresAt(Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 

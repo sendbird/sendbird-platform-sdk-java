@@ -8,16 +8,16 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**dateRange** | **String** |  |  [optional] |
-|**canceledAnnouncementCount** | **BigDecimal** |  |  [optional] |
-|**stoppedAnnouncementCount** | **BigDecimal** |  |  [optional] |
-|**completedAnnouncementCount** | **BigDecimal** |  |  [optional] |
-|**totalAnnouncementCount** | **BigDecimal** |  |  [optional] |
-|**targetChannelCount** | **BigDecimal** |  |  [optional] |
-|**targetUserCount** | **BigDecimal** |  |  [optional] |
-|**sentChannelCount** | **BigDecimal** |  |  [optional] |
-|**sentUserCount** | **BigDecimal** |  |  [optional] |
+|**canceledAnnouncementCount** | **Long** |  |  [optional] |
+|**stoppedAnnouncementCount** | **Long** |  |  [optional] |
+|**completedAnnouncementCount** | **Long** |  |  [optional] |
+|**totalAnnouncementCount** | **Long** |  |  [optional] |
+|**targetChannelCount** | **Long** |  |  [optional] |
+|**targetUserCount** | **Long** |  |  [optional] |
+|**sentChannelCount** | **Long** |  |  [optional] |
+|**sentUserCount** | **Long** |  |  [optional] |
 |**openRate** | **BigDecimal** |  |  [optional] |
-|**openCount** | **BigDecimal** |  |  [optional] |
+|**openCount** | **Long** |  |  [optional] |
 
 
 

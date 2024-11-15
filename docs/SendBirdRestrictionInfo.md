@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**description** | **String** |  |  [optional] |
-|**endAt** | **BigDecimal** |  |  [optional] |
+|**endAt** | **Long** |  |  [optional] |
 |**restrictionType** | [**RestrictionTypeEnum**](#RestrictionTypeEnum) |  |  [optional] |
 
 

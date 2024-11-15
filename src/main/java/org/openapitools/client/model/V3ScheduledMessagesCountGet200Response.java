@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +35,15 @@ import org.sendbird.client.JSON;
   V3ScheduledMessagesCountGet200Response.JSON_PROPERTY_COUNT
 })
 @JsonTypeName("_v3_scheduled_messages_count_get_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class V3ScheduledMessagesCountGet200Response {
   public static final String JSON_PROPERTY_COUNT = "count";
-  private BigDecimal count;
+  private Long count;
 
   public V3ScheduledMessagesCountGet200Response() { 
   }
 
-  public V3ScheduledMessagesCountGet200Response count(BigDecimal count) {
+  public V3ScheduledMessagesCountGet200Response count(Long count) {
     this.count = count;
     return this;
   }
@@ -58,14 +57,14 @@ public class V3ScheduledMessagesCountGet200Response {
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCount() {
+  public Long getCount() {
     return count;
   }
 
 
   @JsonProperty(JSON_PROPERTY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCount(BigDecimal count) {
+  public void setCount(Long count) {
     this.count = count;
   }
 

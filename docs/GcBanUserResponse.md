@@ -8,8 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**user** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
-|**startAt** | **BigDecimal** |  |  [optional] |
-|**endAt** | **BigDecimal** |  |  [optional] |
+|**startAt** | **Long** |  |  [optional] |
+|**endAt** | **Long** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**metadata** | [**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md) |  |  [optional] |
 |**nextUrl** | **String** |  |  [optional] |

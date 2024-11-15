@@ -12,13 +12,13 @@
 |**pushBlockedBotIds** | **List&lt;String&gt;** |  |  [optional] |
 |**pushTriggerOption** | **String** |  |  [optional] |
 |**doNotDisturb** | **Boolean** |  |  [optional] |
-|**startHour** | **BigDecimal** |  |  [optional] |
-|**startMin** | **BigDecimal** |  |  [optional] |
-|**endHour** | **BigDecimal** |  |  [optional] |
-|**endMin** | **BigDecimal** |  |  [optional] |
+|**startHour** | **Long** |  |  [optional] |
+|**startMin** | **Long** |  |  [optional] |
+|**endHour** | **Long** |  |  [optional] |
+|**endMin** | **Long** |  |  [optional] |
 |**snoozeEnabled** | **Boolean** |  |  [optional] |
-|**snoozeStartTs** | **BigDecimal** |  |  [optional] |
-|**snoozeEndTs** | **BigDecimal** |  |  [optional] |
+|**snoozeStartTs** | **Long** |  |  [optional] |
+|**snoozeEndTs** | **Long** |  |  [optional] |
 |**timezone** | **String** |  |  [optional] |
 |**pushSound** | **String** |  |  [optional] |
 

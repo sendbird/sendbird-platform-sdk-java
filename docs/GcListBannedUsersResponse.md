@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**bannedList** | [**List&lt;OcListBannedUsersResponseBannedListInner&gt;**](OcListBannedUsersResponseBannedListInner.md) |  |  [optional] |
-|**totalBanCount** | **BigDecimal** |  |  [optional] |
+|**totalBanCount** | **Long** |  |  [optional] |
 |**next** | **String** |  |  [optional] |
 
 

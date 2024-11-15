@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** |  |  [optional] |
 |**pushType** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 |**apiKey** | **String** |  |  [optional] |
 |**senderId** | **String** |  |  [optional] |
 |**pushSound** | **String** |  |  [optional] |

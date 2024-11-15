@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
@@ -46,36 +45,36 @@ import org.sendbird.client.JSON;
   SendBirdPollOption.JSON_PROPERTY_VOTE_COUNT
 })
 @JsonTypeName("SendBird.PollOption")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdPollOption {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private BigDecimal createdAt;
+  private Long createdAt;
 
   public static final String JSON_PROPERTY_CREATED_BY = "created_by";
   private String createdBy;
 
   public static final String JSON_PROPERTY_ID = "id";
-  private BigDecimal id;
+  private Long id;
 
   public static final String JSON_PROPERTY_PARTIAL_VOTERS = "partial_voters";
   private List<SendBirdUser> partialVoters = null;
 
   public static final String JSON_PROPERTY_POLL_ID = "poll_id";
-  private BigDecimal pollId;
+  private Long pollId;
 
   public static final String JSON_PROPERTY_TEXT = "text";
   private String text;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
-  private BigDecimal updatedAt;
+  private Long updatedAt;
 
   public static final String JSON_PROPERTY_VOTE_COUNT = "vote_count";
-  private BigDecimal voteCount;
+  private Long voteCount;
 
   public SendBirdPollOption() { 
   }
 
-  public SendBirdPollOption createdAt(BigDecimal createdAt) {
+  public SendBirdPollOption createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -89,14 +88,14 @@ public class SendBirdPollOption {
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCreatedAt() {
+  public Long getCreatedAt() {
     return createdAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(BigDecimal createdAt) {
+  public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -127,7 +126,7 @@ public class SendBirdPollOption {
   }
 
 
-  public SendBirdPollOption id(BigDecimal id) {
+  public SendBirdPollOption id(Long id) {
     this.id = id;
     return this;
   }
@@ -141,14 +140,14 @@ public class SendBirdPollOption {
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getId() {
+  public Long getId() {
     return id;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(BigDecimal id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -187,7 +186,7 @@ public class SendBirdPollOption {
   }
 
 
-  public SendBirdPollOption pollId(BigDecimal pollId) {
+  public SendBirdPollOption pollId(Long pollId) {
     this.pollId = pollId;
     return this;
   }
@@ -201,14 +200,14 @@ public class SendBirdPollOption {
   @JsonProperty(JSON_PROPERTY_POLL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getPollId() {
+  public Long getPollId() {
     return pollId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_POLL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPollId(BigDecimal pollId) {
+  public void setPollId(Long pollId) {
     this.pollId = pollId;
   }
 
@@ -239,7 +238,7 @@ public class SendBirdPollOption {
   }
 
 
-  public SendBirdPollOption updatedAt(BigDecimal updatedAt) {
+  public SendBirdPollOption updatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -253,19 +252,19 @@ public class SendBirdPollOption {
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getUpdatedAt() {
+  public Long getUpdatedAt() {
     return updatedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpdatedAt(BigDecimal updatedAt) {
+  public void setUpdatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public SendBirdPollOption voteCount(BigDecimal voteCount) {
+  public SendBirdPollOption voteCount(Long voteCount) {
     this.voteCount = voteCount;
     return this;
   }
@@ -279,14 +278,14 @@ public class SendBirdPollOption {
   @JsonProperty(JSON_PROPERTY_VOTE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getVoteCount() {
+  public Long getVoteCount() {
     return voteCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_VOTE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVoteCount(BigDecimal voteCount) {
+  public void setVoteCount(Long voteCount) {
     this.voteCount = voteCount;
   }
 

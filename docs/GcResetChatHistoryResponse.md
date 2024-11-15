@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**tsMessageOffset** | **BigDecimal** |  |  [optional] |
+|**tsMessageOffset** | **Long** |  |  [optional] |
 
 
 

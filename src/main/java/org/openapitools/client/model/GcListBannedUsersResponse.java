@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.OcListBannedUsersResponseBannedListInner;
@@ -41,13 +40,13 @@ import org.sendbird.client.JSON;
   GcListBannedUsersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("gcListBannedUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class GcListBannedUsersResponse {
   public static final String JSON_PROPERTY_BANNED_LIST = "banned_list";
   private List<OcListBannedUsersResponseBannedListInner> bannedList = null;
 
   public static final String JSON_PROPERTY_TOTAL_BAN_COUNT = "total_ban_count";
-  private BigDecimal totalBanCount;
+  private Long totalBanCount;
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
@@ -89,7 +88,7 @@ public class GcListBannedUsersResponse {
   }
 
 
-  public GcListBannedUsersResponse totalBanCount(BigDecimal totalBanCount) {
+  public GcListBannedUsersResponse totalBanCount(Long totalBanCount) {
     this.totalBanCount = totalBanCount;
     return this;
   }
@@ -103,14 +102,14 @@ public class GcListBannedUsersResponse {
   @JsonProperty(JSON_PROPERTY_TOTAL_BAN_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTotalBanCount() {
+  public Long getTotalBanCount() {
     return totalBanCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TOTAL_BAN_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTotalBanCount(BigDecimal totalBanCount) {
+  public void setTotalBanCount(Long totalBanCount) {
     this.totalBanCount = totalBanCount;
   }
 

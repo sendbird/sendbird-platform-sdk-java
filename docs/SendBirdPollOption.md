@@ -7,14 +7,14 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 |**createdBy** | **String** |  |  [optional] |
-|**id** | **BigDecimal** |  |  [optional] |
+|**id** | **Long** |  |  [optional] |
 |**partialVoters** | [**List&lt;SendBirdUser&gt;**](SendBirdUser.md) |  |  [optional] |
-|**pollId** | **BigDecimal** |  |  [optional] |
+|**pollId** | **Long** |  |  [optional] |
 |**text** | **String** |  |  [optional] |
-|**updatedAt** | **BigDecimal** |  |  [optional] |
-|**voteCount** | **BigDecimal** |  |  [optional] |
+|**updatedAt** | **Long** |  |  [optional] |
+|**voteCount** | **Long** |  |  [optional] |
 
 
 

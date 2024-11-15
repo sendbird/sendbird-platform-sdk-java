@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
   RegisterAndScheduleDataExportData.JSON_PROPERTY_NEIGHBORING_MESSAGE_LIMIT
 })
 @JsonTypeName("registerAndScheduleDataExportData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class RegisterAndScheduleDataExportData {
   public static final String JSON_PROPERTY_START_TS = "start_ts";
   private Integer startTs;

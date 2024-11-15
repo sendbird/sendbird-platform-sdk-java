@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -37,13 +36,13 @@ import org.sendbird.client.JSON;
   ViewNumberOfPeakConnectionsResponsePeakConnectionsInner.JSON_PROPERTY_PEAK_CONNECTIONS
 })
 @JsonTypeName("viewNumberOfPeakConnectionsResponse_peak_connections_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ViewNumberOfPeakConnectionsResponsePeakConnectionsInner {
   public static final String JSON_PROPERTY_DATE = "date";
   private String date;
 
   public static final String JSON_PROPERTY_PEAK_CONNECTIONS = "peak_connections";
-  private BigDecimal peakConnections;
+  private Long peakConnections;
 
   public ViewNumberOfPeakConnectionsResponsePeakConnectionsInner() { 
   }
@@ -74,7 +73,7 @@ public class ViewNumberOfPeakConnectionsResponsePeakConnectionsInner {
   }
 
 
-  public ViewNumberOfPeakConnectionsResponsePeakConnectionsInner peakConnections(BigDecimal peakConnections) {
+  public ViewNumberOfPeakConnectionsResponsePeakConnectionsInner peakConnections(Long peakConnections) {
     this.peakConnections = peakConnections;
     return this;
   }
@@ -88,14 +87,14 @@ public class ViewNumberOfPeakConnectionsResponsePeakConnectionsInner {
   @JsonProperty(JSON_PROPERTY_PEAK_CONNECTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getPeakConnections() {
+  public Long getPeakConnections() {
     return peakConnections;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PEAK_CONNECTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPeakConnections(BigDecimal peakConnections) {
+  public void setPeakConnections(Long peakConnections) {
     this.peakConnections = peakConnections;
   }
 

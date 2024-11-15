@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdThumbnailSBObject;
@@ -44,7 +43,7 @@ import org.sendbird.client.JSON;
   SendBirdFile.JSON_PROPERTY_REQUIRE_AUTH
 })
 @JsonTypeName("SendBird.File")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdFile {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -53,7 +52,7 @@ public class SendBirdFile {
   private String fileName;
 
   public static final String JSON_PROPERTY_FILE_SIZE = "file_size";
-  private BigDecimal fileSize;
+  private Long fileSize;
 
   public static final String JSON_PROPERTY_FILE_TYPE = "file_type";
   private String fileType;
@@ -119,7 +118,7 @@ public class SendBirdFile {
   }
 
 
-  public SendBirdFile fileSize(BigDecimal fileSize) {
+  public SendBirdFile fileSize(Long fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -133,14 +132,14 @@ public class SendBirdFile {
   @JsonProperty(JSON_PROPERTY_FILE_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getFileSize() {
+  public Long getFileSize() {
     return fileSize;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FILE_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFileSize(BigDecimal fileSize) {
+  public void setFileSize(Long fileSize) {
     this.fileSize = fileSize;
   }
 

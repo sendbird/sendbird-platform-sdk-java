@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -40,7 +39,7 @@ import org.sendbird.client.JSON;
   GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner.JSON_PROPERTY_OPEN_AT
 })
 @JsonTypeName("getDetailedOpenStatusOfAnnouncementByIdResponse_open_status_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -52,10 +51,10 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   private Boolean hasOpened;
 
   public static final String JSON_PROPERTY_SENT_AT = "sent_at";
-  private BigDecimal sentAt;
+  private Long sentAt;
 
   public static final String JSON_PROPERTY_OPEN_AT = "open_at";
-  private BigDecimal openAt;
+  private Long openAt;
 
   public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner() { 
   }
@@ -138,7 +137,7 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   }
 
 
-  public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner sentAt(BigDecimal sentAt) {
+  public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner sentAt(Long sentAt) {
     this.sentAt = sentAt;
     return this;
   }
@@ -152,19 +151,19 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   @JsonProperty(JSON_PROPERTY_SENT_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSentAt() {
+  public Long getSentAt() {
     return sentAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SENT_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSentAt(BigDecimal sentAt) {
+  public void setSentAt(Long sentAt) {
     this.sentAt = sentAt;
   }
 
 
-  public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner openAt(BigDecimal openAt) {
+  public GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner openAt(Long openAt) {
     this.openAt = openAt;
     return this;
   }
@@ -178,14 +177,14 @@ public class GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner {
   @JsonProperty(JSON_PROPERTY_OPEN_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getOpenAt() {
+  public Long getOpenAt() {
     return openAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OPEN_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOpenAt(BigDecimal openAt) {
+  public void setOpenAt(Long openAt) {
     this.openAt = openAt;
   }
 

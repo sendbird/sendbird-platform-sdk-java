@@ -27,7 +27,7 @@
 |**url** | **String** |  |  [optional] |
 |**_file** | **String** |  |  [optional] |
 |**fileName** | **String** |  |  [optional] |
-|**fileSize** | **BigDecimal** |  |  [optional] |
+|**fileSize** | **Long** |  |  [optional] |
 |**fileType** | **String** |  |  [optional] |
 |**thumbnails** | **List&lt;String&gt;** |  |  [optional] |
 |**thumbnail1** | **String** |  |  [optional] |

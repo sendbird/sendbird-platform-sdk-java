@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -41,13 +40,13 @@ import org.sendbird.client.JSON;
   SendBirdOGImage.JSON_PROPERTY_WIDTH
 })
 @JsonTypeName("SendBird.OGImage")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdOGImage {
   public static final String JSON_PROPERTY_ALT = "alt";
   private String alt;
 
   public static final String JSON_PROPERTY_HEIGHT = "height";
-  private BigDecimal height;
+  private Long height;
 
   public static final String JSON_PROPERTY_SECURE_URL = "secure_url";
   private String secureUrl;
@@ -59,7 +58,7 @@ public class SendBirdOGImage {
   private String url;
 
   public static final String JSON_PROPERTY_WIDTH = "width";
-  private BigDecimal width;
+  private Long width;
 
   public SendBirdOGImage() { 
   }
@@ -90,7 +89,7 @@ public class SendBirdOGImage {
   }
 
 
-  public SendBirdOGImage height(BigDecimal height) {
+  public SendBirdOGImage height(Long height) {
     this.height = height;
     return this;
   }
@@ -104,14 +103,14 @@ public class SendBirdOGImage {
   @JsonProperty(JSON_PROPERTY_HEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getHeight() {
+  public Long getHeight() {
     return height;
   }
 
 
   @JsonProperty(JSON_PROPERTY_HEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHeight(BigDecimal height) {
+  public void setHeight(Long height) {
     this.height = height;
   }
 
@@ -194,7 +193,7 @@ public class SendBirdOGImage {
   }
 
 
-  public SendBirdOGImage width(BigDecimal width) {
+  public SendBirdOGImage width(Long width) {
     this.width = width;
     return this;
   }
@@ -208,14 +207,14 @@ public class SendBirdOGImage {
   @JsonProperty(JSON_PROPERTY_WIDTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getWidth() {
+  public Long getWidth() {
     return width;
   }
 
 
   @JsonProperty(JSON_PROPERTY_WIDTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWidth(BigDecimal width) {
+  public void setWidth(Long width) {
     this.width = width;
   }
 

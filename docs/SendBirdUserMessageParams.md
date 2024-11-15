@@ -17,8 +17,8 @@
 |**message** | **String** |  |  [optional] |
 |**metaArrayKeys** | **List&lt;String&gt;** |  |  [optional] |
 |**metaArrays** | [**List&lt;SendBirdMessageMetaArray&gt;**](SendBirdMessageMetaArray.md) |  |  [optional] |
-|**parentMessageId** | **BigDecimal** |  |  [optional] |
-|**pollId** | **BigDecimal** |  |  [optional] |
+|**parentMessageId** | **Long** |  |  [optional] |
+|**pollId** | **Long** |  |  [optional] |
 |**pushNotificationDeliveryOption** | [**PushNotificationDeliveryOptionEnum**](#PushNotificationDeliveryOptionEnum) |  |  [optional] |
 |**targetLanguages** | **List&lt;String&gt;** |  |  [optional] |
 |**translationTargetLanguages** | **List&lt;String&gt;** |  |  [optional] |

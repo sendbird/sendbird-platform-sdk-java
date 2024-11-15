@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdGroupChannel;
@@ -41,7 +40,7 @@ import org.sendbird.client.JSON;
   ListMyGroupChannelsResponse.JSON_PROPERTY_TS
 })
 @JsonTypeName("listMyGroupChannelsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ListMyGroupChannelsResponse {
   public static final String JSON_PROPERTY_CHANNELS = "channels";
   private List<SendBirdGroupChannel> channels = null;
@@ -50,7 +49,7 @@ public class ListMyGroupChannelsResponse {
   private String next;
 
   public static final String JSON_PROPERTY_TS = "ts";
-  private BigDecimal ts;
+  private Long ts;
 
   public ListMyGroupChannelsResponse() { 
   }
@@ -115,7 +114,7 @@ public class ListMyGroupChannelsResponse {
   }
 
 
-  public ListMyGroupChannelsResponse ts(BigDecimal ts) {
+  public ListMyGroupChannelsResponse ts(Long ts) {
     this.ts = ts;
     return this;
   }
@@ -129,14 +128,14 @@ public class ListMyGroupChannelsResponse {
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTs() {
+  public Long getTs() {
     return ts;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTs(BigDecimal ts) {
+  public void setTs(Long ts) {
     this.ts = ts;
   }
 

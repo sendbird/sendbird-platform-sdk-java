@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SBObject;
@@ -73,7 +72,7 @@ import org.sendbird.client.JSON;
   SendBirdAdminMessage.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("SendBird.AdminMessage")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdAdminMessage {
   public static final String JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   private SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions;
@@ -85,7 +84,7 @@ public class SendBirdAdminMessage {
   private String channelUrl;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private BigDecimal createdAt;
+  private Long createdAt;
 
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -106,7 +105,7 @@ public class SendBirdAdminMessage {
   private String message;
 
   public static final String JSON_PROPERTY_MESSAGE_ID = "message_id";
-  private BigDecimal messageId;
+  private Long messageId;
 
   /**
    * Gets or Sets messageType
@@ -161,7 +160,7 @@ public class SendBirdAdminMessage {
   private JsonNullable<SendBirdMessageResponse> parentMessage = JsonNullable.<SendBirdMessageResponse>undefined();
 
   public static final String JSON_PROPERTY_PARENT_MESSAGE_ID = "parent_message_id";
-  private BigDecimal parentMessageId;
+  private Long parentMessageId;
 
   public static final String JSON_PROPERTY_PARENT_MESSAGE_TEXT = "parent_message_text";
   private String parentMessageText;
@@ -223,7 +222,7 @@ public class SendBirdAdminMessage {
   private SBObject translations;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
-  private BigDecimal updatedAt;
+  private Long updatedAt;
 
   public SendBirdAdminMessage() { 
   }
@@ -306,7 +305,7 @@ public class SendBirdAdminMessage {
   }
 
 
-  public SendBirdAdminMessage createdAt(BigDecimal createdAt) {
+  public SendBirdAdminMessage createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -320,14 +319,14 @@ public class SendBirdAdminMessage {
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCreatedAt() {
+  public Long getCreatedAt() {
     return createdAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(BigDecimal createdAt) {
+  public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -496,7 +495,7 @@ public class SendBirdAdminMessage {
   }
 
 
-  public SendBirdAdminMessage messageId(BigDecimal messageId) {
+  public SendBirdAdminMessage messageId(Long messageId) {
     this.messageId = messageId;
     return this;
   }
@@ -510,14 +509,14 @@ public class SendBirdAdminMessage {
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMessageId() {
+  public Long getMessageId() {
     return messageId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageId(BigDecimal messageId) {
+  public void setMessageId(Long messageId) {
     this.messageId = messageId;
   }
 
@@ -668,7 +667,7 @@ public class SendBirdAdminMessage {
   }
 
 
-  public SendBirdAdminMessage parentMessageId(BigDecimal parentMessageId) {
+  public SendBirdAdminMessage parentMessageId(Long parentMessageId) {
     this.parentMessageId = parentMessageId;
     return this;
   }
@@ -682,14 +681,14 @@ public class SendBirdAdminMessage {
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getParentMessageId() {
+  public Long getParentMessageId() {
     return parentMessageId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentMessageId(BigDecimal parentMessageId) {
+  public void setParentMessageId(Long parentMessageId) {
     this.parentMessageId = parentMessageId;
   }
 
@@ -858,7 +857,7 @@ public class SendBirdAdminMessage {
   }
 
 
-  public SendBirdAdminMessage updatedAt(BigDecimal updatedAt) {
+  public SendBirdAdminMessage updatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -872,14 +871,14 @@ public class SendBirdAdminMessage {
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getUpdatedAt() {
+  public Long getUpdatedAt() {
     return updatedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpdatedAt(BigDecimal updatedAt) {
+  public void setUpdatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 

@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**maxHeight** | **BigDecimal** |  |  [optional] |
-|**maxWidth** | **BigDecimal** |  |  [optional] |
+|**maxHeight** | **Long** |  |  [optional] |
+|**maxWidth** | **Long** |  |  [optional] |
 
 
 

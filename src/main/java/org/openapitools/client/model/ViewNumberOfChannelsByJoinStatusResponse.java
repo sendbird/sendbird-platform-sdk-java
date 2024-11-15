@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +35,15 @@ import org.sendbird.client.JSON;
   ViewNumberOfChannelsByJoinStatusResponse.JSON_PROPERTY_GROUP_CHANNEL_COUNT
 })
 @JsonTypeName("viewNumberOfChannelsByJoinStatusResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ViewNumberOfChannelsByJoinStatusResponse {
   public static final String JSON_PROPERTY_GROUP_CHANNEL_COUNT = "group_channel_count";
-  private BigDecimal groupChannelCount;
+  private Long groupChannelCount;
 
   public ViewNumberOfChannelsByJoinStatusResponse() { 
   }
 
-  public ViewNumberOfChannelsByJoinStatusResponse groupChannelCount(BigDecimal groupChannelCount) {
+  public ViewNumberOfChannelsByJoinStatusResponse groupChannelCount(Long groupChannelCount) {
     this.groupChannelCount = groupChannelCount;
     return this;
   }
@@ -58,14 +57,14 @@ public class ViewNumberOfChannelsByJoinStatusResponse {
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getGroupChannelCount() {
+  public Long getGroupChannelCount() {
     return groupChannelCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroupChannelCount(BigDecimal groupChannelCount) {
+  public void setGroupChannelCount(Long groupChannelCount) {
     this.groupChannelCount = groupChannelCount;
   }
 

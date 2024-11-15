@@ -14,13 +14,13 @@
 |**data** | **String** |  |  [optional] |
 |**enablePush** | **Boolean** |  |  [optional] |
 |**targetAt** | **String** |  |  [optional] |
-|**targetUserCount** | **BigDecimal** |  |  [optional] |
-|**targetChannelCount** | **BigDecimal** |  |  [optional] |
+|**targetUserCount** | **Long** |  |  [optional] |
+|**targetChannelCount** | **Long** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
-|**scheduledAt** | **BigDecimal** |  |  [optional] |
-|**completedAt** | **BigDecimal** |  |  [optional] |
-|**sentUserCount** | **BigDecimal** |  |  [optional] |
-|**openCount** | **BigDecimal** |  |  [optional] |
+|**scheduledAt** | **Long** |  |  [optional] |
+|**completedAt** | **Long** |  |  [optional] |
+|**sentUserCount** | **Long** |  |  [optional] |
+|**openCount** | **Long** |  |  [optional] |
 |**openRate** | **BigDecimal** |  |  [optional] |
 
 

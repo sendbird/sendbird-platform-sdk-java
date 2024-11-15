@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -39,10 +38,10 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannelSmsFallback.JSON_PROPERTY_EXCLUDE_USER_IDS
 })
 @JsonTypeName("SendBird_GroupChannel_sms_fallback")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdGroupChannelSmsFallback {
   public static final String JSON_PROPERTY_WAIT_SECONDS = "wait_seconds";
-  private BigDecimal waitSeconds;
+  private Long waitSeconds;
 
   public static final String JSON_PROPERTY_EXCLUDE_USER_IDS = "exclude_user_ids";
   private List<String> excludeUserIds = null;
@@ -50,7 +49,7 @@ public class SendBirdGroupChannelSmsFallback {
   public SendBirdGroupChannelSmsFallback() { 
   }
 
-  public SendBirdGroupChannelSmsFallback waitSeconds(BigDecimal waitSeconds) {
+  public SendBirdGroupChannelSmsFallback waitSeconds(Long waitSeconds) {
     this.waitSeconds = waitSeconds;
     return this;
   }
@@ -64,14 +63,14 @@ public class SendBirdGroupChannelSmsFallback {
   @JsonProperty(JSON_PROPERTY_WAIT_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getWaitSeconds() {
+  public Long getWaitSeconds() {
     return waitSeconds;
   }
 
 
   @JsonProperty(JSON_PROPERTY_WAIT_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWaitSeconds(BigDecimal waitSeconds) {
+  public void setWaitSeconds(Long waitSeconds) {
     this.waitSeconds = waitSeconds;
   }
 

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**scheduledMessageId** | **BigDecimal** |  |  [optional] |
+|**scheduledMessageId** | **Long** |  |  [optional] |
 |**messageType** | **String** |  |  [optional] |
 |**message** | **String** |  |  [optional] |
 

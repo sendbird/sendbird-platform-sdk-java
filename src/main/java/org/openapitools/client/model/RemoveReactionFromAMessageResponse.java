@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -41,22 +40,22 @@ import org.sendbird.client.JSON;
   RemoveReactionFromAMessageResponse.JSON_PROPERTY_OPERATION
 })
 @JsonTypeName("removeReactionFromAMessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class RemoveReactionFromAMessageResponse {
   public static final String JSON_PROPERTY_REACTION = "reaction";
   private String reaction;
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
-  private BigDecimal userId;
+  private Long userId;
 
   public static final String JSON_PROPERTY_SUCCESS = "success";
   private Boolean success;
 
   public static final String JSON_PROPERTY_MSG_ID = "msg_id";
-  private BigDecimal msgId;
+  private Long msgId;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
-  private BigDecimal updatedAt;
+  private Long updatedAt;
 
   public static final String JSON_PROPERTY_OPERATION = "operation";
   private String operation;
@@ -90,7 +89,7 @@ public class RemoveReactionFromAMessageResponse {
   }
 
 
-  public RemoveReactionFromAMessageResponse userId(BigDecimal userId) {
+  public RemoveReactionFromAMessageResponse userId(Long userId) {
     this.userId = userId;
     return this;
   }
@@ -104,14 +103,14 @@ public class RemoveReactionFromAMessageResponse {
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getUserId() {
+  public Long getUserId() {
     return userId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserId(BigDecimal userId) {
+  public void setUserId(Long userId) {
     this.userId = userId;
   }
 
@@ -142,7 +141,7 @@ public class RemoveReactionFromAMessageResponse {
   }
 
 
-  public RemoveReactionFromAMessageResponse msgId(BigDecimal msgId) {
+  public RemoveReactionFromAMessageResponse msgId(Long msgId) {
     this.msgId = msgId;
     return this;
   }
@@ -156,19 +155,19 @@ public class RemoveReactionFromAMessageResponse {
   @JsonProperty(JSON_PROPERTY_MSG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMsgId() {
+  public Long getMsgId() {
     return msgId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MSG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMsgId(BigDecimal msgId) {
+  public void setMsgId(Long msgId) {
     this.msgId = msgId;
   }
 
 
-  public RemoveReactionFromAMessageResponse updatedAt(BigDecimal updatedAt) {
+  public RemoveReactionFromAMessageResponse updatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -182,14 +181,14 @@ public class RemoveReactionFromAMessageResponse {
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getUpdatedAt() {
+  public Long getUpdatedAt() {
     return updatedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpdatedAt(BigDecimal updatedAt) {
+  public void setUpdatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 

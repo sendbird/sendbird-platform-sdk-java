@@ -46,40 +46,40 @@ import org.sendbird.client.JSON;
   GetStatisticsDailyResponseStatisticsInner.JSON_PROPERTY_OPEN_COUNT
 })
 @JsonTypeName("getStatisticsDailyResponse_statistics_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class GetStatisticsDailyResponseStatisticsInner {
   public static final String JSON_PROPERTY_DATE_RANGE = "date_range";
   private String dateRange;
 
   public static final String JSON_PROPERTY_CANCELED_ANNOUNCEMENT_COUNT = "canceled_announcement_count";
-  private BigDecimal canceledAnnouncementCount;
+  private Long canceledAnnouncementCount;
 
   public static final String JSON_PROPERTY_STOPPED_ANNOUNCEMENT_COUNT = "stopped_announcement_count";
-  private BigDecimal stoppedAnnouncementCount;
+  private Long stoppedAnnouncementCount;
 
   public static final String JSON_PROPERTY_COMPLETED_ANNOUNCEMENT_COUNT = "completed_announcement_count";
-  private BigDecimal completedAnnouncementCount;
+  private Long completedAnnouncementCount;
 
   public static final String JSON_PROPERTY_TOTAL_ANNOUNCEMENT_COUNT = "total_announcement_count";
-  private BigDecimal totalAnnouncementCount;
+  private Long totalAnnouncementCount;
 
   public static final String JSON_PROPERTY_TARGET_CHANNEL_COUNT = "target_channel_count";
-  private BigDecimal targetChannelCount;
+  private Long targetChannelCount;
 
   public static final String JSON_PROPERTY_TARGET_USER_COUNT = "target_user_count";
-  private BigDecimal targetUserCount;
+  private Long targetUserCount;
 
   public static final String JSON_PROPERTY_SENT_CHANNEL_COUNT = "sent_channel_count";
-  private BigDecimal sentChannelCount;
+  private Long sentChannelCount;
 
   public static final String JSON_PROPERTY_SENT_USER_COUNT = "sent_user_count";
-  private BigDecimal sentUserCount;
+  private Long sentUserCount;
 
   public static final String JSON_PROPERTY_OPEN_RATE = "open_rate";
   private BigDecimal openRate;
 
   public static final String JSON_PROPERTY_OPEN_COUNT = "open_count";
-  private BigDecimal openCount;
+  private Long openCount;
 
   public GetStatisticsDailyResponseStatisticsInner() { 
   }
@@ -110,7 +110,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
   }
 
 
-  public GetStatisticsDailyResponseStatisticsInner canceledAnnouncementCount(BigDecimal canceledAnnouncementCount) {
+  public GetStatisticsDailyResponseStatisticsInner canceledAnnouncementCount(Long canceledAnnouncementCount) {
     this.canceledAnnouncementCount = canceledAnnouncementCount;
     return this;
   }
@@ -124,19 +124,19 @@ public class GetStatisticsDailyResponseStatisticsInner {
   @JsonProperty(JSON_PROPERTY_CANCELED_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCanceledAnnouncementCount() {
+  public Long getCanceledAnnouncementCount() {
     return canceledAnnouncementCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CANCELED_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCanceledAnnouncementCount(BigDecimal canceledAnnouncementCount) {
+  public void setCanceledAnnouncementCount(Long canceledAnnouncementCount) {
     this.canceledAnnouncementCount = canceledAnnouncementCount;
   }
 
 
-  public GetStatisticsDailyResponseStatisticsInner stoppedAnnouncementCount(BigDecimal stoppedAnnouncementCount) {
+  public GetStatisticsDailyResponseStatisticsInner stoppedAnnouncementCount(Long stoppedAnnouncementCount) {
     this.stoppedAnnouncementCount = stoppedAnnouncementCount;
     return this;
   }
@@ -150,19 +150,19 @@ public class GetStatisticsDailyResponseStatisticsInner {
   @JsonProperty(JSON_PROPERTY_STOPPED_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getStoppedAnnouncementCount() {
+  public Long getStoppedAnnouncementCount() {
     return stoppedAnnouncementCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_STOPPED_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStoppedAnnouncementCount(BigDecimal stoppedAnnouncementCount) {
+  public void setStoppedAnnouncementCount(Long stoppedAnnouncementCount) {
     this.stoppedAnnouncementCount = stoppedAnnouncementCount;
   }
 
 
-  public GetStatisticsDailyResponseStatisticsInner completedAnnouncementCount(BigDecimal completedAnnouncementCount) {
+  public GetStatisticsDailyResponseStatisticsInner completedAnnouncementCount(Long completedAnnouncementCount) {
     this.completedAnnouncementCount = completedAnnouncementCount;
     return this;
   }
@@ -176,19 +176,19 @@ public class GetStatisticsDailyResponseStatisticsInner {
   @JsonProperty(JSON_PROPERTY_COMPLETED_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCompletedAnnouncementCount() {
+  public Long getCompletedAnnouncementCount() {
     return completedAnnouncementCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_COMPLETED_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCompletedAnnouncementCount(BigDecimal completedAnnouncementCount) {
+  public void setCompletedAnnouncementCount(Long completedAnnouncementCount) {
     this.completedAnnouncementCount = completedAnnouncementCount;
   }
 
 
-  public GetStatisticsDailyResponseStatisticsInner totalAnnouncementCount(BigDecimal totalAnnouncementCount) {
+  public GetStatisticsDailyResponseStatisticsInner totalAnnouncementCount(Long totalAnnouncementCount) {
     this.totalAnnouncementCount = totalAnnouncementCount;
     return this;
   }
@@ -202,19 +202,19 @@ public class GetStatisticsDailyResponseStatisticsInner {
   @JsonProperty(JSON_PROPERTY_TOTAL_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTotalAnnouncementCount() {
+  public Long getTotalAnnouncementCount() {
     return totalAnnouncementCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TOTAL_ANNOUNCEMENT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTotalAnnouncementCount(BigDecimal totalAnnouncementCount) {
+  public void setTotalAnnouncementCount(Long totalAnnouncementCount) {
     this.totalAnnouncementCount = totalAnnouncementCount;
   }
 
 
-  public GetStatisticsDailyResponseStatisticsInner targetChannelCount(BigDecimal targetChannelCount) {
+  public GetStatisticsDailyResponseStatisticsInner targetChannelCount(Long targetChannelCount) {
     this.targetChannelCount = targetChannelCount;
     return this;
   }
@@ -228,19 +228,19 @@ public class GetStatisticsDailyResponseStatisticsInner {
   @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTargetChannelCount() {
+  public Long getTargetChannelCount() {
     return targetChannelCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargetChannelCount(BigDecimal targetChannelCount) {
+  public void setTargetChannelCount(Long targetChannelCount) {
     this.targetChannelCount = targetChannelCount;
   }
 
 
-  public GetStatisticsDailyResponseStatisticsInner targetUserCount(BigDecimal targetUserCount) {
+  public GetStatisticsDailyResponseStatisticsInner targetUserCount(Long targetUserCount) {
     this.targetUserCount = targetUserCount;
     return this;
   }
@@ -254,19 +254,19 @@ public class GetStatisticsDailyResponseStatisticsInner {
   @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTargetUserCount() {
+  public Long getTargetUserCount() {
     return targetUserCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargetUserCount(BigDecimal targetUserCount) {
+  public void setTargetUserCount(Long targetUserCount) {
     this.targetUserCount = targetUserCount;
   }
 
 
-  public GetStatisticsDailyResponseStatisticsInner sentChannelCount(BigDecimal sentChannelCount) {
+  public GetStatisticsDailyResponseStatisticsInner sentChannelCount(Long sentChannelCount) {
     this.sentChannelCount = sentChannelCount;
     return this;
   }
@@ -280,19 +280,19 @@ public class GetStatisticsDailyResponseStatisticsInner {
   @JsonProperty(JSON_PROPERTY_SENT_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSentChannelCount() {
+  public Long getSentChannelCount() {
     return sentChannelCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SENT_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSentChannelCount(BigDecimal sentChannelCount) {
+  public void setSentChannelCount(Long sentChannelCount) {
     this.sentChannelCount = sentChannelCount;
   }
 
 
-  public GetStatisticsDailyResponseStatisticsInner sentUserCount(BigDecimal sentUserCount) {
+  public GetStatisticsDailyResponseStatisticsInner sentUserCount(Long sentUserCount) {
     this.sentUserCount = sentUserCount;
     return this;
   }
@@ -306,14 +306,14 @@ public class GetStatisticsDailyResponseStatisticsInner {
   @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSentUserCount() {
+  public Long getSentUserCount() {
     return sentUserCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSentUserCount(BigDecimal sentUserCount) {
+  public void setSentUserCount(Long sentUserCount) {
     this.sentUserCount = sentUserCount;
   }
 
@@ -344,7 +344,7 @@ public class GetStatisticsDailyResponseStatisticsInner {
   }
 
 
-  public GetStatisticsDailyResponseStatisticsInner openCount(BigDecimal openCount) {
+  public GetStatisticsDailyResponseStatisticsInner openCount(Long openCount) {
     this.openCount = openCount;
     return this;
   }
@@ -358,14 +358,14 @@ public class GetStatisticsDailyResponseStatisticsInner {
   @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getOpenCount() {
+  public Long getOpenCount() {
     return openCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOpenCount(BigDecimal openCount) {
+  public void setOpenCount(Long openCount) {
     this.openCount = openCount;
   }
 

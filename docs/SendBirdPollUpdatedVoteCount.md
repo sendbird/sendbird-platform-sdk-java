@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**optionId** | **BigDecimal** |  |  [optional] |
-|**voteCount** | **BigDecimal** |  |  [optional] |
+|**optionId** | **Long** |  |  [optional] |
+|**voteCount** | **Long** |  |  [optional] |
 
 
 
