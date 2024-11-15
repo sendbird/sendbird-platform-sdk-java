@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**waitSeconds** | **BigDecimal** |  |  [optional] |
+|**waitSeconds** | **Long** |  |  [optional] |
 |**excludeUserIds** | **List&lt;String&gt;** |  |  [optional] |
 
 

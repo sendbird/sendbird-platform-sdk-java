@@ -13,9 +13,9 @@
 |**format** | **String** |  |  [optional] |
 |**csvDelimiter** | **String** |  |  [optional] |
 |**timezone** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
-|**startTs** | **BigDecimal** |  |  [optional] |
-|**endTs** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
+|**startTs** | **Long** |  |  [optional] |
+|**endTs** | **Long** |  |  [optional] |
 |**channelUrls** | **List&lt;String&gt;** |  |  [optional] |
 |**channelCustomTypes** | **List&lt;String&gt;** |  |  [optional] |
 |**senderIds** | **List&lt;String&gt;** |  |  [optional] |

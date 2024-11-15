@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,13 +39,13 @@ import org.sendbird.client.JSON;
   CreateChannelMetadataResponse.JSON_PROPERTY_INCLUDE_TS
 })
 @JsonTypeName("createChannelMetadataResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class CreateChannelMetadataResponse {
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, String> metadata = null;
 
   public static final String JSON_PROPERTY_INCLUDE_TS = "include_ts";
-  private BigDecimal includeTs;
+  private Long includeTs;
 
   public CreateChannelMetadataResponse() { 
   }
@@ -85,7 +84,7 @@ public class CreateChannelMetadataResponse {
   }
 
 
-  public CreateChannelMetadataResponse includeTs(BigDecimal includeTs) {
+  public CreateChannelMetadataResponse includeTs(Long includeTs) {
     this.includeTs = includeTs;
     return this;
   }
@@ -99,14 +98,14 @@ public class CreateChannelMetadataResponse {
   @JsonProperty(JSON_PROPERTY_INCLUDE_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getIncludeTs() {
+  public Long getIncludeTs() {
     return includeTs;
   }
 
 
   @JsonProperty(JSON_PROPERTY_INCLUDE_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIncludeTs(BigDecimal includeTs) {
+  public void setIncludeTs(Long includeTs) {
     this.includeTs = includeTs;
   }
 

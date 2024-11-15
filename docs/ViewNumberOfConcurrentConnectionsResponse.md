@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**ccu** | **BigDecimal** |  |  [optional] |
+|**ccu** | **Long** |  |  [optional] |
 
 
 

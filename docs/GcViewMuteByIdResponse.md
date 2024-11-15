@@ -8,9 +8,9 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**isMuted** | **Boolean** |  |  [optional] |
-|**remainingDuration** | **BigDecimal** |  |  [optional] |
-|**startAt** | **BigDecimal** |  |  [optional] |
-|**endAt** | **BigDecimal** |  |  [optional] |
+|**remainingDuration** | **Long** |  |  [optional] |
+|**startAt** | **Long** |  |  [optional] |
+|**endAt** | **Long** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 
 

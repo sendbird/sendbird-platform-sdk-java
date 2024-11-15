@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**messageSurvivalSeconds** | **BigDecimal** |  |  [optional] |
+|**messageSurvivalSeconds** | **Long** |  |  [optional] |
 |**isTriggeredByMessageRead** | **Boolean** |  |  [optional] |
 
 

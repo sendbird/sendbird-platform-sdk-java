@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -37,18 +36,18 @@ import org.sendbird.client.JSON;
   SendBirdThumbnailSize.JSON_PROPERTY_MAX_WIDTH
 })
 @JsonTypeName("SendBird.ThumbnailSize")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdThumbnailSize {
   public static final String JSON_PROPERTY_MAX_HEIGHT = "max_height";
-  private BigDecimal maxHeight;
+  private Long maxHeight;
 
   public static final String JSON_PROPERTY_MAX_WIDTH = "max_width";
-  private BigDecimal maxWidth;
+  private Long maxWidth;
 
   public SendBirdThumbnailSize() { 
   }
 
-  public SendBirdThumbnailSize maxHeight(BigDecimal maxHeight) {
+  public SendBirdThumbnailSize maxHeight(Long maxHeight) {
     this.maxHeight = maxHeight;
     return this;
   }
@@ -62,19 +61,19 @@ public class SendBirdThumbnailSize {
   @JsonProperty(JSON_PROPERTY_MAX_HEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMaxHeight() {
+  public Long getMaxHeight() {
     return maxHeight;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MAX_HEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxHeight(BigDecimal maxHeight) {
+  public void setMaxHeight(Long maxHeight) {
     this.maxHeight = maxHeight;
   }
 
 
-  public SendBirdThumbnailSize maxWidth(BigDecimal maxWidth) {
+  public SendBirdThumbnailSize maxWidth(Long maxWidth) {
     this.maxWidth = maxWidth;
     return this;
   }
@@ -88,14 +87,14 @@ public class SendBirdThumbnailSize {
   @JsonProperty(JSON_PROPERTY_MAX_WIDTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMaxWidth() {
+  public Long getMaxWidth() {
     return maxWidth;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MAX_WIDTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxWidth(BigDecimal maxWidth) {
+  public void setMaxWidth(Long maxWidth) {
     this.maxWidth = maxWidth;
   }
 

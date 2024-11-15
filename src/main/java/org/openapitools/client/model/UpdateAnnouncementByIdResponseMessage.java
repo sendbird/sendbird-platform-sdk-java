@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   UpdateAnnouncementByIdResponseMessage.JSON_PROPERTY_OPEN_RATE
 })
 @JsonTypeName("updateAnnouncementByIdResponse_message")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class UpdateAnnouncementByIdResponseMessage {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -74,25 +74,25 @@ public class UpdateAnnouncementByIdResponseMessage {
   private String targetAt;
 
   public static final String JSON_PROPERTY_TARGET_USER_COUNT = "target_user_count";
-  private BigDecimal targetUserCount;
+  private Long targetUserCount;
 
   public static final String JSON_PROPERTY_TARGET_CHANNEL_COUNT = "target_channel_count";
-  private BigDecimal targetChannelCount;
+  private Long targetChannelCount;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   private String status;
 
   public static final String JSON_PROPERTY_SCHEDULED_AT = "scheduled_at";
-  private BigDecimal scheduledAt;
+  private Long scheduledAt;
 
   public static final String JSON_PROPERTY_COMPLETED_AT = "completed_at";
-  private BigDecimal completedAt;
+  private Long completedAt;
 
   public static final String JSON_PROPERTY_SENT_USER_COUNT = "sent_user_count";
-  private BigDecimal sentUserCount;
+  private Long sentUserCount;
 
   public static final String JSON_PROPERTY_OPEN_COUNT = "open_count";
-  private BigDecimal openCount;
+  private Long openCount;
 
   public static final String JSON_PROPERTY_OPEN_RATE = "open_rate";
   private BigDecimal openRate;
@@ -282,7 +282,7 @@ public class UpdateAnnouncementByIdResponseMessage {
   }
 
 
-  public UpdateAnnouncementByIdResponseMessage targetUserCount(BigDecimal targetUserCount) {
+  public UpdateAnnouncementByIdResponseMessage targetUserCount(Long targetUserCount) {
     this.targetUserCount = targetUserCount;
     return this;
   }
@@ -296,19 +296,19 @@ public class UpdateAnnouncementByIdResponseMessage {
   @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTargetUserCount() {
+  public Long getTargetUserCount() {
     return targetUserCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TARGET_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargetUserCount(BigDecimal targetUserCount) {
+  public void setTargetUserCount(Long targetUserCount) {
     this.targetUserCount = targetUserCount;
   }
 
 
-  public UpdateAnnouncementByIdResponseMessage targetChannelCount(BigDecimal targetChannelCount) {
+  public UpdateAnnouncementByIdResponseMessage targetChannelCount(Long targetChannelCount) {
     this.targetChannelCount = targetChannelCount;
     return this;
   }
@@ -322,14 +322,14 @@ public class UpdateAnnouncementByIdResponseMessage {
   @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTargetChannelCount() {
+  public Long getTargetChannelCount() {
     return targetChannelCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TARGET_CHANNEL_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargetChannelCount(BigDecimal targetChannelCount) {
+  public void setTargetChannelCount(Long targetChannelCount) {
     this.targetChannelCount = targetChannelCount;
   }
 
@@ -360,7 +360,7 @@ public class UpdateAnnouncementByIdResponseMessage {
   }
 
 
-  public UpdateAnnouncementByIdResponseMessage scheduledAt(BigDecimal scheduledAt) {
+  public UpdateAnnouncementByIdResponseMessage scheduledAt(Long scheduledAt) {
     this.scheduledAt = scheduledAt;
     return this;
   }
@@ -374,19 +374,19 @@ public class UpdateAnnouncementByIdResponseMessage {
   @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getScheduledAt() {
+  public Long getScheduledAt() {
     return scheduledAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setScheduledAt(BigDecimal scheduledAt) {
+  public void setScheduledAt(Long scheduledAt) {
     this.scheduledAt = scheduledAt;
   }
 
 
-  public UpdateAnnouncementByIdResponseMessage completedAt(BigDecimal completedAt) {
+  public UpdateAnnouncementByIdResponseMessage completedAt(Long completedAt) {
     this.completedAt = completedAt;
     return this;
   }
@@ -400,19 +400,19 @@ public class UpdateAnnouncementByIdResponseMessage {
   @JsonProperty(JSON_PROPERTY_COMPLETED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCompletedAt() {
+  public Long getCompletedAt() {
     return completedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_COMPLETED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCompletedAt(BigDecimal completedAt) {
+  public void setCompletedAt(Long completedAt) {
     this.completedAt = completedAt;
   }
 
 
-  public UpdateAnnouncementByIdResponseMessage sentUserCount(BigDecimal sentUserCount) {
+  public UpdateAnnouncementByIdResponseMessage sentUserCount(Long sentUserCount) {
     this.sentUserCount = sentUserCount;
     return this;
   }
@@ -426,19 +426,19 @@ public class UpdateAnnouncementByIdResponseMessage {
   @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSentUserCount() {
+  public Long getSentUserCount() {
     return sentUserCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SENT_USER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSentUserCount(BigDecimal sentUserCount) {
+  public void setSentUserCount(Long sentUserCount) {
     this.sentUserCount = sentUserCount;
   }
 
 
-  public UpdateAnnouncementByIdResponseMessage openCount(BigDecimal openCount) {
+  public UpdateAnnouncementByIdResponseMessage openCount(Long openCount) {
     this.openCount = openCount;
     return this;
   }
@@ -452,14 +452,14 @@ public class UpdateAnnouncementByIdResponseMessage {
   @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getOpenCount() {
+  public Long getOpenCount() {
     return openCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OPEN_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOpenCount(BigDecimal openCount) {
+  public void setOpenCount(Long openCount) {
     this.openCount = openCount;
   }
 

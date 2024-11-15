@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -94,7 +93,7 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannel.JSON_PROPERTY_READ_RECEIPT
 })
 @JsonTypeName("SendBird.GroupChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -103,7 +102,7 @@ public class SendBirdGroupChannel {
   private String coverUrl;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private BigDecimal createdAt;
+  private Long createdAt;
 
   public static final String JSON_PROPERTY_CREATED_BY = "created_by";
   private JsonNullable<SendBirdGroupChannelCreatedBy> createdBy = JsonNullable.<SendBirdGroupChannelCreatedBy>undefined();
@@ -167,7 +166,7 @@ public class SendBirdGroupChannel {
   private HiddenStateEnum hiddenState;
 
   public static final String JSON_PROPERTY_INVITED_AT = "invited_at";
-  private BigDecimal invitedAt;
+  private Long invitedAt;
 
   public static final String JSON_PROPERTY_INVITER = "inviter";
   private JsonNullable<SendBirdUser> inviter = JsonNullable.<SendBirdUser>undefined();
@@ -203,34 +202,34 @@ public class SendBirdGroupChannel {
   private Boolean isSuper;
 
   public static final String JSON_PROPERTY_JOINED_AT = "joined_at";
-  private BigDecimal joinedAt;
+  private Long joinedAt;
 
   public static final String JSON_PROPERTY_JOINED_MEMBER_COUNT = "joined_member_count";
-  private BigDecimal joinedMemberCount;
+  private Long joinedMemberCount;
 
   public static final String JSON_PROPERTY_LAST_MESSAGE = "last_message";
   private JsonNullable<SendBirdMessageResponse> lastMessage = JsonNullable.<SendBirdMessageResponse>undefined();
 
   public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
-  private BigDecimal maxLengthMessage;
+  private Long maxLengthMessage;
 
   public static final String JSON_PROPERTY_MEMBER_COUNT = "member_count";
-  private BigDecimal memberCount;
+  private Long memberCount;
 
   public static final String JSON_PROPERTY_MEMBERS = "members";
   private List<SendBirdMember> members = null;
 
   public static final String JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP = "message_offset_timestamp";
-  private BigDecimal messageOffsetTimestamp;
+  private Long messageOffsetTimestamp;
 
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
-  private BigDecimal messageSurvivalSeconds;
+  private Long messageSurvivalSeconds;
 
   public static final String JSON_PROPERTY_MY_COUNT_PREFERENCE = "my_count_preference";
   private String myCountPreference;
 
   public static final String JSON_PROPERTY_MY_LAST_READ = "my_last_read";
-  private BigDecimal myLastRead;
+  private Long myLastRead;
 
   /**
    * Gets or Sets myMemberState
@@ -402,10 +401,10 @@ public class SendBirdGroupChannel {
   private SendBirdGroupChannelSmsFallback smsFallback;
 
   public static final String JSON_PROPERTY_UNREAD_MENTION_COUNT = "unread_mention_count";
-  private BigDecimal unreadMentionCount;
+  private Long unreadMentionCount;
 
   public static final String JSON_PROPERTY_UNREAD_MESSAGE_COUNT = "unread_message_count";
-  private BigDecimal unreadMessageCount;
+  private Long unreadMessageCount;
 
   public static final String JSON_PROPERTY_CHANNEL = "channel";
   private SendBirdGroupChannelChannel channel;
@@ -468,7 +467,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel createdAt(BigDecimal createdAt) {
+  public SendBirdGroupChannel createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -482,14 +481,14 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCreatedAt() {
+  public Long getCreatedAt() {
     return createdAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(BigDecimal createdAt) {
+  public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -718,7 +717,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel invitedAt(BigDecimal invitedAt) {
+  public SendBirdGroupChannel invitedAt(Long invitedAt) {
     this.invitedAt = invitedAt;
     return this;
   }
@@ -732,14 +731,14 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_INVITED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getInvitedAt() {
+  public Long getInvitedAt() {
     return invitedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_INVITED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInvitedAt(BigDecimal invitedAt) {
+  public void setInvitedAt(Long invitedAt) {
     this.invitedAt = invitedAt;
   }
 
@@ -1038,7 +1037,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel joinedAt(BigDecimal joinedAt) {
+  public SendBirdGroupChannel joinedAt(Long joinedAt) {
     this.joinedAt = joinedAt;
     return this;
   }
@@ -1052,19 +1051,19 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_JOINED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getJoinedAt() {
+  public Long getJoinedAt() {
     return joinedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_JOINED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setJoinedAt(BigDecimal joinedAt) {
+  public void setJoinedAt(Long joinedAt) {
     this.joinedAt = joinedAt;
   }
 
 
-  public SendBirdGroupChannel joinedMemberCount(BigDecimal joinedMemberCount) {
+  public SendBirdGroupChannel joinedMemberCount(Long joinedMemberCount) {
     this.joinedMemberCount = joinedMemberCount;
     return this;
   }
@@ -1078,14 +1077,14 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_JOINED_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getJoinedMemberCount() {
+  public Long getJoinedMemberCount() {
     return joinedMemberCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_JOINED_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setJoinedMemberCount(BigDecimal joinedMemberCount) {
+  public void setJoinedMemberCount(Long joinedMemberCount) {
     this.joinedMemberCount = joinedMemberCount;
   }
 
@@ -1124,7 +1123,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel maxLengthMessage(BigDecimal maxLengthMessage) {
+  public SendBirdGroupChannel maxLengthMessage(Long maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
     return this;
   }
@@ -1138,19 +1137,19 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMaxLengthMessage() {
+  public Long getMaxLengthMessage() {
     return maxLengthMessage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxLengthMessage(BigDecimal maxLengthMessage) {
+  public void setMaxLengthMessage(Long maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
   }
 
 
-  public SendBirdGroupChannel memberCount(BigDecimal memberCount) {
+  public SendBirdGroupChannel memberCount(Long memberCount) {
     this.memberCount = memberCount;
     return this;
   }
@@ -1164,14 +1163,14 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMemberCount() {
+  public Long getMemberCount() {
     return memberCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMemberCount(BigDecimal memberCount) {
+  public void setMemberCount(Long memberCount) {
     this.memberCount = memberCount;
   }
 
@@ -1210,7 +1209,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel messageOffsetTimestamp(BigDecimal messageOffsetTimestamp) {
+  public SendBirdGroupChannel messageOffsetTimestamp(Long messageOffsetTimestamp) {
     this.messageOffsetTimestamp = messageOffsetTimestamp;
     return this;
   }
@@ -1224,19 +1223,19 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMessageOffsetTimestamp() {
+  public Long getMessageOffsetTimestamp() {
     return messageOffsetTimestamp;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageOffsetTimestamp(BigDecimal messageOffsetTimestamp) {
+  public void setMessageOffsetTimestamp(Long messageOffsetTimestamp) {
     this.messageOffsetTimestamp = messageOffsetTimestamp;
   }
 
 
-  public SendBirdGroupChannel messageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
+  public SendBirdGroupChannel messageSurvivalSeconds(Long messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
     return this;
   }
@@ -1250,14 +1249,14 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMessageSurvivalSeconds() {
+  public Long getMessageSurvivalSeconds() {
     return messageSurvivalSeconds;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
+  public void setMessageSurvivalSeconds(Long messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
   }
 
@@ -1288,7 +1287,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel myLastRead(BigDecimal myLastRead) {
+  public SendBirdGroupChannel myLastRead(Long myLastRead) {
     this.myLastRead = myLastRead;
     return this;
   }
@@ -1302,14 +1301,14 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_MY_LAST_READ)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMyLastRead() {
+  public Long getMyLastRead() {
     return myLastRead;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MY_LAST_READ)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMyLastRead(BigDecimal myLastRead) {
+  public void setMyLastRead(Long myLastRead) {
     this.myLastRead = myLastRead;
   }
 
@@ -1504,7 +1503,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel unreadMentionCount(BigDecimal unreadMentionCount) {
+  public SendBirdGroupChannel unreadMentionCount(Long unreadMentionCount) {
     this.unreadMentionCount = unreadMentionCount;
     return this;
   }
@@ -1518,19 +1517,19 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getUnreadMentionCount() {
+  public Long getUnreadMentionCount() {
     return unreadMentionCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUnreadMentionCount(BigDecimal unreadMentionCount) {
+  public void setUnreadMentionCount(Long unreadMentionCount) {
     this.unreadMentionCount = unreadMentionCount;
   }
 
 
-  public SendBirdGroupChannel unreadMessageCount(BigDecimal unreadMessageCount) {
+  public SendBirdGroupChannel unreadMessageCount(Long unreadMessageCount) {
     this.unreadMessageCount = unreadMessageCount;
     return this;
   }
@@ -1544,14 +1543,14 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getUnreadMessageCount() {
+  public Long getUnreadMessageCount() {
     return unreadMessageCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUnreadMessageCount(BigDecimal unreadMessageCount) {
+  public void setUnreadMessageCount(Long unreadMessageCount) {
     this.unreadMessageCount = unreadMessageCount;
   }
 

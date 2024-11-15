@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -41,30 +40,30 @@ import org.sendbird.client.JSON;
   SendBirdThumbnailSBObject.JSON_PROPERTY_WIDTH
 })
 @JsonTypeName("SendBird.ThumbnailSBObject")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdThumbnailSBObject {
   public static final String JSON_PROPERTY_HEIGHT = "height";
-  private BigDecimal height;
+  private Long height;
 
   public static final String JSON_PROPERTY_PLAIN_URL = "plain_url";
   private String plainUrl;
 
   public static final String JSON_PROPERTY_REAL_HEIGHT = "real_height";
-  private BigDecimal realHeight;
+  private Long realHeight;
 
   public static final String JSON_PROPERTY_REAL_WIDTH = "real_width";
-  private BigDecimal realWidth;
+  private Long realWidth;
 
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
 
   public static final String JSON_PROPERTY_WIDTH = "width";
-  private BigDecimal width;
+  private Long width;
 
   public SendBirdThumbnailSBObject() { 
   }
 
-  public SendBirdThumbnailSBObject height(BigDecimal height) {
+  public SendBirdThumbnailSBObject height(Long height) {
     this.height = height;
     return this;
   }
@@ -78,14 +77,14 @@ public class SendBirdThumbnailSBObject {
   @JsonProperty(JSON_PROPERTY_HEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getHeight() {
+  public Long getHeight() {
     return height;
   }
 
 
   @JsonProperty(JSON_PROPERTY_HEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHeight(BigDecimal height) {
+  public void setHeight(Long height) {
     this.height = height;
   }
 
@@ -116,7 +115,7 @@ public class SendBirdThumbnailSBObject {
   }
 
 
-  public SendBirdThumbnailSBObject realHeight(BigDecimal realHeight) {
+  public SendBirdThumbnailSBObject realHeight(Long realHeight) {
     this.realHeight = realHeight;
     return this;
   }
@@ -130,19 +129,19 @@ public class SendBirdThumbnailSBObject {
   @JsonProperty(JSON_PROPERTY_REAL_HEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getRealHeight() {
+  public Long getRealHeight() {
     return realHeight;
   }
 
 
   @JsonProperty(JSON_PROPERTY_REAL_HEIGHT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRealHeight(BigDecimal realHeight) {
+  public void setRealHeight(Long realHeight) {
     this.realHeight = realHeight;
   }
 
 
-  public SendBirdThumbnailSBObject realWidth(BigDecimal realWidth) {
+  public SendBirdThumbnailSBObject realWidth(Long realWidth) {
     this.realWidth = realWidth;
     return this;
   }
@@ -156,14 +155,14 @@ public class SendBirdThumbnailSBObject {
   @JsonProperty(JSON_PROPERTY_REAL_WIDTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getRealWidth() {
+  public Long getRealWidth() {
     return realWidth;
   }
 
 
   @JsonProperty(JSON_PROPERTY_REAL_WIDTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRealWidth(BigDecimal realWidth) {
+  public void setRealWidth(Long realWidth) {
     this.realWidth = realWidth;
   }
 
@@ -194,7 +193,7 @@ public class SendBirdThumbnailSBObject {
   }
 
 
-  public SendBirdThumbnailSBObject width(BigDecimal width) {
+  public SendBirdThumbnailSBObject width(Long width) {
     this.width = width;
     return this;
   }
@@ -208,14 +207,14 @@ public class SendBirdThumbnailSBObject {
   @JsonProperty(JSON_PROPERTY_WIDTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getWidth() {
+  public Long getWidth() {
     return width;
   }
 
 
   @JsonProperty(JSON_PROPERTY_WIDTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWidth(BigDecimal width) {
+  public void setWidth(Long width) {
     this.width = width;
   }
 

@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
@@ -41,13 +40,13 @@ import org.sendbird.client.JSON;
   OcListMutedUsersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("ocListMutedUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class OcListMutedUsersResponse {
   public static final String JSON_PROPERTY_MUTED_LIST = "muted_list";
   private List<SendBirdUser> mutedList = null;
 
   public static final String JSON_PROPERTY_TOTAL_MUTE_COUNT = "total_mute_count";
-  private BigDecimal totalMuteCount;
+  private Long totalMuteCount;
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
@@ -89,7 +88,7 @@ public class OcListMutedUsersResponse {
   }
 
 
-  public OcListMutedUsersResponse totalMuteCount(BigDecimal totalMuteCount) {
+  public OcListMutedUsersResponse totalMuteCount(Long totalMuteCount) {
     this.totalMuteCount = totalMuteCount;
     return this;
   }
@@ -103,14 +102,14 @@ public class OcListMutedUsersResponse {
   @JsonProperty(JSON_PROPERTY_TOTAL_MUTE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTotalMuteCount() {
+  public Long getTotalMuteCount() {
     return totalMuteCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TOTAL_MUTE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTotalMuteCount(BigDecimal totalMuteCount) {
+  public void setTotalMuteCount(Long totalMuteCount) {
     this.totalMuteCount = totalMuteCount;
   }
 

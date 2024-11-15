@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **BigDecimal** |  |  [optional] |
+|**id** | **Long** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**url** | **String** |  |  [optional] |
 

@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**channels** | [**List&lt;SendBirdGroupChannel&gt;**](SendBirdGroupChannel.md) |  |  [optional] |
 |**next** | **String** |  |  [optional] |
-|**ts** | **BigDecimal** |  |  [optional] |
+|**ts** | **Long** |  |  [optional] |
 
 
 

@@ -11,8 +11,8 @@
 |**operation** | **String** |  |  [optional] |
 |**success** | **Boolean** |  |  [optional] |
 |**reaction** | **String** |  |  [optional] |
-|**updatedAt** | **BigDecimal** |  |  [optional] |
-|**msgId** | **BigDecimal** |  |  [optional] |
+|**updatedAt** | **Long** |  |  [optional] |
+|**msgId** | **Long** |  |  [optional] |
 
 
 

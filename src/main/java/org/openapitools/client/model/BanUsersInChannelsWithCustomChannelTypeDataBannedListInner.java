@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -38,13 +37,13 @@ import org.sendbird.client.JSON;
   BanUsersInChannelsWithCustomChannelTypeDataBannedListInner.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("banUsersInChannelsWithCustomChannelTypeData_banned_list_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
   public static final String JSON_PROPERTY_SECONDS = "seconds";
-  private BigDecimal seconds;
+  private Long seconds;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -78,7 +77,7 @@ public class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner {
   }
 
 
-  public BanUsersInChannelsWithCustomChannelTypeDataBannedListInner seconds(BigDecimal seconds) {
+  public BanUsersInChannelsWithCustomChannelTypeDataBannedListInner seconds(Long seconds) {
     this.seconds = seconds;
     return this;
   }
@@ -92,14 +91,14 @@ public class BanUsersInChannelsWithCustomChannelTypeDataBannedListInner {
   @JsonProperty(JSON_PROPERTY_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSeconds() {
+  public Long getSeconds() {
     return seconds;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSeconds(BigDecimal seconds) {
+  public void setSeconds(Long seconds) {
     this.seconds = seconds;
   }
 

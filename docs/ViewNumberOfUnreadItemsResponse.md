@@ -7,15 +7,15 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**nonSuperGroupChannelUnreadMessageCount** | **BigDecimal** |  |  [optional] |
-|**superGroupChannelUnreadMessageCount** | **BigDecimal** |  |  [optional] |
-|**groupChannelUnreadMessageCount** | **BigDecimal** |  |  [optional] |
-|**superGroupChannelInvitationCount** | **BigDecimal** |  |  [optional] |
-|**groupChannelInvitationCount** | **BigDecimal** |  |  [optional] |
-|**superGroupChannelUnreadMentionCount** | **BigDecimal** |  |  [optional] |
-|**groupChannelUnreadMentionCount** | **BigDecimal** |  |  [optional] |
-|**nonSuperGroupChannelUnreadMentionCount** | **BigDecimal** |  |  [optional] |
-|**nonSuperGroupChannelInvitationCount** | **BigDecimal** |  |  [optional] |
+|**nonSuperGroupChannelUnreadMessageCount** | **Long** |  |  [optional] |
+|**superGroupChannelUnreadMessageCount** | **Long** |  |  [optional] |
+|**groupChannelUnreadMessageCount** | **Long** |  |  [optional] |
+|**superGroupChannelInvitationCount** | **Long** |  |  [optional] |
+|**groupChannelInvitationCount** | **Long** |  |  [optional] |
+|**superGroupChannelUnreadMentionCount** | **Long** |  |  [optional] |
+|**groupChannelUnreadMentionCount** | **Long** |  |  [optional] |
+|**nonSuperGroupChannelUnreadMentionCount** | **Long** |  |  [optional] |
+|**nonSuperGroupChannelInvitationCount** | **Long** |  |  [optional] |
 
 
 

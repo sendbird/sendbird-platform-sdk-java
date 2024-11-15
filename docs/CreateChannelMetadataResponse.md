@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**metadata** | **Map&lt;String, String&gt;** |  |  [optional] |
-|**includeTs** | **BigDecimal** |  |  [optional] |
+|**includeTs** | **Long** |  |  [optional] |
 
 
 

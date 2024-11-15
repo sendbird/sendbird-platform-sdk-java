@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**date** | **String** |  |  [optional] |
-|**peakConnections** | **BigDecimal** |  |  [optional] |
+|**peakConnections** | **Long** |  |  [optional] |
 
 
 

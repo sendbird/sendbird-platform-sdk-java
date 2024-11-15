@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +35,15 @@ import org.sendbird.client.JSON;
   GcResetChatHistoryResponse.JSON_PROPERTY_TS_MESSAGE_OFFSET
 })
 @JsonTypeName("gcResetChatHistoryResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class GcResetChatHistoryResponse {
   public static final String JSON_PROPERTY_TS_MESSAGE_OFFSET = "ts_message_offset";
-  private BigDecimal tsMessageOffset;
+  private Long tsMessageOffset;
 
   public GcResetChatHistoryResponse() { 
   }
 
-  public GcResetChatHistoryResponse tsMessageOffset(BigDecimal tsMessageOffset) {
+  public GcResetChatHistoryResponse tsMessageOffset(Long tsMessageOffset) {
     this.tsMessageOffset = tsMessageOffset;
     return this;
   }
@@ -58,14 +57,14 @@ public class GcResetChatHistoryResponse {
   @JsonProperty(JSON_PROPERTY_TS_MESSAGE_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTsMessageOffset() {
+  public Long getTsMessageOffset() {
     return tsMessageOffset;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TS_MESSAGE_OFFSET)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTsMessageOffset(BigDecimal tsMessageOffset) {
+  public void setTsMessageOffset(Long tsMessageOffset) {
     this.tsMessageOffset = tsMessageOffset;
   }
 

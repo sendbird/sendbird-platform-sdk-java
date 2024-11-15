@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import org.openapitools.client.model.CreateBotResponseBot;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
@@ -42,7 +41,7 @@ import org.sendbird.client.JSON;
   UpdateBotByIdResponse.JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE
 })
 @JsonTypeName("updateBotByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class UpdateBotByIdResponse {
   public static final String JSON_PROPERTY_BOT = "bot";
   private CreateBotResponseBot bot;
@@ -60,7 +59,7 @@ public class UpdateBotByIdResponse {
   private Boolean showMember;
 
   public static final String JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE = "channel_invitation_preference";
-  private BigDecimal channelInvitationPreference;
+  private Integer channelInvitationPreference;
 
   public UpdateBotByIdResponse() { 
   }
@@ -195,7 +194,7 @@ public class UpdateBotByIdResponse {
   }
 
 
-  public UpdateBotByIdResponse channelInvitationPreference(BigDecimal channelInvitationPreference) {
+  public UpdateBotByIdResponse channelInvitationPreference(Integer channelInvitationPreference) {
     this.channelInvitationPreference = channelInvitationPreference;
     return this;
   }
@@ -209,14 +208,14 @@ public class UpdateBotByIdResponse {
   @JsonProperty(JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getChannelInvitationPreference() {
+  public Integer getChannelInvitationPreference() {
     return channelInvitationPreference;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannelInvitationPreference(BigDecimal channelInvitationPreference) {
+  public void setChannelInvitationPreference(Integer channelInvitationPreference) {
     this.channelInvitationPreference = channelInvitationPreference;
   }
 

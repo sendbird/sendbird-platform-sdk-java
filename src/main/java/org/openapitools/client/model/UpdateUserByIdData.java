@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
   UpdateUserByIdData.JSON_PROPERTY_LEAVE_ALL_WHEN_DEACTIVATED
 })
 @JsonTypeName("updateUserByIdData")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class UpdateUserByIdData {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;

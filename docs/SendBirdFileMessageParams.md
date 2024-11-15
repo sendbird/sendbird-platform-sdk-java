@@ -12,7 +12,7 @@
 |**data** | **String** |  |  [optional] |
 |**_file** | [**Blob**](Blob.md) |  |  [optional] |
 |**fileName** | **String** |  |  [optional] |
-|**fileSize** | **BigDecimal** |  |  [optional] |
+|**fileSize** | **Long** |  |  [optional] |
 |**fileUrl** | **String** |  |  [optional] |
 |**isReplyToChannel** | **Boolean** |  |  [optional] |
 |**mentionType** | [**MentionTypeEnum**](#MentionTypeEnum) |  |  [optional] |
@@ -21,7 +21,7 @@
 |**metaArrayKeys** | **List&lt;String&gt;** |  |  [optional] |
 |**metaArrays** | [**List&lt;SendBirdMessageMetaArray&gt;**](SendBirdMessageMetaArray.md) |  |  [optional] |
 |**mimeType** | **String** |  |  [optional] |
-|**parentMessageId** | **BigDecimal** |  |  [optional] |
+|**parentMessageId** | **Long** |  |  [optional] |
 |**pushNotificationDeliveryOption** | [**PushNotificationDeliveryOptionEnum**](#PushNotificationDeliveryOptionEnum) |  |  [optional] |
 |**thumbnailSizes** | [**List&lt;SendBirdThumbnailSize&gt;**](SendBirdThumbnailSize.md) |  |  [optional] |
 

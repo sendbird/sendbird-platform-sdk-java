@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListDataExportsByMessageChannelOrUserResponseExportedDataInnerFile;
@@ -50,7 +49,7 @@ import org.sendbird.client.JSON;
   ListDataExportsByMessageChannelOrUserResponseExportedDataInner.JSON_PROPERTY_USER_IDS
 })
 @JsonTypeName("listDataExportsByMessageChannelOrUserResponse_exported_data_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   public static final String JSON_PROPERTY_REQUEST_ID = "request_id";
   private String requestId;
@@ -68,13 +67,13 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   private String timezone;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private BigDecimal createdAt;
+  private Long createdAt;
 
   public static final String JSON_PROPERTY_START_TS = "start_ts";
-  private BigDecimal startTs;
+  private Long startTs;
 
   public static final String JSON_PROPERTY_END_TS = "end_ts";
-  private BigDecimal endTs;
+  private Long endTs;
 
   public static final String JSON_PROPERTY_CHANNEL_URLS = "channel_urls";
   private List<String> channelUrls = null;
@@ -221,7 +220,7 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   }
 
 
-  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner createdAt(BigDecimal createdAt) {
+  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -235,19 +234,19 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCreatedAt() {
+  public Long getCreatedAt() {
     return createdAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(BigDecimal createdAt) {
+  public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner startTs(BigDecimal startTs) {
+  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner startTs(Long startTs) {
     this.startTs = startTs;
     return this;
   }
@@ -261,19 +260,19 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   @JsonProperty(JSON_PROPERTY_START_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getStartTs() {
+  public Long getStartTs() {
     return startTs;
   }
 
 
   @JsonProperty(JSON_PROPERTY_START_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartTs(BigDecimal startTs) {
+  public void setStartTs(Long startTs) {
     this.startTs = startTs;
   }
 
 
-  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner endTs(BigDecimal endTs) {
+  public ListDataExportsByMessageChannelOrUserResponseExportedDataInner endTs(Long endTs) {
     this.endTs = endTs;
     return this;
   }
@@ -287,14 +286,14 @@ public class ListDataExportsByMessageChannelOrUserResponseExportedDataInner {
   @JsonProperty(JSON_PROPERTY_END_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getEndTs() {
+  public Long getEndTs() {
     return endTs;
   }
 
 
   @JsonProperty(JSON_PROPERTY_END_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndTs(BigDecimal endTs) {
+  public void setEndTs(Long endTs) {
     this.endTs = endTs;
   }
 

@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -40,16 +39,16 @@ import org.sendbird.client.JSON;
   ModelFile.JSON_PROPERTY_WEBKIT_RELATIVE_PATH
 })
 @JsonTypeName("File")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ModelFile {
   public static final String JSON_PROPERTY_LAST_MODIFIED = "last_modified";
-  private BigDecimal lastModified;
+  private Long lastModified;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
   public static final String JSON_PROPERTY_SIZE = "size";
-  private BigDecimal size;
+  private Long size;
 
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -60,7 +59,7 @@ public class ModelFile {
   public ModelFile() { 
   }
 
-  public ModelFile lastModified(BigDecimal lastModified) {
+  public ModelFile lastModified(Long lastModified) {
     this.lastModified = lastModified;
     return this;
   }
@@ -74,14 +73,14 @@ public class ModelFile {
   @JsonProperty(JSON_PROPERTY_LAST_MODIFIED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getLastModified() {
+  public Long getLastModified() {
     return lastModified;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LAST_MODIFIED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastModified(BigDecimal lastModified) {
+  public void setLastModified(Long lastModified) {
     this.lastModified = lastModified;
   }
 
@@ -112,7 +111,7 @@ public class ModelFile {
   }
 
 
-  public ModelFile size(BigDecimal size) {
+  public ModelFile size(Long size) {
     this.size = size;
     return this;
   }
@@ -126,14 +125,14 @@ public class ModelFile {
   @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSize() {
+  public Long getSize() {
     return size;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSize(BigDecimal size) {
+  public void setSize(Long size) {
     this.size = size;
   }
 

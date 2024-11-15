@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -56,7 +55,7 @@ import org.sendbird.client.JSON;
   V3GroupChannelsChannelUrlScheduledMessagesScheduledMessageIdDeleteRequest.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("_v3_group_channels__channel_url__scheduled_messages__scheduled_message_id__delete_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class V3GroupChannelsChannelUrlScheduledMessagesScheduledMessageIdDeleteRequest {
   public static final String JSON_PROPERTY_MESSAGE_TYPE = "message_type";
   private String messageType;
@@ -74,7 +73,7 @@ public class V3GroupChannelsChannelUrlScheduledMessagesScheduledMessageIdDeleteR
   private String url;
 
   public static final String JSON_PROPERTY_SCHEDULED_AT = "scheduled_at";
-  private BigDecimal scheduledAt;
+  private Long scheduledAt;
 
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -248,7 +247,7 @@ public class V3GroupChannelsChannelUrlScheduledMessagesScheduledMessageIdDeleteR
   }
 
 
-  public V3GroupChannelsChannelUrlScheduledMessagesScheduledMessageIdDeleteRequest scheduledAt(BigDecimal scheduledAt) {
+  public V3GroupChannelsChannelUrlScheduledMessagesScheduledMessageIdDeleteRequest scheduledAt(Long scheduledAt) {
     this.scheduledAt = scheduledAt;
     return this;
   }
@@ -262,14 +261,14 @@ public class V3GroupChannelsChannelUrlScheduledMessagesScheduledMessageIdDeleteR
   @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getScheduledAt() {
+  public Long getScheduledAt() {
     return scheduledAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SCHEDULED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setScheduledAt(BigDecimal scheduledAt) {
+  public void setScheduledAt(Long scheduledAt) {
     this.scheduledAt = scheduledAt;
   }
 

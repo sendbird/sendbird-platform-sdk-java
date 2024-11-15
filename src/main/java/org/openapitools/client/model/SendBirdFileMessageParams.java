@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.Blob;
@@ -59,7 +58,7 @@ import org.sendbird.client.JSON;
   SendBirdFileMessageParams.JSON_PROPERTY_THUMBNAIL_SIZES
 })
 @JsonTypeName("SendBird.FileMessageParams")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdFileMessageParams {
   public static final String JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   private SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions;
@@ -77,7 +76,7 @@ public class SendBirdFileMessageParams {
   private String fileName;
 
   public static final String JSON_PROPERTY_FILE_SIZE = "file_size";
-  private BigDecimal fileSize;
+  private Long fileSize;
 
   public static final String JSON_PROPERTY_FILE_URL = "file_url";
   private String fileUrl;
@@ -139,7 +138,7 @@ public class SendBirdFileMessageParams {
   private String mimeType;
 
   public static final String JSON_PROPERTY_PARENT_MESSAGE_ID = "parent_message_id";
-  private BigDecimal parentMessageId;
+  private Long parentMessageId;
 
   /**
    * Gets or Sets pushNotificationDeliveryOption
@@ -315,7 +314,7 @@ public class SendBirdFileMessageParams {
   }
 
 
-  public SendBirdFileMessageParams fileSize(BigDecimal fileSize) {
+  public SendBirdFileMessageParams fileSize(Long fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -329,14 +328,14 @@ public class SendBirdFileMessageParams {
   @JsonProperty(JSON_PROPERTY_FILE_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getFileSize() {
+  public Long getFileSize() {
     return fileSize;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FILE_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFileSize(BigDecimal fileSize) {
+  public void setFileSize(Long fileSize) {
     this.fileSize = fileSize;
   }
 
@@ -581,7 +580,7 @@ public class SendBirdFileMessageParams {
   }
 
 
-  public SendBirdFileMessageParams parentMessageId(BigDecimal parentMessageId) {
+  public SendBirdFileMessageParams parentMessageId(Long parentMessageId) {
     this.parentMessageId = parentMessageId;
     return this;
   }
@@ -595,14 +594,14 @@ public class SendBirdFileMessageParams {
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getParentMessageId() {
+  public Long getParentMessageId() {
     return parentMessageId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentMessageId(BigDecimal parentMessageId) {
+  public void setParentMessageId(Long parentMessageId) {
     this.parentMessageId = parentMessageId;
   }
 

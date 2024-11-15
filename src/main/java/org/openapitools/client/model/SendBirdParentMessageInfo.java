@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdFile;
@@ -50,7 +49,7 @@ import org.sendbird.client.JSON;
   SendBirdParentMessageInfo.JSON_PROPERTY_FILES
 })
 @JsonTypeName("SendBird.ParentMessageInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdParentMessageInfo {
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -62,7 +61,7 @@ public class SendBirdParentMessageInfo {
   private String type;
 
   public static final String JSON_PROPERTY_TS = "ts";
-  private BigDecimal ts;
+  private Long ts;
 
   public static final String JSON_PROPERTY_USER = "user";
   private JsonNullable<SendBirdUser> user = JsonNullable.<SendBirdUser>undefined();
@@ -154,7 +153,7 @@ public class SendBirdParentMessageInfo {
   }
 
 
-  public SendBirdParentMessageInfo ts(BigDecimal ts) {
+  public SendBirdParentMessageInfo ts(Long ts) {
     this.ts = ts;
     return this;
   }
@@ -168,14 +167,14 @@ public class SendBirdParentMessageInfo {
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTs() {
+  public Long getTs() {
     return ts;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTs(BigDecimal ts) {
+  public void setTs(Long ts) {
     this.ts = ts;
   }
 

@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**messageSurvivalSeconds** | **BigDecimal** |  |  [optional] |
+|**messageSurvivalSeconds** | **Long** |  |  [optional] |
 |**customType** | **String** |  |  [optional] |
 |**mentionedUsers** | [**List&lt;SendBirdMessageResponseMentionedUsersInner&gt;**](SendBirdMessageResponseMentionedUsersInner.md) |  |  [optional] |
 |**translations** | **Object** |  |  [optional] |
-|**updatedAt** | **BigDecimal** |  |  [optional] |
+|**updatedAt** | **Long** |  |  [optional] |
 |**isOpMsg** | **Boolean** |  |  [optional] |
 |**isRemoved** | **Boolean** |  |  [optional] |
 |**user** | [**SendBirdMessageResponseUser**](SendBirdMessageResponseUser.md) |  |  [optional] |
@@ -19,15 +19,15 @@
 |**files** | [**List&lt;SendBirdFile&gt;**](SendBirdFile.md) |  |  [optional] |
 |**message** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |
-|**messageRetentionHour** | **BigDecimal** |  |  [optional] |
+|**messageRetentionHour** | **Long** |  |  [optional] |
 |**silent** | **Boolean** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 |**channelType** | **String** |  |  [optional] |
 |**reqId** | **String** |  |  [optional] |
 |**mentionType** | **String** |  |  [optional] |
 |**channelUrl** | **String** |  |  [optional] |
-|**messageId** | **BigDecimal** |  |  [optional] |
+|**messageId** | **Long** |  |  [optional] |
 |**sortedMetaarray** | [**List&lt;ListMessagesResponseMessagesInnerSortedMetaarrayInner&gt;**](ListMessagesResponseMessagesInnerSortedMetaarrayInner.md) |  |  [optional] |
 |**ogTag** | [**ListMessagesResponseMessagesInnerOgTag**](ListMessagesResponseMessagesInnerOgTag.md) |  |  [optional] |
 |**parentMessageInfo** | [**SendBirdParentMessageInfo**](SendBirdParentMessageInfo.md) |  |  [optional] |

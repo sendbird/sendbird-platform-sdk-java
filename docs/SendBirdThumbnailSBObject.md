@@ -7,12 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**height** | **BigDecimal** |  |  [optional] |
+|**height** | **Long** |  |  [optional] |
 |**plainUrl** | **String** |  |  [optional] |
-|**realHeight** | **BigDecimal** |  |  [optional] |
-|**realWidth** | **BigDecimal** |  |  [optional] |
+|**realHeight** | **Long** |  |  [optional] |
+|**realWidth** | **Long** |  |  [optional] |
 |**url** | **String** |  |  [optional] |
-|**width** | **BigDecimal** |  |  [optional] |
+|**width** | **Long** |  |  [optional] |
 
 
 

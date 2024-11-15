@@ -42,19 +42,19 @@ import org.sendbird.client.JSON;
   GetDetailedOpenRateOfAnnouncementByIdResponse.JSON_PROPERTY_CUMULATIVE_OPEN_RATES
 })
 @JsonTypeName("getDetailedOpenRateOfAnnouncementByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class GetDetailedOpenRateOfAnnouncementByIdResponse {
   public static final String JSON_PROPERTY_UNIQUE_ID = "unique_id";
   private String uniqueId;
 
   public static final String JSON_PROPERTY_OPEN_COUNTS = "open_counts";
-  private List<BigDecimal> openCounts = null;
+  private List<Long> openCounts = null;
 
   public static final String JSON_PROPERTY_OPEN_RATES = "open_rates";
   private List<BigDecimal> openRates = null;
 
   public static final String JSON_PROPERTY_CUMULATIVE_OPEN_COUNTS = "cumulative_open_counts";
-  private List<BigDecimal> cumulativeOpenCounts = null;
+  private List<Long> cumulativeOpenCounts = null;
 
   public static final String JSON_PROPERTY_CUMULATIVE_OPEN_RATES = "cumulative_open_rates";
   private List<BigDecimal> cumulativeOpenRates = null;
@@ -88,12 +88,12 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
   }
 
 
-  public GetDetailedOpenRateOfAnnouncementByIdResponse openCounts(List<BigDecimal> openCounts) {
+  public GetDetailedOpenRateOfAnnouncementByIdResponse openCounts(List<Long> openCounts) {
     this.openCounts = openCounts;
     return this;
   }
 
-  public GetDetailedOpenRateOfAnnouncementByIdResponse addOpenCountsItem(BigDecimal openCountsItem) {
+  public GetDetailedOpenRateOfAnnouncementByIdResponse addOpenCountsItem(Long openCountsItem) {
     if (this.openCounts == null) {
       this.openCounts = new ArrayList<>();
     }
@@ -110,14 +110,14 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
   @JsonProperty(JSON_PROPERTY_OPEN_COUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BigDecimal> getOpenCounts() {
+  public List<Long> getOpenCounts() {
     return openCounts;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OPEN_COUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOpenCounts(List<BigDecimal> openCounts) {
+  public void setOpenCounts(List<Long> openCounts) {
     this.openCounts = openCounts;
   }
 
@@ -156,12 +156,12 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
   }
 
 
-  public GetDetailedOpenRateOfAnnouncementByIdResponse cumulativeOpenCounts(List<BigDecimal> cumulativeOpenCounts) {
+  public GetDetailedOpenRateOfAnnouncementByIdResponse cumulativeOpenCounts(List<Long> cumulativeOpenCounts) {
     this.cumulativeOpenCounts = cumulativeOpenCounts;
     return this;
   }
 
-  public GetDetailedOpenRateOfAnnouncementByIdResponse addCumulativeOpenCountsItem(BigDecimal cumulativeOpenCountsItem) {
+  public GetDetailedOpenRateOfAnnouncementByIdResponse addCumulativeOpenCountsItem(Long cumulativeOpenCountsItem) {
     if (this.cumulativeOpenCounts == null) {
       this.cumulativeOpenCounts = new ArrayList<>();
     }
@@ -178,14 +178,14 @@ public class GetDetailedOpenRateOfAnnouncementByIdResponse {
   @JsonProperty(JSON_PROPERTY_CUMULATIVE_OPEN_COUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BigDecimal> getCumulativeOpenCounts() {
+  public List<Long> getCumulativeOpenCounts() {
     return cumulativeOpenCounts;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CUMULATIVE_OPEN_COUNTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCumulativeOpenCounts(List<BigDecimal> cumulativeOpenCounts) {
+  public void setCumulativeOpenCounts(List<Long> cumulativeOpenCounts) {
     this.cumulativeOpenCounts = cumulativeOpenCounts;
   }
 

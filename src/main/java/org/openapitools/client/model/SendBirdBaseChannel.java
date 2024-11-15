@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdUser;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -48,13 +47,13 @@ import org.sendbird.client.JSON;
   SendBirdBaseChannel.JSON_PROPERTY_URL
 })
 @JsonTypeName("SendBird.BaseChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdBaseChannel {
   public static final String JSON_PROPERTY_COVER_URL = "cover_url";
   private String coverUrl;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private BigDecimal createdAt;
+  private Long createdAt;
 
   public static final String JSON_PROPERTY_CREATOR = "creator";
   private JsonNullable<SendBirdUser> creator = JsonNullable.<SendBirdUser>undefined();
@@ -103,7 +102,7 @@ public class SendBirdBaseChannel {
   }
 
 
-  public SendBirdBaseChannel createdAt(BigDecimal createdAt) {
+  public SendBirdBaseChannel createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -117,14 +116,14 @@ public class SendBirdBaseChannel {
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCreatedAt() {
+  public Long getCreatedAt() {
     return createdAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(BigDecimal createdAt) {
+  public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
 

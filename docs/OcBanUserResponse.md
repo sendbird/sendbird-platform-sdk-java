@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**startAt** | **BigDecimal** |  |  [optional] |
-|**endAt** | **BigDecimal** |  |  [optional] |
+|**startAt** | **Long** |  |  [optional] |
+|**endAt** | **Long** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**userId** | **String** |  |  [optional] |
 |**user** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |

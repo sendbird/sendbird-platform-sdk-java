@@ -13,7 +13,7 @@
 |**userId** | **String** |  |  [optional] |
 |**userIds** | **List&lt;String&gt;** |  |  [optional] |
 |**channelDeleteOption** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 
 
 

@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**coverUrl** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 |**creator** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
 |**customType** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |

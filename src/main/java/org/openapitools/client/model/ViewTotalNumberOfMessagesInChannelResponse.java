@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +35,15 @@ import org.sendbird.client.JSON;
   ViewTotalNumberOfMessagesInChannelResponse.JSON_PROPERTY_TOTAL
 })
 @JsonTypeName("viewTotalNumberOfMessagesInChannelResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ViewTotalNumberOfMessagesInChannelResponse {
   public static final String JSON_PROPERTY_TOTAL = "total";
-  private BigDecimal total;
+  private Long total;
 
   public ViewTotalNumberOfMessagesInChannelResponse() { 
   }
 
-  public ViewTotalNumberOfMessagesInChannelResponse total(BigDecimal total) {
+  public ViewTotalNumberOfMessagesInChannelResponse total(Long total) {
     this.total = total;
     return this;
   }
@@ -58,14 +57,14 @@ public class ViewTotalNumberOfMessagesInChannelResponse {
   @JsonProperty(JSON_PROPERTY_TOTAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTotal() {
+  public Long getTotal() {
     return total;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TOTAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTotal(BigDecimal total) {
+  public void setTotal(Long total) {
     this.total = total;
   }
 

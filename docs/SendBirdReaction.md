@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**key** | **String** |  |  [optional] |
-|**updatedAt** | **BigDecimal** |  |  [optional] |
+|**updatedAt** | **Long** |  |  [optional] |
 |**userIds** | **List&lt;String&gt;** |  |  [optional] |
 
 

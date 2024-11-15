@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**lastModified** | **BigDecimal** |  |  [optional] |
+|**lastModified** | **Long** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**size** | **BigDecimal** |  |  [optional] |
+|**size** | **Long** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 |**webkitRelativePath** | **String** |  |  [optional] |
 

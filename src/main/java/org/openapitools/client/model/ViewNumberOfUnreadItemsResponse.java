@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -44,39 +43,39 @@ import org.sendbird.client.JSON;
   ViewNumberOfUnreadItemsResponse.JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT
 })
 @JsonTypeName("viewNumberOfUnreadItemsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ViewNumberOfUnreadItemsResponse {
   public static final String JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "non_super_group_channel_unread_message_count";
-  private BigDecimal nonSuperGroupChannelUnreadMessageCount;
+  private Long nonSuperGroupChannelUnreadMessageCount;
 
   public static final String JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "super_group_channel_unread_message_count";
-  private BigDecimal superGroupChannelUnreadMessageCount;
+  private Long superGroupChannelUnreadMessageCount;
 
   public static final String JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT = "group_channel_unread_message_count";
-  private BigDecimal groupChannelUnreadMessageCount;
+  private Long groupChannelUnreadMessageCount;
 
   public static final String JSON_PROPERTY_SUPER_GROUP_CHANNEL_INVITATION_COUNT = "super_group_channel_invitation_count";
-  private BigDecimal superGroupChannelInvitationCount;
+  private Long superGroupChannelInvitationCount;
 
   public static final String JSON_PROPERTY_GROUP_CHANNEL_INVITATION_COUNT = "group_channel_invitation_count";
-  private BigDecimal groupChannelInvitationCount;
+  private Long groupChannelInvitationCount;
 
   public static final String JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT = "super_group_channel_unread_mention_count";
-  private BigDecimal superGroupChannelUnreadMentionCount;
+  private Long superGroupChannelUnreadMentionCount;
 
   public static final String JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MENTION_COUNT = "group_channel_unread_mention_count";
-  private BigDecimal groupChannelUnreadMentionCount;
+  private Long groupChannelUnreadMentionCount;
 
   public static final String JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT = "non_super_group_channel_unread_mention_count";
-  private BigDecimal nonSuperGroupChannelUnreadMentionCount;
+  private Long nonSuperGroupChannelUnreadMentionCount;
 
   public static final String JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT = "non_super_group_channel_invitation_count";
-  private BigDecimal nonSuperGroupChannelInvitationCount;
+  private Long nonSuperGroupChannelInvitationCount;
 
   public ViewNumberOfUnreadItemsResponse() { 
   }
 
-  public ViewNumberOfUnreadItemsResponse nonSuperGroupChannelUnreadMessageCount(BigDecimal nonSuperGroupChannelUnreadMessageCount) {
+  public ViewNumberOfUnreadItemsResponse nonSuperGroupChannelUnreadMessageCount(Long nonSuperGroupChannelUnreadMessageCount) {
     this.nonSuperGroupChannelUnreadMessageCount = nonSuperGroupChannelUnreadMessageCount;
     return this;
   }
@@ -90,19 +89,19 @@ public class ViewNumberOfUnreadItemsResponse {
   @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getNonSuperGroupChannelUnreadMessageCount() {
+  public Long getNonSuperGroupChannelUnreadMessageCount() {
     return nonSuperGroupChannelUnreadMessageCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNonSuperGroupChannelUnreadMessageCount(BigDecimal nonSuperGroupChannelUnreadMessageCount) {
+  public void setNonSuperGroupChannelUnreadMessageCount(Long nonSuperGroupChannelUnreadMessageCount) {
     this.nonSuperGroupChannelUnreadMessageCount = nonSuperGroupChannelUnreadMessageCount;
   }
 
 
-  public ViewNumberOfUnreadItemsResponse superGroupChannelUnreadMessageCount(BigDecimal superGroupChannelUnreadMessageCount) {
+  public ViewNumberOfUnreadItemsResponse superGroupChannelUnreadMessageCount(Long superGroupChannelUnreadMessageCount) {
     this.superGroupChannelUnreadMessageCount = superGroupChannelUnreadMessageCount;
     return this;
   }
@@ -116,19 +115,19 @@ public class ViewNumberOfUnreadItemsResponse {
   @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSuperGroupChannelUnreadMessageCount() {
+  public Long getSuperGroupChannelUnreadMessageCount() {
     return superGroupChannelUnreadMessageCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSuperGroupChannelUnreadMessageCount(BigDecimal superGroupChannelUnreadMessageCount) {
+  public void setSuperGroupChannelUnreadMessageCount(Long superGroupChannelUnreadMessageCount) {
     this.superGroupChannelUnreadMessageCount = superGroupChannelUnreadMessageCount;
   }
 
 
-  public ViewNumberOfUnreadItemsResponse groupChannelUnreadMessageCount(BigDecimal groupChannelUnreadMessageCount) {
+  public ViewNumberOfUnreadItemsResponse groupChannelUnreadMessageCount(Long groupChannelUnreadMessageCount) {
     this.groupChannelUnreadMessageCount = groupChannelUnreadMessageCount;
     return this;
   }
@@ -142,19 +141,19 @@ public class ViewNumberOfUnreadItemsResponse {
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getGroupChannelUnreadMessageCount() {
+  public Long getGroupChannelUnreadMessageCount() {
     return groupChannelUnreadMessageCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MESSAGE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroupChannelUnreadMessageCount(BigDecimal groupChannelUnreadMessageCount) {
+  public void setGroupChannelUnreadMessageCount(Long groupChannelUnreadMessageCount) {
     this.groupChannelUnreadMessageCount = groupChannelUnreadMessageCount;
   }
 
 
-  public ViewNumberOfUnreadItemsResponse superGroupChannelInvitationCount(BigDecimal superGroupChannelInvitationCount) {
+  public ViewNumberOfUnreadItemsResponse superGroupChannelInvitationCount(Long superGroupChannelInvitationCount) {
     this.superGroupChannelInvitationCount = superGroupChannelInvitationCount;
     return this;
   }
@@ -168,19 +167,19 @@ public class ViewNumberOfUnreadItemsResponse {
   @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSuperGroupChannelInvitationCount() {
+  public Long getSuperGroupChannelInvitationCount() {
     return superGroupChannelInvitationCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSuperGroupChannelInvitationCount(BigDecimal superGroupChannelInvitationCount) {
+  public void setSuperGroupChannelInvitationCount(Long superGroupChannelInvitationCount) {
     this.superGroupChannelInvitationCount = superGroupChannelInvitationCount;
   }
 
 
-  public ViewNumberOfUnreadItemsResponse groupChannelInvitationCount(BigDecimal groupChannelInvitationCount) {
+  public ViewNumberOfUnreadItemsResponse groupChannelInvitationCount(Long groupChannelInvitationCount) {
     this.groupChannelInvitationCount = groupChannelInvitationCount;
     return this;
   }
@@ -194,19 +193,19 @@ public class ViewNumberOfUnreadItemsResponse {
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_INVITATION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getGroupChannelInvitationCount() {
+  public Long getGroupChannelInvitationCount() {
     return groupChannelInvitationCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_INVITATION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroupChannelInvitationCount(BigDecimal groupChannelInvitationCount) {
+  public void setGroupChannelInvitationCount(Long groupChannelInvitationCount) {
     this.groupChannelInvitationCount = groupChannelInvitationCount;
   }
 
 
-  public ViewNumberOfUnreadItemsResponse superGroupChannelUnreadMentionCount(BigDecimal superGroupChannelUnreadMentionCount) {
+  public ViewNumberOfUnreadItemsResponse superGroupChannelUnreadMentionCount(Long superGroupChannelUnreadMentionCount) {
     this.superGroupChannelUnreadMentionCount = superGroupChannelUnreadMentionCount;
     return this;
   }
@@ -220,19 +219,19 @@ public class ViewNumberOfUnreadItemsResponse {
   @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSuperGroupChannelUnreadMentionCount() {
+  public Long getSuperGroupChannelUnreadMentionCount() {
     return superGroupChannelUnreadMentionCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSuperGroupChannelUnreadMentionCount(BigDecimal superGroupChannelUnreadMentionCount) {
+  public void setSuperGroupChannelUnreadMentionCount(Long superGroupChannelUnreadMentionCount) {
     this.superGroupChannelUnreadMentionCount = superGroupChannelUnreadMentionCount;
   }
 
 
-  public ViewNumberOfUnreadItemsResponse groupChannelUnreadMentionCount(BigDecimal groupChannelUnreadMentionCount) {
+  public ViewNumberOfUnreadItemsResponse groupChannelUnreadMentionCount(Long groupChannelUnreadMentionCount) {
     this.groupChannelUnreadMentionCount = groupChannelUnreadMentionCount;
     return this;
   }
@@ -246,19 +245,19 @@ public class ViewNumberOfUnreadItemsResponse {
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getGroupChannelUnreadMentionCount() {
+  public Long getGroupChannelUnreadMentionCount() {
     return groupChannelUnreadMentionCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroupChannelUnreadMentionCount(BigDecimal groupChannelUnreadMentionCount) {
+  public void setGroupChannelUnreadMentionCount(Long groupChannelUnreadMentionCount) {
     this.groupChannelUnreadMentionCount = groupChannelUnreadMentionCount;
   }
 
 
-  public ViewNumberOfUnreadItemsResponse nonSuperGroupChannelUnreadMentionCount(BigDecimal nonSuperGroupChannelUnreadMentionCount) {
+  public ViewNumberOfUnreadItemsResponse nonSuperGroupChannelUnreadMentionCount(Long nonSuperGroupChannelUnreadMentionCount) {
     this.nonSuperGroupChannelUnreadMentionCount = nonSuperGroupChannelUnreadMentionCount;
     return this;
   }
@@ -272,19 +271,19 @@ public class ViewNumberOfUnreadItemsResponse {
   @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getNonSuperGroupChannelUnreadMentionCount() {
+  public Long getNonSuperGroupChannelUnreadMentionCount() {
     return nonSuperGroupChannelUnreadMentionCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_UNREAD_MENTION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNonSuperGroupChannelUnreadMentionCount(BigDecimal nonSuperGroupChannelUnreadMentionCount) {
+  public void setNonSuperGroupChannelUnreadMentionCount(Long nonSuperGroupChannelUnreadMentionCount) {
     this.nonSuperGroupChannelUnreadMentionCount = nonSuperGroupChannelUnreadMentionCount;
   }
 
 
-  public ViewNumberOfUnreadItemsResponse nonSuperGroupChannelInvitationCount(BigDecimal nonSuperGroupChannelInvitationCount) {
+  public ViewNumberOfUnreadItemsResponse nonSuperGroupChannelInvitationCount(Long nonSuperGroupChannelInvitationCount) {
     this.nonSuperGroupChannelInvitationCount = nonSuperGroupChannelInvitationCount;
     return this;
   }
@@ -298,14 +297,14 @@ public class ViewNumberOfUnreadItemsResponse {
   @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getNonSuperGroupChannelInvitationCount() {
+  public Long getNonSuperGroupChannelInvitationCount() {
     return nonSuperGroupChannelInvitationCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_NON_SUPER_GROUP_CHANNEL_INVITATION_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNonSuperGroupChannelInvitationCount(BigDecimal nonSuperGroupChannelInvitationCount) {
+  public void setNonSuperGroupChannelInvitationCount(Long nonSuperGroupChannelInvitationCount) {
     this.nonSuperGroupChannelInvitationCount = nonSuperGroupChannelInvitationCount;
   }
 

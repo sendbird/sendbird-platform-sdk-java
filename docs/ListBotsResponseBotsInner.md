@@ -12,7 +12,7 @@
 |**enableMarkAsRead** | **Boolean** |  |  [optional] |
 |**isPrivacyMode** | **Boolean** |  |  [optional] |
 |**showMember** | **Boolean** |  |  [optional] |
-|**channelInvitationPreference** | **BigDecimal** |  |  [optional] |
+|**channelInvitationPreference** | **Integer** |  |  [optional] |
 
 
 

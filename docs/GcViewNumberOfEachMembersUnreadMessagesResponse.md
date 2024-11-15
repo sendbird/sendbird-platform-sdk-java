@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**unread** | **Map&lt;String, BigDecimal&gt;** |  |  [optional] |
+|**unread** | **Map&lt;String, Long&gt;** |  |  [optional] |
 
 
 

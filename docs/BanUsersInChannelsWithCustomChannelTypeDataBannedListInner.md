@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**userId** | **String** |  |  |
-|**seconds** | **BigDecimal** |  |  [optional] |
+|**seconds** | **Long** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 
 

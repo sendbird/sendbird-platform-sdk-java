@@ -12,18 +12,18 @@
 |**message** | [**ScheduleAnnouncementResponseMessage**](ScheduleAnnouncementResponseMessage.md) |  |  [optional] |
 |**enablePush** | **Boolean** |  |  [optional] |
 |**targetAt** | **String** |  |  [optional] |
-|**targetUserCount** | **BigDecimal** |  |  [optional] |
-|**targetChannelCount** | **BigDecimal** |  |  [optional] |
+|**targetUserCount** | **Long** |  |  [optional] |
+|**targetChannelCount** | **Long** |  |  [optional] |
 |**targetChannelType** | **String** |  |  [optional] |
 |**createChannelOptions** | [**ScheduleAnnouncementResponseCreateChannelOptions**](ScheduleAnnouncementResponseCreateChannelOptions.md) |  |  [optional] |
 |**status** | **String** |  |  [optional] |
-|**scheduledAt** | **BigDecimal** |  |  [optional] |
+|**scheduledAt** | **Long** |  |  [optional] |
 |**ceaseAt** | **String** |  |  [optional] |
 |**resumeAt** | **String** |  |  [optional] |
-|**completedAt** | **BigDecimal** |  |  [optional] |
-|**sentUserCount** | **BigDecimal** |  |  [optional] |
-|**sentChannelCount** | **BigDecimal** |  |  [optional] |
-|**openCount** | **BigDecimal** |  |  [optional] |
+|**completedAt** | **Long** |  |  [optional] |
+|**sentUserCount** | **Long** |  |  [optional] |
+|**sentChannelCount** | **Long** |  |  [optional] |
+|**openCount** | **Long** |  |  [optional] |
 |**openRate** | **BigDecimal** |  |  [optional] |
 
 

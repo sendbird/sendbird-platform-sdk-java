@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -51,19 +50,19 @@ import org.sendbird.client.JSON;
   ViewPushPreferencesResponse.JSON_PROPERTY_PUSH_TRIGGER_OPTION
 })
 @JsonTypeName("viewPushPreferencesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ViewPushPreferencesResponse {
   public static final String JSON_PROPERTY_SNOOZE_START_TS = "snooze_start_ts";
   private String snoozeStartTs;
 
   public static final String JSON_PROPERTY_START_HOUR = "start_hour";
-  private BigDecimal startHour;
+  private Long startHour;
 
   public static final String JSON_PROPERTY_SNOOZE_ENABLED = "snooze_enabled";
   private Boolean snoozeEnabled;
 
   public static final String JSON_PROPERTY_END_MIN = "end_min";
-  private BigDecimal endMin;
+  private Long endMin;
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;
@@ -75,7 +74,7 @@ public class ViewPushPreferencesResponse {
   private List<String> pushBlockedBotIds = null;
 
   public static final String JSON_PROPERTY_START_MIN = "start_min";
-  private BigDecimal startMin;
+  private Long startMin;
 
   public static final String JSON_PROPERTY_SNOOZE_END_TS = "snooze_end_ts";
   private String snoozeEndTs;
@@ -84,7 +83,7 @@ public class ViewPushPreferencesResponse {
   private Boolean doNotDisturb;
 
   public static final String JSON_PROPERTY_END_HOUR = "end_hour";
-  private BigDecimal endHour;
+  private Long endHour;
 
   public static final String JSON_PROPERTY_ENABLE_PUSH_FOR_REPLIES = "enable_push_for_replies";
   private Boolean enablePushForReplies;
@@ -124,7 +123,7 @@ public class ViewPushPreferencesResponse {
   }
 
 
-  public ViewPushPreferencesResponse startHour(BigDecimal startHour) {
+  public ViewPushPreferencesResponse startHour(Long startHour) {
     this.startHour = startHour;
     return this;
   }
@@ -138,14 +137,14 @@ public class ViewPushPreferencesResponse {
   @JsonProperty(JSON_PROPERTY_START_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getStartHour() {
+  public Long getStartHour() {
     return startHour;
   }
 
 
   @JsonProperty(JSON_PROPERTY_START_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartHour(BigDecimal startHour) {
+  public void setStartHour(Long startHour) {
     this.startHour = startHour;
   }
 
@@ -176,7 +175,7 @@ public class ViewPushPreferencesResponse {
   }
 
 
-  public ViewPushPreferencesResponse endMin(BigDecimal endMin) {
+  public ViewPushPreferencesResponse endMin(Long endMin) {
     this.endMin = endMin;
     return this;
   }
@@ -190,14 +189,14 @@ public class ViewPushPreferencesResponse {
   @JsonProperty(JSON_PROPERTY_END_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getEndMin() {
+  public Long getEndMin() {
     return endMin;
   }
 
 
   @JsonProperty(JSON_PROPERTY_END_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndMin(BigDecimal endMin) {
+  public void setEndMin(Long endMin) {
     this.endMin = endMin;
   }
 
@@ -288,7 +287,7 @@ public class ViewPushPreferencesResponse {
   }
 
 
-  public ViewPushPreferencesResponse startMin(BigDecimal startMin) {
+  public ViewPushPreferencesResponse startMin(Long startMin) {
     this.startMin = startMin;
     return this;
   }
@@ -302,14 +301,14 @@ public class ViewPushPreferencesResponse {
   @JsonProperty(JSON_PROPERTY_START_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getStartMin() {
+  public Long getStartMin() {
     return startMin;
   }
 
 
   @JsonProperty(JSON_PROPERTY_START_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartMin(BigDecimal startMin) {
+  public void setStartMin(Long startMin) {
     this.startMin = startMin;
   }
 
@@ -366,7 +365,7 @@ public class ViewPushPreferencesResponse {
   }
 
 
-  public ViewPushPreferencesResponse endHour(BigDecimal endHour) {
+  public ViewPushPreferencesResponse endHour(Long endHour) {
     this.endHour = endHour;
     return this;
   }
@@ -380,14 +379,14 @@ public class ViewPushPreferencesResponse {
   @JsonProperty(JSON_PROPERTY_END_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getEndHour() {
+  public Long getEndHour() {
     return endHour;
   }
 
 
   @JsonProperty(JSON_PROPERTY_END_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndHour(BigDecimal endHour) {
+  public void setEndHour(Long endHour) {
     this.endHour = endHour;
   }
 

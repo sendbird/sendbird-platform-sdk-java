@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -37,18 +36,18 @@ import org.sendbird.client.JSON;
   SendBirdPollUpdatedVoteCount.JSON_PROPERTY_VOTE_COUNT
 })
 @JsonTypeName("SendBird.PollUpdatedVoteCount")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdPollUpdatedVoteCount {
   public static final String JSON_PROPERTY_OPTION_ID = "option_id";
-  private BigDecimal optionId;
+  private Long optionId;
 
   public static final String JSON_PROPERTY_VOTE_COUNT = "vote_count";
-  private BigDecimal voteCount;
+  private Long voteCount;
 
   public SendBirdPollUpdatedVoteCount() { 
   }
 
-  public SendBirdPollUpdatedVoteCount optionId(BigDecimal optionId) {
+  public SendBirdPollUpdatedVoteCount optionId(Long optionId) {
     this.optionId = optionId;
     return this;
   }
@@ -62,19 +61,19 @@ public class SendBirdPollUpdatedVoteCount {
   @JsonProperty(JSON_PROPERTY_OPTION_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getOptionId() {
+  public Long getOptionId() {
     return optionId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OPTION_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOptionId(BigDecimal optionId) {
+  public void setOptionId(Long optionId) {
     this.optionId = optionId;
   }
 
 
-  public SendBirdPollUpdatedVoteCount voteCount(BigDecimal voteCount) {
+  public SendBirdPollUpdatedVoteCount voteCount(Long voteCount) {
     this.voteCount = voteCount;
     return this;
   }
@@ -88,14 +87,14 @@ public class SendBirdPollUpdatedVoteCount {
   @JsonProperty(JSON_PROPERTY_VOTE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getVoteCount() {
+  public Long getVoteCount() {
     return voteCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_VOTE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVoteCount(BigDecimal voteCount) {
+  public void setVoteCount(Long voteCount) {
     this.voteCount = voteCount;
   }
 

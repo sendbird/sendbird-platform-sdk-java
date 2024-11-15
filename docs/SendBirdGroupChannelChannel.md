@@ -11,10 +11,10 @@
 |**name** | **String** |  |  [optional] |
 |**coverUrl** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
 |**customType** | **String** |  |  [optional] |
-|**maxLengthMessage** | **BigDecimal** |  |  [optional] |
-|**memberCount** | **BigDecimal** |  |  [optional] |
+|**maxLengthMessage** | **Long** |  |  [optional] |
+|**memberCount** | **Long** |  |  [optional] |
 
 
 

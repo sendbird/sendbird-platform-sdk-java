@@ -10,8 +10,8 @@
 |**userId** | **String** |  |  [optional] |
 |**channelUrl** | **String** |  |  [optional] |
 |**hasOpened** | **Boolean** |  |  [optional] |
-|**sentAt** | **BigDecimal** |  |  [optional] |
-|**openAt** | **BigDecimal** |  |  [optional] |
+|**sentAt** | **Long** |  |  [optional] |
+|**openAt** | **Long** |  |  [optional] |
 
 
 

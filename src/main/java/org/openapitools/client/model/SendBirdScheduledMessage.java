@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -38,10 +37,10 @@ import org.sendbird.client.JSON;
   SendBirdScheduledMessage.JSON_PROPERTY_MESSAGE
 })
 @JsonTypeName("SendBird.ScheduledMessage")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdScheduledMessage {
   public static final String JSON_PROPERTY_SCHEDULED_MESSAGE_ID = "scheduled_message_id";
-  private BigDecimal scheduledMessageId;
+  private Long scheduledMessageId;
 
   public static final String JSON_PROPERTY_MESSAGE_TYPE = "message_type";
   private String messageType;
@@ -52,7 +51,7 @@ public class SendBirdScheduledMessage {
   public SendBirdScheduledMessage() { 
   }
 
-  public SendBirdScheduledMessage scheduledMessageId(BigDecimal scheduledMessageId) {
+  public SendBirdScheduledMessage scheduledMessageId(Long scheduledMessageId) {
     this.scheduledMessageId = scheduledMessageId;
     return this;
   }
@@ -66,14 +65,14 @@ public class SendBirdScheduledMessage {
   @JsonProperty(JSON_PROPERTY_SCHEDULED_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getScheduledMessageId() {
+  public Long getScheduledMessageId() {
     return scheduledMessageId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SCHEDULED_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setScheduledMessageId(BigDecimal scheduledMessageId) {
+  public void setScheduledMessageId(Long scheduledMessageId) {
     this.scheduledMessageId = scheduledMessageId;
   }
 

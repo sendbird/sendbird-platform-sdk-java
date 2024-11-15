@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import org.openapitools.client.model.SendBirdChannelResponse;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
@@ -40,10 +39,10 @@ import org.sendbird.client.JSON;
   ListBannedChannelsResponseBannedChannelsInner.JSON_PROPERTY_END_AT
 })
 @JsonTypeName("listBannedChannelsResponse_banned_channels_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ListBannedChannelsResponseBannedChannelsInner {
   public static final String JSON_PROPERTY_START_AT = "start_at";
-  private BigDecimal startAt;
+  private Long startAt;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -52,12 +51,12 @@ public class ListBannedChannelsResponseBannedChannelsInner {
   private SendBirdChannelResponse channel;
 
   public static final String JSON_PROPERTY_END_AT = "end_at";
-  private BigDecimal endAt;
+  private Long endAt;
 
   public ListBannedChannelsResponseBannedChannelsInner() { 
   }
 
-  public ListBannedChannelsResponseBannedChannelsInner startAt(BigDecimal startAt) {
+  public ListBannedChannelsResponseBannedChannelsInner startAt(Long startAt) {
     this.startAt = startAt;
     return this;
   }
@@ -71,14 +70,14 @@ public class ListBannedChannelsResponseBannedChannelsInner {
   @JsonProperty(JSON_PROPERTY_START_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getStartAt() {
+  public Long getStartAt() {
     return startAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_START_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartAt(BigDecimal startAt) {
+  public void setStartAt(Long startAt) {
     this.startAt = startAt;
   }
 
@@ -135,7 +134,7 @@ public class ListBannedChannelsResponseBannedChannelsInner {
   }
 
 
-  public ListBannedChannelsResponseBannedChannelsInner endAt(BigDecimal endAt) {
+  public ListBannedChannelsResponseBannedChannelsInner endAt(Long endAt) {
     this.endAt = endAt;
     return this;
   }
@@ -149,14 +148,14 @@ public class ListBannedChannelsResponseBannedChannelsInner {
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getEndAt() {
+  public Long getEndAt() {
     return endAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndAt(BigDecimal endAt) {
+  public void setEndAt(Long endAt) {
     this.endAt = endAt;
   }
 

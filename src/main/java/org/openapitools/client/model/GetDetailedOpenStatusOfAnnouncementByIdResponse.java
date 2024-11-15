@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   GetDetailedOpenStatusOfAnnouncementByIdResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("getDetailedOpenStatusOfAnnouncementByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class GetDetailedOpenStatusOfAnnouncementByIdResponse {
   public static final String JSON_PROPERTY_OPEN_STATUS = "open_status";
   private List<GetDetailedOpenStatusOfAnnouncementByIdResponseOpenStatusInner> openStatus = null;

@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -45,7 +44,7 @@ import org.sendbird.client.JSON;
   AddApnsPushConfigurationResponsePushConfigurationsInner.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("addApnsPushConfigurationResponse_push_configurations_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -54,19 +53,19 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   private String pushType;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private BigDecimal createdAt;
+  private Long createdAt;
 
   public static final String JSON_PROPERTY_APNS_CER_ENV_TYPE = "apns_cer_env_type";
   private String apnsCerEnvType;
 
   public static final String JSON_PROPERTY_APNS_EXPIRATION = "apns_expiration";
-  private BigDecimal apnsExpiration;
+  private Long apnsExpiration;
 
   public static final String JSON_PROPERTY_APNS_NAME = "apns_name";
   private String apnsName;
 
   public static final String JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE = "has_unread_count_badge";
-  private BigDecimal hasUnreadCountBadge;
+  private Long hasUnreadCountBadge;
 
   public static final String JSON_PROPERTY_CONTENT_AVAILABLE = "content_available";
   private Boolean contentAvailable;
@@ -132,7 +131,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   }
 
 
-  public AddApnsPushConfigurationResponsePushConfigurationsInner createdAt(BigDecimal createdAt) {
+  public AddApnsPushConfigurationResponsePushConfigurationsInner createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -146,14 +145,14 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCreatedAt() {
+  public Long getCreatedAt() {
     return createdAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(BigDecimal createdAt) {
+  public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -184,7 +183,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   }
 
 
-  public AddApnsPushConfigurationResponsePushConfigurationsInner apnsExpiration(BigDecimal apnsExpiration) {
+  public AddApnsPushConfigurationResponsePushConfigurationsInner apnsExpiration(Long apnsExpiration) {
     this.apnsExpiration = apnsExpiration;
     return this;
   }
@@ -198,14 +197,14 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   @JsonProperty(JSON_PROPERTY_APNS_EXPIRATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getApnsExpiration() {
+  public Long getApnsExpiration() {
     return apnsExpiration;
   }
 
 
   @JsonProperty(JSON_PROPERTY_APNS_EXPIRATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setApnsExpiration(BigDecimal apnsExpiration) {
+  public void setApnsExpiration(Long apnsExpiration) {
     this.apnsExpiration = apnsExpiration;
   }
 
@@ -236,7 +235,7 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   }
 
 
-  public AddApnsPushConfigurationResponsePushConfigurationsInner hasUnreadCountBadge(BigDecimal hasUnreadCountBadge) {
+  public AddApnsPushConfigurationResponsePushConfigurationsInner hasUnreadCountBadge(Long hasUnreadCountBadge) {
     this.hasUnreadCountBadge = hasUnreadCountBadge;
     return this;
   }
@@ -250,14 +249,14 @@ public class AddApnsPushConfigurationResponsePushConfigurationsInner {
   @JsonProperty(JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getHasUnreadCountBadge() {
+  public Long getHasUnreadCountBadge() {
     return hasUnreadCountBadge;
   }
 
 
   @JsonProperty(JSON_PROPERTY_HAS_UNREAD_COUNT_BADGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHasUnreadCountBadge(BigDecimal hasUnreadCountBadge) {
+  public void setHasUnreadCountBadge(Long hasUnreadCountBadge) {
     this.hasUnreadCountBadge = hasUnreadCountBadge;
   }
 

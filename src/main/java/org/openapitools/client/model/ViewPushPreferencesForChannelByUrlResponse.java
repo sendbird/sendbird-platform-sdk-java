@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -47,7 +46,7 @@ import org.sendbird.client.JSON;
   ViewPushPreferencesForChannelByUrlResponse.JSON_PROPERTY_ENABLE
 })
 @JsonTypeName("viewPushPreferencesForChannelByUrlResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class ViewPushPreferencesForChannelByUrlResponse {
   public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
   private String pushTriggerOption;
@@ -56,25 +55,25 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   private Boolean doNotDisturb;
 
   public static final String JSON_PROPERTY_START_HOUR = "start_hour";
-  private BigDecimal startHour;
+  private Long startHour;
 
   public static final String JSON_PROPERTY_START_MIN = "start_min";
-  private BigDecimal startMin;
+  private Long startMin;
 
   public static final String JSON_PROPERTY_END_HOUR = "end_hour";
-  private BigDecimal endHour;
+  private Long endHour;
 
   public static final String JSON_PROPERTY_END_MIN = "end_min";
-  private BigDecimal endMin;
+  private Long endMin;
 
   public static final String JSON_PROPERTY_SNOOZE_ENABLED = "snooze_enabled";
   private Boolean snoozeEnabled;
 
   public static final String JSON_PROPERTY_SNOOZE_START_TS = "snooze_start_ts";
-  private BigDecimal snoozeStartTs;
+  private Long snoozeStartTs;
 
   public static final String JSON_PROPERTY_SNOOZE_END_TS = "snooze_end_ts";
-  private BigDecimal snoozeEndTs;
+  private Long snoozeEndTs;
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;
@@ -140,7 +139,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   }
 
 
-  public ViewPushPreferencesForChannelByUrlResponse startHour(BigDecimal startHour) {
+  public ViewPushPreferencesForChannelByUrlResponse startHour(Long startHour) {
     this.startHour = startHour;
     return this;
   }
@@ -154,19 +153,19 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   @JsonProperty(JSON_PROPERTY_START_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getStartHour() {
+  public Long getStartHour() {
     return startHour;
   }
 
 
   @JsonProperty(JSON_PROPERTY_START_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartHour(BigDecimal startHour) {
+  public void setStartHour(Long startHour) {
     this.startHour = startHour;
   }
 
 
-  public ViewPushPreferencesForChannelByUrlResponse startMin(BigDecimal startMin) {
+  public ViewPushPreferencesForChannelByUrlResponse startMin(Long startMin) {
     this.startMin = startMin;
     return this;
   }
@@ -180,19 +179,19 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   @JsonProperty(JSON_PROPERTY_START_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getStartMin() {
+  public Long getStartMin() {
     return startMin;
   }
 
 
   @JsonProperty(JSON_PROPERTY_START_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartMin(BigDecimal startMin) {
+  public void setStartMin(Long startMin) {
     this.startMin = startMin;
   }
 
 
-  public ViewPushPreferencesForChannelByUrlResponse endHour(BigDecimal endHour) {
+  public ViewPushPreferencesForChannelByUrlResponse endHour(Long endHour) {
     this.endHour = endHour;
     return this;
   }
@@ -206,19 +205,19 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   @JsonProperty(JSON_PROPERTY_END_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getEndHour() {
+  public Long getEndHour() {
     return endHour;
   }
 
 
   @JsonProperty(JSON_PROPERTY_END_HOUR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndHour(BigDecimal endHour) {
+  public void setEndHour(Long endHour) {
     this.endHour = endHour;
   }
 
 
-  public ViewPushPreferencesForChannelByUrlResponse endMin(BigDecimal endMin) {
+  public ViewPushPreferencesForChannelByUrlResponse endMin(Long endMin) {
     this.endMin = endMin;
     return this;
   }
@@ -232,14 +231,14 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   @JsonProperty(JSON_PROPERTY_END_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getEndMin() {
+  public Long getEndMin() {
     return endMin;
   }
 
 
   @JsonProperty(JSON_PROPERTY_END_MIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndMin(BigDecimal endMin) {
+  public void setEndMin(Long endMin) {
     this.endMin = endMin;
   }
 
@@ -270,7 +269,7 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   }
 
 
-  public ViewPushPreferencesForChannelByUrlResponse snoozeStartTs(BigDecimal snoozeStartTs) {
+  public ViewPushPreferencesForChannelByUrlResponse snoozeStartTs(Long snoozeStartTs) {
     this.snoozeStartTs = snoozeStartTs;
     return this;
   }
@@ -284,19 +283,19 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSnoozeStartTs() {
+  public Long getSnoozeStartTs() {
     return snoozeStartTs;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSnoozeStartTs(BigDecimal snoozeStartTs) {
+  public void setSnoozeStartTs(Long snoozeStartTs) {
     this.snoozeStartTs = snoozeStartTs;
   }
 
 
-  public ViewPushPreferencesForChannelByUrlResponse snoozeEndTs(BigDecimal snoozeEndTs) {
+  public ViewPushPreferencesForChannelByUrlResponse snoozeEndTs(Long snoozeEndTs) {
     this.snoozeEndTs = snoozeEndTs;
     return this;
   }
@@ -310,14 +309,14 @@ public class ViewPushPreferencesForChannelByUrlResponse {
   @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSnoozeEndTs() {
+  public Long getSnoozeEndTs() {
     return snoozeEndTs;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSnoozeEndTs(BigDecimal snoozeEndTs) {
+  public void setSnoozeEndTs(Long snoozeEndTs) {
     this.snoozeEndTs = snoozeEndTs;
   }
 

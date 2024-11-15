@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   AddRegistrationOrDeviceTokenResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("addRegistrationOrDeviceTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class AddRegistrationOrDeviceTokenResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private String token;

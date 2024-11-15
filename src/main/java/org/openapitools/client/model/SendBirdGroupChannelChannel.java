@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -43,7 +42,7 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannelChannel.JSON_PROPERTY_MEMBER_COUNT
 })
 @JsonTypeName("SendBird_GroupChannel_channel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdGroupChannelChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -58,16 +57,16 @@ public class SendBirdGroupChannelChannel {
   private String data;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private BigDecimal createdAt;
+  private Long createdAt;
 
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
   public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
-  private BigDecimal maxLengthMessage;
+  private Long maxLengthMessage;
 
   public static final String JSON_PROPERTY_MEMBER_COUNT = "member_count";
-  private BigDecimal memberCount;
+  private Long memberCount;
 
   public SendBirdGroupChannelChannel() { 
   }
@@ -176,7 +175,7 @@ public class SendBirdGroupChannelChannel {
   }
 
 
-  public SendBirdGroupChannelChannel createdAt(BigDecimal createdAt) {
+  public SendBirdGroupChannelChannel createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -190,14 +189,14 @@ public class SendBirdGroupChannelChannel {
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCreatedAt() {
+  public Long getCreatedAt() {
     return createdAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(BigDecimal createdAt) {
+  public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -228,7 +227,7 @@ public class SendBirdGroupChannelChannel {
   }
 
 
-  public SendBirdGroupChannelChannel maxLengthMessage(BigDecimal maxLengthMessage) {
+  public SendBirdGroupChannelChannel maxLengthMessage(Long maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
     return this;
   }
@@ -242,19 +241,19 @@ public class SendBirdGroupChannelChannel {
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMaxLengthMessage() {
+  public Long getMaxLengthMessage() {
     return maxLengthMessage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxLengthMessage(BigDecimal maxLengthMessage) {
+  public void setMaxLengthMessage(Long maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
   }
 
 
-  public SendBirdGroupChannelChannel memberCount(BigDecimal memberCount) {
+  public SendBirdGroupChannelChannel memberCount(Long memberCount) {
     this.memberCount = memberCount;
     return this;
   }
@@ -268,14 +267,14 @@ public class SendBirdGroupChannelChannel {
   @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMemberCount() {
+  public Long getMemberCount() {
     return memberCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMemberCount(BigDecimal memberCount) {
+  public void setMemberCount(Long memberCount) {
     this.memberCount = memberCount;
   }
 

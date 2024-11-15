@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -40,19 +39,19 @@ import org.sendbird.client.JSON;
   GcViewMuteByIdResponse.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("gcViewMuteByIdResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class GcViewMuteByIdResponse {
   public static final String JSON_PROPERTY_IS_MUTED = "is_muted";
   private Boolean isMuted;
 
   public static final String JSON_PROPERTY_REMAINING_DURATION = "remaining_duration";
-  private BigDecimal remainingDuration;
+  private Long remainingDuration;
 
   public static final String JSON_PROPERTY_START_AT = "start_at";
-  private BigDecimal startAt;
+  private Long startAt;
 
   public static final String JSON_PROPERTY_END_AT = "end_at";
-  private BigDecimal endAt;
+  private Long endAt;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -86,7 +85,7 @@ public class GcViewMuteByIdResponse {
   }
 
 
-  public GcViewMuteByIdResponse remainingDuration(BigDecimal remainingDuration) {
+  public GcViewMuteByIdResponse remainingDuration(Long remainingDuration) {
     this.remainingDuration = remainingDuration;
     return this;
   }
@@ -100,19 +99,19 @@ public class GcViewMuteByIdResponse {
   @JsonProperty(JSON_PROPERTY_REMAINING_DURATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getRemainingDuration() {
+  public Long getRemainingDuration() {
     return remainingDuration;
   }
 
 
   @JsonProperty(JSON_PROPERTY_REMAINING_DURATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRemainingDuration(BigDecimal remainingDuration) {
+  public void setRemainingDuration(Long remainingDuration) {
     this.remainingDuration = remainingDuration;
   }
 
 
-  public GcViewMuteByIdResponse startAt(BigDecimal startAt) {
+  public GcViewMuteByIdResponse startAt(Long startAt) {
     this.startAt = startAt;
     return this;
   }
@@ -126,19 +125,19 @@ public class GcViewMuteByIdResponse {
   @JsonProperty(JSON_PROPERTY_START_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getStartAt() {
+  public Long getStartAt() {
     return startAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_START_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartAt(BigDecimal startAt) {
+  public void setStartAt(Long startAt) {
     this.startAt = startAt;
   }
 
 
-  public GcViewMuteByIdResponse endAt(BigDecimal endAt) {
+  public GcViewMuteByIdResponse endAt(Long endAt) {
     this.endAt = endAt;
     return this;
   }
@@ -152,14 +151,14 @@ public class GcViewMuteByIdResponse {
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getEndAt() {
+  public Long getEndAt() {
     return endAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_END_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndAt(BigDecimal endAt) {
+  public void setEndAt(Long endAt) {
     this.endAt = endAt;
   }
 

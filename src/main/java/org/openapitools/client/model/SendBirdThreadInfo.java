@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdUser;
@@ -42,24 +41,24 @@ import org.sendbird.client.JSON;
   SendBirdThreadInfo.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("SendBird.ThreadInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdThreadInfo {
   public static final String JSON_PROPERTY_LAST_REPLIED_AT = "last_replied_at";
-  private BigDecimal lastRepliedAt;
+  private Long lastRepliedAt;
 
   public static final String JSON_PROPERTY_MOST_REPLIED_USERS = "most_replied_users";
   private List<SendBirdUser> mostRepliedUsers = null;
 
   public static final String JSON_PROPERTY_REPLY_COUNT = "reply_count";
-  private BigDecimal replyCount;
+  private Long replyCount;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
-  private BigDecimal updatedAt;
+  private Long updatedAt;
 
   public SendBirdThreadInfo() { 
   }
 
-  public SendBirdThreadInfo lastRepliedAt(BigDecimal lastRepliedAt) {
+  public SendBirdThreadInfo lastRepliedAt(Long lastRepliedAt) {
     this.lastRepliedAt = lastRepliedAt;
     return this;
   }
@@ -73,14 +72,14 @@ public class SendBirdThreadInfo {
   @JsonProperty(JSON_PROPERTY_LAST_REPLIED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getLastRepliedAt() {
+  public Long getLastRepliedAt() {
     return lastRepliedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LAST_REPLIED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastRepliedAt(BigDecimal lastRepliedAt) {
+  public void setLastRepliedAt(Long lastRepliedAt) {
     this.lastRepliedAt = lastRepliedAt;
   }
 
@@ -119,7 +118,7 @@ public class SendBirdThreadInfo {
   }
 
 
-  public SendBirdThreadInfo replyCount(BigDecimal replyCount) {
+  public SendBirdThreadInfo replyCount(Long replyCount) {
     this.replyCount = replyCount;
     return this;
   }
@@ -133,19 +132,19 @@ public class SendBirdThreadInfo {
   @JsonProperty(JSON_PROPERTY_REPLY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getReplyCount() {
+  public Long getReplyCount() {
     return replyCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_REPLY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReplyCount(BigDecimal replyCount) {
+  public void setReplyCount(Long replyCount) {
     this.replyCount = replyCount;
   }
 
 
-  public SendBirdThreadInfo updatedAt(BigDecimal updatedAt) {
+  public SendBirdThreadInfo updatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -159,14 +158,14 @@ public class SendBirdThreadInfo {
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getUpdatedAt() {
+  public Long getUpdatedAt() {
     return updatedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpdatedAt(BigDecimal updatedAt) {
+  public void setUpdatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 

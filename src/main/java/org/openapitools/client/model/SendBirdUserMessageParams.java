@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendBirdAppleCriticalAlertOptions;
@@ -55,7 +54,7 @@ import org.sendbird.client.JSON;
   SendBirdUserMessageParams.JSON_PROPERTY_TRANSLATION_TARGET_LANGUAGES
 })
 @JsonTypeName("SendBird.UserMessageParams")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T18:01:54.454759+09:00[Asia/Seoul]")
 public class SendBirdUserMessageParams {
   public static final String JSON_PROPERTY_APPLE_CRITICAL_ALERT_OPTIONS = "apple_critical_alert_options";
   private SendBirdAppleCriticalAlertOptions appleCriticalAlertOptions;
@@ -123,10 +122,10 @@ public class SendBirdUserMessageParams {
   private List<SendBirdMessageMetaArray> metaArrays = null;
 
   public static final String JSON_PROPERTY_PARENT_MESSAGE_ID = "parent_message_id";
-  private BigDecimal parentMessageId;
+  private Long parentMessageId;
 
   public static final String JSON_PROPERTY_POLL_ID = "poll_id";
-  private BigDecimal pollId;
+  private Long pollId;
 
   /**
    * Gets or Sets pushNotificationDeliveryOption
@@ -467,7 +466,7 @@ public class SendBirdUserMessageParams {
   }
 
 
-  public SendBirdUserMessageParams parentMessageId(BigDecimal parentMessageId) {
+  public SendBirdUserMessageParams parentMessageId(Long parentMessageId) {
     this.parentMessageId = parentMessageId;
     return this;
   }
@@ -481,19 +480,19 @@ public class SendBirdUserMessageParams {
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getParentMessageId() {
+  public Long getParentMessageId() {
     return parentMessageId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentMessageId(BigDecimal parentMessageId) {
+  public void setParentMessageId(Long parentMessageId) {
     this.parentMessageId = parentMessageId;
   }
 
 
-  public SendBirdUserMessageParams pollId(BigDecimal pollId) {
+  public SendBirdUserMessageParams pollId(Long pollId) {
     this.pollId = pollId;
     return this;
   }
@@ -507,14 +506,14 @@ public class SendBirdUserMessageParams {
   @JsonProperty(JSON_PROPERTY_POLL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getPollId() {
+  public Long getPollId() {
     return pollId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_POLL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPollId(BigDecimal pollId) {
+  public void setPollId(Long pollId) {
     this.pollId = pollId;
   }
 
