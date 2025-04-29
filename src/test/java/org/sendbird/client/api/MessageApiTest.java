@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -15,38 +15,16 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.*;
 import org.sendbird.client.auth.*;
-import org.openapitools.client.model.AddEmojiCategoriesResponse;
-import org.openapitools.client.model.AddEmojisData;
-import org.openapitools.client.model.AddEmojisResponse;
-import org.openapitools.client.model.AddExtraDataToMessageData;
-import org.openapitools.client.model.AddExtraDataToMessageResponse;
-import org.openapitools.client.model.AddReactionToAMessageData;
-import org.openapitools.client.model.AddReactionToAMessageResponse;
-import org.openapitools.client.model.EnableReactionsData;
-import org.openapitools.client.model.EnableReactionsResponse;
-import org.openapitools.client.model.GcMarkAllMessagesAsDeliveredData;
-import org.openapitools.client.model.GcMarkAllMessagesAsDeliveredResponse;
-import org.openapitools.client.model.GcMarkAllMessagesAsReadData;
-import org.openapitools.client.model.GcViewNumberOfEachMembersUnreadMessagesResponse;
-import org.openapitools.client.model.ListAllEmojisAndEmojiCategoriesResponse;
-import org.openapitools.client.model.ListAnnouncementsResponse;
-import org.openapitools.client.model.ListEmojisResponse;
+import org.openapitools.client.model.AddExtraDataToAMessageRequest;
+import org.openapitools.client.model.AddExtraDataToAMessageResponse;
+import org.openapitools.client.model.GetTotalNumberOfMessagesInAChannelResponse;
 import org.openapitools.client.model.ListMessagesResponse;
-import org.openapitools.client.model.ListReactionsOfMessageResponse;
-import org.openapitools.client.model.RemoveReactionFromAMessageResponse;
-import org.openapitools.client.model.SendBirdEmoji;
-import org.openapitools.client.model.SendBirdEmojiCategory;
-import org.openapitools.client.model.SendBirdMessageResponse;
-import org.openapitools.client.model.SendMessageData;
-import org.openapitools.client.model.TranslateMessageIntoOtherLanguagesData;
-import org.openapitools.client.model.UpdateEmojiCategoryUrlByIdData;
-import org.openapitools.client.model.UpdateEmojiUrlByKeyData;
-import org.openapitools.client.model.UpdateExtraDataInMessageData;
-import org.openapitools.client.model.UpdateExtraDataInMessageResponse;
-import org.openapitools.client.model.UpdateMessageByIdData;
-import org.openapitools.client.model.UseDefaultEmojisData;
-import org.openapitools.client.model.UseDefaultEmojisResponse;
-import org.openapitools.client.model.ViewTotalNumberOfMessagesInChannelResponse;
+import org.openapitools.client.model.MarkChannelMessagesAsReadRequest;
+import org.openapitools.client.model.SendAMessageRequest;
+import org.openapitools.client.model.SendbirdMessageResponse;
+import org.openapitools.client.model.UpdateAMessageRequest;
+import org.openapitools.client.model.UpdateExtraDataInAMessageRequest;
+import org.openapitools.client.model.UpdateExtraDataInAMessageResponse;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -65,113 +43,22 @@ public class MessageApiTest {
     private final MessageApi api = new MessageApi();
 
     /**
-     * Add emoji categories
-     *
-     * ## Add emoji categories  Adds a list of one or more new emoji categories to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emoji-categories
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void addEmojiCategoriesTest() throws ApiException {
-        //String apiToken = null;
-        //Object body = null;
-        //AddEmojiCategoriesResponse response = api.addEmojiCategories()
-        //        .apiToken(apiToken)
-        //        .body(body)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Add emojis
-     *
-     * ## Add emojis  Adds a list of one or more new emojis to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-add-emojis
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void addEmojisTest() throws ApiException {
-        //String apiToken = null;
-        //AddEmojisData addEmojisData = null;
-        //AddEmojisResponse response = api.addEmojis()
-        //        .apiToken(apiToken)
-        //        .addEmojisData(addEmojisData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
      * Add extra data to a message
      *
-     * ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-extra-data-to-a-message ----------------------------
+     * ## Add extra data to a message  Adds one or more key-values items which store additional information for a message.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/message-add-metadata#1-add-metadata ----------------------------
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void addExtraDataToMessageTest() throws ApiException {
-        //String apiToken = null;
+    public void addExtraDataToAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
         //String messageId = null;
-        //AddExtraDataToMessageData addExtraDataToMessageData = null;
-        //AddExtraDataToMessageResponse response = api.addExtraDataToMessage(channelType, channelUrl, messageId)
-        //        .apiToken(apiToken)
-        //        .addExtraDataToMessageData(addExtraDataToMessageData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Add a reaction to a message
-     *
-     * ## Add a reaction to a message  Adds a specific reaction to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-add-a-reaction-to-a-message ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void addReactionToAMessageTest() throws ApiException {
         //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String messageId = null;
-        //AddReactionToAMessageData addReactionToAMessageData = null;
-        //AddReactionToAMessageResponse response = api.addReactionToAMessage(channelType, channelUrl, messageId)
+        //AddExtraDataToAMessageRequest addExtraDataToAMessageRequest = null;
+        //AddExtraDataToAMessageResponse response = api.addExtraDataToAMessage(channelType, channelUrl, messageId)
         //        .apiToken(apiToken)
-        //        .addReactionToAMessageData(addReactionToAMessageData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Delete an emoji
-     *
-     * ## Delete an emoji  Deletes an emoji from the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteEmojiByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String emojiKey = null;
-        //api.deleteEmojiByKey(emojiKey)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Delete an emoji category
-     *
-     * ## Delete an emoji category  Deletes an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-delete-an-emoji-category ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteEmojiCategoryByIdTest() throws ApiException {
-        //String apiToken = null;
-        //String emojiCategoryId = null;
-        //Object response = api.deleteEmojiCategoryById(emojiCategoryId)
-        //        .apiToken(apiToken)
+        //        .addExtraDataToAMessageRequest(addExtraDataToAMessageRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -179,184 +66,64 @@ public class MessageApiTest {
     /**
      * Delete a message
      *
-     * ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-delete-a-message ----------------------------
+     * ## Delete a message  Deletes a message from a channel.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/delete-a-message#1-delete-a-message ----------------------------
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void deleteMessageByIdTest() throws ApiException {
-        //String apiToken = null;
+    public void deleteAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
         //String messageId = null;
-        //Object response = api.deleteMessageById(channelType, channelUrl, messageId)
+        //String apiToken = null;
+        //Object response = api.deleteAMessage(channelType, channelUrl, messageId)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * Enable reactions
+     * Get a message
      *
-     * ## Enable reactions  Turn on or off reactions in a Sendbird application.  &gt; __Note__: This action also allows reactions in UIKit.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-enable-reactions
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void enableReactionsTest() throws ApiException {
-        //String apiToken = null;
-        //EnableReactionsData enableReactionsData = null;
-        //EnableReactionsResponse response = api.enableReactions()
-        //        .apiToken(apiToken)
-        //        .enableReactionsData(enableReactionsData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Mark all messages as delivered
-     *
-     * ## Mark all messages as delivered  Marks all messages in a group channel as delivered for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-delivered ----------------------------
+     * ## Get a message  Retrieves information on a specific message.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/get-a-message#1-get-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to retrieve.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcMarkAllMessagesAsDeliveredTest() throws ApiException {
-        //String apiToken = null;
+    public void getAMessageTest() throws ApiException {
+        //String channelType = null;
         //String channelUrl = null;
-        //GcMarkAllMessagesAsDeliveredData gcMarkAllMessagesAsDeliveredData = null;
-        //GcMarkAllMessagesAsDeliveredResponse response = api.gcMarkAllMessagesAsDelivered(channelUrl)
+        //String messageId = null;
+        //Boolean includeReactions = null;
+        //Boolean includeThreadInfo = null;
+        //Boolean includeParentMessageInfo = null;
+        //Boolean includePollDetails = null;
+        //Boolean withSortedMetaArray = null;
+        //String apiToken = null;
+        //SendbirdMessageResponse response = api.getAMessage(channelType, channelUrl, messageId)
+        //        .includeReactions(includeReactions)
+        //        .includeThreadInfo(includeThreadInfo)
+        //        .includeParentMessageInfo(includeParentMessageInfo)
+        //        .includePollDetails(includePollDetails)
+        //        .withSortedMetaArray(withSortedMetaArray)
         //        .apiToken(apiToken)
-        //        .gcMarkAllMessagesAsDeliveredData(gcMarkAllMessagesAsDeliveredData)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * Mark all messages as read
+     * Get total number of messages in a channel
      *
-     * ## Mark all messages as read  Marks all messages in a group channel as read for a given user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-mark-all-messages-as-read ----------------------------
+     * ## Get total number of messages in a channel  Retrieves the total number of messages in a specific channel.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/get-total-number-of-messages-in-a-channel#1-get-total-number-of-messages-in-a-channel ----------------------------
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcMarkAllMessagesAsReadTest() throws ApiException {
-        //String apiToken = null;
+    public void getTotalNumberOfMessagesInAChannelTest() throws ApiException {
+        //String channelType = null;
         //String channelUrl = null;
-        //GcMarkAllMessagesAsReadData gcMarkAllMessagesAsReadData = null;
-        //Object response = api.gcMarkAllMessagesAsRead(channelUrl)
-        //        .apiToken(apiToken)
-        //        .gcMarkAllMessagesAsReadData(gcMarkAllMessagesAsReadData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View number of each member&#39;s unread messages
-     *
-     * ## View number of each member&#39;s unread messages  Retrieves the total number of each member&#39;s unread messages in a group channel. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-number-of-each-member-s-unread-messages ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void gcViewNumberOfEachMembersUnreadMessagesTest() throws ApiException {
         //String apiToken = null;
-        //String channelUrl = null;
-        //String userIds = null;
-        //GcViewNumberOfEachMembersUnreadMessagesResponse response = api.gcViewNumberOfEachMembersUnreadMessages(channelUrl)
-        //        .apiToken(apiToken)
-        //        .userIds(userIds)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Get an emoji
-     *
-     * ## Get an emoji  Retrieves an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getEmojiByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String emojiKey = null;
-        //SendBirdEmoji response = api.getEmojiByKey(emojiKey)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Get an emoji category
-     *
-     * ## Get an emoji category  Retrieves an emoji category with the specified ID, including its emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-get-an-emoji-category ----------------------------   &#x60;emoji_category_id&#x60;      Type: int      Description: Specifies the unique ID of the emoji category to retrieve.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getEmojiCategoryByIdTest() throws ApiException {
-        //String apiToken = null;
-        //String emojiCategoryId = null;
-        //SendBirdEmojiCategory response = api.getEmojiCategoryById(emojiCategoryId)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * List all emojis and emoji categories
-     *
-     * ## List all emojis and emoji categories  Retrieves a list of all emoji categories registered to the application, including their emojis.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-all-emojis-and-emoji-categories
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void listAllEmojisAndEmojiCategoriesTest() throws ApiException {
-        //String apiToken = null;
-        //ListAllEmojisAndEmojiCategoriesResponse response = api.listAllEmojisAndEmojiCategories()
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * List announcements
-     *
-     * ## List announcements  Retrieves a list of announcements.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-list-announcements ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void listAnnouncementsTest() throws ApiException {
-        //String apiToken = null;
-        //String token = null;
-        //Integer limit = null;
-        //String order = null;
-        //String status = null;
-        //String announcementGroup = null;
-        //ListAnnouncementsResponse response = api.listAnnouncements()
-        //        .apiToken(apiToken)
-        //        .token(token)
-        //        .limit(limit)
-        //        .order(order)
-        //        .status(status)
-        //        .announcementGroup(announcementGroup)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * List emojis
-     *
-     * ## List emojis  Retrieves a list of all emojis registered to the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-list-emojis
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void listEmojisTest() throws ApiException {
-        //String apiToken = null;
-        //ListEmojisResponse response = api.listEmojis()
+        //GetTotalNumberOfMessagesInAChannelResponse response = api.getTotalNumberOfMessagesInAChannel(channelType, channelUrl)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
@@ -365,17 +132,16 @@ public class MessageApiTest {
     /**
      * List messages
      *
-     * ## List messages  Retrieves a list of past messages of a channel.  &gt; This message retrieval is one of Sendbird&#39;s [premium features](https://sendbird.com/docs/chat/v3/platform-api/guides/application#-3-sendbird-s-premium-features). Contact our [sales team](https://get.sendbird.com/talk-to-sales.html) for further assistance.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-messages ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of past messages.
+     * ## List messages  You can retrieve a list of past messages of a specific channel with this API.  By default, this action returns a list of messages in the order they were created. Replies in threaded messages are also listed in the chronological order of their creation like other messages, not grouped with their parent messages.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/list-messages#1-list-messages  &#x60;channel_type&#x60;   Type: string   Description: Specifies the type of the channel. Either open_channels or group_channels.   &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to retrieve a list of past messages.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void listMessagesTest() throws ApiException {
-        //String apiToken = null;
         //String channelType = null;
         //String channelUrl = null;
-        //String messageTs = null;
-        //Integer messageId = null;
+        //Long messageTs = null;
+        //Long messageId = null;
         //Integer prevLimit = null;
         //Integer nextLimit = null;
         //Boolean include = null;
@@ -387,13 +153,15 @@ public class MessageApiTest {
         //String messageType = null;
         //Boolean includingRemoved = null;
         //Boolean includeReactions = null;
+        //String includeReplyType = null;
+        //Boolean includeParentMessageInfo = null;
+        //Boolean includeThreadInfo = null;
+        //Boolean includePollDetails = null;
         //Boolean withSortedMetaArray = null;
         //Boolean showSubchannelMessagesOnly = null;
         //String userId = null;
-        //String customType = null;
-        //Boolean withMetaArray = null;
+        //String apiToken = null;
         //ListMessagesResponse response = api.listMessages(channelType, channelUrl)
-        //        .apiToken(apiToken)
         //        .messageTs(messageTs)
         //        .messageId(messageId)
         //        .prevLimit(prevLimit)
@@ -407,32 +175,33 @@ public class MessageApiTest {
         //        .messageType(messageType)
         //        .includingRemoved(includingRemoved)
         //        .includeReactions(includeReactions)
+        //        .includeReplyType(includeReplyType)
+        //        .includeParentMessageInfo(includeParentMessageInfo)
+        //        .includeThreadInfo(includeThreadInfo)
+        //        .includePollDetails(includePollDetails)
         //        .withSortedMetaArray(withSortedMetaArray)
         //        .showSubchannelMessagesOnly(showSubchannelMessagesOnly)
         //        .userId(userId)
-        //        .customType(customType)
-        //        .withMetaArray(withMetaArray)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * List reactions of a message
+     * Mark all messages as read
      *
-     * ## List reactions of a message  Retrieves a list of reactions made to a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-list-reactions-of-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to add a reaction to.
+     * ## Mark all messages as read  Marks all messages in a group channel as read for a specific user. This action is only applicable for users in a group channel.  https://sendbird.com/docs/chat/platform-api/v3/message/read-receipts/mark-all-messages-as-read-message#1-mark-all-messages-as-read
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void listReactionsOfMessageTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
+    public void markChannelMessagesAsReadTest() throws ApiException {
         //String channelUrl = null;
-        //String messageId = null;
-        //Boolean listUsers = null;
-        //ListReactionsOfMessageResponse response = api.listReactionsOfMessage(channelType, channelUrl, messageId)
+        //String apiToken = null;
+        //MarkChannelMessagesAsReadRequest markChannelMessagesAsReadRequest = null;
+        //Object response = api.markChannelMessagesAsRead(channelUrl)
         //        .apiToken(apiToken)
-        //        .listUsers(listUsers)
+        //        .markChannelMessagesAsReadRequest(markChannelMessagesAsReadRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -440,16 +209,16 @@ public class MessageApiTest {
     /**
      * Migrate messages
      *
-     * ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system&#39;s [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  &gt; To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).  There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user). 2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn&#39;t create a channel for your migration automatically. 3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.  https://sendbird.com/docs/chat/v3/platform-api/guides/migration#2-migrate-messages ----------------------------
+     * ## Migrate messages  Using our migration API, you can migrate the messages from another system into a Sendbird system&#39;s [channel](https://sendbird.com/docs/chat/v3/platform-api/guides/channel-types) which consists of users, messages, and other chat-related data.  &gt; To turn on this feature, [contact our support team](https://dashboard.sendbird.com/settings/contact_us).      There are three things to do in advance before the migration. Follow the instructions below:  1. Register the users of your current chat solution to your Sendbird application. You can migrate the users into the Sendbird system using the [user creation API](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user).      2. Create either an [open](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel) or a [group](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel) channel to migrate the messages of your chat solution. The Sendbird system doesn&#39;t create a channel for your migration automatically.      3. The maximum number of migrated messages per call is 100. To avoid the failure during your migration, you must adjust the number of messages to process at once via the API.       https://sendbird.com/docs/chat/platform-api/v3/message/migration/migrate-messages#1-migrate-messages
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void migrateMessagesByUrlTest() throws ApiException {
-        //String apiToken = null;
+    public void migrateMessagesTest() throws ApiException {
         //String targetChannelUrl = null;
+        //String apiToken = null;
         //Object body = null;
-        //api.migrateMessagesByUrl(targetChannelUrl)
+        //Object response = api.migrateMessages(targetChannelUrl)
         //        .apiToken(apiToken)
         //        .body(body)
         //        .execute();
@@ -459,43 +228,20 @@ public class MessageApiTest {
     /**
      * Remove extra data from a message
      *
-     * ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-extra-data-from-a-message ----------------------------
+     * ## Remove extra data from a message  Removes specific items from a message by their keys.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/message-remove-metadata#1-remove-metadata ----------------------------
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void removeExtraDataFromMessageTest() throws ApiException {
-        //String apiToken = null;
+    public void removeExtraDataFromAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
         //String messageId = null;
-        //List<String> keys = null;
-        //Object response = api.removeExtraDataFromMessage(channelType, channelUrl, messageId)
-        //        .apiToken(apiToken)
+        //String keys = null;
+        //String apiToken = null;
+        //Object response = api.removeExtraDataFromAMessage(channelType, channelUrl, messageId)
         //        .keys(keys)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Remove a reaction from a message
-     *
-     * ## Remove a reaction from a message  Removes a specific reaction from a message.  &gt; __Note__: Currently, this action is only available in group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-remove-a-reaction-from-a-message ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void removeReactionFromAMessageTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String messageId = null;
-        //String userId = null;
-        //String reaction = null;
-        //RemoveReactionFromAMessageResponse response = api.removeReactionFromAMessage(channelType, channelUrl, messageId)
         //        .apiToken(apiToken)
-        //        .userId(userId)
-        //        .reaction(reaction)
         //        .execute();
         // TODO: test validations
     }
@@ -503,99 +249,19 @@ public class MessageApiTest {
     /**
      * Send a message
      *
-     * ## Send a message  Sends a message to a channel. You can send a text message, a file message, and an admin message.  &gt;__Note__: With Sendbird Chat SDKs and the platform API, any type of files in messages can be uploaded to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-send-a-message ----------------------------
+     * ## Send a message  You can use this action to send a text message, a file message, or an admin message to a specific channel. Sendbird Chat SDKs and the platform API allows you to upload any type of files in messages to the Sendbird server. See [Message Overview](https://sendbird.com/docs/chat/platform-api/v3/message/message-overview) for more information on each message type. Messages are sent between client devices running the Sendbird Chat SDK or UIKit as well as programmatically from businesses to their customers. For instance, a delivery app can automatically send a message like \&quot;Arriving in one minute!\&quot; on behalf of a delivery driver.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/send-a-message#1-send-a-message ----------------------------
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void sendMessageTest() throws ApiException {
-        //String apiToken = null;
+    public void sendAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
-        //SendMessageData sendMessageData = null;
-        //SendBirdMessageResponse response = api.sendMessage(channelType, channelUrl)
-        //        .apiToken(apiToken)
-        //        .sendMessageData(sendMessageData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Translate a message into other languages
-     *
-     * ## Translate a message into other languages  Translates a message into specific languages. Only text messages of which type is MESG can be translated into other languages.  &gt; __Note__: Message translation is powered by [Google Cloud Translation API recognition engine](https://cloud.google.com/translate/). Find language codes supported by the engine in the [Miscellaneous](https://sendbird.com/docs/chat/v3/platform-api/guides/Miscellaneous) page or visit the [Language Support](https://cloud.google.com/translate/docs/languages) for Google Cloud Translation.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-translate-a-message-into-other-languages ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void translateMessageIntoOtherLanguagesTest() throws ApiException {
         //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String messageId = null;
-        //TranslateMessageIntoOtherLanguagesData translateMessageIntoOtherLanguagesData = null;
-        //SendBirdMessageResponse response = api.translateMessageIntoOtherLanguages(channelType, channelUrl, messageId)
+        //SendAMessageRequest sendAMessageRequest = null;
+        //SendbirdMessageResponse response = api.sendAMessage(channelType, channelUrl)
         //        .apiToken(apiToken)
-        //        .translateMessageIntoOtherLanguagesData(translateMessageIntoOtherLanguagesData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update an emoji category URL
-     *
-     * ## Update an emoji category URL  Updates the URL of an emoji category with the specified ID.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-category-url ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateEmojiCategoryUrlByIdTest() throws ApiException {
-        //String apiToken = null;
-        //String emojiCategoryId = null;
-        //UpdateEmojiCategoryUrlByIdData updateEmojiCategoryUrlByIdData = null;
-        //SendBirdEmojiCategory response = api.updateEmojiCategoryUrlById(emojiCategoryId)
-        //        .apiToken(apiToken)
-        //        .updateEmojiCategoryUrlByIdData(updateEmojiCategoryUrlByIdData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update an emoji URL
-     *
-     * ## Update an emoji URL  Updates the image URL of an emoji with the specified key.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-update-an-emoji-url ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateEmojiUrlByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String emojiKey = null;
-        //UpdateEmojiUrlByKeyData updateEmojiUrlByKeyData = null;
-        //SendBirdEmoji response = api.updateEmojiUrlByKey(emojiKey)
-        //        .apiToken(apiToken)
-        //        .updateEmojiUrlByKeyData(updateEmojiUrlByKeyData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update extra data in a message
-     *
-     * ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-extra-data-in-a-message ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateExtraDataInMessageTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String messageId = null;
-        //UpdateExtraDataInMessageData updateExtraDataInMessageData = null;
-        //UpdateExtraDataInMessageResponse response = api.updateExtraDataInMessage(channelType, channelUrl, messageId)
-        //        .apiToken(apiToken)
-        //        .updateExtraDataInMessageData(updateExtraDataInMessageData)
+        //        .sendAMessageRequest(sendAMessageRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -603,79 +269,41 @@ public class MessageApiTest {
     /**
      * Update a message
      *
-     * ## Update a message  Updates information on a message in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-update-a-message ----------------------------
+     * ## Update a message  Updates specific information on a message.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/update-a-message#1-update-a-message ----------------------------
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void updateMessageByIdTest() throws ApiException {
-        //String apiToken = null;
+    public void updateAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
         //String messageId = null;
-        //UpdateMessageByIdData updateMessageByIdData = null;
-        //SendBirdMessageResponse response = api.updateMessageById(channelType, channelUrl, messageId)
+        //String apiToken = null;
+        //UpdateAMessageRequest updateAMessageRequest = null;
+        //SendbirdMessageResponse response = api.updateAMessage(channelType, channelUrl, messageId)
         //        .apiToken(apiToken)
-        //        .updateMessageByIdData(updateMessageByIdData)
+        //        .updateAMessageRequest(updateAMessageRequest)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * Use default emojis
+     * Update extra data in a message
      *
-     * ## Use default emojis  Determines whether to use the 7 default emojis initially provided.  https://sendbird.com/docs/chat/v3/platform-api/guides/emojis#2-use-default-emojis
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void useDefaultEmojisTest() throws ApiException {
-        //String apiToken = null;
-        //UseDefaultEmojisData useDefaultEmojisData = null;
-        //UseDefaultEmojisResponse response = api.useDefaultEmojis()
-        //        .apiToken(apiToken)
-        //        .useDefaultEmojisData(useDefaultEmojisData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View a message
-     *
-     * ## View a message  Retrieves information on a message.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-a-message ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.  &#x60;message_id&#x60;      Type: long      Description: Specifies the unique ID of the message to retrieve.
+     * ## Update extra data in a message  Updates the values of specific items by their keys.  https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/message-update-metadata#1-update-metadata ----------------------------
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void viewMessageByIdTest() throws ApiException {
-        //String apiToken = null;
+    public void updateExtraDataInAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
         //String messageId = null;
-        //Boolean withSortedMetaArray = null;
-        //Boolean withMetaArray = null;
-        //SendBirdMessageResponse response = api.viewMessageById(channelType, channelUrl, messageId)
-        //        .apiToken(apiToken)
-        //        .withSortedMetaArray(withSortedMetaArray)
-        //        .withMetaArray(withMetaArray)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View total number of messages in a channel
-     *
-     * ## View total number of messages in a channel  Retrieves the total number of messages in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/messages#2-view-total-number-of-messages-in-a-channel ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewTotalNumberOfMessagesInChannelTest() throws ApiException {
         //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //ViewTotalNumberOfMessagesInChannelResponse response = api.viewTotalNumberOfMessagesInChannel(channelType, channelUrl)
+        //UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest = null;
+        //UpdateExtraDataInAMessageResponse response = api.updateExtraDataInAMessage(channelType, channelUrl, messageId)
         //        .apiToken(apiToken)
+        //        .updateExtraDataInAMessageRequest(updateExtraDataInAMessageRequest)
         //        .execute();
         // TODO: test validations
     }

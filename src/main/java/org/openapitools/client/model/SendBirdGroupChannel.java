@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -24,18 +24,16 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.client.model.SendBirdGroupChannelChannel;
-import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
-import org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage;
-import org.openapitools.client.model.SendBirdGroupChannelSmsFallback;
-import org.openapitools.client.model.SendBirdMember;
-import org.openapitools.client.model.SendBirdMessageResponse;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdBasicUserInfo;
+import org.openapitools.client.model.SendbirdDisappearingMessage;
+import org.openapitools.client.model.SendbirdMember;
+import org.openapitools.client.model.SendbirdMessageResponse;
+import org.openapitools.client.model.SendbirdPushTriggerOption;
+import org.openapitools.client.model.SendbirdSmsFallback;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -45,71 +43,111 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdGroupChannel
+ * SendbirdGroupChannel
  */
 @JsonPropertyOrder({
-  SendBirdGroupChannel.JSON_PROPERTY_CHANNEL_URL,
-  SendBirdGroupChannel.JSON_PROPERTY_COVER_URL,
-  SendBirdGroupChannel.JSON_PROPERTY_CREATED_AT,
-  SendBirdGroupChannel.JSON_PROPERTY_CREATED_BY,
-  SendBirdGroupChannel.JSON_PROPERTY_CREATOR,
-  SendBirdGroupChannel.JSON_PROPERTY_CUSTOM_TYPE,
-  SendBirdGroupChannel.JSON_PROPERTY_DATA,
-  SendBirdGroupChannel.JSON_PROPERTY_DISAPPEARING_MESSAGE,
-  SendBirdGroupChannel.JSON_PROPERTY_FREEZE,
-  SendBirdGroupChannel.JSON_PROPERTY_IGNORE_PROFANITY_FILTER,
-  SendBirdGroupChannel.JSON_PROPERTY_HIDDEN_STATE,
-  SendBirdGroupChannel.JSON_PROPERTY_INVITED_AT,
-  SendBirdGroupChannel.JSON_PROPERTY_INVITER,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_BROADCAST,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_CREATED,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_DISCOVERABLE,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_DISTINCT,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_EPHEMERAL,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_HIDDEN,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_PUBLIC,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_PUSH_ENABLED,
-  SendBirdGroupChannel.JSON_PROPERTY_IS_SUPER,
-  SendBirdGroupChannel.JSON_PROPERTY_JOINED_AT,
-  SendBirdGroupChannel.JSON_PROPERTY_JOINED_MEMBER_COUNT,
-  SendBirdGroupChannel.JSON_PROPERTY_LAST_MESSAGE,
-  SendBirdGroupChannel.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
-  SendBirdGroupChannel.JSON_PROPERTY_MEMBER_COUNT,
-  SendBirdGroupChannel.JSON_PROPERTY_MEMBERS,
-  SendBirdGroupChannel.JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP,
-  SendBirdGroupChannel.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
-  SendBirdGroupChannel.JSON_PROPERTY_MY_COUNT_PREFERENCE,
-  SendBirdGroupChannel.JSON_PROPERTY_MY_LAST_READ,
-  SendBirdGroupChannel.JSON_PROPERTY_MY_MEMBER_STATE,
-  SendBirdGroupChannel.JSON_PROPERTY_MY_MUTED_STATE,
-  SendBirdGroupChannel.JSON_PROPERTY_MY_PUSH_TRIGGER_OPTION,
-  SendBirdGroupChannel.JSON_PROPERTY_MY_ROLE,
-  SendBirdGroupChannel.JSON_PROPERTY_NAME,
-  SendBirdGroupChannel.JSON_PROPERTY_OPERATORS,
-  SendBirdGroupChannel.JSON_PROPERTY_SMS_FALLBACK,
-  SendBirdGroupChannel.JSON_PROPERTY_UNREAD_MENTION_COUNT,
-  SendBirdGroupChannel.JSON_PROPERTY_UNREAD_MESSAGE_COUNT,
-  SendBirdGroupChannel.JSON_PROPERTY_CHANNEL,
-  SendBirdGroupChannel.JSON_PROPERTY_READ_RECEIPT
+  SendbirdGroupChannel.JSON_PROPERTY_CHANNEL_URL,
+  SendbirdGroupChannel.JSON_PROPERTY_COUNT_PREFERENCE,
+  SendbirdGroupChannel.JSON_PROPERTY_COVER_URL,
+  SendbirdGroupChannel.JSON_PROPERTY_CREATED_AT,
+  SendbirdGroupChannel.JSON_PROPERTY_CREATED_BY,
+  SendbirdGroupChannel.JSON_PROPERTY_CUSTOM_TYPE,
+  SendbirdGroupChannel.JSON_PROPERTY_DATA,
+  SendbirdGroupChannel.JSON_PROPERTY_DELIVERY_RECEIPT,
+  SendbirdGroupChannel.JSON_PROPERTY_DISAPPEARING_MESSAGE,
+  SendbirdGroupChannel.JSON_PROPERTY_FREEZE,
+  SendbirdGroupChannel.JSON_PROPERTY_HAS_AI_BOT,
+  SendbirdGroupChannel.JSON_PROPERTY_HAS_BOT,
+  SendbirdGroupChannel.JSON_PROPERTY_HIDDEN_STATE,
+  SendbirdGroupChannel.JSON_PROPERTY_IGNORE_PROFANITY_FILTER,
+  SendbirdGroupChannel.JSON_PROPERTY_INVITED_AT,
+  SendbirdGroupChannel.JSON_PROPERTY_INVITER,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_BROADCAST,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_DISCOVERABLE,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_DISTINCT,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_EPHEMERAL,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_EXCLUSIVE,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_HIDDEN,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_MUTED,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_PUBLIC,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_PUSH_ENABLED,
+  SendbirdGroupChannel.JSON_PROPERTY_IS_SUPER,
+  SendbirdGroupChannel.JSON_PROPERTY_JOINED_MEMBER_COUNT,
+  SendbirdGroupChannel.JSON_PROPERTY_JOINED_TS,
+  SendbirdGroupChannel.JSON_PROPERTY_LAST_MESSAGE,
+  SendbirdGroupChannel.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
+  SendbirdGroupChannel.JSON_PROPERTY_MEMBER_COUNT,
+  SendbirdGroupChannel.JSON_PROPERTY_MEMBER_STATE,
+  SendbirdGroupChannel.JSON_PROPERTY_MEMBERS,
+  SendbirdGroupChannel.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
+  SendbirdGroupChannel.JSON_PROPERTY_METADATA,
+  SendbirdGroupChannel.JSON_PROPERTY_MY_ROLE,
+  SendbirdGroupChannel.JSON_PROPERTY_NAME,
+  SendbirdGroupChannel.JSON_PROPERTY_PUSH_TRIGGER_OPTION,
+  SendbirdGroupChannel.JSON_PROPERTY_READ_RECEIPT,
+  SendbirdGroupChannel.JSON_PROPERTY_SMS_FALLBACK,
+  SendbirdGroupChannel.JSON_PROPERTY_TS_MESSAGE_OFFSET,
+  SendbirdGroupChannel.JSON_PROPERTY_UNREAD_MENTION_COUNT,
+  SendbirdGroupChannel.JSON_PROPERTY_UNREAD_MESSAGE_COUNT,
+  SendbirdGroupChannel.JSON_PROPERTY_USER_LAST_READ
 })
-@JsonTypeName("SendBird.GroupChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
-public class SendBirdGroupChannel {
+@JsonTypeName("Sendbird.GroupChannel")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+public class SendbirdGroupChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
+
+  /**
+   * Gets or Sets countPreference
+   */
+  public enum CountPreferenceEnum {
+    FALSE("false"),
+    
+    ALL("all"),
+    
+    UNREAD_MESSAGE_COUNT_ONLY("unread_message_count_only"),
+    
+    UNREAD_MENTIONED_COUNT_ONLY("unread_mentioned_count_only");
+
+    private String value;
+
+    CountPreferenceEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static CountPreferenceEnum fromValue(String value) {
+      for (CountPreferenceEnum b : CountPreferenceEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_COUNT_PREFERENCE = "count_preference";
+  private CountPreferenceEnum countPreference;
 
   public static final String JSON_PROPERTY_COVER_URL = "cover_url";
   private String coverUrl;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private BigDecimal createdAt;
+  private Long createdAt;
 
   public static final String JSON_PROPERTY_CREATED_BY = "created_by";
-  private JsonNullable<SendBirdGroupChannelCreatedBy> createdBy = JsonNullable.<SendBirdGroupChannelCreatedBy>undefined();
-
-  public static final String JSON_PROPERTY_CREATOR = "creator";
-  private JsonNullable<SendBirdUser> creator = JsonNullable.<SendBirdUser>undefined();
+  private SendbirdBasicUserInfo createdBy;
 
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -117,14 +155,20 @@ public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_DATA = "data";
   private String data;
 
+  public static final String JSON_PROPERTY_DELIVERY_RECEIPT = "delivery_receipt";
+  private Object deliveryReceipt;
+
   public static final String JSON_PROPERTY_DISAPPEARING_MESSAGE = "disappearing_message";
-  private SendBirdGroupChannelDisappearingMessage disappearingMessage;
+  private SendbirdDisappearingMessage disappearingMessage;
 
   public static final String JSON_PROPERTY_FREEZE = "freeze";
   private Boolean freeze;
 
-  public static final String JSON_PROPERTY_IGNORE_PROFANITY_FILTER = "ignore_profanity_filter";
-  private Boolean ignoreProfanityFilter;
+  public static final String JSON_PROPERTY_HAS_AI_BOT = "has_ai_bot";
+  private Boolean hasAiBot;
+
+  public static final String JSON_PROPERTY_HAS_BOT = "has_bot";
+  private Boolean hasBot;
 
   /**
    * Gets or Sets hiddenState
@@ -166,20 +210,20 @@ public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_HIDDEN_STATE = "hidden_state";
   private HiddenStateEnum hiddenState;
 
+  public static final String JSON_PROPERTY_IGNORE_PROFANITY_FILTER = "ignore_profanity_filter";
+  private Boolean ignoreProfanityFilter;
+
   public static final String JSON_PROPERTY_INVITED_AT = "invited_at";
-  private BigDecimal invitedAt;
+  private Long invitedAt;
 
   public static final String JSON_PROPERTY_INVITER = "inviter";
-  private JsonNullable<SendBirdUser> inviter = JsonNullable.<SendBirdUser>undefined();
+  private SendbirdBasicUserInfo inviter;
 
   public static final String JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED = "is_access_code_required";
   private Boolean isAccessCodeRequired;
 
   public static final String JSON_PROPERTY_IS_BROADCAST = "is_broadcast";
   private Boolean isBroadcast;
-
-  public static final String JSON_PROPERTY_IS_CREATED = "is_created";
-  private Boolean isCreated;
 
   public static final String JSON_PROPERTY_IS_DISCOVERABLE = "is_discoverable";
   private Boolean isDiscoverable;
@@ -190,8 +234,14 @@ public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_IS_EPHEMERAL = "is_ephemeral";
   private Boolean isEphemeral;
 
+  public static final String JSON_PROPERTY_IS_EXCLUSIVE = "is_exclusive";
+  private Boolean isExclusive;
+
   public static final String JSON_PROPERTY_IS_HIDDEN = "is_hidden";
   private Boolean isHidden;
+
+  public static final String JSON_PROPERTY_IS_MUTED = "is_muted";
+  private Boolean isMuted;
 
   public static final String JSON_PROPERTY_IS_PUBLIC = "is_public";
   private Boolean isPublic;
@@ -202,40 +252,25 @@ public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_IS_SUPER = "is_super";
   private Boolean isSuper;
 
-  public static final String JSON_PROPERTY_JOINED_AT = "joined_at";
-  private BigDecimal joinedAt;
-
   public static final String JSON_PROPERTY_JOINED_MEMBER_COUNT = "joined_member_count";
-  private BigDecimal joinedMemberCount;
+  private Integer joinedMemberCount;
+
+  public static final String JSON_PROPERTY_JOINED_TS = "joined_ts";
+  private Long joinedTs;
 
   public static final String JSON_PROPERTY_LAST_MESSAGE = "last_message";
-  private JsonNullable<SendBirdMessageResponse> lastMessage = JsonNullable.<SendBirdMessageResponse>undefined();
+  private JsonNullable<SendbirdMessageResponse> lastMessage = JsonNullable.<SendbirdMessageResponse>undefined();
 
   public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
-  private BigDecimal maxLengthMessage;
+  private Integer maxLengthMessage;
 
   public static final String JSON_PROPERTY_MEMBER_COUNT = "member_count";
-  private BigDecimal memberCount;
-
-  public static final String JSON_PROPERTY_MEMBERS = "members";
-  private List<SendBirdMember> members = null;
-
-  public static final String JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP = "message_offset_timestamp";
-  private BigDecimal messageOffsetTimestamp;
-
-  public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
-  private BigDecimal messageSurvivalSeconds;
-
-  public static final String JSON_PROPERTY_MY_COUNT_PREFERENCE = "my_count_preference";
-  private String myCountPreference;
-
-  public static final String JSON_PROPERTY_MY_LAST_READ = "my_last_read";
-  private BigDecimal myLastRead;
+  private Integer memberCount;
 
   /**
-   * Gets or Sets myMemberState
+   * Gets or Sets memberState
    */
-  public enum MyMemberStateEnum {
+  public enum MemberStateEnum {
     INVITED("invited"),
     
     JOINED("joined"),
@@ -244,7 +279,7 @@ public class SendBirdGroupChannel {
 
     private String value;
 
-    MyMemberStateEnum(String value) {
+    MemberStateEnum(String value) {
       this.value = value;
     }
 
@@ -259,8 +294,8 @@ public class SendBirdGroupChannel {
     }
 
     @JsonCreator
-    public static MyMemberStateEnum fromValue(String value) {
-      for (MyMemberStateEnum b : MyMemberStateEnum.values()) {
+    public static MemberStateEnum fromValue(String value) {
+      for (MemberStateEnum b : MemberStateEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -269,88 +304,17 @@ public class SendBirdGroupChannel {
     }
   }
 
-  public static final String JSON_PROPERTY_MY_MEMBER_STATE = "my_member_state";
-  private MyMemberStateEnum myMemberState;
+  public static final String JSON_PROPERTY_MEMBER_STATE = "member_state";
+  private MemberStateEnum memberState;
 
-  /**
-   * Gets or Sets myMutedState
-   */
-  public enum MyMutedStateEnum {
-    MUTED("muted"),
-    
-    UNMUTED("unmuted");
+  public static final String JSON_PROPERTY_MEMBERS = "members";
+  private List<SendbirdMember> members = null;
 
-    private String value;
+  public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
+  private Integer messageSurvivalSeconds;
 
-    MyMutedStateEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static MyMutedStateEnum fromValue(String value) {
-      for (MyMutedStateEnum b : MyMutedStateEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-  public static final String JSON_PROPERTY_MY_MUTED_STATE = "my_muted_state";
-  private MyMutedStateEnum myMutedState;
-
-  /**
-   * Gets or Sets myPushTriggerOption
-   */
-  public enum MyPushTriggerOptionEnum {
-    ALL("all"),
-    
-    DEFAULT("default"),
-    
-    MENTION_ONLY("mention_only"),
-    
-    FALSE("false");
-
-    private String value;
-
-    MyPushTriggerOptionEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static MyPushTriggerOptionEnum fromValue(String value) {
-      for (MyPushTriggerOptionEnum b : MyPushTriggerOptionEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-  public static final String JSON_PROPERTY_MY_PUSH_TRIGGER_OPTION = "my_push_trigger_option";
-  private MyPushTriggerOptionEnum myPushTriggerOption;
+  public static final String JSON_PROPERTY_METADATA = "metadata";
+  private Object metadata;
 
   /**
    * Gets or Sets myRole
@@ -395,28 +359,31 @@ public class SendBirdGroupChannel {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public static final String JSON_PROPERTY_OPERATORS = "operators";
-  private List<Object> operators = null;
-
-  public static final String JSON_PROPERTY_SMS_FALLBACK = "sms_fallback";
-  private SendBirdGroupChannelSmsFallback smsFallback;
-
-  public static final String JSON_PROPERTY_UNREAD_MENTION_COUNT = "unread_mention_count";
-  private BigDecimal unreadMentionCount;
-
-  public static final String JSON_PROPERTY_UNREAD_MESSAGE_COUNT = "unread_message_count";
-  private BigDecimal unreadMessageCount;
-
-  public static final String JSON_PROPERTY_CHANNEL = "channel";
-  private SendBirdGroupChannelChannel channel;
+  public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
+  private SendbirdPushTriggerOption pushTriggerOption;
 
   public static final String JSON_PROPERTY_READ_RECEIPT = "read_receipt";
   private Map<String, Long> readReceipt = null;
 
-  public SendBirdGroupChannel() { 
+  public static final String JSON_PROPERTY_SMS_FALLBACK = "sms_fallback";
+  private SendbirdSmsFallback smsFallback;
+
+  public static final String JSON_PROPERTY_TS_MESSAGE_OFFSET = "ts_message_offset";
+  private Long tsMessageOffset;
+
+  public static final String JSON_PROPERTY_UNREAD_MENTION_COUNT = "unread_mention_count";
+  private Integer unreadMentionCount;
+
+  public static final String JSON_PROPERTY_UNREAD_MESSAGE_COUNT = "unread_message_count";
+  private Integer unreadMessageCount;
+
+  public static final String JSON_PROPERTY_USER_LAST_READ = "user_last_read";
+  private Long userLastRead;
+
+  public SendbirdGroupChannel() { 
   }
 
-  public SendBirdGroupChannel channelUrl(String channelUrl) {
+  public SendbirdGroupChannel channelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
     return this;
   }
@@ -425,10 +392,10 @@ public class SendBirdGroupChannel {
    * Get channelUrl
    * @return channelUrl
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getChannelUrl() {
     return channelUrl;
@@ -436,13 +403,39 @@ public class SendBirdGroupChannel {
 
 
   @JsonProperty(JSON_PROPERTY_CHANNEL_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setChannelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
   }
 
 
-  public SendBirdGroupChannel coverUrl(String coverUrl) {
+  public SendbirdGroupChannel countPreference(CountPreferenceEnum countPreference) {
+    this.countPreference = countPreference;
+    return this;
+  }
+
+   /**
+   * Get countPreference
+   * @return countPreference
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_COUNT_PREFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public CountPreferenceEnum getCountPreference() {
+    return countPreference;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_COUNT_PREFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCountPreference(CountPreferenceEnum countPreference) {
+    this.countPreference = countPreference;
+  }
+
+
+  public SendbirdGroupChannel coverUrl(String coverUrl) {
     this.coverUrl = coverUrl;
     return this;
   }
@@ -468,7 +461,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel createdAt(BigDecimal createdAt) {
+  public SendbirdGroupChannel createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -482,20 +475,20 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getCreatedAt() {
+  public Long getCreatedAt() {
     return createdAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(BigDecimal createdAt) {
+  public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public SendBirdGroupChannel createdBy(SendBirdGroupChannelCreatedBy createdBy) {
-    this.createdBy = JsonNullable.<SendBirdGroupChannelCreatedBy>of(createdBy);
+  public SendbirdGroupChannel createdBy(SendbirdBasicUserInfo createdBy) {
+    this.createdBy = createdBy;
     return this;
   }
 
@@ -505,64 +498,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonIgnore
-
-  public SendBirdGroupChannelCreatedBy getCreatedBy() {
-        return createdBy.orElse(null);
-  }
-
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SendBirdGroupChannelCreatedBy> getCreatedBy_JsonNullable() {
+  public SendbirdBasicUserInfo getCreatedBy() {
     return createdBy;
   }
-  
+
+
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
-  public void setCreatedBy_JsonNullable(JsonNullable<SendBirdGroupChannelCreatedBy> createdBy) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedBy(SendbirdBasicUserInfo createdBy) {
     this.createdBy = createdBy;
   }
 
-  public void setCreatedBy(SendBirdGroupChannelCreatedBy createdBy) {
-    this.createdBy = JsonNullable.<SendBirdGroupChannelCreatedBy>of(createdBy);
-  }
 
-
-  public SendBirdGroupChannel creator(SendBirdUser creator) {
-    this.creator = JsonNullable.<SendBirdUser>of(creator);
-    return this;
-  }
-
-   /**
-   * Get creator
-   * @return creator
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonIgnore
-
-  public SendBirdUser getCreator() {
-        return creator.orElse(null);
-  }
-
-  @JsonProperty(JSON_PROPERTY_CREATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public JsonNullable<SendBirdUser> getCreator_JsonNullable() {
-    return creator;
-  }
-  
-  @JsonProperty(JSON_PROPERTY_CREATOR)
-  public void setCreator_JsonNullable(JsonNullable<SendBirdUser> creator) {
-    this.creator = creator;
-  }
-
-  public void setCreator(SendBirdUser creator) {
-    this.creator = JsonNullable.<SendBirdUser>of(creator);
-  }
-
-
-  public SendBirdGroupChannel customType(String customType) {
+  public SendbirdGroupChannel customType(String customType) {
     this.customType = customType;
     return this;
   }
@@ -588,7 +539,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel data(String data) {
+  public SendbirdGroupChannel data(String data) {
     this.data = data;
     return this;
   }
@@ -614,7 +565,33 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel disappearingMessage(SendBirdGroupChannelDisappearingMessage disappearingMessage) {
+  public SendbirdGroupChannel deliveryReceipt(Object deliveryReceipt) {
+    this.deliveryReceipt = deliveryReceipt;
+    return this;
+  }
+
+   /**
+   * Get deliveryReceipt
+   * @return deliveryReceipt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DELIVERY_RECEIPT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Object getDeliveryReceipt() {
+    return deliveryReceipt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DELIVERY_RECEIPT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeliveryReceipt(Object deliveryReceipt) {
+    this.deliveryReceipt = deliveryReceipt;
+  }
+
+
+  public SendbirdGroupChannel disappearingMessage(SendbirdDisappearingMessage disappearingMessage) {
     this.disappearingMessage = disappearingMessage;
     return this;
   }
@@ -628,19 +605,19 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_DISAPPEARING_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdGroupChannelDisappearingMessage getDisappearingMessage() {
+  public SendbirdDisappearingMessage getDisappearingMessage() {
     return disappearingMessage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DISAPPEARING_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDisappearingMessage(SendBirdGroupChannelDisappearingMessage disappearingMessage) {
+  public void setDisappearingMessage(SendbirdDisappearingMessage disappearingMessage) {
     this.disappearingMessage = disappearingMessage;
   }
 
 
-  public SendBirdGroupChannel freeze(Boolean freeze) {
+  public SendbirdGroupChannel freeze(Boolean freeze) {
     this.freeze = freeze;
     return this;
   }
@@ -666,33 +643,59 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel ignoreProfanityFilter(Boolean ignoreProfanityFilter) {
-    this.ignoreProfanityFilter = ignoreProfanityFilter;
+  public SendbirdGroupChannel hasAiBot(Boolean hasAiBot) {
+    this.hasAiBot = hasAiBot;
     return this;
   }
 
    /**
-   * Get ignoreProfanityFilter
-   * @return ignoreProfanityFilter
+   * Get hasAiBot
+   * @return hasAiBot
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IGNORE_PROFANITY_FILTER)
+  @JsonProperty(JSON_PROPERTY_HAS_AI_BOT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getIgnoreProfanityFilter() {
-    return ignoreProfanityFilter;
+  public Boolean getHasAiBot() {
+    return hasAiBot;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IGNORE_PROFANITY_FILTER)
+  @JsonProperty(JSON_PROPERTY_HAS_AI_BOT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIgnoreProfanityFilter(Boolean ignoreProfanityFilter) {
-    this.ignoreProfanityFilter = ignoreProfanityFilter;
+  public void setHasAiBot(Boolean hasAiBot) {
+    this.hasAiBot = hasAiBot;
   }
 
 
-  public SendBirdGroupChannel hiddenState(HiddenStateEnum hiddenState) {
+  public SendbirdGroupChannel hasBot(Boolean hasBot) {
+    this.hasBot = hasBot;
+    return this;
+  }
+
+   /**
+   * Get hasBot
+   * @return hasBot
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_HAS_BOT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getHasBot() {
+    return hasBot;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_HAS_BOT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setHasBot(Boolean hasBot) {
+    this.hasBot = hasBot;
+  }
+
+
+  public SendbirdGroupChannel hiddenState(HiddenStateEnum hiddenState) {
     this.hiddenState = hiddenState;
     return this;
   }
@@ -718,7 +721,33 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel invitedAt(BigDecimal invitedAt) {
+  public SendbirdGroupChannel ignoreProfanityFilter(Boolean ignoreProfanityFilter) {
+    this.ignoreProfanityFilter = ignoreProfanityFilter;
+    return this;
+  }
+
+   /**
+   * Get ignoreProfanityFilter
+   * @return ignoreProfanityFilter
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IGNORE_PROFANITY_FILTER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getIgnoreProfanityFilter() {
+    return ignoreProfanityFilter;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IGNORE_PROFANITY_FILTER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIgnoreProfanityFilter(Boolean ignoreProfanityFilter) {
+    this.ignoreProfanityFilter = ignoreProfanityFilter;
+  }
+
+
+  public SendbirdGroupChannel invitedAt(Long invitedAt) {
     this.invitedAt = invitedAt;
     return this;
   }
@@ -732,20 +761,20 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_INVITED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getInvitedAt() {
+  public Long getInvitedAt() {
     return invitedAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_INVITED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInvitedAt(BigDecimal invitedAt) {
+  public void setInvitedAt(Long invitedAt) {
     this.invitedAt = invitedAt;
   }
 
 
-  public SendBirdGroupChannel inviter(SendBirdUser inviter) {
-    this.inviter = JsonNullable.<SendBirdUser>of(inviter);
+  public SendbirdGroupChannel inviter(SendbirdBasicUserInfo inviter) {
+    this.inviter = inviter;
     return this;
   }
 
@@ -755,30 +784,22 @@ public class SendBirdGroupChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonIgnore
-
-  public SendBirdUser getInviter() {
-        return inviter.orElse(null);
-  }
-
   @JsonProperty(JSON_PROPERTY_INVITER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SendBirdUser> getInviter_JsonNullable() {
+  public SendbirdBasicUserInfo getInviter() {
     return inviter;
   }
-  
+
+
   @JsonProperty(JSON_PROPERTY_INVITER)
-  public void setInviter_JsonNullable(JsonNullable<SendBirdUser> inviter) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInviter(SendbirdBasicUserInfo inviter) {
     this.inviter = inviter;
   }
 
-  public void setInviter(SendBirdUser inviter) {
-    this.inviter = JsonNullable.<SendBirdUser>of(inviter);
-  }
 
-
-  public SendBirdGroupChannel isAccessCodeRequired(Boolean isAccessCodeRequired) {
+  public SendbirdGroupChannel isAccessCodeRequired(Boolean isAccessCodeRequired) {
     this.isAccessCodeRequired = isAccessCodeRequired;
     return this;
   }
@@ -804,7 +825,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel isBroadcast(Boolean isBroadcast) {
+  public SendbirdGroupChannel isBroadcast(Boolean isBroadcast) {
     this.isBroadcast = isBroadcast;
     return this;
   }
@@ -830,33 +851,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel isCreated(Boolean isCreated) {
-    this.isCreated = isCreated;
-    return this;
-  }
-
-   /**
-   * Get isCreated
-   * @return isCreated
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getIsCreated() {
-    return isCreated;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_IS_CREATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsCreated(Boolean isCreated) {
-    this.isCreated = isCreated;
-  }
-
-
-  public SendBirdGroupChannel isDiscoverable(Boolean isDiscoverable) {
+  public SendbirdGroupChannel isDiscoverable(Boolean isDiscoverable) {
     this.isDiscoverable = isDiscoverable;
     return this;
   }
@@ -882,7 +877,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel isDistinct(Boolean isDistinct) {
+  public SendbirdGroupChannel isDistinct(Boolean isDistinct) {
     this.isDistinct = isDistinct;
     return this;
   }
@@ -908,7 +903,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel isEphemeral(Boolean isEphemeral) {
+  public SendbirdGroupChannel isEphemeral(Boolean isEphemeral) {
     this.isEphemeral = isEphemeral;
     return this;
   }
@@ -934,7 +929,33 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel isHidden(Boolean isHidden) {
+  public SendbirdGroupChannel isExclusive(Boolean isExclusive) {
+    this.isExclusive = isExclusive;
+    return this;
+  }
+
+   /**
+   * Get isExclusive
+   * @return isExclusive
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_EXCLUSIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getIsExclusive() {
+    return isExclusive;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IS_EXCLUSIVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIsExclusive(Boolean isExclusive) {
+    this.isExclusive = isExclusive;
+  }
+
+
+  public SendbirdGroupChannel isHidden(Boolean isHidden) {
     this.isHidden = isHidden;
     return this;
   }
@@ -960,7 +981,33 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel isPublic(Boolean isPublic) {
+  public SendbirdGroupChannel isMuted(Boolean isMuted) {
+    this.isMuted = isMuted;
+    return this;
+  }
+
+   /**
+   * Get isMuted
+   * @return isMuted
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_IS_MUTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getIsMuted() {
+    return isMuted;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IS_MUTED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIsMuted(Boolean isMuted) {
+    this.isMuted = isMuted;
+  }
+
+
+  public SendbirdGroupChannel isPublic(Boolean isPublic) {
     this.isPublic = isPublic;
     return this;
   }
@@ -986,7 +1033,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel isPushEnabled(Boolean isPushEnabled) {
+  public SendbirdGroupChannel isPushEnabled(Boolean isPushEnabled) {
     this.isPushEnabled = isPushEnabled;
     return this;
   }
@@ -1012,7 +1059,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel isSuper(Boolean isSuper) {
+  public SendbirdGroupChannel isSuper(Boolean isSuper) {
     this.isSuper = isSuper;
     return this;
   }
@@ -1038,33 +1085,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel joinedAt(BigDecimal joinedAt) {
-    this.joinedAt = joinedAt;
-    return this;
-  }
-
-   /**
-   * Get joinedAt
-   * @return joinedAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_JOINED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getJoinedAt() {
-    return joinedAt;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_JOINED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setJoinedAt(BigDecimal joinedAt) {
-    this.joinedAt = joinedAt;
-  }
-
-
-  public SendBirdGroupChannel joinedMemberCount(BigDecimal joinedMemberCount) {
+  public SendbirdGroupChannel joinedMemberCount(Integer joinedMemberCount) {
     this.joinedMemberCount = joinedMemberCount;
     return this;
   }
@@ -1078,20 +1099,46 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_JOINED_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getJoinedMemberCount() {
+  public Integer getJoinedMemberCount() {
     return joinedMemberCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_JOINED_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setJoinedMemberCount(BigDecimal joinedMemberCount) {
+  public void setJoinedMemberCount(Integer joinedMemberCount) {
     this.joinedMemberCount = joinedMemberCount;
   }
 
 
-  public SendBirdGroupChannel lastMessage(SendBirdMessageResponse lastMessage) {
-    this.lastMessage = JsonNullable.<SendBirdMessageResponse>of(lastMessage);
+  public SendbirdGroupChannel joinedTs(Long joinedTs) {
+    this.joinedTs = joinedTs;
+    return this;
+  }
+
+   /**
+   * Get joinedTs
+   * @return joinedTs
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_JOINED_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getJoinedTs() {
+    return joinedTs;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_JOINED_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setJoinedTs(Long joinedTs) {
+    this.joinedTs = joinedTs;
+  }
+
+
+  public SendbirdGroupChannel lastMessage(SendbirdMessageResponse lastMessage) {
+    this.lastMessage = JsonNullable.<SendbirdMessageResponse>of(lastMessage);
     return this;
   }
 
@@ -1103,28 +1150,28 @@ public class SendBirdGroupChannel {
   @ApiModelProperty(value = "")
   @JsonIgnore
 
-  public SendBirdMessageResponse getLastMessage() {
+  public SendbirdMessageResponse getLastMessage() {
         return lastMessage.orElse(null);
   }
 
   @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SendBirdMessageResponse> getLastMessage_JsonNullable() {
+  public JsonNullable<SendbirdMessageResponse> getLastMessage_JsonNullable() {
     return lastMessage;
   }
   
   @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
-  public void setLastMessage_JsonNullable(JsonNullable<SendBirdMessageResponse> lastMessage) {
+  public void setLastMessage_JsonNullable(JsonNullable<SendbirdMessageResponse> lastMessage) {
     this.lastMessage = lastMessage;
   }
 
-  public void setLastMessage(SendBirdMessageResponse lastMessage) {
-    this.lastMessage = JsonNullable.<SendBirdMessageResponse>of(lastMessage);
+  public void setLastMessage(SendbirdMessageResponse lastMessage) {
+    this.lastMessage = JsonNullable.<SendbirdMessageResponse>of(lastMessage);
   }
 
 
-  public SendBirdGroupChannel maxLengthMessage(BigDecimal maxLengthMessage) {
+  public SendbirdGroupChannel maxLengthMessage(Integer maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
     return this;
   }
@@ -1138,19 +1185,19 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMaxLengthMessage() {
+  public Integer getMaxLengthMessage() {
     return maxLengthMessage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxLengthMessage(BigDecimal maxLengthMessage) {
+  public void setMaxLengthMessage(Integer maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
   }
 
 
-  public SendBirdGroupChannel memberCount(BigDecimal memberCount) {
+  public SendbirdGroupChannel memberCount(Integer memberCount) {
     this.memberCount = memberCount;
     return this;
   }
@@ -1164,24 +1211,50 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMemberCount() {
+  public Integer getMemberCount() {
     return memberCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMemberCount(BigDecimal memberCount) {
+  public void setMemberCount(Integer memberCount) {
     this.memberCount = memberCount;
   }
 
 
-  public SendBirdGroupChannel members(List<SendBirdMember> members) {
+  public SendbirdGroupChannel memberState(MemberStateEnum memberState) {
+    this.memberState = memberState;
+    return this;
+  }
+
+   /**
+   * Get memberState
+   * @return memberState
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_MEMBER_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public MemberStateEnum getMemberState() {
+    return memberState;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MEMBER_STATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMemberState(MemberStateEnum memberState) {
+    this.memberState = memberState;
+  }
+
+
+  public SendbirdGroupChannel members(List<SendbirdMember> members) {
     this.members = members;
     return this;
   }
 
-  public SendBirdGroupChannel addMembersItem(SendBirdMember membersItem) {
+  public SendbirdGroupChannel addMembersItem(SendbirdMember membersItem) {
     if (this.members == null) {
       this.members = new ArrayList<>();
     }
@@ -1198,45 +1271,19 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdMember> getMembers() {
+  public List<SendbirdMember> getMembers() {
     return members;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMembers(List<SendBirdMember> members) {
+  public void setMembers(List<SendbirdMember> members) {
     this.members = members;
   }
 
 
-  public SendBirdGroupChannel messageOffsetTimestamp(BigDecimal messageOffsetTimestamp) {
-    this.messageOffsetTimestamp = messageOffsetTimestamp;
-    return this;
-  }
-
-   /**
-   * Get messageOffsetTimestamp
-   * @return messageOffsetTimestamp
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getMessageOffsetTimestamp() {
-    return messageOffsetTimestamp;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MESSAGE_OFFSET_TIMESTAMP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageOffsetTimestamp(BigDecimal messageOffsetTimestamp) {
-    this.messageOffsetTimestamp = messageOffsetTimestamp;
-  }
-
-
-  public SendBirdGroupChannel messageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
+  public SendbirdGroupChannel messageSurvivalSeconds(Integer messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
     return this;
   }
@@ -1250,149 +1297,45 @@ public class SendBirdGroupChannel {
   @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMessageSurvivalSeconds() {
+  public Integer getMessageSurvivalSeconds() {
     return messageSurvivalSeconds;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageSurvivalSeconds(BigDecimal messageSurvivalSeconds) {
+  public void setMessageSurvivalSeconds(Integer messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
   }
 
 
-  public SendBirdGroupChannel myCountPreference(String myCountPreference) {
-    this.myCountPreference = myCountPreference;
+  public SendbirdGroupChannel metadata(Object metadata) {
+    this.metadata = metadata;
     return this;
   }
 
    /**
-   * Get myCountPreference
-   * @return myCountPreference
+   * Get metadata
+   * @return metadata
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MY_COUNT_PREFERENCE)
+  @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getMyCountPreference() {
-    return myCountPreference;
+  public Object getMetadata() {
+    return metadata;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MY_COUNT_PREFERENCE)
+  @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMyCountPreference(String myCountPreference) {
-    this.myCountPreference = myCountPreference;
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
   }
 
 
-  public SendBirdGroupChannel myLastRead(BigDecimal myLastRead) {
-    this.myLastRead = myLastRead;
-    return this;
-  }
-
-   /**
-   * Get myLastRead
-   * @return myLastRead
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MY_LAST_READ)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getMyLastRead() {
-    return myLastRead;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MY_LAST_READ)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMyLastRead(BigDecimal myLastRead) {
-    this.myLastRead = myLastRead;
-  }
-
-
-  public SendBirdGroupChannel myMemberState(MyMemberStateEnum myMemberState) {
-    this.myMemberState = myMemberState;
-    return this;
-  }
-
-   /**
-   * Get myMemberState
-   * @return myMemberState
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MY_MEMBER_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public MyMemberStateEnum getMyMemberState() {
-    return myMemberState;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MY_MEMBER_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMyMemberState(MyMemberStateEnum myMemberState) {
-    this.myMemberState = myMemberState;
-  }
-
-
-  public SendBirdGroupChannel myMutedState(MyMutedStateEnum myMutedState) {
-    this.myMutedState = myMutedState;
-    return this;
-  }
-
-   /**
-   * Get myMutedState
-   * @return myMutedState
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MY_MUTED_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public MyMutedStateEnum getMyMutedState() {
-    return myMutedState;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MY_MUTED_STATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMyMutedState(MyMutedStateEnum myMutedState) {
-    this.myMutedState = myMutedState;
-  }
-
-
-  public SendBirdGroupChannel myPushTriggerOption(MyPushTriggerOptionEnum myPushTriggerOption) {
-    this.myPushTriggerOption = myPushTriggerOption;
-    return this;
-  }
-
-   /**
-   * Get myPushTriggerOption
-   * @return myPushTriggerOption
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_MY_PUSH_TRIGGER_OPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public MyPushTriggerOptionEnum getMyPushTriggerOption() {
-    return myPushTriggerOption;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MY_PUSH_TRIGGER_OPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMyPushTriggerOption(MyPushTriggerOptionEnum myPushTriggerOption) {
-    this.myPushTriggerOption = myPushTriggerOption;
-  }
-
-
-  public SendBirdGroupChannel myRole(MyRoleEnum myRole) {
+  public SendbirdGroupChannel myRole(MyRoleEnum myRole) {
     this.myRole = myRole;
     return this;
   }
@@ -1418,7 +1361,7 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel name(String name) {
+  public SendbirdGroupChannel name(String name) {
     this.name = name;
     return this;
   }
@@ -1444,150 +1387,38 @@ public class SendBirdGroupChannel {
   }
 
 
-  public SendBirdGroupChannel operators(List<Object> operators) {
-    this.operators = operators;
-    return this;
-  }
-
-  public SendBirdGroupChannel addOperatorsItem(Object operatorsItem) {
-    if (this.operators == null) {
-      this.operators = new ArrayList<>();
-    }
-    this.operators.add(operatorsItem);
+  public SendbirdGroupChannel pushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
+    this.pushTriggerOption = pushTriggerOption;
     return this;
   }
 
    /**
-   * Get operators
-   * @return operators
+   * Get pushTriggerOption
+   * @return pushTriggerOption
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_OPERATORS)
+  @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<Object> getOperators() {
-    return operators;
+  public SendbirdPushTriggerOption getPushTriggerOption() {
+    return pushTriggerOption;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OPERATORS)
+  @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOperators(List<Object> operators) {
-    this.operators = operators;
+  public void setPushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
+    this.pushTriggerOption = pushTriggerOption;
   }
 
 
-  public SendBirdGroupChannel smsFallback(SendBirdGroupChannelSmsFallback smsFallback) {
-    this.smsFallback = smsFallback;
-    return this;
-  }
-
-   /**
-   * Get smsFallback
-   * @return smsFallback
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public SendBirdGroupChannelSmsFallback getSmsFallback() {
-    return smsFallback;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSmsFallback(SendBirdGroupChannelSmsFallback smsFallback) {
-    this.smsFallback = smsFallback;
-  }
-
-
-  public SendBirdGroupChannel unreadMentionCount(BigDecimal unreadMentionCount) {
-    this.unreadMentionCount = unreadMentionCount;
-    return this;
-  }
-
-   /**
-   * Get unreadMentionCount
-   * @return unreadMentionCount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNREAD_MENTION_COUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getUnreadMentionCount() {
-    return unreadMentionCount;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_UNREAD_MENTION_COUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUnreadMentionCount(BigDecimal unreadMentionCount) {
-    this.unreadMentionCount = unreadMentionCount;
-  }
-
-
-  public SendBirdGroupChannel unreadMessageCount(BigDecimal unreadMessageCount) {
-    this.unreadMessageCount = unreadMessageCount;
-    return this;
-  }
-
-   /**
-   * Get unreadMessageCount
-   * @return unreadMessageCount
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_UNREAD_MESSAGE_COUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getUnreadMessageCount() {
-    return unreadMessageCount;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_UNREAD_MESSAGE_COUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUnreadMessageCount(BigDecimal unreadMessageCount) {
-    this.unreadMessageCount = unreadMessageCount;
-  }
-
-
-  public SendBirdGroupChannel channel(SendBirdGroupChannelChannel channel) {
-    this.channel = channel;
-    return this;
-  }
-
-   /**
-   * Get channel
-   * @return channel
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CHANNEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public SendBirdGroupChannelChannel getChannel() {
-    return channel;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CHANNEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannel(SendBirdGroupChannelChannel channel) {
-    this.channel = channel;
-  }
-
-
-  public SendBirdGroupChannel readReceipt(Map<String, Long> readReceipt) {
+  public SendbirdGroupChannel readReceipt(Map<String, Long> readReceipt) {
     this.readReceipt = readReceipt;
     return this;
   }
 
-  public SendBirdGroupChannel putReadReceiptItem(String key, Long readReceiptItem) {
+  public SendbirdGroupChannel putReadReceiptItem(String key, Long readReceiptItem) {
     if (this.readReceipt == null) {
       this.readReceipt = new HashMap<>();
     }
@@ -1616,8 +1447,138 @@ public class SendBirdGroupChannel {
   }
 
 
+  public SendbirdGroupChannel smsFallback(SendbirdSmsFallback smsFallback) {
+    this.smsFallback = smsFallback;
+    return this;
+  }
+
+   /**
+   * Get smsFallback
+   * @return smsFallback
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public SendbirdSmsFallback getSmsFallback() {
+    return smsFallback;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSmsFallback(SendbirdSmsFallback smsFallback) {
+    this.smsFallback = smsFallback;
+  }
+
+
+  public SendbirdGroupChannel tsMessageOffset(Long tsMessageOffset) {
+    this.tsMessageOffset = tsMessageOffset;
+    return this;
+  }
+
+   /**
+   * Get tsMessageOffset
+   * @return tsMessageOffset
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_TS_MESSAGE_OFFSET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getTsMessageOffset() {
+    return tsMessageOffset;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TS_MESSAGE_OFFSET)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTsMessageOffset(Long tsMessageOffset) {
+    this.tsMessageOffset = tsMessageOffset;
+  }
+
+
+  public SendbirdGroupChannel unreadMentionCount(Integer unreadMentionCount) {
+    this.unreadMentionCount = unreadMentionCount;
+    return this;
+  }
+
+   /**
+   * Get unreadMentionCount
+   * @return unreadMentionCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getUnreadMentionCount() {
+    return unreadMentionCount;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_UNREAD_MENTION_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUnreadMentionCount(Integer unreadMentionCount) {
+    this.unreadMentionCount = unreadMentionCount;
+  }
+
+
+  public SendbirdGroupChannel unreadMessageCount(Integer unreadMessageCount) {
+    this.unreadMessageCount = unreadMessageCount;
+    return this;
+  }
+
+   /**
+   * Get unreadMessageCount
+   * @return unreadMessageCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getUnreadMessageCount() {
+    return unreadMessageCount;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_UNREAD_MESSAGE_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUnreadMessageCount(Integer unreadMessageCount) {
+    this.unreadMessageCount = unreadMessageCount;
+  }
+
+
+  public SendbirdGroupChannel userLastRead(Long userLastRead) {
+    this.userLastRead = userLastRead;
+    return this;
+  }
+
+   /**
+   * Get userLastRead
+   * @return userLastRead
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USER_LAST_READ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getUserLastRead() {
+    return userLastRead;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_USER_LAST_READ)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUserLastRead(Long userLastRead) {
+    this.userLastRead = userLastRead;
+  }
+
+
   /**
-   * Return true if this SendBird.GroupChannel object is equal to o.
+   * Return true if this Sendbird.GroupChannel object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -1627,51 +1588,52 @@ public class SendBirdGroupChannel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdGroupChannel sendBirdGroupChannel = (SendBirdGroupChannel) o;
-    return Objects.equals(this.channelUrl, sendBirdGroupChannel.channelUrl) &&
-        Objects.equals(this.coverUrl, sendBirdGroupChannel.coverUrl) &&
-        Objects.equals(this.createdAt, sendBirdGroupChannel.createdAt) &&
-        equalsNullable(this.createdBy, sendBirdGroupChannel.createdBy) &&
-        equalsNullable(this.creator, sendBirdGroupChannel.creator) &&
-        Objects.equals(this.customType, sendBirdGroupChannel.customType) &&
-        Objects.equals(this.data, sendBirdGroupChannel.data) &&
-        Objects.equals(this.disappearingMessage, sendBirdGroupChannel.disappearingMessage) &&
-        Objects.equals(this.freeze, sendBirdGroupChannel.freeze) &&
-        Objects.equals(this.ignoreProfanityFilter, sendBirdGroupChannel.ignoreProfanityFilter) &&
-        Objects.equals(this.hiddenState, sendBirdGroupChannel.hiddenState) &&
-        Objects.equals(this.invitedAt, sendBirdGroupChannel.invitedAt) &&
-        equalsNullable(this.inviter, sendBirdGroupChannel.inviter) &&
-        Objects.equals(this.isAccessCodeRequired, sendBirdGroupChannel.isAccessCodeRequired) &&
-        Objects.equals(this.isBroadcast, sendBirdGroupChannel.isBroadcast) &&
-        Objects.equals(this.isCreated, sendBirdGroupChannel.isCreated) &&
-        Objects.equals(this.isDiscoverable, sendBirdGroupChannel.isDiscoverable) &&
-        Objects.equals(this.isDistinct, sendBirdGroupChannel.isDistinct) &&
-        Objects.equals(this.isEphemeral, sendBirdGroupChannel.isEphemeral) &&
-        Objects.equals(this.isHidden, sendBirdGroupChannel.isHidden) &&
-        Objects.equals(this.isPublic, sendBirdGroupChannel.isPublic) &&
-        Objects.equals(this.isPushEnabled, sendBirdGroupChannel.isPushEnabled) &&
-        Objects.equals(this.isSuper, sendBirdGroupChannel.isSuper) &&
-        Objects.equals(this.joinedAt, sendBirdGroupChannel.joinedAt) &&
-        Objects.equals(this.joinedMemberCount, sendBirdGroupChannel.joinedMemberCount) &&
-        equalsNullable(this.lastMessage, sendBirdGroupChannel.lastMessage) &&
-        Objects.equals(this.maxLengthMessage, sendBirdGroupChannel.maxLengthMessage) &&
-        Objects.equals(this.memberCount, sendBirdGroupChannel.memberCount) &&
-        Objects.equals(this.members, sendBirdGroupChannel.members) &&
-        Objects.equals(this.messageOffsetTimestamp, sendBirdGroupChannel.messageOffsetTimestamp) &&
-        Objects.equals(this.messageSurvivalSeconds, sendBirdGroupChannel.messageSurvivalSeconds) &&
-        Objects.equals(this.myCountPreference, sendBirdGroupChannel.myCountPreference) &&
-        Objects.equals(this.myLastRead, sendBirdGroupChannel.myLastRead) &&
-        Objects.equals(this.myMemberState, sendBirdGroupChannel.myMemberState) &&
-        Objects.equals(this.myMutedState, sendBirdGroupChannel.myMutedState) &&
-        Objects.equals(this.myPushTriggerOption, sendBirdGroupChannel.myPushTriggerOption) &&
-        Objects.equals(this.myRole, sendBirdGroupChannel.myRole) &&
-        Objects.equals(this.name, sendBirdGroupChannel.name) &&
-        Objects.equals(this.operators, sendBirdGroupChannel.operators) &&
-        Objects.equals(this.smsFallback, sendBirdGroupChannel.smsFallback) &&
-        Objects.equals(this.unreadMentionCount, sendBirdGroupChannel.unreadMentionCount) &&
-        Objects.equals(this.unreadMessageCount, sendBirdGroupChannel.unreadMessageCount) &&
-        Objects.equals(this.channel, sendBirdGroupChannel.channel) &&
-        Objects.equals(this.readReceipt, sendBirdGroupChannel.readReceipt);
+    SendbirdGroupChannel sendbirdGroupChannel = (SendbirdGroupChannel) o;
+    return Objects.equals(this.channelUrl, sendbirdGroupChannel.channelUrl) &&
+        Objects.equals(this.countPreference, sendbirdGroupChannel.countPreference) &&
+        Objects.equals(this.coverUrl, sendbirdGroupChannel.coverUrl) &&
+        Objects.equals(this.createdAt, sendbirdGroupChannel.createdAt) &&
+        Objects.equals(this.createdBy, sendbirdGroupChannel.createdBy) &&
+        Objects.equals(this.customType, sendbirdGroupChannel.customType) &&
+        Objects.equals(this.data, sendbirdGroupChannel.data) &&
+        Objects.equals(this.deliveryReceipt, sendbirdGroupChannel.deliveryReceipt) &&
+        Objects.equals(this.disappearingMessage, sendbirdGroupChannel.disappearingMessage) &&
+        Objects.equals(this.freeze, sendbirdGroupChannel.freeze) &&
+        Objects.equals(this.hasAiBot, sendbirdGroupChannel.hasAiBot) &&
+        Objects.equals(this.hasBot, sendbirdGroupChannel.hasBot) &&
+        Objects.equals(this.hiddenState, sendbirdGroupChannel.hiddenState) &&
+        Objects.equals(this.ignoreProfanityFilter, sendbirdGroupChannel.ignoreProfanityFilter) &&
+        Objects.equals(this.invitedAt, sendbirdGroupChannel.invitedAt) &&
+        Objects.equals(this.inviter, sendbirdGroupChannel.inviter) &&
+        Objects.equals(this.isAccessCodeRequired, sendbirdGroupChannel.isAccessCodeRequired) &&
+        Objects.equals(this.isBroadcast, sendbirdGroupChannel.isBroadcast) &&
+        Objects.equals(this.isDiscoverable, sendbirdGroupChannel.isDiscoverable) &&
+        Objects.equals(this.isDistinct, sendbirdGroupChannel.isDistinct) &&
+        Objects.equals(this.isEphemeral, sendbirdGroupChannel.isEphemeral) &&
+        Objects.equals(this.isExclusive, sendbirdGroupChannel.isExclusive) &&
+        Objects.equals(this.isHidden, sendbirdGroupChannel.isHidden) &&
+        Objects.equals(this.isMuted, sendbirdGroupChannel.isMuted) &&
+        Objects.equals(this.isPublic, sendbirdGroupChannel.isPublic) &&
+        Objects.equals(this.isPushEnabled, sendbirdGroupChannel.isPushEnabled) &&
+        Objects.equals(this.isSuper, sendbirdGroupChannel.isSuper) &&
+        Objects.equals(this.joinedMemberCount, sendbirdGroupChannel.joinedMemberCount) &&
+        Objects.equals(this.joinedTs, sendbirdGroupChannel.joinedTs) &&
+        equalsNullable(this.lastMessage, sendbirdGroupChannel.lastMessage) &&
+        Objects.equals(this.maxLengthMessage, sendbirdGroupChannel.maxLengthMessage) &&
+        Objects.equals(this.memberCount, sendbirdGroupChannel.memberCount) &&
+        Objects.equals(this.memberState, sendbirdGroupChannel.memberState) &&
+        Objects.equals(this.members, sendbirdGroupChannel.members) &&
+        Objects.equals(this.messageSurvivalSeconds, sendbirdGroupChannel.messageSurvivalSeconds) &&
+        Objects.equals(this.metadata, sendbirdGroupChannel.metadata) &&
+        Objects.equals(this.myRole, sendbirdGroupChannel.myRole) &&
+        Objects.equals(this.name, sendbirdGroupChannel.name) &&
+        Objects.equals(this.pushTriggerOption, sendbirdGroupChannel.pushTriggerOption) &&
+        Objects.equals(this.readReceipt, sendbirdGroupChannel.readReceipt) &&
+        Objects.equals(this.smsFallback, sendbirdGroupChannel.smsFallback) &&
+        Objects.equals(this.tsMessageOffset, sendbirdGroupChannel.tsMessageOffset) &&
+        Objects.equals(this.unreadMentionCount, sendbirdGroupChannel.unreadMentionCount) &&
+        Objects.equals(this.unreadMessageCount, sendbirdGroupChannel.unreadMessageCount) &&
+        Objects.equals(this.userLastRead, sendbirdGroupChannel.userLastRead);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1680,7 +1642,7 @@ public class SendBirdGroupChannel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelUrl, coverUrl, createdAt, hashCodeNullable(createdBy), hashCodeNullable(creator), customType, data, disappearingMessage, freeze, ignoreProfanityFilter, hiddenState, invitedAt, hashCodeNullable(inviter), isAccessCodeRequired, isBroadcast, isCreated, isDiscoverable, isDistinct, isEphemeral, isHidden, isPublic, isPushEnabled, isSuper, joinedAt, joinedMemberCount, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, members, messageOffsetTimestamp, messageSurvivalSeconds, myCountPreference, myLastRead, myMemberState, myMutedState, myPushTriggerOption, myRole, name, operators, smsFallback, unreadMentionCount, unreadMessageCount, channel, readReceipt);
+    return Objects.hash(channelUrl, countPreference, coverUrl, createdAt, createdBy, customType, data, deliveryReceipt, disappearingMessage, freeze, hasAiBot, hasBot, hiddenState, ignoreProfanityFilter, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isDiscoverable, isDistinct, isEphemeral, isExclusive, isHidden, isMuted, isPublic, isPushEnabled, isSuper, joinedMemberCount, joinedTs, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, memberState, members, messageSurvivalSeconds, metadata, myRole, name, pushTriggerOption, readReceipt, smsFallback, tsMessageOffset, unreadMentionCount, unreadMessageCount, userLastRead);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1693,51 +1655,52 @@ public class SendBirdGroupChannel {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdGroupChannel {\n");
+    sb.append("class SendbirdGroupChannel {\n");
     sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
+    sb.append("    countPreference: ").append(toIndentedString(countPreference)).append("\n");
     sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("    customType: ").append(toIndentedString(customType)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    deliveryReceipt: ").append(toIndentedString(deliveryReceipt)).append("\n");
     sb.append("    disappearingMessage: ").append(toIndentedString(disappearingMessage)).append("\n");
     sb.append("    freeze: ").append(toIndentedString(freeze)).append("\n");
-    sb.append("    ignoreProfanityFilter: ").append(toIndentedString(ignoreProfanityFilter)).append("\n");
+    sb.append("    hasAiBot: ").append(toIndentedString(hasAiBot)).append("\n");
+    sb.append("    hasBot: ").append(toIndentedString(hasBot)).append("\n");
     sb.append("    hiddenState: ").append(toIndentedString(hiddenState)).append("\n");
+    sb.append("    ignoreProfanityFilter: ").append(toIndentedString(ignoreProfanityFilter)).append("\n");
     sb.append("    invitedAt: ").append(toIndentedString(invitedAt)).append("\n");
     sb.append("    inviter: ").append(toIndentedString(inviter)).append("\n");
     sb.append("    isAccessCodeRequired: ").append(toIndentedString(isAccessCodeRequired)).append("\n");
     sb.append("    isBroadcast: ").append(toIndentedString(isBroadcast)).append("\n");
-    sb.append("    isCreated: ").append(toIndentedString(isCreated)).append("\n");
     sb.append("    isDiscoverable: ").append(toIndentedString(isDiscoverable)).append("\n");
     sb.append("    isDistinct: ").append(toIndentedString(isDistinct)).append("\n");
     sb.append("    isEphemeral: ").append(toIndentedString(isEphemeral)).append("\n");
+    sb.append("    isExclusive: ").append(toIndentedString(isExclusive)).append("\n");
     sb.append("    isHidden: ").append(toIndentedString(isHidden)).append("\n");
+    sb.append("    isMuted: ").append(toIndentedString(isMuted)).append("\n");
     sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
     sb.append("    isPushEnabled: ").append(toIndentedString(isPushEnabled)).append("\n");
     sb.append("    isSuper: ").append(toIndentedString(isSuper)).append("\n");
-    sb.append("    joinedAt: ").append(toIndentedString(joinedAt)).append("\n");
     sb.append("    joinedMemberCount: ").append(toIndentedString(joinedMemberCount)).append("\n");
+    sb.append("    joinedTs: ").append(toIndentedString(joinedTs)).append("\n");
     sb.append("    lastMessage: ").append(toIndentedString(lastMessage)).append("\n");
     sb.append("    maxLengthMessage: ").append(toIndentedString(maxLengthMessage)).append("\n");
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
+    sb.append("    memberState: ").append(toIndentedString(memberState)).append("\n");
     sb.append("    members: ").append(toIndentedString(members)).append("\n");
-    sb.append("    messageOffsetTimestamp: ").append(toIndentedString(messageOffsetTimestamp)).append("\n");
     sb.append("    messageSurvivalSeconds: ").append(toIndentedString(messageSurvivalSeconds)).append("\n");
-    sb.append("    myCountPreference: ").append(toIndentedString(myCountPreference)).append("\n");
-    sb.append("    myLastRead: ").append(toIndentedString(myLastRead)).append("\n");
-    sb.append("    myMemberState: ").append(toIndentedString(myMemberState)).append("\n");
-    sb.append("    myMutedState: ").append(toIndentedString(myMutedState)).append("\n");
-    sb.append("    myPushTriggerOption: ").append(toIndentedString(myPushTriggerOption)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    myRole: ").append(toIndentedString(myRole)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    operators: ").append(toIndentedString(operators)).append("\n");
+    sb.append("    pushTriggerOption: ").append(toIndentedString(pushTriggerOption)).append("\n");
+    sb.append("    readReceipt: ").append(toIndentedString(readReceipt)).append("\n");
     sb.append("    smsFallback: ").append(toIndentedString(smsFallback)).append("\n");
+    sb.append("    tsMessageOffset: ").append(toIndentedString(tsMessageOffset)).append("\n");
     sb.append("    unreadMentionCount: ").append(toIndentedString(unreadMentionCount)).append("\n");
     sb.append("    unreadMessageCount: ").append(toIndentedString(unreadMessageCount)).append("\n");
-    sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
-    sb.append("    readReceipt: ").append(toIndentedString(readReceipt)).append("\n");
+    sb.append("    userLastRead: ").append(toIndentedString(userLastRead)).append("\n");
     sb.append("}");
     return sb.toString();
   }

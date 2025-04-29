@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -15,16 +15,13 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.*;
 import org.sendbird.client.auth.*;
-import org.openapitools.client.model.CreateBotData;
-import org.openapitools.client.model.CreateBotResponse;
-import org.openapitools.client.model.JoinChannelsData;
-import org.openapitools.client.model.JoinChannelsResponse;
+import org.openapitools.client.model.CreateABotRequest;
+import org.openapitools.client.model.CreateABotResponse;
+import org.openapitools.client.model.JoinChannelsRequest;
 import org.openapitools.client.model.ListBotsResponse;
-import org.openapitools.client.model.SendBirdMessageResponse;
-import org.openapitools.client.model.SendBotSMessageData;
-import org.openapitools.client.model.UpdateBotByIdData;
-import org.openapitools.client.model.UpdateBotByIdResponse;
-import org.openapitools.client.model.ViewBotByIdResponse;
+import org.openapitools.client.model.SendABotMessageRequest;
+import org.openapitools.client.model.SendbirdGroupChannelDetail;
+import org.openapitools.client.model.SendbirdMessageResponse;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -45,34 +42,17 @@ public class BotApiTest {
     /**
      * Create a bot
      *
-     * ## Create a bot  Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.  &gt; __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
+     * ## Create a bot  Creates a new bot within an application. Creating a bot is similar to creating a normal user, except a callback URL should be specified for a bot to receive events.  &gt; **Note**: The bot must first [join a group channel](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/join-channels) to interact with users. In group channels, you can also invite a bot through the [invite as members](https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel) action.      [https://sendbird.com/docs/chat/platform-api/v3/bot/creating-a-bot/create-a-bot#1-create-a-bot](https://sendbird.com/docs/chat/platform-api/v3/bot/creating-a-bot/create-a-bot#1-create-a-bot)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void createBotTest() throws ApiException {
+    public void createABotTest() throws ApiException {
         //String apiToken = null;
-        //CreateBotData createBotData = null;
-        //CreateBotResponse response = api.createBot()
+        //CreateABotRequest createABotRequest = null;
+        //CreateABotResponse response = api.createABot()
         //        .apiToken(apiToken)
-        //        .createBotData(createBotData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Delete a bot
-     *
-     * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteBotByIdTest() throws ApiException {
-        //String apiToken = null;
-        //String botUserid = null;
-        //Object response = api.deleteBotById(botUserid)
-        //        .apiToken(apiToken)
+        //        .createABotRequest(createABotRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -80,18 +60,36 @@ public class BotApiTest {
     /**
      * Join channels
      *
-     * ## Join channels  Makes a bot join one or more channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels ----------------------------
+     * ## Join channels  Makes a bot join one or more group channels.  [https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/join-channels#1-join-channels](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/join-channels#1-join-channels)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void joinChannelsTest() throws ApiException {
-        //String apiToken = null;
         //String botUserid = null;
-        //JoinChannelsData joinChannelsData = null;
-        //JoinChannelsResponse response = api.joinChannels(botUserid)
+        //String apiToken = null;
+        //JoinChannelsRequest joinChannelsRequest = null;
+        //SendbirdGroupChannelDetail response = api.joinChannels(botUserid)
         //        .apiToken(apiToken)
-        //        .joinChannelsData(joinChannelsData)
+        //        .joinChannelsRequest(joinChannelsRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Leave channels - When leaving a specific channel
+     *
+     * ## Leave channels  Makes a bot leave a specific channel  [https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels)
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void leaveAGroupChannelTest() throws ApiException {
+        //String channelUrl = null;
+        //String botUserid = null;
+        //String apiToken = null;
+        //Object response = api.leaveAGroupChannel(channelUrl, botUserid)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
@@ -99,35 +97,15 @@ public class BotApiTest {
     /**
      * Leave channels - When leaving all channels
      *
-     * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
+     * ## Leave channels  Makes a bot leave all group channels.  [https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void leaveChannelsTest() throws ApiException {
-        //String apiToken = null;
+    public void leaveGroupChannelsTest() throws ApiException {
         //String botUserid = null;
-        //String channelUrl = null;
-        //api.leaveChannels(botUserid)
-        //        .apiToken(apiToken)
-        //        .channelUrl(channelUrl)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Leave channels - When leaving a channel by its channel URL
-     *
-     * ## Leave channels  Makes a bot leave one or more group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void leaveChannelsByUrlTest() throws ApiException {
         //String apiToken = null;
-        //String botUserid = null;
-        //String channelUrl = null;
-        //Object response = api.leaveChannelsByUrl(botUserid, channelUrl)
+        //Object response = api.leaveGroupChannels(botUserid)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
@@ -136,19 +114,19 @@ public class BotApiTest {
     /**
      * List bots
      *
-     * ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots ----------------------------
+     * ## List bots  Retrieves a list of all bots within an application.  https://sendbird.com/docs/chat/platform-api/v3/bot/listing-bots/list-bots#1-list-bots
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void listBotsTest() throws ApiException {
-        //String apiToken = null;
         //String token = null;
         //Integer limit = null;
+        //String apiToken = null;
         //ListBotsResponse response = api.listBots()
-        //        .apiToken(apiToken)
         //        .token(token)
         //        .limit(limit)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
@@ -156,54 +134,18 @@ public class BotApiTest {
     /**
      * Send a bot&#39;s message
      *
-     * ## Send a bot&#39;s message  Sends a bot&#39;s message to a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message ----------------------------   &#x60;bot_userid&#x60;      Type: string      Description: Specifies the ID of the bot to send a message.
+     * ## Send a bot message  Sends a bot message to a group channel.  [https://sendbird.com/docs/chat/platform-api/v3/bot/sending-a-bot-message/send-a-bot-message#1-send-a-bot-message](https://sendbird.com/docs/chat/platform-api/v3/bot/sending-a-bot-message/send-a-bot-message#1-send-a-bot-message)  &#x60;bot_userid&#x60;   Type: string   Description: Specifies the ID of the bot to send a message.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void sendBotsMessageTest() throws ApiException {
-        //String apiToken = null;
+    public void sendABotMessageTest() throws ApiException {
         //String botUserid = null;
-        //SendBotSMessageData sendBotSMessageData = null;
-        //SendBirdMessageResponse response = api.sendBotsMessage(botUserid)
-        //        .apiToken(apiToken)
-        //        .sendBotSMessageData(sendBotSMessageData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update a bot
-     *
-     * ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateBotByIdTest() throws ApiException {
         //String apiToken = null;
-        //String botUserid = null;
-        //UpdateBotByIdData updateBotByIdData = null;
-        //UpdateBotByIdResponse response = api.updateBotById(botUserid)
+        //SendABotMessageRequest sendABotMessageRequest = null;
+        //SendbirdMessageResponse response = api.sendABotMessage(botUserid)
         //        .apiToken(apiToken)
-        //        .updateBotByIdData(updateBotByIdData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View a bot
-     *
-     * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewBotByIdTest() throws ApiException {
-        //String apiToken = null;
-        //String botUserid = null;
-        //ViewBotByIdResponse response = api.viewBotById(botUserid)
-        //        .apiToken(apiToken)
+        //        .sendABotMessageRequest(sendABotMessageRequest)
         //        .execute();
         // TODO: test validations
     }

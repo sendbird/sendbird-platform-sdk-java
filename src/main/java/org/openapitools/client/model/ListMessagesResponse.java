@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListMessagesResponseMessagesInner;
+import org.openapitools.client.model.SendbirdMessageResponse;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -38,20 +38,20 @@ import org.sendbird.client.JSON;
   ListMessagesResponse.JSON_PROPERTY_MESSAGES
 })
 @JsonTypeName("listMessagesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
 public class ListMessagesResponse {
   public static final String JSON_PROPERTY_MESSAGES = "messages";
-  private List<ListMessagesResponseMessagesInner> messages = null;
+  private List<SendbirdMessageResponse> messages = null;
 
   public ListMessagesResponse() { 
   }
 
-  public ListMessagesResponse messages(List<ListMessagesResponseMessagesInner> messages) {
+  public ListMessagesResponse messages(List<SendbirdMessageResponse> messages) {
     this.messages = messages;
     return this;
   }
 
-  public ListMessagesResponse addMessagesItem(ListMessagesResponseMessagesInner messagesItem) {
+  public ListMessagesResponse addMessagesItem(SendbirdMessageResponse messagesItem) {
     if (this.messages == null) {
       this.messages = new ArrayList<>();
     }
@@ -68,14 +68,14 @@ public class ListMessagesResponse {
   @JsonProperty(JSON_PROPERTY_MESSAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<ListMessagesResponseMessagesInner> getMessages() {
+  public List<SendbirdMessageResponse> getMessages() {
     return messages;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessages(List<ListMessagesResponseMessagesInner> messages) {
+  public void setMessages(List<SendbirdMessageResponse> messages) {
     this.messages = messages;
   }
 

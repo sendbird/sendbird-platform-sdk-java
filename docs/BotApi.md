@@ -4,31 +4,29 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createBot**](BotApi.md#createBot) | **POST** /v3/bots | Create a bot |
-| [**deleteBotById**](BotApi.md#deleteBotById) | **DELETE** /v3/bots/{bot_userid} | Delete a bot |
+| [**createABot**](BotApi.md#createABot) | **POST** /v3/bots | Create a bot |
 | [**joinChannels**](BotApi.md#joinChannels) | **POST** /v3/bots/{bot_userid}/channels | Join channels |
-| [**leaveChannels**](BotApi.md#leaveChannels) | **DELETE** /v3/bots/{bot_userid}/channels | Leave channels - When leaving all channels |
-| [**leaveChannelsByUrl**](BotApi.md#leaveChannelsByUrl) | **DELETE** /v3/bots/{bot_userid}/channels/{channel_url} | Leave channels - When leaving a channel by its channel URL |
+| [**leaveAGroupChannel**](BotApi.md#leaveAGroupChannel) | **DELETE** /v3/bots/{bot_userid}/channels/{channel_url} | Leave channels - When leaving a specific channel |
+| [**leaveGroupChannels**](BotApi.md#leaveGroupChannels) | **DELETE** /v3/bots/{bot_userid}/channels | Leave channels - When leaving all channels |
 | [**listBots**](BotApi.md#listBots) | **GET** /v3/bots | List bots |
-| [**sendBotsMessage**](BotApi.md#sendBotsMessage) | **POST** /v3/bots/{bot_userid}/send | Send a bot&#39;s message |
-| [**updateBotById**](BotApi.md#updateBotById) | **PUT** /v3/bots/{bot_userid} | Update a bot |
-| [**viewBotById**](BotApi.md#viewBotById) | **GET** /v3/bots/{bot_userid} | View a bot |
+| [**sendABotMessage**](BotApi.md#sendABotMessage) | **POST** /v3/bots/{bot_userid}/send | Send a bot&#39;s message |
 
 
 
-## createBot
+## createABot
 
-> CreateBotResponse createBot().apiToken(apiToken).createBotData(createBotData).execute();
+> CreateABotResponse createABot().apiToken(apiToken).createABotRequest(createABotRequest).execute();
 
 Create a bot
 
 ## Create a bot
 
-Creates a new bot within the application. Creating a bot is similar to creating a normal user, except that a callback URL is specified in order for the bot to receive events.
+Creates a new bot within an application. Creating a bot is similar to creating a normal user, except a callback URL should be specified for a bot to receive events.
 
-> __Note__: The bot must [join](#2-join-channels) a group channel first to interact with users. In group channels, you can invite a bot through the [invite as members](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members) action instead.
+> **Note**: The bot must first [join a group channel](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/join-channels) to interact with users. In group channels, you can also invite a bot through the [invite as members](https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel) action. 
+  
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-create-a-bot
+[https://sendbird.com/docs/chat/platform-api/v3/bot/creating-a-bot/create-a-bot#1-create-a-bot](https://sendbird.com/docs/chat/platform-api/v3/bot/creating-a-bot/create-a-bot#1-create-a-bot)
 
 ### Example
 
@@ -47,15 +45,15 @@ public class Example {
 
         BotApi apiInstance = new BotApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
-        CreateBotData createBotData = new CreateBotData(); // CreateBotData | 
+        CreateABotRequest createABotRequest = new CreateABotRequest(); // CreateABotRequest | 
         try {
-            CreateBotResponse result = api.createBot()
+            CreateABotResponse result = api.createABot()
                 .apiToken(apiToken)
-                .createBotData(createBotData)
+                .createABotRequest(createABotRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BotApi#createBot");
+            System.err.println("Exception when calling BotApi#createABot");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -71,11 +69,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | [optional] |
-| **createBotData** | [**CreateBotData**](CreateBotData.md)|  | [optional] |
+| **createABotRequest** | [**CreateABotRequest**](CreateABotRequest.md)|  | [optional] |
 
 ### Return type
 
-[**CreateBotResponse**](CreateBotResponse.md)
+[**CreateABotResponse**](CreateABotResponse.md)
 
 ### Authorization
 
@@ -92,18 +90,17 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## deleteBotById
+## joinChannels
 
-> Object deleteBotById(botUserid).apiToken(apiToken).execute();
+> SendbirdGroupChannelDetail joinChannels(botUserid).apiToken(apiToken).joinChannelsRequest(joinChannelsRequest).execute();
 
-Delete a bot
+Join channels
 
-## Delete a bot
+## Join channels
 
-Deletes a bot from an application.
+Makes a bot join one or more group channels.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot
-----------------------------
+[https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/join-channels#1-join-channels](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/join-channels#1-join-channels)
 
 ### Example
 
@@ -121,15 +118,17 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String botUserid = "botUserid_example"; // String | 
+        String botUserid = "botUserid_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
+        JoinChannelsRequest joinChannelsRequest = new JoinChannelsRequest(); // JoinChannelsRequest | 
         try {
-            Object result = api.deleteBotById(botUserid)
+            SendbirdGroupChannelDetail result = api.joinChannels(botUserid)
                 .apiToken(apiToken)
+                .joinChannelsRequest(joinChannelsRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BotApi#deleteBotById");
+            System.err.println("Exception when calling BotApi#joinChannels");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -144,7 +143,83 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **botUserid** | **String**|  | |
+| **botUserid** | **String**| (Required)  | |
+| **apiToken** | **String**|  | [optional] |
+| **joinChannelsRequest** | [**JoinChannelsRequest**](JoinChannelsRequest.md)|  | [optional] |
+
+### Return type
+
+[**SendbirdGroupChannelDetail**](SendbirdGroupChannelDetail.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## leaveAGroupChannel
+
+> Object leaveAGroupChannel(channelUrl, botUserid).apiToken(apiToken).execute();
+
+Leave channels - When leaving a specific channel
+
+## Leave channels
+
+Makes a bot leave a specific channel
+
+[https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels)
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.BotApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        BotApi apiInstance = new BotApi(defaultClient);
+        String channelUrl = "channelUrl_example"; // String | 
+        String botUserid = "botUserid_example"; // String | (Required) 
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        try {
+            Object result = api.leaveAGroupChannel(channelUrl, botUserid)
+                .apiToken(apiToken)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling BotApi#leaveAGroupChannel");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **channelUrl** | **String**|  | |
+| **botUserid** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
 
 ### Return type
@@ -166,171 +241,17 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## joinChannels
+## leaveGroupChannels
 
-> JoinChannelsResponse joinChannels(botUserid).apiToken(apiToken).joinChannelsData(joinChannelsData).execute();
-
-Join channels
-
-## Join channels
-
-Makes a bot join one or more channels.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-join-channels
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.BotApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        BotApi apiInstance = new BotApi(defaultClient);
-        String botUserid = "botUserid_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        JoinChannelsData joinChannelsData = new JoinChannelsData(); // JoinChannelsData | 
-        try {
-            JoinChannelsResponse result = api.joinChannels(botUserid)
-                .apiToken(apiToken)
-                .joinChannelsData(joinChannelsData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling BotApi#joinChannels");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **botUserid** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **joinChannelsData** | [**JoinChannelsData**](JoinChannelsData.md)|  | [optional] |
-
-### Return type
-
-[**JoinChannelsResponse**](JoinChannelsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## leaveChannels
-
-> leaveChannels(botUserid).apiToken(apiToken).channelUrl(channelUrl).execute();
+> Object leaveGroupChannels(botUserid).apiToken(apiToken).execute();
 
 Leave channels - When leaving all channels
 
 ## Leave channels
 
-Makes a bot leave one or more group channels.
+Makes a bot leave all group channels.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.BotApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        BotApi apiInstance = new BotApi(defaultClient);
-        String botUserid = "botUserid_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        String channelUrl = "channelUrl_example"; // String | 
-        try {
-            api.leaveChannels(botUserid)
-                .apiToken(apiToken)
-                .channelUrl(channelUrl)
-                .execute();
-        } catch (ApiException e) {
-            System.err.println("Exception when calling BotApi#leaveChannels");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **botUserid** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **channelUrl** | **String**|  | [optional] |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## leaveChannelsByUrl
-
-> Object leaveChannelsByUrl(botUserid, channelUrl).apiToken(apiToken).execute();
-
-Leave channels - When leaving a channel by its channel URL
-
-## Leave channels
-
-Makes a bot leave one or more group channels.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-leave-channels
-----------------------------
+[https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels](https://sendbird.com/docs/chat/platform-api/v3/bot/managing-a-bot/leave-channels#1-leave-channels)
 
 ### Example
 
@@ -348,16 +269,15 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String botUserid = "botUserid_example"; // String | 
-        String channelUrl = "channelUrl_example"; // String | 
+        String botUserid = "botUserid_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            Object result = api.leaveChannelsByUrl(botUserid, channelUrl)
+            Object result = api.leaveGroupChannels(botUserid)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BotApi#leaveChannelsByUrl");
+            System.err.println("Exception when calling BotApi#leaveGroupChannels");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -372,8 +292,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **botUserid** | **String**|  | |
-| **channelUrl** | **String**|  | |
+| **botUserid** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
 
 ### Return type
@@ -397,7 +316,7 @@ No authorization required
 
 ## listBots
 
-> ListBotsResponse listBots().apiToken(apiToken).token(token).limit(limit).execute();
+> ListBotsResponse listBots().token(token).limit(limit).apiToken(apiToken).execute();
 
 List bots
 
@@ -405,8 +324,7 @@ List bots
 
 Retrieves a list of all bots within an application.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-list-bots
-----------------------------
+https://sendbird.com/docs/chat/platform-api/v3/bot/listing-bots/list-bots#1-list-bots
 
 ### Example
 
@@ -424,14 +342,14 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String apiToken = "{{API_TOKEN}}"; // String | 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ListBotsResponse result = api.listBots()
-                .apiToken(apiToken)
                 .token(token)
                 .limit(limit)
+                .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -450,9 +368,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -473,22 +391,21 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## sendBotsMessage
+## sendABotMessage
 
-> SendBirdBotsMessageResponse sendBotsMessage(botUserid).apiToken(apiToken).sendBotSMessageData(sendBotSMessageData).execute();
+> SendbirdMessageResponse sendABotMessage(botUserid).apiToken(apiToken).sendABotMessageRequest(sendABotMessageRequest).execute();
 
 Send a bot&#39;s message
 
-## Send a bot's message
+## Send a bot message
 
-Sends a bot's message to a channel.
+Sends a bot message to a group channel.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-send-a-bot-s-message
-----------------------------
+[https://sendbird.com/docs/chat/platform-api/v3/bot/sending-a-bot-message/send-a-bot-message#1-send-a-bot-message](https://sendbird.com/docs/chat/platform-api/v3/bot/sending-a-bot-message/send-a-bot-message#1-send-a-bot-message)
 
- `bot_userid`
-     Type: string
-     Description: Specifies the ID of the bot to send a message.
+`bot_userid`  
+Type: string  
+Description: Specifies the ID of the bot to send a message.
 
 ### Example
 
@@ -506,17 +423,17 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         BotApi apiInstance = new BotApi(defaultClient);
-        String botUserid = "botUserid_example"; // String | 
+        String botUserid = "botUserid_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBotSMessageData sendBotSMessageData = new SendBotSMessageData(); // SendBotSMessageData | 
+        SendABotMessageRequest sendABotMessageRequest = new SendABotMessageRequest(); // SendABotMessageRequest | 
         try {
-            SendBirdBotsMessageResponse result = api.sendBotsMessage(botUserid)
+            SendbirdMessageResponse result = api.sendABotMessage(botUserid)
                 .apiToken(apiToken)
-                .sendBotSMessageData(sendBotSMessageData)
+                .sendABotMessageRequest(sendABotMessageRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BotApi#sendBotsMessage");
+            System.err.println("Exception when calling BotApi#sendABotMessage");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -531,13 +448,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **botUserid** | **String**|  | |
+| **botUserid** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBotSMessageData** | [**SendBotSMessageData**](SendBotSMessageData.md)|  | [optional] |
+| **sendABotMessageRequest** | [**SendABotMessageRequest**](SendABotMessageRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdBotsMessageResponse**](SendBirdBotsMessageResponse.md)
+[**SendbirdMessageResponse**](SendbirdMessageResponse.md)
 
 ### Authorization
 
@@ -546,157 +463,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## updateBotById
-
-> UpdateBotByIdResponse updateBotById(botUserid).apiToken(apiToken).updateBotByIdData(updateBotByIdData).execute();
-
-Update a bot
-
-## Update a bot
-
-Updates information on a bot.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.BotApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        BotApi apiInstance = new BotApi(defaultClient);
-        String botUserid = "botUserid_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdateBotByIdData updateBotByIdData = new UpdateBotByIdData(); // UpdateBotByIdData | 
-        try {
-            UpdateBotByIdResponse result = api.updateBotById(botUserid)
-                .apiToken(apiToken)
-                .updateBotByIdData(updateBotByIdData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling BotApi#updateBotById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **botUserid** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **updateBotByIdData** | [**UpdateBotByIdData**](UpdateBotByIdData.md)|  | [optional] |
-
-### Return type
-
-[**UpdateBotByIdResponse**](UpdateBotByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## viewBotById
-
-> ViewBotByIdResponse viewBotById(botUserid).apiToken(apiToken).execute();
-
-View a bot
-
-## View a bot
-
-Retrieves information on a bot.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.BotApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        BotApi apiInstance = new BotApi(defaultClient);
-        String botUserid = "botUserid_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        try {
-            ViewBotByIdResponse result = api.viewBotById(botUserid)
-                .apiToken(apiToken)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling BotApi#viewBotById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **botUserid** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-
-### Return type
-
-[**ViewBotByIdResponse**](ViewBotByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 ### HTTP response details

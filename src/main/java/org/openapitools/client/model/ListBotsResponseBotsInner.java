@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -24,8 +24,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
-import org.openapitools.client.model.CreateBotResponseBot;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.ListBotsResponseBotsInnerAi;
+import org.openapitools.client.model.ListBotsResponseBotsInnerBot;
+import org.openapitools.client.model.ListBotsResponseBotsInnerBotStyle;
+import org.openapitools.client.model.ListBotsResponseBotsInnerFirstMessagesInner;
+import org.openapitools.client.model.ListBotsResponseBotsInnerSafeguard;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -34,38 +39,84 @@ import org.sendbird.client.JSON;
  * ListBotsResponseBotsInner
  */
 @JsonPropertyOrder({
+  ListBotsResponseBotsInner.JSON_PROPERTY_AI,
   ListBotsResponseBotsInner.JSON_PROPERTY_BOT,
   ListBotsResponseBotsInner.JSON_PROPERTY_BOT_CALLBACK_URL,
+  ListBotsResponseBotsInner.JSON_PROPERTY_BOT_STYLE,
+  ListBotsResponseBotsInner.JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE,
+  ListBotsResponseBotsInner.JSON_PROPERTY_CREATED_AT,
   ListBotsResponseBotsInner.JSON_PROPERTY_ENABLE_MARK_AS_READ,
+  ListBotsResponseBotsInner.JSON_PROPERTY_FIRST_MESSAGES,
   ListBotsResponseBotsInner.JSON_PROPERTY_IS_PRIVACY_MODE,
-  ListBotsResponseBotsInner.JSON_PROPERTY_SHOW_MEMBER,
-  ListBotsResponseBotsInner.JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE
+  ListBotsResponseBotsInner.JSON_PROPERTY_SAFEGUARD,
+  ListBotsResponseBotsInner.JSON_PROPERTY_SHOW_MEMBER
 })
 @JsonTypeName("listBotsResponse_bots_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
 public class ListBotsResponseBotsInner {
+  public static final String JSON_PROPERTY_AI = "ai";
+  private ListBotsResponseBotsInnerAi ai;
+
   public static final String JSON_PROPERTY_BOT = "bot";
-  private CreateBotResponseBot bot;
+  private ListBotsResponseBotsInnerBot bot;
 
   public static final String JSON_PROPERTY_BOT_CALLBACK_URL = "bot_callback_url";
   private String botCallbackUrl;
 
+  public static final String JSON_PROPERTY_BOT_STYLE = "bot_style";
+  private ListBotsResponseBotsInnerBotStyle botStyle;
+
+  public static final String JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE = "channel_invitation_preference";
+  private Integer channelInvitationPreference;
+
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  private Long createdAt;
+
   public static final String JSON_PROPERTY_ENABLE_MARK_AS_READ = "enable_mark_as_read";
   private Boolean enableMarkAsRead;
+
+  public static final String JSON_PROPERTY_FIRST_MESSAGES = "first_messages";
+  private List<ListBotsResponseBotsInnerFirstMessagesInner> firstMessages = null;
 
   public static final String JSON_PROPERTY_IS_PRIVACY_MODE = "is_privacy_mode";
   private Boolean isPrivacyMode;
 
+  public static final String JSON_PROPERTY_SAFEGUARD = "safeguard";
+  private ListBotsResponseBotsInnerSafeguard safeguard;
+
   public static final String JSON_PROPERTY_SHOW_MEMBER = "show_member";
   private Boolean showMember;
-
-  public static final String JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE = "channel_invitation_preference";
-  private BigDecimal channelInvitationPreference;
 
   public ListBotsResponseBotsInner() { 
   }
 
-  public ListBotsResponseBotsInner bot(CreateBotResponseBot bot) {
+  public ListBotsResponseBotsInner ai(ListBotsResponseBotsInnerAi ai) {
+    this.ai = ai;
+    return this;
+  }
+
+   /**
+   * Get ai
+   * @return ai
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_AI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ListBotsResponseBotsInnerAi getAi() {
+    return ai;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AI)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAi(ListBotsResponseBotsInnerAi ai) {
+    this.ai = ai;
+  }
+
+
+  public ListBotsResponseBotsInner bot(ListBotsResponseBotsInnerBot bot) {
     this.bot = bot;
     return this;
   }
@@ -79,14 +130,14 @@ public class ListBotsResponseBotsInner {
   @JsonProperty(JSON_PROPERTY_BOT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CreateBotResponseBot getBot() {
+  public ListBotsResponseBotsInnerBot getBot() {
     return bot;
   }
 
 
   @JsonProperty(JSON_PROPERTY_BOT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBot(CreateBotResponseBot bot) {
+  public void setBot(ListBotsResponseBotsInnerBot bot) {
     this.bot = bot;
   }
 
@@ -117,6 +168,84 @@ public class ListBotsResponseBotsInner {
   }
 
 
+  public ListBotsResponseBotsInner botStyle(ListBotsResponseBotsInnerBotStyle botStyle) {
+    this.botStyle = botStyle;
+    return this;
+  }
+
+   /**
+   * Get botStyle
+   * @return botStyle
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_BOT_STYLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ListBotsResponseBotsInnerBotStyle getBotStyle() {
+    return botStyle;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_BOT_STYLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBotStyle(ListBotsResponseBotsInnerBotStyle botStyle) {
+    this.botStyle = botStyle;
+  }
+
+
+  public ListBotsResponseBotsInner channelInvitationPreference(Integer channelInvitationPreference) {
+    this.channelInvitationPreference = channelInvitationPreference;
+    return this;
+  }
+
+   /**
+   * Get channelInvitationPreference
+   * @return channelInvitationPreference
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getChannelInvitationPreference() {
+    return channelInvitationPreference;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setChannelInvitationPreference(Integer channelInvitationPreference) {
+    this.channelInvitationPreference = channelInvitationPreference;
+  }
+
+
+  public ListBotsResponseBotsInner createdAt(Long createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+   /**
+   * Get createdAt
+   * @return createdAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getCreatedAt() {
+    return createdAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedAt(Long createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
   public ListBotsResponseBotsInner enableMarkAsRead(Boolean enableMarkAsRead) {
     this.enableMarkAsRead = enableMarkAsRead;
     return this;
@@ -140,6 +269,40 @@ public class ListBotsResponseBotsInner {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnableMarkAsRead(Boolean enableMarkAsRead) {
     this.enableMarkAsRead = enableMarkAsRead;
+  }
+
+
+  public ListBotsResponseBotsInner firstMessages(List<ListBotsResponseBotsInnerFirstMessagesInner> firstMessages) {
+    this.firstMessages = firstMessages;
+    return this;
+  }
+
+  public ListBotsResponseBotsInner addFirstMessagesItem(ListBotsResponseBotsInnerFirstMessagesInner firstMessagesItem) {
+    if (this.firstMessages == null) {
+      this.firstMessages = new ArrayList<>();
+    }
+    this.firstMessages.add(firstMessagesItem);
+    return this;
+  }
+
+   /**
+   * Get firstMessages
+   * @return firstMessages
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_FIRST_MESSAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<ListBotsResponseBotsInnerFirstMessagesInner> getFirstMessages() {
+    return firstMessages;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FIRST_MESSAGES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFirstMessages(List<ListBotsResponseBotsInnerFirstMessagesInner> firstMessages) {
+    this.firstMessages = firstMessages;
   }
 
 
@@ -169,6 +332,32 @@ public class ListBotsResponseBotsInner {
   }
 
 
+  public ListBotsResponseBotsInner safeguard(ListBotsResponseBotsInnerSafeguard safeguard) {
+    this.safeguard = safeguard;
+    return this;
+  }
+
+   /**
+   * Get safeguard
+   * @return safeguard
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SAFEGUARD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ListBotsResponseBotsInnerSafeguard getSafeguard() {
+    return safeguard;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SAFEGUARD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSafeguard(ListBotsResponseBotsInnerSafeguard safeguard) {
+    this.safeguard = safeguard;
+  }
+
+
   public ListBotsResponseBotsInner showMember(Boolean showMember) {
     this.showMember = showMember;
     return this;
@@ -195,32 +384,6 @@ public class ListBotsResponseBotsInner {
   }
 
 
-  public ListBotsResponseBotsInner channelInvitationPreference(BigDecimal channelInvitationPreference) {
-    this.channelInvitationPreference = channelInvitationPreference;
-    return this;
-  }
-
-   /**
-   * Get channelInvitationPreference
-   * @return channelInvitationPreference
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getChannelInvitationPreference() {
-    return channelInvitationPreference;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannelInvitationPreference(BigDecimal channelInvitationPreference) {
-    this.channelInvitationPreference = channelInvitationPreference;
-  }
-
-
   /**
    * Return true if this listBotsResponse_bots_inner object is equal to o.
    */
@@ -233,29 +396,39 @@ public class ListBotsResponseBotsInner {
       return false;
     }
     ListBotsResponseBotsInner listBotsResponseBotsInner = (ListBotsResponseBotsInner) o;
-    return Objects.equals(this.bot, listBotsResponseBotsInner.bot) &&
+    return Objects.equals(this.ai, listBotsResponseBotsInner.ai) &&
+        Objects.equals(this.bot, listBotsResponseBotsInner.bot) &&
         Objects.equals(this.botCallbackUrl, listBotsResponseBotsInner.botCallbackUrl) &&
+        Objects.equals(this.botStyle, listBotsResponseBotsInner.botStyle) &&
+        Objects.equals(this.channelInvitationPreference, listBotsResponseBotsInner.channelInvitationPreference) &&
+        Objects.equals(this.createdAt, listBotsResponseBotsInner.createdAt) &&
         Objects.equals(this.enableMarkAsRead, listBotsResponseBotsInner.enableMarkAsRead) &&
+        Objects.equals(this.firstMessages, listBotsResponseBotsInner.firstMessages) &&
         Objects.equals(this.isPrivacyMode, listBotsResponseBotsInner.isPrivacyMode) &&
-        Objects.equals(this.showMember, listBotsResponseBotsInner.showMember) &&
-        Objects.equals(this.channelInvitationPreference, listBotsResponseBotsInner.channelInvitationPreference);
+        Objects.equals(this.safeguard, listBotsResponseBotsInner.safeguard) &&
+        Objects.equals(this.showMember, listBotsResponseBotsInner.showMember);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bot, botCallbackUrl, enableMarkAsRead, isPrivacyMode, showMember, channelInvitationPreference);
+    return Objects.hash(ai, bot, botCallbackUrl, botStyle, channelInvitationPreference, createdAt, enableMarkAsRead, firstMessages, isPrivacyMode, safeguard, showMember);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListBotsResponseBotsInner {\n");
+    sb.append("    ai: ").append(toIndentedString(ai)).append("\n");
     sb.append("    bot: ").append(toIndentedString(bot)).append("\n");
     sb.append("    botCallbackUrl: ").append(toIndentedString(botCallbackUrl)).append("\n");
-    sb.append("    enableMarkAsRead: ").append(toIndentedString(enableMarkAsRead)).append("\n");
-    sb.append("    isPrivacyMode: ").append(toIndentedString(isPrivacyMode)).append("\n");
-    sb.append("    showMember: ").append(toIndentedString(showMember)).append("\n");
+    sb.append("    botStyle: ").append(toIndentedString(botStyle)).append("\n");
     sb.append("    channelInvitationPreference: ").append(toIndentedString(channelInvitationPreference)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    enableMarkAsRead: ").append(toIndentedString(enableMarkAsRead)).append("\n");
+    sb.append("    firstMessages: ").append(toIndentedString(firstMessages)).append("\n");
+    sb.append("    isPrivacyMode: ").append(toIndentedString(isPrivacyMode)).append("\n");
+    sb.append("    safeguard: ").append(toIndentedString(safeguard)).append("\n");
+    sb.append("    showMember: ").append(toIndentedString(showMember)).append("\n");
     sb.append("}");
     return sb.toString();
   }

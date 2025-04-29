@@ -8,21 +8,19 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.OcCreateChannelData;
-import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
-import org.openapitools.client.model.OcListChannelsResponse;
-import org.openapitools.client.model.OcListOperatorsResponse;
-import org.openapitools.client.model.OcListParticipantsResponse;
-import org.openapitools.client.model.OcRegisterOperatorsData;
-import org.openapitools.client.model.OcUpdateChannelByUrlData;
-import org.openapitools.client.model.SendBirdOpenChannel;
+import org.openapitools.client.model.CreateAnOpenChannelRequest;
+import org.openapitools.client.model.ListOpenChannelsResponse;
+import org.openapitools.client.model.ListOperatorsResponse;
+import org.openapitools.client.model.RegisterOperatorsToAGroupChannelRequest;
+import org.openapitools.client.model.SendbirdOpenChannel;
+import org.openapitools.client.model.UpdateAnOpenChannelRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
 public class OpenChannelApi {
   private ApiClient apiClient;
 
@@ -53,141 +51,8 @@ public class OpenChannelApi {
   }
 
 
-private ApiResponse<Void> ocCancelTheRegistrationOfOperatorsWithHttpInfo(String channelUrl, List<String> operatorIds, String apiToken, Boolean deleteAll) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling ocCancelTheRegistrationOfOperators");
-    }
-    
-    // verify the required parameter 'operatorIds' is set
-    if (operatorIds == null) {
-      throw new ApiException(400, "Missing the required parameter 'operatorIds' when calling ocCancelTheRegistrationOfOperators");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/open_channels/{channel_url}/operators"
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "operator_ids", operatorIds));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "delete_all", deleteAll));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("OpenChannelApi.ocCancelTheRegistrationOfOperators", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
-  }
-
-  public class APIocCancelTheRegistrationOfOperatorsRequest {
-    private String channelUrl;
-    private List<String> operatorIds;
-    private String apiToken;
-    private Boolean deleteAll;
-
-    private APIocCancelTheRegistrationOfOperatorsRequest(String channelUrl) {
-      this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set operatorIds
-     * @param operatorIds  (required)
-     * @return APIocCancelTheRegistrationOfOperatorsRequest
-     */
-    public APIocCancelTheRegistrationOfOperatorsRequest operatorIds(List<String> operatorIds) {
-      this.operatorIds = operatorIds;
-      return this;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIocCancelTheRegistrationOfOperatorsRequest
-     */
-    public APIocCancelTheRegistrationOfOperatorsRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set deleteAll
-     * @param deleteAll  (optional)
-     * @return APIocCancelTheRegistrationOfOperatorsRequest
-     */
-    public APIocCancelTheRegistrationOfOperatorsRequest deleteAll(Boolean deleteAll) {
-      this.deleteAll = deleteAll;
-      return this;
-    }
-
-    /**
-     * Execute ocCancelTheRegistrationOfOperators request
-     
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public void execute() throws ApiException {
-      this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute ocCancelTheRegistrationOfOperators request with HTTP info returned
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return ocCancelTheRegistrationOfOperatorsWithHttpInfo(channelUrl, operatorIds, apiToken, deleteAll);
-    }
-  }
-
-  /**
-   * Cancel the registration of operators
-   * ## Cancel the registration of operators  Cancels the registration of operators from an open channel but leave them as participants.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-cancel-the-registration-of-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to cancel the registration of operators.
-   * @param channelUrl  (required)
-   * @return ocCancelTheRegistrationOfOperatorsRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIocCancelTheRegistrationOfOperatorsRequest ocCancelTheRegistrationOfOperators(String channelUrl) throws ApiException {
-    return new APIocCancelTheRegistrationOfOperatorsRequest(channelUrl);
-  }
-
-private ApiResponse<SendBirdOpenChannel> ocCreateChannelWithHttpInfo(String apiToken, OcCreateChannelData ocCreateChannelData) throws ApiException {
-    Object localVarPostBody = ocCreateChannelData;
+private ApiResponse<SendbirdOpenChannel> createAnOpenChannelWithHttpInfo(String apiToken, CreateAnOpenChannelRequest createAnOpenChannelRequest) throws ApiException {
+    Object localVarPostBody = createAnOpenChannelRequest;
     
     // create path and map variables
     String localVarPath = "/v3/open_channels";
@@ -200,7 +65,7 @@ private ApiResponse<SendBirdOpenChannel> ocCreateChannelWithHttpInfo(String apiT
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -216,43 +81,43 @@ private ApiResponse<SendBirdOpenChannel> ocCreateChannelWithHttpInfo(String apiT
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdOpenChannel> localVarReturnType = new GenericType<SendBirdOpenChannel>() {};
+    GenericType<SendbirdOpenChannel> localVarReturnType = new GenericType<SendbirdOpenChannel>() {};
 
-    return apiClient.invokeAPI("OpenChannelApi.ocCreateChannel", localVarPath, "POST", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("OpenChannelApi.createAnOpenChannel", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIocCreateChannelRequest {
+  public class APIcreateAnOpenChannelRequest {
     private String apiToken;
-    private OcCreateChannelData ocCreateChannelData;
+    private CreateAnOpenChannelRequest createAnOpenChannelRequest;
 
-    private APIocCreateChannelRequest() {
+    private APIcreateAnOpenChannelRequest() {
     }
 
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIocCreateChannelRequest
+     * @return APIcreateAnOpenChannelRequest
      */
-    public APIocCreateChannelRequest apiToken(String apiToken) {
+    public APIcreateAnOpenChannelRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set ocCreateChannelData
-     * @param ocCreateChannelData  (optional)
-     * @return APIocCreateChannelRequest
+     * Set createAnOpenChannelRequest
+     * @param createAnOpenChannelRequest  (optional)
+     * @return APIcreateAnOpenChannelRequest
      */
-    public APIocCreateChannelRequest ocCreateChannelData(OcCreateChannelData ocCreateChannelData) {
-      this.ocCreateChannelData = ocCreateChannelData;
+    public APIcreateAnOpenChannelRequest createAnOpenChannelRequest(CreateAnOpenChannelRequest createAnOpenChannelRequest) {
+      this.createAnOpenChannelRequest = createAnOpenChannelRequest;
       return this;
     }
 
     /**
-     * Execute ocCreateChannel request
-     * @return SendBirdOpenChannel
+     * Execute createAnOpenChannel request
+     * @return SendbirdOpenChannel
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -262,13 +127,13 @@ private ApiResponse<SendBirdOpenChannel> ocCreateChannelWithHttpInfo(String apiT
      
      */
     
-    public SendBirdOpenChannel execute() throws ApiException {
+    public SendbirdOpenChannel execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute ocCreateChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdOpenChannel&gt;
+     * Execute createAnOpenChannel request with HTTP info returned
+     * @return ApiResponse&lt;SendbirdOpenChannel&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -277,29 +142,29 @@ private ApiResponse<SendBirdOpenChannel> ocCreateChannelWithHttpInfo(String apiT
        </table>
 
      */
-    public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return ocCreateChannelWithHttpInfo(apiToken, ocCreateChannelData);
+    public ApiResponse<SendbirdOpenChannel> executeWithHttpInfo() throws ApiException {
+      return createAnOpenChannelWithHttpInfo(apiToken, createAnOpenChannelRequest);
     }
   }
 
   /**
-   * Create a channel
-   * ## Create a channel  Creates an open channel.  &gt;__Note__: Classic open channels created before the deprecation date of March 2021 will maintain their original form and functions. However, new applications created after December 15, 2020, will be able to create dynamic partitioning open channels only.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel
-   * @return ocCreateChannelRequest
+   * Create an open channel
+   * ## Create an open channel  You can create an [open channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel) that facilitates conversations for millions of users. Open channels allow a seamless chat experience possible for all participants by using [dynamic partitioning](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#4-how-dynamic-partitioning-works) which creates subchannels that each handle up to tens of thousands of participants.  Because users don&#39;t need invitations to join open channels, short-lived live events like concerts or live streams that don&#39;t require a sustained membership are good use cases for open channels.  [https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel)
+   * @return createAnOpenChannelRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIocCreateChannelRequest ocCreateChannel() throws ApiException {
-    return new APIocCreateChannelRequest();
+  public APIcreateAnOpenChannelRequest createAnOpenChannel() throws ApiException {
+    return new APIcreateAnOpenChannelRequest();
   }
 
-private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHttpInfo(String channelUrl, String apiToken) throws ApiException {
+private ApiResponse<Object> deleteAnOpenChannelWithHttpInfo(String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling ocDeleteChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling deleteAnOpenChannel");
     }
     
     // create path and map variables
@@ -314,7 +179,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHtt
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -330,34 +195,34 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHtt
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<OcDeleteChannelByUrl200Response> localVarReturnType = new GenericType<OcDeleteChannelByUrl200Response>() {};
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
 
-    return apiClient.invokeAPI("OpenChannelApi.ocDeleteChannelByUrl", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("OpenChannelApi.deleteAnOpenChannel", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIocDeleteChannelByUrlRequest {
+  public class APIdeleteAnOpenChannelRequest {
     private String channelUrl;
     private String apiToken;
 
-    private APIocDeleteChannelByUrlRequest(String channelUrl) {
+    private APIdeleteAnOpenChannelRequest(String channelUrl) {
       this.channelUrl = channelUrl;
     }
 
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIocDeleteChannelByUrlRequest
+     * @return APIdeleteAnOpenChannelRequest
      */
-    public APIocDeleteChannelByUrlRequest apiToken(String apiToken) {
+    public APIdeleteAnOpenChannelRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute ocDeleteChannelByUrl request
-     * @return OcDeleteChannelByUrl200Response
+     * Execute deleteAnOpenChannel request
+     * @return Object
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -367,13 +232,13 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHtt
      
      */
     
-    public OcDeleteChannelByUrl200Response execute() throws ApiException {
+    public Object execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute ocDeleteChannelByUrl request with HTTP info returned
-     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+     * Execute deleteAnOpenChannel request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -382,25 +247,273 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocDeleteChannelByUrlWithHtt
        </table>
 
      */
-    public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return ocDeleteChannelByUrlWithHttpInfo(channelUrl, apiToken);
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return deleteAnOpenChannelWithHttpInfo(channelUrl, apiToken);
     }
   }
 
   /**
-   * Delete a channel
-   * ## Delete a channel  Deletes an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel ----------------------------
-   * @param channelUrl  (required)
-   * @return ocDeleteChannelByUrlRequest
+   * Delete an open channel
+   * ## Delete an open channel  You can delete an open channel using this API. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/delete-an-open-channel#1-delete-an-open-channel
+   * @param channelUrl (Required)  (required)
+   * @return deleteAnOpenChannelRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIocDeleteChannelByUrlRequest ocDeleteChannelByUrl(String channelUrl) throws ApiException {
-    return new APIocDeleteChannelByUrlRequest(channelUrl);
+  public APIdeleteAnOpenChannelRequest deleteAnOpenChannel(String channelUrl) throws ApiException {
+    return new APIdeleteAnOpenChannelRequest(channelUrl);
   }
 
-private ApiResponse<OcListChannelsResponse> ocListChannelsWithHttpInfo(String apiToken, String token, Integer limit, String customTypes, String nameContains, String urlContains, Boolean showFrozen, Boolean showMetadata, String customType) throws ApiException {
+private ApiResponse<SendbirdOpenChannel> getAnOpenChannelWithHttpInfo(String channelUrl, String apiToken, Boolean includeOperators) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'channelUrl' is set
+    if (channelUrl == null) {
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling getAnOpenChannel");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/open_channels/{channel_url}"
+      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_operators", includeOperators));
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<SendbirdOpenChannel> localVarReturnType = new GenericType<SendbirdOpenChannel>() {};
+
+    return apiClient.invokeAPI("OpenChannelApi.getAnOpenChannel", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIgetAnOpenChannelRequest {
+    private String channelUrl;
+    private String apiToken;
+    private Boolean includeOperators;
+
+    private APIgetAnOpenChannelRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIgetAnOpenChannelRequest
+     */
+    public APIgetAnOpenChannelRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set includeOperators
+     * @param includeOperators Determines whether to include a list of operators in the response. (Default: false) (optional)
+     * @return APIgetAnOpenChannelRequest
+     */
+    public APIgetAnOpenChannelRequest includeOperators(Boolean includeOperators) {
+      this.includeOperators = includeOperators;
+      return this;
+    }
+
+    /**
+     * Execute getAnOpenChannel request
+     * @return SendbirdOpenChannel
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendbirdOpenChannel execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getAnOpenChannel request with HTTP info returned
+     * @return ApiResponse&lt;SendbirdOpenChannel&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendbirdOpenChannel> executeWithHttpInfo() throws ApiException {
+      return getAnOpenChannelWithHttpInfo(channelUrl, apiToken, includeOperators);
+    }
+  }
+
+  /**
+   * Get an open channel
+   * ## Get an open channel  This action retrieves information about a specific [open channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel).  [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-an-open-channel#1-get-an-open-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-an-open-channel#1-get-an-open-channel)
+   * @param channelUrl (Required)  (required)
+   * @return getAnOpenChannelRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIgetAnOpenChannelRequest getAnOpenChannel(String channelUrl) throws ApiException {
+    return new APIgetAnOpenChannelRequest(channelUrl);
+  }
+
+private ApiResponse<ListOperatorsResponse> listChannelOperatorsWithHttpInfo(String channelUrl, String token, Integer limit, String apiToken) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'channelUrl' is set
+    if (channelUrl == null) {
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling listChannelOperators");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/open_channels/{channel_url}/operators"
+      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "token", token));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<ListOperatorsResponse> localVarReturnType = new GenericType<ListOperatorsResponse>() {};
+
+    return apiClient.invokeAPI("OpenChannelApi.listChannelOperators", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIlistChannelOperatorsRequest {
+    private String channelUrl;
+    private String token;
+    private Integer limit;
+    private String apiToken;
+
+    private APIlistChannelOperatorsRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set token
+     * @param token  (optional)
+     * @return APIlistChannelOperatorsRequest
+     */
+    public APIlistChannelOperatorsRequest token(String token) {
+      this.token = token;
+      return this;
+    }
+
+    /**
+     * Set limit
+     * @param limit  (optional)
+     * @return APIlistChannelOperatorsRequest
+     */
+    public APIlistChannelOperatorsRequest limit(Integer limit) {
+      this.limit = limit;
+      return this;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIlistChannelOperatorsRequest
+     */
+    public APIlistChannelOperatorsRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute listChannelOperators request
+     * @return ListOperatorsResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ListOperatorsResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute listChannelOperators request with HTTP info returned
+     * @return ApiResponse&lt;ListOperatorsResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ListOperatorsResponse> executeWithHttpInfo() throws ApiException {
+      return listChannelOperatorsWithHttpInfo(channelUrl, token, limit, apiToken);
+    }
+  }
+
+  /**
+   * List operators of an open channel
+   * ## List operators of an open channel  You can retrieve a list of operators of an open channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/list-operators-of-an-open-channel#1-list-operators-of-an-open-channel  &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to retrieve a list of operators.
+   * @param channelUrl (Required)  (required)
+   * @return listChannelOperatorsRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIlistChannelOperatorsRequest listChannelOperators(String channelUrl) throws ApiException {
+    return new APIlistChannelOperatorsRequest(channelUrl);
+  }
+
+private ApiResponse<ListOpenChannelsResponse> listOpenChannelsWithHttpInfo(String token, String channelUrls, Integer limit, String customTypes, String nameContains, String urlContains, Boolean showFrozen, Boolean showMetadata, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -413,16 +526,16 @@ private ApiResponse<OcListChannelsResponse> ocListChannelsWithHttpInfo(String ap
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "token", token));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "channel_urls", channelUrls));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_types", customTypes));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "name_contains", nameContains));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "url_contains", urlContains));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_frozen", showFrozen));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_metadata", showMetadata));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_type", customType));
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -438,63 +551,63 @@ private ApiResponse<OcListChannelsResponse> ocListChannelsWithHttpInfo(String ap
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<OcListChannelsResponse> localVarReturnType = new GenericType<OcListChannelsResponse>() {};
+    GenericType<ListOpenChannelsResponse> localVarReturnType = new GenericType<ListOpenChannelsResponse>() {};
 
-    return apiClient.invokeAPI("OpenChannelApi.ocListChannels", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("OpenChannelApi.listOpenChannels", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIocListChannelsRequest {
-    private String apiToken;
+  public class APIlistOpenChannelsRequest {
     private String token;
+    private String channelUrls;
     private Integer limit;
     private String customTypes;
     private String nameContains;
     private String urlContains;
     private Boolean showFrozen;
     private Boolean showMetadata;
-    private String customType;
+    private String apiToken;
 
-    private APIocListChannelsRequest() {
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIocListChannelsRequest
-     */
-    public APIocListChannelsRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
+    private APIlistOpenChannelsRequest() {
     }
 
     /**
      * Set token
      * @param token  (optional)
-     * @return APIocListChannelsRequest
+     * @return APIlistOpenChannelsRequest
      */
-    public APIocListChannelsRequest token(String token) {
+    public APIlistOpenChannelsRequest token(String token) {
       this.token = token;
+      return this;
+    }
+
+    /**
+     * Set channelUrls
+     * @param channelUrls Specifies a comma-separated string of one or more open channel URLs to restrict the search scope. URL encoding each channel URL is recommended. (optional)
+     * @return APIlistOpenChannelsRequest
+     */
+    public APIlistOpenChannelsRequest channelUrls(String channelUrls) {
+      this.channelUrls = channelUrls;
       return this;
     }
 
     /**
      * Set limit
      * @param limit  (optional)
-     * @return APIocListChannelsRequest
+     * @return APIlistOpenChannelsRequest
      */
-    public APIocListChannelsRequest limit(Integer limit) {
+    public APIlistOpenChannelsRequest limit(Integer limit) {
       this.limit = limit;
       return this;
     }
 
     /**
      * Set customTypes
-     * @param customTypes  (optional)
-     * @return APIocListChannelsRequest
+     * @param customTypes Specifies a comma-separated string of one or more custom types to filter open channels. Urlencoding each type is recommended (for example, ?custom_types&#x3D;urlencoded_type_1,urlencoded_type_2). If not specified, all channels are returned, regardless of their custom type. (optional)
+     * @return APIlistOpenChannelsRequest
      */
-    public APIocListChannelsRequest customTypes(String customTypes) {
+    public APIlistOpenChannelsRequest customTypes(String customTypes) {
       this.customTypes = customTypes;
       return this;
     }
@@ -502,9 +615,9 @@ private ApiResponse<OcListChannelsResponse> ocListChannelsWithHttpInfo(String ap
     /**
      * Set nameContains
      * @param nameContains  (optional)
-     * @return APIocListChannelsRequest
+     * @return APIlistOpenChannelsRequest
      */
-    public APIocListChannelsRequest nameContains(String nameContains) {
+    public APIlistOpenChannelsRequest nameContains(String nameContains) {
       this.nameContains = nameContains;
       return this;
     }
@@ -512,175 +625,46 @@ private ApiResponse<OcListChannelsResponse> ocListChannelsWithHttpInfo(String ap
     /**
      * Set urlContains
      * @param urlContains  (optional)
-     * @return APIocListChannelsRequest
+     * @return APIlistOpenChannelsRequest
      */
-    public APIocListChannelsRequest urlContains(String urlContains) {
+    public APIlistOpenChannelsRequest urlContains(String urlContains) {
       this.urlContains = urlContains;
       return this;
     }
 
     /**
      * Set showFrozen
-     * @param showFrozen  (optional)
-     * @return APIocListChannelsRequest
+     * @param showFrozen Determines whether to include frozen channels in the response. Frozen channels are channels where only channel operators are allowed to send messages. (Default: true) (optional)
+     * @return APIlistOpenChannelsRequest
      */
-    public APIocListChannelsRequest showFrozen(Boolean showFrozen) {
+    public APIlistOpenChannelsRequest showFrozen(Boolean showFrozen) {
       this.showFrozen = showFrozen;
       return this;
     }
 
     /**
      * Set showMetadata
-     * @param showMetadata  (optional)
-     * @return APIocListChannelsRequest
+     * @param showMetadata Determines whether to include channel metadata in the response. (Default: false) (optional)
+     * @return APIlistOpenChannelsRequest
      */
-    public APIocListChannelsRequest showMetadata(Boolean showMetadata) {
+    public APIlistOpenChannelsRequest showMetadata(Boolean showMetadata) {
       this.showMetadata = showMetadata;
       return this;
     }
 
     /**
-     * Set customType
-     * @param customType  (optional)
-     * @return APIocListChannelsRequest
-     */
-    public APIocListChannelsRequest customType(String customType) {
-      this.customType = customType;
-      return this;
-    }
-
-    /**
-     * Execute ocListChannels request
-     * @return OcListChannelsResponse
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public OcListChannelsResponse execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute ocListChannels request with HTTP info returned
-     * @return ApiResponse&lt;OcListChannelsResponse&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<OcListChannelsResponse> executeWithHttpInfo() throws ApiException {
-      return ocListChannelsWithHttpInfo(apiToken, token, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, customType);
-    }
-  }
-
-  /**
-   * List channels
-   * ## List channels  Retrieves a list of open channels. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-channels ----------------------------
-   * @return ocListChannelsRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIocListChannelsRequest ocListChannels() throws ApiException {
-    return new APIocListChannelsRequest();
-  }
-
-private ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling ocListOperators");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/open_channels/{channel_url}/operators"
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "token", token));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<OcListOperatorsResponse> localVarReturnType = new GenericType<OcListOperatorsResponse>() {};
-
-    return apiClient.invokeAPI("OpenChannelApi.ocListOperators", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIocListOperatorsRequest {
-    private String channelUrl;
-    private String apiToken;
-    private String token;
-    private Integer limit;
-
-    private APIocListOperatorsRequest(String channelUrl) {
-      this.channelUrl = channelUrl;
-    }
-
-    /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIocListOperatorsRequest
+     * @return APIlistOpenChannelsRequest
      */
-    public APIocListOperatorsRequest apiToken(String apiToken) {
+    public APIlistOpenChannelsRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set token
-     * @param token  (optional)
-     * @return APIocListOperatorsRequest
-     */
-    public APIocListOperatorsRequest token(String token) {
-      this.token = token;
-      return this;
-    }
-
-    /**
-     * Set limit
-     * @param limit  (optional)
-     * @return APIocListOperatorsRequest
-     */
-    public APIocListOperatorsRequest limit(Integer limit) {
-      this.limit = limit;
-      return this;
-    }
-
-    /**
-     * Execute ocListOperators request
-     * @return OcListOperatorsResponse
+     * Execute listOpenChannels request
+     * @return ListOpenChannelsResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -690,13 +674,13 @@ private ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String 
      
      */
     
-    public OcListOperatorsResponse execute() throws ApiException {
+    public ListOpenChannelsResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute ocListOperators request with HTTP info returned
-     * @return ApiResponse&lt;OcListOperatorsResponse&gt;
+     * Execute listOpenChannels request with HTTP info returned
+     * @return ApiResponse&lt;ListOpenChannelsResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -705,160 +689,29 @@ private ApiResponse<OcListOperatorsResponse> ocListOperatorsWithHttpInfo(String 
        </table>
 
      */
-    public ApiResponse<OcListOperatorsResponse> executeWithHttpInfo() throws ApiException {
-      return ocListOperatorsWithHttpInfo(channelUrl, apiToken, token, limit);
+    public ApiResponse<ListOpenChannelsResponse> executeWithHttpInfo() throws ApiException {
+      return listOpenChannelsWithHttpInfo(token, channelUrls, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, apiToken);
     }
   }
 
   /**
-   * List operators
-   * ## List operators  Retrieves a list of operators of an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of operators.
-   * @param channelUrl  (required)
-   * @return ocListOperatorsRequest
+   * List open channels
+   * ## List open channels  This action retrieves a list of [open channels](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel). You can use various query parameters to determine the search scope and select what kind of information you want to receive about the queried channels.  [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-open-channels#1-list-open-channels](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-open-channels#1-list-open-channels)
+   * @return listOpenChannelsRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIocListOperatorsRequest ocListOperators(String channelUrl) throws ApiException {
-    return new APIocListOperatorsRequest(channelUrl);
+  public APIlistOpenChannelsRequest listOpenChannels() throws ApiException {
+    return new APIlistOpenChannelsRequest();
   }
 
-private ApiResponse<OcListParticipantsResponse> ocListParticipantsWithHttpInfo(String channelUrl, String apiToken, String token, Integer limit) throws ApiException {
-    Object localVarPostBody = null;
+private ApiResponse<Object> registerOperatorsWithHttpInfo(String channelUrl, String apiToken, RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest) throws ApiException {
+    Object localVarPostBody = registerOperatorsToAGroupChannelRequest;
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling ocListParticipants");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/open_channels/{channel_url}/participants"
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "token", token));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<OcListParticipantsResponse> localVarReturnType = new GenericType<OcListParticipantsResponse>() {};
-
-    return apiClient.invokeAPI("OpenChannelApi.ocListParticipants", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIocListParticipantsRequest {
-    private String channelUrl;
-    private String apiToken;
-    private String token;
-    private Integer limit;
-
-    private APIocListParticipantsRequest(String channelUrl) {
-      this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIocListParticipantsRequest
-     */
-    public APIocListParticipantsRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set token
-     * @param token  (optional)
-     * @return APIocListParticipantsRequest
-     */
-    public APIocListParticipantsRequest token(String token) {
-      this.token = token;
-      return this;
-    }
-
-    /**
-     * Set limit
-     * @param limit  (optional)
-     * @return APIocListParticipantsRequest
-     */
-    public APIocListParticipantsRequest limit(Integer limit) {
-      this.limit = limit;
-      return this;
-    }
-
-    /**
-     * Execute ocListParticipants request
-     * @return OcListParticipantsResponse
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public OcListParticipantsResponse execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute ocListParticipants request with HTTP info returned
-     * @return ApiResponse&lt;OcListParticipantsResponse&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<OcListParticipantsResponse> executeWithHttpInfo() throws ApiException {
-      return ocListParticipantsWithHttpInfo(channelUrl, apiToken, token, limit);
-    }
-  }
-
-  /**
-   * List participants
-   * ## List participants  Retrieves a list of the participants of an open channel. A participant refers to a user who has entered the open channel and is currently online.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-participants ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of participants in.
-   * @param channelUrl  (required)
-   * @return ocListParticipantsRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIocListParticipantsRequest ocListParticipants(String channelUrl) throws ApiException {
-    return new APIocListParticipantsRequest(channelUrl);
-  }
-
-private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttpInfo(String channelUrl, String apiToken, OcRegisterOperatorsData ocRegisterOperatorsData) throws ApiException {
-    Object localVarPostBody = ocRegisterOperatorsData;
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling ocRegisterOperators");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling registerOperators");
     }
     
     // create path and map variables
@@ -873,7 +726,7 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttp
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -889,45 +742,45 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttp
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<OcDeleteChannelByUrl200Response> localVarReturnType = new GenericType<OcDeleteChannelByUrl200Response>() {};
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
 
-    return apiClient.invokeAPI("OpenChannelApi.ocRegisterOperators", localVarPath, "POST", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("OpenChannelApi.registerOperators", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIocRegisterOperatorsRequest {
+  public class APIregisterOperatorsRequest {
     private String channelUrl;
     private String apiToken;
-    private OcRegisterOperatorsData ocRegisterOperatorsData;
+    private RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest;
 
-    private APIocRegisterOperatorsRequest(String channelUrl) {
+    private APIregisterOperatorsRequest(String channelUrl) {
       this.channelUrl = channelUrl;
     }
 
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIocRegisterOperatorsRequest
+     * @return APIregisterOperatorsRequest
      */
-    public APIocRegisterOperatorsRequest apiToken(String apiToken) {
+    public APIregisterOperatorsRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set ocRegisterOperatorsData
-     * @param ocRegisterOperatorsData  (optional)
-     * @return APIocRegisterOperatorsRequest
+     * Set registerOperatorsToAGroupChannelRequest
+     * @param registerOperatorsToAGroupChannelRequest  (optional)
+     * @return APIregisterOperatorsRequest
      */
-    public APIocRegisterOperatorsRequest ocRegisterOperatorsData(OcRegisterOperatorsData ocRegisterOperatorsData) {
-      this.ocRegisterOperatorsData = ocRegisterOperatorsData;
+    public APIregisterOperatorsRequest registerOperatorsToAGroupChannelRequest(RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest) {
+      this.registerOperatorsToAGroupChannelRequest = registerOperatorsToAGroupChannelRequest;
       return this;
     }
 
     /**
-     * Execute ocRegisterOperators request
-     * @return OcDeleteChannelByUrl200Response
+     * Execute registerOperators request
+     * @return Object
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -937,13 +790,13 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttp
      
      */
     
-    public OcDeleteChannelByUrl200Response execute() throws ApiException {
+    public Object execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute ocRegisterOperators request with HTTP info returned
-     * @return ApiResponse&lt;OcDeleteChannelByUrl200Response&gt;
+     * Execute registerOperators request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -952,151 +805,39 @@ private ApiResponse<OcDeleteChannelByUrl200Response> ocRegisterOperatorsWithHttp
        </table>
 
      */
-    public ApiResponse<OcDeleteChannelByUrl200Response> executeWithHttpInfo() throws ApiException {
-      return ocRegisterOperatorsWithHttpInfo(channelUrl, apiToken, ocRegisterOperatorsData);
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return registerOperatorsWithHttpInfo(channelUrl, apiToken, registerOperatorsToAGroupChannelRequest);
     }
   }
 
   /**
-   * Register operators
-   * ## Register operators  Registers one or more operators to an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-register-operators ----------------------------
-   * @param channelUrl  (required)
-   * @return ocRegisterOperatorsRequest
+   * Register operators to an open channel
+   * ## Register operators to an open channel  You can register one or more operators to an open channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/register-operators-to-an-open-channel#1-register-operators-to-an-open-channel
+   * @param channelUrl (Required)  (required)
+   * @return registerOperatorsRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIocRegisterOperatorsRequest ocRegisterOperators(String channelUrl) throws ApiException {
-    return new APIocRegisterOperatorsRequest(channelUrl);
+  public APIregisterOperatorsRequest registerOperators(String channelUrl) throws ApiException {
+    return new APIregisterOperatorsRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdOpenChannel> ocUpdateChannelByUrlWithHttpInfo(String channelUrl, String apiToken, OcUpdateChannelByUrlData ocUpdateChannelByUrlData) throws ApiException {
-    Object localVarPostBody = ocUpdateChannelByUrlData;
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling ocUpdateChannelByUrl");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/open_channels/{channel_url}"
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<SendBirdOpenChannel> localVarReturnType = new GenericType<SendBirdOpenChannel>() {};
-
-    return apiClient.invokeAPI("OpenChannelApi.ocUpdateChannelByUrl", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIocUpdateChannelByUrlRequest {
-    private String channelUrl;
-    private String apiToken;
-    private OcUpdateChannelByUrlData ocUpdateChannelByUrlData;
-
-    private APIocUpdateChannelByUrlRequest(String channelUrl) {
-      this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIocUpdateChannelByUrlRequest
-     */
-    public APIocUpdateChannelByUrlRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set ocUpdateChannelByUrlData
-     * @param ocUpdateChannelByUrlData  (optional)
-     * @return APIocUpdateChannelByUrlRequest
-     */
-    public APIocUpdateChannelByUrlRequest ocUpdateChannelByUrlData(OcUpdateChannelByUrlData ocUpdateChannelByUrlData) {
-      this.ocUpdateChannelByUrlData = ocUpdateChannelByUrlData;
-      return this;
-    }
-
-    /**
-     * Execute ocUpdateChannelByUrl request
-     * @return SendBirdOpenChannel
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public SendBirdOpenChannel execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute ocUpdateChannelByUrl request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdOpenChannel&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return ocUpdateChannelByUrlWithHttpInfo(channelUrl, apiToken, ocUpdateChannelByUrlData);
-    }
-  }
-
-  /**
-   * Update a channel
-   * ## Update a channel  Updates information on an open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-channel ----------------------------
-   * @param channelUrl  (required)
-   * @return ocUpdateChannelByUrlRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIocUpdateChannelByUrlRequest ocUpdateChannelByUrl(String channelUrl) throws ApiException {
-    return new APIocUpdateChannelByUrlRequest(channelUrl);
-  }
-
-private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String channelUrl, String apiToken) throws ApiException {
+private ApiResponse<Object> unregisterOperatorsWithHttpInfo(String channelUrl, String operatorIds, Boolean deleteAll, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling ocViewChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling unregisterOperators");
+    }
+    
+    // verify the required parameter 'operatorIds' is set
+    if (operatorIds == null) {
+      throw new ApiException(400, "Missing the required parameter 'operatorIds' when calling unregisterOperators");
     }
     
     // create path and map variables
-    String localVarPath = "/v3/open_channels/{channel_url}"
+    String localVarPath = "/v3/open_channels/{channel_url}/operators"
       .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
 
     // query params
@@ -1105,9 +846,11 @@ private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String c
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "operator_ids", operatorIds));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "delete_all", deleteAll));
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -1123,34 +866,56 @@ private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String c
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdOpenChannel> localVarReturnType = new GenericType<SendBirdOpenChannel>() {};
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
 
-    return apiClient.invokeAPI("OpenChannelApi.ocViewChannelByUrl", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("OpenChannelApi.unregisterOperators", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIocViewChannelByUrlRequest {
+  public class APIunregisterOperatorsRequest {
     private String channelUrl;
+    private String operatorIds;
+    private Boolean deleteAll;
     private String apiToken;
 
-    private APIocViewChannelByUrlRequest(String channelUrl) {
+    private APIunregisterOperatorsRequest(String channelUrl) {
       this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set operatorIds
+     * @param operatorIds Specifies an array of one or more operator IDs to unregister from the channel. The operators in this array remain as participants of the channel after losing their operational roles. Urlencoding each operator ID is recommended. An example of a Urlencoded array would be ?operator_ids&#x3D;urlencoded_id_1,urlencoded_id_2. (required)
+     * @return APIunregisterOperatorsRequest
+     */
+    public APIunregisterOperatorsRequest operatorIds(String operatorIds) {
+      this.operatorIds = operatorIds;
+      return this;
+    }
+
+    /**
+     * Set deleteAll
+     * @param deleteAll Determines whether to unregister all operators and leave them as the participants of the channel. When this is set to true, the operator_ids property isn&#39;t effective and doesn&#39;t need to be specified in the request. (Default: false) (optional)
+     * @return APIunregisterOperatorsRequest
+     */
+    public APIunregisterOperatorsRequest deleteAll(Boolean deleteAll) {
+      this.deleteAll = deleteAll;
+      return this;
     }
 
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIocViewChannelByUrlRequest
+     * @return APIunregisterOperatorsRequest
      */
-    public APIocViewChannelByUrlRequest apiToken(String apiToken) {
+    public APIunregisterOperatorsRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute ocViewChannelByUrl request
-     * @return SendBirdOpenChannel
+     * Execute unregisterOperators request
+     * @return Object
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1160,13 +925,13 @@ private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String c
      
      */
     
-    public SendBirdOpenChannel execute() throws ApiException {
+    public Object execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute ocViewChannelByUrl request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdOpenChannel&gt;
+     * Execute unregisterOperators request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1175,21 +940,138 @@ private ApiResponse<SendBirdOpenChannel> ocViewChannelByUrlWithHttpInfo(String c
        </table>
 
      */
-    public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return ocViewChannelByUrlWithHttpInfo(channelUrl, apiToken);
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return unregisterOperatorsWithHttpInfo(channelUrl, operatorIds, deleteAll, apiToken);
     }
   }
 
   /**
-   * View a channel
-   * ## View a channel  Retrieves information on a specific open channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-channel ----------------------------
-   * @param channelUrl  (required)
-   * @return ocViewChannelByUrlRequest
+   * Unregister operators from an open channel
+   * ## Unregister operators from an open channel  You can unregister operators in an open channel but keep them in the channel as participants using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/unregister-operators-from-an-open-channel#1-unregister-operators-from-an-open-channel  &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to cancel the registration of operators.
+   * @param channelUrl (Required)  (required)
+   * @return unregisterOperatorsRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIocViewChannelByUrlRequest ocViewChannelByUrl(String channelUrl) throws ApiException {
-    return new APIocViewChannelByUrlRequest(channelUrl);
+  public APIunregisterOperatorsRequest unregisterOperators(String channelUrl) throws ApiException {
+    return new APIunregisterOperatorsRequest(channelUrl);
+  }
+
+private ApiResponse<SendbirdOpenChannel> updateAnOpenChannelWithHttpInfo(String channelUrl, String apiToken, UpdateAnOpenChannelRequest updateAnOpenChannelRequest) throws ApiException {
+    Object localVarPostBody = updateAnOpenChannelRequest;
+    
+    // verify the required parameter 'channelUrl' is set
+    if (channelUrl == null) {
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updateAnOpenChannel");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/open_channels/{channel_url}"
+      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<SendbirdOpenChannel> localVarReturnType = new GenericType<SendbirdOpenChannel>() {};
+
+    return apiClient.invokeAPI("OpenChannelApi.updateAnOpenChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIupdateAnOpenChannelRequest {
+    private String channelUrl;
+    private String apiToken;
+    private UpdateAnOpenChannelRequest updateAnOpenChannelRequest;
+
+    private APIupdateAnOpenChannelRequest(String channelUrl) {
+      this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIupdateAnOpenChannelRequest
+     */
+    public APIupdateAnOpenChannelRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateAnOpenChannelRequest
+     * @param updateAnOpenChannelRequest  (optional)
+     * @return APIupdateAnOpenChannelRequest
+     */
+    public APIupdateAnOpenChannelRequest updateAnOpenChannelRequest(UpdateAnOpenChannelRequest updateAnOpenChannelRequest) {
+      this.updateAnOpenChannelRequest = updateAnOpenChannelRequest;
+      return this;
+    }
+
+    /**
+     * Execute updateAnOpenChannel request
+     * @return SendbirdOpenChannel
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendbirdOpenChannel execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateAnOpenChannel request with HTTP info returned
+     * @return ApiResponse&lt;SendbirdOpenChannel&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendbirdOpenChannel> executeWithHttpInfo() throws ApiException {
+      return updateAnOpenChannelWithHttpInfo(channelUrl, apiToken, updateAnOpenChannelRequest);
+    }
+  }
+
+  /**
+   * Update an open channel
+   * ## Update an open channel  You can update information about an open channel using this API. You can add a cover image to a channel to better identify the channel or specify a custom channel type for grouping channels by custom type. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-an-open-channel#1-update-an-open-channel
+   * @param channelUrl (Required)  (required)
+   * @return updateAnOpenChannelRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIupdateAnOpenChannelRequest updateAnOpenChannel(String channelUrl) throws ApiException {
+    return new APIupdateAnOpenChannelRequest(channelUrl);
   }
 }

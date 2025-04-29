@@ -4,114 +4,30 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**ocCancelTheRegistrationOfOperators**](OpenChannelApi.md#ocCancelTheRegistrationOfOperators) | **DELETE** /v3/open_channels/{channel_url}/operators | Cancel the registration of operators |
-| [**ocCreateChannel**](OpenChannelApi.md#ocCreateChannel) | **POST** /v3/open_channels | Create a channel |
-| [**ocDeleteChannelByUrl**](OpenChannelApi.md#ocDeleteChannelByUrl) | **DELETE** /v3/open_channels/{channel_url} | Delete a channel |
-| [**ocListChannels**](OpenChannelApi.md#ocListChannels) | **GET** /v3/open_channels | List channels |
-| [**ocListOperators**](OpenChannelApi.md#ocListOperators) | **GET** /v3/open_channels/{channel_url}/operators | List operators |
-| [**ocListParticipants**](OpenChannelApi.md#ocListParticipants) | **GET** /v3/open_channels/{channel_url}/participants | List participants |
-| [**ocRegisterOperators**](OpenChannelApi.md#ocRegisterOperators) | **POST** /v3/open_channels/{channel_url}/operators | Register operators |
-| [**ocUpdateChannelByUrl**](OpenChannelApi.md#ocUpdateChannelByUrl) | **PUT** /v3/open_channels/{channel_url} | Update a channel |
-| [**ocViewChannelByUrl**](OpenChannelApi.md#ocViewChannelByUrl) | **GET** /v3/open_channels/{channel_url} | View a channel |
+| [**createAnOpenChannel**](OpenChannelApi.md#createAnOpenChannel) | **POST** /v3/open_channels | Create an open channel |
+| [**deleteAnOpenChannel**](OpenChannelApi.md#deleteAnOpenChannel) | **DELETE** /v3/open_channels/{channel_url} | Delete an open channel |
+| [**getAnOpenChannel**](OpenChannelApi.md#getAnOpenChannel) | **GET** /v3/open_channels/{channel_url} | Get an open channel |
+| [**listChannelOperators**](OpenChannelApi.md#listChannelOperators) | **GET** /v3/open_channels/{channel_url}/operators | List operators of an open channel |
+| [**listOpenChannels**](OpenChannelApi.md#listOpenChannels) | **GET** /v3/open_channels | List open channels |
+| [**registerOperators**](OpenChannelApi.md#registerOperators) | **POST** /v3/open_channels/{channel_url}/operators | Register operators to an open channel |
+| [**unregisterOperators**](OpenChannelApi.md#unregisterOperators) | **DELETE** /v3/open_channels/{channel_url}/operators | Unregister operators from an open channel |
+| [**updateAnOpenChannel**](OpenChannelApi.md#updateAnOpenChannel) | **PUT** /v3/open_channels/{channel_url} | Update an open channel |
 
 
 
-## ocCancelTheRegistrationOfOperators
+## createAnOpenChannel
 
-> ocCancelTheRegistrationOfOperators(channelUrl).operatorIds(operatorIds).apiToken(apiToken).deleteAll(deleteAll).execute();
+> SendbirdOpenChannel createAnOpenChannel().apiToken(apiToken).createAnOpenChannelRequest(createAnOpenChannelRequest).execute();
 
-Cancel the registration of operators
+Create an open channel
 
-## Cancel the registration of operators
+## Create an open channel
 
-Cancels the registration of operators from an open channel but leave them as participants.
+You can create an [open channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel) that facilitates conversations for millions of users. Open channels allow a seamless chat experience possible for all participants by using [dynamic partitioning](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#4-how-dynamic-partitioning-works) which creates subchannels that each handle up to tens of thousands of participants.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-cancel-the-registration-of-operators
-----------------------------
+Because users don't need invitations to join open channels, short-lived live events like concerts or live streams that don't require a sustained membership are good use cases for open channels.
 
- `channel_url`
-     Type: string
-     Description: Specifies the URL of the channel to cancel the registration of operators.
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.OpenChannelApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        List<String> operatorIds = Arrays.asList(); // List<String> | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        Boolean deleteAll = true; // Boolean | 
-        try {
-            api.ocCancelTheRegistrationOfOperators(channelUrl)
-                .operatorIds(operatorIds)
-                .apiToken(apiToken)
-                .deleteAll(deleteAll)
-                .execute();
-        } catch (ApiException e) {
-            System.err.println("Exception when calling OpenChannelApi#ocCancelTheRegistrationOfOperators");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **operatorIds** | **List&lt;String&gt;**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **deleteAll** | **Boolean**|  | [optional] |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocCreateChannel
-
-> SendBirdOpenChannel ocCreateChannel().apiToken(apiToken).ocCreateChannelData(ocCreateChannelData).execute();
-
-Create a channel
-
-## Create a channel
-
-Creates an open channel.
-
->__Note__: Classic open channels created before the deprecation date of March 2021 will maintain their original form and functions. However, new applications created after December 15, 2020, will be able to create dynamic partitioning open channels only.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel
+[https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel](https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-create-a-channel)
 
 ### Example
 
@@ -130,15 +46,15 @@ public class Example {
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
-        OcCreateChannelData ocCreateChannelData = new OcCreateChannelData(); // OcCreateChannelData | 
+        CreateAnOpenChannelRequest createAnOpenChannelRequest = new CreateAnOpenChannelRequest(); // CreateAnOpenChannelRequest | 
         try {
-            SendBirdOpenChannel result = api.ocCreateChannel()
+            SendbirdOpenChannel result = api.createAnOpenChannel()
                 .apiToken(apiToken)
-                .ocCreateChannelData(ocCreateChannelData)
+                .createAnOpenChannelRequest(createAnOpenChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling OpenChannelApi#ocCreateChannel");
+            System.err.println("Exception when calling OpenChannelApi#createAnOpenChannel");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -154,11 +70,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | [optional] |
-| **ocCreateChannelData** | [**OcCreateChannelData**](OcCreateChannelData.md)|  | [optional] |
+| **createAnOpenChannelRequest** | [**CreateAnOpenChannelRequest**](CreateAnOpenChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
+[**SendbirdOpenChannel**](SendbirdOpenChannel.md)
 
 ### Authorization
 
@@ -175,18 +91,17 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## ocDeleteChannelByUrl
+## deleteAnOpenChannel
 
-> OcDeleteChannelByUrl200Response ocDeleteChannelByUrl(channelUrl).apiToken(apiToken).execute();
+> Object deleteAnOpenChannel(channelUrl).apiToken(apiToken).execute();
 
-Delete a channel
+Delete an open channel
 
-## Delete a channel
+## Delete an open channel
 
-Deletes an open channel.
+You can delete an open channel using this API. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-delete-a-channel
-----------------------------
+https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/delete-an-open-channel#1-delete-an-open-channel
 
 ### Example
 
@@ -204,15 +119,15 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            OcDeleteChannelByUrl200Response result = api.ocDeleteChannelByUrl(channelUrl)
+            Object result = api.deleteAnOpenChannel(channelUrl)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling OpenChannelApi#ocDeleteChannelByUrl");
+            System.err.println("Exception when calling OpenChannelApi#deleteAnOpenChannel");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -227,12 +142,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
+| **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
+**Object**
 
 ### Authorization
 
@@ -249,18 +164,17 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## ocListChannels
+## getAnOpenChannel
 
-> OcListChannelsResponse ocListChannels().apiToken(apiToken).token(token).limit(limit).customTypes(customTypes).nameContains(nameContains).urlContains(urlContains).showFrozen(showFrozen).showMetadata(showMetadata).customType(customType).execute();
+> SendbirdOpenChannel getAnOpenChannel(channelUrl).apiToken(apiToken).includeOperators(includeOperators).execute();
 
-List channels
+Get an open channel
 
-## List channels
+## Get an open channel
 
-Retrieves a list of open channels. You can query the list using various parameters.
+This action retrieves information about a specific [open channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel).
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-channels
-----------------------------
+[https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-an-open-channel#1-get-an-open-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-an-open-channel#1-get-an-open-channel)
 
 ### Example
 
@@ -278,30 +192,189 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
+        String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
+        Boolean includeOperators = true; // Boolean | Determines whether to include a list of operators in the response. (Default: false)
+        try {
+            SendbirdOpenChannel result = api.getAnOpenChannel(channelUrl)
+                .apiToken(apiToken)
+                .includeOperators(includeOperators)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OpenChannelApi#getAnOpenChannel");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **channelUrl** | **String**| (Required)  | |
+| **apiToken** | **String**|  | [optional] |
+| **includeOperators** | **Boolean**| Determines whether to include a list of operators in the response. (Default: false) | [optional] |
+
+### Return type
+
+[**SendbirdOpenChannel**](SendbirdOpenChannel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## listChannelOperators
+
+> ListOperatorsResponse listChannelOperators(channelUrl).token(token).limit(limit).apiToken(apiToken).execute();
+
+List operators of an open channel
+
+## List operators of an open channel
+
+You can retrieve a list of operators of an open channel using this API.
+
+https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/list-operators-of-an-open-channel#1-list-operators-of-an-open-channel
+
+`channel_url`  
+Type: string  
+Description: Specifies the URL of the channel to retrieve a list of operators.
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.OpenChannelApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
+        String channelUrl = "channelUrl_example"; // String | (Required) 
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
-        String customTypes = "customTypes_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        try {
+            ListOperatorsResponse result = api.listChannelOperators(channelUrl)
+                .token(token)
+                .limit(limit)
+                .apiToken(apiToken)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OpenChannelApi#listChannelOperators");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **channelUrl** | **String**| (Required)  | |
+| **token** | **String**|  | [optional] |
+| **limit** | **Integer**|  | [optional] |
+| **apiToken** | **String**|  | [optional] |
+
+### Return type
+
+[**ListOperatorsResponse**](ListOperatorsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## listOpenChannels
+
+> ListOpenChannelsResponse listOpenChannels().token(token).channelUrls(channelUrls).limit(limit).customTypes(customTypes).nameContains(nameContains).urlContains(urlContains).showFrozen(showFrozen).showMetadata(showMetadata).apiToken(apiToken).execute();
+
+List open channels
+
+## List open channels
+
+This action retrieves a list of [open channels](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel). You can use various query parameters to determine the search scope and select what kind of information you want to receive about the queried channels.
+
+[https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-open-channels#1-list-open-channels](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-open-channels#1-list-open-channels)
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.OpenChannelApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
+        String token = "token_example"; // String | 
+        String channelUrls = "channelUrls_example"; // String | Specifies a comma-separated string of one or more open channel URLs to restrict the search scope. URL encoding each channel URL is recommended.
+        Integer limit = 56; // Integer | 
+        String customTypes = "customTypes_example"; // String | Specifies a comma-separated string of one or more custom types to filter open channels. Urlencoding each type is recommended (for example, ?custom_types=urlencoded_type_1,urlencoded_type_2). If not specified, all channels are returned, regardless of their custom type.
         String nameContains = "nameContains_example"; // String | 
         String urlContains = "urlContains_example"; // String | 
-        Boolean showFrozen = true; // Boolean | 
-        Boolean showMetadata = true; // Boolean | 
-        String customType = "customType_example"; // String | 
+        Boolean showFrozen = true; // Boolean | Determines whether to include frozen channels in the response. Frozen channels are channels where only channel operators are allowed to send messages. (Default: true)
+        Boolean showMetadata = true; // Boolean | Determines whether to include channel metadata in the response. (Default: false)
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            OcListChannelsResponse result = api.ocListChannels()
-                .apiToken(apiToken)
+            ListOpenChannelsResponse result = api.listOpenChannels()
                 .token(token)
+                .channelUrls(channelUrls)
                 .limit(limit)
                 .customTypes(customTypes)
                 .nameContains(nameContains)
                 .urlContains(urlContains)
                 .showFrozen(showFrozen)
                 .showMetadata(showMetadata)
-                .customType(customType)
+                .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling OpenChannelApi#ocListChannels");
+            System.err.println("Exception when calling OpenChannelApi#listOpenChannels");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -316,19 +389,19 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiToken** | **String**|  | [optional] |
 | **token** | **String**|  | [optional] |
+| **channelUrls** | **String**| Specifies a comma-separated string of one or more open channel URLs to restrict the search scope. URL encoding each channel URL is recommended. | [optional] |
 | **limit** | **Integer**|  | [optional] |
-| **customTypes** | **String**|  | [optional] |
+| **customTypes** | **String**| Specifies a comma-separated string of one or more custom types to filter open channels. Urlencoding each type is recommended (for example, ?custom_types&#x3D;urlencoded_type_1,urlencoded_type_2). If not specified, all channels are returned, regardless of their custom type. | [optional] |
 | **nameContains** | **String**|  | [optional] |
 | **urlContains** | **String**|  | [optional] |
-| **showFrozen** | **Boolean**|  | [optional] |
-| **showMetadata** | **Boolean**|  | [optional] |
-| **customType** | **String**|  | [optional] |
+| **showFrozen** | **Boolean**| Determines whether to include frozen channels in the response. Frozen channels are channels where only channel operators are allowed to send messages. (Default: true) | [optional] |
+| **showMetadata** | **Boolean**| Determines whether to include channel metadata in the response. (Default: false) | [optional] |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
-[**OcListChannelsResponse**](OcListChannelsResponse.md)
+[**ListOpenChannelsResponse**](ListOpenChannelsResponse.md)
 
 ### Authorization
 
@@ -345,22 +418,17 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## ocListOperators
+## registerOperators
 
-> OcListOperatorsResponse ocListOperators(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
+> Object registerOperators(channelUrl).apiToken(apiToken).registerOperatorsToAGroupChannelRequest(registerOperatorsToAGroupChannelRequest).execute();
 
-List operators
+Register operators to an open channel
 
-## List operators
+## Register operators to an open channel
 
-Retrieves a list of operators of an open channel.
+You can register one or more operators to an open channel using this API.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-operators
-----------------------------
-
- `channel_url`
-     Type: string
-     Description: Specifies the URL of the channel to retrieve a list of operators.
+https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/register-operators-to-an-open-channel#1-register-operators-to-an-open-channel
 
 ### Example
 
@@ -378,19 +446,17 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        String token = "token_example"; // String | 
-        Integer limit = 56; // Integer | 
+        RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest = new RegisterOperatorsToAGroupChannelRequest(); // RegisterOperatorsToAGroupChannelRequest | 
         try {
-            OcListOperatorsResponse result = api.ocListOperators(channelUrl)
+            Object result = api.registerOperators(channelUrl)
                 .apiToken(apiToken)
-                .token(token)
-                .limit(limit)
+                .registerOperatorsToAGroupChannelRequest(registerOperatorsToAGroupChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling OpenChannelApi#ocListOperators");
+            System.err.println("Exception when calling OpenChannelApi#registerOperators");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -405,175 +471,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
+| **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **token** | **String**|  | [optional] |
-| **limit** | **Integer**|  | [optional] |
+| **registerOperatorsToAGroupChannelRequest** | [**RegisterOperatorsToAGroupChannelRequest**](RegisterOperatorsToAGroupChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**OcListOperatorsResponse**](OcListOperatorsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocListParticipants
-
-> OcListParticipantsResponse ocListParticipants(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
-
-List participants
-
-## List participants
-
-Retrieves a list of the participants of an open channel. A participant refers to a user who has entered the open channel and is currently online.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-participants
-----------------------------
-
- `channel_url`
-     Type: string
-     Description: Specifies the URL of the channel to retrieve a list of participants in.
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.OpenChannelApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        String token = "token_example"; // String | 
-        Integer limit = 56; // Integer | 
-        try {
-            OcListParticipantsResponse result = api.ocListParticipants(channelUrl)
-                .apiToken(apiToken)
-                .token(token)
-                .limit(limit)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling OpenChannelApi#ocListParticipants");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **token** | **String**|  | [optional] |
-| **limit** | **Integer**|  | [optional] |
-
-### Return type
-
-[**OcListParticipantsResponse**](OcListParticipantsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocRegisterOperators
-
-> OcDeleteChannelByUrl200Response ocRegisterOperators(channelUrl).apiToken(apiToken).ocRegisterOperatorsData(ocRegisterOperatorsData).execute();
-
-Register operators
-
-## Register operators
-
-Registers one or more operators to an open channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-register-operators
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.OpenChannelApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        OcRegisterOperatorsData ocRegisterOperatorsData = new OcRegisterOperatorsData(); // OcRegisterOperatorsData | 
-        try {
-            OcDeleteChannelByUrl200Response result = api.ocRegisterOperators(channelUrl)
-                .apiToken(apiToken)
-                .ocRegisterOperatorsData(ocRegisterOperatorsData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling OpenChannelApi#ocRegisterOperators");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **ocRegisterOperatorsData** | [**OcRegisterOperatorsData**](OcRegisterOperatorsData.md)|  | [optional] |
-
-### Return type
-
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
+**Object**
 
 ### Authorization
 
@@ -590,95 +494,21 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## ocUpdateChannelByUrl
+## unregisterOperators
 
-> SendBirdOpenChannel ocUpdateChannelByUrl(channelUrl).apiToken(apiToken).ocUpdateChannelByUrlData(ocUpdateChannelByUrlData).execute();
+> Object unregisterOperators(channelUrl).operatorIds(operatorIds).deleteAll(deleteAll).apiToken(apiToken).execute();
 
-Update a channel
+Unregister operators from an open channel
 
-## Update a channel
+## Unregister operators from an open channel
 
-Updates information on an open channel.
+You can unregister operators in an open channel but keep them in the channel as participants using this API.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-channel
-----------------------------
+https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/unregister-operators-from-an-open-channel#1-unregister-operators-from-an-open-channel
 
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.OpenChannelApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        OcUpdateChannelByUrlData ocUpdateChannelByUrlData = new OcUpdateChannelByUrlData(); // OcUpdateChannelByUrlData | 
-        try {
-            SendBirdOpenChannel result = api.ocUpdateChannelByUrl(channelUrl)
-                .apiToken(apiToken)
-                .ocUpdateChannelByUrlData(ocUpdateChannelByUrlData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling OpenChannelApi#ocUpdateChannelByUrl");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **ocUpdateChannelByUrlData** | [**OcUpdateChannelByUrlData**](OcUpdateChannelByUrlData.md)|  | [optional] |
-
-### Return type
-
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocViewChannelByUrl
-
-> SendBirdOpenChannel ocViewChannelByUrl(channelUrl).apiToken(apiToken).execute();
-
-View a channel
-
-## View a channel
-
-Retrieves information on a specific open channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-channel
-----------------------------
+`channel_url`  
+Type: string  
+Description: Specifies the URL of the channel to cancel the registration of operators.
 
 ### Example
 
@@ -696,15 +526,19 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | (Required) 
+        String operatorIds = "operatorIds_example"; // String | Specifies an array of one or more operator IDs to unregister from the channel. The operators in this array remain as participants of the channel after losing their operational roles. Urlencoding each operator ID is recommended. An example of a Urlencoded array would be ?operator_ids=urlencoded_id_1,urlencoded_id_2.
+        Boolean deleteAll = true; // Boolean | Determines whether to unregister all operators and leave them as the participants of the channel. When this is set to true, the operator_ids property isn't effective and doesn't need to be specified in the request. (Default: false)
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdOpenChannel result = api.ocViewChannelByUrl(channelUrl)
+            Object result = api.unregisterOperators(channelUrl)
+                .operatorIds(operatorIds)
+                .deleteAll(deleteAll)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling OpenChannelApi#ocViewChannelByUrl");
+            System.err.println("Exception when calling OpenChannelApi#unregisterOperators");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -719,12 +553,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
+| **channelUrl** | **String**| (Required)  | |
+| **operatorIds** | **String**| Specifies an array of one or more operator IDs to unregister from the channel. The operators in this array remain as participants of the channel after losing their operational roles. Urlencoding each operator ID is recommended. An example of a Urlencoded array would be ?operator_ids&#x3D;urlencoded_id_1,urlencoded_id_2. | |
+| **deleteAll** | **Boolean**| Determines whether to unregister all operators and leave them as the participants of the channel. When this is set to true, the operator_ids property isn&#39;t effective and doesn&#39;t need to be specified in the request. (Default: false) | [optional] |
 | **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
+**Object**
 
 ### Authorization
 
@@ -733,6 +569,82 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+
+## updateAnOpenChannel
+
+> SendbirdOpenChannel updateAnOpenChannel(channelUrl).apiToken(apiToken).updateAnOpenChannelRequest(updateAnOpenChannelRequest).execute();
+
+Update an open channel
+
+## Update an open channel
+
+You can update information about an open channel using this API. You can add a cover image to a channel to better identify the channel or specify a custom channel type for grouping channels by custom type. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.
+
+https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-an-open-channel#1-update-an-open-channel
+
+### Example
+
+```java
+// Import classes:
+import org.sendbird.client.ApiClient;
+import org.sendbird.client.ApiException;
+import org.sendbird.client.Configuration;
+import org.sendbird.client.model.*;
+import org.sendbird.client.api.OpenChannelApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+
+        OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
+        String channelUrl = "channelUrl_example"; // String | (Required) 
+        String apiToken = "{{API_TOKEN}}"; // String | 
+        UpdateAnOpenChannelRequest updateAnOpenChannelRequest = new UpdateAnOpenChannelRequest(); // UpdateAnOpenChannelRequest | 
+        try {
+            SendbirdOpenChannel result = api.updateAnOpenChannel(channelUrl)
+                .apiToken(apiToken)
+                .updateAnOpenChannelRequest(updateAnOpenChannelRequest)
+                .execute();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OpenChannelApi#updateAnOpenChannel");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **channelUrl** | **String**| (Required)  | |
+| **apiToken** | **String**|  | [optional] |
+| **updateAnOpenChannelRequest** | [**UpdateAnOpenChannelRequest**](UpdateAnOpenChannelRequest.md)|  | [optional] |
+
+### Return type
+
+[**SendbirdOpenChannel**](SendbirdOpenChannel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 ### HTTP response details

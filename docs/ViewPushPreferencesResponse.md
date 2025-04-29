@@ -7,20 +7,20 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**snoozeStartTs** | **String** |  |  [optional] |
-|**startHour** | **BigDecimal** |  |  [optional] |
-|**snoozeEnabled** | **Boolean** |  |  [optional] |
-|**endMin** | **BigDecimal** |  |  [optional] |
-|**timezone** | **String** |  |  [optional] |
 |**blockPushFromBots** | **Boolean** |  |  [optional] |
-|**pushBlockedBotIds** | **List&lt;String&gt;** |  |  [optional] |
-|**startMin** | **BigDecimal** |  |  [optional] |
-|**snoozeEndTs** | **String** |  |  [optional] |
 |**doNotDisturb** | **Boolean** |  |  [optional] |
-|**endHour** | **BigDecimal** |  |  [optional] |
 |**enablePushForReplies** | **Boolean** |  |  [optional] |
+|**endHour** | **Integer** |  |  [optional] |
+|**endMin** | **Integer** |  |  [optional] |
+|**pushBlockedBotIds** | **List&lt;String&gt;** |  |  [optional] |
 |**pushSound** | **String** |  |  [optional] |
-|**pushTriggerOption** | **String** |  |  [optional] |
+|**pushTriggerOption** | **SendbirdPushTriggerOption** |  |  [optional] |
+|**snoozeEnabled** | **Boolean** |  |  [optional] |
+|**snoozeEndTs** | **Long** |  |  [optional] |
+|**snoozeStartTs** | **Long** |  |  [optional] |
+|**startHour** | **Integer** |  |  [optional] |
+|**startMin** | **Integer** |  |  [optional] |
+|**timezone** | **String** |  |  [optional] |
 
 
 

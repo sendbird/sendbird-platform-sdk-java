@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -20,28 +20,36 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdMessageResponseMentionedUsersInner;
-import org.openapitools.client.model.SendBirdMessageResponseUser;
+import org.openapitools.client.model.SendbirdBasicUserInfo;
+import org.openapitools.client.model.SendbirdExtendedMessagePayload;
+import org.openapitools.client.model.SendbirdFile;
+import org.openapitools.client.model.SendbirdMessageResponseMessageEvents;
+import org.openapitools.client.model.SendbirdParentMessageInfo;
+import org.openapitools.client.model.SendbirdReaction;
+import org.openapitools.client.model.SendbirdSortedMetaarrayInner;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SendBirdMessageResponse
+ * Model tests for SendbirdMessageResponse
  */
-public class SendBirdMessageResponseTest {
-    private final SendBirdMessageResponse model = new SendBirdMessageResponse();
+public class SendbirdMessageResponseTest {
+    private final SendbirdMessageResponse model = new SendbirdMessageResponse();
 
     /**
-     * Model tests for SendBirdMessageResponse
+     * Model tests for SendbirdMessageResponse
      */
     @Test
-    public void testSendBirdMessageResponse() {
-        // TODO: test SendBirdMessageResponse
+    public void testSendbirdMessageResponse() {
+        // TODO: test SendbirdMessageResponse
     }
 
     /**
@@ -101,6 +109,14 @@ public class SendBirdMessageResponseTest {
     }
 
     /**
+     * Test the property 'reactions'
+     */
+    @Test
+    public void reactionsTest() {
+        // TODO: test reactions
+    }
+
+    /**
      * Test the property 'isRemoved'
      */
     @Test
@@ -122,6 +138,14 @@ public class SendBirdMessageResponseTest {
     @Test
     public void _fileTest() {
         // TODO: test _file
+    }
+
+    /**
+     * Test the property 'files'
+     */
+    @Test
+    public void filesTest() {
+        // TODO: test files
     }
 
     /**
@@ -213,14 +237,6 @@ public class SendBirdMessageResponseTest {
     }
 
     /**
-     * Test the property 'size'
-     */
-    @Test
-    public void sizeTest() {
-        // TODO: test size
-    }
-
-    /**
      * Test the property 'sortedMetaarray'
      */
     @Test
@@ -258,6 +274,22 @@ public class SendBirdMessageResponseTest {
     @Test
     public void isReplyToChannelTest() {
         // TODO: test isReplyToChannel
+    }
+
+    /**
+     * Test the property 'messageEvents'
+     */
+    @Test
+    public void messageEventsTest() {
+        // TODO: test messageEvents
+    }
+
+    /**
+     * Test the property 'extendedMessagePayload'
+     */
+    @Test
+    public void extendedMessagePayloadTest() {
+        // TODO: test extendedMessagePayload
     }
 
 }

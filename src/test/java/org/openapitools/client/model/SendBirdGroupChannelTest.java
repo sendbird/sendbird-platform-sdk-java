@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -20,17 +20,16 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import org.openapitools.client.model.SendBirdGroupChannelChannel;
-import org.openapitools.client.model.SendBirdGroupChannelCreatedBy;
-import org.openapitools.client.model.SendBirdGroupChannelDisappearingMessage;
-import org.openapitools.client.model.SendBirdGroupChannelInviter;
-import org.openapitools.client.model.SendBirdGroupChannelLastMessage;
-import org.openapitools.client.model.SendBirdGroupChannelSmsFallback;
-import org.openapitools.client.model.SendBirdMember;
-import org.openapitools.client.model.SendBirdUser;
+import java.util.Map;
+import org.openapitools.client.model.SendbirdBasicUserInfo;
+import org.openapitools.client.model.SendbirdDisappearingMessage;
+import org.openapitools.client.model.SendbirdMember;
+import org.openapitools.client.model.SendbirdMessageResponse;
+import org.openapitools.client.model.SendbirdPushTriggerOption;
+import org.openapitools.client.model.SendbirdSmsFallback;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -41,17 +40,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SendBirdGroupChannel
+ * Model tests for SendbirdGroupChannel
  */
-public class SendBirdGroupChannelTest {
-    private final SendBirdGroupChannel model = new SendBirdGroupChannel();
+public class SendbirdGroupChannelTest {
+    private final SendbirdGroupChannel model = new SendbirdGroupChannel();
 
     /**
-     * Model tests for SendBirdGroupChannel
+     * Model tests for SendbirdGroupChannel
      */
     @Test
-    public void testSendBirdGroupChannel() {
-        // TODO: test SendBirdGroupChannel
+    public void testSendbirdGroupChannel() {
+        // TODO: test SendbirdGroupChannel
     }
 
     /**
@@ -60,6 +59,14 @@ public class SendBirdGroupChannelTest {
     @Test
     public void channelUrlTest() {
         // TODO: test channelUrl
+    }
+
+    /**
+     * Test the property 'countPreference'
+     */
+    @Test
+    public void countPreferenceTest() {
+        // TODO: test countPreference
     }
 
     /**
@@ -87,14 +94,6 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
-     * Test the property 'creator'
-     */
-    @Test
-    public void creatorTest() {
-        // TODO: test creator
-    }
-
-    /**
      * Test the property 'customType'
      */
     @Test
@@ -108,6 +107,14 @@ public class SendBirdGroupChannelTest {
     @Test
     public void dataTest() {
         // TODO: test data
+    }
+
+    /**
+     * Test the property 'deliveryReceipt'
+     */
+    @Test
+    public void deliveryReceiptTest() {
+        // TODO: test deliveryReceipt
     }
 
     /**
@@ -127,11 +134,19 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
-     * Test the property 'ignoreProfanityFilter'
+     * Test the property 'hasAiBot'
      */
     @Test
-    public void ignoreProfanityFilterTest() {
-        // TODO: test ignoreProfanityFilter
+    public void hasAiBotTest() {
+        // TODO: test hasAiBot
+    }
+
+    /**
+     * Test the property 'hasBot'
+     */
+    @Test
+    public void hasBotTest() {
+        // TODO: test hasBot
     }
 
     /**
@@ -140,6 +155,14 @@ public class SendBirdGroupChannelTest {
     @Test
     public void hiddenStateTest() {
         // TODO: test hiddenState
+    }
+
+    /**
+     * Test the property 'ignoreProfanityFilter'
+     */
+    @Test
+    public void ignoreProfanityFilterTest() {
+        // TODO: test ignoreProfanityFilter
     }
 
     /**
@@ -175,14 +198,6 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
-     * Test the property 'isCreated'
-     */
-    @Test
-    public void isCreatedTest() {
-        // TODO: test isCreated
-    }
-
-    /**
      * Test the property 'isDiscoverable'
      */
     @Test
@@ -207,11 +222,11 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
-     * Test the property 'isFrozen'
+     * Test the property 'isExclusive'
      */
     @Test
-    public void isFrozenTest() {
-        // TODO: test isFrozen
+    public void isExclusiveTest() {
+        // TODO: test isExclusive
     }
 
     /**
@@ -220,6 +235,14 @@ public class SendBirdGroupChannelTest {
     @Test
     public void isHiddenTest() {
         // TODO: test isHidden
+    }
+
+    /**
+     * Test the property 'isMuted'
+     */
+    @Test
+    public void isMutedTest() {
+        // TODO: test isMuted
     }
 
     /**
@@ -247,19 +270,19 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
-     * Test the property 'joinedAt'
-     */
-    @Test
-    public void joinedAtTest() {
-        // TODO: test joinedAt
-    }
-
-    /**
      * Test the property 'joinedMemberCount'
      */
     @Test
     public void joinedMemberCountTest() {
         // TODO: test joinedMemberCount
+    }
+
+    /**
+     * Test the property 'joinedTs'
+     */
+    @Test
+    public void joinedTsTest() {
+        // TODO: test joinedTs
     }
 
     /**
@@ -287,19 +310,19 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
+     * Test the property 'memberState'
+     */
+    @Test
+    public void memberStateTest() {
+        // TODO: test memberState
+    }
+
+    /**
      * Test the property 'members'
      */
     @Test
     public void membersTest() {
         // TODO: test members
-    }
-
-    /**
-     * Test the property 'messageOffsetTimestamp'
-     */
-    @Test
-    public void messageOffsetTimestampTest() {
-        // TODO: test messageOffsetTimestamp
     }
 
     /**
@@ -311,43 +334,11 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
-     * Test the property 'myCountPreference'
+     * Test the property 'metadata'
      */
     @Test
-    public void myCountPreferenceTest() {
-        // TODO: test myCountPreference
-    }
-
-    /**
-     * Test the property 'myLastRead'
-     */
-    @Test
-    public void myLastReadTest() {
-        // TODO: test myLastRead
-    }
-
-    /**
-     * Test the property 'myMemberState'
-     */
-    @Test
-    public void myMemberStateTest() {
-        // TODO: test myMemberState
-    }
-
-    /**
-     * Test the property 'myMutedState'
-     */
-    @Test
-    public void myMutedStateTest() {
-        // TODO: test myMutedState
-    }
-
-    /**
-     * Test the property 'myPushTriggerOption'
-     */
-    @Test
-    public void myPushTriggerOptionTest() {
-        // TODO: test myPushTriggerOption
+    public void metadataTest() {
+        // TODO: test metadata
     }
 
     /**
@@ -367,11 +358,19 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
-     * Test the property 'operators'
+     * Test the property 'pushTriggerOption'
      */
     @Test
-    public void operatorsTest() {
-        // TODO: test operators
+    public void pushTriggerOptionTest() {
+        // TODO: test pushTriggerOption
+    }
+
+    /**
+     * Test the property 'readReceipt'
+     */
+    @Test
+    public void readReceiptTest() {
+        // TODO: test readReceipt
     }
 
     /**
@@ -380,6 +379,14 @@ public class SendBirdGroupChannelTest {
     @Test
     public void smsFallbackTest() {
         // TODO: test smsFallback
+    }
+
+    /**
+     * Test the property 'tsMessageOffset'
+     */
+    @Test
+    public void tsMessageOffsetTest() {
+        // TODO: test tsMessageOffset
     }
 
     /**
@@ -399,11 +406,11 @@ public class SendBirdGroupChannelTest {
     }
 
     /**
-     * Test the property 'channel'
+     * Test the property 'userLastRead'
      */
     @Test
-    public void channelTest() {
-        // TODO: test channel
+    public void userLastReadTest() {
+        // TODO: test userLastRead
     }
 
 }

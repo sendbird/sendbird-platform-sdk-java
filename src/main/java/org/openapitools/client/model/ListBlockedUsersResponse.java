@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,10 +39,10 @@ import org.sendbird.client.JSON;
   ListBlockedUsersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("listBlockedUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
 public class ListBlockedUsersResponse {
   public static final String JSON_PROPERTY_USERS = "users";
-  private List<SendBirdUser> users = null;
+  private List<SendbirdUser> users = null;
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
@@ -50,12 +50,12 @@ public class ListBlockedUsersResponse {
   public ListBlockedUsersResponse() { 
   }
 
-  public ListBlockedUsersResponse users(List<SendBirdUser> users) {
+  public ListBlockedUsersResponse users(List<SendbirdUser> users) {
     this.users = users;
     return this;
   }
 
-  public ListBlockedUsersResponse addUsersItem(SendBirdUser usersItem) {
+  public ListBlockedUsersResponse addUsersItem(SendbirdUser usersItem) {
     if (this.users == null) {
       this.users = new ArrayList<>();
     }
@@ -72,14 +72,14 @@ public class ListBlockedUsersResponse {
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdUser> getUsers() {
+  public List<SendbirdUser> getUsers() {
     return users;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUsers(List<SendBirdUser> users) {
+  public void setUsers(List<SendbirdUser> users) {
     this.users = users;
   }
 

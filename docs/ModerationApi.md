@@ -4,202 +4,37 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**banFromChannelsWithCustomChannelTypes**](ModerationApi.md#banFromChannelsWithCustomChannelTypes) | **POST** /v3/users/{user_id}/banned_channel_custom_types | Ban from channels with custom channel types |
-| [**blockUser**](ModerationApi.md#blockUser) | **POST** /v3/users/{user_id}/block | Block a user |
-| [**gcBanUser**](ModerationApi.md#gcBanUser) | **POST** /v3/group_channels/{channel_url}/ban | Ban a user |
-| [**gcFreezeChannel**](ModerationApi.md#gcFreezeChannel) | **PUT** /v3/group_channels/{channel_url}/freeze | Freeze a channel |
-| [**gcListBannedUsers**](ModerationApi.md#gcListBannedUsers) | **GET** /v3/group_channels/{channel_url}/ban | List banned users |
-| [**gcListMutedUsers**](ModerationApi.md#gcListMutedUsers) | **GET** /v3/group_channels/{channel_url}/mute | List muted users |
-| [**gcMuteUser**](ModerationApi.md#gcMuteUser) | **POST** /v3/group_channels/{channel_url}/mute | Mute a user |
-| [**gcUnbanUserById**](ModerationApi.md#gcUnbanUserById) | **DELETE** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Unban a user |
-| [**gcUnmuteUserById**](ModerationApi.md#gcUnmuteUserById) | **DELETE** /v3/group_channels/{channel_url}/mute/{muted_user_id} | Unmute a user |
-| [**gcUpdateBanById**](ModerationApi.md#gcUpdateBanById) | **PUT** /v3/group_channels/{channel_url}/ban/{banned_user_id} | Update a ban |
-| [**gcViewBanById**](ModerationApi.md#gcViewBanById) | **GET** /v3/group_channels/{channel_url}/ban/{banned_user_id} | View a ban |
-| [**gcViewMuteById**](ModerationApi.md#gcViewMuteById) | **GET** /v3/group_channels/{channel_url}/mute/{muted_user_id} | View a mute |
-| [**listBannedChannels**](ModerationApi.md#listBannedChannels) | **GET** /v3/users/{user_id}/ban | List banned channels |
+| [**blockAUser**](ModerationApi.md#blockAUser) | **POST** /v3/users/{user_id}/block | Block a user |
+| [**freezeAGroupChannel**](ModerationApi.md#freezeAGroupChannel) | **PUT** /v3/group_channels/{channel_url}/freeze | Freeze a group channel |
+| [**freezeAnOpenChannel**](ModerationApi.md#freezeAnOpenChannel) | **PUT** /v3/open_channels/{channel_url}/freeze | Freeze an open channel |
 | [**listBlockedUsers**](ModerationApi.md#listBlockedUsers) | **GET** /v3/users/{user_id}/block | List blocked users |
-| [**listMutedChannels**](ModerationApi.md#listMutedChannels) | **GET** /v3/users/{user_id}/mute | List muted channels |
-| [**muteInChannelsWithCustomChannelTypes**](ModerationApi.md#muteInChannelsWithCustomChannelTypes) | **POST** /v3/users/{user_id}/muted_channel_custom_types | Mute in channels with custom channel types |
-| [**ocBanUser**](ModerationApi.md#ocBanUser) | **POST** /v3/open_channels/{channel_url}/ban | Ban a user |
-| [**ocFreezeChannel**](ModerationApi.md#ocFreezeChannel) | **PUT** /v3/open_channels/{channel_url}/freeze | Freeze a channel |
-| [**ocListBannedUsers**](ModerationApi.md#ocListBannedUsers) | **GET** /v3/open_channels/{channel_url}/ban | List banned users |
-| [**ocListMutedUsers**](ModerationApi.md#ocListMutedUsers) | **GET** /v3/open_channels/{channel_url}/mute | List muted users |
-| [**ocMuteUser**](ModerationApi.md#ocMuteUser) | **POST** /v3/open_channels/{channel_url}/mute | Mute a user |
-| [**ocUnbanUserById**](ModerationApi.md#ocUnbanUserById) | **DELETE** /v3/open_channels/{channel_url}/ban/{banned_user_id} | Unban a user |
-| [**ocUnmuteUserById**](ModerationApi.md#ocUnmuteUserById) | **DELETE** /v3/open_channels/{channel_url}/mute/{muted_user_id} | Unmute a user |
-| [**ocUpdateBanById**](ModerationApi.md#ocUpdateBanById) | **PUT** /v3/open_channels/{channel_url}/ban/{banned_user_id} | Update a ban |
-| [**ocViewBanById**](ModerationApi.md#ocViewBanById) | **GET** /v3/open_channels/{channel_url}/ban/{banned_user_id} | View a ban |
-| [**ocViewMuteById**](ModerationApi.md#ocViewMuteById) | **GET** /v3/open_channels/{channel_url}/mute/{muted_user_id} | View a mute |
-| [**unblockUserById**](ModerationApi.md#unblockUserById) | **DELETE** /v3/users/{user_id}/block/{target_id} | Unblock a user |
+| [**unblockAUser**](ModerationApi.md#unblockAUser) | **DELETE** /v3/users/{user_id}/block/{target_id} | Unblock a user |
 
 
 
-## banFromChannelsWithCustomChannelTypes
+## blockAUser
 
-> Object banFromChannelsWithCustomChannelTypes(userId).apiToken(apiToken).banFromChannelsWithCustomChannelTypesData(banFromChannelsWithCustomChannelTypesData).execute();
-
-Ban from channels with custom channel types
-
-## Ban from channels with custom channel types
-
-Bans a user from channels with particular custom channel types.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-ban-from-channels-with-custom-channel-types
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String userId = "userId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        BanFromChannelsWithCustomChannelTypesData banFromChannelsWithCustomChannelTypesData = new BanFromChannelsWithCustomChannelTypesData(); // BanFromChannelsWithCustomChannelTypesData | 
-        try {
-            Object result = api.banFromChannelsWithCustomChannelTypes(userId)
-                .apiToken(apiToken)
-                .banFromChannelsWithCustomChannelTypesData(banFromChannelsWithCustomChannelTypesData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#banFromChannelsWithCustomChannelTypes");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **userId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **banFromChannelsWithCustomChannelTypesData** | [**BanFromChannelsWithCustomChannelTypesData**](BanFromChannelsWithCustomChannelTypesData.md)|  | [optional] |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## blockUser
-
-> BlockUserResponse blockUser(userId).apiToken(apiToken).blockUserData(blockUserData).execute();
+> BlockAUserResponse blockAUser(userId).apiToken(apiToken).blockAUserRequest(blockAUserRequest).execute();
 
 Block a user
 
 ## Block a user
 
-Allows a user to block another user. A user doesn't receive messages from someone they have blocked anymore. Also, blocking someone doesn't alert them that they have been blocked. Blocked users still can send messages as normal in the channel: however, they can't receive any messages from the users who have blocked them.
+A user can block another user if the user doesn't wish to receive any messages or notifications from the blocked user in a 1-to-1 group channel. In a 1-to-N group channel, the user can still receive messages from the blocked user, but this depends on the UI settings of the chat view. In any case, notifications from the blocked user won't be delivered to the 1-to-N group channel. You can choose whether or not the user can view [which users are blocked](https://sendbird.com/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users) in the channel UI.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-block-a-user
-----------------------------
+Sendbird application provides two blocking options: include or exclude blocked users when sending invitations, and turn on or off notifications from blocked users. [Explicit and classic block modes](https://sendbird.com/docs/chat/platform-api/v3/deprecated#2-explicit-and-classic-block-modes) have been deprecated and are only supported for customers who started using them before they were deprecated.
 
-### Example
+- **Include or exclude blocked users when sending invitations**: Determines whether or not to automatically filter out blocked users when a user invites a group of users to a new group channel. By default, blocked users are included when sending invitations. The value of this option can be changed by Sendbird if your Sendbird application isn't integrated to the client app. If you want to change the value, [contact our sales team](https://get.sendbird.com/talk-to-sales.html).
+    
+- **Turn on or off notifications from blocked users**: Determines whether or not to receive message notifications from the blocked user in a specific 1-to-N group channel where they are both members. By default, a user doesn't receive notifications from blocked users. The value of this option can be set individually per channel. If you want to use this option, [contact our sales team](https://get.sendbird.com/talk-to-sales.html).
+    
 
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
+> **Note**: To learn more about other available moderation tools, see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions). 
+  
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
+The following tables explain what happens to a user's chat experience when the user blocks another user in a 1-to-1 or 1-to-N group channel. In the case of a 1-to-1 group channel, the block mode is only maintained with the original members. If other than the original members are added, the rules for 1-to-N group channel begin to apply.
 
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String userId = "userId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        BlockUserData blockUserData = new BlockUserData(); // BlockUserData | 
-        try {
-            BlockUserResponse result = api.blockUser(userId)
-                .apiToken(apiToken)
-                .blockUserData(blockUserData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#blockUser");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **userId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **blockUserData** | [**BlockUserData**](BlockUserData.md)|  | [optional] |
-
-### Return type
-
-[**BlockUserResponse**](BlockUserResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## gcBanUser
-
-> GcBanUserResponse gcBanUser(channelUrl).apiToken(apiToken).gcBanUserData(gcBanUserData).execute();
-
-Ban a user
-
-## Ban a user
-
-Bans a user from a group channel. A banned user is immediately expelled from a channel and allowed to join the channel again after a set time period.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-ban-a-user
-----------------------------
+[https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users](https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users)
 
 ### Example
 
@@ -217,17 +52,17 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
+        String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        GcBanUserData gcBanUserData = new GcBanUserData(); // GcBanUserData | 
+        BlockAUserRequest blockAUserRequest = new BlockAUserRequest(); // BlockAUserRequest | 
         try {
-            GcBanUserResponse result = api.gcBanUser(channelUrl)
+            BlockAUserResponse result = api.blockAUser(userId)
                 .apiToken(apiToken)
-                .gcBanUserData(gcBanUserData)
+                .blockAUserRequest(blockAUserRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcBanUser");
+            System.err.println("Exception when calling ModerationApi#blockAUser");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -242,13 +77,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
+| **userId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **gcBanUserData** | [**GcBanUserData**](GcBanUserData.md)|  | [optional] |
+| **blockAUserRequest** | [**BlockAUserRequest**](BlockAUserRequest.md)|  | [optional] |
 
 ### Return type
 
-[**GcBanUserResponse**](GcBanUserResponse.md)
+[**BlockAUserResponse**](BlockAUserResponse.md)
 
 ### Authorization
 
@@ -265,20 +100,20 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## gcFreezeChannel
+## freezeAGroupChannel
 
-> SendBirdGroupChannel gcFreezeChannel(channelUrl).apiToken(apiToken).gcFreezeChannelData(gcFreezeChannelData).execute();
+> SendbirdGroupChannelDetail freezeAGroupChannel(channelUrl).apiToken(apiToken).freezeAGroupChannelRequest(freezeAGroupChannelRequest).execute();
 
-Freeze a channel
+Freeze a group channel
 
-## Freeze a channel
+## Freeze a group channel
 
 Freezes or unfreezes a group channel.
 
-> __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.
+> **Note**: To learn more about other available moderation tools, see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions). 
+  
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-freeze-a-channel
-----------------------------
+[https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-a-group-channel#1-freeze-a-group-channel](https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-a-group-channel#1-freeze-a-group-channel)
 
 ### Example
 
@@ -296,17 +131,17 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        GcFreezeChannelData gcFreezeChannelData = new GcFreezeChannelData(); // GcFreezeChannelData | 
+        FreezeAGroupChannelRequest freezeAGroupChannelRequest = new FreezeAGroupChannelRequest(); // FreezeAGroupChannelRequest | 
         try {
-            SendBirdGroupChannel result = api.gcFreezeChannel(channelUrl)
+            SendbirdGroupChannelDetail result = api.freezeAGroupChannel(channelUrl)
                 .apiToken(apiToken)
-                .gcFreezeChannelData(gcFreezeChannelData)
+                .freezeAGroupChannelRequest(freezeAGroupChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcFreezeChannel");
+            System.err.println("Exception when calling ModerationApi#freezeAGroupChannel");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -321,13 +156,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
+| **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **gcFreezeChannelData** | [**GcFreezeChannelData**](GcFreezeChannelData.md)|  | [optional] |
+| **freezeAGroupChannelRequest** | [**FreezeAGroupChannelRequest**](FreezeAGroupChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdGroupChannel**](SendBirdGroupChannel.md)
+[**SendbirdGroupChannelDetail**](SendbirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -344,22 +179,20 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## gcListBannedUsers
+## freezeAnOpenChannel
 
-> GcListBannedUsersResponse gcListBannedUsers(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
+> SendbirdOpenChannel freezeAnOpenChannel(channelUrl).apiToken(apiToken).freezeAnOpenChannelRequest(freezeAnOpenChannelRequest).execute();
 
-List banned users
+Freeze an open channel
 
-## List banned users
+## Freeze an open channel
 
-Retrieves a list of the banned users from a group channel.
+Freezes or unfreezes an open channel.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-banned-users
-----------------------------
+> **Note**: To learn more about other available moderation tools, see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions). 
+  
 
- `channel_url`
-     Type: string
-     Description: Specifies the URL of the channel where to retrieve a list of banned users.
+[https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-an-open-channel#1-freeze-an-open-channel](https://sendbird.com/docs/chat/platform-api/v3/moderation/freezing-a-channel/freeze-an-open-channel#1-freeze-an-open-channel)
 
 ### Example
 
@@ -377,19 +210,17 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
+        String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        String token = "token_example"; // String | 
-        Integer limit = 56; // Integer | 
+        FreezeAnOpenChannelRequest freezeAnOpenChannelRequest = new FreezeAnOpenChannelRequest(); // FreezeAnOpenChannelRequest | 
         try {
-            GcListBannedUsersResponse result = api.gcListBannedUsers(channelUrl)
+            SendbirdOpenChannel result = api.freezeAnOpenChannel(channelUrl)
                 .apiToken(apiToken)
-                .token(token)
-                .limit(limit)
+                .freezeAnOpenChannelRequest(freezeAnOpenChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcListBannedUsers");
+            System.err.println("Exception when calling ModerationApi#freezeAnOpenChannel");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -404,175 +235,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
+| **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **token** | **String**|  | [optional] |
-| **limit** | **Integer**|  | [optional] |
+| **freezeAnOpenChannelRequest** | [**FreezeAnOpenChannelRequest**](FreezeAnOpenChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**GcListBannedUsersResponse**](GcListBannedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## gcListMutedUsers
-
-> GcListMutedUsersResponse gcListMutedUsers(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
-
-List muted users
-
-## List muted users
-
-Retrieves a list of the muted users in a group channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-muted-users
-----------------------------
-
- `channel_url`
-     Type: string
-     Description: Specifies the URL of the channel to retrieve a list of muted users.
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        String token = "token_example"; // String | 
-        Integer limit = 56; // Integer | 
-        try {
-            GcListMutedUsersResponse result = api.gcListMutedUsers(channelUrl)
-                .apiToken(apiToken)
-                .token(token)
-                .limit(limit)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcListMutedUsers");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **token** | **String**|  | [optional] |
-| **limit** | **Integer**|  | [optional] |
-
-### Return type
-
-[**GcListMutedUsersResponse**](GcListMutedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## gcMuteUser
-
-> SendBirdGroupChannel gcMuteUser(channelUrl).apiToken(apiToken).gcMuteUserData(gcMuteUserData).execute();
-
-Mute a user
-
-## Mute a user
-
-Mutes a user in a group channel. A muted user remains in the channel and is allowed to view the messages, but can't send any messages until unmuted.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-mute-a-user
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        GcMuteUserData gcMuteUserData = new GcMuteUserData(); // GcMuteUserData | 
-        try {
-            SendBirdGroupChannel result = api.gcMuteUser(channelUrl)
-                .apiToken(apiToken)
-                .gcMuteUserData(gcMuteUserData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcMuteUser");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **gcMuteUserData** | [**GcMuteUserData**](GcMuteUserData.md)|  | [optional] |
-
-### Return type
-
-[**SendBirdGroupChannel**](SendBirdGroupChannel.md)
+[**SendbirdOpenChannel**](SendbirdOpenChannel.md)
 
 ### Authorization
 
@@ -581,473 +250,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## gcUnbanUserById
-
-> OcDeleteChannelByUrl200Response gcUnbanUserById(channelUrl, bannedUserId).apiToken(apiToken).execute();
-
-Unban a user
-
-## Unban a user
-
-Unbans a user from a group channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unban-a-user
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String bannedUserId = "bannedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        try {
-            OcDeleteChannelByUrl200Response result = api.gcUnbanUserById(channelUrl, bannedUserId)
-                .apiToken(apiToken)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcUnbanUserById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **bannedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-
-### Return type
-
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## gcUnmuteUserById
-
-> OcDeleteChannelByUrl200Response gcUnmuteUserById(channelUrl, mutedUserId).apiToken(apiToken).execute();
-
-Unmute a user
-
-## Unmute a user
-
-Unmutes a user within a group channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unmute-a-user
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String mutedUserId = "mutedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        try {
-            OcDeleteChannelByUrl200Response result = api.gcUnmuteUserById(channelUrl, mutedUserId)
-                .apiToken(apiToken)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcUnmuteUserById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **mutedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-
-### Return type
-
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## gcUpdateBanById
-
-> GcUpdateBanByIdResponse gcUpdateBanById(channelUrl, bannedUserId).apiToken(apiToken).gcUpdateBanByIdData(gcUpdateBanByIdData).execute();
-
-Update a ban
-
-## Update a ban
-
-Updates details of a ban imposed on a user. You can change the length of the ban with this action, and also provide an updated description.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-ban
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String bannedUserId = "bannedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        GcUpdateBanByIdData gcUpdateBanByIdData = new GcUpdateBanByIdData(); // GcUpdateBanByIdData | 
-        try {
-            GcUpdateBanByIdResponse result = api.gcUpdateBanById(channelUrl, bannedUserId)
-                .apiToken(apiToken)
-                .gcUpdateBanByIdData(gcUpdateBanByIdData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcUpdateBanById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **bannedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **gcUpdateBanByIdData** | [**GcUpdateBanByIdData**](GcUpdateBanByIdData.md)|  | [optional] |
-
-### Return type
-
-[**GcUpdateBanByIdResponse**](GcUpdateBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## gcViewBanById
-
-> GcViewBanByIdResponse gcViewBanById(channelUrl, bannedUserId).apiToken(apiToken).execute();
-
-View a ban
-
-## View a ban
-
-Retrieves details of a ban imposed on a user.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-ban
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String bannedUserId = "bannedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        try {
-            GcViewBanByIdResponse result = api.gcViewBanById(channelUrl, bannedUserId)
-                .apiToken(apiToken)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcViewBanById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **bannedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-
-### Return type
-
-[**GcViewBanByIdResponse**](GcViewBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## gcViewMuteById
-
-> GcViewMuteByIdResponse gcViewMuteById(channelUrl, mutedUserId).apiToken(apiToken).execute();
-
-View a mute
-
-## View a mute
-
-Checks if a user is muted in a group channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-mute
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String mutedUserId = "mutedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        try {
-            GcViewMuteByIdResponse result = api.gcViewMuteById(channelUrl, mutedUserId)
-                .apiToken(apiToken)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#gcViewMuteById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **mutedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-
-### Return type
-
-[**GcViewMuteByIdResponse**](GcViewMuteByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## listBannedChannels
-
-> ListBannedChannelsResponse listBannedChannels(userId).apiToken(apiToken).token(token).limit(limit).execute();
-
-List banned channels
-
-## List banned channels
-
-Retrieves a list of open and group channels with additional information where a user is banned.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-banned-channels
-----------------------------
-
- `user_id`
-     Type: string
-     Description: Specifies the unique ID of the target user.
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String userId = "userId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        String token = "token_example"; // String | 
-        Integer limit = 56; // Integer | 
-        try {
-            ListBannedChannelsResponse result = api.listBannedChannels(userId)
-                .apiToken(apiToken)
-                .token(token)
-                .limit(limit)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#listBannedChannels");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **userId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **token** | **String**|  | [optional] |
-| **limit** | **Integer**|  | [optional] |
-
-### Return type
-
-[**ListBannedChannelsResponse**](ListBannedChannelsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 ### HTTP response details
@@ -1058,20 +260,19 @@ No authorization required
 
 ## listBlockedUsers
 
-> ListBlockedUsersResponse listBlockedUsers(userId).apiToken(apiToken).token(token).limit(limit).userIds(userIds).metadatakey(metadatakey).metadatavaluesIn(metadatavaluesIn).execute();
+> ListBlockedUsersResponse listBlockedUsers(userId)._list(_list).token(token).limit(limit).userIds(userIds).metadatakey(metadatakey).metadatavaluesIn(metadatavaluesIn).apiToken(apiToken).execute();
 
 List blocked users
 
-## List blocked users
+## List blocked by and blocking users
 
-Retrieves a list of other users that a user has blocked.
+This action retrieves a list of users who are either blocked by a specific user or a list of users who are blocking a specific user.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-blocked-users
-----------------------------
+[https://sendbird.com/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users#1-list-blocked-by-and-blocking-users](https://sendbird.com/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users#1-list-blocked-by-and-blocking-users)
 
- `user_id`
-     Type: string
-     Description: Specifies the unique ID of the target user.
+`user_id`  
+Type: string  
+Description: Specifies the unique ID of the target user.
 
 ### Example
 
@@ -1089,21 +290,23 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String userId = "userId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
+        String userId = "userId_example"; // String | (Required) 
+        String _list = "blocked_by_me"; // String | Specifies whether to retrieve a list of users who are blocked by the specified user or a list of users who are blocking the specified user. Acceptable values are blocked_by_me and blocking_me. The `me` in the values refers to the user specified in the parameter. (Default: blocked_by_me)
         String token = "token_example"; // String | 
         Integer limit = 56; // Integer | 
-        String userIds = "userIds_example"; // String | 
+        String userIds = "userIds_example"; // String | Specifies the user IDs of the blocked or blocking users to search for. The value should be a comma-separated string that consists of multiple URL encoded user IDs.
         String metadatakey = "metadatakey_example"; // String | 
         String metadatavaluesIn = "metadatavaluesIn_example"; // String | 
+        String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             ListBlockedUsersResponse result = api.listBlockedUsers(userId)
-                .apiToken(apiToken)
+                ._list(_list)
                 .token(token)
                 .limit(limit)
                 .userIds(userIds)
                 .metadatakey(metadatakey)
                 .metadatavaluesIn(metadatavaluesIn)
+                .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1122,13 +325,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **userId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
+| **userId** | **String**| (Required)  | |
+| **_list** | **String**| Specifies whether to retrieve a list of users who are blocked by the specified user or a list of users who are blocking the specified user. Acceptable values are blocked_by_me and blocking_me. The &#x60;me&#x60; in the values refers to the user specified in the parameter. (Default: blocked_by_me) | [optional] [enum: blocked_by_me, blocking_me] |
 | **token** | **String**|  | [optional] |
 | **limit** | **Integer**|  | [optional] |
-| **userIds** | **String**|  | [optional] |
+| **userIds** | **String**| Specifies the user IDs of the blocked or blocking users to search for. The value should be a comma-separated string that consists of multiple URL encoded user IDs. | [optional] |
 | **metadatakey** | **String**|  | [optional] |
 | **metadatavaluesIn** | **String**|  | [optional] |
+| **apiToken** | **String**|  | [optional] |
 
 ### Return type
 
@@ -1149,953 +353,9 @@ No authorization required
 | **200** | Successful response |  -  |
 
 
-## listMutedChannels
+## unblockAUser
 
-> ListMutedChannelsResponse listMutedChannels(userId).apiToken(apiToken).token(token).limit(limit).execute();
-
-List muted channels
-
-## List muted channels
-
-Retrieves a list of open and group channels with additional information where a user is muted.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-muted-channels
-----------------------------
-
- `user_id`
-     Type: string
-     Description: Specifies the unique ID of the target user.
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String userId = "userId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        String token = "token_example"; // String | 
-        Integer limit = 56; // Integer | 
-        try {
-            ListMutedChannelsResponse result = api.listMutedChannels(userId)
-                .apiToken(apiToken)
-                .token(token)
-                .limit(limit)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#listMutedChannels");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **userId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **token** | **String**|  | [optional] |
-| **limit** | **Integer**|  | [optional] |
-
-### Return type
-
-[**ListMutedChannelsResponse**](ListMutedChannelsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## muteInChannelsWithCustomChannelTypes
-
-> Object muteInChannelsWithCustomChannelTypes(userId).apiToken(apiToken).muteInChannelsWithCustomChannelTypesData(muteInChannelsWithCustomChannelTypesData).execute();
-
-Mute in channels with custom channel types
-
-## Mute in channels with custom channel types
-
-Mutes a user in channels with particular custom channel types.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mute-in-channels-with-custom-channel-types
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String userId = "userId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        MuteInChannelsWithCustomChannelTypesData muteInChannelsWithCustomChannelTypesData = new MuteInChannelsWithCustomChannelTypesData(); // MuteInChannelsWithCustomChannelTypesData | 
-        try {
-            Object result = api.muteInChannelsWithCustomChannelTypes(userId)
-                .apiToken(apiToken)
-                .muteInChannelsWithCustomChannelTypesData(muteInChannelsWithCustomChannelTypesData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#muteInChannelsWithCustomChannelTypes");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **userId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **muteInChannelsWithCustomChannelTypesData** | [**MuteInChannelsWithCustomChannelTypesData**](MuteInChannelsWithCustomChannelTypesData.md)|  | [optional] |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocBanUser
-
-> OcBanUserResponse ocBanUser(channelUrl).apiToken(apiToken).ocBanUserData(ocBanUserData).execute();
-
-Ban a user
-
-## Ban a user
-
-Bans a user from an open channel. A banned user is immediately expelled from a channel and allowed to participate in the channel again after a set time period.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-ban-a-user
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        OcBanUserData ocBanUserData = new OcBanUserData(); // OcBanUserData | 
-        try {
-            OcBanUserResponse result = api.ocBanUser(channelUrl)
-                .apiToken(apiToken)
-                .ocBanUserData(ocBanUserData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocBanUser");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **ocBanUserData** | [**OcBanUserData**](OcBanUserData.md)|  | [optional] |
-
-### Return type
-
-[**OcBanUserResponse**](OcBanUserResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocFreezeChannel
-
-> SendBirdOpenChannel ocFreezeChannel(channelUrl).apiToken(apiToken).ocFreezeChannelData(ocFreezeChannelData).execute();
-
-Freeze a channel
-
-## Freeze a channel
-
-Freezes or unfreezes an open channel.
-
-> __Note__: Only users designated as channel operators are allowed to talk when a channel is frozen.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-freeze-a-channel
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        OcFreezeChannelData ocFreezeChannelData = new OcFreezeChannelData(); // OcFreezeChannelData | 
-        try {
-            SendBirdOpenChannel result = api.ocFreezeChannel(channelUrl)
-                .apiToken(apiToken)
-                .ocFreezeChannelData(ocFreezeChannelData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocFreezeChannel");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **ocFreezeChannelData** | [**OcFreezeChannelData**](OcFreezeChannelData.md)|  | [optional] |
-
-### Return type
-
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocListBannedUsers
-
-> OcListBannedUsersResponse ocListBannedUsers(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
-
-List banned users
-
-## List banned users
-
-Retrieves a list of banned users from a specific open channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-banned-users
-----------------------------
-
- `channel_url`
-     Type: string
-     Description: Specifies the URL of the channel where to retrieve a list of banned users.
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        String token = "token_example"; // String | 
-        Integer limit = 56; // Integer | 
-        try {
-            OcListBannedUsersResponse result = api.ocListBannedUsers(channelUrl)
-                .apiToken(apiToken)
-                .token(token)
-                .limit(limit)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocListBannedUsers");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **token** | **String**|  | [optional] |
-| **limit** | **Integer**|  | [optional] |
-
-### Return type
-
-[**OcListBannedUsersResponse**](OcListBannedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocListMutedUsers
-
-> OcListMutedUsersResponse ocListMutedUsers(channelUrl).apiToken(apiToken).token(token).limit(limit).execute();
-
-List muted users
-
-## List muted users
-
-Retrieves a list of muted users in the channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-list-muted-users
-----------------------------
-
- `channel_url`
-     Type: string
-     Description: Specifies the URL of the channel to retrieve a list of muted users.
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        String token = "token_example"; // String | 
-        Integer limit = 56; // Integer | 
-        try {
-            OcListMutedUsersResponse result = api.ocListMutedUsers(channelUrl)
-                .apiToken(apiToken)
-                .token(token)
-                .limit(limit)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocListMutedUsers");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **token** | **String**|  | [optional] |
-| **limit** | **Integer**|  | [optional] |
-
-### Return type
-
-[**OcListMutedUsersResponse**](OcListMutedUsersResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocMuteUser
-
-> SendBirdOpenChannel ocMuteUser(channelUrl).apiToken(apiToken).ocMuteUserData(ocMuteUserData).execute();
-
-Mute a user
-
-## Mute a user
-
-Mutes a user in the channel. A muted user remains in the channel and is allowed to view the messages, but can't send any messages until unmuted.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-mute-a-user
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        OcMuteUserData ocMuteUserData = new OcMuteUserData(); // OcMuteUserData | 
-        try {
-            SendBirdOpenChannel result = api.ocMuteUser(channelUrl)
-                .apiToken(apiToken)
-                .ocMuteUserData(ocMuteUserData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocMuteUser");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **ocMuteUserData** | [**OcMuteUserData**](OcMuteUserData.md)|  | [optional] |
-
-### Return type
-
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocUnbanUserById
-
-> OcDeleteChannelByUrl200Response ocUnbanUserById(channelUrl, bannedUserId).apiToken(apiToken).execute();
-
-Unban a user
-
-## Unban a user
-
-Unbans a user from an open channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unban-a-user
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String bannedUserId = "bannedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        try {
-            OcDeleteChannelByUrl200Response result = api.ocUnbanUserById(channelUrl, bannedUserId)
-                .apiToken(apiToken)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocUnbanUserById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **bannedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-
-### Return type
-
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocUnmuteUserById
-
-> OcDeleteChannelByUrl200Response ocUnmuteUserById(channelUrl, mutedUserId).apiToken(apiToken).execute();
-
-Unmute a user
-
-## Unmute a user
-
-Unmutes a user from an open channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-unmute-a-user
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String mutedUserId = "mutedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        try {
-            OcDeleteChannelByUrl200Response result = api.ocUnmuteUserById(channelUrl, mutedUserId)
-                .apiToken(apiToken)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocUnmuteUserById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **mutedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-
-### Return type
-
-[**OcDeleteChannelByUrl200Response**](OcDeleteChannelByUrl200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocUpdateBanById
-
-> OcUpdateBanByIdResponse ocUpdateBanById(channelUrl, bannedUserId).apiToken(apiToken).ocUpdateBanByIdData(ocUpdateBanByIdData).execute();
-
-Update a ban
-
-## Update a ban
-
-Updates details of a ban imposed on a user. You can change the length of a ban with this action, and also provide an updated description.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-update-a-ban
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String bannedUserId = "bannedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        OcUpdateBanByIdData ocUpdateBanByIdData = new OcUpdateBanByIdData(); // OcUpdateBanByIdData | 
-        try {
-            OcUpdateBanByIdResponse result = api.ocUpdateBanById(channelUrl, bannedUserId)
-                .apiToken(apiToken)
-                .ocUpdateBanByIdData(ocUpdateBanByIdData)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocUpdateBanById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **bannedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-| **ocUpdateBanByIdData** | [**OcUpdateBanByIdData**](OcUpdateBanByIdData.md)|  | [optional] |
-
-### Return type
-
-[**OcUpdateBanByIdResponse**](OcUpdateBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocViewBanById
-
-> OcViewBanByIdResponse ocViewBanById(channelUrl, bannedUserId).apiToken(apiToken).execute();
-
-View a ban
-
-## View a ban
-
-Retrieves details of a ban imposed on a user.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-ban
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String bannedUserId = "bannedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        try {
-            OcViewBanByIdResponse result = api.ocViewBanById(channelUrl, bannedUserId)
-                .apiToken(apiToken)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocViewBanById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **bannedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-
-### Return type
-
-[**OcViewBanByIdResponse**](OcViewBanByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## ocViewMuteById
-
-> OcViewMuteByIdResponse ocViewMuteById(channelUrl, mutedUserId).apiToken(apiToken).execute();
-
-View a mute
-
-## View a mute
-
-Checks if a user is muted in an open channel.
-
-https://sendbird.com/docs/chat/v3/platform-api/guides/open-channel#2-view-a-mute
-----------------------------
-
-### Example
-
-```java
-// Import classes:
-import org.sendbird.client.ApiClient;
-import org.sendbird.client.ApiException;
-import org.sendbird.client.Configuration;
-import org.sendbird.client.model.*;
-import org.sendbird.client.api.ModerationApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
-
-        ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String channelUrl = "channelUrl_example"; // String | 
-        String mutedUserId = "mutedUserId_example"; // String | 
-        String apiToken = "{{API_TOKEN}}"; // String | 
-        try {
-            OcViewMuteByIdResponse result = api.ocViewMuteById(channelUrl, mutedUserId)
-                .apiToken(apiToken)
-                .execute();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#ocViewMuteById");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **channelUrl** | **String**|  | |
-| **mutedUserId** | **String**|  | |
-| **apiToken** | **String**|  | [optional] |
-
-### Return type
-
-[**OcViewMuteByIdResponse**](OcViewMuteByIdResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful response |  -  |
-
-
-## unblockUserById
-
-> Object unblockUserById(userId, targetId).apiToken(apiToken).execute();
+> Object unblockAUser(userId, targetId).apiToken(apiToken).execute();
 
 Unblock a user
 
@@ -2103,8 +363,7 @@ Unblock a user
 
 Unblocks the user.
 
-https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-unblock-a-user
-----------------------------
+https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/unblock-a-user#1-unblock-a-user
 
 ### Example
 
@@ -2122,16 +381,16 @@ public class Example {
         defaultClient.setBasePath("https://api-APP_ID.sendbird.com");
 
         ModerationApi apiInstance = new ModerationApi(defaultClient);
-        String userId = "userId_example"; // String | 
-        String targetId = "targetId_example"; // String | 
+        String userId = "userId_example"; // String | (Required) 
+        String targetId = "targetId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            Object result = api.unblockUserById(userId, targetId)
+            Object result = api.unblockAUser(userId, targetId)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ModerationApi#unblockUserById");
+            System.err.println("Exception when calling ModerationApi#unblockAUser");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2146,8 +405,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **userId** | **String**|  | |
-| **targetId** | **String**|  | |
+| **userId** | **String**| (Required)  | |
+| **targetId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
 
 ### Return type

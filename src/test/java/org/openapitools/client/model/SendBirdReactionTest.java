@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,17 +28,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SendBirdReaction
+ * Model tests for SendbirdReaction
  */
-public class SendBirdReactionTest {
-    private final SendBirdReaction model = new SendBirdReaction();
+public class SendbirdReactionTest {
+    private final SendbirdReaction model = new SendbirdReaction();
 
     /**
-     * Model tests for SendBirdReaction
+     * Model tests for SendbirdReaction
      */
     @Test
-    public void testSendBirdReaction() {
-        // TODO: test SendBirdReaction
+    public void testSendbirdReaction() {
+        // TODO: test SendbirdReaction
     }
 
     /**

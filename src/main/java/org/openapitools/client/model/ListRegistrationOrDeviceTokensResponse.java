@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -26,11 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdUser;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
+import org.openapitools.client.model.SendbirdBasicUserInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -45,7 +41,7 @@ import org.sendbird.client.JSON;
   ListRegistrationOrDeviceTokensResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("listRegistrationOrDeviceTokensResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
 public class ListRegistrationOrDeviceTokensResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private List<String> token = null;
@@ -57,7 +53,7 @@ public class ListRegistrationOrDeviceTokensResponse {
   private String type;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private JsonNullable<SendBirdUser> user = JsonNullable.<SendBirdUser>undefined();
+  private SendbirdBasicUserInfo user;
 
   public ListRegistrationOrDeviceTokensResponse() { 
   }
@@ -156,8 +152,8 @@ public class ListRegistrationOrDeviceTokensResponse {
   }
 
 
-  public ListRegistrationOrDeviceTokensResponse user(SendBirdUser user) {
-    this.user = JsonNullable.<SendBirdUser>of(user);
+  public ListRegistrationOrDeviceTokensResponse user(SendbirdBasicUserInfo user) {
+    this.user = user;
     return this;
   }
 
@@ -167,26 +163,18 @@ public class ListRegistrationOrDeviceTokensResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonIgnore
-
-  public SendBirdUser getUser() {
-        return user.orElse(null);
-  }
-
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SendBirdUser> getUser_JsonNullable() {
+  public SendbirdBasicUserInfo getUser() {
     return user;
   }
-  
-  @JsonProperty(JSON_PROPERTY_USER)
-  public void setUser_JsonNullable(JsonNullable<SendBirdUser> user) {
-    this.user = user;
-  }
 
-  public void setUser(SendBirdUser user) {
-    this.user = JsonNullable.<SendBirdUser>of(user);
+
+  @JsonProperty(JSON_PROPERTY_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUser(SendbirdBasicUserInfo user) {
+    this.user = user;
   }
 
 
@@ -205,23 +193,12 @@ public class ListRegistrationOrDeviceTokensResponse {
     return Objects.equals(this.token, listRegistrationOrDeviceTokensResponse.token) &&
         Objects.equals(this.tokens, listRegistrationOrDeviceTokensResponse.tokens) &&
         Objects.equals(this.type, listRegistrationOrDeviceTokensResponse.type) &&
-        equalsNullable(this.user, listRegistrationOrDeviceTokensResponse.user);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.user, listRegistrationOrDeviceTokensResponse.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(token, tokens, type, hashCodeNullable(user));
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(token, tokens, type, user);
   }
 
   @Override
