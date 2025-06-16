@@ -43,7 +43,7 @@ import org.sendbird.client.JSON;
   ListBotsResponseBotsInnerBotStyle.JSON_PROPERTY_TOGGLE_BUTTON_URL
 })
 @JsonTypeName("listBotsResponse_bots_inner_bot_style")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class ListBotsResponseBotsInnerBotStyle {
   public static final String JSON_PROPERTY_AUTO_OPEN = "auto_open";
   private Boolean autoOpen;

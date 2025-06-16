@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   JoinChannelsRequest.JSON_PROPERTY_CHANNEL_URLS
 })
 @JsonTypeName("joinChannels_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class JoinChannelsRequest {
   public static final String JSON_PROPERTY_CHANNEL_URLS = "channel_urls";
   private List<String> channelUrls = new ArrayList<>();

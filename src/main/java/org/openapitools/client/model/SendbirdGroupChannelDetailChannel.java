@@ -42,7 +42,7 @@ import org.sendbird.client.JSON;
   SendbirdGroupChannelDetailChannel.JSON_PROPERTY_NAME
 })
 @JsonTypeName("Sendbird_GroupChannelDetail_channel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class SendbirdGroupChannelDetailChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;

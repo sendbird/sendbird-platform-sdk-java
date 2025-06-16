@@ -51,7 +51,7 @@ import org.sendbird.client.JSON;
   ListBotsResponseBotsInnerAi.JSON_PROPERTY_TOP_P
 })
 @JsonTypeName("listBotsResponse_bots_inner_ai")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class ListBotsResponseBotsInnerAi {
   public static final String JSON_PROPERTY_BACKEND = "backend";
   private String backend;
