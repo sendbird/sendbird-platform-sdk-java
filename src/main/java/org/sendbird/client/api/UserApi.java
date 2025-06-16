@@ -45,7 +45,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class UserApi {
   private ApiClient apiClient;
 
@@ -873,7 +873,7 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
     return new APIleaveMyGroupChannelsRequest(userId);
   }
 
-private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Long createdAfter, Long createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId2) throws ApiException {
+private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Long createdAfter, Long createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String membersNicknameStartswith, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String hiddenMode, String unreadFilter, String memberStateFilter) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -922,6 +922,9 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "query_type", queryType));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "members_nickname", membersNickname));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "members_nickname_contains", membersNicknameContains));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "members_nickname_startswith", membersNicknameStartswith));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "search_query", searchQuery));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "search_fields", searchFields));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metadata_key", metadataKey));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metadata_values", metadataValues));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metadata_value_startswith", metadataValueStartswith));
@@ -932,12 +935,9 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metacounter_value_lt", metacounterValueLt));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metacounter_value_lte", metacounterValueLte));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_sorted_metaarray_in_last_message", includeSortedMetaarrayInLastMessage));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_type", customType));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "read_receipt", readReceipt));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "member", member));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "is_distinct", isDistinct));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "members_in", membersIn));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "user_id", userId2));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "hidden_mode", hiddenMode));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "unread_filter", unreadFilter));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "member_state_filter", memberStateFilter));
 
     if (apiToken != null)
       localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
@@ -992,6 +992,9 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     private String queryType;
     private String membersNickname;
     private String membersNicknameContains;
+    private String membersNicknameStartswith;
+    private String searchQuery;
+    private String searchFields;
     private String metadataKey;
     private String metadataValues;
     private String metadataValueStartswith;
@@ -1002,12 +1005,9 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     private String metacounterValueLt;
     private String metacounterValueLte;
     private Boolean includeSortedMetaarrayInLastMessage;
-    private String customType;
-    private Boolean readReceipt;
-    private Boolean member;
-    private Boolean isDistinct;
-    private String membersIn;
-    private String userId2;
+    private String hiddenMode;
+    private String unreadFilter;
+    private String memberStateFilter;
 
     private APIlistMyGroupChannelsRequest(String userId) {
       this.userId = userId;
@@ -1284,6 +1284,36 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     }
 
     /**
+     * Set membersNicknameStartswith
+     * @param membersNicknameStartswith Searches for group channels with members whose nicknames begin with the specified value. This parameter isn&#39;t case-sensitive. URL encoding the value is recommended. (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest membersNicknameStartswith(String membersNicknameStartswith) {
+      this.membersNicknameStartswith = membersNicknameStartswith;
+      return this;
+    }
+
+    /**
+     * Set searchQuery
+     * @param searchQuery Searches for group channels where the specified query string matches the channel name or the nickname of the member. This parameter isn&#39;t case-sensitive and should be specified in conjunction with the search_fields parameter below. URL encoding the value is recommended. (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest searchQuery(String searchQuery) {
+      this.searchQuery = searchQuery;
+      return this;
+    }
+
+    /**
+     * Set searchFields
+     * @param searchFields Specifies a comma-separated string of one or more search fields to apply to the query, which restricts the results within the specified fields (OR search condition). Acceptable values are channel_name and member_nickname. This is effective only when the search_query parameter above is specified. (Default: channel_name, member_nickname together) (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest searchFields(String searchFields) {
+      this.searchFields = searchFields;
+      return this;
+    }
+
+    /**
      * Set metadataKey
      * @param metadataKey Searches for group channels with metadata containing an item with the specified value as its key. To use this parameter, either the metadata_values parameter or the metadata_value_startswith parameter should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
@@ -1384,62 +1414,32 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     }
 
     /**
-     * Set customType
-     * @param customType (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded. (optional)
+     * Set hiddenMode
+     * @param hiddenMode Restricts the search scope to group channels that match a specific hidden_status and operating behavior (optional)
      * @return APIlistMyGroupChannelsRequest
      */
-    public APIlistMyGroupChannelsRequest customType(String customType) {
-      this.customType = customType;
+    public APIlistMyGroupChannelsRequest hiddenMode(String hiddenMode) {
+      this.hiddenMode = hiddenMode;
       return this;
     }
 
     /**
-     * Set readReceipt
-     * @param readReceipt (Deprecated) Superseded by show_read_receipt. (optional)
+     * Set unreadFilter
+     * @param unreadFilter Restricts the search scope to only retrieve group channels with one or more unread messages. This filter doesn&#39;t support Supergroup channels. Acceptable values are all and unread_message. (Default: all) (optional)
      * @return APIlistMyGroupChannelsRequest
      */
-    public APIlistMyGroupChannelsRequest readReceipt(Boolean readReceipt) {
-      this.readReceipt = readReceipt;
+    public APIlistMyGroupChannelsRequest unreadFilter(String unreadFilter) {
+      this.unreadFilter = unreadFilter;
       return this;
     }
 
     /**
-     * Set member
-     * @param member (Deprecated) Superseded by show_member. (optional)
+     * Set memberStateFilter
+     * @param memberStateFilter  (optional)
      * @return APIlistMyGroupChannelsRequest
      */
-    public APIlistMyGroupChannelsRequest member(Boolean member) {
-      this.member = member;
-      return this;
-    }
-
-    /**
-     * Set isDistinct
-     * @param isDistinct (Deprecated) Superseded by distinct_mode. (optional)
-     * @return APIlistMyGroupChannelsRequest
-     */
-    public APIlistMyGroupChannelsRequest isDistinct(Boolean isDistinct) {
-      this.isDistinct = isDistinct;
-      return this;
-    }
-
-    /**
-     * Set membersIn
-     * @param membersIn (Deprecated) Superseded by members_exactly_in. (optional)
-     * @return APIlistMyGroupChannelsRequest
-     */
-    public APIlistMyGroupChannelsRequest membersIn(String membersIn) {
-      this.membersIn = membersIn;
-      return this;
-    }
-
-    /**
-     * Set userId2
-     * @param userId2 (Deprecated) Restricts the search scope to only retrieve the target user&#39;s group channels. It&#39;s recommended to use the list group channels by user action instead. (optional)
-     * @return APIlistMyGroupChannelsRequest
-     */
-    public APIlistMyGroupChannelsRequest userId2(String userId2) {
-      this.userId2 = userId2;
+    public APIlistMyGroupChannelsRequest memberStateFilter(String memberStateFilter) {
+      this.memberStateFilter = memberStateFilter;
       return this;
     }
 
@@ -1471,7 +1471,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
      */
     public ApiResponse<ListMyGroupChannelsResponse> executeWithHttpInfo() throws ApiException {
-      return listMyGroupChannelsWithHttpInfo(userId, apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId2);
+      return listMyGroupChannelsWithHttpInfo(userId, apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, membersNicknameStartswith, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, hiddenMode, unreadFilter, memberStateFilter);
     }
   }
 

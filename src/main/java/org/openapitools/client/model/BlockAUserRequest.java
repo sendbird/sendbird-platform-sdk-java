@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   BlockAUserRequest.JSON_PROPERTY_USER_IDS
 })
 @JsonTypeName("blockAUser_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class BlockAUserRequest {
   public static final String JSON_PROPERTY_TARGET_ID = "target_id";
   private String targetId;

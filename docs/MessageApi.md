@@ -578,7 +578,7 @@ No authorization required
 
 ## migrateMessages
 
-> Object migrateMessages(targetChannelUrl).apiToken(apiToken).body(body).execute();
+> Object migrateMessages(targetChannelUrl).apiToken(apiToken).migrateMessagesRequest(migrateMessagesRequest).execute();
 
 Migrate messages
 
@@ -618,11 +618,11 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String targetChannelUrl = "targetChannelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        Object body = null; // Object | 
+        MigrateMessagesRequest migrateMessagesRequest = new MigrateMessagesRequest(); // MigrateMessagesRequest | 
         try {
             Object result = api.migrateMessages(targetChannelUrl)
                 .apiToken(apiToken)
-                .body(body)
+                .migrateMessagesRequest(migrateMessagesRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -643,7 +643,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **targetChannelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **body** | **Object**|  | [optional] |
+| **migrateMessagesRequest** | [**MigrateMessagesRequest**](MigrateMessagesRequest.md)|  | [optional] |
 
 ### Return type
 

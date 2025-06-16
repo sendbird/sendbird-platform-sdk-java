@@ -586,7 +586,7 @@ No authorization required
 
 ## listMyGroupChannels
 
-> ListMyGroupChannelsResponse listMyGroupChannels(userId).apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMetadata(showMetadata).showFrozen(showFrozen).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage).customType(customType).readReceipt(readReceipt).member(member).isDistinct(isDistinct).membersIn(membersIn).userId2(userId2).execute();
+> ListMyGroupChannelsResponse listMyGroupChannels(userId).apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMetadata(showMetadata).showFrozen(showFrozen).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).membersNicknameStartswith(membersNicknameStartswith).searchQuery(searchQuery).searchFields(searchFields).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage).hiddenMode(hiddenMode).unreadFilter(unreadFilter).memberStateFilter(memberStateFilter).execute();
 
 List my group channels
 
@@ -646,6 +646,9 @@ public class Example {
         String queryType = "queryType_example"; // String | Specifies a logical condition applied to the members_include_in parameter. Acceptable values are either AND or OR. For example, if you specify three members, A, B, and C, in members_include_in, the value of AND returns all channels that include every one of {A. B, C} as members. The value of OR returns channels that include {A}, plus those that include {B}, plus those that include {C}. (Default: AND)
         String membersNickname = "membersNickname_example"; // String | Searches for group channels with members whose nicknames match the specified value. URL encoding the value is recommended.
         String membersNicknameContains = "membersNicknameContains_example"; // String | Searches for group channels with members whose nicknames contain the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.  * We recommend using at least three characters for the parameter value for better search efficiency when you design and implement related features. If you would like to allow one or two characters for searching, use members_nickname instead to prevent performance issues.
+        String membersNicknameStartswith = "membersNicknameStartswith_example"; // String | Searches for group channels with members whose nicknames begin with the specified value. This parameter isn't case-sensitive. URL encoding the value is recommended.
+        String searchQuery = "searchQuery_example"; // String | Searches for group channels where the specified query string matches the channel name or the nickname of the member. This parameter isn't case-sensitive and should be specified in conjunction with the search_fields parameter below. URL encoding the value is recommended.
+        String searchFields = "searchFields_example"; // String | Specifies a comma-separated string of one or more search fields to apply to the query, which restricts the results within the specified fields (OR search condition). Acceptable values are channel_name and member_nickname. This is effective only when the search_query parameter above is specified. (Default: channel_name, member_nickname together)
         String metadataKey = "metadataKey_example"; // String | Searches for group channels with metadata containing an item with the specified value as its key. To use this parameter, either the metadata_values parameter or the metadata_value_startswith parameter should be specified.
         String metadataValues = "metadataValues_example"; // String | Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the value of that item matches one or more values specified by this parameter. The string should be specified with multiple values separated by commas. URL encoding each value is recommended. To use this parameter, the metadata_key parameter should be specified.
         String metadataValueStartswith = "metadataValueStartswith_example"; // String | Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the values of that item that start with the specified value of this parameter. URL encoding the value is recommended. To use this parameter, the metadata_key parameter should be specified.
@@ -656,12 +659,9 @@ public class Example {
         String metacounterValueLt = "metacounterValueLt_example"; // String | Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.
         String metacounterValueLte = "metacounterValueLte_example"; // String | Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.
         Boolean includeSortedMetaarrayInLastMessage = false; // Boolean | Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response.
-        String customType = "ANNOUNCEMENT"; // String | (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded.
-        Boolean readReceipt = false; // Boolean | (Deprecated) Superseded by show_read_receipt.
-        Boolean member = true; // Boolean | (Deprecated) Superseded by show_member.
-        Boolean isDistinct = true; // Boolean | (Deprecated) Superseded by distinct_mode.
-        String membersIn = "membersIn_example"; // String | (Deprecated) Superseded by members_exactly_in.
-        String userId2 = "userId_example"; // String | (Deprecated) Restricts the search scope to only retrieve the target user's group channels. It's recommended to use the list group channels by user action instead.
+        String hiddenMode = "unhidden_only"; // String | Restricts the search scope to group channels that match a specific hidden_status and operating behavior
+        String unreadFilter = "all"; // String | Restricts the search scope to only retrieve group channels with one or more unread messages. This filter doesn't support Supergroup channels. Acceptable values are all and unread_message. (Default: all)
+        String memberStateFilter = "all"; // String | 
         try {
             ListMyGroupChannelsResponse result = api.listMyGroupChannels(userId)
                 .apiToken(apiToken)
@@ -691,6 +691,9 @@ public class Example {
                 .queryType(queryType)
                 .membersNickname(membersNickname)
                 .membersNicknameContains(membersNicknameContains)
+                .membersNicknameStartswith(membersNicknameStartswith)
+                .searchQuery(searchQuery)
+                .searchFields(searchFields)
                 .metadataKey(metadataKey)
                 .metadataValues(metadataValues)
                 .metadataValueStartswith(metadataValueStartswith)
@@ -701,12 +704,9 @@ public class Example {
                 .metacounterValueLt(metacounterValueLt)
                 .metacounterValueLte(metacounterValueLte)
                 .includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage)
-                .customType(customType)
-                .readReceipt(readReceipt)
-                .member(member)
-                .isDistinct(isDistinct)
-                .membersIn(membersIn)
-                .userId2(userId2)
+                .hiddenMode(hiddenMode)
+                .unreadFilter(unreadFilter)
+                .memberStateFilter(memberStateFilter)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -753,6 +753,9 @@ public class Example {
 | **queryType** | **String**| Specifies a logical condition applied to the members_include_in parameter. Acceptable values are either AND or OR. For example, if you specify three members, A, B, and C, in members_include_in, the value of AND returns all channels that include every one of {A. B, C} as members. The value of OR returns channels that include {A}, plus those that include {B}, plus those that include {C}. (Default: AND) | [optional] |
 | **membersNickname** | **String**| Searches for group channels with members whose nicknames match the specified value. URL encoding the value is recommended. | [optional] |
 | **membersNicknameContains** | **String**| Searches for group channels with members whose nicknames contain the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.  * We recommend using at least three characters for the parameter value for better search efficiency when you design and implement related features. If you would like to allow one or two characters for searching, use members_nickname instead to prevent performance issues. | [optional] |
+| **membersNicknameStartswith** | **String**| Searches for group channels with members whose nicknames begin with the specified value. This parameter isn&#39;t case-sensitive. URL encoding the value is recommended. | [optional] |
+| **searchQuery** | **String**| Searches for group channels where the specified query string matches the channel name or the nickname of the member. This parameter isn&#39;t case-sensitive and should be specified in conjunction with the search_fields parameter below. URL encoding the value is recommended. | [optional] |
+| **searchFields** | **String**| Specifies a comma-separated string of one or more search fields to apply to the query, which restricts the results within the specified fields (OR search condition). Acceptable values are channel_name and member_nickname. This is effective only when the search_query parameter above is specified. (Default: channel_name, member_nickname together) | [optional] |
 | **metadataKey** | **String**| Searches for group channels with metadata containing an item with the specified value as its key. To use this parameter, either the metadata_values parameter or the metadata_value_startswith parameter should be specified. | [optional] |
 | **metadataValues** | **String**| Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the value of that item matches one or more values specified by this parameter. The string should be specified with multiple values separated by commas. URL encoding each value is recommended. To use this parameter, the metadata_key parameter should be specified. | [optional] |
 | **metadataValueStartswith** | **String**| Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the values of that item that start with the specified value of this parameter. URL encoding the value is recommended. To use this parameter, the metadata_key parameter should be specified. | [optional] |
@@ -763,12 +766,9 @@ public class Example {
 | **metacounterValueLt** | **String**| Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. | [optional] |
 | **metacounterValueLte** | **String**| Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. | [optional] |
 | **includeSortedMetaarrayInLastMessage** | **Boolean**| Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response. | [optional] |
-| **customType** | **String**| (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded. | [optional] |
-| **readReceipt** | **Boolean**| (Deprecated) Superseded by show_read_receipt. | [optional] |
-| **member** | **Boolean**| (Deprecated) Superseded by show_member. | [optional] |
-| **isDistinct** | **Boolean**| (Deprecated) Superseded by distinct_mode. | [optional] |
-| **membersIn** | **String**| (Deprecated) Superseded by members_exactly_in. | [optional] |
-| **userId2** | **String**| (Deprecated) Restricts the search scope to only retrieve the target user&#39;s group channels. It&#39;s recommended to use the list group channels by user action instead. | [optional] |
+| **hiddenMode** | **String**| Restricts the search scope to group channels that match a specific hidden_status and operating behavior | [optional] [enum: unhidden_only, hidden_only, hidden_allow_auto_unhide, hidden_prevent_auto_unhide, all] |
+| **unreadFilter** | **String**| Restricts the search scope to only retrieve group channels with one or more unread messages. This filter doesn&#39;t support Supergroup channels. Acceptable values are all and unread_message. (Default: all) | [optional] [enum: all, unread_message] |
+| **memberStateFilter** | **String**|  | [optional] [enum: all, invited_only, joined_only, invited_by_friend, invited_by_non_friend] |
 
 ### Return type
 

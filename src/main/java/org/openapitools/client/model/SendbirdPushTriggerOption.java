@@ -33,9 +33,7 @@ public enum SendbirdPushTriggerOption {
   
   MENTION_ONLY("mention_only"),
   
-  OFF("off"),
-  
-  DEFAULT("default");
+  OFF("off");
 
   private String value;
 

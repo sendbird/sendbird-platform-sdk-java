@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -83,7 +82,7 @@ import org.sendbird.client.JSON;
   SendbirdGroupChannelDetail.JSON_PROPERTY_UNREAD_MESSAGE_COUNT
 })
 @JsonTypeName("Sendbird.GroupChannelDetail")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class SendbirdGroupChannelDetail {
   public static final String JSON_PROPERTY_CHANNEL = "channel";
   private SendbirdGroupChannelDetailChannel channel;
@@ -155,10 +154,10 @@ public class SendbirdGroupChannelDetail {
   private JsonNullable<SendbirdMessageResponse> lastMessage = JsonNullable.<SendbirdMessageResponse>undefined();
 
   public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
-  private BigDecimal maxLengthMessage;
+  private Integer maxLengthMessage;
 
   public static final String JSON_PROPERTY_MEMBER_COUNT = "member_count";
-  private BigDecimal memberCount;
+  private Integer memberCount;
 
   public static final String JSON_PROPERTY_MEMBERS = "members";
   private List<SendbirdMember> members = null;
@@ -801,7 +800,7 @@ public class SendbirdGroupChannelDetail {
   }
 
 
-  public SendbirdGroupChannelDetail maxLengthMessage(BigDecimal maxLengthMessage) {
+  public SendbirdGroupChannelDetail maxLengthMessage(Integer maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
     return this;
   }
@@ -815,19 +814,19 @@ public class SendbirdGroupChannelDetail {
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMaxLengthMessage() {
+  public Integer getMaxLengthMessage() {
     return maxLengthMessage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MAX_LENGTH_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxLengthMessage(BigDecimal maxLengthMessage) {
+  public void setMaxLengthMessage(Integer maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
   }
 
 
-  public SendbirdGroupChannelDetail memberCount(BigDecimal memberCount) {
+  public SendbirdGroupChannelDetail memberCount(Integer memberCount) {
     this.memberCount = memberCount;
     return this;
   }
@@ -841,14 +840,14 @@ public class SendbirdGroupChannelDetail {
   @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMemberCount() {
+  public Integer getMemberCount() {
     return memberCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMBER_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMemberCount(BigDecimal memberCount) {
+  public void setMemberCount(Integer memberCount) {
     this.memberCount = memberCount;
   }
 

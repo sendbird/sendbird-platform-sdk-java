@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class MetadataApi {
   private ApiClient apiClient;
 
@@ -190,7 +190,8 @@ private ApiResponse<Object> deleteAChannelMetadataWhenDeletingAllItemsOfAChannel
     // create path and map variables
     String localVarPath = "/v3/{channel_type}/{channel_url}/metadata"
       .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
+      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()))
+      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -198,7 +199,6 @@ private ApiResponse<Object> deleteAChannelMetadataWhenDeletingAllItemsOfAChannel
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "key", key));
 
     if (apiToken != null)
       localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
@@ -230,19 +230,10 @@ private ApiResponse<Object> deleteAChannelMetadataWhenDeletingAllItemsOfAChannel
     private String key;
     private String apiToken;
 
-    private APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest(String channelType, String channelUrl) {
+    private APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest(String channelType, String channelUrl, String key) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set key
-     * @param key  (optional)
-     * @return APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest
-     */
-    public APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest key(String key) {
       this.key = key;
-      return this;
     }
 
     /**
@@ -292,13 +283,14 @@ private ApiResponse<Object> deleteAChannelMetadataWhenDeletingAllItemsOfAChannel
    * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-metadata/channel-delete-metadata#1-delete-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
    * @param channelType (Required)  (required)
    * @param channelUrl (Required)  (required)
+   * @param key  (required)
    * @return deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(String channelType, String channelUrl) throws ApiException {
-    return new APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest(channelType, channelUrl);
+  public APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(String channelType, String channelUrl, String key) throws ApiException {
+    return new APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest(channelType, channelUrl, key);
   }
 
 private ApiResponse<Object> updateAChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, UpdateAChannelMetadataRequest updateAChannelMetadataRequest) throws ApiException {

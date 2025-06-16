@@ -526,66 +526,6 @@ paths:
         schema:
           type: boolean
         style: form
-      - deprecated: true
-        description: "(Deprecated) Returns channels whose custom_type matches the\
-          \ given value. If this field is not specified, all channels are returned,\
-          \ regardless of their custom type. The string passed here must be urlencoded."
-        example: ANNOUNCEMENT
-        explode: true
-        in: query
-        name: custom_type
-        required: false
-        schema:
-          type: string
-        style: form
-      - deprecated: true
-        description: (Deprecated) Superseded by show_read_receipt.
-        example: false
-        explode: true
-        in: query
-        name: read_receipt
-        required: false
-        schema:
-          type: boolean
-        style: form
-      - deprecated: true
-        description: (Deprecated) Superseded by show_member.
-        explode: true
-        in: query
-        name: member
-        required: false
-        schema:
-          type: boolean
-        style: form
-      - deprecated: true
-        description: (Deprecated) Superseded by distinct_mode.
-        explode: true
-        in: query
-        name: is_distinct
-        required: false
-        schema:
-          type: boolean
-        style: form
-      - deprecated: true
-        description: (Deprecated) Superseded by members_exactly_in.
-        explode: true
-        in: query
-        name: members_in
-        required: false
-        schema:
-          type: string
-        style: form
-      - deprecated: true
-        description: (Deprecated) Restricts the search scope to only retrieve the
-          target user's group channels. It's recommended to use the list group channels
-          by user action instead.
-        explode: true
-        in: query
-        name: user_id
-        required: false
-        schema:
-          type: string
-        style: form
       - explode: false
         in: header
         name: api-token
@@ -3821,6 +3761,39 @@ paths:
         schema:
           type: string
         style: form
+      - description: Searches for group channels with members whose nicknames begin
+          with the specified value. This parameter isn't case-sensitive. URL encoding
+          the value is recommended.
+        explode: true
+        in: query
+        name: members_nickname_startswith
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Searches for group channels where the specified query string
+          matches the channel name or the nickname of the member. This parameter isn't
+          case-sensitive and should be specified in conjunction with the search_fields
+          parameter below. URL encoding the value is recommended.
+        explode: true
+        in: query
+        name: search_query
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Specifies a comma-separated string of one or more search fields\
+          \ to apply to the query, which restricts the results within the specified\
+          \ fields (OR search condition). Acceptable values are channel_name and member_nickname.\
+          \ This is effective only when the search_query parameter above is specified.\
+          \ (Default: channel_name, member_nickname together)"
+        explode: true
+        in: query
+        name: search_fields
+        required: false
+        schema:
+          type: string
+        style: form
       - description: "Searches for group channels with metadata containing an item\
           \ with the specified value as its key. To use this parameter, either the\
           \ metadata_values parameter or the metadata_value_startswith parameter should\
@@ -3934,64 +3907,45 @@ paths:
         schema:
           type: boolean
         style: form
-      - deprecated: true
-        description: "(Deprecated) Returns channels whose custom_type matches the\
-          \ given value. If this field is not specified, all channels are returned,\
-          \ regardless of their custom type. The string passed here must be urlencoded."
-        example: ANNOUNCEMENT
+      - description: Restricts the search scope to group channels that match a specific
+          hidden_status and operating behavior
         explode: true
         in: query
-        name: custom_type
+        name: hidden_mode
         required: false
         schema:
+          enum:
+          - unhidden_only
+          - hidden_only
+          - hidden_allow_auto_unhide
+          - hidden_prevent_auto_unhide
+          - all
           type: string
         style: form
-      - deprecated: true
-        description: (Deprecated) Superseded by show_read_receipt.
-        example: false
+      - description: "Restricts the search scope to only retrieve group channels with\
+          \ one or more unread messages. This filter doesn't support Supergroup channels.\
+          \ Acceptable values are all and unread_message. (Default: all)"
         explode: true
         in: query
-        name: read_receipt
+        name: unread_filter
         required: false
         schema:
-          type: boolean
-        style: form
-      - deprecated: true
-        description: (Deprecated) Superseded by show_member.
-        explode: true
-        in: query
-        name: member
-        required: false
-        schema:
-          type: boolean
-        style: form
-      - deprecated: true
-        description: (Deprecated) Superseded by distinct_mode.
-        explode: true
-        in: query
-        name: is_distinct
-        required: false
-        schema:
-          type: boolean
-        style: form
-      - deprecated: true
-        description: (Deprecated) Superseded by members_exactly_in.
-        explode: true
-        in: query
-        name: members_in
-        required: false
-        schema:
+          enum:
+          - all
+          - unread_message
           type: string
         style: form
-      - deprecated: true
-        description: (Deprecated) Restricts the search scope to only retrieve the
-          target user's group channels. It's recommended to use the list group channels
-          by user action instead.
-        explode: true
+      - explode: true
         in: query
-        name: user_id
+        name: member_state_filter
         required: false
         schema:
+          enum:
+          - all
+          - invited_only
+          - joined_only
+          - invited_by_friend
+          - invited_by_non_friend
           type: string
         style: form
       - explode: false
@@ -4276,13 +4230,13 @@ paths:
         schema:
           type: string
         style: simple
-      - explode: true
-        in: query
+      - explode: false
+        in: path
         name: key
         required: false
         schema:
           type: string
-        style: form
+        style: simple
       - explode: false
         in: header
         name: api-token
@@ -4557,8 +4511,7 @@ paths:
         content:
           application/json:
             schema:
-              properties: {}
-              type: object
+              $ref: '#/components/schemas/MigrateMessagesRequest'
       responses:
         "200":
           content:
@@ -5340,7 +5293,6 @@ components:
       - all
       - mention_only
       - "off"
-      - default
       type: string
     Sendbird.Thumbnail:
       example:
@@ -6851,9 +6803,9 @@ components:
           push_trigger_option: null
           state: ""
           last_seen_at: 6
-        max_length_message: 9.301444243932576
+        max_length_message: 9
         id: 2
-        member_count: 3.616076749251911
+        member_count: 3
         message_survival_seconds: 2
         has_ai_bot: true
         cover_url: cover_url
@@ -6937,9 +6889,9 @@ components:
         last_message:
           $ref: '#/components/schemas/Sendbird.MessageResponse'
         max_length_message:
-          type: number
+          type: integer
         member_count:
-          type: number
+          type: integer
         members:
           items:
             $ref: '#/components/schemas/Sendbird.Member'
@@ -7770,17 +7722,17 @@ components:
       type: object
     viewNumberOfMonthlyActiveUsersResponse:
       example:
-        mau: 0.8008281904610115
+        mau: 0
       properties:
         mau:
-          type: number
+          type: integer
       type: object
     viewNumberOfDailyActiveUsersResponse:
       example:
-        dau: 0.8008281904610115
+        dau: 0
       properties:
         dau:
-          type: number
+          type: integer
       type: object
     resetChatHistoryResponse:
       example:
@@ -10005,6 +9957,136 @@ components:
     emptyObjectResponse:
       properties: {}
       type: object
+    MigrateMessagesRequest:
+      example:
+        rewind_read_ts: true
+        messages:
+        - null
+        - null
+        update_read_ts: true
+      properties:
+        messages:
+          items:
+            $ref: '#/components/schemas/MigrateMessagesRequest_messages_inner'
+          type: array
+        update_read_ts:
+          type: boolean
+        rewind_read_ts:
+          type: boolean
+      type: object
+    MigrateMessagesTextMessageRequest:
+      properties:
+        user_id:
+          type: string
+        message_type:
+          enum:
+          - MESG
+          type: string
+        message:
+          type: string
+        timestamp:
+          format: int64
+          type: integer
+        custom_type:
+          maxLength: 128
+          type: string
+        mentioned_user_ids:
+          items:
+            type: string
+          type: array
+        data:
+          type: string
+        dedup_id:
+          type: string
+        sorted_metaarray:
+          items:
+            type: object
+          type: array
+      required:
+      - message
+      - message_type
+      - timestamp
+      - user_id
+      type: object
+    MigrateMessagesFileMessageRequest:
+      properties:
+        user_id:
+          type: string
+        message_type:
+          enum:
+          - FILE
+          type: string
+        url:
+          type: string
+        timestamp:
+          format: int64
+          type: integer
+        file_name:
+          type: string
+        file_size:
+          type: integer
+        file_type:
+          type: string
+        thumbnails:
+          items:
+            $ref: '#/components/schemas/MigrateMessagesFileMessageRequest_thumbnails_inner'
+          type: array
+        require_auth:
+          type: boolean
+        custom_type:
+          maxLength: 128
+          type: string
+        custom_field:
+          type: string
+        mentioned_user_ids:
+          items:
+            type: string
+          type: array
+        dedup_id:
+          type: string
+        sorted_metaarray:
+          items:
+            type: object
+          type: array
+      required:
+      - message_type
+      - timestamp
+      - url
+      - user_id
+      type: object
+    MigrateMessagesAdminMessageRequest:
+      properties:
+        message_type:
+          enum:
+          - ADMM
+          type: string
+        message:
+          type: string
+        timestamp:
+          format: int64
+          type: integer
+        custom_type:
+          maxLength: 128
+          type: string
+        is_silent:
+          type: boolean
+        mentioned_user_ids:
+          items:
+            type: string
+          type: array
+        data:
+          type: string
+        dedup_id:
+          type: string
+        sorted_metaarray:
+          items:
+            type: object
+          type: array
+      required:
+      - message
+      - message_type
+      - timestamp
+      type: object
     scheduleAnAnnouncement_request_create_channel_options:
       example:
         cover_url: cover_url
@@ -11114,5 +11196,14 @@ components:
       - type: string
       - $ref: '#/components/schemas/sendTextMessageRequestBody_push_message_template_oneOf'
       type: string
+    MigrateMessagesRequest_messages_inner:
+      oneOf:
+      - $ref: '#/components/schemas/MigrateMessagesTextMessageRequest'
+      - $ref: '#/components/schemas/MigrateMessagesFileMessageRequest'
+      - $ref: '#/components/schemas/MigrateMessagesAdminMessageRequest'
+    MigrateMessagesFileMessageRequest_thumbnails_inner:
+      oneOf:
+      - type: string
+      - type: object
 x-group-parameters: true
 

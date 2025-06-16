@@ -30,8 +30,8 @@
 |**isSuper** | **Boolean** |  |  [optional] |
 |**joinedMemberCount** | **Integer** |  |  [optional] |
 |**lastMessage** | [**SendbirdMessageResponse**](SendbirdMessageResponse.md) |  |  [optional] |
-|**maxLengthMessage** | **BigDecimal** |  |  [optional] |
-|**memberCount** | **BigDecimal** |  |  [optional] |
+|**maxLengthMessage** | **Integer** |  |  [optional] |
+|**memberCount** | **Integer** |  |  [optional] |
 |**members** | [**List&lt;SendbirdMember&gt;**](SendbirdMember.md) |  |  [optional] |
 |**messageSurvivalSeconds** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  [optional] |

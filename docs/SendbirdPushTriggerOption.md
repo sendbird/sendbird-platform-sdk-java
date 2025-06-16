@@ -11,7 +11,5 @@
 
 * `OFF` (value: `"off"`)
 
-* `DEFAULT` (value: `"default"`)
-
 
 

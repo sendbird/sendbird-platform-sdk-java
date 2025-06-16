@@ -92,7 +92,7 @@ No authorization required
 
 ## deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata
 
-> Object deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(channelType, channelUrl).key(key).apiToken(apiToken).execute();
+> Object deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(channelType, channelUrl, key).apiToken(apiToken).execute();
 
 Delete a channel metadata - When deleting all items of a channel metadata
 
@@ -131,8 +131,7 @@ public class Example {
         String key = "key_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            Object result = api.deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(channelType, channelUrl)
-                .key(key)
+            Object result = api.deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(channelType, channelUrl, key)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);

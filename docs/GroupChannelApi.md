@@ -819,7 +819,7 @@ No authorization required
 
 ## listChannels
 
-> GroupChatListChannelsResponse listChannels().apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMetadata(showMetadata).showFrozen(showFrozen).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage).customType(customType).readReceipt(readReceipt).member(member).isDistinct(isDistinct).membersIn(membersIn).userId(userId).execute();
+> GroupChatListChannelsResponse listChannels().apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMetadata(showMetadata).showFrozen(showFrozen).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage).execute();
 
 List channels
 
@@ -884,12 +884,6 @@ public class Example {
         String metacounterValueLt = "metacounterValueLt_example"; // String | Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.
         String metacounterValueLte = "metacounterValueLte_example"; // String | Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.
         Boolean includeSortedMetaarrayInLastMessage = false; // Boolean | Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response.
-        String customType = "ANNOUNCEMENT"; // String | (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded.
-        Boolean readReceipt = false; // Boolean | (Deprecated) Superseded by show_read_receipt.
-        Boolean member = true; // Boolean | (Deprecated) Superseded by show_member.
-        Boolean isDistinct = true; // Boolean | (Deprecated) Superseded by distinct_mode.
-        String membersIn = "membersIn_example"; // String | (Deprecated) Superseded by members_exactly_in.
-        String userId = "userId_example"; // String | (Deprecated) Restricts the search scope to only retrieve the target user's group channels. It's recommended to use the list group channels by user action instead.
         try {
             GroupChatListChannelsResponse result = api.listChannels()
                 .apiToken(apiToken)
@@ -929,12 +923,6 @@ public class Example {
                 .metacounterValueLt(metacounterValueLt)
                 .metacounterValueLte(metacounterValueLte)
                 .includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage)
-                .customType(customType)
-                .readReceipt(readReceipt)
-                .member(member)
-                .isDistinct(isDistinct)
-                .membersIn(membersIn)
-                .userId(userId)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -990,12 +978,6 @@ public class Example {
 | **metacounterValueLt** | **String**| Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. | [optional] |
 | **metacounterValueLte** | **String**| Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. | [optional] |
 | **includeSortedMetaarrayInLastMessage** | **Boolean**| Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response. | [optional] |
-| **customType** | **String**| (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded. | [optional] |
-| **readReceipt** | **Boolean**| (Deprecated) Superseded by show_read_receipt. | [optional] |
-| **member** | **Boolean**| (Deprecated) Superseded by show_member. | [optional] |
-| **isDistinct** | **Boolean**| (Deprecated) Superseded by distinct_mode. | [optional] |
-| **membersIn** | **String**| (Deprecated) Superseded by members_exactly_in. | [optional] |
-| **userId** | **String**| (Deprecated) Restricts the search scope to only retrieve the target user&#39;s group channels. It&#39;s recommended to use the list group channels by user action instead. | [optional] |
 
 ### Return type
 

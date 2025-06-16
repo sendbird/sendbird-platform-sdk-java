@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +35,15 @@ import org.sendbird.client.JSON;
   ViewNumberOfDailyActiveUsersResponse.JSON_PROPERTY_DAU
 })
 @JsonTypeName("viewNumberOfDailyActiveUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class ViewNumberOfDailyActiveUsersResponse {
   public static final String JSON_PROPERTY_DAU = "dau";
-  private BigDecimal dau;
+  private Integer dau;
 
   public ViewNumberOfDailyActiveUsersResponse() { 
   }
 
-  public ViewNumberOfDailyActiveUsersResponse dau(BigDecimal dau) {
+  public ViewNumberOfDailyActiveUsersResponse dau(Integer dau) {
     this.dau = dau;
     return this;
   }
@@ -58,14 +57,14 @@ public class ViewNumberOfDailyActiveUsersResponse {
   @JsonProperty(JSON_PROPERTY_DAU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getDau() {
+  public Integer getDau() {
     return dau;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DAU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDau(BigDecimal dau) {
+  public void setDau(Integer dau) {
     this.dau = dau;
   }
 

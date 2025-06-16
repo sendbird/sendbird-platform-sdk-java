@@ -49,7 +49,7 @@ import org.sendbird.client.JSON;
   SendbirdParentMessageInfo.JSON_PROPERTY_FILES
 })
 @JsonTypeName("Sendbird.ParentMessageInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class SendbirdParentMessageInfo {
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;

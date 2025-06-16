@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ScheduleAnAnnouncementRequestCreateChannelOptions.JSON_PROPERTY_NAME
 })
 @JsonTypeName("scheduleAnAnnouncement_request_create_channel_options")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class ScheduleAnAnnouncementRequestCreateChannelOptions {
   public static final String JSON_PROPERTY_COVER_URL = "cover_url";
   private String coverUrl;

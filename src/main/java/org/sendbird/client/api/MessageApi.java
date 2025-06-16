@@ -13,6 +13,7 @@ import org.openapitools.client.model.AddExtraDataToAMessageResponse;
 import org.openapitools.client.model.GetTotalNumberOfMessagesInAChannelResponse;
 import org.openapitools.client.model.ListMessagesResponse;
 import org.openapitools.client.model.MarkChannelMessagesAsReadRequest;
+import org.openapitools.client.model.MigrateMessagesRequest;
 import org.openapitools.client.model.SendAMessageRequest;
 import org.openapitools.client.model.SendbirdMessageResponse;
 import org.openapitools.client.model.UpdateAMessageRequest;
@@ -24,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class MessageApi {
   private ApiClient apiClient;
 
@@ -1095,8 +1096,8 @@ private ApiResponse<Object> markChannelMessagesAsReadWithHttpInfo(String channel
     return new APImarkChannelMessagesAsReadRequest(channelUrl);
   }
 
-private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl, String apiToken, Object body) throws ApiException {
-    Object localVarPostBody = body;
+private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl, String apiToken, MigrateMessagesRequest migrateMessagesRequest) throws ApiException {
+    Object localVarPostBody = migrateMessagesRequest;
     
     // verify the required parameter 'targetChannelUrl' is set
     if (targetChannelUrl == null) {
@@ -1141,7 +1142,7 @@ private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl,
   public class APImigrateMessagesRequest {
     private String targetChannelUrl;
     private String apiToken;
-    private Object body;
+    private MigrateMessagesRequest migrateMessagesRequest;
 
     private APImigrateMessagesRequest(String targetChannelUrl) {
       this.targetChannelUrl = targetChannelUrl;
@@ -1158,12 +1159,12 @@ private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl,
     }
 
     /**
-     * Set body
-     * @param body  (optional)
+     * Set migrateMessagesRequest
+     * @param migrateMessagesRequest  (optional)
      * @return APImigrateMessagesRequest
      */
-    public APImigrateMessagesRequest body(Object body) {
-      this.body = body;
+    public APImigrateMessagesRequest migrateMessagesRequest(MigrateMessagesRequest migrateMessagesRequest) {
+      this.migrateMessagesRequest = migrateMessagesRequest;
       return this;
     }
 
@@ -1195,7 +1196,7 @@ private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl,
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return migrateMessagesWithHttpInfo(targetChannelUrl, apiToken, body);
+      return migrateMessagesWithHttpInfo(targetChannelUrl, apiToken, migrateMessagesRequest);
     }
   }
 

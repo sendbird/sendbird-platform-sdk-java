@@ -46,7 +46,7 @@ import org.sendbird.client.JSON;
   CreateAnOpenChannelRequest.JSON_PROPERTY_OPERATOR_IDS
 })
 @JsonTypeName("createAnOpenChannel_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class CreateAnOpenChannelRequest {
   public static final String JSON_PROPERTY_IS_DYNAMIC_PARTITIONED = "is_dynamic_partitioned";
   private Boolean isDynamicPartitioned;

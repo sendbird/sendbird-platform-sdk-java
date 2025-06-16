@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class GroupChannelApi {
   private ApiClient apiClient;
 
@@ -1278,7 +1278,7 @@ private ApiResponse<Object> leaveAChannelWithHttpInfo(String channelUrl, String 
     return new APIleaveAChannelRequest(channelUrl);
   }
 
-private ApiResponse<GroupChatListChannelsResponse> listChannelsWithHttpInfo(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Long createdAfter, Long createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String customType, Boolean readReceipt, Boolean member, Boolean isDistinct, String membersIn, String userId) throws ApiException {
+private ApiResponse<GroupChatListChannelsResponse> listChannelsWithHttpInfo(String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Long createdAfter, Long createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'apiToken' is set
@@ -1331,12 +1331,6 @@ private ApiResponse<GroupChatListChannelsResponse> listChannelsWithHttpInfo(Stri
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metacounter_value_lt", metacounterValueLt));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metacounter_value_lte", metacounterValueLte));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_sorted_metaarray_in_last_message", includeSortedMetaarrayInLastMessage));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_type", customType));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "read_receipt", readReceipt));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "member", member));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "is_distinct", isDistinct));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "members_in", membersIn));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "user_id", userId));
 
     if (apiToken != null)
       localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
@@ -1400,12 +1394,6 @@ private ApiResponse<GroupChatListChannelsResponse> listChannelsWithHttpInfo(Stri
     private String metacounterValueLt;
     private String metacounterValueLte;
     private Boolean includeSortedMetaarrayInLastMessage;
-    private String customType;
-    private Boolean readReceipt;
-    private Boolean member;
-    private Boolean isDistinct;
-    private String membersIn;
-    private String userId;
 
     private APIlistChannelsRequest() {
     }
@@ -1781,66 +1769,6 @@ private ApiResponse<GroupChatListChannelsResponse> listChannelsWithHttpInfo(Stri
     }
 
     /**
-     * Set customType
-     * @param customType (Deprecated) Returns channels whose custom_type matches the given value. If this field is not specified, all channels are returned, regardless of their custom type. The string passed here must be urlencoded. (optional)
-     * @return APIlistChannelsRequest
-     */
-    public APIlistChannelsRequest customType(String customType) {
-      this.customType = customType;
-      return this;
-    }
-
-    /**
-     * Set readReceipt
-     * @param readReceipt (Deprecated) Superseded by show_read_receipt. (optional)
-     * @return APIlistChannelsRequest
-     */
-    public APIlistChannelsRequest readReceipt(Boolean readReceipt) {
-      this.readReceipt = readReceipt;
-      return this;
-    }
-
-    /**
-     * Set member
-     * @param member (Deprecated) Superseded by show_member. (optional)
-     * @return APIlistChannelsRequest
-     */
-    public APIlistChannelsRequest member(Boolean member) {
-      this.member = member;
-      return this;
-    }
-
-    /**
-     * Set isDistinct
-     * @param isDistinct (Deprecated) Superseded by distinct_mode. (optional)
-     * @return APIlistChannelsRequest
-     */
-    public APIlistChannelsRequest isDistinct(Boolean isDistinct) {
-      this.isDistinct = isDistinct;
-      return this;
-    }
-
-    /**
-     * Set membersIn
-     * @param membersIn (Deprecated) Superseded by members_exactly_in. (optional)
-     * @return APIlistChannelsRequest
-     */
-    public APIlistChannelsRequest membersIn(String membersIn) {
-      this.membersIn = membersIn;
-      return this;
-    }
-
-    /**
-     * Set userId
-     * @param userId (Deprecated) Restricts the search scope to only retrieve the target user&#39;s group channels. It&#39;s recommended to use the list group channels by user action instead. (optional)
-     * @return APIlistChannelsRequest
-     */
-    public APIlistChannelsRequest userId(String userId) {
-      this.userId = userId;
-      return this;
-    }
-
-    /**
      * Execute listChannels request
      * @return GroupChatListChannelsResponse
      * @throws ApiException if fails to make API call
@@ -1868,7 +1796,7 @@ private ApiResponse<GroupChatListChannelsResponse> listChannelsWithHttpInfo(Stri
 
      */
     public ApiResponse<GroupChatListChannelsResponse> executeWithHttpInfo() throws ApiException {
-      return listChannelsWithHttpInfo(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, customType, readReceipt, member, isDistinct, membersIn, userId);
+      return listChannelsWithHttpInfo(apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage);
     }
   }
 

@@ -60,7 +60,7 @@ import org.sendbird.client.JSON;
   SendFileMessageRequestBody.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("sendFileMessageRequestBody")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-29T07:36:12.748535+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T10:11:20.822211+07:00[Asia/Jakarta]")
 public class SendFileMessageRequestBody {
   public static final String JSON_PROPERTY_APNS_BUNDLE_ID = "apns_bundle_id";
   private String apnsBundleId;

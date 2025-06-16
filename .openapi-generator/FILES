@@ -65,6 +65,12 @@ docs/MarkAllMessagesAsReadRequest.md
 docs/MarkChannelMessagesAsReadRequest.md
 docs/MessageApi.md
 docs/MetadataApi.md
+docs/MigrateMessagesAdminMessageRequest.md
+docs/MigrateMessagesFileMessageRequest.md
+docs/MigrateMessagesFileMessageRequestThumbnailsInner.md
+docs/MigrateMessagesRequest.md
+docs/MigrateMessagesRequestMessagesInner.md
+docs/MigrateMessagesTextMessageRequest.md
 docs/ModerationApi.md
 docs/OpenChannelApi.md
 docs/RegisterOperatorsToAGroupChannelRequest.md
@@ -192,6 +198,12 @@ src/main/java/org/openapitools/client/model/ListRegistrationOrDeviceTokensRespon
 src/main/java/org/openapitools/client/model/ListUsersResponse.java
 src/main/java/org/openapitools/client/model/MarkAllMessagesAsReadRequest.java
 src/main/java/org/openapitools/client/model/MarkChannelMessagesAsReadRequest.java
+src/main/java/org/openapitools/client/model/MigrateMessagesAdminMessageRequest.java
+src/main/java/org/openapitools/client/model/MigrateMessagesFileMessageRequest.java
+src/main/java/org/openapitools/client/model/MigrateMessagesFileMessageRequestThumbnailsInner.java
+src/main/java/org/openapitools/client/model/MigrateMessagesRequest.java
+src/main/java/org/openapitools/client/model/MigrateMessagesRequestMessagesInner.java
+src/main/java/org/openapitools/client/model/MigrateMessagesTextMessageRequest.java
 src/main/java/org/openapitools/client/model/RegisterOperatorsToAGroupChannelRequest.java
 src/main/java/org/openapitools/client/model/RemoveARegistrationOrDeviceTokenResponse.java
 src/main/java/org/openapitools/client/model/RemoveAllRegistrationOrDeviceTokenResponse.java
@@ -274,3 +286,9 @@ src/main/java/org/sendbird/client/auth/ApiKeyAuth.java
 src/main/java/org/sendbird/client/auth/Authentication.java
 src/main/java/org/sendbird/client/auth/HttpBasicAuth.java
 src/main/java/org/sendbird/client/auth/HttpBearerAuth.java
+src/test/java/org/openapitools/client/model/MigrateMessagesAdminMessageRequestTest.java
+src/test/java/org/openapitools/client/model/MigrateMessagesFileMessageRequestTest.java
+src/test/java/org/openapitools/client/model/MigrateMessagesFileMessageRequestThumbnailsInnerTest.java
+src/test/java/org/openapitools/client/model/MigrateMessagesRequestMessagesInnerTest.java
+src/test/java/org/openapitools/client/model/MigrateMessagesRequestTest.java
+src/test/java/org/openapitools/client/model/MigrateMessagesTextMessageRequestTest.java
