@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -24,10 +24,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdGroupChannel;
+import org.openapitools.client.model.SendbirdGroupChannel;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -41,26 +40,26 @@ import org.sendbird.client.JSON;
   ListMyGroupChannelsResponse.JSON_PROPERTY_TS
 })
 @JsonTypeName("listMyGroupChannelsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class ListMyGroupChannelsResponse {
   public static final String JSON_PROPERTY_CHANNELS = "channels";
-  private List<SendBirdGroupChannel> channels = null;
+  private List<SendbirdGroupChannel> channels = null;
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
 
   public static final String JSON_PROPERTY_TS = "ts";
-  private BigDecimal ts;
+  private Long ts;
 
   public ListMyGroupChannelsResponse() { 
   }
 
-  public ListMyGroupChannelsResponse channels(List<SendBirdGroupChannel> channels) {
+  public ListMyGroupChannelsResponse channels(List<SendbirdGroupChannel> channels) {
     this.channels = channels;
     return this;
   }
 
-  public ListMyGroupChannelsResponse addChannelsItem(SendBirdGroupChannel channelsItem) {
+  public ListMyGroupChannelsResponse addChannelsItem(SendbirdGroupChannel channelsItem) {
     if (this.channels == null) {
       this.channels = new ArrayList<>();
     }
@@ -77,14 +76,14 @@ public class ListMyGroupChannelsResponse {
   @JsonProperty(JSON_PROPERTY_CHANNELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdGroupChannel> getChannels() {
+  public List<SendbirdGroupChannel> getChannels() {
     return channels;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannels(List<SendBirdGroupChannel> channels) {
+  public void setChannels(List<SendbirdGroupChannel> channels) {
     this.channels = channels;
   }
 
@@ -115,7 +114,7 @@ public class ListMyGroupChannelsResponse {
   }
 
 
-  public ListMyGroupChannelsResponse ts(BigDecimal ts) {
+  public ListMyGroupChannelsResponse ts(Long ts) {
     this.ts = ts;
     return this;
   }
@@ -129,14 +128,14 @@ public class ListMyGroupChannelsResponse {
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTs() {
+  public Long getTs() {
     return ts;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTs(BigDecimal ts) {
+  public void setTs(Long ts) {
     this.ts = ts;
   }
 

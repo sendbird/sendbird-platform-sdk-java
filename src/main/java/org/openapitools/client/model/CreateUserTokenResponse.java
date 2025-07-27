@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -33,20 +32,46 @@ import org.sendbird.client.JSON;
  * CreateUserTokenResponse
  */
 @JsonPropertyOrder({
-  CreateUserTokenResponse.JSON_PROPERTY_TOKEN,
-  CreateUserTokenResponse.JSON_PROPERTY_EXPIRES_AT
+  CreateUserTokenResponse.JSON_PROPERTY_EXPIRES_AT,
+  CreateUserTokenResponse.JSON_PROPERTY_TOKEN
 })
 @JsonTypeName("createUserTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class CreateUserTokenResponse {
+  public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  private Long expiresAt;
+
   public static final String JSON_PROPERTY_TOKEN = "token";
   private String token;
 
-  public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
-  private BigDecimal expiresAt;
-
   public CreateUserTokenResponse() { 
   }
+
+  public CreateUserTokenResponse expiresAt(Long expiresAt) {
+    this.expiresAt = expiresAt;
+    return this;
+  }
+
+   /**
+   * Get expiresAt
+   * @return expiresAt
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getExpiresAt() {
+    return expiresAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExpiresAt(Long expiresAt) {
+    this.expiresAt = expiresAt;
+  }
+
 
   public CreateUserTokenResponse token(String token) {
     this.token = token;
@@ -74,32 +99,6 @@ public class CreateUserTokenResponse {
   }
 
 
-  public CreateUserTokenResponse expiresAt(BigDecimal expiresAt) {
-    this.expiresAt = expiresAt;
-    return this;
-  }
-
-   /**
-   * Get expiresAt
-   * @return expiresAt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getExpiresAt() {
-    return expiresAt;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(BigDecimal expiresAt) {
-    this.expiresAt = expiresAt;
-  }
-
-
   /**
    * Return true if this createUserTokenResponse object is equal to o.
    */
@@ -112,21 +111,21 @@ public class CreateUserTokenResponse {
       return false;
     }
     CreateUserTokenResponse createUserTokenResponse = (CreateUserTokenResponse) o;
-    return Objects.equals(this.token, createUserTokenResponse.token) &&
-        Objects.equals(this.expiresAt, createUserTokenResponse.expiresAt);
+    return Objects.equals(this.expiresAt, createUserTokenResponse.expiresAt) &&
+        Objects.equals(this.token, createUserTokenResponse.token);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(token, expiresAt);
+    return Objects.hash(expiresAt, token);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateUserTokenResponse {\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
   }

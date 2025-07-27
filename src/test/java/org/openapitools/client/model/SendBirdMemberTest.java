@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -20,10 +20,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdRestrictionInfo;
+import org.openapitools.client.model.SendbirdPushTriggerOption;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -34,25 +33,33 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SendBirdMember
+ * Model tests for SendbirdMember
  */
-public class SendBirdMemberTest {
-    private final SendBirdMember model = new SendBirdMember();
+public class SendbirdMemberTest {
+    private final SendbirdMember model = new SendbirdMember();
 
     /**
-     * Model tests for SendBirdMember
+     * Model tests for SendbirdMember
      */
     @Test
-    public void testSendBirdMember() {
-        // TODO: test SendBirdMember
+    public void testSendbirdMember() {
+        // TODO: test SendbirdMember
     }
 
     /**
-     * Test the property 'connectionStatus'
+     * Test the property 'deliveredTs'
      */
     @Test
-    public void connectionStatusTest() {
-        // TODO: test connectionStatus
+    public void deliveredTsTest() {
+        // TODO: test deliveredTs
+    }
+
+    /**
+     * Test the property 'doNotDisturb'
+     */
+    @Test
+    public void doNotDisturbTest() {
+        // TODO: test doNotDisturb
     }
 
     /**
@@ -80,75 +87,27 @@ public class SendBirdMemberTest {
     }
 
     /**
+     * Test the property 'isBlockedByMe'
+     */
+    @Test
+    public void isBlockedByMeTest() {
+        // TODO: test isBlockedByMe
+    }
+
+    /**
+     * Test the property 'isBlockingMe'
+     */
+    @Test
+    public void isBlockingMeTest() {
+        // TODO: test isBlockingMe
+    }
+
+    /**
      * Test the property 'isMuted'
      */
     @Test
     public void isMutedTest() {
         // TODO: test isMuted
-    }
-
-    /**
-     * Test the property 'lastSeenAt'
-     */
-    @Test
-    public void lastSeenAtTest() {
-        // TODO: test lastSeenAt
-    }
-
-    /**
-     * Test the property 'nickname'
-     */
-    @Test
-    public void nicknameTest() {
-        // TODO: test nickname
-    }
-
-    /**
-     * Test the property 'plainProfileUrl'
-     */
-    @Test
-    public void plainProfileUrlTest() {
-        // TODO: test plainProfileUrl
-    }
-
-    /**
-     * Test the property 'preferredLanguages'
-     */
-    @Test
-    public void preferredLanguagesTest() {
-        // TODO: test preferredLanguages
-    }
-
-    /**
-     * Test the property 'profileUrl'
-     */
-    @Test
-    public void profileUrlTest() {
-        // TODO: test profileUrl
-    }
-
-    /**
-     * Test the property 'requireAuth'
-     */
-    @Test
-    public void requireAuthTest() {
-        // TODO: test requireAuth
-    }
-
-    /**
-     * Test the property 'requireAuthForProfileImage'
-     */
-    @Test
-    public void requireAuthForProfileImageTest() {
-        // TODO: test requireAuthForProfileImage
-    }
-
-    /**
-     * Test the property 'metadata'
-     */
-    @Test
-    public void metadataTest() {
-        // TODO: test metadata
     }
 
     /**
@@ -160,11 +119,19 @@ public class SendBirdMemberTest {
     }
 
     /**
-     * Test the property 'mutedEndAt'
+     * Test the property 'lastSeenAt'
      */
     @Test
-    public void mutedEndAtTest() {
-        // TODO: test mutedEndAt
+    public void lastSeenAtTest() {
+        // TODO: test lastSeenAt
+    }
+
+    /**
+     * Test the property 'metadata'
+     */
+    @Test
+    public void metadataTest() {
+        // TODO: test metadata
     }
 
     /**
@@ -176,11 +143,59 @@ public class SendBirdMemberTest {
     }
 
     /**
-     * Test the property 'restrictionInfo'
+     * Test the property 'mutedEndAt'
      */
     @Test
-    public void restrictionInfoTest() {
-        // TODO: test restrictionInfo
+    public void mutedEndAtTest() {
+        // TODO: test mutedEndAt
+    }
+
+    /**
+     * Test the property 'nickname'
+     */
+    @Test
+    public void nicknameTest() {
+        // TODO: test nickname
+    }
+
+    /**
+     * Test the property 'pushEnabled'
+     */
+    @Test
+    public void pushEnabledTest() {
+        // TODO: test pushEnabled
+    }
+
+    /**
+     * Test the property 'pushTriggerOption'
+     */
+    @Test
+    public void pushTriggerOptionTest() {
+        // TODO: test pushTriggerOption
+    }
+
+    /**
+     * Test the property 'profileUrl'
+     */
+    @Test
+    public void profileUrlTest() {
+        // TODO: test profileUrl
+    }
+
+    /**
+     * Test the property 'requireAuthForProfileImage'
+     */
+    @Test
+    public void requireAuthForProfileImageTest() {
+        // TODO: test requireAuthForProfileImage
+    }
+
+    /**
+     * Test the property 'readTs'
+     */
+    @Test
+    public void readTsTest() {
+        // TODO: test readTs
     }
 
     /**

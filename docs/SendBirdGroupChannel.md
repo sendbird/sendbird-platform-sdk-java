@@ -1,56 +1,68 @@
 
 
-# SendBirdGroupChannel
+# SendbirdGroupChannel
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**channelUrl** | **String** |  |  [optional] |
+|**channelUrl** | **String** |  |  |
+|**countPreference** | [**CountPreferenceEnum**](#CountPreferenceEnum) |  |  [optional] |
 |**coverUrl** | **String** |  |  [optional] |
-|**createdAt** | **BigDecimal** |  |  [optional] |
-|**createdBy** | [**SendBirdGroupChannelCreatedBy**](SendBirdGroupChannelCreatedBy.md) |  |  [optional] |
-|**creator** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
+|**createdBy** | [**SendbirdBasicUserInfo**](SendbirdBasicUserInfo.md) |  |  [optional] |
 |**customType** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |
-|**disappearingMessage** | [**SendBirdGroupChannelDisappearingMessage**](SendBirdGroupChannelDisappearingMessage.md) |  |  [optional] |
+|**deliveryReceipt** | **Object** |  |  [optional] |
+|**disappearingMessage** | [**SendbirdDisappearingMessage**](SendbirdDisappearingMessage.md) |  |  [optional] |
 |**freeze** | **Boolean** |  |  [optional] |
-|**ignoreProfanityFilter** | **Boolean** |  |  [optional] |
+|**hasAiBot** | **Boolean** |  |  [optional] |
+|**hasBot** | **Boolean** |  |  [optional] |
 |**hiddenState** | [**HiddenStateEnum**](#HiddenStateEnum) |  |  [optional] |
-|**invitedAt** | **BigDecimal** |  |  [optional] |
-|**inviter** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
+|**ignoreProfanityFilter** | **Boolean** |  |  [optional] |
+|**invitedAt** | **Long** |  |  [optional] |
+|**inviter** | [**SendbirdBasicUserInfo**](SendbirdBasicUserInfo.md) |  |  [optional] |
 |**isAccessCodeRequired** | **Boolean** |  |  [optional] |
 |**isBroadcast** | **Boolean** |  |  [optional] |
-|**isCreated** | **Boolean** |  |  [optional] |
 |**isDiscoverable** | **Boolean** |  |  [optional] |
 |**isDistinct** | **Boolean** |  |  [optional] |
 |**isEphemeral** | **Boolean** |  |  [optional] |
+|**isExclusive** | **Boolean** |  |  [optional] |
 |**isHidden** | **Boolean** |  |  [optional] |
+|**isMuted** | **Boolean** |  |  [optional] |
 |**isPublic** | **Boolean** |  |  [optional] |
 |**isPushEnabled** | **Boolean** |  |  [optional] |
 |**isSuper** | **Boolean** |  |  [optional] |
-|**joinedAt** | **BigDecimal** |  |  [optional] |
-|**joinedMemberCount** | **BigDecimal** |  |  [optional] |
-|**lastMessage** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  |  [optional] |
-|**maxLengthMessage** | **BigDecimal** |  |  [optional] |
-|**memberCount** | **BigDecimal** |  |  [optional] |
-|**members** | [**List&lt;SendBirdMember&gt;**](SendBirdMember.md) |  |  [optional] |
-|**messageOffsetTimestamp** | **BigDecimal** |  |  [optional] |
-|**messageSurvivalSeconds** | **BigDecimal** |  |  [optional] |
-|**myCountPreference** | **String** |  |  [optional] |
-|**myLastRead** | **BigDecimal** |  |  [optional] |
-|**myMemberState** | [**MyMemberStateEnum**](#MyMemberStateEnum) |  |  [optional] |
-|**myMutedState** | [**MyMutedStateEnum**](#MyMutedStateEnum) |  |  [optional] |
-|**myPushTriggerOption** | [**MyPushTriggerOptionEnum**](#MyPushTriggerOptionEnum) |  |  [optional] |
+|**joinedMemberCount** | **Integer** |  |  [optional] |
+|**joinedTs** | **Long** |  |  [optional] |
+|**lastMessage** | [**SendbirdMessageResponse**](SendbirdMessageResponse.md) |  |  [optional] |
+|**maxLengthMessage** | **Integer** |  |  [optional] |
+|**memberCount** | **Integer** |  |  [optional] |
+|**memberState** | [**MemberStateEnum**](#MemberStateEnum) |  |  [optional] |
+|**members** | [**List&lt;SendbirdMember&gt;**](SendbirdMember.md) |  |  [optional] |
+|**messageSurvivalSeconds** | **Integer** |  |  [optional] |
+|**metadata** | **Object** |  |  [optional] |
 |**myRole** | [**MyRoleEnum**](#MyRoleEnum) |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**operators** | **List&lt;Object&gt;** |  |  [optional] |
-|**smsFallback** | [**SendBirdGroupChannelSmsFallback**](SendBirdGroupChannelSmsFallback.md) |  |  [optional] |
-|**unreadMentionCount** | **BigDecimal** |  |  [optional] |
-|**unreadMessageCount** | **BigDecimal** |  |  [optional] |
-|**channel** | [**SendBirdGroupChannelChannel**](SendBirdGroupChannelChannel.md) |  |  [optional] |
+|**pushTriggerOption** | **SendbirdPushTriggerOption** |  |  [optional] |
 |**readReceipt** | **Map&lt;String, Long&gt;** |  |  [optional] |
+|**smsFallback** | [**SendbirdSmsFallback**](SendbirdSmsFallback.md) |  |  [optional] |
+|**tsMessageOffset** | **Long** |  |  [optional] |
+|**unreadMentionCount** | **Integer** |  |  [optional] |
+|**unreadMessageCount** | **Integer** |  |  [optional] |
+|**userLastRead** | **Long** |  |  [optional] |
+
+
+
+## Enum: CountPreferenceEnum
+
+| Name | Value |
+|---- | -----|
+| FALSE | &quot;false&quot; |
+| ALL | &quot;all&quot; |
+| UNREAD_MESSAGE_COUNT_ONLY | &quot;unread_message_count_only&quot; |
+| UNREAD_MENTIONED_COUNT_ONLY | &quot;unread_mentioned_count_only&quot; |
 
 
 
@@ -64,33 +76,13 @@
 
 
 
-## Enum: MyMemberStateEnum
+## Enum: MemberStateEnum
 
 | Name | Value |
 |---- | -----|
 | INVITED | &quot;invited&quot; |
 | JOINED | &quot;joined&quot; |
 | NONE | &quot;none&quot; |
-
-
-
-## Enum: MyMutedStateEnum
-
-| Name | Value |
-|---- | -----|
-| MUTED | &quot;muted&quot; |
-| UNMUTED | &quot;unmuted&quot; |
-
-
-
-## Enum: MyPushTriggerOptionEnum
-
-| Name | Value |
-|---- | -----|
-| ALL | &quot;all&quot; |
-| DEFAULT | &quot;default&quot; |
-| MENTION_ONLY | &quot;mention_only&quot; |
-| FALSE | &quot;false&quot; |
 
 
 

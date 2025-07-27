@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**mau** | **BigDecimal** |  |  [optional] |
+|**mau** | **Integer** |  |  [optional] |
 
 
 

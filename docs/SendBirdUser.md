@@ -1,6 +1,6 @@
 
 
-# SendBirdUser
+# SendbirdUser
 
 User
 
@@ -8,29 +8,38 @@ User
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**requireAuthForProfileImage** | **Boolean** |  |  [optional] |
-|**isOnline** | **Boolean** |  |  [optional] |
-|**userId** | **String** |  |  [optional] |
 |**accessToken** | **String** |  |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
+|**discoveryKeys** | **List&lt;String&gt;** |  |  [optional] |
 |**hasEverLoggedIn** | **Boolean** |  |  [optional] |
 |**isActive** | **Boolean** |  |  [optional] |
+|**isHideMeFromFriends** | **Boolean** |  |  [optional] |
+|**isOnline** | **Boolean** |  |  [optional] |
+|**isShadowBlocked** | **Boolean** |  |  [optional] |
 |**lastSeenAt** | **Long** |  |  [optional] |
+|**locale** | **String** |  |  [optional] |
+|**metadata** | **Object** |  |  [optional] |
 |**nickname** | **String** |  |  [optional] |
-|**discoveryKeys** | **List&lt;String&gt;** |  |  [optional] |
-|**sessionTokens** | **List&lt;Object&gt;** |  |  [optional] |
 |**preferredLanguages** | **List&lt;String&gt;** |  |  [optional] |
 |**profileUrl** | **String** |  |  [optional] |
-|**createdAt** | **Integer** |  |  [optional] |
+|**requireAuthForProfileImage** | **Boolean** |  |  [optional] |
+|**userId** | **String** |  |  |
+|**state** | [**StateEnum**](#StateEnum) |  |  [optional] |
+|**unreadChannelCount** | **Integer** |  |  [optional] |
+|**unreadMessageCount** | **Integer** |  |  [optional] |
 |**phoneNumber** | **String** |  |  [optional] |
-|**local** | **String** |  |  [optional] |
-|**locale** | **String** |  |  [optional] |
-|**isHideMeFromFriends** | **Boolean** |  |  [optional] |
-|**isShadowBlocked** | **Boolean** |  |  [optional] |
 |**isCreated** | **Boolean** |  |  [optional] |
-|**metadata** | **Object** |  |  [optional] |
-|**description** | **String** |  |  [optional] |
-|**endAt** | **BigDecimal** |  |  [optional] |
-|**startAt** | **BigDecimal** |  |  [optional] |
+|**sessionTokens** | **List&lt;String&gt;** |  |  [optional] |
+
+
+
+## Enum: StateEnum
+
+| Name | Value |
+|---- | -----|
+| EMPTY | &quot;&quot; |
+| INVITED | &quot;invited&quot; |
+| JOINED | &quot;joined&quot; |
 
 
 

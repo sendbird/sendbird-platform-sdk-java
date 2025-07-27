@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**unreadCount** | **BigDecimal** |  |  [optional] |
+|**unreadCount** | **Integer** |  |  [optional] |
 
 
 

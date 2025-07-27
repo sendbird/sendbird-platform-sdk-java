@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +35,15 @@ import org.sendbird.client.JSON;
   ViewNumberOfMonthlyActiveUsersResponse.JSON_PROPERTY_MAU
 })
 @JsonTypeName("viewNumberOfMonthlyActiveUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class ViewNumberOfMonthlyActiveUsersResponse {
   public static final String JSON_PROPERTY_MAU = "mau";
-  private BigDecimal mau;
+  private Integer mau;
 
   public ViewNumberOfMonthlyActiveUsersResponse() { 
   }
 
-  public ViewNumberOfMonthlyActiveUsersResponse mau(BigDecimal mau) {
+  public ViewNumberOfMonthlyActiveUsersResponse mau(Integer mau) {
     this.mau = mau;
     return this;
   }
@@ -58,14 +57,14 @@ public class ViewNumberOfMonthlyActiveUsersResponse {
   @JsonProperty(JSON_PROPERTY_MAU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getMau() {
+  public Integer getMau() {
     return mau;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MAU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMau(BigDecimal mau) {
+  public void setMau(Integer mau) {
     this.mau = mau;
   }
 

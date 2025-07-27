@@ -8,23 +8,16 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.CreateChannelMetacounterData;
-import org.openapitools.client.model.CreateChannelMetadataData;
-import org.openapitools.client.model.CreateChannelMetadataResponse;
-import org.openapitools.client.model.CreateUserMetadataData;
-import org.openapitools.client.model.CreateUserMetadataResponse;
-import org.openapitools.client.model.UpdateChannelMetacounterData;
-import org.openapitools.client.model.UpdateChannelMetadataData;
-import org.openapitools.client.model.UpdateUserMetadataData;
-import org.openapitools.client.model.UpdateUserMetadataResponse;
-import org.openapitools.client.model.ViewUserMetadataResponse;
+import org.openapitools.client.model.CreateAChannelMetadataRequest;
+import org.openapitools.client.model.CreateAChannelMetadataResponse;
+import org.openapitools.client.model.UpdateAChannelMetadataRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class MetadataApi {
   private ApiClient apiClient;
 
@@ -55,143 +48,17 @@ public class MetadataApi {
   }
 
 
-private ApiResponse<Object> createChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateChannelMetacounterData createChannelMetacounterData) throws ApiException {
-    Object localVarPostBody = createChannelMetacounterData;
+private ApiResponse<CreateAChannelMetadataResponse> createAChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateAChannelMetadataRequest createAChannelMetadataRequest) throws ApiException {
+    Object localVarPostBody = createAChannelMetadataRequest;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling createChannelMetacounter");
+      throw new ApiException(400, "Missing the required parameter 'channelType' when calling createAChannelMetadata");
     }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling createChannelMetacounter");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metacounter"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-
-    return apiClient.invokeAPI("MetadataApi.createChannelMetacounter", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIcreateChannelMetacounterRequest {
-    private String channelType;
-    private String channelUrl;
-    private String apiToken;
-    private CreateChannelMetacounterData createChannelMetacounterData;
-
-    private APIcreateChannelMetacounterRequest(String channelType, String channelUrl) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIcreateChannelMetacounterRequest
-     */
-    public APIcreateChannelMetacounterRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set createChannelMetacounterData
-     * @param createChannelMetacounterData  (optional)
-     * @return APIcreateChannelMetacounterRequest
-     */
-    public APIcreateChannelMetacounterRequest createChannelMetacounterData(CreateChannelMetacounterData createChannelMetacounterData) {
-      this.createChannelMetacounterData = createChannelMetacounterData;
-      return this;
-    }
-
-    /**
-     * Execute createChannelMetacounter request
-     * @return Object
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Object execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute createChannelMetacounter request with HTTP info returned
-     * @return ApiResponse&lt;Object&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return createChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken, createChannelMetacounterData);
-    }
-  }
-
-  /**
-   * Create a channel metacounter
-   * ## Create a channel metacounter  Creates a channel metacounter&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metacounter ----------------------------
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @return createChannelMetacounterRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIcreateChannelMetacounterRequest createChannelMetacounter(String channelType, String channelUrl) throws ApiException {
-    return new APIcreateChannelMetacounterRequest(channelType, channelUrl);
-  }
-
-private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateChannelMetadataData createChannelMetadataData) throws ApiException {
-    Object localVarPostBody = createChannelMetadataData;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling createChannelMetadata");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling createChannelMetadata");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling createAChannelMetadata");
     }
     
     // create path and map variables
@@ -207,7 +74,7 @@ private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttp
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -223,20 +90,20 @@ private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttp
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<CreateChannelMetadataResponse> localVarReturnType = new GenericType<CreateChannelMetadataResponse>() {};
+    GenericType<CreateAChannelMetadataResponse> localVarReturnType = new GenericType<CreateAChannelMetadataResponse>() {};
 
-    return apiClient.invokeAPI("MetadataApi.createChannelMetadata", localVarPath, "POST", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("MetadataApi.createAChannelMetadata", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIcreateChannelMetadataRequest {
+  public class APIcreateAChannelMetadataRequest {
     private String channelType;
     private String channelUrl;
     private String apiToken;
-    private CreateChannelMetadataData createChannelMetadataData;
+    private CreateAChannelMetadataRequest createAChannelMetadataRequest;
 
-    private APIcreateChannelMetadataRequest(String channelType, String channelUrl) {
+    private APIcreateAChannelMetadataRequest(String channelType, String channelUrl) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
     }
@@ -244,26 +111,26 @@ private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttp
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIcreateChannelMetadataRequest
+     * @return APIcreateAChannelMetadataRequest
      */
-    public APIcreateChannelMetadataRequest apiToken(String apiToken) {
+    public APIcreateAChannelMetadataRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set createChannelMetadataData
-     * @param createChannelMetadataData  (optional)
-     * @return APIcreateChannelMetadataRequest
+     * Set createAChannelMetadataRequest
+     * @param createAChannelMetadataRequest  (optional)
+     * @return APIcreateAChannelMetadataRequest
      */
-    public APIcreateChannelMetadataRequest createChannelMetadataData(CreateChannelMetadataData createChannelMetadataData) {
-      this.createChannelMetadataData = createChannelMetadataData;
+    public APIcreateAChannelMetadataRequest createAChannelMetadataRequest(CreateAChannelMetadataRequest createAChannelMetadataRequest) {
+      this.createAChannelMetadataRequest = createAChannelMetadataRequest;
       return this;
     }
 
     /**
-     * Execute createChannelMetadata request
-     * @return CreateChannelMetadataResponse
+     * Execute createAChannelMetadata request
+     * @return CreateAChannelMetadataResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -273,13 +140,13 @@ private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttp
      
      */
     
-    public CreateChannelMetadataResponse execute() throws ApiException {
+    public CreateAChannelMetadataResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute createChannelMetadata request with HTTP info returned
-     * @return ApiResponse&lt;CreateChannelMetadataResponse&gt;
+     * Execute createAChannelMetadata request with HTTP info returned
+     * @return ApiResponse&lt;CreateAChannelMetadataResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -288,275 +155,40 @@ private ApiResponse<CreateChannelMetadataResponse> createChannelMetadataWithHttp
        </table>
 
      */
-    public ApiResponse<CreateChannelMetadataResponse> executeWithHttpInfo() throws ApiException {
-      return createChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, createChannelMetadataData);
+    public ApiResponse<CreateAChannelMetadataResponse> executeWithHttpInfo() throws ApiException {
+      return createAChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, createAChannelMetadataRequest);
     }
   }
 
   /**
    * Create a channel metadata
-   * ## Create a channel metadata  Creates a channel metadata&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metadata ----------------------------
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @return createChannelMetadataRequest
+   * ## Create a channel metadata  Creates a channel metadata&#39;s items to store in a channel.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-metadata/channel-create-metadata#1-create-metadata ----------------------------
+   * @param channelType (Required)  (required)
+   * @param channelUrl (Required)  (required)
+   * @return createAChannelMetadataRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIcreateChannelMetadataRequest createChannelMetadata(String channelType, String channelUrl) throws ApiException {
-    return new APIcreateChannelMetadataRequest(channelType, channelUrl);
+  public APIcreateAChannelMetadataRequest createAChannelMetadata(String channelType, String channelUrl) throws ApiException {
+    return new APIcreateAChannelMetadataRequest(channelType, channelUrl);
   }
 
-private ApiResponse<CreateUserMetadataResponse> createUserMetadataWithHttpInfo(String userId, String apiToken, CreateUserMetadataData createUserMetadataData) throws ApiException {
-    Object localVarPostBody = createUserMetadataData;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling createUserMetadata");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/metadata"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<CreateUserMetadataResponse> localVarReturnType = new GenericType<CreateUserMetadataResponse>() {};
-
-    return apiClient.invokeAPI("MetadataApi.createUserMetadata", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIcreateUserMetadataRequest {
-    private String userId;
-    private String apiToken;
-    private CreateUserMetadataData createUserMetadataData;
-
-    private APIcreateUserMetadataRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIcreateUserMetadataRequest
-     */
-    public APIcreateUserMetadataRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set createUserMetadataData
-     * @param createUserMetadataData  (optional)
-     * @return APIcreateUserMetadataRequest
-     */
-    public APIcreateUserMetadataRequest createUserMetadataData(CreateUserMetadataData createUserMetadataData) {
-      this.createUserMetadataData = createUserMetadataData;
-      return this;
-    }
-
-    /**
-     * Execute createUserMetadata request
-     * @return CreateUserMetadataResponse
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public CreateUserMetadataResponse execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute createUserMetadata request with HTTP info returned
-     * @return ApiResponse&lt;CreateUserMetadataResponse&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<CreateUserMetadataResponse> executeWithHttpInfo() throws ApiException {
-      return createUserMetadataWithHttpInfo(userId, apiToken, createUserMetadataData);
-    }
-  }
-
-  /**
-   * Create a user metadata
-   * ## Create a user metadata  Creates a user metadata&#39;s items to store in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-user-metadata ----------------------------
-   * @param userId  (required)
-   * @return createUserMetadataRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIcreateUserMetadataRequest createUserMetadata(String userId) throws ApiException {
-    return new APIcreateUserMetadataRequest(userId);
-  }
-
-private ApiResponse<Void> deleteChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken) throws ApiException {
+private ApiResponse<Object> deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling deleteChannelMetacounter");
+      throw new ApiException(400, "Missing the required parameter 'channelType' when calling deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata");
     }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling deleteChannelMetacounter");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata");
     }
     
     // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metacounter"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("MetadataApi.deleteChannelMetacounter", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
-  }
-
-  public class APIdeleteChannelMetacounterRequest {
-    private String channelType;
-    private String channelUrl;
-    private String apiToken;
-
-    private APIdeleteChannelMetacounterRequest(String channelType, String channelUrl) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIdeleteChannelMetacounterRequest
-     */
-    public APIdeleteChannelMetacounterRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Execute deleteChannelMetacounter request
-     
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public void execute() throws ApiException {
-      this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute deleteChannelMetacounter request with HTTP info returned
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken);
-    }
-  }
-
-  /**
-   * Delete a channel metacounter - When deleting all items of a channel metacounter
-   * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @return deleteChannelMetacounterRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIdeleteChannelMetacounterRequest deleteChannelMetacounter(String channelType, String channelUrl) throws ApiException {
-    return new APIdeleteChannelMetacounterRequest(channelType, channelUrl);
-  }
-
-private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling deleteChannelMetacounterByKey");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling deleteChannelMetacounterByKey");
-    }
-    
-    // verify the required parameter 'key' is set
-    if (key == null) {
-      throw new ApiException(400, "Missing the required parameter 'key' when calling deleteChannelMetacounterByKey");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metacounter/{key}"
+    String localVarPath = "/v3/{channel_type}/{channel_url}/metadata"
       .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
       .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()))
       .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
@@ -569,12 +201,12 @@ private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String chann
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
     final String[] localVarAccepts = {
-      
+      "application/json"
     };
     final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -585,18 +217,20 @@ private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String chann
 
     String[] localVarAuthNames = new String[] {  };
 
-    return apiClient.invokeAPI("MetadataApi.deleteChannelMetacounterByKey", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+
+    return apiClient.invokeAPI("MetadataApi.deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
+                               localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIdeleteChannelMetacounterByKeyRequest {
+  public class APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest {
     private String channelType;
     private String channelUrl;
     private String key;
     private String apiToken;
 
-    private APIdeleteChannelMetacounterByKeyRequest(String channelType, String channelUrl, String key) {
+    private APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest(String channelType, String channelUrl, String key) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
       this.key = key;
@@ -605,16 +239,16 @@ private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String chann
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIdeleteChannelMetacounterByKeyRequest
+     * @return APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest
      */
-    public APIdeleteChannelMetacounterByKeyRequest apiToken(String apiToken) {
+    public APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute deleteChannelMetacounterByKey request
-     
+     * Execute deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata request
+     * @return Object
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -624,13 +258,13 @@ private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String chann
      
      */
     
-    public void execute() throws ApiException {
-      this.executeWithHttpInfo().getData();
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute deleteChannelMetacounterByKey request with HTTP info returned
-     * @return ApiResponse&lt;Void&gt;
+     * Execute deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -639,517 +273,41 @@ private ApiResponse<Void> deleteChannelMetacounterByKeyWithHttpInfo(String chann
        </table>
 
      */
-    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteChannelMetacounterByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
-    }
-  }
-
-  /**
-   * Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
-   * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param key  (required)
-   * @return deleteChannelMetacounterByKeyRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIdeleteChannelMetacounterByKeyRequest deleteChannelMetacounterByKey(String channelType, String channelUrl, String key) throws ApiException {
-    return new APIdeleteChannelMetacounterByKeyRequest(channelType, channelUrl, key);
-  }
-
-private ApiResponse<Void> deleteChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, String key) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling deleteChannelMetadata");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling deleteChannelMetadata");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metadata"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "key", key));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("MetadataApi.deleteChannelMetadata", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
-  }
-
-  public class APIdeleteChannelMetadataRequest {
-    private String channelType;
-    private String channelUrl;
-    private String apiToken;
-    private String key;
-
-    private APIdeleteChannelMetadataRequest(String channelType, String channelUrl) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIdeleteChannelMetadataRequest
-     */
-    public APIdeleteChannelMetadataRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set key
-     * @param key  (optional)
-     * @return APIdeleteChannelMetadataRequest
-     */
-    public APIdeleteChannelMetadataRequest key(String key) {
-      this.key = key;
-      return this;
-    }
-
-    /**
-     * Execute deleteChannelMetadata request
-     
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public void execute() throws ApiException {
-      this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute deleteChannelMetadata request with HTTP info returned
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, key);
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataWithHttpInfo(channelType, channelUrl, key, apiToken);
     }
   }
 
   /**
    * Delete a channel metadata - When deleting all items of a channel metadata
-   * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @return deleteChannelMetadataRequest
+   * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-metadata/channel-delete-metadata#1-delete-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+   * @param channelType (Required)  (required)
+   * @param channelUrl (Required)  (required)
+   * @param key  (required)
+   * @return deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIdeleteChannelMetadataRequest deleteChannelMetadata(String channelType, String channelUrl) throws ApiException {
-    return new APIdeleteChannelMetadataRequest(channelType, channelUrl);
+  public APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(String channelType, String channelUrl, String key) throws ApiException {
+    return new APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest(channelType, channelUrl, key);
   }
 
-private ApiResponse<Void> deleteChannelMetadataByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-    Object localVarPostBody = null;
+private ApiResponse<Object> updateAChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, UpdateAChannelMetadataRequest updateAChannelMetadataRequest) throws ApiException {
+    Object localVarPostBody = updateAChannelMetadataRequest;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling deleteChannelMetadataByKey");
+      throw new ApiException(400, "Missing the required parameter 'channelType' when calling updateAChannelMetadata");
     }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling deleteChannelMetadataByKey");
-    }
-    
-    // verify the required parameter 'key' is set
-    if (key == null) {
-      throw new ApiException(400, "Missing the required parameter 'key' when calling deleteChannelMetadataByKey");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updateAChannelMetadata");
     }
     
     // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metadata/{key}"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()))
-      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("MetadataApi.deleteChannelMetadataByKey", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
-  }
-
-  public class APIdeleteChannelMetadataByKeyRequest {
-    private String channelType;
-    private String channelUrl;
-    private String key;
-    private String apiToken;
-
-    private APIdeleteChannelMetadataByKeyRequest(String channelType, String channelUrl, String key) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-      this.key = key;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIdeleteChannelMetadataByKeyRequest
-     */
-    public APIdeleteChannelMetadataByKeyRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Execute deleteChannelMetadataByKey request
-     
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public void execute() throws ApiException {
-      this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute deleteChannelMetadataByKey request with HTTP info returned
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteChannelMetadataByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
-    }
-  }
-
-  /**
-   * Delete a channel metadata - When deleting a specific item of a channel metadata by its key
-   * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param key  (required)
-   * @return deleteChannelMetadataByKeyRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIdeleteChannelMetadataByKeyRequest deleteChannelMetadataByKey(String channelType, String channelUrl, String key) throws ApiException {
-    return new APIdeleteChannelMetadataByKeyRequest(channelType, channelUrl, key);
-  }
-
-private ApiResponse<Void> deleteUserMetadataWithHttpInfo(String userId, String apiToken, String key) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserMetadata");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/metadata"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "key", key));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("MetadataApi.deleteUserMetadata", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
-  }
-
-  public class APIdeleteUserMetadataRequest {
-    private String userId;
-    private String apiToken;
-    private String key;
-
-    private APIdeleteUserMetadataRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIdeleteUserMetadataRequest
-     */
-    public APIdeleteUserMetadataRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set key
-     * @param key  (optional)
-     * @return APIdeleteUserMetadataRequest
-     */
-    public APIdeleteUserMetadataRequest key(String key) {
-      this.key = key;
-      return this;
-    }
-
-    /**
-     * Execute deleteUserMetadata request
-     
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public void execute() throws ApiException {
-      this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute deleteUserMetadata request with HTTP info returned
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteUserMetadataWithHttpInfo(userId, apiToken, key);
-    }
-  }
-
-  /**
-   * Delete a user metadata - When deleting all items of a user metadata
-   * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
-   * @param userId  (required)
-   * @return deleteUserMetadataRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIdeleteUserMetadataRequest deleteUserMetadata(String userId) throws ApiException {
-    return new APIdeleteUserMetadataRequest(userId);
-  }
-
-private ApiResponse<Void> deleteUserMetadataByKeyWithHttpInfo(String userId, String key, String apiToken) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserMetadataByKey");
-    }
-    
-    // verify the required parameter 'key' is set
-    if (key == null) {
-      throw new ApiException(400, "Missing the required parameter 'key' when calling deleteUserMetadataByKey");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/metadata/{key}"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    return apiClient.invokeAPI("MetadataApi.deleteUserMetadataByKey", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, null, false);
-  }
-
-  public class APIdeleteUserMetadataByKeyRequest {
-    private String userId;
-    private String key;
-    private String apiToken;
-
-    private APIdeleteUserMetadataByKeyRequest(String userId, String key) {
-      this.userId = userId;
-      this.key = key;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIdeleteUserMetadataByKeyRequest
-     */
-    public APIdeleteUserMetadataByKeyRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Execute deleteUserMetadataByKey request
-     
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public void execute() throws ApiException {
-      this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute deleteUserMetadataByKey request with HTTP info returned
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Void> executeWithHttpInfo() throws ApiException {
-      return deleteUserMetadataByKeyWithHttpInfo(userId, key, apiToken);
-    }
-  }
-
-  /**
-   * Delete a user metadata - When deleting a specific item of a user metadata by its key
-   * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
-   * @param userId  (required)
-   * @param key  (required)
-   * @return deleteUserMetadataByKeyRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIdeleteUserMetadataByKeyRequest deleteUserMetadataByKey(String userId, String key) throws ApiException {
-    return new APIdeleteUserMetadataByKeyRequest(userId, key);
-  }
-
-private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken, UpdateChannelMetacounterData updateChannelMetacounterData) throws ApiException {
-    Object localVarPostBody = updateChannelMetacounterData;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling updateChannelMetacounter");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updateChannelMetacounter");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metacounter"
+    String localVarPath = "/v3/{channel_type}/{channel_url}/metadata"
       .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
       .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
 
@@ -1161,7 +319,7 @@ private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String channelT
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -1179,18 +337,18 @@ private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String channelT
 
     GenericType<Object> localVarReturnType = new GenericType<Object>() {};
 
-    return apiClient.invokeAPI("MetadataApi.updateChannelMetacounter", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("MetadataApi.updateAChannelMetadata", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIupdateChannelMetacounterRequest {
+  public class APIupdateAChannelMetadataRequest {
     private String channelType;
     private String channelUrl;
     private String apiToken;
-    private UpdateChannelMetacounterData updateChannelMetacounterData;
+    private UpdateAChannelMetadataRequest updateAChannelMetadataRequest;
 
-    private APIupdateChannelMetacounterRequest(String channelType, String channelUrl) {
+    private APIupdateAChannelMetadataRequest(String channelType, String channelUrl) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
     }
@@ -1198,25 +356,25 @@ private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String channelT
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIupdateChannelMetacounterRequest
+     * @return APIupdateAChannelMetadataRequest
      */
-    public APIupdateChannelMetacounterRequest apiToken(String apiToken) {
+    public APIupdateAChannelMetadataRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set updateChannelMetacounterData
-     * @param updateChannelMetacounterData  (optional)
-     * @return APIupdateChannelMetacounterRequest
+     * Set updateAChannelMetadataRequest
+     * @param updateAChannelMetadataRequest  (optional)
+     * @return APIupdateAChannelMetadataRequest
      */
-    public APIupdateChannelMetacounterRequest updateChannelMetacounterData(UpdateChannelMetacounterData updateChannelMetacounterData) {
-      this.updateChannelMetacounterData = updateChannelMetacounterData;
+    public APIupdateAChannelMetadataRequest updateAChannelMetadataRequest(UpdateAChannelMetadataRequest updateAChannelMetadataRequest) {
+      this.updateAChannelMetadataRequest = updateAChannelMetadataRequest;
       return this;
     }
 
     /**
-     * Execute updateChannelMetacounter request
+     * Execute updateAChannelMetadata request
      * @return Object
      * @throws ApiException if fails to make API call
      * @http.response.details
@@ -1232,7 +390,7 @@ private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String channelT
     }
 
     /**
-     * Execute updateChannelMetacounter request with HTTP info returned
+     * Execute updateAChannelMetadata request with HTTP info returned
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
@@ -1243,678 +401,39 @@ private ApiResponse<Object> updateChannelMetacounterWithHttpInfo(String channelT
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return updateChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken, updateChannelMetacounterData);
-    }
-  }
-
-  /**
-   * Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
-   * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @return updateChannelMetacounterRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIupdateChannelMetacounterRequest updateChannelMetacounter(String channelType, String channelUrl) throws ApiException {
-    return new APIupdateChannelMetacounterRequest(channelType, channelUrl);
-  }
-
-private ApiResponse<Map<String, String>> updateChannelMetacounterByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken, Object body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling updateChannelMetacounterByKey");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updateChannelMetacounterByKey");
-    }
-    
-    // verify the required parameter 'key' is set
-    if (key == null) {
-      throw new ApiException(400, "Missing the required parameter 'key' when calling updateChannelMetacounterByKey");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metacounter/{key}"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()))
-      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("MetadataApi.updateChannelMetacounterByKey", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIupdateChannelMetacounterByKeyRequest {
-    private String channelType;
-    private String channelUrl;
-    private String key;
-    private String apiToken;
-    private Object body;
-
-    private APIupdateChannelMetacounterByKeyRequest(String channelType, String channelUrl, String key) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-      this.key = key;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIupdateChannelMetacounterByKeyRequest
-     */
-    public APIupdateChannelMetacounterByKeyRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set body
-     * @param body  (optional)
-     * @return APIupdateChannelMetacounterByKeyRequest
-     */
-    public APIupdateChannelMetacounterByKeyRequest body(Object body) {
-      this.body = body;
-      return this;
-    }
-
-    /**
-     * Execute updateChannelMetacounterByKey request
-     * @return Map&lt;String, String&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Map<String, String> execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute updateChannelMetacounterByKey request with HTTP info returned
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return updateChannelMetacounterByKeyWithHttpInfo(channelType, channelUrl, key, apiToken, body);
-    }
-  }
-
-  /**
-   * Update a channel metacounter - When updating a specific item of a channel metacounter by its key
-   * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param key  (required)
-   * @return updateChannelMetacounterByKeyRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIupdateChannelMetacounterByKeyRequest updateChannelMetacounterByKey(String channelType, String channelUrl, String key) throws ApiException {
-    return new APIupdateChannelMetacounterByKeyRequest(channelType, channelUrl, key);
-  }
-
-private ApiResponse<Map<String, String>> updateChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, UpdateChannelMetadataData updateChannelMetadataData) throws ApiException {
-    Object localVarPostBody = updateChannelMetadataData;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling updateChannelMetadata");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updateChannelMetadata");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metadata"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("MetadataApi.updateChannelMetadata", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIupdateChannelMetadataRequest {
-    private String channelType;
-    private String channelUrl;
-    private String apiToken;
-    private UpdateChannelMetadataData updateChannelMetadataData;
-
-    private APIupdateChannelMetadataRequest(String channelType, String channelUrl) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIupdateChannelMetadataRequest
-     */
-    public APIupdateChannelMetadataRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set updateChannelMetadataData
-     * @param updateChannelMetadataData  (optional)
-     * @return APIupdateChannelMetadataRequest
-     */
-    public APIupdateChannelMetadataRequest updateChannelMetadataData(UpdateChannelMetadataData updateChannelMetadataData) {
-      this.updateChannelMetadataData = updateChannelMetadataData;
-      return this;
-    }
-
-    /**
-     * Execute updateChannelMetadata request
-     * @return Map&lt;String, String&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Map<String, String> execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute updateChannelMetadata request with HTTP info returned
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return updateChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, updateChannelMetadataData);
+      return updateAChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, updateAChannelMetadataRequest);
     }
   }
 
   /**
    * Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
-   * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @return updateChannelMetadataRequest
+   * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-metadata/channel-update-metadata#1-update-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+   * @param channelType (Required)  (required)
+   * @param channelUrl (Required)  (required)
+   * @return updateAChannelMetadataRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIupdateChannelMetadataRequest updateChannelMetadata(String channelType, String channelUrl) throws ApiException {
-    return new APIupdateChannelMetadataRequest(channelType, channelUrl);
+  public APIupdateAChannelMetadataRequest updateAChannelMetadata(String channelType, String channelUrl) throws ApiException {
+    return new APIupdateAChannelMetadataRequest(channelType, channelUrl);
   }
 
-private ApiResponse<Map<String, String>> updateChannelMetadataByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken, Object body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling updateChannelMetadataByKey");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updateChannelMetadataByKey");
-    }
-    
-    // verify the required parameter 'key' is set
-    if (key == null) {
-      throw new ApiException(400, "Missing the required parameter 'key' when calling updateChannelMetadataByKey");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metadata/{key}"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()))
-      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("MetadataApi.updateChannelMetadataByKey", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIupdateChannelMetadataByKeyRequest {
-    private String channelType;
-    private String channelUrl;
-    private String key;
-    private String apiToken;
-    private Object body;
-
-    private APIupdateChannelMetadataByKeyRequest(String channelType, String channelUrl, String key) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-      this.key = key;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIupdateChannelMetadataByKeyRequest
-     */
-    public APIupdateChannelMetadataByKeyRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set body
-     * @param body  (optional)
-     * @return APIupdateChannelMetadataByKeyRequest
-     */
-    public APIupdateChannelMetadataByKeyRequest body(Object body) {
-      this.body = body;
-      return this;
-    }
-
-    /**
-     * Execute updateChannelMetadataByKey request
-     * @return Map&lt;String, String&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Map<String, String> execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute updateChannelMetadataByKey request with HTTP info returned
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return updateChannelMetadataByKeyWithHttpInfo(channelType, channelUrl, key, apiToken, body);
-    }
-  }
-
-  /**
-   * Update a channel metadata - When updating a specific item of a channel metadata by its key
-   * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param key  (required)
-   * @return updateChannelMetadataByKeyRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIupdateChannelMetadataByKeyRequest updateChannelMetadataByKey(String channelType, String channelUrl, String key) throws ApiException {
-    return new APIupdateChannelMetadataByKeyRequest(channelType, channelUrl, key);
-  }
-
-private ApiResponse<UpdateUserMetadataResponse> updateUserMetadataWithHttpInfo(String userId, String apiToken, UpdateUserMetadataData updateUserMetadataData) throws ApiException {
-    Object localVarPostBody = updateUserMetadataData;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling updateUserMetadata");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/metadata"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<UpdateUserMetadataResponse> localVarReturnType = new GenericType<UpdateUserMetadataResponse>() {};
-
-    return apiClient.invokeAPI("MetadataApi.updateUserMetadata", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIupdateUserMetadataRequest {
-    private String userId;
-    private String apiToken;
-    private UpdateUserMetadataData updateUserMetadataData;
-
-    private APIupdateUserMetadataRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIupdateUserMetadataRequest
-     */
-    public APIupdateUserMetadataRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set updateUserMetadataData
-     * @param updateUserMetadataData  (optional)
-     * @return APIupdateUserMetadataRequest
-     */
-    public APIupdateUserMetadataRequest updateUserMetadataData(UpdateUserMetadataData updateUserMetadataData) {
-      this.updateUserMetadataData = updateUserMetadataData;
-      return this;
-    }
-
-    /**
-     * Execute updateUserMetadata request
-     * @return UpdateUserMetadataResponse
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public UpdateUserMetadataResponse execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute updateUserMetadata request with HTTP info returned
-     * @return ApiResponse&lt;UpdateUserMetadataResponse&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<UpdateUserMetadataResponse> executeWithHttpInfo() throws ApiException {
-      return updateUserMetadataWithHttpInfo(userId, apiToken, updateUserMetadataData);
-    }
-  }
-
-  /**
-   * Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
-   * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
-   * @param userId  (required)
-   * @return updateUserMetadataRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIupdateUserMetadataRequest updateUserMetadata(String userId) throws ApiException {
-    return new APIupdateUserMetadataRequest(userId);
-  }
-
-private ApiResponse<Map<String, String>> updateUserMetadataByKeyWithHttpInfo(String userId, String key, String apiToken, Object body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling updateUserMetadataByKey");
-    }
-    
-    // verify the required parameter 'key' is set
-    if (key == null) {
-      throw new ApiException(400, "Missing the required parameter 'key' when calling updateUserMetadataByKey");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/metadata/{key}"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("MetadataApi.updateUserMetadataByKey", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIupdateUserMetadataByKeyRequest {
-    private String userId;
-    private String key;
-    private String apiToken;
-    private Object body;
-
-    private APIupdateUserMetadataByKeyRequest(String userId, String key) {
-      this.userId = userId;
-      this.key = key;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIupdateUserMetadataByKeyRequest
-     */
-    public APIupdateUserMetadataByKeyRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set body
-     * @param body  (optional)
-     * @return APIupdateUserMetadataByKeyRequest
-     */
-    public APIupdateUserMetadataByKeyRequest body(Object body) {
-      this.body = body;
-      return this;
-    }
-
-    /**
-     * Execute updateUserMetadataByKey request
-     * @return Map&lt;String, String&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Map<String, String> execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute updateUserMetadataByKey request with HTTP info returned
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return updateUserMetadataByKeyWithHttpInfo(userId, key, apiToken, body);
-    }
-  }
-
-  /**
-   * Update a user metadata - When updating a specific item of a user metadata by its key
-   * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
-   * @param userId  (required)
-   * @param key  (required)
-   * @return updateUserMetadataByKeyRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIupdateUserMetadataByKeyRequest updateUserMetadataByKey(String userId, String key) throws ApiException {
-    return new APIupdateUserMetadataByKeyRequest(userId, key);
-  }
-
-private ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(String channelType, String channelUrl, String apiToken, String key, List<String> keys) throws ApiException {
+private ApiResponse<Object> viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataWithHttpInfo(String channelType, String channelUrl, String key, String keys, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling viewChannelMetacounter");
+      throw new ApiException(400, "Missing the required parameter 'channelType' when calling viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadata");
     }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling viewChannelMetacounter");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadata");
     }
     
     // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metacounter"
+    String localVarPath = "/v3/{channel_type}/{channel_url}/metadata"
       .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
       .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
 
@@ -1925,153 +444,10 @@ private ApiResponse<Map<String, String>> viewChannelMetacounterWithHttpInfo(Stri
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "key", key));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "keys", keys));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "keys", keys));
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("MetadataApi.viewChannelMetacounter", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIviewChannelMetacounterRequest {
-    private String channelType;
-    private String channelUrl;
-    private String apiToken;
-    private String key;
-    private List<String> keys;
-
-    private APIviewChannelMetacounterRequest(String channelType, String channelUrl) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIviewChannelMetacounterRequest
-     */
-    public APIviewChannelMetacounterRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set key
-     * @param key  (optional)
-     * @return APIviewChannelMetacounterRequest
-     */
-    public APIviewChannelMetacounterRequest key(String key) {
-      this.key = key;
-      return this;
-    }
-
-    /**
-     * Set keys
-     * @param keys  (optional)
-     * @return APIviewChannelMetacounterRequest
-     */
-    public APIviewChannelMetacounterRequest keys(List<String> keys) {
-      this.keys = keys;
-      return this;
-    }
-
-    /**
-     * Execute viewChannelMetacounter request
-     * @return Map&lt;String, String&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Map<String, String> execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute viewChannelMetacounter request with HTTP info returned
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return viewChannelMetacounterWithHttpInfo(channelType, channelUrl, apiToken, key, keys);
-    }
-  }
-
-  /**
-   * View a channel metacounter - When retrieving all items of a channel metacounter
-   * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @return viewChannelMetacounterRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIviewChannelMetacounterRequest viewChannelMetacounter(String channelType, String channelUrl) throws ApiException {
-    return new APIviewChannelMetacounterRequest(channelType, channelUrl);
-  }
-
-private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling viewChannelMetacounterByKey");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling viewChannelMetacounterByKey");
-    }
-    
-    // verify the required parameter 'key' is set
-    if (key == null) {
-      throw new ApiException(400, "Missing the required parameter 'key' when calling viewChannelMetacounterByKey");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metacounter/{key}"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()))
-      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -2089,35 +465,55 @@ private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String chann
 
     GenericType<Object> localVarReturnType = new GenericType<Object>() {};
 
-    return apiClient.invokeAPI("MetadataApi.viewChannelMetacounterByKey", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("MetadataApi.viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadata", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIviewChannelMetacounterByKeyRequest {
+  public class APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest {
     private String channelType;
     private String channelUrl;
     private String key;
+    private String keys;
     private String apiToken;
 
-    private APIviewChannelMetacounterByKeyRequest(String channelType, String channelUrl, String key) {
+    private APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest(String channelType, String channelUrl) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
+    }
+
+    /**
+     * Set key
+     * @param key  (optional)
+     * @return APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest
+     */
+    public APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest key(String key) {
       this.key = key;
+      return this;
+    }
+
+    /**
+     * Set keys
+     * @param keys In a query string, specifies an array of one or more keys of the metadata items. If not specified, all items of the metadata are returned. If specified, only the items that match the parameter values are returned. URL encoding each key is recommended. (optional)
+     * @return APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest
+     */
+    public APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest keys(String keys) {
+      this.keys = keys;
+      return this;
     }
 
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIviewChannelMetacounterByKeyRequest
+     * @return APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest
      */
-    public APIviewChannelMetacounterByKeyRequest apiToken(String apiToken) {
+    public APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute viewChannelMetacounterByKey request
+     * Execute viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadata request
      * @return Object
      * @throws ApiException if fails to make API call
      * @http.response.details
@@ -2133,7 +529,7 @@ private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String chann
     }
 
     /**
-     * Execute viewChannelMetacounterByKey request with HTTP info returned
+     * Execute viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadata request with HTTP info returned
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
@@ -2144,530 +540,21 @@ private ApiResponse<Object> viewChannelMetacounterByKeyWithHttpInfo(String chann
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return viewChannelMetacounterByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
-    }
-  }
-
-  /**
-   * View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
-   * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param key  (required)
-   * @return viewChannelMetacounterByKeyRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIviewChannelMetacounterByKeyRequest viewChannelMetacounterByKey(String channelType, String channelUrl, String key) throws ApiException {
-    return new APIviewChannelMetacounterByKeyRequest(channelType, channelUrl, key);
-  }
-
-private ApiResponse<Map<String, String>> viewChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, String key, List<String> keys) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling viewChannelMetadata");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling viewChannelMetadata");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metadata"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "key", key));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "keys", keys));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("MetadataApi.viewChannelMetadata", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIviewChannelMetadataRequest {
-    private String channelType;
-    private String channelUrl;
-    private String apiToken;
-    private String key;
-    private List<String> keys;
-
-    private APIviewChannelMetadataRequest(String channelType, String channelUrl) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIviewChannelMetadataRequest
-     */
-    public APIviewChannelMetadataRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set key
-     * @param key  (optional)
-     * @return APIviewChannelMetadataRequest
-     */
-    public APIviewChannelMetadataRequest key(String key) {
-      this.key = key;
-      return this;
-    }
-
-    /**
-     * Set keys
-     * @param keys  (optional)
-     * @return APIviewChannelMetadataRequest
-     */
-    public APIviewChannelMetadataRequest keys(List<String> keys) {
-      this.keys = keys;
-      return this;
-    }
-
-    /**
-     * Execute viewChannelMetadata request
-     * @return Map&lt;String, String&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Map<String, String> execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute viewChannelMetadata request with HTTP info returned
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return viewChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, key, keys);
+      return viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataWithHttpInfo(channelType, channelUrl, key, keys, apiToken);
     }
   }
 
   /**
    * View a channel metadata - When retrieving all items of a channel metadata
-   * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @return viewChannelMetadataRequest
+   * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-metadata/channel-get-metadata#1-get-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+   * @param channelType (Required)  (required)
+   * @param channelUrl (Required)  (required)
+   * @return viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIviewChannelMetadataRequest viewChannelMetadata(String channelType, String channelUrl) throws ApiException {
-    return new APIviewChannelMetadataRequest(channelType, channelUrl);
-  }
-
-private ApiResponse<Map<String, String>> viewChannelMetadataByKeyWithHttpInfo(String channelType, String channelUrl, String key, String apiToken) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'channelType' is set
-    if (channelType == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelType' when calling viewChannelMetadataByKey");
-    }
-    
-    // verify the required parameter 'channelUrl' is set
-    if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling viewChannelMetadataByKey");
-    }
-    
-    // verify the required parameter 'key' is set
-    if (key == null) {
-      throw new ApiException(400, "Missing the required parameter 'key' when calling viewChannelMetadataByKey");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/{channel_type}/{channel_url}/metadata/{key}"
-      .replaceAll("\\{" + "channel_type" + "\\}", apiClient.escapeString(channelType.toString()))
-      .replaceAll("\\{" + "channel_url" + "\\}", apiClient.escapeString(channelUrl.toString()))
-      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("MetadataApi.viewChannelMetadataByKey", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIviewChannelMetadataByKeyRequest {
-    private String channelType;
-    private String channelUrl;
-    private String key;
-    private String apiToken;
-
-    private APIviewChannelMetadataByKeyRequest(String channelType, String channelUrl, String key) {
-      this.channelType = channelType;
-      this.channelUrl = channelUrl;
-      this.key = key;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIviewChannelMetadataByKeyRequest
-     */
-    public APIviewChannelMetadataByKeyRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Execute viewChannelMetadataByKey request
-     * @return Map&lt;String, String&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Map<String, String> execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute viewChannelMetadataByKey request with HTTP info returned
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return viewChannelMetadataByKeyWithHttpInfo(channelType, channelUrl, key, apiToken);
-    }
-  }
-
-  /**
-   * View a channel metadata - When retrieving a specific item of a channel metadata by its key
-   * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-   * @param channelType  (required)
-   * @param channelUrl  (required)
-   * @param key  (required)
-   * @return viewChannelMetadataByKeyRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIviewChannelMetadataByKeyRequest viewChannelMetadataByKey(String channelType, String channelUrl, String key) throws ApiException {
-    return new APIviewChannelMetadataByKeyRequest(channelType, channelUrl, key);
-  }
-
-private ApiResponse<ViewUserMetadataResponse> viewUserMetadataWithHttpInfo(String userId, String apiToken, String key, List<String> keys) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewUserMetadata");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/metadata"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "key", key));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "keys", keys));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<ViewUserMetadataResponse> localVarReturnType = new GenericType<ViewUserMetadataResponse>() {};
-
-    return apiClient.invokeAPI("MetadataApi.viewUserMetadata", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIviewUserMetadataRequest {
-    private String userId;
-    private String apiToken;
-    private String key;
-    private List<String> keys;
-
-    private APIviewUserMetadataRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIviewUserMetadataRequest
-     */
-    public APIviewUserMetadataRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set key
-     * @param key  (optional)
-     * @return APIviewUserMetadataRequest
-     */
-    public APIviewUserMetadataRequest key(String key) {
-      this.key = key;
-      return this;
-    }
-
-    /**
-     * Set keys
-     * @param keys  (optional)
-     * @return APIviewUserMetadataRequest
-     */
-    public APIviewUserMetadataRequest keys(List<String> keys) {
-      this.keys = keys;
-      return this;
-    }
-
-    /**
-     * Execute viewUserMetadata request
-     * @return ViewUserMetadataResponse
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public ViewUserMetadataResponse execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute viewUserMetadata request with HTTP info returned
-     * @return ApiResponse&lt;ViewUserMetadataResponse&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<ViewUserMetadataResponse> executeWithHttpInfo() throws ApiException {
-      return viewUserMetadataWithHttpInfo(userId, apiToken, key, keys);
-    }
-  }
-
-  /**
-   * View a user metadata - When retrieving all items of a user metadata
-   * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
-   * @param userId  (required)
-   * @return viewUserMetadataRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIviewUserMetadataRequest viewUserMetadata(String userId) throws ApiException {
-    return new APIviewUserMetadataRequest(userId);
-  }
-
-private ApiResponse<Map<String, String>> viewUserMetadataByKeyWithHttpInfo(String userId, String key, String apiToken) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewUserMetadataByKey");
-    }
-    
-    // verify the required parameter 'key' is set
-    if (key == null) {
-      throw new ApiException(400, "Missing the required parameter 'key' when calling viewUserMetadataByKey");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/metadata/{key}"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()))
-      .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Map<String, String>> localVarReturnType = new GenericType<Map<String, String>>() {};
-
-    return apiClient.invokeAPI("MetadataApi.viewUserMetadataByKey", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIviewUserMetadataByKeyRequest {
-    private String userId;
-    private String key;
-    private String apiToken;
-
-    private APIviewUserMetadataByKeyRequest(String userId, String key) {
-      this.userId = userId;
-      this.key = key;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIviewUserMetadataByKeyRequest
-     */
-    public APIviewUserMetadataByKeyRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Execute viewUserMetadataByKey request
-     * @return Map&lt;String, String&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Map<String, String> execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute viewUserMetadataByKey request with HTTP info returned
-     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Map<String, String>> executeWithHttpInfo() throws ApiException {
-      return viewUserMetadataByKeyWithHttpInfo(userId, key, apiToken);
-    }
-  }
-
-  /**
-   * View a user metadata - When retrieving a specific item of a user metadata by its key
-   * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
-   * @param userId  (required)
-   * @param key  (required)
-   * @return viewUserMetadataByKeyRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIviewUserMetadataByKeyRequest viewUserMetadataByKey(String userId, String key) throws ApiException {
-    return new APIviewUserMetadataByKeyRequest(userId, key);
+  public APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadata(String channelType, String channelUrl) throws ApiException {
+    return new APIviewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataRequest(channelType, channelUrl);
   }
 }

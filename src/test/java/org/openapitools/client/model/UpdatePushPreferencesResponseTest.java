@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -20,9 +20,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.SendbirdPushTriggerOption;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -51,30 +51,6 @@ public class UpdatePushPreferencesResponseTest {
     }
 
     /**
-     * Test the property 'enablePushForReplies'
-     */
-    @Test
-    public void enablePushForRepliesTest() {
-        // TODO: test enablePushForReplies
-    }
-
-    /**
-     * Test the property 'pushBlockedBotIds'
-     */
-    @Test
-    public void pushBlockedBotIdsTest() {
-        // TODO: test pushBlockedBotIds
-    }
-
-    /**
-     * Test the property 'pushTriggerOption'
-     */
-    @Test
-    public void pushTriggerOptionTest() {
-        // TODO: test pushTriggerOption
-    }
-
-    /**
      * Test the property 'doNotDisturb'
      */
     @Test
@@ -83,19 +59,11 @@ public class UpdatePushPreferencesResponseTest {
     }
 
     /**
-     * Test the property 'startHour'
+     * Test the property 'enablePushForReplies'
      */
     @Test
-    public void startHourTest() {
-        // TODO: test startHour
-    }
-
-    /**
-     * Test the property 'startMin'
-     */
-    @Test
-    public void startMinTest() {
-        // TODO: test startMin
+    public void enablePushForRepliesTest() {
+        // TODO: test enablePushForReplies
     }
 
     /**
@@ -115,19 +83,35 @@ public class UpdatePushPreferencesResponseTest {
     }
 
     /**
+     * Test the property 'pushBlockedBotIds'
+     */
+    @Test
+    public void pushBlockedBotIdsTest() {
+        // TODO: test pushBlockedBotIds
+    }
+
+    /**
+     * Test the property 'pushSound'
+     */
+    @Test
+    public void pushSoundTest() {
+        // TODO: test pushSound
+    }
+
+    /**
+     * Test the property 'pushTriggerOption'
+     */
+    @Test
+    public void pushTriggerOptionTest() {
+        // TODO: test pushTriggerOption
+    }
+
+    /**
      * Test the property 'snoozeEnabled'
      */
     @Test
     public void snoozeEnabledTest() {
         // TODO: test snoozeEnabled
-    }
-
-    /**
-     * Test the property 'snoozeStartTs'
-     */
-    @Test
-    public void snoozeStartTsTest() {
-        // TODO: test snoozeStartTs
     }
 
     /**
@@ -139,19 +123,35 @@ public class UpdatePushPreferencesResponseTest {
     }
 
     /**
+     * Test the property 'snoozeStartTs'
+     */
+    @Test
+    public void snoozeStartTsTest() {
+        // TODO: test snoozeStartTs
+    }
+
+    /**
+     * Test the property 'startHour'
+     */
+    @Test
+    public void startHourTest() {
+        // TODO: test startHour
+    }
+
+    /**
+     * Test the property 'startMin'
+     */
+    @Test
+    public void startMinTest() {
+        // TODO: test startMin
+    }
+
+    /**
      * Test the property 'timezone'
      */
     @Test
     public void timezoneTest() {
         // TODO: test timezone
-    }
-
-    /**
-     * Test the property 'pushSound'
-     */
-    @Test
-    public void pushSoundTest() {
-        // TODO: test pushSound
     }
 
 }

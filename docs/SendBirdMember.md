@@ -1,32 +1,34 @@
 
 
-# SendBirdMember
+# SendbirdMember
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**connectionStatus** | **String** |  |  [optional] |
-|**friendDiscoveryKey** | **String** |  |  [optional] |
+|**deliveredTs** | **Long** |  |  [optional] |
+|**doNotDisturb** | **Boolean** |  |  [optional] |
+|**friendDiscoveryKey** | **List&lt;String&gt;** |  |  [optional] |
 |**friendName** | **String** |  |  [optional] |
 |**isActive** | **Boolean** |  |  [optional] |
+|**isBlockedByMe** | **Boolean** |  |  [optional] |
+|**isBlockingMe** | **Boolean** |  |  [optional] |
 |**isMuted** | **Boolean** |  |  [optional] |
-|**lastSeenAt** | **Long** |  |  [optional] |
-|**nickname** | **String** |  |  [optional] |
-|**plainProfileUrl** | **String** |  |  [optional] |
-|**preferredLanguages** | **List&lt;String&gt;** |  |  [optional] |
-|**profileUrl** | **String** |  |  [optional] |
-|**requireAuth** | **Boolean** |  |  [optional] |
-|**requireAuthForProfileImage** | **Boolean** |  |  [optional] |
-|**metadata** | **Object** |  |  [optional] |
 |**isOnline** | **Boolean** |  |  [optional] |
-|**mutedEndAt** | **BigDecimal** |  |  [optional] |
+|**lastSeenAt** | **Long** |  |  [optional] |
+|**metadata** | **Object** |  |  [optional] |
 |**mutedDescription** | **String** |  |  [optional] |
-|**restrictionInfo** | [**SendBirdRestrictionInfo**](SendBirdRestrictionInfo.md) |  |  [optional] |
+|**mutedEndAt** | **Long** |  |  [optional] |
+|**nickname** | **String** |  |  [optional] |
+|**pushEnabled** | **Boolean** |  |  [optional] |
+|**pushTriggerOption** | **SendbirdPushTriggerOption** |  |  [optional] |
+|**profileUrl** | **String** |  |  [optional] |
+|**requireAuthForProfileImage** | **Boolean** |  |  [optional] |
+|**readTs** | **Long** |  |  [optional] |
 |**role** | [**RoleEnum**](#RoleEnum) |  |  [optional] |
 |**state** | [**StateEnum**](#StateEnum) |  |  [optional] |
-|**userId** | **String** |  |  [optional] |
+|**userId** | **String** |  |  |
 
 
 

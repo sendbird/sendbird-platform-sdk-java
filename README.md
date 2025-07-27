@@ -98,7 +98,7 @@ Add these dependency to your project's POM:
     <dependency>
         <groupId>org.sendbird</groupId>
         <artifactId>sendbird-platform-sdk</artifactId>
-        <version>1.0.23</version>
+        <version>2.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -110,7 +110,7 @@ Add this dependency to your project's build file:
 ```groovy
 
 dependencies {
-    implementation "org.sendbird:sendbird-platform-sdk:1.0.23"
+    implementation "org.sendbird:sendbird-platform-sdk:2.0.0"
 }
 
 allprojects {
@@ -132,12 +132,10 @@ All the documentation for this project lives in the /docs directory of this repo
 |       | Documentation |
 | ----------- | ----------- |
 | Announcement   | [docs/AnnouncementApi.md](docs/AnnouncementApi.md)|
-| Application | [docs/ApplicationApi.md](docs/ApplicationApi.md)  |
 | Bot | [docs/BotApi.md](docs/BotApi.md)  |
 | GroupChannel | [docs/GroupChannelApi.md](docs/GroupChannelApi.md)  |
 | Message | [docs/MessageApi.md](docs/MessageApi.md)  |
 | OpenChannel | [docs/OpenChannelApi.md ](docs/OpenChannelApi.md)  |
 | User | [docs/UserApi.md](docs/UserApi.md)  |
-| Webhooks | [docs/WebhooksApi.md](docs/WebhooksApi.md)  |
 
 

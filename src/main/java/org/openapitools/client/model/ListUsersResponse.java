@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -35,54 +35,20 @@ import org.sendbird.client.JSON;
  * ListUsersResponse
  */
 @JsonPropertyOrder({
-  ListUsersResponse.JSON_PROPERTY_USERS,
-  ListUsersResponse.JSON_PROPERTY_NEXT
+  ListUsersResponse.JSON_PROPERTY_NEXT,
+  ListUsersResponse.JSON_PROPERTY_USERS
 })
 @JsonTypeName("listUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class ListUsersResponse {
-  public static final String JSON_PROPERTY_USERS = "users";
-  private List<SendBirdUser> users = null;
-
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
 
+  public static final String JSON_PROPERTY_USERS = "users";
+  private List<SendbirdUser> users = null;
+
   public ListUsersResponse() { 
   }
-
-  public ListUsersResponse users(List<SendBirdUser> users) {
-    this.users = users;
-    return this;
-  }
-
-  public ListUsersResponse addUsersItem(SendBirdUser usersItem) {
-    if (this.users == null) {
-      this.users = new ArrayList<>();
-    }
-    this.users.add(usersItem);
-    return this;
-  }
-
-   /**
-   * Get users
-   * @return users
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_USERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<SendBirdUser> getUsers() {
-    return users;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_USERS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUsers(List<SendBirdUser> users) {
-    this.users = users;
-  }
-
 
   public ListUsersResponse next(String next) {
     this.next = next;
@@ -110,6 +76,40 @@ public class ListUsersResponse {
   }
 
 
+  public ListUsersResponse users(List<SendbirdUser> users) {
+    this.users = users;
+    return this;
+  }
+
+  public ListUsersResponse addUsersItem(SendbirdUser usersItem) {
+    if (this.users == null) {
+      this.users = new ArrayList<>();
+    }
+    this.users.add(usersItem);
+    return this;
+  }
+
+   /**
+   * Get users
+   * @return users
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<SendbirdUser> getUsers() {
+    return users;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_USERS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUsers(List<SendbirdUser> users) {
+    this.users = users;
+  }
+
+
   /**
    * Return true if this listUsersResponse object is equal to o.
    */
@@ -122,21 +122,21 @@ public class ListUsersResponse {
       return false;
     }
     ListUsersResponse listUsersResponse = (ListUsersResponse) o;
-    return Objects.equals(this.users, listUsersResponse.users) &&
-        Objects.equals(this.next, listUsersResponse.next);
+    return Objects.equals(this.next, listUsersResponse.next) &&
+        Objects.equals(this.users, listUsersResponse.users);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(users, next);
+    return Objects.hash(next, users);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListUsersResponse {\n");
-    sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("}");
     return sb.toString();
   }

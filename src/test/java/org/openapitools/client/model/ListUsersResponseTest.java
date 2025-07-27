@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdUser;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -43,19 +43,19 @@ public class ListUsersResponseTest {
     }
 
     /**
-     * Test the property 'users'
-     */
-    @Test
-    public void usersTest() {
-        // TODO: test users
-    }
-
-    /**
      * Test the property 'next'
      */
     @Test
     public void nextTest() {
         // TODO: test next
+    }
+
+    /**
+     * Test the property 'users'
+     */
+    @Test
+    public void usersTest() {
+        // TODO: test users
     }
 
 }

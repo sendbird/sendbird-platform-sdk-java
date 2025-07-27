@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -24,11 +24,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdFile;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdFile;
+import org.openapitools.client.model.SendbirdUser;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -38,20 +37,20 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdParentMessageInfo
+ * SendbirdParentMessageInfo
  */
 @JsonPropertyOrder({
-  SendBirdParentMessageInfo.JSON_PROPERTY_CUSTOM_TYPE,
-  SendBirdParentMessageInfo.JSON_PROPERTY_MESSAGE,
-  SendBirdParentMessageInfo.JSON_PROPERTY_TYPE,
-  SendBirdParentMessageInfo.JSON_PROPERTY_TS,
-  SendBirdParentMessageInfo.JSON_PROPERTY_USER,
-  SendBirdParentMessageInfo.JSON_PROPERTY_FILE,
-  SendBirdParentMessageInfo.JSON_PROPERTY_FILES
+  SendbirdParentMessageInfo.JSON_PROPERTY_CUSTOM_TYPE,
+  SendbirdParentMessageInfo.JSON_PROPERTY_MESSAGE,
+  SendbirdParentMessageInfo.JSON_PROPERTY_TYPE,
+  SendbirdParentMessageInfo.JSON_PROPERTY_TS,
+  SendbirdParentMessageInfo.JSON_PROPERTY_USER,
+  SendbirdParentMessageInfo.JSON_PROPERTY_FILE,
+  SendbirdParentMessageInfo.JSON_PROPERTY_FILES
 })
-@JsonTypeName("SendBird.ParentMessageInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
-public class SendBirdParentMessageInfo {
+@JsonTypeName("Sendbird.ParentMessageInfo")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+public class SendbirdParentMessageInfo {
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
 
@@ -62,21 +61,21 @@ public class SendBirdParentMessageInfo {
   private String type;
 
   public static final String JSON_PROPERTY_TS = "ts";
-  private BigDecimal ts;
+  private Long ts;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private JsonNullable<SendBirdUser> user = JsonNullable.<SendBirdUser>undefined();
+  private JsonNullable<SendbirdUser> user = JsonNullable.<SendbirdUser>undefined();
 
   public static final String JSON_PROPERTY_FILE = "file";
-  private SendBirdFile _file;
+  private SendbirdFile _file;
 
   public static final String JSON_PROPERTY_FILES = "files";
-  private List<SendBirdFile> files = null;
+  private List<SendbirdFile> files = null;
 
-  public SendBirdParentMessageInfo() { 
+  public SendbirdParentMessageInfo() { 
   }
 
-  public SendBirdParentMessageInfo customType(String customType) {
+  public SendbirdParentMessageInfo customType(String customType) {
     this.customType = customType;
     return this;
   }
@@ -102,7 +101,7 @@ public class SendBirdParentMessageInfo {
   }
 
 
-  public SendBirdParentMessageInfo message(String message) {
+  public SendbirdParentMessageInfo message(String message) {
     this.message = message;
     return this;
   }
@@ -128,7 +127,7 @@ public class SendBirdParentMessageInfo {
   }
 
 
-  public SendBirdParentMessageInfo type(String type) {
+  public SendbirdParentMessageInfo type(String type) {
     this.type = type;
     return this;
   }
@@ -154,7 +153,7 @@ public class SendBirdParentMessageInfo {
   }
 
 
-  public SendBirdParentMessageInfo ts(BigDecimal ts) {
+  public SendbirdParentMessageInfo ts(Long ts) {
     this.ts = ts;
     return this;
   }
@@ -168,20 +167,20 @@ public class SendBirdParentMessageInfo {
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getTs() {
+  public Long getTs() {
     return ts;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTs(BigDecimal ts) {
+  public void setTs(Long ts) {
     this.ts = ts;
   }
 
 
-  public SendBirdParentMessageInfo user(SendBirdUser user) {
-    this.user = JsonNullable.<SendBirdUser>of(user);
+  public SendbirdParentMessageInfo user(SendbirdUser user) {
+    this.user = JsonNullable.<SendbirdUser>of(user);
     return this;
   }
 
@@ -193,28 +192,28 @@ public class SendBirdParentMessageInfo {
   @ApiModelProperty(value = "")
   @JsonIgnore
 
-  public SendBirdUser getUser() {
+  public SendbirdUser getUser() {
         return user.orElse(null);
   }
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SendBirdUser> getUser_JsonNullable() {
+  public JsonNullable<SendbirdUser> getUser_JsonNullable() {
     return user;
   }
   
   @JsonProperty(JSON_PROPERTY_USER)
-  public void setUser_JsonNullable(JsonNullable<SendBirdUser> user) {
+  public void setUser_JsonNullable(JsonNullable<SendbirdUser> user) {
     this.user = user;
   }
 
-  public void setUser(SendBirdUser user) {
-    this.user = JsonNullable.<SendBirdUser>of(user);
+  public void setUser(SendbirdUser user) {
+    this.user = JsonNullable.<SendbirdUser>of(user);
   }
 
 
-  public SendBirdParentMessageInfo _file(SendBirdFile _file) {
+  public SendbirdParentMessageInfo _file(SendbirdFile _file) {
     this._file = _file;
     return this;
   }
@@ -228,24 +227,24 @@ public class SendBirdParentMessageInfo {
   @JsonProperty(JSON_PROPERTY_FILE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdFile getFile() {
+  public SendbirdFile getFile() {
     return _file;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FILE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFile(SendBirdFile _file) {
+  public void setFile(SendbirdFile _file) {
     this._file = _file;
   }
 
 
-  public SendBirdParentMessageInfo files(List<SendBirdFile> files) {
+  public SendbirdParentMessageInfo files(List<SendbirdFile> files) {
     this.files = files;
     return this;
   }
 
-  public SendBirdParentMessageInfo addFilesItem(SendBirdFile filesItem) {
+  public SendbirdParentMessageInfo addFilesItem(SendbirdFile filesItem) {
     if (this.files == null) {
       this.files = new ArrayList<>();
     }
@@ -262,20 +261,20 @@ public class SendBirdParentMessageInfo {
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdFile> getFiles() {
+  public List<SendbirdFile> getFiles() {
     return files;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiles(List<SendBirdFile> files) {
+  public void setFiles(List<SendbirdFile> files) {
     this.files = files;
   }
 
 
   /**
-   * Return true if this SendBird.ParentMessageInfo object is equal to o.
+   * Return true if this Sendbird.ParentMessageInfo object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -285,14 +284,14 @@ public class SendBirdParentMessageInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdParentMessageInfo sendBirdParentMessageInfo = (SendBirdParentMessageInfo) o;
-    return Objects.equals(this.customType, sendBirdParentMessageInfo.customType) &&
-        Objects.equals(this.message, sendBirdParentMessageInfo.message) &&
-        Objects.equals(this.type, sendBirdParentMessageInfo.type) &&
-        Objects.equals(this.ts, sendBirdParentMessageInfo.ts) &&
-        equalsNullable(this.user, sendBirdParentMessageInfo.user) &&
-        Objects.equals(this._file, sendBirdParentMessageInfo._file) &&
-        Objects.equals(this.files, sendBirdParentMessageInfo.files);
+    SendbirdParentMessageInfo sendbirdParentMessageInfo = (SendbirdParentMessageInfo) o;
+    return Objects.equals(this.customType, sendbirdParentMessageInfo.customType) &&
+        Objects.equals(this.message, sendbirdParentMessageInfo.message) &&
+        Objects.equals(this.type, sendbirdParentMessageInfo.type) &&
+        Objects.equals(this.ts, sendbirdParentMessageInfo.ts) &&
+        equalsNullable(this.user, sendbirdParentMessageInfo.user) &&
+        Objects.equals(this._file, sendbirdParentMessageInfo._file) &&
+        Objects.equals(this.files, sendbirdParentMessageInfo.files);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -314,7 +313,7 @@ public class SendBirdParentMessageInfo {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdParentMessageInfo {\n");
+    sb.append("class SendbirdParentMessageInfo {\n");
     sb.append("    customType: ").append(toIndentedString(customType)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

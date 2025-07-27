@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**channels** | [**List&lt;SendBirdGroupChannel&gt;**](SendBirdGroupChannel.md) |  |  [optional] |
+|**channels** | [**List&lt;SendbirdGroupChannel&gt;**](SendbirdGroupChannel.md) |  |  [optional] |
 |**next** | **String** |  |  [optional] |
-|**ts** | **BigDecimal** |  |  [optional] |
+|**ts** | **Long** |  |  [optional] |
 
 
 

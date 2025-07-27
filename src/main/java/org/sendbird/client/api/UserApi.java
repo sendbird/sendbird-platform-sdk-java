@@ -8,48 +8,44 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.AddRegistrationOrDeviceTokenData;
-import org.openapitools.client.model.AddRegistrationOrDeviceTokenResponse;
-import org.openapitools.client.model.ChoosePushNotificationContentTemplateResponse;
-import org.openapitools.client.model.CreateUserData;
-import org.openapitools.client.model.CreateUserTokenData;
+import org.openapitools.client.model.AddARegistrationOrDeviceTokenRequest;
+import org.openapitools.client.model.AddARegistrationOrDeviceTokenResponse;
+import org.openapitools.client.model.ChooseAPushNotificationContentTemplateRequest;
+import org.openapitools.client.model.ChooseAPushNotificationContentTemplateResponse;
+import org.openapitools.client.model.CreateAUserRequest;
+import org.openapitools.client.model.CreateUserTokenRequest;
 import org.openapitools.client.model.CreateUserTokenResponse;
-import org.openapitools.client.model.LeaveMyGroupChannelsData;
+import org.openapitools.client.model.GetChannelInvitationPreferenceResponse;
+import org.openapitools.client.model.LeaveMyGroupChannelsRequest;
 import org.openapitools.client.model.ListMyGroupChannelsResponse;
 import org.openapitools.client.model.ListRegistrationOrDeviceTokensResponse;
 import org.openapitools.client.model.ListUsersResponse;
-import org.openapitools.client.model.MarkAllMessagesAsReadData;
-import org.openapitools.client.model.RegisterAsOperatorToChannelsWithCustomChannelTypesData;
-import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenByTokenResponse;
-import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse;
-import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenResponse;
-import org.openapitools.client.model.ResetPushPreferencesResponse;
-import org.openapitools.client.model.SendBirdUser;
-import org.openapitools.client.model.UpdateChannelInvitationPreferenceData;
+import org.openapitools.client.model.MarkAllMessagesAsReadRequest;
+import org.openapitools.client.model.MarkChannelMessagesAsReadRequest;
+import org.openapitools.client.model.RemoveARegistrationOrDeviceTokenResponse;
+import org.openapitools.client.model.RemoveAllRegistrationOrDeviceTokenResponse;
+import org.openapitools.client.model.SendbirdUser;
+import org.openapitools.client.model.UpdateAUserRequest;
+import org.openapitools.client.model.UpdateChannelInvitationPreferenceRequest;
 import org.openapitools.client.model.UpdateChannelInvitationPreferenceResponse;
-import org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlData;
+import org.openapitools.client.model.UpdateCountPreferenceOfAChannelRequest;
 import org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlResponse;
-import org.openapitools.client.model.UpdatePushPreferencesData;
-import org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlData;
-import org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlResponse;
+import org.openapitools.client.model.UpdatePushPreferencesForAChannelRequest;
+import org.openapitools.client.model.UpdatePushPreferencesForAChannelResponse;
+import org.openapitools.client.model.UpdatePushPreferencesRequest;
 import org.openapitools.client.model.UpdatePushPreferencesResponse;
-import org.openapitools.client.model.UpdateUserByIdData;
-import org.openapitools.client.model.ViewChannelInvitationPreferenceResponse;
-import org.openapitools.client.model.ViewCountPreferenceOfChannelByUrlResponse;
-import org.openapitools.client.model.ViewNumberOfChannelsByJoinStatusResponse;
+import org.openapitools.client.model.ViewCountPreferenceOfAChannelResponse;
 import org.openapitools.client.model.ViewNumberOfChannelsWithUnreadMessagesResponse;
-import org.openapitools.client.model.ViewNumberOfUnreadItemsResponse;
 import org.openapitools.client.model.ViewNumberOfUnreadMessagesResponse;
-import org.openapitools.client.model.ViewPushPreferencesForChannelByUrlResponse;
+import org.openapitools.client.model.ViewPushPreferencesForAChannelResponse;
 import org.openapitools.client.model.ViewPushPreferencesResponse;
-import org.openapitools.client.model.ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class UserApi {
   private ApiClient apiClient;
 
@@ -80,17 +76,17 @@ public class UserApi {
   }
 
 
-private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String apiToken, AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) throws ApiException {
-    Object localVarPostBody = addRegistrationOrDeviceTokenData;
+private ApiResponse<AddARegistrationOrDeviceTokenResponse> addARegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String apiToken, AddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest) throws ApiException {
+    Object localVarPostBody = addARegistrationOrDeviceTokenRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling addRegistrationOrDeviceToken");
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling addARegistrationOrDeviceToken");
     }
     
     // verify the required parameter 'tokenType' is set
     if (tokenType == null) {
-      throw new ApiException(400, "Missing the required parameter 'tokenType' when calling addRegistrationOrDeviceToken");
+      throw new ApiException(400, "Missing the required parameter 'tokenType' when calling addARegistrationOrDeviceToken");
     }
     
     // create path and map variables
@@ -106,7 +102,7 @@ private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDevic
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -122,20 +118,20 @@ private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDevic
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<AddRegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<AddRegistrationOrDeviceTokenResponse>() {};
+    GenericType<AddARegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<AddARegistrationOrDeviceTokenResponse>() {};
 
-    return apiClient.invokeAPI("UserApi.addRegistrationOrDeviceToken", localVarPath, "POST", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.addARegistrationOrDeviceToken", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIaddRegistrationOrDeviceTokenRequest {
+  public class APIaddARegistrationOrDeviceTokenRequest {
     private String userId;
     private String tokenType;
     private String apiToken;
-    private AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData;
+    private AddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest;
 
-    private APIaddRegistrationOrDeviceTokenRequest(String userId, String tokenType) {
+    private APIaddARegistrationOrDeviceTokenRequest(String userId, String tokenType) {
       this.userId = userId;
       this.tokenType = tokenType;
     }
@@ -143,26 +139,26 @@ private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDevic
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIaddRegistrationOrDeviceTokenRequest
+     * @return APIaddARegistrationOrDeviceTokenRequest
      */
-    public APIaddRegistrationOrDeviceTokenRequest apiToken(String apiToken) {
+    public APIaddARegistrationOrDeviceTokenRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set addRegistrationOrDeviceTokenData
-     * @param addRegistrationOrDeviceTokenData  (optional)
-     * @return APIaddRegistrationOrDeviceTokenRequest
+     * Set addARegistrationOrDeviceTokenRequest
+     * @param addARegistrationOrDeviceTokenRequest  (optional)
+     * @return APIaddARegistrationOrDeviceTokenRequest
      */
-    public APIaddRegistrationOrDeviceTokenRequest addRegistrationOrDeviceTokenData(AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData) {
-      this.addRegistrationOrDeviceTokenData = addRegistrationOrDeviceTokenData;
+    public APIaddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest(AddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest) {
+      this.addARegistrationOrDeviceTokenRequest = addARegistrationOrDeviceTokenRequest;
       return this;
     }
 
     /**
-     * Execute addRegistrationOrDeviceToken request
-     * @return AddRegistrationOrDeviceTokenResponse
+     * Execute addARegistrationOrDeviceToken request
+     * @return AddARegistrationOrDeviceTokenResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -172,13 +168,13 @@ private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDevic
      
      */
     
-    public AddRegistrationOrDeviceTokenResponse execute() throws ApiException {
+    public AddARegistrationOrDeviceTokenResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute addRegistrationOrDeviceToken request with HTTP info returned
-     * @return ApiResponse&lt;AddRegistrationOrDeviceTokenResponse&gt;
+     * Execute addARegistrationOrDeviceToken request with HTTP info returned
+     * @return ApiResponse&lt;AddARegistrationOrDeviceTokenResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -187,31 +183,31 @@ private ApiResponse<AddRegistrationOrDeviceTokenResponse> addRegistrationOrDevic
        </table>
 
      */
-    public ApiResponse<AddRegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
-      return addRegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, apiToken, addRegistrationOrDeviceTokenData);
+    public ApiResponse<AddARegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
+      return addARegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, apiToken, addARegistrationOrDeviceTokenRequest);
     }
   }
 
   /**
    * Add a registration or device token
    * ## Add a registration or device token  &gt; __Note__: A user can have up to 20 FCM registration tokens, 20 HMS device tokens, and 20 APNs device tokens each. The oldest token will be deleted before a new token is added for a user who already has 20 registration or device tokens. Only the 20 newest tokens will be maintained for users who already have more than 20 of each token type.  To send notification requests to push notification services on behalf of your server, adds a specific user&#39;s FCM registration token, HMS device token, or APNs device token to Sendbird server. Depending on which push service you are using, you can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;.  A FCM registration token and an APNs device token allow identification of each client app instance on each device, and are generated and registered by Android and iOS apps through the corresponding SDKs. Use this method if you need to register a token via your own server.  &gt; __Note__: For more information on the registration token and device token, visit the Google&#39;s [FCM](https://firebase.google.com/docs/auth/admin/verify-id-tokens) page, Huawei&#39;s [Push kit](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050040060) and Apple&#39;s [APNs](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) page.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-add-a-registration-or-device-token ----------------------------
-   * @param userId  (required)
-   * @param tokenType  (required)
-   * @return addRegistrationOrDeviceTokenRequest
+   * @param userId (Required)  (required)
+   * @param tokenType (Required)  (required)
+   * @return addARegistrationOrDeviceTokenRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIaddRegistrationOrDeviceTokenRequest addRegistrationOrDeviceToken(String userId, String tokenType) throws ApiException {
-    return new APIaddRegistrationOrDeviceTokenRequest(userId, tokenType);
+  public APIaddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceToken(String userId, String tokenType) throws ApiException {
+    return new APIaddARegistrationOrDeviceTokenRequest(userId, tokenType);
   }
 
-private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNotificationContentTemplateWithHttpInfo(String userId, String apiToken, Object body) throws ApiException {
-    Object localVarPostBody = body;
+private ApiResponse<ChooseAPushNotificationContentTemplateResponse> chooseAPushNotificationContentTemplateWithHttpInfo(String userId, String apiToken, ChooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest) throws ApiException {
+    Object localVarPostBody = chooseAPushNotificationContentTemplateRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling choosePushNotificationContentTemplate");
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling chooseAPushNotificationContentTemplate");
     }
     
     // create path and map variables
@@ -226,7 +222,7 @@ private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNot
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -242,45 +238,45 @@ private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNot
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ChoosePushNotificationContentTemplateResponse> localVarReturnType = new GenericType<ChoosePushNotificationContentTemplateResponse>() {};
+    GenericType<ChooseAPushNotificationContentTemplateResponse> localVarReturnType = new GenericType<ChooseAPushNotificationContentTemplateResponse>() {};
 
-    return apiClient.invokeAPI("UserApi.choosePushNotificationContentTemplate", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.chooseAPushNotificationContentTemplate", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIchoosePushNotificationContentTemplateRequest {
+  public class APIchooseAPushNotificationContentTemplateRequest {
     private String userId;
     private String apiToken;
-    private Object body;
+    private ChooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest;
 
-    private APIchoosePushNotificationContentTemplateRequest(String userId) {
+    private APIchooseAPushNotificationContentTemplateRequest(String userId) {
       this.userId = userId;
     }
 
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIchoosePushNotificationContentTemplateRequest
+     * @return APIchooseAPushNotificationContentTemplateRequest
      */
-    public APIchoosePushNotificationContentTemplateRequest apiToken(String apiToken) {
+    public APIchooseAPushNotificationContentTemplateRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set body
-     * @param body  (optional)
-     * @return APIchoosePushNotificationContentTemplateRequest
+     * Set chooseAPushNotificationContentTemplateRequest
+     * @param chooseAPushNotificationContentTemplateRequest  (optional)
+     * @return APIchooseAPushNotificationContentTemplateRequest
      */
-    public APIchoosePushNotificationContentTemplateRequest body(Object body) {
-      this.body = body;
+    public APIchooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest(ChooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest) {
+      this.chooseAPushNotificationContentTemplateRequest = chooseAPushNotificationContentTemplateRequest;
       return this;
     }
 
     /**
-     * Execute choosePushNotificationContentTemplate request
-     * @return ChoosePushNotificationContentTemplateResponse
+     * Execute chooseAPushNotificationContentTemplate request
+     * @return ChooseAPushNotificationContentTemplateResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -290,13 +286,13 @@ private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNot
      
      */
     
-    public ChoosePushNotificationContentTemplateResponse execute() throws ApiException {
+    public ChooseAPushNotificationContentTemplateResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute choosePushNotificationContentTemplate request with HTTP info returned
-     * @return ApiResponse&lt;ChoosePushNotificationContentTemplateResponse&gt;
+     * Execute chooseAPushNotificationContentTemplate request with HTTP info returned
+     * @return ApiResponse&lt;ChooseAPushNotificationContentTemplateResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -305,26 +301,26 @@ private ApiResponse<ChoosePushNotificationContentTemplateResponse> choosePushNot
        </table>
 
      */
-    public ApiResponse<ChoosePushNotificationContentTemplateResponse> executeWithHttpInfo() throws ApiException {
-      return choosePushNotificationContentTemplateWithHttpInfo(userId, apiToken, body);
+    public ApiResponse<ChooseAPushNotificationContentTemplateResponse> executeWithHttpInfo() throws ApiException {
+      return chooseAPushNotificationContentTemplateWithHttpInfo(userId, apiToken, chooseAPushNotificationContentTemplateRequest);
     }
   }
 
   /**
    * Choose a push notification content template
-   * ## Choose a push notification content template  Chooses a push notification content template of a user&#39;s own. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-choose-a-push-notification-content-template ----------------------------
-   * @param userId  (required)
-   * @return choosePushNotificationContentTemplateRequest
+   * ## Choose a push notification content template  Users can choose a template to determine how push notifications appear to them. Push notification content templates are pre-formatted forms that can be customized to display your own push notification messages on a user&#39;s device. Sendbird provides two types: &#x60;default&#x60; and &#x60;alternative&#x60;. Go to **Settings** &gt; **Chat** &gt; **Push notifications** &gt; **Push notification content templates** on [Sendbird Dashboard](https://dashboard.sendbird.com/auth/signin) to customize the templates.  If the &#x60;push_message_template&#x60; property is specified when [sending a message](https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/send-a-message), the content template customized for the message takes precedence over the user&#39;s choice.  &gt; **Note**: Push notifications are only available for group channels.      https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/choose-a-push-notification-content-template#1-choose-a-push-notification-content-template
+   * @param userId (Required)  (required)
+   * @return chooseAPushNotificationContentTemplateRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIchoosePushNotificationContentTemplateRequest choosePushNotificationContentTemplate(String userId) throws ApiException {
-    return new APIchoosePushNotificationContentTemplateRequest(userId);
+  public APIchooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplate(String userId) throws ApiException {
+    return new APIchooseAPushNotificationContentTemplateRequest(userId);
   }
 
-private ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, CreateUserData createUserData) throws ApiException {
-    Object localVarPostBody = createUserData;
+private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, CreateAUserRequest createAUserRequest) throws ApiException {
+    Object localVarPostBody = createAUserRequest;
     
     // create path and map variables
     String localVarPath = "/v3/users";
@@ -337,7 +333,7 @@ private ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, Create
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -353,43 +349,43 @@ private ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, Create
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdUser> localVarReturnType = new GenericType<SendBirdUser>() {};
+    GenericType<SendbirdUser> localVarReturnType = new GenericType<SendbirdUser>() {};
 
-    return apiClient.invokeAPI("UserApi.createUser", localVarPath, "POST", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.createAUser", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIcreateUserRequest {
+  public class APIcreateAUserRequest {
     private String apiToken;
-    private CreateUserData createUserData;
+    private CreateAUserRequest createAUserRequest;
 
-    private APIcreateUserRequest() {
+    private APIcreateAUserRequest() {
     }
 
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIcreateUserRequest
+     * @return APIcreateAUserRequest
      */
-    public APIcreateUserRequest apiToken(String apiToken) {
+    public APIcreateAUserRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set createUserData
-     * @param createUserData  (optional)
-     * @return APIcreateUserRequest
+     * Set createAUserRequest
+     * @param createAUserRequest  (optional)
+     * @return APIcreateAUserRequest
      */
-    public APIcreateUserRequest createUserData(CreateUserData createUserData) {
-      this.createUserData = createUserData;
+    public APIcreateAUserRequest createAUserRequest(CreateAUserRequest createAUserRequest) {
+      this.createAUserRequest = createAUserRequest;
       return this;
     }
 
     /**
-     * Execute createUser request
-     * @return SendBirdUser
+     * Execute createAUser request
+     * @return SendbirdUser
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -399,13 +395,13 @@ private ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, Create
      
      */
     
-    public SendBirdUser execute() throws ApiException {
+    public SendbirdUser execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute createUser request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdUser&gt;
+     * Execute createAUser request with HTTP info returned
+     * @return ApiResponse&lt;SendbirdUser&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -414,25 +410,25 @@ private ApiResponse<SendBirdUser> createUserWithHttpInfo(String apiToken, Create
        </table>
 
      */
-    public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
-      return createUserWithHttpInfo(apiToken, createUserData);
+    public ApiResponse<SendbirdUser> executeWithHttpInfo() throws ApiException {
+      return createAUserWithHttpInfo(apiToken, createAUserRequest);
     }
   }
 
   /**
    * Create a user
-   * ## Create a user  Creates a new user in the application. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user
-   * @return createUserRequest
+   * ## Create a user  You should create a user in your Sendbird application to initiate conversations in channels. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on. Users are at the core of all conversations. Sendbird applications are made up of users who chat in either Open Channels or Group Channels. Using this API, it is possible to have fine grained control over your users and what those users can do. To learn more about users, see [User overview](https://sendbird.com/docs/chat/platform-api/v3/user/user-overview#2-resource-representation).  https://sendbird.com/docs/chat/platform-api/v3/user/creating-users/create-a-user#1-create-a-user
+   * @return createAUserRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIcreateUserRequest createUser() throws ApiException {
-    return new APIcreateUserRequest();
+  public APIcreateAUserRequest createAUser() throws ApiException {
+    return new APIcreateAUserRequest();
   }
 
-private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String userId, String apiToken, CreateUserTokenData createUserTokenData) throws ApiException {
-    Object localVarPostBody = createUserTokenData;
+private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String userId, String apiToken, CreateUserTokenRequest createUserTokenRequest) throws ApiException {
+    Object localVarPostBody = createUserTokenRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -451,7 +447,7 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -477,7 +473,7 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
   public class APIcreateUserTokenRequest {
     private String userId;
     private String apiToken;
-    private CreateUserTokenData createUserTokenData;
+    private CreateUserTokenRequest createUserTokenRequest;
 
     private APIcreateUserTokenRequest(String userId) {
       this.userId = userId;
@@ -494,12 +490,12 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
     }
 
     /**
-     * Set createUserTokenData
-     * @param createUserTokenData  (optional)
+     * Set createUserTokenRequest
+     * @param createUserTokenRequest  (optional)
      * @return APIcreateUserTokenRequest
      */
-    public APIcreateUserTokenRequest createUserTokenData(CreateUserTokenData createUserTokenData) {
-      this.createUserTokenData = createUserTokenData;
+    public APIcreateUserTokenRequest createUserTokenRequest(CreateUserTokenRequest createUserTokenRequest) {
+      this.createUserTokenRequest = createUserTokenRequest;
       return this;
     }
 
@@ -531,14 +527,14 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
 
      */
     public ApiResponse<CreateUserTokenResponse> executeWithHttpInfo() throws ApiException {
-      return createUserTokenWithHttpInfo(userId, apiToken, createUserTokenData);
+      return createUserTokenWithHttpInfo(userId, apiToken, createUserTokenRequest);
     }
   }
 
   /**
    * Create user token
-   * ## Create user token
-   * @param userId  (required)
+   * ## Create user token  This action issues a session token for user authentication. Session tokens provide an efficient stateless authentication method by not storing the tokens in the Sendbird database, and thus improving the server&#39;s performance. See [access token vs. session token](https://sendbird.com/docs/chat/platform-api/v3/user/creating-users/create-a-user#2-access-token-vs-session-token) to learn more about authenticating users.  &gt; **Note**: The endpoint &#x60;/users/{user_id}&#x60; is deprecated. Use &#x60;/users/{user_id}/token&#x60; for greater efficiency.      https://sendbird.com/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token#1-issue-a-session-token
+   * @param userId (Required)  (required)
    * @return createUserTokenRequest
    * @throws ApiException if fails to make API call
    
@@ -548,12 +544,12 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
     return new APIcreateUserTokenRequest(userId);
   }
 
-private ApiResponse<Object> deleteUserByIdWithHttpInfo(String userId, String apiToken) throws ApiException {
+private ApiResponse<Object> deleteAUserWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteUserById");
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling deleteAUser");
     }
     
     // create path and map variables
@@ -568,7 +564,7 @@ private ApiResponse<Object> deleteUserByIdWithHttpInfo(String userId, String api
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -586,31 +582,31 @@ private ApiResponse<Object> deleteUserByIdWithHttpInfo(String userId, String api
 
     GenericType<Object> localVarReturnType = new GenericType<Object>() {};
 
-    return apiClient.invokeAPI("UserApi.deleteUserById", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.deleteAUser", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIdeleteUserByIdRequest {
+  public class APIdeleteAUserRequest {
     private String userId;
     private String apiToken;
 
-    private APIdeleteUserByIdRequest(String userId) {
+    private APIdeleteAUserRequest(String userId) {
       this.userId = userId;
     }
 
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIdeleteUserByIdRequest
+     * @return APIdeleteAUserRequest
      */
-    public APIdeleteUserByIdRequest apiToken(String apiToken) {
+    public APIdeleteAUserRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute deleteUserById request
+     * Execute deleteAUser request
      * @return Object
      * @throws ApiException if fails to make API call
      * @http.response.details
@@ -626,7 +622,7 @@ private ApiResponse<Object> deleteUserByIdWithHttpInfo(String userId, String api
     }
 
     /**
-     * Execute deleteUserById request with HTTP info returned
+     * Execute deleteAUser request with HTTP info returned
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
@@ -637,25 +633,131 @@ private ApiResponse<Object> deleteUserByIdWithHttpInfo(String userId, String api
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return deleteUserByIdWithHttpInfo(userId, apiToken);
+      return deleteAUserWithHttpInfo(userId, apiToken);
     }
   }
 
   /**
    * Delete a user
-   * ## Delete a user  Deletes a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-delete-a-user ----------------------------
-   * @param userId  (required)
-   * @return deleteUserByIdRequest
+   * ## Delete a user  You can delete a user from your Sendbird application using this API.  &gt; **Note**: This API deletes user data and metadata, except for their messages. If you wish to delete user data including their messages, use the [GDPR request](https://sendbird.com/docs/chat/platform-api/v3/privacy/privacy-overview).      [https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/delete-a-user#1-delete-a-user](https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/delete-a-user#1-delete-a-user)
+   * @param userId (Required)  (required)
+   * @return deleteAUserRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIdeleteUserByIdRequest deleteUserById(String userId) throws ApiException {
-    return new APIdeleteUserByIdRequest(userId);
+  public APIdeleteAUserRequest deleteAUser(String userId) throws ApiException {
+    return new APIdeleteAUserRequest(userId);
   }
 
-private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, String apiToken, LeaveMyGroupChannelsData leaveMyGroupChannelsData) throws ApiException {
-    Object localVarPostBody = leaveMyGroupChannelsData;
+private ApiResponse<GetChannelInvitationPreferenceResponse> getChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling getChannelInvitationPreference");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}/channel_invitation_preference"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<GetChannelInvitationPreferenceResponse> localVarReturnType = new GenericType<GetChannelInvitationPreferenceResponse>() {};
+
+    return apiClient.invokeAPI("UserApi.getChannelInvitationPreference", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIgetChannelInvitationPreferenceRequest {
+    private String userId;
+    private String apiToken;
+
+    private APIgetChannelInvitationPreferenceRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIgetChannelInvitationPreferenceRequest
+     */
+    public APIgetChannelInvitationPreferenceRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute getChannelInvitationPreference request
+     * @return GetChannelInvitationPreferenceResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public GetChannelInvitationPreferenceResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute getChannelInvitationPreference request with HTTP info returned
+     * @return ApiResponse&lt;GetChannelInvitationPreferenceResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<GetChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
+      return getChannelInvitationPreferenceWithHttpInfo(userId, apiToken);
+    }
+  }
+
+  /**
+   * Get channel invitation preference
+   * ## Get channel invitation preference  This action retrieves a user&#39;s [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) invitation preference. Users are subject to both user-specific and application-wide invitation preferences. Of the two, the invitation preference set for a specific user takes precedence over [the default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/get-default-invitation-preference).  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/get-channel-invitation-preference#1-get-channel-invitation-preference](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/get-channel-invitation-preference#1-get-channel-invitation-preference)
+   * @param userId (Required)  (required)
+   * @return getChannelInvitationPreferenceRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIgetChannelInvitationPreferenceRequest getChannelInvitationPreference(String userId) throws ApiException {
+    return new APIgetChannelInvitationPreferenceRequest(userId);
+  }
+
+private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, String apiToken, LeaveMyGroupChannelsRequest leaveMyGroupChannelsRequest) throws ApiException {
+    Object localVarPostBody = leaveMyGroupChannelsRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -674,7 +776,7 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -700,7 +802,7 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
   public class APIleaveMyGroupChannelsRequest {
     private String userId;
     private String apiToken;
-    private LeaveMyGroupChannelsData leaveMyGroupChannelsData;
+    private LeaveMyGroupChannelsRequest leaveMyGroupChannelsRequest;
 
     private APIleaveMyGroupChannelsRequest(String userId) {
       this.userId = userId;
@@ -717,12 +819,12 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
     }
 
     /**
-     * Set leaveMyGroupChannelsData
-     * @param leaveMyGroupChannelsData  (optional)
+     * Set leaveMyGroupChannelsRequest
+     * @param leaveMyGroupChannelsRequest  (optional)
      * @return APIleaveMyGroupChannelsRequest
      */
-    public APIleaveMyGroupChannelsRequest leaveMyGroupChannelsData(LeaveMyGroupChannelsData leaveMyGroupChannelsData) {
-      this.leaveMyGroupChannelsData = leaveMyGroupChannelsData;
+    public APIleaveMyGroupChannelsRequest leaveMyGroupChannelsRequest(LeaveMyGroupChannelsRequest leaveMyGroupChannelsRequest) {
+      this.leaveMyGroupChannelsRequest = leaveMyGroupChannelsRequest;
       return this;
     }
 
@@ -754,14 +856,14 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return leaveMyGroupChannelsWithHttpInfo(userId, apiToken, leaveMyGroupChannelsData);
+      return leaveMyGroupChannelsWithHttpInfo(userId, apiToken, leaveMyGroupChannelsRequest);
     }
   }
 
   /**
    * Leave my group channels
-   * ## Leave my group channels  Makes a user leave all joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-leave-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to leave all joined group channels.
-   * @param userId  (required)
+   * ## Leave my group channels  This action allows a user to leave all group channels or channels with a specific custom type. This API is useful if you want to let a user leave a set of channels at once. To let a user leave only one of their group channels, use the [leave a channel API](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/leave-a-channel) instead.  Since this API can&#39;t be called for a deactivated user, ensure that the [&lt;code&gt;leave_all_when_deactivated&lt;/code&gt;](https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/update-a-user#2-request-body) property of the user is set to its default value of &#x60;true&#x60; to let the user leave all joined group channels upon deactivation.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-joined-group-channels/leave-group-channels#1-leave-group-channels  &#x60;user_id&#x60;   Type: string   Description: Specifies the unique ID of the user to leave all joined group channels.
+   * @param userId (Required)  (required)
    * @return leaveMyGroupChannelsRequest
    * @throws ApiException if fails to make API call
    
@@ -771,12 +873,17 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
     return new APIleaveMyGroupChannelsRequest(userId);
   }
 
-private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, String hiddenMode, String memberStateFilter, String unreadFilter, Integer createdAfter, Integer createdBefore, Boolean showEmpty, Boolean showFrozen, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, String customType) throws ApiException {
+private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Long createdAfter, Long createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String membersNicknameStartswith, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String hiddenMode, String unreadFilter, String memberStateFilter) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
       throw new ApiException(400, "Missing the required parameter 'userId' when calling listMyGroupChannels");
+    }
+    
+    // verify the required parameter 'apiToken' is set
+    if (apiToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'apiToken' when calling listMyGroupChannels");
     }
     
     // create path and map variables
@@ -794,16 +901,14 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "distinct_mode", distinctMode));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "public_mode", publicMode));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "super_mode", superMode));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "hidden_mode", hiddenMode));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "member_state_filter", memberStateFilter));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "unread_filter", unreadFilter));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "created_after", createdAfter));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "created_before", createdBefore));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_empty", showEmpty));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_frozen", showFrozen));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_member", showMember));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_delivery_receipt", showDeliveryReceipt));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_read_receipt", showReadReceipt));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_metadata", showMetadata));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "show_frozen", showFrozen));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "order", order));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metadata_order_key", metadataOrderKey));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_types", customTypes));
@@ -817,6 +922,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "query_type", queryType));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "members_nickname", membersNickname));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "members_nickname_contains", membersNicknameContains));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "members_nickname_startswith", membersNicknameStartswith));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "search_query", searchQuery));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "search_fields", searchFields));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metadata_key", metadataKey));
@@ -828,10 +934,13 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metacounter_value_gte", metacounterValueGte));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metacounter_value_lt", metacounterValueLt));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metacounter_value_lte", metacounterValueLte));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_type", customType));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_sorted_metaarray_in_last_message", includeSortedMetaarrayInLastMessage));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "hidden_mode", hiddenMode));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "unread_filter", unreadFilter));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "member_state_filter", memberStateFilter));
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -862,16 +971,14 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     private String distinctMode;
     private String publicMode;
     private String superMode;
-    private String hiddenMode;
-    private String memberStateFilter;
-    private String unreadFilter;
-    private Integer createdAfter;
-    private Integer createdBefore;
+    private Long createdAfter;
+    private Long createdBefore;
     private Boolean showEmpty;
-    private Boolean showFrozen;
     private Boolean showMember;
     private Boolean showDeliveryReceipt;
     private Boolean showReadReceipt;
+    private Boolean showMetadata;
+    private Boolean showFrozen;
     private String order;
     private String metadataOrderKey;
     private String customTypes;
@@ -885,6 +992,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     private String queryType;
     private String membersNickname;
     private String membersNicknameContains;
+    private String membersNicknameStartswith;
     private String searchQuery;
     private String searchFields;
     private String metadataKey;
@@ -896,7 +1004,10 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     private String metacounterValueGte;
     private String metacounterValueLt;
     private String metacounterValueLte;
-    private String customType;
+    private Boolean includeSortedMetaarrayInLastMessage;
+    private String hiddenMode;
+    private String unreadFilter;
+    private String memberStateFilter;
 
     private APIlistMyGroupChannelsRequest(String userId) {
       this.userId = userId;
@@ -904,7 +1015,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set apiToken
-     * @param apiToken  (optional)
+     * @param apiToken  (required)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest apiToken(String apiToken) {
@@ -914,7 +1025,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set token
-     * @param token  (optional)
+     * @param token Specifies a page token that indicates the starting index of a chunk of results. If not specified, the index is set as 0. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest token(String token) {
@@ -924,7 +1035,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set limit
-     * @param limit  (optional)
+     * @param limit Specifies the number of results to return per page. Acceptable values are 1 to 100, inclusive. (Default: 10) (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest limit(Integer limit) {
@@ -963,51 +1074,21 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     }
 
     /**
-     * Set hiddenMode
-     * @param hiddenMode  (optional)
-     * @return APIlistMyGroupChannelsRequest
-     */
-    public APIlistMyGroupChannelsRequest hiddenMode(String hiddenMode) {
-      this.hiddenMode = hiddenMode;
-      return this;
-    }
-
-    /**
-     * Set memberStateFilter
-     * @param memberStateFilter  (optional)
-     * @return APIlistMyGroupChannelsRequest
-     */
-    public APIlistMyGroupChannelsRequest memberStateFilter(String memberStateFilter) {
-      this.memberStateFilter = memberStateFilter;
-      return this;
-    }
-
-    /**
-     * Set unreadFilter
-     * @param unreadFilter  (optional)
-     * @return APIlistMyGroupChannelsRequest
-     */
-    public APIlistMyGroupChannelsRequest unreadFilter(String unreadFilter) {
-      this.unreadFilter = unreadFilter;
-      return this;
-    }
-
-    /**
      * Set createdAfter
-     * @param createdAfter  (optional)
+     * @param createdAfter Restricts the search scope to only retrieve group channels which have been created after the specified time, in Unix milliseconds format. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
-    public APIlistMyGroupChannelsRequest createdAfter(Integer createdAfter) {
+    public APIlistMyGroupChannelsRequest createdAfter(Long createdAfter) {
       this.createdAfter = createdAfter;
       return this;
     }
 
     /**
      * Set createdBefore
-     * @param createdBefore  (optional)
+     * @param createdBefore Restricts the search scope to only retrieve group channels which have been created before the specified time, in Unix milliseconds format. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
-    public APIlistMyGroupChannelsRequest createdBefore(Integer createdBefore) {
+    public APIlistMyGroupChannelsRequest createdBefore(Long createdBefore) {
       this.createdBefore = createdBefore;
       return this;
     }
@@ -1019,16 +1100,6 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
      */
     public APIlistMyGroupChannelsRequest showEmpty(Boolean showEmpty) {
       this.showEmpty = showEmpty;
-      return this;
-    }
-
-    /**
-     * Set showFrozen
-     * @param showFrozen  (optional)
-     * @return APIlistMyGroupChannelsRequest
-     */
-    public APIlistMyGroupChannelsRequest showFrozen(Boolean showFrozen) {
-      this.showFrozen = showFrozen;
       return this;
     }
 
@@ -1063,6 +1134,26 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     }
 
     /**
+     * Set showMetadata
+     * @param showMetadata  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest showMetadata(Boolean showMetadata) {
+      this.showMetadata = showMetadata;
+      return this;
+    }
+
+    /**
+     * Set showFrozen
+     * @param showFrozen  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest showFrozen(Boolean showFrozen) {
+      this.showFrozen = showFrozen;
+      return this;
+    }
+
+    /**
      * Set order
      * @param order  (optional)
      * @return APIlistMyGroupChannelsRequest
@@ -1074,7 +1165,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metadataOrderKey
-     * @param metadataOrderKey  (optional)
+     * @param metadataOrderKey Specifies the key of an item in metadata. When a value of the order parameter is set to metadata_value_alphabetical, the results are alphabetically sorted by the value of the item specified by the key. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metadataOrderKey(String metadataOrderKey) {
@@ -1084,7 +1175,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set customTypes
-     * @param customTypes  (optional)
+     * @param customTypes Specifies a comma-separated string of one or more custom types to filter group channels. URL encoding each type is recommended. If not specified, all channels are returned, regardless of their custom type. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest customTypes(String customTypes) {
@@ -1094,7 +1185,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set customTypeStartswith
-     * @param customTypeStartswith  (optional)
+     * @param customTypeStartswith Searches for group channels with the custom type which starts with the specified value. URL encoding the value is recommended. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest customTypeStartswith(String customTypeStartswith) {
@@ -1104,7 +1195,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set channelUrls
-     * @param channelUrls  (optional)
+     * @param channelUrls Specifies a comma-separated string of one or more group channel URLs to restrict the search scope. URL encoding each channel URL is recommended. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest channelUrls(String channelUrls) {
@@ -1114,7 +1205,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set name
-     * @param name  (optional)
+     * @param name Specifies one or more group channel names. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest name(String name) {
@@ -1124,7 +1215,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set nameContains
-     * @param nameContains  (optional)
+     * @param nameContains Searches for group channels whose names contain the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest nameContains(String nameContains) {
@@ -1134,7 +1225,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set nameStartswith
-     * @param nameStartswith  (optional)
+     * @param nameStartswith Searches for group channels whose names start with the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest nameStartswith(String nameStartswith) {
@@ -1144,7 +1235,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set membersExactlyIn
-     * @param membersExactlyIn  (optional)
+     * @param membersExactlyIn Searches for group channels with all the specified users as members. The parameter value should consist of user IDs separated by commas.  Only user IDs that match those of existing users are used for channel search. URL encoding each ID is recommended. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest membersExactlyIn(String membersExactlyIn) {
@@ -1154,7 +1245,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set membersIncludeIn
-     * @param membersIncludeIn  (optional)
+     * @param membersIncludeIn Searches for group channels that include one or more users as members among the specified users. The value should consist of user IDs separated by commas or %2C. You can specify up to 60 user IDs.  Only user IDs that match those of existing users are used for channel search. URL encoding each ID is recommended. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest membersIncludeIn(String membersIncludeIn) {
@@ -1164,7 +1255,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set queryType
-     * @param queryType  (optional)
+     * @param queryType Specifies a logical condition applied to the members_include_in parameter. Acceptable values are either AND or OR. For example, if you specify three members, A, B, and C, in members_include_in, the value of AND returns all channels that include every one of {A. B, C} as members. The value of OR returns channels that include {A}, plus those that include {B}, plus those that include {C}. (Default: AND) (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest queryType(String queryType) {
@@ -1174,7 +1265,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set membersNickname
-     * @param membersNickname  (optional)
+     * @param membersNickname Searches for group channels with members whose nicknames match the specified value. URL encoding the value is recommended. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest membersNickname(String membersNickname) {
@@ -1184,7 +1275,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set membersNicknameContains
-     * @param membersNicknameContains  (optional)
+     * @param membersNicknameContains Searches for group channels with members whose nicknames contain the specified value. Note that this parameter is case-insensitive. URL encoding the value is recommended.  * We recommend using at least three characters for the parameter value for better search efficiency when you design and implement related features. If you would like to allow one or two characters for searching, use members_nickname instead to prevent performance issues. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest membersNicknameContains(String membersNicknameContains) {
@@ -1193,8 +1284,18 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     }
 
     /**
+     * Set membersNicknameStartswith
+     * @param membersNicknameStartswith Searches for group channels with members whose nicknames begin with the specified value. This parameter isn&#39;t case-sensitive. URL encoding the value is recommended. (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest membersNicknameStartswith(String membersNicknameStartswith) {
+      this.membersNicknameStartswith = membersNicknameStartswith;
+      return this;
+    }
+
+    /**
      * Set searchQuery
-     * @param searchQuery  (optional)
+     * @param searchQuery Searches for group channels where the specified query string matches the channel name or the nickname of the member. This parameter isn&#39;t case-sensitive and should be specified in conjunction with the search_fields parameter below. URL encoding the value is recommended. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest searchQuery(String searchQuery) {
@@ -1204,7 +1305,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set searchFields
-     * @param searchFields  (optional)
+     * @param searchFields Specifies a comma-separated string of one or more search fields to apply to the query, which restricts the results within the specified fields (OR search condition). Acceptable values are channel_name and member_nickname. This is effective only when the search_query parameter above is specified. (Default: channel_name, member_nickname together) (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest searchFields(String searchFields) {
@@ -1214,7 +1315,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metadataKey
-     * @param metadataKey  (optional)
+     * @param metadataKey Searches for group channels with metadata containing an item with the specified value as its key. To use this parameter, either the metadata_values parameter or the metadata_value_startswith parameter should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metadataKey(String metadataKey) {
@@ -1224,7 +1325,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metadataValues
-     * @param metadataValues  (optional)
+     * @param metadataValues Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the value of that item matches one or more values specified by this parameter. The string should be specified with multiple values separated by commas. URL encoding each value is recommended. To use this parameter, the metadata_key parameter should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metadataValues(String metadataValues) {
@@ -1234,7 +1335,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metadataValueStartswith
-     * @param metadataValueStartswith  (optional)
+     * @param metadataValueStartswith Searches for group channels with metadata containing an item with the key specified by the metadata_key parameter, and the values of that item that start with the specified value of this parameter. URL encoding the value is recommended. To use this parameter, the metadata_key parameter should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metadataValueStartswith(String metadataValueStartswith) {
@@ -1244,7 +1345,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metacounterKey
-     * @param metacounterKey  (optional)
+     * @param metacounterKey Searches for group channels with metacounter containing an item with the specified value as its key. To use this parameter, either the metacounter_values parameter or one of the metacounter_value_gt, metacounter_value_gte, metacounter_value_lt, and metacounter_value_lte parameters should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metacounterKey(String metacounterKey) {
@@ -1254,7 +1355,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metacounterValues
-     * @param metacounterValues  (optional)
+     * @param metacounterValues Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is equal to one or more values specified by this parameter. The string should be specified with multiple values separated by commas. To use this parameter, the metacounter_key parameter should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metacounterValues(String metacounterValues) {
@@ -1264,7 +1365,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metacounterValueGt
-     * @param metacounterValueGt  (optional)
+     * @param metacounterValueGt Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is greater than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metacounterValueGt(String metacounterValueGt) {
@@ -1274,7 +1375,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metacounterValueGte
-     * @param metacounterValueGte  (optional)
+     * @param metacounterValueGte Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is greater than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metacounterValueGte(String metacounterValueGte) {
@@ -1284,7 +1385,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metacounterValueLt
-     * @param metacounterValueLt  (optional)
+     * @param metacounterValueLt Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metacounterValueLt(String metacounterValueLt) {
@@ -1294,7 +1395,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Set metacounterValueLte
-     * @param metacounterValueLte  (optional)
+     * @param metacounterValueLte Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
     public APIlistMyGroupChannelsRequest metacounterValueLte(String metacounterValueLte) {
@@ -1303,12 +1404,42 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     }
 
     /**
-     * Set customType
-     * @param customType  (optional)
+     * Set includeSortedMetaarrayInLastMessage
+     * @param includeSortedMetaarrayInLastMessage Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response. (optional)
      * @return APIlistMyGroupChannelsRequest
      */
-    public APIlistMyGroupChannelsRequest customType(String customType) {
-      this.customType = customType;
+    public APIlistMyGroupChannelsRequest includeSortedMetaarrayInLastMessage(Boolean includeSortedMetaarrayInLastMessage) {
+      this.includeSortedMetaarrayInLastMessage = includeSortedMetaarrayInLastMessage;
+      return this;
+    }
+
+    /**
+     * Set hiddenMode
+     * @param hiddenMode Restricts the search scope to group channels that match a specific hidden_status and operating behavior (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest hiddenMode(String hiddenMode) {
+      this.hiddenMode = hiddenMode;
+      return this;
+    }
+
+    /**
+     * Set unreadFilter
+     * @param unreadFilter Restricts the search scope to only retrieve group channels with one or more unread messages. This filter doesn&#39;t support Supergroup channels. Acceptable values are all and unread_message. (Default: all) (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest unreadFilter(String unreadFilter) {
+      this.unreadFilter = unreadFilter;
+      return this;
+    }
+
+    /**
+     * Set memberStateFilter
+     * @param memberStateFilter  (optional)
+     * @return APIlistMyGroupChannelsRequest
+     */
+    public APIlistMyGroupChannelsRequest memberStateFilter(String memberStateFilter) {
+      this.memberStateFilter = memberStateFilter;
       return this;
     }
 
@@ -1340,14 +1471,14 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
      */
     public ApiResponse<ListMyGroupChannelsResponse> executeWithHttpInfo() throws ApiException {
-      return listMyGroupChannelsWithHttpInfo(userId, apiToken, token, limit, distinctMode, publicMode, superMode, hiddenMode, memberStateFilter, unreadFilter, createdAfter, createdBefore, showEmpty, showFrozen, showMember, showDeliveryReceipt, showReadReceipt, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, customType);
+      return listMyGroupChannelsWithHttpInfo(userId, apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, membersNicknameStartswith, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, hiddenMode, unreadFilter, memberStateFilter);
     }
   }
 
   /**
    * List my group channels
-   * ## List my group channels  Retrieves all group channels that the user has joined. You can create a request based on various query parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
-   * @param userId  (required)
+   * ## List my group channels  This action retrieves a list of [group channels](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) that a specific user has joined. You can use various query parameters to determine the search scope and select what kind of information you want to receive about the queried channels.  If you&#39;re looking to retrieve a list of group channels in a specific application, visit the [list group channels](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-group-channels) page under the Channel section.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-joined-group-channels/list-group-channels-by-user#1-list-group-channels-by-user  &#x60;user_id&#x60;   Type: string   Description: Specifies the unique ID of the target user.
+   * @param userId (Required)  (required)
    * @return listMyGroupChannelsRequest
    * @throws ApiException if fails to make API call
    
@@ -1383,7 +1514,7 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -1460,9 +1591,9 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
 
   /**
    * List registration or device tokens
-   * ## List registration or device tokens  Retrieves a list of a specific user&#39;s FCM registration tokens, HMS device tokens, or APNs device tokens. You can specify either &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; in the &#x60;token_type&#x60; parameter, depending on which push notification service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-registration-or-device-tokens ----------------------------
-   * @param userId  (required)
-   * @param tokenType  (required)
+   * ## List registration or device tokens  Retrieves a list of a user&#39;s registration or device tokens. You can pass &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; for FCM registration token, HMS device token, or APNs device token, respectively, in the &#x60;token_type&#x60; parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/list-registration-or-device-tokens#1-list-registration-or-device-tokens
+   * @param userId (Required)  (required)
+   * @param tokenType (Required)  (required)
    * @return listRegistrationOrDeviceTokensRequest
    * @throws ApiException if fails to make API call
    
@@ -1472,7 +1603,7 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
     return new APIlistRegistrationOrDeviceTokensRequest(userId, tokenType);
   }
 
-private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn) throws ApiException {
+private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1495,7 +1626,7 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "metadatavalues_in", metadatavaluesIn));
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -1519,7 +1650,6 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
   }
 
   public class APIlistUsersRequest {
-    private String apiToken;
     private String token;
     private Integer limit;
     private String activeMode;
@@ -1529,18 +1659,9 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
     private String nicknameStartswith;
     private String metadatakey;
     private String metadatavaluesIn;
+    private String apiToken;
 
     private APIlistUsersRequest() {
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIlistUsersRequest
-     */
-    public APIlistUsersRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
     }
 
     /**
@@ -1565,7 +1686,7 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
 
     /**
      * Set activeMode
-     * @param activeMode  (optional)
+     * @param activeMode Specifies the activation status of the users in the list. Acceptable values are &#x60;activated&#x60;, &#x60;deactivated&#x60;, and &#x60;all&#x60;. (Default: &#x60;activated&#x60;) (optional)
      * @return APIlistUsersRequest
      */
     public APIlistUsersRequest activeMode(String activeMode) {
@@ -1575,7 +1696,7 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
 
     /**
      * Set showBot
-     * @param showBot  (optional)
+     * @param showBot Determines whether to include bots in the list. (Default: true) (optional)
      * @return APIlistUsersRequest
      */
     public APIlistUsersRequest showBot(Boolean showBot) {
@@ -1585,7 +1706,7 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
 
     /**
      * Set userIds
-     * @param userIds  (optional)
+     * @param userIds Specifies the user IDs. The value should be a comma-separated string that consists of multiple urlencoded user IDs. An example of a urlencoded string is ?user_ids&#x3D;urlencoded_id_1,urlencoded_id_2. * The maximum number of user IDs in this parameter is 250. If you exceed the maximum number, your request may receive an HTTP 414 error indicating that the request URL is longer than what Sendbird server can interpret. (optional)
      * @return APIlistUsersRequest
      */
     public APIlistUsersRequest userIds(String userIds) {
@@ -1625,11 +1746,21 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
 
     /**
      * Set metadatavaluesIn
-     * @param metadatavaluesIn  (optional)
+     * @param metadatavaluesIn Searches for blocked users with metadata containing an item with the key specified by the metadatakey parameter above, and the value of that item matches one or more values specified by this parameter. The string should be specified with multiple urlencoded metadata values separated by commas (for example, &#x60;?metadatavalues_in&#x3D;urlencoded_value_1, urlencoded_value_2&#x60;). This parameter should be specified in conjunction with the &#x60;metadatakey&#x60; above. (optional)
      * @return APIlistUsersRequest
      */
     public APIlistUsersRequest metadatavaluesIn(String metadatavaluesIn) {
       this.metadatavaluesIn = metadatavaluesIn;
+      return this;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIlistUsersRequest
+     */
+    public APIlistUsersRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
       return this;
     }
 
@@ -1661,13 +1792,13 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
 
      */
     public ApiResponse<ListUsersResponse> executeWithHttpInfo() throws ApiException {
-      return listUsersWithHttpInfo(apiToken, token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn);
+      return listUsersWithHttpInfo(token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn, apiToken);
     }
   }
 
   /**
    * List users
-   * ## List users  Retrieves a list of users in your application. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-users ----------------------------
+   * ## List users  You can retrieve a list of users in your Sendbird application using this API. You can generate a customized list using various parameter combinations.  https://sendbird.com/docs/chat/platform-api/v3/user/listing-users/list-users#1-list-users
    * @return listUsersRequest
    * @throws ApiException if fails to make API call
    
@@ -1677,8 +1808,8 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String apiToken, St
     return new APIlistUsersRequest();
   }
 
-private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, String apiToken, MarkAllMessagesAsReadData markAllMessagesAsReadData) throws ApiException {
-    Object localVarPostBody = markAllMessagesAsReadData;
+private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, String apiToken, MarkAllMessagesAsReadRequest markAllMessagesAsReadRequest) throws ApiException {
+    Object localVarPostBody = markAllMessagesAsReadRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1697,7 +1828,7 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, Str
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -1723,7 +1854,7 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, Str
   public class APImarkAllMessagesAsReadRequest {
     private String userId;
     private String apiToken;
-    private MarkAllMessagesAsReadData markAllMessagesAsReadData;
+    private MarkAllMessagesAsReadRequest markAllMessagesAsReadRequest;
 
     private APImarkAllMessagesAsReadRequest(String userId) {
       this.userId = userId;
@@ -1740,12 +1871,12 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, Str
     }
 
     /**
-     * Set markAllMessagesAsReadData
-     * @param markAllMessagesAsReadData  (optional)
+     * Set markAllMessagesAsReadRequest
+     * @param markAllMessagesAsReadRequest  (optional)
      * @return APImarkAllMessagesAsReadRequest
      */
-    public APImarkAllMessagesAsReadRequest markAllMessagesAsReadData(MarkAllMessagesAsReadData markAllMessagesAsReadData) {
-      this.markAllMessagesAsReadData = markAllMessagesAsReadData;
+    public APImarkAllMessagesAsReadRequest markAllMessagesAsReadRequest(MarkAllMessagesAsReadRequest markAllMessagesAsReadRequest) {
+      this.markAllMessagesAsReadRequest = markAllMessagesAsReadRequest;
       return this;
     }
 
@@ -1777,14 +1908,14 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, Str
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return markAllMessagesAsReadWithHttpInfo(userId, apiToken, markAllMessagesAsReadData);
+      return markAllMessagesAsReadWithHttpInfo(userId, apiToken, markAllMessagesAsReadRequest);
     }
   }
 
   /**
    * Mark all messages as read
-   * ## Mark all messages as read  Marks all of a user&#39;s unread messages as read in the joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mark-all-messages-as-read ----------------------------
-   * @param userId  (required)
+   * ## Mark all messages as read  This action marks all of a user&#39;s unread messages as read in certain group channels. If channels aren&#39;t specified, the user&#39;s unread messages in all group channels are marked as read.  https://sendbird.com/docs/chat/platform-api/v3/user/marking-messages-as-read/mark-all-of-a-users-messages-as-read#1-mark-all-of-a-user-s-messages-as-read
+   * @param userId (Required)  (required)
    * @return markAllMessagesAsReadRequest
    * @throws ApiException if fails to make API call
    
@@ -1794,245 +1925,22 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, Str
     return new APImarkAllMessagesAsReadRequest(userId);
   }
 
-private ApiResponse<Object> registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(String userId, String apiToken, RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) throws ApiException {
-    Object localVarPostBody = registerAsOperatorToChannelsWithCustomChannelTypesData;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling registerAsOperatorToChannelsWithCustomChannelTypes");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/operating_channel_custom_types"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-
-    return apiClient.invokeAPI("UserApi.registerAsOperatorToChannelsWithCustomChannelTypes", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest {
-    private String userId;
-    private String apiToken;
-    private RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData;
-
-    private APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest
-     */
-    public APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set registerAsOperatorToChannelsWithCustomChannelTypesData
-     * @param registerAsOperatorToChannelsWithCustomChannelTypesData  (optional)
-     * @return APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest
-     */
-    public APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest registerAsOperatorToChannelsWithCustomChannelTypesData(RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData) {
-      this.registerAsOperatorToChannelsWithCustomChannelTypesData = registerAsOperatorToChannelsWithCustomChannelTypesData;
-      return this;
-    }
-
-    /**
-     * Execute registerAsOperatorToChannelsWithCustomChannelTypes request
-     * @return Object
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public Object execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute registerAsOperatorToChannelsWithCustomChannelTypes request with HTTP info returned
-     * @return ApiResponse&lt;Object&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return registerAsOperatorToChannelsWithCustomChannelTypesWithHttpInfo(userId, apiToken, registerAsOperatorToChannelsWithCustomChannelTypesData);
-    }
-  }
-
-  /**
-   * Register as an operator to channels with custom channel types
-   * ## Register as an operator to channels with custom channel types  Registers a user as an operator to channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-register-as-an-operator-to-channels-with-custom-channel-types ----------------------------
-   * @param userId  (required)
-   * @return registerAsOperatorToChannelsWithCustomChannelTypesRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest registerAsOperatorToChannelsWithCustomChannelTypes(String userId) throws ApiException {
-    return new APIregisterAsOperatorToChannelsWithCustomChannelTypesRequest(userId);
-  }
-
-private ApiResponse<RemoveRegistrationOrDeviceTokenResponse> removeRegistrationOrDeviceTokenWithHttpInfo(String userId, String apiToken) throws ApiException {
+private ApiResponse<RemoveARegistrationOrDeviceTokenResponse> removeARegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String token, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling removeRegistrationOrDeviceToken");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/push"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<RemoveRegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<RemoveRegistrationOrDeviceTokenResponse>() {};
-
-    return apiClient.invokeAPI("UserApi.removeRegistrationOrDeviceToken", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIremoveRegistrationOrDeviceTokenRequest {
-    private String userId;
-    private String apiToken;
-
-    private APIremoveRegistrationOrDeviceTokenRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIremoveRegistrationOrDeviceTokenRequest
-     */
-    public APIremoveRegistrationOrDeviceTokenRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Execute removeRegistrationOrDeviceToken request
-     * @return RemoveRegistrationOrDeviceTokenResponse
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public RemoveRegistrationOrDeviceTokenResponse execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute removeRegistrationOrDeviceToken request with HTTP info returned
-     * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenResponse&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<RemoveRegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
-      return removeRegistrationOrDeviceTokenWithHttpInfo(userId, apiToken);
-    }
-  }
-
-  /**
-   * Remove a registration or device token - When unregistering all device tokens
-   * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
-   * @param userId  (required)
-   * @return removeRegistrationOrDeviceTokenRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIremoveRegistrationOrDeviceTokenRequest removeRegistrationOrDeviceToken(String userId) throws ApiException {
-    return new APIremoveRegistrationOrDeviceTokenRequest(userId);
-  }
-
-private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegistrationOrDeviceTokenByTokenWithHttpInfo(String userId, String tokenType, String token, String apiToken) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling removeRegistrationOrDeviceTokenByToken");
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling removeARegistrationOrDeviceToken");
     }
     
     // verify the required parameter 'tokenType' is set
     if (tokenType == null) {
-      throw new ApiException(400, "Missing the required parameter 'tokenType' when calling removeRegistrationOrDeviceTokenByToken");
+      throw new ApiException(400, "Missing the required parameter 'tokenType' when calling removeARegistrationOrDeviceToken");
     }
     
     // verify the required parameter 'token' is set
     if (token == null) {
-      throw new ApiException(400, "Missing the required parameter 'token' when calling removeRegistrationOrDeviceTokenByToken");
+      throw new ApiException(400, "Missing the required parameter 'token' when calling removeARegistrationOrDeviceToken");
     }
     
     // create path and map variables
@@ -2049,7 +1957,7 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegist
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -2065,20 +1973,20 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegist
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<RemoveRegistrationOrDeviceTokenByTokenResponse> localVarReturnType = new GenericType<RemoveRegistrationOrDeviceTokenByTokenResponse>() {};
+    GenericType<RemoveARegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<RemoveARegistrationOrDeviceTokenResponse>() {};
 
-    return apiClient.invokeAPI("UserApi.removeRegistrationOrDeviceTokenByToken", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.removeARegistrationOrDeviceToken", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIremoveRegistrationOrDeviceTokenByTokenRequest {
+  public class APIremoveARegistrationOrDeviceTokenRequest {
     private String userId;
     private String tokenType;
     private String token;
     private String apiToken;
 
-    private APIremoveRegistrationOrDeviceTokenByTokenRequest(String userId, String tokenType, String token) {
+    private APIremoveARegistrationOrDeviceTokenRequest(String userId, String tokenType, String token) {
       this.userId = userId;
       this.tokenType = tokenType;
       this.token = token;
@@ -2087,16 +1995,16 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegist
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIremoveRegistrationOrDeviceTokenByTokenRequest
+     * @return APIremoveARegistrationOrDeviceTokenRequest
      */
-    public APIremoveRegistrationOrDeviceTokenByTokenRequest apiToken(String apiToken) {
+    public APIremoveARegistrationOrDeviceTokenRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute removeRegistrationOrDeviceTokenByToken request
-     * @return RemoveRegistrationOrDeviceTokenByTokenResponse
+     * Execute removeARegistrationOrDeviceToken request
+     * @return RemoveARegistrationOrDeviceTokenResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2106,13 +2014,13 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegist
      
      */
     
-    public RemoveRegistrationOrDeviceTokenByTokenResponse execute() throws ApiException {
+    public RemoveARegistrationOrDeviceTokenResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute removeRegistrationOrDeviceTokenByToken request with HTTP info returned
-     * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenByTokenResponse&gt;
+     * Execute removeARegistrationOrDeviceToken request with HTTP info returned
+     * @return ApiResponse&lt;RemoveARegistrationOrDeviceTokenResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2121,37 +2029,37 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> removeRegist
        </table>
 
      */
-    public ApiResponse<RemoveRegistrationOrDeviceTokenByTokenResponse> executeWithHttpInfo() throws ApiException {
-      return removeRegistrationOrDeviceTokenByTokenWithHttpInfo(userId, tokenType, token, apiToken);
+    public ApiResponse<RemoveARegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
+      return removeARegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, token, apiToken);
     }
   }
 
   /**
    * Remove a registration or device token - When unregistering a specific token
-   * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
-   * @param userId  (required)
-   * @param tokenType  (required)
-   * @param token  (required)
-   * @return removeRegistrationOrDeviceTokenByTokenRequest
+   * ## Remove a registration or device token  Removes a user&#39;s specific registration or device token or all tokens. You can pass &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; for FCM registration token, HMS device token, or APNs device token, respectively, in the &#x60;token_type&#x60; parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/remove-a-registration-or-device-token#1-remove-a-registration-or-device-token
+   * @param userId (Required)  (required)
+   * @param tokenType (Required)  (required)
+   * @param token (Required)  (required)
+   * @return removeARegistrationOrDeviceTokenRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIremoveRegistrationOrDeviceTokenByTokenRequest removeRegistrationOrDeviceTokenByToken(String userId, String tokenType, String token) throws ApiException {
-    return new APIremoveRegistrationOrDeviceTokenByTokenRequest(userId, tokenType, token);
+  public APIremoveARegistrationOrDeviceTokenRequest removeARegistrationOrDeviceToken(String userId, String tokenType, String token) throws ApiException {
+    return new APIremoveARegistrationOrDeviceTokenRequest(userId, tokenType, token);
   }
 
-private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
+private ApiResponse<List<MarkChannelMessagesAsReadRequest>> removeARegistrationOrDeviceTokenFromAnOwnerWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'tokenType' is set
     if (tokenType == null) {
-      throw new ApiException(400, "Missing the required parameter 'tokenType' when calling removeRegistrationOrDeviceTokenFromOwnerByToken");
+      throw new ApiException(400, "Missing the required parameter 'tokenType' when calling removeARegistrationOrDeviceTokenFromAnOwner");
     }
     
     // verify the required parameter 'token' is set
     if (token == null) {
-      throw new ApiException(400, "Missing the required parameter 'token' when calling removeRegistrationOrDeviceTokenFromOwnerByToken");
+      throw new ApiException(400, "Missing the required parameter 'token' when calling removeARegistrationOrDeviceTokenFromAnOwner");
     }
     
     // create path and map variables
@@ -2167,7 +2075,7 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> rem
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -2183,19 +2091,19 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> rem
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> localVarReturnType = new GenericType<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse>() {};
+    GenericType<List<MarkChannelMessagesAsReadRequest>> localVarReturnType = new GenericType<List<MarkChannelMessagesAsReadRequest>>() {};
 
-    return apiClient.invokeAPI("UserApi.removeRegistrationOrDeviceTokenFromOwnerByToken", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.removeARegistrationOrDeviceTokenFromAnOwner", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest {
+  public class APIremoveARegistrationOrDeviceTokenFromAnOwnerRequest {
     private String tokenType;
     private String token;
     private String apiToken;
 
-    private APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest(String tokenType, String token) {
+    private APIremoveARegistrationOrDeviceTokenFromAnOwnerRequest(String tokenType, String token) {
       this.tokenType = tokenType;
       this.token = token;
     }
@@ -2203,16 +2111,16 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> rem
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest
+     * @return APIremoveARegistrationOrDeviceTokenFromAnOwnerRequest
      */
-    public APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest apiToken(String apiToken) {
+    public APIremoveARegistrationOrDeviceTokenFromAnOwnerRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute removeRegistrationOrDeviceTokenFromOwnerByToken request
-     * @return RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse
+     * Execute removeARegistrationOrDeviceTokenFromAnOwner request
+     * @return List&lt;MarkChannelMessagesAsReadRequest&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2222,13 +2130,13 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> rem
      
      */
     
-    public RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse execute() throws ApiException {
+    public List<MarkChannelMessagesAsReadRequest> execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute removeRegistrationOrDeviceTokenFromOwnerByToken request with HTTP info returned
-     * @return ApiResponse&lt;RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse&gt;
+     * Execute removeARegistrationOrDeviceTokenFromAnOwner request with HTTP info returned
+     * @return ApiResponse&lt;List&lt;MarkChannelMessagesAsReadRequest&gt;&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2237,26 +2145,132 @@ private ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> rem
        </table>
 
      */
-    public ApiResponse<RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse> executeWithHttpInfo() throws ApiException {
-      return removeRegistrationOrDeviceTokenFromOwnerByTokenWithHttpInfo(tokenType, token, apiToken);
+    public ApiResponse<List<MarkChannelMessagesAsReadRequest>> executeWithHttpInfo() throws ApiException {
+      return removeARegistrationOrDeviceTokenFromAnOwnerWithHttpInfo(tokenType, token, apiToken);
     }
   }
 
   /**
    * Remove a registration or device token from an owner
-   * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who owns it. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token-from-an-owner ----------------------------
-   * @param tokenType  (required)
-   * @param token  (required)
-   * @return removeRegistrationOrDeviceTokenFromOwnerByTokenRequest
+   * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who is the owner of the token. You can pass &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; for FCM registration token, HMS device token, or APNs device token, respectively, in the &#x60;token_type&#x60; parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/remove-a-registration-or-device-token-from-an-owner#1-remove-a-registration-or-device-token-from-an-owner
+   * @param tokenType (Required)  (required)
+   * @param token (Required)  (required)
+   * @return removeARegistrationOrDeviceTokenFromAnOwnerRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest removeRegistrationOrDeviceTokenFromOwnerByToken(String tokenType, String token) throws ApiException {
-    return new APIremoveRegistrationOrDeviceTokenFromOwnerByTokenRequest(tokenType, token);
+  public APIremoveARegistrationOrDeviceTokenFromAnOwnerRequest removeARegistrationOrDeviceTokenFromAnOwner(String tokenType, String token) throws ApiException {
+    return new APIremoveARegistrationOrDeviceTokenFromAnOwnerRequest(tokenType, token);
   }
 
-private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
+private ApiResponse<RemoveAllRegistrationOrDeviceTokenResponse> removeAllRegistrationOrDeviceTokenWithHttpInfo(String userId, String apiToken) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling removeAllRegistrationOrDeviceToken");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}/push"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<RemoveAllRegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<RemoveAllRegistrationOrDeviceTokenResponse>() {};
+
+    return apiClient.invokeAPI("UserApi.removeAllRegistrationOrDeviceToken", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIremoveAllRegistrationOrDeviceTokenRequest {
+    private String userId;
+    private String apiToken;
+
+    private APIremoveAllRegistrationOrDeviceTokenRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIremoveAllRegistrationOrDeviceTokenRequest
+     */
+    public APIremoveAllRegistrationOrDeviceTokenRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute removeAllRegistrationOrDeviceToken request
+     * @return RemoveAllRegistrationOrDeviceTokenResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public RemoveAllRegistrationOrDeviceTokenResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute removeAllRegistrationOrDeviceToken request with HTTP info returned
+     * @return ApiResponse&lt;RemoveAllRegistrationOrDeviceTokenResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<RemoveAllRegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
+      return removeAllRegistrationOrDeviceTokenWithHttpInfo(userId, apiToken);
+    }
+  }
+
+  /**
+   * Remove a registration or device token - When unregistering all device tokens
+   * ## Remove a registration or device token  Removes a user&#39;s specific registration or device token or all tokens. You can pass &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; for FCM registration token, HMS device token, or APNs device token, respectively, in the &#x60;token_type&#x60; parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/remove-a-registration-or-device-token#1-remove-a-registration-or-device-token
+   * @param userId (Required)  (required)
+   * @return removeAllRegistrationOrDeviceTokenRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIremoveAllRegistrationOrDeviceTokenRequest removeAllRegistrationOrDeviceToken(String userId) throws ApiException {
+    return new APIremoveAllRegistrationOrDeviceTokenRequest(userId);
+  }
+
+private ApiResponse<Object> resetPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -2276,7 +2290,7 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -2292,7 +2306,7 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ResetPushPreferencesResponse> localVarReturnType = new GenericType<ResetPushPreferencesResponse>() {};
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
 
     return apiClient.invokeAPI("UserApi.resetPushPreferences", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2319,7 +2333,7 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
 
     /**
      * Execute resetPushPreferences request
-     * @return ResetPushPreferencesResponse
+     * @return Object
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2329,13 +2343,13 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
      
      */
     
-    public ResetPushPreferencesResponse execute() throws ApiException {
+    public Object execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute resetPushPreferences request with HTTP info returned
-     * @return ApiResponse&lt;ResetPushPreferencesResponse&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2344,15 +2358,15 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
        </table>
 
      */
-    public ApiResponse<ResetPushPreferencesResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
       return resetPushPreferencesWithHttpInfo(userId, apiToken);
     }
   }
 
   /**
    * Reset push preferences
-   * ## Reset push preferences  Resets a user&#39;s push preferences. After performing this action,   &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; are set to false.  The values of the parameters associated with the time frame are all set to 0.  &#x60;timezone&#x60; is reset to &#x60;UTC&#x60;.  &#x60;push_sound&#x60; is reset to &#x60;default&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-reset-push-preferences ----------------------------
-   * @param userId  (required)
+   * ## Reset push preferences  You can reset a user&#39;s notifications preferences. The values are reset to the default as the following.  - The values for the &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; properties are set to &#x60;false&#x60;.      - The values of the parameters associated with the time frame are all set to &#x60;0&#x60;.      - The value for the &#x60;timezone&#x60; property is set to &#x60;UTC&#x60;.      - The value for the &#x60;push_sound&#x60; property is set to &#x60;default&#x60;.       &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/reset-push-notification-preferences#1-reset-push-notification-preferences](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/reset-push-notification-preferences#1-reset-push-notification-preferences)
+   * @param userId (Required)  (required)
    * @return resetPushPreferencesRequest
    * @throws ApiException if fails to make API call
    
@@ -2362,8 +2376,125 @@ private ApiResponse<ResetPushPreferencesResponse> resetPushPreferencesWithHttpIn
     return new APIresetPushPreferencesRequest(userId);
   }
 
-private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken, UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) throws ApiException {
-    Object localVarPostBody = updateChannelInvitationPreferenceData;
+private ApiResponse<SendbirdUser> updateAUserWithHttpInfo(String userId, String apiToken, UpdateAUserRequest updateAUserRequest) throws ApiException {
+    Object localVarPostBody = updateAUserRequest;
+    
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling updateAUser");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/users/{user_id}"
+      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<SendbirdUser> localVarReturnType = new GenericType<SendbirdUser>() {};
+
+    return apiClient.invokeAPI("UserApi.updateAUser", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIupdateAUserRequest {
+    private String userId;
+    private String apiToken;
+    private UpdateAUserRequest updateAUserRequest;
+
+    private APIupdateAUserRequest(String userId) {
+      this.userId = userId;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIupdateAUserRequest
+     */
+    public APIupdateAUserRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateAUserRequest
+     * @param updateAUserRequest  (optional)
+     * @return APIupdateAUserRequest
+     */
+    public APIupdateAUserRequest updateAUserRequest(UpdateAUserRequest updateAUserRequest) {
+      this.updateAUserRequest = updateAUserRequest;
+      return this;
+    }
+
+    /**
+     * Execute updateAUser request
+     * @return SendbirdUser
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public SendbirdUser execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateAUser request with HTTP info returned
+     * @return ApiResponse&lt;SendbirdUser&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<SendbirdUser> executeWithHttpInfo() throws ApiException {
+      return updateAUserWithHttpInfo(userId, apiToken, updateAUserRequest);
+    }
+  }
+
+  /**
+   * Update a user
+   * ## Update a user  You can update information about a user using this API. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user using this API request. If the &#x60;leave_all_when_deactivated&#x60; is set to &#x60;true&#x60;, a user leaves all joined group channels and becomes deactivated.  &gt; **Note**: Issuing session tokens through the &#x60;/users/{user_id}&#x60; endpoint is now deprecated and it&amp;apos;s replaced with [&amp;lt;code&amp;gt;/users/{user_id}/token&amp;lt;/code&amp;gt;](https://sendbird.com/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token) endpoint for greater efficiency. For those who are currently using the old endpoint, you can start issuing tokens using the new endpoint.      [https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/update-a-user#1-update-a-user](https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/update-a-user#1-update-a-user)
+   * @param userId (Required)  (required)
+   * @return updateAUserRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIupdateAUserRequest updateAUser(String userId) throws ApiException {
+    return new APIupdateAUserRequest(userId);
+  }
+
+private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken, UpdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest) throws ApiException {
+    Object localVarPostBody = updateChannelInvitationPreferenceRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2382,7 +2513,7 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -2408,7 +2539,7 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
   public class APIupdateChannelInvitationPreferenceRequest {
     private String userId;
     private String apiToken;
-    private UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData;
+    private UpdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest;
 
     private APIupdateChannelInvitationPreferenceRequest(String userId) {
       this.userId = userId;
@@ -2425,12 +2556,12 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
     }
 
     /**
-     * Set updateChannelInvitationPreferenceData
-     * @param updateChannelInvitationPreferenceData  (optional)
+     * Set updateChannelInvitationPreferenceRequest
+     * @param updateChannelInvitationPreferenceRequest  (optional)
      * @return APIupdateChannelInvitationPreferenceRequest
      */
-    public APIupdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceData(UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData) {
-      this.updateChannelInvitationPreferenceData = updateChannelInvitationPreferenceData;
+    public APIupdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest(UpdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest) {
+      this.updateChannelInvitationPreferenceRequest = updateChannelInvitationPreferenceRequest;
       return this;
     }
 
@@ -2462,14 +2593,14 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
 
      */
     public ApiResponse<UpdateChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
-      return updateChannelInvitationPreferenceWithHttpInfo(userId, apiToken, updateChannelInvitationPreferenceData);
+      return updateChannelInvitationPreferenceWithHttpInfo(userId, apiToken, updateChannelInvitationPreferenceRequest);
     }
   }
 
   /**
    * Update channel invitation preference
-   * ## Update channel invitation preference  Updates the channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, you can update the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference
-   * @param userId  (required)
+   * ## Update channel invitation preference  This action updates a user&#39;s [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) invitation preference. Updating the [application&#39;s default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/update-default-invitation-preference) won&#39;t override existing users&#39; individual channel invitation preferences. The changed preference only affects the users created after the update.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-channel-invitation-preference#1-update-channel-invitation-preference
+   * @param userId (Required)  (required)
    * @return updateChannelInvitationPreferenceRequest
    * @throws ApiException if fails to make API call
    
@@ -2479,17 +2610,17 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
     return new APIupdateChannelInvitationPreferenceRequest(userId);
   }
 
-private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) throws ApiException {
-    Object localVarPostBody = updateCountPreferenceOfChannelByUrlData;
+private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfAChannelWithHttpInfo(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest) throws ApiException {
+    Object localVarPostBody = updateCountPreferenceOfAChannelRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling updateCountPreferenceOfChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling updateCountPreferenceOfAChannel");
     }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updateCountPreferenceOfChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updateCountPreferenceOfAChannel");
     }
     
     // create path and map variables
@@ -2505,7 +2636,7 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -2523,18 +2654,18 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
 
     GenericType<UpdateCountPreferenceOfChannelByUrlResponse> localVarReturnType = new GenericType<UpdateCountPreferenceOfChannelByUrlResponse>() {};
 
-    return apiClient.invokeAPI("UserApi.updateCountPreferenceOfChannelByUrl", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.updateCountPreferenceOfAChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIupdateCountPreferenceOfChannelByUrlRequest {
+  public class APIupdateCountPreferenceOfAChannelRequest {
     private String userId;
     private String channelUrl;
     private String apiToken;
-    private UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData;
+    private UpdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest;
 
-    private APIupdateCountPreferenceOfChannelByUrlRequest(String userId, String channelUrl) {
+    private APIupdateCountPreferenceOfAChannelRequest(String userId, String channelUrl) {
       this.userId = userId;
       this.channelUrl = channelUrl;
     }
@@ -2542,25 +2673,25 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIupdateCountPreferenceOfChannelByUrlRequest
+     * @return APIupdateCountPreferenceOfAChannelRequest
      */
-    public APIupdateCountPreferenceOfChannelByUrlRequest apiToken(String apiToken) {
+    public APIupdateCountPreferenceOfAChannelRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set updateCountPreferenceOfChannelByUrlData
-     * @param updateCountPreferenceOfChannelByUrlData  (optional)
-     * @return APIupdateCountPreferenceOfChannelByUrlRequest
+     * Set updateCountPreferenceOfAChannelRequest
+     * @param updateCountPreferenceOfAChannelRequest  (optional)
+     * @return APIupdateCountPreferenceOfAChannelRequest
      */
-    public APIupdateCountPreferenceOfChannelByUrlRequest updateCountPreferenceOfChannelByUrlData(UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData) {
-      this.updateCountPreferenceOfChannelByUrlData = updateCountPreferenceOfChannelByUrlData;
+    public APIupdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest(UpdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest) {
+      this.updateCountPreferenceOfAChannelRequest = updateCountPreferenceOfAChannelRequest;
       return this;
     }
 
     /**
-     * Execute updateCountPreferenceOfChannelByUrl request
+     * Execute updateCountPreferenceOfAChannel request
      * @return UpdateCountPreferenceOfChannelByUrlResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
@@ -2576,7 +2707,7 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
     }
 
     /**
-     * Execute updateCountPreferenceOfChannelByUrl request with HTTP info returned
+     * Execute updateCountPreferenceOfAChannel request with HTTP info returned
      * @return ApiResponse&lt;UpdateCountPreferenceOfChannelByUrlResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
@@ -2587,26 +2718,26 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
 
      */
     public ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return updateCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updateCountPreferenceOfChannelByUrlData);
+      return updateCountPreferenceOfAChannelWithHttpInfo(userId, channelUrl, apiToken, updateCountPreferenceOfAChannelRequest);
     }
   }
 
   /**
    * Update count preference of a channel
-   * ## Update count preference of a channel  Updates count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-count-preference-of-a-channel ----------------------------
-   * @param userId  (required)
-   * @param channelUrl  (required)
-   * @return updateCountPreferenceOfChannelByUrlRequest
+   * ## Update count preference of a channel  This action updates a user&#39;s count preference of a specific group channel. The count preference allows a user to either update the number of unread messages or the number of unread mentioned messages, or both in a specific group channel.  If you want to retrieve the total number count of a specific group channel, go to the [get count preference of a channel](https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-count-preference-of-a-channel) page.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/update-count-preference-of-a-channel#1-update-count-preference-of-a-channel
+   * @param userId (Required)  (required)
+   * @param channelUrl (Required)  (required)
+   * @return updateCountPreferenceOfAChannelRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIupdateCountPreferenceOfChannelByUrlRequest updateCountPreferenceOfChannelByUrl(String userId, String channelUrl) throws ApiException {
-    return new APIupdateCountPreferenceOfChannelByUrlRequest(userId, channelUrl);
+  public APIupdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannel(String userId, String channelUrl) throws ApiException {
+    return new APIupdateCountPreferenceOfAChannelRequest(userId, channelUrl);
   }
 
-private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String userId, String apiToken, UpdatePushPreferencesData updatePushPreferencesData) throws ApiException {
-    Object localVarPostBody = updatePushPreferencesData;
+private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String userId, String apiToken, UpdatePushPreferencesRequest updatePushPreferencesRequest) throws ApiException {
+    Object localVarPostBody = updatePushPreferencesRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2625,7 +2756,7 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -2651,7 +2782,7 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
   public class APIupdatePushPreferencesRequest {
     private String userId;
     private String apiToken;
-    private UpdatePushPreferencesData updatePushPreferencesData;
+    private UpdatePushPreferencesRequest updatePushPreferencesRequest;
 
     private APIupdatePushPreferencesRequest(String userId) {
       this.userId = userId;
@@ -2668,12 +2799,12 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
     }
 
     /**
-     * Set updatePushPreferencesData
-     * @param updatePushPreferencesData  (optional)
+     * Set updatePushPreferencesRequest
+     * @param updatePushPreferencesRequest  (optional)
      * @return APIupdatePushPreferencesRequest
      */
-    public APIupdatePushPreferencesRequest updatePushPreferencesData(UpdatePushPreferencesData updatePushPreferencesData) {
-      this.updatePushPreferencesData = updatePushPreferencesData;
+    public APIupdatePushPreferencesRequest updatePushPreferencesRequest(UpdatePushPreferencesRequest updatePushPreferencesRequest) {
+      this.updatePushPreferencesRequest = updatePushPreferencesRequest;
       return this;
     }
 
@@ -2705,14 +2836,14 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
 
      */
     public ApiResponse<UpdatePushPreferencesResponse> executeWithHttpInfo() throws ApiException {
-      return updatePushPreferencesWithHttpInfo(userId, apiToken, updatePushPreferencesData);
+      return updatePushPreferencesWithHttpInfo(userId, apiToken, updatePushPreferencesRequest);
     }
   }
 
   /**
    * Update push preferences
-   * ## Update push preferences  Updates a user&#39;s push preferences. Through this action, you can set &#x60;do_not_disturb&#x60; for a user, and update the time frame in which the setting applies.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences ----------------------------
-   * @param userId  (required)
+   * ## Update push preferences  You can update a user&#39;s notifications preferences. A push notification is a message that is immediately delivered to a user&#39;s device when the device is either idle or running the client app in the background.  &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences#1-update-push-notification-preferences](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences#1-update-push-notification-preferences)
+   * @param userId (Required)  (required)
    * @return updatePushPreferencesRequest
    * @throws ApiException if fails to make API call
    
@@ -2722,17 +2853,17 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
     return new APIupdatePushPreferencesRequest(userId);
   }
 
-private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) throws ApiException {
-    Object localVarPostBody = updatePushPreferencesForChannelByUrlData;
+private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferencesForAChannelWithHttpInfo(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest) throws ApiException {
+    Object localVarPostBody = updatePushPreferencesForAChannelRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling updatePushPreferencesForChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling updatePushPreferencesForAChannel");
     }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updatePushPreferencesForChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling updatePushPreferencesForAChannel");
     }
     
     // create path and map variables
@@ -2748,7 +2879,7 @@ private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPref
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -2764,20 +2895,20 @@ private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPref
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<UpdatePushPreferencesForChannelByUrlResponse> localVarReturnType = new GenericType<UpdatePushPreferencesForChannelByUrlResponse>() {};
+    GenericType<UpdatePushPreferencesForAChannelResponse> localVarReturnType = new GenericType<UpdatePushPreferencesForAChannelResponse>() {};
 
-    return apiClient.invokeAPI("UserApi.updatePushPreferencesForChannelByUrl", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.updatePushPreferencesForAChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIupdatePushPreferencesForChannelByUrlRequest {
+  public class APIupdatePushPreferencesForAChannelRequest {
     private String userId;
     private String channelUrl;
     private String apiToken;
-    private UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData;
+    private UpdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest;
 
-    private APIupdatePushPreferencesForChannelByUrlRequest(String userId, String channelUrl) {
+    private APIupdatePushPreferencesForAChannelRequest(String userId, String channelUrl) {
       this.userId = userId;
       this.channelUrl = channelUrl;
     }
@@ -2785,26 +2916,26 @@ private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPref
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIupdatePushPreferencesForChannelByUrlRequest
+     * @return APIupdatePushPreferencesForAChannelRequest
      */
-    public APIupdatePushPreferencesForChannelByUrlRequest apiToken(String apiToken) {
+    public APIupdatePushPreferencesForAChannelRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Set updatePushPreferencesForChannelByUrlData
-     * @param updatePushPreferencesForChannelByUrlData  (optional)
-     * @return APIupdatePushPreferencesForChannelByUrlRequest
+     * Set updatePushPreferencesForAChannelRequest
+     * @param updatePushPreferencesForAChannelRequest  (optional)
+     * @return APIupdatePushPreferencesForAChannelRequest
      */
-    public APIupdatePushPreferencesForChannelByUrlRequest updatePushPreferencesForChannelByUrlData(UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData) {
-      this.updatePushPreferencesForChannelByUrlData = updatePushPreferencesForChannelByUrlData;
+    public APIupdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest(UpdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest) {
+      this.updatePushPreferencesForAChannelRequest = updatePushPreferencesForAChannelRequest;
       return this;
     }
 
     /**
-     * Execute updatePushPreferencesForChannelByUrl request
-     * @return UpdatePushPreferencesForChannelByUrlResponse
+     * Execute updatePushPreferencesForAChannel request
+     * @return UpdatePushPreferencesForAChannelResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2814,13 +2945,13 @@ private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPref
      
      */
     
-    public UpdatePushPreferencesForChannelByUrlResponse execute() throws ApiException {
+    public UpdatePushPreferencesForAChannelResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute updatePushPreferencesForChannelByUrl request with HTTP info returned
-     * @return ApiResponse&lt;UpdatePushPreferencesForChannelByUrlResponse&gt;
+     * Execute updatePushPreferencesForAChannel request with HTTP info returned
+     * @return ApiResponse&lt;UpdatePushPreferencesForAChannelResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2829,31 +2960,31 @@ private ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> updatePushPref
        </table>
 
      */
-    public ApiResponse<UpdatePushPreferencesForChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return updatePushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken, updatePushPreferencesForChannelByUrlData);
+    public ApiResponse<UpdatePushPreferencesForAChannelResponse> executeWithHttpInfo() throws ApiException {
+      return updatePushPreferencesForAChannelWithHttpInfo(userId, channelUrl, apiToken, updatePushPreferencesForAChannelRequest);
     }
   }
 
   /**
    * Update push preferences for a channel
-   * ## Update push preferences for a channel  Updates push preferences for a user&#39;s specific group channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences-for-a-channel ----------------------------
-   * @param userId  (required)
-   * @param channelUrl  (required)
-   * @return updatePushPreferencesForChannelByUrlRequest
+   * ## Update push preferences for a channel  You can update a user&#39;s notifications preferences for a specific channel. A push notification is a message that is immediately delivered to a user&#39;s device when the device is either idle or running the client app in the background.  &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences-for-a-channel#1-update-push-notification-preferences-for-a-channel](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences-for-a-channel#1-update-push-notification-preferences-for-a-channel)
+   * @param userId (Required)  (required)
+   * @param channelUrl (Required)  (required)
+   * @return updatePushPreferencesForAChannelRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIupdatePushPreferencesForChannelByUrlRequest updatePushPreferencesForChannelByUrl(String userId, String channelUrl) throws ApiException {
-    return new APIupdatePushPreferencesForChannelByUrlRequest(userId, channelUrl);
+  public APIupdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannel(String userId, String channelUrl) throws ApiException {
+    return new APIupdatePushPreferencesForAChannelRequest(userId, channelUrl);
   }
 
-private ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String userId, String apiToken, UpdateUserByIdData updateUserByIdData) throws ApiException {
-    Object localVarPostBody = updateUserByIdData;
+private ApiResponse<SendbirdUser> viewAUserWithHttpInfo(String userId, Boolean includeUnreadCount, String customTypes, String superMode, String apiToken) throws ApiException {
+    Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling updateUserById");
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewAUser");
     }
     
     // create path and map variables
@@ -2866,126 +2997,12 @@ private ApiResponse<SendBirdUser> updateUserByIdWithHttpInfo(String userId, Stri
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_unread_count", includeUnreadCount));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_types", customTypes));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "super_mode", superMode));
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<SendBirdUser> localVarReturnType = new GenericType<SendBirdUser>() {};
-
-    return apiClient.invokeAPI("UserApi.updateUserById", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIupdateUserByIdRequest {
-    private String userId;
-    private String apiToken;
-    private UpdateUserByIdData updateUserByIdData;
-
-    private APIupdateUserByIdRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIupdateUserByIdRequest
-     */
-    public APIupdateUserByIdRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set updateUserByIdData
-     * @param updateUserByIdData  (optional)
-     * @return APIupdateUserByIdRequest
-     */
-    public APIupdateUserByIdRequest updateUserByIdData(UpdateUserByIdData updateUserByIdData) {
-      this.updateUserByIdData = updateUserByIdData;
-      return this;
-    }
-
-    /**
-     * Execute updateUserById request
-     * @return SendBirdUser
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public SendBirdUser execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute updateUserById request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdUser&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
-      return updateUserByIdWithHttpInfo(userId, apiToken, updateUserByIdData);
-    }
-  }
-
-  /**
-   * Update a user
-   * ## Update a user  Updates information on a user. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user. If the &#x60;leave_all_when_deactivated&#x60; is true (which it is by default), a user leaves all joined group channels when deactivated.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-a-user ----------------------------
-   * @param userId  (required)
-   * @return updateUserByIdRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIupdateUserByIdRequest updateUserById(String userId) throws ApiException {
-    return new APIupdateUserByIdRequest(userId);
-  }
-
-private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewChannelInvitationPreference");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/channel_invitation_preference"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -3001,34 +3018,67 @@ private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitati
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewChannelInvitationPreferenceResponse> localVarReturnType = new GenericType<ViewChannelInvitationPreferenceResponse>() {};
+    GenericType<SendbirdUser> localVarReturnType = new GenericType<SendbirdUser>() {};
 
-    return apiClient.invokeAPI("UserApi.viewChannelInvitationPreference", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.viewAUser", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIviewChannelInvitationPreferenceRequest {
+  public class APIviewAUserRequest {
     private String userId;
+    private Boolean includeUnreadCount;
+    private String customTypes;
+    private String superMode;
     private String apiToken;
 
-    private APIviewChannelInvitationPreferenceRequest(String userId) {
+    private APIviewAUserRequest(String userId) {
       this.userId = userId;
+    }
+
+    /**
+     * Set includeUnreadCount
+     * @param includeUnreadCount  (optional)
+     * @return APIviewAUserRequest
+     */
+    public APIviewAUserRequest includeUnreadCount(Boolean includeUnreadCount) {
+      this.includeUnreadCount = includeUnreadCount;
+      return this;
+    }
+
+    /**
+     * Set customTypes
+     * @param customTypes  (optional)
+     * @return APIviewAUserRequest
+     */
+    public APIviewAUserRequest customTypes(String customTypes) {
+      this.customTypes = customTypes;
+      return this;
+    }
+
+    /**
+     * Set superMode
+     * @param superMode Restricts the search scope to retrieve only Supergroup or non-Supergroup channels. Acceptable values are &#x60;all&#x60;, &#x60;super&#x60;, and &#x60;nonsuper&#x60;. This parameter should be specified in conjunction with &#x60;include_unread_count&#x60; above. (Default: &#x60;all&#x60;) (optional)
+     * @return APIviewAUserRequest
+     */
+    public APIviewAUserRequest superMode(String superMode) {
+      this.superMode = superMode;
+      return this;
     }
 
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIviewChannelInvitationPreferenceRequest
+     * @return APIviewAUserRequest
      */
-    public APIviewChannelInvitationPreferenceRequest apiToken(String apiToken) {
+    public APIviewAUserRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute viewChannelInvitationPreference request
-     * @return ViewChannelInvitationPreferenceResponse
+     * Execute viewAUser request
+     * @return SendbirdUser
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3038,13 +3088,13 @@ private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitati
      
      */
     
-    public ViewChannelInvitationPreferenceResponse execute() throws ApiException {
+    public SendbirdUser execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute viewChannelInvitationPreference request with HTTP info returned
-     * @return ApiResponse&lt;ViewChannelInvitationPreferenceResponse&gt;
+     * Execute viewAUser request with HTTP info returned
+     * @return ApiResponse&lt;SendbirdUser&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3053,35 +3103,35 @@ private ApiResponse<ViewChannelInvitationPreferenceResponse> viewChannelInvitati
        </table>
 
      */
-    public ApiResponse<ViewChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
-      return viewChannelInvitationPreferenceWithHttpInfo(userId, apiToken);
+    public ApiResponse<SendbirdUser> executeWithHttpInfo() throws ApiException {
+      return viewAUserWithHttpInfo(userId, includeUnreadCount, customTypes, superMode, apiToken);
     }
   }
 
   /**
-   * View channel invitation preference
-   * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
-   * @param userId  (required)
-   * @return viewChannelInvitationPreferenceRequest
+   * View a user
+   * ## View a user  You can retrieve information about a user using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/listing-users/get-a-user#1-get-a-user  &#x60;user_id&#x60;   Type: string   Description: Specifies the unique ID of the user to retrieve.
+   * @param userId (Required)  (required)
+   * @return viewAUserRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIviewChannelInvitationPreferenceRequest viewChannelInvitationPreference(String userId) throws ApiException {
-    return new APIviewChannelInvitationPreferenceRequest(userId);
+  public APIviewAUserRequest viewAUser(String userId) throws ApiException {
+    return new APIviewAUserRequest(userId);
   }
 
-private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferenceOfChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
+private ApiResponse<ViewCountPreferenceOfAChannelResponse> viewCountPreferenceOfAChannelWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewCountPreferenceOfChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewCountPreferenceOfAChannel");
     }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling viewCountPreferenceOfChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling viewCountPreferenceOfAChannel");
     }
     
     // create path and map variables
@@ -3097,7 +3147,7 @@ private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferen
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -3113,19 +3163,19 @@ private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferen
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewCountPreferenceOfChannelByUrlResponse> localVarReturnType = new GenericType<ViewCountPreferenceOfChannelByUrlResponse>() {};
+    GenericType<ViewCountPreferenceOfAChannelResponse> localVarReturnType = new GenericType<ViewCountPreferenceOfAChannelResponse>() {};
 
-    return apiClient.invokeAPI("UserApi.viewCountPreferenceOfChannelByUrl", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.viewCountPreferenceOfAChannel", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIviewCountPreferenceOfChannelByUrlRequest {
+  public class APIviewCountPreferenceOfAChannelRequest {
     private String userId;
     private String channelUrl;
     private String apiToken;
 
-    private APIviewCountPreferenceOfChannelByUrlRequest(String userId, String channelUrl) {
+    private APIviewCountPreferenceOfAChannelRequest(String userId, String channelUrl) {
       this.userId = userId;
       this.channelUrl = channelUrl;
     }
@@ -3133,16 +3183,16 @@ private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferen
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIviewCountPreferenceOfChannelByUrlRequest
+     * @return APIviewCountPreferenceOfAChannelRequest
      */
-    public APIviewCountPreferenceOfChannelByUrlRequest apiToken(String apiToken) {
+    public APIviewCountPreferenceOfAChannelRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute viewCountPreferenceOfChannelByUrl request
-     * @return ViewCountPreferenceOfChannelByUrlResponse
+     * Execute viewCountPreferenceOfAChannel request
+     * @return ViewCountPreferenceOfAChannelResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3152,13 +3202,13 @@ private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferen
      
      */
     
-    public ViewCountPreferenceOfChannelByUrlResponse execute() throws ApiException {
+    public ViewCountPreferenceOfAChannelResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute viewCountPreferenceOfChannelByUrl request with HTTP info returned
-     * @return ApiResponse&lt;ViewCountPreferenceOfChannelByUrlResponse&gt;
+     * Execute viewCountPreferenceOfAChannel request with HTTP info returned
+     * @return ApiResponse&lt;ViewCountPreferenceOfAChannelResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3167,144 +3217,26 @@ private ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> viewCountPreferen
        </table>
 
      */
-    public ApiResponse<ViewCountPreferenceOfChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return viewCountPreferenceOfChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
+    public ApiResponse<ViewCountPreferenceOfAChannelResponse> executeWithHttpInfo() throws ApiException {
+      return viewCountPreferenceOfAChannelWithHttpInfo(userId, channelUrl, apiToken);
     }
   }
 
   /**
    * View count preference of a channel
-   * ## View count preference of a channel  Retrieves count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-count-preference-of-a-channel ----------------------------
-   * @param userId  (required)
-   * @param channelUrl  (required)
-   * @return viewCountPreferenceOfChannelByUrlRequest
+   * ## View count preference of a channel  This action retrieves a user&#39;s count preference of a specific group channel. The count preference allows a user to either retrieve the number of unread messages or unread mentioned messages, or both in a specific group channel.  If you want to update the total number count of a specific group channel, visit the [update count preference of a channel](https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/update-count-preference-of-a-channel).  https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-count-preference-of-a-channel#1-get-count-preference-of-a-channel
+   * @param userId (Required)  (required)
+   * @param channelUrl (Required)  (required)
+   * @return viewCountPreferenceOfAChannelRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIviewCountPreferenceOfChannelByUrlRequest viewCountPreferenceOfChannelByUrl(String userId, String channelUrl) throws ApiException {
-    return new APIviewCountPreferenceOfChannelByUrlRequest(userId, channelUrl);
+  public APIviewCountPreferenceOfAChannelRequest viewCountPreferenceOfAChannel(String userId, String channelUrl) throws ApiException {
+    return new APIviewCountPreferenceOfAChannelRequest(userId, channelUrl);
   }
 
-private ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> viewNumberOfChannelsByJoinStatusWithHttpInfo(String userId, String apiToken, String state) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewNumberOfChannelsByJoinStatus");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/group_channel_count"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "state", state));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<ViewNumberOfChannelsByJoinStatusResponse> localVarReturnType = new GenericType<ViewNumberOfChannelsByJoinStatusResponse>() {};
-
-    return apiClient.invokeAPI("UserApi.viewNumberOfChannelsByJoinStatus", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIviewNumberOfChannelsByJoinStatusRequest {
-    private String userId;
-    private String apiToken;
-    private String state;
-
-    private APIviewNumberOfChannelsByJoinStatusRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIviewNumberOfChannelsByJoinStatusRequest
-     */
-    public APIviewNumberOfChannelsByJoinStatusRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set state
-     * @param state  (optional)
-     * @return APIviewNumberOfChannelsByJoinStatusRequest
-     */
-    public APIviewNumberOfChannelsByJoinStatusRequest state(String state) {
-      this.state = state;
-      return this;
-    }
-
-    /**
-     * Execute viewNumberOfChannelsByJoinStatus request
-     * @return ViewNumberOfChannelsByJoinStatusResponse
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public ViewNumberOfChannelsByJoinStatusResponse execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute viewNumberOfChannelsByJoinStatus request with HTTP info returned
-     * @return ApiResponse&lt;ViewNumberOfChannelsByJoinStatusResponse&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<ViewNumberOfChannelsByJoinStatusResponse> executeWithHttpInfo() throws ApiException {
-      return viewNumberOfChannelsByJoinStatusWithHttpInfo(userId, apiToken, state);
-    }
-  }
-
-  /**
-   * View number of channels by join status
-   * ## View number of channels by join status  Retrieves the number of a user&#39;s group channels by their join status.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-by-join-status ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
-   * @param userId  (required)
-   * @return viewNumberOfChannelsByJoinStatusRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIviewNumberOfChannelsByJoinStatusRequest viewNumberOfChannelsByJoinStatus(String userId) throws ApiException {
-    return new APIviewNumberOfChannelsByJoinStatusRequest(userId);
-  }
-
-private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String userId, String apiToken, List<String> customTypes, String superMode) throws ApiException {
+private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String userId, String customTypes, String superMode, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -3322,11 +3254,11 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "custom_types", customTypes));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_types", customTypes));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "super_mode", superMode));
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -3351,12 +3283,32 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
 
   public class APIviewNumberOfChannelsWithUnreadMessagesRequest {
     private String userId;
-    private String apiToken;
-    private List<String> customTypes;
+    private String customTypes;
     private String superMode;
+    private String apiToken;
 
     private APIviewNumberOfChannelsWithUnreadMessagesRequest(String userId) {
       this.userId = userId;
+    }
+
+    /**
+     * Set customTypes
+     * @param customTypes  (optional)
+     * @return APIviewNumberOfChannelsWithUnreadMessagesRequest
+     */
+    public APIviewNumberOfChannelsWithUnreadMessagesRequest customTypes(String customTypes) {
+      this.customTypes = customTypes;
+      return this;
+    }
+
+    /**
+     * Set superMode
+     * @param superMode Restricts the search scope to either Supergroup channels or non-Supergroup channels or both. Acceptable values are all, super, and nonsuper. (Default: all) (optional)
+     * @return APIviewNumberOfChannelsWithUnreadMessagesRequest
+     */
+    public APIviewNumberOfChannelsWithUnreadMessagesRequest superMode(String superMode) {
+      this.superMode = superMode;
+      return this;
     }
 
     /**
@@ -3366,26 +3318,6 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
      */
     public APIviewNumberOfChannelsWithUnreadMessagesRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set customTypes
-     * @param customTypes  (optional)
-     * @return APIviewNumberOfChannelsWithUnreadMessagesRequest
-     */
-    public APIviewNumberOfChannelsWithUnreadMessagesRequest customTypes(List<String> customTypes) {
-      this.customTypes = customTypes;
-      return this;
-    }
-
-    /**
-     * Set superMode
-     * @param superMode  (optional)
-     * @return APIviewNumberOfChannelsWithUnreadMessagesRequest
-     */
-    public APIviewNumberOfChannelsWithUnreadMessagesRequest superMode(String superMode) {
-      this.superMode = superMode;
       return this;
     }
 
@@ -3417,14 +3349,14 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
 
      */
     public ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
-      return viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
+      return viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(userId, customTypes, superMode, apiToken);
     }
   }
 
   /**
    * View number of channels with unread messages
-   * ## View number of channels with unread messages  Retrieves the total number of a user&#39;s group channels with unread messages.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-with-unread-messages ----------------------------
-   * @param userId  (required)
+   * ## View number of channels with unread messages  This action retrieves the total number of group channels in which a user has unread messages. You can use various query parameters to determine the search scope of group channels.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-number-of-channels-with-unread-messages#1-get-number-of-channels-with-unread-messages
+   * @param userId (Required)  (required)
    * @return viewNumberOfChannelsWithUnreadMessagesRequest
    * @throws ApiException if fails to make API call
    
@@ -3434,137 +3366,7 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
     return new APIviewNumberOfChannelsWithUnreadMessagesRequest(userId);
   }
 
-private ApiResponse<ViewNumberOfUnreadItemsResponse> viewNumberOfUnreadItemsWithHttpInfo(String userId, String apiToken, String customType, String itemKeys) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewNumberOfUnreadItems");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}/unread_item_count"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_type", customType));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "item_keys", itemKeys));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<ViewNumberOfUnreadItemsResponse> localVarReturnType = new GenericType<ViewNumberOfUnreadItemsResponse>() {};
-
-    return apiClient.invokeAPI("UserApi.viewNumberOfUnreadItems", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIviewNumberOfUnreadItemsRequest {
-    private String userId;
-    private String apiToken;
-    private String customType;
-    private String itemKeys;
-
-    private APIviewNumberOfUnreadItemsRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIviewNumberOfUnreadItemsRequest
-     */
-    public APIviewNumberOfUnreadItemsRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set customType
-     * @param customType  (optional)
-     * @return APIviewNumberOfUnreadItemsRequest
-     */
-    public APIviewNumberOfUnreadItemsRequest customType(String customType) {
-      this.customType = customType;
-      return this;
-    }
-
-    /**
-     * Set itemKeys
-     * @param itemKeys  (optional)
-     * @return APIviewNumberOfUnreadItemsRequest
-     */
-    public APIviewNumberOfUnreadItemsRequest itemKeys(String itemKeys) {
-      this.itemKeys = itemKeys;
-      return this;
-    }
-
-    /**
-     * Execute viewNumberOfUnreadItems request
-     * @return ViewNumberOfUnreadItemsResponse
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public ViewNumberOfUnreadItemsResponse execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute viewNumberOfUnreadItems request with HTTP info returned
-     * @return ApiResponse&lt;ViewNumberOfUnreadItemsResponse&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<ViewNumberOfUnreadItemsResponse> executeWithHttpInfo() throws ApiException {
-      return viewNumberOfUnreadItemsWithHttpInfo(userId, apiToken, customType, itemKeys);
-    }
-  }
-
-  /**
-   * View number of unread items
-   * ## View number of unread items  Retrieves a set of total numbers of a user&#39;s unread messages, unread mentioned messages, or received invitations in either super or non-super group channels. This action is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-items ----------------------------
-   * @param userId  (required)
-   * @return viewNumberOfUnreadItemsRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIviewNumberOfUnreadItemsRequest viewNumberOfUnreadItems(String userId) throws ApiException {
-    return new APIviewNumberOfUnreadItemsRequest(userId);
-  }
-
-private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String userId, String apiToken, String customTypes, String superMode) throws ApiException {
+private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String userId, String customTypes, String superMode, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -3586,7 +3388,7 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "super_mode", superMode));
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -3611,27 +3413,17 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
 
   public class APIviewNumberOfUnreadMessagesRequest {
     private String userId;
-    private String apiToken;
     private String customTypes;
     private String superMode;
+    private String apiToken;
 
     private APIviewNumberOfUnreadMessagesRequest(String userId) {
       this.userId = userId;
     }
 
     /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIviewNumberOfUnreadMessagesRequest
-     */
-    public APIviewNumberOfUnreadMessagesRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
      * Set customTypes
-     * @param customTypes  (optional)
+     * @param customTypes Specifies a comma-separated string of one or more custom types to filter group channels. URL encoding each type is recommended. If not specified, all channels are returned, regardless of their custom type. (optional)
      * @return APIviewNumberOfUnreadMessagesRequest
      */
     public APIviewNumberOfUnreadMessagesRequest customTypes(String customTypes) {
@@ -3641,11 +3433,21 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
 
     /**
      * Set superMode
-     * @param superMode  (optional)
+     * @param superMode Restricts the search scope to either Supergroup channels or non-Supergroup channels or both. Acceptable values are &#x60;all&#x60;, &#x60;super&#x60;, and &#x60;nonsuper&#x60;. (Default: &#x60;all&#x60;) (optional)
      * @return APIviewNumberOfUnreadMessagesRequest
      */
     public APIviewNumberOfUnreadMessagesRequest superMode(String superMode) {
       this.superMode = superMode;
+      return this;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIviewNumberOfUnreadMessagesRequest
+     */
+    public APIviewNumberOfUnreadMessagesRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
       return this;
     }
 
@@ -3677,14 +3479,14 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
 
      */
     public ApiResponse<ViewNumberOfUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
-      return viewNumberOfUnreadMessagesWithHttpInfo(userId, apiToken, customTypes, superMode);
+      return viewNumberOfUnreadMessagesWithHttpInfo(userId, customTypes, superMode, apiToken);
     }
   }
 
   /**
    * View number of unread messages
-   * ## View number of unread messages  Retrieves the total number of a user&#39;s currently unread messages in the group channels. The unread counts feature is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-messages ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
-   * @param userId  (required)
+   * ## View number of unread messages  This action retrieves a user&#39;s total number of unread messages in group channels.  &gt; **Note**: The unread count feature is only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-number-of-unread-messages#1-get-number-of-unread-messages](https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-number-of-unread-messages#1-get-number-of-unread-messages)  &#x60;user_id&#x60;   Type: string   Description: Specifies the unique ID of a user.
+   * @param userId (Required)  (required)
    * @return viewNumberOfUnreadMessagesRequest
    * @throws ApiException if fails to make API call
    
@@ -3714,7 +3516,7 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -3789,8 +3591,8 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
 
   /**
    * View push preferences
-   * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
-   * @param userId  (required)
+   * ## View push preferences  You can retrieves a user&#39;s notifications preferences. A push notification is a message that is immediately delivered to a user&#39;s device when the device is either idle or running the client app in the background.  &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences#1-get-push-notification-preferences](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences#1-get-push-notification-preferences)
+   * @param userId (Required)  (required)
    * @return viewPushPreferencesRequest
    * @throws ApiException if fails to make API call
    
@@ -3800,17 +3602,17 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
     return new APIviewPushPreferencesRequest(userId);
   }
 
-private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferencesForChannelByUrlWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
+private ApiResponse<ViewPushPreferencesForAChannelResponse> viewPushPreferencesForAChannelWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewPushPreferencesForChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewPushPreferencesForAChannel");
     }
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling viewPushPreferencesForChannelByUrl");
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling viewPushPreferencesForAChannel");
     }
     
     // create path and map variables
@@ -3826,7 +3628,7 @@ private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferen
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -3842,19 +3644,19 @@ private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferen
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewPushPreferencesForChannelByUrlResponse> localVarReturnType = new GenericType<ViewPushPreferencesForChannelByUrlResponse>() {};
+    GenericType<ViewPushPreferencesForAChannelResponse> localVarReturnType = new GenericType<ViewPushPreferencesForAChannelResponse>() {};
 
-    return apiClient.invokeAPI("UserApi.viewPushPreferencesForChannelByUrl", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.viewPushPreferencesForAChannel", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIviewPushPreferencesForChannelByUrlRequest {
+  public class APIviewPushPreferencesForAChannelRequest {
     private String userId;
     private String channelUrl;
     private String apiToken;
 
-    private APIviewPushPreferencesForChannelByUrlRequest(String userId, String channelUrl) {
+    private APIviewPushPreferencesForAChannelRequest(String userId, String channelUrl) {
       this.userId = userId;
       this.channelUrl = channelUrl;
     }
@@ -3862,16 +3664,16 @@ private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferen
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIviewPushPreferencesForChannelByUrlRequest
+     * @return APIviewPushPreferencesForAChannelRequest
      */
-    public APIviewPushPreferencesForChannelByUrlRequest apiToken(String apiToken) {
+    public APIviewPushPreferencesForAChannelRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute viewPushPreferencesForChannelByUrl request
-     * @return ViewPushPreferencesForChannelByUrlResponse
+     * Execute viewPushPreferencesForAChannel request
+     * @return ViewPushPreferencesForAChannelResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3881,13 +3683,13 @@ private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferen
      
      */
     
-    public ViewPushPreferencesForChannelByUrlResponse execute() throws ApiException {
+    public ViewPushPreferencesForAChannelResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute viewPushPreferencesForChannelByUrl request with HTTP info returned
-     * @return ApiResponse&lt;ViewPushPreferencesForChannelByUrlResponse&gt;
+     * Execute viewPushPreferencesForAChannel request with HTTP info returned
+     * @return ApiResponse&lt;ViewPushPreferencesForAChannelResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3896,178 +3698,36 @@ private ApiResponse<ViewPushPreferencesForChannelByUrlResponse> viewPushPreferen
        </table>
 
      */
-    public ApiResponse<ViewPushPreferencesForChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return viewPushPreferencesForChannelByUrlWithHttpInfo(userId, channelUrl, apiToken);
+    public ApiResponse<ViewPushPreferencesForAChannelResponse> executeWithHttpInfo() throws ApiException {
+      return viewPushPreferencesForAChannelWithHttpInfo(userId, channelUrl, apiToken);
     }
   }
 
   /**
    * View push preferences for a channel
-   * ## View push preferences for a channel  Retrieves whether a user has turned on notification messages for a specific channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences-for-a-channel ----------------------------
-   * @param userId  (required)
-   * @param channelUrl  (required)
-   * @return viewPushPreferencesForChannelByUrlRequest
+   * ## View push preferences for a channel  You can retrieve a user&#39;s notifications preferences for a specific channel. A push notification is a message that is immediately delivered to a user&#39;s device when the device is either idle or running the client app in the background. These notifications preferences can be configured.  &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences-for-a-channel#1-get-push-notification-preferences-for-a-channel](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences-for-a-channel#1-get-push-notification-preferences-for-a-channel)
+   * @param userId (Required)  (required)
+   * @param channelUrl (Required)  (required)
+   * @return viewPushPreferencesForAChannelRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIviewPushPreferencesForChannelByUrlRequest viewPushPreferencesForChannelByUrl(String userId, String channelUrl) throws ApiException {
-    return new APIviewPushPreferencesForChannelByUrlRequest(userId, channelUrl);
+  public APIviewPushPreferencesForAChannelRequest viewPushPreferencesForAChannel(String userId, String channelUrl) throws ApiException {
+    return new APIviewPushPreferencesForAChannelRequest(userId, channelUrl);
   }
 
-private ApiResponse<SendBirdUser> viewUserByIdWithHttpInfo(String userId, String apiToken, Boolean includeUnreadCount, String customTypes, String superMode) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'userId' is set
-    if (userId == null) {
-      throw new ApiException(400, "Missing the required parameter 'userId' when calling viewUserById");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v3/users/{user_id}"
-      .replaceAll("\\{" + "user_id" + "\\}", apiClient.escapeString(userId.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "include_unread_count", includeUnreadCount));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "custom_types", customTypes));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "super_mode", superMode));
-
-    if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<SendBirdUser> localVarReturnType = new GenericType<SendBirdUser>() {};
-
-    return apiClient.invokeAPI("UserApi.viewUserById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-
-  public class APIviewUserByIdRequest {
-    private String userId;
-    private String apiToken;
-    private Boolean includeUnreadCount;
-    private String customTypes;
-    private String superMode;
-
-    private APIviewUserByIdRequest(String userId) {
-      this.userId = userId;
-    }
-
-    /**
-     * Set apiToken
-     * @param apiToken  (optional)
-     * @return APIviewUserByIdRequest
-     */
-    public APIviewUserByIdRequest apiToken(String apiToken) {
-      this.apiToken = apiToken;
-      return this;
-    }
-
-    /**
-     * Set includeUnreadCount
-     * @param includeUnreadCount  (optional)
-     * @return APIviewUserByIdRequest
-     */
-    public APIviewUserByIdRequest includeUnreadCount(Boolean includeUnreadCount) {
-      this.includeUnreadCount = includeUnreadCount;
-      return this;
-    }
-
-    /**
-     * Set customTypes
-     * @param customTypes  (optional)
-     * @return APIviewUserByIdRequest
-     */
-    public APIviewUserByIdRequest customTypes(String customTypes) {
-      this.customTypes = customTypes;
-      return this;
-    }
-
-    /**
-     * Set superMode
-     * @param superMode  (optional)
-     * @return APIviewUserByIdRequest
-     */
-    public APIviewUserByIdRequest superMode(String superMode) {
-      this.superMode = superMode;
-      return this;
-    }
-
-    /**
-     * Execute viewUserById request
-     * @return SendBirdUser
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-     
-     */
-    
-    public SendBirdUser execute() throws ApiException {
-      return this.executeWithHttpInfo().getData();
-    }
-
-    /**
-     * Execute viewUserById request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdUser&gt;
-     * @throws ApiException if fails to make API call
-     * @http.response.details
-       <table summary="Response Details" border="1">
-         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-       </table>
-
-     */
-    public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
-      return viewUserByIdWithHttpInfo(userId, apiToken, includeUnreadCount, customTypes, superMode);
-    }
-  }
-
-  /**
-   * View a user
-   * ## View a user  Retrieves information on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-a-user ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve.
-   * @param userId  (required)
-   * @return viewUserByIdRequest
-   * @throws ApiException if fails to make API call
-   
-   
-   */
-  public APIviewUserByIdRequest viewUserById(String userId) throws ApiException {
-    return new APIviewUserByIdRequest(userId);
-  }
-
-private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>> viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
+private ApiResponse<List<MarkChannelMessagesAsReadRequest>> viewWhoOwnsARegistrationOrDeviceTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'tokenType' is set
     if (tokenType == null) {
-      throw new ApiException(400, "Missing the required parameter 'tokenType' when calling viewWhoOwnsRegistrationOrDeviceTokenByToken");
+      throw new ApiException(400, "Missing the required parameter 'tokenType' when calling viewWhoOwnsARegistrationOrDeviceToken");
     }
     
     // verify the required parameter 'token' is set
     if (token == null) {
-      throw new ApiException(400, "Missing the required parameter 'token' when calling viewWhoOwnsRegistrationOrDeviceTokenByToken");
+      throw new ApiException(400, "Missing the required parameter 'token' when calling viewWhoOwnsARegistrationOrDeviceToken");
     }
     
     // create path and map variables
@@ -4083,7 +3743,7 @@ private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInne
 
 
     if (apiToken != null)
-      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+      localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
     
@@ -4099,19 +3759,19 @@ private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInne
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>> localVarReturnType = new GenericType<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>>() {};
+    GenericType<List<MarkChannelMessagesAsReadRequest>> localVarReturnType = new GenericType<List<MarkChannelMessagesAsReadRequest>>() {};
 
-    return apiClient.invokeAPI("UserApi.viewWhoOwnsRegistrationOrDeviceTokenByToken", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+    return apiClient.invokeAPI("UserApi.viewWhoOwnsARegistrationOrDeviceToken", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 
-  public class APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest {
+  public class APIviewWhoOwnsARegistrationOrDeviceTokenRequest {
     private String tokenType;
     private String token;
     private String apiToken;
 
-    private APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest(String tokenType, String token) {
+    private APIviewWhoOwnsARegistrationOrDeviceTokenRequest(String tokenType, String token) {
       this.tokenType = tokenType;
       this.token = token;
     }
@@ -4119,16 +3779,16 @@ private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInne
     /**
      * Set apiToken
      * @param apiToken  (optional)
-     * @return APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest
+     * @return APIviewWhoOwnsARegistrationOrDeviceTokenRequest
      */
-    public APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest apiToken(String apiToken) {
+    public APIviewWhoOwnsARegistrationOrDeviceTokenRequest apiToken(String apiToken) {
       this.apiToken = apiToken;
       return this;
     }
 
     /**
-     * Execute viewWhoOwnsRegistrationOrDeviceTokenByToken request
-     * @return List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt;
+     * Execute viewWhoOwnsARegistrationOrDeviceToken request
+     * @return List&lt;MarkChannelMessagesAsReadRequest&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -4138,13 +3798,13 @@ private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInne
      
      */
     
-    public List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> execute() throws ApiException {
+    public List<MarkChannelMessagesAsReadRequest> execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
-     * Execute viewWhoOwnsRegistrationOrDeviceTokenByToken request with HTTP info returned
-     * @return ApiResponse&lt;List&lt;ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner&gt;&gt;
+     * Execute viewWhoOwnsARegistrationOrDeviceToken request with HTTP info returned
+     * @return ApiResponse&lt;List&lt;MarkChannelMessagesAsReadRequest&gt;&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -4153,22 +3813,22 @@ private ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInne
        </table>
 
      */
-    public ApiResponse<List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner>> executeWithHttpInfo() throws ApiException {
-      return viewWhoOwnsRegistrationOrDeviceTokenByTokenWithHttpInfo(tokenType, token, apiToken);
+    public ApiResponse<List<MarkChannelMessagesAsReadRequest>> executeWithHttpInfo() throws ApiException {
+      return viewWhoOwnsARegistrationOrDeviceTokenWithHttpInfo(tokenType, token, apiToken);
     }
   }
 
   /**
    * View who owns a registration or device token
    * ## View who owns a registration or device token  Retrieves a user who owns a FCM registration token, HMS device token, or APNs device token. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-who-owns-a-registration-or-device-token ----------------------------
-   * @param tokenType  (required)
-   * @param token  (required)
-   * @return viewWhoOwnsRegistrationOrDeviceTokenByTokenRequest
+   * @param tokenType (Required)  (required)
+   * @param token (Required)  (required)
+   * @return viewWhoOwnsARegistrationOrDeviceTokenRequest
    * @throws ApiException if fails to make API call
    
    
    */
-  public APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest viewWhoOwnsRegistrationOrDeviceTokenByToken(String tokenType, String token) throws ApiException {
-    return new APIviewWhoOwnsRegistrationOrDeviceTokenByTokenRequest(tokenType, token);
+  public APIviewWhoOwnsARegistrationOrDeviceTokenRequest viewWhoOwnsARegistrationOrDeviceToken(String tokenType, String token) throws ApiException {
+    return new APIviewWhoOwnsARegistrationOrDeviceTokenRequest(tokenType, token);
   }
 }

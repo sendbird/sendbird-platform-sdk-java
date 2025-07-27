@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -24,9 +24,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.SendbirdPushTriggerOption;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,64 +36,64 @@ import org.sendbird.client.JSON;
  */
 @JsonPropertyOrder({
   UpdatePushPreferencesResponse.JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS,
-  UpdatePushPreferencesResponse.JSON_PROPERTY_ENABLE_PUSH_FOR_REPLIES,
-  UpdatePushPreferencesResponse.JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS,
-  UpdatePushPreferencesResponse.JSON_PROPERTY_PUSH_TRIGGER_OPTION,
   UpdatePushPreferencesResponse.JSON_PROPERTY_DO_NOT_DISTURB,
-  UpdatePushPreferencesResponse.JSON_PROPERTY_START_HOUR,
-  UpdatePushPreferencesResponse.JSON_PROPERTY_START_MIN,
+  UpdatePushPreferencesResponse.JSON_PROPERTY_ENABLE_PUSH_FOR_REPLIES,
   UpdatePushPreferencesResponse.JSON_PROPERTY_END_HOUR,
   UpdatePushPreferencesResponse.JSON_PROPERTY_END_MIN,
+  UpdatePushPreferencesResponse.JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS,
+  UpdatePushPreferencesResponse.JSON_PROPERTY_PUSH_SOUND,
+  UpdatePushPreferencesResponse.JSON_PROPERTY_PUSH_TRIGGER_OPTION,
   UpdatePushPreferencesResponse.JSON_PROPERTY_SNOOZE_ENABLED,
-  UpdatePushPreferencesResponse.JSON_PROPERTY_SNOOZE_START_TS,
   UpdatePushPreferencesResponse.JSON_PROPERTY_SNOOZE_END_TS,
-  UpdatePushPreferencesResponse.JSON_PROPERTY_TIMEZONE,
-  UpdatePushPreferencesResponse.JSON_PROPERTY_PUSH_SOUND
+  UpdatePushPreferencesResponse.JSON_PROPERTY_SNOOZE_START_TS,
+  UpdatePushPreferencesResponse.JSON_PROPERTY_START_HOUR,
+  UpdatePushPreferencesResponse.JSON_PROPERTY_START_MIN,
+  UpdatePushPreferencesResponse.JSON_PROPERTY_TIMEZONE
 })
 @JsonTypeName("updatePushPreferencesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-24T16:05:51.854046+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
 public class UpdatePushPreferencesResponse {
   public static final String JSON_PROPERTY_BLOCK_PUSH_FROM_BOTS = "block_push_from_bots";
   private Boolean blockPushFromBots;
 
+  public static final String JSON_PROPERTY_DO_NOT_DISTURB = "do_not_disturb";
+  private Boolean doNotDisturb;
+
   public static final String JSON_PROPERTY_ENABLE_PUSH_FOR_REPLIES = "enable_push_for_replies";
   private Boolean enablePushForReplies;
+
+  public static final String JSON_PROPERTY_END_HOUR = "end_hour";
+  private Integer endHour;
+
+  public static final String JSON_PROPERTY_END_MIN = "end_min";
+  private Integer endMin;
 
   public static final String JSON_PROPERTY_PUSH_BLOCKED_BOT_IDS = "push_blocked_bot_ids";
   private List<String> pushBlockedBotIds = null;
 
+  public static final String JSON_PROPERTY_PUSH_SOUND = "push_sound";
+  private String pushSound;
+
   public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
-  private String pushTriggerOption;
-
-  public static final String JSON_PROPERTY_DO_NOT_DISTURB = "do_not_disturb";
-  private Boolean doNotDisturb;
-
-  public static final String JSON_PROPERTY_START_HOUR = "start_hour";
-  private BigDecimal startHour;
-
-  public static final String JSON_PROPERTY_START_MIN = "start_min";
-  private BigDecimal startMin;
-
-  public static final String JSON_PROPERTY_END_HOUR = "end_hour";
-  private BigDecimal endHour;
-
-  public static final String JSON_PROPERTY_END_MIN = "end_min";
-  private BigDecimal endMin;
+  private SendbirdPushTriggerOption pushTriggerOption;
 
   public static final String JSON_PROPERTY_SNOOZE_ENABLED = "snooze_enabled";
   private Boolean snoozeEnabled;
 
-  public static final String JSON_PROPERTY_SNOOZE_START_TS = "snooze_start_ts";
-  private BigDecimal snoozeStartTs;
-
   public static final String JSON_PROPERTY_SNOOZE_END_TS = "snooze_end_ts";
-  private BigDecimal snoozeEndTs;
+  private Long snoozeEndTs;
+
+  public static final String JSON_PROPERTY_SNOOZE_START_TS = "snooze_start_ts";
+  private Long snoozeStartTs;
+
+  public static final String JSON_PROPERTY_START_HOUR = "start_hour";
+  private Integer startHour;
+
+  public static final String JSON_PROPERTY_START_MIN = "start_min";
+  private Integer startMin;
 
   public static final String JSON_PROPERTY_TIMEZONE = "timezone";
   private String timezone;
-
-  public static final String JSON_PROPERTY_PUSH_SOUND = "push_sound";
-  private String pushSound;
 
   public UpdatePushPreferencesResponse() { 
   }
@@ -124,6 +124,32 @@ public class UpdatePushPreferencesResponse {
   }
 
 
+  public UpdatePushPreferencesResponse doNotDisturb(Boolean doNotDisturb) {
+    this.doNotDisturb = doNotDisturb;
+    return this;
+  }
+
+   /**
+   * Get doNotDisturb
+   * @return doNotDisturb
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getDoNotDisturb() {
+    return doNotDisturb;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDoNotDisturb(Boolean doNotDisturb) {
+    this.doNotDisturb = doNotDisturb;
+  }
+
+
   public UpdatePushPreferencesResponse enablePushForReplies(Boolean enablePushForReplies) {
     this.enablePushForReplies = enablePushForReplies;
     return this;
@@ -147,6 +173,58 @@ public class UpdatePushPreferencesResponse {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnablePushForReplies(Boolean enablePushForReplies) {
     this.enablePushForReplies = enablePushForReplies;
+  }
+
+
+  public UpdatePushPreferencesResponse endHour(Integer endHour) {
+    this.endHour = endHour;
+    return this;
+  }
+
+   /**
+   * Get endHour
+   * @return endHour
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_END_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getEndHour() {
+    return endHour;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_END_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEndHour(Integer endHour) {
+    this.endHour = endHour;
+  }
+
+
+  public UpdatePushPreferencesResponse endMin(Integer endMin) {
+    this.endMin = endMin;
+    return this;
+  }
+
+   /**
+   * Get endMin
+   * @return endMin
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_END_MIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getEndMin() {
+    return endMin;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_END_MIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEndMin(Integer endMin) {
+    this.endMin = endMin;
   }
 
 
@@ -184,7 +262,33 @@ public class UpdatePushPreferencesResponse {
   }
 
 
-  public UpdatePushPreferencesResponse pushTriggerOption(String pushTriggerOption) {
+  public UpdatePushPreferencesResponse pushSound(String pushSound) {
+    this.pushSound = pushSound;
+    return this;
+  }
+
+   /**
+   * Get pushSound
+   * @return pushSound
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getPushSound() {
+    return pushSound;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPushSound(String pushSound) {
+    this.pushSound = pushSound;
+  }
+
+
+  public UpdatePushPreferencesResponse pushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
     return this;
   }
@@ -198,145 +302,15 @@ public class UpdatePushPreferencesResponse {
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getPushTriggerOption() {
+  public SendbirdPushTriggerOption getPushTriggerOption() {
     return pushTriggerOption;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPushTriggerOption(String pushTriggerOption) {
+  public void setPushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
-  }
-
-
-  public UpdatePushPreferencesResponse doNotDisturb(Boolean doNotDisturb) {
-    this.doNotDisturb = doNotDisturb;
-    return this;
-  }
-
-   /**
-   * Get doNotDisturb
-   * @return doNotDisturb
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getDoNotDisturb() {
-    return doNotDisturb;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DO_NOT_DISTURB)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDoNotDisturb(Boolean doNotDisturb) {
-    this.doNotDisturb = doNotDisturb;
-  }
-
-
-  public UpdatePushPreferencesResponse startHour(BigDecimal startHour) {
-    this.startHour = startHour;
-    return this;
-  }
-
-   /**
-   * Get startHour
-   * @return startHour
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_START_HOUR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getStartHour() {
-    return startHour;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_START_HOUR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartHour(BigDecimal startHour) {
-    this.startHour = startHour;
-  }
-
-
-  public UpdatePushPreferencesResponse startMin(BigDecimal startMin) {
-    this.startMin = startMin;
-    return this;
-  }
-
-   /**
-   * Get startMin
-   * @return startMin
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_START_MIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getStartMin() {
-    return startMin;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_START_MIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartMin(BigDecimal startMin) {
-    this.startMin = startMin;
-  }
-
-
-  public UpdatePushPreferencesResponse endHour(BigDecimal endHour) {
-    this.endHour = endHour;
-    return this;
-  }
-
-   /**
-   * Get endHour
-   * @return endHour
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_END_HOUR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getEndHour() {
-    return endHour;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_END_HOUR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndHour(BigDecimal endHour) {
-    this.endHour = endHour;
-  }
-
-
-  public UpdatePushPreferencesResponse endMin(BigDecimal endMin) {
-    this.endMin = endMin;
-    return this;
-  }
-
-   /**
-   * Get endMin
-   * @return endMin
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_END_MIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getEndMin() {
-    return endMin;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_END_MIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndMin(BigDecimal endMin) {
-    this.endMin = endMin;
   }
 
 
@@ -366,33 +340,7 @@ public class UpdatePushPreferencesResponse {
   }
 
 
-  public UpdatePushPreferencesResponse snoozeStartTs(BigDecimal snoozeStartTs) {
-    this.snoozeStartTs = snoozeStartTs;
-    return this;
-  }
-
-   /**
-   * Get snoozeStartTs
-   * @return snoozeStartTs
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public BigDecimal getSnoozeStartTs() {
-    return snoozeStartTs;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSnoozeStartTs(BigDecimal snoozeStartTs) {
-    this.snoozeStartTs = snoozeStartTs;
-  }
-
-
-  public UpdatePushPreferencesResponse snoozeEndTs(BigDecimal snoozeEndTs) {
+  public UpdatePushPreferencesResponse snoozeEndTs(Long snoozeEndTs) {
     this.snoozeEndTs = snoozeEndTs;
     return this;
   }
@@ -406,15 +354,93 @@ public class UpdatePushPreferencesResponse {
   @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getSnoozeEndTs() {
+  public Long getSnoozeEndTs() {
     return snoozeEndTs;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SNOOZE_END_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSnoozeEndTs(BigDecimal snoozeEndTs) {
+  public void setSnoozeEndTs(Long snoozeEndTs) {
     this.snoozeEndTs = snoozeEndTs;
+  }
+
+
+  public UpdatePushPreferencesResponse snoozeStartTs(Long snoozeStartTs) {
+    this.snoozeStartTs = snoozeStartTs;
+    return this;
+  }
+
+   /**
+   * Get snoozeStartTs
+   * @return snoozeStartTs
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getSnoozeStartTs() {
+    return snoozeStartTs;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SNOOZE_START_TS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSnoozeStartTs(Long snoozeStartTs) {
+    this.snoozeStartTs = snoozeStartTs;
+  }
+
+
+  public UpdatePushPreferencesResponse startHour(Integer startHour) {
+    this.startHour = startHour;
+    return this;
+  }
+
+   /**
+   * Get startHour
+   * @return startHour
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_START_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getStartHour() {
+    return startHour;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_START_HOUR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setStartHour(Integer startHour) {
+    this.startHour = startHour;
+  }
+
+
+  public UpdatePushPreferencesResponse startMin(Integer startMin) {
+    this.startMin = startMin;
+    return this;
+  }
+
+   /**
+   * Get startMin
+   * @return startMin
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_START_MIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getStartMin() {
+    return startMin;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_START_MIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setStartMin(Integer startMin) {
+    this.startMin = startMin;
   }
 
 
@@ -444,32 +470,6 @@ public class UpdatePushPreferencesResponse {
   }
 
 
-  public UpdatePushPreferencesResponse pushSound(String pushSound) {
-    this.pushSound = pushSound;
-    return this;
-  }
-
-   /**
-   * Get pushSound
-   * @return pushSound
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getPushSound() {
-    return pushSound;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_PUSH_SOUND)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPushSound(String pushSound) {
-    this.pushSound = pushSound;
-  }
-
-
   /**
    * Return true if this updatePushPreferencesResponse object is equal to o.
    */
@@ -483,24 +483,24 @@ public class UpdatePushPreferencesResponse {
     }
     UpdatePushPreferencesResponse updatePushPreferencesResponse = (UpdatePushPreferencesResponse) o;
     return Objects.equals(this.blockPushFromBots, updatePushPreferencesResponse.blockPushFromBots) &&
-        Objects.equals(this.enablePushForReplies, updatePushPreferencesResponse.enablePushForReplies) &&
-        Objects.equals(this.pushBlockedBotIds, updatePushPreferencesResponse.pushBlockedBotIds) &&
-        Objects.equals(this.pushTriggerOption, updatePushPreferencesResponse.pushTriggerOption) &&
         Objects.equals(this.doNotDisturb, updatePushPreferencesResponse.doNotDisturb) &&
-        Objects.equals(this.startHour, updatePushPreferencesResponse.startHour) &&
-        Objects.equals(this.startMin, updatePushPreferencesResponse.startMin) &&
+        Objects.equals(this.enablePushForReplies, updatePushPreferencesResponse.enablePushForReplies) &&
         Objects.equals(this.endHour, updatePushPreferencesResponse.endHour) &&
         Objects.equals(this.endMin, updatePushPreferencesResponse.endMin) &&
+        Objects.equals(this.pushBlockedBotIds, updatePushPreferencesResponse.pushBlockedBotIds) &&
+        Objects.equals(this.pushSound, updatePushPreferencesResponse.pushSound) &&
+        Objects.equals(this.pushTriggerOption, updatePushPreferencesResponse.pushTriggerOption) &&
         Objects.equals(this.snoozeEnabled, updatePushPreferencesResponse.snoozeEnabled) &&
-        Objects.equals(this.snoozeStartTs, updatePushPreferencesResponse.snoozeStartTs) &&
         Objects.equals(this.snoozeEndTs, updatePushPreferencesResponse.snoozeEndTs) &&
-        Objects.equals(this.timezone, updatePushPreferencesResponse.timezone) &&
-        Objects.equals(this.pushSound, updatePushPreferencesResponse.pushSound);
+        Objects.equals(this.snoozeStartTs, updatePushPreferencesResponse.snoozeStartTs) &&
+        Objects.equals(this.startHour, updatePushPreferencesResponse.startHour) &&
+        Objects.equals(this.startMin, updatePushPreferencesResponse.startMin) &&
+        Objects.equals(this.timezone, updatePushPreferencesResponse.timezone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(blockPushFromBots, enablePushForReplies, pushBlockedBotIds, pushTriggerOption, doNotDisturb, startHour, startMin, endHour, endMin, snoozeEnabled, snoozeStartTs, snoozeEndTs, timezone, pushSound);
+    return Objects.hash(blockPushFromBots, doNotDisturb, enablePushForReplies, endHour, endMin, pushBlockedBotIds, pushSound, pushTriggerOption, snoozeEnabled, snoozeEndTs, snoozeStartTs, startHour, startMin, timezone);
   }
 
   @Override
@@ -508,19 +508,19 @@ public class UpdatePushPreferencesResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdatePushPreferencesResponse {\n");
     sb.append("    blockPushFromBots: ").append(toIndentedString(blockPushFromBots)).append("\n");
-    sb.append("    enablePushForReplies: ").append(toIndentedString(enablePushForReplies)).append("\n");
-    sb.append("    pushBlockedBotIds: ").append(toIndentedString(pushBlockedBotIds)).append("\n");
-    sb.append("    pushTriggerOption: ").append(toIndentedString(pushTriggerOption)).append("\n");
     sb.append("    doNotDisturb: ").append(toIndentedString(doNotDisturb)).append("\n");
-    sb.append("    startHour: ").append(toIndentedString(startHour)).append("\n");
-    sb.append("    startMin: ").append(toIndentedString(startMin)).append("\n");
+    sb.append("    enablePushForReplies: ").append(toIndentedString(enablePushForReplies)).append("\n");
     sb.append("    endHour: ").append(toIndentedString(endHour)).append("\n");
     sb.append("    endMin: ").append(toIndentedString(endMin)).append("\n");
-    sb.append("    snoozeEnabled: ").append(toIndentedString(snoozeEnabled)).append("\n");
-    sb.append("    snoozeStartTs: ").append(toIndentedString(snoozeStartTs)).append("\n");
-    sb.append("    snoozeEndTs: ").append(toIndentedString(snoozeEndTs)).append("\n");
-    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    sb.append("    pushBlockedBotIds: ").append(toIndentedString(pushBlockedBotIds)).append("\n");
     sb.append("    pushSound: ").append(toIndentedString(pushSound)).append("\n");
+    sb.append("    pushTriggerOption: ").append(toIndentedString(pushTriggerOption)).append("\n");
+    sb.append("    snoozeEnabled: ").append(toIndentedString(snoozeEnabled)).append("\n");
+    sb.append("    snoozeEndTs: ").append(toIndentedString(snoozeEndTs)).append("\n");
+    sb.append("    snoozeStartTs: ").append(toIndentedString(snoozeStartTs)).append("\n");
+    sb.append("    startHour: ").append(toIndentedString(startHour)).append("\n");
+    sb.append("    startMin: ").append(toIndentedString(startMin)).append("\n");
+    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -15,13 +15,8 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.*;
 import org.sendbird.client.auth.*;
-import org.openapitools.client.model.GetDetailedOpenRateOfAnnouncementByIdResponse;
-import org.openapitools.client.model.GetDetailedOpenStatusOfAnnouncementByIdResponse;
-import org.openapitools.client.model.RetrieveAdvancedAnalyticsMetricsResponse;
-import org.openapitools.client.model.ViewNumberOfConcurrentConnectionsResponse;
 import org.openapitools.client.model.ViewNumberOfDailyActiveUsersResponse;
 import org.openapitools.client.model.ViewNumberOfMonthlyActiveUsersResponse;
-import org.openapitools.client.model.ViewNumberOfPeakConnectionsResponse;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -40,95 +35,19 @@ public class StatisticsApiTest {
     private final StatisticsApi api = new StatisticsApi();
 
     /**
-     * Get detailed open rate of an announcement
-     *
-     * ## Get detailed open rate of an announcement  Retrieves the detailed open rate information of an announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-rate-of-an-announcement ----------------------------   &#x60;unique_id&#x60;      Type: string      Description: Specifies the unique ID of the announcement to get its open rate.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getDetailedOpenRateOfAnnouncementByIdTest() throws ApiException {
-        //String apiToken = null;
-        //String uniqueId = null;
-        //GetDetailedOpenRateOfAnnouncementByIdResponse response = api.getDetailedOpenRateOfAnnouncementById(uniqueId)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Get detailed open status of an announcement
-     *
-     * ## Get detailed open status of an announcement  Retrieves the detailed open status information of a specific announcement.  https://sendbird.com/docs/chat/v3/platform-api/guides/announcements#2-get-detailed-open-status-of-an-announcement ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getDetailedOpenStatusOfAnnouncementByIdTest() throws ApiException {
-        //String apiToken = null;
-        //String uniqueId = null;
-        //Integer limit = null;
-        //String next = null;
-        //List<String> uniqueIds = null;
-        //List<String> channelUrls = null;
-        //Boolean hasOpened = null;
-        //GetDetailedOpenStatusOfAnnouncementByIdResponse response = api.getDetailedOpenStatusOfAnnouncementById(uniqueId)
-        //        .apiToken(apiToken)
-        //        .limit(limit)
-        //        .next(next)
-        //        .uniqueIds(uniqueIds)
-        //        .channelUrls(channelUrls)
-        //        .hasOpened(hasOpened)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Retrieve Advanced analytics metrics
-     *
-     * ## Retrieve Advanced analytics metrics  Retrieves Advanced analytics metrics based on the specified parameters. You can retrieve either daily or monthly metrics using the time_dimension parameter.  &gt;__Note__: Daily metrics are calculated and updated every three hours, starting at 1 a.m. in UTC. Meanwhile, monthly metrics are calculated after the last day of the month.  https://sendbird.com/docs/chat/v3/platform-api/guides/advanced-analytics#2-retrieve-advanced-analytics-metrics ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void retrieveAdvancedAnalyticsMetricsTest() throws ApiException {
-        //String apiToken = null;
-        //RetrieveAdvancedAnalyticsMetricsResponse response = api.retrieveAdvancedAnalyticsMetrics()
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View number of concurrent connections
-     *
-     * ## View number of concurrent connections  Retrieves the number of devices and opened browser tabs which are currently connected to Sendbird server.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-concurrent-connections
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewNumberOfConcurrentConnectionsTest() throws ApiException {
-        //String apiToken = null;
-        //ViewNumberOfConcurrentConnectionsResponse response = api.viewNumberOfConcurrentConnections()
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
      * View number of daily active users
      *
-     * ## View number of daily active users  Retrieves the number of daily active users of the application (DAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-daily-active-users ----------------------------
+     * ## View number of daily active users  Retrieves the number of daily active users of an application.  &gt; **Note**: This metric is scheduled to be calculated every 30 minutes, starting at 00:00 UTC, with the first update at 00:30 UTC.      [https://sendbird.com/docs/chat/platform-api/v3/statistics/daus-and-maus/get-number-of-daily-active-users#1-get-number-of-daily-active-users](https://sendbird.com/docs/chat/platform-api/v3/statistics/daus-and-maus/get-number-of-daily-active-users#1-get-number-of-daily-active-users)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void viewNumberOfDailyActiveUsersTest() throws ApiException {
-        //String apiToken = null;
         //String date = null;
+        //String apiToken = null;
         //ViewNumberOfDailyActiveUsersResponse response = api.viewNumberOfDailyActiveUsers()
-        //        .apiToken(apiToken)
         //        .date(date)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
@@ -136,47 +55,17 @@ public class StatisticsApiTest {
     /**
      * View number of monthly active users
      *
-     * ## View number of monthly active users  Retrieves the number of monthly active users of the application (MAU).  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-monthly-active-users ----------------------------
+     * ## View number of monthly active users  Retrieves the number of monthly active users of an application.  &gt; **Note**: This metric is scheduled to be calculated every 30 minutes, starting at 00:00 UTC, with the first update at 00:30 UTC.      [https://sendbird.com/docs/chat/platform-api/v3/statistics/daus-and-maus/get-number-of-monthly-active-users#1-get-number-of-monthly-active-users](https://sendbird.com/docs/chat/platform-api/v3/statistics/daus-and-maus/get-number-of-monthly-active-users#1-get-number-of-monthly-active-users)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void viewNumberOfMonthlyActiveUsersTest() throws ApiException {
-        //String apiToken = null;
         //String date = null;
-        //ViewNumberOfMonthlyActiveUsersResponse response = api.viewNumberOfMonthlyActiveUsers()
-        //        .apiToken(apiToken)
-        //        .date(date)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View number of peak connections
-     *
-     * ## View number of peak connections  Retrieves the number of concurrently connected devices to Sendbird server during the requested time period.  https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-number-of-peak-connections ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewNumberOfPeakConnectionsTest() throws ApiException {
         //String apiToken = null;
-        //String timeDimension = null;
-        //Integer startYear = null;
-        //Integer startMonth = null;
-        //Integer endYear = null;
-        //Integer endMonth = null;
-        //Integer startDay = null;
-        //Integer endDay = null;
-        //ViewNumberOfPeakConnectionsResponse response = api.viewNumberOfPeakConnections()
+        //ViewNumberOfMonthlyActiveUsersResponse response = api.viewNumberOfMonthlyActiveUsers()
+        //        .date(date)
         //        .apiToken(apiToken)
-        //        .timeDimension(timeDimension)
-        //        .startYear(startYear)
-        //        .startMonth(startMonth)
-        //        .endYear(endYear)
-        //        .endMonth(endMonth)
-        //        .startDay(startDay)
-        //        .endDay(endDay)
         //        .execute();
         // TODO: test validations
     }

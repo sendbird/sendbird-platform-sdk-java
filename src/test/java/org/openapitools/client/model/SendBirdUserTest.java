@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -20,50 +20,29 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SendBirdUser
+ * Model tests for SendbirdUser
  */
-public class SendBirdUserTest {
-    private final SendBirdUser model = new SendBirdUser();
+public class SendbirdUserTest {
+    private final SendbirdUser model = new SendbirdUser();
 
     /**
-     * Model tests for SendBirdUser
+     * Model tests for SendbirdUser
      */
     @Test
-    public void testSendBirdUser() {
-        // TODO: test SendBirdUser
-    }
-
-    /**
-     * Test the property 'requireAuthForProfileImage'
-     */
-    @Test
-    public void requireAuthForProfileImageTest() {
-        // TODO: test requireAuthForProfileImage
-    }
-
-    /**
-     * Test the property 'isOnline'
-     */
-    @Test
-    public void isOnlineTest() {
-        // TODO: test isOnline
-    }
-
-    /**
-     * Test the property 'userId'
-     */
-    @Test
-    public void userIdTest() {
-        // TODO: test userId
+    public void testSendbirdUser() {
+        // TODO: test SendbirdUser
     }
 
     /**
@@ -72,6 +51,22 @@ public class SendBirdUserTest {
     @Test
     public void accessTokenTest() {
         // TODO: test accessToken
+    }
+
+    /**
+     * Test the property 'createdAt'
+     */
+    @Test
+    public void createdAtTest() {
+        // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'discoveryKeys'
+     */
+    @Test
+    public void discoveryKeysTest() {
+        // TODO: test discoveryKeys
     }
 
     /**
@@ -91,6 +86,30 @@ public class SendBirdUserTest {
     }
 
     /**
+     * Test the property 'isHideMeFromFriends'
+     */
+    @Test
+    public void isHideMeFromFriendsTest() {
+        // TODO: test isHideMeFromFriends
+    }
+
+    /**
+     * Test the property 'isOnline'
+     */
+    @Test
+    public void isOnlineTest() {
+        // TODO: test isOnline
+    }
+
+    /**
+     * Test the property 'isShadowBlocked'
+     */
+    @Test
+    public void isShadowBlockedTest() {
+        // TODO: test isShadowBlocked
+    }
+
+    /**
      * Test the property 'lastSeenAt'
      */
     @Test
@@ -99,27 +118,27 @@ public class SendBirdUserTest {
     }
 
     /**
+     * Test the property 'locale'
+     */
+    @Test
+    public void localeTest() {
+        // TODO: test locale
+    }
+
+    /**
+     * Test the property 'metadata'
+     */
+    @Test
+    public void metadataTest() {
+        // TODO: test metadata
+    }
+
+    /**
      * Test the property 'nickname'
      */
     @Test
     public void nicknameTest() {
         // TODO: test nickname
-    }
-
-    /**
-     * Test the property 'discoveryKeys'
-     */
-    @Test
-    public void discoveryKeysTest() {
-        // TODO: test discoveryKeys
-    }
-
-    /**
-     * Test the property 'sessionTokens'
-     */
-    @Test
-    public void sessionTokensTest() {
-        // TODO: test sessionTokens
     }
 
     /**
@@ -139,11 +158,43 @@ public class SendBirdUserTest {
     }
 
     /**
-     * Test the property 'createdAt'
+     * Test the property 'requireAuthForProfileImage'
      */
     @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
+    public void requireAuthForProfileImageTest() {
+        // TODO: test requireAuthForProfileImage
+    }
+
+    /**
+     * Test the property 'userId'
+     */
+    @Test
+    public void userIdTest() {
+        // TODO: test userId
+    }
+
+    /**
+     * Test the property 'state'
+     */
+    @Test
+    public void stateTest() {
+        // TODO: test state
+    }
+
+    /**
+     * Test the property 'unreadChannelCount'
+     */
+    @Test
+    public void unreadChannelCountTest() {
+        // TODO: test unreadChannelCount
+    }
+
+    /**
+     * Test the property 'unreadMessageCount'
+     */
+    @Test
+    public void unreadMessageCountTest() {
+        // TODO: test unreadMessageCount
     }
 
     /**
@@ -155,38 +206,6 @@ public class SendBirdUserTest {
     }
 
     /**
-     * Test the property 'local'
-     */
-    @Test
-    public void localTest() {
-        // TODO: test local
-    }
-
-    /**
-     * Test the property 'locale'
-     */
-    @Test
-    public void localeTest() {
-        // TODO: test locale
-    }
-
-    /**
-     * Test the property 'isHideMeFromFriends'
-     */
-    @Test
-    public void isHideMeFromFriendsTest() {
-        // TODO: test isHideMeFromFriends
-    }
-
-    /**
-     * Test the property 'isShadowBlocked'
-     */
-    @Test
-    public void isShadowBlockedTest() {
-        // TODO: test isShadowBlocked
-    }
-
-    /**
      * Test the property 'isCreated'
      */
     @Test
@@ -195,35 +214,11 @@ public class SendBirdUserTest {
     }
 
     /**
-     * Test the property 'metadata'
+     * Test the property 'sessionTokens'
      */
     @Test
-    public void metadataTest() {
-        // TODO: test metadata
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'endAt'
-     */
-    @Test
-    public void endAtTest() {
-        // TODO: test endAt
-    }
-
-    /**
-     * Test the property 'startAt'
-     */
-    @Test
-    public void startAtTest() {
-        // TODO: test startAt
+    public void sessionTokensTest() {
+        // TODO: test sessionTokens
     }
 
 }

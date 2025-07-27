@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -20,8 +20,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
-import org.openapitools.client.model.CreateBotResponseBot;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.ListBotsResponseBotsInnerAi;
+import org.openapitools.client.model.ListBotsResponseBotsInnerBot;
+import org.openapitools.client.model.ListBotsResponseBotsInnerBotStyle;
+import org.openapitools.client.model.ListBotsResponseBotsInnerFirstMessagesInner;
+import org.openapitools.client.model.ListBotsResponseBotsInnerSafeguard;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -42,6 +47,14 @@ public class ListBotsResponseBotsInnerTest {
     }
 
     /**
+     * Test the property 'ai'
+     */
+    @Test
+    public void aiTest() {
+        // TODO: test ai
+    }
+
+    /**
      * Test the property 'bot'
      */
     @Test
@@ -58,11 +71,43 @@ public class ListBotsResponseBotsInnerTest {
     }
 
     /**
+     * Test the property 'botStyle'
+     */
+    @Test
+    public void botStyleTest() {
+        // TODO: test botStyle
+    }
+
+    /**
+     * Test the property 'channelInvitationPreference'
+     */
+    @Test
+    public void channelInvitationPreferenceTest() {
+        // TODO: test channelInvitationPreference
+    }
+
+    /**
+     * Test the property 'createdAt'
+     */
+    @Test
+    public void createdAtTest() {
+        // TODO: test createdAt
+    }
+
+    /**
      * Test the property 'enableMarkAsRead'
      */
     @Test
     public void enableMarkAsReadTest() {
         // TODO: test enableMarkAsRead
+    }
+
+    /**
+     * Test the property 'firstMessages'
+     */
+    @Test
+    public void firstMessagesTest() {
+        // TODO: test firstMessages
     }
 
     /**
@@ -74,19 +119,19 @@ public class ListBotsResponseBotsInnerTest {
     }
 
     /**
+     * Test the property 'safeguard'
+     */
+    @Test
+    public void safeguardTest() {
+        // TODO: test safeguard
+    }
+
+    /**
      * Test the property 'showMember'
      */
     @Test
     public void showMemberTest() {
         // TODO: test showMember
-    }
-
-    /**
-     * Test the property 'channelInvitationPreference'
-     */
-    @Test
-    public void channelInvitationPreferenceTest() {
-        // TODO: test channelInvitationPreference
     }
 
 }

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**messages** | [**List&lt;ListMessagesResponseMessagesInner&gt;**](ListMessagesResponseMessagesInner.md) |  |  [optional] |
+|**messages** | [**List&lt;SendbirdMessageResponse&gt;**](SendbirdMessageResponse.md) |  |  [optional] |
 
 
 

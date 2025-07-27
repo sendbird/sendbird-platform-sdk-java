@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -20,43 +20,26 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdBasicUserInfo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SendBirdOpenChannel
+ * Model tests for SendbirdOpenChannel
  */
-public class SendBirdOpenChannelTest {
-    private final SendBirdOpenChannel model = new SendBirdOpenChannel();
+public class SendbirdOpenChannelTest {
+    private final SendbirdOpenChannel model = new SendbirdOpenChannel();
 
     /**
-     * Model tests for SendBirdOpenChannel
+     * Model tests for SendbirdOpenChannel
      */
     @Test
-    public void testSendBirdOpenChannel() {
-        // TODO: test SendBirdOpenChannel
-    }
-
-    /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'customType'
-     */
-    @Test
-    public void customTypeTest() {
-        // TODO: test customType
+    public void testSendbirdOpenChannel() {
+        // TODO: test SendbirdOpenChannel
     }
 
     /**
@@ -68,14 +51,6 @@ public class SendBirdOpenChannelTest {
     }
 
     /**
-     * Test the property 'createdAt'
-     */
-    @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
      * Test the property 'coverUrl'
      */
     @Test
@@ -84,11 +59,19 @@ public class SendBirdOpenChannelTest {
     }
 
     /**
-     * Test the property 'creator'
+     * Test the property 'createdAt'
      */
     @Test
-    public void creatorTest() {
-        // TODO: test creator
+    public void createdAtTest() {
+        // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'customType'
+     */
+    @Test
+    public void customTypeTest() {
+        // TODO: test customType
     }
 
     /**
@@ -97,6 +80,14 @@ public class SendBirdOpenChannelTest {
     @Test
     public void dataTest() {
         // TODO: test data
+    }
+
+    /**
+     * Test the property 'freeze'
+     */
+    @Test
+    public void freezeTest() {
+        // TODO: test freeze
     }
 
     /**
@@ -116,19 +107,19 @@ public class SendBirdOpenChannelTest {
     }
 
     /**
-     * Test the property 'isFrozen'
-     */
-    @Test
-    public void isFrozenTest() {
-        // TODO: test isFrozen
-    }
-
-    /**
      * Test the property 'maxLengthMessage'
      */
     @Test
     public void maxLengthMessageTest() {
         // TODO: test maxLengthMessage
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
@@ -148,11 +139,11 @@ public class SendBirdOpenChannelTest {
     }
 
     /**
-     * Test the property 'freeze'
+     * Test the property 'metadata'
      */
     @Test
-    public void freezeTest() {
-        // TODO: test freeze
+    public void metadataTest() {
+        // TODO: test metadata
     }
 
 }

@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -15,41 +15,37 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.*;
 import org.sendbird.client.auth.*;
-import org.openapitools.client.model.AddRegistrationOrDeviceTokenData;
-import org.openapitools.client.model.AddRegistrationOrDeviceTokenResponse;
-import org.openapitools.client.model.ChoosePushNotificationContentTemplateResponse;
-import org.openapitools.client.model.CreateUserData;
-import org.openapitools.client.model.CreateUserTokenData;
+import org.openapitools.client.model.AddARegistrationOrDeviceTokenRequest;
+import org.openapitools.client.model.AddARegistrationOrDeviceTokenResponse;
+import org.openapitools.client.model.ChooseAPushNotificationContentTemplateRequest;
+import org.openapitools.client.model.ChooseAPushNotificationContentTemplateResponse;
+import org.openapitools.client.model.CreateAUserRequest;
+import org.openapitools.client.model.CreateUserTokenRequest;
 import org.openapitools.client.model.CreateUserTokenResponse;
-import org.openapitools.client.model.LeaveMyGroupChannelsData;
+import org.openapitools.client.model.GetChannelInvitationPreferenceResponse;
+import org.openapitools.client.model.LeaveMyGroupChannelsRequest;
 import org.openapitools.client.model.ListMyGroupChannelsResponse;
 import org.openapitools.client.model.ListRegistrationOrDeviceTokensResponse;
 import org.openapitools.client.model.ListUsersResponse;
-import org.openapitools.client.model.MarkAllMessagesAsReadData;
-import org.openapitools.client.model.RegisterAsOperatorToChannelsWithCustomChannelTypesData;
-import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenByTokenResponse;
-import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse;
-import org.openapitools.client.model.RemoveRegistrationOrDeviceTokenResponse;
-import org.openapitools.client.model.ResetPushPreferencesResponse;
-import org.openapitools.client.model.SendBirdUser;
-import org.openapitools.client.model.UpdateChannelInvitationPreferenceData;
+import org.openapitools.client.model.MarkAllMessagesAsReadRequest;
+import org.openapitools.client.model.MarkChannelMessagesAsReadRequest;
+import org.openapitools.client.model.RemoveARegistrationOrDeviceTokenResponse;
+import org.openapitools.client.model.RemoveAllRegistrationOrDeviceTokenResponse;
+import org.openapitools.client.model.SendbirdUser;
+import org.openapitools.client.model.UpdateAUserRequest;
+import org.openapitools.client.model.UpdateChannelInvitationPreferenceRequest;
 import org.openapitools.client.model.UpdateChannelInvitationPreferenceResponse;
-import org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlData;
+import org.openapitools.client.model.UpdateCountPreferenceOfAChannelRequest;
 import org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlResponse;
-import org.openapitools.client.model.UpdatePushPreferencesData;
-import org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlData;
-import org.openapitools.client.model.UpdatePushPreferencesForChannelByUrlResponse;
+import org.openapitools.client.model.UpdatePushPreferencesForAChannelRequest;
+import org.openapitools.client.model.UpdatePushPreferencesForAChannelResponse;
+import org.openapitools.client.model.UpdatePushPreferencesRequest;
 import org.openapitools.client.model.UpdatePushPreferencesResponse;
-import org.openapitools.client.model.UpdateUserByIdData;
-import org.openapitools.client.model.ViewChannelInvitationPreferenceResponse;
-import org.openapitools.client.model.ViewCountPreferenceOfChannelByUrlResponse;
-import org.openapitools.client.model.ViewNumberOfChannelsByJoinStatusResponse;
+import org.openapitools.client.model.ViewCountPreferenceOfAChannelResponse;
 import org.openapitools.client.model.ViewNumberOfChannelsWithUnreadMessagesResponse;
-import org.openapitools.client.model.ViewNumberOfUnreadItemsResponse;
 import org.openapitools.client.model.ViewNumberOfUnreadMessagesResponse;
-import org.openapitools.client.model.ViewPushPreferencesForChannelByUrlResponse;
+import org.openapitools.client.model.ViewPushPreferencesForAChannelResponse;
 import org.openapitools.client.model.ViewPushPreferencesResponse;
-import org.openapitools.client.model.ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -75,14 +71,14 @@ public class UserApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void addRegistrationOrDeviceTokenTest() throws ApiException {
-        //String apiToken = null;
+    public void addARegistrationOrDeviceTokenTest() throws ApiException {
         //String userId = null;
         //String tokenType = null;
-        //AddRegistrationOrDeviceTokenData addRegistrationOrDeviceTokenData = null;
-        //AddRegistrationOrDeviceTokenResponse response = api.addRegistrationOrDeviceToken(userId, tokenType)
+        //String apiToken = null;
+        //AddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest = null;
+        //AddARegistrationOrDeviceTokenResponse response = api.addARegistrationOrDeviceToken(userId, tokenType)
         //        .apiToken(apiToken)
-        //        .addRegistrationOrDeviceTokenData(addRegistrationOrDeviceTokenData)
+        //        .addARegistrationOrDeviceTokenRequest(addARegistrationOrDeviceTokenRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -90,18 +86,18 @@ public class UserApiTest {
     /**
      * Choose a push notification content template
      *
-     * ## Choose a push notification content template  Chooses a push notification content template of a user&#39;s own. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-choose-a-push-notification-content-template ----------------------------
+     * ## Choose a push notification content template  Users can choose a template to determine how push notifications appear to them. Push notification content templates are pre-formatted forms that can be customized to display your own push notification messages on a user&#39;s device. Sendbird provides two types: &#x60;default&#x60; and &#x60;alternative&#x60;. Go to **Settings** &gt; **Chat** &gt; **Push notifications** &gt; **Push notification content templates** on [Sendbird Dashboard](https://dashboard.sendbird.com/auth/signin) to customize the templates.  If the &#x60;push_message_template&#x60; property is specified when [sending a message](https://sendbird.com/docs/chat/platform-api/v3/message/messaging-basics/send-a-message), the content template customized for the message takes precedence over the user&#39;s choice.  &gt; **Note**: Push notifications are only available for group channels.      https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/choose-a-push-notification-content-template#1-choose-a-push-notification-content-template
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void choosePushNotificationContentTemplateTest() throws ApiException {
-        //String apiToken = null;
+    public void chooseAPushNotificationContentTemplateTest() throws ApiException {
         //String userId = null;
-        //Object body = null;
-        //ChoosePushNotificationContentTemplateResponse response = api.choosePushNotificationContentTemplate(userId)
+        //String apiToken = null;
+        //ChooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest = null;
+        //ChooseAPushNotificationContentTemplateResponse response = api.chooseAPushNotificationContentTemplate(userId)
         //        .apiToken(apiToken)
-        //        .body(body)
+        //        .chooseAPushNotificationContentTemplateRequest(chooseAPushNotificationContentTemplateRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -109,17 +105,17 @@ public class UserApiTest {
     /**
      * Create a user
      *
-     * ## Create a user  Creates a new user in the application. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-create-a-user
+     * ## Create a user  You should create a user in your Sendbird application to initiate conversations in channels. A user is identified by its unique user ID, and additionally have a changeable nickname, profile image, and so on. Users are at the core of all conversations. Sendbird applications are made up of users who chat in either Open Channels or Group Channels. Using this API, it is possible to have fine grained control over your users and what those users can do. To learn more about users, see [User overview](https://sendbird.com/docs/chat/platform-api/v3/user/user-overview#2-resource-representation).  https://sendbird.com/docs/chat/platform-api/v3/user/creating-users/create-a-user#1-create-a-user
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void createUserTest() throws ApiException {
+    public void createAUserTest() throws ApiException {
         //String apiToken = null;
-        //CreateUserData createUserData = null;
-        //SendBirdUser response = api.createUser()
+        //CreateAUserRequest createAUserRequest = null;
+        //SendbirdUser response = api.createAUser()
         //        .apiToken(apiToken)
-        //        .createUserData(createUserData)
+        //        .createAUserRequest(createAUserRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -127,18 +123,18 @@ public class UserApiTest {
     /**
      * Create user token
      *
-     * ## Create user token
+     * ## Create user token  This action issues a session token for user authentication. Session tokens provide an efficient stateless authentication method by not storing the tokens in the Sendbird database, and thus improving the server&#39;s performance. See [access token vs. session token](https://sendbird.com/docs/chat/platform-api/v3/user/creating-users/create-a-user#2-access-token-vs-session-token) to learn more about authenticating users.  &gt; **Note**: The endpoint &#x60;/users/{user_id}&#x60; is deprecated. Use &#x60;/users/{user_id}/token&#x60; for greater efficiency.      https://sendbird.com/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token#1-issue-a-session-token
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void createUserTokenTest() throws ApiException {
-        //String apiToken = null;
         //String userId = null;
-        //CreateUserTokenData createUserTokenData = null;
+        //String apiToken = null;
+        //CreateUserTokenRequest createUserTokenRequest = null;
         //CreateUserTokenResponse response = api.createUserToken(userId)
         //        .apiToken(apiToken)
-        //        .createUserTokenData(createUserTokenData)
+        //        .createUserTokenRequest(createUserTokenRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -146,15 +142,32 @@ public class UserApiTest {
     /**
      * Delete a user
      *
-     * ## Delete a user  Deletes a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-delete-a-user ----------------------------
+     * ## Delete a user  You can delete a user from your Sendbird application using this API.  &gt; **Note**: This API deletes user data and metadata, except for their messages. If you wish to delete user data including their messages, use the [GDPR request](https://sendbird.com/docs/chat/platform-api/v3/privacy/privacy-overview).      [https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/delete-a-user#1-delete-a-user](https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/delete-a-user#1-delete-a-user)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void deleteUserByIdTest() throws ApiException {
-        //String apiToken = null;
+    public void deleteAUserTest() throws ApiException {
         //String userId = null;
-        //Object response = api.deleteUserById(userId)
+        //String apiToken = null;
+        //Object response = api.deleteAUser(userId)
+        //        .apiToken(apiToken)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Get channel invitation preference
+     *
+     * ## Get channel invitation preference  This action retrieves a user&#39;s [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) invitation preference. Users are subject to both user-specific and application-wide invitation preferences. Of the two, the invitation preference set for a specific user takes precedence over [the default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/get-default-invitation-preference).  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/get-channel-invitation-preference#1-get-channel-invitation-preference](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/get-channel-invitation-preference#1-get-channel-invitation-preference)
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getChannelInvitationPreferenceTest() throws ApiException {
+        //String userId = null;
+        //String apiToken = null;
+        //GetChannelInvitationPreferenceResponse response = api.getChannelInvitationPreference(userId)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
@@ -163,18 +176,18 @@ public class UserApiTest {
     /**
      * Leave my group channels
      *
-     * ## Leave my group channels  Makes a user leave all joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-leave-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to leave all joined group channels.
+     * ## Leave my group channels  This action allows a user to leave all group channels or channels with a specific custom type. This API is useful if you want to let a user leave a set of channels at once. To let a user leave only one of their group channels, use the [leave a channel API](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/leave-a-channel) instead.  Since this API can&#39;t be called for a deactivated user, ensure that the [&lt;code&gt;leave_all_when_deactivated&lt;/code&gt;](https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/update-a-user#2-request-body) property of the user is set to its default value of &#x60;true&#x60; to let the user leave all joined group channels upon deactivation.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-joined-group-channels/leave-group-channels#1-leave-group-channels  &#x60;user_id&#x60;   Type: string   Description: Specifies the unique ID of the user to leave all joined group channels.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void leaveMyGroupChannelsTest() throws ApiException {
-        //String apiToken = null;
         //String userId = null;
-        //LeaveMyGroupChannelsData leaveMyGroupChannelsData = null;
+        //String apiToken = null;
+        //LeaveMyGroupChannelsRequest leaveMyGroupChannelsRequest = null;
         //Object response = api.leaveMyGroupChannels(userId)
         //        .apiToken(apiToken)
-        //        .leaveMyGroupChannelsData(leaveMyGroupChannelsData)
+        //        .leaveMyGroupChannelsRequest(leaveMyGroupChannelsRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -182,29 +195,27 @@ public class UserApiTest {
     /**
      * List my group channels
      *
-     * ## List my group channels  Retrieves all group channels that the user has joined. You can create a request based on various query parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the target user.
+     * ## List my group channels  This action retrieves a list of [group channels](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) that a specific user has joined. You can use various query parameters to determine the search scope and select what kind of information you want to receive about the queried channels.  If you&#39;re looking to retrieve a list of group channels in a specific application, visit the [list group channels](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-group-channels) page under the Channel section.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-joined-group-channels/list-group-channels-by-user#1-list-group-channels-by-user  &#x60;user_id&#x60;   Type: string   Description: Specifies the unique ID of the target user.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void listMyGroupChannelsTest() throws ApiException {
-        //String apiToken = null;
         //String userId = null;
+        //String apiToken = null;
         //String token = null;
         //Integer limit = null;
         //String distinctMode = null;
         //String publicMode = null;
         //String superMode = null;
-        //String hiddenMode = null;
-        //String memberStateFilter = null;
-        //String unreadFilter = null;
-        //Integer createdAfter = null;
-        //Integer createdBefore = null;
+        //Long createdAfter = null;
+        //Long createdBefore = null;
         //Boolean showEmpty = null;
-        //Boolean showFrozen = null;
         //Boolean showMember = null;
         //Boolean showDeliveryReceipt = null;
         //Boolean showReadReceipt = null;
+        //Boolean showMetadata = null;
+        //Boolean showFrozen = null;
         //String order = null;
         //String metadataOrderKey = null;
         //String customTypes = null;
@@ -218,8 +229,6 @@ public class UserApiTest {
         //String queryType = null;
         //String membersNickname = null;
         //String membersNicknameContains = null;
-        //String searchQuery = null;
-        //String searchFields = null;
         //String metadataKey = null;
         //String metadataValues = null;
         //String metadataValueStartswith = null;
@@ -229,7 +238,13 @@ public class UserApiTest {
         //String metacounterValueGte = null;
         //String metacounterValueLt = null;
         //String metacounterValueLte = null;
+        //Boolean includeSortedMetaarrayInLastMessage = null;
         //String customType = null;
+        //Boolean readReceipt = null;
+        //Boolean member = null;
+        //Boolean isDistinct = null;
+        //String membersIn = null;
+        //String userId2 = null;
         //ListMyGroupChannelsResponse response = api.listMyGroupChannels(userId)
         //        .apiToken(apiToken)
         //        .token(token)
@@ -237,16 +252,14 @@ public class UserApiTest {
         //        .distinctMode(distinctMode)
         //        .publicMode(publicMode)
         //        .superMode(superMode)
-        //        .hiddenMode(hiddenMode)
-        //        .memberStateFilter(memberStateFilter)
-        //        .unreadFilter(unreadFilter)
         //        .createdAfter(createdAfter)
         //        .createdBefore(createdBefore)
         //        .showEmpty(showEmpty)
-        //        .showFrozen(showFrozen)
         //        .showMember(showMember)
         //        .showDeliveryReceipt(showDeliveryReceipt)
         //        .showReadReceipt(showReadReceipt)
+        //        .showMetadata(showMetadata)
+        //        .showFrozen(showFrozen)
         //        .order(order)
         //        .metadataOrderKey(metadataOrderKey)
         //        .customTypes(customTypes)
@@ -260,8 +273,6 @@ public class UserApiTest {
         //        .queryType(queryType)
         //        .membersNickname(membersNickname)
         //        .membersNicknameContains(membersNicknameContains)
-        //        .searchQuery(searchQuery)
-        //        .searchFields(searchFields)
         //        .metadataKey(metadataKey)
         //        .metadataValues(metadataValues)
         //        .metadataValueStartswith(metadataValueStartswith)
@@ -271,7 +282,13 @@ public class UserApiTest {
         //        .metacounterValueGte(metacounterValueGte)
         //        .metacounterValueLt(metacounterValueLt)
         //        .metacounterValueLte(metacounterValueLte)
+        //        .includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage)
         //        .customType(customType)
+        //        .readReceipt(readReceipt)
+        //        .member(member)
+        //        .isDistinct(isDistinct)
+        //        .membersIn(membersIn)
+        //        .userId2(userId2)
         //        .execute();
         // TODO: test validations
     }
@@ -279,15 +296,15 @@ public class UserApiTest {
     /**
      * List registration or device tokens
      *
-     * ## List registration or device tokens  Retrieves a list of a specific user&#39;s FCM registration tokens, HMS device tokens, or APNs device tokens. You can specify either &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; in the &#x60;token_type&#x60; parameter, depending on which push notification service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-registration-or-device-tokens ----------------------------
+     * ## List registration or device tokens  Retrieves a list of a user&#39;s registration or device tokens. You can pass &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; for FCM registration token, HMS device token, or APNs device token, respectively, in the &#x60;token_type&#x60; parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/list-registration-or-device-tokens#1-list-registration-or-device-tokens
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void listRegistrationOrDeviceTokensTest() throws ApiException {
-        //String apiToken = null;
         //String userId = null;
         //String tokenType = null;
+        //String apiToken = null;
         //ListRegistrationOrDeviceTokensResponse response = api.listRegistrationOrDeviceTokens(userId, tokenType)
         //        .apiToken(apiToken)
         //        .execute();
@@ -297,13 +314,12 @@ public class UserApiTest {
     /**
      * List users
      *
-     * ## List users  Retrieves a list of users in your application. You can query the list using various parameters.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-users ----------------------------
+     * ## List users  You can retrieve a list of users in your Sendbird application using this API. You can generate a customized list using various parameter combinations.  https://sendbird.com/docs/chat/platform-api/v3/user/listing-users/list-users#1-list-users
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void listUsersTest() throws ApiException {
-        //String apiToken = null;
         //String token = null;
         //Integer limit = null;
         //String activeMode = null;
@@ -313,8 +329,8 @@ public class UserApiTest {
         //String nicknameStartswith = null;
         //String metadatakey = null;
         //String metadatavaluesIn = null;
+        //String apiToken = null;
         //ListUsersResponse response = api.listUsers()
-        //        .apiToken(apiToken)
         //        .token(token)
         //        .limit(limit)
         //        .activeMode(activeMode)
@@ -324,6 +340,7 @@ public class UserApiTest {
         //        .nicknameStartswith(nicknameStartswith)
         //        .metadatakey(metadatakey)
         //        .metadatavaluesIn(metadatavaluesIn)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
@@ -331,54 +348,18 @@ public class UserApiTest {
     /**
      * Mark all messages as read
      *
-     * ## Mark all messages as read  Marks all of a user&#39;s unread messages as read in the joined group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-mark-all-messages-as-read ----------------------------
+     * ## Mark all messages as read  This action marks all of a user&#39;s unread messages as read in certain group channels. If channels aren&#39;t specified, the user&#39;s unread messages in all group channels are marked as read.  https://sendbird.com/docs/chat/platform-api/v3/user/marking-messages-as-read/mark-all-of-a-users-messages-as-read#1-mark-all-of-a-user-s-messages-as-read
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void markAllMessagesAsReadTest() throws ApiException {
-        //String apiToken = null;
         //String userId = null;
-        //MarkAllMessagesAsReadData markAllMessagesAsReadData = null;
+        //String apiToken = null;
+        //MarkAllMessagesAsReadRequest markAllMessagesAsReadRequest = null;
         //Object response = api.markAllMessagesAsRead(userId)
         //        .apiToken(apiToken)
-        //        .markAllMessagesAsReadData(markAllMessagesAsReadData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Register as an operator to channels with custom channel types
-     *
-     * ## Register as an operator to channels with custom channel types  Registers a user as an operator to channels with particular custom channel types.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-register-as-an-operator-to-channels-with-custom-channel-types ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void registerAsOperatorToChannelsWithCustomChannelTypesTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //RegisterAsOperatorToChannelsWithCustomChannelTypesData registerAsOperatorToChannelsWithCustomChannelTypesData = null;
-        //Object response = api.registerAsOperatorToChannelsWithCustomChannelTypes(userId)
-        //        .apiToken(apiToken)
-        //        .registerAsOperatorToChannelsWithCustomChannelTypesData(registerAsOperatorToChannelsWithCustomChannelTypesData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Remove a registration or device token - When unregistering all device tokens
-     *
-     * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void removeRegistrationOrDeviceTokenTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //RemoveRegistrationOrDeviceTokenResponse response = api.removeRegistrationOrDeviceToken(userId)
-        //        .apiToken(apiToken)
+        //        .markAllMessagesAsReadRequest(markAllMessagesAsReadRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -386,17 +367,17 @@ public class UserApiTest {
     /**
      * Remove a registration or device token - When unregistering a specific token
      *
-     * ## Remove a registration or device token  Removes a specific user&#39;s one or more FCM registration tokens, HMS device tokens, or APNs device tokens.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token ----------------------------
+     * ## Remove a registration or device token  Removes a user&#39;s specific registration or device token or all tokens. You can pass &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; for FCM registration token, HMS device token, or APNs device token, respectively, in the &#x60;token_type&#x60; parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/remove-a-registration-or-device-token#1-remove-a-registration-or-device-token
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void removeRegistrationOrDeviceTokenByTokenTest() throws ApiException {
-        //String apiToken = null;
+    public void removeARegistrationOrDeviceTokenTest() throws ApiException {
         //String userId = null;
         //String tokenType = null;
         //String token = null;
-        //RemoveRegistrationOrDeviceTokenByTokenResponse response = api.removeRegistrationOrDeviceTokenByToken(userId, tokenType, token)
+        //String apiToken = null;
+        //RemoveARegistrationOrDeviceTokenResponse response = api.removeARegistrationOrDeviceToken(userId, tokenType, token)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
@@ -405,16 +386,33 @@ public class UserApiTest {
     /**
      * Remove a registration or device token from an owner
      *
-     * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who owns it. You can pass one of two values in &#x60;token_type&#x60;: &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60;, depending on which push service you are using.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-remove-a-registration-or-device-token-from-an-owner ----------------------------
+     * ## Remove a registration or device token from an owner  Removes a registration or device token from a user who is the owner of the token. You can pass &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; for FCM registration token, HMS device token, or APNs device token, respectively, in the &#x60;token_type&#x60; parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/remove-a-registration-or-device-token-from-an-owner#1-remove-a-registration-or-device-token-from-an-owner
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void removeRegistrationOrDeviceTokenFromOwnerByTokenTest() throws ApiException {
-        //String apiToken = null;
+    public void removeARegistrationOrDeviceTokenFromAnOwnerTest() throws ApiException {
         //String tokenType = null;
         //String token = null;
-        //RemoveRegistrationOrDeviceTokenFromOwnerByTokenResponse response = api.removeRegistrationOrDeviceTokenFromOwnerByToken(tokenType, token)
+        //String apiToken = null;
+        //List<MarkChannelMessagesAsReadRequest> response = api.removeARegistrationOrDeviceTokenFromAnOwner(tokenType, token)
+        //        .apiToken(apiToken)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Remove a registration or device token - When unregistering all device tokens
+     *
+     * ## Remove a registration or device token  Removes a user&#39;s specific registration or device token or all tokens. You can pass &#x60;gcm&#x60;, &#x60;huawei&#x60;, or &#x60;apns&#x60; for FCM registration token, HMS device token, or APNs device token, respectively, in the &#x60;token_type&#x60; parameter for the push notification service you are using.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-device-tokens/remove-a-registration-or-device-token#1-remove-a-registration-or-device-token
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void removeAllRegistrationOrDeviceTokenTest() throws ApiException {
+        //String userId = null;
+        //String apiToken = null;
+        //RemoveAllRegistrationOrDeviceTokenResponse response = api.removeAllRegistrationOrDeviceToken(userId)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
@@ -423,94 +421,16 @@ public class UserApiTest {
     /**
      * Reset push preferences
      *
-     * ## Reset push preferences  Resets a user&#39;s push preferences. After performing this action,   &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; are set to false.  The values of the parameters associated with the time frame are all set to 0.  &#x60;timezone&#x60; is reset to &#x60;UTC&#x60;.  &#x60;push_sound&#x60; is reset to &#x60;default&#x60;.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-reset-push-preferences ----------------------------
+     * ## Reset push preferences  You can reset a user&#39;s notifications preferences. The values are reset to the default as the following.  - The values for the &#x60;do_not_disturb&#x60; and &#x60;snooze_enabled&#x60; properties are set to &#x60;false&#x60;.      - The values of the parameters associated with the time frame are all set to &#x60;0&#x60;.      - The value for the &#x60;timezone&#x60; property is set to &#x60;UTC&#x60;.      - The value for the &#x60;push_sound&#x60; property is set to &#x60;default&#x60;.       &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/reset-push-notification-preferences#1-reset-push-notification-preferences](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/reset-push-notification-preferences#1-reset-push-notification-preferences)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void resetPushPreferencesTest() throws ApiException {
-        //String apiToken = null;
         //String userId = null;
-        //ResetPushPreferencesResponse response = api.resetPushPreferences(userId)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update channel invitation preference
-     *
-     * ## Update channel invitation preference  Updates the channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, you can update the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateChannelInvitationPreferenceTest() throws ApiException {
         //String apiToken = null;
-        //String userId = null;
-        //UpdateChannelInvitationPreferenceData updateChannelInvitationPreferenceData = null;
-        //UpdateChannelInvitationPreferenceResponse response = api.updateChannelInvitationPreference(userId)
+        //Object response = api.resetPushPreferences(userId)
         //        .apiToken(apiToken)
-        //        .updateChannelInvitationPreferenceData(updateChannelInvitationPreferenceData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update count preference of a channel
-     *
-     * ## Update count preference of a channel  Updates count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-count-preference-of-a-channel ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateCountPreferenceOfChannelByUrlTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //String channelUrl = null;
-        //UpdateCountPreferenceOfChannelByUrlData updateCountPreferenceOfChannelByUrlData = null;
-        //UpdateCountPreferenceOfChannelByUrlResponse response = api.updateCountPreferenceOfChannelByUrl(userId, channelUrl)
-        //        .apiToken(apiToken)
-        //        .updateCountPreferenceOfChannelByUrlData(updateCountPreferenceOfChannelByUrlData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update push preferences
-     *
-     * ## Update push preferences  Updates a user&#39;s push preferences. Through this action, you can set &#x60;do_not_disturb&#x60; for a user, and update the time frame in which the setting applies.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updatePushPreferencesTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //UpdatePushPreferencesData updatePushPreferencesData = null;
-        //UpdatePushPreferencesResponse response = api.updatePushPreferences(userId)
-        //        .apiToken(apiToken)
-        //        .updatePushPreferencesData(updatePushPreferencesData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update push preferences for a channel
-     *
-     * ## Update push preferences for a channel  Updates push preferences for a user&#39;s specific group channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-push-preferences-for-a-channel ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updatePushPreferencesForChannelByUrlTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //String channelUrl = null;
-        //UpdatePushPreferencesForChannelByUrlData updatePushPreferencesForChannelByUrlData = null;
-        //UpdatePushPreferencesForChannelByUrlResponse response = api.updatePushPreferencesForChannelByUrl(userId, channelUrl)
-        //        .apiToken(apiToken)
-        //        .updatePushPreferencesForChannelByUrlData(updatePushPreferencesForChannelByUrlData)
         //        .execute();
         // TODO: test validations
     }
@@ -518,34 +438,118 @@ public class UserApiTest {
     /**
      * Update a user
      *
-     * ## Update a user  Updates information on a user. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user. If the &#x60;leave_all_when_deactivated&#x60; is true (which it is by default), a user leaves all joined group channels when deactivated.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-a-user ----------------------------
+     * ## Update a user  You can update information about a user using this API. In addition to changing a user&#39;s nickname or profile image, you can issue a new access token for the user. The new access token replaces the previous one as the necessary token for authentication.  You can also deactivate or reactivate a user using this API request. If the &#x60;leave_all_when_deactivated&#x60; is set to &#x60;true&#x60;, a user leaves all joined group channels and becomes deactivated.  &gt; **Note**: Issuing session tokens through the &#x60;/users/{user_id}&#x60; endpoint is now deprecated and it&amp;apos;s replaced with [&amp;lt;code&amp;gt;/users/{user_id}/token&amp;lt;/code&amp;gt;](https://sendbird.com/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token) endpoint for greater efficiency. For those who are currently using the old endpoint, you can start issuing tokens using the new endpoint.      [https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/update-a-user#1-update-a-user](https://sendbird.com/docs/chat/platform-api/v3/user/managing-users/update-a-user#1-update-a-user)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void updateUserByIdTest() throws ApiException {
-        //String apiToken = null;
+    public void updateAUserTest() throws ApiException {
         //String userId = null;
-        //UpdateUserByIdData updateUserByIdData = null;
-        //SendBirdUser response = api.updateUserById(userId)
+        //String apiToken = null;
+        //UpdateAUserRequest updateAUserRequest = null;
+        //SendbirdUser response = api.updateAUser(userId)
         //        .apiToken(apiToken)
-        //        .updateUserByIdData(updateUserByIdData)
+        //        .updateAUserRequest(updateAUserRequest)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * View channel invitation preference
+     * Update channel invitation preference
      *
-     * ## View channel invitation preference  Retrieves channel invitation preference for a user&#39;s [private](https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#-3-private-vs-public) group channels.  &gt; __Note__: Using the [view default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-view-default-channel-invitation-preference) action, you can retrieve the value of channel invitation preference which is globally applied to all users within the application.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-channel-invitation-preference
+     * ## Update channel invitation preference  This action updates a user&#39;s [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) invitation preference. Updating the [application&#39;s default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/update-default-invitation-preference) won&#39;t override existing users&#39; individual channel invitation preferences. The changed preference only affects the users created after the update.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-channel-invitation-preference#1-update-channel-invitation-preference
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void viewChannelInvitationPreferenceTest() throws ApiException {
-        //String apiToken = null;
+    public void updateChannelInvitationPreferenceTest() throws ApiException {
         //String userId = null;
-        //ViewChannelInvitationPreferenceResponse response = api.viewChannelInvitationPreference(userId)
+        //String apiToken = null;
+        //UpdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest = null;
+        //UpdateChannelInvitationPreferenceResponse response = api.updateChannelInvitationPreference(userId)
+        //        .apiToken(apiToken)
+        //        .updateChannelInvitationPreferenceRequest(updateChannelInvitationPreferenceRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Update count preference of a channel
+     *
+     * ## Update count preference of a channel  This action updates a user&#39;s count preference of a specific group channel. The count preference allows a user to either update the number of unread messages or the number of unread mentioned messages, or both in a specific group channel.  If you want to retrieve the total number count of a specific group channel, go to the [get count preference of a channel](https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-count-preference-of-a-channel) page.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/update-count-preference-of-a-channel#1-update-count-preference-of-a-channel
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void updateCountPreferenceOfAChannelTest() throws ApiException {
+        //String userId = null;
+        //String channelUrl = null;
+        //String apiToken = null;
+        //UpdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest = null;
+        //UpdateCountPreferenceOfChannelByUrlResponse response = api.updateCountPreferenceOfAChannel(userId, channelUrl)
+        //        .apiToken(apiToken)
+        //        .updateCountPreferenceOfAChannelRequest(updateCountPreferenceOfAChannelRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Update push preferences
+     *
+     * ## Update push preferences  You can update a user&#39;s notifications preferences. A push notification is a message that is immediately delivered to a user&#39;s device when the device is either idle or running the client app in the background.  &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences#1-update-push-notification-preferences](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences#1-update-push-notification-preferences)
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void updatePushPreferencesTest() throws ApiException {
+        //String userId = null;
+        //String apiToken = null;
+        //UpdatePushPreferencesRequest updatePushPreferencesRequest = null;
+        //UpdatePushPreferencesResponse response = api.updatePushPreferences(userId)
+        //        .apiToken(apiToken)
+        //        .updatePushPreferencesRequest(updatePushPreferencesRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Update push preferences for a channel
+     *
+     * ## Update push preferences for a channel  You can update a user&#39;s notifications preferences for a specific channel. A push notification is a message that is immediately delivered to a user&#39;s device when the device is either idle or running the client app in the background.  &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences-for-a-channel#1-update-push-notification-preferences-for-a-channel](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/update-push-notification-preferences-for-a-channel#1-update-push-notification-preferences-for-a-channel)
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void updatePushPreferencesForAChannelTest() throws ApiException {
+        //String userId = null;
+        //String channelUrl = null;
+        //String apiToken = null;
+        //UpdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest = null;
+        //UpdatePushPreferencesForAChannelResponse response = api.updatePushPreferencesForAChannel(userId, channelUrl)
+        //        .apiToken(apiToken)
+        //        .updatePushPreferencesForAChannelRequest(updatePushPreferencesForAChannelRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * View a user
+     *
+     * ## View a user  You can retrieve information about a user using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/listing-users/get-a-user#1-get-a-user  &#x60;user_id&#x60;   Type: string   Description: Specifies the unique ID of the user to retrieve.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void viewAUserTest() throws ApiException {
+        //String userId = null;
+        //Boolean includeUnreadCount = null;
+        //String customTypes = null;
+        //String superMode = null;
+        //String apiToken = null;
+        //SendbirdUser response = api.viewAUser(userId)
+        //        .includeUnreadCount(includeUnreadCount)
+        //        .customTypes(customTypes)
+        //        .superMode(superMode)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
@@ -554,36 +558,17 @@ public class UserApiTest {
     /**
      * View count preference of a channel
      *
-     * ## View count preference of a channel  Retrieves count preference of a specific group channel of a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-count-preference-of-a-channel ----------------------------
+     * ## View count preference of a channel  This action retrieves a user&#39;s count preference of a specific group channel. The count preference allows a user to either retrieve the number of unread messages or unread mentioned messages, or both in a specific group channel.  If you want to update the total number count of a specific group channel, visit the [update count preference of a channel](https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/update-count-preference-of-a-channel).  https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-count-preference-of-a-channel#1-get-count-preference-of-a-channel
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void viewCountPreferenceOfChannelByUrlTest() throws ApiException {
-        //String apiToken = null;
+    public void viewCountPreferenceOfAChannelTest() throws ApiException {
         //String userId = null;
         //String channelUrl = null;
-        //ViewCountPreferenceOfChannelByUrlResponse response = api.viewCountPreferenceOfChannelByUrl(userId, channelUrl)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View number of channels by join status
-     *
-     * ## View number of channels by join status  Retrieves the number of a user&#39;s group channels by their join status.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-by-join-status ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewNumberOfChannelsByJoinStatusTest() throws ApiException {
         //String apiToken = null;
-        //String userId = null;
-        //String state = null;
-        //ViewNumberOfChannelsByJoinStatusResponse response = api.viewNumberOfChannelsByJoinStatus(userId)
+        //ViewCountPreferenceOfAChannelResponse response = api.viewCountPreferenceOfAChannel(userId, channelUrl)
         //        .apiToken(apiToken)
-        //        .state(state)
         //        .execute();
         // TODO: test validations
     }
@@ -591,41 +576,20 @@ public class UserApiTest {
     /**
      * View number of channels with unread messages
      *
-     * ## View number of channels with unread messages  Retrieves the total number of a user&#39;s group channels with unread messages.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-channels-with-unread-messages ----------------------------
+     * ## View number of channels with unread messages  This action retrieves the total number of group channels in which a user has unread messages. You can use various query parameters to determine the search scope of group channels.  https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-number-of-channels-with-unread-messages#1-get-number-of-channels-with-unread-messages
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void viewNumberOfChannelsWithUnreadMessagesTest() throws ApiException {
-        //String apiToken = null;
         //String userId = null;
-        //List<String> customTypes = null;
+        //String customTypes = null;
         //String superMode = null;
+        //String apiToken = null;
         //ViewNumberOfChannelsWithUnreadMessagesResponse response = api.viewNumberOfChannelsWithUnreadMessages(userId)
-        //        .apiToken(apiToken)
         //        .customTypes(customTypes)
         //        .superMode(superMode)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View number of unread items
-     *
-     * ## View number of unread items  Retrieves a set of total numbers of a user&#39;s unread messages, unread mentioned messages, or received invitations in either super or non-super group channels. This action is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-items ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewNumberOfUnreadItemsTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //String customType = null;
-        //String itemKeys = null;
-        //ViewNumberOfUnreadItemsResponse response = api.viewNumberOfUnreadItems(userId)
         //        .apiToken(apiToken)
-        //        .customType(customType)
-        //        .itemKeys(itemKeys)
         //        .execute();
         // TODO: test validations
     }
@@ -633,20 +597,20 @@ public class UserApiTest {
     /**
      * View number of unread messages
      *
-     * ## View number of unread messages  Retrieves the total number of a user&#39;s currently unread messages in the group channels. The unread counts feature is only available for the group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-number-of-unread-messages ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve the number.
+     * ## View number of unread messages  This action retrieves a user&#39;s total number of unread messages in group channels.  &gt; **Note**: The unread count feature is only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-number-of-unread-messages#1-get-number-of-unread-messages](https://sendbird.com/docs/chat/platform-api/v3/user/managing-unread-count/get-number-of-unread-messages#1-get-number-of-unread-messages)  &#x60;user_id&#x60;   Type: string   Description: Specifies the unique ID of a user.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void viewNumberOfUnreadMessagesTest() throws ApiException {
-        //String apiToken = null;
         //String userId = null;
         //String customTypes = null;
         //String superMode = null;
+        //String apiToken = null;
         //ViewNumberOfUnreadMessagesResponse response = api.viewNumberOfUnreadMessages(userId)
-        //        .apiToken(apiToken)
         //        .customTypes(customTypes)
         //        .superMode(superMode)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
@@ -654,14 +618,14 @@ public class UserApiTest {
     /**
      * View push preferences
      *
-     * ## View push preferences  Retrieves a user&#39;s push preferences about whether the user has set &#x60;do_not_disturb&#x60; to pause notifications for a certain period of time, and the time frame in which the user has applied the setting.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences ----------------------------
+     * ## View push preferences  You can retrieves a user&#39;s notifications preferences. A push notification is a message that is immediately delivered to a user&#39;s device when the device is either idle or running the client app in the background.  &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences#1-get-push-notification-preferences](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences#1-get-push-notification-preferences)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void viewPushPreferencesTest() throws ApiException {
-        //String apiToken = null;
         //String userId = null;
+        //String apiToken = null;
         //ViewPushPreferencesResponse response = api.viewPushPreferences(userId)
         //        .apiToken(apiToken)
         //        .execute();
@@ -671,40 +635,17 @@ public class UserApiTest {
     /**
      * View push preferences for a channel
      *
-     * ## View push preferences for a channel  Retrieves whether a user has turned on notification messages for a specific channel. The push notifications feature is only available for group channels.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-push-preferences-for-a-channel ----------------------------
+     * ## View push preferences for a channel  You can retrieve a user&#39;s notifications preferences for a specific channel. A push notification is a message that is immediately delivered to a user&#39;s device when the device is either idle or running the client app in the background. These notifications preferences can be configured.  &gt; **Note**: Push notifications are only available for group channels.      [https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences-for-a-channel#1-get-push-notification-preferences-for-a-channel](https://sendbird.com/docs/chat/platform-api/v3/user/configuring-notification-preferences/get-push-notification-preferences-for-a-channel#1-get-push-notification-preferences-for-a-channel)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void viewPushPreferencesForChannelByUrlTest() throws ApiException {
-        //String apiToken = null;
+    public void viewPushPreferencesForAChannelTest() throws ApiException {
         //String userId = null;
         //String channelUrl = null;
-        //ViewPushPreferencesForChannelByUrlResponse response = api.viewPushPreferencesForChannelByUrl(userId, channelUrl)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View a user
-     *
-     * ## View a user  Retrieves information on a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-view-a-user ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the unique ID of the user to retrieve.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewUserByIdTest() throws ApiException {
         //String apiToken = null;
-        //String userId = null;
-        //Boolean includeUnreadCount = null;
-        //String customTypes = null;
-        //String superMode = null;
-        //SendBirdUser response = api.viewUserById(userId)
+        //ViewPushPreferencesForAChannelResponse response = api.viewPushPreferencesForAChannel(userId, channelUrl)
         //        .apiToken(apiToken)
-        //        .includeUnreadCount(includeUnreadCount)
-        //        .customTypes(customTypes)
-        //        .superMode(superMode)
         //        .execute();
         // TODO: test validations
     }
@@ -717,11 +658,11 @@ public class UserApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void viewWhoOwnsRegistrationOrDeviceTokenByTokenTest() throws ApiException {
-        //String apiToken = null;
+    public void viewWhoOwnsARegistrationOrDeviceTokenTest() throws ApiException {
         //String tokenType = null;
         //String token = null;
-        //List<ViewWhoOwnsRegistrationOrDeviceTokenByTokenResponseInner> response = api.viewWhoOwnsRegistrationOrDeviceTokenByToken(tokenType, token)
+        //String apiToken = null;
+        //List<MarkChannelMessagesAsReadRequest> response = api.viewWhoOwnsARegistrationOrDeviceToken(tokenType, token)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations

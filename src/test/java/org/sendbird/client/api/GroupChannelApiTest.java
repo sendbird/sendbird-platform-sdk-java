@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -15,24 +15,24 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.*;
 import org.sendbird.client.auth.*;
-import org.openapitools.client.model.GcAcceptInvitationData;
-import org.openapitools.client.model.GcCheckIfMemberByIdResponse;
-import org.openapitools.client.model.GcCreateChannelData;
-import org.openapitools.client.model.GcDeclineInvitationData;
-import org.openapitools.client.model.GcHideOrArchiveChannelData;
-import org.openapitools.client.model.GcInviteAsMembersData;
-import org.openapitools.client.model.GcJoinChannelData;
-import org.openapitools.client.model.GcLeaveChannelData;
-import org.openapitools.client.model.GcListChannelsResponse;
-import org.openapitools.client.model.GcListMembersResponse;
-import org.openapitools.client.model.GcListOperatorsResponse;
-import org.openapitools.client.model.GcRegisterOperatorsData;
-import org.openapitools.client.model.GcRegisterOperatorsResponse;
-import org.openapitools.client.model.GcResetChatHistoryData;
-import org.openapitools.client.model.GcResetChatHistoryResponse;
-import org.openapitools.client.model.GcUpdateChannelByUrlData;
-import org.openapitools.client.model.OcDeleteChannelByUrl200Response;
-import org.openapitools.client.model.SendBirdGroupChannel;
+import org.openapitools.client.model.AcceptAnInvitationRequest;
+import org.openapitools.client.model.CheckIfMemberResponse;
+import org.openapitools.client.model.CreateAGroupChannelRequest;
+import org.openapitools.client.model.GetAGroupChannelResponse;
+import org.openapitools.client.model.GroupChannelListMembersResponse;
+import org.openapitools.client.model.GroupChatListChannelsResponse;
+import org.openapitools.client.model.HideAChannelRequest;
+import org.openapitools.client.model.InviteAsMembersRequest;
+import org.openapitools.client.model.InviteAsMembersResponse;
+import org.openapitools.client.model.JoinAChannelRequest;
+import org.openapitools.client.model.LeaveAChannelRequest;
+import org.openapitools.client.model.ListOperatorsResponse;
+import org.openapitools.client.model.RegisterOperatorsToAGroupChannelRequest;
+import org.openapitools.client.model.ResetChatHistoryRequest;
+import org.openapitools.client.model.ResetChatHistoryResponse;
+import org.openapitools.client.model.SendbirdGroupChannelDetail;
+import org.openapitools.client.model.StartTypingIndicatorsRequest;
+import org.openapitools.client.model.UpdateAGroupChannelRequest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -53,18 +53,18 @@ public class GroupChannelApiTest {
     /**
      * Accept an invitation
      *
-     * ## Accept an invitation  Accepts an invitation from a [private](#4-private-vs-public) group channel for a user to join. Since a user is allowed to join up to 2,000 group channels, the invitation to a user who already belongs to a maximum number of group channels will be canceled automatically.  &gt; __Note__: This action is effective only when the &#x60;auto_accept&#x60; property of an application is set to false. You can change the value of the property using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, or [update a user&#39;s channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-accept-an-invitation ----------------------------
+     * ## Accept an invitation  Accepts an invitation from a group channel for a user to join. A single user may join up to 2,000 group channels, and any invitation to a user who is at capacity will be automatically canceled. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  &gt; **Note**: This action is only available when the &#x60;auto_accept&#x60; property of an application is set to **false**. You can change the value of the property using the [update default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/update-default-invitation-preference) action, or the [update channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-channel-invitation-preference) action.      [https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/accept-an-invitation-channel#1-accept-an-invitation](https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/accept-an-invitation-channel#1-accept-an-invitation)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcAcceptInvitationTest() throws ApiException {
-        //String apiToken = null;
+    public void acceptAnInvitationTest() throws ApiException {
         //String channelUrl = null;
-        //GcAcceptInvitationData gcAcceptInvitationData = null;
-        //SendBirdGroupChannel response = api.gcAcceptInvitation(channelUrl)
+        //String apiToken = null;
+        //AcceptAnInvitationRequest acceptAnInvitationRequest = null;
+        //SendbirdGroupChannelDetail response = api.acceptAnInvitation(channelUrl)
         //        .apiToken(apiToken)
-        //        .gcAcceptInvitationData(gcAcceptInvitationData)
+        //        .acceptAnInvitationRequest(acceptAnInvitationRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -72,20 +72,20 @@ public class GroupChannelApiTest {
     /**
      * Cancel the registration of operators
      *
-     * ## Cancel the registration of operators  Cancels the registration of operators from a group channel but leave them as members.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-cancel-the-registration-of-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to cancel the registration of operators.
+     * ## Unregister operators from a group channel  You can unregister operators in a group channel but keep them in the channel as members using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/unregister-operators-from-a-group-channel#1-unregister-operators-from-a-group-channel  &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to cancel the registration of operators.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcCancelTheRegistrationOfOperatorsTest() throws ApiException {
-        //String apiToken = null;
+    public void cancelTheRegistrationOfOperatorsTest() throws ApiException {
         //String channelUrl = null;
-        //List<String> operatorIds = null;
+        //String operatorIds = null;
         //Boolean deleteAll = null;
-        //OcDeleteChannelByUrl200Response response = api.gcCancelTheRegistrationOfOperators(channelUrl)
-        //        .apiToken(apiToken)
+        //String apiToken = null;
+        //Object response = api.cancelTheRegistrationOfOperators(channelUrl)
         //        .operatorIds(operatorIds)
         //        .deleteAll(deleteAll)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
@@ -93,90 +93,98 @@ public class GroupChannelApiTest {
     /**
      * Check if member
      *
-     * ## Check if member  Checks whether the user is a member of the group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-check-if-member ----------------------------
+     * ## Check if user is a member  Checks if a user is a member of a group channel.  &gt; **Note**: See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.      [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-users/check-if-user-is-a-member#1-check-if-user-is-a-member](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-users/check-if-user-is-a-member#1-check-if-user-is-a-member)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcCheckIfMemberByIdTest() throws ApiException {
-        //String apiToken = null;
+    public void checkIfMemberTest() throws ApiException {
         //String channelUrl = null;
         //String userId = null;
-        //GcCheckIfMemberByIdResponse response = api.gcCheckIfMemberById(channelUrl, userId)
+        //String apiToken = null;
+        //CheckIfMemberResponse response = api.checkIfMember(channelUrl, userId)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * Create a channel
+     * Create a group channel
      *
-     * ## Create a channel  Creates a new group channel.  &gt; If you are creating a 1-on-1 direct messaging channel for a user, it is recommended that you turn on the &#x60;distinct&#x60; property. If the property is turned off, a user can create a new channel even if they have had the previous chat between them, and therefore can&#39;t see previously sent messages or data in the new channel. On the other hand, if the &#x60;distinct&#x60; property is turned on, every 1-on-1 conversation between the same two users occurs within the same channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-create-a-channel
+     * ## Create a group channel  You can create a group channel for 1-to-1 and 1-to-N conversations. By default, group channels are used for conversations between up to 100 members. This number can stretch up to tens of thousands in Supergroup channels. Group channels can either be private and invite only, or public. They support typing indicators, unread count and read receipts, allowing for an interactive chat experience. A user can join up to 2000 group channels, and higher numbers would negatively impact the performance for the end user. The Chat history is turned off by default and its settings can be changed on Sendbird Dashboard by going to Settings &gt; Chat &gt; Channels &gt; Group channels &gt; Chat history. To learn more about group channels, see Channel Overview.  &gt; If you are seeing the error message Maximum \&quot;channel join\&quot; count reached., then consider deleting channels that are no longer used. For situations where an agent connects with many customers such as support, delivery logistics or sales, we recommend using Sendbird Desk.  https://sendbird.com/docs/chat/platform-api/v3/channel/creating-a-channel/create-a-group-channel#1-create-a-group-channel
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcCreateChannelTest() throws ApiException {
+    public void createAGroupChannelTest() throws ApiException {
         //String apiToken = null;
-        //GcCreateChannelData gcCreateChannelData = null;
-        //SendBirdGroupChannel response = api.gcCreateChannel()
+        //CreateAGroupChannelRequest createAGroupChannelRequest = null;
+        //SendbirdGroupChannelDetail response = api.createAGroupChannel()
         //        .apiToken(apiToken)
-        //        .gcCreateChannelData(gcCreateChannelData)
+        //        .createAGroupChannelRequest(createAGroupChannelRequest)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * Decline an invitation
+     * Delete a group channel
      *
-     * ## Decline an invitation  Declines an invitation for a user to not join a [private](#4-private-vs-public) group channel.  &gt; __Note__: This action is effective only when the &#x60;auto_accept&#x60; property of an application is set to false. You can change the value of the property using the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action, or [update a user&#39;s channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-decline-an-invitation ----------------------------
+     * ## Delete a group channel  You can delete a group channel or a Supergroup channel using this API. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/delete-a-group-channel#1-delete-a-group-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/delete-a-group-channel#1-delete-a-group-channel)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcDeclineInvitationTest() throws ApiException {
-        //String apiToken = null;
+    public void deleteAGroupChannelTest() throws ApiException {
         //String channelUrl = null;
-        //GcDeclineInvitationData gcDeclineInvitationData = null;
-        //OcDeleteChannelByUrl200Response response = api.gcDeclineInvitation(channelUrl)
-        //        .apiToken(apiToken)
-        //        .gcDeclineInvitationData(gcDeclineInvitationData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Delete a channel
-     *
-     * ## Delete a channel  Deletes a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-delete-a-channel ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void gcDeleteChannelByUrlTest() throws ApiException {
         //String apiToken = null;
-        //String channelUrl = null;
-        //OcDeleteChannelByUrl200Response response = api.gcDeleteChannelByUrl(channelUrl)
+        //Object response = api.deleteAGroupChannel(channelUrl)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * Hide or archive a channel
+     * Get a group channel
      *
-     * ## Hide or archive a channel  Hides or archives a channel from the channel list of either a specific user or entire channel members. Normally, a hidden channel comes back and shows up in the channel list when a member in the channel sends a new message. This automatically-triggered behavior is intended for users who want to temporarily remove a channel from their list because [leaving the channel](#2-leave-the-channel) would delete all the past messages and stored data.  You can also leave out a channel from the list and archive the channel. The channel doesn&#39;t appear even when receiving a new message from other member.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-hide-or-archive-a-channel ----------------------------
+     * ## Get a group channel  This action retrieves information about a specific [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel). You can use the optional query parameters to determine whether to include delivery receipt, read receipt, or member information in the response.  https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/get-a-group-channel#1-get-a-group-channel  &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to retrieve.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcHideOrArchiveChannelTest() throws ApiException {
-        //String apiToken = null;
+    public void getAGroupChannelTest() throws ApiException {
         //String channelUrl = null;
-        //GcHideOrArchiveChannelData gcHideOrArchiveChannelData = null;
-        //OcDeleteChannelByUrl200Response response = api.gcHideOrArchiveChannel(channelUrl)
+        //Boolean showDeliveryReceipt = null;
+        //Boolean showReadReceipt = null;
+        //Boolean showMember = null;
+        //String memberActiveMode = null;
+        //String userId = null;
+        //String apiToken = null;
+        //GetAGroupChannelResponse response = api.getAGroupChannel(channelUrl)
+        //        .showDeliveryReceipt(showDeliveryReceipt)
+        //        .showReadReceipt(showReadReceipt)
+        //        .showMember(showMember)
+        //        .memberActiveMode(memberActiveMode)
+        //        .userId(userId)
         //        .apiToken(apiToken)
-        //        .gcHideOrArchiveChannelData(gcHideOrArchiveChannelData)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Hide a channel
+     *
+     * ## Hide a channel  This action allows you to hide a [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) from a user&#39;s channel list. Hiding a channel gives users the ability to archive channels so that they can focus on channels that need the most attention.  With this API, you can allow users to hide a channel from themselves or from all channel members. You can also determine whether to have the channel remain hidden when a new message is sent to the channel. Note that only group channels can be hidden.  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/hide-a-channel#1-hide-a-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/hide-a-channel#1-hide-a-channel)
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void hideAChannelTest() throws ApiException {
+        //String channelUrl = null;
+        //String apiToken = null;
+        //HideAChannelRequest hideAChannelRequest = null;
+        //Object response = api.hideAChannel(channelUrl)
+        //        .apiToken(apiToken)
+        //        .hideAChannelRequest(hideAChannelRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -184,18 +192,18 @@ public class GroupChannelApiTest {
     /**
      * Invite as members
      *
-     * ## Invite as members  Invites one or more users as members into the group channel.  &gt; __Note__: By default, users in your application automatically join a [private](#4-private-vs-public) group channel promptly from an invitation without having to accept it. If you want to give them the option to decide whether to accept or decline an invitation, you should set the value of channel invitation preference to false through the [update default channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/application#2-update-default-channel-invitation-preference) action. Or using the [update a user&#39;s channel invitation preference](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-update-channel-invitation-preference) action, you can also allow the option individually by user.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-invite-as-members ----------------------------
+     * ## Invite as members  Invites one or more users as members to a group channel. Users can join a group channel immediately after receiving an invitation, without having to accept it. To give users an option to accept or decline an invitation, see [update default channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/setting-up-channels/update-default-invitation-preference) or [update channel invitation preference](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-channel-invitation-preference). See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  &gt; **Note**: By default, [blocked users](https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users) are included when sending invitations. If you wish to exclude blocked users, [contact our sales team](https://get.sendbird.com/talk-to-sales.html).      [https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel#1-invite-as-members](https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel#1-invite-as-members)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcInviteAsMembersTest() throws ApiException {
-        //String apiToken = null;
+    public void inviteAsMembersTest() throws ApiException {
         //String channelUrl = null;
-        //GcInviteAsMembersData gcInviteAsMembersData = null;
-        //SendBirdGroupChannel response = api.gcInviteAsMembers(channelUrl)
+        //String apiToken = null;
+        //InviteAsMembersRequest inviteAsMembersRequest = null;
+        //InviteAsMembersResponse response = api.inviteAsMembers(channelUrl)
         //        .apiToken(apiToken)
-        //        .gcInviteAsMembersData(gcInviteAsMembersData)
+        //        .inviteAsMembersRequest(inviteAsMembersRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -203,18 +211,18 @@ public class GroupChannelApiTest {
     /**
      * Join a channel
      *
-     * ## Join a channel  Allows a user to join a [public](#4-private-vs-public) group channel. Since a user is allowed to join up to 2,000 group channels, a user who already belongs to a maximum number of group channels can&#39;t join a new channel.  &gt; __Note__: This action is only permitted for public group channels where the &#x60;is_public&#x60; property is true.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-join-a-channel ----------------------------
+     * ## Join a channel  This API allows a user to join a [public](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#4-group-channel-types) group channel. Users can only join public group channels where the &#x60;is_public&#x60; property is set to &#x60;true&#x60; using this API. A single user can join up to 2,000 group channels, and a user who reaches the capacity can’t join a new channel. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/join-a-channel#1-join-a-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/join-a-channel#1-join-a-channel)
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcJoinChannelTest() throws ApiException {
-        //String apiToken = null;
+    public void joinAChannelTest() throws ApiException {
         //String channelUrl = null;
-        //GcJoinChannelData gcJoinChannelData = null;
-        //api.gcJoinChannel(channelUrl)
+        //String apiToken = null;
+        //JoinAChannelRequest joinAChannelRequest = null;
+        //SendbirdGroupChannelDetail response = api.joinAChannel(channelUrl)
         //        .apiToken(apiToken)
-        //        .gcJoinChannelData(gcJoinChannelData)
+        //        .joinAChannelRequest(joinAChannelRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -227,13 +235,13 @@ public class GroupChannelApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcLeaveChannelTest() throws ApiException {
-        //String apiToken = null;
+    public void leaveAChannelTest() throws ApiException {
         //String channelUrl = null;
-        //GcLeaveChannelData gcLeaveChannelData = null;
-        //OcDeleteChannelByUrl200Response response = api.gcLeaveChannel(channelUrl)
+        //String apiToken = null;
+        //LeaveAChannelRequest leaveAChannelRequest = null;
+        //Object response = api.leaveAChannel(channelUrl)
         //        .apiToken(apiToken)
-        //        .gcLeaveChannelData(gcLeaveChannelData)
+        //        .leaveAChannelRequest(leaveAChannelRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -241,20 +249,20 @@ public class GroupChannelApiTest {
     /**
      * List channels
      *
-     * ## List channels  Retrieves a list of group channels in the application.  &gt; __Note__: If you want to get a list of a specific user&#39;s group channels, use the [list my group channels](https://sendbird.com/docs/chat/v3/platform-api/guides/user#2-list-my-group-channels) action instead.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-channels ----------------------------
+     * ## List group channels  This action retrieves a list of [group channels](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel). You can use various query parameters to determine the search scope and select what kind of information you want to receive about the queried channels.  If you want to retrieve a list of group channels that a specific user has joined, use the [list group channels by user](https://sendbird.com/docs/chat/platform-api/v3/user/managing-joined-group-channels/list-group-channels-by-user) action under the User section.  https://sendbird.com/docs/chat/platform-api/v3/channel/listing-channels-in-an-application/list-group-channels#1-list-group-channels
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcListChannelsTest() throws ApiException {
+    public void listChannelsTest() throws ApiException {
         //String apiToken = null;
         //String token = null;
         //Integer limit = null;
         //String distinctMode = null;
         //String publicMode = null;
         //String superMode = null;
-        //Integer createdAfter = null;
-        //Integer createdBefore = null;
+        //Long createdAfter = null;
+        //Long createdBefore = null;
         //Boolean showEmpty = null;
         //Boolean showMember = null;
         //Boolean showDeliveryReceipt = null;
@@ -290,7 +298,7 @@ public class GroupChannelApiTest {
         //Boolean isDistinct = null;
         //String membersIn = null;
         //String userId = null;
-        //GcListChannelsResponse response = api.gcListChannels()
+        //GroupChatListChannelsResponse response = api.listChannels()
         //        .apiToken(apiToken)
         //        .token(token)
         //        .limit(limit)
@@ -341,34 +349,42 @@ public class GroupChannelApiTest {
     /**
      * List members
      *
-     * ## List members  Retrieves a list of members of a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-members ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of members of.
+     * ## List members  Retrieves a list of members of a group channel.  &gt; **Note**: See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.      [https://sendbird.com/docs/chat/platform-api/v3/channel/listing-users/list-members-of-a-group-channel#1-list-members-of-a-group-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/listing-users/list-members-of-a-group-channel#1-list-members-of-a-group-channel)  &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to retrieve a list of members of.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcListMembersTest() throws ApiException {
-        //String apiToken = null;
+    public void listMembersTest() throws ApiException {
         //String channelUrl = null;
         //String token = null;
         //Integer limit = null;
+        //String userId = null;
         //Boolean showDeliveryReceipt = null;
         //Boolean showReadReceipt = null;
+        //Boolean showMemberIsMuted = null;
         //String order = null;
         //String operatorFilter = null;
         //String memberStateFilter = null;
         //String mutedMemberFilter = null;
+        //String memberActiveModeFilter = null;
         //String nicknameStartswith = null;
-        //GcListMembersResponse response = api.gcListMembers(channelUrl)
-        //        .apiToken(apiToken)
+        //Boolean includePushPreference = null;
+        //String apiToken = null;
+        //GroupChannelListMembersResponse response = api.listMembers(channelUrl)
         //        .token(token)
         //        .limit(limit)
+        //        .userId(userId)
         //        .showDeliveryReceipt(showDeliveryReceipt)
         //        .showReadReceipt(showReadReceipt)
+        //        .showMemberIsMuted(showMemberIsMuted)
         //        .order(order)
         //        .operatorFilter(operatorFilter)
         //        .memberStateFilter(memberStateFilter)
         //        .mutedMemberFilter(mutedMemberFilter)
+        //        .memberActiveModeFilter(memberActiveModeFilter)
         //        .nicknameStartswith(nicknameStartswith)
+        //        .includePushPreference(includePushPreference)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
@@ -376,39 +392,39 @@ public class GroupChannelApiTest {
     /**
      * List operators
      *
-     * ## List operators  Retrieves a list of operators of a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-list-operators ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve a list of operators.
+     * ## List operators  You can retrieve a list of operators of a group channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/list-operators-of-a-group-channel#1-list-operators-of-a-group-channel  &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to retrieve a list of operators.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcListOperatorsTest() throws ApiException {
-        //String apiToken = null;
+    public void listOperatorsTest() throws ApiException {
         //String channelUrl = null;
         //String token = null;
         //Integer limit = null;
-        //GcListOperatorsResponse response = api.gcListOperators(channelUrl)
-        //        .apiToken(apiToken)
+        //String apiToken = null;
+        //ListOperatorsResponse response = api.listOperators(channelUrl)
         //        .token(token)
         //        .limit(limit)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * Register operators
+     * Register operators to a group channel
      *
-     * ## Register operators  Registers one or more operators to a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-register-operators ----------------------------
+     * ## Register operators to a group channel  You can register one or more operators to a group channel using this API.  https://sendbird.com/docs/chat/platform-api/v3/user/assigning-a-user-role/register-operators-to-a-group-channel#1-register-operators-to-a-group-channel
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcRegisterOperatorsTest() throws ApiException {
-        //String apiToken = null;
+    public void registerOperatorsToAGroupChannelTest() throws ApiException {
         //String channelUrl = null;
-        //GcRegisterOperatorsData gcRegisterOperatorsData = null;
-        //GcRegisterOperatorsResponse response = api.gcRegisterOperators(channelUrl)
+        //String apiToken = null;
+        //RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest = null;
+        //Object response = api.registerOperatorsToAGroupChannel(channelUrl)
         //        .apiToken(apiToken)
-        //        .gcRegisterOperatorsData(gcRegisterOperatorsData)
+        //        .registerOperatorsToAGroupChannelRequest(registerOperatorsToAGroupChannelRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -416,85 +432,96 @@ public class GroupChannelApiTest {
     /**
      * Reset chat history
      *
-     * ## Reset chat history  Resets the properties related to a user&#39;s chat history in a group channel, then clears the existing messages in the channel on the user&#39;s side only. A user can no longer see the messages in a group channel once this action is called, but those messages are not deleted from the database of the Sendbird system. All other members in the channel can retrieve and see the messages.  This action simply clears the messages for the user by updating the &#x60;last_message&#x60; and &#x60;read_receipt&#x60; properties of the [channel](#2-types-of-a-channel-3-resource-representation) resource in addition to other internally managed data such as the number of the user&#39;s unread message.  Using the &#x60;reset_all&#x60; property, you can also reset the properties related to all users&#39; chat history in a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-reset-chat-history ----------------------------
+     * ## Reset chat history  This action resets the properties related to a specific user&#39;s chat history in a [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel), clearing existing messages in a channel from only the specified user&#39;s end. Because this action doesn&#39;t delete messages from the Sendbird database, other members in the channel can still retrieve and see the messages.  This action clears the messages for the specified user by updating the &#x60;last_message&#x60; and &#x60;read_receipt&#x60; properties of the [group channel resource](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#4-list-of-properties-for-group-channels) in addition to other internally managed data such as the count of a user&#39;s unread messages.  Using the &#x60;reset_all&#x60; property, you can also reset the properties related to the chat history of all members in a group channel.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/reset-chat-history#1-reset-chat-history
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcResetChatHistoryTest() throws ApiException {
-        //String apiToken = null;
+    public void resetChatHistoryTest() throws ApiException {
         //String channelUrl = null;
-        //GcResetChatHistoryData gcResetChatHistoryData = null;
-        //GcResetChatHistoryResponse response = api.gcResetChatHistory(channelUrl)
+        //String apiToken = null;
+        //ResetChatHistoryRequest resetChatHistoryRequest = null;
+        //ResetChatHistoryResponse response = api.resetChatHistory(channelUrl)
         //        .apiToken(apiToken)
-        //        .gcResetChatHistoryData(gcResetChatHistoryData)
+        //        .resetChatHistoryRequest(resetChatHistoryRequest)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * Unhide or unarchive a channel
+     * Start typing indicators
      *
-     * ## Unhide or unarchive a channel  Makes a hidden or archived channel reappear in the channel list of either a specific user or entire channel members.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-unhide-or-unarchive-a-channel ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to unhide or unarchive.
+     * ## Start typing indicators  You can start showing a typing indicator using this API. Seeing whether other users are typing can help a more interactive conversation environment by showing real-time engagement of other users.  If you&#39;re looking for an easy way to show typing indicators on your app, check out Sendbird UIKit for a ready-to-use UI feature that can be customized to fit your needs.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/start-typing-indicators#1-start-typing-indicators  &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to set typing indicators.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcUnhideOrUnarchiveChannelTest() throws ApiException {
+    public void startTypingIndicatorsTest() throws ApiException {
+        //String channelUrl = null;
         //String apiToken = null;
+        //StartTypingIndicatorsRequest startTypingIndicatorsRequest = null;
+        //Object response = api.startTypingIndicators(channelUrl)
+        //        .apiToken(apiToken)
+        //        .startTypingIndicatorsRequest(startTypingIndicatorsRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Stop typing indicators
+     *
+     * ## Stop typing indicators  You can stop showing a typing indicator using this API. To signal that a user is no longer typing, you can let the indicator disappear when the user sends a message or completely deletes the message text.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-typing-indicators/stop-typing-indicators#1-stop-typing-indicators  &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to set typing indicators.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void stopTypingIndicatorsTest() throws ApiException {
+        //String channelUrl = null;
+        //String apiToken = null;
+        //StartTypingIndicatorsRequest startTypingIndicatorsRequest = null;
+        //Object response = api.stopTypingIndicators(channelUrl)
+        //        .apiToken(apiToken)
+        //        .startTypingIndicatorsRequest(startTypingIndicatorsRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Unhide a channel
+     *
+     * ## Unhide a channel  This action lets a hidden [group channel](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-group-channel) reappear on the channel list of a specific user or every member in the group channel. Hiding or unhiding a channel lets users organize their channel list based on those that require the most attention. Note that only group channels can be hidden or unhidden.  [https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/unhide-a-channel#1-unhide-a-channel](https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/unhide-a-channel#1-unhide-a-channel)  &#x60;channel_url&#x60;   Type: string   Description: Specifies the URL of the channel to unhide or unarchive.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void unhideAChannelTest() throws ApiException {
         //String channelUrl = null;
         //String userId = null;
         //Boolean shouldUnhideAll = null;
-        //OcDeleteChannelByUrl200Response response = api.gcUnhideOrUnarchiveChannel(channelUrl)
-        //        .apiToken(apiToken)
+        //String apiToken = null;
+        //Object response = api.unhideAChannel(channelUrl)
         //        .userId(userId)
         //        .shouldUnhideAll(shouldUnhideAll)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
 
     /**
-     * Update a channel
+     * Update a group channel
      *
-     * ## Update a channel  Updates information on a group channel.  &gt; __Note__: You can&#39;t change the members of the channel here. To do so, see [invite as members](#2-invite-as-members) action below.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-update-a-channel ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void gcUpdateChannelByUrlTest() throws ApiException {
-        //String apiToken = null;
-        //String channelUrl = null;
-        //GcUpdateChannelByUrlData gcUpdateChannelByUrlData = null;
-        //SendBirdGroupChannel response = api.gcUpdateChannelByUrl(channelUrl)
-        //        .apiToken(apiToken)
-        //        .gcUpdateChannelByUrlData(gcUpdateChannelByUrlData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View a channel
-     *
-     * ## View a channel  Retrieves information on a group channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/group-channel#2-view-a-channel ----------------------------   &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel to retrieve.
+     * ## Update a group channel  You can update information about a group channel or a Supergroup channel using this API. You can&#39;t make any changes to the members of a channel with this API. To change members, see [invite as members](https://sendbird.com/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel) instead. See [this page](https://sendbird.com/docs/chat/platform-api/v3/channel/channel-overview#2-channel-types-3-open-channel-vs-group-channel-vs-supergroup-channel) to learn more about channel types.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-a-channel/update-a-group-channel#1-update-a-group-channel
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void gcViewChannelByUrlTest() throws ApiException {
-        //String apiToken = null;
+    public void updateAGroupChannelTest() throws ApiException {
         //String channelUrl = null;
-        //Boolean showDeliveryReceipt = null;
-        //Boolean showReadReceipt = null;
-        //Boolean showMember = null;
-        //Boolean readReceipt = null;
-        //Boolean member = null;
-        //SendBirdGroupChannel response = api.gcViewChannelByUrl(channelUrl)
+        //String apiToken = null;
+        //UpdateAGroupChannelRequest updateAGroupChannelRequest = null;
+        //SendbirdGroupChannelDetail response = api.updateAGroupChannel(channelUrl)
         //        .apiToken(apiToken)
-        //        .showDeliveryReceipt(showDeliveryReceipt)
-        //        .showReadReceipt(showReadReceipt)
-        //        .showMember(showMember)
-        //        .readReceipt(readReceipt)
-        //        .member(member)
+        //        .updateAGroupChannelRequest(updateAGroupChannelRequest)
         //        .execute();
         // TODO: test validations
     }

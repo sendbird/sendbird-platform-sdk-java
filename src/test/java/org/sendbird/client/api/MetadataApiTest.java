@@ -1,6 +1,6 @@
 /*
  * Sendbird Platform SDK
- * Sendbird Platform API SDK  https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api
+ * Sendbird Platform API SDK  [https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api](https://sendbird.com/docs/chat/v3/platform-api/getting-started/prepare-to-use-api)  Contact Support:   Name: Sendbird   Email: [support@sendbird.com](https://mailto:support@sendbird.com)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@sendbird.com
@@ -15,16 +15,9 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.*;
 import org.sendbird.client.auth.*;
-import org.openapitools.client.model.CreateChannelMetacounterData;
-import org.openapitools.client.model.CreateChannelMetadataData;
-import org.openapitools.client.model.CreateChannelMetadataResponse;
-import org.openapitools.client.model.CreateUserMetadataData;
-import org.openapitools.client.model.CreateUserMetadataResponse;
-import org.openapitools.client.model.UpdateChannelMetacounterData;
-import org.openapitools.client.model.UpdateChannelMetadataData;
-import org.openapitools.client.model.UpdateUserMetadataData;
-import org.openapitools.client.model.UpdateUserMetadataResponse;
-import org.openapitools.client.model.ViewUserMetadataResponse;
+import org.openapitools.client.model.CreateAChannelMetadataRequest;
+import org.openapitools.client.model.CreateAChannelMetadataResponse;
+import org.openapitools.client.model.UpdateAChannelMetadataRequest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -43,97 +36,21 @@ public class MetadataApiTest {
     private final MetadataApi api = new MetadataApi();
 
     /**
-     * Create a channel metacounter
-     *
-     * ## Create a channel metacounter  Creates a channel metacounter&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metacounter ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void createChannelMetacounterTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //CreateChannelMetacounterData createChannelMetacounterData = null;
-        //Object response = api.createChannelMetacounter(channelType, channelUrl)
-        //        .apiToken(apiToken)
-        //        .createChannelMetacounterData(createChannelMetacounterData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
      * Create a channel metadata
      *
-     * ## Create a channel metadata  Creates a channel metadata&#39;s items to store in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-channel-metadata ----------------------------
+     * ## Create a channel metadata  Creates a channel metadata&#39;s items to store in a channel.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-metadata/channel-create-metadata#1-create-metadata ----------------------------
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void createChannelMetadataTest() throws ApiException {
-        //String apiToken = null;
+    public void createAChannelMetadataTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
-        //CreateChannelMetadataData createChannelMetadataData = null;
-        //CreateChannelMetadataResponse response = api.createChannelMetadata(channelType, channelUrl)
-        //        .apiToken(apiToken)
-        //        .createChannelMetadataData(createChannelMetadataData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Create a user metadata
-     *
-     * ## Create a user metadata  Creates a user metadata&#39;s items to store in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-create-a-user-metadata ----------------------------
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void createUserMetadataTest() throws ApiException {
         //String apiToken = null;
-        //String userId = null;
-        //CreateUserMetadataData createUserMetadataData = null;
-        //CreateUserMetadataResponse response = api.createUserMetadata(userId)
+        //CreateAChannelMetadataRequest createAChannelMetadataRequest = null;
+        //CreateAChannelMetadataResponse response = api.createAChannelMetadata(channelType, channelUrl)
         //        .apiToken(apiToken)
-        //        .createUserMetadataData(createUserMetadataData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Delete a channel metacounter - When deleting all items of a channel metacounter
-     *
-     * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteChannelMetacounterTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //api.deleteChannelMetacounter(channelType, channelUrl)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Delete a channel metacounter - When deleting a specific item of a channel metacounter by its key
-     *
-     * ## Delete a channel metacounter  Deletes a channel metacounter&#39;s item that is stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metacounter to delete.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteChannelMetacounterByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String key = null;
-        //api.deleteChannelMetacounterByKey(channelType, channelUrl, key)
-        //        .apiToken(apiToken)
+        //        .createAChannelMetadataRequest(createAChannelMetadataRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -141,116 +58,19 @@ public class MetadataApiTest {
     /**
      * Delete a channel metadata - When deleting all items of a channel metadata
      *
-     * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
+     * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-metadata/channel-delete-metadata#1-delete-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void deleteChannelMetadataTest() throws ApiException {
-        //String apiToken = null;
+    public void deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
         //String key = null;
-        //api.deleteChannelMetadata(channelType, channelUrl)
-        //        .apiToken(apiToken)
+        //String apiToken = null;
+        //Object response = api.deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(channelType, channelUrl)
         //        .key(key)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Delete a channel metadata - When deleting a specific item of a channel metadata by its key
-     *
-     * ## Delete a channel metadata  Deletes a channel metadata&#39;s one or all items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the channel which has the metadata to delete.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteChannelMetadataByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String key = null;
-        //api.deleteChannelMetadataByKey(channelType, channelUrl, key)
         //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Delete a user metadata - When deleting all items of a user metadata
-     *
-     * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteUserMetadataTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //String key = null;
-        //api.deleteUserMetadata(userId)
-        //        .apiToken(apiToken)
-        //        .key(key)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Delete a user metadata - When deleting a specific item of a user metadata by its key
-     *
-     * ## Delete a user metadata  Deletes a user metadata&#39;s one or all items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-delete-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user who has the metadata to delete.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteUserMetadataByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //String key = null;
-        //api.deleteUserMetadataByKey(userId, key)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update a channel metacounter - When updating existing items of a channel metacounter by their keys or adding new items to the metacounter
-     *
-     * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateChannelMetacounterTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //UpdateChannelMetacounterData updateChannelMetacounterData = null;
-        //Object response = api.updateChannelMetacounter(channelType, channelUrl)
-        //        .apiToken(apiToken)
-        //        .updateChannelMetacounterData(updateChannelMetacounterData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update a channel metacounter - When updating a specific item of a channel metacounter by its key
-     *
-     * ## Update a channel metacounter  Updates existing items of a channel metacounter by their keys, or adds new items to the metacounter.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateChannelMetacounterByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String key = null;
-        //Object body = null;
-        //Map<String, String> response = api.updateChannelMetacounterByKey(channelType, channelUrl, key)
-        //        .apiToken(apiToken)
-        //        .body(body)
         //        .execute();
         // TODO: test validations
     }
@@ -258,120 +78,19 @@ public class MetadataApiTest {
     /**
      * Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
      *
-     * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-metadata/channel-update-metadata#1-update-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void updateChannelMetadataTest() throws ApiException {
-        //String apiToken = null;
+    public void updateAChannelMetadataTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
-        //UpdateChannelMetadataData updateChannelMetadataData = null;
-        //Map<String, String> response = api.updateChannelMetadata(channelType, channelUrl)
-        //        .apiToken(apiToken)
-        //        .updateChannelMetadataData(updateChannelMetadataData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update a channel metadata - When updating a specific item of a channel metadata by its key
-     *
-     * ## Update a channel metadata  Updates existing items of a channel metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateChannelMetadataByKeyTest() throws ApiException {
         //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String key = null;
-        //Object body = null;
-        //Map<String, String> response = api.updateChannelMetadataByKey(channelType, channelUrl, key)
+        //UpdateAChannelMetadataRequest updateAChannelMetadataRequest = null;
+        //Object response = api.updateAChannelMetadata(channelType, channelUrl)
         //        .apiToken(apiToken)
-        //        .body(body)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update a user metadata - When updating existing items of a user metadata by their keys or adding new items to the metadata
-     *
-     * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateUserMetadataTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //UpdateUserMetadataData updateUserMetadataData = null;
-        //UpdateUserMetadataResponse response = api.updateUserMetadata(userId)
-        //        .apiToken(apiToken)
-        //        .updateUserMetadataData(updateUserMetadataData)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * Update a user metadata - When updating a specific item of a user metadata by its key
-     *
-     * ## Update a user metadata  Updates existing items of a user metadata by their keys, or adds new items to the metadata.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-update-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to update the metadata in.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void updateUserMetadataByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //String key = null;
-        //Object body = null;
-        //Map<String, String> response = api.updateUserMetadataByKey(userId, key)
-        //        .apiToken(apiToken)
-        //        .body(body)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View a channel metacounter - When retrieving all items of a channel metacounter
-     *
-     * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewChannelMetacounterTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String key = null;
-        //List<String> keys = null;
-        //Map<String, String> response = api.viewChannelMetacounter(channelType, channelUrl)
-        //        .apiToken(apiToken)
-        //        .key(key)
-        //        .keys(keys)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View a channel metacounter - When retrieving a specific item of a channel metacounter by its key
-     *
-     * ## View a channel metacounter  Retrieves channel metacounter&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metacounter ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewChannelMetacounterByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String key = null;
-        //Object response = api.viewChannelMetacounterByKey(channelType, channelUrl, key)
-        //        .apiToken(apiToken)
+        //        .updateAChannelMetadataRequest(updateAChannelMetadataRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -379,78 +98,20 @@ public class MetadataApiTest {
     /**
      * View a channel metadata - When retrieving all items of a channel metadata
      *
-     * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
+     * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/platform-api/v3/channel/managing-metadata/channel-get-metadata#1-get-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void viewChannelMetadataTest() throws ApiException {
-        //String apiToken = null;
+    public void viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadataTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
         //String key = null;
-        //List<String> keys = null;
-        //Map<String, String> response = api.viewChannelMetadata(channelType, channelUrl)
-        //        .apiToken(apiToken)
+        //String keys = null;
+        //String apiToken = null;
+        //Object response = api.viewAChannelMetadataWhenRetrievingAllItemsOfAChannelMetadata(channelType, channelUrl)
         //        .key(key)
         //        .keys(keys)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View a channel metadata - When retrieving a specific item of a channel metadata by its key
-     *
-     * ## View a channel metadata  Retrieves a channel metadata&#39;s one or more items that are stored in a channel.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-channel-metadata ----------------------------   &#x60;channel_type&#x60;      Type: string      Description: Specifies the type of the channel. Either open_channels or group_channels.  &#x60;channel_url&#x60;      Type: string      Description: Specifies the URL of the target channel.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewChannelMetadataByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String channelType = null;
-        //String channelUrl = null;
-        //String key = null;
-        //Map<String, String> response = api.viewChannelMetadataByKey(channelType, channelUrl, key)
-        //        .apiToken(apiToken)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View a user metadata - When retrieving all items of a user metadata
-     *
-     * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewUserMetadataTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //String key = null;
-        //List<String> keys = null;
-        //ViewUserMetadataResponse response = api.viewUserMetadata(userId)
-        //        .apiToken(apiToken)
-        //        .key(key)
-        //        .keys(keys)
-        //        .execute();
-        // TODO: test validations
-    }
-
-    /**
-     * View a user metadata - When retrieving a specific item of a user metadata by its key
-     *
-     * ## View a user metadata  Retrieves a user metadata&#39;s one or more items that are stored in a user.  https://sendbird.com/docs/chat/v3/platform-api/guides/user-and-channel-metadata#2-view-a-user-metadata ----------------------------   &#x60;user_id&#x60;      Type: string      Description: Specifies the ID of the user to retrieve the metadata in.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void viewUserMetadataByKeyTest() throws ApiException {
-        //String apiToken = null;
-        //String userId = null;
-        //String key = null;
-        //Map<String, String> response = api.viewUserMetadataByKey(userId, key)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
