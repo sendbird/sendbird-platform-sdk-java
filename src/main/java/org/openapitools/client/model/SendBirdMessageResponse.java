@@ -27,8 +27,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendbirdBasicUserInfo;
-import org.openapitools.client.model.SendbirdExtendedMessagePayload;
 import org.openapitools.client.model.SendbirdFile;
+import org.openapitools.client.model.SendbirdMessageResponseExtendedMessagePayload;
 import org.openapitools.client.model.SendbirdMessageResponseMessageEvents;
 import org.openapitools.client.model.SendbirdParentMessageInfo;
 import org.openapitools.client.model.SendbirdReaction;
@@ -77,7 +77,7 @@ import org.sendbird.client.JSON;
   SendbirdMessageResponse.JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD
 })
 @JsonTypeName("Sendbird.MessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class SendbirdMessageResponse {
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;
@@ -146,7 +146,7 @@ public class SendbirdMessageResponse {
   private String channelUrl;
 
   public static final String JSON_PROPERTY_MESSAGE_ID = "message_id";
-  private Integer messageId;
+  private Long messageId;
 
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
   private List<SendbirdSortedMetaarrayInner> sortedMetaarray = null;
@@ -167,7 +167,7 @@ public class SendbirdMessageResponse {
   private JsonNullable<SendbirdMessageResponseMessageEvents> messageEvents = JsonNullable.<SendbirdMessageResponseMessageEvents>undefined();
 
   public static final String JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD = "extended_message_payload";
-  private SendbirdExtendedMessagePayload extendedMessagePayload;
+  private SendbirdMessageResponseExtendedMessagePayload extendedMessagePayload;
 
   public SendbirdMessageResponse() { 
   }
@@ -768,7 +768,7 @@ public class SendbirdMessageResponse {
   }
 
 
-  public SendbirdMessageResponse messageId(Integer messageId) {
+  public SendbirdMessageResponse messageId(Long messageId) {
     this.messageId = messageId;
     return this;
   }
@@ -782,14 +782,14 @@ public class SendbirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getMessageId() {
+  public Long getMessageId() {
     return messageId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessageId(Integer messageId) {
+  public void setMessageId(Long messageId) {
     this.messageId = messageId;
   }
 
@@ -966,7 +966,7 @@ public class SendbirdMessageResponse {
   }
 
 
-  public SendbirdMessageResponse extendedMessagePayload(SendbirdExtendedMessagePayload extendedMessagePayload) {
+  public SendbirdMessageResponse extendedMessagePayload(SendbirdMessageResponseExtendedMessagePayload extendedMessagePayload) {
     this.extendedMessagePayload = extendedMessagePayload;
     return this;
   }
@@ -980,14 +980,14 @@ public class SendbirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendbirdExtendedMessagePayload getExtendedMessagePayload() {
+  public SendbirdMessageResponseExtendedMessagePayload getExtendedMessagePayload() {
     return extendedMessagePayload;
   }
 
 
   @JsonProperty(JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExtendedMessagePayload(SendbirdExtendedMessagePayload extendedMessagePayload) {
+  public void setExtendedMessagePayload(SendbirdMessageResponseExtendedMessagePayload extendedMessagePayload) {
     this.extendedMessagePayload = extendedMessagePayload;
   }
 

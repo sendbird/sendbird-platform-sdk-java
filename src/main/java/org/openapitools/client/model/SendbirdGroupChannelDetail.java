@@ -35,10 +35,6 @@ import org.openapitools.client.model.SendbirdMember;
 import org.openapitools.client.model.SendbirdMessageResponse;
 import org.openapitools.client.model.SendbirdSmsFallback;
 import org.openapitools.client.model.SendbirdUser;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -82,7 +78,7 @@ import org.sendbird.client.JSON;
   SendbirdGroupChannelDetail.JSON_PROPERTY_UNREAD_MESSAGE_COUNT
 })
 @JsonTypeName("Sendbird.GroupChannelDetail")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class SendbirdGroupChannelDetail {
   public static final String JSON_PROPERTY_CHANNEL = "channel";
   private SendbirdGroupChannelDetailChannel channel;
@@ -151,7 +147,7 @@ public class SendbirdGroupChannelDetail {
   private Integer joinedMemberCount;
 
   public static final String JSON_PROPERTY_LAST_MESSAGE = "last_message";
-  private JsonNullable<SendbirdMessageResponse> lastMessage = JsonNullable.<SendbirdMessageResponse>undefined();
+  private SendbirdMessageResponse lastMessage;
 
   public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
   private Integer maxLengthMessage;
@@ -767,7 +763,7 @@ public class SendbirdGroupChannelDetail {
 
 
   public SendbirdGroupChannelDetail lastMessage(SendbirdMessageResponse lastMessage) {
-    this.lastMessage = JsonNullable.<SendbirdMessageResponse>of(lastMessage);
+    this.lastMessage = lastMessage;
     return this;
   }
 
@@ -777,26 +773,18 @@ public class SendbirdGroupChannelDetail {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonIgnore
-
-  public SendbirdMessageResponse getLastMessage() {
-        return lastMessage.orElse(null);
-  }
-
   @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SendbirdMessageResponse> getLastMessage_JsonNullable() {
+  public SendbirdMessageResponse getLastMessage() {
     return lastMessage;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
-  public void setLastMessage_JsonNullable(JsonNullable<SendbirdMessageResponse> lastMessage) {
-    this.lastMessage = lastMessage;
-  }
 
+
+  @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastMessage(SendbirdMessageResponse lastMessage) {
-    this.lastMessage = JsonNullable.<SendbirdMessageResponse>of(lastMessage);
+    this.lastMessage = lastMessage;
   }
 
 
@@ -1118,7 +1106,7 @@ public class SendbirdGroupChannelDetail {
         Objects.equals(this.isPublic, sendbirdGroupChannelDetail.isPublic) &&
         Objects.equals(this.isSuper, sendbirdGroupChannelDetail.isSuper) &&
         Objects.equals(this.joinedMemberCount, sendbirdGroupChannelDetail.joinedMemberCount) &&
-        equalsNullable(this.lastMessage, sendbirdGroupChannelDetail.lastMessage) &&
+        Objects.equals(this.lastMessage, sendbirdGroupChannelDetail.lastMessage) &&
         Objects.equals(this.maxLengthMessage, sendbirdGroupChannelDetail.maxLengthMessage) &&
         Objects.equals(this.memberCount, sendbirdGroupChannelDetail.memberCount) &&
         Objects.equals(this.members, sendbirdGroupChannelDetail.members) &&
@@ -1131,20 +1119,9 @@ public class SendbirdGroupChannelDetail {
         Objects.equals(this.unreadMessageCount, sendbirdGroupChannelDetail.unreadMessageCount);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(channel, channelUrl, coverUrl, createdAt, createdBy, customType, data, deliveryReceipt, disappearingMessage, freeze, hasAiBot, hasBot, id, ignoreProfanityFilter, isAccessCodeRequired, isBroadcast, isDiscoverable, isDistinct, isEphemeral, isPublic, isSuper, joinedMemberCount, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, members, messageSurvivalSeconds, name, operators, readReceipt, smsFallback, unreadMentionCount, unreadMessageCount);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(channel, channelUrl, coverUrl, createdAt, createdBy, customType, data, deliveryReceipt, disappearingMessage, freeze, hasAiBot, hasBot, id, ignoreProfanityFilter, isAccessCodeRequired, isBroadcast, isDiscoverable, isDistinct, isEphemeral, isPublic, isSuper, joinedMemberCount, lastMessage, maxLengthMessage, memberCount, members, messageSurvivalSeconds, name, operators, readReceipt, smsFallback, unreadMentionCount, unreadMessageCount);
   }
 
   @Override

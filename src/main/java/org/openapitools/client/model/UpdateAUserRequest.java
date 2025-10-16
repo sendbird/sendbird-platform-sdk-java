@@ -27,6 +27,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -46,10 +50,10 @@ import org.sendbird.client.JSON;
   UpdateAUserRequest.JSON_PROPERTY_PROFILE_URL
 })
 @JsonTypeName("updateAUser_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class UpdateAUserRequest {
   public static final String JSON_PROPERTY_DISCOVERY_KEYS = "discovery_keys";
-  private List<String> discoveryKeys = null;
+  private JsonNullable<List<String>> discoveryKeys = JsonNullable.<List<String>>undefined();
 
   public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
   private Boolean isActive;
@@ -64,30 +68,34 @@ public class UpdateAUserRequest {
   private Boolean leaveAllWhenDeactivated;
 
   public static final String JSON_PROPERTY_NICKNAME = "nickname";
-  private String nickname;
+  private JsonNullable<String> nickname = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PREFERRED_LANGUAGES = "preferred_languages";
-  private List<String> preferredLanguages = null;
+  private JsonNullable<List<String>> preferredLanguages = JsonNullable.<List<String>>undefined();
 
   public static final String JSON_PROPERTY_PROFILE_FILE = "profile_file";
   private File profileFile;
 
   public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
-  private String profileUrl;
+  private JsonNullable<String> profileUrl = JsonNullable.<String>undefined();
 
   public UpdateAUserRequest() { 
   }
 
   public UpdateAUserRequest discoveryKeys(List<String> discoveryKeys) {
-    this.discoveryKeys = discoveryKeys;
+    this.discoveryKeys = JsonNullable.<List<String>>of(discoveryKeys);
     return this;
   }
 
   public UpdateAUserRequest addDiscoveryKeysItem(String discoveryKeysItem) {
-    if (this.discoveryKeys == null) {
-      this.discoveryKeys = new ArrayList<>();
+    if (this.discoveryKeys == null || !this.discoveryKeys.isPresent()) {
+      this.discoveryKeys = JsonNullable.<List<String>>of(new ArrayList<>());
     }
-    this.discoveryKeys.add(discoveryKeysItem);
+    try {
+      this.discoveryKeys.get().add(discoveryKeysItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -97,18 +105,26 @@ public class UpdateAUserRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<String> getDiscoveryKeys() {
-    return discoveryKeys;
+        return discoveryKeys.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscoveryKeys(List<String> discoveryKeys) {
+
+  public JsonNullable<List<String>> getDiscoveryKeys_JsonNullable() {
+    return discoveryKeys;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
+  public void setDiscoveryKeys_JsonNullable(JsonNullable<List<String>> discoveryKeys) {
     this.discoveryKeys = discoveryKeys;
+  }
+
+  public void setDiscoveryKeys(List<String> discoveryKeys) {
+    this.discoveryKeys = JsonNullable.<List<String>>of(discoveryKeys);
   }
 
 
@@ -217,7 +233,7 @@ public class UpdateAUserRequest {
 
 
   public UpdateAUserRequest nickname(String nickname) {
-    this.nickname = nickname;
+    this.nickname = JsonNullable.<String>of(nickname);
     return this;
   }
 
@@ -227,31 +243,43 @@ public class UpdateAUserRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NICKNAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public String getNickname() {
-    return nickname;
+        return nickname.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNickname(String nickname) {
+
+  public JsonNullable<String> getNickname_JsonNullable() {
+    return nickname;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  public void setNickname_JsonNullable(JsonNullable<String> nickname) {
     this.nickname = nickname;
+  }
+
+  public void setNickname(String nickname) {
+    this.nickname = JsonNullable.<String>of(nickname);
   }
 
 
   public UpdateAUserRequest preferredLanguages(List<String> preferredLanguages) {
-    this.preferredLanguages = preferredLanguages;
+    this.preferredLanguages = JsonNullable.<List<String>>of(preferredLanguages);
     return this;
   }
 
   public UpdateAUserRequest addPreferredLanguagesItem(String preferredLanguagesItem) {
-    if (this.preferredLanguages == null) {
-      this.preferredLanguages = new ArrayList<>();
+    if (this.preferredLanguages == null || !this.preferredLanguages.isPresent()) {
+      this.preferredLanguages = JsonNullable.<List<String>>of(new ArrayList<>());
     }
-    this.preferredLanguages.add(preferredLanguagesItem);
+    try {
+      this.preferredLanguages.get().add(preferredLanguagesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -261,18 +289,26 @@ public class UpdateAUserRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<String> getPreferredLanguages() {
-    return preferredLanguages;
+        return preferredLanguages.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPreferredLanguages(List<String> preferredLanguages) {
+
+  public JsonNullable<List<String>> getPreferredLanguages_JsonNullable() {
+    return preferredLanguages;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
+  public void setPreferredLanguages_JsonNullable(JsonNullable<List<String>> preferredLanguages) {
     this.preferredLanguages = preferredLanguages;
+  }
+
+  public void setPreferredLanguages(List<String> preferredLanguages) {
+    this.preferredLanguages = JsonNullable.<List<String>>of(preferredLanguages);
   }
 
 
@@ -303,7 +339,7 @@ public class UpdateAUserRequest {
 
 
   public UpdateAUserRequest profileUrl(String profileUrl) {
-    this.profileUrl = profileUrl;
+    this.profileUrl = JsonNullable.<String>of(profileUrl);
     return this;
   }
 
@@ -313,18 +349,26 @@ public class UpdateAUserRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public String getProfileUrl() {
-    return profileUrl;
+        return profileUrl.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_PROFILE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProfileUrl(String profileUrl) {
+
+  public JsonNullable<String> getProfileUrl_JsonNullable() {
+    return profileUrl;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PROFILE_URL)
+  public void setProfileUrl_JsonNullable(JsonNullable<String> profileUrl) {
     this.profileUrl = profileUrl;
+  }
+
+  public void setProfileUrl(String profileUrl) {
+    this.profileUrl = JsonNullable.<String>of(profileUrl);
   }
 
 
@@ -340,20 +384,31 @@ public class UpdateAUserRequest {
       return false;
     }
     UpdateAUserRequest updateAUserRequest = (UpdateAUserRequest) o;
-    return Objects.equals(this.discoveryKeys, updateAUserRequest.discoveryKeys) &&
+    return equalsNullable(this.discoveryKeys, updateAUserRequest.discoveryKeys) &&
         Objects.equals(this.isActive, updateAUserRequest.isActive) &&
         Objects.equals(this.issueAccessToken, updateAUserRequest.issueAccessToken) &&
         Objects.equals(this.lastSeenAt, updateAUserRequest.lastSeenAt) &&
         Objects.equals(this.leaveAllWhenDeactivated, updateAUserRequest.leaveAllWhenDeactivated) &&
-        Objects.equals(this.nickname, updateAUserRequest.nickname) &&
-        Objects.equals(this.preferredLanguages, updateAUserRequest.preferredLanguages) &&
+        equalsNullable(this.nickname, updateAUserRequest.nickname) &&
+        equalsNullable(this.preferredLanguages, updateAUserRequest.preferredLanguages) &&
         Objects.equals(this.profileFile, updateAUserRequest.profileFile) &&
-        Objects.equals(this.profileUrl, updateAUserRequest.profileUrl);
+        equalsNullable(this.profileUrl, updateAUserRequest.profileUrl);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(discoveryKeys, isActive, issueAccessToken, lastSeenAt, leaveAllWhenDeactivated, nickname, preferredLanguages, profileFile, profileUrl);
+    return Objects.hash(hashCodeNullable(discoveryKeys), isActive, issueAccessToken, lastSeenAt, leaveAllWhenDeactivated, hashCodeNullable(nickname), hashCodeNullable(preferredLanguages), profileFile, hashCodeNullable(profileUrl));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

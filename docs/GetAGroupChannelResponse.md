@@ -37,7 +37,7 @@
 |**isSuper** | **Boolean** |  |  [optional] |
 |**joinedMemberCount** | **Integer** |  |  [optional] |
 |**joinedTs** | **Long** |  |  [optional] |
-|**lastMessage** | [**SendbirdMessageResponse**](SendbirdMessageResponse.md) |  |  [optional] |
+|**lastMessage** | [**SendbirdGroupChannelLastMessage**](SendbirdGroupChannelLastMessage.md) |  |  [optional] |
 |**maxLengthMessage** | **Integer** |  |  [optional] |
 |**memberCount** | **Integer** |  |  [optional] |
 |**memberState** | [**MemberStateEnum**](#MemberStateEnum) |  |  [optional] |

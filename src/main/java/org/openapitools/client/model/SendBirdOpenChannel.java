@@ -27,6 +27,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendbirdBasicUserInfo;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -50,7 +54,7 @@ import org.sendbird.client.JSON;
   SendbirdOpenChannel.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("Sendbird.OpenChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class SendbirdOpenChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -89,7 +93,7 @@ public class SendbirdOpenChannel {
   private Integer participantCount;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Object metadata;
+  private JsonNullable<Object> metadata = JsonNullable.<Object>undefined();
 
   public SendbirdOpenChannel() { 
   }
@@ -415,7 +419,7 @@ public class SendbirdOpenChannel {
 
 
   public SendbirdOpenChannel metadata(Object metadata) {
-    this.metadata = metadata;
+    this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
 
@@ -425,18 +429,26 @@ public class SendbirdOpenChannel {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public Object getMetadata() {
-    return metadata;
+        return metadata.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Object metadata) {
+
+  public JsonNullable<Object> getMetadata_JsonNullable() {
+    return metadata;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  public void setMetadata_JsonNullable(JsonNullable<Object> metadata) {
     this.metadata = metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = JsonNullable.<Object>of(metadata);
   }
 
 
@@ -464,12 +476,23 @@ public class SendbirdOpenChannel {
         Objects.equals(this.name, sendbirdOpenChannel.name) &&
         Objects.equals(this.operators, sendbirdOpenChannel.operators) &&
         Objects.equals(this.participantCount, sendbirdOpenChannel.participantCount) &&
-        Objects.equals(this.metadata, sendbirdOpenChannel.metadata);
+        equalsNullable(this.metadata, sendbirdOpenChannel.metadata);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelUrl, coverUrl, createdAt, customType, data, freeze, isDynamicPartitioned, isEphemeral, maxLengthMessage, name, operators, participantCount, metadata);
+    return Objects.hash(channelUrl, coverUrl, createdAt, customType, data, freeze, isDynamicPartitioned, isEphemeral, maxLengthMessage, name, operators, participantCount, hashCodeNullable(metadata));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

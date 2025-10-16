@@ -20,39 +20,42 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.SendbirdExtendedMessagePayload;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for SendTextMessageRequestBodyPushMessageTemplateOneOf
+ * Model tests for SendbirdMessageResponseExtendedMessagePayload
  */
-public class SendTextMessageRequestBodyPushMessageTemplateOneOfTest {
-    private final SendTextMessageRequestBodyPushMessageTemplateOneOf model = new SendTextMessageRequestBodyPushMessageTemplateOneOf();
+public class SendbirdMessageResponseExtendedMessagePayloadTest {
+    private final SendbirdMessageResponseExtendedMessagePayload model = new SendbirdMessageResponseExtendedMessagePayload();
 
     /**
-     * Model tests for SendTextMessageRequestBodyPushMessageTemplateOneOf
+     * Model tests for SendbirdMessageResponseExtendedMessagePayload
      */
     @Test
-    public void testSendTextMessageRequestBodyPushMessageTemplateOneOf() {
-        // TODO: test SendTextMessageRequestBodyPushMessageTemplateOneOf
+    public void testSendbirdMessageResponseExtendedMessagePayload() {
+        // TODO: test SendbirdMessageResponseExtendedMessagePayload
     }
 
     /**
-     * Test the property 'title'
+     * Test the property 'customView'
      */
     @Test
-    public void titleTest() {
-        // TODO: test title
+    public void customViewTest() {
+        // TODO: test customView
     }
 
     /**
-     * Test the property 'body'
+     * Test the property 'suggestedReplies'
      */
     @Test
-    public void bodyTest() {
-        // TODO: test body
+    public void suggestedRepliesTest() {
+        // TODO: test suggestedReplies
     }
 
 }

@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SendbirdReaction.JSON_PROPERTY_USER_IDS
 })
 @JsonTypeName("Sendbird.Reaction")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class SendbirdReaction {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;

@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.openapitools.client.model.CreateABotResponseBot;
-import org.openapitools.client.model.CreateABotResponseBotStyle;
+import org.openapitools.client.model.ListBotsResponseBotsInnerBotStyle;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -44,7 +44,7 @@ import org.sendbird.client.JSON;
   CreateABotResponse.JSON_PROPERTY_SHOW_MEMBER
 })
 @JsonTypeName("createABotResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class CreateABotResponse {
   public static final String JSON_PROPERTY_BOT = "bot";
   private CreateABotResponseBot bot;
@@ -53,7 +53,7 @@ public class CreateABotResponse {
   private String botCallbackUrl;
 
   public static final String JSON_PROPERTY_BOT_STYLE = "bot_style";
-  private CreateABotResponseBotStyle botStyle;
+  private ListBotsResponseBotsInnerBotStyle botStyle;
 
   public static final String JSON_PROPERTY_CHANNEL_INVITATION_PREFERENCE = "channel_invitation_preference";
   private Integer channelInvitationPreference;
@@ -125,7 +125,7 @@ public class CreateABotResponse {
   }
 
 
-  public CreateABotResponse botStyle(CreateABotResponseBotStyle botStyle) {
+  public CreateABotResponse botStyle(ListBotsResponseBotsInnerBotStyle botStyle) {
     this.botStyle = botStyle;
     return this;
   }
@@ -139,14 +139,14 @@ public class CreateABotResponse {
   @JsonProperty(JSON_PROPERTY_BOT_STYLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CreateABotResponseBotStyle getBotStyle() {
+  public ListBotsResponseBotsInnerBotStyle getBotStyle() {
     return botStyle;
   }
 
 
   @JsonProperty(JSON_PROPERTY_BOT_STYLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBotStyle(CreateABotResponseBotStyle botStyle) {
+  public void setBotStyle(ListBotsResponseBotsInnerBotStyle botStyle) {
     this.botStyle = botStyle;
   }
 

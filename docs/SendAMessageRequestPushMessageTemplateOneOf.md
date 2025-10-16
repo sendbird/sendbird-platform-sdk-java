@@ -1,6 +1,6 @@
 
 
-# SendTextMessageRequestBodyPushMessageTemplateOneOf
+# SendAMessageRequestPushMessageTemplateOneOf
 
 
 ## Properties

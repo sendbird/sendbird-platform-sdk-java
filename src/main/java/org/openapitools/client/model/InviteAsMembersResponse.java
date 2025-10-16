@@ -32,8 +32,8 @@ import org.openapitools.client.model.InviteAsMembersResponseAllOf;
 import org.openapitools.client.model.SendbirdBasicUserInfo;
 import org.openapitools.client.model.SendbirdDisappearingMessage;
 import org.openapitools.client.model.SendbirdGroupChannel;
+import org.openapitools.client.model.SendbirdGroupChannelLastMessage;
 import org.openapitools.client.model.SendbirdMember;
-import org.openapitools.client.model.SendbirdMessageResponse;
 import org.openapitools.client.model.SendbirdPushTriggerOption;
 import org.openapitools.client.model.SendbirdSmsFallback;
 import org.openapitools.client.model.SendbirdUser;
@@ -97,7 +97,7 @@ import org.sendbird.client.JSON;
   InviteAsMembersResponse.JSON_PROPERTY_OPERATORS
 })
 @JsonTypeName("inviteAsMembersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class InviteAsMembersResponse {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -224,7 +224,7 @@ public class InviteAsMembersResponse {
   private SendbirdBasicUserInfo inviter;
 
   public static final String JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED = "is_access_code_required";
-  private Boolean isAccessCodeRequired;
+  private JsonNullable<Boolean> isAccessCodeRequired = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_IS_BROADCAST = "is_broadcast";
   private Boolean isBroadcast;
@@ -260,10 +260,10 @@ public class InviteAsMembersResponse {
   private Integer joinedMemberCount;
 
   public static final String JSON_PROPERTY_JOINED_TS = "joined_ts";
-  private Long joinedTs;
+  private JsonNullable<Long> joinedTs = JsonNullable.<Long>undefined();
 
   public static final String JSON_PROPERTY_LAST_MESSAGE = "last_message";
-  private JsonNullable<SendbirdMessageResponse> lastMessage = JsonNullable.<SendbirdMessageResponse>undefined();
+  private SendbirdGroupChannelLastMessage lastMessage;
 
   public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
   private Integer maxLengthMessage;
@@ -318,7 +318,7 @@ public class InviteAsMembersResponse {
   private Integer messageSurvivalSeconds;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Object metadata;
+  private JsonNullable<Object> metadata = JsonNullable.<Object>undefined();
 
   /**
    * Gets or Sets myRole
@@ -807,7 +807,7 @@ public class InviteAsMembersResponse {
 
 
   public InviteAsMembersResponse isAccessCodeRequired(Boolean isAccessCodeRequired) {
-    this.isAccessCodeRequired = isAccessCodeRequired;
+    this.isAccessCodeRequired = JsonNullable.<Boolean>of(isAccessCodeRequired);
     return this;
   }
 
@@ -817,18 +817,26 @@ public class InviteAsMembersResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public Boolean getIsAccessCodeRequired() {
-    return isAccessCodeRequired;
+        return isAccessCodeRequired.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsAccessCodeRequired(Boolean isAccessCodeRequired) {
+
+  public JsonNullable<Boolean> getIsAccessCodeRequired_JsonNullable() {
+    return isAccessCodeRequired;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED)
+  public void setIsAccessCodeRequired_JsonNullable(JsonNullable<Boolean> isAccessCodeRequired) {
     this.isAccessCodeRequired = isAccessCodeRequired;
+  }
+
+  public void setIsAccessCodeRequired(Boolean isAccessCodeRequired) {
+    this.isAccessCodeRequired = JsonNullable.<Boolean>of(isAccessCodeRequired);
   }
 
 
@@ -1119,7 +1127,7 @@ public class InviteAsMembersResponse {
 
 
   public InviteAsMembersResponse joinedTs(Long joinedTs) {
-    this.joinedTs = joinedTs;
+    this.joinedTs = JsonNullable.<Long>of(joinedTs);
     return this;
   }
 
@@ -1129,23 +1137,31 @@ public class InviteAsMembersResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_JOINED_TS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public Long getJoinedTs() {
-    return joinedTs;
+        return joinedTs.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_JOINED_TS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setJoinedTs(Long joinedTs) {
+
+  public JsonNullable<Long> getJoinedTs_JsonNullable() {
+    return joinedTs;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_JOINED_TS)
+  public void setJoinedTs_JsonNullable(JsonNullable<Long> joinedTs) {
     this.joinedTs = joinedTs;
   }
 
+  public void setJoinedTs(Long joinedTs) {
+    this.joinedTs = JsonNullable.<Long>of(joinedTs);
+  }
 
-  public InviteAsMembersResponse lastMessage(SendbirdMessageResponse lastMessage) {
-    this.lastMessage = JsonNullable.<SendbirdMessageResponse>of(lastMessage);
+
+  public InviteAsMembersResponse lastMessage(SendbirdGroupChannelLastMessage lastMessage) {
+    this.lastMessage = lastMessage;
     return this;
   }
 
@@ -1155,26 +1171,18 @@ public class InviteAsMembersResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonIgnore
-
-  public SendbirdMessageResponse getLastMessage() {
-        return lastMessage.orElse(null);
-  }
-
   @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SendbirdMessageResponse> getLastMessage_JsonNullable() {
+  public SendbirdGroupChannelLastMessage getLastMessage() {
     return lastMessage;
   }
-  
-  @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
-  public void setLastMessage_JsonNullable(JsonNullable<SendbirdMessageResponse> lastMessage) {
-    this.lastMessage = lastMessage;
-  }
 
-  public void setLastMessage(SendbirdMessageResponse lastMessage) {
-    this.lastMessage = JsonNullable.<SendbirdMessageResponse>of(lastMessage);
+
+  @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLastMessage(SendbirdGroupChannelLastMessage lastMessage) {
+    this.lastMessage = lastMessage;
   }
 
 
@@ -1317,7 +1325,7 @@ public class InviteAsMembersResponse {
 
 
   public InviteAsMembersResponse metadata(Object metadata) {
-    this.metadata = metadata;
+    this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
 
@@ -1327,18 +1335,26 @@ public class InviteAsMembersResponse {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public Object getMetadata() {
-    return metadata;
+        return metadata.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Object metadata) {
+
+  public JsonNullable<Object> getMetadata_JsonNullable() {
+    return metadata;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  public void setMetadata_JsonNullable(JsonNullable<Object> metadata) {
     this.metadata = metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = JsonNullable.<Object>of(metadata);
   }
 
 
@@ -1646,7 +1662,7 @@ public class InviteAsMembersResponse {
         Objects.equals(this.ignoreProfanityFilter, inviteAsMembersResponse.ignoreProfanityFilter) &&
         Objects.equals(this.invitedAt, inviteAsMembersResponse.invitedAt) &&
         Objects.equals(this.inviter, inviteAsMembersResponse.inviter) &&
-        Objects.equals(this.isAccessCodeRequired, inviteAsMembersResponse.isAccessCodeRequired) &&
+        equalsNullable(this.isAccessCodeRequired, inviteAsMembersResponse.isAccessCodeRequired) &&
         Objects.equals(this.isBroadcast, inviteAsMembersResponse.isBroadcast) &&
         Objects.equals(this.isDiscoverable, inviteAsMembersResponse.isDiscoverable) &&
         Objects.equals(this.isDistinct, inviteAsMembersResponse.isDistinct) &&
@@ -1658,14 +1674,14 @@ public class InviteAsMembersResponse {
         Objects.equals(this.isPushEnabled, inviteAsMembersResponse.isPushEnabled) &&
         Objects.equals(this.isSuper, inviteAsMembersResponse.isSuper) &&
         Objects.equals(this.joinedMemberCount, inviteAsMembersResponse.joinedMemberCount) &&
-        Objects.equals(this.joinedTs, inviteAsMembersResponse.joinedTs) &&
-        equalsNullable(this.lastMessage, inviteAsMembersResponse.lastMessage) &&
+        equalsNullable(this.joinedTs, inviteAsMembersResponse.joinedTs) &&
+        Objects.equals(this.lastMessage, inviteAsMembersResponse.lastMessage) &&
         Objects.equals(this.maxLengthMessage, inviteAsMembersResponse.maxLengthMessage) &&
         Objects.equals(this.memberCount, inviteAsMembersResponse.memberCount) &&
         Objects.equals(this.memberState, inviteAsMembersResponse.memberState) &&
         Objects.equals(this.members, inviteAsMembersResponse.members) &&
         Objects.equals(this.messageSurvivalSeconds, inviteAsMembersResponse.messageSurvivalSeconds) &&
-        Objects.equals(this.metadata, inviteAsMembersResponse.metadata) &&
+        equalsNullable(this.metadata, inviteAsMembersResponse.metadata) &&
         Objects.equals(this.myRole, inviteAsMembersResponse.myRole) &&
         Objects.equals(this.name, inviteAsMembersResponse.name) &&
         Objects.equals(this.pushTriggerOption, inviteAsMembersResponse.pushTriggerOption) &&
@@ -1684,7 +1700,7 @@ public class InviteAsMembersResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelUrl, countPreference, coverUrl, createdAt, createdBy, customType, data, deliveryReceipt, disappearingMessage, freeze, hasAiBot, hasBot, hiddenState, ignoreProfanityFilter, invitedAt, inviter, isAccessCodeRequired, isBroadcast, isDiscoverable, isDistinct, isEphemeral, isExclusive, isHidden, isMuted, isPublic, isPushEnabled, isSuper, joinedMemberCount, joinedTs, hashCodeNullable(lastMessage), maxLengthMessage, memberCount, memberState, members, messageSurvivalSeconds, metadata, myRole, name, pushTriggerOption, readReceipt, smsFallback, tsMessageOffset, unreadMentionCount, unreadMessageCount, userLastRead, operators);
+    return Objects.hash(channelUrl, countPreference, coverUrl, createdAt, createdBy, customType, data, deliveryReceipt, disappearingMessage, freeze, hasAiBot, hasBot, hiddenState, ignoreProfanityFilter, invitedAt, inviter, hashCodeNullable(isAccessCodeRequired), isBroadcast, isDiscoverable, isDistinct, isEphemeral, isExclusive, isHidden, isMuted, isPublic, isPushEnabled, isSuper, joinedMemberCount, hashCodeNullable(joinedTs), lastMessage, maxLengthMessage, memberCount, memberState, members, messageSurvivalSeconds, hashCodeNullable(metadata), myRole, name, pushTriggerOption, readReceipt, smsFallback, tsMessageOffset, unreadMentionCount, unreadMessageCount, userLastRead, operators);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

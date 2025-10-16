@@ -20,6 +20,7 @@ import org.openapitools.client.model.AddExtraDataToAMessageResponse;
 import org.openapitools.client.model.GetTotalNumberOfMessagesInAChannelResponse;
 import org.openapitools.client.model.ListMessagesResponse;
 import org.openapitools.client.model.MarkChannelMessagesAsReadRequest;
+import org.openapitools.client.model.MigrateMessagesRequest;
 import org.openapitools.client.model.SendAMessageRequest;
 import org.openapitools.client.model.SendbirdMessageResponse;
 import org.openapitools.client.model.UpdateAMessageRequest;
@@ -53,7 +54,7 @@ public class MessageApiTest {
     public void addExtraDataToAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
-        //String messageId = null;
+        //Long messageId = null;
         //String apiToken = null;
         //AddExtraDataToAMessageRequest addExtraDataToAMessageRequest = null;
         //AddExtraDataToAMessageResponse response = api.addExtraDataToAMessage(channelType, channelUrl, messageId)
@@ -74,7 +75,7 @@ public class MessageApiTest {
     public void deleteAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
-        //String messageId = null;
+        //Long messageId = null;
         //String apiToken = null;
         //Object response = api.deleteAMessage(channelType, channelUrl, messageId)
         //        .apiToken(apiToken)
@@ -93,7 +94,7 @@ public class MessageApiTest {
     public void getAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
-        //String messageId = null;
+        //Long messageId = null;
         //Boolean includeReactions = null;
         //Boolean includeThreadInfo = null;
         //Boolean includeParentMessageInfo = null;
@@ -217,10 +218,10 @@ public class MessageApiTest {
     public void migrateMessagesTest() throws ApiException {
         //String targetChannelUrl = null;
         //String apiToken = null;
-        //Object body = null;
+        //MigrateMessagesRequest migrateMessagesRequest = null;
         //Object response = api.migrateMessages(targetChannelUrl)
         //        .apiToken(apiToken)
-        //        .body(body)
+        //        .migrateMessagesRequest(migrateMessagesRequest)
         //        .execute();
         // TODO: test validations
     }
@@ -236,7 +237,7 @@ public class MessageApiTest {
     public void removeExtraDataFromAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
-        //String messageId = null;
+        //Long messageId = null;
         //String keys = null;
         //String apiToken = null;
         //Object response = api.removeExtraDataFromAMessage(channelType, channelUrl, messageId)
@@ -277,7 +278,7 @@ public class MessageApiTest {
     public void updateAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
-        //String messageId = null;
+        //Long messageId = null;
         //String apiToken = null;
         //UpdateAMessageRequest updateAMessageRequest = null;
         //SendbirdMessageResponse response = api.updateAMessage(channelType, channelUrl, messageId)
@@ -298,7 +299,7 @@ public class MessageApiTest {
     public void updateExtraDataInAMessageTest() throws ApiException {
         //String channelType = null;
         //String channelUrl = null;
-        //String messageId = null;
+        //Long messageId = null;
         //String apiToken = null;
         //UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest = null;
         //UpdateExtraDataInAMessageResponse response = api.updateExtraDataInAMessage(channelType, channelUrl, messageId)

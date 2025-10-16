@@ -63,7 +63,7 @@ import org.sendbird.client.JSON;
   SendbirdMember.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("Sendbird.Member")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class SendbirdMember {
   public static final String JSON_PROPERTY_DELIVERED_TS = "delivered_ts";
   private Long deliveredTs;
@@ -96,7 +96,7 @@ public class SendbirdMember {
   private Long lastSeenAt;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Object metadata;
+  private JsonNullable<Object> metadata = JsonNullable.<Object>undefined();
 
   public static final String JSON_PROPERTY_MUTED_DESCRIPTION = "muted_description";
   private String mutedDescription;
@@ -105,7 +105,7 @@ public class SendbirdMember {
   private Long mutedEndAt;
 
   public static final String JSON_PROPERTY_NICKNAME = "nickname";
-  private String nickname;
+  private JsonNullable<String> nickname = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PUSH_ENABLED = "push_enabled";
   private Boolean pushEnabled;
@@ -114,7 +114,7 @@ public class SendbirdMember {
   private SendbirdPushTriggerOption pushTriggerOption;
 
   public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
-  private String profileUrl;
+  private String profileUrl = "";
 
   public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;
@@ -497,7 +497,7 @@ public class SendbirdMember {
 
 
   public SendbirdMember metadata(Object metadata) {
-    this.metadata = metadata;
+    this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
 
@@ -507,18 +507,26 @@ public class SendbirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public Object getMetadata() {
-    return metadata;
+        return metadata.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Object metadata) {
+
+  public JsonNullable<Object> getMetadata_JsonNullable() {
+    return metadata;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  public void setMetadata_JsonNullable(JsonNullable<Object> metadata) {
     this.metadata = metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = JsonNullable.<Object>of(metadata);
   }
 
 
@@ -575,7 +583,7 @@ public class SendbirdMember {
 
 
   public SendbirdMember nickname(String nickname) {
-    this.nickname = nickname;
+    this.nickname = JsonNullable.<String>of(nickname);
     return this;
   }
 
@@ -585,18 +593,26 @@ public class SendbirdMember {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NICKNAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public String getNickname() {
-    return nickname;
+        return nickname.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNickname(String nickname) {
+
+  public JsonNullable<String> getNickname_JsonNullable() {
+    return nickname;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  public void setNickname_JsonNullable(JsonNullable<String> nickname) {
     this.nickname = nickname;
+  }
+
+  public void setNickname(String nickname) {
+    this.nickname = JsonNullable.<String>of(nickname);
   }
 
 
@@ -846,10 +862,10 @@ public class SendbirdMember {
         Objects.equals(this.isMuted, sendbirdMember.isMuted) &&
         Objects.equals(this.isOnline, sendbirdMember.isOnline) &&
         Objects.equals(this.lastSeenAt, sendbirdMember.lastSeenAt) &&
-        Objects.equals(this.metadata, sendbirdMember.metadata) &&
+        equalsNullable(this.metadata, sendbirdMember.metadata) &&
         Objects.equals(this.mutedDescription, sendbirdMember.mutedDescription) &&
         Objects.equals(this.mutedEndAt, sendbirdMember.mutedEndAt) &&
-        Objects.equals(this.nickname, sendbirdMember.nickname) &&
+        equalsNullable(this.nickname, sendbirdMember.nickname) &&
         Objects.equals(this.pushEnabled, sendbirdMember.pushEnabled) &&
         Objects.equals(this.pushTriggerOption, sendbirdMember.pushTriggerOption) &&
         Objects.equals(this.profileUrl, sendbirdMember.profileUrl) &&
@@ -866,7 +882,7 @@ public class SendbirdMember {
 
   @Override
   public int hashCode() {
-    return Objects.hash(deliveredTs, doNotDisturb, hashCodeNullable(friendDiscoveryKey), hashCodeNullable(friendName), isActive, isBlockedByMe, isBlockingMe, isMuted, isOnline, lastSeenAt, metadata, mutedDescription, mutedEndAt, nickname, pushEnabled, pushTriggerOption, profileUrl, requireAuthForProfileImage, readTs, hashCodeNullable(role), hashCodeNullable(state), userId);
+    return Objects.hash(deliveredTs, doNotDisturb, hashCodeNullable(friendDiscoveryKey), hashCodeNullable(friendName), isActive, isBlockedByMe, isBlockingMe, isMuted, isOnline, lastSeenAt, hashCodeNullable(metadata), mutedDescription, mutedEndAt, hashCodeNullable(nickname), pushEnabled, pushTriggerOption, profileUrl, requireAuthForProfileImage, readTs, hashCodeNullable(role), hashCodeNullable(state), userId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {

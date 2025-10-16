@@ -229,6 +229,9 @@ public class UserApiTest {
         //String queryType = null;
         //String membersNickname = null;
         //String membersNicknameContains = null;
+        //String membersNicknameStartswith = null;
+        //String searchQuery = null;
+        //String searchFields = null;
         //String metadataKey = null;
         //String metadataValues = null;
         //String metadataValueStartswith = null;
@@ -239,12 +242,9 @@ public class UserApiTest {
         //String metacounterValueLt = null;
         //String metacounterValueLte = null;
         //Boolean includeSortedMetaarrayInLastMessage = null;
-        //String customType = null;
-        //Boolean readReceipt = null;
-        //Boolean member = null;
-        //Boolean isDistinct = null;
-        //String membersIn = null;
-        //String userId2 = null;
+        //String hiddenMode = null;
+        //String unreadFilter = null;
+        //String memberStateFilter = null;
         //ListMyGroupChannelsResponse response = api.listMyGroupChannels(userId)
         //        .apiToken(apiToken)
         //        .token(token)
@@ -273,6 +273,9 @@ public class UserApiTest {
         //        .queryType(queryType)
         //        .membersNickname(membersNickname)
         //        .membersNicknameContains(membersNicknameContains)
+        //        .membersNicknameStartswith(membersNicknameStartswith)
+        //        .searchQuery(searchQuery)
+        //        .searchFields(searchFields)
         //        .metadataKey(metadataKey)
         //        .metadataValues(metadataValues)
         //        .metadataValueStartswith(metadataValueStartswith)
@@ -283,12 +286,9 @@ public class UserApiTest {
         //        .metacounterValueLt(metacounterValueLt)
         //        .metacounterValueLte(metacounterValueLte)
         //        .includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage)
-        //        .customType(customType)
-        //        .readReceipt(readReceipt)
-        //        .member(member)
-        //        .isDistinct(isDistinct)
-        //        .membersIn(membersIn)
-        //        .userId2(userId2)
+        //        .hiddenMode(hiddenMode)
+        //        .unreadFilter(unreadFilter)
+        //        .memberStateFilter(memberStateFilter)
         //        .execute();
         // TODO: test validations
     }

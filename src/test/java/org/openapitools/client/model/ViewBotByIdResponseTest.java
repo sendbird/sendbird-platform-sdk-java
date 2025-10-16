@@ -20,60 +20,72 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.client.model.ListBotsResponseBotsInnerBotStyleColor;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
+import org.openapitools.client.model.ViewBotByIdResponseBot;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for CreateABotResponseBotStyle
+ * Model tests for ViewBotByIdResponse
  */
-public class CreateABotResponseBotStyleTest {
-    private final CreateABotResponseBotStyle model = new CreateABotResponseBotStyle();
+public class ViewBotByIdResponseTest {
+    private final ViewBotByIdResponse model = new ViewBotByIdResponse();
 
     /**
-     * Model tests for CreateABotResponseBotStyle
+     * Model tests for ViewBotByIdResponse
      */
     @Test
-    public void testCreateABotResponseBotStyle() {
-        // TODO: test CreateABotResponseBotStyle
+    public void testViewBotByIdResponse() {
+        // TODO: test ViewBotByIdResponse
     }
 
     /**
-     * Test the property 'autoOpen'
+     * Test the property 'bot'
      */
     @Test
-    public void autoOpenTest() {
-        // TODO: test autoOpen
+    public void botTest() {
+        // TODO: test bot
     }
 
     /**
-     * Test the property 'color'
+     * Test the property 'botCallbackUrl'
      */
     @Test
-    public void colorTest() {
-        // TODO: test color
+    public void botCallbackUrlTest() {
+        // TODO: test botCallbackUrl
     }
 
     /**
-     * Test the property 'toggleButtonType'
+     * Test the property 'enableMarkAsRead'
      */
     @Test
-    public void toggleButtonTypeTest() {
-        // TODO: test toggleButtonType
+    public void enableMarkAsReadTest() {
+        // TODO: test enableMarkAsRead
     }
 
     /**
-     * Test the property 'toggleButtonUrl'
+     * Test the property 'isPrivacyMode'
      */
     @Test
-    public void toggleButtonUrlTest() {
-        // TODO: test toggleButtonUrl
+    public void isPrivacyModeTest() {
+        // TODO: test isPrivacyMode
+    }
+
+    /**
+     * Test the property 'showMember'
+     */
+    @Test
+    public void showMemberTest() {
+        // TODO: test showMember
+    }
+
+    /**
+     * Test the property 'channelInvitationPreference'
+     */
+    @Test
+    public void channelInvitationPreferenceTest() {
+        // TODO: test channelInvitationPreference
     }
 
 }

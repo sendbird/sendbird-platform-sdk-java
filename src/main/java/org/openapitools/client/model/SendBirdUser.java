@@ -59,11 +59,10 @@ import org.sendbird.client.JSON;
   SendbirdUser.JSON_PROPERTY_UNREAD_CHANNEL_COUNT,
   SendbirdUser.JSON_PROPERTY_UNREAD_MESSAGE_COUNT,
   SendbirdUser.JSON_PROPERTY_PHONE_NUMBER,
-  SendbirdUser.JSON_PROPERTY_IS_CREATED,
-  SendbirdUser.JSON_PROPERTY_SESSION_TOKENS
+  SendbirdUser.JSON_PROPERTY_IS_CREATED
 })
 @JsonTypeName("Sendbird.User")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class SendbirdUser {
   public static final String JSON_PROPERTY_ACCESS_TOKEN = "access_token";
   private String accessToken;
@@ -72,7 +71,7 @@ public class SendbirdUser {
   private Long createdAt;
 
   public static final String JSON_PROPERTY_DISCOVERY_KEYS = "discovery_keys";
-  private List<String> discoveryKeys = null;
+  private JsonNullable<List<String>> discoveryKeys = JsonNullable.<List<String>>undefined();
 
   public static final String JSON_PROPERTY_HAS_EVER_LOGGED_IN = "has_ever_logged_in";
   private Boolean hasEverLoggedIn;
@@ -96,16 +95,16 @@ public class SendbirdUser {
   private String locale;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Object metadata;
+  private JsonNullable<Object> metadata = JsonNullable.<Object>undefined();
 
   public static final String JSON_PROPERTY_NICKNAME = "nickname";
-  private String nickname;
+  private JsonNullable<String> nickname = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_PREFERRED_LANGUAGES = "preferred_languages";
-  private List<String> preferredLanguages = null;
+  private JsonNullable<List<String>> preferredLanguages = JsonNullable.<List<String>>undefined();
 
   public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
-  private String profileUrl;
+  private String profileUrl = "";
 
   public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;
@@ -165,9 +164,6 @@ public class SendbirdUser {
   public static final String JSON_PROPERTY_IS_CREATED = "is_created";
   private Boolean isCreated;
 
-  public static final String JSON_PROPERTY_SESSION_TOKENS = "session_tokens";
-  private List<String> sessionTokens = null;
-
   public SendbirdUser() { 
   }
 
@@ -224,15 +220,19 @@ public class SendbirdUser {
 
 
   public SendbirdUser discoveryKeys(List<String> discoveryKeys) {
-    this.discoveryKeys = discoveryKeys;
+    this.discoveryKeys = JsonNullable.<List<String>>of(discoveryKeys);
     return this;
   }
 
   public SendbirdUser addDiscoveryKeysItem(String discoveryKeysItem) {
-    if (this.discoveryKeys == null) {
-      this.discoveryKeys = new ArrayList<>();
+    if (this.discoveryKeys == null || !this.discoveryKeys.isPresent()) {
+      this.discoveryKeys = JsonNullable.<List<String>>of(new ArrayList<>());
     }
-    this.discoveryKeys.add(discoveryKeysItem);
+    try {
+      this.discoveryKeys.get().add(discoveryKeysItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -242,18 +242,26 @@ public class SendbirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<String> getDiscoveryKeys() {
-    return discoveryKeys;
+        return discoveryKeys.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscoveryKeys(List<String> discoveryKeys) {
+
+  public JsonNullable<List<String>> getDiscoveryKeys_JsonNullable() {
+    return discoveryKeys;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
+  public void setDiscoveryKeys_JsonNullable(JsonNullable<List<String>> discoveryKeys) {
     this.discoveryKeys = discoveryKeys;
+  }
+
+  public void setDiscoveryKeys(List<String> discoveryKeys) {
+    this.discoveryKeys = JsonNullable.<List<String>>of(discoveryKeys);
   }
 
 
@@ -440,7 +448,7 @@ public class SendbirdUser {
 
 
   public SendbirdUser metadata(Object metadata) {
-    this.metadata = metadata;
+    this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
 
@@ -450,23 +458,31 @@ public class SendbirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public Object getMetadata() {
-    return metadata;
+        return metadata.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Object metadata) {
+
+  public JsonNullable<Object> getMetadata_JsonNullable() {
+    return metadata;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  public void setMetadata_JsonNullable(JsonNullable<Object> metadata) {
     this.metadata = metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = JsonNullable.<Object>of(metadata);
   }
 
 
   public SendbirdUser nickname(String nickname) {
-    this.nickname = nickname;
+    this.nickname = JsonNullable.<String>of(nickname);
     return this;
   }
 
@@ -476,31 +492,43 @@ public class SendbirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NICKNAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public String getNickname() {
-    return nickname;
+        return nickname.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNickname(String nickname) {
+
+  public JsonNullable<String> getNickname_JsonNullable() {
+    return nickname;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  public void setNickname_JsonNullable(JsonNullable<String> nickname) {
     this.nickname = nickname;
+  }
+
+  public void setNickname(String nickname) {
+    this.nickname = JsonNullable.<String>of(nickname);
   }
 
 
   public SendbirdUser preferredLanguages(List<String> preferredLanguages) {
-    this.preferredLanguages = preferredLanguages;
+    this.preferredLanguages = JsonNullable.<List<String>>of(preferredLanguages);
     return this;
   }
 
   public SendbirdUser addPreferredLanguagesItem(String preferredLanguagesItem) {
-    if (this.preferredLanguages == null) {
-      this.preferredLanguages = new ArrayList<>();
+    if (this.preferredLanguages == null || !this.preferredLanguages.isPresent()) {
+      this.preferredLanguages = JsonNullable.<List<String>>of(new ArrayList<>());
     }
-    this.preferredLanguages.add(preferredLanguagesItem);
+    try {
+      this.preferredLanguages.get().add(preferredLanguagesItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -510,18 +538,26 @@ public class SendbirdUser {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<String> getPreferredLanguages() {
-    return preferredLanguages;
+        return preferredLanguages.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPreferredLanguages(List<String> preferredLanguages) {
+
+  public JsonNullable<List<String>> getPreferredLanguages_JsonNullable() {
+    return preferredLanguages;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_PREFERRED_LANGUAGES)
+  public void setPreferredLanguages_JsonNullable(JsonNullable<List<String>> preferredLanguages) {
     this.preferredLanguages = preferredLanguages;
+  }
+
+  public void setPreferredLanguages(List<String> preferredLanguages) {
+    this.preferredLanguages = JsonNullable.<List<String>>of(preferredLanguages);
   }
 
 
@@ -741,40 +777,6 @@ public class SendbirdUser {
   }
 
 
-  public SendbirdUser sessionTokens(List<String> sessionTokens) {
-    this.sessionTokens = sessionTokens;
-    return this;
-  }
-
-  public SendbirdUser addSessionTokensItem(String sessionTokensItem) {
-    if (this.sessionTokens == null) {
-      this.sessionTokens = new ArrayList<>();
-    }
-    this.sessionTokens.add(sessionTokensItem);
-    return this;
-  }
-
-   /**
-   * Get sessionTokens
-   * @return sessionTokens
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_SESSION_TOKENS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<String> getSessionTokens() {
-    return sessionTokens;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SESSION_TOKENS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSessionTokens(List<String> sessionTokens) {
-    this.sessionTokens = sessionTokens;
-  }
-
-
   /**
    * Return true if this Sendbird.User object is equal to o.
    */
@@ -789,7 +791,7 @@ public class SendbirdUser {
     SendbirdUser sendbirdUser = (SendbirdUser) o;
     return Objects.equals(this.accessToken, sendbirdUser.accessToken) &&
         Objects.equals(this.createdAt, sendbirdUser.createdAt) &&
-        Objects.equals(this.discoveryKeys, sendbirdUser.discoveryKeys) &&
+        equalsNullable(this.discoveryKeys, sendbirdUser.discoveryKeys) &&
         Objects.equals(this.hasEverLoggedIn, sendbirdUser.hasEverLoggedIn) &&
         Objects.equals(this.isActive, sendbirdUser.isActive) &&
         Objects.equals(this.isHideMeFromFriends, sendbirdUser.isHideMeFromFriends) &&
@@ -797,9 +799,9 @@ public class SendbirdUser {
         Objects.equals(this.isShadowBlocked, sendbirdUser.isShadowBlocked) &&
         Objects.equals(this.lastSeenAt, sendbirdUser.lastSeenAt) &&
         Objects.equals(this.locale, sendbirdUser.locale) &&
-        Objects.equals(this.metadata, sendbirdUser.metadata) &&
-        Objects.equals(this.nickname, sendbirdUser.nickname) &&
-        Objects.equals(this.preferredLanguages, sendbirdUser.preferredLanguages) &&
+        equalsNullable(this.metadata, sendbirdUser.metadata) &&
+        equalsNullable(this.nickname, sendbirdUser.nickname) &&
+        equalsNullable(this.preferredLanguages, sendbirdUser.preferredLanguages) &&
         Objects.equals(this.profileUrl, sendbirdUser.profileUrl) &&
         Objects.equals(this.requireAuthForProfileImage, sendbirdUser.requireAuthForProfileImage) &&
         Objects.equals(this.userId, sendbirdUser.userId) &&
@@ -807,8 +809,7 @@ public class SendbirdUser {
         Objects.equals(this.unreadChannelCount, sendbirdUser.unreadChannelCount) &&
         Objects.equals(this.unreadMessageCount, sendbirdUser.unreadMessageCount) &&
         Objects.equals(this.phoneNumber, sendbirdUser.phoneNumber) &&
-        Objects.equals(this.isCreated, sendbirdUser.isCreated) &&
-        Objects.equals(this.sessionTokens, sendbirdUser.sessionTokens);
+        Objects.equals(this.isCreated, sendbirdUser.isCreated);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -817,7 +818,7 @@ public class SendbirdUser {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, createdAt, discoveryKeys, hasEverLoggedIn, isActive, isHideMeFromFriends, isOnline, isShadowBlocked, lastSeenAt, locale, metadata, nickname, preferredLanguages, profileUrl, requireAuthForProfileImage, userId, hashCodeNullable(state), unreadChannelCount, unreadMessageCount, phoneNumber, isCreated, sessionTokens);
+    return Objects.hash(accessToken, createdAt, hashCodeNullable(discoveryKeys), hasEverLoggedIn, isActive, isHideMeFromFriends, isOnline, isShadowBlocked, lastSeenAt, locale, hashCodeNullable(metadata), hashCodeNullable(nickname), hashCodeNullable(preferredLanguages), profileUrl, requireAuthForProfileImage, userId, hashCodeNullable(state), unreadChannelCount, unreadMessageCount, phoneNumber, isCreated);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -852,7 +853,6 @@ public class SendbirdUser {
     sb.append("    unreadMessageCount: ").append(toIndentedString(unreadMessageCount)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    isCreated: ").append(toIndentedString(isCreated)).append("\n");
-    sb.append("    sessionTokens: ").append(toIndentedString(sessionTokens)).append("\n");
     sb.append("}");
     return sb.toString();
   }

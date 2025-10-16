@@ -29,25 +29,25 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendTextMessageRequestBodyPushMessageTemplateOneOf
+ * SendAMessageRequestPushMessageTemplateOneOf
  */
 @JsonPropertyOrder({
-  SendTextMessageRequestBodyPushMessageTemplateOneOf.JSON_PROPERTY_TITLE,
-  SendTextMessageRequestBodyPushMessageTemplateOneOf.JSON_PROPERTY_BODY
+  SendAMessageRequestPushMessageTemplateOneOf.JSON_PROPERTY_TITLE,
+  SendAMessageRequestPushMessageTemplateOneOf.JSON_PROPERTY_BODY
 })
-@JsonTypeName("sendTextMessageRequestBody_push_message_template_oneOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
-public class SendTextMessageRequestBodyPushMessageTemplateOneOf {
+@JsonTypeName("sendAMessage_request_push_message_template_oneOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+public class SendAMessageRequestPushMessageTemplateOneOf {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
 
   public static final String JSON_PROPERTY_BODY = "body";
   private String body;
 
-  public SendTextMessageRequestBodyPushMessageTemplateOneOf() { 
+  public SendAMessageRequestPushMessageTemplateOneOf() { 
   }
 
-  public SendTextMessageRequestBodyPushMessageTemplateOneOf title(String title) {
+  public SendAMessageRequestPushMessageTemplateOneOf title(String title) {
     this.title = title;
     return this;
   }
@@ -73,7 +73,7 @@ public class SendTextMessageRequestBodyPushMessageTemplateOneOf {
   }
 
 
-  public SendTextMessageRequestBodyPushMessageTemplateOneOf body(String body) {
+  public SendAMessageRequestPushMessageTemplateOneOf body(String body) {
     this.body = body;
     return this;
   }
@@ -100,7 +100,7 @@ public class SendTextMessageRequestBodyPushMessageTemplateOneOf {
 
 
   /**
-   * Return true if this sendTextMessageRequestBody_push_message_template_oneOf object is equal to o.
+   * Return true if this sendAMessage_request_push_message_template_oneOf object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -110,9 +110,9 @@ public class SendTextMessageRequestBodyPushMessageTemplateOneOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendTextMessageRequestBodyPushMessageTemplateOneOf sendTextMessageRequestBodyPushMessageTemplateOneOf = (SendTextMessageRequestBodyPushMessageTemplateOneOf) o;
-    return Objects.equals(this.title, sendTextMessageRequestBodyPushMessageTemplateOneOf.title) &&
-        Objects.equals(this.body, sendTextMessageRequestBodyPushMessageTemplateOneOf.body);
+    SendAMessageRequestPushMessageTemplateOneOf sendAMessageRequestPushMessageTemplateOneOf = (SendAMessageRequestPushMessageTemplateOneOf) o;
+    return Objects.equals(this.title, sendAMessageRequestPushMessageTemplateOneOf.title) &&
+        Objects.equals(this.body, sendAMessageRequestPushMessageTemplateOneOf.body);
   }
 
   @Override
@@ -123,7 +123,7 @@ public class SendTextMessageRequestBodyPushMessageTemplateOneOf {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendTextMessageRequestBodyPushMessageTemplateOneOf {\n");
+    sb.append("class SendAMessageRequestPushMessageTemplateOneOf {\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("}");

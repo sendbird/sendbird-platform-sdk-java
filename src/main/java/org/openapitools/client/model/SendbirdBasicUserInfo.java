@@ -24,6 +24,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -42,7 +46,7 @@ import org.sendbird.client.JSON;
   SendbirdBasicUserInfo.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("Sendbird.BasicUserInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class SendbirdBasicUserInfo {
   public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;
@@ -94,16 +98,16 @@ public class SendbirdBasicUserInfo {
   private RoleEnum role;
 
   public static final String JSON_PROPERTY_NICKNAME = "nickname";
-  private String nickname;
+  private JsonNullable<String> nickname = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
   public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
-  private String profileUrl;
+  private String profileUrl = "";
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Object metadata;
+  private JsonNullable<Object> metadata = JsonNullable.<Object>undefined();
 
   public SendbirdBasicUserInfo() { 
   }
@@ -213,7 +217,7 @@ public class SendbirdBasicUserInfo {
 
 
   public SendbirdBasicUserInfo nickname(String nickname) {
-    this.nickname = nickname;
+    this.nickname = JsonNullable.<String>of(nickname);
     return this;
   }
 
@@ -223,18 +227,26 @@ public class SendbirdBasicUserInfo {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_NICKNAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public String getNickname() {
-    return nickname;
+        return nickname.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNickname(String nickname) {
+
+  public JsonNullable<String> getNickname_JsonNullable() {
+    return nickname;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_NICKNAME)
+  public void setNickname_JsonNullable(JsonNullable<String> nickname) {
     this.nickname = nickname;
+  }
+
+  public void setNickname(String nickname) {
+    this.nickname = JsonNullable.<String>of(nickname);
   }
 
 
@@ -291,7 +303,7 @@ public class SendbirdBasicUserInfo {
 
 
   public SendbirdBasicUserInfo metadata(Object metadata) {
-    this.metadata = metadata;
+    this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
 
@@ -301,18 +313,26 @@ public class SendbirdBasicUserInfo {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public Object getMetadata() {
-    return metadata;
+        return metadata.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Object metadata) {
+
+  public JsonNullable<Object> getMetadata_JsonNullable() {
+    return metadata;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  public void setMetadata_JsonNullable(JsonNullable<Object> metadata) {
     this.metadata = metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = JsonNullable.<Object>of(metadata);
   }
 
 
@@ -332,15 +352,26 @@ public class SendbirdBasicUserInfo {
         Objects.equals(this.isActive, sendbirdBasicUserInfo.isActive) &&
         Objects.equals(this.isBlockedByMe, sendbirdBasicUserInfo.isBlockedByMe) &&
         Objects.equals(this.role, sendbirdBasicUserInfo.role) &&
-        Objects.equals(this.nickname, sendbirdBasicUserInfo.nickname) &&
+        equalsNullable(this.nickname, sendbirdBasicUserInfo.nickname) &&
         Objects.equals(this.userId, sendbirdBasicUserInfo.userId) &&
         Objects.equals(this.profileUrl, sendbirdBasicUserInfo.profileUrl) &&
-        Objects.equals(this.metadata, sendbirdBasicUserInfo.metadata);
+        equalsNullable(this.metadata, sendbirdBasicUserInfo.metadata);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requireAuthForProfileImage, isActive, isBlockedByMe, role, nickname, userId, profileUrl, metadata);
+    return Objects.hash(requireAuthForProfileImage, isActive, isBlockedByMe, role, hashCodeNullable(nickname), userId, profileUrl, hashCodeNullable(metadata));
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

@@ -15,13 +15,19 @@ package org.sendbird.client.api;
 
 import org.sendbird.client.*;
 import org.sendbird.client.auth.*;
+import java.math.BigDecimal;
 import org.openapitools.client.model.CreateABotRequest;
 import org.openapitools.client.model.CreateABotResponse;
+import java.io.File;
 import org.openapitools.client.model.JoinChannelsRequest;
 import org.openapitools.client.model.ListBotsResponse;
-import org.openapitools.client.model.SendABotMessageRequest;
+import org.openapitools.client.model.SendABotMessageResponse;
+import org.openapitools.client.model.SendbirdExtendedMessagePayload;
 import org.openapitools.client.model.SendbirdGroupChannelDetail;
-import org.openapitools.client.model.SendbirdMessageResponse;
+import org.openapitools.client.model.SendbirdSortedMetaarrayInner;
+import org.openapitools.client.model.UpdateBotByIdData;
+import org.openapitools.client.model.UpdateBotByIdResponse;
+import org.openapitools.client.model.ViewBotByIdResponse;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -53,6 +59,23 @@ public class BotApiTest {
         //CreateABotResponse response = api.createABot()
         //        .apiToken(apiToken)
         //        .createABotRequest(createABotRequest)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Delete a bot
+     *
+     * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void deleteBotByIdTest() throws ApiException {
+        //String botUserid = null;
+        //String apiToken = null;
+        //Object response = api.deleteBotById(botUserid)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }
@@ -141,11 +164,87 @@ public class BotApiTest {
     @Test
     public void sendABotMessageTest() throws ApiException {
         //String botUserid = null;
+        //String messageType = null;
+        //String channelUrl = null;
         //String apiToken = null;
-        //SendABotMessageRequest sendABotMessageRequest = null;
-        //SendbirdMessageResponse response = api.sendABotMessage(botUserid)
+        //String message = null;
+        //List<String> mentioned = null;
+        //SendbirdExtendedMessagePayload extendedMessagePayload = null;
+        //File _file = null;
+        //Boolean requireAuth = null;
+        //String mentionType = null;
+        //List<String> mentionedUserIds = null;
+        //Boolean isSilent = null;
+        //List<SendbirdSortedMetaarrayInner> sortedMetaarray = null;
+        //String apnsBundleId = null;
+        //Object appleCriticalAlertOptions = null;
+        //String sound = null;
+        //BigDecimal volume = null;
+        //Long createdAt = null;
+        //String customType = null;
+        //String data = null;
+        //String dedupId = null;
+        //Boolean markAsRead = null;
+        //Boolean sendPush = null;
+        //SendABotMessageResponse response = api.sendABotMessage(botUserid)
+        //        .messageType(messageType)
+        //        .channelUrl(channelUrl)
         //        .apiToken(apiToken)
-        //        .sendABotMessageRequest(sendABotMessageRequest)
+        //        .message(message)
+        //        .mentioned(mentioned)
+        //        .extendedMessagePayload(extendedMessagePayload)
+        //        ._file(_file)
+        //        .requireAuth(requireAuth)
+        //        .mentionType(mentionType)
+        //        .mentionedUserIds(mentionedUserIds)
+        //        .isSilent(isSilent)
+        //        .sortedMetaarray(sortedMetaarray)
+        //        .apnsBundleId(apnsBundleId)
+        //        .appleCriticalAlertOptions(appleCriticalAlertOptions)
+        //        .sound(sound)
+        //        .volume(volume)
+        //        .createdAt(createdAt)
+        //        .customType(customType)
+        //        .data(data)
+        //        .dedupId(dedupId)
+        //        .markAsRead(markAsRead)
+        //        .sendPush(sendPush)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * Update a bot
+     *
+     * ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void updateBotByIdTest() throws ApiException {
+        //String botUserid = null;
+        //String apiToken = null;
+        //UpdateBotByIdData updateBotByIdData = null;
+        //UpdateBotByIdResponse response = api.updateBotById(botUserid)
+        //        .apiToken(apiToken)
+        //        .updateBotByIdData(updateBotByIdData)
+        //        .execute();
+        // TODO: test validations
+    }
+
+    /**
+     * View a bot
+     *
+     * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void viewBotByIdTest() throws ApiException {
+        //String botUserid = null;
+        //String apiToken = null;
+        //ViewBotByIdResponse response = api.viewBotById(botUserid)
+        //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations
     }

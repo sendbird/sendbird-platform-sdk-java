@@ -1,7 +1,6 @@
 .github/workflows/maven.yml
 .gitignore
 .travis.yml
-README.md
 api/openapi.yaml
 build.gradle
 build.sbt
@@ -20,7 +19,6 @@ docs/ChooseAPushNotificationContentTemplateResponse.md
 docs/CreateABotRequest.md
 docs/CreateABotResponse.md
 docs/CreateABotResponseBot.md
-docs/CreateABotResponseBotStyle.md
 docs/CreateAChannelMetadataRequest.md
 docs/CreateAChannelMetadataResponse.md
 docs/CreateAGroupChannelRequest.md
@@ -48,7 +46,6 @@ docs/LeaveMyGroupChannelsRequest.md
 docs/ListBlockedUsersResponse.md
 docs/ListBotsResponse.md
 docs/ListBotsResponseBotsInner.md
-docs/ListBotsResponseBotsInnerAi.md
 docs/ListBotsResponseBotsInnerBot.md
 docs/ListBotsResponseBotsInnerBotStyle.md
 docs/ListBotsResponseBotsInnerBotStyleColor.md
@@ -83,13 +80,14 @@ docs/ScheduleAnAnnouncementRequestCreateChannelOptions.md
 docs/ScheduleAnAnnouncementRequestMessage.md
 docs/ScheduleAnAnnouncementResponse.md
 docs/ScheduleAnAnnouncementResponseMessage.md
-docs/SendABotMessageRequest.md
+docs/SendABotMessageResponse.md
 docs/SendAMessageRequest.md
+docs/SendAMessageRequestPushMessageTemplate.md
+docs/SendAMessageRequestPushMessageTemplateOneOf.md
 docs/SendAdminMessageRequestBody.md
 docs/SendFileMessageRequestBody.md
 docs/SendTextMessageRequestBody.md
 docs/SendTextMessageRequestBodyPushMessageTemplate.md
-docs/SendTextMessageRequestBodyPushMessageTemplateOneOf.md
 docs/SendbirdBasicUserInfo.md
 docs/SendbirdDisappearingMessage.md
 docs/SendbirdExtendedMessagePayload.md
@@ -97,8 +95,10 @@ docs/SendbirdFile.md
 docs/SendbirdGroupChannel.md
 docs/SendbirdGroupChannelDetail.md
 docs/SendbirdGroupChannelDetailChannel.md
+docs/SendbirdGroupChannelLastMessage.md
 docs/SendbirdMember.md
 docs/SendbirdMessageResponse.md
+docs/SendbirdMessageResponseExtendedMessagePayload.md
 docs/SendbirdMessageResponseMessageEvents.md
 docs/SendbirdOpenChannel.md
 docs/SendbirdParentMessageInfo.md
@@ -115,6 +115,8 @@ docs/UpdateAGroupChannelRequest.md
 docs/UpdateAMessageRequest.md
 docs/UpdateAUserRequest.md
 docs/UpdateAnOpenChannelRequest.md
+docs/UpdateBotByIdData.md
+docs/UpdateBotByIdResponse.md
 docs/UpdateChannelInvitationPreferenceRequest.md
 docs/UpdateChannelInvitationPreferenceResponse.md
 docs/UpdateCountPreferenceOfAChannelRequest.md
@@ -126,6 +128,8 @@ docs/UpdatePushPreferencesForAChannelResponse.md
 docs/UpdatePushPreferencesRequest.md
 docs/UpdatePushPreferencesResponse.md
 docs/UserApi.md
+docs/ViewBotByIdResponse.md
+docs/ViewBotByIdResponseBot.md
 docs/ViewCountPreferenceOfAChannelResponse.md
 docs/ViewNumberOfChannelsWithUnreadMessagesResponse.md
 docs/ViewNumberOfDailyActiveUsersResponse.md
@@ -156,7 +160,6 @@ src/main/java/org/openapitools/client/model/ChooseAPushNotificationContentTempla
 src/main/java/org/openapitools/client/model/CreateABotRequest.java
 src/main/java/org/openapitools/client/model/CreateABotResponse.java
 src/main/java/org/openapitools/client/model/CreateABotResponseBot.java
-src/main/java/org/openapitools/client/model/CreateABotResponseBotStyle.java
 src/main/java/org/openapitools/client/model/CreateAChannelMetadataRequest.java
 src/main/java/org/openapitools/client/model/CreateAChannelMetadataResponse.java
 src/main/java/org/openapitools/client/model/CreateAGroupChannelRequest.java
@@ -183,7 +186,6 @@ src/main/java/org/openapitools/client/model/LeaveMyGroupChannelsRequest.java
 src/main/java/org/openapitools/client/model/ListBlockedUsersResponse.java
 src/main/java/org/openapitools/client/model/ListBotsResponse.java
 src/main/java/org/openapitools/client/model/ListBotsResponseBotsInner.java
-src/main/java/org/openapitools/client/model/ListBotsResponseBotsInnerAi.java
 src/main/java/org/openapitools/client/model/ListBotsResponseBotsInnerBot.java
 src/main/java/org/openapitools/client/model/ListBotsResponseBotsInnerBotStyle.java
 src/main/java/org/openapitools/client/model/ListBotsResponseBotsInnerBotStyleColor.java
@@ -214,13 +216,14 @@ src/main/java/org/openapitools/client/model/ScheduleAnAnnouncementRequestCreateC
 src/main/java/org/openapitools/client/model/ScheduleAnAnnouncementRequestMessage.java
 src/main/java/org/openapitools/client/model/ScheduleAnAnnouncementResponse.java
 src/main/java/org/openapitools/client/model/ScheduleAnAnnouncementResponseMessage.java
-src/main/java/org/openapitools/client/model/SendABotMessageRequest.java
+src/main/java/org/openapitools/client/model/SendABotMessageResponse.java
 src/main/java/org/openapitools/client/model/SendAMessageRequest.java
+src/main/java/org/openapitools/client/model/SendAMessageRequestPushMessageTemplate.java
+src/main/java/org/openapitools/client/model/SendAMessageRequestPushMessageTemplateOneOf.java
 src/main/java/org/openapitools/client/model/SendAdminMessageRequestBody.java
 src/main/java/org/openapitools/client/model/SendFileMessageRequestBody.java
 src/main/java/org/openapitools/client/model/SendTextMessageRequestBody.java
 src/main/java/org/openapitools/client/model/SendTextMessageRequestBodyPushMessageTemplate.java
-src/main/java/org/openapitools/client/model/SendTextMessageRequestBodyPushMessageTemplateOneOf.java
 src/main/java/org/openapitools/client/model/SendbirdBasicUserInfo.java
 src/main/java/org/openapitools/client/model/SendbirdDisappearingMessage.java
 src/main/java/org/openapitools/client/model/SendbirdExtendedMessagePayload.java
@@ -228,8 +231,10 @@ src/main/java/org/openapitools/client/model/SendbirdFile.java
 src/main/java/org/openapitools/client/model/SendbirdGroupChannel.java
 src/main/java/org/openapitools/client/model/SendbirdGroupChannelDetail.java
 src/main/java/org/openapitools/client/model/SendbirdGroupChannelDetailChannel.java
+src/main/java/org/openapitools/client/model/SendbirdGroupChannelLastMessage.java
 src/main/java/org/openapitools/client/model/SendbirdMember.java
 src/main/java/org/openapitools/client/model/SendbirdMessageResponse.java
+src/main/java/org/openapitools/client/model/SendbirdMessageResponseExtendedMessagePayload.java
 src/main/java/org/openapitools/client/model/SendbirdMessageResponseMessageEvents.java
 src/main/java/org/openapitools/client/model/SendbirdOpenChannel.java
 src/main/java/org/openapitools/client/model/SendbirdParentMessageInfo.java
@@ -245,6 +250,8 @@ src/main/java/org/openapitools/client/model/UpdateAGroupChannelRequest.java
 src/main/java/org/openapitools/client/model/UpdateAMessageRequest.java
 src/main/java/org/openapitools/client/model/UpdateAUserRequest.java
 src/main/java/org/openapitools/client/model/UpdateAnOpenChannelRequest.java
+src/main/java/org/openapitools/client/model/UpdateBotByIdData.java
+src/main/java/org/openapitools/client/model/UpdateBotByIdResponse.java
 src/main/java/org/openapitools/client/model/UpdateChannelInvitationPreferenceRequest.java
 src/main/java/org/openapitools/client/model/UpdateChannelInvitationPreferenceResponse.java
 src/main/java/org/openapitools/client/model/UpdateCountPreferenceOfAChannelRequest.java
@@ -255,6 +262,8 @@ src/main/java/org/openapitools/client/model/UpdatePushPreferencesForAChannelRequ
 src/main/java/org/openapitools/client/model/UpdatePushPreferencesForAChannelResponse.java
 src/main/java/org/openapitools/client/model/UpdatePushPreferencesRequest.java
 src/main/java/org/openapitools/client/model/UpdatePushPreferencesResponse.java
+src/main/java/org/openapitools/client/model/ViewBotByIdResponse.java
+src/main/java/org/openapitools/client/model/ViewBotByIdResponseBot.java
 src/main/java/org/openapitools/client/model/ViewCountPreferenceOfAChannelResponse.java
 src/main/java/org/openapitools/client/model/ViewNumberOfChannelsWithUnreadMessagesResponse.java
 src/main/java/org/openapitools/client/model/ViewNumberOfDailyActiveUsersResponse.java

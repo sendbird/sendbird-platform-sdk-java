@@ -27,6 +27,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -47,10 +51,10 @@ import org.sendbird.client.JSON;
   UpdateAGroupChannelRequest.JSON_PROPERTY_OPERATOR_IDS
 })
 @JsonTypeName("updateAGroupChannel_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
 public class UpdateAGroupChannelRequest {
   public static final String JSON_PROPERTY_ACCESS_CODE = "access_code";
-  private String accessCode;
+  private JsonNullable<String> accessCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_COVER_FILE = "cover_file";
   private File coverFile;
@@ -83,7 +87,7 @@ public class UpdateAGroupChannelRequest {
   }
 
   public UpdateAGroupChannelRequest accessCode(String accessCode) {
-    this.accessCode = accessCode;
+    this.accessCode = JsonNullable.<String>of(accessCode);
     return this;
   }
 
@@ -93,18 +97,26 @@ public class UpdateAGroupChannelRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public String getAccessCode() {
-    return accessCode;
+        return accessCode.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccessCode(String accessCode) {
+
+  public JsonNullable<String> getAccessCode_JsonNullable() {
+    return accessCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
+  public void setAccessCode_JsonNullable(JsonNullable<String> accessCode) {
     this.accessCode = accessCode;
+  }
+
+  public void setAccessCode(String accessCode) {
+    this.accessCode = JsonNullable.<String>of(accessCode);
   }
 
 
@@ -362,7 +374,7 @@ public class UpdateAGroupChannelRequest {
       return false;
     }
     UpdateAGroupChannelRequest updateAGroupChannelRequest = (UpdateAGroupChannelRequest) o;
-    return Objects.equals(this.accessCode, updateAGroupChannelRequest.accessCode) &&
+    return equalsNullable(this.accessCode, updateAGroupChannelRequest.accessCode) &&
         Objects.equals(this.coverFile, updateAGroupChannelRequest.coverFile) &&
         Objects.equals(this.coverUrl, updateAGroupChannelRequest.coverUrl) &&
         Objects.equals(this.customType, updateAGroupChannelRequest.customType) &&
@@ -374,9 +386,20 @@ public class UpdateAGroupChannelRequest {
         Objects.equals(this.operatorIds, updateAGroupChannelRequest.operatorIds);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(accessCode, coverFile, coverUrl, customType, data, isDistinct, isPublic, isSuper, name, operatorIds);
+    return Objects.hash(hashCodeNullable(accessCode), coverFile, coverUrl, customType, data, isDistinct, isPublic, isSuper, name, operatorIds);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
