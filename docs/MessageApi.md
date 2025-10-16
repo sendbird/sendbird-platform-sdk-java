@@ -20,7 +20,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## addExtraDataToAMessage
 
-> AddExtraDataToAMessageResponse addExtraDataToAMessage(channelType, channelUrl, messageId).apiToken(apiToken).addExtraDataToAMessageRequest(addExtraDataToAMessageRequest).execute();
+> SendBirdAddExtraDataToAMessageResponse addExtraDataToAMessage(channelType, channelUrl, messageId).apiToken(apiToken).sendBirdAddExtraDataToAMessageRequest(sendBirdAddExtraDataToAMessageRequest).execute();
 
 Add extra data to a message
 
@@ -51,11 +51,11 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | (Required) 
         Long messageId = 56L; // Long | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        AddExtraDataToAMessageRequest addExtraDataToAMessageRequest = new AddExtraDataToAMessageRequest(); // AddExtraDataToAMessageRequest | 
+        SendBirdAddExtraDataToAMessageRequest sendBirdAddExtraDataToAMessageRequest = new SendBirdAddExtraDataToAMessageRequest(); // SendBirdAddExtraDataToAMessageRequest | 
         try {
-            AddExtraDataToAMessageResponse result = api.addExtraDataToAMessage(channelType, channelUrl, messageId)
+            SendBirdAddExtraDataToAMessageResponse result = api.addExtraDataToAMessage(channelType, channelUrl, messageId)
                 .apiToken(apiToken)
-                .addExtraDataToAMessageRequest(addExtraDataToAMessageRequest)
+                .sendBirdAddExtraDataToAMessageRequest(sendBirdAddExtraDataToAMessageRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -78,11 +78,11 @@ public class Example {
 | **channelUrl** | **String**| (Required)  | |
 | **messageId** | **Long**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **addExtraDataToAMessageRequest** | [**AddExtraDataToAMessageRequest**](AddExtraDataToAMessageRequest.md)|  | [optional] |
+| **sendBirdAddExtraDataToAMessageRequest** | [**SendBirdAddExtraDataToAMessageRequest**](SendBirdAddExtraDataToAMessageRequest.md)|  | [optional] |
 
 ### Return type
 
-[**AddExtraDataToAMessageResponse**](AddExtraDataToAMessageResponse.md)
+[**SendBirdAddExtraDataToAMessageResponse**](SendBirdAddExtraDataToAMessageResponse.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ No authorization required
 
 ## getAMessage
 
-> SendbirdMessageResponse getAMessage(channelType, channelUrl, messageId).includeReactions(includeReactions).includeThreadInfo(includeThreadInfo).includeParentMessageInfo(includeParentMessageInfo).includePollDetails(includePollDetails).withSortedMetaArray(withSortedMetaArray).apiToken(apiToken).execute();
+> SendBirdSendbirdMessageResponse getAMessage(channelType, channelUrl, messageId).includeReactions(includeReactions).includeThreadInfo(includeThreadInfo).includeParentMessageInfo(includeParentMessageInfo).includePollDetails(includePollDetails).withSortedMetaArray(withSortedMetaArray).apiToken(apiToken).execute();
 
 Get a message
 
@@ -226,7 +226,7 @@ public class Example {
         Boolean withSortedMetaArray = true; // Boolean | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendbirdMessageResponse result = api.getAMessage(channelType, channelUrl, messageId)
+            SendBirdSendbirdMessageResponse result = api.getAMessage(channelType, channelUrl, messageId)
                 .includeReactions(includeReactions)
                 .includeThreadInfo(includeThreadInfo)
                 .includeParentMessageInfo(includeParentMessageInfo)
@@ -263,7 +263,7 @@ public class Example {
 
 ### Return type
 
-[**SendbirdMessageResponse**](SendbirdMessageResponse.md)
+[**SendBirdSendbirdMessageResponse**](SendBirdSendbirdMessageResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ No authorization required
 
 ## getTotalNumberOfMessagesInAChannel
 
-> GetTotalNumberOfMessagesInAChannelResponse getTotalNumberOfMessagesInAChannel(channelType, channelUrl).apiToken(apiToken).execute();
+> SendBirdGetTotalNumberOfMessagesInAChannelResponse getTotalNumberOfMessagesInAChannel(channelType, channelUrl).apiToken(apiToken).execute();
 
 Get total number of messages in a channel
 
@@ -313,7 +313,7 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            GetTotalNumberOfMessagesInAChannelResponse result = api.getTotalNumberOfMessagesInAChannel(channelType, channelUrl)
+            SendBirdGetTotalNumberOfMessagesInAChannelResponse result = api.getTotalNumberOfMessagesInAChannel(channelType, channelUrl)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -339,7 +339,7 @@ public class Example {
 
 ### Return type
 
-[**GetTotalNumberOfMessagesInAChannelResponse**](GetTotalNumberOfMessagesInAChannelResponse.md)
+[**SendBirdGetTotalNumberOfMessagesInAChannelResponse**](SendBirdGetTotalNumberOfMessagesInAChannelResponse.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ No authorization required
 
 ## listMessages
 
-> ListMessagesResponse listMessages(channelType, channelUrl).messageTs(messageTs).messageId(messageId).prevLimit(prevLimit).nextLimit(nextLimit).include(include).reverse(reverse).senderId(senderId).senderIds(senderIds).operatorFilter(operatorFilter).customTypes(customTypes).messageType(messageType).includingRemoved(includingRemoved).includeReactions(includeReactions).includeReplyType(includeReplyType).includeParentMessageInfo(includeParentMessageInfo).includeThreadInfo(includeThreadInfo).includePollDetails(includePollDetails).withSortedMetaArray(withSortedMetaArray).showSubchannelMessagesOnly(showSubchannelMessagesOnly).userId(userId).apiToken(apiToken).execute();
+> SendBirdListMessagesResponse listMessages(channelType, channelUrl).messageTs(messageTs).messageId(messageId).prevLimit(prevLimit).nextLimit(nextLimit).include(include).reverse(reverse).senderId(senderId).senderIds(senderIds).operatorFilter(operatorFilter).customTypes(customTypes).messageType(messageType).includingRemoved(includingRemoved).includeReactions(includeReactions).includeReplyType(includeReplyType).includeParentMessageInfo(includeParentMessageInfo).includeThreadInfo(includeThreadInfo).includePollDetails(includePollDetails).withSortedMetaArray(withSortedMetaArray).showSubchannelMessagesOnly(showSubchannelMessagesOnly).userId(userId).apiToken(apiToken).execute();
 
 List messages
 
@@ -417,7 +417,7 @@ public class Example {
         String userId = "userId_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ListMessagesResponse result = api.listMessages(channelType, channelUrl)
+            SendBirdListMessagesResponse result = api.listMessages(channelType, channelUrl)
                 .messageTs(messageTs)
                 .messageId(messageId)
                 .prevLimit(prevLimit)
@@ -483,7 +483,7 @@ public class Example {
 
 ### Return type
 
-[**ListMessagesResponse**](ListMessagesResponse.md)
+[**SendBirdListMessagesResponse**](SendBirdListMessagesResponse.md)
 
 ### Authorization
 
@@ -502,7 +502,7 @@ No authorization required
 
 ## markChannelMessagesAsRead
 
-> Object markChannelMessagesAsRead(channelUrl).apiToken(apiToken).markChannelMessagesAsReadRequest(markChannelMessagesAsReadRequest).execute();
+> Object markChannelMessagesAsRead(channelUrl).apiToken(apiToken).sendBirdMarkChannelMessagesAsReadRequest(sendBirdMarkChannelMessagesAsReadRequest).execute();
 
 Mark all messages as read
 
@@ -530,11 +530,11 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        MarkChannelMessagesAsReadRequest markChannelMessagesAsReadRequest = new MarkChannelMessagesAsReadRequest(); // MarkChannelMessagesAsReadRequest | 
+        SendBirdMarkChannelMessagesAsReadRequest sendBirdMarkChannelMessagesAsReadRequest = new SendBirdMarkChannelMessagesAsReadRequest(); // SendBirdMarkChannelMessagesAsReadRequest | 
         try {
             Object result = api.markChannelMessagesAsRead(channelUrl)
                 .apiToken(apiToken)
-                .markChannelMessagesAsReadRequest(markChannelMessagesAsReadRequest)
+                .sendBirdMarkChannelMessagesAsReadRequest(sendBirdMarkChannelMessagesAsReadRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -555,7 +555,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **markChannelMessagesAsReadRequest** | [**MarkChannelMessagesAsReadRequest**](MarkChannelMessagesAsReadRequest.md)|  | [optional] |
+| **sendBirdMarkChannelMessagesAsReadRequest** | [**SendBirdMarkChannelMessagesAsReadRequest**](SendBirdMarkChannelMessagesAsReadRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -578,7 +578,7 @@ No authorization required
 
 ## migrateMessages
 
-> Object migrateMessages(targetChannelUrl).apiToken(apiToken).migrateMessagesRequest(migrateMessagesRequest).execute();
+> Object migrateMessages(targetChannelUrl).apiToken(apiToken).sendBirdMigrateMessagesRequest(sendBirdMigrateMessagesRequest).execute();
 
 Migrate messages
 
@@ -618,11 +618,11 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String targetChannelUrl = "targetChannelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        MigrateMessagesRequest migrateMessagesRequest = new MigrateMessagesRequest(); // MigrateMessagesRequest | 
+        SendBirdMigrateMessagesRequest sendBirdMigrateMessagesRequest = new SendBirdMigrateMessagesRequest(); // SendBirdMigrateMessagesRequest | 
         try {
             Object result = api.migrateMessages(targetChannelUrl)
                 .apiToken(apiToken)
-                .migrateMessagesRequest(migrateMessagesRequest)
+                .sendBirdMigrateMessagesRequest(sendBirdMigrateMessagesRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -643,7 +643,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **targetChannelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **migrateMessagesRequest** | [**MigrateMessagesRequest**](MigrateMessagesRequest.md)|  | [optional] |
+| **sendBirdMigrateMessagesRequest** | [**SendBirdMigrateMessagesRequest**](SendBirdMigrateMessagesRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -747,7 +747,7 @@ No authorization required
 
 ## sendAMessage
 
-> SendbirdMessageResponse sendAMessage(channelType, channelUrl).apiToken(apiToken).sendAMessageRequest(sendAMessageRequest).execute();
+> SendBirdSendbirdMessageResponse sendAMessage(channelType, channelUrl).apiToken(apiToken).sendBirdSendAMessageRequest(sendBirdSendAMessageRequest).execute();
 
 Send a message
 
@@ -778,11 +778,11 @@ public class Example {
         String channelType = "open_channels"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendAMessageRequest sendAMessageRequest = new SendAMessageRequest(); // SendAMessageRequest | 
+        SendBirdSendAMessageRequest sendBirdSendAMessageRequest = new SendBirdSendAMessageRequest(); // SendBirdSendAMessageRequest | 
         try {
-            SendbirdMessageResponse result = api.sendAMessage(channelType, channelUrl)
+            SendBirdSendbirdMessageResponse result = api.sendAMessage(channelType, channelUrl)
                 .apiToken(apiToken)
-                .sendAMessageRequest(sendAMessageRequest)
+                .sendBirdSendAMessageRequest(sendBirdSendAMessageRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -804,11 +804,11 @@ public class Example {
 | **channelType** | **String**| (Required)  | [enum: open_channels, group_channels] |
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendAMessageRequest** | [**SendAMessageRequest**](SendAMessageRequest.md)|  | [optional] |
+| **sendBirdSendAMessageRequest** | [**SendBirdSendAMessageRequest**](SendBirdSendAMessageRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendbirdMessageResponse**](SendbirdMessageResponse.md)
+[**SendBirdSendbirdMessageResponse**](SendBirdSendbirdMessageResponse.md)
 
 ### Authorization
 
@@ -827,7 +827,7 @@ No authorization required
 
 ## updateAMessage
 
-> SendbirdMessageResponse updateAMessage(channelType, channelUrl, messageId).apiToken(apiToken).updateAMessageRequest(updateAMessageRequest).execute();
+> SendBirdSendbirdMessageResponse updateAMessage(channelType, channelUrl, messageId).apiToken(apiToken).sendBirdUpdateAMessageRequest(sendBirdUpdateAMessageRequest).execute();
 
 Update a message
 
@@ -858,11 +858,11 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | (Required) 
         Long messageId = 56L; // Long | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdateAMessageRequest updateAMessageRequest = new UpdateAMessageRequest(); // UpdateAMessageRequest | 
+        SendBirdUpdateAMessageRequest sendBirdUpdateAMessageRequest = new SendBirdUpdateAMessageRequest(); // SendBirdUpdateAMessageRequest | 
         try {
-            SendbirdMessageResponse result = api.updateAMessage(channelType, channelUrl, messageId)
+            SendBirdSendbirdMessageResponse result = api.updateAMessage(channelType, channelUrl, messageId)
                 .apiToken(apiToken)
-                .updateAMessageRequest(updateAMessageRequest)
+                .sendBirdUpdateAMessageRequest(sendBirdUpdateAMessageRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -885,11 +885,11 @@ public class Example {
 | **channelUrl** | **String**| (Required)  | |
 | **messageId** | **Long**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **updateAMessageRequest** | [**UpdateAMessageRequest**](UpdateAMessageRequest.md)|  | [optional] |
+| **sendBirdUpdateAMessageRequest** | [**SendBirdUpdateAMessageRequest**](SendBirdUpdateAMessageRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendbirdMessageResponse**](SendbirdMessageResponse.md)
+[**SendBirdSendbirdMessageResponse**](SendBirdSendbirdMessageResponse.md)
 
 ### Authorization
 
@@ -908,7 +908,7 @@ No authorization required
 
 ## updateExtraDataInAMessage
 
-> UpdateExtraDataInAMessageResponse updateExtraDataInAMessage(channelType, channelUrl, messageId).apiToken(apiToken).updateExtraDataInAMessageRequest(updateExtraDataInAMessageRequest).execute();
+> SendBirdUpdateExtraDataInAMessageResponse updateExtraDataInAMessage(channelType, channelUrl, messageId).apiToken(apiToken).sendBirdUpdateExtraDataInAMessageRequest(sendBirdUpdateExtraDataInAMessageRequest).execute();
 
 Update extra data in a message
 
@@ -939,11 +939,11 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | (Required) 
         Long messageId = 56L; // Long | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest = new UpdateExtraDataInAMessageRequest(); // UpdateExtraDataInAMessageRequest | 
+        SendBirdUpdateExtraDataInAMessageRequest sendBirdUpdateExtraDataInAMessageRequest = new SendBirdUpdateExtraDataInAMessageRequest(); // SendBirdUpdateExtraDataInAMessageRequest | 
         try {
-            UpdateExtraDataInAMessageResponse result = api.updateExtraDataInAMessage(channelType, channelUrl, messageId)
+            SendBirdUpdateExtraDataInAMessageResponse result = api.updateExtraDataInAMessage(channelType, channelUrl, messageId)
                 .apiToken(apiToken)
-                .updateExtraDataInAMessageRequest(updateExtraDataInAMessageRequest)
+                .sendBirdUpdateExtraDataInAMessageRequest(sendBirdUpdateExtraDataInAMessageRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -966,11 +966,11 @@ public class Example {
 | **channelUrl** | **String**| (Required)  | |
 | **messageId** | **Long**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **updateExtraDataInAMessageRequest** | [**UpdateExtraDataInAMessageRequest**](UpdateExtraDataInAMessageRequest.md)|  | [optional] |
+| **sendBirdUpdateExtraDataInAMessageRequest** | [**SendBirdUpdateExtraDataInAMessageRequest**](SendBirdUpdateExtraDataInAMessageRequest.md)|  | [optional] |
 
 ### Return type
 
-[**UpdateExtraDataInAMessageResponse**](UpdateExtraDataInAMessageResponse.md)
+[**SendBirdUpdateExtraDataInAMessageResponse**](SendBirdUpdateExtraDataInAMessageResponse.md)
 
 ### Authorization
 

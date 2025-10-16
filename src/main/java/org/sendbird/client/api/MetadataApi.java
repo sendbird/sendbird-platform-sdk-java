@@ -8,16 +8,16 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.CreateAChannelMetadataRequest;
-import org.openapitools.client.model.CreateAChannelMetadataResponse;
-import org.openapitools.client.model.UpdateAChannelMetadataRequest;
+import org.openapitools.client.model.SendBirdCreateAChannelMetadataRequest;
+import org.openapitools.client.model.SendBirdCreateAChannelMetadataResponse;
+import org.openapitools.client.model.SendBirdUpdateAChannelMetadataRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
 public class MetadataApi {
   private ApiClient apiClient;
 
@@ -48,8 +48,8 @@ public class MetadataApi {
   }
 
 
-private ApiResponse<CreateAChannelMetadataResponse> createAChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, CreateAChannelMetadataRequest createAChannelMetadataRequest) throws ApiException {
-    Object localVarPostBody = createAChannelMetadataRequest;
+private ApiResponse<SendBirdCreateAChannelMetadataResponse> createAChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, SendBirdCreateAChannelMetadataRequest sendBirdCreateAChannelMetadataRequest) throws ApiException {
+    Object localVarPostBody = sendBirdCreateAChannelMetadataRequest;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -90,7 +90,7 @@ private ApiResponse<CreateAChannelMetadataResponse> createAChannelMetadataWithHt
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<CreateAChannelMetadataResponse> localVarReturnType = new GenericType<CreateAChannelMetadataResponse>() {};
+    GenericType<SendBirdCreateAChannelMetadataResponse> localVarReturnType = new GenericType<SendBirdCreateAChannelMetadataResponse>() {};
 
     return apiClient.invokeAPI("MetadataApi.createAChannelMetadata", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -101,7 +101,7 @@ private ApiResponse<CreateAChannelMetadataResponse> createAChannelMetadataWithHt
     private String channelType;
     private String channelUrl;
     private String apiToken;
-    private CreateAChannelMetadataRequest createAChannelMetadataRequest;
+    private SendBirdCreateAChannelMetadataRequest sendBirdCreateAChannelMetadataRequest;
 
     private APIcreateAChannelMetadataRequest(String channelType, String channelUrl) {
       this.channelType = channelType;
@@ -119,18 +119,18 @@ private ApiResponse<CreateAChannelMetadataResponse> createAChannelMetadataWithHt
     }
 
     /**
-     * Set createAChannelMetadataRequest
-     * @param createAChannelMetadataRequest  (optional)
+     * Set sendBirdCreateAChannelMetadataRequest
+     * @param sendBirdCreateAChannelMetadataRequest  (optional)
      * @return APIcreateAChannelMetadataRequest
      */
-    public APIcreateAChannelMetadataRequest createAChannelMetadataRequest(CreateAChannelMetadataRequest createAChannelMetadataRequest) {
-      this.createAChannelMetadataRequest = createAChannelMetadataRequest;
+    public APIcreateAChannelMetadataRequest sendBirdCreateAChannelMetadataRequest(SendBirdCreateAChannelMetadataRequest sendBirdCreateAChannelMetadataRequest) {
+      this.sendBirdCreateAChannelMetadataRequest = sendBirdCreateAChannelMetadataRequest;
       return this;
     }
 
     /**
      * Execute createAChannelMetadata request
-     * @return CreateAChannelMetadataResponse
+     * @return SendBirdCreateAChannelMetadataResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -140,13 +140,13 @@ private ApiResponse<CreateAChannelMetadataResponse> createAChannelMetadataWithHt
      
      */
     
-    public CreateAChannelMetadataResponse execute() throws ApiException {
+    public SendBirdCreateAChannelMetadataResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute createAChannelMetadata request with HTTP info returned
-     * @return ApiResponse&lt;CreateAChannelMetadataResponse&gt;
+     * @return ApiResponse&lt;SendBirdCreateAChannelMetadataResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -155,8 +155,8 @@ private ApiResponse<CreateAChannelMetadataResponse> createAChannelMetadataWithHt
        </table>
 
      */
-    public ApiResponse<CreateAChannelMetadataResponse> executeWithHttpInfo() throws ApiException {
-      return createAChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, createAChannelMetadataRequest);
+    public ApiResponse<SendBirdCreateAChannelMetadataResponse> executeWithHttpInfo() throws ApiException {
+      return createAChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, sendBirdCreateAChannelMetadataRequest);
     }
   }
 
@@ -293,8 +293,8 @@ private ApiResponse<Object> deleteAChannelMetadataWhenDeletingAllItemsOfAChannel
     return new APIdeleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadataRequest(channelType, channelUrl, key);
   }
 
-private ApiResponse<Object> updateAChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, UpdateAChannelMetadataRequest updateAChannelMetadataRequest) throws ApiException {
-    Object localVarPostBody = updateAChannelMetadataRequest;
+private ApiResponse<Object> updateAChannelMetadataWithHttpInfo(String channelType, String channelUrl, String apiToken, SendBirdUpdateAChannelMetadataRequest sendBirdUpdateAChannelMetadataRequest) throws ApiException {
+    Object localVarPostBody = sendBirdUpdateAChannelMetadataRequest;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -346,7 +346,7 @@ private ApiResponse<Object> updateAChannelMetadataWithHttpInfo(String channelTyp
     private String channelType;
     private String channelUrl;
     private String apiToken;
-    private UpdateAChannelMetadataRequest updateAChannelMetadataRequest;
+    private SendBirdUpdateAChannelMetadataRequest sendBirdUpdateAChannelMetadataRequest;
 
     private APIupdateAChannelMetadataRequest(String channelType, String channelUrl) {
       this.channelType = channelType;
@@ -364,12 +364,12 @@ private ApiResponse<Object> updateAChannelMetadataWithHttpInfo(String channelTyp
     }
 
     /**
-     * Set updateAChannelMetadataRequest
-     * @param updateAChannelMetadataRequest  (optional)
+     * Set sendBirdUpdateAChannelMetadataRequest
+     * @param sendBirdUpdateAChannelMetadataRequest  (optional)
      * @return APIupdateAChannelMetadataRequest
      */
-    public APIupdateAChannelMetadataRequest updateAChannelMetadataRequest(UpdateAChannelMetadataRequest updateAChannelMetadataRequest) {
-      this.updateAChannelMetadataRequest = updateAChannelMetadataRequest;
+    public APIupdateAChannelMetadataRequest sendBirdUpdateAChannelMetadataRequest(SendBirdUpdateAChannelMetadataRequest sendBirdUpdateAChannelMetadataRequest) {
+      this.sendBirdUpdateAChannelMetadataRequest = sendBirdUpdateAChannelMetadataRequest;
       return this;
     }
 
@@ -401,7 +401,7 @@ private ApiResponse<Object> updateAChannelMetadataWithHttpInfo(String channelTyp
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return updateAChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, updateAChannelMetadataRequest);
+      return updateAChannelMetadataWithHttpInfo(channelType, channelUrl, apiToken, sendBirdUpdateAChannelMetadataRequest);
     }
   }
 

@@ -8,15 +8,15 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.ScheduleAnAnnouncementRequest;
-import org.openapitools.client.model.ScheduleAnAnnouncementResponse;
+import org.openapitools.client.model.SendBirdScheduleAnAnnouncementRequest;
+import org.openapitools.client.model.SendBirdScheduleAnAnnouncementResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
 public class AnnouncementApi {
   private ApiClient apiClient;
 
@@ -47,8 +47,8 @@ public class AnnouncementApi {
   }
 
 
-private ApiResponse<ScheduleAnAnnouncementResponse> scheduleAnAnnouncementWithHttpInfo(String apiToken, ScheduleAnAnnouncementRequest scheduleAnAnnouncementRequest) throws ApiException {
-    Object localVarPostBody = scheduleAnAnnouncementRequest;
+private ApiResponse<SendBirdScheduleAnAnnouncementResponse> scheduleAnAnnouncementWithHttpInfo(String apiToken, SendBirdScheduleAnAnnouncementRequest sendBirdScheduleAnAnnouncementRequest) throws ApiException {
+    Object localVarPostBody = sendBirdScheduleAnAnnouncementRequest;
     
     // create path and map variables
     String localVarPath = "/v3/announcements";
@@ -77,7 +77,7 @@ private ApiResponse<ScheduleAnAnnouncementResponse> scheduleAnAnnouncementWithHt
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ScheduleAnAnnouncementResponse> localVarReturnType = new GenericType<ScheduleAnAnnouncementResponse>() {};
+    GenericType<SendBirdScheduleAnAnnouncementResponse> localVarReturnType = new GenericType<SendBirdScheduleAnAnnouncementResponse>() {};
 
     return apiClient.invokeAPI("AnnouncementApi.scheduleAnAnnouncement", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -86,7 +86,7 @@ private ApiResponse<ScheduleAnAnnouncementResponse> scheduleAnAnnouncementWithHt
 
   public class APIscheduleAnAnnouncementRequest {
     private String apiToken;
-    private ScheduleAnAnnouncementRequest scheduleAnAnnouncementRequest;
+    private SendBirdScheduleAnAnnouncementRequest sendBirdScheduleAnAnnouncementRequest;
 
     private APIscheduleAnAnnouncementRequest() {
     }
@@ -102,18 +102,18 @@ private ApiResponse<ScheduleAnAnnouncementResponse> scheduleAnAnnouncementWithHt
     }
 
     /**
-     * Set scheduleAnAnnouncementRequest
-     * @param scheduleAnAnnouncementRequest  (optional)
+     * Set sendBirdScheduleAnAnnouncementRequest
+     * @param sendBirdScheduleAnAnnouncementRequest  (optional)
      * @return APIscheduleAnAnnouncementRequest
      */
-    public APIscheduleAnAnnouncementRequest scheduleAnAnnouncementRequest(ScheduleAnAnnouncementRequest scheduleAnAnnouncementRequest) {
-      this.scheduleAnAnnouncementRequest = scheduleAnAnnouncementRequest;
+    public APIscheduleAnAnnouncementRequest sendBirdScheduleAnAnnouncementRequest(SendBirdScheduleAnAnnouncementRequest sendBirdScheduleAnAnnouncementRequest) {
+      this.sendBirdScheduleAnAnnouncementRequest = sendBirdScheduleAnAnnouncementRequest;
       return this;
     }
 
     /**
      * Execute scheduleAnAnnouncement request
-     * @return ScheduleAnAnnouncementResponse
+     * @return SendBirdScheduleAnAnnouncementResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -123,13 +123,13 @@ private ApiResponse<ScheduleAnAnnouncementResponse> scheduleAnAnnouncementWithHt
      
      */
     
-    public ScheduleAnAnnouncementResponse execute() throws ApiException {
+    public SendBirdScheduleAnAnnouncementResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute scheduleAnAnnouncement request with HTTP info returned
-     * @return ApiResponse&lt;ScheduleAnAnnouncementResponse&gt;
+     * @return ApiResponse&lt;SendBirdScheduleAnAnnouncementResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -138,8 +138,8 @@ private ApiResponse<ScheduleAnAnnouncementResponse> scheduleAnAnnouncementWithHt
        </table>
 
      */
-    public ApiResponse<ScheduleAnAnnouncementResponse> executeWithHttpInfo() throws ApiException {
-      return scheduleAnAnnouncementWithHttpInfo(apiToken, scheduleAnAnnouncementRequest);
+    public ApiResponse<SendBirdScheduleAnAnnouncementResponse> executeWithHttpInfo() throws ApiException {
+      return scheduleAnAnnouncementWithHttpInfo(apiToken, sendBirdScheduleAnAnnouncementRequest);
     }
   }
 

@@ -8,20 +8,20 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.BlockAUserRequest;
-import org.openapitools.client.model.BlockAUserResponse;
-import org.openapitools.client.model.FreezeAGroupChannelRequest;
-import org.openapitools.client.model.FreezeAnOpenChannelRequest;
-import org.openapitools.client.model.ListBlockedUsersResponse;
-import org.openapitools.client.model.SendbirdGroupChannelDetail;
-import org.openapitools.client.model.SendbirdOpenChannel;
+import org.openapitools.client.model.SendBirdBlockAUserRequest;
+import org.openapitools.client.model.SendBirdBlockAUserResponse;
+import org.openapitools.client.model.SendBirdFreezeAGroupChannelRequest;
+import org.openapitools.client.model.SendBirdFreezeAnOpenChannelRequest;
+import org.openapitools.client.model.SendBirdListBlockedUsersResponse;
+import org.openapitools.client.model.SendBirdSendbirdGroupChannelDetail;
+import org.openapitools.client.model.SendBirdSendbirdOpenChannel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
 public class ModerationApi {
   private ApiClient apiClient;
 
@@ -52,8 +52,8 @@ public class ModerationApi {
   }
 
 
-private ApiResponse<BlockAUserResponse> blockAUserWithHttpInfo(String userId, String apiToken, BlockAUserRequest blockAUserRequest) throws ApiException {
-    Object localVarPostBody = blockAUserRequest;
+private ApiResponse<SendBirdBlockAUserResponse> blockAUserWithHttpInfo(String userId, String apiToken, SendBirdBlockAUserRequest sendBirdBlockAUserRequest) throws ApiException {
+    Object localVarPostBody = sendBirdBlockAUserRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -88,7 +88,7 @@ private ApiResponse<BlockAUserResponse> blockAUserWithHttpInfo(String userId, St
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<BlockAUserResponse> localVarReturnType = new GenericType<BlockAUserResponse>() {};
+    GenericType<SendBirdBlockAUserResponse> localVarReturnType = new GenericType<SendBirdBlockAUserResponse>() {};
 
     return apiClient.invokeAPI("ModerationApi.blockAUser", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -98,7 +98,7 @@ private ApiResponse<BlockAUserResponse> blockAUserWithHttpInfo(String userId, St
   public class APIblockAUserRequest {
     private String userId;
     private String apiToken;
-    private BlockAUserRequest blockAUserRequest;
+    private SendBirdBlockAUserRequest sendBirdBlockAUserRequest;
 
     private APIblockAUserRequest(String userId) {
       this.userId = userId;
@@ -115,18 +115,18 @@ private ApiResponse<BlockAUserResponse> blockAUserWithHttpInfo(String userId, St
     }
 
     /**
-     * Set blockAUserRequest
-     * @param blockAUserRequest  (optional)
+     * Set sendBirdBlockAUserRequest
+     * @param sendBirdBlockAUserRequest  (optional)
      * @return APIblockAUserRequest
      */
-    public APIblockAUserRequest blockAUserRequest(BlockAUserRequest blockAUserRequest) {
-      this.blockAUserRequest = blockAUserRequest;
+    public APIblockAUserRequest sendBirdBlockAUserRequest(SendBirdBlockAUserRequest sendBirdBlockAUserRequest) {
+      this.sendBirdBlockAUserRequest = sendBirdBlockAUserRequest;
       return this;
     }
 
     /**
      * Execute blockAUser request
-     * @return BlockAUserResponse
+     * @return SendBirdBlockAUserResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -136,13 +136,13 @@ private ApiResponse<BlockAUserResponse> blockAUserWithHttpInfo(String userId, St
      
      */
     
-    public BlockAUserResponse execute() throws ApiException {
+    public SendBirdBlockAUserResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute blockAUser request with HTTP info returned
-     * @return ApiResponse&lt;BlockAUserResponse&gt;
+     * @return ApiResponse&lt;SendBirdBlockAUserResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -151,8 +151,8 @@ private ApiResponse<BlockAUserResponse> blockAUserWithHttpInfo(String userId, St
        </table>
 
      */
-    public ApiResponse<BlockAUserResponse> executeWithHttpInfo() throws ApiException {
-      return blockAUserWithHttpInfo(userId, apiToken, blockAUserRequest);
+    public ApiResponse<SendBirdBlockAUserResponse> executeWithHttpInfo() throws ApiException {
+      return blockAUserWithHttpInfo(userId, apiToken, sendBirdBlockAUserRequest);
     }
   }
 
@@ -169,8 +169,8 @@ private ApiResponse<BlockAUserResponse> blockAUserWithHttpInfo(String userId, St
     return new APIblockAUserRequest(userId);
   }
 
-private ApiResponse<SendbirdGroupChannelDetail> freezeAGroupChannelWithHttpInfo(String channelUrl, String apiToken, FreezeAGroupChannelRequest freezeAGroupChannelRequest) throws ApiException {
-    Object localVarPostBody = freezeAGroupChannelRequest;
+private ApiResponse<SendBirdSendbirdGroupChannelDetail> freezeAGroupChannelWithHttpInfo(String channelUrl, String apiToken, SendBirdFreezeAGroupChannelRequest sendBirdFreezeAGroupChannelRequest) throws ApiException {
+    Object localVarPostBody = sendBirdFreezeAGroupChannelRequest;
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -205,7 +205,7 @@ private ApiResponse<SendbirdGroupChannelDetail> freezeAGroupChannelWithHttpInfo(
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendbirdGroupChannelDetail> localVarReturnType = new GenericType<SendbirdGroupChannelDetail>() {};
+    GenericType<SendBirdSendbirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdSendbirdGroupChannelDetail>() {};
 
     return apiClient.invokeAPI("ModerationApi.freezeAGroupChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -215,7 +215,7 @@ private ApiResponse<SendbirdGroupChannelDetail> freezeAGroupChannelWithHttpInfo(
   public class APIfreezeAGroupChannelRequest {
     private String channelUrl;
     private String apiToken;
-    private FreezeAGroupChannelRequest freezeAGroupChannelRequest;
+    private SendBirdFreezeAGroupChannelRequest sendBirdFreezeAGroupChannelRequest;
 
     private APIfreezeAGroupChannelRequest(String channelUrl) {
       this.channelUrl = channelUrl;
@@ -232,18 +232,18 @@ private ApiResponse<SendbirdGroupChannelDetail> freezeAGroupChannelWithHttpInfo(
     }
 
     /**
-     * Set freezeAGroupChannelRequest
-     * @param freezeAGroupChannelRequest  (optional)
+     * Set sendBirdFreezeAGroupChannelRequest
+     * @param sendBirdFreezeAGroupChannelRequest  (optional)
      * @return APIfreezeAGroupChannelRequest
      */
-    public APIfreezeAGroupChannelRequest freezeAGroupChannelRequest(FreezeAGroupChannelRequest freezeAGroupChannelRequest) {
-      this.freezeAGroupChannelRequest = freezeAGroupChannelRequest;
+    public APIfreezeAGroupChannelRequest sendBirdFreezeAGroupChannelRequest(SendBirdFreezeAGroupChannelRequest sendBirdFreezeAGroupChannelRequest) {
+      this.sendBirdFreezeAGroupChannelRequest = sendBirdFreezeAGroupChannelRequest;
       return this;
     }
 
     /**
      * Execute freezeAGroupChannel request
-     * @return SendbirdGroupChannelDetail
+     * @return SendBirdSendbirdGroupChannelDetail
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -253,13 +253,13 @@ private ApiResponse<SendbirdGroupChannelDetail> freezeAGroupChannelWithHttpInfo(
      
      */
     
-    public SendbirdGroupChannelDetail execute() throws ApiException {
+    public SendBirdSendbirdGroupChannelDetail execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute freezeAGroupChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendbirdGroupChannelDetail&gt;
+     * @return ApiResponse&lt;SendBirdSendbirdGroupChannelDetail&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -268,8 +268,8 @@ private ApiResponse<SendbirdGroupChannelDetail> freezeAGroupChannelWithHttpInfo(
        </table>
 
      */
-    public ApiResponse<SendbirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
-      return freezeAGroupChannelWithHttpInfo(channelUrl, apiToken, freezeAGroupChannelRequest);
+    public ApiResponse<SendBirdSendbirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
+      return freezeAGroupChannelWithHttpInfo(channelUrl, apiToken, sendBirdFreezeAGroupChannelRequest);
     }
   }
 
@@ -286,8 +286,8 @@ private ApiResponse<SendbirdGroupChannelDetail> freezeAGroupChannelWithHttpInfo(
     return new APIfreezeAGroupChannelRequest(channelUrl);
   }
 
-private ApiResponse<SendbirdOpenChannel> freezeAnOpenChannelWithHttpInfo(String channelUrl, String apiToken, FreezeAnOpenChannelRequest freezeAnOpenChannelRequest) throws ApiException {
-    Object localVarPostBody = freezeAnOpenChannelRequest;
+private ApiResponse<SendBirdSendbirdOpenChannel> freezeAnOpenChannelWithHttpInfo(String channelUrl, String apiToken, SendBirdFreezeAnOpenChannelRequest sendBirdFreezeAnOpenChannelRequest) throws ApiException {
+    Object localVarPostBody = sendBirdFreezeAnOpenChannelRequest;
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -322,7 +322,7 @@ private ApiResponse<SendbirdOpenChannel> freezeAnOpenChannelWithHttpInfo(String 
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendbirdOpenChannel> localVarReturnType = new GenericType<SendbirdOpenChannel>() {};
+    GenericType<SendBirdSendbirdOpenChannel> localVarReturnType = new GenericType<SendBirdSendbirdOpenChannel>() {};
 
     return apiClient.invokeAPI("ModerationApi.freezeAnOpenChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -332,7 +332,7 @@ private ApiResponse<SendbirdOpenChannel> freezeAnOpenChannelWithHttpInfo(String 
   public class APIfreezeAnOpenChannelRequest {
     private String channelUrl;
     private String apiToken;
-    private FreezeAnOpenChannelRequest freezeAnOpenChannelRequest;
+    private SendBirdFreezeAnOpenChannelRequest sendBirdFreezeAnOpenChannelRequest;
 
     private APIfreezeAnOpenChannelRequest(String channelUrl) {
       this.channelUrl = channelUrl;
@@ -349,18 +349,18 @@ private ApiResponse<SendbirdOpenChannel> freezeAnOpenChannelWithHttpInfo(String 
     }
 
     /**
-     * Set freezeAnOpenChannelRequest
-     * @param freezeAnOpenChannelRequest  (optional)
+     * Set sendBirdFreezeAnOpenChannelRequest
+     * @param sendBirdFreezeAnOpenChannelRequest  (optional)
      * @return APIfreezeAnOpenChannelRequest
      */
-    public APIfreezeAnOpenChannelRequest freezeAnOpenChannelRequest(FreezeAnOpenChannelRequest freezeAnOpenChannelRequest) {
-      this.freezeAnOpenChannelRequest = freezeAnOpenChannelRequest;
+    public APIfreezeAnOpenChannelRequest sendBirdFreezeAnOpenChannelRequest(SendBirdFreezeAnOpenChannelRequest sendBirdFreezeAnOpenChannelRequest) {
+      this.sendBirdFreezeAnOpenChannelRequest = sendBirdFreezeAnOpenChannelRequest;
       return this;
     }
 
     /**
      * Execute freezeAnOpenChannel request
-     * @return SendbirdOpenChannel
+     * @return SendBirdSendbirdOpenChannel
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -370,13 +370,13 @@ private ApiResponse<SendbirdOpenChannel> freezeAnOpenChannelWithHttpInfo(String 
      
      */
     
-    public SendbirdOpenChannel execute() throws ApiException {
+    public SendBirdSendbirdOpenChannel execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute freezeAnOpenChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendbirdOpenChannel&gt;
+     * @return ApiResponse&lt;SendBirdSendbirdOpenChannel&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -385,8 +385,8 @@ private ApiResponse<SendbirdOpenChannel> freezeAnOpenChannelWithHttpInfo(String 
        </table>
 
      */
-    public ApiResponse<SendbirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return freezeAnOpenChannelWithHttpInfo(channelUrl, apiToken, freezeAnOpenChannelRequest);
+    public ApiResponse<SendBirdSendbirdOpenChannel> executeWithHttpInfo() throws ApiException {
+      return freezeAnOpenChannelWithHttpInfo(channelUrl, apiToken, sendBirdFreezeAnOpenChannelRequest);
     }
   }
 
@@ -403,7 +403,7 @@ private ApiResponse<SendbirdOpenChannel> freezeAnOpenChannelWithHttpInfo(String 
     return new APIfreezeAnOpenChannelRequest(channelUrl);
   }
 
-private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(String userId, String _list, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, String apiToken) throws ApiException {
+private ApiResponse<SendBirdListBlockedUsersResponse> listBlockedUsersWithHttpInfo(String userId, String _list, String token, Integer limit, String userIds, String metadatakey, String metadatavaluesIn, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -445,7 +445,7 @@ private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(Strin
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ListBlockedUsersResponse> localVarReturnType = new GenericType<ListBlockedUsersResponse>() {};
+    GenericType<SendBirdListBlockedUsersResponse> localVarReturnType = new GenericType<SendBirdListBlockedUsersResponse>() {};
 
     return apiClient.invokeAPI("ModerationApi.listBlockedUsers", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -538,7 +538,7 @@ private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(Strin
 
     /**
      * Execute listBlockedUsers request
-     * @return ListBlockedUsersResponse
+     * @return SendBirdListBlockedUsersResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -548,13 +548,13 @@ private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(Strin
      
      */
     
-    public ListBlockedUsersResponse execute() throws ApiException {
+    public SendBirdListBlockedUsersResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute listBlockedUsers request with HTTP info returned
-     * @return ApiResponse&lt;ListBlockedUsersResponse&gt;
+     * @return ApiResponse&lt;SendBirdListBlockedUsersResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -563,7 +563,7 @@ private ApiResponse<ListBlockedUsersResponse> listBlockedUsersWithHttpInfo(Strin
        </table>
 
      */
-    public ApiResponse<ListBlockedUsersResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdListBlockedUsersResponse> executeWithHttpInfo() throws ApiException {
       return listBlockedUsersWithHttpInfo(userId, _list, token, limit, userIds, metadatakey, metadatavaluesIn, apiToken);
     }
   }

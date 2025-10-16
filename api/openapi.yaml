@@ -9234,12 +9234,6 @@ components:
       properties: {}
       type: object
     MigrateMessagesRequest:
-      example:
-        rewind_read_ts: true
-        messages:
-        - null
-        - null
-        update_read_ts: true
       properties:
         messages:
           items:

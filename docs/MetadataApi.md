@@ -13,7 +13,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## createAChannelMetadata
 
-> CreateAChannelMetadataResponse createAChannelMetadata(channelType, channelUrl).apiToken(apiToken).createAChannelMetadataRequest(createAChannelMetadataRequest).execute();
+> SendBirdCreateAChannelMetadataResponse createAChannelMetadata(channelType, channelUrl).apiToken(apiToken).sendBirdCreateAChannelMetadataRequest(sendBirdCreateAChannelMetadataRequest).execute();
 
 Create a channel metadata
 
@@ -43,11 +43,11 @@ public class Example {
         String channelType = "open_channels"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        CreateAChannelMetadataRequest createAChannelMetadataRequest = new CreateAChannelMetadataRequest(); // CreateAChannelMetadataRequest | 
+        SendBirdCreateAChannelMetadataRequest sendBirdCreateAChannelMetadataRequest = new SendBirdCreateAChannelMetadataRequest(); // SendBirdCreateAChannelMetadataRequest | 
         try {
-            CreateAChannelMetadataResponse result = api.createAChannelMetadata(channelType, channelUrl)
+            SendBirdCreateAChannelMetadataResponse result = api.createAChannelMetadata(channelType, channelUrl)
                 .apiToken(apiToken)
-                .createAChannelMetadataRequest(createAChannelMetadataRequest)
+                .sendBirdCreateAChannelMetadataRequest(sendBirdCreateAChannelMetadataRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -69,11 +69,11 @@ public class Example {
 | **channelType** | **String**| (Required)  | [enum: open_channels, group_channels] |
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **createAChannelMetadataRequest** | [**CreateAChannelMetadataRequest**](CreateAChannelMetadataRequest.md)|  | [optional] |
+| **sendBirdCreateAChannelMetadataRequest** | [**SendBirdCreateAChannelMetadataRequest**](SendBirdCreateAChannelMetadataRequest.md)|  | [optional] |
 
 ### Return type
 
-[**CreateAChannelMetadataResponse**](CreateAChannelMetadataResponse.md)
+[**SendBirdCreateAChannelMetadataResponse**](SendBirdCreateAChannelMetadataResponse.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ No authorization required
 
 ## updateAChannelMetadata
 
-> Object updateAChannelMetadata(channelType, channelUrl).apiToken(apiToken).updateAChannelMetadataRequest(updateAChannelMetadataRequest).execute();
+> Object updateAChannelMetadata(channelType, channelUrl).apiToken(apiToken).sendBirdUpdateAChannelMetadataRequest(sendBirdUpdateAChannelMetadataRequest).execute();
 
 Update a channel metadata - When updating existing items of a channel metadata by their keys or adding new items to the metadata
 
@@ -214,11 +214,11 @@ public class Example {
         String channelType = "open_channels"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdateAChannelMetadataRequest updateAChannelMetadataRequest = new UpdateAChannelMetadataRequest(); // UpdateAChannelMetadataRequest | 
+        SendBirdUpdateAChannelMetadataRequest sendBirdUpdateAChannelMetadataRequest = new SendBirdUpdateAChannelMetadataRequest(); // SendBirdUpdateAChannelMetadataRequest | 
         try {
             Object result = api.updateAChannelMetadata(channelType, channelUrl)
                 .apiToken(apiToken)
-                .updateAChannelMetadataRequest(updateAChannelMetadataRequest)
+                .sendBirdUpdateAChannelMetadataRequest(sendBirdUpdateAChannelMetadataRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -240,7 +240,7 @@ public class Example {
 | **channelType** | **String**| (Required)  | [enum: open_channels, group_channels] |
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **updateAChannelMetadataRequest** | [**UpdateAChannelMetadataRequest**](UpdateAChannelMetadataRequest.md)|  | [optional] |
+| **sendBirdUpdateAChannelMetadataRequest** | [**SendBirdUpdateAChannelMetadataRequest**](SendBirdUpdateAChannelMetadataRequest.md)|  | [optional] |
 
 ### Return type
 

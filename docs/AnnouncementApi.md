@@ -10,7 +10,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## scheduleAnAnnouncement
 
-> ScheduleAnAnnouncementResponse scheduleAnAnnouncement().apiToken(apiToken).scheduleAnAnnouncementRequest(scheduleAnAnnouncementRequest).execute();
+> SendBirdScheduleAnAnnouncementResponse scheduleAnAnnouncement().apiToken(apiToken).sendBirdScheduleAnAnnouncementRequest(sendBirdScheduleAnAnnouncementRequest).execute();
 
 Schedule an announcement
 
@@ -37,11 +37,11 @@ public class Example {
 
         AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
-        ScheduleAnAnnouncementRequest scheduleAnAnnouncementRequest = new ScheduleAnAnnouncementRequest(); // ScheduleAnAnnouncementRequest | 
+        SendBirdScheduleAnAnnouncementRequest sendBirdScheduleAnAnnouncementRequest = new SendBirdScheduleAnAnnouncementRequest(); // SendBirdScheduleAnAnnouncementRequest | 
         try {
-            ScheduleAnAnnouncementResponse result = api.scheduleAnAnnouncement()
+            SendBirdScheduleAnAnnouncementResponse result = api.scheduleAnAnnouncement()
                 .apiToken(apiToken)
-                .scheduleAnAnnouncementRequest(scheduleAnAnnouncementRequest)
+                .sendBirdScheduleAnAnnouncementRequest(sendBirdScheduleAnAnnouncementRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -61,11 +61,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | [optional] |
-| **scheduleAnAnnouncementRequest** | [**ScheduleAnAnnouncementRequest**](ScheduleAnAnnouncementRequest.md)|  | [optional] |
+| **sendBirdScheduleAnAnnouncementRequest** | [**SendBirdScheduleAnAnnouncementRequest**](SendBirdScheduleAnAnnouncementRequest.md)|  | [optional] |
 
 ### Return type
 
-[**ScheduleAnAnnouncementResponse**](ScheduleAnAnnouncementResponse.md)
+[**SendBirdScheduleAnAnnouncementResponse**](SendBirdScheduleAnAnnouncementResponse.md)
 
 ### Authorization
 

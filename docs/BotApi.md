@@ -18,7 +18,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## createABot
 
-> CreateABotResponse createABot().apiToken(apiToken).createABotRequest(createABotRequest).execute();
+> SendBirdCreateABotResponse createABot().apiToken(apiToken).sendBirdCreateABotRequest(sendBirdCreateABotRequest).execute();
 
 Create a bot
 
@@ -48,11 +48,11 @@ public class Example {
 
         BotApi apiInstance = new BotApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
-        CreateABotRequest createABotRequest = new CreateABotRequest(); // CreateABotRequest | 
+        SendBirdCreateABotRequest sendBirdCreateABotRequest = new SendBirdCreateABotRequest(); // SendBirdCreateABotRequest | 
         try {
-            CreateABotResponse result = api.createABot()
+            SendBirdCreateABotResponse result = api.createABot()
                 .apiToken(apiToken)
-                .createABotRequest(createABotRequest)
+                .sendBirdCreateABotRequest(sendBirdCreateABotRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -72,11 +72,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | [optional] |
-| **createABotRequest** | [**CreateABotRequest**](CreateABotRequest.md)|  | [optional] |
+| **sendBirdCreateABotRequest** | [**SendBirdCreateABotRequest**](SendBirdCreateABotRequest.md)|  | [optional] |
 
 ### Return type
 
-[**CreateABotResponse**](CreateABotResponse.md)
+[**SendBirdCreateABotResponse**](SendBirdCreateABotResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ No authorization required
 
 ## joinChannels
 
-> SendbirdGroupChannelDetail joinChannels(botUserid).apiToken(apiToken).joinChannelsRequest(joinChannelsRequest).execute();
+> SendBirdSendbirdGroupChannelDetail joinChannels(botUserid).apiToken(apiToken).sendBirdJoinChannelsRequest(sendBirdJoinChannelsRequest).execute();
 
 Join channels
 
@@ -197,11 +197,11 @@ public class Example {
         BotApi apiInstance = new BotApi(defaultClient);
         String botUserid = "botUserid_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        JoinChannelsRequest joinChannelsRequest = new JoinChannelsRequest(); // JoinChannelsRequest | 
+        SendBirdJoinChannelsRequest sendBirdJoinChannelsRequest = new SendBirdJoinChannelsRequest(); // SendBirdJoinChannelsRequest | 
         try {
-            SendbirdGroupChannelDetail result = api.joinChannels(botUserid)
+            SendBirdSendbirdGroupChannelDetail result = api.joinChannels(botUserid)
                 .apiToken(apiToken)
-                .joinChannelsRequest(joinChannelsRequest)
+                .sendBirdJoinChannelsRequest(sendBirdJoinChannelsRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -222,11 +222,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **botUserid** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **joinChannelsRequest** | [**JoinChannelsRequest**](JoinChannelsRequest.md)|  | [optional] |
+| **sendBirdJoinChannelsRequest** | [**SendBirdJoinChannelsRequest**](SendBirdJoinChannelsRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendbirdGroupChannelDetail**](SendbirdGroupChannelDetail.md)
+[**SendBirdSendbirdGroupChannelDetail**](SendBirdSendbirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -393,7 +393,7 @@ No authorization required
 
 ## listBots
 
-> ListBotsResponse listBots().token(token).limit(limit).apiToken(apiToken).execute();
+> SendBirdListBotsResponse listBots().token(token).limit(limit).apiToken(apiToken).execute();
 
 List bots
 
@@ -423,7 +423,7 @@ public class Example {
         Integer limit = 56; // Integer | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ListBotsResponse result = api.listBots()
+            SendBirdListBotsResponse result = api.listBots()
                 .token(token)
                 .limit(limit)
                 .apiToken(apiToken)
@@ -451,7 +451,7 @@ public class Example {
 
 ### Return type
 
-[**ListBotsResponse**](ListBotsResponse.md)
+[**SendBirdListBotsResponse**](SendBirdListBotsResponse.md)
 
 ### Authorization
 
@@ -470,7 +470,7 @@ No authorization required
 
 ## sendABotMessage
 
-> SendABotMessageResponse sendABotMessage(botUserid).messageType(messageType).channelUrl(channelUrl).apiToken(apiToken).message(message).mentioned(mentioned).extendedMessagePayload(extendedMessagePayload)._file(_file).requireAuth(requireAuth).mentionType(mentionType).mentionedUserIds(mentionedUserIds).isSilent(isSilent).sortedMetaarray(sortedMetaarray).apnsBundleId(apnsBundleId).appleCriticalAlertOptions(appleCriticalAlertOptions).sound(sound).volume(volume).createdAt(createdAt).customType(customType).data(data).dedupId(dedupId).markAsRead(markAsRead).sendPush(sendPush).execute();
+> SendBirdSendABotMessageResponse sendABotMessage(botUserid).messageType(messageType).channelUrl(channelUrl).apiToken(apiToken).message(message).mentioned(mentioned).extendedMessagePayload(extendedMessagePayload)._file(_file).requireAuth(requireAuth).mentionType(mentionType).mentionedUserIds(mentionedUserIds).isSilent(isSilent).sortedMetaarray(sortedMetaarray).apnsBundleId(apnsBundleId).appleCriticalAlertOptions(appleCriticalAlertOptions).sound(sound).volume(volume).createdAt(createdAt).customType(customType).data(data).dedupId(dedupId).markAsRead(markAsRead).sendPush(sendPush).execute();
 
 Send a bot&#39;s message
 
@@ -508,13 +508,13 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String message = "message_example"; // String | Specifies the content of the message. * This property is required when message_type is MESG.
         List<String> mentioned = Arrays.asList(); // List<String> | * This property is available when message_type is MESG.
-        SendbirdExtendedMessagePayload extendedMessagePayload = new SendbirdExtendedMessagePayload(); // SendbirdExtendedMessagePayload | 
+        SendBirdSendbirdExtendedMessagePayload extendedMessagePayload = new SendBirdSendbirdExtendedMessagePayload(); // SendBirdSendbirdExtendedMessagePayload | 
         File _file = new File("/path/to/file"); // File | When sending a single file with a message, specifies the data of the file to upload to the Sendbird server in raw binary format. When sending a request containing a file, change the value of the content-type header to multipart/form-data;boundary={your_unique_boundary_string} in the request. * This property is required when message_type is FILE. * This doesn't allow a converted base64-encoded string from a file as its value.
         Boolean requireAuth = true; // Boolean | Determines whether to require an authentication key to verify if the file is being properly accessed. Only the user who uploaded the file or users who are in the channel where the file was uploaded should have access. The authentication key managed internally by the Sendbird system is generated every time a user logs in to the Sendbird server and is valid for three days starting from the last login. If set to false, Sendbird tries to access a file without any key. To access encrypted files, such as the files in the Sendbird server which are by default encrypted, the property must be set to true. (Default: false) The require_auth parameter only works if the file or URL is managed by Sendbird, which means that when you upload files using multipart format or provide URLs that point to the files hosted on the Sendbird server. However, if the file is hosted on a server or service that is not managed by Sendbird, access control and authentication for the file should be handled by the respective server or service hosting the file. * This property is available when message_type is FILE.
         String mentionType = "users"; // String | * This property is available when message_type is FILE.
         List<String> mentionedUserIds = Arrays.asList(); // List<String> | * This property is available when message_type is FILE.
         Boolean isSilent = true; // Boolean | * This property is available when message_type is FILE.
-        List<SendbirdSortedMetaarrayInner> sortedMetaarray = Arrays.asList(); // List<SendbirdSortedMetaarrayInner> | 
+        List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray = Arrays.asList(); // List<SendBirdSendbirdSortedMetaarrayInner> | 
         String apnsBundleId = "apnsBundleId_example"; // String | * This property is available when message_type is FILE.
         Object appleCriticalAlertOptions = null; // Object | * This property is available when message_type is FILE.
         String sound = "sound_example"; // String | * This property is available when message_type is FILE.
@@ -526,7 +526,7 @@ public class Example {
         Boolean markAsRead = true; // Boolean | 
         Boolean sendPush = true; // Boolean | 
         try {
-            SendABotMessageResponse result = api.sendABotMessage(botUserid)
+            SendBirdSendABotMessageResponse result = api.sendABotMessage(botUserid)
                 .messageType(messageType)
                 .channelUrl(channelUrl)
                 .apiToken(apiToken)
@@ -573,13 +573,13 @@ public class Example {
 | **apiToken** | **String**|  | [optional] |
 | **message** | **String**| Specifies the content of the message. * This property is required when message_type is MESG. | [optional] |
 | **mentioned** | **List&lt;String&gt;**| * This property is available when message_type is MESG. | [optional] |
-| **extendedMessagePayload** | [**SendbirdExtendedMessagePayload**](SendbirdExtendedMessagePayload.md)|  | [optional] |
+| **extendedMessagePayload** | [**SendBirdSendbirdExtendedMessagePayload**](SendBirdSendbirdExtendedMessagePayload.md)|  | [optional] |
 | **_file** | **File**| When sending a single file with a message, specifies the data of the file to upload to the Sendbird server in raw binary format. When sending a request containing a file, change the value of the content-type header to multipart/form-data;boundary&#x3D;{your_unique_boundary_string} in the request. * This property is required when message_type is FILE. * This doesn&#39;t allow a converted base64-encoded string from a file as its value. | [optional] |
 | **requireAuth** | **Boolean**| Determines whether to require an authentication key to verify if the file is being properly accessed. Only the user who uploaded the file or users who are in the channel where the file was uploaded should have access. The authentication key managed internally by the Sendbird system is generated every time a user logs in to the Sendbird server and is valid for three days starting from the last login. If set to false, Sendbird tries to access a file without any key. To access encrypted files, such as the files in the Sendbird server which are by default encrypted, the property must be set to true. (Default: false) The require_auth parameter only works if the file or URL is managed by Sendbird, which means that when you upload files using multipart format or provide URLs that point to the files hosted on the Sendbird server. However, if the file is hosted on a server or service that is not managed by Sendbird, access control and authentication for the file should be handled by the respective server or service hosting the file. * This property is available when message_type is FILE. | [optional] |
 | **mentionType** | **String**| * This property is available when message_type is FILE. | [optional] [enum: users, channel] |
 | **mentionedUserIds** | **List&lt;String&gt;**| * This property is available when message_type is FILE. | [optional] |
 | **isSilent** | **Boolean**| * This property is available when message_type is FILE. | [optional] |
-| **sortedMetaarray** | [**List&lt;SendbirdSortedMetaarrayInner&gt;**](SendbirdSortedMetaarrayInner.md)|  | [optional] |
+| **sortedMetaarray** | [**List&lt;SendBirdSendbirdSortedMetaarrayInner&gt;**](SendBirdSendbirdSortedMetaarrayInner.md)|  | [optional] |
 | **apnsBundleId** | **String**| * This property is available when message_type is FILE. | [optional] |
 | **appleCriticalAlertOptions** | **Object**| * This property is available when message_type is FILE. | [optional] |
 | **sound** | **String**| * This property is available when message_type is FILE. | [optional] |
@@ -593,7 +593,7 @@ public class Example {
 
 ### Return type
 
-[**SendABotMessageResponse**](SendABotMessageResponse.md)
+[**SendBirdSendABotMessageResponse**](SendBirdSendABotMessageResponse.md)
 
 ### Authorization
 
@@ -612,7 +612,7 @@ No authorization required
 
 ## updateBotById
 
-> UpdateBotByIdResponse updateBotById(botUserid).apiToken(apiToken).updateBotByIdData(updateBotByIdData).execute();
+> SendBirdUpdateBotByIdResponse updateBotById(botUserid).apiToken(apiToken).sendBirdUpdateBotByIdData(sendBirdUpdateBotByIdData).execute();
 
 Update a bot
 
@@ -641,11 +641,11 @@ public class Example {
         BotApi apiInstance = new BotApi(defaultClient);
         String botUserid = "botUserid_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdateBotByIdData updateBotByIdData = new UpdateBotByIdData(); // UpdateBotByIdData | 
+        SendBirdUpdateBotByIdData sendBirdUpdateBotByIdData = new SendBirdUpdateBotByIdData(); // SendBirdUpdateBotByIdData | 
         try {
-            UpdateBotByIdResponse result = api.updateBotById(botUserid)
+            SendBirdUpdateBotByIdResponse result = api.updateBotById(botUserid)
                 .apiToken(apiToken)
-                .updateBotByIdData(updateBotByIdData)
+                .sendBirdUpdateBotByIdData(sendBirdUpdateBotByIdData)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -666,11 +666,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **botUserid** | **String**|  | |
 | **apiToken** | **String**|  | [optional] |
-| **updateBotByIdData** | [**UpdateBotByIdData**](UpdateBotByIdData.md)|  | [optional] |
+| **sendBirdUpdateBotByIdData** | [**SendBirdUpdateBotByIdData**](SendBirdUpdateBotByIdData.md)|  | [optional] |
 
 ### Return type
 
-[**UpdateBotByIdResponse**](UpdateBotByIdResponse.md)
+[**SendBirdUpdateBotByIdResponse**](SendBirdUpdateBotByIdResponse.md)
 
 ### Authorization
 
@@ -689,7 +689,7 @@ No authorization required
 
 ## viewBotById
 
-> ViewBotByIdResponse viewBotById(botUserid).apiToken(apiToken).execute();
+> SendBirdViewBotByIdResponse viewBotById(botUserid).apiToken(apiToken).execute();
 
 View a bot
 
@@ -719,7 +719,7 @@ public class Example {
         String botUserid = "botUserid_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ViewBotByIdResponse result = api.viewBotById(botUserid)
+            SendBirdViewBotByIdResponse result = api.viewBotById(botUserid)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -744,7 +744,7 @@ public class Example {
 
 ### Return type
 
-[**ViewBotByIdResponse**](ViewBotByIdResponse.md)
+[**SendBirdViewBotByIdResponse**](SendBirdViewBotByIdResponse.md)
 
 ### Authorization
 

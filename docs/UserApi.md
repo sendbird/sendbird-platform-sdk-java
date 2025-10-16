@@ -36,7 +36,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## addARegistrationOrDeviceToken
 
-> AddARegistrationOrDeviceTokenResponse addARegistrationOrDeviceToken(userId, tokenType).apiToken(apiToken).addARegistrationOrDeviceTokenRequest(addARegistrationOrDeviceTokenRequest).execute();
+> SendBirdAddARegistrationOrDeviceTokenResponse addARegistrationOrDeviceToken(userId, tokenType).apiToken(apiToken).sendBirdAddARegistrationOrDeviceTokenRequest(sendBirdAddARegistrationOrDeviceTokenRequest).execute();
 
 Add a registration or device token
 
@@ -72,11 +72,11 @@ public class Example {
         String userId = "userId_example"; // String | (Required) 
         String tokenType = "gcm"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        AddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest = new AddARegistrationOrDeviceTokenRequest(); // AddARegistrationOrDeviceTokenRequest | 
+        SendBirdAddARegistrationOrDeviceTokenRequest sendBirdAddARegistrationOrDeviceTokenRequest = new SendBirdAddARegistrationOrDeviceTokenRequest(); // SendBirdAddARegistrationOrDeviceTokenRequest | 
         try {
-            AddARegistrationOrDeviceTokenResponse result = api.addARegistrationOrDeviceToken(userId, tokenType)
+            SendBirdAddARegistrationOrDeviceTokenResponse result = api.addARegistrationOrDeviceToken(userId, tokenType)
                 .apiToken(apiToken)
-                .addARegistrationOrDeviceTokenRequest(addARegistrationOrDeviceTokenRequest)
+                .sendBirdAddARegistrationOrDeviceTokenRequest(sendBirdAddARegistrationOrDeviceTokenRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -98,11 +98,11 @@ public class Example {
 | **userId** | **String**| (Required)  | |
 | **tokenType** | **String**| (Required)  | [enum: gcm, huawei, apns] |
 | **apiToken** | **String**|  | [optional] |
-| **addARegistrationOrDeviceTokenRequest** | [**AddARegistrationOrDeviceTokenRequest**](AddARegistrationOrDeviceTokenRequest.md)|  | [optional] |
+| **sendBirdAddARegistrationOrDeviceTokenRequest** | [**SendBirdAddARegistrationOrDeviceTokenRequest**](SendBirdAddARegistrationOrDeviceTokenRequest.md)|  | [optional] |
 
 ### Return type
 
-[**AddARegistrationOrDeviceTokenResponse**](AddARegistrationOrDeviceTokenResponse.md)
+[**SendBirdAddARegistrationOrDeviceTokenResponse**](SendBirdAddARegistrationOrDeviceTokenResponse.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ No authorization required
 
 ## chooseAPushNotificationContentTemplate
 
-> ChooseAPushNotificationContentTemplateResponse chooseAPushNotificationContentTemplate(userId).apiToken(apiToken).chooseAPushNotificationContentTemplateRequest(chooseAPushNotificationContentTemplateRequest).execute();
+> SendBirdChooseAPushNotificationContentTemplateResponse chooseAPushNotificationContentTemplate(userId).apiToken(apiToken).sendBirdChooseAPushNotificationContentTemplateRequest(sendBirdChooseAPushNotificationContentTemplateRequest).execute();
 
 Choose a push notification content template
 
@@ -154,11 +154,11 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        ChooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest = new ChooseAPushNotificationContentTemplateRequest(); // ChooseAPushNotificationContentTemplateRequest | 
+        SendBirdChooseAPushNotificationContentTemplateRequest sendBirdChooseAPushNotificationContentTemplateRequest = new SendBirdChooseAPushNotificationContentTemplateRequest(); // SendBirdChooseAPushNotificationContentTemplateRequest | 
         try {
-            ChooseAPushNotificationContentTemplateResponse result = api.chooseAPushNotificationContentTemplate(userId)
+            SendBirdChooseAPushNotificationContentTemplateResponse result = api.chooseAPushNotificationContentTemplate(userId)
                 .apiToken(apiToken)
-                .chooseAPushNotificationContentTemplateRequest(chooseAPushNotificationContentTemplateRequest)
+                .sendBirdChooseAPushNotificationContentTemplateRequest(sendBirdChooseAPushNotificationContentTemplateRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -179,11 +179,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **chooseAPushNotificationContentTemplateRequest** | [**ChooseAPushNotificationContentTemplateRequest**](ChooseAPushNotificationContentTemplateRequest.md)|  | [optional] |
+| **sendBirdChooseAPushNotificationContentTemplateRequest** | [**SendBirdChooseAPushNotificationContentTemplateRequest**](SendBirdChooseAPushNotificationContentTemplateRequest.md)|  | [optional] |
 
 ### Return type
 
-[**ChooseAPushNotificationContentTemplateResponse**](ChooseAPushNotificationContentTemplateResponse.md)
+[**SendBirdChooseAPushNotificationContentTemplateResponse**](SendBirdChooseAPushNotificationContentTemplateResponse.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ No authorization required
 
 ## createAUser
 
-> SendbirdUser createAUser().apiToken(apiToken).createAUserRequest(createAUserRequest).execute();
+> SendBirdSendbirdUser createAUser().apiToken(apiToken).sendBirdCreateAUserRequest(sendBirdCreateAUserRequest).execute();
 
 Create a user
 
@@ -229,11 +229,11 @@ public class Example {
 
         UserApi apiInstance = new UserApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
-        CreateAUserRequest createAUserRequest = new CreateAUserRequest(); // CreateAUserRequest | 
+        SendBirdCreateAUserRequest sendBirdCreateAUserRequest = new SendBirdCreateAUserRequest(); // SendBirdCreateAUserRequest | 
         try {
-            SendbirdUser result = api.createAUser()
+            SendBirdSendbirdUser result = api.createAUser()
                 .apiToken(apiToken)
-                .createAUserRequest(createAUserRequest)
+                .sendBirdCreateAUserRequest(sendBirdCreateAUserRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -253,11 +253,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | [optional] |
-| **createAUserRequest** | [**CreateAUserRequest**](CreateAUserRequest.md)|  | [optional] |
+| **sendBirdCreateAUserRequest** | [**SendBirdCreateAUserRequest**](SendBirdCreateAUserRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendbirdUser**](SendbirdUser.md)
+[**SendBirdSendbirdUser**](SendBirdSendbirdUser.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ No authorization required
 
 ## createUserToken
 
-> CreateUserTokenResponse createUserToken(userId).apiToken(apiToken).createUserTokenRequest(createUserTokenRequest).execute();
+> SendBirdCreateUserTokenResponse createUserToken(userId).apiToken(apiToken).sendBirdCreateUserTokenRequest(sendBirdCreateUserTokenRequest).execute();
 
 Create user token
 
@@ -307,11 +307,11 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        CreateUserTokenRequest createUserTokenRequest = new CreateUserTokenRequest(); // CreateUserTokenRequest | 
+        SendBirdCreateUserTokenRequest sendBirdCreateUserTokenRequest = new SendBirdCreateUserTokenRequest(); // SendBirdCreateUserTokenRequest | 
         try {
-            CreateUserTokenResponse result = api.createUserToken(userId)
+            SendBirdCreateUserTokenResponse result = api.createUserToken(userId)
                 .apiToken(apiToken)
-                .createUserTokenRequest(createUserTokenRequest)
+                .sendBirdCreateUserTokenRequest(sendBirdCreateUserTokenRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -332,11 +332,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **createUserTokenRequest** | [**CreateUserTokenRequest**](CreateUserTokenRequest.md)|  | [optional] |
+| **sendBirdCreateUserTokenRequest** | [**SendBirdCreateUserTokenRequest**](SendBirdCreateUserTokenRequest.md)|  | [optional] |
 
 ### Return type
 
-[**CreateUserTokenResponse**](CreateUserTokenResponse.md)
+[**SendBirdCreateUserTokenResponse**](SendBirdCreateUserTokenResponse.md)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ No authorization required
 
 ## getChannelInvitationPreference
 
-> GetChannelInvitationPreferenceResponse getChannelInvitationPreference(userId).apiToken(apiToken).execute();
+> SendBirdGetChannelInvitationPreferenceResponse getChannelInvitationPreference(userId).apiToken(apiToken).execute();
 
 Get channel invitation preference
 
@@ -460,7 +460,7 @@ public class Example {
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            GetChannelInvitationPreferenceResponse result = api.getChannelInvitationPreference(userId)
+            SendBirdGetChannelInvitationPreferenceResponse result = api.getChannelInvitationPreference(userId)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -485,7 +485,7 @@ public class Example {
 
 ### Return type
 
-[**GetChannelInvitationPreferenceResponse**](GetChannelInvitationPreferenceResponse.md)
+[**SendBirdGetChannelInvitationPreferenceResponse**](SendBirdGetChannelInvitationPreferenceResponse.md)
 
 ### Authorization
 
@@ -504,7 +504,7 @@ No authorization required
 
 ## leaveMyGroupChannels
 
-> Object leaveMyGroupChannels(userId).apiToken(apiToken).leaveMyGroupChannelsRequest(leaveMyGroupChannelsRequest).execute();
+> Object leaveMyGroupChannels(userId).apiToken(apiToken).sendBirdLeaveMyGroupChannelsRequest(sendBirdLeaveMyGroupChannelsRequest).execute();
 
 Leave my group channels
 
@@ -538,11 +538,11 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        LeaveMyGroupChannelsRequest leaveMyGroupChannelsRequest = new LeaveMyGroupChannelsRequest(); // LeaveMyGroupChannelsRequest | 
+        SendBirdLeaveMyGroupChannelsRequest sendBirdLeaveMyGroupChannelsRequest = new SendBirdLeaveMyGroupChannelsRequest(); // SendBirdLeaveMyGroupChannelsRequest | 
         try {
             Object result = api.leaveMyGroupChannels(userId)
                 .apiToken(apiToken)
-                .leaveMyGroupChannelsRequest(leaveMyGroupChannelsRequest)
+                .sendBirdLeaveMyGroupChannelsRequest(sendBirdLeaveMyGroupChannelsRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -563,7 +563,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **leaveMyGroupChannelsRequest** | [**LeaveMyGroupChannelsRequest**](LeaveMyGroupChannelsRequest.md)|  | [optional] |
+| **sendBirdLeaveMyGroupChannelsRequest** | [**SendBirdLeaveMyGroupChannelsRequest**](SendBirdLeaveMyGroupChannelsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -586,7 +586,7 @@ No authorization required
 
 ## listMyGroupChannels
 
-> ListMyGroupChannelsResponse listMyGroupChannels(userId).apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMetadata(showMetadata).showFrozen(showFrozen).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).membersNicknameStartswith(membersNicknameStartswith).searchQuery(searchQuery).searchFields(searchFields).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage).hiddenMode(hiddenMode).unreadFilter(unreadFilter).memberStateFilter(memberStateFilter).execute();
+> SendBirdListMyGroupChannelsResponse listMyGroupChannels(userId).apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMetadata(showMetadata).showFrozen(showFrozen).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).membersNicknameStartswith(membersNicknameStartswith).searchQuery(searchQuery).searchFields(searchFields).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage).hiddenMode(hiddenMode).unreadFilter(unreadFilter).memberStateFilter(memberStateFilter).execute();
 
 List my group channels
 
@@ -663,7 +663,7 @@ public class Example {
         String unreadFilter = "all"; // String | Restricts the search scope to only retrieve group channels with one or more unread messages. This filter doesn't support Supergroup channels. Acceptable values are all and unread_message. (Default: all)
         String memberStateFilter = "all"; // String | 
         try {
-            ListMyGroupChannelsResponse result = api.listMyGroupChannels(userId)
+            SendBirdListMyGroupChannelsResponse result = api.listMyGroupChannels(userId)
                 .apiToken(apiToken)
                 .token(token)
                 .limit(limit)
@@ -772,7 +772,7 @@ public class Example {
 
 ### Return type
 
-[**ListMyGroupChannelsResponse**](ListMyGroupChannelsResponse.md)
+[**SendBirdListMyGroupChannelsResponse**](SendBirdListMyGroupChannelsResponse.md)
 
 ### Authorization
 
@@ -791,7 +791,7 @@ No authorization required
 
 ## listRegistrationOrDeviceTokens
 
-> ListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(userId, tokenType).apiToken(apiToken).execute();
+> SendBirdListRegistrationOrDeviceTokensResponse listRegistrationOrDeviceTokens(userId, tokenType).apiToken(apiToken).execute();
 
 List registration or device tokens
 
@@ -821,7 +821,7 @@ public class Example {
         String tokenType = "gcm"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ListRegistrationOrDeviceTokensResponse result = api.listRegistrationOrDeviceTokens(userId, tokenType)
+            SendBirdListRegistrationOrDeviceTokensResponse result = api.listRegistrationOrDeviceTokens(userId, tokenType)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -847,7 +847,7 @@ public class Example {
 
 ### Return type
 
-[**ListRegistrationOrDeviceTokensResponse**](ListRegistrationOrDeviceTokensResponse.md)
+[**SendBirdListRegistrationOrDeviceTokensResponse**](SendBirdListRegistrationOrDeviceTokensResponse.md)
 
 ### Authorization
 
@@ -866,7 +866,7 @@ No authorization required
 
 ## listUsers
 
-> ListUsersResponse listUsers().token(token).limit(limit).activeMode(activeMode).showBot(showBot).userIds(userIds).nickname(nickname).nicknameStartswith(nicknameStartswith).metadatakey(metadatakey).metadatavaluesIn(metadatavaluesIn).apiToken(apiToken).execute();
+> SendBirdListUsersResponse listUsers().token(token).limit(limit).activeMode(activeMode).showBot(showBot).userIds(userIds).nickname(nickname).nicknameStartswith(nicknameStartswith).metadatakey(metadatakey).metadatavaluesIn(metadatavaluesIn).apiToken(apiToken).execute();
 
 List users
 
@@ -903,7 +903,7 @@ public class Example {
         String metadatavaluesIn = "metadatavaluesIn_example"; // String | Searches for blocked users with metadata containing an item with the key specified by the metadatakey parameter above, and the value of that item matches one or more values specified by this parameter. The string should be specified with multiple urlencoded metadata values separated by commas (for example, `?metadatavalues_in=urlencoded_value_1, urlencoded_value_2`). This parameter should be specified in conjunction with the `metadatakey` above.
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ListUsersResponse result = api.listUsers()
+            SendBirdListUsersResponse result = api.listUsers()
                 .token(token)
                 .limit(limit)
                 .activeMode(activeMode)
@@ -945,7 +945,7 @@ public class Example {
 
 ### Return type
 
-[**ListUsersResponse**](ListUsersResponse.md)
+[**SendBirdListUsersResponse**](SendBirdListUsersResponse.md)
 
 ### Authorization
 
@@ -964,7 +964,7 @@ No authorization required
 
 ## markAllMessagesAsRead
 
-> Object markAllMessagesAsRead(userId).apiToken(apiToken).markAllMessagesAsReadRequest(markAllMessagesAsReadRequest).execute();
+> Object markAllMessagesAsRead(userId).apiToken(apiToken).sendBirdMarkAllMessagesAsReadRequest(sendBirdMarkAllMessagesAsReadRequest).execute();
 
 Mark all messages as read
 
@@ -992,11 +992,11 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        MarkAllMessagesAsReadRequest markAllMessagesAsReadRequest = new MarkAllMessagesAsReadRequest(); // MarkAllMessagesAsReadRequest | 
+        SendBirdMarkAllMessagesAsReadRequest sendBirdMarkAllMessagesAsReadRequest = new SendBirdMarkAllMessagesAsReadRequest(); // SendBirdMarkAllMessagesAsReadRequest | 
         try {
             Object result = api.markAllMessagesAsRead(userId)
                 .apiToken(apiToken)
-                .markAllMessagesAsReadRequest(markAllMessagesAsReadRequest)
+                .sendBirdMarkAllMessagesAsReadRequest(sendBirdMarkAllMessagesAsReadRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1017,7 +1017,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **markAllMessagesAsReadRequest** | [**MarkAllMessagesAsReadRequest**](MarkAllMessagesAsReadRequest.md)|  | [optional] |
+| **sendBirdMarkAllMessagesAsReadRequest** | [**SendBirdMarkAllMessagesAsReadRequest**](SendBirdMarkAllMessagesAsReadRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -1040,7 +1040,7 @@ No authorization required
 
 ## removeARegistrationOrDeviceToken
 
-> RemoveARegistrationOrDeviceTokenResponse removeARegistrationOrDeviceToken(userId, tokenType, token).apiToken(apiToken).execute();
+> SendBirdRemoveARegistrationOrDeviceTokenResponse removeARegistrationOrDeviceToken(userId, tokenType, token).apiToken(apiToken).execute();
 
 Remove a registration or device token - When unregistering a specific token
 
@@ -1071,7 +1071,7 @@ public class Example {
         String token = "token_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            RemoveARegistrationOrDeviceTokenResponse result = api.removeARegistrationOrDeviceToken(userId, tokenType, token)
+            SendBirdRemoveARegistrationOrDeviceTokenResponse result = api.removeARegistrationOrDeviceToken(userId, tokenType, token)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -1098,7 +1098,7 @@ public class Example {
 
 ### Return type
 
-[**RemoveARegistrationOrDeviceTokenResponse**](RemoveARegistrationOrDeviceTokenResponse.md)
+[**SendBirdRemoveARegistrationOrDeviceTokenResponse**](SendBirdRemoveARegistrationOrDeviceTokenResponse.md)
 
 ### Authorization
 
@@ -1117,7 +1117,7 @@ No authorization required
 
 ## removeARegistrationOrDeviceTokenFromAnOwner
 
-> List&lt;MarkChannelMessagesAsReadRequest&gt; removeARegistrationOrDeviceTokenFromAnOwner(tokenType, token).apiToken(apiToken).execute();
+> List&lt;SendBirdMarkChannelMessagesAsReadRequest&gt; removeARegistrationOrDeviceTokenFromAnOwner(tokenType, token).apiToken(apiToken).execute();
 
 Remove a registration or device token from an owner
 
@@ -1147,7 +1147,7 @@ public class Example {
         String token = "token_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            List<MarkChannelMessagesAsReadRequest> result = api.removeARegistrationOrDeviceTokenFromAnOwner(tokenType, token)
+            List<SendBirdMarkChannelMessagesAsReadRequest> result = api.removeARegistrationOrDeviceTokenFromAnOwner(tokenType, token)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -1173,7 +1173,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;MarkChannelMessagesAsReadRequest&gt;**](MarkChannelMessagesAsReadRequest.md)
+[**List&lt;SendBirdMarkChannelMessagesAsReadRequest&gt;**](SendBirdMarkChannelMessagesAsReadRequest.md)
 
 ### Authorization
 
@@ -1192,7 +1192,7 @@ No authorization required
 
 ## removeAllRegistrationOrDeviceToken
 
-> RemoveAllRegistrationOrDeviceTokenResponse removeAllRegistrationOrDeviceToken(userId).apiToken(apiToken).execute();
+> SendBirdRemoveAllRegistrationOrDeviceTokenResponse removeAllRegistrationOrDeviceToken(userId).apiToken(apiToken).execute();
 
 Remove a registration or device token - When unregistering all device tokens
 
@@ -1221,7 +1221,7 @@ public class Example {
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            RemoveAllRegistrationOrDeviceTokenResponse result = api.removeAllRegistrationOrDeviceToken(userId)
+            SendBirdRemoveAllRegistrationOrDeviceTokenResponse result = api.removeAllRegistrationOrDeviceToken(userId)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -1246,7 +1246,7 @@ public class Example {
 
 ### Return type
 
-[**RemoveAllRegistrationOrDeviceTokenResponse**](RemoveAllRegistrationOrDeviceTokenResponse.md)
+[**SendBirdRemoveAllRegistrationOrDeviceTokenResponse**](SendBirdRemoveAllRegistrationOrDeviceTokenResponse.md)
 
 ### Authorization
 
@@ -1350,7 +1350,7 @@ No authorization required
 
 ## updateAUser
 
-> SendbirdUser updateAUser(userId).apiToken(apiToken).updateAUserRequest(updateAUserRequest).execute();
+> SendBirdSendbirdUser updateAUser(userId).apiToken(apiToken).sendBirdUpdateAUserRequest(sendBirdUpdateAUserRequest).execute();
 
 Update a user
 
@@ -1383,11 +1383,11 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdateAUserRequest updateAUserRequest = new UpdateAUserRequest(); // UpdateAUserRequest | 
+        SendBirdUpdateAUserRequest sendBirdUpdateAUserRequest = new SendBirdUpdateAUserRequest(); // SendBirdUpdateAUserRequest | 
         try {
-            SendbirdUser result = api.updateAUser(userId)
+            SendBirdSendbirdUser result = api.updateAUser(userId)
                 .apiToken(apiToken)
-                .updateAUserRequest(updateAUserRequest)
+                .sendBirdUpdateAUserRequest(sendBirdUpdateAUserRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1408,11 +1408,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **updateAUserRequest** | [**UpdateAUserRequest**](UpdateAUserRequest.md)|  | [optional] |
+| **sendBirdUpdateAUserRequest** | [**SendBirdUpdateAUserRequest**](SendBirdUpdateAUserRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendbirdUser**](SendbirdUser.md)
+[**SendBirdSendbirdUser**](SendBirdSendbirdUser.md)
 
 ### Authorization
 
@@ -1431,7 +1431,7 @@ No authorization required
 
 ## updateChannelInvitationPreference
 
-> UpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(userId).apiToken(apiToken).updateChannelInvitationPreferenceRequest(updateChannelInvitationPreferenceRequest).execute();
+> SendBirdUpdateChannelInvitationPreferenceResponse updateChannelInvitationPreference(userId).apiToken(apiToken).sendBirdUpdateChannelInvitationPreferenceRequest(sendBirdUpdateChannelInvitationPreferenceRequest).execute();
 
 Update channel invitation preference
 
@@ -1459,11 +1459,11 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest = new UpdateChannelInvitationPreferenceRequest(); // UpdateChannelInvitationPreferenceRequest | 
+        SendBirdUpdateChannelInvitationPreferenceRequest sendBirdUpdateChannelInvitationPreferenceRequest = new SendBirdUpdateChannelInvitationPreferenceRequest(); // SendBirdUpdateChannelInvitationPreferenceRequest | 
         try {
-            UpdateChannelInvitationPreferenceResponse result = api.updateChannelInvitationPreference(userId)
+            SendBirdUpdateChannelInvitationPreferenceResponse result = api.updateChannelInvitationPreference(userId)
                 .apiToken(apiToken)
-                .updateChannelInvitationPreferenceRequest(updateChannelInvitationPreferenceRequest)
+                .sendBirdUpdateChannelInvitationPreferenceRequest(sendBirdUpdateChannelInvitationPreferenceRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1484,11 +1484,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **updateChannelInvitationPreferenceRequest** | [**UpdateChannelInvitationPreferenceRequest**](UpdateChannelInvitationPreferenceRequest.md)|  | [optional] |
+| **sendBirdUpdateChannelInvitationPreferenceRequest** | [**SendBirdUpdateChannelInvitationPreferenceRequest**](SendBirdUpdateChannelInvitationPreferenceRequest.md)|  | [optional] |
 
 ### Return type
 
-[**UpdateChannelInvitationPreferenceResponse**](UpdateChannelInvitationPreferenceResponse.md)
+[**SendBirdUpdateChannelInvitationPreferenceResponse**](SendBirdUpdateChannelInvitationPreferenceResponse.md)
 
 ### Authorization
 
@@ -1507,7 +1507,7 @@ No authorization required
 
 ## updateCountPreferenceOfAChannel
 
-> UpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfAChannel(userId, channelUrl).apiToken(apiToken).updateCountPreferenceOfAChannelRequest(updateCountPreferenceOfAChannelRequest).execute();
+> SendBirdUpdateCountPreferenceOfChannelByUrlResponse updateCountPreferenceOfAChannel(userId, channelUrl).apiToken(apiToken).sendBirdUpdateCountPreferenceOfAChannelRequest(sendBirdUpdateCountPreferenceOfAChannelRequest).execute();
 
 Update count preference of a channel
 
@@ -1538,11 +1538,11 @@ public class Example {
         String userId = "userId_example"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest = new UpdateCountPreferenceOfAChannelRequest(); // UpdateCountPreferenceOfAChannelRequest | 
+        SendBirdUpdateCountPreferenceOfAChannelRequest sendBirdUpdateCountPreferenceOfAChannelRequest = new SendBirdUpdateCountPreferenceOfAChannelRequest(); // SendBirdUpdateCountPreferenceOfAChannelRequest | 
         try {
-            UpdateCountPreferenceOfChannelByUrlResponse result = api.updateCountPreferenceOfAChannel(userId, channelUrl)
+            SendBirdUpdateCountPreferenceOfChannelByUrlResponse result = api.updateCountPreferenceOfAChannel(userId, channelUrl)
                 .apiToken(apiToken)
-                .updateCountPreferenceOfAChannelRequest(updateCountPreferenceOfAChannelRequest)
+                .sendBirdUpdateCountPreferenceOfAChannelRequest(sendBirdUpdateCountPreferenceOfAChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1564,11 +1564,11 @@ public class Example {
 | **userId** | **String**| (Required)  | |
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **updateCountPreferenceOfAChannelRequest** | [**UpdateCountPreferenceOfAChannelRequest**](UpdateCountPreferenceOfAChannelRequest.md)|  | [optional] |
+| **sendBirdUpdateCountPreferenceOfAChannelRequest** | [**SendBirdUpdateCountPreferenceOfAChannelRequest**](SendBirdUpdateCountPreferenceOfAChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**UpdateCountPreferenceOfChannelByUrlResponse**](UpdateCountPreferenceOfChannelByUrlResponse.md)
+[**SendBirdUpdateCountPreferenceOfChannelByUrlResponse**](SendBirdUpdateCountPreferenceOfChannelByUrlResponse.md)
 
 ### Authorization
 
@@ -1587,7 +1587,7 @@ No authorization required
 
 ## updatePushPreferences
 
-> UpdatePushPreferencesResponse updatePushPreferences(userId).apiToken(apiToken).updatePushPreferencesRequest(updatePushPreferencesRequest).execute();
+> SendBirdUpdatePushPreferencesResponse updatePushPreferences(userId).apiToken(apiToken).sendBirdUpdatePushPreferencesRequest(sendBirdUpdatePushPreferencesRequest).execute();
 
 Update push preferences
 
@@ -1618,11 +1618,11 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdatePushPreferencesRequest updatePushPreferencesRequest = new UpdatePushPreferencesRequest(); // UpdatePushPreferencesRequest | 
+        SendBirdUpdatePushPreferencesRequest sendBirdUpdatePushPreferencesRequest = new SendBirdUpdatePushPreferencesRequest(); // SendBirdUpdatePushPreferencesRequest | 
         try {
-            UpdatePushPreferencesResponse result = api.updatePushPreferences(userId)
+            SendBirdUpdatePushPreferencesResponse result = api.updatePushPreferences(userId)
                 .apiToken(apiToken)
-                .updatePushPreferencesRequest(updatePushPreferencesRequest)
+                .sendBirdUpdatePushPreferencesRequest(sendBirdUpdatePushPreferencesRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1643,11 +1643,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **updatePushPreferencesRequest** | [**UpdatePushPreferencesRequest**](UpdatePushPreferencesRequest.md)|  | [optional] |
+| **sendBirdUpdatePushPreferencesRequest** | [**SendBirdUpdatePushPreferencesRequest**](SendBirdUpdatePushPreferencesRequest.md)|  | [optional] |
 
 ### Return type
 
-[**UpdatePushPreferencesResponse**](UpdatePushPreferencesResponse.md)
+[**SendBirdUpdatePushPreferencesResponse**](SendBirdUpdatePushPreferencesResponse.md)
 
 ### Authorization
 
@@ -1666,7 +1666,7 @@ No authorization required
 
 ## updatePushPreferencesForAChannel
 
-> UpdatePushPreferencesForAChannelResponse updatePushPreferencesForAChannel(userId, channelUrl).apiToken(apiToken).updatePushPreferencesForAChannelRequest(updatePushPreferencesForAChannelRequest).execute();
+> SendBirdUpdatePushPreferencesForAChannelResponse updatePushPreferencesForAChannel(userId, channelUrl).apiToken(apiToken).sendBirdUpdatePushPreferencesForAChannelRequest(sendBirdUpdatePushPreferencesForAChannelRequest).execute();
 
 Update push preferences for a channel
 
@@ -1698,11 +1698,11 @@ public class Example {
         String userId = "userId_example"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        UpdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest = new UpdatePushPreferencesForAChannelRequest(); // UpdatePushPreferencesForAChannelRequest | 
+        SendBirdUpdatePushPreferencesForAChannelRequest sendBirdUpdatePushPreferencesForAChannelRequest = new SendBirdUpdatePushPreferencesForAChannelRequest(); // SendBirdUpdatePushPreferencesForAChannelRequest | 
         try {
-            UpdatePushPreferencesForAChannelResponse result = api.updatePushPreferencesForAChannel(userId, channelUrl)
+            SendBirdUpdatePushPreferencesForAChannelResponse result = api.updatePushPreferencesForAChannel(userId, channelUrl)
                 .apiToken(apiToken)
-                .updatePushPreferencesForAChannelRequest(updatePushPreferencesForAChannelRequest)
+                .sendBirdUpdatePushPreferencesForAChannelRequest(sendBirdUpdatePushPreferencesForAChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1724,11 +1724,11 @@ public class Example {
 | **userId** | **String**| (Required)  | |
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **updatePushPreferencesForAChannelRequest** | [**UpdatePushPreferencesForAChannelRequest**](UpdatePushPreferencesForAChannelRequest.md)|  | [optional] |
+| **sendBirdUpdatePushPreferencesForAChannelRequest** | [**SendBirdUpdatePushPreferencesForAChannelRequest**](SendBirdUpdatePushPreferencesForAChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**UpdatePushPreferencesForAChannelResponse**](UpdatePushPreferencesForAChannelResponse.md)
+[**SendBirdUpdatePushPreferencesForAChannelResponse**](SendBirdUpdatePushPreferencesForAChannelResponse.md)
 
 ### Authorization
 
@@ -1747,7 +1747,7 @@ No authorization required
 
 ## viewAUser
 
-> SendbirdUser viewAUser(userId).includeUnreadCount(includeUnreadCount).customTypes(customTypes).superMode(superMode).apiToken(apiToken).execute();
+> SendBirdSendbirdUser viewAUser(userId).includeUnreadCount(includeUnreadCount).customTypes(customTypes).superMode(superMode).apiToken(apiToken).execute();
 
 View a user
 
@@ -1783,7 +1783,7 @@ public class Example {
         String superMode = "all"; // String | Restricts the search scope to retrieve only Supergroup or non-Supergroup channels. Acceptable values are `all`, `super`, and `nonsuper`. This parameter should be specified in conjunction with `include_unread_count` above. (Default: `all`)
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendbirdUser result = api.viewAUser(userId)
+            SendBirdSendbirdUser result = api.viewAUser(userId)
                 .includeUnreadCount(includeUnreadCount)
                 .customTypes(customTypes)
                 .superMode(superMode)
@@ -1814,7 +1814,7 @@ public class Example {
 
 ### Return type
 
-[**SendbirdUser**](SendbirdUser.md)
+[**SendBirdSendbirdUser**](SendBirdSendbirdUser.md)
 
 ### Authorization
 
@@ -1833,7 +1833,7 @@ No authorization required
 
 ## viewCountPreferenceOfAChannel
 
-> ViewCountPreferenceOfAChannelResponse viewCountPreferenceOfAChannel(userId, channelUrl).apiToken(apiToken).execute();
+> SendBirdViewCountPreferenceOfAChannelResponse viewCountPreferenceOfAChannel(userId, channelUrl).apiToken(apiToken).execute();
 
 View count preference of a channel
 
@@ -1865,7 +1865,7 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ViewCountPreferenceOfAChannelResponse result = api.viewCountPreferenceOfAChannel(userId, channelUrl)
+            SendBirdViewCountPreferenceOfAChannelResponse result = api.viewCountPreferenceOfAChannel(userId, channelUrl)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -1891,7 +1891,7 @@ public class Example {
 
 ### Return type
 
-[**ViewCountPreferenceOfAChannelResponse**](ViewCountPreferenceOfAChannelResponse.md)
+[**SendBirdViewCountPreferenceOfAChannelResponse**](SendBirdViewCountPreferenceOfAChannelResponse.md)
 
 ### Authorization
 
@@ -1910,7 +1910,7 @@ No authorization required
 
 ## viewNumberOfChannelsWithUnreadMessages
 
-> ViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(userId).customTypes(customTypes).superMode(superMode).apiToken(apiToken).execute();
+> SendBirdViewNumberOfChannelsWithUnreadMessagesResponse viewNumberOfChannelsWithUnreadMessages(userId).customTypes(customTypes).superMode(superMode).apiToken(apiToken).execute();
 
 View number of channels with unread messages
 
@@ -1941,7 +1941,7 @@ public class Example {
         String superMode = "all"; // String | Restricts the search scope to either Supergroup channels or non-Supergroup channels or both. Acceptable values are all, super, and nonsuper. (Default: all)
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ViewNumberOfChannelsWithUnreadMessagesResponse result = api.viewNumberOfChannelsWithUnreadMessages(userId)
+            SendBirdViewNumberOfChannelsWithUnreadMessagesResponse result = api.viewNumberOfChannelsWithUnreadMessages(userId)
                 .customTypes(customTypes)
                 .superMode(superMode)
                 .apiToken(apiToken)
@@ -1970,7 +1970,7 @@ public class Example {
 
 ### Return type
 
-[**ViewNumberOfChannelsWithUnreadMessagesResponse**](ViewNumberOfChannelsWithUnreadMessagesResponse.md)
+[**SendBirdViewNumberOfChannelsWithUnreadMessagesResponse**](SendBirdViewNumberOfChannelsWithUnreadMessagesResponse.md)
 
 ### Authorization
 
@@ -1989,7 +1989,7 @@ No authorization required
 
 ## viewNumberOfUnreadMessages
 
-> ViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(userId).customTypes(customTypes).superMode(superMode).apiToken(apiToken).execute();
+> SendBirdViewNumberOfUnreadMessagesResponse viewNumberOfUnreadMessages(userId).customTypes(customTypes).superMode(superMode).apiToken(apiToken).execute();
 
 View number of unread messages
 
@@ -2027,7 +2027,7 @@ public class Example {
         String superMode = "superMode_example"; // String | Restricts the search scope to either Supergroup channels or non-Supergroup channels or both. Acceptable values are `all`, `super`, and `nonsuper`. (Default: `all`)
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ViewNumberOfUnreadMessagesResponse result = api.viewNumberOfUnreadMessages(userId)
+            SendBirdViewNumberOfUnreadMessagesResponse result = api.viewNumberOfUnreadMessages(userId)
                 .customTypes(customTypes)
                 .superMode(superMode)
                 .apiToken(apiToken)
@@ -2056,7 +2056,7 @@ public class Example {
 
 ### Return type
 
-[**ViewNumberOfUnreadMessagesResponse**](ViewNumberOfUnreadMessagesResponse.md)
+[**SendBirdViewNumberOfUnreadMessagesResponse**](SendBirdViewNumberOfUnreadMessagesResponse.md)
 
 ### Authorization
 
@@ -2075,7 +2075,7 @@ No authorization required
 
 ## viewPushPreferences
 
-> ViewPushPreferencesResponse viewPushPreferences(userId).apiToken(apiToken).execute();
+> SendBirdViewPushPreferencesResponse viewPushPreferences(userId).apiToken(apiToken).execute();
 
 View push preferences
 
@@ -2107,7 +2107,7 @@ public class Example {
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ViewPushPreferencesResponse result = api.viewPushPreferences(userId)
+            SendBirdViewPushPreferencesResponse result = api.viewPushPreferences(userId)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -2132,7 +2132,7 @@ public class Example {
 
 ### Return type
 
-[**ViewPushPreferencesResponse**](ViewPushPreferencesResponse.md)
+[**SendBirdViewPushPreferencesResponse**](SendBirdViewPushPreferencesResponse.md)
 
 ### Authorization
 
@@ -2151,7 +2151,7 @@ No authorization required
 
 ## viewPushPreferencesForAChannel
 
-> ViewPushPreferencesForAChannelResponse viewPushPreferencesForAChannel(userId, channelUrl).apiToken(apiToken).execute();
+> SendBirdViewPushPreferencesForAChannelResponse viewPushPreferencesForAChannel(userId, channelUrl).apiToken(apiToken).execute();
 
 View push preferences for a channel
 
@@ -2184,7 +2184,7 @@ public class Example {
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            ViewPushPreferencesForAChannelResponse result = api.viewPushPreferencesForAChannel(userId, channelUrl)
+            SendBirdViewPushPreferencesForAChannelResponse result = api.viewPushPreferencesForAChannel(userId, channelUrl)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -2210,7 +2210,7 @@ public class Example {
 
 ### Return type
 
-[**ViewPushPreferencesForAChannelResponse**](ViewPushPreferencesForAChannelResponse.md)
+[**SendBirdViewPushPreferencesForAChannelResponse**](SendBirdViewPushPreferencesForAChannelResponse.md)
 
 ### Authorization
 
@@ -2229,7 +2229,7 @@ No authorization required
 
 ## viewWhoOwnsARegistrationOrDeviceToken
 
-> List&lt;MarkChannelMessagesAsReadRequest&gt; viewWhoOwnsARegistrationOrDeviceToken(tokenType, token).apiToken(apiToken).execute();
+> List&lt;SendBirdMarkChannelMessagesAsReadRequest&gt; viewWhoOwnsARegistrationOrDeviceToken(tokenType, token).apiToken(apiToken).execute();
 
 View who owns a registration or device token
 
@@ -2260,7 +2260,7 @@ public class Example {
         String token = "token_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            List<MarkChannelMessagesAsReadRequest> result = api.viewWhoOwnsARegistrationOrDeviceToken(tokenType, token)
+            List<SendBirdMarkChannelMessagesAsReadRequest> result = api.viewWhoOwnsARegistrationOrDeviceToken(tokenType, token)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -2286,7 +2286,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;MarkChannelMessagesAsReadRequest&gt;**](MarkChannelMessagesAsReadRequest.md)
+[**List&lt;SendBirdMarkChannelMessagesAsReadRequest&gt;**](SendBirdMarkChannelMessagesAsReadRequest.md)
 
 ### Authorization
 

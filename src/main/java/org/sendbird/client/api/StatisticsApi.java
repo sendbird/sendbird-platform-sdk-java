@@ -8,15 +8,15 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.ViewNumberOfDailyActiveUsersResponse;
-import org.openapitools.client.model.ViewNumberOfMonthlyActiveUsersResponse;
+import org.openapitools.client.model.SendBirdViewNumberOfDailyActiveUsersResponse;
+import org.openapitools.client.model.SendBirdViewNumberOfMonthlyActiveUsersResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
 public class StatisticsApi {
   private ApiClient apiClient;
 
@@ -47,7 +47,7 @@ public class StatisticsApi {
   }
 
 
-private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiveUsersWithHttpInfo(String date, String apiToken) throws ApiException {
+private ApiResponse<SendBirdViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiveUsersWithHttpInfo(String date, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -78,7 +78,7 @@ private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiv
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewNumberOfDailyActiveUsersResponse> localVarReturnType = new GenericType<ViewNumberOfDailyActiveUsersResponse>() {};
+    GenericType<SendBirdViewNumberOfDailyActiveUsersResponse> localVarReturnType = new GenericType<SendBirdViewNumberOfDailyActiveUsersResponse>() {};
 
     return apiClient.invokeAPI("StatisticsApi.viewNumberOfDailyActiveUsers", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -114,7 +114,7 @@ private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiv
 
     /**
      * Execute viewNumberOfDailyActiveUsers request
-     * @return ViewNumberOfDailyActiveUsersResponse
+     * @return SendBirdViewNumberOfDailyActiveUsersResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -124,13 +124,13 @@ private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiv
      
      */
     
-    public ViewNumberOfDailyActiveUsersResponse execute() throws ApiException {
+    public SendBirdViewNumberOfDailyActiveUsersResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewNumberOfDailyActiveUsers request with HTTP info returned
-     * @return ApiResponse&lt;ViewNumberOfDailyActiveUsersResponse&gt;
+     * @return ApiResponse&lt;SendBirdViewNumberOfDailyActiveUsersResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -139,7 +139,7 @@ private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiv
        </table>
 
      */
-    public ApiResponse<ViewNumberOfDailyActiveUsersResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdViewNumberOfDailyActiveUsersResponse> executeWithHttpInfo() throws ApiException {
       return viewNumberOfDailyActiveUsersWithHttpInfo(date, apiToken);
     }
   }
@@ -156,7 +156,7 @@ private ApiResponse<ViewNumberOfDailyActiveUsersResponse> viewNumberOfDailyActiv
     return new APIviewNumberOfDailyActiveUsersRequest();
   }
 
-private ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyActiveUsersWithHttpInfo(String date, String apiToken) throws ApiException {
+private ApiResponse<SendBirdViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyActiveUsersWithHttpInfo(String date, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -187,7 +187,7 @@ private ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyA
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewNumberOfMonthlyActiveUsersResponse> localVarReturnType = new GenericType<ViewNumberOfMonthlyActiveUsersResponse>() {};
+    GenericType<SendBirdViewNumberOfMonthlyActiveUsersResponse> localVarReturnType = new GenericType<SendBirdViewNumberOfMonthlyActiveUsersResponse>() {};
 
     return apiClient.invokeAPI("StatisticsApi.viewNumberOfMonthlyActiveUsers", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -223,7 +223,7 @@ private ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyA
 
     /**
      * Execute viewNumberOfMonthlyActiveUsers request
-     * @return ViewNumberOfMonthlyActiveUsersResponse
+     * @return SendBirdViewNumberOfMonthlyActiveUsersResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -233,13 +233,13 @@ private ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyA
      
      */
     
-    public ViewNumberOfMonthlyActiveUsersResponse execute() throws ApiException {
+    public SendBirdViewNumberOfMonthlyActiveUsersResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewNumberOfMonthlyActiveUsers request with HTTP info returned
-     * @return ApiResponse&lt;ViewNumberOfMonthlyActiveUsersResponse&gt;
+     * @return ApiResponse&lt;SendBirdViewNumberOfMonthlyActiveUsersResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -248,7 +248,7 @@ private ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> viewNumberOfMonthlyA
        </table>
 
      */
-    public ApiResponse<ViewNumberOfMonthlyActiveUsersResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdViewNumberOfMonthlyActiveUsersResponse> executeWithHttpInfo() throws ApiException {
       return viewNumberOfMonthlyActiveUsersWithHttpInfo(date, apiToken);
     }
   }

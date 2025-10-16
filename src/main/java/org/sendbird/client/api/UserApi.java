@@ -8,44 +8,44 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.AddARegistrationOrDeviceTokenRequest;
-import org.openapitools.client.model.AddARegistrationOrDeviceTokenResponse;
-import org.openapitools.client.model.ChooseAPushNotificationContentTemplateRequest;
-import org.openapitools.client.model.ChooseAPushNotificationContentTemplateResponse;
-import org.openapitools.client.model.CreateAUserRequest;
-import org.openapitools.client.model.CreateUserTokenRequest;
-import org.openapitools.client.model.CreateUserTokenResponse;
-import org.openapitools.client.model.GetChannelInvitationPreferenceResponse;
-import org.openapitools.client.model.LeaveMyGroupChannelsRequest;
-import org.openapitools.client.model.ListMyGroupChannelsResponse;
-import org.openapitools.client.model.ListRegistrationOrDeviceTokensResponse;
-import org.openapitools.client.model.ListUsersResponse;
-import org.openapitools.client.model.MarkAllMessagesAsReadRequest;
-import org.openapitools.client.model.MarkChannelMessagesAsReadRequest;
-import org.openapitools.client.model.RemoveARegistrationOrDeviceTokenResponse;
-import org.openapitools.client.model.RemoveAllRegistrationOrDeviceTokenResponse;
-import org.openapitools.client.model.SendbirdUser;
-import org.openapitools.client.model.UpdateAUserRequest;
-import org.openapitools.client.model.UpdateChannelInvitationPreferenceRequest;
-import org.openapitools.client.model.UpdateChannelInvitationPreferenceResponse;
-import org.openapitools.client.model.UpdateCountPreferenceOfAChannelRequest;
-import org.openapitools.client.model.UpdateCountPreferenceOfChannelByUrlResponse;
-import org.openapitools.client.model.UpdatePushPreferencesForAChannelRequest;
-import org.openapitools.client.model.UpdatePushPreferencesForAChannelResponse;
-import org.openapitools.client.model.UpdatePushPreferencesRequest;
-import org.openapitools.client.model.UpdatePushPreferencesResponse;
-import org.openapitools.client.model.ViewCountPreferenceOfAChannelResponse;
-import org.openapitools.client.model.ViewNumberOfChannelsWithUnreadMessagesResponse;
-import org.openapitools.client.model.ViewNumberOfUnreadMessagesResponse;
-import org.openapitools.client.model.ViewPushPreferencesForAChannelResponse;
-import org.openapitools.client.model.ViewPushPreferencesResponse;
+import org.openapitools.client.model.SendBirdAddARegistrationOrDeviceTokenRequest;
+import org.openapitools.client.model.SendBirdAddARegistrationOrDeviceTokenResponse;
+import org.openapitools.client.model.SendBirdChooseAPushNotificationContentTemplateRequest;
+import org.openapitools.client.model.SendBirdChooseAPushNotificationContentTemplateResponse;
+import org.openapitools.client.model.SendBirdCreateAUserRequest;
+import org.openapitools.client.model.SendBirdCreateUserTokenRequest;
+import org.openapitools.client.model.SendBirdCreateUserTokenResponse;
+import org.openapitools.client.model.SendBirdGetChannelInvitationPreferenceResponse;
+import org.openapitools.client.model.SendBirdLeaveMyGroupChannelsRequest;
+import org.openapitools.client.model.SendBirdListMyGroupChannelsResponse;
+import org.openapitools.client.model.SendBirdListRegistrationOrDeviceTokensResponse;
+import org.openapitools.client.model.SendBirdListUsersResponse;
+import org.openapitools.client.model.SendBirdMarkAllMessagesAsReadRequest;
+import org.openapitools.client.model.SendBirdMarkChannelMessagesAsReadRequest;
+import org.openapitools.client.model.SendBirdRemoveARegistrationOrDeviceTokenResponse;
+import org.openapitools.client.model.SendBirdRemoveAllRegistrationOrDeviceTokenResponse;
+import org.openapitools.client.model.SendBirdSendbirdUser;
+import org.openapitools.client.model.SendBirdUpdateAUserRequest;
+import org.openapitools.client.model.SendBirdUpdateChannelInvitationPreferenceRequest;
+import org.openapitools.client.model.SendBirdUpdateChannelInvitationPreferenceResponse;
+import org.openapitools.client.model.SendBirdUpdateCountPreferenceOfAChannelRequest;
+import org.openapitools.client.model.SendBirdUpdateCountPreferenceOfChannelByUrlResponse;
+import org.openapitools.client.model.SendBirdUpdatePushPreferencesForAChannelRequest;
+import org.openapitools.client.model.SendBirdUpdatePushPreferencesForAChannelResponse;
+import org.openapitools.client.model.SendBirdUpdatePushPreferencesRequest;
+import org.openapitools.client.model.SendBirdUpdatePushPreferencesResponse;
+import org.openapitools.client.model.SendBirdViewCountPreferenceOfAChannelResponse;
+import org.openapitools.client.model.SendBirdViewNumberOfChannelsWithUnreadMessagesResponse;
+import org.openapitools.client.model.SendBirdViewNumberOfUnreadMessagesResponse;
+import org.openapitools.client.model.SendBirdViewPushPreferencesForAChannelResponse;
+import org.openapitools.client.model.SendBirdViewPushPreferencesResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
 public class UserApi {
   private ApiClient apiClient;
 
@@ -76,8 +76,8 @@ public class UserApi {
   }
 
 
-private ApiResponse<AddARegistrationOrDeviceTokenResponse> addARegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String apiToken, AddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest) throws ApiException {
-    Object localVarPostBody = addARegistrationOrDeviceTokenRequest;
+private ApiResponse<SendBirdAddARegistrationOrDeviceTokenResponse> addARegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String apiToken, SendBirdAddARegistrationOrDeviceTokenRequest sendBirdAddARegistrationOrDeviceTokenRequest) throws ApiException {
+    Object localVarPostBody = sendBirdAddARegistrationOrDeviceTokenRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -118,7 +118,7 @@ private ApiResponse<AddARegistrationOrDeviceTokenResponse> addARegistrationOrDev
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<AddARegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<AddARegistrationOrDeviceTokenResponse>() {};
+    GenericType<SendBirdAddARegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<SendBirdAddARegistrationOrDeviceTokenResponse>() {};
 
     return apiClient.invokeAPI("UserApi.addARegistrationOrDeviceToken", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -129,7 +129,7 @@ private ApiResponse<AddARegistrationOrDeviceTokenResponse> addARegistrationOrDev
     private String userId;
     private String tokenType;
     private String apiToken;
-    private AddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest;
+    private SendBirdAddARegistrationOrDeviceTokenRequest sendBirdAddARegistrationOrDeviceTokenRequest;
 
     private APIaddARegistrationOrDeviceTokenRequest(String userId, String tokenType) {
       this.userId = userId;
@@ -147,18 +147,18 @@ private ApiResponse<AddARegistrationOrDeviceTokenResponse> addARegistrationOrDev
     }
 
     /**
-     * Set addARegistrationOrDeviceTokenRequest
-     * @param addARegistrationOrDeviceTokenRequest  (optional)
+     * Set sendBirdAddARegistrationOrDeviceTokenRequest
+     * @param sendBirdAddARegistrationOrDeviceTokenRequest  (optional)
      * @return APIaddARegistrationOrDeviceTokenRequest
      */
-    public APIaddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest(AddARegistrationOrDeviceTokenRequest addARegistrationOrDeviceTokenRequest) {
-      this.addARegistrationOrDeviceTokenRequest = addARegistrationOrDeviceTokenRequest;
+    public APIaddARegistrationOrDeviceTokenRequest sendBirdAddARegistrationOrDeviceTokenRequest(SendBirdAddARegistrationOrDeviceTokenRequest sendBirdAddARegistrationOrDeviceTokenRequest) {
+      this.sendBirdAddARegistrationOrDeviceTokenRequest = sendBirdAddARegistrationOrDeviceTokenRequest;
       return this;
     }
 
     /**
      * Execute addARegistrationOrDeviceToken request
-     * @return AddARegistrationOrDeviceTokenResponse
+     * @return SendBirdAddARegistrationOrDeviceTokenResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -168,13 +168,13 @@ private ApiResponse<AddARegistrationOrDeviceTokenResponse> addARegistrationOrDev
      
      */
     
-    public AddARegistrationOrDeviceTokenResponse execute() throws ApiException {
+    public SendBirdAddARegistrationOrDeviceTokenResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute addARegistrationOrDeviceToken request with HTTP info returned
-     * @return ApiResponse&lt;AddARegistrationOrDeviceTokenResponse&gt;
+     * @return ApiResponse&lt;SendBirdAddARegistrationOrDeviceTokenResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -183,8 +183,8 @@ private ApiResponse<AddARegistrationOrDeviceTokenResponse> addARegistrationOrDev
        </table>
 
      */
-    public ApiResponse<AddARegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
-      return addARegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, apiToken, addARegistrationOrDeviceTokenRequest);
+    public ApiResponse<SendBirdAddARegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
+      return addARegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, apiToken, sendBirdAddARegistrationOrDeviceTokenRequest);
     }
   }
 
@@ -202,8 +202,8 @@ private ApiResponse<AddARegistrationOrDeviceTokenResponse> addARegistrationOrDev
     return new APIaddARegistrationOrDeviceTokenRequest(userId, tokenType);
   }
 
-private ApiResponse<ChooseAPushNotificationContentTemplateResponse> chooseAPushNotificationContentTemplateWithHttpInfo(String userId, String apiToken, ChooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest) throws ApiException {
-    Object localVarPostBody = chooseAPushNotificationContentTemplateRequest;
+private ApiResponse<SendBirdChooseAPushNotificationContentTemplateResponse> chooseAPushNotificationContentTemplateWithHttpInfo(String userId, String apiToken, SendBirdChooseAPushNotificationContentTemplateRequest sendBirdChooseAPushNotificationContentTemplateRequest) throws ApiException {
+    Object localVarPostBody = sendBirdChooseAPushNotificationContentTemplateRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -238,7 +238,7 @@ private ApiResponse<ChooseAPushNotificationContentTemplateResponse> chooseAPushN
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ChooseAPushNotificationContentTemplateResponse> localVarReturnType = new GenericType<ChooseAPushNotificationContentTemplateResponse>() {};
+    GenericType<SendBirdChooseAPushNotificationContentTemplateResponse> localVarReturnType = new GenericType<SendBirdChooseAPushNotificationContentTemplateResponse>() {};
 
     return apiClient.invokeAPI("UserApi.chooseAPushNotificationContentTemplate", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -248,7 +248,7 @@ private ApiResponse<ChooseAPushNotificationContentTemplateResponse> chooseAPushN
   public class APIchooseAPushNotificationContentTemplateRequest {
     private String userId;
     private String apiToken;
-    private ChooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest;
+    private SendBirdChooseAPushNotificationContentTemplateRequest sendBirdChooseAPushNotificationContentTemplateRequest;
 
     private APIchooseAPushNotificationContentTemplateRequest(String userId) {
       this.userId = userId;
@@ -265,18 +265,18 @@ private ApiResponse<ChooseAPushNotificationContentTemplateResponse> chooseAPushN
     }
 
     /**
-     * Set chooseAPushNotificationContentTemplateRequest
-     * @param chooseAPushNotificationContentTemplateRequest  (optional)
+     * Set sendBirdChooseAPushNotificationContentTemplateRequest
+     * @param sendBirdChooseAPushNotificationContentTemplateRequest  (optional)
      * @return APIchooseAPushNotificationContentTemplateRequest
      */
-    public APIchooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest(ChooseAPushNotificationContentTemplateRequest chooseAPushNotificationContentTemplateRequest) {
-      this.chooseAPushNotificationContentTemplateRequest = chooseAPushNotificationContentTemplateRequest;
+    public APIchooseAPushNotificationContentTemplateRequest sendBirdChooseAPushNotificationContentTemplateRequest(SendBirdChooseAPushNotificationContentTemplateRequest sendBirdChooseAPushNotificationContentTemplateRequest) {
+      this.sendBirdChooseAPushNotificationContentTemplateRequest = sendBirdChooseAPushNotificationContentTemplateRequest;
       return this;
     }
 
     /**
      * Execute chooseAPushNotificationContentTemplate request
-     * @return ChooseAPushNotificationContentTemplateResponse
+     * @return SendBirdChooseAPushNotificationContentTemplateResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -286,13 +286,13 @@ private ApiResponse<ChooseAPushNotificationContentTemplateResponse> chooseAPushN
      
      */
     
-    public ChooseAPushNotificationContentTemplateResponse execute() throws ApiException {
+    public SendBirdChooseAPushNotificationContentTemplateResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute chooseAPushNotificationContentTemplate request with HTTP info returned
-     * @return ApiResponse&lt;ChooseAPushNotificationContentTemplateResponse&gt;
+     * @return ApiResponse&lt;SendBirdChooseAPushNotificationContentTemplateResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -301,8 +301,8 @@ private ApiResponse<ChooseAPushNotificationContentTemplateResponse> chooseAPushN
        </table>
 
      */
-    public ApiResponse<ChooseAPushNotificationContentTemplateResponse> executeWithHttpInfo() throws ApiException {
-      return chooseAPushNotificationContentTemplateWithHttpInfo(userId, apiToken, chooseAPushNotificationContentTemplateRequest);
+    public ApiResponse<SendBirdChooseAPushNotificationContentTemplateResponse> executeWithHttpInfo() throws ApiException {
+      return chooseAPushNotificationContentTemplateWithHttpInfo(userId, apiToken, sendBirdChooseAPushNotificationContentTemplateRequest);
     }
   }
 
@@ -319,8 +319,8 @@ private ApiResponse<ChooseAPushNotificationContentTemplateResponse> chooseAPushN
     return new APIchooseAPushNotificationContentTemplateRequest(userId);
   }
 
-private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, CreateAUserRequest createAUserRequest) throws ApiException {
-    Object localVarPostBody = createAUserRequest;
+private ApiResponse<SendBirdSendbirdUser> createAUserWithHttpInfo(String apiToken, SendBirdCreateAUserRequest sendBirdCreateAUserRequest) throws ApiException {
+    Object localVarPostBody = sendBirdCreateAUserRequest;
     
     // create path and map variables
     String localVarPath = "/v3/users";
@@ -349,7 +349,7 @@ private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, Creat
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendbirdUser> localVarReturnType = new GenericType<SendbirdUser>() {};
+    GenericType<SendBirdSendbirdUser> localVarReturnType = new GenericType<SendBirdSendbirdUser>() {};
 
     return apiClient.invokeAPI("UserApi.createAUser", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -358,7 +358,7 @@ private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, Creat
 
   public class APIcreateAUserRequest {
     private String apiToken;
-    private CreateAUserRequest createAUserRequest;
+    private SendBirdCreateAUserRequest sendBirdCreateAUserRequest;
 
     private APIcreateAUserRequest() {
     }
@@ -374,18 +374,18 @@ private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, Creat
     }
 
     /**
-     * Set createAUserRequest
-     * @param createAUserRequest  (optional)
+     * Set sendBirdCreateAUserRequest
+     * @param sendBirdCreateAUserRequest  (optional)
      * @return APIcreateAUserRequest
      */
-    public APIcreateAUserRequest createAUserRequest(CreateAUserRequest createAUserRequest) {
-      this.createAUserRequest = createAUserRequest;
+    public APIcreateAUserRequest sendBirdCreateAUserRequest(SendBirdCreateAUserRequest sendBirdCreateAUserRequest) {
+      this.sendBirdCreateAUserRequest = sendBirdCreateAUserRequest;
       return this;
     }
 
     /**
      * Execute createAUser request
-     * @return SendbirdUser
+     * @return SendBirdSendbirdUser
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -395,13 +395,13 @@ private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, Creat
      
      */
     
-    public SendbirdUser execute() throws ApiException {
+    public SendBirdSendbirdUser execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute createAUser request with HTTP info returned
-     * @return ApiResponse&lt;SendbirdUser&gt;
+     * @return ApiResponse&lt;SendBirdSendbirdUser&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -410,8 +410,8 @@ private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, Creat
        </table>
 
      */
-    public ApiResponse<SendbirdUser> executeWithHttpInfo() throws ApiException {
-      return createAUserWithHttpInfo(apiToken, createAUserRequest);
+    public ApiResponse<SendBirdSendbirdUser> executeWithHttpInfo() throws ApiException {
+      return createAUserWithHttpInfo(apiToken, sendBirdCreateAUserRequest);
     }
   }
 
@@ -427,8 +427,8 @@ private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, Creat
     return new APIcreateAUserRequest();
   }
 
-private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String userId, String apiToken, CreateUserTokenRequest createUserTokenRequest) throws ApiException {
-    Object localVarPostBody = createUserTokenRequest;
+private ApiResponse<SendBirdCreateUserTokenResponse> createUserTokenWithHttpInfo(String userId, String apiToken, SendBirdCreateUserTokenRequest sendBirdCreateUserTokenRequest) throws ApiException {
+    Object localVarPostBody = sendBirdCreateUserTokenRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -463,7 +463,7 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<CreateUserTokenResponse> localVarReturnType = new GenericType<CreateUserTokenResponse>() {};
+    GenericType<SendBirdCreateUserTokenResponse> localVarReturnType = new GenericType<SendBirdCreateUserTokenResponse>() {};
 
     return apiClient.invokeAPI("UserApi.createUserToken", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -473,7 +473,7 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
   public class APIcreateUserTokenRequest {
     private String userId;
     private String apiToken;
-    private CreateUserTokenRequest createUserTokenRequest;
+    private SendBirdCreateUserTokenRequest sendBirdCreateUserTokenRequest;
 
     private APIcreateUserTokenRequest(String userId) {
       this.userId = userId;
@@ -490,18 +490,18 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
     }
 
     /**
-     * Set createUserTokenRequest
-     * @param createUserTokenRequest  (optional)
+     * Set sendBirdCreateUserTokenRequest
+     * @param sendBirdCreateUserTokenRequest  (optional)
      * @return APIcreateUserTokenRequest
      */
-    public APIcreateUserTokenRequest createUserTokenRequest(CreateUserTokenRequest createUserTokenRequest) {
-      this.createUserTokenRequest = createUserTokenRequest;
+    public APIcreateUserTokenRequest sendBirdCreateUserTokenRequest(SendBirdCreateUserTokenRequest sendBirdCreateUserTokenRequest) {
+      this.sendBirdCreateUserTokenRequest = sendBirdCreateUserTokenRequest;
       return this;
     }
 
     /**
      * Execute createUserToken request
-     * @return CreateUserTokenResponse
+     * @return SendBirdCreateUserTokenResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -511,13 +511,13 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
      
      */
     
-    public CreateUserTokenResponse execute() throws ApiException {
+    public SendBirdCreateUserTokenResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute createUserToken request with HTTP info returned
-     * @return ApiResponse&lt;CreateUserTokenResponse&gt;
+     * @return ApiResponse&lt;SendBirdCreateUserTokenResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -526,8 +526,8 @@ private ApiResponse<CreateUserTokenResponse> createUserTokenWithHttpInfo(String 
        </table>
 
      */
-    public ApiResponse<CreateUserTokenResponse> executeWithHttpInfo() throws ApiException {
-      return createUserTokenWithHttpInfo(userId, apiToken, createUserTokenRequest);
+    public ApiResponse<SendBirdCreateUserTokenResponse> executeWithHttpInfo() throws ApiException {
+      return createUserTokenWithHttpInfo(userId, apiToken, sendBirdCreateUserTokenRequest);
     }
   }
 
@@ -650,7 +650,7 @@ private ApiResponse<Object> deleteAUserWithHttpInfo(String userId, String apiTok
     return new APIdeleteAUserRequest(userId);
   }
 
-private ApiResponse<GetChannelInvitationPreferenceResponse> getChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken) throws ApiException {
+private ApiResponse<SendBirdGetChannelInvitationPreferenceResponse> getChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -686,7 +686,7 @@ private ApiResponse<GetChannelInvitationPreferenceResponse> getChannelInvitation
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<GetChannelInvitationPreferenceResponse> localVarReturnType = new GenericType<GetChannelInvitationPreferenceResponse>() {};
+    GenericType<SendBirdGetChannelInvitationPreferenceResponse> localVarReturnType = new GenericType<SendBirdGetChannelInvitationPreferenceResponse>() {};
 
     return apiClient.invokeAPI("UserApi.getChannelInvitationPreference", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -713,7 +713,7 @@ private ApiResponse<GetChannelInvitationPreferenceResponse> getChannelInvitation
 
     /**
      * Execute getChannelInvitationPreference request
-     * @return GetChannelInvitationPreferenceResponse
+     * @return SendBirdGetChannelInvitationPreferenceResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -723,13 +723,13 @@ private ApiResponse<GetChannelInvitationPreferenceResponse> getChannelInvitation
      
      */
     
-    public GetChannelInvitationPreferenceResponse execute() throws ApiException {
+    public SendBirdGetChannelInvitationPreferenceResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute getChannelInvitationPreference request with HTTP info returned
-     * @return ApiResponse&lt;GetChannelInvitationPreferenceResponse&gt;
+     * @return ApiResponse&lt;SendBirdGetChannelInvitationPreferenceResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -738,7 +738,7 @@ private ApiResponse<GetChannelInvitationPreferenceResponse> getChannelInvitation
        </table>
 
      */
-    public ApiResponse<GetChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdGetChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
       return getChannelInvitationPreferenceWithHttpInfo(userId, apiToken);
     }
   }
@@ -756,8 +756,8 @@ private ApiResponse<GetChannelInvitationPreferenceResponse> getChannelInvitation
     return new APIgetChannelInvitationPreferenceRequest(userId);
   }
 
-private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, String apiToken, LeaveMyGroupChannelsRequest leaveMyGroupChannelsRequest) throws ApiException {
-    Object localVarPostBody = leaveMyGroupChannelsRequest;
+private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, String apiToken, SendBirdLeaveMyGroupChannelsRequest sendBirdLeaveMyGroupChannelsRequest) throws ApiException {
+    Object localVarPostBody = sendBirdLeaveMyGroupChannelsRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -802,7 +802,7 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
   public class APIleaveMyGroupChannelsRequest {
     private String userId;
     private String apiToken;
-    private LeaveMyGroupChannelsRequest leaveMyGroupChannelsRequest;
+    private SendBirdLeaveMyGroupChannelsRequest sendBirdLeaveMyGroupChannelsRequest;
 
     private APIleaveMyGroupChannelsRequest(String userId) {
       this.userId = userId;
@@ -819,12 +819,12 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
     }
 
     /**
-     * Set leaveMyGroupChannelsRequest
-     * @param leaveMyGroupChannelsRequest  (optional)
+     * Set sendBirdLeaveMyGroupChannelsRequest
+     * @param sendBirdLeaveMyGroupChannelsRequest  (optional)
      * @return APIleaveMyGroupChannelsRequest
      */
-    public APIleaveMyGroupChannelsRequest leaveMyGroupChannelsRequest(LeaveMyGroupChannelsRequest leaveMyGroupChannelsRequest) {
-      this.leaveMyGroupChannelsRequest = leaveMyGroupChannelsRequest;
+    public APIleaveMyGroupChannelsRequest sendBirdLeaveMyGroupChannelsRequest(SendBirdLeaveMyGroupChannelsRequest sendBirdLeaveMyGroupChannelsRequest) {
+      this.sendBirdLeaveMyGroupChannelsRequest = sendBirdLeaveMyGroupChannelsRequest;
       return this;
     }
 
@@ -856,7 +856,7 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return leaveMyGroupChannelsWithHttpInfo(userId, apiToken, leaveMyGroupChannelsRequest);
+      return leaveMyGroupChannelsWithHttpInfo(userId, apiToken, sendBirdLeaveMyGroupChannelsRequest);
     }
   }
 
@@ -873,7 +873,7 @@ private ApiResponse<Object> leaveMyGroupChannelsWithHttpInfo(String userId, Stri
     return new APIleaveMyGroupChannelsRequest(userId);
   }
 
-private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Long createdAfter, Long createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String membersNicknameStartswith, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String hiddenMode, String unreadFilter, String memberStateFilter) throws ApiException {
+private ApiResponse<SendBirdListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo(String userId, String apiToken, String token, Integer limit, String distinctMode, String publicMode, String superMode, Long createdAfter, Long createdBefore, Boolean showEmpty, Boolean showMember, Boolean showDeliveryReceipt, Boolean showReadReceipt, Boolean showMetadata, Boolean showFrozen, String order, String metadataOrderKey, String customTypes, String customTypeStartswith, String channelUrls, String name, String nameContains, String nameStartswith, String membersExactlyIn, String membersIncludeIn, String queryType, String membersNickname, String membersNicknameContains, String membersNicknameStartswith, String searchQuery, String searchFields, String metadataKey, String metadataValues, String metadataValueStartswith, String metacounterKey, String metacounterValues, String metacounterValueGt, String metacounterValueGte, String metacounterValueLt, String metacounterValueLte, Boolean includeSortedMetaarrayInLastMessage, String hiddenMode, String unreadFilter, String memberStateFilter) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -956,7 +956,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ListMyGroupChannelsResponse> localVarReturnType = new GenericType<ListMyGroupChannelsResponse>() {};
+    GenericType<SendBirdListMyGroupChannelsResponse> localVarReturnType = new GenericType<SendBirdListMyGroupChannelsResponse>() {};
 
     return apiClient.invokeAPI("UserApi.listMyGroupChannels", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1445,7 +1445,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
 
     /**
      * Execute listMyGroupChannels request
-     * @return ListMyGroupChannelsResponse
+     * @return SendBirdListMyGroupChannelsResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1455,13 +1455,13 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
      
      */
     
-    public ListMyGroupChannelsResponse execute() throws ApiException {
+    public SendBirdListMyGroupChannelsResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute listMyGroupChannels request with HTTP info returned
-     * @return ApiResponse&lt;ListMyGroupChannelsResponse&gt;
+     * @return ApiResponse&lt;SendBirdListMyGroupChannelsResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1470,7 +1470,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
        </table>
 
      */
-    public ApiResponse<ListMyGroupChannelsResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdListMyGroupChannelsResponse> executeWithHttpInfo() throws ApiException {
       return listMyGroupChannelsWithHttpInfo(userId, apiToken, token, limit, distinctMode, publicMode, superMode, createdAfter, createdBefore, showEmpty, showMember, showDeliveryReceipt, showReadReceipt, showMetadata, showFrozen, order, metadataOrderKey, customTypes, customTypeStartswith, channelUrls, name, nameContains, nameStartswith, membersExactlyIn, membersIncludeIn, queryType, membersNickname, membersNicknameContains, membersNicknameStartswith, searchQuery, searchFields, metadataKey, metadataValues, metadataValueStartswith, metacounterKey, metacounterValues, metacounterValueGt, metacounterValueGte, metacounterValueLt, metacounterValueLte, includeSortedMetaarrayInLastMessage, hiddenMode, unreadFilter, memberStateFilter);
     }
   }
@@ -1488,7 +1488,7 @@ private ApiResponse<ListMyGroupChannelsResponse> listMyGroupChannelsWithHttpInfo
     return new APIlistMyGroupChannelsRequest(userId);
   }
 
-private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDeviceTokensWithHttpInfo(String userId, String tokenType, String apiToken) throws ApiException {
+private ApiResponse<SendBirdListRegistrationOrDeviceTokensResponse> listRegistrationOrDeviceTokensWithHttpInfo(String userId, String tokenType, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -1530,7 +1530,7 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ListRegistrationOrDeviceTokensResponse> localVarReturnType = new GenericType<ListRegistrationOrDeviceTokensResponse>() {};
+    GenericType<SendBirdListRegistrationOrDeviceTokensResponse> localVarReturnType = new GenericType<SendBirdListRegistrationOrDeviceTokensResponse>() {};
 
     return apiClient.invokeAPI("UserApi.listRegistrationOrDeviceTokens", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1559,7 +1559,7 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
 
     /**
      * Execute listRegistrationOrDeviceTokens request
-     * @return ListRegistrationOrDeviceTokensResponse
+     * @return SendBirdListRegistrationOrDeviceTokensResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1569,13 +1569,13 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
      
      */
     
-    public ListRegistrationOrDeviceTokensResponse execute() throws ApiException {
+    public SendBirdListRegistrationOrDeviceTokensResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute listRegistrationOrDeviceTokens request with HTTP info returned
-     * @return ApiResponse&lt;ListRegistrationOrDeviceTokensResponse&gt;
+     * @return ApiResponse&lt;SendBirdListRegistrationOrDeviceTokensResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1584,7 +1584,7 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
        </table>
 
      */
-    public ApiResponse<ListRegistrationOrDeviceTokensResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdListRegistrationOrDeviceTokensResponse> executeWithHttpInfo() throws ApiException {
       return listRegistrationOrDeviceTokensWithHttpInfo(userId, tokenType, apiToken);
     }
   }
@@ -1603,7 +1603,7 @@ private ApiResponse<ListRegistrationOrDeviceTokensResponse> listRegistrationOrDe
     return new APIlistRegistrationOrDeviceTokensRequest(userId, tokenType);
   }
 
-private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn, String apiToken) throws ApiException {
+private ApiResponse<SendBirdListUsersResponse> listUsersWithHttpInfo(String token, Integer limit, String activeMode, Boolean showBot, String userIds, String nickname, String nicknameStartswith, String metadatakey, String metadatavaluesIn, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -1642,7 +1642,7 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String token, Integ
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ListUsersResponse> localVarReturnType = new GenericType<ListUsersResponse>() {};
+    GenericType<SendBirdListUsersResponse> localVarReturnType = new GenericType<SendBirdListUsersResponse>() {};
 
     return apiClient.invokeAPI("UserApi.listUsers", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1766,7 +1766,7 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String token, Integ
 
     /**
      * Execute listUsers request
-     * @return ListUsersResponse
+     * @return SendBirdListUsersResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1776,13 +1776,13 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String token, Integ
      
      */
     
-    public ListUsersResponse execute() throws ApiException {
+    public SendBirdListUsersResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute listUsers request with HTTP info returned
-     * @return ApiResponse&lt;ListUsersResponse&gt;
+     * @return ApiResponse&lt;SendBirdListUsersResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1791,7 +1791,7 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String token, Integ
        </table>
 
      */
-    public ApiResponse<ListUsersResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdListUsersResponse> executeWithHttpInfo() throws ApiException {
       return listUsersWithHttpInfo(token, limit, activeMode, showBot, userIds, nickname, nicknameStartswith, metadatakey, metadatavaluesIn, apiToken);
     }
   }
@@ -1808,8 +1808,8 @@ private ApiResponse<ListUsersResponse> listUsersWithHttpInfo(String token, Integ
     return new APIlistUsersRequest();
   }
 
-private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, String apiToken, MarkAllMessagesAsReadRequest markAllMessagesAsReadRequest) throws ApiException {
-    Object localVarPostBody = markAllMessagesAsReadRequest;
+private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, String apiToken, SendBirdMarkAllMessagesAsReadRequest sendBirdMarkAllMessagesAsReadRequest) throws ApiException {
+    Object localVarPostBody = sendBirdMarkAllMessagesAsReadRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -1854,7 +1854,7 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, Str
   public class APImarkAllMessagesAsReadRequest {
     private String userId;
     private String apiToken;
-    private MarkAllMessagesAsReadRequest markAllMessagesAsReadRequest;
+    private SendBirdMarkAllMessagesAsReadRequest sendBirdMarkAllMessagesAsReadRequest;
 
     private APImarkAllMessagesAsReadRequest(String userId) {
       this.userId = userId;
@@ -1871,12 +1871,12 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, Str
     }
 
     /**
-     * Set markAllMessagesAsReadRequest
-     * @param markAllMessagesAsReadRequest  (optional)
+     * Set sendBirdMarkAllMessagesAsReadRequest
+     * @param sendBirdMarkAllMessagesAsReadRequest  (optional)
      * @return APImarkAllMessagesAsReadRequest
      */
-    public APImarkAllMessagesAsReadRequest markAllMessagesAsReadRequest(MarkAllMessagesAsReadRequest markAllMessagesAsReadRequest) {
-      this.markAllMessagesAsReadRequest = markAllMessagesAsReadRequest;
+    public APImarkAllMessagesAsReadRequest sendBirdMarkAllMessagesAsReadRequest(SendBirdMarkAllMessagesAsReadRequest sendBirdMarkAllMessagesAsReadRequest) {
+      this.sendBirdMarkAllMessagesAsReadRequest = sendBirdMarkAllMessagesAsReadRequest;
       return this;
     }
 
@@ -1908,7 +1908,7 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, Str
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return markAllMessagesAsReadWithHttpInfo(userId, apiToken, markAllMessagesAsReadRequest);
+      return markAllMessagesAsReadWithHttpInfo(userId, apiToken, sendBirdMarkAllMessagesAsReadRequest);
     }
   }
 
@@ -1925,7 +1925,7 @@ private ApiResponse<Object> markAllMessagesAsReadWithHttpInfo(String userId, Str
     return new APImarkAllMessagesAsReadRequest(userId);
   }
 
-private ApiResponse<RemoveARegistrationOrDeviceTokenResponse> removeARegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String token, String apiToken) throws ApiException {
+private ApiResponse<SendBirdRemoveARegistrationOrDeviceTokenResponse> removeARegistrationOrDeviceTokenWithHttpInfo(String userId, String tokenType, String token, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -1973,7 +1973,7 @@ private ApiResponse<RemoveARegistrationOrDeviceTokenResponse> removeARegistratio
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<RemoveARegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<RemoveARegistrationOrDeviceTokenResponse>() {};
+    GenericType<SendBirdRemoveARegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<SendBirdRemoveARegistrationOrDeviceTokenResponse>() {};
 
     return apiClient.invokeAPI("UserApi.removeARegistrationOrDeviceToken", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2004,7 +2004,7 @@ private ApiResponse<RemoveARegistrationOrDeviceTokenResponse> removeARegistratio
 
     /**
      * Execute removeARegistrationOrDeviceToken request
-     * @return RemoveARegistrationOrDeviceTokenResponse
+     * @return SendBirdRemoveARegistrationOrDeviceTokenResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2014,13 +2014,13 @@ private ApiResponse<RemoveARegistrationOrDeviceTokenResponse> removeARegistratio
      
      */
     
-    public RemoveARegistrationOrDeviceTokenResponse execute() throws ApiException {
+    public SendBirdRemoveARegistrationOrDeviceTokenResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute removeARegistrationOrDeviceToken request with HTTP info returned
-     * @return ApiResponse&lt;RemoveARegistrationOrDeviceTokenResponse&gt;
+     * @return ApiResponse&lt;SendBirdRemoveARegistrationOrDeviceTokenResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2029,7 +2029,7 @@ private ApiResponse<RemoveARegistrationOrDeviceTokenResponse> removeARegistratio
        </table>
 
      */
-    public ApiResponse<RemoveARegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdRemoveARegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
       return removeARegistrationOrDeviceTokenWithHttpInfo(userId, tokenType, token, apiToken);
     }
   }
@@ -2049,7 +2049,7 @@ private ApiResponse<RemoveARegistrationOrDeviceTokenResponse> removeARegistratio
     return new APIremoveARegistrationOrDeviceTokenRequest(userId, tokenType, token);
   }
 
-private ApiResponse<List<MarkChannelMessagesAsReadRequest>> removeARegistrationOrDeviceTokenFromAnOwnerWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
+private ApiResponse<List<SendBirdMarkChannelMessagesAsReadRequest>> removeARegistrationOrDeviceTokenFromAnOwnerWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'tokenType' is set
@@ -2091,7 +2091,7 @@ private ApiResponse<List<MarkChannelMessagesAsReadRequest>> removeARegistrationO
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<List<MarkChannelMessagesAsReadRequest>> localVarReturnType = new GenericType<List<MarkChannelMessagesAsReadRequest>>() {};
+    GenericType<List<SendBirdMarkChannelMessagesAsReadRequest>> localVarReturnType = new GenericType<List<SendBirdMarkChannelMessagesAsReadRequest>>() {};
 
     return apiClient.invokeAPI("UserApi.removeARegistrationOrDeviceTokenFromAnOwner", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2120,7 +2120,7 @@ private ApiResponse<List<MarkChannelMessagesAsReadRequest>> removeARegistrationO
 
     /**
      * Execute removeARegistrationOrDeviceTokenFromAnOwner request
-     * @return List&lt;MarkChannelMessagesAsReadRequest&gt;
+     * @return List&lt;SendBirdMarkChannelMessagesAsReadRequest&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2130,13 +2130,13 @@ private ApiResponse<List<MarkChannelMessagesAsReadRequest>> removeARegistrationO
      
      */
     
-    public List<MarkChannelMessagesAsReadRequest> execute() throws ApiException {
+    public List<SendBirdMarkChannelMessagesAsReadRequest> execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute removeARegistrationOrDeviceTokenFromAnOwner request with HTTP info returned
-     * @return ApiResponse&lt;List&lt;MarkChannelMessagesAsReadRequest&gt;&gt;
+     * @return ApiResponse&lt;List&lt;SendBirdMarkChannelMessagesAsReadRequest&gt;&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2145,7 +2145,7 @@ private ApiResponse<List<MarkChannelMessagesAsReadRequest>> removeARegistrationO
        </table>
 
      */
-    public ApiResponse<List<MarkChannelMessagesAsReadRequest>> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<List<SendBirdMarkChannelMessagesAsReadRequest>> executeWithHttpInfo() throws ApiException {
       return removeARegistrationOrDeviceTokenFromAnOwnerWithHttpInfo(tokenType, token, apiToken);
     }
   }
@@ -2164,7 +2164,7 @@ private ApiResponse<List<MarkChannelMessagesAsReadRequest>> removeARegistrationO
     return new APIremoveARegistrationOrDeviceTokenFromAnOwnerRequest(tokenType, token);
   }
 
-private ApiResponse<RemoveAllRegistrationOrDeviceTokenResponse> removeAllRegistrationOrDeviceTokenWithHttpInfo(String userId, String apiToken) throws ApiException {
+private ApiResponse<SendBirdRemoveAllRegistrationOrDeviceTokenResponse> removeAllRegistrationOrDeviceTokenWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -2200,7 +2200,7 @@ private ApiResponse<RemoveAllRegistrationOrDeviceTokenResponse> removeAllRegistr
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<RemoveAllRegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<RemoveAllRegistrationOrDeviceTokenResponse>() {};
+    GenericType<SendBirdRemoveAllRegistrationOrDeviceTokenResponse> localVarReturnType = new GenericType<SendBirdRemoveAllRegistrationOrDeviceTokenResponse>() {};
 
     return apiClient.invokeAPI("UserApi.removeAllRegistrationOrDeviceToken", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2227,7 +2227,7 @@ private ApiResponse<RemoveAllRegistrationOrDeviceTokenResponse> removeAllRegistr
 
     /**
      * Execute removeAllRegistrationOrDeviceToken request
-     * @return RemoveAllRegistrationOrDeviceTokenResponse
+     * @return SendBirdRemoveAllRegistrationOrDeviceTokenResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2237,13 +2237,13 @@ private ApiResponse<RemoveAllRegistrationOrDeviceTokenResponse> removeAllRegistr
      
      */
     
-    public RemoveAllRegistrationOrDeviceTokenResponse execute() throws ApiException {
+    public SendBirdRemoveAllRegistrationOrDeviceTokenResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute removeAllRegistrationOrDeviceToken request with HTTP info returned
-     * @return ApiResponse&lt;RemoveAllRegistrationOrDeviceTokenResponse&gt;
+     * @return ApiResponse&lt;SendBirdRemoveAllRegistrationOrDeviceTokenResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2252,7 +2252,7 @@ private ApiResponse<RemoveAllRegistrationOrDeviceTokenResponse> removeAllRegistr
        </table>
 
      */
-    public ApiResponse<RemoveAllRegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdRemoveAllRegistrationOrDeviceTokenResponse> executeWithHttpInfo() throws ApiException {
       return removeAllRegistrationOrDeviceTokenWithHttpInfo(userId, apiToken);
     }
   }
@@ -2376,8 +2376,8 @@ private ApiResponse<Object> resetPushPreferencesWithHttpInfo(String userId, Stri
     return new APIresetPushPreferencesRequest(userId);
   }
 
-private ApiResponse<SendbirdUser> updateAUserWithHttpInfo(String userId, String apiToken, UpdateAUserRequest updateAUserRequest) throws ApiException {
-    Object localVarPostBody = updateAUserRequest;
+private ApiResponse<SendBirdSendbirdUser> updateAUserWithHttpInfo(String userId, String apiToken, SendBirdUpdateAUserRequest sendBirdUpdateAUserRequest) throws ApiException {
+    Object localVarPostBody = sendBirdUpdateAUserRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2412,7 +2412,7 @@ private ApiResponse<SendbirdUser> updateAUserWithHttpInfo(String userId, String 
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendbirdUser> localVarReturnType = new GenericType<SendbirdUser>() {};
+    GenericType<SendBirdSendbirdUser> localVarReturnType = new GenericType<SendBirdSendbirdUser>() {};
 
     return apiClient.invokeAPI("UserApi.updateAUser", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2422,7 +2422,7 @@ private ApiResponse<SendbirdUser> updateAUserWithHttpInfo(String userId, String 
   public class APIupdateAUserRequest {
     private String userId;
     private String apiToken;
-    private UpdateAUserRequest updateAUserRequest;
+    private SendBirdUpdateAUserRequest sendBirdUpdateAUserRequest;
 
     private APIupdateAUserRequest(String userId) {
       this.userId = userId;
@@ -2439,18 +2439,18 @@ private ApiResponse<SendbirdUser> updateAUserWithHttpInfo(String userId, String 
     }
 
     /**
-     * Set updateAUserRequest
-     * @param updateAUserRequest  (optional)
+     * Set sendBirdUpdateAUserRequest
+     * @param sendBirdUpdateAUserRequest  (optional)
      * @return APIupdateAUserRequest
      */
-    public APIupdateAUserRequest updateAUserRequest(UpdateAUserRequest updateAUserRequest) {
-      this.updateAUserRequest = updateAUserRequest;
+    public APIupdateAUserRequest sendBirdUpdateAUserRequest(SendBirdUpdateAUserRequest sendBirdUpdateAUserRequest) {
+      this.sendBirdUpdateAUserRequest = sendBirdUpdateAUserRequest;
       return this;
     }
 
     /**
      * Execute updateAUser request
-     * @return SendbirdUser
+     * @return SendBirdSendbirdUser
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2460,13 +2460,13 @@ private ApiResponse<SendbirdUser> updateAUserWithHttpInfo(String userId, String 
      
      */
     
-    public SendbirdUser execute() throws ApiException {
+    public SendBirdSendbirdUser execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updateAUser request with HTTP info returned
-     * @return ApiResponse&lt;SendbirdUser&gt;
+     * @return ApiResponse&lt;SendBirdSendbirdUser&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2475,8 +2475,8 @@ private ApiResponse<SendbirdUser> updateAUserWithHttpInfo(String userId, String 
        </table>
 
      */
-    public ApiResponse<SendbirdUser> executeWithHttpInfo() throws ApiException {
-      return updateAUserWithHttpInfo(userId, apiToken, updateAUserRequest);
+    public ApiResponse<SendBirdSendbirdUser> executeWithHttpInfo() throws ApiException {
+      return updateAUserWithHttpInfo(userId, apiToken, sendBirdUpdateAUserRequest);
     }
   }
 
@@ -2493,8 +2493,8 @@ private ApiResponse<SendbirdUser> updateAUserWithHttpInfo(String userId, String 
     return new APIupdateAUserRequest(userId);
   }
 
-private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken, UpdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest) throws ApiException {
-    Object localVarPostBody = updateChannelInvitationPreferenceRequest;
+private ApiResponse<SendBirdUpdateChannelInvitationPreferenceResponse> updateChannelInvitationPreferenceWithHttpInfo(String userId, String apiToken, SendBirdUpdateChannelInvitationPreferenceRequest sendBirdUpdateChannelInvitationPreferenceRequest) throws ApiException {
+    Object localVarPostBody = sendBirdUpdateChannelInvitationPreferenceRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2529,7 +2529,7 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<UpdateChannelInvitationPreferenceResponse> localVarReturnType = new GenericType<UpdateChannelInvitationPreferenceResponse>() {};
+    GenericType<SendBirdUpdateChannelInvitationPreferenceResponse> localVarReturnType = new GenericType<SendBirdUpdateChannelInvitationPreferenceResponse>() {};
 
     return apiClient.invokeAPI("UserApi.updateChannelInvitationPreference", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2539,7 +2539,7 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
   public class APIupdateChannelInvitationPreferenceRequest {
     private String userId;
     private String apiToken;
-    private UpdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest;
+    private SendBirdUpdateChannelInvitationPreferenceRequest sendBirdUpdateChannelInvitationPreferenceRequest;
 
     private APIupdateChannelInvitationPreferenceRequest(String userId) {
       this.userId = userId;
@@ -2556,18 +2556,18 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
     }
 
     /**
-     * Set updateChannelInvitationPreferenceRequest
-     * @param updateChannelInvitationPreferenceRequest  (optional)
+     * Set sendBirdUpdateChannelInvitationPreferenceRequest
+     * @param sendBirdUpdateChannelInvitationPreferenceRequest  (optional)
      * @return APIupdateChannelInvitationPreferenceRequest
      */
-    public APIupdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest(UpdateChannelInvitationPreferenceRequest updateChannelInvitationPreferenceRequest) {
-      this.updateChannelInvitationPreferenceRequest = updateChannelInvitationPreferenceRequest;
+    public APIupdateChannelInvitationPreferenceRequest sendBirdUpdateChannelInvitationPreferenceRequest(SendBirdUpdateChannelInvitationPreferenceRequest sendBirdUpdateChannelInvitationPreferenceRequest) {
+      this.sendBirdUpdateChannelInvitationPreferenceRequest = sendBirdUpdateChannelInvitationPreferenceRequest;
       return this;
     }
 
     /**
      * Execute updateChannelInvitationPreference request
-     * @return UpdateChannelInvitationPreferenceResponse
+     * @return SendBirdUpdateChannelInvitationPreferenceResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2577,13 +2577,13 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
      
      */
     
-    public UpdateChannelInvitationPreferenceResponse execute() throws ApiException {
+    public SendBirdUpdateChannelInvitationPreferenceResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updateChannelInvitationPreference request with HTTP info returned
-     * @return ApiResponse&lt;UpdateChannelInvitationPreferenceResponse&gt;
+     * @return ApiResponse&lt;SendBirdUpdateChannelInvitationPreferenceResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2592,8 +2592,8 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
        </table>
 
      */
-    public ApiResponse<UpdateChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
-      return updateChannelInvitationPreferenceWithHttpInfo(userId, apiToken, updateChannelInvitationPreferenceRequest);
+    public ApiResponse<SendBirdUpdateChannelInvitationPreferenceResponse> executeWithHttpInfo() throws ApiException {
+      return updateChannelInvitationPreferenceWithHttpInfo(userId, apiToken, sendBirdUpdateChannelInvitationPreferenceRequest);
     }
   }
 
@@ -2610,8 +2610,8 @@ private ApiResponse<UpdateChannelInvitationPreferenceResponse> updateChannelInvi
     return new APIupdateChannelInvitationPreferenceRequest(userId);
   }
 
-private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfAChannelWithHttpInfo(String userId, String channelUrl, String apiToken, UpdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest) throws ApiException {
-    Object localVarPostBody = updateCountPreferenceOfAChannelRequest;
+private ApiResponse<SendBirdUpdateCountPreferenceOfChannelByUrlResponse> updateCountPreferenceOfAChannelWithHttpInfo(String userId, String channelUrl, String apiToken, SendBirdUpdateCountPreferenceOfAChannelRequest sendBirdUpdateCountPreferenceOfAChannelRequest) throws ApiException {
+    Object localVarPostBody = sendBirdUpdateCountPreferenceOfAChannelRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2652,7 +2652,7 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<UpdateCountPreferenceOfChannelByUrlResponse> localVarReturnType = new GenericType<UpdateCountPreferenceOfChannelByUrlResponse>() {};
+    GenericType<SendBirdUpdateCountPreferenceOfChannelByUrlResponse> localVarReturnType = new GenericType<SendBirdUpdateCountPreferenceOfChannelByUrlResponse>() {};
 
     return apiClient.invokeAPI("UserApi.updateCountPreferenceOfAChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2663,7 +2663,7 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
     private String userId;
     private String channelUrl;
     private String apiToken;
-    private UpdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest;
+    private SendBirdUpdateCountPreferenceOfAChannelRequest sendBirdUpdateCountPreferenceOfAChannelRequest;
 
     private APIupdateCountPreferenceOfAChannelRequest(String userId, String channelUrl) {
       this.userId = userId;
@@ -2681,18 +2681,18 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
     }
 
     /**
-     * Set updateCountPreferenceOfAChannelRequest
-     * @param updateCountPreferenceOfAChannelRequest  (optional)
+     * Set sendBirdUpdateCountPreferenceOfAChannelRequest
+     * @param sendBirdUpdateCountPreferenceOfAChannelRequest  (optional)
      * @return APIupdateCountPreferenceOfAChannelRequest
      */
-    public APIupdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest(UpdateCountPreferenceOfAChannelRequest updateCountPreferenceOfAChannelRequest) {
-      this.updateCountPreferenceOfAChannelRequest = updateCountPreferenceOfAChannelRequest;
+    public APIupdateCountPreferenceOfAChannelRequest sendBirdUpdateCountPreferenceOfAChannelRequest(SendBirdUpdateCountPreferenceOfAChannelRequest sendBirdUpdateCountPreferenceOfAChannelRequest) {
+      this.sendBirdUpdateCountPreferenceOfAChannelRequest = sendBirdUpdateCountPreferenceOfAChannelRequest;
       return this;
     }
 
     /**
      * Execute updateCountPreferenceOfAChannel request
-     * @return UpdateCountPreferenceOfChannelByUrlResponse
+     * @return SendBirdUpdateCountPreferenceOfChannelByUrlResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2702,13 +2702,13 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
      
      */
     
-    public UpdateCountPreferenceOfChannelByUrlResponse execute() throws ApiException {
+    public SendBirdUpdateCountPreferenceOfChannelByUrlResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updateCountPreferenceOfAChannel request with HTTP info returned
-     * @return ApiResponse&lt;UpdateCountPreferenceOfChannelByUrlResponse&gt;
+     * @return ApiResponse&lt;SendBirdUpdateCountPreferenceOfChannelByUrlResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2717,8 +2717,8 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
        </table>
 
      */
-    public ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
-      return updateCountPreferenceOfAChannelWithHttpInfo(userId, channelUrl, apiToken, updateCountPreferenceOfAChannelRequest);
+    public ApiResponse<SendBirdUpdateCountPreferenceOfChannelByUrlResponse> executeWithHttpInfo() throws ApiException {
+      return updateCountPreferenceOfAChannelWithHttpInfo(userId, channelUrl, apiToken, sendBirdUpdateCountPreferenceOfAChannelRequest);
     }
   }
 
@@ -2736,8 +2736,8 @@ private ApiResponse<UpdateCountPreferenceOfChannelByUrlResponse> updateCountPref
     return new APIupdateCountPreferenceOfAChannelRequest(userId, channelUrl);
   }
 
-private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String userId, String apiToken, UpdatePushPreferencesRequest updatePushPreferencesRequest) throws ApiException {
-    Object localVarPostBody = updatePushPreferencesRequest;
+private ApiResponse<SendBirdUpdatePushPreferencesResponse> updatePushPreferencesWithHttpInfo(String userId, String apiToken, SendBirdUpdatePushPreferencesRequest sendBirdUpdatePushPreferencesRequest) throws ApiException {
+    Object localVarPostBody = sendBirdUpdatePushPreferencesRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2772,7 +2772,7 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<UpdatePushPreferencesResponse> localVarReturnType = new GenericType<UpdatePushPreferencesResponse>() {};
+    GenericType<SendBirdUpdatePushPreferencesResponse> localVarReturnType = new GenericType<SendBirdUpdatePushPreferencesResponse>() {};
 
     return apiClient.invokeAPI("UserApi.updatePushPreferences", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2782,7 +2782,7 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
   public class APIupdatePushPreferencesRequest {
     private String userId;
     private String apiToken;
-    private UpdatePushPreferencesRequest updatePushPreferencesRequest;
+    private SendBirdUpdatePushPreferencesRequest sendBirdUpdatePushPreferencesRequest;
 
     private APIupdatePushPreferencesRequest(String userId) {
       this.userId = userId;
@@ -2799,18 +2799,18 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
     }
 
     /**
-     * Set updatePushPreferencesRequest
-     * @param updatePushPreferencesRequest  (optional)
+     * Set sendBirdUpdatePushPreferencesRequest
+     * @param sendBirdUpdatePushPreferencesRequest  (optional)
      * @return APIupdatePushPreferencesRequest
      */
-    public APIupdatePushPreferencesRequest updatePushPreferencesRequest(UpdatePushPreferencesRequest updatePushPreferencesRequest) {
-      this.updatePushPreferencesRequest = updatePushPreferencesRequest;
+    public APIupdatePushPreferencesRequest sendBirdUpdatePushPreferencesRequest(SendBirdUpdatePushPreferencesRequest sendBirdUpdatePushPreferencesRequest) {
+      this.sendBirdUpdatePushPreferencesRequest = sendBirdUpdatePushPreferencesRequest;
       return this;
     }
 
     /**
      * Execute updatePushPreferences request
-     * @return UpdatePushPreferencesResponse
+     * @return SendBirdUpdatePushPreferencesResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2820,13 +2820,13 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
      
      */
     
-    public UpdatePushPreferencesResponse execute() throws ApiException {
+    public SendBirdUpdatePushPreferencesResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updatePushPreferences request with HTTP info returned
-     * @return ApiResponse&lt;UpdatePushPreferencesResponse&gt;
+     * @return ApiResponse&lt;SendBirdUpdatePushPreferencesResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2835,8 +2835,8 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
        </table>
 
      */
-    public ApiResponse<UpdatePushPreferencesResponse> executeWithHttpInfo() throws ApiException {
-      return updatePushPreferencesWithHttpInfo(userId, apiToken, updatePushPreferencesRequest);
+    public ApiResponse<SendBirdUpdatePushPreferencesResponse> executeWithHttpInfo() throws ApiException {
+      return updatePushPreferencesWithHttpInfo(userId, apiToken, sendBirdUpdatePushPreferencesRequest);
     }
   }
 
@@ -2853,8 +2853,8 @@ private ApiResponse<UpdatePushPreferencesResponse> updatePushPreferencesWithHttp
     return new APIupdatePushPreferencesRequest(userId);
   }
 
-private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferencesForAChannelWithHttpInfo(String userId, String channelUrl, String apiToken, UpdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest) throws ApiException {
-    Object localVarPostBody = updatePushPreferencesForAChannelRequest;
+private ApiResponse<SendBirdUpdatePushPreferencesForAChannelResponse> updatePushPreferencesForAChannelWithHttpInfo(String userId, String channelUrl, String apiToken, SendBirdUpdatePushPreferencesForAChannelRequest sendBirdUpdatePushPreferencesForAChannelRequest) throws ApiException {
+    Object localVarPostBody = sendBirdUpdatePushPreferencesForAChannelRequest;
     
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -2895,7 +2895,7 @@ private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferen
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<UpdatePushPreferencesForAChannelResponse> localVarReturnType = new GenericType<UpdatePushPreferencesForAChannelResponse>() {};
+    GenericType<SendBirdUpdatePushPreferencesForAChannelResponse> localVarReturnType = new GenericType<SendBirdUpdatePushPreferencesForAChannelResponse>() {};
 
     return apiClient.invokeAPI("UserApi.updatePushPreferencesForAChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2906,7 +2906,7 @@ private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferen
     private String userId;
     private String channelUrl;
     private String apiToken;
-    private UpdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest;
+    private SendBirdUpdatePushPreferencesForAChannelRequest sendBirdUpdatePushPreferencesForAChannelRequest;
 
     private APIupdatePushPreferencesForAChannelRequest(String userId, String channelUrl) {
       this.userId = userId;
@@ -2924,18 +2924,18 @@ private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferen
     }
 
     /**
-     * Set updatePushPreferencesForAChannelRequest
-     * @param updatePushPreferencesForAChannelRequest  (optional)
+     * Set sendBirdUpdatePushPreferencesForAChannelRequest
+     * @param sendBirdUpdatePushPreferencesForAChannelRequest  (optional)
      * @return APIupdatePushPreferencesForAChannelRequest
      */
-    public APIupdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest(UpdatePushPreferencesForAChannelRequest updatePushPreferencesForAChannelRequest) {
-      this.updatePushPreferencesForAChannelRequest = updatePushPreferencesForAChannelRequest;
+    public APIupdatePushPreferencesForAChannelRequest sendBirdUpdatePushPreferencesForAChannelRequest(SendBirdUpdatePushPreferencesForAChannelRequest sendBirdUpdatePushPreferencesForAChannelRequest) {
+      this.sendBirdUpdatePushPreferencesForAChannelRequest = sendBirdUpdatePushPreferencesForAChannelRequest;
       return this;
     }
 
     /**
      * Execute updatePushPreferencesForAChannel request
-     * @return UpdatePushPreferencesForAChannelResponse
+     * @return SendBirdUpdatePushPreferencesForAChannelResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2945,13 +2945,13 @@ private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferen
      
      */
     
-    public UpdatePushPreferencesForAChannelResponse execute() throws ApiException {
+    public SendBirdUpdatePushPreferencesForAChannelResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updatePushPreferencesForAChannel request with HTTP info returned
-     * @return ApiResponse&lt;UpdatePushPreferencesForAChannelResponse&gt;
+     * @return ApiResponse&lt;SendBirdUpdatePushPreferencesForAChannelResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2960,8 +2960,8 @@ private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferen
        </table>
 
      */
-    public ApiResponse<UpdatePushPreferencesForAChannelResponse> executeWithHttpInfo() throws ApiException {
-      return updatePushPreferencesForAChannelWithHttpInfo(userId, channelUrl, apiToken, updatePushPreferencesForAChannelRequest);
+    public ApiResponse<SendBirdUpdatePushPreferencesForAChannelResponse> executeWithHttpInfo() throws ApiException {
+      return updatePushPreferencesForAChannelWithHttpInfo(userId, channelUrl, apiToken, sendBirdUpdatePushPreferencesForAChannelRequest);
     }
   }
 
@@ -2979,7 +2979,7 @@ private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferen
     return new APIupdatePushPreferencesForAChannelRequest(userId, channelUrl);
   }
 
-private ApiResponse<SendbirdUser> viewAUserWithHttpInfo(String userId, Boolean includeUnreadCount, String customTypes, String superMode, String apiToken) throws ApiException {
+private ApiResponse<SendBirdSendbirdUser> viewAUserWithHttpInfo(String userId, Boolean includeUnreadCount, String customTypes, String superMode, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -3018,7 +3018,7 @@ private ApiResponse<SendbirdUser> viewAUserWithHttpInfo(String userId, Boolean i
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendbirdUser> localVarReturnType = new GenericType<SendbirdUser>() {};
+    GenericType<SendBirdSendbirdUser> localVarReturnType = new GenericType<SendBirdSendbirdUser>() {};
 
     return apiClient.invokeAPI("UserApi.viewAUser", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -3078,7 +3078,7 @@ private ApiResponse<SendbirdUser> viewAUserWithHttpInfo(String userId, Boolean i
 
     /**
      * Execute viewAUser request
-     * @return SendbirdUser
+     * @return SendBirdSendbirdUser
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3088,13 +3088,13 @@ private ApiResponse<SendbirdUser> viewAUserWithHttpInfo(String userId, Boolean i
      
      */
     
-    public SendbirdUser execute() throws ApiException {
+    public SendBirdSendbirdUser execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewAUser request with HTTP info returned
-     * @return ApiResponse&lt;SendbirdUser&gt;
+     * @return ApiResponse&lt;SendBirdSendbirdUser&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3103,7 +3103,7 @@ private ApiResponse<SendbirdUser> viewAUserWithHttpInfo(String userId, Boolean i
        </table>
 
      */
-    public ApiResponse<SendbirdUser> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdSendbirdUser> executeWithHttpInfo() throws ApiException {
       return viewAUserWithHttpInfo(userId, includeUnreadCount, customTypes, superMode, apiToken);
     }
   }
@@ -3121,7 +3121,7 @@ private ApiResponse<SendbirdUser> viewAUserWithHttpInfo(String userId, Boolean i
     return new APIviewAUserRequest(userId);
   }
 
-private ApiResponse<ViewCountPreferenceOfAChannelResponse> viewCountPreferenceOfAChannelWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
+private ApiResponse<SendBirdViewCountPreferenceOfAChannelResponse> viewCountPreferenceOfAChannelWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -3163,7 +3163,7 @@ private ApiResponse<ViewCountPreferenceOfAChannelResponse> viewCountPreferenceOf
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewCountPreferenceOfAChannelResponse> localVarReturnType = new GenericType<ViewCountPreferenceOfAChannelResponse>() {};
+    GenericType<SendBirdViewCountPreferenceOfAChannelResponse> localVarReturnType = new GenericType<SendBirdViewCountPreferenceOfAChannelResponse>() {};
 
     return apiClient.invokeAPI("UserApi.viewCountPreferenceOfAChannel", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -3192,7 +3192,7 @@ private ApiResponse<ViewCountPreferenceOfAChannelResponse> viewCountPreferenceOf
 
     /**
      * Execute viewCountPreferenceOfAChannel request
-     * @return ViewCountPreferenceOfAChannelResponse
+     * @return SendBirdViewCountPreferenceOfAChannelResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3202,13 +3202,13 @@ private ApiResponse<ViewCountPreferenceOfAChannelResponse> viewCountPreferenceOf
      
      */
     
-    public ViewCountPreferenceOfAChannelResponse execute() throws ApiException {
+    public SendBirdViewCountPreferenceOfAChannelResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewCountPreferenceOfAChannel request with HTTP info returned
-     * @return ApiResponse&lt;ViewCountPreferenceOfAChannelResponse&gt;
+     * @return ApiResponse&lt;SendBirdViewCountPreferenceOfAChannelResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3217,7 +3217,7 @@ private ApiResponse<ViewCountPreferenceOfAChannelResponse> viewCountPreferenceOf
        </table>
 
      */
-    public ApiResponse<ViewCountPreferenceOfAChannelResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdViewCountPreferenceOfAChannelResponse> executeWithHttpInfo() throws ApiException {
       return viewCountPreferenceOfAChannelWithHttpInfo(userId, channelUrl, apiToken);
     }
   }
@@ -3236,7 +3236,7 @@ private ApiResponse<ViewCountPreferenceOfAChannelResponse> viewCountPreferenceOf
     return new APIviewCountPreferenceOfAChannelRequest(userId, channelUrl);
   }
 
-private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String userId, String customTypes, String superMode, String apiToken) throws ApiException {
+private ApiResponse<SendBirdViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(String userId, String customTypes, String superMode, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -3274,7 +3274,7 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewNumberOfChannelsWithUnreadMessagesResponse> localVarReturnType = new GenericType<ViewNumberOfChannelsWithUnreadMessagesResponse>() {};
+    GenericType<SendBirdViewNumberOfChannelsWithUnreadMessagesResponse> localVarReturnType = new GenericType<SendBirdViewNumberOfChannelsWithUnreadMessagesResponse>() {};
 
     return apiClient.invokeAPI("UserApi.viewNumberOfChannelsWithUnreadMessages", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -3323,7 +3323,7 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
 
     /**
      * Execute viewNumberOfChannelsWithUnreadMessages request
-     * @return ViewNumberOfChannelsWithUnreadMessagesResponse
+     * @return SendBirdViewNumberOfChannelsWithUnreadMessagesResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3333,13 +3333,13 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
      
      */
     
-    public ViewNumberOfChannelsWithUnreadMessagesResponse execute() throws ApiException {
+    public SendBirdViewNumberOfChannelsWithUnreadMessagesResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewNumberOfChannelsWithUnreadMessages request with HTTP info returned
-     * @return ApiResponse&lt;ViewNumberOfChannelsWithUnreadMessagesResponse&gt;
+     * @return ApiResponse&lt;SendBirdViewNumberOfChannelsWithUnreadMessagesResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3348,7 +3348,7 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
        </table>
 
      */
-    public ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdViewNumberOfChannelsWithUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
       return viewNumberOfChannelsWithUnreadMessagesWithHttpInfo(userId, customTypes, superMode, apiToken);
     }
   }
@@ -3366,7 +3366,7 @@ private ApiResponse<ViewNumberOfChannelsWithUnreadMessagesResponse> viewNumberOf
     return new APIviewNumberOfChannelsWithUnreadMessagesRequest(userId);
   }
 
-private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String userId, String customTypes, String superMode, String apiToken) throws ApiException {
+private ApiResponse<SendBirdViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessagesWithHttpInfo(String userId, String customTypes, String superMode, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -3404,7 +3404,7 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewNumberOfUnreadMessagesResponse> localVarReturnType = new GenericType<ViewNumberOfUnreadMessagesResponse>() {};
+    GenericType<SendBirdViewNumberOfUnreadMessagesResponse> localVarReturnType = new GenericType<SendBirdViewNumberOfUnreadMessagesResponse>() {};
 
     return apiClient.invokeAPI("UserApi.viewNumberOfUnreadMessages", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -3453,7 +3453,7 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
 
     /**
      * Execute viewNumberOfUnreadMessages request
-     * @return ViewNumberOfUnreadMessagesResponse
+     * @return SendBirdViewNumberOfUnreadMessagesResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3463,13 +3463,13 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
      
      */
     
-    public ViewNumberOfUnreadMessagesResponse execute() throws ApiException {
+    public SendBirdViewNumberOfUnreadMessagesResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewNumberOfUnreadMessages request with HTTP info returned
-     * @return ApiResponse&lt;ViewNumberOfUnreadMessagesResponse&gt;
+     * @return ApiResponse&lt;SendBirdViewNumberOfUnreadMessagesResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3478,7 +3478,7 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
        </table>
 
      */
-    public ApiResponse<ViewNumberOfUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdViewNumberOfUnreadMessagesResponse> executeWithHttpInfo() throws ApiException {
       return viewNumberOfUnreadMessagesWithHttpInfo(userId, customTypes, superMode, apiToken);
     }
   }
@@ -3496,7 +3496,7 @@ private ApiResponse<ViewNumberOfUnreadMessagesResponse> viewNumberOfUnreadMessag
     return new APIviewNumberOfUnreadMessagesRequest(userId);
   }
 
-private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
+private ApiResponse<SendBirdViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo(String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -3532,7 +3532,7 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewPushPreferencesResponse> localVarReturnType = new GenericType<ViewPushPreferencesResponse>() {};
+    GenericType<SendBirdViewPushPreferencesResponse> localVarReturnType = new GenericType<SendBirdViewPushPreferencesResponse>() {};
 
     return apiClient.invokeAPI("UserApi.viewPushPreferences", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -3559,7 +3559,7 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
 
     /**
      * Execute viewPushPreferences request
-     * @return ViewPushPreferencesResponse
+     * @return SendBirdViewPushPreferencesResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3569,13 +3569,13 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
      
      */
     
-    public ViewPushPreferencesResponse execute() throws ApiException {
+    public SendBirdViewPushPreferencesResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewPushPreferences request with HTTP info returned
-     * @return ApiResponse&lt;ViewPushPreferencesResponse&gt;
+     * @return ApiResponse&lt;SendBirdViewPushPreferencesResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3584,7 +3584,7 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
        </table>
 
      */
-    public ApiResponse<ViewPushPreferencesResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdViewPushPreferencesResponse> executeWithHttpInfo() throws ApiException {
       return viewPushPreferencesWithHttpInfo(userId, apiToken);
     }
   }
@@ -3602,7 +3602,7 @@ private ApiResponse<ViewPushPreferencesResponse> viewPushPreferencesWithHttpInfo
     return new APIviewPushPreferencesRequest(userId);
   }
 
-private ApiResponse<ViewPushPreferencesForAChannelResponse> viewPushPreferencesForAChannelWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
+private ApiResponse<SendBirdViewPushPreferencesForAChannelResponse> viewPushPreferencesForAChannelWithHttpInfo(String userId, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -3644,7 +3644,7 @@ private ApiResponse<ViewPushPreferencesForAChannelResponse> viewPushPreferencesF
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ViewPushPreferencesForAChannelResponse> localVarReturnType = new GenericType<ViewPushPreferencesForAChannelResponse>() {};
+    GenericType<SendBirdViewPushPreferencesForAChannelResponse> localVarReturnType = new GenericType<SendBirdViewPushPreferencesForAChannelResponse>() {};
 
     return apiClient.invokeAPI("UserApi.viewPushPreferencesForAChannel", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -3673,7 +3673,7 @@ private ApiResponse<ViewPushPreferencesForAChannelResponse> viewPushPreferencesF
 
     /**
      * Execute viewPushPreferencesForAChannel request
-     * @return ViewPushPreferencesForAChannelResponse
+     * @return SendBirdViewPushPreferencesForAChannelResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3683,13 +3683,13 @@ private ApiResponse<ViewPushPreferencesForAChannelResponse> viewPushPreferencesF
      
      */
     
-    public ViewPushPreferencesForAChannelResponse execute() throws ApiException {
+    public SendBirdViewPushPreferencesForAChannelResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewPushPreferencesForAChannel request with HTTP info returned
-     * @return ApiResponse&lt;ViewPushPreferencesForAChannelResponse&gt;
+     * @return ApiResponse&lt;SendBirdViewPushPreferencesForAChannelResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3698,7 +3698,7 @@ private ApiResponse<ViewPushPreferencesForAChannelResponse> viewPushPreferencesF
        </table>
 
      */
-    public ApiResponse<ViewPushPreferencesForAChannelResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdViewPushPreferencesForAChannelResponse> executeWithHttpInfo() throws ApiException {
       return viewPushPreferencesForAChannelWithHttpInfo(userId, channelUrl, apiToken);
     }
   }
@@ -3717,7 +3717,7 @@ private ApiResponse<ViewPushPreferencesForAChannelResponse> viewPushPreferencesF
     return new APIviewPushPreferencesForAChannelRequest(userId, channelUrl);
   }
 
-private ApiResponse<List<MarkChannelMessagesAsReadRequest>> viewWhoOwnsARegistrationOrDeviceTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
+private ApiResponse<List<SendBirdMarkChannelMessagesAsReadRequest>> viewWhoOwnsARegistrationOrDeviceTokenWithHttpInfo(String tokenType, String token, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'tokenType' is set
@@ -3759,7 +3759,7 @@ private ApiResponse<List<MarkChannelMessagesAsReadRequest>> viewWhoOwnsARegistra
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<List<MarkChannelMessagesAsReadRequest>> localVarReturnType = new GenericType<List<MarkChannelMessagesAsReadRequest>>() {};
+    GenericType<List<SendBirdMarkChannelMessagesAsReadRequest>> localVarReturnType = new GenericType<List<SendBirdMarkChannelMessagesAsReadRequest>>() {};
 
     return apiClient.invokeAPI("UserApi.viewWhoOwnsARegistrationOrDeviceToken", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -3788,7 +3788,7 @@ private ApiResponse<List<MarkChannelMessagesAsReadRequest>> viewWhoOwnsARegistra
 
     /**
      * Execute viewWhoOwnsARegistrationOrDeviceToken request
-     * @return List&lt;MarkChannelMessagesAsReadRequest&gt;
+     * @return List&lt;SendBirdMarkChannelMessagesAsReadRequest&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3798,13 +3798,13 @@ private ApiResponse<List<MarkChannelMessagesAsReadRequest>> viewWhoOwnsARegistra
      
      */
     
-    public List<MarkChannelMessagesAsReadRequest> execute() throws ApiException {
+    public List<SendBirdMarkChannelMessagesAsReadRequest> execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewWhoOwnsARegistrationOrDeviceToken request with HTTP info returned
-     * @return ApiResponse&lt;List&lt;MarkChannelMessagesAsReadRequest&gt;&gt;
+     * @return ApiResponse&lt;List&lt;SendBirdMarkChannelMessagesAsReadRequest&gt;&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3813,7 +3813,7 @@ private ApiResponse<List<MarkChannelMessagesAsReadRequest>> viewWhoOwnsARegistra
        </table>
 
      */
-    public ApiResponse<List<MarkChannelMessagesAsReadRequest>> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<List<SendBirdMarkChannelMessagesAsReadRequest>> executeWithHttpInfo() throws ApiException {
       return viewWhoOwnsARegistrationOrDeviceTokenWithHttpInfo(tokenType, token, apiToken);
     }
   }
