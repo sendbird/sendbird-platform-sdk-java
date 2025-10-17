@@ -28,8 +28,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendAMessageRequestPushMessageTemplate;
-import org.openapitools.client.model.SendBirdFile;
-import org.openapitools.client.model.SendBirdSortedMetaarrayInner;
+import org.openapitools.client.model.SendbirdFile;
+import org.openapitools.client.model.SendbirdSortedMetaarrayInner;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -66,7 +66,7 @@ import org.sendbird.client.JSON;
   SendAMessageRequest.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("sendAMessage_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class SendAMessageRequest {
   /**
    * Gets or Sets messageType
@@ -121,7 +121,7 @@ public class SendAMessageRequest {
   private Integer pollId;
 
   public static final String JSON_PROPERTY_FILES = "files";
-  private SendBirdFile files;
+  private SendbirdFile files;
 
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;
@@ -210,7 +210,7 @@ public class SendAMessageRequest {
   private Boolean sendPush;
 
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
-  private List<SendBirdSortedMetaarrayInner> sortedMetaarray = null;
+  private List<SendbirdSortedMetaarrayInner> sortedMetaarray = null;
 
   public static final String JSON_PROPERTY_SOUND = "sound";
   private String sound;
@@ -351,7 +351,7 @@ public class SendAMessageRequest {
   }
 
 
-  public SendAMessageRequest files(SendBirdFile files) {
+  public SendAMessageRequest files(SendbirdFile files) {
     this.files = files;
     return this;
   }
@@ -365,14 +365,14 @@ public class SendAMessageRequest {
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdFile getFiles() {
+  public SendbirdFile getFiles() {
     return files;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiles(SendBirdFile files) {
+  public void setFiles(SendbirdFile files) {
     this.files = files;
   }
 
@@ -835,12 +835,12 @@ public class SendAMessageRequest {
   }
 
 
-  public SendAMessageRequest sortedMetaarray(List<SendBirdSortedMetaarrayInner> sortedMetaarray) {
+  public SendAMessageRequest sortedMetaarray(List<SendbirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
 
-  public SendAMessageRequest addSortedMetaarrayItem(SendBirdSortedMetaarrayInner sortedMetaarrayItem) {
+  public SendAMessageRequest addSortedMetaarrayItem(SendbirdSortedMetaarrayInner sortedMetaarrayItem) {
     if (this.sortedMetaarray == null) {
       this.sortedMetaarray = new ArrayList<>();
     }
@@ -857,14 +857,14 @@ public class SendAMessageRequest {
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSortedMetaarrayInner> getSortedMetaarray() {
+  public List<SendbirdSortedMetaarrayInner> getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSortedMetaarray(List<SendBirdSortedMetaarrayInner> sortedMetaarray) {
+  public void setSortedMetaarray(List<SendbirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 

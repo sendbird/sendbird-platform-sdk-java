@@ -1,6 +1,6 @@
 
 
-# SendBirdMessageResponse
+# SendbirdMessageResponse
 
 
 ## Properties
@@ -10,15 +10,15 @@
 |**requireAuth** | **Boolean** |  |  [optional] |
 |**messageSurvivalSeconds** | **Integer** |  |  [optional] |
 |**customType** | **String** |  |  [optional] |
-|**mentionedUsers** | [**List&lt;SendBirdBasicUserInfo&gt;**](SendBirdBasicUserInfo.md) |  |  [optional] |
+|**mentionedUsers** | [**List&lt;SendbirdBasicUserInfo&gt;**](SendbirdBasicUserInfo.md) |  |  [optional] |
 |**translations** | **Object** |  |  [optional] |
 |**updatedAt** | **Long** |  |  [optional] |
 |**isOpMsg** | **Boolean** |  |  [optional] |
-|**reactions** | [**List&lt;SendBirdReaction&gt;**](SendBirdReaction.md) |  |  [optional] |
+|**reactions** | [**List&lt;SendbirdReaction&gt;**](SendbirdReaction.md) |  |  [optional] |
 |**isRemoved** | **Boolean** |  |  [optional] |
-|**user** | [**SendBirdBasicUserInfo**](SendBirdBasicUserInfo.md) |  |  [optional] |
+|**user** | [**SendbirdBasicUserInfo**](SendbirdBasicUserInfo.md) |  |  [optional] |
 |**_file** | **Object** |  |  [optional] |
-|**files** | [**List&lt;SendBirdFile&gt;**](SendBirdFile.md) |  |  [optional] |
+|**files** | [**List&lt;SendbirdFile&gt;**](SendbirdFile.md) |  |  [optional] |
 |**message** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |
 |**messageRetentionHour** | **Integer** |  |  [optional] |
@@ -30,13 +30,13 @@
 |**mentionType** | **String** |  |  [optional] |
 |**channelUrl** | **String** |  |  [optional] |
 |**messageId** | **Long** |  |  [optional] |
-|**sortedMetaarray** | [**List&lt;SendBirdSortedMetaarrayInner&gt;**](SendBirdSortedMetaarrayInner.md) |  |  [optional] |
+|**sortedMetaarray** | [**List&lt;SendbirdSortedMetaarrayInner&gt;**](SendbirdSortedMetaarrayInner.md) |  |  [optional] |
 |**threadInfo** | **Object** |  |  [optional] |
 |**parentMessageId** | **Integer** |  |  [optional] |
-|**parentMessageInfo** | [**SendBirdParentMessageInfo**](SendBirdParentMessageInfo.md) |  |  [optional] |
+|**parentMessageInfo** | [**SendbirdParentMessageInfo**](SendbirdParentMessageInfo.md) |  |  [optional] |
 |**isReplyToChannel** | **Boolean** |  |  [optional] |
-|**messageEvents** | [**SendBirdMessageResponseMessageEvents**](SendBirdMessageResponseMessageEvents.md) |  |  [optional] |
-|**extendedMessagePayload** | [**SendBirdMessageResponseExtendedMessagePayload**](SendBirdMessageResponseExtendedMessagePayload.md) |  |  [optional] |
+|**messageEvents** | [**SendbirdMessageResponseMessageEvents**](SendbirdMessageResponseMessageEvents.md) |  |  [optional] |
+|**extendedMessagePayload** | [**SendbirdMessageResponseExtendedMessagePayload**](SendbirdMessageResponseExtendedMessagePayload.md) |  |  [optional] |
 
 
 

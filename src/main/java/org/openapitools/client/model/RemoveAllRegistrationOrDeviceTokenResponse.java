@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdBasicUserInfo;
+import org.openapitools.client.model.SendbirdBasicUserInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,13 +39,13 @@ import org.sendbird.client.JSON;
   RemoveAllRegistrationOrDeviceTokenResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("removeAllRegistrationOrDeviceTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class RemoveAllRegistrationOrDeviceTokenResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private List<String> token = null;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private SendBirdBasicUserInfo user;
+  private SendbirdBasicUserInfo user;
 
   public RemoveAllRegistrationOrDeviceTokenResponse() { 
   }
@@ -84,7 +84,7 @@ public class RemoveAllRegistrationOrDeviceTokenResponse {
   }
 
 
-  public RemoveAllRegistrationOrDeviceTokenResponse user(SendBirdBasicUserInfo user) {
+  public RemoveAllRegistrationOrDeviceTokenResponse user(SendbirdBasicUserInfo user) {
     this.user = user;
     return this;
   }
@@ -98,14 +98,14 @@ public class RemoveAllRegistrationOrDeviceTokenResponse {
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdBasicUserInfo getUser() {
+  public SendbirdBasicUserInfo getUser() {
     return user;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendBirdBasicUserInfo user) {
+  public void setUser(SendbirdBasicUserInfo user) {
     this.user = user;
   }
 

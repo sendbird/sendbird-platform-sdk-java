@@ -1,6 +1,6 @@
 
 
-# SendBirdBasicUserInfo
+# SendbirdBasicUserInfo
 
 
 ## Properties

@@ -28,60 +28,60 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.client.model.SendBirdBasicUserInfo;
-import org.openapitools.client.model.SendBirdDisappearingMessage;
-import org.openapitools.client.model.SendBirdGroupChannelDetailChannel;
-import org.openapitools.client.model.SendBirdMember;
-import org.openapitools.client.model.SendBirdMessageResponse;
-import org.openapitools.client.model.SendBirdSmsFallback;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdBasicUserInfo;
+import org.openapitools.client.model.SendbirdDisappearingMessage;
+import org.openapitools.client.model.SendbirdGroupChannelDetailChannel;
+import org.openapitools.client.model.SendbirdMember;
+import org.openapitools.client.model.SendbirdMessageResponse;
+import org.openapitools.client.model.SendbirdSmsFallback;
+import org.openapitools.client.model.SendbirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdGroupChannelDetail
+ * SendbirdGroupChannelDetail
  */
 @JsonPropertyOrder({
-  SendBirdGroupChannelDetail.JSON_PROPERTY_CHANNEL,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_CHANNEL_URL,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_COVER_URL,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_CREATED_AT,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_CREATED_BY,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_CUSTOM_TYPE,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_DATA,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_DELIVERY_RECEIPT,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_DISAPPEARING_MESSAGE,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_FREEZE,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_HAS_AI_BOT,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_HAS_BOT,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_ID,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_IGNORE_PROFANITY_FILTER,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_IS_BROADCAST,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_IS_DISCOVERABLE,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_IS_DISTINCT,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_IS_EPHEMERAL,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_IS_PUBLIC,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_IS_SUPER,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_JOINED_MEMBER_COUNT,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_LAST_MESSAGE,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_MEMBER_COUNT,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_MEMBERS,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_NAME,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_OPERATORS,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_READ_RECEIPT,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_SMS_FALLBACK,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_UNREAD_MENTION_COUNT,
-  SendBirdGroupChannelDetail.JSON_PROPERTY_UNREAD_MESSAGE_COUNT
+  SendbirdGroupChannelDetail.JSON_PROPERTY_CHANNEL,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_CHANNEL_URL,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_COVER_URL,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_CREATED_AT,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_CREATED_BY,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_CUSTOM_TYPE,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_DATA,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_DELIVERY_RECEIPT,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_DISAPPEARING_MESSAGE,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_FREEZE,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_HAS_AI_BOT,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_HAS_BOT,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_ID,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_IGNORE_PROFANITY_FILTER,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_IS_BROADCAST,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_IS_DISCOVERABLE,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_IS_DISTINCT,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_IS_EPHEMERAL,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_IS_PUBLIC,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_IS_SUPER,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_JOINED_MEMBER_COUNT,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_LAST_MESSAGE,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_MEMBER_COUNT,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_MEMBERS,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_NAME,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_OPERATORS,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_READ_RECEIPT,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_SMS_FALLBACK,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_UNREAD_MENTION_COUNT,
+  SendbirdGroupChannelDetail.JSON_PROPERTY_UNREAD_MESSAGE_COUNT
 })
-@JsonTypeName("SendBird.GroupChannelDetail")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
-public class SendBirdGroupChannelDetail {
+@JsonTypeName("Sendbird.GroupChannelDetail")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+public class SendbirdGroupChannelDetail {
   public static final String JSON_PROPERTY_CHANNEL = "channel";
-  private SendBirdGroupChannelDetailChannel channel;
+  private SendbirdGroupChannelDetailChannel channel;
 
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -93,7 +93,7 @@ public class SendBirdGroupChannelDetail {
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CREATED_BY = "created_by";
-  private SendBirdBasicUserInfo createdBy;
+  private SendbirdBasicUserInfo createdBy;
 
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -105,7 +105,7 @@ public class SendBirdGroupChannelDetail {
   private Map<String, Long> deliveryReceipt = null;
 
   public static final String JSON_PROPERTY_DISAPPEARING_MESSAGE = "disappearing_message";
-  private SendBirdDisappearingMessage disappearingMessage;
+  private SendbirdDisappearingMessage disappearingMessage;
 
   public static final String JSON_PROPERTY_FREEZE = "freeze";
   private Boolean freeze;
@@ -147,7 +147,7 @@ public class SendBirdGroupChannelDetail {
   private Integer joinedMemberCount;
 
   public static final String JSON_PROPERTY_LAST_MESSAGE = "last_message";
-  private SendBirdMessageResponse lastMessage;
+  private SendbirdMessageResponse lastMessage;
 
   public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
   private Integer maxLengthMessage;
@@ -156,7 +156,7 @@ public class SendBirdGroupChannelDetail {
   private Integer memberCount;
 
   public static final String JSON_PROPERTY_MEMBERS = "members";
-  private List<SendBirdMember> members = null;
+  private List<SendbirdMember> members = null;
 
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private Integer messageSurvivalSeconds;
@@ -165,13 +165,13 @@ public class SendBirdGroupChannelDetail {
   private String name;
 
   public static final String JSON_PROPERTY_OPERATORS = "operators";
-  private List<SendBirdUser> operators = null;
+  private List<SendbirdUser> operators = null;
 
   public static final String JSON_PROPERTY_READ_RECEIPT = "read_receipt";
   private Map<String, Long> readReceipt = null;
 
   public static final String JSON_PROPERTY_SMS_FALLBACK = "sms_fallback";
-  private SendBirdSmsFallback smsFallback;
+  private SendbirdSmsFallback smsFallback;
 
   public static final String JSON_PROPERTY_UNREAD_MENTION_COUNT = "unread_mention_count";
   private Integer unreadMentionCount;
@@ -179,10 +179,10 @@ public class SendBirdGroupChannelDetail {
   public static final String JSON_PROPERTY_UNREAD_MESSAGE_COUNT = "unread_message_count";
   private Integer unreadMessageCount;
 
-  public SendBirdGroupChannelDetail() { 
+  public SendbirdGroupChannelDetail() { 
   }
 
-  public SendBirdGroupChannelDetail channel(SendBirdGroupChannelDetailChannel channel) {
+  public SendbirdGroupChannelDetail channel(SendbirdGroupChannelDetailChannel channel) {
     this.channel = channel;
     return this;
   }
@@ -196,19 +196,19 @@ public class SendBirdGroupChannelDetail {
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdGroupChannelDetailChannel getChannel() {
+  public SendbirdGroupChannelDetailChannel getChannel() {
     return channel;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannel(SendBirdGroupChannelDetailChannel channel) {
+  public void setChannel(SendbirdGroupChannelDetailChannel channel) {
     this.channel = channel;
   }
 
 
-  public SendBirdGroupChannelDetail channelUrl(String channelUrl) {
+  public SendbirdGroupChannelDetail channelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
     return this;
   }
@@ -234,7 +234,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail coverUrl(String coverUrl) {
+  public SendbirdGroupChannelDetail coverUrl(String coverUrl) {
     this.coverUrl = coverUrl;
     return this;
   }
@@ -260,7 +260,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail createdAt(Long createdAt) {
+  public SendbirdGroupChannelDetail createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -286,7 +286,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail createdBy(SendBirdBasicUserInfo createdBy) {
+  public SendbirdGroupChannelDetail createdBy(SendbirdBasicUserInfo createdBy) {
     this.createdBy = createdBy;
     return this;
   }
@@ -300,19 +300,19 @@ public class SendBirdGroupChannelDetail {
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdBasicUserInfo getCreatedBy() {
+  public SendbirdBasicUserInfo getCreatedBy() {
     return createdBy;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedBy(SendBirdBasicUserInfo createdBy) {
+  public void setCreatedBy(SendbirdBasicUserInfo createdBy) {
     this.createdBy = createdBy;
   }
 
 
-  public SendBirdGroupChannelDetail customType(String customType) {
+  public SendbirdGroupChannelDetail customType(String customType) {
     this.customType = customType;
     return this;
   }
@@ -338,7 +338,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail data(String data) {
+  public SendbirdGroupChannelDetail data(String data) {
     this.data = data;
     return this;
   }
@@ -364,12 +364,12 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail deliveryReceipt(Map<String, Long> deliveryReceipt) {
+  public SendbirdGroupChannelDetail deliveryReceipt(Map<String, Long> deliveryReceipt) {
     this.deliveryReceipt = deliveryReceipt;
     return this;
   }
 
-  public SendBirdGroupChannelDetail putDeliveryReceiptItem(String key, Long deliveryReceiptItem) {
+  public SendbirdGroupChannelDetail putDeliveryReceiptItem(String key, Long deliveryReceiptItem) {
     if (this.deliveryReceipt == null) {
       this.deliveryReceipt = new HashMap<>();
     }
@@ -398,7 +398,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail disappearingMessage(SendBirdDisappearingMessage disappearingMessage) {
+  public SendbirdGroupChannelDetail disappearingMessage(SendbirdDisappearingMessage disappearingMessage) {
     this.disappearingMessage = disappearingMessage;
     return this;
   }
@@ -412,19 +412,19 @@ public class SendBirdGroupChannelDetail {
   @JsonProperty(JSON_PROPERTY_DISAPPEARING_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdDisappearingMessage getDisappearingMessage() {
+  public SendbirdDisappearingMessage getDisappearingMessage() {
     return disappearingMessage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DISAPPEARING_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDisappearingMessage(SendBirdDisappearingMessage disappearingMessage) {
+  public void setDisappearingMessage(SendbirdDisappearingMessage disappearingMessage) {
     this.disappearingMessage = disappearingMessage;
   }
 
 
-  public SendBirdGroupChannelDetail freeze(Boolean freeze) {
+  public SendbirdGroupChannelDetail freeze(Boolean freeze) {
     this.freeze = freeze;
     return this;
   }
@@ -450,7 +450,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail hasAiBot(Boolean hasAiBot) {
+  public SendbirdGroupChannelDetail hasAiBot(Boolean hasAiBot) {
     this.hasAiBot = hasAiBot;
     return this;
   }
@@ -476,7 +476,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail hasBot(Boolean hasBot) {
+  public SendbirdGroupChannelDetail hasBot(Boolean hasBot) {
     this.hasBot = hasBot;
     return this;
   }
@@ -502,7 +502,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail id(Integer id) {
+  public SendbirdGroupChannelDetail id(Integer id) {
     this.id = id;
     return this;
   }
@@ -528,7 +528,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail ignoreProfanityFilter(Boolean ignoreProfanityFilter) {
+  public SendbirdGroupChannelDetail ignoreProfanityFilter(Boolean ignoreProfanityFilter) {
     this.ignoreProfanityFilter = ignoreProfanityFilter;
     return this;
   }
@@ -554,7 +554,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail isAccessCodeRequired(Boolean isAccessCodeRequired) {
+  public SendbirdGroupChannelDetail isAccessCodeRequired(Boolean isAccessCodeRequired) {
     this.isAccessCodeRequired = isAccessCodeRequired;
     return this;
   }
@@ -580,7 +580,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail isBroadcast(Boolean isBroadcast) {
+  public SendbirdGroupChannelDetail isBroadcast(Boolean isBroadcast) {
     this.isBroadcast = isBroadcast;
     return this;
   }
@@ -606,7 +606,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail isDiscoverable(Boolean isDiscoverable) {
+  public SendbirdGroupChannelDetail isDiscoverable(Boolean isDiscoverable) {
     this.isDiscoverable = isDiscoverable;
     return this;
   }
@@ -632,7 +632,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail isDistinct(Boolean isDistinct) {
+  public SendbirdGroupChannelDetail isDistinct(Boolean isDistinct) {
     this.isDistinct = isDistinct;
     return this;
   }
@@ -658,7 +658,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail isEphemeral(Boolean isEphemeral) {
+  public SendbirdGroupChannelDetail isEphemeral(Boolean isEphemeral) {
     this.isEphemeral = isEphemeral;
     return this;
   }
@@ -684,7 +684,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail isPublic(Boolean isPublic) {
+  public SendbirdGroupChannelDetail isPublic(Boolean isPublic) {
     this.isPublic = isPublic;
     return this;
   }
@@ -710,7 +710,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail isSuper(Boolean isSuper) {
+  public SendbirdGroupChannelDetail isSuper(Boolean isSuper) {
     this.isSuper = isSuper;
     return this;
   }
@@ -736,7 +736,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail joinedMemberCount(Integer joinedMemberCount) {
+  public SendbirdGroupChannelDetail joinedMemberCount(Integer joinedMemberCount) {
     this.joinedMemberCount = joinedMemberCount;
     return this;
   }
@@ -762,7 +762,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail lastMessage(SendBirdMessageResponse lastMessage) {
+  public SendbirdGroupChannelDetail lastMessage(SendbirdMessageResponse lastMessage) {
     this.lastMessage = lastMessage;
     return this;
   }
@@ -776,19 +776,19 @@ public class SendBirdGroupChannelDetail {
   @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdMessageResponse getLastMessage() {
+  public SendbirdMessageResponse getLastMessage() {
     return lastMessage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastMessage(SendBirdMessageResponse lastMessage) {
+  public void setLastMessage(SendbirdMessageResponse lastMessage) {
     this.lastMessage = lastMessage;
   }
 
 
-  public SendBirdGroupChannelDetail maxLengthMessage(Integer maxLengthMessage) {
+  public SendbirdGroupChannelDetail maxLengthMessage(Integer maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
     return this;
   }
@@ -814,7 +814,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail memberCount(Integer memberCount) {
+  public SendbirdGroupChannelDetail memberCount(Integer memberCount) {
     this.memberCount = memberCount;
     return this;
   }
@@ -840,12 +840,12 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail members(List<SendBirdMember> members) {
+  public SendbirdGroupChannelDetail members(List<SendbirdMember> members) {
     this.members = members;
     return this;
   }
 
-  public SendBirdGroupChannelDetail addMembersItem(SendBirdMember membersItem) {
+  public SendbirdGroupChannelDetail addMembersItem(SendbirdMember membersItem) {
     if (this.members == null) {
       this.members = new ArrayList<>();
     }
@@ -862,19 +862,19 @@ public class SendBirdGroupChannelDetail {
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdMember> getMembers() {
+  public List<SendbirdMember> getMembers() {
     return members;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMembers(List<SendBirdMember> members) {
+  public void setMembers(List<SendbirdMember> members) {
     this.members = members;
   }
 
 
-  public SendBirdGroupChannelDetail messageSurvivalSeconds(Integer messageSurvivalSeconds) {
+  public SendbirdGroupChannelDetail messageSurvivalSeconds(Integer messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
     return this;
   }
@@ -900,7 +900,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail name(String name) {
+  public SendbirdGroupChannelDetail name(String name) {
     this.name = name;
     return this;
   }
@@ -926,12 +926,12 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail operators(List<SendBirdUser> operators) {
+  public SendbirdGroupChannelDetail operators(List<SendbirdUser> operators) {
     this.operators = operators;
     return this;
   }
 
-  public SendBirdGroupChannelDetail addOperatorsItem(SendBirdUser operatorsItem) {
+  public SendbirdGroupChannelDetail addOperatorsItem(SendbirdUser operatorsItem) {
     if (this.operators == null) {
       this.operators = new ArrayList<>();
     }
@@ -948,24 +948,24 @@ public class SendBirdGroupChannelDetail {
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdUser> getOperators() {
+  public List<SendbirdUser> getOperators() {
     return operators;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOperators(List<SendBirdUser> operators) {
+  public void setOperators(List<SendbirdUser> operators) {
     this.operators = operators;
   }
 
 
-  public SendBirdGroupChannelDetail readReceipt(Map<String, Long> readReceipt) {
+  public SendbirdGroupChannelDetail readReceipt(Map<String, Long> readReceipt) {
     this.readReceipt = readReceipt;
     return this;
   }
 
-  public SendBirdGroupChannelDetail putReadReceiptItem(String key, Long readReceiptItem) {
+  public SendbirdGroupChannelDetail putReadReceiptItem(String key, Long readReceiptItem) {
     if (this.readReceipt == null) {
       this.readReceipt = new HashMap<>();
     }
@@ -994,7 +994,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail smsFallback(SendBirdSmsFallback smsFallback) {
+  public SendbirdGroupChannelDetail smsFallback(SendbirdSmsFallback smsFallback) {
     this.smsFallback = smsFallback;
     return this;
   }
@@ -1008,19 +1008,19 @@ public class SendBirdGroupChannelDetail {
   @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdSmsFallback getSmsFallback() {
+  public SendbirdSmsFallback getSmsFallback() {
     return smsFallback;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSmsFallback(SendBirdSmsFallback smsFallback) {
+  public void setSmsFallback(SendbirdSmsFallback smsFallback) {
     this.smsFallback = smsFallback;
   }
 
 
-  public SendBirdGroupChannelDetail unreadMentionCount(Integer unreadMentionCount) {
+  public SendbirdGroupChannelDetail unreadMentionCount(Integer unreadMentionCount) {
     this.unreadMentionCount = unreadMentionCount;
     return this;
   }
@@ -1046,7 +1046,7 @@ public class SendBirdGroupChannelDetail {
   }
 
 
-  public SendBirdGroupChannelDetail unreadMessageCount(Integer unreadMessageCount) {
+  public SendbirdGroupChannelDetail unreadMessageCount(Integer unreadMessageCount) {
     this.unreadMessageCount = unreadMessageCount;
     return this;
   }
@@ -1073,7 +1073,7 @@ public class SendBirdGroupChannelDetail {
 
 
   /**
-   * Return true if this SendBird.GroupChannelDetail object is equal to o.
+   * Return true if this Sendbird.GroupChannelDetail object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -1083,40 +1083,40 @@ public class SendBirdGroupChannelDetail {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdGroupChannelDetail sendBirdGroupChannelDetail = (SendBirdGroupChannelDetail) o;
-    return Objects.equals(this.channel, sendBirdGroupChannelDetail.channel) &&
-        Objects.equals(this.channelUrl, sendBirdGroupChannelDetail.channelUrl) &&
-        Objects.equals(this.coverUrl, sendBirdGroupChannelDetail.coverUrl) &&
-        Objects.equals(this.createdAt, sendBirdGroupChannelDetail.createdAt) &&
-        Objects.equals(this.createdBy, sendBirdGroupChannelDetail.createdBy) &&
-        Objects.equals(this.customType, sendBirdGroupChannelDetail.customType) &&
-        Objects.equals(this.data, sendBirdGroupChannelDetail.data) &&
-        Objects.equals(this.deliveryReceipt, sendBirdGroupChannelDetail.deliveryReceipt) &&
-        Objects.equals(this.disappearingMessage, sendBirdGroupChannelDetail.disappearingMessage) &&
-        Objects.equals(this.freeze, sendBirdGroupChannelDetail.freeze) &&
-        Objects.equals(this.hasAiBot, sendBirdGroupChannelDetail.hasAiBot) &&
-        Objects.equals(this.hasBot, sendBirdGroupChannelDetail.hasBot) &&
-        Objects.equals(this.id, sendBirdGroupChannelDetail.id) &&
-        Objects.equals(this.ignoreProfanityFilter, sendBirdGroupChannelDetail.ignoreProfanityFilter) &&
-        Objects.equals(this.isAccessCodeRequired, sendBirdGroupChannelDetail.isAccessCodeRequired) &&
-        Objects.equals(this.isBroadcast, sendBirdGroupChannelDetail.isBroadcast) &&
-        Objects.equals(this.isDiscoverable, sendBirdGroupChannelDetail.isDiscoverable) &&
-        Objects.equals(this.isDistinct, sendBirdGroupChannelDetail.isDistinct) &&
-        Objects.equals(this.isEphemeral, sendBirdGroupChannelDetail.isEphemeral) &&
-        Objects.equals(this.isPublic, sendBirdGroupChannelDetail.isPublic) &&
-        Objects.equals(this.isSuper, sendBirdGroupChannelDetail.isSuper) &&
-        Objects.equals(this.joinedMemberCount, sendBirdGroupChannelDetail.joinedMemberCount) &&
-        Objects.equals(this.lastMessage, sendBirdGroupChannelDetail.lastMessage) &&
-        Objects.equals(this.maxLengthMessage, sendBirdGroupChannelDetail.maxLengthMessage) &&
-        Objects.equals(this.memberCount, sendBirdGroupChannelDetail.memberCount) &&
-        Objects.equals(this.members, sendBirdGroupChannelDetail.members) &&
-        Objects.equals(this.messageSurvivalSeconds, sendBirdGroupChannelDetail.messageSurvivalSeconds) &&
-        Objects.equals(this.name, sendBirdGroupChannelDetail.name) &&
-        Objects.equals(this.operators, sendBirdGroupChannelDetail.operators) &&
-        Objects.equals(this.readReceipt, sendBirdGroupChannelDetail.readReceipt) &&
-        Objects.equals(this.smsFallback, sendBirdGroupChannelDetail.smsFallback) &&
-        Objects.equals(this.unreadMentionCount, sendBirdGroupChannelDetail.unreadMentionCount) &&
-        Objects.equals(this.unreadMessageCount, sendBirdGroupChannelDetail.unreadMessageCount);
+    SendbirdGroupChannelDetail sendbirdGroupChannelDetail = (SendbirdGroupChannelDetail) o;
+    return Objects.equals(this.channel, sendbirdGroupChannelDetail.channel) &&
+        Objects.equals(this.channelUrl, sendbirdGroupChannelDetail.channelUrl) &&
+        Objects.equals(this.coverUrl, sendbirdGroupChannelDetail.coverUrl) &&
+        Objects.equals(this.createdAt, sendbirdGroupChannelDetail.createdAt) &&
+        Objects.equals(this.createdBy, sendbirdGroupChannelDetail.createdBy) &&
+        Objects.equals(this.customType, sendbirdGroupChannelDetail.customType) &&
+        Objects.equals(this.data, sendbirdGroupChannelDetail.data) &&
+        Objects.equals(this.deliveryReceipt, sendbirdGroupChannelDetail.deliveryReceipt) &&
+        Objects.equals(this.disappearingMessage, sendbirdGroupChannelDetail.disappearingMessage) &&
+        Objects.equals(this.freeze, sendbirdGroupChannelDetail.freeze) &&
+        Objects.equals(this.hasAiBot, sendbirdGroupChannelDetail.hasAiBot) &&
+        Objects.equals(this.hasBot, sendbirdGroupChannelDetail.hasBot) &&
+        Objects.equals(this.id, sendbirdGroupChannelDetail.id) &&
+        Objects.equals(this.ignoreProfanityFilter, sendbirdGroupChannelDetail.ignoreProfanityFilter) &&
+        Objects.equals(this.isAccessCodeRequired, sendbirdGroupChannelDetail.isAccessCodeRequired) &&
+        Objects.equals(this.isBroadcast, sendbirdGroupChannelDetail.isBroadcast) &&
+        Objects.equals(this.isDiscoverable, sendbirdGroupChannelDetail.isDiscoverable) &&
+        Objects.equals(this.isDistinct, sendbirdGroupChannelDetail.isDistinct) &&
+        Objects.equals(this.isEphemeral, sendbirdGroupChannelDetail.isEphemeral) &&
+        Objects.equals(this.isPublic, sendbirdGroupChannelDetail.isPublic) &&
+        Objects.equals(this.isSuper, sendbirdGroupChannelDetail.isSuper) &&
+        Objects.equals(this.joinedMemberCount, sendbirdGroupChannelDetail.joinedMemberCount) &&
+        Objects.equals(this.lastMessage, sendbirdGroupChannelDetail.lastMessage) &&
+        Objects.equals(this.maxLengthMessage, sendbirdGroupChannelDetail.maxLengthMessage) &&
+        Objects.equals(this.memberCount, sendbirdGroupChannelDetail.memberCount) &&
+        Objects.equals(this.members, sendbirdGroupChannelDetail.members) &&
+        Objects.equals(this.messageSurvivalSeconds, sendbirdGroupChannelDetail.messageSurvivalSeconds) &&
+        Objects.equals(this.name, sendbirdGroupChannelDetail.name) &&
+        Objects.equals(this.operators, sendbirdGroupChannelDetail.operators) &&
+        Objects.equals(this.readReceipt, sendbirdGroupChannelDetail.readReceipt) &&
+        Objects.equals(this.smsFallback, sendbirdGroupChannelDetail.smsFallback) &&
+        Objects.equals(this.unreadMentionCount, sendbirdGroupChannelDetail.unreadMentionCount) &&
+        Objects.equals(this.unreadMessageCount, sendbirdGroupChannelDetail.unreadMessageCount);
   }
 
   @Override
@@ -1127,7 +1127,7 @@ public class SendBirdGroupChannelDetail {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdGroupChannelDetail {\n");
+    sb.append("class SendbirdGroupChannelDetail {\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
     sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");

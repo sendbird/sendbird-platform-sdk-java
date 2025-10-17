@@ -25,9 +25,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets SendBird.PushTriggerOption
+ * Gets or Sets Sendbird.PushTriggerOption
  */
-public enum SendBirdPushTriggerOption {
+public enum SendbirdPushTriggerOption {
   
   ALL("all"),
   
@@ -37,7 +37,7 @@ public enum SendBirdPushTriggerOption {
 
   private String value;
 
-  SendBirdPushTriggerOption(String value) {
+  SendbirdPushTriggerOption(String value) {
     this.value = value;
   }
 
@@ -52,8 +52,8 @@ public enum SendBirdPushTriggerOption {
   }
 
   @JsonCreator
-  public static SendBirdPushTriggerOption fromValue(String value) {
-    for (SendBirdPushTriggerOption b : SendBirdPushTriggerOption.values()) {
+  public static SendbirdPushTriggerOption fromValue(String value) {
+    for (SendbirdPushTriggerOption b : SendbirdPushTriggerOption.values()) {
       if (b.value.equals(value)) {
         return b;
       }

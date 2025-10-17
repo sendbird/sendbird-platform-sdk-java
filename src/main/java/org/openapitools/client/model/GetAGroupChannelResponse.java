@@ -29,14 +29,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.openapitools.client.model.GetAGroupChannelResponseAllOf;
-import org.openapitools.client.model.SendBirdBasicUserInfo;
-import org.openapitools.client.model.SendBirdDisappearingMessage;
-import org.openapitools.client.model.SendBirdGroupChannel;
-import org.openapitools.client.model.SendBirdGroupChannelDetailChannel;
-import org.openapitools.client.model.SendBirdGroupChannelLastMessage;
-import org.openapitools.client.model.SendBirdMember;
-import org.openapitools.client.model.SendBirdPushTriggerOption;
-import org.openapitools.client.model.SendBirdSmsFallback;
+import org.openapitools.client.model.SendbirdBasicUserInfo;
+import org.openapitools.client.model.SendbirdDisappearingMessage;
+import org.openapitools.client.model.SendbirdGroupChannel;
+import org.openapitools.client.model.SendbirdGroupChannelDetailChannel;
+import org.openapitools.client.model.SendbirdGroupChannelLastMessage;
+import org.openapitools.client.model.SendbirdMember;
+import org.openapitools.client.model.SendbirdPushTriggerOption;
+import org.openapitools.client.model.SendbirdSmsFallback;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -97,10 +97,10 @@ import org.sendbird.client.JSON;
   GetAGroupChannelResponse.JSON_PROPERTY_USER_LAST_READ
 })
 @JsonTypeName("getAGroupChannelResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class GetAGroupChannelResponse {
   public static final String JSON_PROPERTY_CHANNEL = "channel";
-  private SendBirdGroupChannelDetailChannel channel;
+  private SendbirdGroupChannelDetailChannel channel;
 
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -154,7 +154,7 @@ public class GetAGroupChannelResponse {
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CREATED_BY = "created_by";
-  private SendBirdBasicUserInfo createdBy;
+  private SendbirdBasicUserInfo createdBy;
 
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -166,7 +166,7 @@ public class GetAGroupChannelResponse {
   private Object deliveryReceipt;
 
   public static final String JSON_PROPERTY_DISAPPEARING_MESSAGE = "disappearing_message";
-  private SendBirdDisappearingMessage disappearingMessage;
+  private SendbirdDisappearingMessage disappearingMessage;
 
   public static final String JSON_PROPERTY_FREEZE = "freeze";
   private Boolean freeze;
@@ -224,7 +224,7 @@ public class GetAGroupChannelResponse {
   private Long invitedAt;
 
   public static final String JSON_PROPERTY_INVITER = "inviter";
-  private SendBirdBasicUserInfo inviter;
+  private SendbirdBasicUserInfo inviter;
 
   public static final String JSON_PROPERTY_IS_ACCESS_CODE_REQUIRED = "is_access_code_required";
   private JsonNullable<Boolean> isAccessCodeRequired = JsonNullable.<Boolean>undefined();
@@ -266,7 +266,7 @@ public class GetAGroupChannelResponse {
   private JsonNullable<Long> joinedTs = JsonNullable.<Long>undefined();
 
   public static final String JSON_PROPERTY_LAST_MESSAGE = "last_message";
-  private SendBirdGroupChannelLastMessage lastMessage;
+  private SendbirdGroupChannelLastMessage lastMessage;
 
   public static final String JSON_PROPERTY_MAX_LENGTH_MESSAGE = "max_length_message";
   private Integer maxLengthMessage;
@@ -315,7 +315,7 @@ public class GetAGroupChannelResponse {
   private MemberStateEnum memberState;
 
   public static final String JSON_PROPERTY_MEMBERS = "members";
-  private List<SendBirdMember> members = null;
+  private List<SendbirdMember> members = null;
 
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private Integer messageSurvivalSeconds;
@@ -367,13 +367,13 @@ public class GetAGroupChannelResponse {
   private String name;
 
   public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
-  private SendBirdPushTriggerOption pushTriggerOption;
+  private SendbirdPushTriggerOption pushTriggerOption;
 
   public static final String JSON_PROPERTY_READ_RECEIPT = "read_receipt";
   private Map<String, Long> readReceipt = null;
 
   public static final String JSON_PROPERTY_SMS_FALLBACK = "sms_fallback";
-  private SendBirdSmsFallback smsFallback;
+  private SendbirdSmsFallback smsFallback;
 
   public static final String JSON_PROPERTY_TS_MESSAGE_OFFSET = "ts_message_offset";
   private Long tsMessageOffset;
@@ -390,7 +390,7 @@ public class GetAGroupChannelResponse {
   public GetAGroupChannelResponse() { 
   }
 
-  public GetAGroupChannelResponse channel(SendBirdGroupChannelDetailChannel channel) {
+  public GetAGroupChannelResponse channel(SendbirdGroupChannelDetailChannel channel) {
     this.channel = channel;
     return this;
   }
@@ -404,14 +404,14 @@ public class GetAGroupChannelResponse {
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdGroupChannelDetailChannel getChannel() {
+  public SendbirdGroupChannelDetailChannel getChannel() {
     return channel;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannel(SendBirdGroupChannelDetailChannel channel) {
+  public void setChannel(SendbirdGroupChannelDetailChannel channel) {
     this.channel = channel;
   }
 
@@ -520,7 +520,7 @@ public class GetAGroupChannelResponse {
   }
 
 
-  public GetAGroupChannelResponse createdBy(SendBirdBasicUserInfo createdBy) {
+  public GetAGroupChannelResponse createdBy(SendbirdBasicUserInfo createdBy) {
     this.createdBy = createdBy;
     return this;
   }
@@ -534,14 +534,14 @@ public class GetAGroupChannelResponse {
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdBasicUserInfo getCreatedBy() {
+  public SendbirdBasicUserInfo getCreatedBy() {
     return createdBy;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_BY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedBy(SendBirdBasicUserInfo createdBy) {
+  public void setCreatedBy(SendbirdBasicUserInfo createdBy) {
     this.createdBy = createdBy;
   }
 
@@ -624,7 +624,7 @@ public class GetAGroupChannelResponse {
   }
 
 
-  public GetAGroupChannelResponse disappearingMessage(SendBirdDisappearingMessage disappearingMessage) {
+  public GetAGroupChannelResponse disappearingMessage(SendbirdDisappearingMessage disappearingMessage) {
     this.disappearingMessage = disappearingMessage;
     return this;
   }
@@ -638,14 +638,14 @@ public class GetAGroupChannelResponse {
   @JsonProperty(JSON_PROPERTY_DISAPPEARING_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdDisappearingMessage getDisappearingMessage() {
+  public SendbirdDisappearingMessage getDisappearingMessage() {
     return disappearingMessage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DISAPPEARING_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDisappearingMessage(SendBirdDisappearingMessage disappearingMessage) {
+  public void setDisappearingMessage(SendbirdDisappearingMessage disappearingMessage) {
     this.disappearingMessage = disappearingMessage;
   }
 
@@ -806,7 +806,7 @@ public class GetAGroupChannelResponse {
   }
 
 
-  public GetAGroupChannelResponse inviter(SendBirdBasicUserInfo inviter) {
+  public GetAGroupChannelResponse inviter(SendbirdBasicUserInfo inviter) {
     this.inviter = inviter;
     return this;
   }
@@ -820,14 +820,14 @@ public class GetAGroupChannelResponse {
   @JsonProperty(JSON_PROPERTY_INVITER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdBasicUserInfo getInviter() {
+  public SendbirdBasicUserInfo getInviter() {
     return inviter;
   }
 
 
   @JsonProperty(JSON_PROPERTY_INVITER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInviter(SendBirdBasicUserInfo inviter) {
+  public void setInviter(SendbirdBasicUserInfo inviter) {
     this.inviter = inviter;
   }
 
@@ -1186,7 +1186,7 @@ public class GetAGroupChannelResponse {
   }
 
 
-  public GetAGroupChannelResponse lastMessage(SendBirdGroupChannelLastMessage lastMessage) {
+  public GetAGroupChannelResponse lastMessage(SendbirdGroupChannelLastMessage lastMessage) {
     this.lastMessage = lastMessage;
     return this;
   }
@@ -1200,14 +1200,14 @@ public class GetAGroupChannelResponse {
   @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdGroupChannelLastMessage getLastMessage() {
+  public SendbirdGroupChannelLastMessage getLastMessage() {
     return lastMessage;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LAST_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastMessage(SendBirdGroupChannelLastMessage lastMessage) {
+  public void setLastMessage(SendbirdGroupChannelLastMessage lastMessage) {
     this.lastMessage = lastMessage;
   }
 
@@ -1290,12 +1290,12 @@ public class GetAGroupChannelResponse {
   }
 
 
-  public GetAGroupChannelResponse members(List<SendBirdMember> members) {
+  public GetAGroupChannelResponse members(List<SendbirdMember> members) {
     this.members = members;
     return this;
   }
 
-  public GetAGroupChannelResponse addMembersItem(SendBirdMember membersItem) {
+  public GetAGroupChannelResponse addMembersItem(SendbirdMember membersItem) {
     if (this.members == null) {
       this.members = new ArrayList<>();
     }
@@ -1312,14 +1312,14 @@ public class GetAGroupChannelResponse {
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdMember> getMembers() {
+  public List<SendbirdMember> getMembers() {
     return members;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMembers(List<SendBirdMember> members) {
+  public void setMembers(List<SendbirdMember> members) {
     this.members = members;
   }
 
@@ -1436,7 +1436,7 @@ public class GetAGroupChannelResponse {
   }
 
 
-  public GetAGroupChannelResponse pushTriggerOption(SendBirdPushTriggerOption pushTriggerOption) {
+  public GetAGroupChannelResponse pushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
     return this;
   }
@@ -1450,14 +1450,14 @@ public class GetAGroupChannelResponse {
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdPushTriggerOption getPushTriggerOption() {
+  public SendbirdPushTriggerOption getPushTriggerOption() {
     return pushTriggerOption;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPushTriggerOption(SendBirdPushTriggerOption pushTriggerOption) {
+  public void setPushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
   }
 
@@ -1496,7 +1496,7 @@ public class GetAGroupChannelResponse {
   }
 
 
-  public GetAGroupChannelResponse smsFallback(SendBirdSmsFallback smsFallback) {
+  public GetAGroupChannelResponse smsFallback(SendbirdSmsFallback smsFallback) {
     this.smsFallback = smsFallback;
     return this;
   }
@@ -1510,14 +1510,14 @@ public class GetAGroupChannelResponse {
   @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdSmsFallback getSmsFallback() {
+  public SendbirdSmsFallback getSmsFallback() {
     return smsFallback;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SMS_FALLBACK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSmsFallback(SendBirdSmsFallback smsFallback) {
+  public void setSmsFallback(SendbirdSmsFallback smsFallback) {
     this.smsFallback = smsFallback;
   }
 

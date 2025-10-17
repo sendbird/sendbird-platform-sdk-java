@@ -15,9 +15,9 @@ import java.io.File;
 import org.openapitools.client.model.JoinChannelsRequest;
 import org.openapitools.client.model.ListBotsResponse;
 import org.openapitools.client.model.SendABotMessageResponse;
-import org.openapitools.client.model.SendBirdExtendedMessagePayload;
-import org.openapitools.client.model.SendBirdGroupChannelDetail;
-import org.openapitools.client.model.SendBirdSortedMetaarrayInner;
+import org.openapitools.client.model.SendbirdExtendedMessagePayload;
+import org.openapitools.client.model.SendbirdGroupChannelDetail;
+import org.openapitools.client.model.SendbirdSortedMetaarrayInner;
 import org.openapitools.client.model.UpdateBotByIdData;
 import org.openapitools.client.model.UpdateBotByIdResponse;
 import org.openapitools.client.model.ViewBotByIdResponse;
@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class BotApi {
   private ApiClient apiClient;
 
@@ -272,7 +272,7 @@ private ApiResponse<Object> deleteBotByIdWithHttpInfo(String botUserid, String a
     return new APIdeleteBotByIdRequest(botUserid);
   }
 
-private ApiResponse<SendBirdGroupChannelDetail> joinChannelsWithHttpInfo(String botUserid, String apiToken, JoinChannelsRequest joinChannelsRequest) throws ApiException {
+private ApiResponse<SendbirdGroupChannelDetail> joinChannelsWithHttpInfo(String botUserid, String apiToken, JoinChannelsRequest joinChannelsRequest) throws ApiException {
     Object localVarPostBody = joinChannelsRequest;
     
     // verify the required parameter 'botUserid' is set
@@ -308,7 +308,7 @@ private ApiResponse<SendBirdGroupChannelDetail> joinChannelsWithHttpInfo(String 
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdGroupChannelDetail>() {};
+    GenericType<SendbirdGroupChannelDetail> localVarReturnType = new GenericType<SendbirdGroupChannelDetail>() {};
 
     return apiClient.invokeAPI("BotApi.joinChannels", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -346,7 +346,7 @@ private ApiResponse<SendBirdGroupChannelDetail> joinChannelsWithHttpInfo(String 
 
     /**
      * Execute joinChannels request
-     * @return SendBirdGroupChannelDetail
+     * @return SendbirdGroupChannelDetail
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -356,13 +356,13 @@ private ApiResponse<SendBirdGroupChannelDetail> joinChannelsWithHttpInfo(String 
      
      */
     
-    public SendBirdGroupChannelDetail execute() throws ApiException {
+    public SendbirdGroupChannelDetail execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute joinChannels request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdGroupChannelDetail&gt;
+     * @return ApiResponse&lt;SendbirdGroupChannelDetail&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -371,7 +371,7 @@ private ApiResponse<SendBirdGroupChannelDetail> joinChannelsWithHttpInfo(String 
        </table>
 
      */
-    public ApiResponse<SendBirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendbirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
       return joinChannelsWithHttpInfo(botUserid, apiToken, joinChannelsRequest);
     }
   }
@@ -731,7 +731,7 @@ private ApiResponse<ListBotsResponse> listBotsWithHttpInfo(String token, Integer
     return new APIlistBotsRequest();
   }
 
-private ApiResponse<SendABotMessageResponse> sendABotMessageWithHttpInfo(String botUserid, String messageType, String channelUrl, String apiToken, String message, List<String> mentioned, SendBirdExtendedMessagePayload extendedMessagePayload, File _file, Boolean requireAuth, String mentionType, List<String> mentionedUserIds, Boolean isSilent, List<SendBirdSortedMetaarrayInner> sortedMetaarray, String apnsBundleId, Object appleCriticalAlertOptions, String sound, BigDecimal volume, Long createdAt, String customType, String data, String dedupId, Boolean markAsRead, Boolean sendPush) throws ApiException {
+private ApiResponse<SendABotMessageResponse> sendABotMessageWithHttpInfo(String botUserid, String messageType, String channelUrl, String apiToken, String message, List<String> mentioned, SendbirdExtendedMessagePayload extendedMessagePayload, File _file, Boolean requireAuth, String mentionType, List<String> mentionedUserIds, Boolean isSilent, List<SendbirdSortedMetaarrayInner> sortedMetaarray, String apnsBundleId, Object appleCriticalAlertOptions, String sound, BigDecimal volume, Long createdAt, String customType, String data, String dedupId, Boolean markAsRead, Boolean sendPush) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'botUserid' is set
@@ -833,13 +833,13 @@ if (sendPush != null)
     private String apiToken;
     private String message;
     private List<String> mentioned;
-    private SendBirdExtendedMessagePayload extendedMessagePayload;
+    private SendbirdExtendedMessagePayload extendedMessagePayload;
     private File _file;
     private Boolean requireAuth;
     private String mentionType;
     private List<String> mentionedUserIds;
     private Boolean isSilent;
-    private List<SendBirdSortedMetaarrayInner> sortedMetaarray;
+    private List<SendbirdSortedMetaarrayInner> sortedMetaarray;
     private String apnsBundleId;
     private Object appleCriticalAlertOptions;
     private String sound;
@@ -910,7 +910,7 @@ if (sendPush != null)
      * @param extendedMessagePayload  (optional)
      * @return APIsendABotMessageRequest
      */
-    public APIsendABotMessageRequest extendedMessagePayload(SendBirdExtendedMessagePayload extendedMessagePayload) {
+    public APIsendABotMessageRequest extendedMessagePayload(SendbirdExtendedMessagePayload extendedMessagePayload) {
       this.extendedMessagePayload = extendedMessagePayload;
       return this;
     }
@@ -970,7 +970,7 @@ if (sendPush != null)
      * @param sortedMetaarray  (optional)
      * @return APIsendABotMessageRequest
      */
-    public APIsendABotMessageRequest sortedMetaarray(List<SendBirdSortedMetaarrayInner> sortedMetaarray) {
+    public APIsendABotMessageRequest sortedMetaarray(List<SendbirdSortedMetaarrayInner> sortedMetaarray) {
       this.sortedMetaarray = sortedMetaarray;
       return this;
     }

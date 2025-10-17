@@ -31,16 +31,16 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdReaction
+ * SendbirdReaction
  */
 @JsonPropertyOrder({
-  SendBirdReaction.JSON_PROPERTY_KEY,
-  SendBirdReaction.JSON_PROPERTY_UPDATED_AT,
-  SendBirdReaction.JSON_PROPERTY_USER_IDS
+  SendbirdReaction.JSON_PROPERTY_KEY,
+  SendbirdReaction.JSON_PROPERTY_UPDATED_AT,
+  SendbirdReaction.JSON_PROPERTY_USER_IDS
 })
-@JsonTypeName("SendBird.Reaction")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
-public class SendBirdReaction {
+@JsonTypeName("Sendbird.Reaction")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+public class SendbirdReaction {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;
 
@@ -50,10 +50,10 @@ public class SendBirdReaction {
   public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = null;
 
-  public SendBirdReaction() { 
+  public SendbirdReaction() { 
   }
 
-  public SendBirdReaction key(String key) {
+  public SendbirdReaction key(String key) {
     this.key = key;
     return this;
   }
@@ -79,7 +79,7 @@ public class SendBirdReaction {
   }
 
 
-  public SendBirdReaction updatedAt(Long updatedAt) {
+  public SendbirdReaction updatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -105,12 +105,12 @@ public class SendBirdReaction {
   }
 
 
-  public SendBirdReaction userIds(List<String> userIds) {
+  public SendbirdReaction userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
 
-  public SendBirdReaction addUserIdsItem(String userIdsItem) {
+  public SendbirdReaction addUserIdsItem(String userIdsItem) {
     if (this.userIds == null) {
       this.userIds = new ArrayList<>();
     }
@@ -140,7 +140,7 @@ public class SendBirdReaction {
 
 
   /**
-   * Return true if this SendBird.Reaction object is equal to o.
+   * Return true if this Sendbird.Reaction object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -150,10 +150,10 @@ public class SendBirdReaction {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdReaction sendBirdReaction = (SendBirdReaction) o;
-    return Objects.equals(this.key, sendBirdReaction.key) &&
-        Objects.equals(this.updatedAt, sendBirdReaction.updatedAt) &&
-        Objects.equals(this.userIds, sendBirdReaction.userIds);
+    SendbirdReaction sendbirdReaction = (SendbirdReaction) o;
+    return Objects.equals(this.key, sendbirdReaction.key) &&
+        Objects.equals(this.updatedAt, sendbirdReaction.updatedAt) &&
+        Objects.equals(this.userIds, sendbirdReaction.userIds);
   }
 
   @Override
@@ -164,7 +164,7 @@ public class SendBirdReaction {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdReaction {\n");
+    sb.append("class SendbirdReaction {\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");

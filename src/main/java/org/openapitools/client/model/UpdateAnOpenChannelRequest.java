@@ -43,7 +43,7 @@ import org.sendbird.client.JSON;
   UpdateAnOpenChannelRequest.JSON_PROPERTY_OPERATOR_IDS
 })
 @JsonTypeName("updateAnOpenChannel_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class UpdateAnOpenChannelRequest {
   public static final String JSON_PROPERTY_COVER_FILE = "cover_file";
   private File coverFile;

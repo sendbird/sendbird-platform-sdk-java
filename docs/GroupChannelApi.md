@@ -28,7 +28,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## acceptAnInvitation
 
-> SendBirdGroupChannelDetail acceptAnInvitation(channelUrl).apiToken(apiToken).acceptAnInvitationRequest(acceptAnInvitationRequest).execute();
+> SendbirdGroupChannelDetail acceptAnInvitation(channelUrl).apiToken(apiToken).acceptAnInvitationRequest(acceptAnInvitationRequest).execute();
 
 Accept an invitation
 
@@ -61,7 +61,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         AcceptAnInvitationRequest acceptAnInvitationRequest = new AcceptAnInvitationRequest(); // AcceptAnInvitationRequest | 
         try {
-            SendBirdGroupChannelDetail result = api.acceptAnInvitation(channelUrl)
+            SendbirdGroupChannelDetail result = api.acceptAnInvitation(channelUrl)
                 .apiToken(apiToken)
                 .acceptAnInvitationRequest(acceptAnInvitationRequest)
                 .execute();
@@ -88,7 +88,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
+[**SendbirdGroupChannelDetail**](SendbirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -268,7 +268,7 @@ No authorization required
 
 ## createAGroupChannel
 
-> SendBirdGroupChannelDetail createAGroupChannel().apiToken(apiToken).createAGroupChannelRequest(createAGroupChannelRequest).execute();
+> SendbirdGroupChannelDetail createAGroupChannel().apiToken(apiToken).createAGroupChannelRequest(createAGroupChannelRequest).execute();
 
 Create a group channel
 
@@ -299,7 +299,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         CreateAGroupChannelRequest createAGroupChannelRequest = new CreateAGroupChannelRequest(); // CreateAGroupChannelRequest | 
         try {
-            SendBirdGroupChannelDetail result = api.createAGroupChannel()
+            SendbirdGroupChannelDetail result = api.createAGroupChannel()
                 .apiToken(apiToken)
                 .createAGroupChannelRequest(createAGroupChannelRequest)
                 .execute();
@@ -325,7 +325,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
+[**SendbirdGroupChannelDetail**](SendbirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -666,7 +666,7 @@ No authorization required
 
 ## joinAChannel
 
-> SendBirdGroupChannelDetail joinAChannel(channelUrl).apiToken(apiToken).joinAChannelRequest(joinAChannelRequest).execute();
+> SendbirdGroupChannelDetail joinAChannel(channelUrl).apiToken(apiToken).joinAChannelRequest(joinAChannelRequest).execute();
 
 Join a channel
 
@@ -696,7 +696,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         JoinAChannelRequest joinAChannelRequest = new JoinAChannelRequest(); // JoinAChannelRequest | 
         try {
-            SendBirdGroupChannelDetail result = api.joinAChannel(channelUrl)
+            SendbirdGroupChannelDetail result = api.joinAChannel(channelUrl)
                 .apiToken(apiToken)
                 .joinAChannelRequest(joinAChannelRequest)
                 .execute();
@@ -723,7 +723,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
+[**SendbirdGroupChannelDetail**](SendbirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -1603,7 +1603,7 @@ No authorization required
 
 ## updateAGroupChannel
 
-> SendBirdGroupChannelDetail updateAGroupChannel(channelUrl).apiToken(apiToken).updateAGroupChannelRequest(updateAGroupChannelRequest).execute();
+> SendbirdGroupChannelDetail updateAGroupChannel(channelUrl).apiToken(apiToken).updateAGroupChannelRequest(updateAGroupChannelRequest).execute();
 
 Update a group channel
 
@@ -1633,7 +1633,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateAGroupChannelRequest updateAGroupChannelRequest = new UpdateAGroupChannelRequest(); // UpdateAGroupChannelRequest | 
         try {
-            SendBirdGroupChannelDetail result = api.updateAGroupChannel(channelUrl)
+            SendbirdGroupChannelDetail result = api.updateAGroupChannel(channelUrl)
                 .apiToken(apiToken)
                 .updateAGroupChannelRequest(updateAGroupChannelRequest)
                 .execute();
@@ -1660,7 +1660,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
+[**SendbirdGroupChannelDetail**](SendbirdGroupChannelDetail.md)
 
 ### Authorization
 

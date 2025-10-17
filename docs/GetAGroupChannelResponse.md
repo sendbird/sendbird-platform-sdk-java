@@ -7,23 +7,23 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**channel** | [**SendBirdGroupChannelDetailChannel**](SendBirdGroupChannelDetailChannel.md) |  |  [optional] |
+|**channel** | [**SendbirdGroupChannelDetailChannel**](SendbirdGroupChannelDetailChannel.md) |  |  [optional] |
 |**channelUrl** | **String** |  |  |
 |**countPreference** | [**CountPreferenceEnum**](#CountPreferenceEnum) |  |  [optional] |
 |**coverUrl** | **String** |  |  [optional] |
 |**createdAt** | **Long** |  |  [optional] |
-|**createdBy** | [**SendBirdBasicUserInfo**](SendBirdBasicUserInfo.md) |  |  [optional] |
+|**createdBy** | [**SendbirdBasicUserInfo**](SendbirdBasicUserInfo.md) |  |  [optional] |
 |**customType** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |
 |**deliveryReceipt** | **Object** |  |  [optional] |
-|**disappearingMessage** | [**SendBirdDisappearingMessage**](SendBirdDisappearingMessage.md) |  |  [optional] |
+|**disappearingMessage** | [**SendbirdDisappearingMessage**](SendbirdDisappearingMessage.md) |  |  [optional] |
 |**freeze** | **Boolean** |  |  [optional] |
 |**hasAiBot** | **Boolean** |  |  [optional] |
 |**hasBot** | **Boolean** |  |  [optional] |
 |**hiddenState** | [**HiddenStateEnum**](#HiddenStateEnum) |  |  [optional] |
 |**ignoreProfanityFilter** | **Boolean** |  |  [optional] |
 |**invitedAt** | **Long** |  |  [optional] |
-|**inviter** | [**SendBirdBasicUserInfo**](SendBirdBasicUserInfo.md) |  |  [optional] |
+|**inviter** | [**SendbirdBasicUserInfo**](SendbirdBasicUserInfo.md) |  |  [optional] |
 |**isAccessCodeRequired** | **Boolean** |  |  [optional] |
 |**isBroadcast** | **Boolean** |  |  [optional] |
 |**isDiscoverable** | **Boolean** |  |  [optional] |
@@ -37,18 +37,18 @@
 |**isSuper** | **Boolean** |  |  [optional] |
 |**joinedMemberCount** | **Integer** |  |  [optional] |
 |**joinedTs** | **Long** |  |  [optional] |
-|**lastMessage** | [**SendBirdGroupChannelLastMessage**](SendBirdGroupChannelLastMessage.md) |  |  [optional] |
+|**lastMessage** | [**SendbirdGroupChannelLastMessage**](SendbirdGroupChannelLastMessage.md) |  |  [optional] |
 |**maxLengthMessage** | **Integer** |  |  [optional] |
 |**memberCount** | **Integer** |  |  [optional] |
 |**memberState** | [**MemberStateEnum**](#MemberStateEnum) |  |  [optional] |
-|**members** | [**List&lt;SendBirdMember&gt;**](SendBirdMember.md) |  |  [optional] |
+|**members** | [**List&lt;SendbirdMember&gt;**](SendbirdMember.md) |  |  [optional] |
 |**messageSurvivalSeconds** | **Integer** |  |  [optional] |
 |**metadata** | **Object** |  |  [optional] |
 |**myRole** | [**MyRoleEnum**](#MyRoleEnum) |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**pushTriggerOption** | **SendBirdPushTriggerOption** |  |  [optional] |
+|**pushTriggerOption** | **SendbirdPushTriggerOption** |  |  [optional] |
 |**readReceipt** | **Map&lt;String, Long&gt;** |  |  [optional] |
-|**smsFallback** | [**SendBirdSmsFallback**](SendBirdSmsFallback.md) |  |  [optional] |
+|**smsFallback** | [**SendbirdSmsFallback**](SendbirdSmsFallback.md) |  |  [optional] |
 |**tsMessageOffset** | **Long** |  |  [optional] |
 |**unreadMentionCount** | **Integer** |  |  [optional] |
 |**unreadMessageCount** | **Integer** |  |  [optional] |

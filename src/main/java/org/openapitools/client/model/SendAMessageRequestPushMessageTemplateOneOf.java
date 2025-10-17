@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   SendAMessageRequestPushMessageTemplateOneOf.JSON_PROPERTY_BODY
 })
 @JsonTypeName("sendAMessage_request_push_message_template_oneOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class SendAMessageRequestPushMessageTemplateOneOf {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;

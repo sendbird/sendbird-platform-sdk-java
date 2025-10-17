@@ -1,6 +1,6 @@
 
 
-# SendBirdPushTriggerOption
+# SendbirdPushTriggerOption
 
 ## Enum
 

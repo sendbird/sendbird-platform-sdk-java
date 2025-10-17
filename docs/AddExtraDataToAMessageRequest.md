@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**sortedMetaarray** | [**List&lt;SendBirdSortedMetaarrayInner&gt;**](SendBirdSortedMetaarrayInner.md) |  |  |
+|**sortedMetaarray** | [**List&lt;SendbirdSortedMetaarrayInner&gt;**](SendbirdSortedMetaarrayInner.md) |  |  |
 
 
 

@@ -24,7 +24,7 @@ import org.openapitools.client.model.MarkAllMessagesAsReadRequest;
 import org.openapitools.client.model.MarkChannelMessagesAsReadRequest;
 import org.openapitools.client.model.RemoveARegistrationOrDeviceTokenResponse;
 import org.openapitools.client.model.RemoveAllRegistrationOrDeviceTokenResponse;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdUser;
 import org.openapitools.client.model.UpdateAUserRequest;
 import org.openapitools.client.model.UpdateChannelInvitationPreferenceRequest;
 import org.openapitools.client.model.UpdateChannelInvitationPreferenceResponse;
@@ -45,7 +45,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class UserApi {
   private ApiClient apiClient;
 
@@ -319,7 +319,7 @@ private ApiResponse<ChooseAPushNotificationContentTemplateResponse> chooseAPushN
     return new APIchooseAPushNotificationContentTemplateRequest(userId);
   }
 
-private ApiResponse<SendBirdUser> createAUserWithHttpInfo(String apiToken, CreateAUserRequest createAUserRequest) throws ApiException {
+private ApiResponse<SendbirdUser> createAUserWithHttpInfo(String apiToken, CreateAUserRequest createAUserRequest) throws ApiException {
     Object localVarPostBody = createAUserRequest;
     
     // create path and map variables
@@ -349,7 +349,7 @@ private ApiResponse<SendBirdUser> createAUserWithHttpInfo(String apiToken, Creat
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdUser> localVarReturnType = new GenericType<SendBirdUser>() {};
+    GenericType<SendbirdUser> localVarReturnType = new GenericType<SendbirdUser>() {};
 
     return apiClient.invokeAPI("UserApi.createAUser", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -385,7 +385,7 @@ private ApiResponse<SendBirdUser> createAUserWithHttpInfo(String apiToken, Creat
 
     /**
      * Execute createAUser request
-     * @return SendBirdUser
+     * @return SendbirdUser
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -395,13 +395,13 @@ private ApiResponse<SendBirdUser> createAUserWithHttpInfo(String apiToken, Creat
      
      */
     
-    public SendBirdUser execute() throws ApiException {
+    public SendbirdUser execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute createAUser request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdUser&gt;
+     * @return ApiResponse&lt;SendbirdUser&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -410,7 +410,7 @@ private ApiResponse<SendBirdUser> createAUserWithHttpInfo(String apiToken, Creat
        </table>
 
      */
-    public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendbirdUser> executeWithHttpInfo() throws ApiException {
       return createAUserWithHttpInfo(apiToken, createAUserRequest);
     }
   }
@@ -2376,7 +2376,7 @@ private ApiResponse<Object> resetPushPreferencesWithHttpInfo(String userId, Stri
     return new APIresetPushPreferencesRequest(userId);
   }
 
-private ApiResponse<SendBirdUser> updateAUserWithHttpInfo(String userId, String apiToken, UpdateAUserRequest updateAUserRequest) throws ApiException {
+private ApiResponse<SendbirdUser> updateAUserWithHttpInfo(String userId, String apiToken, UpdateAUserRequest updateAUserRequest) throws ApiException {
     Object localVarPostBody = updateAUserRequest;
     
     // verify the required parameter 'userId' is set
@@ -2412,7 +2412,7 @@ private ApiResponse<SendBirdUser> updateAUserWithHttpInfo(String userId, String 
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdUser> localVarReturnType = new GenericType<SendBirdUser>() {};
+    GenericType<SendbirdUser> localVarReturnType = new GenericType<SendbirdUser>() {};
 
     return apiClient.invokeAPI("UserApi.updateAUser", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2450,7 +2450,7 @@ private ApiResponse<SendBirdUser> updateAUserWithHttpInfo(String userId, String 
 
     /**
      * Execute updateAUser request
-     * @return SendBirdUser
+     * @return SendbirdUser
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2460,13 +2460,13 @@ private ApiResponse<SendBirdUser> updateAUserWithHttpInfo(String userId, String 
      
      */
     
-    public SendBirdUser execute() throws ApiException {
+    public SendbirdUser execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updateAUser request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdUser&gt;
+     * @return ApiResponse&lt;SendbirdUser&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2475,7 +2475,7 @@ private ApiResponse<SendBirdUser> updateAUserWithHttpInfo(String userId, String 
        </table>
 
      */
-    public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendbirdUser> executeWithHttpInfo() throws ApiException {
       return updateAUserWithHttpInfo(userId, apiToken, updateAUserRequest);
     }
   }
@@ -2979,7 +2979,7 @@ private ApiResponse<UpdatePushPreferencesForAChannelResponse> updatePushPreferen
     return new APIupdatePushPreferencesForAChannelRequest(userId, channelUrl);
   }
 
-private ApiResponse<SendBirdUser> viewAUserWithHttpInfo(String userId, Boolean includeUnreadCount, String customTypes, String superMode, String apiToken) throws ApiException {
+private ApiResponse<SendbirdUser> viewAUserWithHttpInfo(String userId, Boolean includeUnreadCount, String customTypes, String superMode, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'userId' is set
@@ -3018,7 +3018,7 @@ private ApiResponse<SendBirdUser> viewAUserWithHttpInfo(String userId, Boolean i
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdUser> localVarReturnType = new GenericType<SendBirdUser>() {};
+    GenericType<SendbirdUser> localVarReturnType = new GenericType<SendbirdUser>() {};
 
     return apiClient.invokeAPI("UserApi.viewAUser", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -3078,7 +3078,7 @@ private ApiResponse<SendBirdUser> viewAUserWithHttpInfo(String userId, Boolean i
 
     /**
      * Execute viewAUser request
-     * @return SendBirdUser
+     * @return SendbirdUser
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3088,13 +3088,13 @@ private ApiResponse<SendBirdUser> viewAUserWithHttpInfo(String userId, Boolean i
      
      */
     
-    public SendBirdUser execute() throws ApiException {
+    public SendbirdUser execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute viewAUser request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdUser&gt;
+     * @return ApiResponse&lt;SendbirdUser&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -3103,7 +3103,7 @@ private ApiResponse<SendBirdUser> viewAUserWithHttpInfo(String userId, Boolean i
        </table>
 
      */
-    public ApiResponse<SendBirdUser> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendbirdUser> executeWithHttpInfo() throws ApiException {
       return viewAUserWithHttpInfo(userId, includeUnreadCount, customTypes, superMode, apiToken);
     }
   }

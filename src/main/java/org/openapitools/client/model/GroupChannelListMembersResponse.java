@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdMember;
+import org.openapitools.client.model.SendbirdMember;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,10 +39,10 @@ import org.sendbird.client.JSON;
   GroupChannelListMembersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("groupChannelListMembersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class GroupChannelListMembersResponse {
   public static final String JSON_PROPERTY_MEMBERS = "members";
-  private List<SendBirdMember> members = new ArrayList<>();
+  private List<SendbirdMember> members = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
@@ -50,12 +50,12 @@ public class GroupChannelListMembersResponse {
   public GroupChannelListMembersResponse() { 
   }
 
-  public GroupChannelListMembersResponse members(List<SendBirdMember> members) {
+  public GroupChannelListMembersResponse members(List<SendbirdMember> members) {
     this.members = members;
     return this;
   }
 
-  public GroupChannelListMembersResponse addMembersItem(SendBirdMember membersItem) {
+  public GroupChannelListMembersResponse addMembersItem(SendbirdMember membersItem) {
     this.members.add(membersItem);
     return this;
   }
@@ -69,14 +69,14 @@ public class GroupChannelListMembersResponse {
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<SendBirdMember> getMembers() {
+  public List<SendbirdMember> getMembers() {
     return members;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMembers(List<SendBirdMember> members) {
+  public void setMembers(List<SendbirdMember> members) {
     this.members = members;
   }
 

@@ -27,8 +27,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSortedMetaarrayInner;
 import org.openapitools.client.model.SendTextMessageRequestBodyPushMessageTemplate;
+import org.openapitools.client.model.SendbirdSortedMetaarrayInner;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -58,7 +58,7 @@ import org.sendbird.client.JSON;
   SendTextMessageRequestBody.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("sendTextMessageRequestBody")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class SendTextMessageRequestBody {
   public static final String JSON_PROPERTY_APNS_BUNDLE_ID = "apns_bundle_id";
   private String apnsBundleId;
@@ -177,7 +177,7 @@ public class SendTextMessageRequestBody {
   private Boolean sendPush;
 
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
-  private List<SendBirdSortedMetaarrayInner> sortedMetaarray = null;
+  private List<SendbirdSortedMetaarrayInner> sortedMetaarray = null;
 
   public static final String JSON_PROPERTY_SOUND = "sound";
   private String sound;
@@ -612,12 +612,12 @@ public class SendTextMessageRequestBody {
   }
 
 
-  public SendTextMessageRequestBody sortedMetaarray(List<SendBirdSortedMetaarrayInner> sortedMetaarray) {
+  public SendTextMessageRequestBody sortedMetaarray(List<SendbirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
 
-  public SendTextMessageRequestBody addSortedMetaarrayItem(SendBirdSortedMetaarrayInner sortedMetaarrayItem) {
+  public SendTextMessageRequestBody addSortedMetaarrayItem(SendbirdSortedMetaarrayInner sortedMetaarrayItem) {
     if (this.sortedMetaarray == null) {
       this.sortedMetaarray = new ArrayList<>();
     }
@@ -634,14 +634,14 @@ public class SendTextMessageRequestBody {
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSortedMetaarrayInner> getSortedMetaarray() {
+  public List<SendbirdSortedMetaarrayInner> getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSortedMetaarray(List<SendBirdSortedMetaarrayInner> sortedMetaarray) {
+  public void setSortedMetaarray(List<SendbirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 

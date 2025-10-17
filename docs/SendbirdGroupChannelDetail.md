@@ -1,21 +1,21 @@
 
 
-# SendBirdGroupChannelDetail
+# SendbirdGroupChannelDetail
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**channel** | [**SendBirdGroupChannelDetailChannel**](SendBirdGroupChannelDetailChannel.md) |  |  [optional] |
+|**channel** | [**SendbirdGroupChannelDetailChannel**](SendbirdGroupChannelDetailChannel.md) |  |  [optional] |
 |**channelUrl** | **String** |  |  |
 |**coverUrl** | **String** |  |  [optional] |
 |**createdAt** | **Long** |  |  [optional] |
-|**createdBy** | [**SendBirdBasicUserInfo**](SendBirdBasicUserInfo.md) |  |  [optional] |
+|**createdBy** | [**SendbirdBasicUserInfo**](SendbirdBasicUserInfo.md) |  |  [optional] |
 |**customType** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |
 |**deliveryReceipt** | **Map&lt;String, Long&gt;** |  |  [optional] |
-|**disappearingMessage** | [**SendBirdDisappearingMessage**](SendBirdDisappearingMessage.md) |  |  [optional] |
+|**disappearingMessage** | [**SendbirdDisappearingMessage**](SendbirdDisappearingMessage.md) |  |  [optional] |
 |**freeze** | **Boolean** |  |  [optional] |
 |**hasAiBot** | **Boolean** |  |  [optional] |
 |**hasBot** | **Boolean** |  |  [optional] |
@@ -29,15 +29,15 @@
 |**isPublic** | **Boolean** |  |  [optional] |
 |**isSuper** | **Boolean** |  |  [optional] |
 |**joinedMemberCount** | **Integer** |  |  [optional] |
-|**lastMessage** | [**SendBirdMessageResponse**](SendBirdMessageResponse.md) |  |  [optional] |
+|**lastMessage** | [**SendbirdMessageResponse**](SendbirdMessageResponse.md) |  |  [optional] |
 |**maxLengthMessage** | **Integer** |  |  [optional] |
 |**memberCount** | **Integer** |  |  [optional] |
-|**members** | [**List&lt;SendBirdMember&gt;**](SendBirdMember.md) |  |  [optional] |
+|**members** | [**List&lt;SendbirdMember&gt;**](SendbirdMember.md) |  |  [optional] |
 |**messageSurvivalSeconds** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**operators** | [**List&lt;SendBirdUser&gt;**](SendBirdUser.md) |  |  [optional] |
+|**operators** | [**List&lt;SendbirdUser&gt;**](SendbirdUser.md) |  |  [optional] |
 |**readReceipt** | **Map&lt;String, Long&gt;** |  |  [optional] |
-|**smsFallback** | [**SendBirdSmsFallback**](SendBirdSmsFallback.md) |  |  [optional] |
+|**smsFallback** | [**SendbirdSmsFallback**](SendbirdSmsFallback.md) |  |  [optional] |
 |**unreadMentionCount** | **Integer** |  |  [optional] |
 |**unreadMessageCount** | **Integer** |  |  [optional] |
 

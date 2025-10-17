@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdPushTriggerOption;
+import org.openapitools.client.model.SendbirdPushTriggerOption;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -36,35 +36,35 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdMember
+ * SendbirdMember
  */
 @JsonPropertyOrder({
-  SendBirdMember.JSON_PROPERTY_DELIVERED_TS,
-  SendBirdMember.JSON_PROPERTY_DO_NOT_DISTURB,
-  SendBirdMember.JSON_PROPERTY_FRIEND_DISCOVERY_KEY,
-  SendBirdMember.JSON_PROPERTY_FRIEND_NAME,
-  SendBirdMember.JSON_PROPERTY_IS_ACTIVE,
-  SendBirdMember.JSON_PROPERTY_IS_BLOCKED_BY_ME,
-  SendBirdMember.JSON_PROPERTY_IS_BLOCKING_ME,
-  SendBirdMember.JSON_PROPERTY_IS_MUTED,
-  SendBirdMember.JSON_PROPERTY_IS_ONLINE,
-  SendBirdMember.JSON_PROPERTY_LAST_SEEN_AT,
-  SendBirdMember.JSON_PROPERTY_METADATA,
-  SendBirdMember.JSON_PROPERTY_MUTED_DESCRIPTION,
-  SendBirdMember.JSON_PROPERTY_MUTED_END_AT,
-  SendBirdMember.JSON_PROPERTY_NICKNAME,
-  SendBirdMember.JSON_PROPERTY_PUSH_ENABLED,
-  SendBirdMember.JSON_PROPERTY_PUSH_TRIGGER_OPTION,
-  SendBirdMember.JSON_PROPERTY_PROFILE_URL,
-  SendBirdMember.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
-  SendBirdMember.JSON_PROPERTY_READ_TS,
-  SendBirdMember.JSON_PROPERTY_ROLE,
-  SendBirdMember.JSON_PROPERTY_STATE,
-  SendBirdMember.JSON_PROPERTY_USER_ID
+  SendbirdMember.JSON_PROPERTY_DELIVERED_TS,
+  SendbirdMember.JSON_PROPERTY_DO_NOT_DISTURB,
+  SendbirdMember.JSON_PROPERTY_FRIEND_DISCOVERY_KEY,
+  SendbirdMember.JSON_PROPERTY_FRIEND_NAME,
+  SendbirdMember.JSON_PROPERTY_IS_ACTIVE,
+  SendbirdMember.JSON_PROPERTY_IS_BLOCKED_BY_ME,
+  SendbirdMember.JSON_PROPERTY_IS_BLOCKING_ME,
+  SendbirdMember.JSON_PROPERTY_IS_MUTED,
+  SendbirdMember.JSON_PROPERTY_IS_ONLINE,
+  SendbirdMember.JSON_PROPERTY_LAST_SEEN_AT,
+  SendbirdMember.JSON_PROPERTY_METADATA,
+  SendbirdMember.JSON_PROPERTY_MUTED_DESCRIPTION,
+  SendbirdMember.JSON_PROPERTY_MUTED_END_AT,
+  SendbirdMember.JSON_PROPERTY_NICKNAME,
+  SendbirdMember.JSON_PROPERTY_PUSH_ENABLED,
+  SendbirdMember.JSON_PROPERTY_PUSH_TRIGGER_OPTION,
+  SendbirdMember.JSON_PROPERTY_PROFILE_URL,
+  SendbirdMember.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
+  SendbirdMember.JSON_PROPERTY_READ_TS,
+  SendbirdMember.JSON_PROPERTY_ROLE,
+  SendbirdMember.JSON_PROPERTY_STATE,
+  SendbirdMember.JSON_PROPERTY_USER_ID
 })
-@JsonTypeName("SendBird.Member")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
-public class SendBirdMember {
+@JsonTypeName("Sendbird.Member")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+public class SendbirdMember {
   public static final String JSON_PROPERTY_DELIVERED_TS = "delivered_ts";
   private Long deliveredTs;
 
@@ -111,7 +111,7 @@ public class SendBirdMember {
   private Boolean pushEnabled;
 
   public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
-  private SendBirdPushTriggerOption pushTriggerOption;
+  private SendbirdPushTriggerOption pushTriggerOption;
 
   public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
   private String profileUrl = "";
@@ -205,10 +205,10 @@ public class SendBirdMember {
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
 
-  public SendBirdMember() { 
+  public SendbirdMember() { 
   }
 
-  public SendBirdMember deliveredTs(Long deliveredTs) {
+  public SendbirdMember deliveredTs(Long deliveredTs) {
     this.deliveredTs = deliveredTs;
     return this;
   }
@@ -234,7 +234,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember doNotDisturb(Boolean doNotDisturb) {
+  public SendbirdMember doNotDisturb(Boolean doNotDisturb) {
     this.doNotDisturb = doNotDisturb;
     return this;
   }
@@ -260,12 +260,12 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember friendDiscoveryKey(List<String> friendDiscoveryKey) {
+  public SendbirdMember friendDiscoveryKey(List<String> friendDiscoveryKey) {
     this.friendDiscoveryKey = JsonNullable.<List<String>>of(friendDiscoveryKey);
     return this;
   }
 
-  public SendBirdMember addFriendDiscoveryKeyItem(String friendDiscoveryKeyItem) {
+  public SendbirdMember addFriendDiscoveryKeyItem(String friendDiscoveryKeyItem) {
     if (this.friendDiscoveryKey == null || !this.friendDiscoveryKey.isPresent()) {
       this.friendDiscoveryKey = JsonNullable.<List<String>>of(new ArrayList<>());
     }
@@ -306,7 +306,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember friendName(String friendName) {
+  public SendbirdMember friendName(String friendName) {
     this.friendName = JsonNullable.<String>of(friendName);
     return this;
   }
@@ -340,7 +340,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember isActive(Boolean isActive) {
+  public SendbirdMember isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
   }
@@ -366,7 +366,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember isBlockedByMe(Boolean isBlockedByMe) {
+  public SendbirdMember isBlockedByMe(Boolean isBlockedByMe) {
     this.isBlockedByMe = isBlockedByMe;
     return this;
   }
@@ -392,7 +392,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember isBlockingMe(Boolean isBlockingMe) {
+  public SendbirdMember isBlockingMe(Boolean isBlockingMe) {
     this.isBlockingMe = isBlockingMe;
     return this;
   }
@@ -418,7 +418,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember isMuted(Boolean isMuted) {
+  public SendbirdMember isMuted(Boolean isMuted) {
     this.isMuted = isMuted;
     return this;
   }
@@ -444,7 +444,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember isOnline(Boolean isOnline) {
+  public SendbirdMember isOnline(Boolean isOnline) {
     this.isOnline = isOnline;
     return this;
   }
@@ -470,7 +470,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember lastSeenAt(Long lastSeenAt) {
+  public SendbirdMember lastSeenAt(Long lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
     return this;
   }
@@ -496,7 +496,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember metadata(Object metadata) {
+  public SendbirdMember metadata(Object metadata) {
     this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
@@ -530,7 +530,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember mutedDescription(String mutedDescription) {
+  public SendbirdMember mutedDescription(String mutedDescription) {
     this.mutedDescription = mutedDescription;
     return this;
   }
@@ -556,7 +556,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember mutedEndAt(Long mutedEndAt) {
+  public SendbirdMember mutedEndAt(Long mutedEndAt) {
     this.mutedEndAt = mutedEndAt;
     return this;
   }
@@ -582,7 +582,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember nickname(String nickname) {
+  public SendbirdMember nickname(String nickname) {
     this.nickname = JsonNullable.<String>of(nickname);
     return this;
   }
@@ -616,7 +616,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember pushEnabled(Boolean pushEnabled) {
+  public SendbirdMember pushEnabled(Boolean pushEnabled) {
     this.pushEnabled = pushEnabled;
     return this;
   }
@@ -642,7 +642,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember pushTriggerOption(SendBirdPushTriggerOption pushTriggerOption) {
+  public SendbirdMember pushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
     return this;
   }
@@ -656,19 +656,19 @@ public class SendBirdMember {
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdPushTriggerOption getPushTriggerOption() {
+  public SendbirdPushTriggerOption getPushTriggerOption() {
     return pushTriggerOption;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPushTriggerOption(SendBirdPushTriggerOption pushTriggerOption) {
+  public void setPushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
   }
 
 
-  public SendBirdMember profileUrl(String profileUrl) {
+  public SendbirdMember profileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
     return this;
   }
@@ -694,7 +694,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
+  public SendbirdMember requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
     this.requireAuthForProfileImage = requireAuthForProfileImage;
     return this;
   }
@@ -720,7 +720,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember readTs(Long readTs) {
+  public SendbirdMember readTs(Long readTs) {
     this.readTs = readTs;
     return this;
   }
@@ -746,7 +746,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember role(RoleEnum role) {
+  public SendbirdMember role(RoleEnum role) {
     this.role = JsonNullable.<RoleEnum>of(role);
     return this;
   }
@@ -780,7 +780,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember state(StateEnum state) {
+  public SendbirdMember state(StateEnum state) {
     this.state = JsonNullable.<StateEnum>of(state);
     return this;
   }
@@ -814,7 +814,7 @@ public class SendBirdMember {
   }
 
 
-  public SendBirdMember userId(String userId) {
+  public SendbirdMember userId(String userId) {
     this.userId = userId;
     return this;
   }
@@ -841,7 +841,7 @@ public class SendBirdMember {
 
 
   /**
-   * Return true if this SendBird.Member object is equal to o.
+   * Return true if this Sendbird.Member object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -851,29 +851,29 @@ public class SendBirdMember {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdMember sendBirdMember = (SendBirdMember) o;
-    return Objects.equals(this.deliveredTs, sendBirdMember.deliveredTs) &&
-        Objects.equals(this.doNotDisturb, sendBirdMember.doNotDisturb) &&
-        equalsNullable(this.friendDiscoveryKey, sendBirdMember.friendDiscoveryKey) &&
-        equalsNullable(this.friendName, sendBirdMember.friendName) &&
-        Objects.equals(this.isActive, sendBirdMember.isActive) &&
-        Objects.equals(this.isBlockedByMe, sendBirdMember.isBlockedByMe) &&
-        Objects.equals(this.isBlockingMe, sendBirdMember.isBlockingMe) &&
-        Objects.equals(this.isMuted, sendBirdMember.isMuted) &&
-        Objects.equals(this.isOnline, sendBirdMember.isOnline) &&
-        Objects.equals(this.lastSeenAt, sendBirdMember.lastSeenAt) &&
-        equalsNullable(this.metadata, sendBirdMember.metadata) &&
-        Objects.equals(this.mutedDescription, sendBirdMember.mutedDescription) &&
-        Objects.equals(this.mutedEndAt, sendBirdMember.mutedEndAt) &&
-        equalsNullable(this.nickname, sendBirdMember.nickname) &&
-        Objects.equals(this.pushEnabled, sendBirdMember.pushEnabled) &&
-        Objects.equals(this.pushTriggerOption, sendBirdMember.pushTriggerOption) &&
-        Objects.equals(this.profileUrl, sendBirdMember.profileUrl) &&
-        Objects.equals(this.requireAuthForProfileImage, sendBirdMember.requireAuthForProfileImage) &&
-        Objects.equals(this.readTs, sendBirdMember.readTs) &&
-        equalsNullable(this.role, sendBirdMember.role) &&
-        equalsNullable(this.state, sendBirdMember.state) &&
-        Objects.equals(this.userId, sendBirdMember.userId);
+    SendbirdMember sendbirdMember = (SendbirdMember) o;
+    return Objects.equals(this.deliveredTs, sendbirdMember.deliveredTs) &&
+        Objects.equals(this.doNotDisturb, sendbirdMember.doNotDisturb) &&
+        equalsNullable(this.friendDiscoveryKey, sendbirdMember.friendDiscoveryKey) &&
+        equalsNullable(this.friendName, sendbirdMember.friendName) &&
+        Objects.equals(this.isActive, sendbirdMember.isActive) &&
+        Objects.equals(this.isBlockedByMe, sendbirdMember.isBlockedByMe) &&
+        Objects.equals(this.isBlockingMe, sendbirdMember.isBlockingMe) &&
+        Objects.equals(this.isMuted, sendbirdMember.isMuted) &&
+        Objects.equals(this.isOnline, sendbirdMember.isOnline) &&
+        Objects.equals(this.lastSeenAt, sendbirdMember.lastSeenAt) &&
+        equalsNullable(this.metadata, sendbirdMember.metadata) &&
+        Objects.equals(this.mutedDescription, sendbirdMember.mutedDescription) &&
+        Objects.equals(this.mutedEndAt, sendbirdMember.mutedEndAt) &&
+        equalsNullable(this.nickname, sendbirdMember.nickname) &&
+        Objects.equals(this.pushEnabled, sendbirdMember.pushEnabled) &&
+        Objects.equals(this.pushTriggerOption, sendbirdMember.pushTriggerOption) &&
+        Objects.equals(this.profileUrl, sendbirdMember.profileUrl) &&
+        Objects.equals(this.requireAuthForProfileImage, sendbirdMember.requireAuthForProfileImage) &&
+        Objects.equals(this.readTs, sendbirdMember.readTs) &&
+        equalsNullable(this.role, sendbirdMember.role) &&
+        equalsNullable(this.state, sendbirdMember.state) &&
+        Objects.equals(this.userId, sendbirdMember.userId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -895,7 +895,7 @@ public class SendBirdMember {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdMember {\n");
+    sb.append("class SendbirdMember {\n");
     sb.append("    deliveredTs: ").append(toIndentedString(deliveredTs)).append("\n");
     sb.append("    doNotDisturb: ").append(toIndentedString(doNotDisturb)).append("\n");
     sb.append("    friendDiscoveryKey: ").append(toIndentedString(friendDiscoveryKey)).append("\n");

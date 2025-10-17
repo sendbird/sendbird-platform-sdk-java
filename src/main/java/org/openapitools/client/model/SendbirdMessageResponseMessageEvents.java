@@ -29,17 +29,17 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdMessageResponseMessageEvents
+ * SendbirdMessageResponseMessageEvents
  */
 @JsonPropertyOrder({
-  SendBirdMessageResponseMessageEvents.JSON_PROPERTY_SEND_PUSH_NOTIFICATION,
-  SendBirdMessageResponseMessageEvents.JSON_PROPERTY_UPDATE_UNREAD_COUNT,
-  SendBirdMessageResponseMessageEvents.JSON_PROPERTY_UPDATE_MENTION_COUNT,
-  SendBirdMessageResponseMessageEvents.JSON_PROPERTY_UPDATE_LAST_MESSAGE
+  SendbirdMessageResponseMessageEvents.JSON_PROPERTY_SEND_PUSH_NOTIFICATION,
+  SendbirdMessageResponseMessageEvents.JSON_PROPERTY_UPDATE_UNREAD_COUNT,
+  SendbirdMessageResponseMessageEvents.JSON_PROPERTY_UPDATE_MENTION_COUNT,
+  SendbirdMessageResponseMessageEvents.JSON_PROPERTY_UPDATE_LAST_MESSAGE
 })
-@JsonTypeName("SendBird_MessageResponse_message_events")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
-public class SendBirdMessageResponseMessageEvents {
+@JsonTypeName("Sendbird_MessageResponse_message_events")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+public class SendbirdMessageResponseMessageEvents {
   public static final String JSON_PROPERTY_SEND_PUSH_NOTIFICATION = "send_push_notification";
   private String sendPushNotification;
 
@@ -52,10 +52,10 @@ public class SendBirdMessageResponseMessageEvents {
   public static final String JSON_PROPERTY_UPDATE_LAST_MESSAGE = "update_last_message";
   private Boolean updateLastMessage;
 
-  public SendBirdMessageResponseMessageEvents() { 
+  public SendbirdMessageResponseMessageEvents() { 
   }
 
-  public SendBirdMessageResponseMessageEvents sendPushNotification(String sendPushNotification) {
+  public SendbirdMessageResponseMessageEvents sendPushNotification(String sendPushNotification) {
     this.sendPushNotification = sendPushNotification;
     return this;
   }
@@ -81,7 +81,7 @@ public class SendBirdMessageResponseMessageEvents {
   }
 
 
-  public SendBirdMessageResponseMessageEvents updateUnreadCount(Boolean updateUnreadCount) {
+  public SendbirdMessageResponseMessageEvents updateUnreadCount(Boolean updateUnreadCount) {
     this.updateUnreadCount = updateUnreadCount;
     return this;
   }
@@ -107,7 +107,7 @@ public class SendBirdMessageResponseMessageEvents {
   }
 
 
-  public SendBirdMessageResponseMessageEvents updateMentionCount(Boolean updateMentionCount) {
+  public SendbirdMessageResponseMessageEvents updateMentionCount(Boolean updateMentionCount) {
     this.updateMentionCount = updateMentionCount;
     return this;
   }
@@ -133,7 +133,7 @@ public class SendBirdMessageResponseMessageEvents {
   }
 
 
-  public SendBirdMessageResponseMessageEvents updateLastMessage(Boolean updateLastMessage) {
+  public SendbirdMessageResponseMessageEvents updateLastMessage(Boolean updateLastMessage) {
     this.updateLastMessage = updateLastMessage;
     return this;
   }
@@ -160,7 +160,7 @@ public class SendBirdMessageResponseMessageEvents {
 
 
   /**
-   * Return true if this SendBird_MessageResponse_message_events object is equal to o.
+   * Return true if this Sendbird_MessageResponse_message_events object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -170,11 +170,11 @@ public class SendBirdMessageResponseMessageEvents {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdMessageResponseMessageEvents sendBirdMessageResponseMessageEvents = (SendBirdMessageResponseMessageEvents) o;
-    return Objects.equals(this.sendPushNotification, sendBirdMessageResponseMessageEvents.sendPushNotification) &&
-        Objects.equals(this.updateUnreadCount, sendBirdMessageResponseMessageEvents.updateUnreadCount) &&
-        Objects.equals(this.updateMentionCount, sendBirdMessageResponseMessageEvents.updateMentionCount) &&
-        Objects.equals(this.updateLastMessage, sendBirdMessageResponseMessageEvents.updateLastMessage);
+    SendbirdMessageResponseMessageEvents sendbirdMessageResponseMessageEvents = (SendbirdMessageResponseMessageEvents) o;
+    return Objects.equals(this.sendPushNotification, sendbirdMessageResponseMessageEvents.sendPushNotification) &&
+        Objects.equals(this.updateUnreadCount, sendbirdMessageResponseMessageEvents.updateUnreadCount) &&
+        Objects.equals(this.updateMentionCount, sendbirdMessageResponseMessageEvents.updateMentionCount) &&
+        Objects.equals(this.updateLastMessage, sendbirdMessageResponseMessageEvents.updateLastMessage);
   }
 
   @Override
@@ -185,7 +185,7 @@ public class SendBirdMessageResponseMessageEvents {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdMessageResponseMessageEvents {\n");
+    sb.append("class SendbirdMessageResponseMessageEvents {\n");
     sb.append("    sendPushNotification: ").append(toIndentedString(sendPushNotification)).append("\n");
     sb.append("    updateUnreadCount: ").append(toIndentedString(updateUnreadCount)).append("\n");
     sb.append("    updateMentionCount: ").append(toIndentedString(updateMentionCount)).append("\n");

@@ -1,6 +1,6 @@
 
 
-# SendBirdMessageResponseMessageEvents
+# SendbirdMessageResponseMessageEvents
 
 
 ## Properties

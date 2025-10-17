@@ -23,7 +23,7 @@
 |**pollId** | **Integer** |  |  [optional] |
 |**pushMessageTemplate** | [**SendTextMessageRequestBodyPushMessageTemplate**](SendTextMessageRequestBodyPushMessageTemplate.md) |  |  [optional] |
 |**sendPush** | **Boolean** |  |  [optional] |
-|**sortedMetaarray** | [**List&lt;SendBirdSortedMetaarrayInner&gt;**](SendBirdSortedMetaarrayInner.md) |  |  [optional] |
+|**sortedMetaarray** | [**List&lt;SendbirdSortedMetaarrayInner&gt;**](SendbirdSortedMetaarrayInner.md) |  |  [optional] |
 |**sound** | **String** |  |  [optional] |
 |**volume** | **BigDecimal** |  |  [optional] |
 

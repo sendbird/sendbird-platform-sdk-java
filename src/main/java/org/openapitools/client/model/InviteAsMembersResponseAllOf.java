@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -38,20 +38,20 @@ import org.sendbird.client.JSON;
   InviteAsMembersResponseAllOf.JSON_PROPERTY_OPERATORS
 })
 @JsonTypeName("inviteAsMembersResponse_allOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class InviteAsMembersResponseAllOf {
   public static final String JSON_PROPERTY_OPERATORS = "operators";
-  private List<SendBirdUser> operators = null;
+  private List<SendbirdUser> operators = null;
 
   public InviteAsMembersResponseAllOf() { 
   }
 
-  public InviteAsMembersResponseAllOf operators(List<SendBirdUser> operators) {
+  public InviteAsMembersResponseAllOf operators(List<SendbirdUser> operators) {
     this.operators = operators;
     return this;
   }
 
-  public InviteAsMembersResponseAllOf addOperatorsItem(SendBirdUser operatorsItem) {
+  public InviteAsMembersResponseAllOf addOperatorsItem(SendbirdUser operatorsItem) {
     if (this.operators == null) {
       this.operators = new ArrayList<>();
     }
@@ -68,14 +68,14 @@ public class InviteAsMembersResponseAllOf {
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdUser> getOperators() {
+  public List<SendbirdUser> getOperators() {
     return operators;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOperators(List<SendBirdUser> operators) {
+  public void setOperators(List<SendbirdUser> operators) {
     this.operators = operators;
   }
 

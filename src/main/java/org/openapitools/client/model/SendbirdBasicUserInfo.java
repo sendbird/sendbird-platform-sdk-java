@@ -33,21 +33,21 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdBasicUserInfo
+ * SendbirdBasicUserInfo
  */
 @JsonPropertyOrder({
-  SendBirdBasicUserInfo.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
-  SendBirdBasicUserInfo.JSON_PROPERTY_IS_ACTIVE,
-  SendBirdBasicUserInfo.JSON_PROPERTY_IS_BLOCKED_BY_ME,
-  SendBirdBasicUserInfo.JSON_PROPERTY_ROLE,
-  SendBirdBasicUserInfo.JSON_PROPERTY_NICKNAME,
-  SendBirdBasicUserInfo.JSON_PROPERTY_USER_ID,
-  SendBirdBasicUserInfo.JSON_PROPERTY_PROFILE_URL,
-  SendBirdBasicUserInfo.JSON_PROPERTY_METADATA
+  SendbirdBasicUserInfo.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
+  SendbirdBasicUserInfo.JSON_PROPERTY_IS_ACTIVE,
+  SendbirdBasicUserInfo.JSON_PROPERTY_IS_BLOCKED_BY_ME,
+  SendbirdBasicUserInfo.JSON_PROPERTY_ROLE,
+  SendbirdBasicUserInfo.JSON_PROPERTY_NICKNAME,
+  SendbirdBasicUserInfo.JSON_PROPERTY_USER_ID,
+  SendbirdBasicUserInfo.JSON_PROPERTY_PROFILE_URL,
+  SendbirdBasicUserInfo.JSON_PROPERTY_METADATA
 })
-@JsonTypeName("SendBird.BasicUserInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
-public class SendBirdBasicUserInfo {
+@JsonTypeName("Sendbird.BasicUserInfo")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+public class SendbirdBasicUserInfo {
   public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;
 
@@ -109,10 +109,10 @@ public class SendBirdBasicUserInfo {
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private JsonNullable<Object> metadata = JsonNullable.<Object>undefined();
 
-  public SendBirdBasicUserInfo() { 
+  public SendbirdBasicUserInfo() { 
   }
 
-  public SendBirdBasicUserInfo requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
+  public SendbirdBasicUserInfo requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
     this.requireAuthForProfileImage = requireAuthForProfileImage;
     return this;
   }
@@ -138,7 +138,7 @@ public class SendBirdBasicUserInfo {
   }
 
 
-  public SendBirdBasicUserInfo isActive(Boolean isActive) {
+  public SendbirdBasicUserInfo isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
   }
@@ -164,7 +164,7 @@ public class SendBirdBasicUserInfo {
   }
 
 
-  public SendBirdBasicUserInfo isBlockedByMe(Boolean isBlockedByMe) {
+  public SendbirdBasicUserInfo isBlockedByMe(Boolean isBlockedByMe) {
     this.isBlockedByMe = isBlockedByMe;
     return this;
   }
@@ -190,7 +190,7 @@ public class SendBirdBasicUserInfo {
   }
 
 
-  public SendBirdBasicUserInfo role(RoleEnum role) {
+  public SendbirdBasicUserInfo role(RoleEnum role) {
     this.role = role;
     return this;
   }
@@ -216,7 +216,7 @@ public class SendBirdBasicUserInfo {
   }
 
 
-  public SendBirdBasicUserInfo nickname(String nickname) {
+  public SendbirdBasicUserInfo nickname(String nickname) {
     this.nickname = JsonNullable.<String>of(nickname);
     return this;
   }
@@ -250,7 +250,7 @@ public class SendBirdBasicUserInfo {
   }
 
 
-  public SendBirdBasicUserInfo userId(String userId) {
+  public SendbirdBasicUserInfo userId(String userId) {
     this.userId = userId;
     return this;
   }
@@ -276,7 +276,7 @@ public class SendBirdBasicUserInfo {
   }
 
 
-  public SendBirdBasicUserInfo profileUrl(String profileUrl) {
+  public SendbirdBasicUserInfo profileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
     return this;
   }
@@ -302,7 +302,7 @@ public class SendBirdBasicUserInfo {
   }
 
 
-  public SendBirdBasicUserInfo metadata(Object metadata) {
+  public SendbirdBasicUserInfo metadata(Object metadata) {
     this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
@@ -337,7 +337,7 @@ public class SendBirdBasicUserInfo {
 
 
   /**
-   * Return true if this SendBird.BasicUserInfo object is equal to o.
+   * Return true if this Sendbird.BasicUserInfo object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -347,15 +347,15 @@ public class SendBirdBasicUserInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdBasicUserInfo sendBirdBasicUserInfo = (SendBirdBasicUserInfo) o;
-    return Objects.equals(this.requireAuthForProfileImage, sendBirdBasicUserInfo.requireAuthForProfileImage) &&
-        Objects.equals(this.isActive, sendBirdBasicUserInfo.isActive) &&
-        Objects.equals(this.isBlockedByMe, sendBirdBasicUserInfo.isBlockedByMe) &&
-        Objects.equals(this.role, sendBirdBasicUserInfo.role) &&
-        equalsNullable(this.nickname, sendBirdBasicUserInfo.nickname) &&
-        Objects.equals(this.userId, sendBirdBasicUserInfo.userId) &&
-        Objects.equals(this.profileUrl, sendBirdBasicUserInfo.profileUrl) &&
-        equalsNullable(this.metadata, sendBirdBasicUserInfo.metadata);
+    SendbirdBasicUserInfo sendbirdBasicUserInfo = (SendbirdBasicUserInfo) o;
+    return Objects.equals(this.requireAuthForProfileImage, sendbirdBasicUserInfo.requireAuthForProfileImage) &&
+        Objects.equals(this.isActive, sendbirdBasicUserInfo.isActive) &&
+        Objects.equals(this.isBlockedByMe, sendbirdBasicUserInfo.isBlockedByMe) &&
+        Objects.equals(this.role, sendbirdBasicUserInfo.role) &&
+        equalsNullable(this.nickname, sendbirdBasicUserInfo.nickname) &&
+        Objects.equals(this.userId, sendbirdBasicUserInfo.userId) &&
+        Objects.equals(this.profileUrl, sendbirdBasicUserInfo.profileUrl) &&
+        equalsNullable(this.metadata, sendbirdBasicUserInfo.metadata);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -377,7 +377,7 @@ public class SendBirdBasicUserInfo {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdBasicUserInfo {\n");
+    sb.append("class SendbirdBasicUserInfo {\n");
     sb.append("    requireAuthForProfileImage: ").append(toIndentedString(requireAuthForProfileImage)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    isBlockedByMe: ").append(toIndentedString(isBlockedByMe)).append("\n");

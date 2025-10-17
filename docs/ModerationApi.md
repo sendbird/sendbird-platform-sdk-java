@@ -98,7 +98,7 @@ No authorization required
 
 ## freezeAGroupChannel
 
-> SendBirdGroupChannelDetail freezeAGroupChannel(channelUrl).apiToken(apiToken).freezeAGroupChannelRequest(freezeAGroupChannelRequest).execute();
+> SendbirdGroupChannelDetail freezeAGroupChannel(channelUrl).apiToken(apiToken).freezeAGroupChannelRequest(freezeAGroupChannelRequest).execute();
 
 Freeze a group channel
 
@@ -131,7 +131,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         FreezeAGroupChannelRequest freezeAGroupChannelRequest = new FreezeAGroupChannelRequest(); // FreezeAGroupChannelRequest | 
         try {
-            SendBirdGroupChannelDetail result = api.freezeAGroupChannel(channelUrl)
+            SendbirdGroupChannelDetail result = api.freezeAGroupChannel(channelUrl)
                 .apiToken(apiToken)
                 .freezeAGroupChannelRequest(freezeAGroupChannelRequest)
                 .execute();
@@ -158,7 +158,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
+[**SendbirdGroupChannelDetail**](SendbirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ No authorization required
 
 ## freezeAnOpenChannel
 
-> SendBirdOpenChannel freezeAnOpenChannel(channelUrl).apiToken(apiToken).freezeAnOpenChannelRequest(freezeAnOpenChannelRequest).execute();
+> SendbirdOpenChannel freezeAnOpenChannel(channelUrl).apiToken(apiToken).freezeAnOpenChannelRequest(freezeAnOpenChannelRequest).execute();
 
 Freeze an open channel
 
@@ -210,7 +210,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         FreezeAnOpenChannelRequest freezeAnOpenChannelRequest = new FreezeAnOpenChannelRequest(); // FreezeAnOpenChannelRequest | 
         try {
-            SendBirdOpenChannel result = api.freezeAnOpenChannel(channelUrl)
+            SendbirdOpenChannel result = api.freezeAnOpenChannel(channelUrl)
                 .apiToken(apiToken)
                 .freezeAnOpenChannelRequest(freezeAnOpenChannelRequest)
                 .execute();
@@ -237,7 +237,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
+[**SendbirdOpenChannel**](SendbirdOpenChannel.md)
 
 ### Authorization
 

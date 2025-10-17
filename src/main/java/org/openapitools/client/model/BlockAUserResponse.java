@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdUser;
+import org.openapitools.client.model.SendbirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,10 +39,10 @@ import org.sendbird.client.JSON;
   BlockAUserResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("blockAUserResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class BlockAUserResponse {
   public static final String JSON_PROPERTY_USERS = "users";
-  private List<SendBirdUser> users = null;
+  private List<SendbirdUser> users = null;
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
@@ -50,12 +50,12 @@ public class BlockAUserResponse {
   public BlockAUserResponse() { 
   }
 
-  public BlockAUserResponse users(List<SendBirdUser> users) {
+  public BlockAUserResponse users(List<SendbirdUser> users) {
     this.users = users;
     return this;
   }
 
-  public BlockAUserResponse addUsersItem(SendBirdUser usersItem) {
+  public BlockAUserResponse addUsersItem(SendbirdUser usersItem) {
     if (this.users == null) {
       this.users = new ArrayList<>();
     }
@@ -72,14 +72,14 @@ public class BlockAUserResponse {
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdUser> getUsers() {
+  public List<SendbirdUser> getUsers() {
     return users;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUsers(List<SendBirdUser> users) {
+  public void setUsers(List<SendbirdUser> users) {
     this.users = users;
   }
 

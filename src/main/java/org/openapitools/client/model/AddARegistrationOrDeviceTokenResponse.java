@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.client.model.SendBirdBasicUserInfo;
+import org.openapitools.client.model.SendbirdBasicUserInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   AddARegistrationOrDeviceTokenResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("addARegistrationOrDeviceTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
 public class AddARegistrationOrDeviceTokenResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private String token;
@@ -47,7 +47,7 @@ public class AddARegistrationOrDeviceTokenResponse {
   private String type;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private SendBirdBasicUserInfo user;
+  private SendbirdBasicUserInfo user;
 
   public AddARegistrationOrDeviceTokenResponse() { 
   }
@@ -104,7 +104,7 @@ public class AddARegistrationOrDeviceTokenResponse {
   }
 
 
-  public AddARegistrationOrDeviceTokenResponse user(SendBirdBasicUserInfo user) {
+  public AddARegistrationOrDeviceTokenResponse user(SendbirdBasicUserInfo user) {
     this.user = user;
     return this;
   }
@@ -118,14 +118,14 @@ public class AddARegistrationOrDeviceTokenResponse {
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdBasicUserInfo getUser() {
+  public SendbirdBasicUserInfo getUser() {
     return user;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendBirdBasicUserInfo user) {
+  public void setUser(SendbirdBasicUserInfo user) {
     this.user = user;
   }
 
