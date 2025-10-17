@@ -28,6 +28,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendbirdUser;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -57,13 +61,13 @@ import org.sendbird.client.JSON;
   CreateAGroupChannelRequest.JSON_PROPERTY_USERS
 })
 @JsonTypeName("createAGroupChannel_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class CreateAGroupChannelRequest {
   public static final String JSON_PROPERTY_ACCESS_CODE = "access_code";
-  private String accessCode;
+  private JsonNullable<String> accessCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_BLOCK_SDK_USER_CHANNEL_JOIN = "block_sdk_user_channel_join";
-  private Boolean blockSdkUserChannelJoin;
+  private JsonNullable<Boolean> blockSdkUserChannelJoin = JsonNullable.<Boolean>undefined();
 
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -120,7 +124,7 @@ public class CreateAGroupChannelRequest {
   }
 
   public CreateAGroupChannelRequest accessCode(String accessCode) {
-    this.accessCode = accessCode;
+    this.accessCode = JsonNullable.<String>of(accessCode);
     return this;
   }
 
@@ -130,23 +134,31 @@ public class CreateAGroupChannelRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public String getAccessCode() {
-    return accessCode;
+        return accessCode.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccessCode(String accessCode) {
+
+  public JsonNullable<String> getAccessCode_JsonNullable() {
+    return accessCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
+  public void setAccessCode_JsonNullable(JsonNullable<String> accessCode) {
     this.accessCode = accessCode;
+  }
+
+  public void setAccessCode(String accessCode) {
+    this.accessCode = JsonNullable.<String>of(accessCode);
   }
 
 
   public CreateAGroupChannelRequest blockSdkUserChannelJoin(Boolean blockSdkUserChannelJoin) {
-    this.blockSdkUserChannelJoin = blockSdkUserChannelJoin;
+    this.blockSdkUserChannelJoin = JsonNullable.<Boolean>of(blockSdkUserChannelJoin);
     return this;
   }
 
@@ -156,18 +168,26 @@ public class CreateAGroupChannelRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_BLOCK_SDK_USER_CHANNEL_JOIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public Boolean getBlockSdkUserChannelJoin() {
-    return blockSdkUserChannelJoin;
+        return blockSdkUserChannelJoin.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_BLOCK_SDK_USER_CHANNEL_JOIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBlockSdkUserChannelJoin(Boolean blockSdkUserChannelJoin) {
+
+  public JsonNullable<Boolean> getBlockSdkUserChannelJoin_JsonNullable() {
+    return blockSdkUserChannelJoin;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_BLOCK_SDK_USER_CHANNEL_JOIN)
+  public void setBlockSdkUserChannelJoin_JsonNullable(JsonNullable<Boolean> blockSdkUserChannelJoin) {
     this.blockSdkUserChannelJoin = blockSdkUserChannelJoin;
+  }
+
+  public void setBlockSdkUserChannelJoin(Boolean blockSdkUserChannelJoin) {
+    this.blockSdkUserChannelJoin = JsonNullable.<Boolean>of(blockSdkUserChannelJoin);
   }
 
 
@@ -646,8 +666,8 @@ public class CreateAGroupChannelRequest {
       return false;
     }
     CreateAGroupChannelRequest createAGroupChannelRequest = (CreateAGroupChannelRequest) o;
-    return Objects.equals(this.accessCode, createAGroupChannelRequest.accessCode) &&
-        Objects.equals(this.blockSdkUserChannelJoin, createAGroupChannelRequest.blockSdkUserChannelJoin) &&
+    return equalsNullable(this.accessCode, createAGroupChannelRequest.accessCode) &&
+        equalsNullable(this.blockSdkUserChannelJoin, createAGroupChannelRequest.blockSdkUserChannelJoin) &&
         Objects.equals(this.channelUrl, createAGroupChannelRequest.channelUrl) &&
         Objects.equals(this.coverFile, createAGroupChannelRequest.coverFile) &&
         Objects.equals(this.coverUrl, createAGroupChannelRequest.coverUrl) &&
@@ -667,9 +687,20 @@ public class CreateAGroupChannelRequest {
         Objects.equals(this.users, createAGroupChannelRequest.users);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(accessCode, blockSdkUserChannelJoin, channelUrl, coverFile, coverUrl, customType, data, hiddenStatus, invitationStatus, inviterId, isDistinct, isEphemeral, isPublic, isSuper, name, operatorIds, strict, userIds, users);
+    return Objects.hash(hashCodeNullable(accessCode), hashCodeNullable(blockSdkUserChannelJoin), channelUrl, coverFile, coverUrl, customType, data, hiddenStatus, invitationStatus, inviterId, isDistinct, isEphemeral, isPublic, isSuper, name, operatorIds, strict, userIds, users);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

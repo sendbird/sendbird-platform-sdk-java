@@ -27,6 +27,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -44,16 +48,16 @@ import org.sendbird.client.JSON;
   CreateAUserRequest.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("createAUser_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class CreateAUserRequest {
   public static final String JSON_PROPERTY_DISCOVERY_KEYS = "discovery_keys";
-  private List<String> discoveryKeys = null;
+  private JsonNullable<List<String>> discoveryKeys = JsonNullable.<List<String>>undefined();
 
   public static final String JSON_PROPERTY_ISSUE_ACCESS_TOKEN = "issue_access_token";
   private Boolean issueAccessToken;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Object metadata;
+  private JsonNullable<Object> metadata = JsonNullable.<Object>undefined();
 
   public static final String JSON_PROPERTY_NICKNAME = "nickname";
   private String nickname;
@@ -62,7 +66,7 @@ public class CreateAUserRequest {
   private File profileFile;
 
   public static final String JSON_PROPERTY_PROFILE_URL = "profile_url";
-  private String profileUrl;
+  private String profileUrl = "";
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -71,15 +75,19 @@ public class CreateAUserRequest {
   }
 
   public CreateAUserRequest discoveryKeys(List<String> discoveryKeys) {
-    this.discoveryKeys = discoveryKeys;
+    this.discoveryKeys = JsonNullable.<List<String>>of(discoveryKeys);
     return this;
   }
 
   public CreateAUserRequest addDiscoveryKeysItem(String discoveryKeysItem) {
-    if (this.discoveryKeys == null) {
-      this.discoveryKeys = new ArrayList<>();
+    if (this.discoveryKeys == null || !this.discoveryKeys.isPresent()) {
+      this.discoveryKeys = JsonNullable.<List<String>>of(new ArrayList<>());
     }
-    this.discoveryKeys.add(discoveryKeysItem);
+    try {
+      this.discoveryKeys.get().add(discoveryKeysItem);
+    } catch (java.util.NoSuchElementException e) {
+      // this can never happen, as we make sure above that the value is present
+    }
     return this;
   }
 
@@ -89,18 +97,26 @@ public class CreateAUserRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public List<String> getDiscoveryKeys() {
-    return discoveryKeys;
+        return discoveryKeys.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscoveryKeys(List<String> discoveryKeys) {
+
+  public JsonNullable<List<String>> getDiscoveryKeys_JsonNullable() {
+    return discoveryKeys;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_DISCOVERY_KEYS)
+  public void setDiscoveryKeys_JsonNullable(JsonNullable<List<String>> discoveryKeys) {
     this.discoveryKeys = discoveryKeys;
+  }
+
+  public void setDiscoveryKeys(List<String> discoveryKeys) {
+    this.discoveryKeys = JsonNullable.<List<String>>of(discoveryKeys);
   }
 
 
@@ -131,7 +147,7 @@ public class CreateAUserRequest {
 
 
   public CreateAUserRequest metadata(Object metadata) {
-    this.metadata = metadata;
+    this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
 
@@ -141,18 +157,26 @@ public class CreateAUserRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public Object getMetadata() {
-    return metadata;
+        return metadata.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Object metadata) {
+
+  public JsonNullable<Object> getMetadata_JsonNullable() {
+    return metadata;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  public void setMetadata_JsonNullable(JsonNullable<Object> metadata) {
     this.metadata = metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = JsonNullable.<Object>of(metadata);
   }
 
 
@@ -165,7 +189,7 @@ public class CreateAUserRequest {
    * Get nickname
    * @return nickname
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_NICKNAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -272,18 +296,29 @@ public class CreateAUserRequest {
       return false;
     }
     CreateAUserRequest createAUserRequest = (CreateAUserRequest) o;
-    return Objects.equals(this.discoveryKeys, createAUserRequest.discoveryKeys) &&
+    return equalsNullable(this.discoveryKeys, createAUserRequest.discoveryKeys) &&
         Objects.equals(this.issueAccessToken, createAUserRequest.issueAccessToken) &&
-        Objects.equals(this.metadata, createAUserRequest.metadata) &&
+        equalsNullable(this.metadata, createAUserRequest.metadata) &&
         Objects.equals(this.nickname, createAUserRequest.nickname) &&
         Objects.equals(this.profileFile, createAUserRequest.profileFile) &&
         Objects.equals(this.profileUrl, createAUserRequest.profileUrl) &&
         Objects.equals(this.userId, createAUserRequest.userId);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(discoveryKeys, issueAccessToken, metadata, nickname, profileFile, profileUrl, userId);
+    return Objects.hash(hashCodeNullable(discoveryKeys), issueAccessToken, hashCodeNullable(metadata), nickname, profileFile, profileUrl, userId);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

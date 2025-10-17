@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListBotsResponseBotsInnerAi;
 import org.openapitools.client.model.ListBotsResponseBotsInnerBot;
 import org.openapitools.client.model.ListBotsResponseBotsInnerBotStyle;
 import org.openapitools.client.model.ListBotsResponseBotsInnerFirstMessagesInner;
@@ -44,14 +43,6 @@ public class ListBotsResponseBotsInnerTest {
     @Test
     public void testListBotsResponseBotsInner() {
         // TODO: test ListBotsResponseBotsInner
-    }
-
-    /**
-     * Test the property 'ai'
-     */
-    @Test
-    public void aiTest() {
-        // TODO: test ai
     }
 
     /**

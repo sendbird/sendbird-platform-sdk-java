@@ -292,12 +292,6 @@ public class GroupChannelApiTest {
         //String metacounterValueLt = null;
         //String metacounterValueLte = null;
         //Boolean includeSortedMetaarrayInLastMessage = null;
-        //String customType = null;
-        //Boolean readReceipt = null;
-        //Boolean member = null;
-        //Boolean isDistinct = null;
-        //String membersIn = null;
-        //String userId = null;
         //GroupChatListChannelsResponse response = api.listChannels()
         //        .apiToken(apiToken)
         //        .token(token)
@@ -336,12 +330,6 @@ public class GroupChannelApiTest {
         //        .metacounterValueLt(metacounterValueLt)
         //        .metacounterValueLte(metacounterValueLte)
         //        .includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage)
-        //        .customType(customType)
-        //        .readReceipt(readReceipt)
-        //        .member(member)
-        //        .isDistinct(isDistinct)
-        //        .membersIn(membersIn)
-        //        .userId(userId)
         //        .execute();
         // TODO: test validations
     }

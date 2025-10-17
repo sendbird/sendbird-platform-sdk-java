@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   UpdateAChannelMetadataRequest.JSON_PROPERTY_UPSERT
 })
 @JsonTypeName("updateAChannelMetadata_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class UpdateAChannelMetadataRequest {
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Object metadata;
@@ -56,7 +56,7 @@ public class UpdateAChannelMetadataRequest {
    * Get metadata
    * @return metadata
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

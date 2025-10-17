@@ -23,10 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendAdminMessageRequestBody;
-import org.openapitools.client.model.SendFileMessageRequestBody;
-import org.openapitools.client.model.SendTextMessageRequestBody;
-import org.openapitools.client.model.SendTextMessageRequestBodyPushMessageTemplate;
+import org.openapitools.client.model.SendAMessageRequestPushMessageTemplate;
 import org.openapitools.client.model.SendbirdFile;
 import org.openapitools.client.model.SendbirdSortedMetaarrayInner;
 
@@ -46,6 +43,94 @@ public class SendAMessageRequestTest {
     @Test
     public void testSendAMessageRequest() {
         // TODO: test SendAMessageRequest
+    }
+
+    /**
+     * Test the property 'messageType'
+     */
+    @Test
+    public void messageTypeTest() {
+        // TODO: test messageType
+    }
+
+    /**
+     * Test the property 'userId'
+     */
+    @Test
+    public void userIdTest() {
+        // TODO: test userId
+    }
+
+    /**
+     * Test the property 'message'
+     */
+    @Test
+    public void messageTest() {
+        // TODO: test message
+    }
+
+    /**
+     * Test the property 'pushMessageTemplate'
+     */
+    @Test
+    public void pushMessageTemplateTest() {
+        // TODO: test pushMessageTemplate
+    }
+
+    /**
+     * Test the property 'pollId'
+     */
+    @Test
+    public void pollIdTest() {
+        // TODO: test pollId
+    }
+
+    /**
+     * Test the property 'files'
+     */
+    @Test
+    public void filesTest() {
+        // TODO: test files
+    }
+
+    /**
+     * Test the property 'requireAuth'
+     */
+    @Test
+    public void requireAuthTest() {
+        // TODO: test requireAuth
+    }
+
+    /**
+     * Test the property 'thumbnail1'
+     */
+    @Test
+    public void thumbnail1Test() {
+        // TODO: test thumbnail1
+    }
+
+    /**
+     * Test the property 'thumbnail2'
+     */
+    @Test
+    public void thumbnail2Test() {
+        // TODO: test thumbnail2
+    }
+
+    /**
+     * Test the property 'thumbnail3'
+     */
+    @Test
+    public void thumbnail3Test() {
+        // TODO: test thumbnail3
+    }
+
+    /**
+     * Test the property 'thumbnails'
+     */
+    @Test
+    public void thumbnailsTest() {
+        // TODO: test thumbnails
     }
 
     /**
@@ -137,38 +222,6 @@ public class SendAMessageRequestTest {
     }
 
     /**
-     * Test the property 'message'
-     */
-    @Test
-    public void messageTest() {
-        // TODO: test message
-    }
-
-    /**
-     * Test the property 'messageType'
-     */
-    @Test
-    public void messageTypeTest() {
-        // TODO: test messageType
-    }
-
-    /**
-     * Test the property 'pollId'
-     */
-    @Test
-    public void pollIdTest() {
-        // TODO: test pollId
-    }
-
-    /**
-     * Test the property 'pushMessageTemplate'
-     */
-    @Test
-    public void pushMessageTemplateTest() {
-        // TODO: test pushMessageTemplate
-    }
-
-    /**
      * Test the property 'sendPush'
      */
     @Test
@@ -198,54 +251,6 @@ public class SendAMessageRequestTest {
     @Test
     public void volumeTest() {
         // TODO: test volume
-    }
-
-    /**
-     * Test the property 'files'
-     */
-    @Test
-    public void filesTest() {
-        // TODO: test files
-    }
-
-    /**
-     * Test the property 'requireAuth'
-     */
-    @Test
-    public void requireAuthTest() {
-        // TODO: test requireAuth
-    }
-
-    /**
-     * Test the property 'thumbnail1'
-     */
-    @Test
-    public void thumbnail1Test() {
-        // TODO: test thumbnail1
-    }
-
-    /**
-     * Test the property 'thumbnail2'
-     */
-    @Test
-    public void thumbnail2Test() {
-        // TODO: test thumbnail2
-    }
-
-    /**
-     * Test the property 'thumbnail3'
-     */
-    @Test
-    public void thumbnail3Test() {
-        // TODO: test thumbnail3
-    }
-
-    /**
-     * Test the property 'thumbnails'
-     */
-    @Test
-    public void thumbnailsTest() {
-        // TODO: test thumbnails
     }
 
 }

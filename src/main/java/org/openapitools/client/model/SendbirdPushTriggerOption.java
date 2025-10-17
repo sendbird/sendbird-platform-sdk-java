@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets Sendbird.PushTriggerOption
+ * Gets or Sets SendbirdPushTriggerOption
  */
 public enum SendbirdPushTriggerOption {
   

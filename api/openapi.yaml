@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.0.3
 info:
   contact:
     email: support@sendbird.com
@@ -2077,6 +2077,121 @@ paths:
       - Bot
       x-content-type: application/json
       x-accepts: application/json
+  /v3/bots/{bot_userid}:
+    delete:
+      description: |-
+        ## Delete a bot
+
+        Deletes a bot from an application.
+
+        https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot
+        ----------------------------
+      operationId: deleteBotById
+      parameters:
+      - example: "{{API_TOKEN}}"
+        explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: bot_userid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Successful response
+      summary: Delete a bot
+      tags:
+      - Bot
+      x-accepts: application/json
+    get:
+      description: |-
+        ## View a bot
+
+        Retrieves information on a bot.
+
+        https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot
+        ----------------------------
+      operationId: viewBotById
+      parameters:
+      - example: "{{API_TOKEN}}"
+        explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: bot_userid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/viewBotByIdResponse'
+          description: Successful response
+      summary: View a bot
+      tags:
+      - Bot
+      x-accepts: application/json
+    put:
+      description: |-
+        ## Update a bot
+
+        Updates information on a bot.
+
+        https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot
+        ----------------------------
+      operationId: updateBotById
+      parameters:
+      - example: "{{API_TOKEN}}"
+        explode: false
+        in: header
+        name: Api-Token
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: bot_userid
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateBotByIdData'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateBotByIdResponse'
+          description: Successful response
+      summary: Update a bot
+      tags:
+      - Bot
+      x-content-type: application/json
+      x-accepts: application/json
   /v3/bots/{bot_userid}/send:
     post:
       description: "## Send a bot message\n\nSends a bot message to a group channel.\n\
@@ -2103,9 +2218,9 @@ paths:
         style: simple
       requestBody:
         content:
-          application/json:
+          multipart/form-data:
             schema:
-              $ref: '#/components/schemas/sendABotMessage_request'
+              $ref: '#/components/schemas/SendABotMessageRequest'
       responses:
         "200":
           content:
@@ -2116,7 +2231,7 @@ paths:
       summary: Send a bot's message
       tags:
       - Bot
-      x-content-type: application/json
+      x-content-type: multipart/form-data
       x-accepts: application/json
   /v3/bots/{bot_userid}/channels:
     delete:
@@ -2523,20 +2638,20 @@ paths:
         \ out blocked users when a user invites a group of users to a new group channel.\
         \ By default, blocked users are included when sending invitations. The value\
         \ of this option can be changed by Sendbird if your Sendbird application isn't\
-        \ integrated to the client app. If you want to change the value, [contact\
+        \ integrated with the client app. If you want to change the value, [contact\
         \ our sales team](https://get.sendbird.com/talk-to-sales.html).\n    \n- **Turn\
         \ on or off notifications from blocked users**: Determines whether or not\
         \ to receive message notifications from the blocked user in a specific 1-to-N\
         \ group channel where they are both members. By default, a user doesn't receive\
         \ notifications from blocked users. The value of this option can be set individually\
         \ per channel. If you want to use this option, [contact our sales team](https://get.sendbird.com/talk-to-sales.html).\n\
-        \    \n\n> **Note**: To learn more about other available moderation tools,\
-        \ see [Moderation Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions).\
-        \ \n  \n\nThe following tables explain what happens to a user's chat experience\
-        \ when the user blocks another user in a 1-to-1 or 1-to-N group channel. In\
-        \ the case of a 1-to-1 group channel, the block mode is only maintained with\
-        \ the original members. If other than the original members are added, the\
-        \ rules for 1-to-N group channel begin to apply.\n\n[https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users](https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users)"
+        \n> **Note**: To learn more about other available moderation tools, see [Moderation\
+        \ Overview](https://sendbird.com/docs/chat/platform-api/v3/moderation/moderation-overview#2-actions).\
+        \  The following tables explain what happens to a user's chat experience when\
+        \ the user blocks another user in a 1-to-1 or 1-to-N group channel. In the\
+        \ case of a 1-to-1 group channel, the block mode is only maintained with the\
+        \ original members. If other than the original members are added, the rules\
+        \ for 1-to-N group channel begin to apply.\n\n[https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users](https://sendbird.com/docs/chat/platform-api/v3/moderation/blocking-users/block-users#1-block-users)"
       operationId: blockAUser
       parameters:
       - description: '(Required) '
@@ -4914,7 +5029,8 @@ paths:
         name: message_id
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
         style: simple
       - explode: true
         in: query
@@ -4977,7 +5093,8 @@ paths:
         name: message_id
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
         style: simple
       - explode: false
         in: header
@@ -5039,7 +5156,8 @@ paths:
         name: message_id
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
         style: simple
       - explode: false
         in: header
@@ -5102,7 +5220,8 @@ paths:
         name: message_id
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
         style: simple
       - explode: false
         in: header
@@ -5158,7 +5277,8 @@ paths:
         name: message_id
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
         style: simple
       - explode: true
         in: query
@@ -5255,7 +5375,8 @@ paths:
         name: message_id
         required: true
         schema:
-          type: string
+          format: int64
+          type: integer
         style: simple
       - explode: false
         in: header
@@ -5284,24 +5405,24 @@ paths:
       x-accepts: application/json
 components:
   schemas:
-    Sendbird.SortedMetaarray:
+    SendbirdSortedMetaarray:
       items:
-        $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+        $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
       type: array
-    Sendbird.PushTriggerOption:
+    SendbirdPushTriggerOption:
       enum:
       - all
       - mention_only
       - "off"
       type: string
-    Sendbird.Thumbnail:
+    SendbirdThumbnail:
       example:
-        real_width: 7
+        real_width: 1
         width: 1
         plain_url: plain_url
-        real_height: 4
+        real_height: 1
         url: url
-        height: 2
+        height: 7
       properties:
         height:
           type: integer
@@ -5316,26 +5437,26 @@ components:
         width:
           type: integer
       type: object
-    Sendbird.File:
+    SendbirdFile:
       example:
         file_name: file_name
         file_type: file_type
         require_auth: true
         thumbnails:
-        - real_width: 7
+        - real_width: 1
           width: 1
           plain_url: plain_url
-          real_height: 4
+          real_height: 1
           url: url
-          height: 2
-        - real_width: 7
+          height: 7
+        - real_width: 1
           width: 1
           plain_url: plain_url
-          real_height: 4
+          real_height: 1
           url: url
-          height: 2
+          height: 7
         url: url
-        file_size: 3
+        file_size: 4
       properties:
         url:
           type: string
@@ -5347,17 +5468,17 @@ components:
           type: string
         thumbnails:
           items:
-            $ref: '#/components/schemas/Sendbird.Thumbnail'
+            $ref: '#/components/schemas/SendbirdThumbnail'
           type: array
         require_auth:
           type: boolean
       type: object
-    Sendbird.SmsFallback:
+    SendbirdSmsFallback:
       example:
         exclude_user_ids:
         - exclude_user_ids
         - exclude_user_ids
-        wait_seconds: 6
+        wait_seconds: 1
       properties:
         wait_seconds:
           type: integer
@@ -5366,7 +5487,7 @@ components:
             type: string
           type: array
       type: object
-    Sendbird.DisappearingMessage:
+    SendbirdDisappearingMessage:
       example:
         is_triggered_by_message_read: true
         message_survival_seconds: 6
@@ -5376,7 +5497,7 @@ components:
         is_triggered_by_message_read:
           type: boolean
       type: object
-    Sendbird.BasicUserInfo:
+    SendbirdBasicUserInfo:
       example:
         metadata: "{}"
         require_auth_for_profile_image: true
@@ -5400,17 +5521,20 @@ components:
           - operator
           type: string
         nickname:
+          nullable: true
           type: string
         user_id:
           type: string
         profile_url:
+          default: ""
           type: string
         metadata:
+          nullable: true
           type: object
       required:
       - user_id
       type: object
-    Sendbird.User:
+    SendbirdUser:
       description: User
       example:
         metadata: "{}"
@@ -5419,29 +5543,25 @@ components:
         - preferred_languages
         - preferred_languages
         require_auth_for_profile_image: true
-        unread_channel_count: 9
+        unread_channel_count: 6
         discovery_keys:
         - discovery_keys
         - discovery_keys
         profile_url: profile_url
         is_created: true
-        created_at: 4
+        created_at: 9
         has_ever_logged_in: true
         locale: locale
-        unread_message_count: 9
+        unread_message_count: 8
         access_token: access_token
         is_shadow_blocked: true
         user_id: user_id
         nickname: nickname
-        session_tokens:
-        - session_tokens
-        - session_tokens
         phone_number: phone_number
         is_online: true
         state: ""
         is_hide_me_from_friends: true
-        last_seen_at: 5
-      nullable: true
+        last_seen_at: 9
       properties:
         access_token:
           type: string
@@ -5451,6 +5571,7 @@ components:
         discovery_keys:
           items:
             type: string
+          nullable: true
           type: array
         has_ever_logged_in:
           type: boolean
@@ -5468,15 +5589,19 @@ components:
         locale:
           type: string
         metadata:
+          nullable: true
           properties: {}
           type: object
         nickname:
+          nullable: true
           type: string
         preferred_languages:
           items:
             type: string
+          nullable: true
           type: array
         profile_url:
+          default: ""
           type: string
         require_auth_for_profile_image:
           type: boolean
@@ -5497,14 +5622,10 @@ components:
           type: string
         is_created:
           type: boolean
-        session_tokens:
-          items:
-            type: string
-          type: array
       required:
       - user_id
       type: object
-    Sendbird.Member:
+    SendbirdMember:
       example:
         metadata: "{}"
         is_active: true
@@ -5512,11 +5633,11 @@ components:
         require_auth_for_profile_image: true
         role: ""
         profile_url: profile_url
-        muted_end_at: 3
+        muted_end_at: 2
         delivered_ts: 9
         do_not_disturb: true
         is_muted: true
-        read_ts: 6
+        read_ts: 4
         is_blocked_by_me: true
         friend_name: friend_name
         friend_discovery_key:
@@ -5529,7 +5650,7 @@ components:
         is_online: true
         push_trigger_option: null
         state: ""
-        last_seen_at: 6
+        last_seen_at: 3
       properties:
         delivered_ts:
           format: int64
@@ -5558,6 +5679,7 @@ components:
           format: int64
           type: integer
         metadata:
+          nullable: true
           properties: {}
           type: object
         muted_description:
@@ -5566,12 +5688,14 @@ components:
           format: int64
           type: integer
         nickname:
+          nullable: true
           type: string
         push_enabled:
           type: boolean
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendbirdPushTriggerOption'
         profile_url:
+          default: ""
           type: string
         require_auth_for_profile_image:
           type: boolean
@@ -5597,14 +5721,9 @@ components:
       required:
       - user_id
       type: object
-    Sendbird.ExtendedMessagePayload:
+    SendbirdExtendedMessagePayload:
       description: Specifies the extended message payload which is used to send a
         message with a custom message type.
-      example:
-        suggested_replies:
-        - suggested_replies
-        - suggested_replies
-        custom_view: "{}"
       properties:
         custom_view:
           description: "JSON format you want to embed in message, eq : {\"title\"\
@@ -5617,65 +5736,65 @@ components:
             type: string
           type: array
       type: object
-    Sendbird.ParentMessageInfo:
+    SendbirdParentMessageInfo:
       example:
         file:
           file_name: file_name
           file_type: file_type
           require_auth: true
           thumbnails:
-          - real_width: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
-          - real_width: 7
+            height: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
+            height: 7
           url: url
-          file_size: 3
+          file_size: 4
         custom_type: custom_type
         files:
         - file_name: file_name
           file_type: file_type
           require_auth: true
           thumbnails:
-          - real_width: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
-          - real_width: 7
+            height: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
+            height: 7
           url: url
-          file_size: 3
+          file_size: 4
         - file_name: file_name
           file_type: file_type
           require_auth: true
           thumbnails:
-          - real_width: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
-          - real_width: 7
+            height: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
+            height: 7
           url: url
-          file_size: 3
+          file_size: 4
         message: message
         type: type
         user:
@@ -5685,29 +5804,26 @@ components:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          unread_channel_count: 9
+          unread_channel_count: 6
           discovery_keys:
           - discovery_keys
           - discovery_keys
           profile_url: profile_url
           is_created: true
-          created_at: 4
+          created_at: 9
           has_ever_logged_in: true
           locale: locale
-          unread_message_count: 9
+          unread_message_count: 8
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
           phone_number: phone_number
           is_online: true
           state: ""
           is_hide_me_from_friends: true
-          last_seen_at: 5
-        ts: 1
+          last_seen_at: 9
+        ts: 5
       properties:
         custom_type:
           type: string
@@ -5719,17 +5835,17 @@ components:
           format: int64
           type: integer
         user:
-          $ref: '#/components/schemas/Sendbird.User'
+          $ref: '#/components/schemas/SendbirdUser'
         file:
-          $ref: '#/components/schemas/Sendbird.File'
+          $ref: '#/components/schemas/SendbirdFile'
         files:
           items:
-            $ref: '#/components/schemas/Sendbird.File'
+            $ref: '#/components/schemas/SendbirdFile'
           type: array
       type: object
-    Sendbird.Reaction:
+    SendbirdReaction:
       example:
-        updated_at: 9
+        updated_at: 2
         user_ids:
         - user_ids
         - user_ids
@@ -5745,7 +5861,7 @@ components:
             type: string
           type: array
       type: object
-    Sendbird.MessageResponse:
+    SendbirdMessageResponse:
       example:
         data: data
         message_events:
@@ -5755,12 +5871,12 @@ components:
           update_unread_count: true
         custom_type: custom_type
         is_reply_to_channel: true
-        created_at: 1
+        created_at: 7
         is_removed: true
         type: type
         req_id: req_id
         file: "{}"
-        updated_at: 7
+        updated_at: 3
         translations: "{}"
         thread_info: "{}"
         mentioned_users:
@@ -5781,67 +5897,67 @@ components:
           nickname: nickname
           is_blocked_by_me: true
         channel_type: channel_type
-        message_survival_seconds: 2
+        message_survival_seconds: 9
         silent: true
-        parent_message_id: 7
+        parent_message_id: 4
         parent_message_info:
           file:
             file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
-            - real_width: 7
+              height: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
+              height: 7
             url: url
-            file_size: 3
+            file_size: 4
           custom_type: custom_type
           files:
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
-            - real_width: 7
+              height: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
+              height: 7
             url: url
-            file_size: 3
+            file_size: 4
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
-            - real_width: 7
+              height: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
+              height: 7
             url: url
-            file_size: 3
+            file_size: 4
           message: message
           type: type
           user:
@@ -5851,31 +5967,28 @@ components:
             - preferred_languages
             - preferred_languages
             require_auth_for_profile_image: true
-            unread_channel_count: 9
+            unread_channel_count: 6
             discovery_keys:
             - discovery_keys
             - discovery_keys
             profile_url: profile_url
             is_created: true
-            created_at: 4
+            created_at: 9
             has_ever_logged_in: true
             locale: locale
-            unread_message_count: 9
+            unread_message_count: 8
             access_token: access_token
             is_shadow_blocked: true
             user_id: user_id
             nickname: nickname
-            session_tokens:
-            - session_tokens
-            - session_tokens
             phone_number: phone_number
             is_online: true
             state: ""
             is_hide_me_from_friends: true
-            last_seen_at: 5
-          ts: 1
+            last_seen_at: 9
+          ts: 5
         require_auth: true
-        message_id: 6
+        message_id: 1
         sorted_metaarray:
         - value:
           - value
@@ -5889,56 +6002,52 @@ components:
         message: message
         channel_url: channel_url
         is_op_msg: true
-        message_retention_hour: 1
-        extended_message_payload:
-          suggested_replies:
-          - suggested_replies
-          - suggested_replies
-          custom_view: "{}"
+        message_retention_hour: 6
+        extended_message_payload: null
         files:
         - file_name: file_name
           file_type: file_type
           require_auth: true
           thumbnails:
-          - real_width: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
-          - real_width: 7
+            height: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
+            height: 7
           url: url
-          file_size: 3
+          file_size: 4
         - file_name: file_name
           file_type: file_type
           require_auth: true
           thumbnails:
-          - real_width: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
-          - real_width: 7
+            height: 7
+          - real_width: 1
             width: 1
             plain_url: plain_url
-            real_height: 4
+            real_height: 1
             url: url
-            height: 2
+            height: 7
           url: url
-          file_size: 3
+          file_size: 4
         reactions:
-        - updated_at: 9
+        - updated_at: 2
           user_ids:
           - user_ids
           - user_ids
           key: key
-        - updated_at: 9
+        - updated_at: 2
           user_ids:
           - user_ids
           - user_ids
@@ -5952,7 +6061,6 @@ components:
           profile_url: profile_url
           nickname: nickname
           is_blocked_by_me: true
-      nullable: true
       properties:
         require_auth:
           type: boolean
@@ -5962,7 +6070,7 @@ components:
           type: string
         mentioned_users:
           items:
-            $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+            $ref: '#/components/schemas/SendbirdBasicUserInfo'
           type: array
         translations:
           type: object
@@ -5973,17 +6081,17 @@ components:
           type: boolean
         reactions:
           items:
-            $ref: '#/components/schemas/Sendbird.Reaction'
+            $ref: '#/components/schemas/SendbirdReaction'
           type: array
         is_removed:
           type: boolean
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendbirdBasicUserInfo'
         file:
           type: object
         files:
           items:
-            $ref: '#/components/schemas/Sendbird.File'
+            $ref: '#/components/schemas/SendbirdFile'
           type: array
         message:
           type: string
@@ -6007,25 +6115,26 @@ components:
         channel_url:
           type: string
         message_id:
+          format: int64
           type: integer
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
           type: array
         thread_info:
           type: object
         parent_message_id:
           type: integer
         parent_message_info:
-          $ref: '#/components/schemas/Sendbird.ParentMessageInfo'
+          $ref: '#/components/schemas/SendbirdParentMessageInfo'
         is_reply_to_channel:
           type: boolean
         message_events:
-          $ref: '#/components/schemas/Sendbird_MessageResponse_message_events'
+          $ref: '#/components/schemas/SendbirdMessageResponse_message_events'
         extended_message_payload:
-          $ref: '#/components/schemas/Sendbird.ExtendedMessagePayload'
+          $ref: '#/components/schemas/SendbirdMessageResponse_extended_message_payload'
       type: object
-    Sendbird.GroupChannel:
+    SendbirdGroupChannel:
       example:
         metadata: "{}"
         count_preference: "false"
@@ -6038,213 +6147,8 @@ components:
         is_hidden: true
         created_at: 0
         is_super: true
-        last_message:
-          data: data
-          message_events:
-            update_last_message: true
-            update_mention_count: true
-            send_push_notification: send_push_notification
-            update_unread_count: true
-          custom_type: custom_type
-          is_reply_to_channel: true
-          created_at: 1
-          is_removed: true
-          type: type
-          req_id: req_id
-          file: "{}"
-          updated_at: 7
-          translations: "{}"
-          thread_info: "{}"
-          mentioned_users:
-          - metadata: "{}"
-            require_auth_for_profile_image: true
-            is_active: true
-            role: ""
-            user_id: user_id
-            profile_url: profile_url
-            nickname: nickname
-            is_blocked_by_me: true
-          - metadata: "{}"
-            require_auth_for_profile_image: true
-            is_active: true
-            role: ""
-            user_id: user_id
-            profile_url: profile_url
-            nickname: nickname
-            is_blocked_by_me: true
-          channel_type: channel_type
-          message_survival_seconds: 2
-          silent: true
-          parent_message_id: 7
-          parent_message_info:
-            file:
-              file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            custom_type: custom_type
-            files:
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            message: message
-            type: type
-            user:
-              metadata: "{}"
-              is_active: true
-              preferred_languages:
-              - preferred_languages
-              - preferred_languages
-              require_auth_for_profile_image: true
-              unread_channel_count: 9
-              discovery_keys:
-              - discovery_keys
-              - discovery_keys
-              profile_url: profile_url
-              is_created: true
-              created_at: 4
-              has_ever_logged_in: true
-              locale: locale
-              unread_message_count: 9
-              access_token: access_token
-              is_shadow_blocked: true
-              user_id: user_id
-              nickname: nickname
-              session_tokens:
-              - session_tokens
-              - session_tokens
-              phone_number: phone_number
-              is_online: true
-              state: ""
-              is_hide_me_from_friends: true
-              last_seen_at: 5
-            ts: 1
-          require_auth: true
-          message_id: 6
-          sorted_metaarray:
-          - value:
-            - value
-            - value
-            key: key
-          - value:
-            - value
-            - value
-            key: key
-          mention_type: mention_type
-          message: message
-          channel_url: channel_url
-          is_op_msg: true
-          message_retention_hour: 1
-          extended_message_payload:
-            suggested_replies:
-            - suggested_replies
-            - suggested_replies
-            custom_view: "{}"
-          files:
-          - file_name: file_name
-            file_type: file_type
-            require_auth: true
-            thumbnails:
-            - real_width: 7
-              width: 1
-              plain_url: plain_url
-              real_height: 4
-              url: url
-              height: 2
-            - real_width: 7
-              width: 1
-              plain_url: plain_url
-              real_height: 4
-              url: url
-              height: 2
-            url: url
-            file_size: 3
-          - file_name: file_name
-            file_type: file_type
-            require_auth: true
-            thumbnails:
-            - real_width: 7
-              width: 1
-              plain_url: plain_url
-              real_height: 4
-              url: url
-              height: 2
-            - real_width: 7
-              width: 1
-              plain_url: plain_url
-              real_height: 4
-              url: url
-              height: 2
-            url: url
-            file_size: 3
-          reactions:
-          - updated_at: 9
-            user_ids:
-            - user_ids
-            - user_ids
-            key: key
-          - updated_at: 9
-            user_ids:
-            - user_ids
-            - user_ids
-            key: key
-          user:
-            metadata: "{}"
-            require_auth_for_profile_image: true
-            is_active: true
-            role: ""
-            user_id: user_id
-            profile_url: profile_url
-            nickname: nickname
-            is_blocked_by_me: true
-        user_last_read: 3
+        last_message: null
+        user_last_read: 1
         is_discoverable: true
         is_muted: true
         joined_member_count: 5
@@ -6257,11 +6161,11 @@ components:
           require_auth_for_profile_image: true
           role: ""
           profile_url: profile_url
-          muted_end_at: 3
+          muted_end_at: 2
           delivered_ts: 9
           do_not_disturb: true
           is_muted: true
-          read_ts: 6
+          read_ts: 4
           is_blocked_by_me: true
           friend_name: friend_name
           friend_discovery_key:
@@ -6274,18 +6178,18 @@ components:
           is_online: true
           push_trigger_option: null
           state: ""
-          last_seen_at: 6
+          last_seen_at: 3
         - metadata: "{}"
           is_active: true
           is_blocking_me: true
           require_auth_for_profile_image: true
           role: ""
           profile_url: profile_url
-          muted_end_at: 3
+          muted_end_at: 2
           delivered_ts: 9
           do_not_disturb: true
           is_muted: true
-          read_ts: 6
+          read_ts: 4
           is_blocked_by_me: true
           friend_name: friend_name
           friend_discovery_key:
@@ -6298,8 +6202,8 @@ components:
           is_online: true
           push_trigger_option: null
           state: ""
-          last_seen_at: 6
-        max_length_message: 6
+          last_seen_at: 3
+        max_length_message: 2
         my_role: ""
         inviter:
           metadata: "{}"
@@ -6311,13 +6215,13 @@ components:
           nickname: nickname
           is_blocked_by_me: true
         push_trigger_option: null
-        member_count: 8
-        message_survival_seconds: 1
+        member_count: 7
+        message_survival_seconds: 7
         has_ai_bot: true
         cover_url: cover_url
         is_ephemeral: true
         is_exclusive: true
-        unread_mention_count: 5
+        unread_mention_count: 6
         joined_ts: 5
         created_by:
           metadata: "{}"
@@ -6329,7 +6233,7 @@ components:
           nickname: nickname
           is_blocked_by_me: true
         has_bot: true
-        unread_message_count: 6
+        unread_message_count: 7
         channel_url: channel_url
         is_broadcast: true
         hidden_state: hidden_allow_auto_unhide
@@ -6338,16 +6242,16 @@ components:
         is_public: true
         name: name
         read_receipt:
-          key: 2
+          key: 1
         sms_fallback:
           exclude_user_ids:
           - exclude_user_ids
           - exclude_user_ids
-          wait_seconds: 6
+          wait_seconds: 1
         ignore_profanity_filter: true
         delivery_receipt: "{}"
         is_access_code_required: true
-        ts_message_offset: 6
+        ts_message_offset: 1
       properties:
         channel_url:
           type: string
@@ -6364,7 +6268,7 @@ components:
           format: int64
           type: integer
         created_by:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendbirdBasicUserInfo'
         custom_type:
           type: string
         data:
@@ -6372,7 +6276,7 @@ components:
         delivery_receipt:
           type: object
         disappearing_message:
-          $ref: '#/components/schemas/Sendbird.DisappearingMessage'
+          $ref: '#/components/schemas/SendbirdDisappearingMessage'
         freeze:
           type: boolean
         has_ai_bot:
@@ -6391,8 +6295,9 @@ components:
           format: int64
           type: integer
         inviter:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendbirdBasicUserInfo'
         is_access_code_required:
+          nullable: true
           type: boolean
         is_broadcast:
           type: boolean
@@ -6418,9 +6323,10 @@ components:
           type: integer
         joined_ts:
           format: int64
+          nullable: true
           type: integer
         last_message:
-          $ref: '#/components/schemas/Sendbird.MessageResponse'
+          $ref: '#/components/schemas/SendbirdGroupChannel_last_message'
         max_length_message:
           type: integer
         member_count:
@@ -6433,11 +6339,12 @@ components:
           type: string
         members:
           items:
-            $ref: '#/components/schemas/Sendbird.Member'
+            $ref: '#/components/schemas/SendbirdMember'
           type: array
         message_survival_seconds:
           type: integer
         metadata:
+          nullable: true
           type: object
         my_role:
           enum:
@@ -6448,14 +6355,14 @@ components:
         name:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendbirdPushTriggerOption'
         read_receipt:
           additionalProperties:
             format: int64
             type: integer
           type: object
         sms_fallback:
-          $ref: '#/components/schemas/Sendbird.SmsFallback'
+          $ref: '#/components/schemas/SendbirdSmsFallback'
         ts_message_offset:
           format: int64
           type: integer
@@ -6469,7 +6376,7 @@ components:
       required:
       - channel_url
       type: object
-    Sendbird.GroupChannelDetail:
+    SendbirdGroupChannelDetail:
       example:
         data: data
         custom_type: custom_type
@@ -6496,12 +6403,12 @@ components:
             update_unread_count: true
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 1
+          created_at: 7
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 7
+          updated_at: 3
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -6522,67 +6429,67 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           channel_type: channel_type
-          message_survival_seconds: 2
+          message_survival_seconds: 9
           silent: true
-          parent_message_id: 7
+          parent_message_id: 4
           parent_message_info:
             file:
               file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
-              - real_width: 7
+                height: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
+                height: 7
               url: url
-              file_size: 3
+              file_size: 4
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
-              - real_width: 7
+                height: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
+                height: 7
               url: url
-              file_size: 3
+              file_size: 4
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
-              - real_width: 7
+                height: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
+                height: 7
               url: url
-              file_size: 3
+              file_size: 4
             message: message
             type: type
             user:
@@ -6592,31 +6499,28 @@ components:
               - preferred_languages
               - preferred_languages
               require_auth_for_profile_image: true
-              unread_channel_count: 9
+              unread_channel_count: 6
               discovery_keys:
               - discovery_keys
               - discovery_keys
               profile_url: profile_url
               is_created: true
-              created_at: 4
+              created_at: 9
               has_ever_logged_in: true
               locale: locale
-              unread_message_count: 9
+              unread_message_count: 8
               access_token: access_token
               is_shadow_blocked: true
               user_id: user_id
               nickname: nickname
-              session_tokens:
-              - session_tokens
-              - session_tokens
               phone_number: phone_number
               is_online: true
               state: ""
               is_hide_me_from_friends: true
-              last_seen_at: 5
-            ts: 1
+              last_seen_at: 9
+            ts: 5
           require_auth: true
-          message_id: 6
+          message_id: 1
           sorted_metaarray:
           - value:
             - value
@@ -6630,56 +6534,52 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 1
-          extended_message_payload:
-            suggested_replies:
-            - suggested_replies
-            - suggested_replies
-            custom_view: "{}"
+          message_retention_hour: 6
+          extended_message_payload: null
           files:
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
-            - real_width: 7
+              height: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
+              height: 7
             url: url
-            file_size: 3
+            file_size: 4
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
-            - real_width: 7
+              height: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
+              height: 7
             url: url
-            file_size: 3
+            file_size: 4
           reactions:
-          - updated_at: 9
+          - updated_at: 2
             user_ids:
             - user_ids
             - user_ids
             key: key
-          - updated_at: 9
+          - updated_at: 2
             user_ids:
             - user_ids
             - user_ids
@@ -6704,56 +6604,50 @@ components:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          unread_channel_count: 9
+          unread_channel_count: 6
           discovery_keys:
           - discovery_keys
           - discovery_keys
           profile_url: profile_url
           is_created: true
-          created_at: 4
+          created_at: 9
           has_ever_logged_in: true
           locale: locale
-          unread_message_count: 9
+          unread_message_count: 8
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
           phone_number: phone_number
           is_online: true
           state: ""
           is_hide_me_from_friends: true
-          last_seen_at: 5
+          last_seen_at: 9
         - metadata: "{}"
           is_active: true
           preferred_languages:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          unread_channel_count: 9
+          unread_channel_count: 6
           discovery_keys:
           - discovery_keys
           - discovery_keys
           profile_url: profile_url
           is_created: true
-          created_at: 4
+          created_at: 9
           has_ever_logged_in: true
           locale: locale
-          unread_message_count: 9
+          unread_message_count: 8
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
           phone_number: phone_number
           is_online: true
           state: ""
           is_hide_me_from_friends: true
-          last_seen_at: 5
+          last_seen_at: 9
         members:
         - metadata: "{}"
           is_active: true
@@ -6761,11 +6655,11 @@ components:
           require_auth_for_profile_image: true
           role: ""
           profile_url: profile_url
-          muted_end_at: 3
+          muted_end_at: 2
           delivered_ts: 9
           do_not_disturb: true
           is_muted: true
-          read_ts: 6
+          read_ts: 4
           is_blocked_by_me: true
           friend_name: friend_name
           friend_discovery_key:
@@ -6778,18 +6672,18 @@ components:
           is_online: true
           push_trigger_option: null
           state: ""
-          last_seen_at: 6
+          last_seen_at: 3
         - metadata: "{}"
           is_active: true
           is_blocking_me: true
           require_auth_for_profile_image: true
           role: ""
           profile_url: profile_url
-          muted_end_at: 3
+          muted_end_at: 2
           delivered_ts: 9
           do_not_disturb: true
           is_muted: true
-          read_ts: 6
+          read_ts: 4
           is_blocked_by_me: true
           friend_name: friend_name
           friend_discovery_key:
@@ -6802,15 +6696,15 @@ components:
           is_online: true
           push_trigger_option: null
           state: ""
-          last_seen_at: 6
+          last_seen_at: 3
         max_length_message: 9
         id: 2
-        member_count: 3
-        message_survival_seconds: 2
+        member_count: 6
+        message_survival_seconds: 3
         has_ai_bot: true
         cover_url: cover_url
         is_ephemeral: true
-        unread_mention_count: 7
+        unread_mention_count: 1
         created_by:
           metadata: "{}"
           require_auth_for_profile_image: true
@@ -6821,25 +6715,25 @@ components:
           nickname: nickname
           is_blocked_by_me: true
         has_bot: true
-        unread_message_count: 1
+        unread_message_count: 2
         channel_url: channel_url
         is_broadcast: true
         is_public: true
         name: name
         read_receipt:
-          key: 4
+          key: 6
         sms_fallback:
           exclude_user_ids:
           - exclude_user_ids
           - exclude_user_ids
-          wait_seconds: 6
+          wait_seconds: 1
         ignore_profanity_filter: true
         delivery_receipt:
           key: 5
         is_access_code_required: true
       properties:
         channel:
-          $ref: '#/components/schemas/Sendbird_GroupChannelDetail_channel'
+          $ref: '#/components/schemas/SendbirdGroupChannelDetail_channel'
         channel_url:
           type: string
         cover_url:
@@ -6848,7 +6742,7 @@ components:
           format: int64
           type: integer
         created_by:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendbirdBasicUserInfo'
         custom_type:
           type: string
         data:
@@ -6859,7 +6753,7 @@ components:
             type: integer
           type: object
         disappearing_message:
-          $ref: '#/components/schemas/Sendbird.DisappearingMessage'
+          $ref: '#/components/schemas/SendbirdDisappearingMessage'
         freeze:
           type: boolean
         has_ai_bot:
@@ -6887,14 +6781,14 @@ components:
         joined_member_count:
           type: integer
         last_message:
-          $ref: '#/components/schemas/Sendbird.MessageResponse'
+          $ref: '#/components/schemas/SendbirdMessageResponse'
         max_length_message:
           type: integer
         member_count:
           type: integer
         members:
           items:
-            $ref: '#/components/schemas/Sendbird.Member'
+            $ref: '#/components/schemas/SendbirdMember'
           type: array
         message_survival_seconds:
           type: integer
@@ -6902,7 +6796,7 @@ components:
           type: string
         operators:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendbirdUser'
           type: array
         read_receipt:
           additionalProperties:
@@ -6910,7 +6804,7 @@ components:
             type: integer
           type: object
         sms_fallback:
-          $ref: '#/components/schemas/Sendbird.SmsFallback'
+          $ref: '#/components/schemas/SendbirdSmsFallback'
         unread_mention_count:
           type: integer
         unread_message_count:
@@ -6918,7 +6812,7 @@ components:
       required:
       - channel_url
       type: object
-    Sendbird.OpenChannel:
+    SendbirdOpenChannel:
       example:
         cover_url: cover_url
         metadata: "{}"
@@ -6973,17 +6867,18 @@ components:
           type: string
         operators:
           items:
-            $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+            $ref: '#/components/schemas/SendbirdBasicUserInfo'
           type: array
         participant_count:
           type: integer
         metadata:
+          nullable: true
           type: object
       required:
       - channel_url
       type: object
     createAGroupChannelResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendbirdGroupChannelDetail'
     groupChatListChannelsResponse:
       example:
         next: next
@@ -6999,213 +6894,8 @@ components:
           is_hidden: true
           created_at: 0
           is_super: true
-          last_message:
-            data: data
-            message_events:
-              update_last_message: true
-              update_mention_count: true
-              send_push_notification: send_push_notification
-              update_unread_count: true
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 1
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-            - metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-            channel_type: channel_type
-            message_survival_seconds: 2
-            silent: true
-            parent_message_id: 7
-            parent_message_info:
-              file:
-                file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              custom_type: custom_type
-              files:
-              - file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              - file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              message: message
-              type: type
-              user:
-                metadata: "{}"
-                is_active: true
-                preferred_languages:
-                - preferred_languages
-                - preferred_languages
-                require_auth_for_profile_image: true
-                unread_channel_count: 9
-                discovery_keys:
-                - discovery_keys
-                - discovery_keys
-                profile_url: profile_url
-                is_created: true
-                created_at: 4
-                has_ever_logged_in: true
-                locale: locale
-                unread_message_count: 9
-                access_token: access_token
-                is_shadow_blocked: true
-                user_id: user_id
-                nickname: nickname
-                session_tokens:
-                - session_tokens
-                - session_tokens
-                phone_number: phone_number
-                is_online: true
-                state: ""
-                is_hide_me_from_friends: true
-                last_seen_at: 5
-              ts: 1
-            require_auth: true
-            message_id: 6
-            sorted_metaarray:
-            - value:
-              - value
-              - value
-              key: key
-            - value:
-              - value
-              - value
-              key: key
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 1
-            extended_message_payload:
-              suggested_replies:
-              - suggested_replies
-              - suggested_replies
-              custom_view: "{}"
-            files:
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            reactions:
-            - updated_at: 9
-              user_ids:
-              - user_ids
-              - user_ids
-              key: key
-            - updated_at: 9
-              user_ids:
-              - user_ids
-              - user_ids
-              key: key
-            user:
-              metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-          user_last_read: 3
+          last_message: null
+          user_last_read: 1
           is_discoverable: true
           is_muted: true
           joined_member_count: 5
@@ -7218,11 +6908,11 @@ components:
             require_auth_for_profile_image: true
             role: ""
             profile_url: profile_url
-            muted_end_at: 3
+            muted_end_at: 2
             delivered_ts: 9
             do_not_disturb: true
             is_muted: true
-            read_ts: 6
+            read_ts: 4
             is_blocked_by_me: true
             friend_name: friend_name
             friend_discovery_key:
@@ -7235,18 +6925,18 @@ components:
             is_online: true
             push_trigger_option: null
             state: ""
-            last_seen_at: 6
+            last_seen_at: 3
           - metadata: "{}"
             is_active: true
             is_blocking_me: true
             require_auth_for_profile_image: true
             role: ""
             profile_url: profile_url
-            muted_end_at: 3
+            muted_end_at: 2
             delivered_ts: 9
             do_not_disturb: true
             is_muted: true
-            read_ts: 6
+            read_ts: 4
             is_blocked_by_me: true
             friend_name: friend_name
             friend_discovery_key:
@@ -7259,8 +6949,8 @@ components:
             is_online: true
             push_trigger_option: null
             state: ""
-            last_seen_at: 6
-          max_length_message: 6
+            last_seen_at: 3
+          max_length_message: 2
           my_role: ""
           inviter:
             metadata: "{}"
@@ -7272,13 +6962,13 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           push_trigger_option: null
-          member_count: 8
-          message_survival_seconds: 1
+          member_count: 7
+          message_survival_seconds: 7
           has_ai_bot: true
           cover_url: cover_url
           is_ephemeral: true
           is_exclusive: true
-          unread_mention_count: 5
+          unread_mention_count: 6
           joined_ts: 5
           created_by:
             metadata: "{}"
@@ -7290,7 +6980,7 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           has_bot: true
-          unread_message_count: 6
+          unread_message_count: 7
           channel_url: channel_url
           is_broadcast: true
           hidden_state: hidden_allow_auto_unhide
@@ -7299,16 +6989,16 @@ components:
           is_public: true
           name: name
           read_receipt:
-            key: 2
+            key: 1
           sms_fallback:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 6
+            wait_seconds: 1
           ignore_profanity_filter: true
           delivery_receipt: "{}"
           is_access_code_required: true
-          ts_message_offset: 6
+          ts_message_offset: 1
         - metadata: "{}"
           count_preference: "false"
           data: data
@@ -7320,213 +7010,8 @@ components:
           is_hidden: true
           created_at: 0
           is_super: true
-          last_message:
-            data: data
-            message_events:
-              update_last_message: true
-              update_mention_count: true
-              send_push_notification: send_push_notification
-              update_unread_count: true
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 1
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-            - metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-            channel_type: channel_type
-            message_survival_seconds: 2
-            silent: true
-            parent_message_id: 7
-            parent_message_info:
-              file:
-                file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              custom_type: custom_type
-              files:
-              - file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              - file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              message: message
-              type: type
-              user:
-                metadata: "{}"
-                is_active: true
-                preferred_languages:
-                - preferred_languages
-                - preferred_languages
-                require_auth_for_profile_image: true
-                unread_channel_count: 9
-                discovery_keys:
-                - discovery_keys
-                - discovery_keys
-                profile_url: profile_url
-                is_created: true
-                created_at: 4
-                has_ever_logged_in: true
-                locale: locale
-                unread_message_count: 9
-                access_token: access_token
-                is_shadow_blocked: true
-                user_id: user_id
-                nickname: nickname
-                session_tokens:
-                - session_tokens
-                - session_tokens
-                phone_number: phone_number
-                is_online: true
-                state: ""
-                is_hide_me_from_friends: true
-                last_seen_at: 5
-              ts: 1
-            require_auth: true
-            message_id: 6
-            sorted_metaarray:
-            - value:
-              - value
-              - value
-              key: key
-            - value:
-              - value
-              - value
-              key: key
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 1
-            extended_message_payload:
-              suggested_replies:
-              - suggested_replies
-              - suggested_replies
-              custom_view: "{}"
-            files:
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            reactions:
-            - updated_at: 9
-              user_ids:
-              - user_ids
-              - user_ids
-              key: key
-            - updated_at: 9
-              user_ids:
-              - user_ids
-              - user_ids
-              key: key
-            user:
-              metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-          user_last_read: 3
+          last_message: null
+          user_last_read: 1
           is_discoverable: true
           is_muted: true
           joined_member_count: 5
@@ -7539,11 +7024,11 @@ components:
             require_auth_for_profile_image: true
             role: ""
             profile_url: profile_url
-            muted_end_at: 3
+            muted_end_at: 2
             delivered_ts: 9
             do_not_disturb: true
             is_muted: true
-            read_ts: 6
+            read_ts: 4
             is_blocked_by_me: true
             friend_name: friend_name
             friend_discovery_key:
@@ -7556,18 +7041,18 @@ components:
             is_online: true
             push_trigger_option: null
             state: ""
-            last_seen_at: 6
+            last_seen_at: 3
           - metadata: "{}"
             is_active: true
             is_blocking_me: true
             require_auth_for_profile_image: true
             role: ""
             profile_url: profile_url
-            muted_end_at: 3
+            muted_end_at: 2
             delivered_ts: 9
             do_not_disturb: true
             is_muted: true
-            read_ts: 6
+            read_ts: 4
             is_blocked_by_me: true
             friend_name: friend_name
             friend_discovery_key:
@@ -7580,8 +7065,8 @@ components:
             is_online: true
             push_trigger_option: null
             state: ""
-            last_seen_at: 6
-          max_length_message: 6
+            last_seen_at: 3
+          max_length_message: 2
           my_role: ""
           inviter:
             metadata: "{}"
@@ -7593,13 +7078,13 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           push_trigger_option: null
-          member_count: 8
-          message_survival_seconds: 1
+          member_count: 7
+          message_survival_seconds: 7
           has_ai_bot: true
           cover_url: cover_url
           is_ephemeral: true
           is_exclusive: true
-          unread_mention_count: 5
+          unread_mention_count: 6
           joined_ts: 5
           created_by:
             metadata: "{}"
@@ -7611,7 +7096,7 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           has_bot: true
-          unread_message_count: 6
+          unread_message_count: 7
           channel_url: channel_url
           is_broadcast: true
           hidden_state: hidden_allow_auto_unhide
@@ -7620,21 +7105,21 @@ components:
           is_public: true
           name: name
           read_receipt:
-            key: 2
+            key: 1
           sms_fallback:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 6
+            wait_seconds: 1
           ignore_profanity_filter: true
           delivery_receipt: "{}"
           is_access_code_required: true
-          ts_message_offset: 6
-        ts: 3
+          ts_message_offset: 1
+        ts: 4
       properties:
         channels:
           items:
-            $ref: '#/components/schemas/Sendbird.GroupChannel'
+            $ref: '#/components/schemas/SendbirdGroupChannel'
           type: array
         next:
           type: string
@@ -7645,19 +7130,19 @@ components:
     getAGroupChannelResponse:
       allOf:
       - $ref: '#/components/schemas/getAGroupChannelResponse_allOf'
-      - $ref: '#/components/schemas/Sendbird.GroupChannel'
+      - $ref: '#/components/schemas/SendbirdGroupChannel'
     updateAGroupChannelResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendbirdGroupChannelDetail'
     acceptAnInvitationResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendbirdGroupChannelDetail'
     inviteAsMembersResponse:
       allOf:
-      - $ref: '#/components/schemas/Sendbird.GroupChannel'
+      - $ref: '#/components/schemas/SendbirdGroupChannel'
       - $ref: '#/components/schemas/inviteAsMembersResponse_allOf'
     joinAChannelResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendbirdGroupChannelDetail'
     freezeAGroupChannelResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendbirdGroupChannelDetail'
     groupChannelListMembersResponse:
       example:
         next: next
@@ -7668,11 +7153,11 @@ components:
           require_auth_for_profile_image: true
           role: ""
           profile_url: profile_url
-          muted_end_at: 3
+          muted_end_at: 2
           delivered_ts: 9
           do_not_disturb: true
           is_muted: true
-          read_ts: 6
+          read_ts: 4
           is_blocked_by_me: true
           friend_name: friend_name
           friend_discovery_key:
@@ -7685,18 +7170,18 @@ components:
           is_online: true
           push_trigger_option: null
           state: ""
-          last_seen_at: 6
+          last_seen_at: 3
         - metadata: "{}"
           is_active: true
           is_blocking_me: true
           require_auth_for_profile_image: true
           role: ""
           profile_url: profile_url
-          muted_end_at: 3
+          muted_end_at: 2
           delivered_ts: 9
           do_not_disturb: true
           is_muted: true
-          read_ts: 6
+          read_ts: 4
           is_blocked_by_me: true
           friend_name: friend_name
           friend_discovery_key:
@@ -7709,11 +7194,11 @@ components:
           is_online: true
           push_trigger_option: null
           state: ""
-          last_seen_at: 6
+          last_seen_at: 3
       properties:
         members:
           items:
-            $ref: '#/components/schemas/Sendbird.Member'
+            $ref: '#/components/schemas/SendbirdMember'
           type: array
         next:
           type: string
@@ -7784,7 +7269,7 @@ components:
           type: string
         operators:
           items:
-            $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+            $ref: '#/components/schemas/SendbirdBasicUserInfo'
           type: array
       type: object
     listBotsResponse:
@@ -7812,21 +7297,8 @@ components:
             toggle_button_type: toggle_button_type
             toggle_button_url: toggle_button_url
             auto_open: true
-          ai:
-            feedback: true
-            top_p: 5
-            system_message: system_message
-            frequency_penalty: 0
-            max_tokens: 6
-            stream: true
-            presence_penalty: 1
-            temperature: 5.962133916683182
-            backend: backend
-            model: model
-            instruction_mode: ""
-            system_message_for_context_prefix: system_message_for_context_prefix
-          created_at: 7
-          channel_invitation_preference: 2
+          created_at: 6
+          channel_invitation_preference: 0
           first_messages:
           - data:
               suggested_replies:
@@ -7866,21 +7338,8 @@ components:
             toggle_button_type: toggle_button_type
             toggle_button_url: toggle_button_url
             auto_open: true
-          ai:
-            feedback: true
-            top_p: 5
-            system_message: system_message
-            frequency_penalty: 0
-            max_tokens: 6
-            stream: true
-            presence_penalty: 1
-            temperature: 5.962133916683182
-            backend: backend
-            model: model
-            instruction_mode: ""
-            system_message_for_context_prefix: system_message_for_context_prefix
-          created_at: 7
-          channel_invitation_preference: 2
+          created_at: 6
+          channel_invitation_preference: 0
           first_messages:
           - data:
               suggested_replies:
@@ -7907,8 +7366,267 @@ components:
         next:
           type: string
       type: object
+    viewBotByIdResponse:
+      example:
+        show_member: true
+        enable_mark_as_read: true
+        is_privacy_mode: true
+        bot_callback_url: bot_callback_url
+        bot:
+          bot_profile_url: bot_profile_url
+          bot_userid: bot_userid
+          bot_metadata: "{}"
+          bot_type: bot_type
+          bot_token: bot_token
+          bot_nickname: bot_nickname
+        channel_invitation_preference: 0
+      properties:
+        bot:
+          $ref: '#/components/schemas/viewBotByIdResponse_bot'
+        bot_callback_url:
+          type: string
+        enable_mark_as_read:
+          type: boolean
+        is_privacy_mode:
+          type: boolean
+        show_member:
+          type: boolean
+        channel_invitation_preference:
+          type: integer
+      type: object
+    updateBotByIdResponse:
+      example:
+        show_member: true
+        enable_mark_as_read: true
+        is_privacy_mode: true
+        bot_callback_url: bot_callback_url
+        bot:
+          bot_profile_url: bot_profile_url
+          bot_userid: bot_userid
+          bot_metadata: "{}"
+          bot_type: bot_type
+          bot_token: bot_token
+          bot_nickname: bot_nickname
+        channel_invitation_preference: 0
+      properties:
+        bot:
+          $ref: '#/components/schemas/viewBotByIdResponse_bot'
+        bot_callback_url:
+          type: string
+        enable_mark_as_read:
+          type: boolean
+        is_privacy_mode:
+          type: boolean
+        show_member:
+          type: boolean
+        channel_invitation_preference:
+          type: integer
+      type: object
     sendABotMessageResponse:
-      $ref: '#/components/schemas/Sendbird.MessageResponse'
+      example:
+        message:
+          data: data
+          message_events:
+            update_last_message: true
+            update_mention_count: true
+            send_push_notification: send_push_notification
+            update_unread_count: true
+          custom_type: custom_type
+          is_reply_to_channel: true
+          created_at: 7
+          is_removed: true
+          type: type
+          req_id: req_id
+          file: "{}"
+          updated_at: 3
+          translations: "{}"
+          thread_info: "{}"
+          mentioned_users:
+          - metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            role: ""
+            user_id: user_id
+            profile_url: profile_url
+            nickname: nickname
+            is_blocked_by_me: true
+          - metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            role: ""
+            user_id: user_id
+            profile_url: profile_url
+            nickname: nickname
+            is_blocked_by_me: true
+          channel_type: channel_type
+          message_survival_seconds: 9
+          silent: true
+          parent_message_id: 4
+          parent_message_info:
+            file:
+              file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 1
+                width: 1
+                plain_url: plain_url
+                real_height: 1
+                url: url
+                height: 7
+              - real_width: 1
+                width: 1
+                plain_url: plain_url
+                real_height: 1
+                url: url
+                height: 7
+              url: url
+              file_size: 4
+            custom_type: custom_type
+            files:
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 1
+                width: 1
+                plain_url: plain_url
+                real_height: 1
+                url: url
+                height: 7
+              - real_width: 1
+                width: 1
+                plain_url: plain_url
+                real_height: 1
+                url: url
+                height: 7
+              url: url
+              file_size: 4
+            - file_name: file_name
+              file_type: file_type
+              require_auth: true
+              thumbnails:
+              - real_width: 1
+                width: 1
+                plain_url: plain_url
+                real_height: 1
+                url: url
+                height: 7
+              - real_width: 1
+                width: 1
+                plain_url: plain_url
+                real_height: 1
+                url: url
+                height: 7
+              url: url
+              file_size: 4
+            message: message
+            type: type
+            user:
+              metadata: "{}"
+              is_active: true
+              preferred_languages:
+              - preferred_languages
+              - preferred_languages
+              require_auth_for_profile_image: true
+              unread_channel_count: 6
+              discovery_keys:
+              - discovery_keys
+              - discovery_keys
+              profile_url: profile_url
+              is_created: true
+              created_at: 9
+              has_ever_logged_in: true
+              locale: locale
+              unread_message_count: 8
+              access_token: access_token
+              is_shadow_blocked: true
+              user_id: user_id
+              nickname: nickname
+              phone_number: phone_number
+              is_online: true
+              state: ""
+              is_hide_me_from_friends: true
+              last_seen_at: 9
+            ts: 5
+          require_auth: true
+          message_id: 1
+          sorted_metaarray:
+          - value:
+            - value
+            - value
+            key: key
+          - value:
+            - value
+            - value
+            key: key
+          mention_type: mention_type
+          message: message
+          channel_url: channel_url
+          is_op_msg: true
+          message_retention_hour: 6
+          extended_message_payload: null
+          files:
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 1
+              width: 1
+              plain_url: plain_url
+              real_height: 1
+              url: url
+              height: 7
+            - real_width: 1
+              width: 1
+              plain_url: plain_url
+              real_height: 1
+              url: url
+              height: 7
+            url: url
+            file_size: 4
+          - file_name: file_name
+            file_type: file_type
+            require_auth: true
+            thumbnails:
+            - real_width: 1
+              width: 1
+              plain_url: plain_url
+              real_height: 1
+              url: url
+              height: 7
+            - real_width: 1
+              width: 1
+              plain_url: plain_url
+              real_height: 1
+              url: url
+              height: 7
+            url: url
+            file_size: 4
+          reactions:
+          - updated_at: 2
+            user_ids:
+            - user_ids
+            - user_ids
+            key: key
+          - updated_at: 2
+            user_ids:
+            - user_ids
+            - user_ids
+            key: key
+          user:
+            metadata: "{}"
+            require_auth_for_profile_image: true
+            is_active: true
+            role: ""
+            user_id: user_id
+            profile_url: profile_url
+            nickname: nickname
+            is_blocked_by_me: true
+      properties:
+        message:
+          $ref: '#/components/schemas/SendbirdMessageResponse'
+      type: object
     createABotResponse:
       example:
         show_member: true
@@ -7941,7 +7659,7 @@ components:
         bot_callback_url:
           type: string
         bot_style:
-          $ref: '#/components/schemas/createABotResponse_bot_style'
+          $ref: '#/components/schemas/listBotsResponse_bots_inner_bot_style'
         channel_invitation_preference:
           type: integer
         created_at:
@@ -8047,11 +7765,11 @@ components:
           type: string
       type: object
     createAnOpenChannelResponse:
-      $ref: '#/components/schemas/Sendbird.OpenChannel'
+      $ref: '#/components/schemas/SendbirdOpenChannel'
     getAnOpenChannelResponse:
-      $ref: '#/components/schemas/Sendbird.OpenChannel'
+      $ref: '#/components/schemas/SendbirdOpenChannel'
     updateAnOpenChannelResponse:
-      $ref: '#/components/schemas/Sendbird.OpenChannel'
+      $ref: '#/components/schemas/SendbirdOpenChannel'
     listOpenChannelsResponse:
       example:
         next: next
@@ -8118,7 +7836,7 @@ components:
       properties:
         channels:
           items:
-            $ref: '#/components/schemas/Sendbird.OpenChannel'
+            $ref: '#/components/schemas/SendbirdOpenChannel'
           type: array
         next:
           type: string
@@ -8127,7 +7845,7 @@ components:
           type: integer
       type: object
     freezeAnOpenChannelResponse:
-      $ref: '#/components/schemas/Sendbird.OpenChannel'
+      $ref: '#/components/schemas/SendbirdOpenChannel'
     listBlockedUsersResponse:
       example:
         next: next
@@ -8138,60 +7856,54 @@ components:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          unread_channel_count: 9
+          unread_channel_count: 6
           discovery_keys:
           - discovery_keys
           - discovery_keys
           profile_url: profile_url
           is_created: true
-          created_at: 4
+          created_at: 9
           has_ever_logged_in: true
           locale: locale
-          unread_message_count: 9
+          unread_message_count: 8
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
           phone_number: phone_number
           is_online: true
           state: ""
           is_hide_me_from_friends: true
-          last_seen_at: 5
+          last_seen_at: 9
         - metadata: "{}"
           is_active: true
           preferred_languages:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          unread_channel_count: 9
+          unread_channel_count: 6
           discovery_keys:
           - discovery_keys
           - discovery_keys
           profile_url: profile_url
           is_created: true
-          created_at: 4
+          created_at: 9
           has_ever_logged_in: true
           locale: locale
-          unread_message_count: 9
+          unread_message_count: 8
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
           phone_number: phone_number
           is_online: true
           state: ""
           is_hide_me_from_friends: true
-          last_seen_at: 5
+          last_seen_at: 9
       properties:
         users:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendbirdUser'
           type: array
         next:
           type: string
@@ -8206,60 +7918,54 @@ components:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          unread_channel_count: 9
+          unread_channel_count: 6
           discovery_keys:
           - discovery_keys
           - discovery_keys
           profile_url: profile_url
           is_created: true
-          created_at: 4
+          created_at: 9
           has_ever_logged_in: true
           locale: locale
-          unread_message_count: 9
+          unread_message_count: 8
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
           phone_number: phone_number
           is_online: true
           state: ""
           is_hide_me_from_friends: true
-          last_seen_at: 5
+          last_seen_at: 9
         - metadata: "{}"
           is_active: true
           preferred_languages:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          unread_channel_count: 9
+          unread_channel_count: 6
           discovery_keys:
           - discovery_keys
           - discovery_keys
           profile_url: profile_url
           is_created: true
-          created_at: 4
+          created_at: 9
           has_ever_logged_in: true
           locale: locale
-          unread_message_count: 9
+          unread_message_count: 8
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
           phone_number: phone_number
           is_online: true
           state: ""
           is_hide_me_from_friends: true
-          last_seen_at: 5
+          last_seen_at: 9
       properties:
         users:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendbirdUser'
           type: array
         next:
           type: string
@@ -8272,9 +7978,9 @@ components:
           type: integer
       type: object
     viewAUserResponse:
-      $ref: '#/components/schemas/Sendbird.User'
+      $ref: '#/components/schemas/SendbirdUser'
     updateAUserResponse:
-      $ref: '#/components/schemas/Sendbird.User'
+      $ref: '#/components/schemas/SendbirdUser'
     listUsersResponse:
       example:
         next: next
@@ -8285,62 +7991,56 @@ components:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          unread_channel_count: 9
+          unread_channel_count: 6
           discovery_keys:
           - discovery_keys
           - discovery_keys
           profile_url: profile_url
           is_created: true
-          created_at: 4
+          created_at: 9
           has_ever_logged_in: true
           locale: locale
-          unread_message_count: 9
+          unread_message_count: 8
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
           phone_number: phone_number
           is_online: true
           state: ""
           is_hide_me_from_friends: true
-          last_seen_at: 5
+          last_seen_at: 9
         - metadata: "{}"
           is_active: true
           preferred_languages:
           - preferred_languages
           - preferred_languages
           require_auth_for_profile_image: true
-          unread_channel_count: 9
+          unread_channel_count: 6
           discovery_keys:
           - discovery_keys
           - discovery_keys
           profile_url: profile_url
           is_created: true
-          created_at: 4
+          created_at: 9
           has_ever_logged_in: true
           locale: locale
-          unread_message_count: 9
+          unread_message_count: 8
           access_token: access_token
           is_shadow_blocked: true
           user_id: user_id
           nickname: nickname
-          session_tokens:
-          - session_tokens
-          - session_tokens
           phone_number: phone_number
           is_online: true
           state: ""
           is_hide_me_from_friends: true
-          last_seen_at: 5
+          last_seen_at: 9
       properties:
         next:
           type: string
         users:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendbirdUser'
           type: array
       type: object
     chooseAPushNotificationContentTemplateResponse:
@@ -8351,7 +8051,7 @@ components:
           type: string
       type: object
     createAUserResponse:
-      $ref: '#/components/schemas/Sendbird.User'
+      $ref: '#/components/schemas/SendbirdUser'
     listRegistrationOrDeviceTokensResponse:
       example:
         tokens:
@@ -8382,7 +8082,7 @@ components:
         type:
           type: string
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendbirdBasicUserInfo'
       type: object
     addARegistrationOrDeviceTokenResponse:
       example:
@@ -8403,7 +8103,7 @@ components:
         type:
           type: string
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendbirdBasicUserInfo'
       type: object
     viewPushPreferencesResponse:
       example:
@@ -8441,7 +8141,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendbirdPushTriggerOption'
         snooze_enabled:
           type: boolean
         snooze_end_ts:
@@ -8493,7 +8193,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendbirdPushTriggerOption'
         snooze_enabled:
           type: boolean
         snooze_end_ts:
@@ -8529,7 +8229,7 @@ components:
             type: string
           type: array
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendbirdBasicUserInfo'
       type: object
     createUserTokenResponse:
       example:
@@ -8553,7 +8253,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendbirdPushTriggerOption'
       type: object
     updatePushPreferencesForAChannelResponse:
       example:
@@ -8566,7 +8266,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendbirdPushTriggerOption'
       type: object
     viewWhoOwnsARegistrationOrDeviceTokenResponse:
       items:
@@ -8598,213 +8298,8 @@ components:
           is_hidden: true
           created_at: 0
           is_super: true
-          last_message:
-            data: data
-            message_events:
-              update_last_message: true
-              update_mention_count: true
-              send_push_notification: send_push_notification
-              update_unread_count: true
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 1
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-            - metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-            channel_type: channel_type
-            message_survival_seconds: 2
-            silent: true
-            parent_message_id: 7
-            parent_message_info:
-              file:
-                file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              custom_type: custom_type
-              files:
-              - file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              - file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              message: message
-              type: type
-              user:
-                metadata: "{}"
-                is_active: true
-                preferred_languages:
-                - preferred_languages
-                - preferred_languages
-                require_auth_for_profile_image: true
-                unread_channel_count: 9
-                discovery_keys:
-                - discovery_keys
-                - discovery_keys
-                profile_url: profile_url
-                is_created: true
-                created_at: 4
-                has_ever_logged_in: true
-                locale: locale
-                unread_message_count: 9
-                access_token: access_token
-                is_shadow_blocked: true
-                user_id: user_id
-                nickname: nickname
-                session_tokens:
-                - session_tokens
-                - session_tokens
-                phone_number: phone_number
-                is_online: true
-                state: ""
-                is_hide_me_from_friends: true
-                last_seen_at: 5
-              ts: 1
-            require_auth: true
-            message_id: 6
-            sorted_metaarray:
-            - value:
-              - value
-              - value
-              key: key
-            - value:
-              - value
-              - value
-              key: key
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 1
-            extended_message_payload:
-              suggested_replies:
-              - suggested_replies
-              - suggested_replies
-              custom_view: "{}"
-            files:
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            reactions:
-            - updated_at: 9
-              user_ids:
-              - user_ids
-              - user_ids
-              key: key
-            - updated_at: 9
-              user_ids:
-              - user_ids
-              - user_ids
-              key: key
-            user:
-              metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-          user_last_read: 3
+          last_message: null
+          user_last_read: 1
           is_discoverable: true
           is_muted: true
           joined_member_count: 5
@@ -8817,11 +8312,11 @@ components:
             require_auth_for_profile_image: true
             role: ""
             profile_url: profile_url
-            muted_end_at: 3
+            muted_end_at: 2
             delivered_ts: 9
             do_not_disturb: true
             is_muted: true
-            read_ts: 6
+            read_ts: 4
             is_blocked_by_me: true
             friend_name: friend_name
             friend_discovery_key:
@@ -8834,18 +8329,18 @@ components:
             is_online: true
             push_trigger_option: null
             state: ""
-            last_seen_at: 6
+            last_seen_at: 3
           - metadata: "{}"
             is_active: true
             is_blocking_me: true
             require_auth_for_profile_image: true
             role: ""
             profile_url: profile_url
-            muted_end_at: 3
+            muted_end_at: 2
             delivered_ts: 9
             do_not_disturb: true
             is_muted: true
-            read_ts: 6
+            read_ts: 4
             is_blocked_by_me: true
             friend_name: friend_name
             friend_discovery_key:
@@ -8858,8 +8353,8 @@ components:
             is_online: true
             push_trigger_option: null
             state: ""
-            last_seen_at: 6
-          max_length_message: 6
+            last_seen_at: 3
+          max_length_message: 2
           my_role: ""
           inviter:
             metadata: "{}"
@@ -8871,13 +8366,13 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           push_trigger_option: null
-          member_count: 8
-          message_survival_seconds: 1
+          member_count: 7
+          message_survival_seconds: 7
           has_ai_bot: true
           cover_url: cover_url
           is_ephemeral: true
           is_exclusive: true
-          unread_mention_count: 5
+          unread_mention_count: 6
           joined_ts: 5
           created_by:
             metadata: "{}"
@@ -8889,7 +8384,7 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           has_bot: true
-          unread_message_count: 6
+          unread_message_count: 7
           channel_url: channel_url
           is_broadcast: true
           hidden_state: hidden_allow_auto_unhide
@@ -8898,16 +8393,16 @@ components:
           is_public: true
           name: name
           read_receipt:
-            key: 2
+            key: 1
           sms_fallback:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 6
+            wait_seconds: 1
           ignore_profanity_filter: true
           delivery_receipt: "{}"
           is_access_code_required: true
-          ts_message_offset: 6
+          ts_message_offset: 1
         - metadata: "{}"
           count_preference: "false"
           data: data
@@ -8919,213 +8414,8 @@ components:
           is_hidden: true
           created_at: 0
           is_super: true
-          last_message:
-            data: data
-            message_events:
-              update_last_message: true
-              update_mention_count: true
-              send_push_notification: send_push_notification
-              update_unread_count: true
-            custom_type: custom_type
-            is_reply_to_channel: true
-            created_at: 1
-            is_removed: true
-            type: type
-            req_id: req_id
-            file: "{}"
-            updated_at: 7
-            translations: "{}"
-            thread_info: "{}"
-            mentioned_users:
-            - metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-            - metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-            channel_type: channel_type
-            message_survival_seconds: 2
-            silent: true
-            parent_message_id: 7
-            parent_message_info:
-              file:
-                file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              custom_type: custom_type
-              files:
-              - file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              - file_name: file_name
-                file_type: file_type
-                require_auth: true
-                thumbnails:
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                - real_width: 7
-                  width: 1
-                  plain_url: plain_url
-                  real_height: 4
-                  url: url
-                  height: 2
-                url: url
-                file_size: 3
-              message: message
-              type: type
-              user:
-                metadata: "{}"
-                is_active: true
-                preferred_languages:
-                - preferred_languages
-                - preferred_languages
-                require_auth_for_profile_image: true
-                unread_channel_count: 9
-                discovery_keys:
-                - discovery_keys
-                - discovery_keys
-                profile_url: profile_url
-                is_created: true
-                created_at: 4
-                has_ever_logged_in: true
-                locale: locale
-                unread_message_count: 9
-                access_token: access_token
-                is_shadow_blocked: true
-                user_id: user_id
-                nickname: nickname
-                session_tokens:
-                - session_tokens
-                - session_tokens
-                phone_number: phone_number
-                is_online: true
-                state: ""
-                is_hide_me_from_friends: true
-                last_seen_at: 5
-              ts: 1
-            require_auth: true
-            message_id: 6
-            sorted_metaarray:
-            - value:
-              - value
-              - value
-              key: key
-            - value:
-              - value
-              - value
-              key: key
-            mention_type: mention_type
-            message: message
-            channel_url: channel_url
-            is_op_msg: true
-            message_retention_hour: 1
-            extended_message_payload:
-              suggested_replies:
-              - suggested_replies
-              - suggested_replies
-              custom_view: "{}"
-            files:
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            - file_name: file_name
-              file_type: file_type
-              require_auth: true
-              thumbnails:
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              - real_width: 7
-                width: 1
-                plain_url: plain_url
-                real_height: 4
-                url: url
-                height: 2
-              url: url
-              file_size: 3
-            reactions:
-            - updated_at: 9
-              user_ids:
-              - user_ids
-              - user_ids
-              key: key
-            - updated_at: 9
-              user_ids:
-              - user_ids
-              - user_ids
-              key: key
-            user:
-              metadata: "{}"
-              require_auth_for_profile_image: true
-              is_active: true
-              role: ""
-              user_id: user_id
-              profile_url: profile_url
-              nickname: nickname
-              is_blocked_by_me: true
-          user_last_read: 3
+          last_message: null
+          user_last_read: 1
           is_discoverable: true
           is_muted: true
           joined_member_count: 5
@@ -9138,11 +8428,11 @@ components:
             require_auth_for_profile_image: true
             role: ""
             profile_url: profile_url
-            muted_end_at: 3
+            muted_end_at: 2
             delivered_ts: 9
             do_not_disturb: true
             is_muted: true
-            read_ts: 6
+            read_ts: 4
             is_blocked_by_me: true
             friend_name: friend_name
             friend_discovery_key:
@@ -9155,18 +8445,18 @@ components:
             is_online: true
             push_trigger_option: null
             state: ""
-            last_seen_at: 6
+            last_seen_at: 3
           - metadata: "{}"
             is_active: true
             is_blocking_me: true
             require_auth_for_profile_image: true
             role: ""
             profile_url: profile_url
-            muted_end_at: 3
+            muted_end_at: 2
             delivered_ts: 9
             do_not_disturb: true
             is_muted: true
-            read_ts: 6
+            read_ts: 4
             is_blocked_by_me: true
             friend_name: friend_name
             friend_discovery_key:
@@ -9179,8 +8469,8 @@ components:
             is_online: true
             push_trigger_option: null
             state: ""
-            last_seen_at: 6
-          max_length_message: 6
+            last_seen_at: 3
+          max_length_message: 2
           my_role: ""
           inviter:
             metadata: "{}"
@@ -9192,13 +8482,13 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           push_trigger_option: null
-          member_count: 8
-          message_survival_seconds: 1
+          member_count: 7
+          message_survival_seconds: 7
           has_ai_bot: true
           cover_url: cover_url
           is_ephemeral: true
           is_exclusive: true
-          unread_mention_count: 5
+          unread_mention_count: 6
           joined_ts: 5
           created_by:
             metadata: "{}"
@@ -9210,7 +8500,7 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           has_bot: true
-          unread_message_count: 6
+          unread_message_count: 7
           channel_url: channel_url
           is_broadcast: true
           hidden_state: hidden_allow_auto_unhide
@@ -9219,21 +8509,21 @@ components:
           is_public: true
           name: name
           read_receipt:
-            key: 2
+            key: 1
           sms_fallback:
             exclude_user_ids:
             - exclude_user_ids
             - exclude_user_ids
-            wait_seconds: 6
+            wait_seconds: 1
           ignore_profanity_filter: true
           delivery_receipt: "{}"
           is_access_code_required: true
-          ts_message_offset: 6
+          ts_message_offset: 1
         ts: 0
       properties:
         channels:
           items:
-            $ref: '#/components/schemas/Sendbird.GroupChannel'
+            $ref: '#/components/schemas/SendbirdGroupChannel'
           type: array
         next:
           type: string
@@ -9257,7 +8547,7 @@ components:
         token:
           type: string
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendbirdBasicUserInfo'
       type: object
     viewCountPreferenceOfAChannelResponse:
       example:
@@ -9323,12 +8613,12 @@ components:
             update_unread_count: true
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 1
+          created_at: 7
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 7
+          updated_at: 3
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -9349,67 +8639,67 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           channel_type: channel_type
-          message_survival_seconds: 2
+          message_survival_seconds: 9
           silent: true
-          parent_message_id: 7
+          parent_message_id: 4
           parent_message_info:
             file:
               file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
-              - real_width: 7
+                height: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
+                height: 7
               url: url
-              file_size: 3
+              file_size: 4
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
-              - real_width: 7
+                height: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
+                height: 7
               url: url
-              file_size: 3
+              file_size: 4
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
-              - real_width: 7
+                height: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
+                height: 7
               url: url
-              file_size: 3
+              file_size: 4
             message: message
             type: type
             user:
@@ -9419,31 +8709,28 @@ components:
               - preferred_languages
               - preferred_languages
               require_auth_for_profile_image: true
-              unread_channel_count: 9
+              unread_channel_count: 6
               discovery_keys:
               - discovery_keys
               - discovery_keys
               profile_url: profile_url
               is_created: true
-              created_at: 4
+              created_at: 9
               has_ever_logged_in: true
               locale: locale
-              unread_message_count: 9
+              unread_message_count: 8
               access_token: access_token
               is_shadow_blocked: true
               user_id: user_id
               nickname: nickname
-              session_tokens:
-              - session_tokens
-              - session_tokens
               phone_number: phone_number
               is_online: true
               state: ""
               is_hide_me_from_friends: true
-              last_seen_at: 5
-            ts: 1
+              last_seen_at: 9
+            ts: 5
           require_auth: true
-          message_id: 6
+          message_id: 1
           sorted_metaarray:
           - value:
             - value
@@ -9457,56 +8744,52 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 1
-          extended_message_payload:
-            suggested_replies:
-            - suggested_replies
-            - suggested_replies
-            custom_view: "{}"
+          message_retention_hour: 6
+          extended_message_payload: null
           files:
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
-            - real_width: 7
+              height: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
+              height: 7
             url: url
-            file_size: 3
+            file_size: 4
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
-            - real_width: 7
+              height: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
+              height: 7
             url: url
-            file_size: 3
+            file_size: 4
           reactions:
-          - updated_at: 9
+          - updated_at: 2
             user_ids:
             - user_ids
             - user_ids
             key: key
-          - updated_at: 9
+          - updated_at: 2
             user_ids:
             - user_ids
             - user_ids
@@ -9528,12 +8811,12 @@ components:
             update_unread_count: true
           custom_type: custom_type
           is_reply_to_channel: true
-          created_at: 1
+          created_at: 7
           is_removed: true
           type: type
           req_id: req_id
           file: "{}"
-          updated_at: 7
+          updated_at: 3
           translations: "{}"
           thread_info: "{}"
           mentioned_users:
@@ -9554,67 +8837,67 @@ components:
             nickname: nickname
             is_blocked_by_me: true
           channel_type: channel_type
-          message_survival_seconds: 2
+          message_survival_seconds: 9
           silent: true
-          parent_message_id: 7
+          parent_message_id: 4
           parent_message_info:
             file:
               file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
-              - real_width: 7
+                height: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
+                height: 7
               url: url
-              file_size: 3
+              file_size: 4
             custom_type: custom_type
             files:
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
-              - real_width: 7
+                height: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
+                height: 7
               url: url
-              file_size: 3
+              file_size: 4
             - file_name: file_name
               file_type: file_type
               require_auth: true
               thumbnails:
-              - real_width: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
-              - real_width: 7
+                height: 7
+              - real_width: 1
                 width: 1
                 plain_url: plain_url
-                real_height: 4
+                real_height: 1
                 url: url
-                height: 2
+                height: 7
               url: url
-              file_size: 3
+              file_size: 4
             message: message
             type: type
             user:
@@ -9624,31 +8907,28 @@ components:
               - preferred_languages
               - preferred_languages
               require_auth_for_profile_image: true
-              unread_channel_count: 9
+              unread_channel_count: 6
               discovery_keys:
               - discovery_keys
               - discovery_keys
               profile_url: profile_url
               is_created: true
-              created_at: 4
+              created_at: 9
               has_ever_logged_in: true
               locale: locale
-              unread_message_count: 9
+              unread_message_count: 8
               access_token: access_token
               is_shadow_blocked: true
               user_id: user_id
               nickname: nickname
-              session_tokens:
-              - session_tokens
-              - session_tokens
               phone_number: phone_number
               is_online: true
               state: ""
               is_hide_me_from_friends: true
-              last_seen_at: 5
-            ts: 1
+              last_seen_at: 9
+            ts: 5
           require_auth: true
-          message_id: 6
+          message_id: 1
           sorted_metaarray:
           - value:
             - value
@@ -9662,56 +8942,52 @@ components:
           message: message
           channel_url: channel_url
           is_op_msg: true
-          message_retention_hour: 1
-          extended_message_payload:
-            suggested_replies:
-            - suggested_replies
-            - suggested_replies
-            custom_view: "{}"
+          message_retention_hour: 6
+          extended_message_payload: null
           files:
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
-            - real_width: 7
+              height: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
+              height: 7
             url: url
-            file_size: 3
+            file_size: 4
           - file_name: file_name
             file_type: file_type
             require_auth: true
             thumbnails:
-            - real_width: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
-            - real_width: 7
+              height: 7
+            - real_width: 1
               width: 1
               plain_url: plain_url
-              real_height: 4
+              real_height: 1
               url: url
-              height: 2
+              height: 7
             url: url
-            file_size: 3
+            file_size: 4
           reactions:
-          - updated_at: 9
+          - updated_at: 2
             user_ids:
             - user_ids
             - user_ids
             key: key
-          - updated_at: 9
+          - updated_at: 2
             user_ids:
             - user_ids
             - user_ids
@@ -9728,7 +9004,7 @@ components:
       properties:
         messages:
           items:
-            $ref: '#/components/schemas/Sendbird.MessageResponse'
+            $ref: '#/components/schemas/SendbirdMessageResponse'
           type: array
       type: object
     sendTextMessageRequestBody:
@@ -9777,7 +9053,7 @@ components:
           type: boolean
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
           type: array
         sound:
           type: string
@@ -9804,7 +9080,7 @@ components:
         dedup_id:
           type: string
         files:
-          $ref: '#/components/schemas/Sendbird.File'
+          $ref: '#/components/schemas/SendbirdFile'
         is_silent:
           type: boolean
         mark_as_read:
@@ -9845,7 +9121,7 @@ components:
           type: boolean
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
           type: array
         sound:
           type: string
@@ -9901,14 +9177,14 @@ components:
           type: boolean
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
           type: array
       required:
       - message
       - message_type
       type: object
     sendAMessageResponse:
-      $ref: '#/components/schemas/Sendbird.MessageResponse'
+      $ref: '#/components/schemas/SendbirdMessageResponse'
     getTotalNumberOfMessagesInAChannelResponse:
       example:
         total: 0
@@ -9930,7 +9206,7 @@ components:
       properties:
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
           type: array
       type: object
     addExtraDataToAMessageResponse:
@@ -9947,13 +9223,13 @@ components:
       properties:
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
           type: array
       type: object
     getAMessageResponse:
-      $ref: '#/components/schemas/Sendbird.MessageResponse'
+      $ref: '#/components/schemas/SendbirdMessageResponse'
     updateAMessageResponse:
-      $ref: '#/components/schemas/Sendbird.MessageResponse'
+      $ref: '#/components/schemas/SendbirdMessageResponse'
     emptyObjectResponse:
       properties: {}
       type: object
@@ -10087,6 +9363,103 @@ components:
       - message_type
       - timestamp
       type: object
+    SendABotMessageRequest:
+      properties:
+        message_type:
+          description: "Specifies the type of message to send. MESG for text message,\
+            \ FILE for file message."
+          enum:
+          - MESG
+          - FILE
+          type: string
+        channel_url:
+          description: Specifies the URL of the channel to send the message to.
+          type: string
+        message:
+          description: Specifies the content of the message. * This property is required
+            when message_type is MESG.
+          type: string
+        mentioned:
+          description: '* This property is available when message_type is MESG.'
+          items:
+            type: string
+          type: array
+        extended_message_payload:
+          $ref: '#/components/schemas/SendbirdExtendedMessagePayload'
+        file:
+          description: "When sending a single file with a message, specifies the data\
+            \ of the file to upload to the Sendbird server in raw binary format. When\
+            \ sending a request containing a file, change the value of the content-type\
+            \ header to multipart/form-data;boundary={your_unique_boundary_string}\
+            \ in the request. * This property is required when message_type is FILE.\
+            \ * This doesn't allow a converted base64-encoded string from a file as\
+            \ its value."
+          format: binary
+          type: string
+          x-ts-type: FileCompat
+        require_auth:
+          description: "Determines whether to require an authentication key to verify\
+            \ if the file is being properly accessed. Only the user who uploaded the\
+            \ file or users who are in the channel where the file was uploaded should\
+            \ have access. The authentication key managed internally by the Sendbird\
+            \ system is generated every time a user logs in to the Sendbird server\
+            \ and is valid for three days starting from the last login. If set to\
+            \ false, Sendbird tries to access a file without any key. To access encrypted\
+            \ files, such as the files in the Sendbird server which are by default\
+            \ encrypted, the property must be set to true. (Default: false) The require_auth\
+            \ parameter only works if the file or URL is managed by Sendbird, which\
+            \ means that when you upload files using multipart format or provide URLs\
+            \ that point to the files hosted on the Sendbird server. However, if the\
+            \ file is hosted on a server or service that is not managed by Sendbird,\
+            \ access control and authentication for the file should be handled by\
+            \ the respective server or service hosting the file. * This property is\
+            \ available when message_type is FILE."
+          type: boolean
+        mention_type:
+          description: '* This property is available when message_type is FILE.'
+          enum:
+          - users
+          - channel
+          type: string
+        mentioned_user_ids:
+          description: '* This property is available when message_type is FILE.'
+          items:
+            type: string
+          type: array
+        is_silent:
+          description: '* This property is available when message_type is FILE.'
+          type: boolean
+        sorted_metaarray:
+          $ref: '#/components/schemas/SendbirdSortedMetaarray'
+        apns_bundle_id:
+          description: '* This property is available when message_type is FILE.'
+          type: string
+        apple_critical_alert_options:
+          description: '* This property is available when message_type is FILE.'
+          type: object
+        sound:
+          description: '* This property is available when message_type is FILE.'
+          type: string
+        volume:
+          description: '* This property is available when message_type is FILE.'
+          type: number
+        created_at:
+          format: int64
+          type: integer
+        custom_type:
+          type: string
+        data:
+          type: string
+        dedup_id:
+          type: string
+        mark_as_read:
+          type: boolean
+        send_push:
+          type: boolean
+      required:
+      - channel_url
+      - message_type
+      type: object
     scheduleAnAnnouncement_request_create_channel_options:
       example:
         cover_url: cover_url
@@ -10165,8 +9538,10 @@ components:
     createAGroupChannel_request:
       properties:
         access_code:
+          nullable: true
           type: string
         block_sdk_user_channel_join:
+          nullable: true
           type: boolean
         channel_url:
           type: string
@@ -10220,7 +9595,7 @@ components:
           type: array
         users:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendbirdUser'
           type: array
       required:
       - users
@@ -10228,6 +9603,7 @@ components:
     updateAGroupChannel_request:
       properties:
         access_code:
+          nullable: true
           type: string
         cover_file:
           format: binary
@@ -10254,6 +9630,7 @@ components:
     acceptAnInvitation_request:
       properties:
         access_code:
+          nullable: true
           type: string
         user_id:
           type: string
@@ -10342,6 +9719,7 @@ components:
           description: "This property should be specified if the public group channel\
             \ to join requires an access code to users, which means that the is_access_code_required\
             \ property of the channel resource is true."
+          nullable: true
           type: string
       required:
       - user_id
@@ -10491,34 +9869,55 @@ components:
       - bot_userid
       - is_privacy_mode
       type: object
-    sendABotMessage_request:
+    updateBotByIdData:
       properties:
-        channel_url:
+        bot_userid:
+          description: Specifies the ID of the bot to update.
           type: string
-        created_at:
-          format: int64
+        bot_nickname:
+          description: Specifies the bot's nickname. The length is limited to 80 characters.
+          type: string
+        bot_profile_url:
+          description: "Specifies the URL of the bot's profile image. The size is\
+            \ limited to 2,048 characters."
+          type: string
+        bot_callback_url:
+          description: "Specifies the server URL where bot is located to receive all\
+            \ events, requests, and data forwarded from an application. For security\
+            \ reasons, it is highly recommended that you use an SSL server. The length\
+            \ is limited to 1,024 characters."
+          type: string
+        is_privacy_mode:
+          description: "In the channels of where the bot is a member, determines whether\
+            \ to only forward the messages with the specific conditions to the bot\
+            \ or forword all messages to the bot, for privacy concerns. If set to\
+            \ true, only messages that start with a '/' or mention the bot_userid\
+            \ are forwarded to the bot. If set to false, all messages are forwarded."
+          type: boolean
+        enable_mark_as_read:
+          description: "Determines whether to mark the bot's message as read upon\
+            \ sending it. (Default: true)"
+          type: boolean
+        show_member:
+          description: "Determines whether to include information about the members\
+            \ of each channel in a callback response. (Default: false)"
+          type: boolean
+        channel_invitation_preference:
+          description: "Determines whether the bot automatically joins the channel\
+            \ when invited or joins the channel after manually accepting an invitation\
+            \ using the API. If set to 0, it automatically joins the channel. If set\
+            \ to 1, the latter takes place. (Default: 0)"
           type: integer
-        custom_type:
-          type: string
-        data:
-          type: string
-        dedup_id:
-          type: string
-        extended_message_payload:
-          $ref: '#/components/schemas/Sendbird.ExtendedMessagePayload'
-        mark_as_read:
-          type: boolean
-        mentioned:
-          items:
-            type: string
-          type: array
-        message:
-          type: string
-        send_push:
-          type: boolean
       required:
-      - channel_url
-      - message
+      - bot_callback_url
+      - bot_nickname
+      - bot_profile_url
+      - bot_userid
+      - channel_invitation_preference
+      - enable_mark_as_read
+      - is_privacy_mode
+      - show_member
+      title: updateBotByIdData
       type: object
     joinChannels_request:
       properties:
@@ -10534,12 +9933,15 @@ components:
         discovery_keys:
           items:
             type: string
+          nullable: true
           type: array
         issue_access_token:
           type: boolean
         metadata:
+          nullable: true
           type: object
         nickname:
+          nullable: true
           type: string
         profile_file:
           description: "Specifies the file of the user's profile image. An acceptable\
@@ -10549,6 +9951,7 @@ components:
           format: binary
           type: string
         profile_url:
+          default: ""
           type: string
         user_id:
           type: string
@@ -10589,6 +9992,7 @@ components:
         discovery_keys:
           items:
             type: string
+          nullable: true
           type: array
         is_active:
           type: boolean
@@ -10600,15 +10004,18 @@ components:
         leave_all_when_deactivated:
           type: boolean
         nickname:
+          nullable: true
           type: string
         preferred_languages:
           items:
             type: string
+          nullable: true
           type: array
         profile_file:
           format: binary
           type: string
         profile_url:
+          nullable: true
           type: string
       type: object
     chooseAPushNotificationContentTemplate_request:
@@ -10651,7 +10058,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendbirdPushTriggerOption'
         snooze_enabled:
           type: boolean
         snooze_end_ts:
@@ -10714,6 +10121,7 @@ components:
     updateAChannelMetadata_request:
       properties:
         metadata:
+          nullable: true
           type: object
         upsert:
           type: boolean
@@ -10725,6 +10133,7 @@ components:
         include_ts:
           type: boolean
         metadata:
+          nullable: true
           type: object
       required:
       - metadata
@@ -10736,18 +10145,149 @@ components:
         user_id:
           type: string
       type: object
-    sendAMessage_request:
+    sendAMessage_request_push_message_template_oneOf:
+      properties:
+        title:
+          description: "Specifies the title of the custom push notification template.\
+            \ You can customize the title using the variables sender_name and message,\
+            \ which can be later replaced with corresponding real values when the\
+            \ template is sent out as a notification request to FCM, HMS, or APNs."
+          type: string
+        body:
+          description: "Specifies the body of the custom push notification template.\
+            \ You can customize the body using the variables sender_name and message,\
+            \ which can be later replaced with corresponding real values when the\
+            \ template is sent out as a notification request to FCM, HMS, or APNs.\n\
+            If not specified, the body by default contains the message content inside\
+            \ the message property."
+          type: string
+      type: object
+    sendAMessage_request_push_message_template:
+      description: "Specifies the content of a push notification customized for the\
+        \ message. This property only applies to group channels.\nTo choose from a\
+        \ push notification content template within your Sendbird application, specify\
+        \ a string value of default or alternative.\nTo create a new push notification\
+        \ content tailored to the message being sent, use the properties listed below\
+        \ to specify its title and body in a nested object format.\n* This property\
+        \ overrides the application's default push notification content template or\
+        \ the preference chosen by the user. * This property is available when message_type\
+        \ is MESG or ADMM."
       oneOf:
-      - $ref: '#/components/schemas/sendTextMessageRequestBody'
-      - $ref: '#/components/schemas/sendFileMessageRequestBody'
-      - $ref: '#/components/schemas/sendAdminMessageRequestBody'
+      - type: string
+      - $ref: '#/components/schemas/sendAMessage_request_push_message_template_oneOf'
+      type: string
+    sendAMessage_request:
+      properties:
+        message_type:
+          enum:
+          - MESG
+          - ADMM
+          - FILE
+          type: string
+        user_id:
+          type: string
+        message:
+          description: |-
+            Specifies the content of the message.
+            * This property is required when message_type is MESG or ADMM.
+          type: string
+        push_message_template:
+          $ref: '#/components/schemas/sendAMessage_request_push_message_template'
+        poll_id:
+          description: |-
+            Specifies the ID of the poll to be associated with the message.
+            * This property is only available for group channels and message_type is MESG.
+          type: integer
+        files:
+          $ref: '#/components/schemas/SendbirdFile'
+        require_auth:
+          description: "Determines whether to require an authentication key to verify\
+            \ if the file is being properly accessed. Only the user who uploaded the\
+            \ file or users who are in the channel where the file was uploaded should\
+            \ have access. The authentication key managed internally by the Sendbird\
+            \ system is generated every time a user logs in to the Sendbird server\
+            \ and is valid for three days starting from the last login. If set to\
+            \ false, Sendbird tries to access a file without any key. To access encrypted\
+            \ files, such as the files in the Sendbird server which are by default\
+            \ encrypted, the property must be set to true. (Default: false)\nThe require_auth\
+            \ parameter only works if the file or URL is managed by Sendbird, which\
+            \ means that when you upload files using multipart format or provide URLs\
+            \ that point to the files hosted on the Sendbird server. However, if the\
+            \ file is hosted on a server or service that is not managed by Sendbird,\
+            \ access control and authentication for the file should be handled by\
+            \ the respective server or service hosting the file."
+          type: boolean
+        thumbnail1:
+          description: |-
+            Specifies the URL of the thumbnail of the file.
+            * This property is available when message_type is FILE.
+          type: string
+        thumbnail2:
+          description: |-
+            Specifies the URL of the thumbnail of the file.
+            * This property is available when message_type is FILE.
+          type: string
+        thumbnail3:
+          description: |-
+            Specifies the URL of the thumbnail of the file.
+            * This property is available when message_type is FILE.
+          type: string
+        thumbnails:
+          description: |-
+            Specifies the URL of the thumbnail of the file.
+            * This property is available when message_type is FILE.
+          items:
+            type: string
+          type: array
+        apns_bundle_id:
+          type: string
+        apple_critical_alert_options:
+          type: object
+        created_at:
+          format: int64
+          type: integer
+        custom_type:
+          type: string
+        data:
+          type: string
+        dedup_id:
+          type: string
+        include_poll_details:
+          type: boolean
+        is_silent:
+          type: boolean
+        mark_as_read:
+          type: boolean
+        mention_type:
+          enum:
+          - users
+          - channel
+          type: string
+        mentioned_user_ids:
+          items:
+            type: string
+          type: array
+        send_push:
+          type: boolean
+        sorted_metaarray:
+          items:
+            $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
+          type: array
+        sound:
+          type: string
+        volume:
+          type: number
+      required:
+      - message_type
+      - user_id
+      type: object
     updateExtraDataInAMessage_request:
       properties:
         mode:
           type: string
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
           type: array
         upsert:
           type: boolean
@@ -10756,7 +10296,7 @@ components:
       properties:
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendbirdSortedMetaarray_inner'
           type: array
       required:
       - sorted_metaarray
@@ -10786,7 +10326,7 @@ components:
       required:
       - message_type
       type: object
-    Sendbird_SortedMetaarray_inner:
+    SendbirdSortedMetaarray_inner:
       example:
         value:
         - value
@@ -10800,7 +10340,7 @@ components:
             type: string
           type: array
       type: object
-    Sendbird_MessageResponse_message_events:
+    SendbirdMessageResponse_message_events:
       example:
         update_last_message: true
         update_mention_count: true
@@ -10817,7 +10357,13 @@ components:
         update_last_message:
           type: boolean
       type: object
-    Sendbird_GroupChannelDetail_channel:
+    SendbirdMessageResponse_extended_message_payload:
+      oneOf:
+      - $ref: '#/components/schemas/SendbirdExtendedMessagePayload'
+    SendbirdGroupChannel_last_message:
+      oneOf:
+      - $ref: '#/components/schemas/SendbirdMessageResponse'
+    SendbirdGroupChannelDetail_channel:
       example:
         cover_url: cover_url
         data: data
@@ -10849,54 +10395,14 @@ components:
     getAGroupChannelResponse_allOf:
       properties:
         channel:
-          $ref: '#/components/schemas/Sendbird_GroupChannelDetail_channel'
+          $ref: '#/components/schemas/SendbirdGroupChannelDetail_channel'
       type: object
     inviteAsMembersResponse_allOf:
       properties:
         operators:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendbirdUser'
           type: array
-      type: object
-    listBotsResponse_bots_inner_ai:
-      example:
-        feedback: true
-        top_p: 5
-        system_message: system_message
-        frequency_penalty: 0
-        max_tokens: 6
-        stream: true
-        presence_penalty: 1
-        temperature: 5.962133916683182
-        backend: backend
-        model: model
-        instruction_mode: ""
-        system_message_for_context_prefix: system_message_for_context_prefix
-      properties:
-        backend:
-          type: string
-        feedback:
-          type: boolean
-        frequency_penalty:
-          type: integer
-        instruction_mode:
-          nullable: true
-        max_tokens:
-          type: integer
-        model:
-          type: string
-        presence_penalty:
-          type: integer
-        stream:
-          type: boolean
-        system_message:
-          type: string
-        system_message_for_context_prefix:
-          type: string
-        temperature:
-          type: number
-        top_p:
-          type: integer
       type: object
     listBotsResponse_bots_inner_bot:
       example:
@@ -11029,21 +10535,8 @@ components:
           toggle_button_type: toggle_button_type
           toggle_button_url: toggle_button_url
           auto_open: true
-        ai:
-          feedback: true
-          top_p: 5
-          system_message: system_message
-          frequency_penalty: 0
-          max_tokens: 6
-          stream: true
-          presence_penalty: 1
-          temperature: 5.962133916683182
-          backend: backend
-          model: model
-          instruction_mode: ""
-          system_message_for_context_prefix: system_message_for_context_prefix
-        created_at: 7
-        channel_invitation_preference: 2
+        created_at: 6
+        channel_invitation_preference: 0
         first_messages:
         - data:
             suggested_replies:
@@ -11063,8 +10556,6 @@ components:
           message: message
           enabled: true
       properties:
-        ai:
-          $ref: '#/components/schemas/listBotsResponse_bots_inner_ai'
         bot:
           $ref: '#/components/schemas/listBotsResponse_bots_inner_bot'
         bot_callback_url:
@@ -11088,6 +10579,28 @@ components:
           $ref: '#/components/schemas/listBotsResponse_bots_inner_safeguard'
         show_member:
           type: boolean
+      type: object
+    viewBotByIdResponse_bot:
+      example:
+        bot_profile_url: bot_profile_url
+        bot_userid: bot_userid
+        bot_metadata: "{}"
+        bot_type: bot_type
+        bot_token: bot_token
+        bot_nickname: bot_nickname
+      properties:
+        bot_token:
+          type: string
+        bot_profile_url:
+          type: string
+        bot_userid:
+          type: string
+        bot_nickname:
+          type: string
+        bot_type:
+          type: string
+        bot_metadata:
+          type: object
       type: object
     createABotResponse_bot:
       example:
@@ -11123,27 +10636,6 @@ components:
       required:
       - bot_userid
       type: object
-    createABotResponse_bot_style:
-      example:
-        color:
-          accent_color: accent_color
-          bot_message_color: bot_message_color
-          theme: theme
-        toggle_button_type: toggle_button_type
-        toggle_button_url: toggle_button_url
-        auto_open: true
-      properties:
-        auto_open:
-          type: boolean
-        color:
-          $ref: '#/components/schemas/listBotsResponse_bots_inner_bot_style_color'
-        toggle_button_type:
-          nullable: true
-          type: string
-        toggle_button_url:
-          nullable: false
-          type: string
-      type: object
     scheduleAnAnnouncementResponse_message:
       example:
         message_retention_hour: 1
@@ -11166,23 +10658,6 @@ components:
         user_id:
           type: string
       type: object
-    sendTextMessageRequestBody_push_message_template_oneOf:
-      properties:
-        title:
-          description: "Specifies the title of the custom push notification template.\
-            \ You can customize the title using the variables sender_name and message,\
-            \ which can be later replaced with corresponding real values when the\
-            \ template is sent out as a notification request to FCM, HMS, or APNs."
-          type: string
-        body:
-          description: "Specifies the body of the custom push notification template.\
-            \ You can customize the body using the variables sender_name and message,\
-            \ which can be later replaced with corresponding real values when the\
-            \ template is sent out as a notification request to FCM, HMS, or APNs.\n\
-            If not specified, the body by default contains the message content inside\
-            \ the message property."
-          type: string
-      type: object
     sendTextMessageRequestBody_push_message_template:
       description: "Specifies the content of a push notification customized for the\
         \ message. This property only applies to group channels.\nTo choose from a\
@@ -11194,7 +10669,7 @@ components:
         \ the preference chosen by the user."
       oneOf:
       - type: string
-      - $ref: '#/components/schemas/sendTextMessageRequestBody_push_message_template_oneOf'
+      - $ref: '#/components/schemas/sendAMessage_request_push_message_template_oneOf'
       type: string
     MigrateMessagesRequest_messages_inner:
       oneOf:

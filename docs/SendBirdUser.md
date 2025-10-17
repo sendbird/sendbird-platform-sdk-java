@@ -29,7 +29,6 @@ User
 |**unreadMessageCount** | **Integer** |  |  [optional] |
 |**phoneNumber** | **String** |  |  [optional] |
 |**isCreated** | **Boolean** |  |  [optional] |
-|**sessionTokens** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

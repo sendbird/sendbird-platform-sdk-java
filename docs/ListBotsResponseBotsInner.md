@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**ai** | [**ListBotsResponseBotsInnerAi**](ListBotsResponseBotsInnerAi.md) |  |  [optional] |
 |**bot** | [**ListBotsResponseBotsInnerBot**](ListBotsResponseBotsInnerBot.md) |  |  [optional] |
 |**botCallbackUrl** | **String** |  |  [optional] |
 |**botStyle** | [**ListBotsResponseBotsInnerBotStyle**](ListBotsResponseBotsInnerBotStyle.md) |  |  [optional] |

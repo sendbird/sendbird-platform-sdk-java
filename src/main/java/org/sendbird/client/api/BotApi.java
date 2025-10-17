@@ -8,20 +8,26 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
+import java.math.BigDecimal;
 import org.openapitools.client.model.CreateABotRequest;
 import org.openapitools.client.model.CreateABotResponse;
+import java.io.File;
 import org.openapitools.client.model.JoinChannelsRequest;
 import org.openapitools.client.model.ListBotsResponse;
-import org.openapitools.client.model.SendABotMessageRequest;
+import org.openapitools.client.model.SendABotMessageResponse;
+import org.openapitools.client.model.SendbirdExtendedMessagePayload;
 import org.openapitools.client.model.SendbirdGroupChannelDetail;
-import org.openapitools.client.model.SendbirdMessageResponse;
+import org.openapitools.client.model.SendbirdSortedMetaarrayInner;
+import org.openapitools.client.model.UpdateBotByIdData;
+import org.openapitools.client.model.UpdateBotByIdResponse;
+import org.openapitools.client.model.ViewBotByIdResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class BotApi {
   private ApiClient apiClient;
 
@@ -158,6 +164,112 @@ private ApiResponse<CreateABotResponse> createABotWithHttpInfo(String apiToken, 
    */
   public APIcreateABotRequest createABot() throws ApiException {
     return new APIcreateABotRequest();
+  }
+
+private ApiResponse<Object> deleteBotByIdWithHttpInfo(String botUserid, String apiToken) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'botUserid' is set
+    if (botUserid == null) {
+      throw new ApiException(400, "Missing the required parameter 'botUserid' when calling deleteBotById");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/bots/{bot_userid}"
+      .replaceAll("\\{" + "bot_userid" + "\\}", apiClient.escapeString(botUserid.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+
+    return apiClient.invokeAPI("BotApi.deleteBotById", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIdeleteBotByIdRequest {
+    private String botUserid;
+    private String apiToken;
+
+    private APIdeleteBotByIdRequest(String botUserid) {
+      this.botUserid = botUserid;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIdeleteBotByIdRequest
+     */
+    public APIdeleteBotByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute deleteBotById request
+     * @return Object
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public Object execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute deleteBotById request with HTTP info returned
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
+      return deleteBotByIdWithHttpInfo(botUserid, apiToken);
+    }
+  }
+
+  /**
+   * Delete a bot
+   * ## Delete a bot  Deletes a bot from an application.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-delete-a-bot ----------------------------
+   * @param botUserid  (required)
+   * @return deleteBotByIdRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIdeleteBotByIdRequest deleteBotById(String botUserid) throws ApiException {
+    return new APIdeleteBotByIdRequest(botUserid);
   }
 
 private ApiResponse<SendbirdGroupChannelDetail> joinChannelsWithHttpInfo(String botUserid, String apiToken, JoinChannelsRequest joinChannelsRequest) throws ApiException {
@@ -619,12 +731,22 @@ private ApiResponse<ListBotsResponse> listBotsWithHttpInfo(String token, Integer
     return new APIlistBotsRequest();
   }
 
-private ApiResponse<SendbirdMessageResponse> sendABotMessageWithHttpInfo(String botUserid, String apiToken, SendABotMessageRequest sendABotMessageRequest) throws ApiException {
-    Object localVarPostBody = sendABotMessageRequest;
+private ApiResponse<SendABotMessageResponse> sendABotMessageWithHttpInfo(String botUserid, String messageType, String channelUrl, String apiToken, String message, List<String> mentioned, SendbirdExtendedMessagePayload extendedMessagePayload, File _file, Boolean requireAuth, String mentionType, List<String> mentionedUserIds, Boolean isSilent, List<SendbirdSortedMetaarrayInner> sortedMetaarray, String apnsBundleId, Object appleCriticalAlertOptions, String sound, BigDecimal volume, Long createdAt, String customType, String data, String dedupId, Boolean markAsRead, Boolean sendPush) throws ApiException {
+    Object localVarPostBody = null;
     
     // verify the required parameter 'botUserid' is set
     if (botUserid == null) {
       throw new ApiException(400, "Missing the required parameter 'botUserid' when calling sendABotMessage");
+    }
+    
+    // verify the required parameter 'messageType' is set
+    if (messageType == null) {
+      throw new ApiException(400, "Missing the required parameter 'messageType' when calling sendABotMessage");
+    }
+    
+    // verify the required parameter 'channelUrl' is set
+    if (channelUrl == null) {
+      throw new ApiException(400, "Missing the required parameter 'channelUrl' when calling sendABotMessage");
     }
     
     // create path and map variables
@@ -642,20 +764,62 @@ private ApiResponse<SendbirdMessageResponse> sendABotMessageWithHttpInfo(String 
       localVarHeaderParams.put("api-token", apiClient.parameterToString(apiToken));
 
     
-    
+    if (messageType != null)
+      localVarFormParams.put("message_type", messageType);
+if (channelUrl != null)
+      localVarFormParams.put("channel_url", channelUrl);
+if (message != null)
+      localVarFormParams.put("message", message);
+if (mentioned != null)
+      localVarFormParams.put("mentioned", mentioned);
+if (extendedMessagePayload != null)
+      localVarFormParams.put("extended_message_payload", extendedMessagePayload);
+if (_file != null)
+      localVarFormParams.put("file", _file);
+if (requireAuth != null)
+      localVarFormParams.put("require_auth", requireAuth);
+if (mentionType != null)
+      localVarFormParams.put("mention_type", mentionType);
+if (mentionedUserIds != null)
+      localVarFormParams.put("mentioned_user_ids", mentionedUserIds);
+if (isSilent != null)
+      localVarFormParams.put("is_silent", isSilent);
+if (sortedMetaarray != null)
+      localVarFormParams.put("sorted_metaarray", sortedMetaarray);
+if (apnsBundleId != null)
+      localVarFormParams.put("apns_bundle_id", apnsBundleId);
+if (appleCriticalAlertOptions != null)
+      localVarFormParams.put("apple_critical_alert_options", appleCriticalAlertOptions);
+if (sound != null)
+      localVarFormParams.put("sound", sound);
+if (volume != null)
+      localVarFormParams.put("volume", volume);
+if (createdAt != null)
+      localVarFormParams.put("created_at", createdAt);
+if (customType != null)
+      localVarFormParams.put("custom_type", customType);
+if (data != null)
+      localVarFormParams.put("data", data);
+if (dedupId != null)
+      localVarFormParams.put("dedup_id", dedupId);
+if (markAsRead != null)
+      localVarFormParams.put("mark_as_read", markAsRead);
+if (sendPush != null)
+      localVarFormParams.put("send_push", sendPush);
+
     final String[] localVarAccepts = {
       "application/json"
     };
     final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
     final String[] localVarContentTypes = {
-      "application/json"
+      "multipart/form-data"
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendbirdMessageResponse> localVarReturnType = new GenericType<SendbirdMessageResponse>() {};
+    GenericType<SendABotMessageResponse> localVarReturnType = new GenericType<SendABotMessageResponse>() {};
 
     return apiClient.invokeAPI("BotApi.sendABotMessage", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -664,11 +828,51 @@ private ApiResponse<SendbirdMessageResponse> sendABotMessageWithHttpInfo(String 
 
   public class APIsendABotMessageRequest {
     private String botUserid;
+    private String messageType;
+    private String channelUrl;
     private String apiToken;
-    private SendABotMessageRequest sendABotMessageRequest;
+    private String message;
+    private List<String> mentioned;
+    private SendbirdExtendedMessagePayload extendedMessagePayload;
+    private File _file;
+    private Boolean requireAuth;
+    private String mentionType;
+    private List<String> mentionedUserIds;
+    private Boolean isSilent;
+    private List<SendbirdSortedMetaarrayInner> sortedMetaarray;
+    private String apnsBundleId;
+    private Object appleCriticalAlertOptions;
+    private String sound;
+    private BigDecimal volume;
+    private Long createdAt;
+    private String customType;
+    private String data;
+    private String dedupId;
+    private Boolean markAsRead;
+    private Boolean sendPush;
 
     private APIsendABotMessageRequest(String botUserid) {
       this.botUserid = botUserid;
+    }
+
+    /**
+     * Set messageType
+     * @param messageType Specifies the type of message to send. MESG for text message, FILE for file message. (required)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest messageType(String messageType) {
+      this.messageType = messageType;
+      return this;
+    }
+
+    /**
+     * Set channelUrl
+     * @param channelUrl Specifies the URL of the channel to send the message to. (required)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest channelUrl(String channelUrl) {
+      this.channelUrl = channelUrl;
+      return this;
     }
 
     /**
@@ -682,18 +886,198 @@ private ApiResponse<SendbirdMessageResponse> sendABotMessageWithHttpInfo(String 
     }
 
     /**
-     * Set sendABotMessageRequest
-     * @param sendABotMessageRequest  (optional)
+     * Set message
+     * @param message Specifies the content of the message. * This property is required when message_type is MESG. (optional)
      * @return APIsendABotMessageRequest
      */
-    public APIsendABotMessageRequest sendABotMessageRequest(SendABotMessageRequest sendABotMessageRequest) {
-      this.sendABotMessageRequest = sendABotMessageRequest;
+    public APIsendABotMessageRequest message(String message) {
+      this.message = message;
+      return this;
+    }
+
+    /**
+     * Set mentioned
+     * @param mentioned * This property is available when message_type is MESG. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest mentioned(List<String> mentioned) {
+      this.mentioned = mentioned;
+      return this;
+    }
+
+    /**
+     * Set extendedMessagePayload
+     * @param extendedMessagePayload  (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest extendedMessagePayload(SendbirdExtendedMessagePayload extendedMessagePayload) {
+      this.extendedMessagePayload = extendedMessagePayload;
+      return this;
+    }
+
+    /**
+     * Set _file
+     * @param _file When sending a single file with a message, specifies the data of the file to upload to the Sendbird server in raw binary format. When sending a request containing a file, change the value of the content-type header to multipart/form-data;boundary&#x3D;{your_unique_boundary_string} in the request. * This property is required when message_type is FILE. * This doesn&#39;t allow a converted base64-encoded string from a file as its value. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest _file(File _file) {
+      this._file = _file;
+      return this;
+    }
+
+    /**
+     * Set requireAuth
+     * @param requireAuth Determines whether to require an authentication key to verify if the file is being properly accessed. Only the user who uploaded the file or users who are in the channel where the file was uploaded should have access. The authentication key managed internally by the Sendbird system is generated every time a user logs in to the Sendbird server and is valid for three days starting from the last login. If set to false, Sendbird tries to access a file without any key. To access encrypted files, such as the files in the Sendbird server which are by default encrypted, the property must be set to true. (Default: false) The require_auth parameter only works if the file or URL is managed by Sendbird, which means that when you upload files using multipart format or provide URLs that point to the files hosted on the Sendbird server. However, if the file is hosted on a server or service that is not managed by Sendbird, access control and authentication for the file should be handled by the respective server or service hosting the file. * This property is available when message_type is FILE. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest requireAuth(Boolean requireAuth) {
+      this.requireAuth = requireAuth;
+      return this;
+    }
+
+    /**
+     * Set mentionType
+     * @param mentionType * This property is available when message_type is FILE. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest mentionType(String mentionType) {
+      this.mentionType = mentionType;
+      return this;
+    }
+
+    /**
+     * Set mentionedUserIds
+     * @param mentionedUserIds * This property is available when message_type is FILE. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest mentionedUserIds(List<String> mentionedUserIds) {
+      this.mentionedUserIds = mentionedUserIds;
+      return this;
+    }
+
+    /**
+     * Set isSilent
+     * @param isSilent * This property is available when message_type is FILE. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest isSilent(Boolean isSilent) {
+      this.isSilent = isSilent;
+      return this;
+    }
+
+    /**
+     * Set sortedMetaarray
+     * @param sortedMetaarray  (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest sortedMetaarray(List<SendbirdSortedMetaarrayInner> sortedMetaarray) {
+      this.sortedMetaarray = sortedMetaarray;
+      return this;
+    }
+
+    /**
+     * Set apnsBundleId
+     * @param apnsBundleId * This property is available when message_type is FILE. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest apnsBundleId(String apnsBundleId) {
+      this.apnsBundleId = apnsBundleId;
+      return this;
+    }
+
+    /**
+     * Set appleCriticalAlertOptions
+     * @param appleCriticalAlertOptions * This property is available when message_type is FILE. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest appleCriticalAlertOptions(Object appleCriticalAlertOptions) {
+      this.appleCriticalAlertOptions = appleCriticalAlertOptions;
+      return this;
+    }
+
+    /**
+     * Set sound
+     * @param sound * This property is available when message_type is FILE. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest sound(String sound) {
+      this.sound = sound;
+      return this;
+    }
+
+    /**
+     * Set volume
+     * @param volume * This property is available when message_type is FILE. (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest volume(BigDecimal volume) {
+      this.volume = volume;
+      return this;
+    }
+
+    /**
+     * Set createdAt
+     * @param createdAt  (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest createdAt(Long createdAt) {
+      this.createdAt = createdAt;
+      return this;
+    }
+
+    /**
+     * Set customType
+     * @param customType  (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest customType(String customType) {
+      this.customType = customType;
+      return this;
+    }
+
+    /**
+     * Set data
+     * @param data  (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest data(String data) {
+      this.data = data;
+      return this;
+    }
+
+    /**
+     * Set dedupId
+     * @param dedupId  (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest dedupId(String dedupId) {
+      this.dedupId = dedupId;
+      return this;
+    }
+
+    /**
+     * Set markAsRead
+     * @param markAsRead  (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest markAsRead(Boolean markAsRead) {
+      this.markAsRead = markAsRead;
+      return this;
+    }
+
+    /**
+     * Set sendPush
+     * @param sendPush  (optional)
+     * @return APIsendABotMessageRequest
+     */
+    public APIsendABotMessageRequest sendPush(Boolean sendPush) {
+      this.sendPush = sendPush;
       return this;
     }
 
     /**
      * Execute sendABotMessage request
-     * @return SendbirdMessageResponse
+     * @return SendABotMessageResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -703,13 +1087,13 @@ private ApiResponse<SendbirdMessageResponse> sendABotMessageWithHttpInfo(String 
      
      */
     
-    public SendbirdMessageResponse execute() throws ApiException {
+    public SendABotMessageResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute sendABotMessage request with HTTP info returned
-     * @return ApiResponse&lt;SendbirdMessageResponse&gt;
+     * @return ApiResponse&lt;SendABotMessageResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -718,8 +1102,8 @@ private ApiResponse<SendbirdMessageResponse> sendABotMessageWithHttpInfo(String 
        </table>
 
      */
-    public ApiResponse<SendbirdMessageResponse> executeWithHttpInfo() throws ApiException {
-      return sendABotMessageWithHttpInfo(botUserid, apiToken, sendABotMessageRequest);
+    public ApiResponse<SendABotMessageResponse> executeWithHttpInfo() throws ApiException {
+      return sendABotMessageWithHttpInfo(botUserid, messageType, channelUrl, apiToken, message, mentioned, extendedMessagePayload, _file, requireAuth, mentionType, mentionedUserIds, isSilent, sortedMetaarray, apnsBundleId, appleCriticalAlertOptions, sound, volume, createdAt, customType, data, dedupId, markAsRead, sendPush);
     }
   }
 
@@ -734,5 +1118,228 @@ private ApiResponse<SendbirdMessageResponse> sendABotMessageWithHttpInfo(String 
    */
   public APIsendABotMessageRequest sendABotMessage(String botUserid) throws ApiException {
     return new APIsendABotMessageRequest(botUserid);
+  }
+
+private ApiResponse<UpdateBotByIdResponse> updateBotByIdWithHttpInfo(String botUserid, String apiToken, UpdateBotByIdData updateBotByIdData) throws ApiException {
+    Object localVarPostBody = updateBotByIdData;
+    
+    // verify the required parameter 'botUserid' is set
+    if (botUserid == null) {
+      throw new ApiException(400, "Missing the required parameter 'botUserid' when calling updateBotById");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/bots/{bot_userid}"
+      .replaceAll("\\{" + "bot_userid" + "\\}", apiClient.escapeString(botUserid.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<UpdateBotByIdResponse> localVarReturnType = new GenericType<UpdateBotByIdResponse>() {};
+
+    return apiClient.invokeAPI("BotApi.updateBotById", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIupdateBotByIdRequest {
+    private String botUserid;
+    private String apiToken;
+    private UpdateBotByIdData updateBotByIdData;
+
+    private APIupdateBotByIdRequest(String botUserid) {
+      this.botUserid = botUserid;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIupdateBotByIdRequest
+     */
+    public APIupdateBotByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Set updateBotByIdData
+     * @param updateBotByIdData  (optional)
+     * @return APIupdateBotByIdRequest
+     */
+    public APIupdateBotByIdRequest updateBotByIdData(UpdateBotByIdData updateBotByIdData) {
+      this.updateBotByIdData = updateBotByIdData;
+      return this;
+    }
+
+    /**
+     * Execute updateBotById request
+     * @return UpdateBotByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public UpdateBotByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute updateBotById request with HTTP info returned
+     * @return ApiResponse&lt;UpdateBotByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<UpdateBotByIdResponse> executeWithHttpInfo() throws ApiException {
+      return updateBotByIdWithHttpInfo(botUserid, apiToken, updateBotByIdData);
+    }
+  }
+
+  /**
+   * Update a bot
+   * ## Update a bot  Updates information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-update-a-bot ----------------------------
+   * @param botUserid  (required)
+   * @return updateBotByIdRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIupdateBotByIdRequest updateBotById(String botUserid) throws ApiException {
+    return new APIupdateBotByIdRequest(botUserid);
+  }
+
+private ApiResponse<ViewBotByIdResponse> viewBotByIdWithHttpInfo(String botUserid, String apiToken) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'botUserid' is set
+    if (botUserid == null) {
+      throw new ApiException(400, "Missing the required parameter 'botUserid' when calling viewBotById");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v3/bots/{bot_userid}"
+      .replaceAll("\\{" + "bot_userid" + "\\}", apiClient.escapeString(botUserid.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (apiToken != null)
+      localVarHeaderParams.put("Api-Token", apiClient.parameterToString(apiToken));
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<ViewBotByIdResponse> localVarReturnType = new GenericType<ViewBotByIdResponse>() {};
+
+    return apiClient.invokeAPI("BotApi.viewBotById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+
+  public class APIviewBotByIdRequest {
+    private String botUserid;
+    private String apiToken;
+
+    private APIviewBotByIdRequest(String botUserid) {
+      this.botUserid = botUserid;
+    }
+
+    /**
+     * Set apiToken
+     * @param apiToken  (optional)
+     * @return APIviewBotByIdRequest
+     */
+    public APIviewBotByIdRequest apiToken(String apiToken) {
+      this.apiToken = apiToken;
+      return this;
+    }
+
+    /**
+     * Execute viewBotById request
+     * @return ViewBotByIdResponse
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+     
+     */
+    
+    public ViewBotByIdResponse execute() throws ApiException {
+      return this.executeWithHttpInfo().getData();
+    }
+
+    /**
+     * Execute viewBotById request with HTTP info returned
+     * @return ApiResponse&lt;ViewBotByIdResponse&gt;
+     * @throws ApiException if fails to make API call
+     * @http.response.details
+       <table summary="Response Details" border="1">
+         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+       </table>
+
+     */
+    public ApiResponse<ViewBotByIdResponse> executeWithHttpInfo() throws ApiException {
+      return viewBotByIdWithHttpInfo(botUserid, apiToken);
+    }
+  }
+
+  /**
+   * View a bot
+   * ## View a bot  Retrieves information on a bot.  https://sendbird.com/docs/chat/v3/platform-api/guides/bot-interface#2-view-a-bot ----------------------------
+   * @param botUserid  (required)
+   * @return viewBotByIdRequest
+   * @throws ApiException if fails to make API call
+   
+   
+   */
+  public APIviewBotByIdRequest viewBotById(String botUserid) throws ApiException {
+    return new APIviewBotByIdRequest(botUserid);
   }
 }

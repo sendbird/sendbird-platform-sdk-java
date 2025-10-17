@@ -26,7 +26,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListBotsResponseBotsInnerAi;
 import org.openapitools.client.model.ListBotsResponseBotsInnerBot;
 import org.openapitools.client.model.ListBotsResponseBotsInnerBotStyle;
 import org.openapitools.client.model.ListBotsResponseBotsInnerFirstMessagesInner;
@@ -39,7 +38,6 @@ import org.sendbird.client.JSON;
  * ListBotsResponseBotsInner
  */
 @JsonPropertyOrder({
-  ListBotsResponseBotsInner.JSON_PROPERTY_AI,
   ListBotsResponseBotsInner.JSON_PROPERTY_BOT,
   ListBotsResponseBotsInner.JSON_PROPERTY_BOT_CALLBACK_URL,
   ListBotsResponseBotsInner.JSON_PROPERTY_BOT_STYLE,
@@ -52,11 +50,8 @@ import org.sendbird.client.JSON;
   ListBotsResponseBotsInner.JSON_PROPERTY_SHOW_MEMBER
 })
 @JsonTypeName("listBotsResponse_bots_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class ListBotsResponseBotsInner {
-  public static final String JSON_PROPERTY_AI = "ai";
-  private ListBotsResponseBotsInnerAi ai;
-
   public static final String JSON_PROPERTY_BOT = "bot";
   private ListBotsResponseBotsInnerBot bot;
 
@@ -89,32 +84,6 @@ public class ListBotsResponseBotsInner {
 
   public ListBotsResponseBotsInner() { 
   }
-
-  public ListBotsResponseBotsInner ai(ListBotsResponseBotsInnerAi ai) {
-    this.ai = ai;
-    return this;
-  }
-
-   /**
-   * Get ai
-   * @return ai
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_AI)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public ListBotsResponseBotsInnerAi getAi() {
-    return ai;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_AI)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAi(ListBotsResponseBotsInnerAi ai) {
-    this.ai = ai;
-  }
-
 
   public ListBotsResponseBotsInner bot(ListBotsResponseBotsInnerBot bot) {
     this.bot = bot;
@@ -396,8 +365,7 @@ public class ListBotsResponseBotsInner {
       return false;
     }
     ListBotsResponseBotsInner listBotsResponseBotsInner = (ListBotsResponseBotsInner) o;
-    return Objects.equals(this.ai, listBotsResponseBotsInner.ai) &&
-        Objects.equals(this.bot, listBotsResponseBotsInner.bot) &&
+    return Objects.equals(this.bot, listBotsResponseBotsInner.bot) &&
         Objects.equals(this.botCallbackUrl, listBotsResponseBotsInner.botCallbackUrl) &&
         Objects.equals(this.botStyle, listBotsResponseBotsInner.botStyle) &&
         Objects.equals(this.channelInvitationPreference, listBotsResponseBotsInner.channelInvitationPreference) &&
@@ -411,14 +379,13 @@ public class ListBotsResponseBotsInner {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ai, bot, botCallbackUrl, botStyle, channelInvitationPreference, createdAt, enableMarkAsRead, firstMessages, isPrivacyMode, safeguard, showMember);
+    return Objects.hash(bot, botCallbackUrl, botStyle, channelInvitationPreference, createdAt, enableMarkAsRead, firstMessages, isPrivacyMode, safeguard, showMember);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListBotsResponseBotsInner {\n");
-    sb.append("    ai: ").append(toIndentedString(ai)).append("\n");
     sb.append("    bot: ").append(toIndentedString(bot)).append("\n");
     sb.append("    botCallbackUrl: ").append(toIndentedString(botCallbackUrl)).append("\n");
     sb.append("    botStyle: ").append(toIndentedString(botStyle)).append("\n");

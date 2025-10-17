@@ -28,10 +28,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.SendbirdFile;
 import org.openapitools.client.model.SendbirdUser;
-import org.openapitools.jackson.nullable.JsonNullable;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.openapitools.jackson.nullable.JsonNullable;
-import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -48,8 +44,7 @@ import org.sendbird.client.JSON;
   SendbirdParentMessageInfo.JSON_PROPERTY_FILE,
   SendbirdParentMessageInfo.JSON_PROPERTY_FILES
 })
-@JsonTypeName("Sendbird.ParentMessageInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdParentMessageInfo {
   public static final String JSON_PROPERTY_CUSTOM_TYPE = "custom_type";
   private String customType;
@@ -64,7 +59,7 @@ public class SendbirdParentMessageInfo {
   private Long ts;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private JsonNullable<SendbirdUser> user = JsonNullable.<SendbirdUser>undefined();
+  private SendbirdUser user;
 
   public static final String JSON_PROPERTY_FILE = "file";
   private SendbirdFile _file;
@@ -180,7 +175,7 @@ public class SendbirdParentMessageInfo {
 
 
   public SendbirdParentMessageInfo user(SendbirdUser user) {
-    this.user = JsonNullable.<SendbirdUser>of(user);
+    this.user = user;
     return this;
   }
 
@@ -190,26 +185,18 @@ public class SendbirdParentMessageInfo {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonIgnore
-
-  public SendbirdUser getUser() {
-        return user.orElse(null);
-  }
-
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SendbirdUser> getUser_JsonNullable() {
+  public SendbirdUser getUser() {
     return user;
   }
-  
-  @JsonProperty(JSON_PROPERTY_USER)
-  public void setUser_JsonNullable(JsonNullable<SendbirdUser> user) {
-    this.user = user;
-  }
 
+
+  @JsonProperty(JSON_PROPERTY_USER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUser(SendbirdUser user) {
-    this.user = JsonNullable.<SendbirdUser>of(user);
+    this.user = user;
   }
 
 
@@ -274,7 +261,7 @@ public class SendbirdParentMessageInfo {
 
 
   /**
-   * Return true if this Sendbird.ParentMessageInfo object is equal to o.
+   * Return true if this SendbirdParentMessageInfo object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -289,25 +276,14 @@ public class SendbirdParentMessageInfo {
         Objects.equals(this.message, sendbirdParentMessageInfo.message) &&
         Objects.equals(this.type, sendbirdParentMessageInfo.type) &&
         Objects.equals(this.ts, sendbirdParentMessageInfo.ts) &&
-        equalsNullable(this.user, sendbirdParentMessageInfo.user) &&
+        Objects.equals(this.user, sendbirdParentMessageInfo.user) &&
         Objects.equals(this._file, sendbirdParentMessageInfo._file) &&
         Objects.equals(this.files, sendbirdParentMessageInfo.files);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(customType, message, type, ts, hashCodeNullable(user), _file, files);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(customType, message, type, ts, user, _file, files);
   }
 
   @Override

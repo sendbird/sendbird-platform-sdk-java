@@ -37,8 +37,8 @@ import org.sendbird.client.JSON;
   SendbirdSortedMetaarrayInner.JSON_PROPERTY_KEY,
   SendbirdSortedMetaarrayInner.JSON_PROPERTY_VALUE
 })
-@JsonTypeName("Sendbird_SortedMetaarray_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@JsonTypeName("SendbirdSortedMetaarray_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdSortedMetaarrayInner {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;
@@ -110,7 +110,7 @@ public class SendbirdSortedMetaarrayInner {
 
 
   /**
-   * Return true if this Sendbird_SortedMetaarray_inner object is equal to o.
+   * Return true if this SendbirdSortedMetaarray_inner object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

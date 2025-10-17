@@ -213,12 +213,4 @@ public class SendbirdUserTest {
         // TODO: test isCreated
     }
 
-    /**
-     * Test the property 'sessionTokens'
-     */
-    @Test
-    public void sessionTokensTest() {
-        // TODO: test sessionTokens
-    }
-
 }

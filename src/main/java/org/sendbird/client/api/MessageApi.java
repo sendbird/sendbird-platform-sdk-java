@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class MessageApi {
   private ApiClient apiClient;
 
@@ -56,7 +56,7 @@ public class MessageApi {
   }
 
 
-private ApiResponse<AddExtraDataToAMessageResponse> addExtraDataToAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, AddExtraDataToAMessageRequest addExtraDataToAMessageRequest) throws ApiException {
+private ApiResponse<AddExtraDataToAMessageResponse> addExtraDataToAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken, AddExtraDataToAMessageRequest addExtraDataToAMessageRequest) throws ApiException {
     Object localVarPostBody = addExtraDataToAMessageRequest;
     
     // verify the required parameter 'channelType' is set
@@ -114,11 +114,11 @@ private ApiResponse<AddExtraDataToAMessageResponse> addExtraDataToAMessageWithHt
   public class APIaddExtraDataToAMessageRequest {
     private String channelType;
     private String channelUrl;
-    private String messageId;
+    private Long messageId;
     private String apiToken;
     private AddExtraDataToAMessageRequest addExtraDataToAMessageRequest;
 
-    private APIaddExtraDataToAMessageRequest(String channelType, String channelUrl, String messageId) {
+    private APIaddExtraDataToAMessageRequest(String channelType, String channelUrl, Long messageId) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
       this.messageId = messageId;
@@ -187,11 +187,11 @@ private ApiResponse<AddExtraDataToAMessageResponse> addExtraDataToAMessageWithHt
    
    
    */
-  public APIaddExtraDataToAMessageRequest addExtraDataToAMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+  public APIaddExtraDataToAMessageRequest addExtraDataToAMessage(String channelType, String channelUrl, Long messageId) throws ApiException {
     return new APIaddExtraDataToAMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<Object> deleteAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken) throws ApiException {
+private ApiResponse<Object> deleteAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
@@ -249,10 +249,10 @@ private ApiResponse<Object> deleteAMessageWithHttpInfo(String channelType, Strin
   public class APIdeleteAMessageRequest {
     private String channelType;
     private String channelUrl;
-    private String messageId;
+    private Long messageId;
     private String apiToken;
 
-    private APIdeleteAMessageRequest(String channelType, String channelUrl, String messageId) {
+    private APIdeleteAMessageRequest(String channelType, String channelUrl, Long messageId) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
       this.messageId = messageId;
@@ -311,11 +311,11 @@ private ApiResponse<Object> deleteAMessageWithHttpInfo(String channelType, Strin
    
    
    */
-  public APIdeleteAMessageRequest deleteAMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+  public APIdeleteAMessageRequest deleteAMessage(String channelType, String channelUrl, Long messageId) throws ApiException {
     return new APIdeleteAMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<SendbirdMessageResponse> getAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, Boolean includeReactions, Boolean includeThreadInfo, Boolean includeParentMessageInfo, Boolean includePollDetails, Boolean withSortedMetaArray, String apiToken) throws ApiException {
+private ApiResponse<SendbirdMessageResponse> getAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, Boolean includeReactions, Boolean includeThreadInfo, Boolean includeParentMessageInfo, Boolean includePollDetails, Boolean withSortedMetaArray, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
@@ -378,7 +378,7 @@ private ApiResponse<SendbirdMessageResponse> getAMessageWithHttpInfo(String chan
   public class APIgetAMessageRequest {
     private String channelType;
     private String channelUrl;
-    private String messageId;
+    private Long messageId;
     private Boolean includeReactions;
     private Boolean includeThreadInfo;
     private Boolean includeParentMessageInfo;
@@ -386,7 +386,7 @@ private ApiResponse<SendbirdMessageResponse> getAMessageWithHttpInfo(String chan
     private Boolean withSortedMetaArray;
     private String apiToken;
 
-    private APIgetAMessageRequest(String channelType, String channelUrl, String messageId) {
+    private APIgetAMessageRequest(String channelType, String channelUrl, Long messageId) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
       this.messageId = messageId;
@@ -495,7 +495,7 @@ private ApiResponse<SendbirdMessageResponse> getAMessageWithHttpInfo(String chan
    
    
    */
-  public APIgetAMessageRequest getAMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+  public APIgetAMessageRequest getAMessage(String channelType, String channelUrl, Long messageId) throws ApiException {
     return new APIgetAMessageRequest(channelType, channelUrl, messageId);
   }
 
@@ -1213,7 +1213,7 @@ private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl,
     return new APImigrateMessagesRequest(targetChannelUrl);
   }
 
-private ApiResponse<Object> removeExtraDataFromAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String keys, String apiToken) throws ApiException {
+private ApiResponse<Object> removeExtraDataFromAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String keys, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
@@ -1272,11 +1272,11 @@ private ApiResponse<Object> removeExtraDataFromAMessageWithHttpInfo(String chann
   public class APIremoveExtraDataFromAMessageRequest {
     private String channelType;
     private String channelUrl;
-    private String messageId;
+    private Long messageId;
     private String keys;
     private String apiToken;
 
-    private APIremoveExtraDataFromAMessageRequest(String channelType, String channelUrl, String messageId) {
+    private APIremoveExtraDataFromAMessageRequest(String channelType, String channelUrl, Long messageId) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
       this.messageId = messageId;
@@ -1345,7 +1345,7 @@ private ApiResponse<Object> removeExtraDataFromAMessageWithHttpInfo(String chann
    
    
    */
-  public APIremoveExtraDataFromAMessageRequest removeExtraDataFromAMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+  public APIremoveExtraDataFromAMessageRequest removeExtraDataFromAMessage(String channelType, String channelUrl, Long messageId) throws ApiException {
     return new APIremoveExtraDataFromAMessageRequest(channelType, channelUrl, messageId);
   }
 
@@ -1475,7 +1475,7 @@ private ApiResponse<SendbirdMessageResponse> sendAMessageWithHttpInfo(String cha
     return new APIsendAMessageRequest(channelType, channelUrl);
   }
 
-private ApiResponse<SendbirdMessageResponse> updateAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, UpdateAMessageRequest updateAMessageRequest) throws ApiException {
+private ApiResponse<SendbirdMessageResponse> updateAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken, UpdateAMessageRequest updateAMessageRequest) throws ApiException {
     Object localVarPostBody = updateAMessageRequest;
     
     // verify the required parameter 'channelType' is set
@@ -1533,11 +1533,11 @@ private ApiResponse<SendbirdMessageResponse> updateAMessageWithHttpInfo(String c
   public class APIupdateAMessageRequest {
     private String channelType;
     private String channelUrl;
-    private String messageId;
+    private Long messageId;
     private String apiToken;
     private UpdateAMessageRequest updateAMessageRequest;
 
-    private APIupdateAMessageRequest(String channelType, String channelUrl, String messageId) {
+    private APIupdateAMessageRequest(String channelType, String channelUrl, Long messageId) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
       this.messageId = messageId;
@@ -1606,11 +1606,11 @@ private ApiResponse<SendbirdMessageResponse> updateAMessageWithHttpInfo(String c
    
    
    */
-  public APIupdateAMessageRequest updateAMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+  public APIupdateAMessageRequest updateAMessage(String channelType, String channelUrl, Long messageId) throws ApiException {
     return new APIupdateAMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<UpdateExtraDataInAMessageResponse> updateExtraDataInAMessageWithHttpInfo(String channelType, String channelUrl, String messageId, String apiToken, UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest) throws ApiException {
+private ApiResponse<UpdateExtraDataInAMessageResponse> updateExtraDataInAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken, UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest) throws ApiException {
     Object localVarPostBody = updateExtraDataInAMessageRequest;
     
     // verify the required parameter 'channelType' is set
@@ -1668,11 +1668,11 @@ private ApiResponse<UpdateExtraDataInAMessageResponse> updateExtraDataInAMessage
   public class APIupdateExtraDataInAMessageRequest {
     private String channelType;
     private String channelUrl;
-    private String messageId;
+    private Long messageId;
     private String apiToken;
     private UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest;
 
-    private APIupdateExtraDataInAMessageRequest(String channelType, String channelUrl, String messageId) {
+    private APIupdateExtraDataInAMessageRequest(String channelType, String channelUrl, Long messageId) {
       this.channelType = channelType;
       this.channelUrl = channelUrl;
       this.messageId = messageId;
@@ -1741,7 +1741,7 @@ private ApiResponse<UpdateExtraDataInAMessageResponse> updateExtraDataInAMessage
    
    
    */
-  public APIupdateExtraDataInAMessageRequest updateExtraDataInAMessage(String channelType, String channelUrl, String messageId) throws ApiException {
+  public APIupdateExtraDataInAMessageRequest updateExtraDataInAMessage(String channelType, String channelUrl, Long messageId) throws ApiException {
     return new APIupdateExtraDataInAMessageRequest(channelType, channelUrl, messageId);
   }
 }

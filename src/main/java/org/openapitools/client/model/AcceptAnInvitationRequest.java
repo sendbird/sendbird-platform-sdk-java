@@ -24,6 +24,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.openapitools.jackson.nullable.JsonNullable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.NoSuchElementException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,10 +40,10 @@ import org.sendbird.client.JSON;
   AcceptAnInvitationRequest.JSON_PROPERTY_USER_ID
 })
 @JsonTypeName("acceptAnInvitation_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class AcceptAnInvitationRequest {
   public static final String JSON_PROPERTY_ACCESS_CODE = "access_code";
-  private String accessCode;
+  private JsonNullable<String> accessCode = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   private String userId;
@@ -48,7 +52,7 @@ public class AcceptAnInvitationRequest {
   }
 
   public AcceptAnInvitationRequest accessCode(String accessCode) {
-    this.accessCode = accessCode;
+    this.accessCode = JsonNullable.<String>of(accessCode);
     return this;
   }
 
@@ -58,18 +62,26 @@ public class AcceptAnInvitationRequest {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonIgnore
 
   public String getAccessCode() {
-    return accessCode;
+        return accessCode.orElse(null);
   }
-
 
   @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccessCode(String accessCode) {
+
+  public JsonNullable<String> getAccessCode_JsonNullable() {
+    return accessCode;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ACCESS_CODE)
+  public void setAccessCode_JsonNullable(JsonNullable<String> accessCode) {
     this.accessCode = accessCode;
+  }
+
+  public void setAccessCode(String accessCode) {
+    this.accessCode = JsonNullable.<String>of(accessCode);
   }
 
 
@@ -111,13 +123,24 @@ public class AcceptAnInvitationRequest {
       return false;
     }
     AcceptAnInvitationRequest acceptAnInvitationRequest = (AcceptAnInvitationRequest) o;
-    return Objects.equals(this.accessCode, acceptAnInvitationRequest.accessCode) &&
+    return equalsNullable(this.accessCode, acceptAnInvitationRequest.accessCode) &&
         Objects.equals(this.userId, acceptAnInvitationRequest.userId);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessCode, userId);
+    return Objects.hash(hashCodeNullable(accessCode), userId);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

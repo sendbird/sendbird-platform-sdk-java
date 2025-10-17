@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   ViewCountPreferenceOfAChannelResponse.JSON_PROPERTY_COUNT_PREFERENCE
 })
 @JsonTypeName("viewCountPreferenceOfAChannelResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T11:20:47.026559+07:00[Asia/Jakarta]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class ViewCountPreferenceOfAChannelResponse {
   /**
    * Gets or Sets countPreference

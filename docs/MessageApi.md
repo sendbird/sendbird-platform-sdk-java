@@ -49,7 +49,7 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String channelType = "open_channels"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
-        String messageId = "messageId_example"; // String | (Required) 
+        Long messageId = 56L; // Long | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         AddExtraDataToAMessageRequest addExtraDataToAMessageRequest = new AddExtraDataToAMessageRequest(); // AddExtraDataToAMessageRequest | 
         try {
@@ -76,7 +76,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelType** | **String**| (Required)  | [enum: open_channels, group_channels] |
 | **channelUrl** | **String**| (Required)  | |
-| **messageId** | **String**| (Required)  | |
+| **messageId** | **Long**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
 | **addExtraDataToAMessageRequest** | [**AddExtraDataToAMessageRequest**](AddExtraDataToAMessageRequest.md)|  | [optional] |
 
@@ -130,7 +130,7 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String channelType = "open_channels"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
-        String messageId = "messageId_example"; // String | (Required) 
+        Long messageId = 56L; // Long | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
             Object result = api.deleteAMessage(channelType, channelUrl, messageId)
@@ -155,7 +155,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelType** | **String**| (Required)  | [enum: open_channels, group_channels] |
 | **channelUrl** | **String**| (Required)  | |
-| **messageId** | **String**| (Required)  | |
+| **messageId** | **Long**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
 
 ### Return type
@@ -218,7 +218,7 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String channelType = "open_channels"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
-        String messageId = "messageId_example"; // String | (Required) 
+        Long messageId = 56L; // Long | (Required) 
         Boolean includeReactions = true; // Boolean | 
         Boolean includeThreadInfo = true; // Boolean | 
         Boolean includeParentMessageInfo = true; // Boolean | 
@@ -253,7 +253,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelType** | **String**| (Required)  | [enum: open_channels, group_channels] |
 | **channelUrl** | **String**| (Required)  | |
-| **messageId** | **String**| (Required)  | |
+| **messageId** | **Long**| (Required)  | |
 | **includeReactions** | **Boolean**|  | [optional] |
 | **includeThreadInfo** | **Boolean**|  | [optional] |
 | **includeParentMessageInfo** | **Boolean**|  | [optional] |
@@ -695,7 +695,7 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String channelType = "open_channels"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
-        String messageId = "messageId_example"; // String | (Required) 
+        Long messageId = 56L; // Long | (Required) 
         String keys = "keys_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
@@ -722,7 +722,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelType** | **String**| (Required)  | [enum: open_channels, group_channels] |
 | **channelUrl** | **String**| (Required)  | |
-| **messageId** | **String**| (Required)  | |
+| **messageId** | **Long**| (Required)  | |
 | **keys** | **String**|  | [optional] |
 | **apiToken** | **String**|  | [optional] |
 
@@ -856,7 +856,7 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String channelType = "open_channels"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
-        String messageId = "messageId_example"; // String | (Required) 
+        Long messageId = 56L; // Long | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateAMessageRequest updateAMessageRequest = new UpdateAMessageRequest(); // UpdateAMessageRequest | 
         try {
@@ -883,7 +883,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelType** | **String**| (Required)  | [enum: open_channels, group_channels] |
 | **channelUrl** | **String**| (Required)  | |
-| **messageId** | **String**| (Required)  | |
+| **messageId** | **Long**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
 | **updateAMessageRequest** | [**UpdateAMessageRequest**](UpdateAMessageRequest.md)|  | [optional] |
 
@@ -937,7 +937,7 @@ public class Example {
         MessageApi apiInstance = new MessageApi(defaultClient);
         String channelType = "open_channels"; // String | (Required) 
         String channelUrl = "channelUrl_example"; // String | (Required) 
-        String messageId = "messageId_example"; // String | (Required) 
+        Long messageId = 56L; // Long | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest = new UpdateExtraDataInAMessageRequest(); // UpdateExtraDataInAMessageRequest | 
         try {
@@ -964,7 +964,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelType** | **String**| (Required)  | [enum: open_channels, group_channels] |
 | **channelUrl** | **String**| (Required)  | |
-| **messageId** | **String**| (Required)  | |
+| **messageId** | **Long**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
 | **updateExtraDataInAMessageRequest** | [**UpdateExtraDataInAMessageRequest**](UpdateExtraDataInAMessageRequest.md)|  | [optional] |
 

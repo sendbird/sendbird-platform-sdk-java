@@ -68,8 +68,7 @@ public class MetadataApiTest {
         //String channelUrl = null;
         //String key = null;
         //String apiToken = null;
-        //Object response = api.deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(channelType, channelUrl)
-        //        .key(key)
+        //Object response = api.deleteAChannelMetadataWhenDeletingAllItemsOfAChannelMetadata(channelType, channelUrl, key)
         //        .apiToken(apiToken)
         //        .execute();
         // TODO: test validations

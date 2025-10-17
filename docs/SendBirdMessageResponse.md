@@ -29,14 +29,14 @@
 |**reqId** | **String** |  |  [optional] |
 |**mentionType** | **String** |  |  [optional] |
 |**channelUrl** | **String** |  |  [optional] |
-|**messageId** | **Integer** |  |  [optional] |
+|**messageId** | **Long** |  |  [optional] |
 |**sortedMetaarray** | [**List&lt;SendbirdSortedMetaarrayInner&gt;**](SendbirdSortedMetaarrayInner.md) |  |  [optional] |
 |**threadInfo** | **Object** |  |  [optional] |
 |**parentMessageId** | **Integer** |  |  [optional] |
 |**parentMessageInfo** | [**SendbirdParentMessageInfo**](SendbirdParentMessageInfo.md) |  |  [optional] |
 |**isReplyToChannel** | **Boolean** |  |  [optional] |
 |**messageEvents** | [**SendbirdMessageResponseMessageEvents**](SendbirdMessageResponseMessageEvents.md) |  |  [optional] |
-|**extendedMessagePayload** | [**SendbirdExtendedMessagePayload**](SendbirdExtendedMessagePayload.md) |  |  [optional] |
+|**extendedMessagePayload** | [**SendbirdMessageResponseExtendedMessagePayload**](SendbirdMessageResponseExtendedMessagePayload.md) |  |  [optional] |
 
 
 
