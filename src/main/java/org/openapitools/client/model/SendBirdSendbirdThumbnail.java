@@ -29,19 +29,19 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdSendbirdThumbnail
+ * SendBirdSendBirdThumbnail
  */
 @JsonPropertyOrder({
-  SendBirdSendbirdThumbnail.JSON_PROPERTY_HEIGHT,
-  SendBirdSendbirdThumbnail.JSON_PROPERTY_PLAIN_URL,
-  SendBirdSendbirdThumbnail.JSON_PROPERTY_REAL_HEIGHT,
-  SendBirdSendbirdThumbnail.JSON_PROPERTY_REAL_WIDTH,
-  SendBirdSendbirdThumbnail.JSON_PROPERTY_URL,
-  SendBirdSendbirdThumbnail.JSON_PROPERTY_WIDTH
+  SendBirdSendBirdThumbnail.JSON_PROPERTY_HEIGHT,
+  SendBirdSendBirdThumbnail.JSON_PROPERTY_PLAIN_URL,
+  SendBirdSendBirdThumbnail.JSON_PROPERTY_REAL_HEIGHT,
+  SendBirdSendBirdThumbnail.JSON_PROPERTY_REAL_WIDTH,
+  SendBirdSendBirdThumbnail.JSON_PROPERTY_URL,
+  SendBirdSendBirdThumbnail.JSON_PROPERTY_WIDTH
 })
-@JsonTypeName("Sendbird.Thumbnail")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
-public class SendBirdSendbirdThumbnail {
+@JsonTypeName("SendBird.Thumbnail")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+public class SendBirdSendBirdThumbnail {
   public static final String JSON_PROPERTY_HEIGHT = "height";
   private Integer height;
 
@@ -60,10 +60,10 @@ public class SendBirdSendbirdThumbnail {
   public static final String JSON_PROPERTY_WIDTH = "width";
   private Integer width;
 
-  public SendBirdSendbirdThumbnail() { 
+  public SendBirdSendBirdThumbnail() { 
   }
 
-  public SendBirdSendbirdThumbnail height(Integer height) {
+  public SendBirdSendBirdThumbnail height(Integer height) {
     this.height = height;
     return this;
   }
@@ -89,7 +89,7 @@ public class SendBirdSendbirdThumbnail {
   }
 
 
-  public SendBirdSendbirdThumbnail plainUrl(String plainUrl) {
+  public SendBirdSendBirdThumbnail plainUrl(String plainUrl) {
     this.plainUrl = plainUrl;
     return this;
   }
@@ -115,7 +115,7 @@ public class SendBirdSendbirdThumbnail {
   }
 
 
-  public SendBirdSendbirdThumbnail realHeight(Integer realHeight) {
+  public SendBirdSendBirdThumbnail realHeight(Integer realHeight) {
     this.realHeight = realHeight;
     return this;
   }
@@ -141,7 +141,7 @@ public class SendBirdSendbirdThumbnail {
   }
 
 
-  public SendBirdSendbirdThumbnail realWidth(Integer realWidth) {
+  public SendBirdSendBirdThumbnail realWidth(Integer realWidth) {
     this.realWidth = realWidth;
     return this;
   }
@@ -167,7 +167,7 @@ public class SendBirdSendbirdThumbnail {
   }
 
 
-  public SendBirdSendbirdThumbnail url(String url) {
+  public SendBirdSendBirdThumbnail url(String url) {
     this.url = url;
     return this;
   }
@@ -193,7 +193,7 @@ public class SendBirdSendbirdThumbnail {
   }
 
 
-  public SendBirdSendbirdThumbnail width(Integer width) {
+  public SendBirdSendBirdThumbnail width(Integer width) {
     this.width = width;
     return this;
   }
@@ -220,7 +220,7 @@ public class SendBirdSendbirdThumbnail {
 
 
   /**
-   * Return true if this Sendbird.Thumbnail object is equal to o.
+   * Return true if this SendBird.Thumbnail object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -230,13 +230,13 @@ public class SendBirdSendbirdThumbnail {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdSendbirdThumbnail sendbirdThumbnail = (SendBirdSendbirdThumbnail) o;
-    return Objects.equals(this.height, sendbirdThumbnail.height) &&
-        Objects.equals(this.plainUrl, sendbirdThumbnail.plainUrl) &&
-        Objects.equals(this.realHeight, sendbirdThumbnail.realHeight) &&
-        Objects.equals(this.realWidth, sendbirdThumbnail.realWidth) &&
-        Objects.equals(this.url, sendbirdThumbnail.url) &&
-        Objects.equals(this.width, sendbirdThumbnail.width);
+    SendBirdSendBirdThumbnail sendBirdThumbnail = (SendBirdSendBirdThumbnail) o;
+    return Objects.equals(this.height, sendBirdThumbnail.height) &&
+        Objects.equals(this.plainUrl, sendBirdThumbnail.plainUrl) &&
+        Objects.equals(this.realHeight, sendBirdThumbnail.realHeight) &&
+        Objects.equals(this.realWidth, sendBirdThumbnail.realWidth) &&
+        Objects.equals(this.url, sendBirdThumbnail.url) &&
+        Objects.equals(this.width, sendBirdThumbnail.width);
   }
 
   @Override
@@ -247,7 +247,7 @@ public class SendBirdSendbirdThumbnail {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdSendbirdThumbnail {\n");
+    sb.append("class SendBirdSendBirdThumbnail {\n");
     sb.append("    height: ").append(toIndentedString(height)).append("\n");
     sb.append("    plainUrl: ").append(toIndentedString(plainUrl)).append("\n");
     sb.append("    realHeight: ").append(toIndentedString(realHeight)).append("\n");

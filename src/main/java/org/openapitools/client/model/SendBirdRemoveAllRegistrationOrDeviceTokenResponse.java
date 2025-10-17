@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdBasicUserInfo;
+import org.openapitools.client.model.SendBirdSendBirdBasicUserInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,13 +39,13 @@ import org.sendbird.client.JSON;
   SendBirdRemoveAllRegistrationOrDeviceTokenResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("removeAllRegistrationOrDeviceTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdRemoveAllRegistrationOrDeviceTokenResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private List<String> token = null;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private SendBirdSendbirdBasicUserInfo user;
+  private SendBirdSendBirdBasicUserInfo user;
 
   public SendBirdRemoveAllRegistrationOrDeviceTokenResponse() { 
   }
@@ -84,7 +84,7 @@ public class SendBirdRemoveAllRegistrationOrDeviceTokenResponse {
   }
 
 
-  public SendBirdRemoveAllRegistrationOrDeviceTokenResponse user(SendBirdSendbirdBasicUserInfo user) {
+  public SendBirdRemoveAllRegistrationOrDeviceTokenResponse user(SendBirdSendBirdBasicUserInfo user) {
     this.user = user;
     return this;
   }
@@ -98,14 +98,14 @@ public class SendBirdRemoveAllRegistrationOrDeviceTokenResponse {
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdSendbirdBasicUserInfo getUser() {
+  public SendBirdSendBirdBasicUserInfo getUser() {
     return user;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendBirdSendbirdBasicUserInfo user) {
+  public void setUser(SendBirdSendBirdBasicUserInfo user) {
     this.user = user;
   }
 

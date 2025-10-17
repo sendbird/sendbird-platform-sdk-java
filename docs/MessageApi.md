@@ -179,7 +179,7 @@ No authorization required
 
 ## getAMessage
 
-> SendBirdSendbirdMessageResponse getAMessage(channelType, channelUrl, messageId).includeReactions(includeReactions).includeThreadInfo(includeThreadInfo).includeParentMessageInfo(includeParentMessageInfo).includePollDetails(includePollDetails).withSortedMetaArray(withSortedMetaArray).apiToken(apiToken).execute();
+> SendBirdSendBirdMessageResponse getAMessage(channelType, channelUrl, messageId).includeReactions(includeReactions).includeThreadInfo(includeThreadInfo).includeParentMessageInfo(includeParentMessageInfo).includePollDetails(includePollDetails).withSortedMetaArray(withSortedMetaArray).apiToken(apiToken).execute();
 
 Get a message
 
@@ -226,7 +226,7 @@ public class Example {
         Boolean withSortedMetaArray = true; // Boolean | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdSendbirdMessageResponse result = api.getAMessage(channelType, channelUrl, messageId)
+            SendBirdSendBirdMessageResponse result = api.getAMessage(channelType, channelUrl, messageId)
                 .includeReactions(includeReactions)
                 .includeThreadInfo(includeThreadInfo)
                 .includeParentMessageInfo(includeParentMessageInfo)
@@ -263,7 +263,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdMessageResponse**](SendBirdSendbirdMessageResponse.md)
+[**SendBirdSendBirdMessageResponse**](SendBirdSendBirdMessageResponse.md)
 
 ### Authorization
 
@@ -747,7 +747,7 @@ No authorization required
 
 ## sendAMessage
 
-> SendBirdSendbirdMessageResponse sendAMessage(channelType, channelUrl).apiToken(apiToken).sendBirdSendAMessageRequest(sendBirdSendAMessageRequest).execute();
+> SendBirdSendBirdMessageResponse sendAMessage(channelType, channelUrl).apiToken(apiToken).sendBirdSendAMessageRequest(sendBirdSendAMessageRequest).execute();
 
 Send a message
 
@@ -780,7 +780,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         SendBirdSendAMessageRequest sendBirdSendAMessageRequest = new SendBirdSendAMessageRequest(); // SendBirdSendAMessageRequest | 
         try {
-            SendBirdSendbirdMessageResponse result = api.sendAMessage(channelType, channelUrl)
+            SendBirdSendBirdMessageResponse result = api.sendAMessage(channelType, channelUrl)
                 .apiToken(apiToken)
                 .sendBirdSendAMessageRequest(sendBirdSendAMessageRequest)
                 .execute();
@@ -808,7 +808,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdMessageResponse**](SendBirdSendbirdMessageResponse.md)
+[**SendBirdSendBirdMessageResponse**](SendBirdSendBirdMessageResponse.md)
 
 ### Authorization
 
@@ -827,7 +827,7 @@ No authorization required
 
 ## updateAMessage
 
-> SendBirdSendbirdMessageResponse updateAMessage(channelType, channelUrl, messageId).apiToken(apiToken).sendBirdUpdateAMessageRequest(sendBirdUpdateAMessageRequest).execute();
+> SendBirdSendBirdMessageResponse updateAMessage(channelType, channelUrl, messageId).apiToken(apiToken).sendBirdUpdateAMessageRequest(sendBirdUpdateAMessageRequest).execute();
 
 Update a message
 
@@ -860,7 +860,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         SendBirdUpdateAMessageRequest sendBirdUpdateAMessageRequest = new SendBirdUpdateAMessageRequest(); // SendBirdUpdateAMessageRequest | 
         try {
-            SendBirdSendbirdMessageResponse result = api.updateAMessage(channelType, channelUrl, messageId)
+            SendBirdSendBirdMessageResponse result = api.updateAMessage(channelType, channelUrl, messageId)
                 .apiToken(apiToken)
                 .sendBirdUpdateAMessageRequest(sendBirdUpdateAMessageRequest)
                 .execute();
@@ -889,7 +889,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdMessageResponse**](SendBirdSendbirdMessageResponse.md)
+[**SendBirdSendBirdMessageResponse**](SendBirdSendBirdMessageResponse.md)
 
 ### Authorization
 

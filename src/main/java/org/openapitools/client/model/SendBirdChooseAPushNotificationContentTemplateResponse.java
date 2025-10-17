@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   SendBirdChooseAPushNotificationContentTemplateResponse.JSON_PROPERTY_NAME
 })
 @JsonTypeName("chooseAPushNotificationContentTemplateResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdChooseAPushNotificationContentTemplateResponse {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;

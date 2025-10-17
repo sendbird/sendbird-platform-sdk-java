@@ -26,25 +26,25 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdThumbnail;
+import org.openapitools.client.model.SendBirdSendBirdThumbnail;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdSendbirdFile
+ * SendBirdSendBirdFile
  */
 @JsonPropertyOrder({
-  SendBirdSendbirdFile.JSON_PROPERTY_URL,
-  SendBirdSendbirdFile.JSON_PROPERTY_FILE_NAME,
-  SendBirdSendbirdFile.JSON_PROPERTY_FILE_SIZE,
-  SendBirdSendbirdFile.JSON_PROPERTY_FILE_TYPE,
-  SendBirdSendbirdFile.JSON_PROPERTY_THUMBNAILS,
-  SendBirdSendbirdFile.JSON_PROPERTY_REQUIRE_AUTH
+  SendBirdSendBirdFile.JSON_PROPERTY_URL,
+  SendBirdSendBirdFile.JSON_PROPERTY_FILE_NAME,
+  SendBirdSendBirdFile.JSON_PROPERTY_FILE_SIZE,
+  SendBirdSendBirdFile.JSON_PROPERTY_FILE_TYPE,
+  SendBirdSendBirdFile.JSON_PROPERTY_THUMBNAILS,
+  SendBirdSendBirdFile.JSON_PROPERTY_REQUIRE_AUTH
 })
-@JsonTypeName("Sendbird.File")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
-public class SendBirdSendbirdFile {
+@JsonTypeName("SendBird.File")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+public class SendBirdSendBirdFile {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
 
@@ -58,15 +58,15 @@ public class SendBirdSendbirdFile {
   private String fileType;
 
   public static final String JSON_PROPERTY_THUMBNAILS = "thumbnails";
-  private List<SendBirdSendbirdThumbnail> thumbnails = null;
+  private List<SendBirdSendBirdThumbnail> thumbnails = null;
 
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;
 
-  public SendBirdSendbirdFile() { 
+  public SendBirdSendBirdFile() { 
   }
 
-  public SendBirdSendbirdFile url(String url) {
+  public SendBirdSendBirdFile url(String url) {
     this.url = url;
     return this;
   }
@@ -92,7 +92,7 @@ public class SendBirdSendbirdFile {
   }
 
 
-  public SendBirdSendbirdFile fileName(String fileName) {
+  public SendBirdSendBirdFile fileName(String fileName) {
     this.fileName = fileName;
     return this;
   }
@@ -118,7 +118,7 @@ public class SendBirdSendbirdFile {
   }
 
 
-  public SendBirdSendbirdFile fileSize(Integer fileSize) {
+  public SendBirdSendBirdFile fileSize(Integer fileSize) {
     this.fileSize = fileSize;
     return this;
   }
@@ -144,7 +144,7 @@ public class SendBirdSendbirdFile {
   }
 
 
-  public SendBirdSendbirdFile fileType(String fileType) {
+  public SendBirdSendBirdFile fileType(String fileType) {
     this.fileType = fileType;
     return this;
   }
@@ -170,12 +170,12 @@ public class SendBirdSendbirdFile {
   }
 
 
-  public SendBirdSendbirdFile thumbnails(List<SendBirdSendbirdThumbnail> thumbnails) {
+  public SendBirdSendBirdFile thumbnails(List<SendBirdSendBirdThumbnail> thumbnails) {
     this.thumbnails = thumbnails;
     return this;
   }
 
-  public SendBirdSendbirdFile addThumbnailsItem(SendBirdSendbirdThumbnail thumbnailsItem) {
+  public SendBirdSendBirdFile addThumbnailsItem(SendBirdSendBirdThumbnail thumbnailsItem) {
     if (this.thumbnails == null) {
       this.thumbnails = new ArrayList<>();
     }
@@ -192,19 +192,19 @@ public class SendBirdSendbirdFile {
   @JsonProperty(JSON_PROPERTY_THUMBNAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdThumbnail> getThumbnails() {
+  public List<SendBirdSendBirdThumbnail> getThumbnails() {
     return thumbnails;
   }
 
 
   @JsonProperty(JSON_PROPERTY_THUMBNAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThumbnails(List<SendBirdSendbirdThumbnail> thumbnails) {
+  public void setThumbnails(List<SendBirdSendBirdThumbnail> thumbnails) {
     this.thumbnails = thumbnails;
   }
 
 
-  public SendBirdSendbirdFile requireAuth(Boolean requireAuth) {
+  public SendBirdSendBirdFile requireAuth(Boolean requireAuth) {
     this.requireAuth = requireAuth;
     return this;
   }
@@ -231,7 +231,7 @@ public class SendBirdSendbirdFile {
 
 
   /**
-   * Return true if this Sendbird.File object is equal to o.
+   * Return true if this SendBird.File object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -241,13 +241,13 @@ public class SendBirdSendbirdFile {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdSendbirdFile sendbirdFile = (SendBirdSendbirdFile) o;
-    return Objects.equals(this.url, sendbirdFile.url) &&
-        Objects.equals(this.fileName, sendbirdFile.fileName) &&
-        Objects.equals(this.fileSize, sendbirdFile.fileSize) &&
-        Objects.equals(this.fileType, sendbirdFile.fileType) &&
-        Objects.equals(this.thumbnails, sendbirdFile.thumbnails) &&
-        Objects.equals(this.requireAuth, sendbirdFile.requireAuth);
+    SendBirdSendBirdFile sendBirdFile = (SendBirdSendBirdFile) o;
+    return Objects.equals(this.url, sendBirdFile.url) &&
+        Objects.equals(this.fileName, sendBirdFile.fileName) &&
+        Objects.equals(this.fileSize, sendBirdFile.fileSize) &&
+        Objects.equals(this.fileType, sendBirdFile.fileType) &&
+        Objects.equals(this.thumbnails, sendBirdFile.thumbnails) &&
+        Objects.equals(this.requireAuth, sendBirdFile.requireAuth);
   }
 
   @Override
@@ -258,7 +258,7 @@ public class SendBirdSendbirdFile {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdSendbirdFile {\n");
+    sb.append("class SendBirdSendBirdFile {\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
     sb.append("    fileSize: ").append(toIndentedString(fileSize)).append("\n");

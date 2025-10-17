@@ -18,7 +18,7 @@
 |**messageType** | [**MessageTypeEnum**](#MessageTypeEnum) | Specifies the type of the message. The value of ADMM represents an admin message. |  |
 |**pushMessageTemplate** | [**SendBirdSendTextMessageRequestBodyPushMessageTemplate**](SendBirdSendTextMessageRequestBodyPushMessageTemplate.md) |  |  [optional] |
 |**sendPush** | **Boolean** |  |  [optional] |
-|**sortedMetaarray** | [**List&lt;SendBirdSendbirdSortedMetaarrayInner&gt;**](SendBirdSendbirdSortedMetaarrayInner.md) |  |  [optional] |
+|**sortedMetaarray** | [**List&lt;SendBirdSendBirdSortedMetaarrayInner&gt;**](SendBirdSendBirdSortedMetaarrayInner.md) |  |  [optional] |
 
 
 

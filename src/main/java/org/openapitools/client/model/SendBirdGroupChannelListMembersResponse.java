@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdMember;
+import org.openapitools.client.model.SendBirdSendBirdMember;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,10 +39,10 @@ import org.sendbird.client.JSON;
   SendBirdGroupChannelListMembersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("groupChannelListMembersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdGroupChannelListMembersResponse {
   public static final String JSON_PROPERTY_MEMBERS = "members";
-  private List<SendBirdSendbirdMember> members = new ArrayList<>();
+  private List<SendBirdSendBirdMember> members = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
@@ -50,12 +50,12 @@ public class SendBirdGroupChannelListMembersResponse {
   public SendBirdGroupChannelListMembersResponse() { 
   }
 
-  public SendBirdGroupChannelListMembersResponse members(List<SendBirdSendbirdMember> members) {
+  public SendBirdGroupChannelListMembersResponse members(List<SendBirdSendBirdMember> members) {
     this.members = members;
     return this;
   }
 
-  public SendBirdGroupChannelListMembersResponse addMembersItem(SendBirdSendbirdMember membersItem) {
+  public SendBirdGroupChannelListMembersResponse addMembersItem(SendBirdSendBirdMember membersItem) {
     this.members.add(membersItem);
     return this;
   }
@@ -69,14 +69,14 @@ public class SendBirdGroupChannelListMembersResponse {
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<SendBirdSendbirdMember> getMembers() {
+  public List<SendBirdSendBirdMember> getMembers() {
     return members;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMBERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMembers(List<SendBirdSendbirdMember> members) {
+  public void setMembers(List<SendBirdSendBirdMember> members) {
     this.members = members;
   }
 

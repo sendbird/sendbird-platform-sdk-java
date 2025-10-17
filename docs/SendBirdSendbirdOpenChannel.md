@@ -1,6 +1,6 @@
 
 
-# SendBirdSendbirdOpenChannel
+# SendBirdSendBirdOpenChannel
 
 
 ## Properties
@@ -17,7 +17,7 @@
 |**isEphemeral** | **Boolean** |  |  [optional] |
 |**maxLengthMessage** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**operators** | [**List&lt;SendBirdSendbirdBasicUserInfo&gt;**](SendBirdSendbirdBasicUserInfo.md) |  |  [optional] |
+|**operators** | [**List&lt;SendBirdSendBirdBasicUserInfo&gt;**](SendBirdSendBirdBasicUserInfo.md) |  |  [optional] |
 |**participantCount** | **Integer** |  |  [optional] |
 |**metadata** | **Object** |  |  [optional] |
 

@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   SendBirdListBotsResponseBotsInnerFirstMessagesInner.JSON_PROPERTY_MESSAGE
 })
 @JsonTypeName("listBotsResponse_bots_inner_first_messages_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdListBotsResponseBotsInnerFirstMessagesInner {
   public static final String JSON_PROPERTY_DATA = "data";
   private SendBirdListBotsResponseBotsInnerFirstMessagesInnerData data;

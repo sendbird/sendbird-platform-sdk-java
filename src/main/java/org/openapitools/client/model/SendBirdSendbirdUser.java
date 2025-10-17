@@ -39,31 +39,31 @@ import org.sendbird.client.JSON;
  */
 @ApiModel(description = "User")
 @JsonPropertyOrder({
-  SendBirdSendbirdUser.JSON_PROPERTY_ACCESS_TOKEN,
-  SendBirdSendbirdUser.JSON_PROPERTY_CREATED_AT,
-  SendBirdSendbirdUser.JSON_PROPERTY_DISCOVERY_KEYS,
-  SendBirdSendbirdUser.JSON_PROPERTY_HAS_EVER_LOGGED_IN,
-  SendBirdSendbirdUser.JSON_PROPERTY_IS_ACTIVE,
-  SendBirdSendbirdUser.JSON_PROPERTY_IS_HIDE_ME_FROM_FRIENDS,
-  SendBirdSendbirdUser.JSON_PROPERTY_IS_ONLINE,
-  SendBirdSendbirdUser.JSON_PROPERTY_IS_SHADOW_BLOCKED,
-  SendBirdSendbirdUser.JSON_PROPERTY_LAST_SEEN_AT,
-  SendBirdSendbirdUser.JSON_PROPERTY_LOCALE,
-  SendBirdSendbirdUser.JSON_PROPERTY_METADATA,
-  SendBirdSendbirdUser.JSON_PROPERTY_NICKNAME,
-  SendBirdSendbirdUser.JSON_PROPERTY_PREFERRED_LANGUAGES,
-  SendBirdSendbirdUser.JSON_PROPERTY_PROFILE_URL,
-  SendBirdSendbirdUser.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
-  SendBirdSendbirdUser.JSON_PROPERTY_USER_ID,
-  SendBirdSendbirdUser.JSON_PROPERTY_STATE,
-  SendBirdSendbirdUser.JSON_PROPERTY_UNREAD_CHANNEL_COUNT,
-  SendBirdSendbirdUser.JSON_PROPERTY_UNREAD_MESSAGE_COUNT,
-  SendBirdSendbirdUser.JSON_PROPERTY_PHONE_NUMBER,
-  SendBirdSendbirdUser.JSON_PROPERTY_IS_CREATED
+  SendBirdSendBirdUser.JSON_PROPERTY_ACCESS_TOKEN,
+  SendBirdSendBirdUser.JSON_PROPERTY_CREATED_AT,
+  SendBirdSendBirdUser.JSON_PROPERTY_DISCOVERY_KEYS,
+  SendBirdSendBirdUser.JSON_PROPERTY_HAS_EVER_LOGGED_IN,
+  SendBirdSendBirdUser.JSON_PROPERTY_IS_ACTIVE,
+  SendBirdSendBirdUser.JSON_PROPERTY_IS_HIDE_ME_FROM_FRIENDS,
+  SendBirdSendBirdUser.JSON_PROPERTY_IS_ONLINE,
+  SendBirdSendBirdUser.JSON_PROPERTY_IS_SHADOW_BLOCKED,
+  SendBirdSendBirdUser.JSON_PROPERTY_LAST_SEEN_AT,
+  SendBirdSendBirdUser.JSON_PROPERTY_LOCALE,
+  SendBirdSendBirdUser.JSON_PROPERTY_METADATA,
+  SendBirdSendBirdUser.JSON_PROPERTY_NICKNAME,
+  SendBirdSendBirdUser.JSON_PROPERTY_PREFERRED_LANGUAGES,
+  SendBirdSendBirdUser.JSON_PROPERTY_PROFILE_URL,
+  SendBirdSendBirdUser.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
+  SendBirdSendBirdUser.JSON_PROPERTY_USER_ID,
+  SendBirdSendBirdUser.JSON_PROPERTY_STATE,
+  SendBirdSendBirdUser.JSON_PROPERTY_UNREAD_CHANNEL_COUNT,
+  SendBirdSendBirdUser.JSON_PROPERTY_UNREAD_MESSAGE_COUNT,
+  SendBirdSendBirdUser.JSON_PROPERTY_PHONE_NUMBER,
+  SendBirdSendBirdUser.JSON_PROPERTY_IS_CREATED
 })
-@JsonTypeName("Sendbird.User")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
-public class SendBirdSendbirdUser {
+@JsonTypeName("SendBird.User")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+public class SendBirdSendBirdUser {
   public static final String JSON_PROPERTY_ACCESS_TOKEN = "access_token";
   private String accessToken;
 
@@ -164,10 +164,10 @@ public class SendBirdSendbirdUser {
   public static final String JSON_PROPERTY_IS_CREATED = "is_created";
   private Boolean isCreated;
 
-  public SendBirdSendbirdUser() { 
+  public SendBirdSendBirdUser() { 
   }
 
-  public SendBirdSendbirdUser accessToken(String accessToken) {
+  public SendBirdSendBirdUser accessToken(String accessToken) {
     this.accessToken = accessToken;
     return this;
   }
@@ -193,7 +193,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser createdAt(Long createdAt) {
+  public SendBirdSendBirdUser createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -219,12 +219,12 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser discoveryKeys(List<String> discoveryKeys) {
+  public SendBirdSendBirdUser discoveryKeys(List<String> discoveryKeys) {
     this.discoveryKeys = JsonNullable.<List<String>>of(discoveryKeys);
     return this;
   }
 
-  public SendBirdSendbirdUser addDiscoveryKeysItem(String discoveryKeysItem) {
+  public SendBirdSendBirdUser addDiscoveryKeysItem(String discoveryKeysItem) {
     if (this.discoveryKeys == null || !this.discoveryKeys.isPresent()) {
       this.discoveryKeys = JsonNullable.<List<String>>of(new ArrayList<>());
     }
@@ -265,7 +265,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser hasEverLoggedIn(Boolean hasEverLoggedIn) {
+  public SendBirdSendBirdUser hasEverLoggedIn(Boolean hasEverLoggedIn) {
     this.hasEverLoggedIn = hasEverLoggedIn;
     return this;
   }
@@ -291,7 +291,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser isActive(Boolean isActive) {
+  public SendBirdSendBirdUser isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
   }
@@ -317,7 +317,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser isHideMeFromFriends(Boolean isHideMeFromFriends) {
+  public SendBirdSendBirdUser isHideMeFromFriends(Boolean isHideMeFromFriends) {
     this.isHideMeFromFriends = isHideMeFromFriends;
     return this;
   }
@@ -343,7 +343,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser isOnline(Boolean isOnline) {
+  public SendBirdSendBirdUser isOnline(Boolean isOnline) {
     this.isOnline = isOnline;
     return this;
   }
@@ -369,7 +369,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser isShadowBlocked(Boolean isShadowBlocked) {
+  public SendBirdSendBirdUser isShadowBlocked(Boolean isShadowBlocked) {
     this.isShadowBlocked = isShadowBlocked;
     return this;
   }
@@ -395,7 +395,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser lastSeenAt(Long lastSeenAt) {
+  public SendBirdSendBirdUser lastSeenAt(Long lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
     return this;
   }
@@ -421,7 +421,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser locale(String locale) {
+  public SendBirdSendBirdUser locale(String locale) {
     this.locale = locale;
     return this;
   }
@@ -447,7 +447,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser metadata(Object metadata) {
+  public SendBirdSendBirdUser metadata(Object metadata) {
     this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
@@ -481,7 +481,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser nickname(String nickname) {
+  public SendBirdSendBirdUser nickname(String nickname) {
     this.nickname = JsonNullable.<String>of(nickname);
     return this;
   }
@@ -515,12 +515,12 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser preferredLanguages(List<String> preferredLanguages) {
+  public SendBirdSendBirdUser preferredLanguages(List<String> preferredLanguages) {
     this.preferredLanguages = JsonNullable.<List<String>>of(preferredLanguages);
     return this;
   }
 
-  public SendBirdSendbirdUser addPreferredLanguagesItem(String preferredLanguagesItem) {
+  public SendBirdSendBirdUser addPreferredLanguagesItem(String preferredLanguagesItem) {
     if (this.preferredLanguages == null || !this.preferredLanguages.isPresent()) {
       this.preferredLanguages = JsonNullable.<List<String>>of(new ArrayList<>());
     }
@@ -561,7 +561,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser profileUrl(String profileUrl) {
+  public SendBirdSendBirdUser profileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
     return this;
   }
@@ -587,7 +587,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
+  public SendBirdSendBirdUser requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
     this.requireAuthForProfileImage = requireAuthForProfileImage;
     return this;
   }
@@ -613,7 +613,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser userId(String userId) {
+  public SendBirdSendBirdUser userId(String userId) {
     this.userId = userId;
     return this;
   }
@@ -639,7 +639,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser state(StateEnum state) {
+  public SendBirdSendBirdUser state(StateEnum state) {
     this.state = JsonNullable.<StateEnum>of(state);
     return this;
   }
@@ -673,7 +673,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser unreadChannelCount(Integer unreadChannelCount) {
+  public SendBirdSendBirdUser unreadChannelCount(Integer unreadChannelCount) {
     this.unreadChannelCount = unreadChannelCount;
     return this;
   }
@@ -699,7 +699,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser unreadMessageCount(Integer unreadMessageCount) {
+  public SendBirdSendBirdUser unreadMessageCount(Integer unreadMessageCount) {
     this.unreadMessageCount = unreadMessageCount;
     return this;
   }
@@ -725,7 +725,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser phoneNumber(String phoneNumber) {
+  public SendBirdSendBirdUser phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -751,7 +751,7 @@ public class SendBirdSendbirdUser {
   }
 
 
-  public SendBirdSendbirdUser isCreated(Boolean isCreated) {
+  public SendBirdSendBirdUser isCreated(Boolean isCreated) {
     this.isCreated = isCreated;
     return this;
   }
@@ -778,7 +778,7 @@ public class SendBirdSendbirdUser {
 
 
   /**
-   * Return true if this Sendbird.User object is equal to o.
+   * Return true if this SendBird.User object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -788,28 +788,28 @@ public class SendBirdSendbirdUser {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdSendbirdUser sendbirdUser = (SendBirdSendbirdUser) o;
-    return Objects.equals(this.accessToken, sendbirdUser.accessToken) &&
-        Objects.equals(this.createdAt, sendbirdUser.createdAt) &&
-        equalsNullable(this.discoveryKeys, sendbirdUser.discoveryKeys) &&
-        Objects.equals(this.hasEverLoggedIn, sendbirdUser.hasEverLoggedIn) &&
-        Objects.equals(this.isActive, sendbirdUser.isActive) &&
-        Objects.equals(this.isHideMeFromFriends, sendbirdUser.isHideMeFromFriends) &&
-        Objects.equals(this.isOnline, sendbirdUser.isOnline) &&
-        Objects.equals(this.isShadowBlocked, sendbirdUser.isShadowBlocked) &&
-        Objects.equals(this.lastSeenAt, sendbirdUser.lastSeenAt) &&
-        Objects.equals(this.locale, sendbirdUser.locale) &&
-        equalsNullable(this.metadata, sendbirdUser.metadata) &&
-        equalsNullable(this.nickname, sendbirdUser.nickname) &&
-        equalsNullable(this.preferredLanguages, sendbirdUser.preferredLanguages) &&
-        Objects.equals(this.profileUrl, sendbirdUser.profileUrl) &&
-        Objects.equals(this.requireAuthForProfileImage, sendbirdUser.requireAuthForProfileImage) &&
-        Objects.equals(this.userId, sendbirdUser.userId) &&
-        equalsNullable(this.state, sendbirdUser.state) &&
-        Objects.equals(this.unreadChannelCount, sendbirdUser.unreadChannelCount) &&
-        Objects.equals(this.unreadMessageCount, sendbirdUser.unreadMessageCount) &&
-        Objects.equals(this.phoneNumber, sendbirdUser.phoneNumber) &&
-        Objects.equals(this.isCreated, sendbirdUser.isCreated);
+    SendBirdSendBirdUser sendBirdUser = (SendBirdSendBirdUser) o;
+    return Objects.equals(this.accessToken, sendBirdUser.accessToken) &&
+        Objects.equals(this.createdAt, sendBirdUser.createdAt) &&
+        equalsNullable(this.discoveryKeys, sendBirdUser.discoveryKeys) &&
+        Objects.equals(this.hasEverLoggedIn, sendBirdUser.hasEverLoggedIn) &&
+        Objects.equals(this.isActive, sendBirdUser.isActive) &&
+        Objects.equals(this.isHideMeFromFriends, sendBirdUser.isHideMeFromFriends) &&
+        Objects.equals(this.isOnline, sendBirdUser.isOnline) &&
+        Objects.equals(this.isShadowBlocked, sendBirdUser.isShadowBlocked) &&
+        Objects.equals(this.lastSeenAt, sendBirdUser.lastSeenAt) &&
+        Objects.equals(this.locale, sendBirdUser.locale) &&
+        equalsNullable(this.metadata, sendBirdUser.metadata) &&
+        equalsNullable(this.nickname, sendBirdUser.nickname) &&
+        equalsNullable(this.preferredLanguages, sendBirdUser.preferredLanguages) &&
+        Objects.equals(this.profileUrl, sendBirdUser.profileUrl) &&
+        Objects.equals(this.requireAuthForProfileImage, sendBirdUser.requireAuthForProfileImage) &&
+        Objects.equals(this.userId, sendBirdUser.userId) &&
+        equalsNullable(this.state, sendBirdUser.state) &&
+        Objects.equals(this.unreadChannelCount, sendBirdUser.unreadChannelCount) &&
+        Objects.equals(this.unreadMessageCount, sendBirdUser.unreadMessageCount) &&
+        Objects.equals(this.phoneNumber, sendBirdUser.phoneNumber) &&
+        Objects.equals(this.isCreated, sendBirdUser.isCreated);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -831,7 +831,7 @@ public class SendBirdSendbirdUser {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdSendbirdUser {\n");
+    sb.append("class SendBirdSendBirdUser {\n");
     sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    discoveryKeys: ").append(toIndentedString(discoveryKeys)).append("\n");

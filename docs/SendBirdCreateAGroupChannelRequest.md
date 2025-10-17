@@ -25,7 +25,7 @@
 |**operatorIds** | **List&lt;String&gt;** |  |  [optional] |
 |**strict** | **Boolean** |  |  [optional] |
 |**userIds** | **List&lt;String&gt;** |  |  [optional] |
-|**users** | [**List&lt;SendBirdSendbirdUser&gt;**](SendBirdSendbirdUser.md) |  |  |
+|**users** | [**List&lt;SendBirdSendBirdUser&gt;**](SendBirdSendBirdUser.md) |  |  |
 
 
 

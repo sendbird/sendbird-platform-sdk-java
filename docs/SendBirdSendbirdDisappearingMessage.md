@@ -1,6 +1,6 @@
 
 
-# SendBirdSendbirdDisappearingMessage
+# SendBirdSendBirdDisappearingMessage
 
 
 ## Properties

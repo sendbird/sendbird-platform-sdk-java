@@ -35,22 +35,22 @@ import org.sendbird.client.JSON;
  */
 @ApiModel(description = "Specifies the extended message payload which is used to send a message with a custom message type.")
 @JsonPropertyOrder({
-  SendBirdSendbirdExtendedMessagePayload.JSON_PROPERTY_CUSTOM_VIEW,
-  SendBirdSendbirdExtendedMessagePayload.JSON_PROPERTY_SUGGESTED_REPLIES
+  SendBirdSendBirdExtendedMessagePayload.JSON_PROPERTY_CUSTOM_VIEW,
+  SendBirdSendBirdExtendedMessagePayload.JSON_PROPERTY_SUGGESTED_REPLIES
 })
-@JsonTypeName("Sendbird.ExtendedMessagePayload")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
-public class SendBirdSendbirdExtendedMessagePayload {
+@JsonTypeName("SendBird.ExtendedMessagePayload")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+public class SendBirdSendBirdExtendedMessagePayload {
   public static final String JSON_PROPERTY_CUSTOM_VIEW = "custom_view";
   private Object customView;
 
   public static final String JSON_PROPERTY_SUGGESTED_REPLIES = "suggested_replies";
   private List<String> suggestedReplies = null;
 
-  public SendBirdSendbirdExtendedMessagePayload() { 
+  public SendBirdSendBirdExtendedMessagePayload() { 
   }
 
-  public SendBirdSendbirdExtendedMessagePayload customView(Object customView) {
+  public SendBirdSendBirdExtendedMessagePayload customView(Object customView) {
     this.customView = customView;
     return this;
   }
@@ -76,12 +76,12 @@ public class SendBirdSendbirdExtendedMessagePayload {
   }
 
 
-  public SendBirdSendbirdExtendedMessagePayload suggestedReplies(List<String> suggestedReplies) {
+  public SendBirdSendBirdExtendedMessagePayload suggestedReplies(List<String> suggestedReplies) {
     this.suggestedReplies = suggestedReplies;
     return this;
   }
 
-  public SendBirdSendbirdExtendedMessagePayload addSuggestedRepliesItem(String suggestedRepliesItem) {
+  public SendBirdSendBirdExtendedMessagePayload addSuggestedRepliesItem(String suggestedRepliesItem) {
     if (this.suggestedReplies == null) {
       this.suggestedReplies = new ArrayList<>();
     }
@@ -111,7 +111,7 @@ public class SendBirdSendbirdExtendedMessagePayload {
 
 
   /**
-   * Return true if this Sendbird.ExtendedMessagePayload object is equal to o.
+   * Return true if this SendBird.ExtendedMessagePayload object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -121,9 +121,9 @@ public class SendBirdSendbirdExtendedMessagePayload {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdSendbirdExtendedMessagePayload sendbirdExtendedMessagePayload = (SendBirdSendbirdExtendedMessagePayload) o;
-    return Objects.equals(this.customView, sendbirdExtendedMessagePayload.customView) &&
-        Objects.equals(this.suggestedReplies, sendbirdExtendedMessagePayload.suggestedReplies);
+    SendBirdSendBirdExtendedMessagePayload sendBirdExtendedMessagePayload = (SendBirdSendBirdExtendedMessagePayload) o;
+    return Objects.equals(this.customView, sendBirdExtendedMessagePayload.customView) &&
+        Objects.equals(this.suggestedReplies, sendBirdExtendedMessagePayload.suggestedReplies);
   }
 
   @Override
@@ -134,7 +134,7 @@ public class SendBirdSendbirdExtendedMessagePayload {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdSendbirdExtendedMessagePayload {\n");
+    sb.append("class SendBirdSendBirdExtendedMessagePayload {\n");
     sb.append("    customView: ").append(toIndentedString(customView)).append("\n");
     sb.append("    suggestedReplies: ").append(toIndentedString(suggestedReplies)).append("\n");
     sb.append("}");

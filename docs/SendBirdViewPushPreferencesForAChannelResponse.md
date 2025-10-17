@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**enable** | **Boolean** |  |  [optional] |
 |**pushSound** | **String** |  |  [optional] |
-|**pushTriggerOption** | **SendBirdSendbirdPushTriggerOption** |  |  [optional] |
+|**pushTriggerOption** | **SendBirdSendBirdPushTriggerOption** |  |  [optional] |
 
 
 

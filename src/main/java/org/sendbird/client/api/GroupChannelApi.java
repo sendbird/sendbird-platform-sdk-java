@@ -23,7 +23,7 @@ import org.openapitools.client.model.SendBirdListOperatorsResponse;
 import org.openapitools.client.model.SendBirdRegisterOperatorsToAGroupChannelRequest;
 import org.openapitools.client.model.SendBirdResetChatHistoryRequest;
 import org.openapitools.client.model.SendBirdResetChatHistoryResponse;
-import org.openapitools.client.model.SendBirdSendbirdGroupChannelDetail;
+import org.openapitools.client.model.SendBirdSendBirdGroupChannelDetail;
 import org.openapitools.client.model.SendBirdStartTypingIndicatorsRequest;
 import org.openapitools.client.model.SendBirdUpdateAGroupChannelRequest;
 
@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class GroupChannelApi {
   private ApiClient apiClient;
 
@@ -63,7 +63,7 @@ public class GroupChannelApi {
   }
 
 
-private ApiResponse<SendBirdSendbirdGroupChannelDetail> acceptAnInvitationWithHttpInfo(String channelUrl, String apiToken, SendBirdAcceptAnInvitationRequest sendBirdAcceptAnInvitationRequest) throws ApiException {
+private ApiResponse<SendBirdSendBirdGroupChannelDetail> acceptAnInvitationWithHttpInfo(String channelUrl, String apiToken, SendBirdAcceptAnInvitationRequest sendBirdAcceptAnInvitationRequest) throws ApiException {
     Object localVarPostBody = sendBirdAcceptAnInvitationRequest;
     
     // verify the required parameter 'channelUrl' is set
@@ -99,7 +99,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> acceptAnInvitationWithHt
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendbirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdSendbirdGroupChannelDetail>() {};
+    GenericType<SendBirdSendBirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdSendBirdGroupChannelDetail>() {};
 
     return apiClient.invokeAPI("GroupChannelApi.acceptAnInvitation", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -137,7 +137,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> acceptAnInvitationWithHt
 
     /**
      * Execute acceptAnInvitation request
-     * @return SendBirdSendbirdGroupChannelDetail
+     * @return SendBirdSendBirdGroupChannelDetail
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -147,13 +147,13 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> acceptAnInvitationWithHt
      
      */
     
-    public SendBirdSendbirdGroupChannelDetail execute() throws ApiException {
+    public SendBirdSendBirdGroupChannelDetail execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute acceptAnInvitation request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendbirdGroupChannelDetail&gt;
+     * @return ApiResponse&lt;SendBirdSendBirdGroupChannelDetail&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -162,7 +162,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> acceptAnInvitationWithHt
        </table>
 
      */
-    public ApiResponse<SendBirdSendbirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdSendBirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
       return acceptAnInvitationWithHttpInfo(channelUrl, apiToken, sendBirdAcceptAnInvitationRequest);
     }
   }
@@ -430,7 +430,7 @@ private ApiResponse<SendBirdCheckIfMemberResponse> checkIfMemberWithHttpInfo(Str
     return new APIcheckIfMemberRequest(channelUrl, userId);
   }
 
-private ApiResponse<SendBirdSendbirdGroupChannelDetail> createAGroupChannelWithHttpInfo(String apiToken, SendBirdCreateAGroupChannelRequest sendBirdCreateAGroupChannelRequest) throws ApiException {
+private ApiResponse<SendBirdSendBirdGroupChannelDetail> createAGroupChannelWithHttpInfo(String apiToken, SendBirdCreateAGroupChannelRequest sendBirdCreateAGroupChannelRequest) throws ApiException {
     Object localVarPostBody = sendBirdCreateAGroupChannelRequest;
     
     // create path and map variables
@@ -460,7 +460,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> createAGroupChannelWithH
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendbirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdSendbirdGroupChannelDetail>() {};
+    GenericType<SendBirdSendBirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdSendBirdGroupChannelDetail>() {};
 
     return apiClient.invokeAPI("GroupChannelApi.createAGroupChannel", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -496,7 +496,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> createAGroupChannelWithH
 
     /**
      * Execute createAGroupChannel request
-     * @return SendBirdSendbirdGroupChannelDetail
+     * @return SendBirdSendBirdGroupChannelDetail
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -506,13 +506,13 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> createAGroupChannelWithH
      
      */
     
-    public SendBirdSendbirdGroupChannelDetail execute() throws ApiException {
+    public SendBirdSendBirdGroupChannelDetail execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute createAGroupChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendbirdGroupChannelDetail&gt;
+     * @return ApiResponse&lt;SendBirdSendBirdGroupChannelDetail&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -521,7 +521,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> createAGroupChannelWithH
        </table>
 
      */
-    public ApiResponse<SendBirdSendbirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdSendBirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
       return createAGroupChannelWithHttpInfo(apiToken, sendBirdCreateAGroupChannelRequest);
     }
   }
@@ -1044,7 +1044,7 @@ private ApiResponse<SendBirdInviteAsMembersResponse> inviteAsMembersWithHttpInfo
     return new APIinviteAsMembersRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdSendbirdGroupChannelDetail> joinAChannelWithHttpInfo(String channelUrl, String apiToken, SendBirdJoinAChannelRequest sendBirdJoinAChannelRequest) throws ApiException {
+private ApiResponse<SendBirdSendBirdGroupChannelDetail> joinAChannelWithHttpInfo(String channelUrl, String apiToken, SendBirdJoinAChannelRequest sendBirdJoinAChannelRequest) throws ApiException {
     Object localVarPostBody = sendBirdJoinAChannelRequest;
     
     // verify the required parameter 'channelUrl' is set
@@ -1080,7 +1080,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> joinAChannelWithHttpInfo
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendbirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdSendbirdGroupChannelDetail>() {};
+    GenericType<SendBirdSendBirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdSendBirdGroupChannelDetail>() {};
 
     return apiClient.invokeAPI("GroupChannelApi.joinAChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1118,7 +1118,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> joinAChannelWithHttpInfo
 
     /**
      * Execute joinAChannel request
-     * @return SendBirdSendbirdGroupChannelDetail
+     * @return SendBirdSendBirdGroupChannelDetail
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1128,13 +1128,13 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> joinAChannelWithHttpInfo
      
      */
     
-    public SendBirdSendbirdGroupChannelDetail execute() throws ApiException {
+    public SendBirdSendBirdGroupChannelDetail execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute joinAChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendbirdGroupChannelDetail&gt;
+     * @return ApiResponse&lt;SendBirdSendBirdGroupChannelDetail&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1143,7 +1143,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> joinAChannelWithHttpInfo
        </table>
 
      */
-    public ApiResponse<SendBirdSendbirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdSendBirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
       return joinAChannelWithHttpInfo(channelUrl, apiToken, sendBirdJoinAChannelRequest);
     }
   }
@@ -2807,7 +2807,7 @@ private ApiResponse<Object> unhideAChannelWithHttpInfo(String channelUrl, String
     return new APIunhideAChannelRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdSendbirdGroupChannelDetail> updateAGroupChannelWithHttpInfo(String channelUrl, String apiToken, SendBirdUpdateAGroupChannelRequest sendBirdUpdateAGroupChannelRequest) throws ApiException {
+private ApiResponse<SendBirdSendBirdGroupChannelDetail> updateAGroupChannelWithHttpInfo(String channelUrl, String apiToken, SendBirdUpdateAGroupChannelRequest sendBirdUpdateAGroupChannelRequest) throws ApiException {
     Object localVarPostBody = sendBirdUpdateAGroupChannelRequest;
     
     // verify the required parameter 'channelUrl' is set
@@ -2843,7 +2843,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> updateAGroupChannelWithH
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendbirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdSendbirdGroupChannelDetail>() {};
+    GenericType<SendBirdSendBirdGroupChannelDetail> localVarReturnType = new GenericType<SendBirdSendBirdGroupChannelDetail>() {};
 
     return apiClient.invokeAPI("GroupChannelApi.updateAGroupChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -2881,7 +2881,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> updateAGroupChannelWithH
 
     /**
      * Execute updateAGroupChannel request
-     * @return SendBirdSendbirdGroupChannelDetail
+     * @return SendBirdSendBirdGroupChannelDetail
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2891,13 +2891,13 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> updateAGroupChannelWithH
      
      */
     
-    public SendBirdSendbirdGroupChannelDetail execute() throws ApiException {
+    public SendBirdSendBirdGroupChannelDetail execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updateAGroupChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendbirdGroupChannelDetail&gt;
+     * @return ApiResponse&lt;SendBirdSendBirdGroupChannelDetail&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -2906,7 +2906,7 @@ private ApiResponse<SendBirdSendbirdGroupChannelDetail> updateAGroupChannelWithH
        </table>
 
      */
-    public ApiResponse<SendBirdSendbirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdSendBirdGroupChannelDetail> executeWithHttpInfo() throws ApiException {
       return updateAGroupChannelWithHttpInfo(channelUrl, apiToken, sendBirdUpdateAGroupChannelRequest);
     }
   }

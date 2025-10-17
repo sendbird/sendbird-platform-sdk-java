@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   SendBirdCreateUserTokenResponse.JSON_PROPERTY_TOKEN
 })
 @JsonTypeName("createUserTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdCreateUserTokenResponse {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;

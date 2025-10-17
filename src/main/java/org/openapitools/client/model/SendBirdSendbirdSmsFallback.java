@@ -31,25 +31,25 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdSendbirdSmsFallback
+ * SendBirdSendBirdSmsFallback
  */
 @JsonPropertyOrder({
-  SendBirdSendbirdSmsFallback.JSON_PROPERTY_WAIT_SECONDS,
-  SendBirdSendbirdSmsFallback.JSON_PROPERTY_EXCLUDE_USER_IDS
+  SendBirdSendBirdSmsFallback.JSON_PROPERTY_WAIT_SECONDS,
+  SendBirdSendBirdSmsFallback.JSON_PROPERTY_EXCLUDE_USER_IDS
 })
-@JsonTypeName("Sendbird.SmsFallback")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
-public class SendBirdSendbirdSmsFallback {
+@JsonTypeName("SendBird.SmsFallback")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+public class SendBirdSendBirdSmsFallback {
   public static final String JSON_PROPERTY_WAIT_SECONDS = "wait_seconds";
   private Integer waitSeconds;
 
   public static final String JSON_PROPERTY_EXCLUDE_USER_IDS = "exclude_user_ids";
   private List<String> excludeUserIds = null;
 
-  public SendBirdSendbirdSmsFallback() { 
+  public SendBirdSendBirdSmsFallback() { 
   }
 
-  public SendBirdSendbirdSmsFallback waitSeconds(Integer waitSeconds) {
+  public SendBirdSendBirdSmsFallback waitSeconds(Integer waitSeconds) {
     this.waitSeconds = waitSeconds;
     return this;
   }
@@ -75,12 +75,12 @@ public class SendBirdSendbirdSmsFallback {
   }
 
 
-  public SendBirdSendbirdSmsFallback excludeUserIds(List<String> excludeUserIds) {
+  public SendBirdSendBirdSmsFallback excludeUserIds(List<String> excludeUserIds) {
     this.excludeUserIds = excludeUserIds;
     return this;
   }
 
-  public SendBirdSendbirdSmsFallback addExcludeUserIdsItem(String excludeUserIdsItem) {
+  public SendBirdSendBirdSmsFallback addExcludeUserIdsItem(String excludeUserIdsItem) {
     if (this.excludeUserIds == null) {
       this.excludeUserIds = new ArrayList<>();
     }
@@ -110,7 +110,7 @@ public class SendBirdSendbirdSmsFallback {
 
 
   /**
-   * Return true if this Sendbird.SmsFallback object is equal to o.
+   * Return true if this SendBird.SmsFallback object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -120,9 +120,9 @@ public class SendBirdSendbirdSmsFallback {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdSendbirdSmsFallback sendbirdSmsFallback = (SendBirdSendbirdSmsFallback) o;
-    return Objects.equals(this.waitSeconds, sendbirdSmsFallback.waitSeconds) &&
-        Objects.equals(this.excludeUserIds, sendbirdSmsFallback.excludeUserIds);
+    SendBirdSendBirdSmsFallback sendBirdSmsFallback = (SendBirdSendBirdSmsFallback) o;
+    return Objects.equals(this.waitSeconds, sendBirdSmsFallback.waitSeconds) &&
+        Objects.equals(this.excludeUserIds, sendBirdSmsFallback.excludeUserIds);
   }
 
   @Override
@@ -133,7 +133,7 @@ public class SendBirdSendbirdSmsFallback {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdSendbirdSmsFallback {\n");
+    sb.append("class SendBirdSendBirdSmsFallback {\n");
     sb.append("    waitSeconds: ").append(toIndentedString(waitSeconds)).append("\n");
     sb.append("    excludeUserIds: ").append(toIndentedString(excludeUserIds)).append("\n");
     sb.append("}");

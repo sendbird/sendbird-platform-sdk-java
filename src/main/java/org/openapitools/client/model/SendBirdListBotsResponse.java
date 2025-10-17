@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   SendBirdListBotsResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("listBotsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdListBotsResponse {
   public static final String JSON_PROPERTY_BOTS = "bots";
   private List<SendBirdListBotsResponseBotsInner> bots = null;

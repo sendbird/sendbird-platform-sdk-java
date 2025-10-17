@@ -1,6 +1,6 @@
 
 
-# SendBirdSendbirdThumbnail
+# SendBirdSendBirdThumbnail
 
 
 ## Properties

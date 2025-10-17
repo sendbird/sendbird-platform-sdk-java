@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdBasicUserInfo;
+import org.openapitools.client.model.SendBirdSendBirdBasicUserInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   SendBirdListRegistrationOrDeviceTokensResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("listRegistrationOrDeviceTokensResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdListRegistrationOrDeviceTokensResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private List<String> token = null;
@@ -53,7 +53,7 @@ public class SendBirdListRegistrationOrDeviceTokensResponse {
   private String type;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private SendBirdSendbirdBasicUserInfo user;
+  private SendBirdSendBirdBasicUserInfo user;
 
   public SendBirdListRegistrationOrDeviceTokensResponse() { 
   }
@@ -152,7 +152,7 @@ public class SendBirdListRegistrationOrDeviceTokensResponse {
   }
 
 
-  public SendBirdListRegistrationOrDeviceTokensResponse user(SendBirdSendbirdBasicUserInfo user) {
+  public SendBirdListRegistrationOrDeviceTokensResponse user(SendBirdSendBirdBasicUserInfo user) {
     this.user = user;
     return this;
   }
@@ -166,14 +166,14 @@ public class SendBirdListRegistrationOrDeviceTokensResponse {
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdSendbirdBasicUserInfo getUser() {
+  public SendBirdSendBirdBasicUserInfo getUser() {
     return user;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendBirdSendbirdBasicUserInfo user) {
+  public void setUser(SendBirdSendBirdBasicUserInfo user) {
     this.user = user;
   }
 

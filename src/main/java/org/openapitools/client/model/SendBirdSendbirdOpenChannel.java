@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdBasicUserInfo;
+import org.openapitools.client.model.SendBirdSendBirdBasicUserInfo;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -36,26 +36,26 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdSendbirdOpenChannel
+ * SendBirdSendBirdOpenChannel
  */
 @JsonPropertyOrder({
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_CHANNEL_URL,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_COVER_URL,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_CREATED_AT,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_CUSTOM_TYPE,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_DATA,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_FREEZE,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_IS_DYNAMIC_PARTITIONED,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_IS_EPHEMERAL,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_NAME,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_OPERATORS,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_PARTICIPANT_COUNT,
-  SendBirdSendbirdOpenChannel.JSON_PROPERTY_METADATA
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_CHANNEL_URL,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_COVER_URL,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_CREATED_AT,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_CUSTOM_TYPE,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_DATA,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_FREEZE,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_IS_DYNAMIC_PARTITIONED,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_IS_EPHEMERAL,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_NAME,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_OPERATORS,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_PARTICIPANT_COUNT,
+  SendBirdSendBirdOpenChannel.JSON_PROPERTY_METADATA
 })
-@JsonTypeName("Sendbird.OpenChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
-public class SendBirdSendbirdOpenChannel {
+@JsonTypeName("SendBird.OpenChannel")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+public class SendBirdSendBirdOpenChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
@@ -87,7 +87,7 @@ public class SendBirdSendbirdOpenChannel {
   private String name;
 
   public static final String JSON_PROPERTY_OPERATORS = "operators";
-  private List<SendBirdSendbirdBasicUserInfo> operators = null;
+  private List<SendBirdSendBirdBasicUserInfo> operators = null;
 
   public static final String JSON_PROPERTY_PARTICIPANT_COUNT = "participant_count";
   private Integer participantCount;
@@ -95,10 +95,10 @@ public class SendBirdSendbirdOpenChannel {
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private JsonNullable<Object> metadata = JsonNullable.<Object>undefined();
 
-  public SendBirdSendbirdOpenChannel() { 
+  public SendBirdSendBirdOpenChannel() { 
   }
 
-  public SendBirdSendbirdOpenChannel channelUrl(String channelUrl) {
+  public SendBirdSendBirdOpenChannel channelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
     return this;
   }
@@ -124,7 +124,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel coverUrl(String coverUrl) {
+  public SendBirdSendBirdOpenChannel coverUrl(String coverUrl) {
     this.coverUrl = coverUrl;
     return this;
   }
@@ -150,7 +150,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel createdAt(Long createdAt) {
+  public SendBirdSendBirdOpenChannel createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -176,7 +176,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel customType(String customType) {
+  public SendBirdSendBirdOpenChannel customType(String customType) {
     this.customType = customType;
     return this;
   }
@@ -202,7 +202,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel data(String data) {
+  public SendBirdSendBirdOpenChannel data(String data) {
     this.data = data;
     return this;
   }
@@ -228,7 +228,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel freeze(Boolean freeze) {
+  public SendBirdSendBirdOpenChannel freeze(Boolean freeze) {
     this.freeze = freeze;
     return this;
   }
@@ -254,7 +254,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel isDynamicPartitioned(Boolean isDynamicPartitioned) {
+  public SendBirdSendBirdOpenChannel isDynamicPartitioned(Boolean isDynamicPartitioned) {
     this.isDynamicPartitioned = isDynamicPartitioned;
     return this;
   }
@@ -280,7 +280,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel isEphemeral(Boolean isEphemeral) {
+  public SendBirdSendBirdOpenChannel isEphemeral(Boolean isEphemeral) {
     this.isEphemeral = isEphemeral;
     return this;
   }
@@ -306,7 +306,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel maxLengthMessage(Integer maxLengthMessage) {
+  public SendBirdSendBirdOpenChannel maxLengthMessage(Integer maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
     return this;
   }
@@ -332,7 +332,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel name(String name) {
+  public SendBirdSendBirdOpenChannel name(String name) {
     this.name = name;
     return this;
   }
@@ -358,12 +358,12 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel operators(List<SendBirdSendbirdBasicUserInfo> operators) {
+  public SendBirdSendBirdOpenChannel operators(List<SendBirdSendBirdBasicUserInfo> operators) {
     this.operators = operators;
     return this;
   }
 
-  public SendBirdSendbirdOpenChannel addOperatorsItem(SendBirdSendbirdBasicUserInfo operatorsItem) {
+  public SendBirdSendBirdOpenChannel addOperatorsItem(SendBirdSendBirdBasicUserInfo operatorsItem) {
     if (this.operators == null) {
       this.operators = new ArrayList<>();
     }
@@ -380,19 +380,19 @@ public class SendBirdSendbirdOpenChannel {
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdBasicUserInfo> getOperators() {
+  public List<SendBirdSendBirdBasicUserInfo> getOperators() {
     return operators;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOperators(List<SendBirdSendbirdBasicUserInfo> operators) {
+  public void setOperators(List<SendBirdSendBirdBasicUserInfo> operators) {
     this.operators = operators;
   }
 
 
-  public SendBirdSendbirdOpenChannel participantCount(Integer participantCount) {
+  public SendBirdSendBirdOpenChannel participantCount(Integer participantCount) {
     this.participantCount = participantCount;
     return this;
   }
@@ -418,7 +418,7 @@ public class SendBirdSendbirdOpenChannel {
   }
 
 
-  public SendBirdSendbirdOpenChannel metadata(Object metadata) {
+  public SendBirdSendBirdOpenChannel metadata(Object metadata) {
     this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
@@ -453,7 +453,7 @@ public class SendBirdSendbirdOpenChannel {
 
 
   /**
-   * Return true if this Sendbird.OpenChannel object is equal to o.
+   * Return true if this SendBird.OpenChannel object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -463,20 +463,20 @@ public class SendBirdSendbirdOpenChannel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdSendbirdOpenChannel sendbirdOpenChannel = (SendBirdSendbirdOpenChannel) o;
-    return Objects.equals(this.channelUrl, sendbirdOpenChannel.channelUrl) &&
-        Objects.equals(this.coverUrl, sendbirdOpenChannel.coverUrl) &&
-        Objects.equals(this.createdAt, sendbirdOpenChannel.createdAt) &&
-        Objects.equals(this.customType, sendbirdOpenChannel.customType) &&
-        Objects.equals(this.data, sendbirdOpenChannel.data) &&
-        Objects.equals(this.freeze, sendbirdOpenChannel.freeze) &&
-        Objects.equals(this.isDynamicPartitioned, sendbirdOpenChannel.isDynamicPartitioned) &&
-        Objects.equals(this.isEphemeral, sendbirdOpenChannel.isEphemeral) &&
-        Objects.equals(this.maxLengthMessage, sendbirdOpenChannel.maxLengthMessage) &&
-        Objects.equals(this.name, sendbirdOpenChannel.name) &&
-        Objects.equals(this.operators, sendbirdOpenChannel.operators) &&
-        Objects.equals(this.participantCount, sendbirdOpenChannel.participantCount) &&
-        equalsNullable(this.metadata, sendbirdOpenChannel.metadata);
+    SendBirdSendBirdOpenChannel sendBirdOpenChannel = (SendBirdSendBirdOpenChannel) o;
+    return Objects.equals(this.channelUrl, sendBirdOpenChannel.channelUrl) &&
+        Objects.equals(this.coverUrl, sendBirdOpenChannel.coverUrl) &&
+        Objects.equals(this.createdAt, sendBirdOpenChannel.createdAt) &&
+        Objects.equals(this.customType, sendBirdOpenChannel.customType) &&
+        Objects.equals(this.data, sendBirdOpenChannel.data) &&
+        Objects.equals(this.freeze, sendBirdOpenChannel.freeze) &&
+        Objects.equals(this.isDynamicPartitioned, sendBirdOpenChannel.isDynamicPartitioned) &&
+        Objects.equals(this.isEphemeral, sendBirdOpenChannel.isEphemeral) &&
+        Objects.equals(this.maxLengthMessage, sendBirdOpenChannel.maxLengthMessage) &&
+        Objects.equals(this.name, sendBirdOpenChannel.name) &&
+        Objects.equals(this.operators, sendBirdOpenChannel.operators) &&
+        Objects.equals(this.participantCount, sendBirdOpenChannel.participantCount) &&
+        equalsNullable(this.metadata, sendBirdOpenChannel.metadata);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -498,7 +498,7 @@ public class SendBirdSendbirdOpenChannel {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdSendbirdOpenChannel {\n");
+    sb.append("class SendBirdSendBirdOpenChannel {\n");
     sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
     sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

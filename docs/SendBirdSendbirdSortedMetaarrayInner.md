@@ -1,6 +1,6 @@
 
 
-# SendBirdSendbirdSortedMetaarrayInner
+# SendBirdSendBirdSortedMetaarrayInner
 
 
 ## Properties

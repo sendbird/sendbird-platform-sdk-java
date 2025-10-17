@@ -1,26 +1,26 @@
 
 
-# SendBirdSendbirdGroupChannelLastMessage
+# SendBirdSendBirdGroupChannelLastMessage
 
 ## oneOf schemas
-* [SendBirdSendbirdMessageResponse](SendBirdSendbirdMessageResponse.md)
+* [SendBirdSendBirdMessageResponse](SendBirdSendBirdMessageResponse.md)
 
 ## Example
 ```java
 // Import classes:
-import org.openapitools.client.model.SendBirdSendbirdGroupChannelLastMessage;
-import org.openapitools.client.model.SendBirdSendbirdMessageResponse;
+import org.openapitools.client.model.SendBirdSendBirdGroupChannelLastMessage;
+import org.openapitools.client.model.SendBirdSendBirdMessageResponse;
 
 public class Example {
     public static void main(String[] args) {
-        SendBirdSendbirdGroupChannelLastMessage exampleSendBirdSendbirdGroupChannelLastMessage = new SendBirdSendbirdGroupChannelLastMessage();
+        SendBirdSendBirdGroupChannelLastMessage exampleSendBirdSendBirdGroupChannelLastMessage = new SendBirdSendBirdGroupChannelLastMessage();
 
-        // create a new SendBirdSendbirdMessageResponse
-        SendBirdSendbirdMessageResponse exampleSendBirdSendbirdMessageResponse = new SendBirdSendbirdMessageResponse();
-        // set SendBirdSendbirdGroupChannelLastMessage to SendBirdSendbirdMessageResponse
-        exampleSendBirdSendbirdGroupChannelLastMessage.setActualInstance(exampleSendBirdSendbirdMessageResponse);
-        // to get back the SendBirdSendbirdMessageResponse set earlier
-        SendBirdSendbirdMessageResponse testSendBirdSendbirdMessageResponse = (SendBirdSendbirdMessageResponse) exampleSendBirdSendbirdGroupChannelLastMessage.getActualInstance();
+        // create a new SendBirdSendBirdMessageResponse
+        SendBirdSendBirdMessageResponse exampleSendBirdSendBirdMessageResponse = new SendBirdSendBirdMessageResponse();
+        // set SendBirdSendBirdGroupChannelLastMessage to SendBirdSendBirdMessageResponse
+        exampleSendBirdSendBirdGroupChannelLastMessage.setActualInstance(exampleSendBirdSendBirdMessageResponse);
+        // to get back the SendBirdSendBirdMessageResponse set earlier
+        SendBirdSendBirdMessageResponse testSendBirdSendBirdMessageResponse = (SendBirdSendBirdMessageResponse) exampleSendBirdSendBirdGroupChannelLastMessage.getActualInstance();
     }
 }
 ```

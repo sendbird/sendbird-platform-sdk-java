@@ -33,21 +33,21 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdSendbirdBasicUserInfo
+ * SendBirdSendBirdBasicUserInfo
  */
 @JsonPropertyOrder({
-  SendBirdSendbirdBasicUserInfo.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
-  SendBirdSendbirdBasicUserInfo.JSON_PROPERTY_IS_ACTIVE,
-  SendBirdSendbirdBasicUserInfo.JSON_PROPERTY_IS_BLOCKED_BY_ME,
-  SendBirdSendbirdBasicUserInfo.JSON_PROPERTY_ROLE,
-  SendBirdSendbirdBasicUserInfo.JSON_PROPERTY_NICKNAME,
-  SendBirdSendbirdBasicUserInfo.JSON_PROPERTY_USER_ID,
-  SendBirdSendbirdBasicUserInfo.JSON_PROPERTY_PROFILE_URL,
-  SendBirdSendbirdBasicUserInfo.JSON_PROPERTY_METADATA
+  SendBirdSendBirdBasicUserInfo.JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE,
+  SendBirdSendBirdBasicUserInfo.JSON_PROPERTY_IS_ACTIVE,
+  SendBirdSendBirdBasicUserInfo.JSON_PROPERTY_IS_BLOCKED_BY_ME,
+  SendBirdSendBirdBasicUserInfo.JSON_PROPERTY_ROLE,
+  SendBirdSendBirdBasicUserInfo.JSON_PROPERTY_NICKNAME,
+  SendBirdSendBirdBasicUserInfo.JSON_PROPERTY_USER_ID,
+  SendBirdSendBirdBasicUserInfo.JSON_PROPERTY_PROFILE_URL,
+  SendBirdSendBirdBasicUserInfo.JSON_PROPERTY_METADATA
 })
-@JsonTypeName("Sendbird.BasicUserInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
-public class SendBirdSendbirdBasicUserInfo {
+@JsonTypeName("SendBird.BasicUserInfo")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+public class SendBirdSendBirdBasicUserInfo {
   public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;
 
@@ -109,10 +109,10 @@ public class SendBirdSendbirdBasicUserInfo {
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private JsonNullable<Object> metadata = JsonNullable.<Object>undefined();
 
-  public SendBirdSendbirdBasicUserInfo() { 
+  public SendBirdSendBirdBasicUserInfo() { 
   }
 
-  public SendBirdSendbirdBasicUserInfo requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
+  public SendBirdSendBirdBasicUserInfo requireAuthForProfileImage(Boolean requireAuthForProfileImage) {
     this.requireAuthForProfileImage = requireAuthForProfileImage;
     return this;
   }
@@ -138,7 +138,7 @@ public class SendBirdSendbirdBasicUserInfo {
   }
 
 
-  public SendBirdSendbirdBasicUserInfo isActive(Boolean isActive) {
+  public SendBirdSendBirdBasicUserInfo isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
   }
@@ -164,7 +164,7 @@ public class SendBirdSendbirdBasicUserInfo {
   }
 
 
-  public SendBirdSendbirdBasicUserInfo isBlockedByMe(Boolean isBlockedByMe) {
+  public SendBirdSendBirdBasicUserInfo isBlockedByMe(Boolean isBlockedByMe) {
     this.isBlockedByMe = isBlockedByMe;
     return this;
   }
@@ -190,7 +190,7 @@ public class SendBirdSendbirdBasicUserInfo {
   }
 
 
-  public SendBirdSendbirdBasicUserInfo role(RoleEnum role) {
+  public SendBirdSendBirdBasicUserInfo role(RoleEnum role) {
     this.role = role;
     return this;
   }
@@ -216,7 +216,7 @@ public class SendBirdSendbirdBasicUserInfo {
   }
 
 
-  public SendBirdSendbirdBasicUserInfo nickname(String nickname) {
+  public SendBirdSendBirdBasicUserInfo nickname(String nickname) {
     this.nickname = JsonNullable.<String>of(nickname);
     return this;
   }
@@ -250,7 +250,7 @@ public class SendBirdSendbirdBasicUserInfo {
   }
 
 
-  public SendBirdSendbirdBasicUserInfo userId(String userId) {
+  public SendBirdSendBirdBasicUserInfo userId(String userId) {
     this.userId = userId;
     return this;
   }
@@ -276,7 +276,7 @@ public class SendBirdSendbirdBasicUserInfo {
   }
 
 
-  public SendBirdSendbirdBasicUserInfo profileUrl(String profileUrl) {
+  public SendBirdSendBirdBasicUserInfo profileUrl(String profileUrl) {
     this.profileUrl = profileUrl;
     return this;
   }
@@ -302,7 +302,7 @@ public class SendBirdSendbirdBasicUserInfo {
   }
 
 
-  public SendBirdSendbirdBasicUserInfo metadata(Object metadata) {
+  public SendBirdSendBirdBasicUserInfo metadata(Object metadata) {
     this.metadata = JsonNullable.<Object>of(metadata);
     return this;
   }
@@ -337,7 +337,7 @@ public class SendBirdSendbirdBasicUserInfo {
 
 
   /**
-   * Return true if this Sendbird.BasicUserInfo object is equal to o.
+   * Return true if this SendBird.BasicUserInfo object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -347,15 +347,15 @@ public class SendBirdSendbirdBasicUserInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdSendbirdBasicUserInfo sendbirdBasicUserInfo = (SendBirdSendbirdBasicUserInfo) o;
-    return Objects.equals(this.requireAuthForProfileImage, sendbirdBasicUserInfo.requireAuthForProfileImage) &&
-        Objects.equals(this.isActive, sendbirdBasicUserInfo.isActive) &&
-        Objects.equals(this.isBlockedByMe, sendbirdBasicUserInfo.isBlockedByMe) &&
-        Objects.equals(this.role, sendbirdBasicUserInfo.role) &&
-        equalsNullable(this.nickname, sendbirdBasicUserInfo.nickname) &&
-        Objects.equals(this.userId, sendbirdBasicUserInfo.userId) &&
-        Objects.equals(this.profileUrl, sendbirdBasicUserInfo.profileUrl) &&
-        equalsNullable(this.metadata, sendbirdBasicUserInfo.metadata);
+    SendBirdSendBirdBasicUserInfo sendBirdBasicUserInfo = (SendBirdSendBirdBasicUserInfo) o;
+    return Objects.equals(this.requireAuthForProfileImage, sendBirdBasicUserInfo.requireAuthForProfileImage) &&
+        Objects.equals(this.isActive, sendBirdBasicUserInfo.isActive) &&
+        Objects.equals(this.isBlockedByMe, sendBirdBasicUserInfo.isBlockedByMe) &&
+        Objects.equals(this.role, sendBirdBasicUserInfo.role) &&
+        equalsNullable(this.nickname, sendBirdBasicUserInfo.nickname) &&
+        Objects.equals(this.userId, sendBirdBasicUserInfo.userId) &&
+        Objects.equals(this.profileUrl, sendBirdBasicUserInfo.profileUrl) &&
+        equalsNullable(this.metadata, sendBirdBasicUserInfo.metadata);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -377,7 +377,7 @@ public class SendBirdSendbirdBasicUserInfo {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdSendbirdBasicUserInfo {\n");
+    sb.append("class SendBirdSendBirdBasicUserInfo {\n");
     sb.append("    requireAuthForProfileImage: ").append(toIndentedString(requireAuthForProfileImage)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    isBlockedByMe: ").append(toIndentedString(isBlockedByMe)).append("\n");

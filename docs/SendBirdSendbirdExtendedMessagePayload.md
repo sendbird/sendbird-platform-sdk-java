@@ -1,6 +1,6 @@
 
 
-# SendBirdSendbirdExtendedMessagePayload
+# SendBirdSendBirdExtendedMessagePayload
 
 Specifies the extended message payload which is used to send a message with a custom message type.
 

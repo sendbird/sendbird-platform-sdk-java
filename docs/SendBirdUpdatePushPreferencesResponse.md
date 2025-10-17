@@ -14,7 +14,7 @@
 |**endMin** | **Integer** |  |  [optional] |
 |**pushBlockedBotIds** | **List&lt;String&gt;** |  |  [optional] |
 |**pushSound** | **String** |  |  [optional] |
-|**pushTriggerOption** | **SendBirdSendbirdPushTriggerOption** |  |  [optional] |
+|**pushTriggerOption** | **SendBirdSendBirdPushTriggerOption** |  |  [optional] |
 |**snoozeEnabled** | **Boolean** |  |  [optional] |
 |**snoozeEndTs** | **Long** |  |  [optional] |
 |**snoozeStartTs** | **Long** |  |  [optional] |

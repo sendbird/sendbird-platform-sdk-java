@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdUser;
+import org.openapitools.client.model.SendBirdSendBirdUser;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -61,7 +61,7 @@ import org.sendbird.client.JSON;
   SendBirdCreateAGroupChannelRequest.JSON_PROPERTY_USERS
 })
 @JsonTypeName("createAGroupChannel_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdCreateAGroupChannelRequest {
   public static final String JSON_PROPERTY_ACCESS_CODE = "access_code";
   private JsonNullable<String> accessCode = JsonNullable.<String>undefined();
@@ -118,7 +118,7 @@ public class SendBirdCreateAGroupChannelRequest {
   private List<String> userIds = null;
 
   public static final String JSON_PROPERTY_USERS = "users";
-  private List<SendBirdSendbirdUser> users = new ArrayList<>();
+  private List<SendBirdSendBirdUser> users = new ArrayList<>();
 
   public SendBirdCreateAGroupChannelRequest() { 
   }
@@ -623,12 +623,12 @@ public class SendBirdCreateAGroupChannelRequest {
   }
 
 
-  public SendBirdCreateAGroupChannelRequest users(List<SendBirdSendbirdUser> users) {
+  public SendBirdCreateAGroupChannelRequest users(List<SendBirdSendBirdUser> users) {
     this.users = users;
     return this;
   }
 
-  public SendBirdCreateAGroupChannelRequest addUsersItem(SendBirdSendbirdUser usersItem) {
+  public SendBirdCreateAGroupChannelRequest addUsersItem(SendBirdSendBirdUser usersItem) {
     this.users.add(usersItem);
     return this;
   }
@@ -642,14 +642,14 @@ public class SendBirdCreateAGroupChannelRequest {
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<SendBirdSendbirdUser> getUsers() {
+  public List<SendBirdSendBirdUser> getUsers() {
     return users;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUsers(List<SendBirdSendbirdUser> users) {
+  public void setUsers(List<SendBirdSendBirdUser> users) {
     this.users = users;
   }
 

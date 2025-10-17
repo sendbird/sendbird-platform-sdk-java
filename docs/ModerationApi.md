@@ -98,7 +98,7 @@ No authorization required
 
 ## freezeAGroupChannel
 
-> SendBirdSendbirdGroupChannelDetail freezeAGroupChannel(channelUrl).apiToken(apiToken).sendBirdFreezeAGroupChannelRequest(sendBirdFreezeAGroupChannelRequest).execute();
+> SendBirdSendBirdGroupChannelDetail freezeAGroupChannel(channelUrl).apiToken(apiToken).sendBirdFreezeAGroupChannelRequest(sendBirdFreezeAGroupChannelRequest).execute();
 
 Freeze a group channel
 
@@ -131,7 +131,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         SendBirdFreezeAGroupChannelRequest sendBirdFreezeAGroupChannelRequest = new SendBirdFreezeAGroupChannelRequest(); // SendBirdFreezeAGroupChannelRequest | 
         try {
-            SendBirdSendbirdGroupChannelDetail result = api.freezeAGroupChannel(channelUrl)
+            SendBirdSendBirdGroupChannelDetail result = api.freezeAGroupChannel(channelUrl)
                 .apiToken(apiToken)
                 .sendBirdFreezeAGroupChannelRequest(sendBirdFreezeAGroupChannelRequest)
                 .execute();
@@ -158,7 +158,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdGroupChannelDetail**](SendBirdSendbirdGroupChannelDetail.md)
+[**SendBirdSendBirdGroupChannelDetail**](SendBirdSendBirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ No authorization required
 
 ## freezeAnOpenChannel
 
-> SendBirdSendbirdOpenChannel freezeAnOpenChannel(channelUrl).apiToken(apiToken).sendBirdFreezeAnOpenChannelRequest(sendBirdFreezeAnOpenChannelRequest).execute();
+> SendBirdSendBirdOpenChannel freezeAnOpenChannel(channelUrl).apiToken(apiToken).sendBirdFreezeAnOpenChannelRequest(sendBirdFreezeAnOpenChannelRequest).execute();
 
 Freeze an open channel
 
@@ -210,7 +210,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         SendBirdFreezeAnOpenChannelRequest sendBirdFreezeAnOpenChannelRequest = new SendBirdFreezeAnOpenChannelRequest(); // SendBirdFreezeAnOpenChannelRequest | 
         try {
-            SendBirdSendbirdOpenChannel result = api.freezeAnOpenChannel(channelUrl)
+            SendBirdSendBirdOpenChannel result = api.freezeAnOpenChannel(channelUrl)
                 .apiToken(apiToken)
                 .sendBirdFreezeAnOpenChannelRequest(sendBirdFreezeAnOpenChannelRequest)
                 .execute();
@@ -237,7 +237,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdOpenChannel**](SendBirdSendbirdOpenChannel.md)
+[**SendBirdSendBirdOpenChannel**](SendBirdSendBirdOpenChannel.md)
 
 ### Authorization
 

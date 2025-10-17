@@ -202,7 +202,7 @@ No authorization required
 
 ## createAUser
 
-> SendBirdSendbirdUser createAUser().apiToken(apiToken).sendBirdCreateAUserRequest(sendBirdCreateAUserRequest).execute();
+> SendBirdSendBirdUser createAUser().apiToken(apiToken).sendBirdCreateAUserRequest(sendBirdCreateAUserRequest).execute();
 
 Create a user
 
@@ -231,7 +231,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         SendBirdCreateAUserRequest sendBirdCreateAUserRequest = new SendBirdCreateAUserRequest(); // SendBirdCreateAUserRequest | 
         try {
-            SendBirdSendbirdUser result = api.createAUser()
+            SendBirdSendBirdUser result = api.createAUser()
                 .apiToken(apiToken)
                 .sendBirdCreateAUserRequest(sendBirdCreateAUserRequest)
                 .execute();
@@ -257,7 +257,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdUser**](SendBirdSendbirdUser.md)
+[**SendBirdSendBirdUser**](SendBirdSendBirdUser.md)
 
 ### Authorization
 
@@ -1350,7 +1350,7 @@ No authorization required
 
 ## updateAUser
 
-> SendBirdSendbirdUser updateAUser(userId).apiToken(apiToken).sendBirdUpdateAUserRequest(sendBirdUpdateAUserRequest).execute();
+> SendBirdSendBirdUser updateAUser(userId).apiToken(apiToken).sendBirdUpdateAUserRequest(sendBirdUpdateAUserRequest).execute();
 
 Update a user
 
@@ -1385,7 +1385,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         SendBirdUpdateAUserRequest sendBirdUpdateAUserRequest = new SendBirdUpdateAUserRequest(); // SendBirdUpdateAUserRequest | 
         try {
-            SendBirdSendbirdUser result = api.updateAUser(userId)
+            SendBirdSendBirdUser result = api.updateAUser(userId)
                 .apiToken(apiToken)
                 .sendBirdUpdateAUserRequest(sendBirdUpdateAUserRequest)
                 .execute();
@@ -1412,7 +1412,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdUser**](SendBirdSendbirdUser.md)
+[**SendBirdSendBirdUser**](SendBirdSendBirdUser.md)
 
 ### Authorization
 
@@ -1747,7 +1747,7 @@ No authorization required
 
 ## viewAUser
 
-> SendBirdSendbirdUser viewAUser(userId).includeUnreadCount(includeUnreadCount).customTypes(customTypes).superMode(superMode).apiToken(apiToken).execute();
+> SendBirdSendBirdUser viewAUser(userId).includeUnreadCount(includeUnreadCount).customTypes(customTypes).superMode(superMode).apiToken(apiToken).execute();
 
 View a user
 
@@ -1783,7 +1783,7 @@ public class Example {
         String superMode = "all"; // String | Restricts the search scope to retrieve only Supergroup or non-Supergroup channels. Acceptable values are `all`, `super`, and `nonsuper`. This parameter should be specified in conjunction with `include_unread_count` above. (Default: `all`)
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdSendbirdUser result = api.viewAUser(userId)
+            SendBirdSendBirdUser result = api.viewAUser(userId)
                 .includeUnreadCount(includeUnreadCount)
                 .customTypes(customTypes)
                 .superMode(superMode)
@@ -1814,7 +1814,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdUser**](SendBirdSendbirdUser.md)
+[**SendBirdSendBirdUser**](SendBirdSendBirdUser.md)
 
 ### Authorization
 

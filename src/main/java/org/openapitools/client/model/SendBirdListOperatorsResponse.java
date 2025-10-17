@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdBasicUserInfo;
+import org.openapitools.client.model.SendBirdSendBirdBasicUserInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,13 +39,13 @@ import org.sendbird.client.JSON;
   SendBirdListOperatorsResponse.JSON_PROPERTY_OPERATORS
 })
 @JsonTypeName("listOperatorsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdListOperatorsResponse {
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
 
   public static final String JSON_PROPERTY_OPERATORS = "operators";
-  private List<SendBirdSendbirdBasicUserInfo> operators = null;
+  private List<SendBirdSendBirdBasicUserInfo> operators = null;
 
   public SendBirdListOperatorsResponse() { 
   }
@@ -76,12 +76,12 @@ public class SendBirdListOperatorsResponse {
   }
 
 
-  public SendBirdListOperatorsResponse operators(List<SendBirdSendbirdBasicUserInfo> operators) {
+  public SendBirdListOperatorsResponse operators(List<SendBirdSendBirdBasicUserInfo> operators) {
     this.operators = operators;
     return this;
   }
 
-  public SendBirdListOperatorsResponse addOperatorsItem(SendBirdSendbirdBasicUserInfo operatorsItem) {
+  public SendBirdListOperatorsResponse addOperatorsItem(SendBirdSendBirdBasicUserInfo operatorsItem) {
     if (this.operators == null) {
       this.operators = new ArrayList<>();
     }
@@ -98,14 +98,14 @@ public class SendBirdListOperatorsResponse {
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdBasicUserInfo> getOperators() {
+  public List<SendBirdSendBirdBasicUserInfo> getOperators() {
     return operators;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OPERATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOperators(List<SendBirdSendbirdBasicUserInfo> operators) {
+  public void setOperators(List<SendBirdSendBirdBasicUserInfo> operators) {
     this.operators = operators;
   }
 

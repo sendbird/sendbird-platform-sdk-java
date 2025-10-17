@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.client.model.SendBirdSendbirdMessageResponse;
+import org.openapitools.client.model.SendBirdSendBirdMessageResponse;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +36,15 @@ import org.sendbird.client.JSON;
   SendBirdSendABotMessageResponse.JSON_PROPERTY_MESSAGE
 })
 @JsonTypeName("sendABotMessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdSendABotMessageResponse {
   public static final String JSON_PROPERTY_MESSAGE = "message";
-  private SendBirdSendbirdMessageResponse message;
+  private SendBirdSendBirdMessageResponse message;
 
   public SendBirdSendABotMessageResponse() { 
   }
 
-  public SendBirdSendABotMessageResponse message(SendBirdSendbirdMessageResponse message) {
+  public SendBirdSendABotMessageResponse message(SendBirdSendBirdMessageResponse message) {
     this.message = message;
     return this;
   }
@@ -58,14 +58,14 @@ public class SendBirdSendABotMessageResponse {
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdSendbirdMessageResponse getMessage() {
+  public SendBirdSendBirdMessageResponse getMessage() {
     return message;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessage(SendBirdSendbirdMessageResponse message) {
+  public void setMessage(SendBirdSendBirdMessageResponse message) {
     this.message = message;
   }
 

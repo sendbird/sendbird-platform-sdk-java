@@ -5405,17 +5405,17 @@ paths:
       x-accepts: application/json
 components:
   schemas:
-    Sendbird.SortedMetaarray:
+    SendBird.SortedMetaarray:
       items:
-        $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+        $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
       type: array
-    Sendbird.PushTriggerOption:
+    SendBird.PushTriggerOption:
       enum:
       - all
       - mention_only
       - "off"
       type: string
-    Sendbird.Thumbnail:
+    SendBird.Thumbnail:
       example:
         real_width: 1
         width: 1
@@ -5437,7 +5437,7 @@ components:
         width:
           type: integer
       type: object
-    Sendbird.File:
+    SendBird.File:
       example:
         file_name: file_name
         file_type: file_type
@@ -5468,12 +5468,12 @@ components:
           type: string
         thumbnails:
           items:
-            $ref: '#/components/schemas/Sendbird.Thumbnail'
+            $ref: '#/components/schemas/SendBird.Thumbnail'
           type: array
         require_auth:
           type: boolean
       type: object
-    Sendbird.SmsFallback:
+    SendBird.SmsFallback:
       example:
         exclude_user_ids:
         - exclude_user_ids
@@ -5487,7 +5487,7 @@ components:
             type: string
           type: array
       type: object
-    Sendbird.DisappearingMessage:
+    SendBird.DisappearingMessage:
       example:
         is_triggered_by_message_read: true
         message_survival_seconds: 6
@@ -5497,7 +5497,7 @@ components:
         is_triggered_by_message_read:
           type: boolean
       type: object
-    Sendbird.BasicUserInfo:
+    SendBird.BasicUserInfo:
       example:
         metadata: "{}"
         require_auth_for_profile_image: true
@@ -5534,7 +5534,7 @@ components:
       required:
       - user_id
       type: object
-    Sendbird.User:
+    SendBird.User:
       description: User
       example:
         metadata: "{}"
@@ -5625,7 +5625,7 @@ components:
       required:
       - user_id
       type: object
-    Sendbird.Member:
+    SendBird.Member:
       example:
         metadata: "{}"
         is_active: true
@@ -5693,7 +5693,7 @@ components:
         push_enabled:
           type: boolean
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendBird.PushTriggerOption'
         profile_url:
           default: ""
           type: string
@@ -5721,7 +5721,7 @@ components:
       required:
       - user_id
       type: object
-    Sendbird.ExtendedMessagePayload:
+    SendBird.ExtendedMessagePayload:
       description: Specifies the extended message payload which is used to send a
         message with a custom message type.
       properties:
@@ -5736,7 +5736,7 @@ components:
             type: string
           type: array
       type: object
-    Sendbird.ParentMessageInfo:
+    SendBird.ParentMessageInfo:
       example:
         file:
           file_name: file_name
@@ -5835,15 +5835,15 @@ components:
           format: int64
           type: integer
         user:
-          $ref: '#/components/schemas/Sendbird.User'
+          $ref: '#/components/schemas/SendBird.User'
         file:
-          $ref: '#/components/schemas/Sendbird.File'
+          $ref: '#/components/schemas/SendBird.File'
         files:
           items:
-            $ref: '#/components/schemas/Sendbird.File'
+            $ref: '#/components/schemas/SendBird.File'
           type: array
       type: object
-    Sendbird.Reaction:
+    SendBird.Reaction:
       example:
         updated_at: 2
         user_ids:
@@ -5861,7 +5861,7 @@ components:
             type: string
           type: array
       type: object
-    Sendbird.MessageResponse:
+    SendBird.MessageResponse:
       example:
         data: data
         message_events:
@@ -6070,7 +6070,7 @@ components:
           type: string
         mentioned_users:
           items:
-            $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+            $ref: '#/components/schemas/SendBird.BasicUserInfo'
           type: array
         translations:
           type: object
@@ -6081,17 +6081,17 @@ components:
           type: boolean
         reactions:
           items:
-            $ref: '#/components/schemas/Sendbird.Reaction'
+            $ref: '#/components/schemas/SendBird.Reaction'
           type: array
         is_removed:
           type: boolean
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendBird.BasicUserInfo'
         file:
           type: object
         files:
           items:
-            $ref: '#/components/schemas/Sendbird.File'
+            $ref: '#/components/schemas/SendBird.File'
           type: array
         message:
           type: string
@@ -6119,22 +6119,22 @@ components:
           type: integer
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
           type: array
         thread_info:
           type: object
         parent_message_id:
           type: integer
         parent_message_info:
-          $ref: '#/components/schemas/Sendbird.ParentMessageInfo'
+          $ref: '#/components/schemas/SendBird.ParentMessageInfo'
         is_reply_to_channel:
           type: boolean
         message_events:
-          $ref: '#/components/schemas/Sendbird_MessageResponse_message_events'
+          $ref: '#/components/schemas/SendBird_MessageResponse_message_events'
         extended_message_payload:
-          $ref: '#/components/schemas/Sendbird_MessageResponse_extended_message_payload'
+          $ref: '#/components/schemas/SendBird_MessageResponse_extended_message_payload'
       type: object
-    Sendbird.GroupChannel:
+    SendBird.GroupChannel:
       example:
         metadata: "{}"
         count_preference: "false"
@@ -6268,7 +6268,7 @@ components:
           format: int64
           type: integer
         created_by:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendBird.BasicUserInfo'
         custom_type:
           type: string
         data:
@@ -6276,7 +6276,7 @@ components:
         delivery_receipt:
           type: object
         disappearing_message:
-          $ref: '#/components/schemas/Sendbird.DisappearingMessage'
+          $ref: '#/components/schemas/SendBird.DisappearingMessage'
         freeze:
           type: boolean
         has_ai_bot:
@@ -6295,7 +6295,7 @@ components:
           format: int64
           type: integer
         inviter:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendBird.BasicUserInfo'
         is_access_code_required:
           nullable: true
           type: boolean
@@ -6326,7 +6326,7 @@ components:
           nullable: true
           type: integer
         last_message:
-          $ref: '#/components/schemas/Sendbird_GroupChannel_last_message'
+          $ref: '#/components/schemas/SendBird_GroupChannel_last_message'
         max_length_message:
           type: integer
         member_count:
@@ -6339,7 +6339,7 @@ components:
           type: string
         members:
           items:
-            $ref: '#/components/schemas/Sendbird.Member'
+            $ref: '#/components/schemas/SendBird.Member'
           type: array
         message_survival_seconds:
           type: integer
@@ -6355,14 +6355,14 @@ components:
         name:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendBird.PushTriggerOption'
         read_receipt:
           additionalProperties:
             format: int64
             type: integer
           type: object
         sms_fallback:
-          $ref: '#/components/schemas/Sendbird.SmsFallback'
+          $ref: '#/components/schemas/SendBird.SmsFallback'
         ts_message_offset:
           format: int64
           type: integer
@@ -6376,7 +6376,7 @@ components:
       required:
       - channel_url
       type: object
-    Sendbird.GroupChannelDetail:
+    SendBird.GroupChannelDetail:
       example:
         data: data
         custom_type: custom_type
@@ -6733,7 +6733,7 @@ components:
         is_access_code_required: true
       properties:
         channel:
-          $ref: '#/components/schemas/Sendbird_GroupChannelDetail_channel'
+          $ref: '#/components/schemas/SendBird_GroupChannelDetail_channel'
         channel_url:
           type: string
         cover_url:
@@ -6742,7 +6742,7 @@ components:
           format: int64
           type: integer
         created_by:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendBird.BasicUserInfo'
         custom_type:
           type: string
         data:
@@ -6753,7 +6753,7 @@ components:
             type: integer
           type: object
         disappearing_message:
-          $ref: '#/components/schemas/Sendbird.DisappearingMessage'
+          $ref: '#/components/schemas/SendBird.DisappearingMessage'
         freeze:
           type: boolean
         has_ai_bot:
@@ -6781,14 +6781,14 @@ components:
         joined_member_count:
           type: integer
         last_message:
-          $ref: '#/components/schemas/Sendbird.MessageResponse'
+          $ref: '#/components/schemas/SendBird.MessageResponse'
         max_length_message:
           type: integer
         member_count:
           type: integer
         members:
           items:
-            $ref: '#/components/schemas/Sendbird.Member'
+            $ref: '#/components/schemas/SendBird.Member'
           type: array
         message_survival_seconds:
           type: integer
@@ -6796,7 +6796,7 @@ components:
           type: string
         operators:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendBird.User'
           type: array
         read_receipt:
           additionalProperties:
@@ -6804,7 +6804,7 @@ components:
             type: integer
           type: object
         sms_fallback:
-          $ref: '#/components/schemas/Sendbird.SmsFallback'
+          $ref: '#/components/schemas/SendBird.SmsFallback'
         unread_mention_count:
           type: integer
         unread_message_count:
@@ -6812,7 +6812,7 @@ components:
       required:
       - channel_url
       type: object
-    Sendbird.OpenChannel:
+    SendBird.OpenChannel:
       example:
         cover_url: cover_url
         metadata: "{}"
@@ -6867,7 +6867,7 @@ components:
           type: string
         operators:
           items:
-            $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+            $ref: '#/components/schemas/SendBird.BasicUserInfo'
           type: array
         participant_count:
           type: integer
@@ -6878,7 +6878,7 @@ components:
       - channel_url
       type: object
     createAGroupChannelResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendBird.GroupChannelDetail'
     groupChatListChannelsResponse:
       example:
         next: next
@@ -7119,7 +7119,7 @@ components:
       properties:
         channels:
           items:
-            $ref: '#/components/schemas/Sendbird.GroupChannel'
+            $ref: '#/components/schemas/SendBird.GroupChannel'
           type: array
         next:
           type: string
@@ -7130,19 +7130,19 @@ components:
     getAGroupChannelResponse:
       allOf:
       - $ref: '#/components/schemas/getAGroupChannelResponse_allOf'
-      - $ref: '#/components/schemas/Sendbird.GroupChannel'
+      - $ref: '#/components/schemas/SendBird.GroupChannel'
     updateAGroupChannelResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendBird.GroupChannelDetail'
     acceptAnInvitationResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendBird.GroupChannelDetail'
     inviteAsMembersResponse:
       allOf:
-      - $ref: '#/components/schemas/Sendbird.GroupChannel'
+      - $ref: '#/components/schemas/SendBird.GroupChannel'
       - $ref: '#/components/schemas/inviteAsMembersResponse_allOf'
     joinAChannelResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendBird.GroupChannelDetail'
     freezeAGroupChannelResponse:
-      $ref: '#/components/schemas/Sendbird.GroupChannelDetail'
+      $ref: '#/components/schemas/SendBird.GroupChannelDetail'
     groupChannelListMembersResponse:
       example:
         next: next
@@ -7198,7 +7198,7 @@ components:
       properties:
         members:
           items:
-            $ref: '#/components/schemas/Sendbird.Member'
+            $ref: '#/components/schemas/SendBird.Member'
           type: array
         next:
           type: string
@@ -7269,7 +7269,7 @@ components:
           type: string
         operators:
           items:
-            $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+            $ref: '#/components/schemas/SendBird.BasicUserInfo'
           type: array
       type: object
     listBotsResponse:
@@ -7625,7 +7625,7 @@ components:
             is_blocked_by_me: true
       properties:
         message:
-          $ref: '#/components/schemas/Sendbird.MessageResponse'
+          $ref: '#/components/schemas/SendBird.MessageResponse'
       type: object
     createABotResponse:
       example:
@@ -7765,11 +7765,11 @@ components:
           type: string
       type: object
     createAnOpenChannelResponse:
-      $ref: '#/components/schemas/Sendbird.OpenChannel'
+      $ref: '#/components/schemas/SendBird.OpenChannel'
     getAnOpenChannelResponse:
-      $ref: '#/components/schemas/Sendbird.OpenChannel'
+      $ref: '#/components/schemas/SendBird.OpenChannel'
     updateAnOpenChannelResponse:
-      $ref: '#/components/schemas/Sendbird.OpenChannel'
+      $ref: '#/components/schemas/SendBird.OpenChannel'
     listOpenChannelsResponse:
       example:
         next: next
@@ -7836,7 +7836,7 @@ components:
       properties:
         channels:
           items:
-            $ref: '#/components/schemas/Sendbird.OpenChannel'
+            $ref: '#/components/schemas/SendBird.OpenChannel'
           type: array
         next:
           type: string
@@ -7845,7 +7845,7 @@ components:
           type: integer
       type: object
     freezeAnOpenChannelResponse:
-      $ref: '#/components/schemas/Sendbird.OpenChannel'
+      $ref: '#/components/schemas/SendBird.OpenChannel'
     listBlockedUsersResponse:
       example:
         next: next
@@ -7903,7 +7903,7 @@ components:
       properties:
         users:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendBird.User'
           type: array
         next:
           type: string
@@ -7965,7 +7965,7 @@ components:
       properties:
         users:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendBird.User'
           type: array
         next:
           type: string
@@ -7978,9 +7978,9 @@ components:
           type: integer
       type: object
     viewAUserResponse:
-      $ref: '#/components/schemas/Sendbird.User'
+      $ref: '#/components/schemas/SendBird.User'
     updateAUserResponse:
-      $ref: '#/components/schemas/Sendbird.User'
+      $ref: '#/components/schemas/SendBird.User'
     listUsersResponse:
       example:
         next: next
@@ -8040,7 +8040,7 @@ components:
           type: string
         users:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendBird.User'
           type: array
       type: object
     chooseAPushNotificationContentTemplateResponse:
@@ -8051,7 +8051,7 @@ components:
           type: string
       type: object
     createAUserResponse:
-      $ref: '#/components/schemas/Sendbird.User'
+      $ref: '#/components/schemas/SendBird.User'
     listRegistrationOrDeviceTokensResponse:
       example:
         tokens:
@@ -8082,7 +8082,7 @@ components:
         type:
           type: string
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendBird.BasicUserInfo'
       type: object
     addARegistrationOrDeviceTokenResponse:
       example:
@@ -8103,7 +8103,7 @@ components:
         type:
           type: string
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendBird.BasicUserInfo'
       type: object
     viewPushPreferencesResponse:
       example:
@@ -8141,7 +8141,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendBird.PushTriggerOption'
         snooze_enabled:
           type: boolean
         snooze_end_ts:
@@ -8193,7 +8193,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendBird.PushTriggerOption'
         snooze_enabled:
           type: boolean
         snooze_end_ts:
@@ -8229,7 +8229,7 @@ components:
             type: string
           type: array
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendBird.BasicUserInfo'
       type: object
     createUserTokenResponse:
       example:
@@ -8253,7 +8253,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendBird.PushTriggerOption'
       type: object
     updatePushPreferencesForAChannelResponse:
       example:
@@ -8266,7 +8266,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendBird.PushTriggerOption'
       type: object
     viewWhoOwnsARegistrationOrDeviceTokenResponse:
       items:
@@ -8523,7 +8523,7 @@ components:
       properties:
         channels:
           items:
-            $ref: '#/components/schemas/Sendbird.GroupChannel'
+            $ref: '#/components/schemas/SendBird.GroupChannel'
           type: array
         next:
           type: string
@@ -8547,7 +8547,7 @@ components:
         token:
           type: string
         user:
-          $ref: '#/components/schemas/Sendbird.BasicUserInfo'
+          $ref: '#/components/schemas/SendBird.BasicUserInfo'
       type: object
     viewCountPreferenceOfAChannelResponse:
       example:
@@ -9004,7 +9004,7 @@ components:
       properties:
         messages:
           items:
-            $ref: '#/components/schemas/Sendbird.MessageResponse'
+            $ref: '#/components/schemas/SendBird.MessageResponse'
           type: array
       type: object
     sendTextMessageRequestBody:
@@ -9053,7 +9053,7 @@ components:
           type: boolean
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
           type: array
         sound:
           type: string
@@ -9080,7 +9080,7 @@ components:
         dedup_id:
           type: string
         files:
-          $ref: '#/components/schemas/Sendbird.File'
+          $ref: '#/components/schemas/SendBird.File'
         is_silent:
           type: boolean
         mark_as_read:
@@ -9121,7 +9121,7 @@ components:
           type: boolean
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
           type: array
         sound:
           type: string
@@ -9177,14 +9177,14 @@ components:
           type: boolean
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
           type: array
       required:
       - message
       - message_type
       type: object
     sendAMessageResponse:
-      $ref: '#/components/schemas/Sendbird.MessageResponse'
+      $ref: '#/components/schemas/SendBird.MessageResponse'
     getTotalNumberOfMessagesInAChannelResponse:
       example:
         total: 0
@@ -9206,7 +9206,7 @@ components:
       properties:
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
           type: array
       type: object
     addExtraDataToAMessageResponse:
@@ -9223,13 +9223,13 @@ components:
       properties:
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
           type: array
       type: object
     getAMessageResponse:
-      $ref: '#/components/schemas/Sendbird.MessageResponse'
+      $ref: '#/components/schemas/SendBird.MessageResponse'
     updateAMessageResponse:
-      $ref: '#/components/schemas/Sendbird.MessageResponse'
+      $ref: '#/components/schemas/SendBird.MessageResponse'
     emptyObjectResponse:
       properties: {}
       type: object
@@ -9379,7 +9379,7 @@ components:
             type: string
           type: array
         extended_message_payload:
-          $ref: '#/components/schemas/Sendbird.ExtendedMessagePayload'
+          $ref: '#/components/schemas/SendBird.ExtendedMessagePayload'
         file:
           description: "When sending a single file with a message, specifies the data\
             \ of the file to upload to the Sendbird server in raw binary format. When\
@@ -9424,7 +9424,7 @@ components:
           description: '* This property is available when message_type is FILE.'
           type: boolean
         sorted_metaarray:
-          $ref: '#/components/schemas/Sendbird.SortedMetaarray'
+          $ref: '#/components/schemas/SendBird.SortedMetaarray'
         apns_bundle_id:
           description: '* This property is available when message_type is FILE.'
           type: string
@@ -9589,7 +9589,7 @@ components:
           type: array
         users:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendBird.User'
           type: array
       required:
       - users
@@ -10052,7 +10052,7 @@ components:
         push_sound:
           type: string
         push_trigger_option:
-          $ref: '#/components/schemas/Sendbird.PushTriggerOption'
+          $ref: '#/components/schemas/SendBird.PushTriggerOption'
         snooze_enabled:
           type: boolean
         snooze_end_ts:
@@ -10193,7 +10193,7 @@ components:
             * This property is only available for group channels and message_type is MESG.
           type: integer
         files:
-          $ref: '#/components/schemas/Sendbird.File'
+          $ref: '#/components/schemas/SendBird.File'
         require_auth:
           description: "Determines whether to require an authentication key to verify\
             \ if the file is being properly accessed. Only the user who uploaded the\
@@ -10265,7 +10265,7 @@ components:
           type: boolean
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
           type: array
         sound:
           type: string
@@ -10281,7 +10281,7 @@ components:
           type: string
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
           type: array
         upsert:
           type: boolean
@@ -10290,7 +10290,7 @@ components:
       properties:
         sorted_metaarray:
           items:
-            $ref: '#/components/schemas/Sendbird_SortedMetaarray_inner'
+            $ref: '#/components/schemas/SendBird_SortedMetaarray_inner'
           type: array
       required:
       - sorted_metaarray
@@ -10320,7 +10320,7 @@ components:
       required:
       - message_type
       type: object
-    Sendbird_SortedMetaarray_inner:
+    SendBird_SortedMetaarray_inner:
       example:
         value:
         - value
@@ -10334,7 +10334,7 @@ components:
             type: string
           type: array
       type: object
-    Sendbird_MessageResponse_message_events:
+    SendBird_MessageResponse_message_events:
       example:
         update_last_message: true
         update_mention_count: true
@@ -10351,13 +10351,13 @@ components:
         update_last_message:
           type: boolean
       type: object
-    Sendbird_MessageResponse_extended_message_payload:
+    SendBird_MessageResponse_extended_message_payload:
       oneOf:
-      - $ref: '#/components/schemas/Sendbird.ExtendedMessagePayload'
-    Sendbird_GroupChannel_last_message:
+      - $ref: '#/components/schemas/SendBird.ExtendedMessagePayload'
+    SendBird_GroupChannel_last_message:
       oneOf:
-      - $ref: '#/components/schemas/Sendbird.MessageResponse'
-    Sendbird_GroupChannelDetail_channel:
+      - $ref: '#/components/schemas/SendBird.MessageResponse'
+    SendBird_GroupChannelDetail_channel:
       example:
         cover_url: cover_url
         data: data
@@ -10389,13 +10389,13 @@ components:
     getAGroupChannelResponse_allOf:
       properties:
         channel:
-          $ref: '#/components/schemas/Sendbird_GroupChannelDetail_channel'
+          $ref: '#/components/schemas/SendBird_GroupChannelDetail_channel'
       type: object
     inviteAsMembersResponse_allOf:
       properties:
         operators:
           items:
-            $ref: '#/components/schemas/Sendbird.User'
+            $ref: '#/components/schemas/SendBird.User'
           type: array
       type: object
     listBotsResponse_bots_inner_bot:

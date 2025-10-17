@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**token** | **String** |  |  [optional] |
-|**user** | [**SendBirdSendbirdBasicUserInfo**](SendBirdSendbirdBasicUserInfo.md) |  |  [optional] |
+|**user** | [**SendBirdSendBirdBasicUserInfo**](SendBirdSendBirdBasicUserInfo.md) |  |  [optional] |
 
 
 

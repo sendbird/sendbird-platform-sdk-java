@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**messages** | [**List&lt;SendBirdSendbirdMessageResponse&gt;**](SendBirdSendbirdMessageResponse.md) |  |  [optional] |
+|**messages** | [**List&lt;SendBirdSendBirdMessageResponse&gt;**](SendBirdSendBirdMessageResponse.md) |  |  [optional] |
 
 
 

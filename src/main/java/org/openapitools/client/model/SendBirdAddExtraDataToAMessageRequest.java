@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdSortedMetaarrayInner;
+import org.openapitools.client.model.SendBirdSendBirdSortedMetaarrayInner;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -38,20 +38,20 @@ import org.sendbird.client.JSON;
   SendBirdAddExtraDataToAMessageRequest.JSON_PROPERTY_SORTED_METAARRAY
 })
 @JsonTypeName("addExtraDataToAMessage_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdAddExtraDataToAMessageRequest {
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
-  private List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray = new ArrayList<>();
+  private List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray = new ArrayList<>();
 
   public SendBirdAddExtraDataToAMessageRequest() { 
   }
 
-  public SendBirdAddExtraDataToAMessageRequest sortedMetaarray(List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray) {
+  public SendBirdAddExtraDataToAMessageRequest sortedMetaarray(List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
 
-  public SendBirdAddExtraDataToAMessageRequest addSortedMetaarrayItem(SendBirdSendbirdSortedMetaarrayInner sortedMetaarrayItem) {
+  public SendBirdAddExtraDataToAMessageRequest addSortedMetaarrayItem(SendBirdSendBirdSortedMetaarrayInner sortedMetaarrayItem) {
     this.sortedMetaarray.add(sortedMetaarrayItem);
     return this;
   }
@@ -65,14 +65,14 @@ public class SendBirdAddExtraDataToAMessageRequest {
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<SendBirdSendbirdSortedMetaarrayInner> getSortedMetaarray() {
+  public List<SendBirdSendBirdSortedMetaarrayInner> getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSortedMetaarray(List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray) {
+  public void setSortedMetaarray(List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 

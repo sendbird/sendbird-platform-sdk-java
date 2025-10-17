@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdMessageResponse;
+import org.openapitools.client.model.SendBirdSendBirdMessageResponse;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -38,20 +38,20 @@ import org.sendbird.client.JSON;
   SendBirdListMessagesResponse.JSON_PROPERTY_MESSAGES
 })
 @JsonTypeName("listMessagesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdListMessagesResponse {
   public static final String JSON_PROPERTY_MESSAGES = "messages";
-  private List<SendBirdSendbirdMessageResponse> messages = null;
+  private List<SendBirdSendBirdMessageResponse> messages = null;
 
   public SendBirdListMessagesResponse() { 
   }
 
-  public SendBirdListMessagesResponse messages(List<SendBirdSendbirdMessageResponse> messages) {
+  public SendBirdListMessagesResponse messages(List<SendBirdSendBirdMessageResponse> messages) {
     this.messages = messages;
     return this;
   }
 
-  public SendBirdListMessagesResponse addMessagesItem(SendBirdSendbirdMessageResponse messagesItem) {
+  public SendBirdListMessagesResponse addMessagesItem(SendBirdSendBirdMessageResponse messagesItem) {
     if (this.messages == null) {
       this.messages = new ArrayList<>();
     }
@@ -68,14 +68,14 @@ public class SendBirdListMessagesResponse {
   @JsonProperty(JSON_PROPERTY_MESSAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdMessageResponse> getMessages() {
+  public List<SendBirdSendBirdMessageResponse> getMessages() {
     return messages;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessages(List<SendBirdSendbirdMessageResponse> messages) {
+  public void setMessages(List<SendBirdSendBirdMessageResponse> messages) {
     this.messages = messages;
   }
 

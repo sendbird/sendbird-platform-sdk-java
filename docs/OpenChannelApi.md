@@ -17,7 +17,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## createAnOpenChannel
 
-> SendBirdSendbirdOpenChannel createAnOpenChannel().apiToken(apiToken).sendBirdCreateAnOpenChannelRequest(sendBirdCreateAnOpenChannelRequest).execute();
+> SendBirdSendBirdOpenChannel createAnOpenChannel().apiToken(apiToken).sendBirdCreateAnOpenChannelRequest(sendBirdCreateAnOpenChannelRequest).execute();
 
 Create an open channel
 
@@ -48,7 +48,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         SendBirdCreateAnOpenChannelRequest sendBirdCreateAnOpenChannelRequest = new SendBirdCreateAnOpenChannelRequest(); // SendBirdCreateAnOpenChannelRequest | 
         try {
-            SendBirdSendbirdOpenChannel result = api.createAnOpenChannel()
+            SendBirdSendBirdOpenChannel result = api.createAnOpenChannel()
                 .apiToken(apiToken)
                 .sendBirdCreateAnOpenChannelRequest(sendBirdCreateAnOpenChannelRequest)
                 .execute();
@@ -74,7 +74,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdOpenChannel**](SendBirdSendbirdOpenChannel.md)
+[**SendBirdSendBirdOpenChannel**](SendBirdSendBirdOpenChannel.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ No authorization required
 
 ## getAnOpenChannel
 
-> SendBirdSendbirdOpenChannel getAnOpenChannel(channelUrl).apiToken(apiToken).includeOperators(includeOperators).execute();
+> SendBirdSendBirdOpenChannel getAnOpenChannel(channelUrl).apiToken(apiToken).includeOperators(includeOperators).execute();
 
 Get an open channel
 
@@ -196,7 +196,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean includeOperators = true; // Boolean | Determines whether to include a list of operators in the response. (Default: false)
         try {
-            SendBirdSendbirdOpenChannel result = api.getAnOpenChannel(channelUrl)
+            SendBirdSendBirdOpenChannel result = api.getAnOpenChannel(channelUrl)
                 .apiToken(apiToken)
                 .includeOperators(includeOperators)
                 .execute();
@@ -223,7 +223,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdOpenChannel**](SendBirdSendbirdOpenChannel.md)
+[**SendBirdSendBirdOpenChannel**](SendBirdSendBirdOpenChannel.md)
 
 ### Authorization
 
@@ -579,7 +579,7 @@ No authorization required
 
 ## updateAnOpenChannel
 
-> SendBirdSendbirdOpenChannel updateAnOpenChannel(channelUrl).apiToken(apiToken).sendBirdUpdateAnOpenChannelRequest(sendBirdUpdateAnOpenChannelRequest).execute();
+> SendBirdSendBirdOpenChannel updateAnOpenChannel(channelUrl).apiToken(apiToken).sendBirdUpdateAnOpenChannelRequest(sendBirdUpdateAnOpenChannelRequest).execute();
 
 Update an open channel
 
@@ -609,7 +609,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         SendBirdUpdateAnOpenChannelRequest sendBirdUpdateAnOpenChannelRequest = new SendBirdUpdateAnOpenChannelRequest(); // SendBirdUpdateAnOpenChannelRequest | 
         try {
-            SendBirdSendbirdOpenChannel result = api.updateAnOpenChannel(channelUrl)
+            SendBirdSendBirdOpenChannel result = api.updateAnOpenChannel(channelUrl)
                 .apiToken(apiToken)
                 .sendBirdUpdateAnOpenChannelRequest(sendBirdUpdateAnOpenChannelRequest)
                 .execute();
@@ -636,7 +636,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdOpenChannel**](SendBirdSendbirdOpenChannel.md)
+[**SendBirdSendBirdOpenChannel**](SendBirdSendBirdOpenChannel.md)
 
 ### Authorization
 

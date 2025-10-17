@@ -26,14 +26,14 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdBasicUserInfo;
-import org.openapitools.client.model.SendBirdSendbirdFile;
-import org.openapitools.client.model.SendBirdSendbirdMessageResponse;
-import org.openapitools.client.model.SendBirdSendbirdMessageResponseExtendedMessagePayload;
-import org.openapitools.client.model.SendBirdSendbirdMessageResponseMessageEvents;
-import org.openapitools.client.model.SendBirdSendbirdParentMessageInfo;
-import org.openapitools.client.model.SendBirdSendbirdReaction;
-import org.openapitools.client.model.SendBirdSendbirdSortedMetaarrayInner;
+import org.openapitools.client.model.SendBirdSendBirdBasicUserInfo;
+import org.openapitools.client.model.SendBirdSendBirdFile;
+import org.openapitools.client.model.SendBirdSendBirdMessageResponse;
+import org.openapitools.client.model.SendBirdSendBirdMessageResponseExtendedMessagePayload;
+import org.openapitools.client.model.SendBirdSendBirdMessageResponseMessageEvents;
+import org.openapitools.client.model.SendBirdSendBirdParentMessageInfo;
+import org.openapitools.client.model.SendBirdSendBirdReaction;
+import org.openapitools.client.model.SendBirdSendBirdSortedMetaarrayInner;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -68,132 +68,132 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import org.sendbird.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
-@JsonDeserialize(using = SendBirdSendbirdGroupChannelLastMessage.SendBirdSendbirdGroupChannelLastMessageDeserializer.class)
-@JsonSerialize(using = SendBirdSendbirdGroupChannelLastMessage.SendBirdSendbirdGroupChannelLastMessageSerializer.class)
-public class SendBirdSendbirdGroupChannelLastMessage extends AbstractOpenApiSchema {
-    private static final Logger log = Logger.getLogger(SendBirdSendbirdGroupChannelLastMessage.class.getName());
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+@JsonDeserialize(using = SendBirdSendBirdGroupChannelLastMessage.SendBirdSendBirdGroupChannelLastMessageDeserializer.class)
+@JsonSerialize(using = SendBirdSendBirdGroupChannelLastMessage.SendBirdSendBirdGroupChannelLastMessageSerializer.class)
+public class SendBirdSendBirdGroupChannelLastMessage extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(SendBirdSendBirdGroupChannelLastMessage.class.getName());
 
-    public static class SendBirdSendbirdGroupChannelLastMessageSerializer extends StdSerializer<SendBirdSendbirdGroupChannelLastMessage> {
-        public SendBirdSendbirdGroupChannelLastMessageSerializer(Class<SendBirdSendbirdGroupChannelLastMessage> t) {
+    public static class SendBirdSendBirdGroupChannelLastMessageSerializer extends StdSerializer<SendBirdSendBirdGroupChannelLastMessage> {
+        public SendBirdSendBirdGroupChannelLastMessageSerializer(Class<SendBirdSendBirdGroupChannelLastMessage> t) {
             super(t);
         }
 
-        public SendBirdSendbirdGroupChannelLastMessageSerializer() {
+        public SendBirdSendBirdGroupChannelLastMessageSerializer() {
             this(null);
         }
 
         @Override
-        public void serialize(SendBirdSendbirdGroupChannelLastMessage value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
+        public void serialize(SendBirdSendBirdGroupChannelLastMessage value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
             jgen.writeObject(value.getActualInstance());
         }
     }
 
-    public static class SendBirdSendbirdGroupChannelLastMessageDeserializer extends StdDeserializer<SendBirdSendbirdGroupChannelLastMessage> {
-        public SendBirdSendbirdGroupChannelLastMessageDeserializer() {
-            this(SendBirdSendbirdGroupChannelLastMessage.class);
+    public static class SendBirdSendBirdGroupChannelLastMessageDeserializer extends StdDeserializer<SendBirdSendBirdGroupChannelLastMessage> {
+        public SendBirdSendBirdGroupChannelLastMessageDeserializer() {
+            this(SendBirdSendBirdGroupChannelLastMessage.class);
         }
 
-        public SendBirdSendbirdGroupChannelLastMessageDeserializer(Class<?> vc) {
+        public SendBirdSendBirdGroupChannelLastMessageDeserializer(Class<?> vc) {
             super(vc);
         }
 
         @Override
-        public SendBirdSendbirdGroupChannelLastMessage deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+        public SendBirdSendBirdGroupChannelLastMessage deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
             JsonNode tree = jp.readValueAsTree();
             Object deserialized = null;
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
             int match = 0;
             JsonToken token = tree.traverse(jp.getCodec()).nextToken();
-            // deserialize SendBirdSendbirdMessageResponse
+            // deserialize SendBirdSendBirdMessageResponse
             try {
                 boolean attemptParsing = true;
                 // ensure that we respect type coercion as set on the client ObjectMapper
-                if (SendBirdSendbirdMessageResponse.class.equals(Integer.class) || SendBirdSendbirdMessageResponse.class.equals(Long.class) || SendBirdSendbirdMessageResponse.class.equals(Float.class) || SendBirdSendbirdMessageResponse.class.equals(Double.class) || SendBirdSendbirdMessageResponse.class.equals(Boolean.class) || SendBirdSendbirdMessageResponse.class.equals(String.class)) {
+                if (SendBirdSendBirdMessageResponse.class.equals(Integer.class) || SendBirdSendBirdMessageResponse.class.equals(Long.class) || SendBirdSendBirdMessageResponse.class.equals(Float.class) || SendBirdSendBirdMessageResponse.class.equals(Double.class) || SendBirdSendBirdMessageResponse.class.equals(Boolean.class) || SendBirdSendBirdMessageResponse.class.equals(String.class)) {
                     attemptParsing = typeCoercion;
                     if (!attemptParsing) {
-                        attemptParsing |= ((SendBirdSendbirdMessageResponse.class.equals(Integer.class) || SendBirdSendbirdMessageResponse.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((SendBirdSendbirdMessageResponse.class.equals(Float.class) || SendBirdSendbirdMessageResponse.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (SendBirdSendbirdMessageResponse.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (SendBirdSendbirdMessageResponse.class.equals(String.class) && token == JsonToken.VALUE_STRING);
+                        attemptParsing |= ((SendBirdSendBirdMessageResponse.class.equals(Integer.class) || SendBirdSendBirdMessageResponse.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
+                        attemptParsing |= ((SendBirdSendBirdMessageResponse.class.equals(Float.class) || SendBirdSendBirdMessageResponse.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
+                        attemptParsing |= (SendBirdSendBirdMessageResponse.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
+                        attemptParsing |= (SendBirdSendBirdMessageResponse.class.equals(String.class) && token == JsonToken.VALUE_STRING);
                     }
                 }
                 if (attemptParsing) {
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(SendBirdSendbirdMessageResponse.class);
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(SendBirdSendBirdMessageResponse.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
                     match++;
-                    log.log(Level.FINER, "Input data matches schema 'SendBirdSendbirdMessageResponse'");
+                    log.log(Level.FINER, "Input data matches schema 'SendBirdSendBirdMessageResponse'");
                 }
             } catch (Exception e) {
                 // deserialization failed, continue
-                log.log(Level.FINER, "Input data does not match schema 'SendBirdSendbirdMessageResponse'", e);
+                log.log(Level.FINER, "Input data does not match schema 'SendBirdSendBirdMessageResponse'", e);
             }
 
             if (match == 1) {
-                SendBirdSendbirdGroupChannelLastMessage ret = new SendBirdSendbirdGroupChannelLastMessage();
+                SendBirdSendBirdGroupChannelLastMessage ret = new SendBirdSendBirdGroupChannelLastMessage();
                 ret.setActualInstance(deserialized);
                 return ret;
             }
-            throw new IOException(String.format("Failed deserialization for SendBirdSendbirdGroupChannelLastMessage: %d classes match result, expected 1", match));
+            throw new IOException(String.format("Failed deserialization for SendBirdSendBirdGroupChannelLastMessage: %d classes match result, expected 1", match));
         }
 
         /**
          * Handle deserialization of the 'null' value.
          */
         @Override
-        public SendBirdSendbirdGroupChannelLastMessage getNullValue(DeserializationContext ctxt) throws JsonMappingException {
-            throw new JsonMappingException(ctxt.getParser(), "SendBirdSendbirdGroupChannelLastMessage cannot be null");
+        public SendBirdSendBirdGroupChannelLastMessage getNullValue(DeserializationContext ctxt) throws JsonMappingException {
+            throw new JsonMappingException(ctxt.getParser(), "SendBirdSendBirdGroupChannelLastMessage cannot be null");
         }
     }
 
     // store a list of schema names defined in oneOf
     public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-    public SendBirdSendbirdGroupChannelLastMessage() {
+    public SendBirdSendBirdGroupChannelLastMessage() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public SendBirdSendbirdGroupChannelLastMessage(SendBirdSendbirdMessageResponse o) {
+    public SendBirdSendBirdGroupChannelLastMessage(SendBirdSendBirdMessageResponse o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("SendBirdSendbirdMessageResponse", new GenericType<SendBirdSendbirdMessageResponse>() {
+        schemas.put("SendBirdSendBirdMessageResponse", new GenericType<SendBirdSendBirdMessageResponse>() {
         });
-        JSON.registerDescendants(SendBirdSendbirdGroupChannelLastMessage.class, Collections.unmodifiableMap(schemas));
+        JSON.registerDescendants(SendBirdSendBirdGroupChannelLastMessage.class, Collections.unmodifiableMap(schemas));
     }
 
     @Override
     public Map<String, GenericType> getSchemas() {
-        return SendBirdSendbirdGroupChannelLastMessage.schemas;
+        return SendBirdSendBirdGroupChannelLastMessage.schemas;
     }
 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * SendBirdSendbirdMessageResponse
+     * SendBirdSendBirdMessageResponse
      *
      * It could be an instance of the 'oneOf' schemas.
      * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(SendBirdSendbirdMessageResponse.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(SendBirdSendBirdMessageResponse.class, instance, new HashSet<Class<?>>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be SendBirdSendbirdMessageResponse");
+        throw new RuntimeException("Invalid instance type. Must be SendBirdSendBirdMessageResponse");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * SendBirdSendbirdMessageResponse
+     * SendBirdSendBirdMessageResponse
      *
-     * @return The actual instance (SendBirdSendbirdMessageResponse)
+     * @return The actual instance (SendBirdSendBirdMessageResponse)
      */
     @Override
     public Object getActualInstance() {
@@ -201,14 +201,14 @@ public class SendBirdSendbirdGroupChannelLastMessage extends AbstractOpenApiSche
     }
 
     /**
-     * Get the actual instance of `SendBirdSendbirdMessageResponse`. If the actual instance is not `SendBirdSendbirdMessageResponse`,
+     * Get the actual instance of `SendBirdSendBirdMessageResponse`. If the actual instance is not `SendBirdSendBirdMessageResponse`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `SendBirdSendbirdMessageResponse`
-     * @throws ClassCastException if the instance is not `SendBirdSendbirdMessageResponse`
+     * @return The actual instance of `SendBirdSendBirdMessageResponse`
+     * @throws ClassCastException if the instance is not `SendBirdSendBirdMessageResponse`
      */
-    public SendBirdSendbirdMessageResponse getSendBirdSendbirdMessageResponse() throws ClassCastException {
-        return (SendBirdSendbirdMessageResponse)super.getActualInstance();
+    public SendBirdSendBirdMessageResponse getSendBirdSendBirdMessageResponse() throws ClassCastException {
+        return (SendBirdSendBirdMessageResponse)super.getActualInstance();
     }
 
 }

@@ -169,7 +169,7 @@ No authorization required
 
 ## joinChannels
 
-> SendBirdSendbirdGroupChannelDetail joinChannels(botUserid).apiToken(apiToken).sendBirdJoinChannelsRequest(sendBirdJoinChannelsRequest).execute();
+> SendBirdSendBirdGroupChannelDetail joinChannels(botUserid).apiToken(apiToken).sendBirdJoinChannelsRequest(sendBirdJoinChannelsRequest).execute();
 
 Join channels
 
@@ -199,7 +199,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         SendBirdJoinChannelsRequest sendBirdJoinChannelsRequest = new SendBirdJoinChannelsRequest(); // SendBirdJoinChannelsRequest | 
         try {
-            SendBirdSendbirdGroupChannelDetail result = api.joinChannels(botUserid)
+            SendBirdSendBirdGroupChannelDetail result = api.joinChannels(botUserid)
                 .apiToken(apiToken)
                 .sendBirdJoinChannelsRequest(sendBirdJoinChannelsRequest)
                 .execute();
@@ -226,7 +226,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendbirdGroupChannelDetail**](SendBirdSendbirdGroupChannelDetail.md)
+[**SendBirdSendBirdGroupChannelDetail**](SendBirdSendBirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -508,13 +508,13 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         String message = "message_example"; // String | Specifies the content of the message. * This property is required when message_type is MESG.
         List<String> mentioned = Arrays.asList(); // List<String> | * This property is available when message_type is MESG.
-        SendBirdSendbirdExtendedMessagePayload extendedMessagePayload = new SendBirdSendbirdExtendedMessagePayload(); // SendBirdSendbirdExtendedMessagePayload | 
+        SendBirdSendBirdExtendedMessagePayload extendedMessagePayload = new SendBirdSendBirdExtendedMessagePayload(); // SendBirdSendBirdExtendedMessagePayload | 
         File _file = new File("/path/to/file"); // File | When sending a single file with a message, specifies the data of the file to upload to the Sendbird server in raw binary format. When sending a request containing a file, change the value of the content-type header to multipart/form-data;boundary={your_unique_boundary_string} in the request. * This property is required when message_type is FILE. * This doesn't allow a converted base64-encoded string from a file as its value.
         Boolean requireAuth = true; // Boolean | Determines whether to require an authentication key to verify if the file is being properly accessed. Only the user who uploaded the file or users who are in the channel where the file was uploaded should have access. The authentication key managed internally by the Sendbird system is generated every time a user logs in to the Sendbird server and is valid for three days starting from the last login. If set to false, Sendbird tries to access a file without any key. To access encrypted files, such as the files in the Sendbird server which are by default encrypted, the property must be set to true. (Default: false) The require_auth parameter only works if the file or URL is managed by Sendbird, which means that when you upload files using multipart format or provide URLs that point to the files hosted on the Sendbird server. However, if the file is hosted on a server or service that is not managed by Sendbird, access control and authentication for the file should be handled by the respective server or service hosting the file. * This property is available when message_type is FILE.
         String mentionType = "users"; // String | * This property is available when message_type is FILE.
         List<String> mentionedUserIds = Arrays.asList(); // List<String> | * This property is available when message_type is FILE.
         Boolean isSilent = true; // Boolean | * This property is available when message_type is FILE.
-        List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray = Arrays.asList(); // List<SendBirdSendbirdSortedMetaarrayInner> | 
+        List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray = Arrays.asList(); // List<SendBirdSendBirdSortedMetaarrayInner> | 
         String apnsBundleId = "apnsBundleId_example"; // String | * This property is available when message_type is FILE.
         Object appleCriticalAlertOptions = null; // Object | * This property is available when message_type is FILE.
         String sound = "sound_example"; // String | * This property is available when message_type is FILE.
@@ -573,13 +573,13 @@ public class Example {
 | **apiToken** | **String**|  | [optional] |
 | **message** | **String**| Specifies the content of the message. * This property is required when message_type is MESG. | [optional] |
 | **mentioned** | **List&lt;String&gt;**| * This property is available when message_type is MESG. | [optional] |
-| **extendedMessagePayload** | [**SendBirdSendbirdExtendedMessagePayload**](SendBirdSendbirdExtendedMessagePayload.md)|  | [optional] |
+| **extendedMessagePayload** | [**SendBirdSendBirdExtendedMessagePayload**](SendBirdSendBirdExtendedMessagePayload.md)|  | [optional] |
 | **_file** | **File**| When sending a single file with a message, specifies the data of the file to upload to the Sendbird server in raw binary format. When sending a request containing a file, change the value of the content-type header to multipart/form-data;boundary&#x3D;{your_unique_boundary_string} in the request. * This property is required when message_type is FILE. * This doesn&#39;t allow a converted base64-encoded string from a file as its value. | [optional] |
 | **requireAuth** | **Boolean**| Determines whether to require an authentication key to verify if the file is being properly accessed. Only the user who uploaded the file or users who are in the channel where the file was uploaded should have access. The authentication key managed internally by the Sendbird system is generated every time a user logs in to the Sendbird server and is valid for three days starting from the last login. If set to false, Sendbird tries to access a file without any key. To access encrypted files, such as the files in the Sendbird server which are by default encrypted, the property must be set to true. (Default: false) The require_auth parameter only works if the file or URL is managed by Sendbird, which means that when you upload files using multipart format or provide URLs that point to the files hosted on the Sendbird server. However, if the file is hosted on a server or service that is not managed by Sendbird, access control and authentication for the file should be handled by the respective server or service hosting the file. * This property is available when message_type is FILE. | [optional] |
 | **mentionType** | **String**| * This property is available when message_type is FILE. | [optional] [enum: users, channel] |
 | **mentionedUserIds** | **List&lt;String&gt;**| * This property is available when message_type is FILE. | [optional] |
 | **isSilent** | **Boolean**| * This property is available when message_type is FILE. | [optional] |
-| **sortedMetaarray** | [**List&lt;SendBirdSendbirdSortedMetaarrayInner&gt;**](SendBirdSendbirdSortedMetaarrayInner.md)|  | [optional] |
+| **sortedMetaarray** | [**List&lt;SendBirdSendBirdSortedMetaarrayInner&gt;**](SendBirdSendBirdSortedMetaarrayInner.md)|  | [optional] |
 | **apnsBundleId** | **String**| * This property is available when message_type is FILE. | [optional] |
 | **appleCriticalAlertOptions** | **Object**| * This property is available when message_type is FILE. | [optional] |
 | **sound** | **String**| * This property is available when message_type is FILE. | [optional] |

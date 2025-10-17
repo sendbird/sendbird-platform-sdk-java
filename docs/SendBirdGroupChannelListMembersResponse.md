@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**members** | [**List&lt;SendBirdSendbirdMember&gt;**](SendBirdSendbirdMember.md) |  |  |
+|**members** | [**List&lt;SendBirdSendBirdMember&gt;**](SendBirdSendBirdMember.md) |  |  |
 |**next** | **String** |  |  [optional] |
 
 

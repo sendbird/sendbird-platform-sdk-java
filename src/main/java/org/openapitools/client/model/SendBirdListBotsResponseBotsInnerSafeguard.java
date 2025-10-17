@@ -40,7 +40,7 @@ import org.sendbird.client.JSON;
   SendBirdListBotsResponseBotsInnerSafeguard.JSON_PROPERTY_PII_MASKING
 })
 @JsonTypeName("listBotsResponse_bots_inner_safeguard")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdListBotsResponseBotsInnerSafeguard {
   public static final String JSON_PROPERTY_BANNED_PHRASES = "banned_phrases";
   private List<Object> bannedPhrases = null;

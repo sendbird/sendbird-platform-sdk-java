@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.client.model.SendBirdSendbirdGroupChannelDetailChannel;
+import org.openapitools.client.model.SendBirdSendBirdGroupChannelDetailChannel;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +36,15 @@ import org.sendbird.client.JSON;
   SendBirdGetAGroupChannelResponseAllOf.JSON_PROPERTY_CHANNEL
 })
 @JsonTypeName("getAGroupChannelResponse_allOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdGetAGroupChannelResponseAllOf {
   public static final String JSON_PROPERTY_CHANNEL = "channel";
-  private SendBirdSendbirdGroupChannelDetailChannel channel;
+  private SendBirdSendBirdGroupChannelDetailChannel channel;
 
   public SendBirdGetAGroupChannelResponseAllOf() { 
   }
 
-  public SendBirdGetAGroupChannelResponseAllOf channel(SendBirdSendbirdGroupChannelDetailChannel channel) {
+  public SendBirdGetAGroupChannelResponseAllOf channel(SendBirdSendBirdGroupChannelDetailChannel channel) {
     this.channel = channel;
     return this;
   }
@@ -58,14 +58,14 @@ public class SendBirdGetAGroupChannelResponseAllOf {
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdSendbirdGroupChannelDetailChannel getChannel() {
+  public SendBirdSendBirdGroupChannelDetailChannel getChannel() {
     return channel;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannel(SendBirdSendbirdGroupChannelDetailChannel channel) {
+  public void setChannel(SendBirdSendBirdGroupChannelDetailChannel channel) {
     this.channel = channel;
   }
 

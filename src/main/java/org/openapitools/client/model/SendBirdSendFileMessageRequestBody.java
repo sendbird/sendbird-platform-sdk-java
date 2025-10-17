@@ -27,8 +27,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdFile;
-import org.openapitools.client.model.SendBirdSendbirdSortedMetaarrayInner;
+import org.openapitools.client.model.SendBirdSendBirdFile;
+import org.openapitools.client.model.SendBirdSendBirdSortedMetaarrayInner;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -60,7 +60,7 @@ import org.sendbird.client.JSON;
   SendBirdSendFileMessageRequestBody.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("sendFileMessageRequestBody")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdSendFileMessageRequestBody {
   public static final String JSON_PROPERTY_APNS_BUNDLE_ID = "apns_bundle_id";
   private String apnsBundleId;
@@ -81,7 +81,7 @@ public class SendBirdSendFileMessageRequestBody {
   private String dedupId;
 
   public static final String JSON_PROPERTY_FILES = "files";
-  private SendBirdSendbirdFile files;
+  private SendBirdSendBirdFile files;
 
   public static final String JSON_PROPERTY_IS_SILENT = "is_silent";
   private Boolean isSilent;
@@ -173,7 +173,7 @@ public class SendBirdSendFileMessageRequestBody {
   private Boolean sendPush;
 
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
-  private List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray = null;
+  private List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray = null;
 
   public static final String JSON_PROPERTY_SOUND = "sound";
   private String sound;
@@ -352,7 +352,7 @@ public class SendBirdSendFileMessageRequestBody {
   }
 
 
-  public SendBirdSendFileMessageRequestBody files(SendBirdSendbirdFile files) {
+  public SendBirdSendFileMessageRequestBody files(SendBirdSendBirdFile files) {
     this.files = files;
     return this;
   }
@@ -366,14 +366,14 @@ public class SendBirdSendFileMessageRequestBody {
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public SendBirdSendbirdFile getFiles() {
+  public SendBirdSendBirdFile getFiles() {
     return files;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFiles(SendBirdSendbirdFile files) {
+  public void setFiles(SendBirdSendBirdFile files) {
     this.files = files;
   }
 
@@ -568,12 +568,12 @@ public class SendBirdSendFileMessageRequestBody {
   }
 
 
-  public SendBirdSendFileMessageRequestBody sortedMetaarray(List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray) {
+  public SendBirdSendFileMessageRequestBody sortedMetaarray(List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
 
-  public SendBirdSendFileMessageRequestBody addSortedMetaarrayItem(SendBirdSendbirdSortedMetaarrayInner sortedMetaarrayItem) {
+  public SendBirdSendFileMessageRequestBody addSortedMetaarrayItem(SendBirdSendBirdSortedMetaarrayInner sortedMetaarrayItem) {
     if (this.sortedMetaarray == null) {
       this.sortedMetaarray = new ArrayList<>();
     }
@@ -590,14 +590,14 @@ public class SendBirdSendFileMessageRequestBody {
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdSortedMetaarrayInner> getSortedMetaarray() {
+  public List<SendBirdSendBirdSortedMetaarrayInner> getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSortedMetaarray(List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray) {
+  public void setSortedMetaarray(List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 

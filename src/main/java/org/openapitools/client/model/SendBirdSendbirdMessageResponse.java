@@ -26,13 +26,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdBasicUserInfo;
-import org.openapitools.client.model.SendBirdSendbirdFile;
-import org.openapitools.client.model.SendBirdSendbirdMessageResponseExtendedMessagePayload;
-import org.openapitools.client.model.SendBirdSendbirdMessageResponseMessageEvents;
-import org.openapitools.client.model.SendBirdSendbirdParentMessageInfo;
-import org.openapitools.client.model.SendBirdSendbirdReaction;
-import org.openapitools.client.model.SendBirdSendbirdSortedMetaarrayInner;
+import org.openapitools.client.model.SendBirdSendBirdBasicUserInfo;
+import org.openapitools.client.model.SendBirdSendBirdFile;
+import org.openapitools.client.model.SendBirdSendBirdMessageResponseExtendedMessagePayload;
+import org.openapitools.client.model.SendBirdSendBirdMessageResponseMessageEvents;
+import org.openapitools.client.model.SendBirdSendBirdParentMessageInfo;
+import org.openapitools.client.model.SendBirdSendBirdReaction;
+import org.openapitools.client.model.SendBirdSendBirdSortedMetaarrayInner;
 import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -42,43 +42,43 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendBirdSendbirdMessageResponse
+ * SendBirdSendBirdMessageResponse
  */
 @JsonPropertyOrder({
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_REQUIRE_AUTH,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_CUSTOM_TYPE,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_MENTIONED_USERS,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_TRANSLATIONS,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_UPDATED_AT,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_IS_OP_MSG,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_REACTIONS,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_IS_REMOVED,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_USER,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_FILE,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_FILES,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_MESSAGE,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_DATA,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_MESSAGE_RETENTION_HOUR,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_SILENT,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_TYPE,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_CREATED_AT,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_CHANNEL_TYPE,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_REQ_ID,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_MENTION_TYPE,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_CHANNEL_URL,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_MESSAGE_ID,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_SORTED_METAARRAY,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_THREAD_INFO,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_PARENT_MESSAGE_ID,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_PARENT_MESSAGE_INFO,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_IS_REPLY_TO_CHANNEL,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_MESSAGE_EVENTS,
-  SendBirdSendbirdMessageResponse.JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_REQUIRE_AUTH,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_CUSTOM_TYPE,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_MENTIONED_USERS,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_TRANSLATIONS,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_UPDATED_AT,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_IS_OP_MSG,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_REACTIONS,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_IS_REMOVED,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_USER,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_FILE,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_FILES,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_MESSAGE,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_DATA,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_MESSAGE_RETENTION_HOUR,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_SILENT,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_TYPE,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_CREATED_AT,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_CHANNEL_TYPE,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_REQ_ID,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_MENTION_TYPE,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_CHANNEL_URL,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_MESSAGE_ID,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_SORTED_METAARRAY,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_THREAD_INFO,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_PARENT_MESSAGE_ID,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_PARENT_MESSAGE_INFO,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_IS_REPLY_TO_CHANNEL,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_MESSAGE_EVENTS,
+  SendBirdSendBirdMessageResponse.JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD
 })
-@JsonTypeName("Sendbird.MessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
-public class SendBirdSendbirdMessageResponse {
+@JsonTypeName("SendBird.MessageResponse")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+public class SendBirdSendBirdMessageResponse {
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;
 
@@ -89,7 +89,7 @@ public class SendBirdSendbirdMessageResponse {
   private String customType;
 
   public static final String JSON_PROPERTY_MENTIONED_USERS = "mentioned_users";
-  private List<SendBirdSendbirdBasicUserInfo> mentionedUsers = null;
+  private List<SendBirdSendBirdBasicUserInfo> mentionedUsers = null;
 
   public static final String JSON_PROPERTY_TRANSLATIONS = "translations";
   private Object translations;
@@ -101,19 +101,19 @@ public class SendBirdSendbirdMessageResponse {
   private Boolean isOpMsg;
 
   public static final String JSON_PROPERTY_REACTIONS = "reactions";
-  private List<SendBirdSendbirdReaction> reactions = null;
+  private List<SendBirdSendBirdReaction> reactions = null;
 
   public static final String JSON_PROPERTY_IS_REMOVED = "is_removed";
   private Boolean isRemoved;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private SendBirdSendbirdBasicUserInfo user;
+  private SendBirdSendBirdBasicUserInfo user;
 
   public static final String JSON_PROPERTY_FILE = "file";
   private Object _file;
 
   public static final String JSON_PROPERTY_FILES = "files";
-  private List<SendBirdSendbirdFile> files = null;
+  private List<SendBirdSendBirdFile> files = null;
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
@@ -149,7 +149,7 @@ public class SendBirdSendbirdMessageResponse {
   private Long messageId;
 
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
-  private List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray = null;
+  private List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray = null;
 
   public static final String JSON_PROPERTY_THREAD_INFO = "thread_info";
   private Object threadInfo;
@@ -158,21 +158,21 @@ public class SendBirdSendbirdMessageResponse {
   private Integer parentMessageId;
 
   public static final String JSON_PROPERTY_PARENT_MESSAGE_INFO = "parent_message_info";
-  private SendBirdSendbirdParentMessageInfo parentMessageInfo;
+  private SendBirdSendBirdParentMessageInfo parentMessageInfo;
 
   public static final String JSON_PROPERTY_IS_REPLY_TO_CHANNEL = "is_reply_to_channel";
   private Boolean isReplyToChannel;
 
   public static final String JSON_PROPERTY_MESSAGE_EVENTS = "message_events";
-  private JsonNullable<SendBirdSendbirdMessageResponseMessageEvents> messageEvents = JsonNullable.<SendBirdSendbirdMessageResponseMessageEvents>undefined();
+  private JsonNullable<SendBirdSendBirdMessageResponseMessageEvents> messageEvents = JsonNullable.<SendBirdSendBirdMessageResponseMessageEvents>undefined();
 
   public static final String JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD = "extended_message_payload";
-  private SendBirdSendbirdMessageResponseExtendedMessagePayload extendedMessagePayload;
+  private SendBirdSendBirdMessageResponseExtendedMessagePayload extendedMessagePayload;
 
-  public SendBirdSendbirdMessageResponse() { 
+  public SendBirdSendBirdMessageResponse() { 
   }
 
-  public SendBirdSendbirdMessageResponse requireAuth(Boolean requireAuth) {
+  public SendBirdSendBirdMessageResponse requireAuth(Boolean requireAuth) {
     this.requireAuth = requireAuth;
     return this;
   }
@@ -198,7 +198,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse messageSurvivalSeconds(Integer messageSurvivalSeconds) {
+  public SendBirdSendBirdMessageResponse messageSurvivalSeconds(Integer messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
     return this;
   }
@@ -224,7 +224,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse customType(String customType) {
+  public SendBirdSendBirdMessageResponse customType(String customType) {
     this.customType = customType;
     return this;
   }
@@ -250,12 +250,12 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse mentionedUsers(List<SendBirdSendbirdBasicUserInfo> mentionedUsers) {
+  public SendBirdSendBirdMessageResponse mentionedUsers(List<SendBirdSendBirdBasicUserInfo> mentionedUsers) {
     this.mentionedUsers = mentionedUsers;
     return this;
   }
 
-  public SendBirdSendbirdMessageResponse addMentionedUsersItem(SendBirdSendbirdBasicUserInfo mentionedUsersItem) {
+  public SendBirdSendBirdMessageResponse addMentionedUsersItem(SendBirdSendBirdBasicUserInfo mentionedUsersItem) {
     if (this.mentionedUsers == null) {
       this.mentionedUsers = new ArrayList<>();
     }
@@ -272,19 +272,19 @@ public class SendBirdSendbirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdBasicUserInfo> getMentionedUsers() {
+  public List<SendBirdSendBirdBasicUserInfo> getMentionedUsers() {
     return mentionedUsers;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MENTIONED_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMentionedUsers(List<SendBirdSendbirdBasicUserInfo> mentionedUsers) {
+  public void setMentionedUsers(List<SendBirdSendBirdBasicUserInfo> mentionedUsers) {
     this.mentionedUsers = mentionedUsers;
   }
 
 
-  public SendBirdSendbirdMessageResponse translations(Object translations) {
+  public SendBirdSendBirdMessageResponse translations(Object translations) {
     this.translations = translations;
     return this;
   }
@@ -310,7 +310,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse updatedAt(Long updatedAt) {
+  public SendBirdSendBirdMessageResponse updatedAt(Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -336,7 +336,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse isOpMsg(Boolean isOpMsg) {
+  public SendBirdSendBirdMessageResponse isOpMsg(Boolean isOpMsg) {
     this.isOpMsg = isOpMsg;
     return this;
   }
@@ -362,12 +362,12 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse reactions(List<SendBirdSendbirdReaction> reactions) {
+  public SendBirdSendBirdMessageResponse reactions(List<SendBirdSendBirdReaction> reactions) {
     this.reactions = reactions;
     return this;
   }
 
-  public SendBirdSendbirdMessageResponse addReactionsItem(SendBirdSendbirdReaction reactionsItem) {
+  public SendBirdSendBirdMessageResponse addReactionsItem(SendBirdSendBirdReaction reactionsItem) {
     if (this.reactions == null) {
       this.reactions = new ArrayList<>();
     }
@@ -384,19 +384,19 @@ public class SendBirdSendbirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_REACTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdReaction> getReactions() {
+  public List<SendBirdSendBirdReaction> getReactions() {
     return reactions;
   }
 
 
   @JsonProperty(JSON_PROPERTY_REACTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReactions(List<SendBirdSendbirdReaction> reactions) {
+  public void setReactions(List<SendBirdSendBirdReaction> reactions) {
     this.reactions = reactions;
   }
 
 
-  public SendBirdSendbirdMessageResponse isRemoved(Boolean isRemoved) {
+  public SendBirdSendBirdMessageResponse isRemoved(Boolean isRemoved) {
     this.isRemoved = isRemoved;
     return this;
   }
@@ -422,7 +422,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse user(SendBirdSendbirdBasicUserInfo user) {
+  public SendBirdSendBirdMessageResponse user(SendBirdSendBirdBasicUserInfo user) {
     this.user = user;
     return this;
   }
@@ -436,19 +436,19 @@ public class SendBirdSendbirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdSendbirdBasicUserInfo getUser() {
+  public SendBirdSendBirdBasicUserInfo getUser() {
     return user;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendBirdSendbirdBasicUserInfo user) {
+  public void setUser(SendBirdSendBirdBasicUserInfo user) {
     this.user = user;
   }
 
 
-  public SendBirdSendbirdMessageResponse _file(Object _file) {
+  public SendBirdSendBirdMessageResponse _file(Object _file) {
     this._file = _file;
     return this;
   }
@@ -474,12 +474,12 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse files(List<SendBirdSendbirdFile> files) {
+  public SendBirdSendBirdMessageResponse files(List<SendBirdSendBirdFile> files) {
     this.files = files;
     return this;
   }
 
-  public SendBirdSendbirdMessageResponse addFilesItem(SendBirdSendbirdFile filesItem) {
+  public SendBirdSendBirdMessageResponse addFilesItem(SendBirdSendBirdFile filesItem) {
     if (this.files == null) {
       this.files = new ArrayList<>();
     }
@@ -496,19 +496,19 @@ public class SendBirdSendbirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdFile> getFiles() {
+  public List<SendBirdSendBirdFile> getFiles() {
     return files;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FILES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiles(List<SendBirdSendbirdFile> files) {
+  public void setFiles(List<SendBirdSendBirdFile> files) {
     this.files = files;
   }
 
 
-  public SendBirdSendbirdMessageResponse message(String message) {
+  public SendBirdSendBirdMessageResponse message(String message) {
     this.message = message;
     return this;
   }
@@ -534,7 +534,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse data(String data) {
+  public SendBirdSendBirdMessageResponse data(String data) {
     this.data = data;
     return this;
   }
@@ -560,7 +560,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse messageRetentionHour(Integer messageRetentionHour) {
+  public SendBirdSendBirdMessageResponse messageRetentionHour(Integer messageRetentionHour) {
     this.messageRetentionHour = messageRetentionHour;
     return this;
   }
@@ -586,7 +586,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse silent(Boolean silent) {
+  public SendBirdSendBirdMessageResponse silent(Boolean silent) {
     this.silent = silent;
     return this;
   }
@@ -612,7 +612,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse type(String type) {
+  public SendBirdSendBirdMessageResponse type(String type) {
     this.type = type;
     return this;
   }
@@ -638,7 +638,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse createdAt(Long createdAt) {
+  public SendBirdSendBirdMessageResponse createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -664,7 +664,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse channelType(String channelType) {
+  public SendBirdSendBirdMessageResponse channelType(String channelType) {
     this.channelType = channelType;
     return this;
   }
@@ -690,7 +690,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse reqId(String reqId) {
+  public SendBirdSendBirdMessageResponse reqId(String reqId) {
     this.reqId = reqId;
     return this;
   }
@@ -716,7 +716,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse mentionType(String mentionType) {
+  public SendBirdSendBirdMessageResponse mentionType(String mentionType) {
     this.mentionType = mentionType;
     return this;
   }
@@ -742,7 +742,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse channelUrl(String channelUrl) {
+  public SendBirdSendBirdMessageResponse channelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
     return this;
   }
@@ -768,7 +768,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse messageId(Long messageId) {
+  public SendBirdSendBirdMessageResponse messageId(Long messageId) {
     this.messageId = messageId;
     return this;
   }
@@ -794,12 +794,12 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse sortedMetaarray(List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray) {
+  public SendBirdSendBirdMessageResponse sortedMetaarray(List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
 
-  public SendBirdSendbirdMessageResponse addSortedMetaarrayItem(SendBirdSendbirdSortedMetaarrayInner sortedMetaarrayItem) {
+  public SendBirdSendBirdMessageResponse addSortedMetaarrayItem(SendBirdSendBirdSortedMetaarrayInner sortedMetaarrayItem) {
     if (this.sortedMetaarray == null) {
       this.sortedMetaarray = new ArrayList<>();
     }
@@ -816,19 +816,19 @@ public class SendBirdSendbirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdSortedMetaarrayInner> getSortedMetaarray() {
+  public List<SendBirdSendBirdSortedMetaarrayInner> getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSortedMetaarray(List<SendBirdSendbirdSortedMetaarrayInner> sortedMetaarray) {
+  public void setSortedMetaarray(List<SendBirdSendBirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 
 
-  public SendBirdSendbirdMessageResponse threadInfo(Object threadInfo) {
+  public SendBirdSendBirdMessageResponse threadInfo(Object threadInfo) {
     this.threadInfo = threadInfo;
     return this;
   }
@@ -854,7 +854,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse parentMessageId(Integer parentMessageId) {
+  public SendBirdSendBirdMessageResponse parentMessageId(Integer parentMessageId) {
     this.parentMessageId = parentMessageId;
     return this;
   }
@@ -880,7 +880,7 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse parentMessageInfo(SendBirdSendbirdParentMessageInfo parentMessageInfo) {
+  public SendBirdSendBirdMessageResponse parentMessageInfo(SendBirdSendBirdParentMessageInfo parentMessageInfo) {
     this.parentMessageInfo = parentMessageInfo;
     return this;
   }
@@ -894,19 +894,19 @@ public class SendBirdSendbirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdSendbirdParentMessageInfo getParentMessageInfo() {
+  public SendBirdSendBirdParentMessageInfo getParentMessageInfo() {
     return parentMessageInfo;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PARENT_MESSAGE_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentMessageInfo(SendBirdSendbirdParentMessageInfo parentMessageInfo) {
+  public void setParentMessageInfo(SendBirdSendBirdParentMessageInfo parentMessageInfo) {
     this.parentMessageInfo = parentMessageInfo;
   }
 
 
-  public SendBirdSendbirdMessageResponse isReplyToChannel(Boolean isReplyToChannel) {
+  public SendBirdSendBirdMessageResponse isReplyToChannel(Boolean isReplyToChannel) {
     this.isReplyToChannel = isReplyToChannel;
     return this;
   }
@@ -932,8 +932,8 @@ public class SendBirdSendbirdMessageResponse {
   }
 
 
-  public SendBirdSendbirdMessageResponse messageEvents(SendBirdSendbirdMessageResponseMessageEvents messageEvents) {
-    this.messageEvents = JsonNullable.<SendBirdSendbirdMessageResponseMessageEvents>of(messageEvents);
+  public SendBirdSendBirdMessageResponse messageEvents(SendBirdSendBirdMessageResponseMessageEvents messageEvents) {
+    this.messageEvents = JsonNullable.<SendBirdSendBirdMessageResponseMessageEvents>of(messageEvents);
     return this;
   }
 
@@ -945,28 +945,28 @@ public class SendBirdSendbirdMessageResponse {
   @ApiModelProperty(value = "")
   @JsonIgnore
 
-  public SendBirdSendbirdMessageResponseMessageEvents getMessageEvents() {
+  public SendBirdSendBirdMessageResponseMessageEvents getMessageEvents() {
         return messageEvents.orElse(null);
   }
 
   @JsonProperty(JSON_PROPERTY_MESSAGE_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public JsonNullable<SendBirdSendbirdMessageResponseMessageEvents> getMessageEvents_JsonNullable() {
+  public JsonNullable<SendBirdSendBirdMessageResponseMessageEvents> getMessageEvents_JsonNullable() {
     return messageEvents;
   }
   
   @JsonProperty(JSON_PROPERTY_MESSAGE_EVENTS)
-  public void setMessageEvents_JsonNullable(JsonNullable<SendBirdSendbirdMessageResponseMessageEvents> messageEvents) {
+  public void setMessageEvents_JsonNullable(JsonNullable<SendBirdSendBirdMessageResponseMessageEvents> messageEvents) {
     this.messageEvents = messageEvents;
   }
 
-  public void setMessageEvents(SendBirdSendbirdMessageResponseMessageEvents messageEvents) {
-    this.messageEvents = JsonNullable.<SendBirdSendbirdMessageResponseMessageEvents>of(messageEvents);
+  public void setMessageEvents(SendBirdSendBirdMessageResponseMessageEvents messageEvents) {
+    this.messageEvents = JsonNullable.<SendBirdSendBirdMessageResponseMessageEvents>of(messageEvents);
   }
 
 
-  public SendBirdSendbirdMessageResponse extendedMessagePayload(SendBirdSendbirdMessageResponseExtendedMessagePayload extendedMessagePayload) {
+  public SendBirdSendBirdMessageResponse extendedMessagePayload(SendBirdSendBirdMessageResponseExtendedMessagePayload extendedMessagePayload) {
     this.extendedMessagePayload = extendedMessagePayload;
     return this;
   }
@@ -980,20 +980,20 @@ public class SendBirdSendbirdMessageResponse {
   @JsonProperty(JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendBirdSendbirdMessageResponseExtendedMessagePayload getExtendedMessagePayload() {
+  public SendBirdSendBirdMessageResponseExtendedMessagePayload getExtendedMessagePayload() {
     return extendedMessagePayload;
   }
 
 
   @JsonProperty(JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExtendedMessagePayload(SendBirdSendbirdMessageResponseExtendedMessagePayload extendedMessagePayload) {
+  public void setExtendedMessagePayload(SendBirdSendBirdMessageResponseExtendedMessagePayload extendedMessagePayload) {
     this.extendedMessagePayload = extendedMessagePayload;
   }
 
 
   /**
-   * Return true if this Sendbird.MessageResponse object is equal to o.
+   * Return true if this SendBird.MessageResponse object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -1003,37 +1003,37 @@ public class SendBirdSendbirdMessageResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendBirdSendbirdMessageResponse sendbirdMessageResponse = (SendBirdSendbirdMessageResponse) o;
-    return Objects.equals(this.requireAuth, sendbirdMessageResponse.requireAuth) &&
-        Objects.equals(this.messageSurvivalSeconds, sendbirdMessageResponse.messageSurvivalSeconds) &&
-        Objects.equals(this.customType, sendbirdMessageResponse.customType) &&
-        Objects.equals(this.mentionedUsers, sendbirdMessageResponse.mentionedUsers) &&
-        Objects.equals(this.translations, sendbirdMessageResponse.translations) &&
-        Objects.equals(this.updatedAt, sendbirdMessageResponse.updatedAt) &&
-        Objects.equals(this.isOpMsg, sendbirdMessageResponse.isOpMsg) &&
-        Objects.equals(this.reactions, sendbirdMessageResponse.reactions) &&
-        Objects.equals(this.isRemoved, sendbirdMessageResponse.isRemoved) &&
-        Objects.equals(this.user, sendbirdMessageResponse.user) &&
-        Objects.equals(this._file, sendbirdMessageResponse._file) &&
-        Objects.equals(this.files, sendbirdMessageResponse.files) &&
-        Objects.equals(this.message, sendbirdMessageResponse.message) &&
-        Objects.equals(this.data, sendbirdMessageResponse.data) &&
-        Objects.equals(this.messageRetentionHour, sendbirdMessageResponse.messageRetentionHour) &&
-        Objects.equals(this.silent, sendbirdMessageResponse.silent) &&
-        Objects.equals(this.type, sendbirdMessageResponse.type) &&
-        Objects.equals(this.createdAt, sendbirdMessageResponse.createdAt) &&
-        Objects.equals(this.channelType, sendbirdMessageResponse.channelType) &&
-        Objects.equals(this.reqId, sendbirdMessageResponse.reqId) &&
-        Objects.equals(this.mentionType, sendbirdMessageResponse.mentionType) &&
-        Objects.equals(this.channelUrl, sendbirdMessageResponse.channelUrl) &&
-        Objects.equals(this.messageId, sendbirdMessageResponse.messageId) &&
-        Objects.equals(this.sortedMetaarray, sendbirdMessageResponse.sortedMetaarray) &&
-        Objects.equals(this.threadInfo, sendbirdMessageResponse.threadInfo) &&
-        Objects.equals(this.parentMessageId, sendbirdMessageResponse.parentMessageId) &&
-        Objects.equals(this.parentMessageInfo, sendbirdMessageResponse.parentMessageInfo) &&
-        Objects.equals(this.isReplyToChannel, sendbirdMessageResponse.isReplyToChannel) &&
-        equalsNullable(this.messageEvents, sendbirdMessageResponse.messageEvents) &&
-        Objects.equals(this.extendedMessagePayload, sendbirdMessageResponse.extendedMessagePayload);
+    SendBirdSendBirdMessageResponse sendBirdMessageResponse = (SendBirdSendBirdMessageResponse) o;
+    return Objects.equals(this.requireAuth, sendBirdMessageResponse.requireAuth) &&
+        Objects.equals(this.messageSurvivalSeconds, sendBirdMessageResponse.messageSurvivalSeconds) &&
+        Objects.equals(this.customType, sendBirdMessageResponse.customType) &&
+        Objects.equals(this.mentionedUsers, sendBirdMessageResponse.mentionedUsers) &&
+        Objects.equals(this.translations, sendBirdMessageResponse.translations) &&
+        Objects.equals(this.updatedAt, sendBirdMessageResponse.updatedAt) &&
+        Objects.equals(this.isOpMsg, sendBirdMessageResponse.isOpMsg) &&
+        Objects.equals(this.reactions, sendBirdMessageResponse.reactions) &&
+        Objects.equals(this.isRemoved, sendBirdMessageResponse.isRemoved) &&
+        Objects.equals(this.user, sendBirdMessageResponse.user) &&
+        Objects.equals(this._file, sendBirdMessageResponse._file) &&
+        Objects.equals(this.files, sendBirdMessageResponse.files) &&
+        Objects.equals(this.message, sendBirdMessageResponse.message) &&
+        Objects.equals(this.data, sendBirdMessageResponse.data) &&
+        Objects.equals(this.messageRetentionHour, sendBirdMessageResponse.messageRetentionHour) &&
+        Objects.equals(this.silent, sendBirdMessageResponse.silent) &&
+        Objects.equals(this.type, sendBirdMessageResponse.type) &&
+        Objects.equals(this.createdAt, sendBirdMessageResponse.createdAt) &&
+        Objects.equals(this.channelType, sendBirdMessageResponse.channelType) &&
+        Objects.equals(this.reqId, sendBirdMessageResponse.reqId) &&
+        Objects.equals(this.mentionType, sendBirdMessageResponse.mentionType) &&
+        Objects.equals(this.channelUrl, sendBirdMessageResponse.channelUrl) &&
+        Objects.equals(this.messageId, sendBirdMessageResponse.messageId) &&
+        Objects.equals(this.sortedMetaarray, sendBirdMessageResponse.sortedMetaarray) &&
+        Objects.equals(this.threadInfo, sendBirdMessageResponse.threadInfo) &&
+        Objects.equals(this.parentMessageId, sendBirdMessageResponse.parentMessageId) &&
+        Objects.equals(this.parentMessageInfo, sendBirdMessageResponse.parentMessageInfo) &&
+        Objects.equals(this.isReplyToChannel, sendBirdMessageResponse.isReplyToChannel) &&
+        equalsNullable(this.messageEvents, sendBirdMessageResponse.messageEvents) &&
+        Objects.equals(this.extendedMessagePayload, sendBirdMessageResponse.extendedMessagePayload);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1055,7 +1055,7 @@ public class SendBirdSendbirdMessageResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendBirdSendbirdMessageResponse {\n");
+    sb.append("class SendBirdSendBirdMessageResponse {\n");
     sb.append("    requireAuth: ").append(toIndentedString(requireAuth)).append("\n");
     sb.append("    messageSurvivalSeconds: ").append(toIndentedString(messageSurvivalSeconds)).append("\n");
     sb.append("    customType: ").append(toIndentedString(customType)).append("\n");

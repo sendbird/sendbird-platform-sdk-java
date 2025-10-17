@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendBirdSendbirdUser;
+import org.openapitools.client.model.SendBirdSendBirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,13 +39,13 @@ import org.sendbird.client.JSON;
   SendBirdListUsersResponse.JSON_PROPERTY_USERS
 })
 @JsonTypeName("listUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T08:54:05.631950+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
 public class SendBirdListUsersResponse {
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
 
   public static final String JSON_PROPERTY_USERS = "users";
-  private List<SendBirdSendbirdUser> users = null;
+  private List<SendBirdSendBirdUser> users = null;
 
   public SendBirdListUsersResponse() { 
   }
@@ -76,12 +76,12 @@ public class SendBirdListUsersResponse {
   }
 
 
-  public SendBirdListUsersResponse users(List<SendBirdSendbirdUser> users) {
+  public SendBirdListUsersResponse users(List<SendBirdSendBirdUser> users) {
     this.users = users;
     return this;
   }
 
-  public SendBirdListUsersResponse addUsersItem(SendBirdSendbirdUser usersItem) {
+  public SendBirdListUsersResponse addUsersItem(SendBirdSendBirdUser usersItem) {
     if (this.users == null) {
       this.users = new ArrayList<>();
     }
@@ -98,14 +98,14 @@ public class SendBirdListUsersResponse {
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendBirdSendbirdUser> getUsers() {
+  public List<SendBirdSendBirdUser> getUsers() {
     return users;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUsers(List<SendBirdSendbirdUser> users) {
+  public void setUsers(List<SendBirdSendBirdUser> users) {
     this.users = users;
   }
 
