@@ -42,8 +42,7 @@ import org.sendbird.client.JSON;
   SendbirdFile.JSON_PROPERTY_THUMBNAILS,
   SendbirdFile.JSON_PROPERTY_REQUIRE_AUTH
 })
-@JsonTypeName("Sendbird.File")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdFile {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -231,7 +230,7 @@ public class SendbirdFile {
 
 
   /**
-   * Return true if this Sendbird.File object is equal to o.
+   * Return true if this SendbirdFile object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

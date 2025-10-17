@@ -41,8 +41,8 @@ import org.sendbird.client.JSON;
   SendbirdGroupChannelDetailChannel.JSON_PROPERTY_MEMBER_COUNT,
   SendbirdGroupChannelDetailChannel.JSON_PROPERTY_NAME
 })
-@JsonTypeName("Sendbird_GroupChannelDetail_channel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@JsonTypeName("SendbirdGroupChannelDetail_channel")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdGroupChannelDetailChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -280,7 +280,7 @@ public class SendbirdGroupChannelDetailChannel {
 
 
   /**
-   * Return true if this Sendbird_GroupChannelDetail_channel object is equal to o.
+   * Return true if this SendbirdGroupChannelDetail_channel object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

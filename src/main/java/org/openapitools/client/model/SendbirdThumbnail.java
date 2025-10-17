@@ -39,8 +39,7 @@ import org.sendbird.client.JSON;
   SendbirdThumbnail.JSON_PROPERTY_URL,
   SendbirdThumbnail.JSON_PROPERTY_WIDTH
 })
-@JsonTypeName("Sendbird.Thumbnail")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdThumbnail {
   public static final String JSON_PROPERTY_HEIGHT = "height";
   private Integer height;
@@ -220,7 +219,7 @@ public class SendbirdThumbnail {
 
 
   /**
-   * Return true if this Sendbird.Thumbnail object is equal to o.
+   * Return true if this SendbirdThumbnail object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

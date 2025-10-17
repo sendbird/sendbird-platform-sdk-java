@@ -50,7 +50,7 @@ import org.sendbird.client.JSON;
   ListBotsResponseBotsInner.JSON_PROPERTY_SHOW_MEMBER
 })
 @JsonTypeName("listBotsResponse_bots_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class ListBotsResponseBotsInner {
   public static final String JSON_PROPERTY_BOT = "bot";
   private ListBotsResponseBotsInnerBot bot;

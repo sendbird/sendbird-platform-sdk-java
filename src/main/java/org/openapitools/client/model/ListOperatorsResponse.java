@@ -39,7 +39,7 @@ import org.sendbird.client.JSON;
   ListOperatorsResponse.JSON_PROPERTY_OPERATORS
 })
 @JsonTypeName("listOperatorsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class ListOperatorsResponse {
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;

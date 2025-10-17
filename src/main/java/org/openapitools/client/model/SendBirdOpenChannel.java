@@ -53,8 +53,7 @@ import org.sendbird.client.JSON;
   SendbirdOpenChannel.JSON_PROPERTY_PARTICIPANT_COUNT,
   SendbirdOpenChannel.JSON_PROPERTY_METADATA
 })
-@JsonTypeName("Sendbird.OpenChannel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdOpenChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
@@ -453,7 +452,7 @@ public class SendbirdOpenChannel {
 
 
   /**
-   * Return true if this Sendbird.OpenChannel object is equal to o.
+   * Return true if this SendbirdOpenChannel object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

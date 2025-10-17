@@ -37,8 +37,7 @@ import org.sendbird.client.JSON;
   SendbirdSmsFallback.JSON_PROPERTY_WAIT_SECONDS,
   SendbirdSmsFallback.JSON_PROPERTY_EXCLUDE_USER_IDS
 })
-@JsonTypeName("Sendbird.SmsFallback")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdSmsFallback {
   public static final String JSON_PROPERTY_WAIT_SECONDS = "wait_seconds";
   private Integer waitSeconds;
@@ -110,7 +109,7 @@ public class SendbirdSmsFallback {
 
 
   /**
-   * Return true if this Sendbird.SmsFallback object is equal to o.
+   * Return true if this SendbirdSmsFallback object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

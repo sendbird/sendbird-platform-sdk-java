@@ -38,8 +38,7 @@ import org.sendbird.client.JSON;
   SendbirdReaction.JSON_PROPERTY_UPDATED_AT,
   SendbirdReaction.JSON_PROPERTY_USER_IDS
 })
-@JsonTypeName("Sendbird.Reaction")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdReaction {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;
@@ -140,7 +139,7 @@ public class SendbirdReaction {
 
 
   /**
-   * Return true if this Sendbird.Reaction object is equal to o.
+   * Return true if this SendbirdReaction object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

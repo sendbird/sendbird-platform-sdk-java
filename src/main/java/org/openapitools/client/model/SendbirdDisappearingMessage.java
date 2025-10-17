@@ -35,8 +35,7 @@ import org.sendbird.client.JSON;
   SendbirdDisappearingMessage.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
   SendbirdDisappearingMessage.JSON_PROPERTY_IS_TRIGGERED_BY_MESSAGE_READ
 })
-@JsonTypeName("Sendbird.DisappearingMessage")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdDisappearingMessage {
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private Integer messageSurvivalSeconds;
@@ -100,7 +99,7 @@ public class SendbirdDisappearingMessage {
 
 
   /**
-   * Return true if this Sendbird.DisappearingMessage object is equal to o.
+   * Return true if this SendbirdDisappearingMessage object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

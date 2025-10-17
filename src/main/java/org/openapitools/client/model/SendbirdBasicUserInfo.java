@@ -45,8 +45,7 @@ import org.sendbird.client.JSON;
   SendbirdBasicUserInfo.JSON_PROPERTY_PROFILE_URL,
   SendbirdBasicUserInfo.JSON_PROPERTY_METADATA
 })
-@JsonTypeName("Sendbird.BasicUserInfo")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdBasicUserInfo {
   public static final String JSON_PROPERTY_REQUIRE_AUTH_FOR_PROFILE_IMAGE = "require_auth_for_profile_image";
   private Boolean requireAuthForProfileImage;
@@ -337,7 +336,7 @@ public class SendbirdBasicUserInfo {
 
 
   /**
-   * Return true if this Sendbird.BasicUserInfo object is equal to o.
+   * Return true if this SendbirdBasicUserInfo object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

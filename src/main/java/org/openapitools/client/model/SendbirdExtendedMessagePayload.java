@@ -38,8 +38,7 @@ import org.sendbird.client.JSON;
   SendbirdExtendedMessagePayload.JSON_PROPERTY_CUSTOM_VIEW,
   SendbirdExtendedMessagePayload.JSON_PROPERTY_SUGGESTED_REPLIES
 })
-@JsonTypeName("Sendbird.ExtendedMessagePayload")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdExtendedMessagePayload {
   public static final String JSON_PROPERTY_CUSTOM_VIEW = "custom_view";
   private Object customView;
@@ -111,7 +110,7 @@ public class SendbirdExtendedMessagePayload {
 
 
   /**
-   * Return true if this Sendbird.ExtendedMessagePayload object is equal to o.
+   * Return true if this SendbirdExtendedMessagePayload object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

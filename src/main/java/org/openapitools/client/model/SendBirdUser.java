@@ -61,8 +61,7 @@ import org.sendbird.client.JSON;
   SendbirdUser.JSON_PROPERTY_PHONE_NUMBER,
   SendbirdUser.JSON_PROPERTY_IS_CREATED
 })
-@JsonTypeName("Sendbird.User")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdUser {
   public static final String JSON_PROPERTY_ACCESS_TOKEN = "access_token";
   private String accessToken;
@@ -778,7 +777,7 @@ public class SendbirdUser {
 
 
   /**
-   * Return true if this Sendbird.User object is equal to o.
+   * Return true if this SendbirdUser object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

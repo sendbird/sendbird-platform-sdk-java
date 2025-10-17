@@ -76,8 +76,7 @@ import org.sendbird.client.JSON;
   SendbirdMessageResponse.JSON_PROPERTY_MESSAGE_EVENTS,
   SendbirdMessageResponse.JSON_PROPERTY_EXTENDED_MESSAGE_PAYLOAD
 })
-@JsonTypeName("Sendbird.MessageResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:43:55.483942+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:55:58.534222+09:00[Asia/Seoul]")
 public class SendbirdMessageResponse {
   public static final String JSON_PROPERTY_REQUIRE_AUTH = "require_auth";
   private Boolean requireAuth;
@@ -993,7 +992,7 @@ public class SendbirdMessageResponse {
 
 
   /**
-   * Return true if this Sendbird.MessageResponse object is equal to o.
+   * Return true if this SendbirdMessageResponse object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
