@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendbirdBasicUserInfo;
+import org.openapitools.client.model.SendBirdBasicUserInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -41,7 +41,7 @@ import org.sendbird.client.JSON;
   ListRegistrationOrDeviceTokensResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("listRegistrationOrDeviceTokensResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class ListRegistrationOrDeviceTokensResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private List<String> token = null;
@@ -53,7 +53,7 @@ public class ListRegistrationOrDeviceTokensResponse {
   private String type;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private SendbirdBasicUserInfo user;
+  private SendBirdBasicUserInfo user;
 
   public ListRegistrationOrDeviceTokensResponse() { 
   }
@@ -152,7 +152,7 @@ public class ListRegistrationOrDeviceTokensResponse {
   }
 
 
-  public ListRegistrationOrDeviceTokensResponse user(SendbirdBasicUserInfo user) {
+  public ListRegistrationOrDeviceTokensResponse user(SendBirdBasicUserInfo user) {
     this.user = user;
     return this;
   }
@@ -166,14 +166,14 @@ public class ListRegistrationOrDeviceTokensResponse {
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendbirdBasicUserInfo getUser() {
+  public SendBirdBasicUserInfo getUser() {
     return user;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendbirdBasicUserInfo user) {
+  public void setUser(SendBirdBasicUserInfo user) {
     this.user = user;
   }
 

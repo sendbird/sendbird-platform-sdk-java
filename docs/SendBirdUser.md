@@ -1,6 +1,6 @@
 
 
-# SendbirdUser
+# SendBirdUser
 
 User
 

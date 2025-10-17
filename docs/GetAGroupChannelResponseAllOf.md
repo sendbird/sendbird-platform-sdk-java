@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**channel** | [**SendbirdGroupChannelDetailChannel**](SendbirdGroupChannelDetailChannel.md) |  |  [optional] |
+|**channel** | [**SendBirdGroupChannelDetailChannel**](SendBirdGroupChannelDetailChannel.md) |  |  [optional] |
 
 
 

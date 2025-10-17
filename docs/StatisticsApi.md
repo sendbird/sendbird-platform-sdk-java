@@ -11,7 +11,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## viewNumberOfDailyActiveUsers
 
-> SendBirdViewNumberOfDailyActiveUsersResponse viewNumberOfDailyActiveUsers().date(date).apiToken(apiToken).execute();
+> ViewNumberOfDailyActiveUsersResponse viewNumberOfDailyActiveUsers().date(date).apiToken(apiToken).execute();
 
 View number of daily active users
 
@@ -43,7 +43,7 @@ public class Example {
         String date = "date_example"; // String | YYYY-MM-DD
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdViewNumberOfDailyActiveUsersResponse result = api.viewNumberOfDailyActiveUsers()
+            ViewNumberOfDailyActiveUsersResponse result = api.viewNumberOfDailyActiveUsers()
                 .date(date)
                 .apiToken(apiToken)
                 .execute();
@@ -69,7 +69,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdViewNumberOfDailyActiveUsersResponse**](SendBirdViewNumberOfDailyActiveUsersResponse.md)
+[**ViewNumberOfDailyActiveUsersResponse**](ViewNumberOfDailyActiveUsersResponse.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ No authorization required
 
 ## viewNumberOfMonthlyActiveUsers
 
-> SendBirdViewNumberOfMonthlyActiveUsersResponse viewNumberOfMonthlyActiveUsers().date(date).apiToken(apiToken).execute();
+> ViewNumberOfMonthlyActiveUsersResponse viewNumberOfMonthlyActiveUsers().date(date).apiToken(apiToken).execute();
 
 View number of monthly active users
 
@@ -120,7 +120,7 @@ public class Example {
         String date = "date_example"; // String | YYYY-MM-DD
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdViewNumberOfMonthlyActiveUsersResponse result = api.viewNumberOfMonthlyActiveUsers()
+            ViewNumberOfMonthlyActiveUsersResponse result = api.viewNumberOfMonthlyActiveUsers()
                 .date(date)
                 .apiToken(apiToken)
                 .execute();
@@ -146,7 +146,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdViewNumberOfMonthlyActiveUsersResponse**](SendBirdViewNumberOfMonthlyActiveUsersResponse.md)
+[**ViewNumberOfMonthlyActiveUsersResponse**](ViewNumberOfMonthlyActiveUsersResponse.md)
 
 ### Authorization
 

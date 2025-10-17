@@ -1,26 +1,26 @@
 
 
-# SendbirdGroupChannelLastMessage
+# SendBirdGroupChannelLastMessage
 
 ## oneOf schemas
-* [SendbirdMessageResponse](SendbirdMessageResponse.md)
+* [SendBirdMessageResponse](SendBirdMessageResponse.md)
 
 ## Example
 ```java
 // Import classes:
-import org.openapitools.client.model.SendbirdGroupChannelLastMessage;
-import org.openapitools.client.model.SendbirdMessageResponse;
+import org.openapitools.client.model.SendBirdGroupChannelLastMessage;
+import org.openapitools.client.model.SendBirdMessageResponse;
 
 public class Example {
     public static void main(String[] args) {
-        SendbirdGroupChannelLastMessage exampleSendbirdGroupChannelLastMessage = new SendbirdGroupChannelLastMessage();
+        SendBirdGroupChannelLastMessage exampleSendBirdGroupChannelLastMessage = new SendBirdGroupChannelLastMessage();
 
-        // create a new SendbirdMessageResponse
-        SendbirdMessageResponse exampleSendbirdMessageResponse = new SendbirdMessageResponse();
-        // set SendbirdGroupChannelLastMessage to SendbirdMessageResponse
-        exampleSendbirdGroupChannelLastMessage.setActualInstance(exampleSendbirdMessageResponse);
-        // to get back the SendbirdMessageResponse set earlier
-        SendbirdMessageResponse testSendbirdMessageResponse = (SendbirdMessageResponse) exampleSendbirdGroupChannelLastMessage.getActualInstance();
+        // create a new SendBirdMessageResponse
+        SendBirdMessageResponse exampleSendBirdMessageResponse = new SendBirdMessageResponse();
+        // set SendBirdGroupChannelLastMessage to SendBirdMessageResponse
+        exampleSendBirdGroupChannelLastMessage.setActualInstance(exampleSendBirdMessageResponse);
+        // to get back the SendBirdMessageResponse set earlier
+        SendBirdMessageResponse testSendBirdMessageResponse = (SendBirdMessageResponse) exampleSendBirdGroupChannelLastMessage.getActualInstance();
     }
 }
 ```

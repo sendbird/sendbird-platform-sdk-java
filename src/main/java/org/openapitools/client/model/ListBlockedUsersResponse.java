@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendbirdUser;
+import org.openapitools.client.model.SendBirdUser;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -39,10 +39,10 @@ import org.sendbird.client.JSON;
   ListBlockedUsersResponse.JSON_PROPERTY_NEXT
 })
 @JsonTypeName("listBlockedUsersResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class ListBlockedUsersResponse {
   public static final String JSON_PROPERTY_USERS = "users";
-  private List<SendbirdUser> users = null;
+  private List<SendBirdUser> users = null;
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
@@ -50,12 +50,12 @@ public class ListBlockedUsersResponse {
   public ListBlockedUsersResponse() { 
   }
 
-  public ListBlockedUsersResponse users(List<SendbirdUser> users) {
+  public ListBlockedUsersResponse users(List<SendBirdUser> users) {
     this.users = users;
     return this;
   }
 
-  public ListBlockedUsersResponse addUsersItem(SendbirdUser usersItem) {
+  public ListBlockedUsersResponse addUsersItem(SendBirdUser usersItem) {
     if (this.users == null) {
       this.users = new ArrayList<>();
     }
@@ -72,14 +72,14 @@ public class ListBlockedUsersResponse {
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendbirdUser> getUsers() {
+  public List<SendBirdUser> getUsers() {
     return users;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USERS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUsers(List<SendbirdUser> users) {
+  public void setUsers(List<SendBirdUser> users) {
     this.users = users;
   }
 

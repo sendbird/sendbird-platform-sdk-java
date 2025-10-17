@@ -29,25 +29,25 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendbirdDisappearingMessage
+ * SendBirdDisappearingMessage
  */
 @JsonPropertyOrder({
-  SendbirdDisappearingMessage.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
-  SendbirdDisappearingMessage.JSON_PROPERTY_IS_TRIGGERED_BY_MESSAGE_READ
+  SendBirdDisappearingMessage.JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS,
+  SendBirdDisappearingMessage.JSON_PROPERTY_IS_TRIGGERED_BY_MESSAGE_READ
 })
-@JsonTypeName("Sendbird.DisappearingMessage")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
-public class SendbirdDisappearingMessage {
+@JsonTypeName("SendBird.DisappearingMessage")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+public class SendBirdDisappearingMessage {
   public static final String JSON_PROPERTY_MESSAGE_SURVIVAL_SECONDS = "message_survival_seconds";
   private Integer messageSurvivalSeconds;
 
   public static final String JSON_PROPERTY_IS_TRIGGERED_BY_MESSAGE_READ = "is_triggered_by_message_read";
   private Boolean isTriggeredByMessageRead;
 
-  public SendbirdDisappearingMessage() { 
+  public SendBirdDisappearingMessage() { 
   }
 
-  public SendbirdDisappearingMessage messageSurvivalSeconds(Integer messageSurvivalSeconds) {
+  public SendBirdDisappearingMessage messageSurvivalSeconds(Integer messageSurvivalSeconds) {
     this.messageSurvivalSeconds = messageSurvivalSeconds;
     return this;
   }
@@ -73,7 +73,7 @@ public class SendbirdDisappearingMessage {
   }
 
 
-  public SendbirdDisappearingMessage isTriggeredByMessageRead(Boolean isTriggeredByMessageRead) {
+  public SendBirdDisappearingMessage isTriggeredByMessageRead(Boolean isTriggeredByMessageRead) {
     this.isTriggeredByMessageRead = isTriggeredByMessageRead;
     return this;
   }
@@ -100,7 +100,7 @@ public class SendbirdDisappearingMessage {
 
 
   /**
-   * Return true if this Sendbird.DisappearingMessage object is equal to o.
+   * Return true if this SendBird.DisappearingMessage object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -110,9 +110,9 @@ public class SendbirdDisappearingMessage {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendbirdDisappearingMessage sendbirdDisappearingMessage = (SendbirdDisappearingMessage) o;
-    return Objects.equals(this.messageSurvivalSeconds, sendbirdDisappearingMessage.messageSurvivalSeconds) &&
-        Objects.equals(this.isTriggeredByMessageRead, sendbirdDisappearingMessage.isTriggeredByMessageRead);
+    SendBirdDisappearingMessage sendBirdDisappearingMessage = (SendBirdDisappearingMessage) o;
+    return Objects.equals(this.messageSurvivalSeconds, sendBirdDisappearingMessage.messageSurvivalSeconds) &&
+        Objects.equals(this.isTriggeredByMessageRead, sendBirdDisappearingMessage.isTriggeredByMessageRead);
   }
 
   @Override
@@ -123,7 +123,7 @@ public class SendbirdDisappearingMessage {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendbirdDisappearingMessage {\n");
+    sb.append("class SendBirdDisappearingMessage {\n");
     sb.append("    messageSurvivalSeconds: ").append(toIndentedString(messageSurvivalSeconds)).append("\n");
     sb.append("    isTriggeredByMessageRead: ").append(toIndentedString(isTriggeredByMessageRead)).append("\n");
     sb.append("}");

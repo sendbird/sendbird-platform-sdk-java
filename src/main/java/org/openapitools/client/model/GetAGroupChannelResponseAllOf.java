@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.client.model.SendbirdGroupChannelDetailChannel;
+import org.openapitools.client.model.SendBirdGroupChannelDetailChannel;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -36,15 +36,15 @@ import org.sendbird.client.JSON;
   GetAGroupChannelResponseAllOf.JSON_PROPERTY_CHANNEL
 })
 @JsonTypeName("getAGroupChannelResponse_allOf")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class GetAGroupChannelResponseAllOf {
   public static final String JSON_PROPERTY_CHANNEL = "channel";
-  private SendbirdGroupChannelDetailChannel channel;
+  private SendBirdGroupChannelDetailChannel channel;
 
   public GetAGroupChannelResponseAllOf() { 
   }
 
-  public GetAGroupChannelResponseAllOf channel(SendbirdGroupChannelDetailChannel channel) {
+  public GetAGroupChannelResponseAllOf channel(SendBirdGroupChannelDetailChannel channel) {
     this.channel = channel;
     return this;
   }
@@ -58,14 +58,14 @@ public class GetAGroupChannelResponseAllOf {
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendbirdGroupChannelDetailChannel getChannel() {
+  public SendBirdGroupChannelDetailChannel getChannel() {
     return channel;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannel(SendbirdGroupChannelDetailChannel channel) {
+  public void setChannel(SendBirdGroupChannelDetailChannel channel) {
     this.channel = channel;
   }
 

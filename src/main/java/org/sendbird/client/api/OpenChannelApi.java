@@ -8,19 +8,19 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.SendBirdCreateAnOpenChannelRequest;
-import org.openapitools.client.model.SendBirdListOpenChannelsResponse;
-import org.openapitools.client.model.SendBirdListOperatorsResponse;
-import org.openapitools.client.model.SendBirdRegisterOperatorsToAGroupChannelRequest;
-import org.openapitools.client.model.SendBirdSendBirdOpenChannel;
-import org.openapitools.client.model.SendBirdUpdateAnOpenChannelRequest;
+import org.openapitools.client.model.CreateAnOpenChannelRequest;
+import org.openapitools.client.model.ListOpenChannelsResponse;
+import org.openapitools.client.model.ListOperatorsResponse;
+import org.openapitools.client.model.RegisterOperatorsToAGroupChannelRequest;
+import org.openapitools.client.model.SendBirdOpenChannel;
+import org.openapitools.client.model.UpdateAnOpenChannelRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class OpenChannelApi {
   private ApiClient apiClient;
 
@@ -51,8 +51,8 @@ public class OpenChannelApi {
   }
 
 
-private ApiResponse<SendBirdSendBirdOpenChannel> createAnOpenChannelWithHttpInfo(String apiToken, SendBirdCreateAnOpenChannelRequest sendBirdCreateAnOpenChannelRequest) throws ApiException {
-    Object localVarPostBody = sendBirdCreateAnOpenChannelRequest;
+private ApiResponse<SendBirdOpenChannel> createAnOpenChannelWithHttpInfo(String apiToken, CreateAnOpenChannelRequest createAnOpenChannelRequest) throws ApiException {
+    Object localVarPostBody = createAnOpenChannelRequest;
     
     // create path and map variables
     String localVarPath = "/v3/open_channels";
@@ -81,7 +81,7 @@ private ApiResponse<SendBirdSendBirdOpenChannel> createAnOpenChannelWithHttpInfo
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendBirdOpenChannel> localVarReturnType = new GenericType<SendBirdSendBirdOpenChannel>() {};
+    GenericType<SendBirdOpenChannel> localVarReturnType = new GenericType<SendBirdOpenChannel>() {};
 
     return apiClient.invokeAPI("OpenChannelApi.createAnOpenChannel", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -90,7 +90,7 @@ private ApiResponse<SendBirdSendBirdOpenChannel> createAnOpenChannelWithHttpInfo
 
   public class APIcreateAnOpenChannelRequest {
     private String apiToken;
-    private SendBirdCreateAnOpenChannelRequest sendBirdCreateAnOpenChannelRequest;
+    private CreateAnOpenChannelRequest createAnOpenChannelRequest;
 
     private APIcreateAnOpenChannelRequest() {
     }
@@ -106,18 +106,18 @@ private ApiResponse<SendBirdSendBirdOpenChannel> createAnOpenChannelWithHttpInfo
     }
 
     /**
-     * Set sendBirdCreateAnOpenChannelRequest
-     * @param sendBirdCreateAnOpenChannelRequest  (optional)
+     * Set createAnOpenChannelRequest
+     * @param createAnOpenChannelRequest  (optional)
      * @return APIcreateAnOpenChannelRequest
      */
-    public APIcreateAnOpenChannelRequest sendBirdCreateAnOpenChannelRequest(SendBirdCreateAnOpenChannelRequest sendBirdCreateAnOpenChannelRequest) {
-      this.sendBirdCreateAnOpenChannelRequest = sendBirdCreateAnOpenChannelRequest;
+    public APIcreateAnOpenChannelRequest createAnOpenChannelRequest(CreateAnOpenChannelRequest createAnOpenChannelRequest) {
+      this.createAnOpenChannelRequest = createAnOpenChannelRequest;
       return this;
     }
 
     /**
      * Execute createAnOpenChannel request
-     * @return SendBirdSendBirdOpenChannel
+     * @return SendBirdOpenChannel
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -127,13 +127,13 @@ private ApiResponse<SendBirdSendBirdOpenChannel> createAnOpenChannelWithHttpInfo
      
      */
     
-    public SendBirdSendBirdOpenChannel execute() throws ApiException {
+    public SendBirdOpenChannel execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute createAnOpenChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendBirdOpenChannel&gt;
+     * @return ApiResponse&lt;SendBirdOpenChannel&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -142,8 +142,8 @@ private ApiResponse<SendBirdSendBirdOpenChannel> createAnOpenChannelWithHttpInfo
        </table>
 
      */
-    public ApiResponse<SendBirdSendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return createAnOpenChannelWithHttpInfo(apiToken, sendBirdCreateAnOpenChannelRequest);
+    public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
+      return createAnOpenChannelWithHttpInfo(apiToken, createAnOpenChannelRequest);
     }
   }
 
@@ -265,7 +265,7 @@ private ApiResponse<Object> deleteAnOpenChannelWithHttpInfo(String channelUrl, S
     return new APIdeleteAnOpenChannelRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdSendBirdOpenChannel> getAnOpenChannelWithHttpInfo(String channelUrl, String apiToken, Boolean includeOperators) throws ApiException {
+private ApiResponse<SendBirdOpenChannel> getAnOpenChannelWithHttpInfo(String channelUrl, String apiToken, Boolean includeOperators) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelUrl' is set
@@ -302,7 +302,7 @@ private ApiResponse<SendBirdSendBirdOpenChannel> getAnOpenChannelWithHttpInfo(St
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendBirdOpenChannel> localVarReturnType = new GenericType<SendBirdSendBirdOpenChannel>() {};
+    GenericType<SendBirdOpenChannel> localVarReturnType = new GenericType<SendBirdOpenChannel>() {};
 
     return apiClient.invokeAPI("OpenChannelApi.getAnOpenChannel", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -340,7 +340,7 @@ private ApiResponse<SendBirdSendBirdOpenChannel> getAnOpenChannelWithHttpInfo(St
 
     /**
      * Execute getAnOpenChannel request
-     * @return SendBirdSendBirdOpenChannel
+     * @return SendBirdOpenChannel
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -350,13 +350,13 @@ private ApiResponse<SendBirdSendBirdOpenChannel> getAnOpenChannelWithHttpInfo(St
      
      */
     
-    public SendBirdSendBirdOpenChannel execute() throws ApiException {
+    public SendBirdOpenChannel execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute getAnOpenChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendBirdOpenChannel&gt;
+     * @return ApiResponse&lt;SendBirdOpenChannel&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -365,7 +365,7 @@ private ApiResponse<SendBirdSendBirdOpenChannel> getAnOpenChannelWithHttpInfo(St
        </table>
 
      */
-    public ApiResponse<SendBirdSendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
       return getAnOpenChannelWithHttpInfo(channelUrl, apiToken, includeOperators);
     }
   }
@@ -383,7 +383,7 @@ private ApiResponse<SendBirdSendBirdOpenChannel> getAnOpenChannelWithHttpInfo(St
     return new APIgetAnOpenChannelRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdListOperatorsResponse> listChannelOperatorsWithHttpInfo(String channelUrl, String token, Integer limit, String apiToken) throws ApiException {
+private ApiResponse<ListOperatorsResponse> listChannelOperatorsWithHttpInfo(String channelUrl, String token, Integer limit, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelUrl' is set
@@ -421,7 +421,7 @@ private ApiResponse<SendBirdListOperatorsResponse> listChannelOperatorsWithHttpI
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdListOperatorsResponse> localVarReturnType = new GenericType<SendBirdListOperatorsResponse>() {};
+    GenericType<ListOperatorsResponse> localVarReturnType = new GenericType<ListOperatorsResponse>() {};
 
     return apiClient.invokeAPI("OpenChannelApi.listChannelOperators", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -470,7 +470,7 @@ private ApiResponse<SendBirdListOperatorsResponse> listChannelOperatorsWithHttpI
 
     /**
      * Execute listChannelOperators request
-     * @return SendBirdListOperatorsResponse
+     * @return ListOperatorsResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -480,13 +480,13 @@ private ApiResponse<SendBirdListOperatorsResponse> listChannelOperatorsWithHttpI
      
      */
     
-    public SendBirdListOperatorsResponse execute() throws ApiException {
+    public ListOperatorsResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute listChannelOperators request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdListOperatorsResponse&gt;
+     * @return ApiResponse&lt;ListOperatorsResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -495,7 +495,7 @@ private ApiResponse<SendBirdListOperatorsResponse> listChannelOperatorsWithHttpI
        </table>
 
      */
-    public ApiResponse<SendBirdListOperatorsResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<ListOperatorsResponse> executeWithHttpInfo() throws ApiException {
       return listChannelOperatorsWithHttpInfo(channelUrl, token, limit, apiToken);
     }
   }
@@ -513,7 +513,7 @@ private ApiResponse<SendBirdListOperatorsResponse> listChannelOperatorsWithHttpI
     return new APIlistChannelOperatorsRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdListOpenChannelsResponse> listOpenChannelsWithHttpInfo(String token, String channelUrls, Integer limit, String customTypes, String nameContains, String urlContains, Boolean showFrozen, Boolean showMetadata, String apiToken) throws ApiException {
+private ApiResponse<ListOpenChannelsResponse> listOpenChannelsWithHttpInfo(String token, String channelUrls, Integer limit, String customTypes, String nameContains, String urlContains, Boolean showFrozen, Boolean showMetadata, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // create path and map variables
@@ -551,7 +551,7 @@ private ApiResponse<SendBirdListOpenChannelsResponse> listOpenChannelsWithHttpIn
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdListOpenChannelsResponse> localVarReturnType = new GenericType<SendBirdListOpenChannelsResponse>() {};
+    GenericType<ListOpenChannelsResponse> localVarReturnType = new GenericType<ListOpenChannelsResponse>() {};
 
     return apiClient.invokeAPI("OpenChannelApi.listOpenChannels", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -664,7 +664,7 @@ private ApiResponse<SendBirdListOpenChannelsResponse> listOpenChannelsWithHttpIn
 
     /**
      * Execute listOpenChannels request
-     * @return SendBirdListOpenChannelsResponse
+     * @return ListOpenChannelsResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -674,13 +674,13 @@ private ApiResponse<SendBirdListOpenChannelsResponse> listOpenChannelsWithHttpIn
      
      */
     
-    public SendBirdListOpenChannelsResponse execute() throws ApiException {
+    public ListOpenChannelsResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute listOpenChannels request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdListOpenChannelsResponse&gt;
+     * @return ApiResponse&lt;ListOpenChannelsResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -689,7 +689,7 @@ private ApiResponse<SendBirdListOpenChannelsResponse> listOpenChannelsWithHttpIn
        </table>
 
      */
-    public ApiResponse<SendBirdListOpenChannelsResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<ListOpenChannelsResponse> executeWithHttpInfo() throws ApiException {
       return listOpenChannelsWithHttpInfo(token, channelUrls, limit, customTypes, nameContains, urlContains, showFrozen, showMetadata, apiToken);
     }
   }
@@ -706,8 +706,8 @@ private ApiResponse<SendBirdListOpenChannelsResponse> listOpenChannelsWithHttpIn
     return new APIlistOpenChannelsRequest();
   }
 
-private ApiResponse<Object> registerOperatorsWithHttpInfo(String channelUrl, String apiToken, SendBirdRegisterOperatorsToAGroupChannelRequest sendBirdRegisterOperatorsToAGroupChannelRequest) throws ApiException {
-    Object localVarPostBody = sendBirdRegisterOperatorsToAGroupChannelRequest;
+private ApiResponse<Object> registerOperatorsWithHttpInfo(String channelUrl, String apiToken, RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest) throws ApiException {
+    Object localVarPostBody = registerOperatorsToAGroupChannelRequest;
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -752,7 +752,7 @@ private ApiResponse<Object> registerOperatorsWithHttpInfo(String channelUrl, Str
   public class APIregisterOperatorsRequest {
     private String channelUrl;
     private String apiToken;
-    private SendBirdRegisterOperatorsToAGroupChannelRequest sendBirdRegisterOperatorsToAGroupChannelRequest;
+    private RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest;
 
     private APIregisterOperatorsRequest(String channelUrl) {
       this.channelUrl = channelUrl;
@@ -769,12 +769,12 @@ private ApiResponse<Object> registerOperatorsWithHttpInfo(String channelUrl, Str
     }
 
     /**
-     * Set sendBirdRegisterOperatorsToAGroupChannelRequest
-     * @param sendBirdRegisterOperatorsToAGroupChannelRequest  (optional)
+     * Set registerOperatorsToAGroupChannelRequest
+     * @param registerOperatorsToAGroupChannelRequest  (optional)
      * @return APIregisterOperatorsRequest
      */
-    public APIregisterOperatorsRequest sendBirdRegisterOperatorsToAGroupChannelRequest(SendBirdRegisterOperatorsToAGroupChannelRequest sendBirdRegisterOperatorsToAGroupChannelRequest) {
-      this.sendBirdRegisterOperatorsToAGroupChannelRequest = sendBirdRegisterOperatorsToAGroupChannelRequest;
+    public APIregisterOperatorsRequest registerOperatorsToAGroupChannelRequest(RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest) {
+      this.registerOperatorsToAGroupChannelRequest = registerOperatorsToAGroupChannelRequest;
       return this;
     }
 
@@ -806,7 +806,7 @@ private ApiResponse<Object> registerOperatorsWithHttpInfo(String channelUrl, Str
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return registerOperatorsWithHttpInfo(channelUrl, apiToken, sendBirdRegisterOperatorsToAGroupChannelRequest);
+      return registerOperatorsWithHttpInfo(channelUrl, apiToken, registerOperatorsToAGroupChannelRequest);
     }
   }
 
@@ -958,8 +958,8 @@ private ApiResponse<Object> unregisterOperatorsWithHttpInfo(String channelUrl, S
     return new APIunregisterOperatorsRequest(channelUrl);
   }
 
-private ApiResponse<SendBirdSendBirdOpenChannel> updateAnOpenChannelWithHttpInfo(String channelUrl, String apiToken, SendBirdUpdateAnOpenChannelRequest sendBirdUpdateAnOpenChannelRequest) throws ApiException {
-    Object localVarPostBody = sendBirdUpdateAnOpenChannelRequest;
+private ApiResponse<SendBirdOpenChannel> updateAnOpenChannelWithHttpInfo(String channelUrl, String apiToken, UpdateAnOpenChannelRequest updateAnOpenChannelRequest) throws ApiException {
+    Object localVarPostBody = updateAnOpenChannelRequest;
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -994,7 +994,7 @@ private ApiResponse<SendBirdSendBirdOpenChannel> updateAnOpenChannelWithHttpInfo
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendBirdOpenChannel> localVarReturnType = new GenericType<SendBirdSendBirdOpenChannel>() {};
+    GenericType<SendBirdOpenChannel> localVarReturnType = new GenericType<SendBirdOpenChannel>() {};
 
     return apiClient.invokeAPI("OpenChannelApi.updateAnOpenChannel", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1004,7 +1004,7 @@ private ApiResponse<SendBirdSendBirdOpenChannel> updateAnOpenChannelWithHttpInfo
   public class APIupdateAnOpenChannelRequest {
     private String channelUrl;
     private String apiToken;
-    private SendBirdUpdateAnOpenChannelRequest sendBirdUpdateAnOpenChannelRequest;
+    private UpdateAnOpenChannelRequest updateAnOpenChannelRequest;
 
     private APIupdateAnOpenChannelRequest(String channelUrl) {
       this.channelUrl = channelUrl;
@@ -1021,18 +1021,18 @@ private ApiResponse<SendBirdSendBirdOpenChannel> updateAnOpenChannelWithHttpInfo
     }
 
     /**
-     * Set sendBirdUpdateAnOpenChannelRequest
-     * @param sendBirdUpdateAnOpenChannelRequest  (optional)
+     * Set updateAnOpenChannelRequest
+     * @param updateAnOpenChannelRequest  (optional)
      * @return APIupdateAnOpenChannelRequest
      */
-    public APIupdateAnOpenChannelRequest sendBirdUpdateAnOpenChannelRequest(SendBirdUpdateAnOpenChannelRequest sendBirdUpdateAnOpenChannelRequest) {
-      this.sendBirdUpdateAnOpenChannelRequest = sendBirdUpdateAnOpenChannelRequest;
+    public APIupdateAnOpenChannelRequest updateAnOpenChannelRequest(UpdateAnOpenChannelRequest updateAnOpenChannelRequest) {
+      this.updateAnOpenChannelRequest = updateAnOpenChannelRequest;
       return this;
     }
 
     /**
      * Execute updateAnOpenChannel request
-     * @return SendBirdSendBirdOpenChannel
+     * @return SendBirdOpenChannel
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1042,13 +1042,13 @@ private ApiResponse<SendBirdSendBirdOpenChannel> updateAnOpenChannelWithHttpInfo
      
      */
     
-    public SendBirdSendBirdOpenChannel execute() throws ApiException {
+    public SendBirdOpenChannel execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updateAnOpenChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendBirdOpenChannel&gt;
+     * @return ApiResponse&lt;SendBirdOpenChannel&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1057,8 +1057,8 @@ private ApiResponse<SendBirdSendBirdOpenChannel> updateAnOpenChannelWithHttpInfo
        </table>
 
      */
-    public ApiResponse<SendBirdSendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
-      return updateAnOpenChannelWithHttpInfo(channelUrl, apiToken, sendBirdUpdateAnOpenChannelRequest);
+    public ApiResponse<SendBirdOpenChannel> executeWithHttpInfo() throws ApiException {
+      return updateAnOpenChannelWithHttpInfo(channelUrl, apiToken, updateAnOpenChannelRequest);
     }
   }
 

@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**token** | **String** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
-|**user** | [**SendbirdBasicUserInfo**](SendbirdBasicUserInfo.md) |  |  [optional] |
+|**user** | [**SendBirdBasicUserInfo**](SendBirdBasicUserInfo.md) |  |  [optional] |
 
 
 

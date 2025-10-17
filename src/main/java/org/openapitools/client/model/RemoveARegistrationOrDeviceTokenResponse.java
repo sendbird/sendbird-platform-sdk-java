@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.client.model.SendbirdBasicUserInfo;
+import org.openapitools.client.model.SendBirdBasicUserInfo;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -37,13 +37,13 @@ import org.sendbird.client.JSON;
   RemoveARegistrationOrDeviceTokenResponse.JSON_PROPERTY_USER
 })
 @JsonTypeName("removeARegistrationOrDeviceTokenResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class RemoveARegistrationOrDeviceTokenResponse {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private String token;
 
   public static final String JSON_PROPERTY_USER = "user";
-  private SendbirdBasicUserInfo user;
+  private SendBirdBasicUserInfo user;
 
   public RemoveARegistrationOrDeviceTokenResponse() { 
   }
@@ -74,7 +74,7 @@ public class RemoveARegistrationOrDeviceTokenResponse {
   }
 
 
-  public RemoveARegistrationOrDeviceTokenResponse user(SendbirdBasicUserInfo user) {
+  public RemoveARegistrationOrDeviceTokenResponse user(SendBirdBasicUserInfo user) {
     this.user = user;
     return this;
   }
@@ -88,14 +88,14 @@ public class RemoveARegistrationOrDeviceTokenResponse {
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendbirdBasicUserInfo getUser() {
+  public SendBirdBasicUserInfo getUser() {
     return user;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUser(SendbirdBasicUserInfo user) {
+  public void setUser(SendBirdBasicUserInfo user) {
     this.user = user;
   }
 

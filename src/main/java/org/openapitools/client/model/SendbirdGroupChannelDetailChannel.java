@@ -29,21 +29,21 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendbirdGroupChannelDetailChannel
+ * SendBirdGroupChannelDetailChannel
  */
 @JsonPropertyOrder({
-  SendbirdGroupChannelDetailChannel.JSON_PROPERTY_CHANNEL_URL,
-  SendbirdGroupChannelDetailChannel.JSON_PROPERTY_COVER_URL,
-  SendbirdGroupChannelDetailChannel.JSON_PROPERTY_CREATED_AT,
-  SendbirdGroupChannelDetailChannel.JSON_PROPERTY_CUSTOM_TYPE,
-  SendbirdGroupChannelDetailChannel.JSON_PROPERTY_DATA,
-  SendbirdGroupChannelDetailChannel.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
-  SendbirdGroupChannelDetailChannel.JSON_PROPERTY_MEMBER_COUNT,
-  SendbirdGroupChannelDetailChannel.JSON_PROPERTY_NAME
+  SendBirdGroupChannelDetailChannel.JSON_PROPERTY_CHANNEL_URL,
+  SendBirdGroupChannelDetailChannel.JSON_PROPERTY_COVER_URL,
+  SendBirdGroupChannelDetailChannel.JSON_PROPERTY_CREATED_AT,
+  SendBirdGroupChannelDetailChannel.JSON_PROPERTY_CUSTOM_TYPE,
+  SendBirdGroupChannelDetailChannel.JSON_PROPERTY_DATA,
+  SendBirdGroupChannelDetailChannel.JSON_PROPERTY_MAX_LENGTH_MESSAGE,
+  SendBirdGroupChannelDetailChannel.JSON_PROPERTY_MEMBER_COUNT,
+  SendBirdGroupChannelDetailChannel.JSON_PROPERTY_NAME
 })
-@JsonTypeName("Sendbird_GroupChannelDetail_channel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
-public class SendbirdGroupChannelDetailChannel {
+@JsonTypeName("SendBird_GroupChannelDetail_channel")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+public class SendBirdGroupChannelDetailChannel {
   public static final String JSON_PROPERTY_CHANNEL_URL = "channel_url";
   private String channelUrl;
 
@@ -68,10 +68,10 @@ public class SendbirdGroupChannelDetailChannel {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public SendbirdGroupChannelDetailChannel() { 
+  public SendBirdGroupChannelDetailChannel() { 
   }
 
-  public SendbirdGroupChannelDetailChannel channelUrl(String channelUrl) {
+  public SendBirdGroupChannelDetailChannel channelUrl(String channelUrl) {
     this.channelUrl = channelUrl;
     return this;
   }
@@ -97,7 +97,7 @@ public class SendbirdGroupChannelDetailChannel {
   }
 
 
-  public SendbirdGroupChannelDetailChannel coverUrl(String coverUrl) {
+  public SendBirdGroupChannelDetailChannel coverUrl(String coverUrl) {
     this.coverUrl = coverUrl;
     return this;
   }
@@ -123,7 +123,7 @@ public class SendbirdGroupChannelDetailChannel {
   }
 
 
-  public SendbirdGroupChannelDetailChannel createdAt(Long createdAt) {
+  public SendBirdGroupChannelDetailChannel createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -149,7 +149,7 @@ public class SendbirdGroupChannelDetailChannel {
   }
 
 
-  public SendbirdGroupChannelDetailChannel customType(String customType) {
+  public SendBirdGroupChannelDetailChannel customType(String customType) {
     this.customType = customType;
     return this;
   }
@@ -175,7 +175,7 @@ public class SendbirdGroupChannelDetailChannel {
   }
 
 
-  public SendbirdGroupChannelDetailChannel data(String data) {
+  public SendBirdGroupChannelDetailChannel data(String data) {
     this.data = data;
     return this;
   }
@@ -201,7 +201,7 @@ public class SendbirdGroupChannelDetailChannel {
   }
 
 
-  public SendbirdGroupChannelDetailChannel maxLengthMessage(Integer maxLengthMessage) {
+  public SendBirdGroupChannelDetailChannel maxLengthMessage(Integer maxLengthMessage) {
     this.maxLengthMessage = maxLengthMessage;
     return this;
   }
@@ -227,7 +227,7 @@ public class SendbirdGroupChannelDetailChannel {
   }
 
 
-  public SendbirdGroupChannelDetailChannel memberCount(Integer memberCount) {
+  public SendBirdGroupChannelDetailChannel memberCount(Integer memberCount) {
     this.memberCount = memberCount;
     return this;
   }
@@ -253,7 +253,7 @@ public class SendbirdGroupChannelDetailChannel {
   }
 
 
-  public SendbirdGroupChannelDetailChannel name(String name) {
+  public SendBirdGroupChannelDetailChannel name(String name) {
     this.name = name;
     return this;
   }
@@ -280,7 +280,7 @@ public class SendbirdGroupChannelDetailChannel {
 
 
   /**
-   * Return true if this Sendbird_GroupChannelDetail_channel object is equal to o.
+   * Return true if this SendBird_GroupChannelDetail_channel object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -290,15 +290,15 @@ public class SendbirdGroupChannelDetailChannel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendbirdGroupChannelDetailChannel sendbirdGroupChannelDetailChannel = (SendbirdGroupChannelDetailChannel) o;
-    return Objects.equals(this.channelUrl, sendbirdGroupChannelDetailChannel.channelUrl) &&
-        Objects.equals(this.coverUrl, sendbirdGroupChannelDetailChannel.coverUrl) &&
-        Objects.equals(this.createdAt, sendbirdGroupChannelDetailChannel.createdAt) &&
-        Objects.equals(this.customType, sendbirdGroupChannelDetailChannel.customType) &&
-        Objects.equals(this.data, sendbirdGroupChannelDetailChannel.data) &&
-        Objects.equals(this.maxLengthMessage, sendbirdGroupChannelDetailChannel.maxLengthMessage) &&
-        Objects.equals(this.memberCount, sendbirdGroupChannelDetailChannel.memberCount) &&
-        Objects.equals(this.name, sendbirdGroupChannelDetailChannel.name);
+    SendBirdGroupChannelDetailChannel sendBirdGroupChannelDetailChannel = (SendBirdGroupChannelDetailChannel) o;
+    return Objects.equals(this.channelUrl, sendBirdGroupChannelDetailChannel.channelUrl) &&
+        Objects.equals(this.coverUrl, sendBirdGroupChannelDetailChannel.coverUrl) &&
+        Objects.equals(this.createdAt, sendBirdGroupChannelDetailChannel.createdAt) &&
+        Objects.equals(this.customType, sendBirdGroupChannelDetailChannel.customType) &&
+        Objects.equals(this.data, sendBirdGroupChannelDetailChannel.data) &&
+        Objects.equals(this.maxLengthMessage, sendBirdGroupChannelDetailChannel.maxLengthMessage) &&
+        Objects.equals(this.memberCount, sendBirdGroupChannelDetailChannel.memberCount) &&
+        Objects.equals(this.name, sendBirdGroupChannelDetailChannel.name);
   }
 
   @Override
@@ -309,7 +309,7 @@ public class SendbirdGroupChannelDetailChannel {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendbirdGroupChannelDetailChannel {\n");
+    sb.append("class SendBirdGroupChannelDetailChannel {\n");
     sb.append("    channelUrl: ").append(toIndentedString(channelUrl)).append("\n");
     sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

@@ -37,7 +37,7 @@ import org.sendbird.client.JSON;
   StartTypingIndicatorsRequest.JSON_PROPERTY_USER_IDS
 })
 @JsonTypeName("startTypingIndicators_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class StartTypingIndicatorsRequest {
   public static final String JSON_PROPERTY_USER_IDS = "user_ids";
   private List<String> userIds = new ArrayList<>();

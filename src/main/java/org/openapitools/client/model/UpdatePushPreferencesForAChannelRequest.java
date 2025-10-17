@@ -36,7 +36,7 @@ import org.sendbird.client.JSON;
   UpdatePushPreferencesForAChannelRequest.JSON_PROPERTY_PUSH_SOUND
 })
 @JsonTypeName("updatePushPreferencesForAChannel_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class UpdatePushPreferencesForAChannelRequest {
   /**
    * The type of notifications trigger applies to group channels when a user is disconnected from Sendbird server. Acceptable values are the following: - default (default): Indicates that a user&#39;s notifications trigger setting applies to the specified channel. - all: Indicates that a user receives notifications for all new messages. - mention_only: Indicates that a user only receives notifications for mentioned messages. - off: Indicates that a user doesn&#39;t receive any notifications.

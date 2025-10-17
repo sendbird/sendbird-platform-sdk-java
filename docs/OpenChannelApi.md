@@ -17,7 +17,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## createAnOpenChannel
 
-> SendBirdSendBirdOpenChannel createAnOpenChannel().apiToken(apiToken).sendBirdCreateAnOpenChannelRequest(sendBirdCreateAnOpenChannelRequest).execute();
+> SendBirdOpenChannel createAnOpenChannel().apiToken(apiToken).createAnOpenChannelRequest(createAnOpenChannelRequest).execute();
 
 Create an open channel
 
@@ -46,11 +46,11 @@ public class Example {
 
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdCreateAnOpenChannelRequest sendBirdCreateAnOpenChannelRequest = new SendBirdCreateAnOpenChannelRequest(); // SendBirdCreateAnOpenChannelRequest | 
+        CreateAnOpenChannelRequest createAnOpenChannelRequest = new CreateAnOpenChannelRequest(); // CreateAnOpenChannelRequest | 
         try {
-            SendBirdSendBirdOpenChannel result = api.createAnOpenChannel()
+            SendBirdOpenChannel result = api.createAnOpenChannel()
                 .apiToken(apiToken)
-                .sendBirdCreateAnOpenChannelRequest(sendBirdCreateAnOpenChannelRequest)
+                .createAnOpenChannelRequest(createAnOpenChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -70,11 +70,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdCreateAnOpenChannelRequest** | [**SendBirdCreateAnOpenChannelRequest**](SendBirdCreateAnOpenChannelRequest.md)|  | [optional] |
+| **createAnOpenChannelRequest** | [**CreateAnOpenChannelRequest**](CreateAnOpenChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdSendBirdOpenChannel**](SendBirdSendBirdOpenChannel.md)
+[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ No authorization required
 
 ## getAnOpenChannel
 
-> SendBirdSendBirdOpenChannel getAnOpenChannel(channelUrl).apiToken(apiToken).includeOperators(includeOperators).execute();
+> SendBirdOpenChannel getAnOpenChannel(channelUrl).apiToken(apiToken).includeOperators(includeOperators).execute();
 
 Get an open channel
 
@@ -196,7 +196,7 @@ public class Example {
         String apiToken = "{{API_TOKEN}}"; // String | 
         Boolean includeOperators = true; // Boolean | Determines whether to include a list of operators in the response. (Default: false)
         try {
-            SendBirdSendBirdOpenChannel result = api.getAnOpenChannel(channelUrl)
+            SendBirdOpenChannel result = api.getAnOpenChannel(channelUrl)
                 .apiToken(apiToken)
                 .includeOperators(includeOperators)
                 .execute();
@@ -223,7 +223,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdSendBirdOpenChannel**](SendBirdSendBirdOpenChannel.md)
+[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
 
 ### Authorization
 
@@ -242,7 +242,7 @@ No authorization required
 
 ## listChannelOperators
 
-> SendBirdListOperatorsResponse listChannelOperators(channelUrl).token(token).limit(limit).apiToken(apiToken).execute();
+> ListOperatorsResponse listChannelOperators(channelUrl).token(token).limit(limit).apiToken(apiToken).execute();
 
 List operators of an open channel
 
@@ -277,7 +277,7 @@ public class Example {
         Integer limit = 56; // Integer | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdListOperatorsResponse result = api.listChannelOperators(channelUrl)
+            ListOperatorsResponse result = api.listChannelOperators(channelUrl)
                 .token(token)
                 .limit(limit)
                 .apiToken(apiToken)
@@ -306,7 +306,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdListOperatorsResponse**](SendBirdListOperatorsResponse.md)
+[**ListOperatorsResponse**](ListOperatorsResponse.md)
 
 ### Authorization
 
@@ -325,7 +325,7 @@ No authorization required
 
 ## listOpenChannels
 
-> SendBirdListOpenChannelsResponse listOpenChannels().token(token).channelUrls(channelUrls).limit(limit).customTypes(customTypes).nameContains(nameContains).urlContains(urlContains).showFrozen(showFrozen).showMetadata(showMetadata).apiToken(apiToken).execute();
+> ListOpenChannelsResponse listOpenChannels().token(token).channelUrls(channelUrls).limit(limit).customTypes(customTypes).nameContains(nameContains).urlContains(urlContains).showFrozen(showFrozen).showMetadata(showMetadata).apiToken(apiToken).execute();
 
 List open channels
 
@@ -361,7 +361,7 @@ public class Example {
         Boolean showMetadata = true; // Boolean | Determines whether to include channel metadata in the response. (Default: false)
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdListOpenChannelsResponse result = api.listOpenChannels()
+            ListOpenChannelsResponse result = api.listOpenChannels()
                 .token(token)
                 .channelUrls(channelUrls)
                 .limit(limit)
@@ -401,7 +401,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdListOpenChannelsResponse**](SendBirdListOpenChannelsResponse.md)
+[**ListOpenChannelsResponse**](ListOpenChannelsResponse.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ No authorization required
 
 ## registerOperators
 
-> Object registerOperators(channelUrl).apiToken(apiToken).sendBirdRegisterOperatorsToAGroupChannelRequest(sendBirdRegisterOperatorsToAGroupChannelRequest).execute();
+> Object registerOperators(channelUrl).apiToken(apiToken).registerOperatorsToAGroupChannelRequest(registerOperatorsToAGroupChannelRequest).execute();
 
 Register operators to an open channel
 
@@ -448,11 +448,11 @@ public class Example {
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdRegisterOperatorsToAGroupChannelRequest sendBirdRegisterOperatorsToAGroupChannelRequest = new SendBirdRegisterOperatorsToAGroupChannelRequest(); // SendBirdRegisterOperatorsToAGroupChannelRequest | 
+        RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest = new RegisterOperatorsToAGroupChannelRequest(); // RegisterOperatorsToAGroupChannelRequest | 
         try {
             Object result = api.registerOperators(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdRegisterOperatorsToAGroupChannelRequest(sendBirdRegisterOperatorsToAGroupChannelRequest)
+                .registerOperatorsToAGroupChannelRequest(registerOperatorsToAGroupChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -473,7 +473,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdRegisterOperatorsToAGroupChannelRequest** | [**SendBirdRegisterOperatorsToAGroupChannelRequest**](SendBirdRegisterOperatorsToAGroupChannelRequest.md)|  | [optional] |
+| **registerOperatorsToAGroupChannelRequest** | [**RegisterOperatorsToAGroupChannelRequest**](RegisterOperatorsToAGroupChannelRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -579,7 +579,7 @@ No authorization required
 
 ## updateAnOpenChannel
 
-> SendBirdSendBirdOpenChannel updateAnOpenChannel(channelUrl).apiToken(apiToken).sendBirdUpdateAnOpenChannelRequest(sendBirdUpdateAnOpenChannelRequest).execute();
+> SendBirdOpenChannel updateAnOpenChannel(channelUrl).apiToken(apiToken).updateAnOpenChannelRequest(updateAnOpenChannelRequest).execute();
 
 Update an open channel
 
@@ -607,11 +607,11 @@ public class Example {
         OpenChannelApi apiInstance = new OpenChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdUpdateAnOpenChannelRequest sendBirdUpdateAnOpenChannelRequest = new SendBirdUpdateAnOpenChannelRequest(); // SendBirdUpdateAnOpenChannelRequest | 
+        UpdateAnOpenChannelRequest updateAnOpenChannelRequest = new UpdateAnOpenChannelRequest(); // UpdateAnOpenChannelRequest | 
         try {
-            SendBirdSendBirdOpenChannel result = api.updateAnOpenChannel(channelUrl)
+            SendBirdOpenChannel result = api.updateAnOpenChannel(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdUpdateAnOpenChannelRequest(sendBirdUpdateAnOpenChannelRequest)
+                .updateAnOpenChannelRequest(updateAnOpenChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -632,11 +632,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdUpdateAnOpenChannelRequest** | [**SendBirdUpdateAnOpenChannelRequest**](SendBirdUpdateAnOpenChannelRequest.md)|  | [optional] |
+| **updateAnOpenChannelRequest** | [**UpdateAnOpenChannelRequest**](UpdateAnOpenChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdSendBirdOpenChannel**](SendBirdSendBirdOpenChannel.md)
+[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
 
 ### Authorization
 

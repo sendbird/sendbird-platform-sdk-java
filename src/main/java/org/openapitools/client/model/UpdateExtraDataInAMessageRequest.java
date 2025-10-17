@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendbirdSortedMetaarrayInner;
+import org.openapitools.client.model.SendBirdSortedMetaarrayInner;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -40,13 +40,13 @@ import org.sendbird.client.JSON;
   UpdateExtraDataInAMessageRequest.JSON_PROPERTY_UPSERT
 })
 @JsonTypeName("updateExtraDataInAMessage_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class UpdateExtraDataInAMessageRequest {
   public static final String JSON_PROPERTY_MODE = "mode";
   private String mode;
 
   public static final String JSON_PROPERTY_SORTED_METAARRAY = "sorted_metaarray";
-  private List<SendbirdSortedMetaarrayInner> sortedMetaarray = null;
+  private List<SendBirdSortedMetaarrayInner> sortedMetaarray = null;
 
   public static final String JSON_PROPERTY_UPSERT = "upsert";
   private Boolean upsert;
@@ -80,12 +80,12 @@ public class UpdateExtraDataInAMessageRequest {
   }
 
 
-  public UpdateExtraDataInAMessageRequest sortedMetaarray(List<SendbirdSortedMetaarrayInner> sortedMetaarray) {
+  public UpdateExtraDataInAMessageRequest sortedMetaarray(List<SendBirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
     return this;
   }
 
-  public UpdateExtraDataInAMessageRequest addSortedMetaarrayItem(SendbirdSortedMetaarrayInner sortedMetaarrayItem) {
+  public UpdateExtraDataInAMessageRequest addSortedMetaarrayItem(SendBirdSortedMetaarrayInner sortedMetaarrayItem) {
     if (this.sortedMetaarray == null) {
       this.sortedMetaarray = new ArrayList<>();
     }
@@ -102,14 +102,14 @@ public class UpdateExtraDataInAMessageRequest {
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendbirdSortedMetaarrayInner> getSortedMetaarray() {
+  public List<SendBirdSortedMetaarrayInner> getSortedMetaarray() {
     return sortedMetaarray;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SORTED_METAARRAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSortedMetaarray(List<SendbirdSortedMetaarrayInner> sortedMetaarray) {
+  public void setSortedMetaarray(List<SendBirdSortedMetaarrayInner> sortedMetaarray) {
     this.sortedMetaarray = sortedMetaarray;
   }
 

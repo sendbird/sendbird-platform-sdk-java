@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendbirdGroupChannel;
+import org.openapitools.client.model.SendBirdGroupChannel;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -40,10 +40,10 @@ import org.sendbird.client.JSON;
   GroupChatListChannelsResponse.JSON_PROPERTY_TS
 })
 @JsonTypeName("groupChatListChannelsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class GroupChatListChannelsResponse {
   public static final String JSON_PROPERTY_CHANNELS = "channels";
-  private List<SendbirdGroupChannel> channels = null;
+  private List<SendBirdGroupChannel> channels = null;
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
@@ -54,12 +54,12 @@ public class GroupChatListChannelsResponse {
   public GroupChatListChannelsResponse() { 
   }
 
-  public GroupChatListChannelsResponse channels(List<SendbirdGroupChannel> channels) {
+  public GroupChatListChannelsResponse channels(List<SendBirdGroupChannel> channels) {
     this.channels = channels;
     return this;
   }
 
-  public GroupChatListChannelsResponse addChannelsItem(SendbirdGroupChannel channelsItem) {
+  public GroupChatListChannelsResponse addChannelsItem(SendBirdGroupChannel channelsItem) {
     if (this.channels == null) {
       this.channels = new ArrayList<>();
     }
@@ -76,14 +76,14 @@ public class GroupChatListChannelsResponse {
   @JsonProperty(JSON_PROPERTY_CHANNELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendbirdGroupChannel> getChannels() {
+  public List<SendBirdGroupChannel> getChannels() {
     return channels;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannels(List<SendbirdGroupChannel> channels) {
+  public void setChannels(List<SendBirdGroupChannel> channels) {
     this.channels = channels;
   }
 

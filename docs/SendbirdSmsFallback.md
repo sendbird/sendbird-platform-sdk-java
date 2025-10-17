@@ -1,6 +1,6 @@
 
 
-# SendbirdSmsFallback
+# SendBirdSmsFallback
 
 
 ## Properties

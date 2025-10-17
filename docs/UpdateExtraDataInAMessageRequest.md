@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**mode** | **String** |  |  [optional] |
-|**sortedMetaarray** | [**List&lt;SendbirdSortedMetaarrayInner&gt;**](SendbirdSortedMetaarrayInner.md) |  |  [optional] |
+|**sortedMetaarray** | [**List&lt;SendBirdSortedMetaarrayInner&gt;**](SendBirdSortedMetaarrayInner.md) |  |  [optional] |
 |**upsert** | **Boolean** |  |  [optional] |
 
 

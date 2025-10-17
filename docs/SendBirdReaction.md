@@ -1,6 +1,6 @@
 
 
-# SendbirdReaction
+# SendBirdReaction
 
 
 ## Properties

@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendbirdMessageResponse;
+import org.openapitools.client.model.SendBirdMessageResponse;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -38,20 +38,20 @@ import org.sendbird.client.JSON;
   ListMessagesResponse.JSON_PROPERTY_MESSAGES
 })
 @JsonTypeName("listMessagesResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class ListMessagesResponse {
   public static final String JSON_PROPERTY_MESSAGES = "messages";
-  private List<SendbirdMessageResponse> messages = null;
+  private List<SendBirdMessageResponse> messages = null;
 
   public ListMessagesResponse() { 
   }
 
-  public ListMessagesResponse messages(List<SendbirdMessageResponse> messages) {
+  public ListMessagesResponse messages(List<SendBirdMessageResponse> messages) {
     this.messages = messages;
     return this;
   }
 
-  public ListMessagesResponse addMessagesItem(SendbirdMessageResponse messagesItem) {
+  public ListMessagesResponse addMessagesItem(SendBirdMessageResponse messagesItem) {
     if (this.messages == null) {
       this.messages = new ArrayList<>();
     }
@@ -68,14 +68,14 @@ public class ListMessagesResponse {
   @JsonProperty(JSON_PROPERTY_MESSAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendbirdMessageResponse> getMessages() {
+  public List<SendBirdMessageResponse> getMessages() {
     return messages;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MESSAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessages(List<SendbirdMessageResponse> messages) {
+  public void setMessages(List<SendBirdMessageResponse> messages) {
     this.messages = messages;
   }
 

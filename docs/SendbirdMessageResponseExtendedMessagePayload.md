@@ -1,26 +1,26 @@
 
 
-# SendbirdMessageResponseExtendedMessagePayload
+# SendBirdMessageResponseExtendedMessagePayload
 
 ## oneOf schemas
-* [SendbirdExtendedMessagePayload](SendbirdExtendedMessagePayload.md)
+* [SendBirdExtendedMessagePayload](SendBirdExtendedMessagePayload.md)
 
 ## Example
 ```java
 // Import classes:
-import org.openapitools.client.model.SendbirdMessageResponseExtendedMessagePayload;
-import org.openapitools.client.model.SendbirdExtendedMessagePayload;
+import org.openapitools.client.model.SendBirdMessageResponseExtendedMessagePayload;
+import org.openapitools.client.model.SendBirdExtendedMessagePayload;
 
 public class Example {
     public static void main(String[] args) {
-        SendbirdMessageResponseExtendedMessagePayload exampleSendbirdMessageResponseExtendedMessagePayload = new SendbirdMessageResponseExtendedMessagePayload();
+        SendBirdMessageResponseExtendedMessagePayload exampleSendBirdMessageResponseExtendedMessagePayload = new SendBirdMessageResponseExtendedMessagePayload();
 
-        // create a new SendbirdExtendedMessagePayload
-        SendbirdExtendedMessagePayload exampleSendbirdExtendedMessagePayload = new SendbirdExtendedMessagePayload();
-        // set SendbirdMessageResponseExtendedMessagePayload to SendbirdExtendedMessagePayload
-        exampleSendbirdMessageResponseExtendedMessagePayload.setActualInstance(exampleSendbirdExtendedMessagePayload);
-        // to get back the SendbirdExtendedMessagePayload set earlier
-        SendbirdExtendedMessagePayload testSendbirdExtendedMessagePayload = (SendbirdExtendedMessagePayload) exampleSendbirdMessageResponseExtendedMessagePayload.getActualInstance();
+        // create a new SendBirdExtendedMessagePayload
+        SendBirdExtendedMessagePayload exampleSendBirdExtendedMessagePayload = new SendBirdExtendedMessagePayload();
+        // set SendBirdMessageResponseExtendedMessagePayload to SendBirdExtendedMessagePayload
+        exampleSendBirdMessageResponseExtendedMessagePayload.setActualInstance(exampleSendBirdExtendedMessagePayload);
+        // to get back the SendBirdExtendedMessagePayload set earlier
+        SendBirdExtendedMessagePayload testSendBirdExtendedMessagePayload = (SendBirdExtendedMessagePayload) exampleSendBirdMessageResponseExtendedMessagePayload.getActualInstance();
     }
 }
 ```

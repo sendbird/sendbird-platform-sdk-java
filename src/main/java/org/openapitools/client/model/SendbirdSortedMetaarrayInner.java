@@ -31,25 +31,25 @@ import org.sendbird.client.JSON;
 
 
 /**
- * SendbirdSortedMetaarrayInner
+ * SendBirdSortedMetaarrayInner
  */
 @JsonPropertyOrder({
-  SendbirdSortedMetaarrayInner.JSON_PROPERTY_KEY,
-  SendbirdSortedMetaarrayInner.JSON_PROPERTY_VALUE
+  SendBirdSortedMetaarrayInner.JSON_PROPERTY_KEY,
+  SendBirdSortedMetaarrayInner.JSON_PROPERTY_VALUE
 })
-@JsonTypeName("Sendbird_SortedMetaarray_inner")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
-public class SendbirdSortedMetaarrayInner {
+@JsonTypeName("SendBird_SortedMetaarray_inner")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+public class SendBirdSortedMetaarrayInner {
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;
 
   public static final String JSON_PROPERTY_VALUE = "value";
   private List<String> value = null;
 
-  public SendbirdSortedMetaarrayInner() { 
+  public SendBirdSortedMetaarrayInner() { 
   }
 
-  public SendbirdSortedMetaarrayInner key(String key) {
+  public SendBirdSortedMetaarrayInner key(String key) {
     this.key = key;
     return this;
   }
@@ -75,12 +75,12 @@ public class SendbirdSortedMetaarrayInner {
   }
 
 
-  public SendbirdSortedMetaarrayInner value(List<String> value) {
+  public SendBirdSortedMetaarrayInner value(List<String> value) {
     this.value = value;
     return this;
   }
 
-  public SendbirdSortedMetaarrayInner addValueItem(String valueItem) {
+  public SendBirdSortedMetaarrayInner addValueItem(String valueItem) {
     if (this.value == null) {
       this.value = new ArrayList<>();
     }
@@ -110,7 +110,7 @@ public class SendbirdSortedMetaarrayInner {
 
 
   /**
-   * Return true if this Sendbird_SortedMetaarray_inner object is equal to o.
+   * Return true if this SendBird_SortedMetaarray_inner object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -120,9 +120,9 @@ public class SendbirdSortedMetaarrayInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SendbirdSortedMetaarrayInner sendbirdSortedMetaarrayInner = (SendbirdSortedMetaarrayInner) o;
-    return Objects.equals(this.key, sendbirdSortedMetaarrayInner.key) &&
-        Objects.equals(this.value, sendbirdSortedMetaarrayInner.value);
+    SendBirdSortedMetaarrayInner sendBirdSortedMetaarrayInner = (SendBirdSortedMetaarrayInner) o;
+    return Objects.equals(this.key, sendBirdSortedMetaarrayInner.key) &&
+        Objects.equals(this.value, sendBirdSortedMetaarrayInner.value);
   }
 
   @Override
@@ -133,7 +133,7 @@ public class SendbirdSortedMetaarrayInner {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SendbirdSortedMetaarrayInner {\n");
+    sb.append("class SendBirdSortedMetaarrayInner {\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");

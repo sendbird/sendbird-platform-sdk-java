@@ -28,7 +28,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## acceptAnInvitation
 
-> SendBirdSendBirdGroupChannelDetail acceptAnInvitation(channelUrl).apiToken(apiToken).sendBirdAcceptAnInvitationRequest(sendBirdAcceptAnInvitationRequest).execute();
+> SendBirdGroupChannelDetail acceptAnInvitation(channelUrl).apiToken(apiToken).acceptAnInvitationRequest(acceptAnInvitationRequest).execute();
 
 Accept an invitation
 
@@ -59,11 +59,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdAcceptAnInvitationRequest sendBirdAcceptAnInvitationRequest = new SendBirdAcceptAnInvitationRequest(); // SendBirdAcceptAnInvitationRequest | 
+        AcceptAnInvitationRequest acceptAnInvitationRequest = new AcceptAnInvitationRequest(); // AcceptAnInvitationRequest | 
         try {
-            SendBirdSendBirdGroupChannelDetail result = api.acceptAnInvitation(channelUrl)
+            SendBirdGroupChannelDetail result = api.acceptAnInvitation(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdAcceptAnInvitationRequest(sendBirdAcceptAnInvitationRequest)
+                .acceptAnInvitationRequest(acceptAnInvitationRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -84,11 +84,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdAcceptAnInvitationRequest** | [**SendBirdAcceptAnInvitationRequest**](SendBirdAcceptAnInvitationRequest.md)|  | [optional] |
+| **acceptAnInvitationRequest** | [**AcceptAnInvitationRequest**](AcceptAnInvitationRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdSendBirdGroupChannelDetail**](SendBirdSendBirdGroupChannelDetail.md)
+[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -190,7 +190,7 @@ No authorization required
 
 ## checkIfMember
 
-> SendBirdCheckIfMemberResponse checkIfMember(channelUrl, userId).apiToken(apiToken).execute();
+> CheckIfMemberResponse checkIfMember(channelUrl, userId).apiToken(apiToken).execute();
 
 Check if member
 
@@ -223,7 +223,7 @@ public class Example {
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdCheckIfMemberResponse result = api.checkIfMember(channelUrl, userId)
+            CheckIfMemberResponse result = api.checkIfMember(channelUrl, userId)
                 .apiToken(apiToken)
                 .execute();
             System.out.println(result);
@@ -249,7 +249,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdCheckIfMemberResponse**](SendBirdCheckIfMemberResponse.md)
+[**CheckIfMemberResponse**](CheckIfMemberResponse.md)
 
 ### Authorization
 
@@ -268,7 +268,7 @@ No authorization required
 
 ## createAGroupChannel
 
-> SendBirdSendBirdGroupChannelDetail createAGroupChannel().apiToken(apiToken).sendBirdCreateAGroupChannelRequest(sendBirdCreateAGroupChannelRequest).execute();
+> SendBirdGroupChannelDetail createAGroupChannel().apiToken(apiToken).createAGroupChannelRequest(createAGroupChannelRequest).execute();
 
 Create a group channel
 
@@ -297,11 +297,11 @@ public class Example {
 
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdCreateAGroupChannelRequest sendBirdCreateAGroupChannelRequest = new SendBirdCreateAGroupChannelRequest(); // SendBirdCreateAGroupChannelRequest | 
+        CreateAGroupChannelRequest createAGroupChannelRequest = new CreateAGroupChannelRequest(); // CreateAGroupChannelRequest | 
         try {
-            SendBirdSendBirdGroupChannelDetail result = api.createAGroupChannel()
+            SendBirdGroupChannelDetail result = api.createAGroupChannel()
                 .apiToken(apiToken)
-                .sendBirdCreateAGroupChannelRequest(sendBirdCreateAGroupChannelRequest)
+                .createAGroupChannelRequest(createAGroupChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -321,11 +321,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdCreateAGroupChannelRequest** | [**SendBirdCreateAGroupChannelRequest**](SendBirdCreateAGroupChannelRequest.md)|  | [optional] |
+| **createAGroupChannelRequest** | [**CreateAGroupChannelRequest**](CreateAGroupChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdSendBirdGroupChannelDetail**](SendBirdSendBirdGroupChannelDetail.md)
+[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -417,7 +417,7 @@ No authorization required
 
 ## getAGroupChannel
 
-> SendBirdGetAGroupChannelResponse getAGroupChannel(channelUrl).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMember(showMember).memberActiveMode(memberActiveMode).userId(userId).apiToken(apiToken).execute();
+> GetAGroupChannelResponse getAGroupChannel(channelUrl).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMember(showMember).memberActiveMode(memberActiveMode).userId(userId).apiToken(apiToken).execute();
 
 Get a group channel
 
@@ -455,7 +455,7 @@ public class Example {
         String userId = "userId_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdGetAGroupChannelResponse result = api.getAGroupChannel(channelUrl)
+            GetAGroupChannelResponse result = api.getAGroupChannel(channelUrl)
                 .showDeliveryReceipt(showDeliveryReceipt)
                 .showReadReceipt(showReadReceipt)
                 .showMember(showMember)
@@ -490,7 +490,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdGetAGroupChannelResponse**](SendBirdGetAGroupChannelResponse.md)
+[**GetAGroupChannelResponse**](GetAGroupChannelResponse.md)
 
 ### Authorization
 
@@ -509,7 +509,7 @@ No authorization required
 
 ## hideAChannel
 
-> Object hideAChannel(channelUrl).apiToken(apiToken).sendBirdHideAChannelRequest(sendBirdHideAChannelRequest).execute();
+> Object hideAChannel(channelUrl).apiToken(apiToken).hideAChannelRequest(hideAChannelRequest).execute();
 
 Hide a channel
 
@@ -539,11 +539,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdHideAChannelRequest sendBirdHideAChannelRequest = new SendBirdHideAChannelRequest(); // SendBirdHideAChannelRequest | 
+        HideAChannelRequest hideAChannelRequest = new HideAChannelRequest(); // HideAChannelRequest | 
         try {
             Object result = api.hideAChannel(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdHideAChannelRequest(sendBirdHideAChannelRequest)
+                .hideAChannelRequest(hideAChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -564,7 +564,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdHideAChannelRequest** | [**SendBirdHideAChannelRequest**](SendBirdHideAChannelRequest.md)|  | [optional] |
+| **hideAChannelRequest** | [**HideAChannelRequest**](HideAChannelRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -587,7 +587,7 @@ No authorization required
 
 ## inviteAsMembers
 
-> SendBirdInviteAsMembersResponse inviteAsMembers(channelUrl).apiToken(apiToken).sendBirdInviteAsMembersRequest(sendBirdInviteAsMembersRequest).execute();
+> InviteAsMembersResponse inviteAsMembers(channelUrl).apiToken(apiToken).inviteAsMembersRequest(inviteAsMembersRequest).execute();
 
 Invite as members
 
@@ -618,11 +618,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdInviteAsMembersRequest sendBirdInviteAsMembersRequest = new SendBirdInviteAsMembersRequest(); // SendBirdInviteAsMembersRequest | 
+        InviteAsMembersRequest inviteAsMembersRequest = new InviteAsMembersRequest(); // InviteAsMembersRequest | 
         try {
-            SendBirdInviteAsMembersResponse result = api.inviteAsMembers(channelUrl)
+            InviteAsMembersResponse result = api.inviteAsMembers(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdInviteAsMembersRequest(sendBirdInviteAsMembersRequest)
+                .inviteAsMembersRequest(inviteAsMembersRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -643,11 +643,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdInviteAsMembersRequest** | [**SendBirdInviteAsMembersRequest**](SendBirdInviteAsMembersRequest.md)|  | [optional] |
+| **inviteAsMembersRequest** | [**InviteAsMembersRequest**](InviteAsMembersRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdInviteAsMembersResponse**](SendBirdInviteAsMembersResponse.md)
+[**InviteAsMembersResponse**](InviteAsMembersResponse.md)
 
 ### Authorization
 
@@ -666,7 +666,7 @@ No authorization required
 
 ## joinAChannel
 
-> SendBirdSendBirdGroupChannelDetail joinAChannel(channelUrl).apiToken(apiToken).sendBirdJoinAChannelRequest(sendBirdJoinAChannelRequest).execute();
+> SendBirdGroupChannelDetail joinAChannel(channelUrl).apiToken(apiToken).joinAChannelRequest(joinAChannelRequest).execute();
 
 Join a channel
 
@@ -694,11 +694,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdJoinAChannelRequest sendBirdJoinAChannelRequest = new SendBirdJoinAChannelRequest(); // SendBirdJoinAChannelRequest | 
+        JoinAChannelRequest joinAChannelRequest = new JoinAChannelRequest(); // JoinAChannelRequest | 
         try {
-            SendBirdSendBirdGroupChannelDetail result = api.joinAChannel(channelUrl)
+            SendBirdGroupChannelDetail result = api.joinAChannel(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdJoinAChannelRequest(sendBirdJoinAChannelRequest)
+                .joinAChannelRequest(joinAChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -719,11 +719,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdJoinAChannelRequest** | [**SendBirdJoinAChannelRequest**](SendBirdJoinAChannelRequest.md)|  | [optional] |
+| **joinAChannelRequest** | [**JoinAChannelRequest**](JoinAChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdSendBirdGroupChannelDetail**](SendBirdSendBirdGroupChannelDetail.md)
+[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -742,7 +742,7 @@ No authorization required
 
 ## leaveAChannel
 
-> Object leaveAChannel(channelUrl).apiToken(apiToken).sendBirdLeaveAChannelRequest(sendBirdLeaveAChannelRequest).execute();
+> Object leaveAChannel(channelUrl).apiToken(apiToken).leaveAChannelRequest(leaveAChannelRequest).execute();
 
 Leave a channel
 
@@ -771,11 +771,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdLeaveAChannelRequest sendBirdLeaveAChannelRequest = new SendBirdLeaveAChannelRequest(); // SendBirdLeaveAChannelRequest | 
+        LeaveAChannelRequest leaveAChannelRequest = new LeaveAChannelRequest(); // LeaveAChannelRequest | 
         try {
             Object result = api.leaveAChannel(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdLeaveAChannelRequest(sendBirdLeaveAChannelRequest)
+                .leaveAChannelRequest(leaveAChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -796,7 +796,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**|  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdLeaveAChannelRequest** | [**SendBirdLeaveAChannelRequest**](SendBirdLeaveAChannelRequest.md)|  | [optional] |
+| **leaveAChannelRequest** | [**LeaveAChannelRequest**](LeaveAChannelRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -819,7 +819,7 @@ No authorization required
 
 ## listChannels
 
-> SendBirdGroupChatListChannelsResponse listChannels().apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMetadata(showMetadata).showFrozen(showFrozen).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage).execute();
+> GroupChatListChannelsResponse listChannels().apiToken(apiToken).token(token).limit(limit).distinctMode(distinctMode).publicMode(publicMode).superMode(superMode).createdAfter(createdAfter).createdBefore(createdBefore).showEmpty(showEmpty).showMember(showMember).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMetadata(showMetadata).showFrozen(showFrozen).order(order).metadataOrderKey(metadataOrderKey).customTypes(customTypes).customTypeStartswith(customTypeStartswith).channelUrls(channelUrls).name(name).nameContains(nameContains).nameStartswith(nameStartswith).membersExactlyIn(membersExactlyIn).membersIncludeIn(membersIncludeIn).queryType(queryType).membersNickname(membersNickname).membersNicknameContains(membersNicknameContains).metadataKey(metadataKey).metadataValues(metadataValues).metadataValueStartswith(metadataValueStartswith).metacounterKey(metacounterKey).metacounterValues(metacounterValues).metacounterValueGt(metacounterValueGt).metacounterValueGte(metacounterValueGte).metacounterValueLt(metacounterValueLt).metacounterValueLte(metacounterValueLte).includeSortedMetaarrayInLastMessage(includeSortedMetaarrayInLastMessage).execute();
 
 List channels
 
@@ -885,7 +885,7 @@ public class Example {
         String metacounterValueLte = "metacounterValueLte_example"; // String | Searches for group channels with metacounter containing an item with the key specified by the metadata_key parameter, where the value of that item is lower than or equal to the value specified by this parameter. To use this parameter, the metacounter_key parameter should be specified.
         Boolean includeSortedMetaarrayInLastMessage = false; // Boolean | Determines whether to include the sorted_metaarray as one of the last_message’s properties in the response.
         try {
-            SendBirdGroupChatListChannelsResponse result = api.listChannels()
+            GroupChatListChannelsResponse result = api.listChannels()
                 .apiToken(apiToken)
                 .token(token)
                 .limit(limit)
@@ -981,7 +981,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdGroupChatListChannelsResponse**](SendBirdGroupChatListChannelsResponse.md)
+[**GroupChatListChannelsResponse**](GroupChatListChannelsResponse.md)
 
 ### Authorization
 
@@ -1000,7 +1000,7 @@ No authorization required
 
 ## listMembers
 
-> SendBirdGroupChannelListMembersResponse listMembers(channelUrl).token(token).limit(limit).userId(userId).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMemberIsMuted(showMemberIsMuted).order(order).operatorFilter(operatorFilter).memberStateFilter(memberStateFilter).mutedMemberFilter(mutedMemberFilter).memberActiveModeFilter(memberActiveModeFilter).nicknameStartswith(nicknameStartswith).includePushPreference(includePushPreference).apiToken(apiToken).execute();
+> GroupChannelListMembersResponse listMembers(channelUrl).token(token).limit(limit).userId(userId).showDeliveryReceipt(showDeliveryReceipt).showReadReceipt(showReadReceipt).showMemberIsMuted(showMemberIsMuted).order(order).operatorFilter(operatorFilter).memberStateFilter(memberStateFilter).mutedMemberFilter(mutedMemberFilter).memberActiveModeFilter(memberActiveModeFilter).nicknameStartswith(nicknameStartswith).includePushPreference(includePushPreference).apiToken(apiToken).execute();
 
 List members
 
@@ -1049,7 +1049,7 @@ public class Example {
         Boolean includePushPreference = true; // Boolean | Determines whether to include information about the push preference of each member, such as `push_enabled`, `push_trigger_option`, and `do_not_disturb`. (Default: `false`)
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdGroupChannelListMembersResponse result = api.listMembers(channelUrl)
+            GroupChannelListMembersResponse result = api.listMembers(channelUrl)
                 .token(token)
                 .limit(limit)
                 .userId(userId)
@@ -1100,7 +1100,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdGroupChannelListMembersResponse**](SendBirdGroupChannelListMembersResponse.md)
+[**GroupChannelListMembersResponse**](GroupChannelListMembersResponse.md)
 
 ### Authorization
 
@@ -1119,7 +1119,7 @@ No authorization required
 
 ## listOperators
 
-> SendBirdListOperatorsResponse listOperators(channelUrl).token(token).limit(limit).apiToken(apiToken).execute();
+> ListOperatorsResponse listOperators(channelUrl).token(token).limit(limit).apiToken(apiToken).execute();
 
 List operators
 
@@ -1154,7 +1154,7 @@ public class Example {
         Integer limit = 56; // Integer | Specifies the number of results to return per page. Acceptable values are 1 to 100, inclusive. (Default: 10)
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdListOperatorsResponse result = api.listOperators(channelUrl)
+            ListOperatorsResponse result = api.listOperators(channelUrl)
                 .token(token)
                 .limit(limit)
                 .apiToken(apiToken)
@@ -1183,7 +1183,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdListOperatorsResponse**](SendBirdListOperatorsResponse.md)
+[**ListOperatorsResponse**](ListOperatorsResponse.md)
 
 ### Authorization
 
@@ -1202,7 +1202,7 @@ No authorization required
 
 ## registerOperatorsToAGroupChannel
 
-> Object registerOperatorsToAGroupChannel(channelUrl).apiToken(apiToken).sendBirdRegisterOperatorsToAGroupChannelRequest(sendBirdRegisterOperatorsToAGroupChannelRequest).execute();
+> Object registerOperatorsToAGroupChannel(channelUrl).apiToken(apiToken).registerOperatorsToAGroupChannelRequest(registerOperatorsToAGroupChannelRequest).execute();
 
 Register operators to a group channel
 
@@ -1230,11 +1230,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdRegisterOperatorsToAGroupChannelRequest sendBirdRegisterOperatorsToAGroupChannelRequest = new SendBirdRegisterOperatorsToAGroupChannelRequest(); // SendBirdRegisterOperatorsToAGroupChannelRequest | 
+        RegisterOperatorsToAGroupChannelRequest registerOperatorsToAGroupChannelRequest = new RegisterOperatorsToAGroupChannelRequest(); // RegisterOperatorsToAGroupChannelRequest | 
         try {
             Object result = api.registerOperatorsToAGroupChannel(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdRegisterOperatorsToAGroupChannelRequest(sendBirdRegisterOperatorsToAGroupChannelRequest)
+                .registerOperatorsToAGroupChannelRequest(registerOperatorsToAGroupChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1255,7 +1255,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdRegisterOperatorsToAGroupChannelRequest** | [**SendBirdRegisterOperatorsToAGroupChannelRequest**](SendBirdRegisterOperatorsToAGroupChannelRequest.md)|  | [optional] |
+| **registerOperatorsToAGroupChannelRequest** | [**RegisterOperatorsToAGroupChannelRequest**](RegisterOperatorsToAGroupChannelRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -1278,7 +1278,7 @@ No authorization required
 
 ## resetChatHistory
 
-> SendBirdResetChatHistoryResponse resetChatHistory(channelUrl).apiToken(apiToken).sendBirdResetChatHistoryRequest(sendBirdResetChatHistoryRequest).execute();
+> ResetChatHistoryResponse resetChatHistory(channelUrl).apiToken(apiToken).resetChatHistoryRequest(resetChatHistoryRequest).execute();
 
 Reset chat history
 
@@ -1310,11 +1310,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdResetChatHistoryRequest sendBirdResetChatHistoryRequest = new SendBirdResetChatHistoryRequest(); // SendBirdResetChatHistoryRequest | 
+        ResetChatHistoryRequest resetChatHistoryRequest = new ResetChatHistoryRequest(); // ResetChatHistoryRequest | 
         try {
-            SendBirdResetChatHistoryResponse result = api.resetChatHistory(channelUrl)
+            ResetChatHistoryResponse result = api.resetChatHistory(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdResetChatHistoryRequest(sendBirdResetChatHistoryRequest)
+                .resetChatHistoryRequest(resetChatHistoryRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1335,11 +1335,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdResetChatHistoryRequest** | [**SendBirdResetChatHistoryRequest**](SendBirdResetChatHistoryRequest.md)|  | [optional] |
+| **resetChatHistoryRequest** | [**ResetChatHistoryRequest**](ResetChatHistoryRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdResetChatHistoryResponse**](SendBirdResetChatHistoryResponse.md)
+[**ResetChatHistoryResponse**](ResetChatHistoryResponse.md)
 
 ### Authorization
 
@@ -1358,7 +1358,7 @@ No authorization required
 
 ## startTypingIndicators
 
-> Object startTypingIndicators(channelUrl).apiToken(apiToken).sendBirdStartTypingIndicatorsRequest(sendBirdStartTypingIndicatorsRequest).execute();
+> Object startTypingIndicators(channelUrl).apiToken(apiToken).startTypingIndicatorsRequest(startTypingIndicatorsRequest).execute();
 
 Start typing indicators
 
@@ -1392,11 +1392,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdStartTypingIndicatorsRequest sendBirdStartTypingIndicatorsRequest = new SendBirdStartTypingIndicatorsRequest(); // SendBirdStartTypingIndicatorsRequest | 
+        StartTypingIndicatorsRequest startTypingIndicatorsRequest = new StartTypingIndicatorsRequest(); // StartTypingIndicatorsRequest | 
         try {
             Object result = api.startTypingIndicators(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdStartTypingIndicatorsRequest(sendBirdStartTypingIndicatorsRequest)
+                .startTypingIndicatorsRequest(startTypingIndicatorsRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1417,7 +1417,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdStartTypingIndicatorsRequest** | [**SendBirdStartTypingIndicatorsRequest**](SendBirdStartTypingIndicatorsRequest.md)|  | [optional] |
+| **startTypingIndicatorsRequest** | [**StartTypingIndicatorsRequest**](StartTypingIndicatorsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -1440,7 +1440,7 @@ No authorization required
 
 ## stopTypingIndicators
 
-> Object stopTypingIndicators(channelUrl).apiToken(apiToken).sendBirdStartTypingIndicatorsRequest(sendBirdStartTypingIndicatorsRequest).execute();
+> Object stopTypingIndicators(channelUrl).apiToken(apiToken).startTypingIndicatorsRequest(startTypingIndicatorsRequest).execute();
 
 Stop typing indicators
 
@@ -1472,11 +1472,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdStartTypingIndicatorsRequest sendBirdStartTypingIndicatorsRequest = new SendBirdStartTypingIndicatorsRequest(); // SendBirdStartTypingIndicatorsRequest | 
+        StartTypingIndicatorsRequest startTypingIndicatorsRequest = new StartTypingIndicatorsRequest(); // StartTypingIndicatorsRequest | 
         try {
             Object result = api.stopTypingIndicators(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdStartTypingIndicatorsRequest(sendBirdStartTypingIndicatorsRequest)
+                .startTypingIndicatorsRequest(startTypingIndicatorsRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1497,7 +1497,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdStartTypingIndicatorsRequest** | [**SendBirdStartTypingIndicatorsRequest**](SendBirdStartTypingIndicatorsRequest.md)|  | [optional] |
+| **startTypingIndicatorsRequest** | [**StartTypingIndicatorsRequest**](StartTypingIndicatorsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -1603,7 +1603,7 @@ No authorization required
 
 ## updateAGroupChannel
 
-> SendBirdSendBirdGroupChannelDetail updateAGroupChannel(channelUrl).apiToken(apiToken).sendBirdUpdateAGroupChannelRequest(sendBirdUpdateAGroupChannelRequest).execute();
+> SendBirdGroupChannelDetail updateAGroupChannel(channelUrl).apiToken(apiToken).updateAGroupChannelRequest(updateAGroupChannelRequest).execute();
 
 Update a group channel
 
@@ -1631,11 +1631,11 @@ public class Example {
         GroupChannelApi apiInstance = new GroupChannelApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdUpdateAGroupChannelRequest sendBirdUpdateAGroupChannelRequest = new SendBirdUpdateAGroupChannelRequest(); // SendBirdUpdateAGroupChannelRequest | 
+        UpdateAGroupChannelRequest updateAGroupChannelRequest = new UpdateAGroupChannelRequest(); // UpdateAGroupChannelRequest | 
         try {
-            SendBirdSendBirdGroupChannelDetail result = api.updateAGroupChannel(channelUrl)
+            SendBirdGroupChannelDetail result = api.updateAGroupChannel(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdUpdateAGroupChannelRequest(sendBirdUpdateAGroupChannelRequest)
+                .updateAGroupChannelRequest(updateAGroupChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -1656,11 +1656,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**|  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdUpdateAGroupChannelRequest** | [**SendBirdUpdateAGroupChannelRequest**](SendBirdUpdateAGroupChannelRequest.md)|  | [optional] |
+| **updateAGroupChannelRequest** | [**UpdateAGroupChannelRequest**](UpdateAGroupChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdSendBirdGroupChannelDetail**](SendBirdSendBirdGroupChannelDetail.md)
+[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
 
 ### Authorization
 

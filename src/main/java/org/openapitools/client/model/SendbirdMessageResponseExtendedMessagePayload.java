@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendbirdExtendedMessagePayload;
+import org.openapitools.client.model.SendBirdExtendedMessagePayload;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -57,132 +57,132 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import org.sendbird.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
-@JsonDeserialize(using = SendbirdMessageResponseExtendedMessagePayload.SendbirdMessageResponseExtendedMessagePayloadDeserializer.class)
-@JsonSerialize(using = SendbirdMessageResponseExtendedMessagePayload.SendbirdMessageResponseExtendedMessagePayloadSerializer.class)
-public class SendbirdMessageResponseExtendedMessagePayload extends AbstractOpenApiSchema {
-    private static final Logger log = Logger.getLogger(SendbirdMessageResponseExtendedMessagePayload.class.getName());
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
+@JsonDeserialize(using = SendBirdMessageResponseExtendedMessagePayload.SendBirdMessageResponseExtendedMessagePayloadDeserializer.class)
+@JsonSerialize(using = SendBirdMessageResponseExtendedMessagePayload.SendBirdMessageResponseExtendedMessagePayloadSerializer.class)
+public class SendBirdMessageResponseExtendedMessagePayload extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(SendBirdMessageResponseExtendedMessagePayload.class.getName());
 
-    public static class SendbirdMessageResponseExtendedMessagePayloadSerializer extends StdSerializer<SendbirdMessageResponseExtendedMessagePayload> {
-        public SendbirdMessageResponseExtendedMessagePayloadSerializer(Class<SendbirdMessageResponseExtendedMessagePayload> t) {
+    public static class SendBirdMessageResponseExtendedMessagePayloadSerializer extends StdSerializer<SendBirdMessageResponseExtendedMessagePayload> {
+        public SendBirdMessageResponseExtendedMessagePayloadSerializer(Class<SendBirdMessageResponseExtendedMessagePayload> t) {
             super(t);
         }
 
-        public SendbirdMessageResponseExtendedMessagePayloadSerializer() {
+        public SendBirdMessageResponseExtendedMessagePayloadSerializer() {
             this(null);
         }
 
         @Override
-        public void serialize(SendbirdMessageResponseExtendedMessagePayload value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
+        public void serialize(SendBirdMessageResponseExtendedMessagePayload value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
             jgen.writeObject(value.getActualInstance());
         }
     }
 
-    public static class SendbirdMessageResponseExtendedMessagePayloadDeserializer extends StdDeserializer<SendbirdMessageResponseExtendedMessagePayload> {
-        public SendbirdMessageResponseExtendedMessagePayloadDeserializer() {
-            this(SendbirdMessageResponseExtendedMessagePayload.class);
+    public static class SendBirdMessageResponseExtendedMessagePayloadDeserializer extends StdDeserializer<SendBirdMessageResponseExtendedMessagePayload> {
+        public SendBirdMessageResponseExtendedMessagePayloadDeserializer() {
+            this(SendBirdMessageResponseExtendedMessagePayload.class);
         }
 
-        public SendbirdMessageResponseExtendedMessagePayloadDeserializer(Class<?> vc) {
+        public SendBirdMessageResponseExtendedMessagePayloadDeserializer(Class<?> vc) {
             super(vc);
         }
 
         @Override
-        public SendbirdMessageResponseExtendedMessagePayload deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+        public SendBirdMessageResponseExtendedMessagePayload deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
             JsonNode tree = jp.readValueAsTree();
             Object deserialized = null;
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
             int match = 0;
             JsonToken token = tree.traverse(jp.getCodec()).nextToken();
-            // deserialize SendbirdExtendedMessagePayload
+            // deserialize SendBirdExtendedMessagePayload
             try {
                 boolean attemptParsing = true;
                 // ensure that we respect type coercion as set on the client ObjectMapper
-                if (SendbirdExtendedMessagePayload.class.equals(Integer.class) || SendbirdExtendedMessagePayload.class.equals(Long.class) || SendbirdExtendedMessagePayload.class.equals(Float.class) || SendbirdExtendedMessagePayload.class.equals(Double.class) || SendbirdExtendedMessagePayload.class.equals(Boolean.class) || SendbirdExtendedMessagePayload.class.equals(String.class)) {
+                if (SendBirdExtendedMessagePayload.class.equals(Integer.class) || SendBirdExtendedMessagePayload.class.equals(Long.class) || SendBirdExtendedMessagePayload.class.equals(Float.class) || SendBirdExtendedMessagePayload.class.equals(Double.class) || SendBirdExtendedMessagePayload.class.equals(Boolean.class) || SendBirdExtendedMessagePayload.class.equals(String.class)) {
                     attemptParsing = typeCoercion;
                     if (!attemptParsing) {
-                        attemptParsing |= ((SendbirdExtendedMessagePayload.class.equals(Integer.class) || SendbirdExtendedMessagePayload.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((SendbirdExtendedMessagePayload.class.equals(Float.class) || SendbirdExtendedMessagePayload.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (SendbirdExtendedMessagePayload.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (SendbirdExtendedMessagePayload.class.equals(String.class) && token == JsonToken.VALUE_STRING);
+                        attemptParsing |= ((SendBirdExtendedMessagePayload.class.equals(Integer.class) || SendBirdExtendedMessagePayload.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
+                        attemptParsing |= ((SendBirdExtendedMessagePayload.class.equals(Float.class) || SendBirdExtendedMessagePayload.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
+                        attemptParsing |= (SendBirdExtendedMessagePayload.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
+                        attemptParsing |= (SendBirdExtendedMessagePayload.class.equals(String.class) && token == JsonToken.VALUE_STRING);
                     }
                 }
                 if (attemptParsing) {
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(SendbirdExtendedMessagePayload.class);
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(SendBirdExtendedMessagePayload.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
                     match++;
-                    log.log(Level.FINER, "Input data matches schema 'SendbirdExtendedMessagePayload'");
+                    log.log(Level.FINER, "Input data matches schema 'SendBirdExtendedMessagePayload'");
                 }
             } catch (Exception e) {
                 // deserialization failed, continue
-                log.log(Level.FINER, "Input data does not match schema 'SendbirdExtendedMessagePayload'", e);
+                log.log(Level.FINER, "Input data does not match schema 'SendBirdExtendedMessagePayload'", e);
             }
 
             if (match == 1) {
-                SendbirdMessageResponseExtendedMessagePayload ret = new SendbirdMessageResponseExtendedMessagePayload();
+                SendBirdMessageResponseExtendedMessagePayload ret = new SendBirdMessageResponseExtendedMessagePayload();
                 ret.setActualInstance(deserialized);
                 return ret;
             }
-            throw new IOException(String.format("Failed deserialization for SendbirdMessageResponseExtendedMessagePayload: %d classes match result, expected 1", match));
+            throw new IOException(String.format("Failed deserialization for SendBirdMessageResponseExtendedMessagePayload: %d classes match result, expected 1", match));
         }
 
         /**
          * Handle deserialization of the 'null' value.
          */
         @Override
-        public SendbirdMessageResponseExtendedMessagePayload getNullValue(DeserializationContext ctxt) throws JsonMappingException {
-            throw new JsonMappingException(ctxt.getParser(), "SendbirdMessageResponseExtendedMessagePayload cannot be null");
+        public SendBirdMessageResponseExtendedMessagePayload getNullValue(DeserializationContext ctxt) throws JsonMappingException {
+            throw new JsonMappingException(ctxt.getParser(), "SendBirdMessageResponseExtendedMessagePayload cannot be null");
         }
     }
 
     // store a list of schema names defined in oneOf
     public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-    public SendbirdMessageResponseExtendedMessagePayload() {
+    public SendBirdMessageResponseExtendedMessagePayload() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public SendbirdMessageResponseExtendedMessagePayload(SendbirdExtendedMessagePayload o) {
+    public SendBirdMessageResponseExtendedMessagePayload(SendBirdExtendedMessagePayload o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("SendbirdExtendedMessagePayload", new GenericType<SendbirdExtendedMessagePayload>() {
+        schemas.put("SendBirdExtendedMessagePayload", new GenericType<SendBirdExtendedMessagePayload>() {
         });
-        JSON.registerDescendants(SendbirdMessageResponseExtendedMessagePayload.class, Collections.unmodifiableMap(schemas));
+        JSON.registerDescendants(SendBirdMessageResponseExtendedMessagePayload.class, Collections.unmodifiableMap(schemas));
     }
 
     @Override
     public Map<String, GenericType> getSchemas() {
-        return SendbirdMessageResponseExtendedMessagePayload.schemas;
+        return SendBirdMessageResponseExtendedMessagePayload.schemas;
     }
 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * SendbirdExtendedMessagePayload
+     * SendBirdExtendedMessagePayload
      *
      * It could be an instance of the 'oneOf' schemas.
      * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(SendbirdExtendedMessagePayload.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(SendBirdExtendedMessagePayload.class, instance, new HashSet<Class<?>>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be SendbirdExtendedMessagePayload");
+        throw new RuntimeException("Invalid instance type. Must be SendBirdExtendedMessagePayload");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * SendbirdExtendedMessagePayload
+     * SendBirdExtendedMessagePayload
      *
-     * @return The actual instance (SendbirdExtendedMessagePayload)
+     * @return The actual instance (SendBirdExtendedMessagePayload)
      */
     @Override
     public Object getActualInstance() {
@@ -190,14 +190,14 @@ public class SendbirdMessageResponseExtendedMessagePayload extends AbstractOpenA
     }
 
     /**
-     * Get the actual instance of `SendbirdExtendedMessagePayload`. If the actual instance is not `SendbirdExtendedMessagePayload`,
+     * Get the actual instance of `SendBirdExtendedMessagePayload`. If the actual instance is not `SendBirdExtendedMessagePayload`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `SendbirdExtendedMessagePayload`
-     * @throws ClassCastException if the instance is not `SendbirdExtendedMessagePayload`
+     * @return The actual instance of `SendBirdExtendedMessagePayload`
+     * @throws ClassCastException if the instance is not `SendBirdExtendedMessagePayload`
      */
-    public SendbirdExtendedMessagePayload getSendbirdExtendedMessagePayload() throws ClassCastException {
-        return (SendbirdExtendedMessagePayload)super.getActualInstance();
+    public SendBirdExtendedMessagePayload getSendBirdExtendedMessagePayload() throws ClassCastException {
+        return (SendBirdExtendedMessagePayload)super.getActualInstance();
     }
 
 }

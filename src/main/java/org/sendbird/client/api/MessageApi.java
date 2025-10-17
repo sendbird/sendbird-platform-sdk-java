@@ -8,24 +8,24 @@ import org.sendbird.client.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.openapitools.client.model.SendBirdAddExtraDataToAMessageRequest;
-import org.openapitools.client.model.SendBirdAddExtraDataToAMessageResponse;
-import org.openapitools.client.model.SendBirdGetTotalNumberOfMessagesInAChannelResponse;
-import org.openapitools.client.model.SendBirdListMessagesResponse;
-import org.openapitools.client.model.SendBirdMarkChannelMessagesAsReadRequest;
-import org.openapitools.client.model.SendBirdMigrateMessagesRequest;
-import org.openapitools.client.model.SendBirdSendAMessageRequest;
-import org.openapitools.client.model.SendBirdSendBirdMessageResponse;
-import org.openapitools.client.model.SendBirdUpdateAMessageRequest;
-import org.openapitools.client.model.SendBirdUpdateExtraDataInAMessageRequest;
-import org.openapitools.client.model.SendBirdUpdateExtraDataInAMessageResponse;
+import org.openapitools.client.model.AddExtraDataToAMessageRequest;
+import org.openapitools.client.model.AddExtraDataToAMessageResponse;
+import org.openapitools.client.model.GetTotalNumberOfMessagesInAChannelResponse;
+import org.openapitools.client.model.ListMessagesResponse;
+import org.openapitools.client.model.MarkChannelMessagesAsReadRequest;
+import org.openapitools.client.model.MigrateMessagesRequest;
+import org.openapitools.client.model.SendAMessageRequest;
+import org.openapitools.client.model.SendBirdMessageResponse;
+import org.openapitools.client.model.UpdateAMessageRequest;
+import org.openapitools.client.model.UpdateExtraDataInAMessageRequest;
+import org.openapitools.client.model.UpdateExtraDataInAMessageResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:07:44.254699+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class MessageApi {
   private ApiClient apiClient;
 
@@ -56,8 +56,8 @@ public class MessageApi {
   }
 
 
-private ApiResponse<SendBirdAddExtraDataToAMessageResponse> addExtraDataToAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken, SendBirdAddExtraDataToAMessageRequest sendBirdAddExtraDataToAMessageRequest) throws ApiException {
-    Object localVarPostBody = sendBirdAddExtraDataToAMessageRequest;
+private ApiResponse<AddExtraDataToAMessageResponse> addExtraDataToAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken, AddExtraDataToAMessageRequest addExtraDataToAMessageRequest) throws ApiException {
+    Object localVarPostBody = addExtraDataToAMessageRequest;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -104,7 +104,7 @@ private ApiResponse<SendBirdAddExtraDataToAMessageResponse> addExtraDataToAMessa
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdAddExtraDataToAMessageResponse> localVarReturnType = new GenericType<SendBirdAddExtraDataToAMessageResponse>() {};
+    GenericType<AddExtraDataToAMessageResponse> localVarReturnType = new GenericType<AddExtraDataToAMessageResponse>() {};
 
     return apiClient.invokeAPI("MessageApi.addExtraDataToAMessage", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -116,7 +116,7 @@ private ApiResponse<SendBirdAddExtraDataToAMessageResponse> addExtraDataToAMessa
     private String channelUrl;
     private Long messageId;
     private String apiToken;
-    private SendBirdAddExtraDataToAMessageRequest sendBirdAddExtraDataToAMessageRequest;
+    private AddExtraDataToAMessageRequest addExtraDataToAMessageRequest;
 
     private APIaddExtraDataToAMessageRequest(String channelType, String channelUrl, Long messageId) {
       this.channelType = channelType;
@@ -135,18 +135,18 @@ private ApiResponse<SendBirdAddExtraDataToAMessageResponse> addExtraDataToAMessa
     }
 
     /**
-     * Set sendBirdAddExtraDataToAMessageRequest
-     * @param sendBirdAddExtraDataToAMessageRequest  (optional)
+     * Set addExtraDataToAMessageRequest
+     * @param addExtraDataToAMessageRequest  (optional)
      * @return APIaddExtraDataToAMessageRequest
      */
-    public APIaddExtraDataToAMessageRequest sendBirdAddExtraDataToAMessageRequest(SendBirdAddExtraDataToAMessageRequest sendBirdAddExtraDataToAMessageRequest) {
-      this.sendBirdAddExtraDataToAMessageRequest = sendBirdAddExtraDataToAMessageRequest;
+    public APIaddExtraDataToAMessageRequest addExtraDataToAMessageRequest(AddExtraDataToAMessageRequest addExtraDataToAMessageRequest) {
+      this.addExtraDataToAMessageRequest = addExtraDataToAMessageRequest;
       return this;
     }
 
     /**
      * Execute addExtraDataToAMessage request
-     * @return SendBirdAddExtraDataToAMessageResponse
+     * @return AddExtraDataToAMessageResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -156,13 +156,13 @@ private ApiResponse<SendBirdAddExtraDataToAMessageResponse> addExtraDataToAMessa
      
      */
     
-    public SendBirdAddExtraDataToAMessageResponse execute() throws ApiException {
+    public AddExtraDataToAMessageResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute addExtraDataToAMessage request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdAddExtraDataToAMessageResponse&gt;
+     * @return ApiResponse&lt;AddExtraDataToAMessageResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -171,8 +171,8 @@ private ApiResponse<SendBirdAddExtraDataToAMessageResponse> addExtraDataToAMessa
        </table>
 
      */
-    public ApiResponse<SendBirdAddExtraDataToAMessageResponse> executeWithHttpInfo() throws ApiException {
-      return addExtraDataToAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, sendBirdAddExtraDataToAMessageRequest);
+    public ApiResponse<AddExtraDataToAMessageResponse> executeWithHttpInfo() throws ApiException {
+      return addExtraDataToAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, addExtraDataToAMessageRequest);
     }
   }
 
@@ -315,7 +315,7 @@ private ApiResponse<Object> deleteAMessageWithHttpInfo(String channelType, Strin
     return new APIdeleteAMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<SendBirdSendBirdMessageResponse> getAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, Boolean includeReactions, Boolean includeThreadInfo, Boolean includeParentMessageInfo, Boolean includePollDetails, Boolean withSortedMetaArray, String apiToken) throws ApiException {
+private ApiResponse<SendBirdMessageResponse> getAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, Boolean includeReactions, Boolean includeThreadInfo, Boolean includeParentMessageInfo, Boolean includePollDetails, Boolean withSortedMetaArray, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
@@ -368,7 +368,7 @@ private ApiResponse<SendBirdSendBirdMessageResponse> getAMessageWithHttpInfo(Str
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendBirdMessageResponse> localVarReturnType = new GenericType<SendBirdSendBirdMessageResponse>() {};
+    GenericType<SendBirdMessageResponse> localVarReturnType = new GenericType<SendBirdMessageResponse>() {};
 
     return apiClient.invokeAPI("MessageApi.getAMessage", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -454,7 +454,7 @@ private ApiResponse<SendBirdSendBirdMessageResponse> getAMessageWithHttpInfo(Str
 
     /**
      * Execute getAMessage request
-     * @return SendBirdSendBirdMessageResponse
+     * @return SendBirdMessageResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -464,13 +464,13 @@ private ApiResponse<SendBirdSendBirdMessageResponse> getAMessageWithHttpInfo(Str
      
      */
     
-    public SendBirdSendBirdMessageResponse execute() throws ApiException {
+    public SendBirdMessageResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute getAMessage request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendBirdMessageResponse&gt;
+     * @return ApiResponse&lt;SendBirdMessageResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -479,7 +479,7 @@ private ApiResponse<SendBirdSendBirdMessageResponse> getAMessageWithHttpInfo(Str
        </table>
 
      */
-    public ApiResponse<SendBirdSendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
       return getAMessageWithHttpInfo(channelType, channelUrl, messageId, includeReactions, includeThreadInfo, includeParentMessageInfo, includePollDetails, withSortedMetaArray, apiToken);
     }
   }
@@ -499,7 +499,7 @@ private ApiResponse<SendBirdSendBirdMessageResponse> getAMessageWithHttpInfo(Str
     return new APIgetAMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<SendBirdGetTotalNumberOfMessagesInAChannelResponse> getTotalNumberOfMessagesInAChannelWithHttpInfo(String channelType, String channelUrl, String apiToken) throws ApiException {
+private ApiResponse<GetTotalNumberOfMessagesInAChannelResponse> getTotalNumberOfMessagesInAChannelWithHttpInfo(String channelType, String channelUrl, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
@@ -541,7 +541,7 @@ private ApiResponse<SendBirdGetTotalNumberOfMessagesInAChannelResponse> getTotal
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdGetTotalNumberOfMessagesInAChannelResponse> localVarReturnType = new GenericType<SendBirdGetTotalNumberOfMessagesInAChannelResponse>() {};
+    GenericType<GetTotalNumberOfMessagesInAChannelResponse> localVarReturnType = new GenericType<GetTotalNumberOfMessagesInAChannelResponse>() {};
 
     return apiClient.invokeAPI("MessageApi.getTotalNumberOfMessagesInAChannel", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -570,7 +570,7 @@ private ApiResponse<SendBirdGetTotalNumberOfMessagesInAChannelResponse> getTotal
 
     /**
      * Execute getTotalNumberOfMessagesInAChannel request
-     * @return SendBirdGetTotalNumberOfMessagesInAChannelResponse
+     * @return GetTotalNumberOfMessagesInAChannelResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -580,13 +580,13 @@ private ApiResponse<SendBirdGetTotalNumberOfMessagesInAChannelResponse> getTotal
      
      */
     
-    public SendBirdGetTotalNumberOfMessagesInAChannelResponse execute() throws ApiException {
+    public GetTotalNumberOfMessagesInAChannelResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute getTotalNumberOfMessagesInAChannel request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdGetTotalNumberOfMessagesInAChannelResponse&gt;
+     * @return ApiResponse&lt;GetTotalNumberOfMessagesInAChannelResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -595,7 +595,7 @@ private ApiResponse<SendBirdGetTotalNumberOfMessagesInAChannelResponse> getTotal
        </table>
 
      */
-    public ApiResponse<SendBirdGetTotalNumberOfMessagesInAChannelResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<GetTotalNumberOfMessagesInAChannelResponse> executeWithHttpInfo() throws ApiException {
       return getTotalNumberOfMessagesInAChannelWithHttpInfo(channelType, channelUrl, apiToken);
     }
   }
@@ -614,7 +614,7 @@ private ApiResponse<SendBirdGetTotalNumberOfMessagesInAChannelResponse> getTotal
     return new APIgetTotalNumberOfMessagesInAChannelRequest(channelType, channelUrl);
   }
 
-private ApiResponse<SendBirdListMessagesResponse> listMessagesWithHttpInfo(String channelType, String channelUrl, Long messageTs, Long messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, String includeReplyType, Boolean includeParentMessageInfo, Boolean includeThreadInfo, Boolean includePollDetails, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String apiToken) throws ApiException {
+private ApiResponse<ListMessagesResponse> listMessagesWithHttpInfo(String channelType, String channelUrl, Long messageTs, Long messageId, Integer prevLimit, Integer nextLimit, Boolean include, Boolean reverse, String senderId, String senderIds, String operatorFilter, String customTypes, String messageType, Boolean includingRemoved, Boolean includeReactions, String includeReplyType, Boolean includeParentMessageInfo, Boolean includeThreadInfo, Boolean includePollDetails, Boolean withSortedMetaArray, Boolean showSubchannelMessagesOnly, String userId, String apiToken) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'channelType' is set
@@ -686,7 +686,7 @@ private ApiResponse<SendBirdListMessagesResponse> listMessagesWithHttpInfo(Strin
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdListMessagesResponse> localVarReturnType = new GenericType<SendBirdListMessagesResponse>() {};
+    GenericType<ListMessagesResponse> localVarReturnType = new GenericType<ListMessagesResponse>() {};
 
     return apiClient.invokeAPI("MessageApi.listMessages", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -935,7 +935,7 @@ private ApiResponse<SendBirdListMessagesResponse> listMessagesWithHttpInfo(Strin
 
     /**
      * Execute listMessages request
-     * @return SendBirdListMessagesResponse
+     * @return ListMessagesResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -945,13 +945,13 @@ private ApiResponse<SendBirdListMessagesResponse> listMessagesWithHttpInfo(Strin
      
      */
     
-    public SendBirdListMessagesResponse execute() throws ApiException {
+    public ListMessagesResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute listMessages request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdListMessagesResponse&gt;
+     * @return ApiResponse&lt;ListMessagesResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -960,7 +960,7 @@ private ApiResponse<SendBirdListMessagesResponse> listMessagesWithHttpInfo(Strin
        </table>
 
      */
-    public ApiResponse<SendBirdListMessagesResponse> executeWithHttpInfo() throws ApiException {
+    public ApiResponse<ListMessagesResponse> executeWithHttpInfo() throws ApiException {
       return listMessagesWithHttpInfo(channelType, channelUrl, messageTs, messageId, prevLimit, nextLimit, include, reverse, senderId, senderIds, operatorFilter, customTypes, messageType, includingRemoved, includeReactions, includeReplyType, includeParentMessageInfo, includeThreadInfo, includePollDetails, withSortedMetaArray, showSubchannelMessagesOnly, userId, apiToken);
     }
   }
@@ -979,8 +979,8 @@ private ApiResponse<SendBirdListMessagesResponse> listMessagesWithHttpInfo(Strin
     return new APIlistMessagesRequest(channelType, channelUrl);
   }
 
-private ApiResponse<Object> markChannelMessagesAsReadWithHttpInfo(String channelUrl, String apiToken, SendBirdMarkChannelMessagesAsReadRequest sendBirdMarkChannelMessagesAsReadRequest) throws ApiException {
-    Object localVarPostBody = sendBirdMarkChannelMessagesAsReadRequest;
+private ApiResponse<Object> markChannelMessagesAsReadWithHttpInfo(String channelUrl, String apiToken, MarkChannelMessagesAsReadRequest markChannelMessagesAsReadRequest) throws ApiException {
+    Object localVarPostBody = markChannelMessagesAsReadRequest;
     
     // verify the required parameter 'channelUrl' is set
     if (channelUrl == null) {
@@ -1025,7 +1025,7 @@ private ApiResponse<Object> markChannelMessagesAsReadWithHttpInfo(String channel
   public class APImarkChannelMessagesAsReadRequest {
     private String channelUrl;
     private String apiToken;
-    private SendBirdMarkChannelMessagesAsReadRequest sendBirdMarkChannelMessagesAsReadRequest;
+    private MarkChannelMessagesAsReadRequest markChannelMessagesAsReadRequest;
 
     private APImarkChannelMessagesAsReadRequest(String channelUrl) {
       this.channelUrl = channelUrl;
@@ -1042,12 +1042,12 @@ private ApiResponse<Object> markChannelMessagesAsReadWithHttpInfo(String channel
     }
 
     /**
-     * Set sendBirdMarkChannelMessagesAsReadRequest
-     * @param sendBirdMarkChannelMessagesAsReadRequest  (optional)
+     * Set markChannelMessagesAsReadRequest
+     * @param markChannelMessagesAsReadRequest  (optional)
      * @return APImarkChannelMessagesAsReadRequest
      */
-    public APImarkChannelMessagesAsReadRequest sendBirdMarkChannelMessagesAsReadRequest(SendBirdMarkChannelMessagesAsReadRequest sendBirdMarkChannelMessagesAsReadRequest) {
-      this.sendBirdMarkChannelMessagesAsReadRequest = sendBirdMarkChannelMessagesAsReadRequest;
+    public APImarkChannelMessagesAsReadRequest markChannelMessagesAsReadRequest(MarkChannelMessagesAsReadRequest markChannelMessagesAsReadRequest) {
+      this.markChannelMessagesAsReadRequest = markChannelMessagesAsReadRequest;
       return this;
     }
 
@@ -1079,7 +1079,7 @@ private ApiResponse<Object> markChannelMessagesAsReadWithHttpInfo(String channel
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return markChannelMessagesAsReadWithHttpInfo(channelUrl, apiToken, sendBirdMarkChannelMessagesAsReadRequest);
+      return markChannelMessagesAsReadWithHttpInfo(channelUrl, apiToken, markChannelMessagesAsReadRequest);
     }
   }
 
@@ -1096,8 +1096,8 @@ private ApiResponse<Object> markChannelMessagesAsReadWithHttpInfo(String channel
     return new APImarkChannelMessagesAsReadRequest(channelUrl);
   }
 
-private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl, String apiToken, SendBirdMigrateMessagesRequest sendBirdMigrateMessagesRequest) throws ApiException {
-    Object localVarPostBody = sendBirdMigrateMessagesRequest;
+private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl, String apiToken, MigrateMessagesRequest migrateMessagesRequest) throws ApiException {
+    Object localVarPostBody = migrateMessagesRequest;
     
     // verify the required parameter 'targetChannelUrl' is set
     if (targetChannelUrl == null) {
@@ -1142,7 +1142,7 @@ private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl,
   public class APImigrateMessagesRequest {
     private String targetChannelUrl;
     private String apiToken;
-    private SendBirdMigrateMessagesRequest sendBirdMigrateMessagesRequest;
+    private MigrateMessagesRequest migrateMessagesRequest;
 
     private APImigrateMessagesRequest(String targetChannelUrl) {
       this.targetChannelUrl = targetChannelUrl;
@@ -1159,12 +1159,12 @@ private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl,
     }
 
     /**
-     * Set sendBirdMigrateMessagesRequest
-     * @param sendBirdMigrateMessagesRequest  (optional)
+     * Set migrateMessagesRequest
+     * @param migrateMessagesRequest  (optional)
      * @return APImigrateMessagesRequest
      */
-    public APImigrateMessagesRequest sendBirdMigrateMessagesRequest(SendBirdMigrateMessagesRequest sendBirdMigrateMessagesRequest) {
-      this.sendBirdMigrateMessagesRequest = sendBirdMigrateMessagesRequest;
+    public APImigrateMessagesRequest migrateMessagesRequest(MigrateMessagesRequest migrateMessagesRequest) {
+      this.migrateMessagesRequest = migrateMessagesRequest;
       return this;
     }
 
@@ -1196,7 +1196,7 @@ private ApiResponse<Object> migrateMessagesWithHttpInfo(String targetChannelUrl,
 
      */
     public ApiResponse<Object> executeWithHttpInfo() throws ApiException {
-      return migrateMessagesWithHttpInfo(targetChannelUrl, apiToken, sendBirdMigrateMessagesRequest);
+      return migrateMessagesWithHttpInfo(targetChannelUrl, apiToken, migrateMessagesRequest);
     }
   }
 
@@ -1349,8 +1349,8 @@ private ApiResponse<Object> removeExtraDataFromAMessageWithHttpInfo(String chann
     return new APIremoveExtraDataFromAMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<SendBirdSendBirdMessageResponse> sendAMessageWithHttpInfo(String channelType, String channelUrl, String apiToken, SendBirdSendAMessageRequest sendBirdSendAMessageRequest) throws ApiException {
-    Object localVarPostBody = sendBirdSendAMessageRequest;
+private ApiResponse<SendBirdMessageResponse> sendAMessageWithHttpInfo(String channelType, String channelUrl, String apiToken, SendAMessageRequest sendAMessageRequest) throws ApiException {
+    Object localVarPostBody = sendAMessageRequest;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -1391,7 +1391,7 @@ private ApiResponse<SendBirdSendBirdMessageResponse> sendAMessageWithHttpInfo(St
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendBirdMessageResponse> localVarReturnType = new GenericType<SendBirdSendBirdMessageResponse>() {};
+    GenericType<SendBirdMessageResponse> localVarReturnType = new GenericType<SendBirdMessageResponse>() {};
 
     return apiClient.invokeAPI("MessageApi.sendAMessage", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1402,7 +1402,7 @@ private ApiResponse<SendBirdSendBirdMessageResponse> sendAMessageWithHttpInfo(St
     private String channelType;
     private String channelUrl;
     private String apiToken;
-    private SendBirdSendAMessageRequest sendBirdSendAMessageRequest;
+    private SendAMessageRequest sendAMessageRequest;
 
     private APIsendAMessageRequest(String channelType, String channelUrl) {
       this.channelType = channelType;
@@ -1420,18 +1420,18 @@ private ApiResponse<SendBirdSendBirdMessageResponse> sendAMessageWithHttpInfo(St
     }
 
     /**
-     * Set sendBirdSendAMessageRequest
-     * @param sendBirdSendAMessageRequest  (optional)
+     * Set sendAMessageRequest
+     * @param sendAMessageRequest  (optional)
      * @return APIsendAMessageRequest
      */
-    public APIsendAMessageRequest sendBirdSendAMessageRequest(SendBirdSendAMessageRequest sendBirdSendAMessageRequest) {
-      this.sendBirdSendAMessageRequest = sendBirdSendAMessageRequest;
+    public APIsendAMessageRequest sendAMessageRequest(SendAMessageRequest sendAMessageRequest) {
+      this.sendAMessageRequest = sendAMessageRequest;
       return this;
     }
 
     /**
      * Execute sendAMessage request
-     * @return SendBirdSendBirdMessageResponse
+     * @return SendBirdMessageResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1441,13 +1441,13 @@ private ApiResponse<SendBirdSendBirdMessageResponse> sendAMessageWithHttpInfo(St
      
      */
     
-    public SendBirdSendBirdMessageResponse execute() throws ApiException {
+    public SendBirdMessageResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute sendAMessage request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendBirdMessageResponse&gt;
+     * @return ApiResponse&lt;SendBirdMessageResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1456,8 +1456,8 @@ private ApiResponse<SendBirdSendBirdMessageResponse> sendAMessageWithHttpInfo(St
        </table>
 
      */
-    public ApiResponse<SendBirdSendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
-      return sendAMessageWithHttpInfo(channelType, channelUrl, apiToken, sendBirdSendAMessageRequest);
+    public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
+      return sendAMessageWithHttpInfo(channelType, channelUrl, apiToken, sendAMessageRequest);
     }
   }
 
@@ -1475,8 +1475,8 @@ private ApiResponse<SendBirdSendBirdMessageResponse> sendAMessageWithHttpInfo(St
     return new APIsendAMessageRequest(channelType, channelUrl);
   }
 
-private ApiResponse<SendBirdSendBirdMessageResponse> updateAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken, SendBirdUpdateAMessageRequest sendBirdUpdateAMessageRequest) throws ApiException {
-    Object localVarPostBody = sendBirdUpdateAMessageRequest;
+private ApiResponse<SendBirdMessageResponse> updateAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken, UpdateAMessageRequest updateAMessageRequest) throws ApiException {
+    Object localVarPostBody = updateAMessageRequest;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -1523,7 +1523,7 @@ private ApiResponse<SendBirdSendBirdMessageResponse> updateAMessageWithHttpInfo(
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdSendBirdMessageResponse> localVarReturnType = new GenericType<SendBirdSendBirdMessageResponse>() {};
+    GenericType<SendBirdMessageResponse> localVarReturnType = new GenericType<SendBirdMessageResponse>() {};
 
     return apiClient.invokeAPI("MessageApi.updateAMessage", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1535,7 +1535,7 @@ private ApiResponse<SendBirdSendBirdMessageResponse> updateAMessageWithHttpInfo(
     private String channelUrl;
     private Long messageId;
     private String apiToken;
-    private SendBirdUpdateAMessageRequest sendBirdUpdateAMessageRequest;
+    private UpdateAMessageRequest updateAMessageRequest;
 
     private APIupdateAMessageRequest(String channelType, String channelUrl, Long messageId) {
       this.channelType = channelType;
@@ -1554,18 +1554,18 @@ private ApiResponse<SendBirdSendBirdMessageResponse> updateAMessageWithHttpInfo(
     }
 
     /**
-     * Set sendBirdUpdateAMessageRequest
-     * @param sendBirdUpdateAMessageRequest  (optional)
+     * Set updateAMessageRequest
+     * @param updateAMessageRequest  (optional)
      * @return APIupdateAMessageRequest
      */
-    public APIupdateAMessageRequest sendBirdUpdateAMessageRequest(SendBirdUpdateAMessageRequest sendBirdUpdateAMessageRequest) {
-      this.sendBirdUpdateAMessageRequest = sendBirdUpdateAMessageRequest;
+    public APIupdateAMessageRequest updateAMessageRequest(UpdateAMessageRequest updateAMessageRequest) {
+      this.updateAMessageRequest = updateAMessageRequest;
       return this;
     }
 
     /**
      * Execute updateAMessage request
-     * @return SendBirdSendBirdMessageResponse
+     * @return SendBirdMessageResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1575,13 +1575,13 @@ private ApiResponse<SendBirdSendBirdMessageResponse> updateAMessageWithHttpInfo(
      
      */
     
-    public SendBirdSendBirdMessageResponse execute() throws ApiException {
+    public SendBirdMessageResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updateAMessage request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdSendBirdMessageResponse&gt;
+     * @return ApiResponse&lt;SendBirdMessageResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1590,8 +1590,8 @@ private ApiResponse<SendBirdSendBirdMessageResponse> updateAMessageWithHttpInfo(
        </table>
 
      */
-    public ApiResponse<SendBirdSendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
-      return updateAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, sendBirdUpdateAMessageRequest);
+    public ApiResponse<SendBirdMessageResponse> executeWithHttpInfo() throws ApiException {
+      return updateAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, updateAMessageRequest);
     }
   }
 
@@ -1610,8 +1610,8 @@ private ApiResponse<SendBirdSendBirdMessageResponse> updateAMessageWithHttpInfo(
     return new APIupdateAMessageRequest(channelType, channelUrl, messageId);
   }
 
-private ApiResponse<SendBirdUpdateExtraDataInAMessageResponse> updateExtraDataInAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken, SendBirdUpdateExtraDataInAMessageRequest sendBirdUpdateExtraDataInAMessageRequest) throws ApiException {
-    Object localVarPostBody = sendBirdUpdateExtraDataInAMessageRequest;
+private ApiResponse<UpdateExtraDataInAMessageResponse> updateExtraDataInAMessageWithHttpInfo(String channelType, String channelUrl, Long messageId, String apiToken, UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest) throws ApiException {
+    Object localVarPostBody = updateExtraDataInAMessageRequest;
     
     // verify the required parameter 'channelType' is set
     if (channelType == null) {
@@ -1658,7 +1658,7 @@ private ApiResponse<SendBirdUpdateExtraDataInAMessageResponse> updateExtraDataIn
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<SendBirdUpdateExtraDataInAMessageResponse> localVarReturnType = new GenericType<SendBirdUpdateExtraDataInAMessageResponse>() {};
+    GenericType<UpdateExtraDataInAMessageResponse> localVarReturnType = new GenericType<UpdateExtraDataInAMessageResponse>() {};
 
     return apiClient.invokeAPI("MessageApi.updateExtraDataInAMessage", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
@@ -1670,7 +1670,7 @@ private ApiResponse<SendBirdUpdateExtraDataInAMessageResponse> updateExtraDataIn
     private String channelUrl;
     private Long messageId;
     private String apiToken;
-    private SendBirdUpdateExtraDataInAMessageRequest sendBirdUpdateExtraDataInAMessageRequest;
+    private UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest;
 
     private APIupdateExtraDataInAMessageRequest(String channelType, String channelUrl, Long messageId) {
       this.channelType = channelType;
@@ -1689,18 +1689,18 @@ private ApiResponse<SendBirdUpdateExtraDataInAMessageResponse> updateExtraDataIn
     }
 
     /**
-     * Set sendBirdUpdateExtraDataInAMessageRequest
-     * @param sendBirdUpdateExtraDataInAMessageRequest  (optional)
+     * Set updateExtraDataInAMessageRequest
+     * @param updateExtraDataInAMessageRequest  (optional)
      * @return APIupdateExtraDataInAMessageRequest
      */
-    public APIupdateExtraDataInAMessageRequest sendBirdUpdateExtraDataInAMessageRequest(SendBirdUpdateExtraDataInAMessageRequest sendBirdUpdateExtraDataInAMessageRequest) {
-      this.sendBirdUpdateExtraDataInAMessageRequest = sendBirdUpdateExtraDataInAMessageRequest;
+    public APIupdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest(UpdateExtraDataInAMessageRequest updateExtraDataInAMessageRequest) {
+      this.updateExtraDataInAMessageRequest = updateExtraDataInAMessageRequest;
       return this;
     }
 
     /**
      * Execute updateExtraDataInAMessage request
-     * @return SendBirdUpdateExtraDataInAMessageResponse
+     * @return UpdateExtraDataInAMessageResponse
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1710,13 +1710,13 @@ private ApiResponse<SendBirdUpdateExtraDataInAMessageResponse> updateExtraDataIn
      
      */
     
-    public SendBirdUpdateExtraDataInAMessageResponse execute() throws ApiException {
+    public UpdateExtraDataInAMessageResponse execute() throws ApiException {
       return this.executeWithHttpInfo().getData();
     }
 
     /**
      * Execute updateExtraDataInAMessage request with HTTP info returned
-     * @return ApiResponse&lt;SendBirdUpdateExtraDataInAMessageResponse&gt;
+     * @return ApiResponse&lt;UpdateExtraDataInAMessageResponse&gt;
      * @throws ApiException if fails to make API call
      * @http.response.details
        <table summary="Response Details" border="1">
@@ -1725,8 +1725,8 @@ private ApiResponse<SendBirdUpdateExtraDataInAMessageResponse> updateExtraDataIn
        </table>
 
      */
-    public ApiResponse<SendBirdUpdateExtraDataInAMessageResponse> executeWithHttpInfo() throws ApiException {
-      return updateExtraDataInAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, sendBirdUpdateExtraDataInAMessageRequest);
+    public ApiResponse<UpdateExtraDataInAMessageResponse> executeWithHttpInfo() throws ApiException {
+      return updateExtraDataInAMessageWithHttpInfo(channelType, channelUrl, messageId, apiToken, updateExtraDataInAMessageRequest);
     }
   }
 

@@ -1,6 +1,6 @@
 
 
-# SendbirdParentMessageInfo
+# SendBirdParentMessageInfo
 
 
 ## Properties
@@ -11,9 +11,9 @@
 |**message** | **String** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 |**ts** | **Long** |  |  [optional] |
-|**user** | [**SendbirdUser**](SendbirdUser.md) |  |  [optional] |
-|**_file** | [**SendbirdFile**](SendbirdFile.md) |  |  [optional] |
-|**files** | [**List&lt;SendbirdFile&gt;**](SendbirdFile.md) |  |  [optional] |
+|**user** | [**SendBirdUser**](SendBirdUser.md) |  |  [optional] |
+|**_file** | [**SendBirdFile**](SendBirdFile.md) |  |  [optional] |
+|**files** | [**List&lt;SendBirdFile&gt;**](SendBirdFile.md) |  |  [optional] |
 
 
 

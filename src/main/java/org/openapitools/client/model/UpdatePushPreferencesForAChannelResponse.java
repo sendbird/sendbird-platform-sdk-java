@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.client.model.SendbirdPushTriggerOption;
+import org.openapitools.client.model.SendBirdPushTriggerOption;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -38,7 +38,7 @@ import org.sendbird.client.JSON;
   UpdatePushPreferencesForAChannelResponse.JSON_PROPERTY_PUSH_TRIGGER_OPTION
 })
 @JsonTypeName("updatePushPreferencesForAChannelResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class UpdatePushPreferencesForAChannelResponse {
   public static final String JSON_PROPERTY_ENABLE = "enable";
   private Boolean enable;
@@ -47,7 +47,7 @@ public class UpdatePushPreferencesForAChannelResponse {
   private String pushSound;
 
   public static final String JSON_PROPERTY_PUSH_TRIGGER_OPTION = "push_trigger_option";
-  private SendbirdPushTriggerOption pushTriggerOption;
+  private SendBirdPushTriggerOption pushTriggerOption;
 
   public UpdatePushPreferencesForAChannelResponse() { 
   }
@@ -104,7 +104,7 @@ public class UpdatePushPreferencesForAChannelResponse {
   }
 
 
-  public UpdatePushPreferencesForAChannelResponse pushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
+  public UpdatePushPreferencesForAChannelResponse pushTriggerOption(SendBirdPushTriggerOption pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
     return this;
   }
@@ -118,14 +118,14 @@ public class UpdatePushPreferencesForAChannelResponse {
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SendbirdPushTriggerOption getPushTriggerOption() {
+  public SendBirdPushTriggerOption getPushTriggerOption() {
     return pushTriggerOption;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PUSH_TRIGGER_OPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPushTriggerOption(SendbirdPushTriggerOption pushTriggerOption) {
+  public void setPushTriggerOption(SendBirdPushTriggerOption pushTriggerOption) {
     this.pushTriggerOption = pushTriggerOption;
   }
 

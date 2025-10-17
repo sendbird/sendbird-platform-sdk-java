@@ -10,7 +10,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## scheduleAnAnnouncement
 
-> SendBirdScheduleAnAnnouncementResponse scheduleAnAnnouncement().apiToken(apiToken).sendBirdScheduleAnAnnouncementRequest(sendBirdScheduleAnAnnouncementRequest).execute();
+> ScheduleAnAnnouncementResponse scheduleAnAnnouncement().apiToken(apiToken).scheduleAnAnnouncementRequest(scheduleAnAnnouncementRequest).execute();
 
 Schedule an announcement
 
@@ -37,11 +37,11 @@ public class Example {
 
         AnnouncementApi apiInstance = new AnnouncementApi(defaultClient);
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdScheduleAnAnnouncementRequest sendBirdScheduleAnAnnouncementRequest = new SendBirdScheduleAnAnnouncementRequest(); // SendBirdScheduleAnAnnouncementRequest | 
+        ScheduleAnAnnouncementRequest scheduleAnAnnouncementRequest = new ScheduleAnAnnouncementRequest(); // ScheduleAnAnnouncementRequest | 
         try {
-            SendBirdScheduleAnAnnouncementResponse result = api.scheduleAnAnnouncement()
+            ScheduleAnAnnouncementResponse result = api.scheduleAnAnnouncement()
                 .apiToken(apiToken)
-                .sendBirdScheduleAnAnnouncementRequest(sendBirdScheduleAnAnnouncementRequest)
+                .scheduleAnAnnouncementRequest(scheduleAnAnnouncementRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -61,11 +61,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdScheduleAnAnnouncementRequest** | [**SendBirdScheduleAnAnnouncementRequest**](SendBirdScheduleAnAnnouncementRequest.md)|  | [optional] |
+| **scheduleAnAnnouncementRequest** | [**ScheduleAnAnnouncementRequest**](ScheduleAnAnnouncementRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdScheduleAnAnnouncementResponse**](SendBirdScheduleAnAnnouncementResponse.md)
+[**ScheduleAnAnnouncementResponse**](ScheduleAnAnnouncementResponse.md)
 
 ### Authorization
 

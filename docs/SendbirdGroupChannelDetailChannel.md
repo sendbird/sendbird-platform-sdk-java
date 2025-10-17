@@ -1,6 +1,6 @@
 
 
-# SendbirdGroupChannelDetailChannel
+# SendBirdGroupChannelDetailChannel
 
 
 ## Properties

@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.SendbirdOpenChannel;
+import org.openapitools.client.model.SendBirdOpenChannel;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.sendbird.client.JSON;
 
@@ -40,10 +40,10 @@ import org.sendbird.client.JSON;
   ListOpenChannelsResponse.JSON_PROPERTY_TS
 })
 @JsonTypeName("listOpenChannelsResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class ListOpenChannelsResponse {
   public static final String JSON_PROPERTY_CHANNELS = "channels";
-  private List<SendbirdOpenChannel> channels = null;
+  private List<SendBirdOpenChannel> channels = null;
 
   public static final String JSON_PROPERTY_NEXT = "next";
   private String next;
@@ -54,12 +54,12 @@ public class ListOpenChannelsResponse {
   public ListOpenChannelsResponse() { 
   }
 
-  public ListOpenChannelsResponse channels(List<SendbirdOpenChannel> channels) {
+  public ListOpenChannelsResponse channels(List<SendBirdOpenChannel> channels) {
     this.channels = channels;
     return this;
   }
 
-  public ListOpenChannelsResponse addChannelsItem(SendbirdOpenChannel channelsItem) {
+  public ListOpenChannelsResponse addChannelsItem(SendBirdOpenChannel channelsItem) {
     if (this.channels == null) {
       this.channels = new ArrayList<>();
     }
@@ -76,14 +76,14 @@ public class ListOpenChannelsResponse {
   @JsonProperty(JSON_PROPERTY_CHANNELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<SendbirdOpenChannel> getChannels() {
+  public List<SendBirdOpenChannel> getChannels() {
     return channels;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNELS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannels(List<SendbirdOpenChannel> channels) {
+  public void setChannels(List<SendBirdOpenChannel> channels) {
     this.channels = channels;
   }
 

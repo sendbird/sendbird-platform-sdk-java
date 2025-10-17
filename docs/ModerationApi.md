@@ -14,7 +14,7 @@ All URIs are relative to *https://api-APP_ID.sendbird.com*
 
 ## blockAUser
 
-> SendBirdBlockAUserResponse blockAUser(userId).apiToken(apiToken).sendBirdBlockAUserRequest(sendBirdBlockAUserRequest).execute();
+> BlockAUserResponse blockAUser(userId).apiToken(apiToken).blockAUserRequest(blockAUserRequest).execute();
 
 Block a user
 
@@ -50,11 +50,11 @@ public class Example {
         ModerationApi apiInstance = new ModerationApi(defaultClient);
         String userId = "userId_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdBlockAUserRequest sendBirdBlockAUserRequest = new SendBirdBlockAUserRequest(); // SendBirdBlockAUserRequest | 
+        BlockAUserRequest blockAUserRequest = new BlockAUserRequest(); // BlockAUserRequest | 
         try {
-            SendBirdBlockAUserResponse result = api.blockAUser(userId)
+            BlockAUserResponse result = api.blockAUser(userId)
                 .apiToken(apiToken)
-                .sendBirdBlockAUserRequest(sendBirdBlockAUserRequest)
+                .blockAUserRequest(blockAUserRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -75,11 +75,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **userId** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdBlockAUserRequest** | [**SendBirdBlockAUserRequest**](SendBirdBlockAUserRequest.md)|  | [optional] |
+| **blockAUserRequest** | [**BlockAUserRequest**](BlockAUserRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdBlockAUserResponse**](SendBirdBlockAUserResponse.md)
+[**BlockAUserResponse**](BlockAUserResponse.md)
 
 ### Authorization
 
@@ -98,7 +98,7 @@ No authorization required
 
 ## freezeAGroupChannel
 
-> SendBirdSendBirdGroupChannelDetail freezeAGroupChannel(channelUrl).apiToken(apiToken).sendBirdFreezeAGroupChannelRequest(sendBirdFreezeAGroupChannelRequest).execute();
+> SendBirdGroupChannelDetail freezeAGroupChannel(channelUrl).apiToken(apiToken).freezeAGroupChannelRequest(freezeAGroupChannelRequest).execute();
 
 Freeze a group channel
 
@@ -129,11 +129,11 @@ public class Example {
         ModerationApi apiInstance = new ModerationApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdFreezeAGroupChannelRequest sendBirdFreezeAGroupChannelRequest = new SendBirdFreezeAGroupChannelRequest(); // SendBirdFreezeAGroupChannelRequest | 
+        FreezeAGroupChannelRequest freezeAGroupChannelRequest = new FreezeAGroupChannelRequest(); // FreezeAGroupChannelRequest | 
         try {
-            SendBirdSendBirdGroupChannelDetail result = api.freezeAGroupChannel(channelUrl)
+            SendBirdGroupChannelDetail result = api.freezeAGroupChannel(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdFreezeAGroupChannelRequest(sendBirdFreezeAGroupChannelRequest)
+                .freezeAGroupChannelRequest(freezeAGroupChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -154,11 +154,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdFreezeAGroupChannelRequest** | [**SendBirdFreezeAGroupChannelRequest**](SendBirdFreezeAGroupChannelRequest.md)|  | [optional] |
+| **freezeAGroupChannelRequest** | [**FreezeAGroupChannelRequest**](FreezeAGroupChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdSendBirdGroupChannelDetail**](SendBirdSendBirdGroupChannelDetail.md)
+[**SendBirdGroupChannelDetail**](SendBirdGroupChannelDetail.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ No authorization required
 
 ## freezeAnOpenChannel
 
-> SendBirdSendBirdOpenChannel freezeAnOpenChannel(channelUrl).apiToken(apiToken).sendBirdFreezeAnOpenChannelRequest(sendBirdFreezeAnOpenChannelRequest).execute();
+> SendBirdOpenChannel freezeAnOpenChannel(channelUrl).apiToken(apiToken).freezeAnOpenChannelRequest(freezeAnOpenChannelRequest).execute();
 
 Freeze an open channel
 
@@ -208,11 +208,11 @@ public class Example {
         ModerationApi apiInstance = new ModerationApi(defaultClient);
         String channelUrl = "channelUrl_example"; // String | (Required) 
         String apiToken = "{{API_TOKEN}}"; // String | 
-        SendBirdFreezeAnOpenChannelRequest sendBirdFreezeAnOpenChannelRequest = new SendBirdFreezeAnOpenChannelRequest(); // SendBirdFreezeAnOpenChannelRequest | 
+        FreezeAnOpenChannelRequest freezeAnOpenChannelRequest = new FreezeAnOpenChannelRequest(); // FreezeAnOpenChannelRequest | 
         try {
-            SendBirdSendBirdOpenChannel result = api.freezeAnOpenChannel(channelUrl)
+            SendBirdOpenChannel result = api.freezeAnOpenChannel(channelUrl)
                 .apiToken(apiToken)
-                .sendBirdFreezeAnOpenChannelRequest(sendBirdFreezeAnOpenChannelRequest)
+                .freezeAnOpenChannelRequest(freezeAnOpenChannelRequest)
                 .execute();
             System.out.println(result);
         } catch (ApiException e) {
@@ -233,11 +233,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **channelUrl** | **String**| (Required)  | |
 | **apiToken** | **String**|  | [optional] |
-| **sendBirdFreezeAnOpenChannelRequest** | [**SendBirdFreezeAnOpenChannelRequest**](SendBirdFreezeAnOpenChannelRequest.md)|  | [optional] |
+| **freezeAnOpenChannelRequest** | [**FreezeAnOpenChannelRequest**](FreezeAnOpenChannelRequest.md)|  | [optional] |
 
 ### Return type
 
-[**SendBirdSendBirdOpenChannel**](SendBirdSendBirdOpenChannel.md)
+[**SendBirdOpenChannel**](SendBirdOpenChannel.md)
 
 ### Authorization
 
@@ -256,7 +256,7 @@ No authorization required
 
 ## listBlockedUsers
 
-> SendBirdListBlockedUsersResponse listBlockedUsers(userId)._list(_list).token(token).limit(limit).userIds(userIds).metadatakey(metadatakey).metadatavaluesIn(metadatavaluesIn).apiToken(apiToken).execute();
+> ListBlockedUsersResponse listBlockedUsers(userId)._list(_list).token(token).limit(limit).userIds(userIds).metadatakey(metadatakey).metadatavaluesIn(metadatavaluesIn).apiToken(apiToken).execute();
 
 List blocked users
 
@@ -295,7 +295,7 @@ public class Example {
         String metadatavaluesIn = "metadatavaluesIn_example"; // String | 
         String apiToken = "{{API_TOKEN}}"; // String | 
         try {
-            SendBirdListBlockedUsersResponse result = api.listBlockedUsers(userId)
+            ListBlockedUsersResponse result = api.listBlockedUsers(userId)
                 ._list(_list)
                 .token(token)
                 .limit(limit)
@@ -332,7 +332,7 @@ public class Example {
 
 ### Return type
 
-[**SendBirdListBlockedUsersResponse**](SendBirdListBlockedUsersResponse.md)
+[**ListBlockedUsersResponse**](ListBlockedUsersResponse.md)
 
 ### Authorization
 

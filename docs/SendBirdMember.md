@@ -1,6 +1,6 @@
 
 
-# SendbirdMember
+# SendBirdMember
 
 
 ## Properties
@@ -22,7 +22,7 @@
 |**mutedEndAt** | **Long** |  |  [optional] |
 |**nickname** | **String** |  |  [optional] |
 |**pushEnabled** | **Boolean** |  |  [optional] |
-|**pushTriggerOption** | **SendbirdPushTriggerOption** |  |  [optional] |
+|**pushTriggerOption** | **SendBirdPushTriggerOption** |  |  [optional] |
 |**profileUrl** | **String** |  |  [optional] |
 |**requireAuthForProfileImage** | **Boolean** |  |  [optional] |
 |**readTs** | **Long** |  |  [optional] |

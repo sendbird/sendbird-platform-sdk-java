@@ -35,7 +35,7 @@ import org.sendbird.client.JSON;
   FreezeAGroupChannelRequest.JSON_PROPERTY_FREEZE
 })
 @JsonTypeName("freezeAGroupChannel_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:18:28.613351+09:00[Asia/Seoul]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-17T09:09:26.119651+09:00[Asia/Seoul]")
 public class FreezeAGroupChannelRequest {
   public static final String JSON_PROPERTY_FREEZE = "freeze";
   private Boolean freeze;

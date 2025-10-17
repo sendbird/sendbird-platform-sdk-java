@@ -1,6 +1,6 @@
 
 
-# SendbirdGroupChannel
+# SendBirdGroupChannel
 
 
 ## Properties
@@ -11,18 +11,18 @@
 |**countPreference** | [**CountPreferenceEnum**](#CountPreferenceEnum) |  |  [optional] |
 |**coverUrl** | **String** |  |  [optional] |
 |**createdAt** | **Long** |  |  [optional] |
-|**createdBy** | [**SendbirdBasicUserInfo**](SendbirdBasicUserInfo.md) |  |  [optional] |
+|**createdBy** | [**SendBirdBasicUserInfo**](SendBirdBasicUserInfo.md) |  |  [optional] |
 |**customType** | **String** |  |  [optional] |
 |**data** | **String** |  |  [optional] |
 |**deliveryReceipt** | **Object** |  |  [optional] |
-|**disappearingMessage** | [**SendbirdDisappearingMessage**](SendbirdDisappearingMessage.md) |  |  [optional] |
+|**disappearingMessage** | [**SendBirdDisappearingMessage**](SendBirdDisappearingMessage.md) |  |  [optional] |
 |**freeze** | **Boolean** |  |  [optional] |
 |**hasAiBot** | **Boolean** |  |  [optional] |
 |**hasBot** | **Boolean** |  |  [optional] |
 |**hiddenState** | [**HiddenStateEnum**](#HiddenStateEnum) |  |  [optional] |
 |**ignoreProfanityFilter** | **Boolean** |  |  [optional] |
 |**invitedAt** | **Long** |  |  [optional] |
-|**inviter** | [**SendbirdBasicUserInfo**](SendbirdBasicUserInfo.md) |  |  [optional] |
+|**inviter** | [**SendBirdBasicUserInfo**](SendBirdBasicUserInfo.md) |  |  [optional] |
 |**isAccessCodeRequired** | **Boolean** |  |  [optional] |
 |**isBroadcast** | **Boolean** |  |  [optional] |
 |**isDiscoverable** | **Boolean** |  |  [optional] |
@@ -36,18 +36,18 @@
 |**isSuper** | **Boolean** |  |  [optional] |
 |**joinedMemberCount** | **Integer** |  |  [optional] |
 |**joinedTs** | **Long** |  |  [optional] |
-|**lastMessage** | [**SendbirdGroupChannelLastMessage**](SendbirdGroupChannelLastMessage.md) |  |  [optional] |
+|**lastMessage** | [**SendBirdGroupChannelLastMessage**](SendBirdGroupChannelLastMessage.md) |  |  [optional] |
 |**maxLengthMessage** | **Integer** |  |  [optional] |
 |**memberCount** | **Integer** |  |  [optional] |
 |**memberState** | [**MemberStateEnum**](#MemberStateEnum) |  |  [optional] |
-|**members** | [**List&lt;SendbirdMember&gt;**](SendbirdMember.md) |  |  [optional] |
+|**members** | [**List&lt;SendBirdMember&gt;**](SendBirdMember.md) |  |  [optional] |
 |**messageSurvivalSeconds** | **Integer** |  |  [optional] |
 |**metadata** | **Object** |  |  [optional] |
 |**myRole** | [**MyRoleEnum**](#MyRoleEnum) |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**pushTriggerOption** | **SendbirdPushTriggerOption** |  |  [optional] |
+|**pushTriggerOption** | **SendBirdPushTriggerOption** |  |  [optional] |
 |**readReceipt** | **Map&lt;String, Long&gt;** |  |  [optional] |
-|**smsFallback** | [**SendbirdSmsFallback**](SendbirdSmsFallback.md) |  |  [optional] |
+|**smsFallback** | [**SendBirdSmsFallback**](SendBirdSmsFallback.md) |  |  [optional] |
 |**tsMessageOffset** | **Long** |  |  [optional] |
 |**unreadMentionCount** | **Integer** |  |  [optional] |
 |**unreadMessageCount** | **Integer** |  |  [optional] |
