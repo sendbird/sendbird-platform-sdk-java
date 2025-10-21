@@ -33,7 +33,7 @@ jobs:
       with:
         name: maven-artifacts
         path: |
-          **/target/*.jar     # 모든 모듈의 JAR
-          **/pom.xml          # 루트 및 하위 모듈의 POM
+          target/*.jar
+          pom.xml
         if-no-files-found: error
         retention-days: 7
